@@ -1,6 +1,6 @@
 [[JUnit 4.x#AtTestExpected|<--Back]]
 
-# @Test(expected``=``SomeException.class)=
+# @Test(expected``=``SomeException.class)
 Prior to JUnit 4, if I wanted to write a test that verified a certain exception was thrown, I'd write something like the following:
 ```
 public void testSomething() {

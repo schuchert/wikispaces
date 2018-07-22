@@ -1,4 +1,4 @@
-### Queries===
+### Queries
 In these example, the variable "em" is an entity manger initialized just like it was in the first tutorial.
 
 **Empty String**

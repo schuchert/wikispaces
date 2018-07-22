@@ -3,5 +3,5 @@ The following stories along with their user acceptance tests cover release 1:
 * [[Monopoly(r) R1 Game Players|Game Players]]
 * [[Monopoly(r) R1 Game Rounds|Game Rounds]]
 
-### Optional===
+### Optional
 * Display the names of the locations rather than the number of the locations.

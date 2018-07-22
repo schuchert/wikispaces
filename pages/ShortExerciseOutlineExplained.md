@@ -1,6 +1,6 @@
 [[ShortExerciseOutlineThinking|<--Back]] [[ShortExerciseOutlineExercises|Next-->]]
 
-# Explained=
+# Explained
 While not part of the learning cycle per-se, I'm adding this step for three reasons:
 
 * Some people will want to see a summary and explanation so I'm attempting to more directly address some learning styles/preferences. 

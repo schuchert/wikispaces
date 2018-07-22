@@ -1,4 +1,4 @@
-### Creating the Entity Model===
+### Creating the Entity Model
 We need to create our entity model. There are three classes in it:
 * Address
 * Company
@@ -12,7 +12,7 @@ To create the basic classes:
 
 Type or enter the source provided below for each of the three classes.
 
-### Changes===
+### Changes
 The entity model is changed slightly from the first JPA tutorial. There is one change in Company.java. Review that class' comments to understand that change. The quick summary is that we've added eager fetching to a relationship.
 
 **Address.java**

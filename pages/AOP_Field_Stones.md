@@ -1,5 +1,5 @@
-# Taken from The Server Side=
-http://www.theserverside.com/news/thread.tss?thread_id=39026=
+# Taken from The Server Side
+http://www.theserverside.com/news/thread.tss?thread_id=39026
 
 We use it for asynchronous event handling, undo management (on the client), replication, transactions, security, caching, parameter validation, the entire object model (in a way that would be more or less impossible to do without AOP), versioning of state, automatic persistence, locking, last modified timestamps, business rules, client/server synchronization, and lots lots more.
 

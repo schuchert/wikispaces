@@ -1,4 +1,4 @@
-# Tell Me About Yourself=
+# Tell Me About Yourself
 * Your Name
 * what you hope to get out of the class
 * Your Java Experience

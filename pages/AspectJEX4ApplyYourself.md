@@ -1,26 +1,26 @@
 [[AspectJEX4Explained|<--Back]] [[AspectJEX4AssignmentApplications|Next-->]]
 
-# Apply Yourself=
-## Avoid unnecessary checking==
+# Apply Yourself
+## Avoid unnecessary checking
 Change the SetInterceptor so that if the object is already changed, it does not check the current and previous value.
 ----
 [[#Unexpected Recursion]]
-## Experiment: Unexpected Recursion==
+## Experiment: Unexpected Recursion
 Line 13 of [[AspectJEX4Explained#FieldSetAspect|FieldSetAspect.java]] file defines a pointcut meant to avoid recursion. Line 21 actually uses that pointcut. Change line 21 by removing “&& skipTrackedObject()” and run main(). Describe why happens.
 
 Make sure to change FieldSetAspect.java back to its original value.
 ----
-## Experiment: Changing what gets passed==
+## Experiment: Changing what gets passed
 Notice that the Dao.save() method checks for null. Instead of not calling Dao.save() if the object is unchanged, pass in null object, which will have the effect of the object not being saved.
 ----
 [[#ExperimentConstructorUpdatesAddress]]
-## Experiment: Constructor Updates Address==
+## Experiment: Constructor Updates Address
 Currently the constructor does not change anything. Update the constructor to set all of the strings to “”. Now run Main.main() and see what has changed. Describe what is happening.
 ----
-## Challenge: Adding Automatic History==
+## Challenge: Adding Automatic History
 Create a class that allows you to keep track of the history of rolls of individual Die objects. Introduce that history class into the Die class and track the history of individual die objects. At the end of the program, display the history information.
 ----
-## Thought: Why return null?==
+## Thought: Why return null?
 [[AspectJEX4Explained#FieldSetAspect|FieldSetAspect.java]] returns null on line 32. Could this cause any side effects? Can you suggest any alternatives?
 
 [[AspectJEX4Explained|<--Back]] [[AspectJEX4AssignmentApplications|Next-->]]

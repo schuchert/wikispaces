@@ -1,4 +1,4 @@
-## JPA Tutorial 1 - FAQ==
+## JPA Tutorial 1 - FAQ
  * **What's the entity Manager?**  //Object cache which persists entities.  Manages any objects with the @Entity annotation.  Allows starting/stopping transactions, crud'ing database.  "Your facade to working with the database"//
 * **Is hibernate using an in-memory database?**  //Hibernate is one implementation of JPA.  It connects to the database through a jdbc url.  The database we use in the early exercises is Hypersonic SQL.//
 * **When do you need a default constructor?**  //Spec says you always need it.  If there are no other constructors, java provides the default constructor.  If you add a single constructor (w/parms), keep in mind the default constructor is removed by java.// 
@@ -15,7 +15,7 @@
 * **How do you know what you set 'mappedBy' to? ** // Use the name of the field that defines the relationship //
 * **What happens if you manipulate your objects outside of a transaction? ** // In a JSE environment, objects are still managed by the EntityManager. So if you make a change to an object, then later start a transaction and commit it, the changes made outside of the transaction are also sent to the database. If, on the other hand, you close the EntityManager or flush it, the changes are lost.//
 
-## # Brett: What have you learned in this tutorial? === 
+## # Brett: What have you learned in this tutorial? 
 **Class responses:**
 //
 * Eclipse is good
@@ -24,7 +24,7 @@
 * Using entity notations
 //
 
-## # Responses to questions in the exercises ===
+## # Responses to questions in the exercises 
 * **What does @Entity do? **
 //
 * defines a class as being an entity bean.
@@ -46,8 +46,8 @@
 //
 
 
-## Day 1 Review ==
-### What we learned today . . .===
+## Day 1 Review 
+### What we learned today . . .
 * JUnit
 * many-to-one & vice versa (bi-directional)
 * Annotations & JUnit
@@ -61,11 +61,11 @@
 * static imports
 * persisting all the entities (without using cascade attributes)
 
-### feedback so far on the class format===
+### feedback so far on the class format
 * "better than just hearing somebody talk"
 * hands-on is good, maybe should have an overview at the beginning though.  "pedagogical"
  
-### What we'll do tommorrow===
+### What we'll do tommorrow
 * more tdd style approach
 * tutorial 3 (big project)
 * polymorphic queries

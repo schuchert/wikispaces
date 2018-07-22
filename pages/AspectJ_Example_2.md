@@ -1,11 +1,11 @@
 [[AspectJ Self Study|<--Back]] [[AspectJEX2ExpectedVersusActualOutput|Next-->]]
 
-# Predict the Output=
+# Predict the Output
 Source files are here: [[file:AspectJExample2src.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject|here]].
 
 Have a look at the following Main.main() method and the associated Address class.
 ----
-## Main class==
+## Main class
 ```java
 package ex2;
 
@@ -22,7 +22,7 @@ public class Main {
 }
 ```
 ----
-## Address class==
+## Address class
 ```java
 package ex2;
 
@@ -78,7 +78,7 @@ public class Address implements Serializable {
 }
 ```
 ----
-## Assignment: Predict the Output==
+## Assignment: Predict the Output
 
 Given these 2 classes, predict the output. Please do so before continuing.
 

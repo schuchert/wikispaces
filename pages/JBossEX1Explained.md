@@ -1,6 +1,6 @@
 [[JBossEX1SoWhatIsHappening|<--Back]] [[JBossVMConfigurationBlackMagic|Next-->]]
 
-## Example 1 Explained==
+## Example 1 Explained
 Capturing method execution is often what people first think of when considering AOP. This example is modified from one provided with the JBoss AOP documentation under docs/aspect-framework/examples/method-execution.
 
 In this example, we intercept each method called on a class called MethodExecutionExample. Before each method call we print a message, we call the method and then print another message after returning from the method.
@@ -19,7 +19,7 @@ I did not show you three things:
 * The Java Virtual Machine is configured to give JBoss AOP a chance to 
 
 ----
-### MethodInterceptor.java===
+### MethodInterceptor.java
 ```java
 01: package com.valtech.methodexecution; 
 02: 
@@ -51,7 +51,7 @@ Calls to the MethodInterceptor.invoke() method are placed into target classes ba
 ||18||This line calls the provided invocation object's invokeNext() method. Since we only have one aspect, this calls the target method. If we had multiple aspects targeting the same method, invoke next would call the next aspect to do its thing. What happens if instead of calling invocation.invokeNext() you just return? Well the method will not be called. If you do this, you must return something that can be converted to the expected return type.||
 ||12||Note the signature returns Object. If the underlying method has a void return or if it returns a primitive, you still use Object. The details are taken care of for you.||
 ----
-### jboss-aop.xml===
+### jboss-aop.xml
 ```xml
 01: <aop> 
 02:    <pointcut name="MethodExecution" 

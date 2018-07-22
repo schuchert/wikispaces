@@ -1,6 +1,6 @@
 [[AspectJ Annotation Problem|<--Back]] [[AspectJ Annotation One Solution|Next-->]]
 
-# Possibilities=
+# Possibilities
 What ideas did you come up with? How about some of these ideas:
 # Use a super class to contain fields that don’t affect change tracking. Inherit and only capture the setters on fields in the derived class.
 # Use the modifier transient. Somehow skip fields that are transient.

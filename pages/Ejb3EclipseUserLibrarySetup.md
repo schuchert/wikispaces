@@ -1,4 +1,4 @@
-### Define User Library===
+### Define User Library
 We need to add several jar files to the class path. We created a user library in [[JPA Tutorial 1 - Eclipse Project Setup#ClasspathVariables|these steps]] and we're going to do the same thing with a different set of jar files.
 
 **Create User Library**

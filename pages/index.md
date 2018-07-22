@@ -2,17 +2,17 @@ I'm attempting to create materials people will find useful for learning some too
 
 For more background on where I'm coming from, have a look at [[ExperientialLearningNotes]].
 
-# Exercises =
-> == [[AspectOrientedProgramming|Aspect Oriented Programming]] ==
+# Exercises 
+> == [[AspectOrientedProgramming|Aspect Oriented Programming]] 
 
-# Notes =
-> == [[ExperientialLearningNotes]] ==
+# Notes 
+> == [[ExperientialLearningNotes]] 
 
-# Old Book Work =
-> == [[CSharpAndOop]]==
+# Old Book Work 
+> == [[CSharpAndOop]]
 
-# My blog =
-> ==[[http://brettschuchert.blogspot.com/]]==
+# My blog 
+> ==[[http://brettschuchert.blogspot.com/]]
 
-# Pictures =
-> == [[http://www.pbase.com/brett_schuchert|My pictures at PBase]]==
+# Pictures 
+> == [[http://www.pbase.com/brett_schuchert|My pictures at PBase]]

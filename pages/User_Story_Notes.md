@@ -1,18 +1,18 @@
-# Examples=
-## Online Itinerary Maintenance==
+# Examples
+## Online Itinerary Maintenance
 * As a business traveler I want to reschedule a flight in the future so that I know I can still get home but finish an important business meeting
 * As a business traveler I want to cancel a flight because my schedule changes and if I don’t update it now I might forget and lose money
 * As a traveler’s representative I want to inform a business traveler of a delayed flight to keep them from spending their limited free time at the airport
-## Monopoly==
+## Monopoly
 * A Player can land on go and receive $200
 * A Player can land on Reading Railroad and purchase it
 * A Player can land on Boardwalk and pay rent
-## Online Student Store==
+## Online Student Store
 * I’m a student who wants to purchase books for my schedule
 * I’m a student who wants to purchase supplemental materials for a course
 * I’m a student who needs to get the cost for the books and materials of a semester’s schedule
 
-# INVEST=
+# INVEST
 Independent
 * Avoid dependencies between stories
 Negotiable
@@ -26,7 +26,7 @@ Small
 Testable
 * Can describe ways in which we know the story works
 
-# Story Guidelines=
+# Story Guidelines
 * Customer writes them 
 * Start with user role goal epics 
 * Slice the cake 
@@ -41,7 +41,7 @@ Testable
 * It's a reminder/placeholder, not the requirements 
 * Put constraints on "constraint cards" (first version of quality attributes) 
 
-# Story Smells=
+# Story Smells
 Many of these come of Mike Cohn's work.
 * Stories are too small
 * Interdependent stories

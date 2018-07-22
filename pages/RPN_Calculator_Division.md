@@ -1,6 +1,6 @@
 As a user, I want to be able to divide two numbers so that I don't have to do the work manually
 
-### UAT===
+### UAT
 * [] 4 <enter> 2 <divide> -> [2]
 * [] 3 <enter> 2 <divide> -> [1.5]
 * [] -4 <enter> -8 <divide> -> [.5]

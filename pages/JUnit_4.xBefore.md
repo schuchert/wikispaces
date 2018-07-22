@@ -1,6 +1,6 @@
 [[JUnit 4.x#Before|<--Back]]
 
-# @Before=
+# @Before
 The @Before annotation applies to methods. You put it on a method and JUnit will execute it before each unit test. This is equivalent to the setUp method from JUnit bfore 4.0 that was defined as protected in TestCase.
 
 ```

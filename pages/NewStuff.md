@@ -4,7 +4,7 @@
 * ## [C++ Training Materials]({{ site.pagesurl }}/cpptraining)
 * ## [VideoDemonstrations]({{ site.pagesurl }}/VideoDemonstrations)
 * ## [FitNesse]({{ site.pagesurl }}/FitNesse)
-* ## [Ruby]({{ site.pagesurl }}/Ruby)
+* ## [Ruby]({{ site.pagesurl }}/RubyNotes)
 * ## [Languages]({{ site.pagesurl }}/Languages)
 * ## [Tdd & Concurrency]({{ site.pagesurl }}/TddAndConcurrency)
 * ## [CustomJUnit4Runner]({{ site.pagesurl }}/CustomJUnit4Runner)

@@ -1,6 +1,6 @@
 [[Spring Templates Typical JDBC|<--Back]] [[Spring Templates JDBC Strategy Is A Template|Next-->]]
 
-# JDBC Using the Template Method Pattern=
+# JDBC Using the Template Method Pattern
 This version uses the [[http://en.wikipedia.org/wiki/Design_Patterns|GoF design pattern]] [[http://en.wikipedia.org/wiki/Template_method_pattern|Template Method]]. For more details, take a look at this [[Template Method Pattern|Template Method Pattern Example]].
 
 In this case, we've factored out much of the code in the a base class called AbstractTemplateMethod. We have one concrete implementation of this class called Example2. The driver class, JdbcExample, now uses Exmaple2 to:
@@ -8,13 +8,13 @@ In this case, we've factored out much of the code in the a base class called Abs
 * Insert some rows
 * Execute a query
 
-## Class Diagram==
+## Class Diagram
 [[image:DesigningToSpringTemplates.v2.gif]]
 
-## The Source==
+## The Source
 ----
 [[#AbstractTemplateMethod]]
-## AbstractTemplateMethod.java==
+## AbstractTemplateMethod.java
 ```java
 01: package aab.valtech.jug.templatemethod;
 02: 
@@ -94,11 +94,11 @@ In this case, we've factored out much of the code in the a base class called Abs
 76:     protected abstract String getSearchStatement();
 77: }
 ```
-### Interesting Lines===
+### Interesting Lines
 ||Line||Description||
 ----
 [[#Example2]]
-## Example2.java==
+## Example2.java
 ```java
 01: package aab.valtech.jug.templatemethod;
 02: 
@@ -164,11 +164,11 @@ In this case, we've factored out much of the code in the a base class called Abs
 62:     }
 63: }
 ```
-### Interesting Lines===
+### Interesting Lines
 ||Line||Description||
 ----
 [[#JdbcExample]]
-## JdbcExample.java==
+## JdbcExample.java
 ```java
 01: package aab.valtech.jug.templatemethod;
 02: 
@@ -194,7 +194,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 22:     }
 23: }
 ```
-### Interesting Lines===
+### Interesting Lines
 ||Line||Description||
 
 [[Spring Templates Typical JDBC|<--Back]] [[Spring Templates JDBC Strategy Is A Template|Next-->]]

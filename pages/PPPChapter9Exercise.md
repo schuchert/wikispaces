@@ -1,6 +1,6 @@
 [[image:Back.gif link="PPPChapter8Exercise"]]  [[image:up.gif link="Vancouver_PPP_Exercise_Ch8and9"]]
 
-## Part 2: Unit 9==
+## Part 2: Unit 9
 
 You have been tasked with "reusing" what's already there. You've already pulled out one or more components to support that functionality -- catalog maintenance -- how does your component measure up?
 

@@ -22,7 +22,7 @@ You get the idea, it's a lot of work to make this change. That's why we'll do th
 
 Note the source code for all of these changes is at the bottom of this page.
 
-### The Updated Entities===
+### The Updated Entities
 **Resource.java**
 ```java
 package entity;
@@ -494,7 +494,7 @@ public class Loan {
      * A duplicate column in a sense, this one gives us the actual Patron rather
      * than just having the id of the Patron.
      * 
-     * In the reference material I read, putting in insertable and updatable =
+     * In the reference material I read, putting in insertable and updatable 
      * false did not seem required. However, when using the hibernate entity
      * manger I got a null pointer exception and had to step through the source
      * code to fix the problem.
@@ -599,13 +599,13 @@ The changes to Patron are a little less extreme. Other than some comments referr
     }
 ```
 
-### The exceptions===
+### The exceptions
 # Rename all of the exceptions with "Book" in their name. Replace "Book" with "Resource"
 # Rename all of the variables names bookId --> resourceId
 
 How can you easliy go about doing this? Use the refactor factor in Eclipse. Select an exception class, right-click and select Refactor:Rename and enter a new name. You can also do the same thing by selecting the attribute name, right-click, refactor:rename and enter the new name. Make sure to select the bottom two selections regarding renaming the getter and setter.
 
-### The Dao's===
+### The Dao's
 **BookDao.java**
 Most of the functionality that was in BookDao is now in ResourceDao.java. Why is this? Or better yet, why is the a BookDao at all? Look at the one method and answer the question for yourself (or ask).
 
@@ -917,7 +917,7 @@ public class ResourceDao extends BaseDao {
 }
 ```
 
-### The Tests===
+### The Tests
 
 **BookDaoTest.java**
 Removed (or moved to ResourceDaoTest, take your pick).
@@ -1291,5 +1291,5 @@ public class ResourceDaoTest extends BaseDbDaoTest {
     }
 }
 ```
-### The Source===
+### The Source
 > [[file:ResourceBasicSupport.jar]]

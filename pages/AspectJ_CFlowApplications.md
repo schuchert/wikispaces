@@ -1,6 +1,6 @@
 [[AspectJ CFlowAssignmentApplications|<--Back]] [[AspectJ CFlowAssignmentIssues|Next-->]]
 
-## Applications of CFlow==
+## Applications of CFlow
 Here are some things I’ve heard people mention:
 * …
 

@@ -1,6 +1,6 @@
 [[Car Rental Code Coverage with Emma|<--Back]] [[Emma Code Coverage vehicle.configuration|Next-->]]
 
-# Emma Code Coverage vehicle.type Package=
+# Emma Code Coverage vehicle.type Package
 
 Looking into the details of just this package, we have the following stats:
 ||name||class, %||method, %||block, %||line, %||
@@ -19,7 +19,7 @@ Looking into the details of just this package, we have the following stats:
 
 The first thing to notice is that EnumField.java and ObjectField.java have no coverage. These are some classes I created in some preliminary work that I stopped using as I refactored. It is time to get rid of these classes but I did realize that until running Emma for the first time.
 
-## The Plan==
+## The Plan
 Now for a class-by-class breakdown.
 
 **ListField.java**
@@ -74,7 +74,7 @@ This class has 94% coverage and the only thing uncovered is a get method, so I'l
 **IntegerField.java**
 It has 100% coverage.
 
-## The Results==
+## The Results
 After making the above changes, we now have the following package-level resuls:
 ||name||class, %||method, %||block, %||line, %||
 ||vehicle.type||100% (16/16)||98% (92/94)|| 94% (797/846)|| 94% (173.9/185) ||

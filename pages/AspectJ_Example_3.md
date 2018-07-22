@@ -1,11 +1,11 @@
 [[AspectJ Self Study|<--Back]] [[AspectJEX3ExpectedVersusActualOutput|Next-->]]
 
-# Predict the Output=
+# Predict the Output
 Source files are here: [[file:AspectJExample3src.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject|here]].
 
 Have a look at the following Die class and the associated Main.main() method that serializes the Die.
 ----
-## Die class==
+## Die class
 ```java
 package ex3;
 
@@ -32,7 +32,7 @@ public class Die {
 }
 ```
 ----
-## Main class==
+## Main class
 ```java
 package ex3;
 
@@ -106,7 +106,7 @@ public class Main {
 }
 ```
 ----
-## Assignment: Predict the Output==
+## Assignment: Predict the Output
 Given these 2 classes, predict the output. Please do so before continuing.
 
 [[AspectJ Self Study|<--Back]] [[AspectJEX3ExpectedVersusActualOutput|Next-->]]

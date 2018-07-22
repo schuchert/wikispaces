@@ -1,6 +1,6 @@
-# Must haves=
+# Must haves
 ----
-# # For the MC ==
+# # For the MC 
 //**As an MC, I can create a game that players can join.**//
 * Any number of players can join while the game is accepting players.
 * No new players may join after the game is started.
@@ -25,7 +25,7 @@
 
 //**As an MC, I can complete the game ahead of finishing all answer-questions.**//
 ----
-# # For the Player ==
+# # For the Player 
 //**As a player, I can join a game that has not yet started.**//
 * I am uniquely identified via my name
 * Two players cannot have the same name
@@ -44,10 +44,10 @@
 * The MC must have indicated an incorrect response
 * Overall time for a given answer must not have expired.
 ----
-# # From the game ==
+# # From the game 
 //**As the game, I am able to broadcast the just-selected category, dollar-amount, and answer to all players.**//
 ----
-# Nice to haves=
+# Nice to haves
 //**As a player, I can join a game that I was already a member of in case of a crash.**//
 //**As the game, I can indicate that the current answer-question has timed out.**//
 //**Research a "fair" way to select who took an answer-question first.**//

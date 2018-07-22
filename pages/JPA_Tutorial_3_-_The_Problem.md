@@ -1,6 +1,6 @@
 We want to implement a simple system to track books and eventually other resources for a library. This page covers the requirements for Version 1. The problem as stated is bigger than what this tutorial implements. Parts are left as exercises that are scheduled into a course or advanced exercises for students who finish their work early.
 
-### Checking out a Book===
+### Checking out a Book
 **Description**
 A Patron checks out one or more books, all of which are due 14 days later.
 
@@ -21,7 +21,7 @@ A Patron checks out one or more books, all of which are due 14 days later.
 ||5||5||The Book is a reserve book and cannot be checked out. Inform the Patron.||
 ||6||5||The due date falls on a day when the Library is not open, move the return date to the next date the library is open.||
 
-### Returning a Book===
+### Returning a Book
 **Description**
 A Patron returns a book. The library computes any fines and removes the recording of the loan of the book.
 
@@ -42,7 +42,7 @@ A Patron returns a book. The library computes any fines and removes the recordin
 ||3||5||The user owes no fines, the use case ends.||
 ||4||6||The user indicates they do not want to pay fines right now. The system informs them they will not be able to checkout books until all fines are paid and the use case ends.||
 
-### Adding a Book===
+### Adding a Book
 **Description**
 A Librarian wishes to add a new book into the system.
 
@@ -58,7 +58,7 @@ A Librarian wishes to add a new book into the system.
 **Alternatives**
 No alternatives listed for this use case.
 
-### Removing a Book===
+### Removing a Book
 **Description**
 The Librarian wishes to take a book out of the system and make it no longer available for checkout.
 
@@ -75,7 +75,7 @@ The Librarian wishes to take a book out of the system and make it no longer avai
 ||2||4||The book is on loan. Remove the loan (ignoring any fines). Indicate the error to the user but complete the use case normally.||
 ||3||4||This is the last book with the that particular ISBN. Ask the user to confirm the removal. If confirmed, complete the use case normally. If not confirmed, do not remove the book. Either way, the use case ends.||
 
-### Adding a Patron===
+### Adding a Patron
 **Description**
 A Librarian adds a new Patron into the system.
 
@@ -91,7 +91,7 @@ A Librarian adds a new Patron into the system.
 ||**Num**||**Step**||**Description**||
 ||1||3||Some required information is missing. Indicate the required information and ask the Librarian to perform it. Continue back at step 2.||
 
-### Removing a Patron===
+### Removing a Patron
 **Description**
 The Librarian wants to remove a Patron.
 
@@ -108,7 +108,7 @@ The Librarian wants to remove a Patron.
 ||2||3||The Patron has outstanding fines. Indicate this to the Librarian and ask to confirm the removal. If confirmed, remove and complete the use case normally. If not confirmed, end the use case without removing the Patron.||
 ||3||3||The Patron has outstanding loans. Indicate this to the Librarian and do not allow removal.||
 
-### Paying Fines===
+### Paying Fines
 **Description**
 A Patron wishes to pay fines. Note that this use case can be invoked by itself or called from other use cases.
 
@@ -123,7 +123,7 @@ A Patron wishes to pay fines. Note that this use case can be invoked by itself o
 ||1||1||The identified Patron has no fines. Indicate this to the user and the use case ends.||
 ||2||4||If there is still a balance, the system asks if it should ask for additional reimbursements. If yes, they go back to step 2, otherwise the use case ends.||
 
-### Record a Book as Unrecoverable===
+### Record a Book as Unrecoverable
 **Description**
 A book is not going to be returned/recovered. Add a fine if the book is on loan.
 
@@ -141,9 +141,9 @@ A book is not going to be returned/recovered. Add a fine if the book is on loan.
 ||2||3||The book id is not known. Provide the isbn. Select the user who has the book checked out and select the book by id. Continue at step 3.||
 ||3||3||The book id is not known. Provide the title. Select the user who has the book checked out and select the book by id. Continue at step 3.||
 ||4||5||The book is not checked out, do not calculate any fines.||
-### Reviewing all Checkouts for a Patron===
+### Reviewing all Checkouts for a Patron
 **Description**
 Report all of the books currently checked out by a Patron. Provide the title, isbn and due date. Sort by due date, with the book due the soonest at the beginning. If the user has an outstanding balance, indicate that as well.
 
-### Reviewing all Fines for all Patrons===
+### Reviewing all Fines for all Patrons
 Present a list of all the patrons with fines. Sort by the last name followed by the first name. Provide the name of the user, their phone number and their total balance.

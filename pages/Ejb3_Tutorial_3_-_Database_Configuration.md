@@ -1,4 +1,4 @@
-## # persistence.xml ===
+## # persistence.xml 
 As we have seen with the previous EJB tutorials, the persistence.xml looks a little different for a JEE environment. Update the persistence.xml to resemble the following:
 **persistence.xml**
 ```xml
@@ -14,7 +14,7 @@ As we have seen with the previous EJB tutorials, the persistence.xml looks a lit
 </persistence>
 ```
 
-## # Data Source and Database ===
+## # Data Source and Database 
 This persistence.xml makes use of a data source that we mentioned [[Ejb 3 Tutorial 2 - Optional Data Source Configuration|here]]. We're using this so that we have a database we can look at as we work through our tests to make sure we're cleaning everything up properly.
 
 **If you're working with a preconfigured system, the startdb.bat file mentioned below will already exist, you just need to run it.**

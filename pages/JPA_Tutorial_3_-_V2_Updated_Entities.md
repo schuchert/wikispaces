@@ -58,7 +58,7 @@ public class Loan {
      * A duplicate column in a sense, this one gives us the actual Patron rather
      * than just having the id of the Patron.
      * 
-     * In the reference material I read, putting in insertable and updatable =
+     * In the reference material I read, putting in insertable and updatable 
      * false did not seem required. However, when using the hibernate entity
      * manger I got a null pointer exception and had to step through the source
      * code to fix the problem.

@@ -1,6 +1,6 @@
 As a Player, landing on Income Tax forces me to pay the smaller of 10% of my total worth or $200.
 
-### User Acceptance Tests===
+### User Acceptance Tests
 * During a turn, a Player with an initial total worth of $1800 lands on Income Tax. The balance decreases by $180.
 * During a turn, a Player with an initial total worth of $2200 lands on Income Tax. The balance decreases by $200.
 * During a turn, a Player with an initial total worth of $0 lands on Income Tax. The balance decreases by $0.

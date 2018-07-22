@@ -1,6 +1,6 @@
 [[JBossAOPEX2SoWhatIsHappening|<--Back]] [[JBossAOPEX2ApplyYourself|Next-->]]
 
-# Example 2 Explained=
+# Example 2 Explained
 Accessing a field in Java is a joinpoint exposed by the JBoss AOP joinpoint model. This is different from method execution in that captures things like the following: 
 ```
    this.aString = "value";              // Writing to a field called aString
@@ -18,7 +18,7 @@ To make this example work, we need two additional things:
 * SetInterceptor.java
 * jboss-aop.xml
 ----
-## SetInterceptor.java==
+## SetInterceptor.java
 ```java
 01: package ex2;
 02: 
@@ -49,14 +49,14 @@ To make this example work, we need two additional things:
 27: 	}
 28: }
 ```
-### Interesting Lines===
+### Interesting Lines
 ||Line||Description||
 ||14||This is the method called whenever the a field is set that matches the pointcut. We can choose to allow the get/set to continue by calling invocation.invokeNext(). We can do work before or after that depending on our needs.||
 ||15||We only care about sets, if the type of this invocation is not a FieldWriteInvocation (set), simply return the result of performing the invocation.invokeNext(). The only other option is accessing a field, so allow the access to happen and return the value.||
 ||19||Get the value on the right-hand side of the assignment operator.||
 ||20 - 22||Get the current value of the field.||
 ----
-## jboss-aop.xml==
+## jboss-aop.xml
 ```xml
 01: <aop>
 02:    <pointcut name="PrivateAttributes" expr="set(private java.lang.String *.Address->*)"/>
@@ -67,7 +67,7 @@ To make this example work, we need two additional things:
 07:    
 08: </aop>
 ```
-### Interesting Lines===
+### Interesting Lines
 ||Line||Description||
 ||3 - 4||Define a pointcut that matches all sets of private fields of type String on all classes called Address. If we wanted to get all types, we could replace "java.lang.String" with "*". If we didn't care if the field was private, simply leave private out.||
 ||6 - 8||Bind the pointcut defined above to the SetInterceptor class.||

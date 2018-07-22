@@ -1,6 +1,6 @@
 [[TDD Example Catalog|<--Back]]
 
-## Introduction==
+## Introduction
 This is a complete, albeit simple, example using jMock. To get this running, you'll need to do the following
 # Use Java 5 or later
 # Add JUnit 4 to your classpath
@@ -12,7 +12,7 @@ This is a complete, albeit simple, example using jMock. To get this running, you
 ** hamcrest-library-1.0.jar
 # Take each of the following files and add them into a project in your favorite IDE
 
-## WithdrawalTest.java==
+## WithdrawalTest.java
 ```java
 package com.objectmentor.jmock;
 
@@ -97,7 +97,7 @@ public class WithdrawalTest {
 }
 ```
 
-## BankAccount.java==
+## BankAccount.java
 ```java
 package com.objectmentor.jmock;
 
@@ -107,7 +107,7 @@ public interface BankAccount {
 }
 ```
 
-## Withdrawal.java==
+## Withdrawal.java
 ```java
 package com.objectmentor.jmock;
 
@@ -138,7 +138,7 @@ public class Withdrawal {
 }
 ```
 
-## InsufficientFunds.java==
+## InsufficientFunds.java
 
 ```java
 package com.objectmentor.jmock;

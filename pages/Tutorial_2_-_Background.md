@@ -1,6 +1,6 @@
 In this tutorial, you experiment with queries to get a feel for how the interface actually behaves. For this tutorial we stick to using JUnit 4 to write a "test" for each of our tutorials.
 
-### Background===
+### Background
 The **Entity Manager** allows you to create queries using its own query language called Java Persistence Query Language, **JPQL**. Rather than cover the syntax directly, this tutorial presents you with several queries and asks you to use each one of these queries against the entities we created in [[JPA Tutorial 1 - Getting Started]].
 
 Queries in **JPQL** are not like SQL queries. Where a SQL query deals with tables and columns, a JPQL query deals with objects and attributes. In many cases there is no difference, but it is possible that a single object maps to multiple tables (think of a many to many relationship with join tables). When you are working with **JPQL**, you don't think about join tables; you think in terms of objects and their relationships. As you'll find out, the name of your Objects and attributes are case sensitive.

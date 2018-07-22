@@ -118,9 +118,9 @@ While we're at it, we are no longer using the base classes so we can delete the 
 
 Run LibraryBean test and things look a bit bleak. Out of 20 tests we have 8 errors and 9 failures. On the other hand, three tests passed successfully so it's not all bad.
 ----
-# # Fixing The Tests ==
+# # Fixing The Tests 
 
-# # addBook ==
+# # addBook 
 The last line of the addBook method fails. After a little research it turns out that the book's authors does not appear to contain all of the authors. If we step through all of this, it turns out that it does not contain any.
 
 Here's a fact about the containAll() method on collections. It requires a proper definition of equals() and/or hashCode() depending on the type of collection. While Author has both hashCode and equals, both of these methods depend on Name.equals() and Name.hashCode(), neither of which are defined. So we need to add these missing methods to fix this problem.
@@ -143,7 +143,7 @@ We need to add the following methods to Name.java:
 
 Run the test and after making this change, you'll notice that addBook passes.
 
-## # lookupBookThatDoesNotExist ===
+## # lookupBookThatDoesNotExist 
 When a method on a session bean throws an exception it will either return wrapped in an EJBException or "raw" depending on if the exception has the annotation @ApplicationException. The method findResourceById currently uses EntityNotFoundException, but we don't own that exception so we will make our own exception class and throw it instead.
 
 Here's a new exception:
@@ -198,10 +198,10 @@ And the updated test method:
     }
 ```
 
-### lookupPatronThatDoesNotExist===
+### lookupPatronThatDoesNotExist
 The test suffers from the Same problem as the above example. Do the same thing.
 
-### checkoutBook===
+### checkoutBook
 After digging into this problem a bit, you'll discover that Patron is missing equals() and hashCode():
 ```java
     @Override
@@ -216,7 +216,7 @@ After digging into this problem a bit, you'll discover that Patron is missing eq
     }
 ```
 
-### returnBook===
+### returnBook
 There are two problems with this test. First, we're using detached objects after they have been updated. Second, there's a lazily-initialized relationship. We'll fix the relationship first and the re-write the test to perform some additional lookups.
 
 ```java
@@ -241,7 +241,7 @@ Once we make these changes and re-run the test, we get the following exception:
 ```
 java.lang.RuntimeException: org.jboss.tm.JBossRollbackException:
 Unable to commit, tx=TransactionImpl:XidImpl[FormatId=257, GlobalId=null:
-1164776892890/6, BranchQual=null:1164776892890, localId=0:6], status=
+1164776892890/6, BranchQual=null:1164776892890, localId=0:6], status
 STATUS_NO_TRANSACTION; - nested throwable: (javax.persistence.EntityNotFoundException:
 deleted entity passed to persist: [entity.Loan#<null>]) 
 
@@ -286,7 +286,7 @@ Here's one more thing that has to do with how JPA reads JoinTables. In the case 
 
 Finally, run the test to verify that it now works.
 
-### returnResourceLate===
+### returnResourceLate
 We have three problems with this test:
 * Detached Object
 * Lazy relationship
@@ -298,19 +298,19 @@ To fix the lazy relationship, add fetch=FetchType.EAGER to the fines attribute.
 
 To fix the List<Fine>, replace all List<Fine> with Set<Fine> and also replace all ArrayList<Fine>() with HashSet<Fine>().
 
-### returnResourceThatsNotCheckedOut===
+### returnResourceThatsNotCheckedOut
 We are throwing an exception, ResourceNotCheckedOut, that has not had the @ApplicationException annotation added to it.
 
-### checkoutBookThatIsAlreadyCheckedOut===
+### checkoutBookThatIsAlreadyCheckedOut
 Same problem as with the previous test.
 
-### checkoutBookThatDoesNotExist===
+### checkoutBookThatDoesNotExist
 We should replace EntityNotFoundException with EntityDoesNotExist Exception.
 
-### checkoutBookToPatronThatDoesNotExist===
+### checkoutBookToPatronThatDoesNotExist
 Same problem as the previous test.
 
-### findOverdueBooks===
+### findOverdueBooks
 This test is actually failing because of previous tests. Since we have not made our tests isolated, we cannot really fix this test. However, we can verify that this test is not broken. Clean up the database and run this test to verify that it works.
 
 Here's the order in which you can drop all records from the database:
@@ -364,28 +364,28 @@ Also, if you managed to fix the OneToOne, the order from above changes. Move dvd
 **This Is a Temporary Fix**
 Note, once we work on making each of our tests isolated, we'll need to remove this method. And this method makes it impossible to look at the contents of the database after running the tests. It also slows things down and would not work with a pre-populated database. So this really is temporary scaffolding until we can get to the next phase of cleaning up properly after each test.
 
-### patronsWithOverdueBooks===
+### patronsWithOverdueBooks
 Same problem as above.
 
-### payFineInsufficientFunds===
+### payFineInsufficientFunds
 InsufficientFunds needs to be an application exception.
 
-### patronCannotCheckoutWithFines===
+### patronCannotCheckoutWithFines
 PatronHasFines class should be an application exception.
 
-### checkoutDvd===
+### checkoutDvd
 This is a detached object problem. After the call to checkout and before the asserts, make sure to get a fresh version of the dvd.
 
-### returnDvdLate===
+### returnDvdLate
 This is a detached object problem. You need to update both the patron and the dvd before the asserts.
 
-### checkoutDvdAndBook===
+### checkoutDvdAndBook
 This is a detached object problem. You need to update both the dvd and the book before the asserts.
 ----
-# # Test Isolation ==
+# # Test Isolation 
 Finally, we need to make our test clean up after themselves. Along the way we're going to have to make a few big changes to make all of this work. We'll clean up each test one after the other.
 
-### addBook===
+### addBook
 This one is straightforward. We can use the method removeBookAndAuthors in the ResourceDaoBeanTest:
 ```java
     @Test
@@ -406,10 +406,10 @@ This one is straightforward. We can use the method removeBookAndAuthors in the R
 
 To test this, make sure your database is clean. Next, comment out or delete the cleanupDatabase method (and make sure to get the annotation). Run this test by itself and verify that nothing remains in the database after executing the test.
 
-### lookupBookThatDoesNotExist===
+### lookupBookThatDoesNotExist
 This test creates no objects so no cleanup is necessary.
 
-### addPatron===
+### addPatron
 We have a method in PatronDaoBeanTest that we could use, but we need to make two changes:
 # Make the method PatronDaoBeanTest.removePatron public and static
 # Make the metho PatronDaoBeanTest.getDao() static
@@ -428,10 +428,10 @@ Once you've done that, you can change the test:
     }
 ```
 
-### lookupPatronThatDoesNotExist===
+### lookupPatronThatDoesNotExist
 This test creates no objects so no cleanup is necessary.
 
-### checkoutBook===
+### checkoutBook
 When we checkout a book, we create a loan. So in addition to removing the two books and patrons that are created as a result of this test, we must also remove the loan.
 
 This one requires a bit more work. First the updated test:
@@ -499,7 +499,7 @@ We also added the method ResourceDao.removeFine. We need to add it to the interf
     }
 ```
 
-### returnBook===
+### returnBook
 Give the support for removing patrons, we can now use that in the returnBook test. Here's the skeleton:
 ```java
         final Book b = createBook();
@@ -515,31 +515,31 @@ Give the support for removing patrons, we can now use that in the returnBook tes
         }
 ```
 
-### returnResourceLate===
+### returnResourceLate
 This test can use the same skeleton as returnBook to clean up after itself.
 
-### returnResourceThatsNotCheckedOut===
+### returnResourceThatsNotCheckedOut
 This test only needs to remove a book. Follow the skeleton from returnBook.
 
-### checkoutBookThatIsAlreadyCheckedOut===
+### checkoutBookThatIsAlreadyCheckedOut
 Remove the two Patrons then remove the book. Follow the skeleton from returnBook.
 
-### checkoutBookThatDoesNotExist===
+### checkoutBookThatDoesNotExist
 Remove the created patron. Follow the skeleton from returnBook.
 
-### checkoutBookToPatronThatDoesNotExist===
+### checkoutBookToPatronThatDoesNotExist
 Remove the created book. Follow the skeleton from returnBook.
 
-### findOverdueBooks===
+### findOverdueBooks
 Remove the patron that is created then the two books. Follow the skeleton from returnBook.
 
-### patronsWithOverdueBooks===
+### patronsWithOverdueBooks
 Remove the patron that is created then the two books. Follow the skeleton from returnBook.
 
-### calculateTotalFinesForPatron===
+### calculateTotalFinesForPatron
 Remove the patron that is created then the two books. Follow the skeleton from returnBook.
 
-### payFineExactAmount===
+### payFineExactAmount
 Up to this point we were doing so well. Unfortunately, when we pay fines, we remove fines from our entities but we do not remove them properly. You can tell this by stepping through the code and the useful stack trace.
 
 To fix this, we need to add just a bit of infrastructure. First the background. When we call Library.tenderFine(), a message goes to Patron. The patron removes fines from its collection based on the amount tendered and then returns the balance. Unfortunately, the fines removed from its collection need to be deleted. So we have two options:
@@ -605,23 +605,23 @@ public class FinesPaidAndBalance {
     }
 ```
 
-### payFineInsufficientFunds===
+### payFineInsufficientFunds
 Remove the created patron and book. Follow the skeleton from returnBook.
 
-### patronCannotCheckoutWithFines===
+### patronCannotCheckoutWithFines
 Remove the created patron and book following the skeleton from returnBook.
 
-### checkoutDvd===
+### checkoutDvd
 Remove the patron following the skeleton from returnBook.
 
 Your challenge is to somehow call the ResourceDao.remove() method passing in the id of the dvd. You'll also need to remove the director.
 
-### returnDvdLate===
+### returnDvdLate
 Remove the patron following the skeleton from returnBook.
 
 Your challenge is to somehow call the ResourceDao.remove() method passing in the id of the dvd. You'll also need to remove the director.
 
-### checkoutDvdAndBook===
+### checkoutDvdAndBook
 
 Remove the patron and the book using the skeleton from returnBook.
 

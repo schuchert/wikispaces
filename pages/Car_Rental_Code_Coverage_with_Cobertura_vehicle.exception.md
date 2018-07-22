@@ -1,12 +1,12 @@
 [[Car Rental Code Coverage with Cobertura vehicle.type|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.configuration|Next-->]]
 
-# Package: vehicle.exception=
+# Package: vehicle.exception
 
-## Analysis==
+## Analysis
 
-## Results==
+## Results
 
-## Conclusions==
+## Conclusions
 
 
 [[Car Rental Code Coverage with Cobertura vehicle.type|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.configuration|Next-->]]

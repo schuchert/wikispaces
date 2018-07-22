@@ -11,7 +11,7 @@ Now it is time to add a higher-level concept, the Library. The Library class rep
 
 Of course, along the way we'll end up doing yet more refactoring to accommodate this new suite of tests.
 
-### Library===
+### Library
 First we'll start with a new suite of tests for this Library facade. For this first pass, we'll write several basic tests and a few tests that move us closer to use-case like functionality.
 
 **Adding a Book**
@@ -304,7 +304,7 @@ public abstract class BaseDbDaoTest extends EntityManagerBasedTest {
 }
 ```
 
-### The Exception===
+### The Exception
 We've added one new unchecked exception to our system, BookAlreadyCheckedOut. Here it is:
 ```java
 package exception;
@@ -446,7 +446,7 @@ We've also added a method, findById, which should return a unique value (or null
     }
 ```
 
-### Util===
+### Util
 We need a basic utility to assist with equality. This utility will handle when we have null references.
 
 **EqualsUtil**
@@ -510,7 +510,7 @@ public class EqualsUtilTest {
 }
 ```
 
-### Entity Changes===
+### Entity Changes
 
 **Book**
 The book is somewhat changed. First it needs to **import util.EqualsUtil** (as shown below). It also contains some named queries and three new methods: isOnLoanTo, isOnLoan and checkin. The code below shows these changes.

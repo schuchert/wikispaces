@@ -1,6 +1,6 @@
 [[Tool Setup and Configuration Notes|<--Back]]
 
-# Using PMD in Eclipse=
+# Using PMD in Eclipse
 
 **Install PMD**
 # Start Eclipse

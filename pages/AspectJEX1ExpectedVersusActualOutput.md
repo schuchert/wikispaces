@@ -1,6 +1,6 @@
 [[AspectJ Example 1|<--Back]] [[AspectJEX1FormTheory|Next-->]]
 
-## Expected Output==
+## Expected Output
 Did you guess the output would look something like this?
 ```
    noArgMethod
@@ -13,7 +13,7 @@ Did you guess the output would look something like this?
    staticMethod
 ```
 
-## Actual Output==
+## Actual Output
 What if I told you the output was actually this (ignoring line wrapping)?
 ```
 Entering: void ex1.MethodExecutionExample.noArgMethod()

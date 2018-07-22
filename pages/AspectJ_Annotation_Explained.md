@@ -1,8 +1,8 @@
 [[AspectJ Annotation Thinking|<--Back]] [[AspectJ Annotation Exercises|Next-->]]
 
-# Annotation Explained=
+# Annotation Explained
 ----
-## Main.java==
+## Main.java
 ```java
 01: package annotation;
 02: 
@@ -16,12 +16,12 @@
 10:     }
 11: }
 ```
-### Interesting Lines===
+### Interesting Lines
 There are arguably no interesting lines in this class. All of the work is done via aspects and annotations.
 ||Line||Description||
 ||6||This is the first place where we direclty change the address instance. In other examples, changes to Address instance are tracked by the FieldSetAspect. In this case, as we will see, this change is ignored.||
 ----
-## Dao.java==
+## Dao.java
 ```java
 01: package annotation;
 02: 
@@ -33,10 +33,10 @@ There are arguably no interesting lines in this class. All of the work is done v
 08:     }
 09: }
 ```
-### Interesting Lines===
+### Interesting Lines
 This class is unchanged from [[AspectJEX4Explained#Dao|Example 4]].
 ----
-## Address.java==
+## Address.java
 ```java
 01: package annotation;
 02: 
@@ -106,7 +106,7 @@ This class is unchanged from [[AspectJEX4Explained#Dao|Example 4]].
 66:     }
 67: }
 ```
-### Interesting Lines===
+### Interesting Lines
 There are 4 changes to this class.
 # We've added a new attribute, ignoredField.
 # We've added a setter
@@ -115,7 +115,7 @@ There are 4 changes to this class.
 ||Line||Description||
 ||13||@IgnoreField is an annotation that targets fields. We apply the annotation to the field named ignoredField. This does nothing directly to the field. This is just information associated with the field that will later be used by the SetFieldAspect.||
 ----
-## IgnoreField.java==
+## IgnoreField.java
 ```java
 01: package annotation;
 02: 
@@ -134,13 +134,13 @@ There are 4 changes to this class.
 15:     String value() default "";
 16: }
 ```
-### Interesting Lines===
+### Interesting Lines
 We create a new kind of annotation. This annotation by itself only allows adding information to some element type. In this case, it is a field. This does not actively do anything. However, this annotation and a chagne to the SetFieldAspect combine to cause fields with this annotation to be ignored.
 ||Line||Description||
 ||12||This annotation's lifetime is **//RUNTIME//**. This means it is available even after the class has been loaded and used in a VM. Contrast that with **//SOURCE//** - thrown out after compilation and **//CLASS//** - recorded in the class file but not retained by the VM. See [[http://java.sun.com/j2se/1.5.0/docs/api/java/lang/annotation/RetentionPolicy.html|RetentionPolicy]] for details.||
 ||13||This annotation targets **//FIELD//**s. There are several other options. For details, see [[http://java.sun.com/j2se/1.5.0/docs/api/java/lang/annotation/ElementType.html|ElementType]].||
 ----
-## FieldSetAspect.java==
+## FieldSetAspect.java
 ```java
 01: package annotation;
 02: 
@@ -197,7 +197,7 @@ We create a new kind of annotation. This annotation by itself only allows adding
 53:     }
 54: }
 ```
-### Interesting Lines===
+### Interesting Lines
 The key change to this class is on line 17 where we ignore fields with the annotation IgnoreField. Otherwise this aspect is mostly unchanged from previous examples. (In fact, this verion of the aspect includes changes for the [[AspectJ CFlow|CFlow]] exmample on lines 21 - 23.
 ||Line||Description||
 ||13 - 15||Define a pointcut that covers the setting of all fields included in the class TrackedObjectMixin. We will use this later with ! to exclude these fields. This is to avoid a recursion problem. The details of why were covered by an exercise. To see that exercise, click [[AspectJEX4ApplyYourself#Unexpected Recursion|here]].||
@@ -205,7 +205,7 @@ The key change to this class is on line 17 where we ignore fields with the annot
 ||21 - 23||This is described elsewhere. See [[AspectJ CFlow Explained]].||
 ||25||This Around advice applies to pointcuts that setters in Address but do not have the annotation IgnoreField AND NOT any pointcuts in the TrackedObjectMixin class AND NOT any pointcuts that happen in in the call of a constructor or anything called by the constructor. It's a lot to deal with, but by breaking it up into smaller pointcuts, it tends to be easier to understand and more manageable.||
 ----
-## SaveMethodAspect.java==
+## SaveMethodAspect.java
 ```java
 01: package annotation;
 02: 
@@ -240,7 +240,7 @@ The key change to this class is on line 17 where we ignore fields with the annot
 ```
 This Aspect is unchanged from [[AspectJ Example 4|Example 4]]. For details, see [[AspectJEX4Explained#SaveMethodAspect|Example 4 SaveMethodAspect]].
 ----
-## InnerTypeAspect.java==
+## InnerTypeAspect.java
 ```java
 01: package annotation;
 02: 
@@ -255,7 +255,7 @@ This Aspect is unchanged from [[AspectJ Example 4|Example 4]]. For details, see 
 ```
 This Aspect is unchanged from [[AspectJEX4Explained#InnerTypeAspect|Example 4 InnerTypeAspect]].
 ----
-## ITrackedObject.java==
+## ITrackedObject.java
 ```java
 01: package annotation;
 02: 
@@ -267,7 +267,7 @@ This Aspect is unchanged from [[AspectJEX4Explained#InnerTypeAspect|Example 4 In
 ```
 This interface is unchanged from [[AspectJEX4Explained#ITrackedObject|Example 4 ITrackedObject]].
 ----
-## TrackedObjectMixin.java==
+## TrackedObjectMixin.java
 ```java
 01: package annotation;
 02: 
@@ -288,7 +288,7 @@ This interface is unchanged from [[AspectJEX4Explained#ITrackedObject|Example 4 
 ```
 This interface is unchanged from [[AspectJEX4Explained#TrackedObjectMixin|Example 4 TrackedObjectMixin]].
 ----
-## aop.xml==
+## aop.xml
 ```
 01: <aspectj>
 02: 	<aspects>

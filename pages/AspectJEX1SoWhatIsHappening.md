@@ -1,6 +1,6 @@
 [[AspectJEX1WhatIsHappening|<--Back]] [[AspectJEX1Explained|Next-->]]
 
-## So What Is Happening?==
+## So What Is Happening?
 Here are some descriptions I’ve heard some people mention:
 * Every time we call a method, we print something before the method runs, the method runs, then we print something after the method runs.
 * We intercept each method call and do something before and after it.

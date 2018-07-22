@@ -1,6 +1,6 @@
 [[AspectJEX2SoWhatIsHappening|<--Back]] [[AspectJEX2ApplyYourself|Next-->]]
 
-# Example 2 Explained=
+# Example 2 Explained
 Accessing a field in Java is a joinpoint exposed by the AspectJ joinpoint model. This is different from method execution in that captures things like the following: 
 ```
    this.aString = "value";              // Writing to a field called aString
@@ -18,7 +18,7 @@ To make this example work, we need two additional things:
 * FieldSetaspect.java
 * aop.xml
 ----
-## FieldSetAspect.java==
+## FieldSetAspect.java
 ```java
 01: package ex2;
 02: 
@@ -53,7 +53,7 @@ To make this example work, we need two additional things:
 31:     }
 32: }
 ```
-### Interesting Lines===
+### Interesting Lines
 ||Line||Description||
 ||10||This class is an aspect. This annotation denotes the following class as an aspect.||
 ||14||This is a pointcut. There is one argument, rhs, of type Object (see line 15). We are capturing "set()", or fields being written. We are watching all fields of the type java.lang.String in the class ex2.Address.||
@@ -64,7 +64,7 @@ To make this example work, we need two additional things:
 ||23 - 26||Get the current value of the underlying field being set.||
 ||30||Actually perform the set
 ----
-## aop.xml==
+## aop.xml
 ```xml
 01: <aspectj>
 02: 	<aspects>
@@ -75,7 +75,7 @@ To make this example work, we need two additional things:
 07: 	</weaver>
 08: </aspectj>
 ```
-### Interesting Lines===
+### Interesting Lines
 ||Line||Description||
 ||3||Tell the weaver to use the aspect of type ex2.FieldSetAspect||
 ||6||Apply this aspect only to classes whose package start with ex2.||

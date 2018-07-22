@@ -2,13 +2,13 @@
 
 Source files are here: [[file:AspectJCFlowsrc.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject|here]].
 
-# Predict the Output=
+# Predict the Output
 In this exercise, you have all of the information you need to predict the output, unlike Examples 1 - 4.
 
-## Code to Review==
+## Code to Review
  This example closely follows [[AspectJ Example 4]], the only changes are the addition of a constructor to the Address class and an update to the pointcuts in FieldSetAspect.
 ----
-### Address.java===
+### Address.java
 Note, just a partial listing.
 ```java
 ...
@@ -19,7 +19,7 @@ public class Address implements Serializable {
 ...
 ```
 ----
-### FieldSetAspect.java===
+### FieldSetAspect.java
 ```java
 ...
 @Aspect
@@ -41,7 +41,7 @@ public class FieldSetAspect {
             Object rhs) throws Throwable {
 ...
 ```
-### Main.java===
+### Main.java
 ```java
 package cflow;
 
@@ -57,7 +57,7 @@ public class Main {
     }
 }
 ```
-## Predict the output==
+## Predict the output
 In the previous version of Address.java, the constructor did nothing, now the constructor sets one of the fields. So is it changed or not? Review the third pointcut in FieldSetAspect.java. Question, what is the output?
 
 [[AspectJ Self Study|<--Back]] [[AspectJ CFlow ExpectedVersusActualOutput|Next-->]]
