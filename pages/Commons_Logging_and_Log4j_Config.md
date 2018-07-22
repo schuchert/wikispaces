@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[Tool Setup and Configuration Notes|<--Back]]
 
 When I started using [[http://www.springframework.org/|Spring]], I need to include some logging and basic configuration. This page gives the details for the entire setup I'm using.

@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[FitNesse.Tutorials|<--Back]]
 # Introduction
 Sometime in the beginning of 2010, Bob Martin started working on an alternative way to write script tables to provide something that looks more like a style used in tools like [[http://cukes.info/|cucumber]]. While still somewhat preliminary, this tutorial gives you a brief introduction to using this alternative style. Before getting into details, there are a few things I'll note:

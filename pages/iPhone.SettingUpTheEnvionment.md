@@ -1,4 +1,4 @@
-[[toc]][[iPhone|<-- Back]]
+{:toc}[[iPhone|<-- Back]]
 
 # UNDER CONSTRUCTION
 [[iPhone.setup.xcode3|Old Setup for XCode 3]]

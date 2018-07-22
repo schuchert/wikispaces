@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 ## Background
 This is the final version of a unit test I created using Moq. As you work your way through the code, logical blocks are explained.
 

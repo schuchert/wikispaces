@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[EJB 3 and Java Persistence API|<--back]]
 
 # EJB3 Tutorial 3 - A Mini Application

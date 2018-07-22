@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 # Overview
 Sometimes there's some low-level code, or badly written code, that makes verifying its behavior difficult. In this example, I'll show a few examples of mixing [[https://code.google.com/p/powermock/|PowerMock]] in with [[https://code.google.com/p/mockito/|Mockito]] to take control of:
 * static methods

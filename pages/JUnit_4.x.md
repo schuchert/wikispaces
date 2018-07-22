@@ -1,5 +1,5 @@
 # JUnit 4.1
-[[toc]]
+{:toc}
 If you've used JUnit prior to version 4.0 (e.g. you've been using JUnit in Eclipse version 2.0 to 3.1.2) then here is the first place you want to go to get up to speed: [[http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52|JUnit 4.0 in 10 Minutes]]. If you are not somewhat familiar with JUnit 4, you can probably follow this material. However, after code examples that use JUnit 4 specific features, you'll notice a [[Click Here]] link that will give you more detailed information.
 
 Now that I've used it a bit in Eclipse 3.1.2, I've got an initial recommendation and some examples:

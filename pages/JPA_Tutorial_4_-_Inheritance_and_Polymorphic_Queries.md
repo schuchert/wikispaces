@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[EJB 3 and Java Persistence API|<-Back]]
 # Inheritance and Polymorphic Queries
 This tutorial picks up at the end of [[JPA Tutorial 3 - A Mini Application]]. If you have not completed that tutorial, you can start with this source base: 

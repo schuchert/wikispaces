@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[cpptraining#FitNesse|<--Back]]
 
 //**September 2011**//

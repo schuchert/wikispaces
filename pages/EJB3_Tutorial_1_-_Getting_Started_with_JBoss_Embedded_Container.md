@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[EJB 3 and Java Persistence API|<--Back]]
 
 # Getting Started with the JBoss Embedded Container

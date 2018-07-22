@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 # Getting Started
 I'm assuming you can [[http://mockito.org/|download Mockito]] and get it in your classpath. So I'll start with tests that implement some of the requirements from [[Tdd.Problems.LoggingIn|here]].
 

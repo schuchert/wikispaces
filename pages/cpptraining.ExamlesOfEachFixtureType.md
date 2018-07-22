@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[cpptraining#FitNesse|<<--Back]]
 
 # Decision Table

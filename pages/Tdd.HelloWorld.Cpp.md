@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 # Overview
 Here's a traditional Hello World program in C++:
 ```cpp

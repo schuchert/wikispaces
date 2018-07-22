@@ -1,7 +1,7 @@
 [[ruby.tutorials|<--Back]]
 
 # Overview
-[[toc]]
+{:toc}
 This tutorial presents the mechanics of BDD, refactoring and touches on continuous integration by implementing the **[[http://en.wikipedia.org/wiki/Shunting_yard_algorithm|Shunting Yard Algorithm]]**. The point of this tutorial is** //not**// to write a solution to this algorithm. The algorithm is a vehicle for practicing the mechanics of BDD. Having said that, you will end up solving much of the algorithm.
 
 This tutorial has been written for you to actually read and type. The [[http://en.wikipedia.org/wiki/Kinesthetic_learning|Kinesthetic Learning]] experience of actually typing the code, running the tests and checking in the work significantly reinforces learning habits that will serve you well. Much of what you practice in this tutorial can eventually become habit/muscle memory with enough practice. Consider this an opportunity to start. You'll get frequent feedback throughout. And while this may represent a very different way of working from what you are used to, here are a few comments:

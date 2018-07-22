@@ -1,4 +1,4 @@
-[[toc]][[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.TableTables|Next Tutorial--->]]
+{:toc}[[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.TableTables|Next Tutorial--->]]
 
 # //Note//
 The [[FitNesse.Tutorials.ScenarioTables.OriginalArticle|original article]] is here. This page is a rewritten version that ties in with the previous tutorials.

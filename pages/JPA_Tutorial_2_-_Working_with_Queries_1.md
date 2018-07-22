@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[EJB 3 and Java Persistence API|<--Back]]
 
 # JPA Tutorial 2 - Working with Queries 1

@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[FitNesse.Tutorials|<--Back]] -or- [[FitNesse.Tutorials.2|Next Tutorial-->]]
 # Introduction
 This tutorial assumes some basic [[http://fitnesse.org/|FitNesse]] knowledge. If you need help installing or running [[http://fitnesse.org/|FitNesse]], please [[FitNesse.Tutorials.0|go here first]]. In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:

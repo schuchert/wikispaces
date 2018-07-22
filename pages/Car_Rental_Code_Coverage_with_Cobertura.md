@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[Car Rental Example|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.type|Next-->]]
 
 # Code Coverage with Cobertura

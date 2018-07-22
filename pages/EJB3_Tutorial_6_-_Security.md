@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[EJB 3 and Java Persistence API|<--Back]]
 # Ejb3 Tutorial 6 - Security
 This simple tutorial takes the solution from [[EJB3 Tutorial 5 - Message Driven Beans]] and augments the beans with the configuration information necessary to limit access declaratively.

@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[Articles|<--Back]]
 
 # Java 5 Variable Arguments

@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[FitNesse.Tutorials|<--Back]]
 
 # Introduction

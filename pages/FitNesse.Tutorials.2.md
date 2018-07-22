@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.ScriptTables|Next Tutorial--->]]
 # Introduction
 A Query table is a means of performing a single query and verifying the results. A typical test might use [[http://fitnesse.org/FitNesse.UserGuide.SliM.DecisionTable|Slim Decision Tables]] to insert a large data set and then Query tables to verify that the correct sub-set of the data is returned from the query.

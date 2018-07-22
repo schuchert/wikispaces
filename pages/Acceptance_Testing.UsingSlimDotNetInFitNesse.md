@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[FitNesse.Tutorials|<--Back]]
 
 # Rapid Intro to using Slim with .Net

@@ -1,4 +1,4 @@
-[[toc]][[FitNesse.Tutorials|<--Back]] -or- [[FitNesse.Tutorials.AlternativeScriptTableSyntax|Next Tutorial-->]]
+{:toc}[[FitNesse.Tutorials|<--Back]] -or- [[FitNesse.Tutorials.AlternativeScriptTableSyntax|Next Tutorial-->]]
 
 # Background
 This is a tutorial loosely based on [[Acceptance Testing.FitNesse.TableTableExample|this writeup]]. [[Acceptance Testing.FitNesse.TableTableExample|That writeup]] describes using table table to implement test data setup to make determining expected results easier. You can read that for a slightly different take. That example was written after the fact and somewhat cleaned up. It also is not a tutorial; it is really a summary of what you'll be doing in this tutorial.

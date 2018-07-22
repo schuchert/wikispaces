@@ -1,4 +1,4 @@
-[[toc]]
+{:toc}
 [[FitNesse.Tutorials|<--Back]]
 # Install FitNesse
 * Install a JVM 1.6 or later.
