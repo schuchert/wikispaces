@@ -1,6 +1,6 @@
 For this example we'll use a "top-down" approach. This means we'll create a Plain Old Java Object (POJO) with some annotations to indicate how we want JPA to persist it. We're letting the EntityManager take care of creating the tables in the database for us.
 
-###Create a Simple Class===
+### Create a Simple Class===
 
 The following class contains everything you need to begin persisting it to a database:
 [[#Person]]
@@ -115,7 +115,7 @@ public class Person {
     }
 }
 [[code]]
-###Update persistence.xml===
+### Update persistence.xml===
 Note, for our configuration this step is optional.
 
 If you use libraries provided exclusively by JBoss and Company, then you do not need to update your persistence.xml. If you are using another vendor or you want to make sure that your solution will work regardless of your persistence provider, add the following line to your persistence.xml:
@@ -147,7 +147,7 @@ Your updated persistence.xml is now:
 </persistence>
 [[code]]
 
-###Inserting and Querying===
+### Inserting and Querying===
 Now we need to update our unit test class, Person.java. We will have it insert two people, query and verify that the people we created are in the database:
 **PersonTest.java**
 [[code format="java5"]]

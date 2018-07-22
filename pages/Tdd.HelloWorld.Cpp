@@ -1,8 +1,8 @@
 [[toc]]
-#Overview
+# Overview
 Here's a traditional Hello World program in C++:
 [[code format="cpp"]]
-#include <iostream>
+# include <iostream>
 
 int main(int argc, char **argv) {
 	std::cout << "Hello World" << std::endl;
@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 
 A beginning C++ class typically teaches this, but what if we wanted to accomplish the same thing using TDD? In this case, there's really no design per-se, so I'll Interpret TDD as Test-Driven// **Development**// rather than Test Driven// **Design**//.
 
-#Observations
+# Observations
 A well-written main should do something and then return an error code. So I need two tests, one verifying that main returns 0 and another that as a result of calling the main function, the text "Hello World" is sent to cout.
 
 Both of these tests are easy, but we have a serious problem. C++ programs require a main to get started. A test harness such as CppUTest requires a main. So how can we actually verify that main does what it is supposed to do when in fact our test harness, living by the same rules as all other C++ programs, needs its own main?
@@ -21,11 +21,11 @@ See the problem?
 
 I'm already going to accept partial defeat. I'm not going to test that main does all of this. Instead, I'm going to say that there is some function that main could call that does all of the work. I'll verify its behavior, then I'll spot check that main does in fact call that function. Hum, maybe this is a little bit of design.
 
-#First Test
+# First Test
 Choosing to test the easy thing first, I'll verify that the method I'll eventually have main call in fact returns 0 (meaning no error in the shell):
 **HelloWorldTest.cpp**
 [[code format="cpp"]]
-#include <cpputest/TestHarness.h>
+# include <cpputest/TestHarness.h>
 
 extern int mainImpl(int argc, char **argv);
 
@@ -41,8 +41,8 @@ TEST(HelloWorld, ExtractedFunctionReturns0UponSuccess) {
 Getting this test to pass requires that I write a main for the test harness as well as the method mainImpl:
 **HelloWorld.cpp**
 [[code format="cpp"]]
-#include <iostream>
-#include <CppUTest/CommandLineTestRunner.h>
+# include <iostream>
+# include <CppUTest/CommandLineTestRunner.h>
 
 int mainImpl(int argc, char **argv) {
 	return 0;
@@ -67,14 +67,14 @@ When I run this test, I see that it is successful:
 OK (1 tests, 1 ran, 1 checks, 0 ignored, 0 filtered out, 0 ms)
 [[code]]
 
-##Second Test
+## Second Test
 Now we have to get tricky. I know that the traditional Hello World program writes to a global variable, std::cout. However, that does not cause any problems since I can inject my own stream into the middle before calling the method. That is, dependency injection is an option with cout. Note that I do this in a setup and teardown method to make sure that cout is reset regardless of what happens in my test:
 **HelloWorldTest.cpp**
 [[code format="cpp"]]
-#include <iostream>
-#include <sstream>
+# include <iostream>
+# include <sstream>
 
-#include <cpputest/TestHarness.h>
+# include <cpputest/TestHarness.h>
 
 extern int mainImpl(int argc, char **argv);
 
@@ -110,8 +110,8 @@ Note, CppUTest does memory leak detection. It will report a memory leak when usi
 To get this test passing:
 **HelloWorld.cpp**
 [[code format="cpp"]]
-#include <iostream>
-#include <CppUTest/CommandLineTestRunner.h>
+# include <iostream>
+# include <CppUTest/CommandLineTestRunner.h>
 
 int mainImpl(int argc, char **argv) {
 	std::cout << "Hello World!" << std::endl;
@@ -131,11 +131,11 @@ OK (2 tests, 2 ran, 2 checks, 0 ignored, 0 filtered out, 1 ms)
 [[code]]
 
 Even so, I'm bothered by checking for "\n" in one place and using std::endl in another. For now, I'll leave that as an exercise to the reader to decide if that's really a problem or not.
-##Finally?
+## Finally?
 Well now that we've got a working method, we can change main:
 **HelloWorld.cpp**
 [[code format="cpp"]]
-#include <iostream>
+# include <iostream>
 
 int mainImpl(int argc, char **argv) {
 	std::cout << "Hello World!" << std::endl;
@@ -155,19 +155,19 @@ But this loses our ability to use the test harness. Hum, I don't like that. Seem
 Note that is simply changing the structure to support what Michael Feathers calls a link seam. I'll build the test version with one main and the non-test system with a different main. Here are those moving parts:
 **mainImpl.h**
 [[code format="cpp"]]
-#pragma once
-#ifndef mainImpl_header
-#define mainImpl_header
+# pragma once
+# ifndef mainImpl_header
+# define mainImpl_header
 
 int mainImpl(int argc, char **argv);
 
-#endif
+# endif
 [[code]]
 
 **mainImpl.cpp**
 [[code format="cpp"]]
-#include <iostream>
-#include "mainImpl.h"
+# include <iostream>
+# include "mainImpl.h"
 
 int mainImpl(int argc, char **argv) {
 	std::cout << "Hello World!" << std::endl;
@@ -177,7 +177,7 @@ int mainImpl(int argc, char **argv) {
 
 **HelloWorld.cpp**
 [[code format="cpp"]]
-#include "mainImpl.h"
+# include "mainImpl.h"
 
 int main(int argc, char **argv) {
 	return mainImpl(argc, argv);
@@ -186,7 +186,7 @@ int main(int argc, char **argv) {
 
 **TestMain.cpp**
 [[code format="cpp"]]
-#include <cpputest/CommandLineTestRunner.h>
+# include <cpputest/CommandLineTestRunner.h>
 
 int main(int argc, char **argv) {
 	CommandLineTestRunner::RunAllTests(argc, argv);
@@ -196,11 +196,11 @@ int main(int argc, char **argv) {
 I updated HelloWorldTest.cpp to include mainImpl.h:
 **HelloWorldTest.cpp**
 [[code format="cpp"]]
-#include <iostream>
-#include <sstream>
-#include "mainImpl.h"
+# include <iostream>
+# include <sstream>
+# include "mainImpl.h"
 
-#include <cpputest/TestHarness.h>
+# include <cpputest/TestHarness.h>
 
 TEST_GROUP(HelloWorld) {
 	std::streambuf *original;
@@ -277,7 +277,7 @@ g++ mainImpl.cpp HelloWorld.cpp -o HelloWorld
 Hello World!
 [~/src/cpp_class]% 
 [[code]]
-##Conclusion
+## Conclusion
 When I originally came up with this idea, I figured it'd be a quick walk in the park. What I didn't take into consideration is that you cannot have two main functions in a single link. So I had to find a way around that. What I originally considered, simply updating main, was wholly unsatisfactory. That lead to using a link seam and creating a makefile. This might seem like a bit of work, and sure enough it was a bit of work. On the other hand, not losing the ability to test trumps a touch of what seems like inconvenience.
 
 Furthermore, the idea that my production code should be in main is a violation of mixing enabling technology with business technology. Putting the call to cout in main() is the same thing as embedding business logic into a gui form or letting database calls work their way up from the integration layer into the presentation layer.

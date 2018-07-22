@@ -1,4 +1,4 @@
-##Why?
+## Why?
 It took a bit of digging to come up with the steps required to get basic unit testing working in XCode. These steps borrow heavily from the following sites (in no order, because I don't remember what all it took to get this working):
 * [[http://chanson.livejournal.com/182472.html]]
 * [[http://developer.apple.com/tools/unittest.html]]
@@ -6,7 +6,7 @@ It took a bit of digging to come up with the steps required to get basic unit te
 
 Much of my confusion comes from the difference between using "raw" Objective-C (relatively easy) versus XCode and all that implies. In any case, that's the environment I'll be using for courses, so that's what I need to be able to get working.
 
-##What These Steps Describe
+## What These Steps Describe
 Technology:
 * XCode 3.2.1
 * The OCunit framework built-in to XCode 3.2.1
@@ -15,10 +15,10 @@ Technology:
 
 These steps describe what you'll need to do to set up a framework, not an application. If you want to set up an application, review either of the bottom two links in the Why section.
 
-##Video Version
+## Video Version
 [[media type="custom" key="5352763"]]
 
-##Setting up Project
+## Setting up Project
 * In XCode create a new project:// **File:New Project**// or// **Command-Shift-N**//
 * Under the// **Mac OS X Templates**//, select// **Framework & Library**//
 * Select// **Cocoa Framework**// on the right-side, top pane and either click// **Choose**// or double-click
@@ -29,7 +29,7 @@ These steps describe what you'll need to do to set up a framework, not an applic
 At this point, you should have a window that resembles the following:
 [[image:ObjectiveCRpnCalculatorProjectCreated.jpg]]
 
-##Configuring for Unit Tests
+## Configuring for Unit Tests
 * Under// **Groups & Files**//, select// **RpnCalculator**// and// **right-click**// (ctrl-click), select// **Add:New Target**//
 * Under// **Max OS X**//, select// **Cocoa**//
 * In the top-most right pane, select// **Unit Test Bundle**// and either// **double-click**// or click// **next**//
@@ -40,7 +40,7 @@ At this point, you should have a window that resembles the following:
 * Under the Direct Dependencies pane, click the// **+**// and add a dependency to// **RpnCalculator**// (double-click on// **RpnCalculator**//)
 * Close the info window
 
-##Adding a Test Fixture
+## Adding a Test Fixture
 Now you'll add a simple fixture with a failing test, then get the test to pass.
 
 * Create a new File,// **File::New**// or// **Command-N**//
@@ -51,10 +51,10 @@ Now you'll add a simple fixture with a failing test, then get the test to pass.
 * Under the// **Targets**// make sure to select// **UnitTests**// and to unselect// **RpnCalculator**//
 * Click// **Finish**//
 
-##Create a Failing Test
+## Create a Failing Test
 * Update ANewlyCreatedRpnCalculator.h to resemble:
 [[code format="c"]]
-#import <SenTestingKit/SenTestingKit.h>
+# import <SenTestingKit/SenTestingKit.h>
 
 @interface ANewlyCreatedRpnCalculatorShould : SenTestCase {
 }
@@ -64,7 +64,7 @@ Now you'll add a simple fixture with a failing test, then get the test to pass.
 
 * Update ANewlyCreatedRpnCalculator.m to resemble:
 [[code format="c"]]
-#import "ANewlyCreatedRpnCalculatorShould.h"
+# import "ANewlyCreatedRpnCalculatorShould.h"
 
 @implementation ANewlyCreatedRpnCalculatorShould
 
@@ -75,7 +75,7 @@ Now you'll add a simple fixture with a failing test, then get the test to pass.
 @end
 [[code]]
 
-##Build to run the test
+## Build to run the test
 Let's assume the for building you'll want to run the tests every time.
 * Pull down the// **Project**// Menu, select// **Set Active Target**// and pick// **UnitTests**//
 * Bring up the// **Build**// window:// **command-shift-B**// or// **Build:Build Results**//
@@ -83,7 +83,7 @@ Let's assume the for building you'll want to run the tests every time.
 * The test should fail:
 [[image:BuildResultsFailed.jpg]]
 
-##Get the test to pass
+## Get the test to pass
 * Update the assertion line in ANewlyCreatedCalculatorShould from:
 [[code format="c"]]
 	STAssertTrue(0, @"");
@@ -96,12 +96,12 @@ To:
 * All tests should be passing:
 [[image:BuildResultsPassing.jpg]]
 
-##Really Getting it all Tied Together
+## Really Getting it all Tied Together
 Now it's time to get the RpnCalculator framework linked into the test target. 
 * Update the unit test (in ANewlyCreatedCalculatorShould.m):
 [[code format="c"]]
-#import "ANewlyCreatedRpnCalculatorShould.h"
-#import "RpnCalculator.h"
+# import "ANewlyCreatedRpnCalculatorShould.h"
+# import "RpnCalculator.h"
 
 @implementation ANewlyCreatedRpnCalculatorShould
 
@@ -123,7 +123,7 @@ This example imports a type that does not yet exist. So add it:
 * Click// **Finish**//
 * Edit// **RpnCalculator.h**//:
 [[code format="c"]]
-#import <Cocoa/Cocoa.h>
+# import <Cocoa/Cocoa.h>
 
 @interface RpnCalculator : NSObject {
 	int accumulator;
@@ -135,7 +135,7 @@ This example imports a type that does not yet exist. So add it:
 [[code]]
 * Edit// **RpnCalculator.m**//:
 [[code format="c"]]
-#import "RpnCalculator.h"
+# import "RpnCalculator.h"
 
 @implementation RpnCalculator
 
@@ -157,7 +157,7 @@ To Fix this:
 * You should have a successful build:
 [[image:BuildSucceeded.jpg]]
 
-##Congratulations
+## Congratulations
 You have a project configured to run unit tests when built.
 * You can add "production" code to RpnCalculator and unit tests code to UnitTests.
 * By default, a build will build the RpnCalculator framework, then UnitTests and then execute the unit tests.

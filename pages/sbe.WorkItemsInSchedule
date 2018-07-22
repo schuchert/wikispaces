@@ -1,4 +1,4 @@
-##Before
+## Before
 [[code format="smalltalk"]]
 Feature: Handling Scheduling Conflicts
   As an operator I want to make sure feature conflicts are managed by an appropriate policy.
@@ -35,7 +35,7 @@ Feature: Handling Scheduling Conflicts
     Then I2 should be completed
 [[code]]
 
-##After Removing All Extra Time "Movement" Steps
+## After Removing All Extra Time "Movement" Steps
 [[code format="smalltalk"]]
 Feature: Handling Scheduling Conflicts
   As an operator I want to make sure feature conflicts are managed by an appropriate policy.
@@ -72,7 +72,7 @@ Feature: Handling Scheduling Conflicts
     Then Megatron_Head should be completed
 [[code]]
 
-##After Gojko's Twitter Comment
+## After Gojko's Twitter Comment
 It's amazing what 140 characters can accomplish. He did it in fewer than that.
 
 [[code format="smalltalk"]]

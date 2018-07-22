@@ -1,39 +1,39 @@
 [[include page="RPN Calculator"]]
 ----
-##Release 1
-###Addition
+## Release 1
+### Addition
 [[include page="RPN Calculator Addition"]]
-###Subtraction
+### Subtraction
 [[include page="RPN Calculator Subtraction"]]
-###Multiplication
+### Multiplication
 [[include page="RPN Calculator Multiplication"]]
-###Division
+### Division
 [[include page="RPN Calculator Division"]]
 ----
-##Release 2
-###Review Stack
+## Release 2
+### Review Stack
 [[include page="RPN Calculator Review Stack"]]
-###Clear Stack
+### Clear Stack
 [[include page="RPN Calculator Clear Stack"]]
-###Insert into Stack
+### Insert into Stack
 [[include page="RPN Calculator Insert into Stack"]]
-###Replace Item on Stack
+### Replace Item on Stack
 [[include page="RPN Calculator Replace Item on Stack"]]
 ----
-##Release 3
-###Square Root
+## Release 3
+### Square Root
 [[include page="RPN Calculator Square Root"]]
-###Y to X
+### Y to X
 [[include page="RPN Calculator Y to X"]]
-###1 over X
+### 1 over X
 [[include page="RPN Calculator 1 over X"]]
-###Sin
+### Sin
 [[include page="RPN Calculator Sin"]]
-###Cos
+### Cos
 [[include page="RPN Calculator Cos"]]
-###Tan
+### Tan
 [[include page="RPN Calculator Tan"]]
-###Exponentials
+### Exponentials
 [[include page="RPN Calculator Exponentials"]]
-###Factorials
+### Factorials
 [[include page="RPN Calculator Factorials"]]

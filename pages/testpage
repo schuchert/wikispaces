@@ -13,7 +13,7 @@
   end
 [[code]]
 
-#Header1
+# Header1
 
 This is regular stuff.
 
@@ -24,7 +24,7 @@ Contents of the sidebar. Note that this line should be long enough to take up at
 *** Third bullet
 * This is something else
 [[include page="sidebar_end"]]
-#Does Level 1 Header Right After Work?
+# Does Level 1 Header Right After Work?
 This is the outside text:
 * Now what happens? int oneone point int oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pone now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one p
 ** level 2int oneone point one int oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pnow what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one p
@@ -33,18 +33,18 @@ This is the outside text:
 * Level 1
 And then there's the text with numbered lists:
 # oneint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one p
-## one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting?
-## one point one one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting?
+# # one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting?
+# # one point one one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting?
 # twoint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one p
-## one point one
-### one point oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?
-## one point one
-### one point one
-## one point one
+# # one point one
+## # one point oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?
+# # one point one
+## # one point one
+# # one point one
 # three
-## one point one
-## one point one
-## one point one
+# # one point one
+# # one point one
+# # one point one
 # ;lakjsdfl;kjasdl;kjasdf
 # ;laksdjf l;kasdjf l;jk
 # ;aksjf;lasdjk f;l f

@@ -1,5 +1,5 @@
 [[image:Back.gif link="JavaAgent"]]
-##Background
+## Background
 The only requirement for a class used to register a Java Agent is a premain method:
 [[code format="java5"]]
 package schuchert.agent;
@@ -45,7 +45,7 @@ public static void premain(String agentArguments, Instrumentation instrumentatio
 }
 [[code]]
 
-##ConfigurableClassFileTransformerRegistrar
+## ConfigurableClassFileTransformerRegistrar
 Below is the source for the registrar. Here are a couple of notes:
 * Many of the output strings are exposed as package-level constants to make testing easier
 * There's a static filed, ERROR_OUT, exposed for testability as well

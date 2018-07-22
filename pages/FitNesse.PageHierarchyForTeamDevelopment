@@ -1,9 +1,9 @@
 [[toc]]
-##Background
+## Background
 There are several ways to organize a team's use of FitNesse. This document mentions one and describes a second one in some detail. The two models are the "FitNesse as an Editor" model and the "FitNesse Server" model.
 
-##The Models in a Nutshell
-###FitNesse as an Editor
+## The Models in a Nutshell
+### FitNesse as an Editor
 There are several ways to layout pages using FitNesse. One mechanism is to keep FitNesseRoot checked into your favorite repository and developers simply check it out on their local machine. Updating a test involves the following steps:
 * Update local copy of FitNesseRoot
 * Start FitNesse (if necessary)
@@ -20,12 +20,12 @@ However, these are minor nuisances. In many cases, the people writing acceptance
 
 The last bullet is both a strength and weakness. Forcing the machines to have similar configurations can actually remove problems over time. It also discourages one-off solutions as they will immediately break on other machines.
 
-###FitNesse Server
+### FitNesse Server
 In this configuration, there is a master FitNesse server. People working on tests have a local installation of FitNesse with a page that makes  a virtual link to the server pages. The server pages are shadowed on the local machine. People make updates remotely, making the changes immediately available. The FitNesse Server installation is configured to be backed up on a regular basis.
 
 This second model is describe in more detail below.
 
-##Setting up the FitNesse Server Model
+## Setting up the FitNesse Server Model
 This model has a few characteristics:
 * Updates to tests are seen as soon as someone runs a test on their local FitNesse installation
 * Backing up is (or should be) automatically configured
@@ -33,7 +33,7 @@ This model has a few characteristics:
 * It is easier to have a local, machine-based, configuration
 This is one mechanism you can use to allow for execution of tests with machine-relative settings configured into the page hierarchy. You can use this configuration to make it easy to have, for example, a "master" FitNesse server used to execute tests with its own class path and machine/environment specific settings, and still run tests on a local developer machine with its own settings.
 
-##Overview
+## Overview
 The picture gives a high level view. In a nutshell:
 [[image:TargetFitNessePageConfiguration.jpg]]
 
@@ -60,10 +60,10 @@ Why? So their work is immediately shared. These are meant to be collaborative. I
 
 In any case,// **test writers should be editing remotely**//.
 
-##Detailed Steps
+## Detailed Steps
 This set of steps describes how to simulate this on a single machine to practice. The only change to the real configuration is that you need to physically install FitNesse on a different machine.
 
-###Setup Two FitNesse Servers
+### Setup Two FitNesse Servers
 //**Create a location for the "server machine".**//
 # Create a directory in some convenient location, I'll use ~/src/fitnesse_example/server.
 # Under that directory copy fitnesse.jar and FitNesseRoot. The easiest way to accomplish this is to copy fitnesse.jar to ~/src/fitnesse_examples/server then type:
@@ -86,8 +86,8 @@ In this example I use 2 different ports because each executing FitNesse server n
 
 The rest of this example uses a simulated project called "Dvr" for DigitalVideoRecorder.
 
-###Creating Server Page Hierarchy
-####Top Level Environment
+### Creating Server Page Hierarchy
+#### Top Level Environment
 * Go to [[http://localhost:9080/]]
 * You should see the FitNesse start page.
 * Update the URL to [[http://localhost:9080/DvrServerEnvironment]]
@@ -95,7 +95,7 @@ The rest of this example uses a simulated project called "Dvr" for DigitalVideoR
 * Simply save this page.
 * Edit the page properties, set the type to// **suite**//.
 
-####Common Environment
+#### Common Environment
 * Go to [[http://localhost:9080/DvrServerEnvironment.CommonEnviornment]]
 * On this page, set the contents to:
 [[code format="text"]]
@@ -107,13 +107,13 @@ The rest of this example uses a simulated project called "Dvr" for DigitalVideoR
 * Save the page.
 * Edit the page properties, set the type to// **suite**//.
 
-####Create a top-level suite page
+#### Create a top-level suite page
 While not strictly necessary, this top-level page will remain stable while the common environment page might change. It is reasonable to merge the common environment and top-level suite pages, this example keeps them separate.
 * Go to [[http://localhost:9080/DvrServerEnvironment.CommonEnviornment.AllTests]]
 * Simply save this page
 * Edit the page properties, set the type to// **suite**//.
 
-####Create a Common Setup
+#### Create a Common Setup
 This SetUp page will apply to all children test pages that do not have SetUp pages. If you need to have multiple setup pages, you can use an import statement.
 * Go to [[http://localhost:9080/DvrServerEnvironment.CommonEnviornment.AllTests.SetUp]]
 * Set the page contents to:
@@ -122,7 +122,7 @@ This SetUp page will apply to all children test pages that do not have SetUp pag
 |com.om.fitnesseexample|
 [[code]]
 
-####Create an Example Test
+#### Create an Example Test
 This is a simple test we'll use to verify that things are working.
 * Create a test page under the top level suite by going to this link: [[http://localhost:9080/DvrServerEnvironment.CommonEnviornment.AllTests.SimpleExample]]. This page is a sibling of the SetUp page, so it will automatically pickup the SetUp page. Also note that since the page name ends in "Example" it will automatically be created as a test page.
 * Set this page's contents to:
@@ -132,7 +132,7 @@ This is a simple test we'll use to verify that things are working.
 |true|
 [[code]]
 
-###Get Server Test Passing
+### Get Server Test Passing
 Now you'll create a single Eclipse workspace with two projects. One project will have code that will be executed on the server installation of FitNesse, the other will have code executed by the Developer installation of FitNesse.
 * Create a new Eclipse project. For this example, I'll create the new workspace at /Users/schuchert/src/FitNesseLinkPageExample
 * Create a new Java project called "server" in this workspace.
@@ -156,7 +156,7 @@ The server needs to know where to look for java classes. We will configure this 
 [[code]]
 * If you've followed all of these instructions, then the server-based test should pass. Confirm this by pressing the// **Suite**// button.
 
-####Setting up Developer Machine
+#### Setting up Developer Machine
 The procedure is much the same for the developer machine, with a little less setup.
 * Create the Developer Environment Page by clicking on this link: [[http://localhost:8080/DvrDeveloperEnvironment]]
 * Rather than going back and editing this, set the contents of this page to the following:
@@ -167,14 +167,14 @@ The procedure is much the same for the developer machine, with a little less set
 [[code]]
 Notice that this class path is different, it points to a directory that does not currently exist. You'll be creating that shortly.
 * Update this page so that it is a// **Suite**// page. Edit the properties, select// **Suite**// and save the page properties.
-####Replicating Server Tests
+#### Replicating Server Tests
 * Edit the page properties for this page. In the// **Remote Wiki URL**//, enter the following url: http://localhost:9080/DvrServerEnvironment
 * Verify that the// **Automatically update imported content when executing tests**// option is set.
 * Save the page.
 
 You should see the classpath as well as a the pages from the server listed as children of this page.
 
-####Getting Developer Test Running but Failing
+#### Getting Developer Test Running but Failing
 If you attempt to run the test, it will fail with yellow errors indicating that one or more classes could not be found. You'll create a second Java project in your workspace.
 * Go back to Eclipse and create a new project called// **developer**//.
 * Create the following class (making sure that the package matches):
@@ -193,7 +193,7 @@ Verify that your test fails with a red error (indicating class found but asserti
 * Go back to: [[http://localhost:8080/DvrDeveloperEnvironment]]
 * Click the// **Suite**// button. The test should execute but fail, expected true but was false.
 
-##Congratulations
+## Congratulations
 Good work, you:
 * Created two installations of FitNesse, one representing the server and one representing the client.
 * Created the server-side page hierarchy
@@ -207,7 +207,7 @@ Good work, you:
 
 Now you are ready to try this out in your development environment.
 
-###Final Note on Backups
+### Final Note on Backups
 With this configuration, you can simply schedule a backup of the FitNesseRoot directory on the server machine every so often to avoid losing tests.
 
 Alternatively, and my preference, is to actually have the edits checked in to a source repository. However, if you do use the single server model, you will lose track of who made changes. This, as far as I can tell, is probably the biggest drawback to the approach. However, in practice I don't see it as too much of an issue with teams that collaborate well.

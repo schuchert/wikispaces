@@ -1,6 +1,6 @@
 [[JBoss AOP Example 1|<--Back]] [[JBossEX1FormTheory|Next-->]]
 
-##Expected Output==
+## Expected Output==
 Did you guess the output would look something like this?
 [[code]]
    noArgMethod
@@ -13,7 +13,7 @@ Did you guess the output would look something like this?
    staticMethod
 [[code]]
 
-##Actual Output==
+## Actual Output==
 What if I told you the output was actually this (ignoring line wrapping)?
 [[code]]
 Entering: public void ex1.MethodExecutionExample.noArgMethod()

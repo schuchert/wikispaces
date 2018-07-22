@@ -2,7 +2,7 @@ Considering the amount of work required to get ready to add a resource, you migh
 
 In this final step for the tutorial, we'll create a second kind of resource, a DVD and then write some basic tests.
 
-###Supporting DVD's===
+### Supporting DVD's===
 The first basic test is creating a dvd and checking it out to a Patron. This is a test we add to LibraryTest.java.
 
 **First test: Checkout a Dvd**
@@ -200,7 +200,7 @@ Here are a few more tests to verify basic functionality. These also belong in Li
     }
 [[code]]
 
-###Summary: Inheritance===
+### Summary: Inheritance===
 That's pretty much it. If we had started with a base class called Resource, this work would have been trivial. Adding new subclasses is quite easy. Figuring out which representation may take a little experimentation, but it's easy to change.
 
 Queries are inherently polymorphic in nature if that makes sense for the given query. Your challenge is working with a base type insead of down-casting to a derived type.

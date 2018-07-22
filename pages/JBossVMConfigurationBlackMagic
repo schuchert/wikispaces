@@ -1,6 +1,6 @@
 [[JBossEX1Explained|<--Back]] [[JBossEX1ApplyYourself|Next-->]]
 
-##VM Configuration: Black Magic==
+## VM Configuration: Black Magic==
 This section describes the black magic that actually binds the MethodInterceptor class to the MethodExecutionExample class. You can safely skip it but it is here just in case you are interested in what’s happening.
 
 These examples work on a Java 5 VM. The Java 5 VM has a new command line option, javaagent. You can provide a so-called Java Agent Jar on the command line. When the VM starts up, it will look at the provided Jar file’s manifest. The manifest describes a class to hook into the Java Classloader. When there is a registered Java Agent, the following happens during class loading:

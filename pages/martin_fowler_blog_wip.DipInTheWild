@@ -1,4 +1,4 @@
-##Overview
+## Overview
 You can safely skip to [[martin_fowler_blog_wip.DipInTheWild#article|the article]].
 
 This is my WIP for an article for Martin Fowler's blog. The first cut is going to be a novelization of a talk I recently gave in Sweden. The materials for that (code and pdf of slides) are [[https://github.com/schuchert/spring_aop|on github]].
@@ -8,7 +8,7 @@ This is a first version I'll put together. Then, after I've reintroduced myself 
 I'm applying my extraversion to the creation of this work just because. Since a 50-minute talk and a blog are different media, I expect there'll be some differences. However, I could also offer the real scoop on the heavy use of SWAG + procstination that went into the original presentation for [[http://www.scandevconf.se/|SDC2013]].
 
 [[#article]]
-#Dip in the Wild
+# Dip in the Wild
 My original introduction to the  [[http://www.objectmentor.com/resources/articles/dip.pdf|Dependency Inversion Principle]] came from Robert (Uncle Bob) Martin back in the last century, around 1994. It, along with most of the [[http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)|SOLID]] principles, is simple to state but deep in its application. What follows are some recent applications I've used on real projects (everything I discuss is in production from June 2012 and as of 2013 is still in production, with one of these going back several more years).
 
 Rather than define the dependency inversion principle, I'll first point to [[http://c2.com/cgi/wiki?DependencyInversionPrinciple|wikipedia]] and then a more in-depth coverage from [[http://www.objectmentor.com/resources/articles/dip.pdf|my original source]].
@@ -38,12 +38,12 @@ Before going into examples, I want to give you my current (circa early 2013) per
 In fact, like the term "best practices" I wonder if "design principles" even makes sense as a moniker. In the case of the [[http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)|SOLID]] principles, I think of them more as up front ideas that I often come back to due to familiarity.
 
 In any case, an ability to make an informed decision to disregard a design principle, a so-called Journeyman according to [[http://www.wayland-informatics.com/The%20Seven%20Stages%20of%20Expertise%20in%20Software.htm|The Seven Stages of Expertise in Software]], is a good place to always be moving towards.[[include page="sidebar_end"]]
-##Logging
+## Logging
 [[image:LoggerComplexity.png width="600"]]
 
 [[image:Logger_an_approach.png width="600"]]
 
-##Depending on Interfaces
+## Depending on Interfaces
 [[image:Database.png width="100"]]
 
 [[image:Database_jdbc.png width="100"]]
@@ -52,19 +52,19 @@ In any case, an ability to make an informed decision to disregard a design princ
 
 [[image:Database_dao.png width="500"]]
 
-##Message Oriented Middleware
+## Message Oriented Middleware
 [[image:Async_original_description.png width="600"]]
 [[image:Async_dependencies.png width="600"]]
 [[image:Async_re_envisioned.png width="600"]]
 [[image:Async_resulting_interaction.png width="600"]]
 
-##Assist in Multi-Thread Development (add this???)
+## Assist in Multi-Thread Development (add this???)
 
-##Metrics and a Feature Toggle
+## Metrics and a Feature Toggle
 
 to be drawn, includes much code...
 
-##Conclusion
+## Conclusion
 
 Depending on an interface is not enough.
 

@@ -1,4 +1,4 @@
-###Q/A===
+### Q/A===
 * **@EJB**  //Automatically filling in a dao. If the type of the Bean is unambigious, then JNDI will automatically insert your session bean reference.//
 * **Would local interface imply different semantics than remote?**  // The strictness could be better for testing...fail faster.//
 * **Brett: Why use EJB3?**  //class: security, easy web services, . brett: transaction demarcation, organizational mandate, standard (community+materials), entity beans done right (jpa), commercial support, //
@@ -9,7 +9,7 @@
 * ** ** // //
 * ** ** // //
 
-###Take Aways===
+### Take Aways===
 * persistence.xml must be in right location or le be your butt.
 * Generated values might not make it back to your object if it runs outside the context of a transaction.
 * Merge returns a new object (unless the object is already managed)

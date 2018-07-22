@@ -29,7 +29,7 @@ Notice that I have separate src and test directories. It turns out that both of 
 If you do not use a src directory and just store your projects at the top level, then your META-INF directory will be directly under your project.
 ----
 [[#TestMethodTimingAspect]]
-##TestMethodTimingAspect.java==
+## TestMethodTimingAspect.java==
 [[code format="java5"]]
 01: package test.timingaspect;
 02: 
@@ -98,7 +98,7 @@ If you do not use a src directory and just store your projects at the top level,
 65:     }
 66: }
 [[code]]
-###Interesting Lines===
+### Interesting Lines===
 ||Line||Description||
 ||24||Use a [[Commons Loggins and Log4j Config|simple configurator]] to get a logging configuration.||
 ||25||Create an output file name that's based on the [[http://java.sun.com/docs/books/tutorial/essential/system/properties.html|Java user.home]] property. On my machine, this is the directory "C:\Documents and Settings\brett.schuchert". On a Unix machine, it will probably be equal to "~".||
@@ -117,7 +117,7 @@ If you do not use a src directory and just store your projects at the top level,
 ||63||Use the new String.format method to format my output.||
 ----
 [[#aop]]
-##aop.xml==
+## aop.xml==
 [[code]]
 01: <aspectj>
 02: 	<aspects>
@@ -128,7 +128,7 @@ If you do not use a src directory and just store your projects at the top level,
 07: 	</weaver>
 08: </aspectj>
 [[code]]
-###Interesting Lines===
+### Interesting Lines===
 ||Line||Description||
 ||3||The fully-qualified name of an aspect. Add this aspect to the list of aspects to weave at runtime. If you change the name of the aspect or change its package, you must update this fully-qualified name.||
 ||6||The list of packages to be woven. You'll need to change this to match your packages. The part before .. is the beginning of the package names I used (see the picture above). The ..* means everything from that name down. So in my case, I have packages like vehicle.component and vehicle.validation and vehicle.component.validation, all of which match vehicle..*.||

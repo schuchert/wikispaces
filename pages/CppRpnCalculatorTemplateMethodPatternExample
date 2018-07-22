@@ -1,15 +1,15 @@
 [[RpnCalculatorCppExampleImplementation|<--Back]]
-##Template Method Pattern Example
+## Template Method Pattern Example
 Review the method BinaryOperator::execute. Notice how it is concrete, but it refers to a method called executeImpl, which is declared pure virtual. That's the extension point. Review Plus, Minus, Multiply, Divide to see how each extends the base class by only implementing the method executeImpl.
 
 **Note**: All of the classes in this section are subclasses of MathOperator, which is a base class for strategies. BinaryOperator uses template method, so this is an implementation of a strategy that uses the template method pattern.
 
 **BinaryOperator.h**
 [[code format="cpp"]]
-#ifndef BINARYOPERATOR_H
-#define BINARYOPERATOR_H
+# ifndef BINARYOPERATOR_H
+# define BINARYOPERATOR_H
 
-#include "MathOperator.h"
+# include "MathOperator.h"
 
 class BinaryOperator: public MathOperator {
 public:
@@ -20,14 +20,14 @@ protected:
    virtual int executeImpl(int lhs, int rhs) = 0;
 
 };
-#endif
+# endif
 [[code]]
 
 **BinaryOperator.cpp**
 [[code format="cpp"]]
-#include "BinaryOperator.h"
+# include "BinaryOperator.h"
 
-#include "OperandStack.h"
+# include "OperandStack.h"
 
 BinaryOperator::~BinaryOperator() {
 }

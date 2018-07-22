@@ -1,7 +1,7 @@
 [[toc]]
 [[cpptraining#FitNesse|<<--Back]]
 
-#Decision Table
+# Decision Table
 Here is a basic table in FitNesse:
 **Example Decision Table**
 [[code]]
@@ -22,13 +22,13 @@ Since no table type is provided, this is a decision table. The basic mechanics f
 Here's cslim code that can handle this table:
 **ExecuteBinaryOperator.cpp**
 [[code format="cpp"]]
-#include <stdlib.h>
-#include <stdio.h>
-#include <string>
-#include "RpnCalculator.h"
-#include "OperatorFactory.h"
-#include "Fixtures.h"
-#include "SlimUtils.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include <string>
+# include "RpnCalculator.h"
+# include "OperatorFactory.h"
+# include "Fixtures.h"
+# include "SlimUtils.h"
  
 struct ExecuteBinaryOperator {
 	ExecuteBinaryOperator() {
@@ -100,7 +100,7 @@ SLIM_END
 Note that as with all fixtures, this code will need to be "registered" with cslim. The default installation of cslim provides a file called "Fixtures.c". To register this class, you'd add:
 **Fixtures.c**
 [[code format="cpp"]]
-#include "Fixtures.h"
+# include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(ExecuteBinaryOperator)
@@ -111,7 +111,7 @@ SLIM_END
 
 This particular Fixtures.c file registeres all thee fixtures mentioned on this page.
 
-#Script Table
+# Script Table
 Here is an example of a script table:
 **Example Script Table**
 [[code]]
@@ -131,14 +131,14 @@ How can you tell it's a script table? The word script on the first row.
 And here's an example fixture that can handle this table. Note, I used g++ 4.4 (or 4.5) and provided the command-line parameter "-std=c++0x". This allows me to use the auto keyword in its new form:
 **ProgrammingTheCalculator.cpp**
 [[code format="cpp"]]
-#include <stdlib.h>
-#include <stdio.h>
-#include <string>
-#include "RpnCalculator.h"
-#include "OperatorFactory.h"
-#include "SlimUtils.h"
-#include "SlimList.h"
-#include "Fixtures.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include <string>
+# include "RpnCalculator.h"
+# include "OperatorFactory.h"
+# include "SlimUtils.h"
+# include "SlimList.h"
+# include "Fixtures.h"
 
 struct ProgramTheCalculator {
 	ProgramTheCalculator() : calculator(factory) {
@@ -216,7 +216,7 @@ SLIM_END
 }
 [[code]]
 
-#Query Table
+# Query Table
 Finally, the dreaded query table. The query table requires a bit more work to produce a result. So this section contains a table, a fixture and a utility class to help create the query results.
 **Example Query Table**
 [[code]]
@@ -233,16 +233,16 @@ How can you tell this is a query table? The word "Query" in the first row.
 Now the fixture to handle it:
 **SingleCharacterNameOperators.cpp**
 [[code format="cpp"]]
-#include <stdlib.h>
-#include <stdio.h>
-#include <vector>
-#include <string>
-#include <memory>
-#include "RpnCalculator.h"
-#include "OperatorFactory.h"
-#include "Fixtures.h"
-#include "SlimUtils.h"
-#include "QueryResultAccumulator.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include <vector>
+# include <string>
+# include <memory>
+# include "RpnCalculator.h"
+# include "OperatorFactory.h"
+# include "Fixtures.h"
+# include "SlimUtils.h"
+# include "QueryResultAccumulator.h"
 
 struct SingleCharacterNameOperators {
 	OperatorFactory factory;
@@ -305,13 +305,13 @@ SLIM_END
 This code makes use of a utility class QueryResultAccumulator. This is [[http://github.com/schuchert/CSlimCppExtensions|available in source from github]] (warning, as of this writing it's in a raw form):
 **QueryResultAccumulator.h**
 [[code format="cpp"]]
-#pragma once
-#ifndef QUERYRESULTACCUMULATOR_H_
-#define QUERYRESULTACCUMULATOR_H_
+# pragma once
+# ifndef QUERYRESULTACCUMULATOR_H_
+# define QUERYRESULTACCUMULATOR_H_
 
 class SlimList;
-#include <vector>
-#include <string>
+# include <vector>
+# include <string>
 class QueryResultAccumulator {
 public:
 	typedef std::vector<SlimList*> v_SlimList;
@@ -342,18 +342,18 @@ private:
 	QueryResultAccumulator& operator=(const QueryResultAccumulator&);
 };
 
-#endif
+# endif
 [[code]]
 
 **QueryResultAccumulator.cpp**
 [[code format="cpp"]]
-#include "QueryResultAccumulator.h"
-#include "DifferentFieldCountsInObjects.h"
-#include "InvalidStateException.h"
+# include "QueryResultAccumulator.h"
+# include "DifferentFieldCountsInObjects.h"
+# include "InvalidStateException.h"
 
 extern "C" {
-#include "SlimList.h"
-#include "SlimListSerializer.h"
+# include "SlimList.h"
+# include "SlimListSerializer.h"
 }
 
 QueryResultAccumulator::QueryResultAccumulator() : result(0) {

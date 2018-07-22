@@ -1,6 +1,6 @@
 [[TDD Example Catalog|<--Back]]
 
-##Verify a sequence of methods==
+## Verify a sequence of methods==
 This test method exists in a [[jMock JUnit 4 Die Skeleton]].
 
 Make sure that the testDoubleDie method will first have its roll() method called exactly once and then its getFaceValue() method called exactly once():

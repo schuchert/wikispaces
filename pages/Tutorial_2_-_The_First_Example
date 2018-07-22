@@ -1,4 +1,4 @@
-###Test Setup===
+### Test Setup===
 We have a bit of setup/initialization code we need to do before we can get started. We have seen all of this code before in Tutorial 1. The difference here is that we are going to work though some refactorings to get to where we were in tutorial 1. Here are the various parts:
 **Configure the Logger**
 [[code format="java5"]]
@@ -42,7 +42,7 @@ We have a bit of setup/initialization code we need to do before we can get start
     assertEquals(2, numberFound);
 [[code]]
 
-###The Whole Thing===
+### The Whole Thing===
 Here's all of this put together. Note that we're going to refactor this heavily coming up.
 [[code format="java5"]]
 package entity;
@@ -88,7 +88,7 @@ public class JpaApiTests {
 }
 [[code]]
 
-###Get it Running===
+### Get it Running===
 After creating your Test Class, verify that it runs and that this test passes:
 # Right-click anywhere in your class' editor pane.
 # Select **Run As:JUnit Test**

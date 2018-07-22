@@ -1,15 +1,15 @@
 [[toc]]
 [[cpptraining#FitNesse|<--Back]]
 
-#Background
+# Background
 These steps assuem you have already worked through the tutorial: [[cpptraining.GettingStartedWithFitNesseInCpp|Getting Started With FitNesse in C++]].
 
-#Building the RpnCalcualtor
+# Building the RpnCalcualtor
 You can find the source for the RpnCalculator at two github locations:
 * [[http://github.com/schuchert/RpnCalculatorInCpp|Here is production code]]
 * [[http://github.com/schuchert/RpnCalculatorInCppTests|Here is the test code]]
 
-##Building the Basic Structure
+## Building the Basic Structure
 * Create a top-level directory for all of your work. I'll be using ~/src/waat
 * Under that, create a workspace directory. I'll use ~/src/waat/workspace
 [[code]]
@@ -54,7 +54,7 @@ RpnCalculatorInCpp/		RpnCalculatorInCppTests/
 [~/src/waat/workspace]% 
 [[code]]
 
-##Configuring the Eclipse Project
+## Configuring the Eclipse Project
 In [[cpptraining.GettingStartedWithFitNesseInCpp|previous tutorial]], you created a directory called ~/src/cslim and under that is CppUTest. To create this project, we'll use the equivalent of environment variables in Eclipse.
 * Create a new workspace. Select the directory containing two github projects you just checked out. In my case that's **Users/schuchert/src/waat/workspace**
 * Close the Welcome to Eclipse tab.
@@ -89,7 +89,7 @@ You should see your tests pass. As of this writing, there are 70 tests:
 
 OK (70 tests, 70 ran, 108 checks, 0 ignored, 0 filtered out, 8 ms)
 [[code]]
-#Creating Your First Test Table
+# Creating Your First Test Table
 Since you've already worked through [[cpptraining.GettingStartedWithFitNesseInCpp|Getting Started With FitNesse in C++]], you have FitNesse installed somewhere. Start your FitNesse instance. Here's what it looks like on my computer:
 [[code]]
 [~]% cd src/cpp_fitnesse 
@@ -103,7 +103,7 @@ FitNesse (v20100711) Started...
 	html page factory: fitnesse.html.HtmlPageFactory
 	page version expiration set to 14 days.
 [[code]]
-##Creating Top-Level Test Suite
+## Creating Top-Level Test Suite
 Now that you have FitNesse started, create a top-level page for all of your work.
 * Edit the following URL: [[http://localhost:8080/RpnExamples]]
 * Edit its content to be:
@@ -117,7 +117,7 @@ Now that you have FitNesse started, create a top-level page for all of your work
 * Confirm this page has a **Suite** button. If not, edit its properties so it is a suite and save those properties.
 
 The TEST_RUNNER makes reference to a project/executable we have not yet created. Don't worry, it'll be there soon.
-##Creating First Test
+## Creating First Test
 * Go to the following URL and click edit: [[http://localhost:8080/RpnExamples.BinaryOperatorExecution]]
 * Click on the **Edit** button and set its contents to:
 [[code]]
@@ -130,7 +130,7 @@ The TEST_RUNNER makes reference to a project/executable we have not yet created.
 
 This page makes reference to a fixture that does not yet exist. As in the previous step, don't worry. That's next.
 
-#Creating Fixture Project
+# Creating Fixture Project
 Now you're going to add a third project to contain your fixtures. This involves creating a project, linking to the calculator.
 * Select **File:New:C++ Project**
 * Create an **Empty Project**
@@ -140,16 +140,16 @@ Now you're going to add a third project to contain your fixtures. This involves 
 You'll need to copy in two boilerplate files, create the fixture class and then set up libraries and include paths.
 * Add a new file called **Main.c** and set its contents:
 [[code format="cpp"]]
-#include "SocketServer.h"
-#include "SlimConnectionHandler.h"
-#include "TcpComLink.h"
-#include <stdlib.h>
-#include <string.h>
-#include "SlimList.h"
-#include "SlimListDeserializer.h"
-#include "StatementExecutor.h"
-#include "ListExecutor.h"
-#include "SlimListSerializer.h"
+# include "SocketServer.h"
+# include "SlimConnectionHandler.h"
+# include "TcpComLink.h"
+# include <stdlib.h>
+# include <string.h>
+# include "SlimList.h"
+# include "SlimListDeserializer.h"
+# include "StatementExecutor.h"
+# include "ListExecutor.h"
+# include "SlimListSerializer.h"
 
 void AddFixtures(StatementExecutor* executor);
 char * handle_slim_message(char * message);
@@ -210,7 +210,7 @@ You'll notice several warnings about unknown header files. Let's fix that before
 
 Next, create another new file called **Fixtures.c**: 
 [[code format="cpp"]]
-#include "Fixtures.h"
+# include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(ExecuteBinaryOperator)
@@ -222,13 +222,13 @@ I'm having you preemptively add in the name of a fixture you have yet to write.
 Now it's time to create the fixture. Since this is a mechanics tutorial, I'll give you the fixture source code:
 **ExecuteBinaryOperator.cpp**
 [[code format="cpp"]]
-#include <stdlib.h>
-#include <stdio.h>
-#include <string>
-#include "RpnCalculator.h"
-#include "OperatorFactory.h"
-#include "Fixtures.h"
-#include "SlimUtils.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include <string>
+# include "RpnCalculator.h"
+# include "OperatorFactory.h"
+# include "Fixtures.h"
+# include "SlimUtils.h"
  
 struct ExecuteBinaryOperator {
 	ExecuteBinaryOperator() {
@@ -329,7 +329,7 @@ Resolving deltas: 100% (1/1), done.
 * Click on **Finish**
 * Select the project, right-click and select build.
 * //**Warning**//: As of this writing, there is a "missing" method in the cslim library. You'll need to make two changes to the cslim library that you've downloaded to resolve this.
-###Updating CSlim Library
+### Updating CSlim Library
 **<cslim_base>/include/CSlim/SlimListSerializer.h**
 Add the following function declaration to the header file:
 [[code format="cpp"]]
@@ -370,15 +370,15 @@ You should now be able to run this executable. If you do, you'll see in red text
 getaddrinfo: nodename nor servname provided, or not known
 [[code]]
 
-#Running the Test
+# Running the Test
 You should be able to run your FitNesse test and get to green.
 * Go back to the following URL: [[http://localhost:8080/RpnExamples]]
 * Click on the **Suite** button
 * You should see all green.
 * You might see an error regarding a difference in protocol. That's under construction. The cslim library should be updated in the near future (August 2010 I hope).
-#Working with a Script Table
+# Working with a Script Table
 Now it is time to program the calculator. First a test, then the fixture code.
-##The Test
+## The Test
 Create the following test at: [[http://localhost:8080/RpnExamples.SumOfPrimesExample]]
 [[code]]
 !|script           |ProgramTheCalculator|
@@ -392,17 +392,17 @@ Create the following test at: [[http://localhost:8080/RpnExamples.SumOfPrimesExa
 [[code]]
 
 This creates a new operator called "sumOfPrimesFactors" and then executes it. To make this work, you'll need to create a new fixture and register it.
-##Creating the Fixture
+## Creating the Fixture
 Create a new source filed called **ProgramTheCalcualtor.cpp**. Here's the source:
 [[code format="cpp"]]
-#include <stdlib.h>
-#include <stdio.h>
-#include <string>
-#include "RpnCalculator.h"
-#include "OperatorFactory.h"
-#include "SlimUtils.h"
-#include "SlimList.h"
-#include "Fixtures.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include <string>
+# include "RpnCalculator.h"
+# include "OperatorFactory.h"
+# include "SlimUtils.h"
+# include "SlimList.h"
+# include "Fixtures.h"
 
 struct ProgramTheCalculator {
     ProgramTheCalculator() : calculator(factory) {
@@ -477,7 +477,7 @@ SLIM_END
 
 To get this working, you'll need to register the fixture by updated **Fixtures.c**:
 [[code format="cpp"]]
-#include "Fixtures.h"
+# include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(ExecuteBinaryOperator)
@@ -486,7 +486,7 @@ SLIM_END
 [[code]]
 
 Once you make these changes and rebuild, you should have a passing test.
-#The Query Table
+# The Query Table
 Here is an example of a query table:
 [[code]]
 !|Query: AlphaNamedOperators|
@@ -506,14 +506,14 @@ Create this page at: [[http://localhost:8080/RpnExamples.AlphaNamedOperatorsExam
 
 Now you'll need to create a fixture. Create a new source file called **AlphaNamedOperators.cpp**:
 [[code format="cpp"]]
-#include <ctype.h>
-#include <stdlib.h>
-#include <string>
-#include "RpnCalculator.h"
-#include "OperatorFactory.h"
-#include "Fixtures.h"
-#include "SlimUtils.h"
-#include "QueryResultAccumulator.h"
+# include <ctype.h>
+# include <stdlib.h>
+# include <string>
+# include "RpnCalculator.h"
+# include "OperatorFactory.h"
+# include "Fixtures.h"
+# include "SlimUtils.h"
+# include "QueryResultAccumulator.h"
 
 struct AlphaNamedOperators {
 	OperatorFactory factory;
@@ -574,7 +574,7 @@ SLIM_CREATE_FIXTURE(AlphaNamedOperators)
 
 To get this registered, you'll have to update **Fixtures.c**:
 [[code format="cpp"]]
-#include "Fixtures.h"
+# include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(ExecuteBinaryOperator)

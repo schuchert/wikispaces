@@ -1,7 +1,7 @@
 As a user I want to be able to calculate the cos of an angle in degrees so that I don't have to perform the calculation manually.
 
 
-###UAT===
+### UAT===
 * [0] <cos> -> [1]
 * [45] <cos> -> [.7071]
 * [90] <cos> -> [0]

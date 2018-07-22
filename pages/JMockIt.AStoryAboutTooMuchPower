@@ -1,4 +1,4 @@
-#A Story About Too Much Power
+# A Story About Too Much Power
 
 Notes:
 * In this article I talk about JMockIt. However, these comments generally apply to that class of mocking frameworks. This list includes (at least): JMockIt, Typemock Isolator, PowerMock. These are the current breed of mocking tools - all very powerful.

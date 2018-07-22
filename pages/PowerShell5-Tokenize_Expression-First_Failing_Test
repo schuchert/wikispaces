@@ -95,7 +95,7 @@ Executing script C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1
 Tests completed in 683ms
 Tests Passed: 1, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0
 [[code]]
-##Summary
+## Summary
 There are many common complaints about TDD in such a simple start:
 * This doesn't do *anything*
 * How can such small steps accomplish anything?
@@ -108,9 +108,9 @@ I'm not going to even try to convince you that this does or does not work. We'll
 * It takes a String and returns an array of Strings, one element for each token
 
 Now that we have an API, we can focus on trying to grow the algorithm to make it work with at least the examples listed above.
-#Sidebar
+# Sidebar
 Throughout working on this problem, I'll be using git to make working snapshots. I might even put this code into my github account. I'll show a few of the git commands I'm using now, then as we move through the rest of this, I'll mention good times to at least locally commit your work.
-##Initialize And Initial Push
+## Initialize And Initial Push
 * Make your shunting_yard_algorithm directory a git repo
 > [[code format-"powershell"]]
 PS C:\Users\Brett\shunting_yard_algorithm> git init

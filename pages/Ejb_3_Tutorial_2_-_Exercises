@@ -1,4 +1,4 @@
-##Fetching and Lazy Initialization==
+## Fetching and Lazy Initialization==
 The Company entity has one attribute where we've specified the fetch type. Review the employees attribute in Company.java. Remove the {{**fetch = FetchType.EAGER**}} and execute the tests.  
 
 There's another way to make this "work" by manually reading the contents of the collection. Experiment with that and see if you can get it to work using this technique.  What is the impact of //@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)// on a lazy fetch? (Hint: you might have some issues with this combination.)
@@ -15,7 +15,7 @@ Hint: You can compare the SQL from each approach by adding the following line to
          <property name="hibernate.show_sql" value="true" />
 [[code]]
 
-##Fetch and Lazy Initialization Revisited==
+## Fetch and Lazy Initialization Revisited==
 Add a unit test where you:
 # Create a person
 # Create a company
@@ -26,7 +26,7 @@ Add a unit test where you:
 * Did this test work? If not, why? If so, what can you say about @OneToMany versus @ManyToOne?
 * If it did not work, fix it.
 
-##Add Tests==
+## Add Tests==
 Review the driver from the first JPA tutorial. Use that as example source from which you can derive tests.
 
 In addition, add the following tests:
@@ -42,5 +42,5 @@ Create two people and hire them both. Make sure this works.
 
 Question, do you think it should work? If not, then update the equals and hashCode method and make this test be one that only works if the attempt fails.
 
-##Test Isolation==
+## Test Isolation==
 Use the installed QuantumDB Perspective to discover if our tests are leaving around objects after they have completed. Assuming they have, write code to have each test clean up after itself.

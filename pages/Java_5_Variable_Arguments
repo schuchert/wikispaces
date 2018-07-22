@@ -1,7 +1,7 @@
 [[toc]]
 [[Articles|<--Back]]
 
-#Java 5 Variable Arguments
+# Java 5 Variable Arguments
 
 This article uses Log4J as a vehicle to describe Java 5 Variable Augments through a concrete example.
 
@@ -11,13 +11,13 @@ There are 4 versions of the same program:
 * [[Java 5 Variable Arguments#Mainv3|Version 3]]: Shows what we should do using the existing interface
 * [[Java 5 Variable Arguments#Mainv4|Version 4]]: Shows a new interface using Java 5 variable arguments
 
-##Version 1
+## Version 1
 Here is a typical example of using Log4J with a simple utility class that:
 * Configures Log4J
 * Returns the logger for a provided class
 ----
 [[#Mainv1]]
-##Main.java
+## Main.java
 [[code format="java5"]]
 01: package varargs.v1;
 02: 
@@ -39,14 +39,14 @@ Here is a typical example of using Log4J with a simple utility class that:
 18: }
 [[code]]
 
-###Interesting Lines
+### Interesting Lines
 ||Line||Description||
 ||14||Use a utility class to retrieve a logger for my class.||
 ||16||Use the logger.||
 
 So what is wrong with this example? Specifically, something is missing. In a real application, line 16 should be wrapped in some conditional logic. Don't worry if you're not sure about this, it's coming up.
 
-##Version 2
+## Version 2
 This version only introduced the use of a new utility method on the String class. Instead of writing the following:
 [[code]]
    System.out.println("You have scored: " + points + ", and made it to level: " + level);
@@ -61,7 +61,7 @@ Note that String.format is an example of a method whose parameters are defined u
 Here's the code for version 2:
 ----
 [[#Mainv2]]
-##Main.java
+## Main.java
 [[code format="java5"]]
 01: package varargs.v2;
 02: 
@@ -83,11 +83,11 @@ Here's the code for version 2:
 18:     }
 19: }
 [[code]]
-###Interesting Lines
+### Interesting Lines
 ||Line||Description||
 ||16 - 17||Use the String.format method to produce the same output as before.||
 
-##Version 3
+## Version 3
 Version 3 adds the missing element mentioned in version 1. Namely, in both version 1 and version 2, we are formatting a String, performing string concatenation, allocating memory, etc. when it might not be necessary.
 
 The logger might not be displaying debug-level information. If it is not, then we have wasted time and memory on String manipulation. This is a typical problem with logging. It may not seem like much but from my experience it is a big deal. In a large system, you'll end up garbage collecting more often than necessary.
@@ -104,7 +104,7 @@ It is ugly but it makes a big difference.
 Here's the code modified to take this into consideration:
 ----
 [[#Mainv3]]
-##Main.java
+## Main.java
 [[code format="java5"]]
 01: package varargs.v3;
 02: 
@@ -128,19 +128,19 @@ Here's the code modified to take this into consideration:
 20:     }
 21: }
 [[code]]
-###Interesting Lines
+### Interesting Lines
 ||Line||Description||
 ||16 - 19||Now we are wrapping our calls to the logger just in case we are not currently printing debugging information.||
 
 This is ugly, error prone and a pain, right? But it really does make a big difference. What if you could make this happen automagically?
 
-##Version 4
+## Version 4
 This version has the advantages of versions 1 and 2 in terms of what you write. It also has most of the advantages of version 3 in terms of not doing work unnecessarily.
 
 First let's look at the use of the code:
 ----
 [[#Mainv4]]
-##Main.java
+## Main.java
 [[code format="java5"]]
 01: package varargs.v4;
 02: 
@@ -159,7 +159,7 @@ First let's look at the use of the code:
 15:     }
 16: }
 [[code]]
-###Interesting Lines
+### Interesting Lines
 ||Line||Description||
 ||14||What? This is just back to version 2, right?||
 ||12||This was Logger, now it is ILogger.||
@@ -167,7 +167,7 @@ First let's look at the use of the code:
 To make this work, we first introduce an interface that uses Java 5 Variable Arguments:
 ----
 [[#ILogger]]
-##ILogger.java
+## ILogger.java
 [[code format="java5"]]
 01: package varargs.v4;
 02: 
@@ -203,7 +203,7 @@ Next, we write a simple implementation for this interface. For now we'll just lo
 18:         return this;
 19:     }
 [[code]]
-###Interesting Lines
+### Interesting Lines
 ||Line||Description||
 ||14||This method uses variable arguments. You can tell this when you see **Object...**. It turns out that objects is simply an array of Objects. You can write objects[0] to get the first element (assuming there are some elements in it).||
 ||15||Our wrapper performs the isDebugEnabled() check for us rather than having to do it everywhere where we use the logger.||
@@ -214,7 +214,7 @@ This version was not possible before variable arguments. We might have some over
 Here is the full implementation:
 ----
 [[#LoggerImpl]]
-##LoggerImpl.java
+## LoggerImpl.java
 [[code format="java5"]]
 01: package varargs.v4;
 02: 
@@ -333,7 +333,7 @@ Here is the full implementation:
 And finally, for completeness, here are the final two files in this final example:
 ----
 [[#LoggingConfiguration]]
-##LoggingConfiguration.java
+## LoggingConfiguration.java
 [[code format="java5"]]
 01: package varargs.v4;
 02: 
@@ -375,7 +375,7 @@ And finally, for completeness, here are the final two files in this final exampl
 [[code]]
 ----
 [[#log4j_properties]]
-##log4j.properties
+## log4j.properties
 [[code]]
 log4j.logger.org.springframework=WARN
 [[code]]
@@ -389,7 +389,7 @@ But it does not come without some costs. If you wrap as demonstrated in the 3rd 
 * Java does not need to make the array of objects, which is how it passes variable arguments
 * If your code calls a function to calculate the output, you call the function even if you do not perform the output.
 
-#Summary
+# Summary
 
 **Define Variable Arguments**
 [[code]]
@@ -415,7 +415,7 @@ But it does not come without some costs. If you wrap as demonstrated in the 3rd 
 Here is the source code for all 4 versions in an Eclipse 3.2 archive file.
 [[file:VariableArgumentsExample.zip]]
 
-#Other Resources
+# Other Resources
 * [[http://surguy.net/articles/removing-log-messages.xml|Speeding up Log4J in Java 1.5]]
 
 [[Articles|<--Back]]

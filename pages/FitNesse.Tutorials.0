@@ -1,6 +1,6 @@
 [[toc]]
 [[FitNesse.Tutorials|<--Back]]
-#Install FitNesse
+# Install FitNesse
 * Install a JVM 1.6 or later.
 * [[http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad|Download FitNesse]]
 * Go to that directory and execute "java -jar fitnesse.jar -p 8080"
@@ -19,7 +19,7 @@ FitNesse (v20100103) Started...
 * Verify you see a friendly FitNesse web page when you open [[http://localhost:8080/|your browser here]] (I built this from source and it might be different from what you see when you start FitNesse, but it should be close - you won't see the tree on the left until sometime in 4/2009)
 [[image:FitNesseStartScreen.gif]]
 
-#Configure FitNesse for Slim
+# Configure FitNesse for Slim
 * Click the **Edit** button on the home page. You will see something close to the following:
 [[code format="text"]]
 !1 Welcome to [[FitNesse][FitNesse.FitNesse]]!
@@ -73,11 +73,11 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 !path fitnesse.jar
 [[code]]
 
-#[[FitNesse.Tutorials.0.Java|Continue Tutorial in Java]]
-#[[FitNesse.Tutorials.0.CSharp|Continue Tutorial in C#]]
+# [[FitNesse.Tutorials.0.Java|Continue Tutorial in Java]]
+# [[FitNesse.Tutorials.0.CSharp|Continue Tutorial in C#]]
 
 [[#Congratulations]]
-#Congratulations
+# Congratulations
 Congratulations, you've finished the first tutorial. In this tutorial you:
 * Installed FitNesse
 * Created a Page
@@ -90,7 +90,7 @@ Congratulations, you've finished the first tutorial. In this tutorial you:
 * Updated your Java fixture class to include all of the methods needed to handle each of the columns in your FitNesse Decision tables
 * You've assigned the result of a method (the id() method) to a variable, ID.
 
-#What's Next
+# What's Next
 * Continue working on the [[FitNesse.Tutorials.1|next tutorials]] (I recommend in the order listed). 
 * Learn how to make tests that actually execute production code.
 * Learn how to use a Table Table to implement a "fluent" or DSL-based table

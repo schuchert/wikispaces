@@ -1,26 +1,26 @@
-#Introduction
+# Introduction
 
 This page contains examples to use when practicing or teaching [[Test Driven Development]] (TDD).
 * [[http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd|The Three Rules of TDD]]
 * [[Red Green Refactor]]
 
-#Examples
+# Examples
 Here are a few stand-alone examples: [[TDD Example Catalog]]
 
-#Projects
+# Projects
 * [[RPN Calculator]] ([[http://schuchert.wikispaces.com/RpnCalculatorPrintable?f=print|print]])
 * [[Monopoly(r)]]  ([[http://schuchert.wikispaces.com/MonopolyPrintable?f=print|print]])
 
-#Use in a C++ Class
+# Use in a C++ Class
 Here is the beginnings of an example TDD session using the [[Monopoly(r)]] as the basis and [[Cxx TDD Monopoly|C++]] as the language.
 
-##[[tdd.cpp.NotesOnCppUTest|Notes on CppUTest]]
-##[[NotesOnCppULite|Notes on CppULite]]
-##[[TwoDayTddJavaEclipseWorkspace]]
-##[[tdd.cpp.ProjectOutline|C++ Project Outline]]
-##[[tdd.cpp.MovingTowardsStoryBasedExpressionOfTests|Moving towards a story-based expression of tests]]
+## [[tdd.cpp.NotesOnCppUTest|Notes on CppUTest]]
+## [[NotesOnCppULite|Notes on CppULite]]
+## [[TwoDayTddJavaEclipseWorkspace]]
+## [[tdd.cpp.ProjectOutline|C++ Project Outline]]
+## [[tdd.cpp.MovingTowardsStoryBasedExpressionOfTests|Moving towards a story-based expression of tests]]
 
-#Use in a Java Class
+# Use in a Java Class
 
 Use a TDD approach for the [[RPN Calculator]]. 
 
@@ -37,9 +37,9 @@ Next, use the [[Monopoly(r)]] problem.
 
 [[Mockito]]
 
-#In a C# Class
+# In a C# Class
 * [[CSharpTddNotes]]
 * [[Moq]]
 
-#For Objective-C
+# For Objective-C
 * [[tdd.objectivec.XCodeProjectSetup|Getting Started in XCode]]

@@ -1,7 +1,7 @@
 [[toc]]
 [[FitNesse.Tutorials|<--Back]]
 
-#DRAFT
+# DRAFT
 
 I'm working on an example of developing acceptance tests using a Digital Video Recorder as my problem domain. After several acceptance tests I started working on the idea of season pass priorities. In a nutshell, a season pass says "record all episodes of a given program". When you add priority, then the highest-priority season pass takes precedence. For example, say you can only record one program at a time and on Monday Evening you want to record House at 7 PM CST as well as Chuck, same time, different channel. If House is the higher priority program, it should be recorded.
 
@@ -14,7 +14,7 @@ So I wanted to create several tests around priority with dimensions like:
 
 First thing I wanted to do was create a schedule to test against. A program has zero to many episodes and I want to be able to create them in different ways. My first thought was to us a script table.
 
-###Script Table
+### Script Table
 I like Script tables because they remind me of Smalltalk. I like to use them when I need to create things that have one to many relationships and I want to create them together. 
 
 A program has a normal day and time and is on a channel. An episode can be at any day or time, but is the same day and time of the program by default.
@@ -46,7 +46,7 @@ Next, 4 episodes are added to that program with the following names:
 * The Ties That Bind
 * Escape Velocity
 
-###Decision Tables
+### Decision Tables
 This was fine initially, but for some tests I wanted to make more stuff with less verbage. I needed a lower-fidelity way to create more things. By lower-fidelity, I really mean it was OK for some things to be less flexible (e.g. episode duration always being the same as the default value).
 
 Then I decided to try Decision tables:
@@ -76,7 +76,7 @@ FYI, here's an example query table to validate these results:
 |They break into someone's house.                           |2008/3/1|19:00    |60               |
 [[code]]
 
-###Table Table
+### Table Table
 As already mentioned, I envisioned my domain with two separate concepts, Programs and Episodes. This might be a mistake but for now I am not considering whether it is or is not. An episode can only exist with a Program. Season passes operate on episodes, not programs. (If anything, removing the Program concept would probably simplify things.) So I needed a way to create a bunch of programs and episodes. I also needed a good way to be able to see what I was doing.
 
 So I came up with the following table:
@@ -94,11 +94,11 @@ Notes:
 * The first line calls a Table Fixture called Create Schedule.
 * The second line defines the time of day this schedule starts, 1 AM.
 * The next 5 lines describe a schedule of programs. Each line:
-## Starts with the channel number
-## Has letters for a program, e.g., aaa, BB, cccccccc.
-## The length of the name determines its duration, with 15 per letter.
-## Names are all the same letter (case included).
-## An underscore means "no program scheduled"
+# # Starts with the channel number
+# # Has letters for a program, e.g., aaa, BB, cccccccc.
+# # The length of the name determines its duration, with 15 per letter.
+# # Names are all the same letter (case included).
+# # An underscore means "no program scheduled"
 
 I came up with this right from the domain (and I doubt I'm the first person to do something like list). I was trying to visualize the program schedule to figure out how to create it quickly and it occurred to me that I could do that like I did above.
 

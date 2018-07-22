@@ -1,5 +1,5 @@
 [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstFailingTest|<— Back]]  [[PowerShell5.TokenizeExpression|^^ Up ^^]] [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstStabAtParentheses|Next—>]]
-#Overview
+# Overview
 Now that we have a trivial first test, we'll begin growing the implementation one test at a time. We'll be following [[http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd|Uncle Bob's Three Rules of TDD]], summarized here as:
 # Write no production code without a failing test
 # Write just enough of a test to get the test to fail
@@ -17,7 +17,7 @@ In general, there are for things we might do at any point:
 * Refactor production code
 
 We'll strive to do only one of these at a time and only switch to another one of these actions when all tests are passing.
-#Moving Towards Binary Expression
+# Moving Towards Binary Expression
 Rather than immediately going to a full binary expression, we'll add a test with a number and an operator.
 * Create a new test:
 > [[code format='powershell']]

@@ -1,4 +1,4 @@
-#EJB 3 and Java Persistence API Tutorials
+# EJB 3 and Java Persistence API Tutorials
 
 These tutorials form the basis of a 1-week class. They are listed below by category but they are meant to be followed in a particular order. Note that these tutorials build on each other. For example, there are things "missing" in JPA Tutorial 3 that get resolved in EJB3 Tutorial 3.
 
@@ -44,5 +44,5 @@ These tutorials form the basis of a 1-week class. They are listed below by categ
 # QuantumDB Configuration
 * [[QuantumDB Configuration]]
 
-#Additional Resources
+# Additional Resources
 * [[http://www.caucho.com/resin-3.0/amber/amber-table.xtp]]

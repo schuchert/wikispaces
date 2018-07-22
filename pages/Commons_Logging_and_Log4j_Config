@@ -3,14 +3,14 @@
 
 When I started using [[http://www.springframework.org/|Spring]], I need to include some logging and basic configuration. This page gives the details for the entire setup I'm using.
 
-## Log 4j
+# # Log 4j
 # Download log4j from [[http://logging.apache.org/site/binindex.cgi|here]] (in my case, I downloaded the [[http://www.springframework.org/|Spring]] jar with dependencies from [[http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644|here]], which includes Log4j).
 # Extract the jar somewhere
 # Add the jar to your Eclipse project
 # Create a simple configurator, see LogginConfiguration.java, and a simple configuration file, see [[#log4j|log4j.properties]].
 ----
 [[#LoggingConfiguration]]
-##LoggingConfiguration.java
+## LoggingConfiguration.java
 [[code format="java5"]]
 01: package loggingutil;
 02: 
@@ -49,7 +49,7 @@ When I started using [[http://www.springframework.org/|Spring]], I need to inclu
 35: 
 36: }
 [[code]]
-###Interesting Lines
+### Interesting Lines
 ||Line||Description||
 ||11 - 13||I'm using [[http://eclipse-cs.sourceforge.net/|Checkstyle]] and [[http://pmd.sourceforge.net/integrations.html#eclipse|PMD]]. One of them has a rule that suggests classes with all static methods should have a private constructor to disallow instantiation.||
 ||15 - 24||When loading this class, perform basic Log4j configuration, line 17. In addition, Spring, by default, produces quite a bit of output. The output is useful but I generally don't want it unless I'm debugging a problem. So I load a simple properties file that sets the default logging for [[http://www.springframework.org/|Spring]] to WARN. If I need to switch to DEBUG, I simply edit [[#log4j|log4j.properties]].||
@@ -61,17 +61,17 @@ When I started using [[http://www.springframework.org/|Spring]], I need to inclu
 ||26 - 28||Just in case I want to get a logger, I have a simple method that will give me an [[Commons Logging and Log4j Config#ILogger|ILogger]] for a given class. Notice that I'm not using Sun's or Lor4J's Logger. Why? I change the interface to support both a variable number of parameters and automatic log level checking. So no place in my code beyond this configuration utility is aware of Log4J. I know I'm going to use Log4J so is there any value in wrapping it? In this case I am not simply wrapping it by actually adapting its interface.||
 ||30 - 34||The comment says it all. If you want to look like you are initializing the logging infrastructure, call initialize. It's an empty method, but by referencing it, the class will get loaded and the logger will get initialized because of the static initializer on lines 12 - 15.||
 [[#log4j]]
-## log4j.properties
+# # log4j.properties
 This file resides in the same directory as the source file for [[#LoggingConfiguration|LogginConfiguration.java]].
 [[code]]
 01: log4j.logger.org.springframework=WARN
 [[code]]
-###Interesting Lines
+### Interesting Lines
 ||Line||Description||
 ||01||This sets the logging level from its default, DEBUG, to WARN. I did this to reduce the output produced by Spring. I've occasionally turned it back on to DEBUG to trace through things. However, I generally prefer my console to have little if any output so that what's there is something I know I need to pay attention to.||
 ----
 [[#ILogger]]
-##ILogger.java
+## ILogger.java
 Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it does not have an interface that uses the features offered by Java 5 so instead of using Lof4J directly, I have returned this interface that publishes what I think is a better interface.
 
 [[code format="java5"]]
@@ -99,11 +99,11 @@ Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it 
 22:     ILogger fatal(final Throwable t, final String formatString, final Object... params);
 23: }
 [[code]]
-###Interesting Lines
+### Interesting Lines
 There are not really any specifically interesting lines. Notice that every method's last parameter is a variable number of parameters. Take a look below at the implementation of this class.
 ----
 [[#Logger]]
-##Logger.java
+## Logger.java
 [[code format="java5"]]
 01: package loggingutil;
 02: 
@@ -187,7 +187,7 @@ There are not really any specifically interesting lines. Notice that every metho
 80:     }
 81: }
 [[code]]
-###Interesting Lines
+### Interesting Lines
 ||Line||Description||
 ||6||This class holds a reference to a Log4J logger instance. It publishes a different interface and adapts the new interface on to the Log4J interface.||
 ||12 - 17||A typical problem with logging is that of string concatenation. A way to avoid this is to check the logging level performing any string concatenation. That makes for ugly code. With variable arguments to methods, we can pass in a format string and the parameters to be sent into the format string, check the logging level and only actually perform the string formatting if the logging level is enabled. Each of these methods does exactly that.||

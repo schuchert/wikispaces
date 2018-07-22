@@ -1,4 +1,4 @@
-#Introduction
+# Introduction
 Bob Martin has an excellent Tdd Kata called [[http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata|The Prime Factors Kata]]. When I teach Tdd, I often use this as part of the [[RPN Calculator]] problem. I have the students add two operators:
 * Sum of the stack
 * Prime Factors
@@ -6,7 +6,7 @@ Then I have them create a composite operator and build an instance using a sum o
 
 Recently, I took a bit of a different approach to writing the tests as a way to demonstrate alternative approaches to writing unit tests. After the class I continued experimenting with various forms and what I ended up on a plane ride from Cleveland to Chicago was pretty interesting, at least to me. What the rest of this article contains is number of versions of the same tests written in different ways.
 
-#Typical Tests
+# Typical Tests
 Typically, I introduce this problem similar to how Bob introduces it (it is his problem after all), with the following test cases:
 
 ||~ value||~ expected results||
@@ -23,10 +23,10 @@ Typically, I introduce this problem similar to how Bob introduces it (it is his 
 Here is one way to write these tests using [[http://www.cpputest.org/|CppUTest]]:
 **PrimeFactorsOperator.cpp**
 [[code format="cpp"]]
-#include <CppUTest/TestHarness.h>
+# include <CppUTest/TestHarness.h>
 
-#include "OperandStack.h"
-#include "PrimeFactorsOperator.h"
+# include "OperandStack.h"
+# include "PrimeFactorsOperator.h"
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
    PrimeFactorsOperator op;
@@ -106,13 +106,13 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
 }
 [[code]]
 
-#[[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] Violation?
+# [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] Violation?
 There is a lot of duplication in this test code. Often, test code might have more duplication than production code to make it easier to understand without hunting around. Even so, this really seems to abuse duplication unnecessarily. Here is the same thing simply cleaned up a bit:
 [[code format="cpp"]]
-#include <CppUTest/TestHarness.h>
+# include <CppUTest/TestHarness.h>
 
-#include "OperandStack.h"
-#include "PrimeFactorsOperator.h"
+# include "OperandStack.h"
+# include "PrimeFactorsOperator.h"
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
    // snip
@@ -173,7 +173,7 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
 [[code]]
 This example includes a few support methods to **evaluate()** and then check that the **stackContains()** a given value. The code is more expressive and even 6 lines shorter (just counting the ;'s, not the source lines).
 
-#Multiple Lines for Checking
+# Multiple Lines for Checking
 The next thing worth improving is the multiple lines used to determine what is on the Operand Stack. There are multiple approaches to solving this, here are a few you might consider:
 * using several overloaded methods, one for 1 expected value, 2 expected values, ...
 * using a method with several (we'd need at least 10) arguments with all but the first value defaulted to 0
@@ -184,10 +184,10 @@ The next thing worth improving is the multiple lines used to determine what is o
 
 Here is one example using a (crazy) long list of parameters:
 [[code format="cpp"]]
-#include <CppUTest/TestHarness.h>
+# include <CppUTest/TestHarness.h>
 
-#include "OperandStack.h"
-#include "PrimeFactorsOperator.h"
+# include "OperandStack.h"
+# include "PrimeFactorsOperator.h"
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
    // snip
@@ -267,10 +267,10 @@ It would be nice to be able to specify the total number of elements that should 
 
 Consider this version:
 [[code format="cpp"]]
-#include <CppUTest/TestHarness.h>
+# include <CppUTest/TestHarness.h>
 
-#include "OperandStack.h"
-#include "PrimeFactorsOperator.h"
+# include "OperandStack.h"
+# include "PrimeFactorsOperator.h"
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
    // snip
@@ -334,11 +334,11 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
 }
 [[code]]
 
-#Now we can improve that Ugly Method
+# Now we can improve that Ugly Method
 The method taking 10 parameters was just a temporary solution. Now we can rewrite it using variable arguments. A problem with variable arguments is that you need some way to know when to stop reading. Putting in the **stackSizeShouldBe()** method gives us a natural way to express the number of variable arguments:
 [[code format="cpp"]]
 //snip
-#include <stdarg.h>
+# include <stdarg.h>
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
    int expectedStackLength;
@@ -365,18 +365,18 @@ TEST_GROUP(PrimeFactorsOperatorTest) {
 [[code]]
 
 These tests are somewhat influenced by BDD and some experience I've had using [[http://rspec.info|RSpec]]. One thing these tests exhibit from my RSpec experience is that some of the steps with the test have a side-effect of storing intermediate information used later in the test. This often happens within an RSpec example as well. You can see several detailed [[ruby.tutorials|Ruby examples here]] for some examples of this style of testing.
-#Story-Runner Influenced Tests
+# Story-Runner Influenced Tests
 Here is another, probably over the top, version of the tests using more of a story-runner influence. This comes from my recent experience working through a beta version of [[http://www.pragprog.com/titles/achbd/the-rspec-book|The RSpec Book]] and specifically using [[http://wiki.github.com/aslakhellesoy/cucumber|Cucumber]].
 
 For these unit tests, I believe this is overkill. However, it does show another way to express tests:
 [[code format="cpp"]]
-#include <CppUTest/TestHarness.h>
+# include <CppUTest/TestHarness.h>
 
-#include "OperandStack.h"
-#include "PrimeFactorsOperator.h"
+# include "OperandStack.h"
+# include "PrimeFactorsOperator.h"
 
-#include <stdarg.h>
-#include <string>
+# include <stdarg.h>
+# include <string>
 using namespace std;
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
@@ -521,17 +521,17 @@ Unlike Ruby, C++ doesn't really offer a very expressive way to make this look un
 
 This second point is a bit ironic coming from me. There's a design pattern from Smalltalk called [[http://www.objectmentor.com/resources/articles/SelfShunPtrn.pdf|self-shunt]]. I'm not a big fan of that pattern, but that pattern shares similarities with the second bullet. So I might have to reassess that pattern.
 
-#One Final Version
+# One Final Version
 In Cucumber, often the "And" step includes one thing to check. There's no reason to disallow more than one thing to check. Given the a previous solution using variable arguments, it seems OK to bring that back to clean up the examples that have so many "And" lines:
 
 [[code format="cpp"]]
-#include <CppUTest/TestHarness.h>
+# include <CppUTest/TestHarness.h>
 
-#include "OperandStack.h"
-#include "PrimeFactorsOperator.h"
+# include "OperandStack.h"
+# include "PrimeFactorsOperator.h"
 
-#include <stdarg.h>
-#include <string>
+# include <stdarg.h>
+# include <string>
 using namespace std;
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
@@ -656,7 +656,7 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
 }
 [[code]] 
 
-#Conclusion
+# Conclusion
 We started with a fairly standard set of tests. There was some duplication, but there is a wide array of opinions on just how much the [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] principle impacts the clarity of tests. Duplication is bad, but if [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] is the solution, then what problems might it introduce? (One of Jerry Weinberg's principles of problem solving is that "Every Solution introduces problems.") In the case of tests, applying the [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] principle can lead to hard to understand tests. 
 
 Even so, the first version seemed to have unnecessary duplication. That's where the second version made some improvements. However, one thing the second version lacked was a good way to check multiple results. It instead called a method each time for each of the expected results. In the last case, 1024, it uses a for-loop. This certainly makes the test pass and it can be interpreted, but that's sort of the point of writing expressive tests; they are easier to read and are expressed in a more natural language.

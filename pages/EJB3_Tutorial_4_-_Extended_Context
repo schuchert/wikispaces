@@ -1,12 +1,12 @@
 [[toc]]
 [[EJB 3 and Java Persistence API|<--Back]]
 
-#Ejb3 Tutorial 4 - Extended Context
+# Ejb3 Tutorial 4 - Extended Context
 A Stateful session bean can optionally use an extended context. An extended context maintains its managed objects between transactions or even in situation where a method is not using transactions. All objects accessed or created hang around until the bean goes away. This normally happens when a client executes a method that has been denoted as a Remove method (annotated with @Remove or declared as such in XML).
 
 This short tutorial demonstrates some of the differences between these two types of container-managed contexts.
 
-##Project Setup
+## Project Setup
 The instructions for setting up your project mirror those from the first tutorial: [[EJB3 Tutorial 1 - Create and Configure]].
 
 For the remainder of this tutorial, when you see **<project>**, replace it with **Ejb3Tutorial4**.
@@ -19,7 +19,7 @@ Here are a few things to note (source for all of these items appears at the end 
 <persistence-unit name="tolltag">
 [[code]]
 
-##The Entity Model
+## The Entity Model
 
 For this example, we have a simple entity model. We have an Account that has a bidirectional one-to-many relationship with TollTag objects and a bidirectional one-to-many relationship with Vehicle objects. Normally, one-to-many relationships are lazily fetched. For this example, the relationship with TollTag objects is left as lazily fetched while the relationship with Vehicle objects is eagerly fetched. 
 
@@ -293,7 +293,7 @@ public class Vehicle {
 }
 [[code]]
 
-## The Session Beans
+# # The Session Beans
 
 **AccountInventory.java**
 [[code format="java5"]]
@@ -469,7 +469,7 @@ public class AccountInventoryExtendedBean implements AccountInventory {
 }
 [[code]]
 
-##The Tests
+## The Tests
 
 This class performs the same two test algorithms two times each for a total of 4 test methods:
 ||**Name**||**Scope**||**Accesses**||**Expected**||
@@ -589,8 +589,8 @@ public class AccountInventoryBeanTest {
 }
 [[code]]
 
-##Exercises
-###Test Passing
+## Exercises
+### Test Passing
 There are 3 ways to make the one failing test pass:
 # Touch the collection before returning from the method
 # Change the query from using getEm().find(...) to instead use a named query such as "SELECT a FROM Account a JOIN FETCH a.tollTags WHERE a.id = :id"
@@ -598,14 +598,14 @@ There are 3 ways to make the one failing test pass:
 
 Experiment with each of these options.
 
-###Shared Code
+### Shared Code
 There is a lot of shared code between the two AccountInventory bean implementations. Describe at least two ways you could reduce the redundancy.
 
-###Interfaces
+### Interfaces
 The interface seems to be a bit messed up with concepts that relate to both stateless and stateful beans. Describe how you might change the interface to make this better. Consider using two interfaces instead of one.
 
 [[#OtherFiles]]
-##Other Files
+## Other Files
 **persistence.xml**
 [[code format="xml"]]
 <?xml version="1.0" encoding="UTF-8"?>

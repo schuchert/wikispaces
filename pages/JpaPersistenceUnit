@@ -1,6 +1,6 @@
 We now need to create the Persistent Unit definition. We are going to create a file called persistence.xml in the src/META-INF directory with the following contents:
 [[#Persistence_xml]]
-###persistence.xml===
+### persistence.xml===
 [[code format="xml"]]
 <persistence>
     <persistence-unit name="examplePersistenceUnit" 
@@ -23,7 +23,7 @@ We now need to create the Persistent Unit definition. We are going to create a f
 </persistence>
 [[code]]
 
-###The Steps===
+### The Steps===
 # Expand your **<project>**
 # Select the **src** directory
 # Find the **src/META-INF** directory (if one does not exist, right-click, select **New:Folder**, enter **META-INF** and press enter)

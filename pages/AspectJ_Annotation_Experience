@@ -1,13 +1,13 @@
 [[AspectJ Annotation Start|<--Back]] [[AspectJ Annotation Observation|Next-->]]
 
-#AspectJ Annotation: Experience=
+# AspectJ Annotation: Experience=
 Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If you'd like to know how to set up a project using it, [[ExtractingSourceFilesIntoProject|click here]].
 
 This example is written in a way that it is meant to follow: [[AspectJ Example 3]] and [[AspectJ Example 4]]. I specifically leave out details unchanged from those examples.
 
 Now we'll introduce selecting pointcuts augmented by annotations. Begin by reviewing the following Java files and the expected output. Based on all of that information, your assignment is to describe what is happening and try to guess how it is happening. Note that the code provided here is somewhat stripped down to reduce what you have to look at. Later, we provide the full source in the [[AspectJ Annotation Explained|Explained]] section.
 ----
-##Main.java==
+## Main.java==
 [[code format="java5"]]
 public class Main {
     public static void main(String args[]) {
@@ -20,7 +20,7 @@ public class Main {
 }
 [[code]]
 ----
-##Dao.java==
+## Dao.java==
 [[code format="java5"]]
 public class Dao {
     public static void save(Object o) {
@@ -31,13 +31,13 @@ public class Dao {
 }
 [[code]]
 ----
-##The Output==
+## The Output==
 [[code]]
 Not saving: class annotation.Address, it is unchanged
 Saving: class annotation.Address
 [[code]]
 ----
-##IgnoreField.java - the annotation==
+## IgnoreField.java - the annotation==
 [[code format="java5"]]
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
@@ -46,7 +46,7 @@ public @interface IgnoreField {
 }
 [[code]]
 ----
-##FieldSetAspect.java==
+## FieldSetAspect.java==
 [[code format="java5"]]
 @Aspect
 public class FieldSetAspect {

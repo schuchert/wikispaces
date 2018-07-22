@@ -1,4 +1,4 @@
-#Create a new project
+# Create a new project
 * Use the default maven archetype:
 > [[code]]
 mvn archetype:generate <<enter>>
@@ -38,7 +38,7 @@ version: 1.0-SNAPSHOT
 package: com.shoe.paginator
  Y: : <<enter>>
 [[code]]
-#Check the project
+# Check the project
 * Change to directory created (e.g., cd paginator)
 > [[code]]
 cd paginator <<enter>> 
@@ -65,7 +65,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO] Final Memory: 14M/166M
 [INFO] ------------------------------------------------------------------------
 [[code]]
-#Modernize the project
+# Modernize the project
 * Edit pom.xml
 * Change JUnit version to 4.12
 * Modify the target Java version (paste above <dependencies>:
@@ -99,5 +99,5 @@ echo "target" > .gitignore
 git add pom.xml .gitignore
 git commit -m "Initial commit"
 [[code]]
-#You are ready to open pom.xml in an ide
+# You are ready to open pom.xml in an ide
 [[media type="vimeo" key="143582262" height="313" width="500"]]

@@ -1,6 +1,6 @@
 Now that we have all the preliminary setup of the environment we next need to create a session bean.
 
-###The Session Bean===
+### The Session Bean===
 The basic requirement for a session bean is that it must implement an interface and be either annotated with **@Stateless** or be registered in an XML file. We are sticking strictly to using annotations. The annotation goes on the class and not the interface, so here's the interface.
 
 **The Interface**

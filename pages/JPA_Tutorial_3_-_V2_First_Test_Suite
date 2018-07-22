@@ -31,7 +31,7 @@ Along the way, we make a lot of additions and changes. Based on the updated Libr
 **test/util**
 ||DateTimeUtilTest||Several test in support of new utility class.||
 
-###New Utility===
+### New Utility===
 To calculate fines, we needed to determine the number of days late a Patron returned a Book. Here are the tests for that class:
 
 **DateTimeUtilTest.java**
@@ -198,7 +198,7 @@ public class DateTimeUtil {
 }
 [[code]]
 
-###The Exceptions===
+### The Exceptions===
 Here are the three new exception classes:
 **BookNotCheckedOut**
 [[code format="java5"]]
@@ -265,7 +265,7 @@ public class PatronHasFines extends RuntimeException {
 }
 [[code]]
 
-###The Library Test===
+### The Library Test===
 Many of the original tests are different from the previous version. Additionally, there are many new tests. Here is the test. Once you get this in to your system, you might want to simply get all of the tests methods to compile and then get the tests to pass. 
 
 Doing so is approaching formal TDD. It is different in a few important respects:

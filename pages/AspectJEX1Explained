@@ -1,6 +1,6 @@
 [[AspectJEX1SoWhatIsHappening|<--Back]] [[AspectJVMConfigurationBlackMagic|Next-->]]
 
-##Example 1 Explained
+## Example 1 Explained
 Capturing method execution is often what people first think of when considering AOP.
 
 In this example, we intercept each method called on a class called MethodExecutionExample. Before each method call we print a message, we call the method and then print another message after returning from the method.
@@ -19,7 +19,7 @@ I did not show you three things:
 * The Java Virtual Machine is configured to give AspectJ a chance to modify classes as the VM loads them
 
 ----
-##MethodExecutionAspect.java
+## MethodExecutionAspect.java
 [[code format="java5"]]
 01: package ex1;
 02: 
@@ -46,7 +46,7 @@ I did not show you three things:
 23:     }
 24: }
 [[code]]
-###Interesting Lines
+### Interesting Lines
 ||Lines||Description||
 ||8||This class is an AspectJ aspect class. It will need to be registered in the aop.xml file to take effect.||
 ||10||Define a **pointcut**. This is **where** the aspect applies. In this case it applies to execution of methods of any access level (the first *), in the class ex1.MethodExecutionExample, with any name (the second *) taking any parameters (..).||
@@ -55,7 +55,7 @@ I did not show you three things:
 ||15||This is the method that replaces the underlying method execution (all methods in the class ex1.MethodExecutionExample). It takes one parameter, a ProceedingJoinPoint, which is automatically provided by AspectJ. (More on what parameters can go here later.)||
 ||19||Call proceed() on "thisJoinPoint" to actually perform the original method execution.||
 ----
-##aop.xml
+## aop.xml
 [[code format="xml"]]
 01: <aspectj>
 02: 	<aspects>
@@ -66,7 +66,7 @@ I did not show you three things:
 07: 	</weaver>
 08: </aspectj>
 [[code]]
-###Interesting Lines
+### Interesting Lines
 ||Lines||Description||
 ||3||Register ex1.MethodExecutionAspect as an apsect to apply to this VM||
 ||6||Only apply the registered aspects with classes whose package starts with ex1.||

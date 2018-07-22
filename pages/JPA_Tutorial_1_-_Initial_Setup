@@ -2,7 +2,7 @@ This example requires Java 5 (JDK 1.5) or later and Eclipse 3.2 or later. This p
 
 **//Note://** We need the jar file that contains javax.persistence and the various annotations associated with JPA. You can either download JEE or get it from somewhere else. For this series of tutorials, we eventually use the JBoss EJB3 Embeddable container, so we'll use that to avoid an extra 150+ meg download for one jar file.
 
-###Download Everything
+### Download Everything
 First the basic stuff:
 # Download [[http://java.sun.com/javase/downloads/index_jdk5.jsp|JSE 5]] (choose just JDK 5.0 (there will be an update after it))
 # Download [[http://www.eclipse.org/downloads/|Eclipse]]
@@ -15,11 +15,11 @@ Next, the libraries:
 # Download [[http://www.slf4j.org/download.html|SLF4J 1.5.8]]
 # Download [[http://openejb.apache.org/download.html|Open EJB 3.1.1]]
 
-### Setup the JDK & Eclipse
+## # Setup the JDK & Eclipse
 # Install the JSE 5.
 # Extract the eclipse download somewhere. For all examples I use C:/eclipse.
 
-### Extract Jar Files
+## # Extract Jar Files
 Extract each of the libraries to some location. In my case I extracted everything to C:/libs, so I have the following directories
 > C:/libs/hibernate-annotations-3.4.0.GA
 > C:/libs/hibernate-entitymanager-3.4.0.GA

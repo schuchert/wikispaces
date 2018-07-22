@@ -1,9 +1,9 @@
 This tutorial assumes you already have Eclipse 3.2 and a Java 5 JDK installed. If not, please review [[JPA Tutorial 1 - Initial Setup|this]].
 
-###Download===
+### Download===
 Download the JBoss EJB3 Embeddable Container from [[http://sourceforge.net/project/showfiles.php?group_id=22866&package_id=132063|here]]. The version used for this tutorial is jboss-EJB-3.0_Embeddable_ALPHA_9.zip.
 
-###Install===
+### Install===
 Extract this zip file anywhere, for this tutorial I used **C:\libs**, which makes the following directory: **C:\libs\jboss-EJB-3.0_Embeddable_ALPHA_9**
 
 You'll find the following directories under the install directory:

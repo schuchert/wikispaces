@@ -1,12 +1,12 @@
 [[cpptraining#ruby|<--Back]]
 
-##Preliminary Setup
+## Preliminary Setup
 * Install ruby
 * Install cucumber gem
 * Install gherkin gem
 * Install rspec gem
 
-##Starting with Cucumber
+## Starting with Cucumber
 * Create a directory to store your work
 * In that directory, type cucumber:
 [[code]]
@@ -76,7 +76,7 @@ Then /^the result should be "([^"]*)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
 [[code]]
-##Creating the basic glue code
+## Creating the basic glue code
 * Create a file in the top-level directory called extconf.rb:
 //**extconf.rb**//
 [[code]]
@@ -87,10 +87,10 @@ create_makefile("fixture_glue")
 * Create a file called fixture_glue.cpp:
 //**fixture_glue.cpp**//
 [[code]]
-#include "ruby.h"
+# include "ruby.h"
  
 using namespace std;
-#include <stdio.h>
+# include <stdio.h>
  
 VALUE cRpnCalcFixture;
  
@@ -155,7 +155,7 @@ i386-msvcrt
 C:\learncpp\ruby>
 [[code]]
 
-##Connecting to the glue code
+## Connecting to the glue code
 * Update your rpncalc_steps.rb:
 [[code]]
 require 'fixture_glue'

@@ -18,7 +18,7 @@ This test method exists in a [[jMock JUnit 4 Die Skeleton]].
     }
 [[code]]
 
-###Fix the return value of the roll() method===
+### Fix the return value of the roll() method===
 The method "roll()" on the mock object "mockedDie" will always return the value 2. Otherwise, we state that we don't care for jMock to remember, track or in anyway care about the use of the roll() method on mockedDie.
 
 [[code format="java5"]]
@@ -37,7 +37,7 @@ public void alwaysRoll2() throws Exception {
 }
 [[code]]
 
-##Fix the return value of the faceValue() method==
+## Fix the return value of the faceValue() method==
 [[code format="java5"]]
 @Test
 public void faceValueAlways2() {

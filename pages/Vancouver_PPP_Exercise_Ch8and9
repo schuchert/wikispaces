@@ -1,6 +1,6 @@
 [[image:Back.gif link="Hidden"]]
 
-#Exercises for Chapters 8 and 9
+# Exercises for Chapters 8 and 9
 This exercise is meant to give you a feel for how to organize your classes into releasable components. The end result of this exercise is a listing of classes and interfaces that should all be grouped together to be released.
 
 You'll work on two exercises:

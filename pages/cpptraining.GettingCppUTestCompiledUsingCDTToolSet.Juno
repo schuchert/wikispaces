@@ -1,8 +1,8 @@
 [[cpptraining|<--back]]
-#Overview
+# Overview
 These instructions assume you have already followed [[cpptraining.GettingStartedWithEclipseCdt.Juno|these instructions]].
 
-##Instructions
+## Instructions
 * Download [[http://sourceforge.net/projects/cpputest/files/cpputest/v3.1/CppUTest-v3.1.zip/download|CppUTest]] (as of this writing, I'm using version 3.1.
 * Extract the zip somewhere. I'm using// **c:\learncpp\cpputest**// for these instructions.
 * Start a command shell.

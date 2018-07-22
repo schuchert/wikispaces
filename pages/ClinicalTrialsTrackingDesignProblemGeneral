@@ -1,4 +1,4 @@
-##Clinical Trials Tracking
+## Clinical Trials Tracking
 Small clinics are popping up all over performing specialized clinical trials and observations. One common example is labs specializing in sleep studies and sleep disorders.
 
 We want to build a turnkey system to sell to these smaller labs. At the very least, it should track patient information, room information and schedules. Tracking anybody who works on a patient is also important and it needs to be very simple.
