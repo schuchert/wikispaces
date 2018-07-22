@@ -3,7 +3,7 @@
 Imagine we have a series of tests where for each test we perform some operation and then verify the results. The only thing that varies is the data we send into the operation and the expected result. Here's how we might brute force this:
 
 **BlankLineTest.java**
-[[code format="java5"]]
+```java
 package com.objectmentor.parameterized;
 
 import static org.junit.Assert.assertEquals;
@@ -48,7 +48,7 @@ public class BlankLineTest {
         assertEquals(false, "    q".matches(regex));
     }
 }
-[[code]]
+```
 
 For each test we have a string we test and an expected result (true or false). Here are each of those values:
 ||**Literal String**||**Expected**||**Test Name**||
@@ -70,7 +70,7 @@ JUnit has an idiom for this kind of test. Use a parameterized test. To do so, we
 
 That's a lot of steps. Here's an example:
 **BlankLineParameterizedTest.java**
-[[code format="java5"]]
+```java
 01: package com.objectmentor.parameterized;
 02: 
 03: import static org.junit.Assert.assertEquals;
@@ -117,6 +117,6 @@ That's a lot of steps. Here's an example:
 34:         assertEquals(expectedResult, line.matches(regex));
 35:     }
 36: }
-[[code]]
+```
 
 [[TDD Example Catalog|<--Back]]

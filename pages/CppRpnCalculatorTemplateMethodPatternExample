@@ -5,7 +5,7 @@ Review the method BinaryOperator::execute. Notice how it is concrete, but it ref
 **Note**: All of the classes in this section are subclasses of MathOperator, which is a base class for strategies. BinaryOperator uses template method, so this is an implementation of a strategy that uses the template method pattern.
 
 **BinaryOperator.h**
-[[code format="cpp"]]
+```cpp
 # ifndef BINARYOPERATOR_H
 # define BINARYOPERATOR_H
 
@@ -21,10 +21,10 @@ protected:
 
 };
 # endif
-[[code]]
+```
 
 **BinaryOperator.cpp**
-[[code format="cpp"]]
+```cpp
 # include "BinaryOperator.h"
 
 # include "OperandStack.h"
@@ -38,7 +38,7 @@ void BinaryOperator::execute(OperandStack& stack) {
    int result = executeImpl(lhs, rhs);
    stack.enter(result);
 }
-[[code]]
+```
 
 **Why Use Template Method Pattern?**
 Every binary operator follows the same pattern:
@@ -50,31 +50,31 @@ Every binary operator follows the same pattern:
 Rather than duplicate the first, second and fourth line, push the responsibility of the 3rd line to an abstract (pure virtual) method/extension point. The subclasses write only one line. It reduces duplication and avoids violating the DRY principle.
 
 **Divide.cpp**
-[[code format="cpp"]]
+```cpp
 int Divide::executeImpl(int lhs, int rhs) {
    return lhs / rhs;
 }
-[[code]]
+```
 
 **Minus.cpp**
-[[code format="cpp"]]
+```cpp
 int Minus::executeImpl(int lhs, int rhs) {
    return lhs - rhs;
 }
-[[code]]
+```
 
 **Multiply.cpp**
-[[code format="cpp"]]
+```cpp
 int Multiply::executeImpl(int lhs, int rhs) {
    return lhs * rhs;
 }
-[[code]]
+```
 
 **Plus.cpp**
-[[code format="cpp"]]
+```cpp
 int Plus::executeImpl(int lhs, int rhs) {
    return lhs + rhs;
 }
-[[code]]
+```
 
 [[RpnCalculatorCppExampleImplementation|<--Back]]

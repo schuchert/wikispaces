@@ -12,7 +12,7 @@ To make this example work, we need two additional things:
 * aop.xml
 ----
 ## SerializableIntroductionAspect.java==
-[[code format="java5"]]
+```java
 01: package ex3;
 02: 
 03: import java.io.Serializable;
@@ -25,7 +25,7 @@ To make this example work, we need two additional things:
 10:     @DeclareParents(value="ex3.Die")
 11:     Serializable serializable;
 12: }
-[[code]]
+```
 ### Interesting Lines===
 ||Line||Description||
 ||8||As we have seen with other examples, we denote this class as an apsect. Using annotations we are able to use AspectJ without a special compiler by using the @Aspect syntax.||
@@ -33,7 +33,7 @@ To make this example work, we need two additional things:
 ||11||Define an instance variable for this class/aspect. Becuase this line is annotated with @DeclareParents, the type of this variable is added as an interface to the ex3.Die class.||
 ----
 ## aop.xml==
-[[code format="xml"]]
+```xml
 01: <aspectj>
 02: 	<aspects>
 03: 		<aspect name="ex3.SerializableIntroductionAspect"/>
@@ -42,14 +42,14 @@ To make this example work, we need two additional things:
 06: 		<include within="ex3.*"/>
 07: 	</weaver>
 08: </aspectj>
-[[code]]
+```
 ### Interesting Lines===
 ||Line||Description||
 ||3||List the aspect we want to weave into our code||
 ||6||Apply the aspect to all classes in the package ex3||
 ----
 ## Main.java==
-[[code format="java5"]]
+```java
 01: package ex3;
 02: 
 03: import java.io.ByteArrayInputStream;
@@ -120,7 +120,7 @@ To make this example work, we need two additional things:
 68:         }
 69:     }
 70: }
-[[code]]
+```
 ### Interesting Lines===
 ||Line||Description||
 ||16||Create a ByteArrayOutputStream from the underlying Die object. Rather than create a file on the file system, we instead serialize to a byte array for this example.||

@@ -4,7 +4,7 @@ This page describes some of what it takes to successfully test thread-related co
 ## Broken Code
 Here is some simple production code:
 **//ClassWithThreadingProblem.java//**
-[[code format="java5"]]
+```java
 01: package example;
 02: 
 03: public class ClassWithThreadingProblem {
@@ -14,7 +14,7 @@ Here is some simple production code:
 07:         return ++lastId;
 08:     }
 09: }
-[[code]]
+```
 
 The name should be a hint that it has problems, and it does. If a single instance of this class is used by more than one thread, it is possible that expression ++lastId on line 7 could fail. How? If one thread starts executing that method and another thread preempts it, than we could lose one of the updates.
 
@@ -24,7 +24,7 @@ Think it is not possible? It is.
 You can safely [[DebuggingThreadedCodePart1.Original#SkipOverBytecodeInformation|skip]] this section if you are not interested in the bit-head information.
 
 What is an atomic operation? Any operation that cannot be interrupted from when it starts to when it completes. For example, in the following code, line 5, where 1 is assigned to i, is atomic. It cannot be interrupted:
-[[code format="java5"]]
+```java
 01: public class Example {
 02:    int value;
 03:
@@ -32,10 +32,10 @@ What is an atomic operation? Any operation that cannot be interrupted from when 
 05:        value = 1;
 06:    }
 07:}
-[[code]]
+```
 
 What happens if we change line 5 to use ++ instead? It is still atomic?
-[[code format="java5"]]
+```java
 01: public class Example {
 02:    int value;
 03:
@@ -43,7 +43,7 @@ What happens if we change line 5 to use ++ instead? It is still atomic?
 05:        ++value;
 06:    }
 07:}
-[[code]]
+```
 
 In this case, the answer is it can be interrupted, it is not atomic.
 
@@ -86,7 +86,7 @@ Here's a description of a test that will prove our code is broken:
 Here is such a test:
 [[#ClassWithThreadingProblemTest]]
 **//ClassWithThreadingProblemTest.java//**
-[[code format="java5"]]
+```java
 01: package example;
 02: 
 03: import static org.junit.Assert.fail;
@@ -125,7 +125,7 @@ Here is such a test:
 35:         fail("This test should have exposed a threading issue but it did not.");
 36:     }
 37: }
-[[code]]
+```
 ### Interesting Lines
 ||Line||Description||
 ||10||Create a single instance of ClassWithThreadingProblem. Note, we must use the final keyword since we use it below in an anonymous inner class||
@@ -183,9 +183,9 @@ Describing how [[http://www.haifa.ibm.com/projects/verification/contest/index.ht
 A short time before writing this, I wrote something on using the -javaagent VM argument for dynamic instrumentation ([[JavaAgent]]) of classes while they are loaded into the Java VM. I wrote that in support of applying [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] instrumentation automatically using so-called dynamic instrumentation. I do not not like the manual step of instrumenting my classes with [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] every time I was ready to run my tests.
 
 To instrument your classes using [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]], you issue a command like the following:
-[[code format="text"]]
+```terminal
 java -classpath ConTest.jar com.ibm.contest.instrumentation.Instrument Class1.class
-[[code]]
+```
 
 I wanted to avoid having to manually instrument, but while I was working on this, the team supporting ConTest added a class called ClassStreamInstrumentor(), which takes the raw bytes of classes loaded by the class loader and instruments them to work with ConTest.
 
@@ -210,16 +210,16 @@ To use this jar:
 # [[http://www.alphaworks.ibm.com/tech/contest/download?open&S_TACT=105AGX59&S_CMP=GR|Download ConTest]]
 # Add the ConTest.jar to your classpath
 # Start the VM with the following command (I've added some whitespace to make this readable):
-[[code format="text"]]
+```terminal
 java -javaagent:Registrar.jar 
      -Dschuchert.ClassFileTransformer=schuchert.contest.DynamicInstrumentor 
      schuchert.agent.Main
-[[code]]
+```
 
 You should see results similar to this:
-[[code format="test"]]
+```java
 Congratulations, everything appears to be working
-[[code]]
+```
 
 ## Configuration Details
 All of the properties ConTest allows you to define are still available. These are just the properties to define for the Java Agent and the ClassFileTransformer.

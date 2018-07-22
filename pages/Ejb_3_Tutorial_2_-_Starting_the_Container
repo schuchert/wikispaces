@@ -7,7 +7,7 @@ As with our first tutorial, we need to be able to start the container. Here's th
 # Paste it (**ctrl-v** or right-click and select **paste**)
 
 **JBossUtil.java**
-[[code format="java5"]]
+```java
 package util;
 
 import java.io.ByteArrayOutputStream;
@@ -166,9 +166,9 @@ public class JBossUtil {
         }
     }
 }
-[[code]]
+```
 
 A unit test or main program can use the following code to initialize the JBoss EJB 3 Container:
-[[code format="java5"]]
+```java
     JBossUtil.startDeployer();
-[[code]]
+```

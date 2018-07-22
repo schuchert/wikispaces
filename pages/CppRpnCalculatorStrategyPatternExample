@@ -2,7 +2,7 @@
 ## Strategy Pattern Example
 Review first the abstract base classes of all strategies (in this case, math operators):
 **MathOperator.h**
-[[code format="cpp"]]
+```cpp
 # ifndef MATHOPERATOR_H
 # define MATHOPERATOR_H
 
@@ -17,7 +17,7 @@ public:
 };
 
 # endif
-[[code]]
+```
 
 This defines that any operator can perform its work by having its **execute** method called passing in an OperandStack. An operand stack is a regular stack that:
 * Returns 0 if it is empty
@@ -25,7 +25,7 @@ This defines that any operator can perform its work by having its **execute** me
 
 Here is an example of a concrete implementation, a factorial method:
 **Factorial.cpp**
-[[code format="cpp"]]
+```cpp
 void Factorial::execute(OperandStack& stack) {
    int count = stack.pop();
 
@@ -39,11 +39,11 @@ void Factorial::execute(OperandStack& stack) {
 
    stack.enter(result);
 }
-[[code]]
+```
 
 Here are the tests that verify it works as expected(using CppUTest):
 **FactorialTest.cpp**
-[[code format="cpp"]]
+```cpp
 # include "CppUTest/TestHarness.h"
 
 # include "OperandStack.h"
@@ -76,7 +76,7 @@ TEST(Factorial, factorialOfNegativeNumber) {
    }
    FAIL("Should have thrown InvalidOperandException");
 }
-[[code]]
+```
 
 In the next section, **Template Method Pattern Example**, each of the subclasses are all examples of the strategy as well.
 

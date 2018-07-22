@@ -1,14 +1,14 @@
 [[toc]]
 # Overview
 Here's a traditional Hello World program in C++:
-[[code format="cpp"]]
+```cpp
 # include <iostream>
 
 int main(int argc, char **argv) {
 	std::cout << "Hello World" << std::endl;
 	return 0;
 }
-[[code]]
+```
 
 A beginning C++ class typically teaches this, but what if we wanted to accomplish the same thing using TDD? In this case, there's really no design per-se, so I'll Interpret TDD as Test-Driven// **Development**// rather than Test Driven// **Design**//.
 
@@ -24,7 +24,7 @@ I'm already going to accept partial defeat. I'm not going to test that main does
 # First Test
 Choosing to test the easy thing first, I'll verify that the method I'll eventually have main call in fact returns 0 (meaning no error in the shell):
 **HelloWorldTest.cpp**
-[[code format="cpp"]]
+```cpp
 # include <cpputest/TestHarness.h>
 
 extern int mainImpl(int argc, char **argv);
@@ -36,11 +36,11 @@ TEST(HelloWorld, ExtractedFunctionReturns0UponSuccess) {
 	int result = mainImpl(0, 0);
 	LONGS_EQUAL(0, result);
 }
-[[code]]
+```
 
 Getting this test to pass requires that I write a main for the test harness as well as the method mainImpl:
 **HelloWorld.cpp**
-[[code format="cpp"]]
+```cpp
 # include <iostream>
 # include <CppUTest/CommandLineTestRunner.h>
 
@@ -51,26 +51,26 @@ int mainImpl(int argc, char **argv) {
 int main(int argc, char **argv) {
     return CommandLineTestRunner::RunAllTests(argc, argv);
 }
-[[code]]
+```
 
 To get this to compile and link on my machine, I typed the following (didn't feel this warranted a makefile):
-[[code format="text"]]
+```terminal
 [~/src/cpp_class]% g++ HelloWorld*.cpp 
     -I/Users/schuchert/src/cpputest/include 
     /Users/schuchert/src/cpputest/lib/libCppUTest.a
-[[code]]
+```
 
 When I run this test, I see that it is successful:
-[[code format="text"]]
+```terminal
 [~/src/cpp_class]% ./a.out
 .
 OK (1 tests, 1 ran, 1 checks, 0 ignored, 0 filtered out, 0 ms)
-[[code]]
+```
 
 ## Second Test
 Now we have to get tricky. I know that the traditional Hello World program writes to a global variable, std::cout. However, that does not cause any problems since I can inject my own stream into the middle before calling the method. That is, dependency injection is an option with cout. Note that I do this in a setup and teardown method to make sure that cout is reset regardless of what happens in my test:
 **HelloWorldTest.cpp**
-[[code format="cpp"]]
+```cpp
 # include <iostream>
 # include <sstream>
 
@@ -103,13 +103,13 @@ TEST(HelloWorld, CorrectOuputPutToCout) {
 	mainImpl(0, 0);
 	STRCMP_EQUAL("Hello World!\n", stream->str().c_str());
 }
-[[code]]
+```
 
 Note, CppUTest does memory leak detection. It will report a memory leak when using a regular std::stringstream (and most of the standard types) in a test. One way to fix this, typically, is to use pointers and then new in the setup and delete in the teardown.
 
 To get this test passing:
 **HelloWorld.cpp**
-[[code format="cpp"]]
+```cpp
 # include <iostream>
 # include <CppUTest/CommandLineTestRunner.h>
 
@@ -122,19 +122,19 @@ int mainImpl(int argc, char **argv) {
 int main(int argc, char **argv) {
     return CommandLineTestRunner::RunAllTests(argc, argv);
 }
-[[code]]
+```
 
 This "works" , at least on my computer:
-[[code format="text"]]
+```terminal
 [~/src/cpp_class]% ./a.out..
 OK (2 tests, 2 ran, 2 checks, 0 ignored, 0 filtered out, 1 ms)
-[[code]]
+```
 
 Even so, I'm bothered by checking for "\n" in one place and using std::endl in another. For now, I'll leave that as an exercise to the reader to decide if that's really a problem or not.
 ## Finally?
 Well now that we've got a working method, we can change main:
 **HelloWorld.cpp**
-[[code format="cpp"]]
+```cpp
 # include <iostream>
 
 int mainImpl(int argc, char **argv) {
@@ -145,7 +145,7 @@ int mainImpl(int argc, char **argv) {
 int main(int argc, char **argv) {
 	return mainImpl(argc, argv);
 }
-[[code]]
+```
 
 But this loses our ability to use the test harness. Hum, I don't like that. Seems like I need to do a few things:
 * Move the mainImpl method into its own file (making it a separate compilation unit).
@@ -154,7 +154,7 @@ But this loses our ability to use the test harness. Hum, I don't like that. Seem
 
 Note that is simply changing the structure to support what Michael Feathers calls a link seam. I'll build the test version with one main and the non-test system with a different main. Here are those moving parts:
 **mainImpl.h**
-[[code format="cpp"]]
+```cpp
 # pragma once
 # ifndef mainImpl_header
 # define mainImpl_header
@@ -162,10 +162,10 @@ Note that is simply changing the structure to support what Michael Feathers call
 int mainImpl(int argc, char **argv);
 
 # endif
-[[code]]
+```
 
 **mainImpl.cpp**
-[[code format="cpp"]]
+```cpp
 # include <iostream>
 # include "mainImpl.h"
 
@@ -173,29 +173,29 @@ int mainImpl(int argc, char **argv) {
 	std::cout << "Hello World!" << std::endl;
 	return 0;
 }
-[[code]]
+```
 
 **HelloWorld.cpp**
-[[code format="cpp"]]
+```cpp
 # include "mainImpl.h"
 
 int main(int argc, char **argv) {
 	return mainImpl(argc, argv);
 }
-[[code]]
+```
 
 **TestMain.cpp**
-[[code format="cpp"]]
+```cpp
 # include <cpputest/CommandLineTestRunner.h>
 
 int main(int argc, char **argv) {
 	CommandLineTestRunner::RunAllTests(argc, argv);
 }
-[[code]]
+```
 
 I updated HelloWorldTest.cpp to include mainImpl.h:
 **HelloWorldTest.cpp**
-[[code format="cpp"]]
+```cpp
 # include <iostream>
 # include <sstream>
 # include "mainImpl.h"
@@ -227,11 +227,11 @@ TEST(HelloWorld, CorrectOuputPutToCout) {
 	mainImpl(0, 0);
 	STRCMP_EQUAL("Hello World!\n", stream->str().c_str());
 }
-[[code]]
+```
 
 And since I got tired of using my command history to compile and also because I now have a link seam to select the main, here's my makefile:
 **makefile**
-[[code format="text"]]
+```terminal
 PRODUCTION_CODE = mainImpl.cpp
 PRODUCTION_MAIN = HelloWorld.cpp
 PRODUCTION_NAME = HelloWorld
@@ -255,10 +255,10 @@ all: test production
 
 clean:
 	rm -rf *.o $(PRODUCTION_NAME) $(TEST_NAME)
-[[code]]
+```
 
 So now I can build and run:
-[[code format="text"]]
+```terminal
 [~/src/cpp_class]% make clean
 rm -rf *.o HelloWorld RunAllTests
 [~/src/cpp_class]% make all
@@ -276,7 +276,7 @@ g++ mainImpl.cpp HelloWorld.cpp -o HelloWorld
 [~/src/cpp_class]% ./HelloWorld 
 Hello World!
 [~/src/cpp_class]% 
-[[code]]
+```
 ## Conclusion
 When I originally came up with this idea, I figured it'd be a quick walk in the park. What I didn't take into consideration is that you cannot have two main functions in a single link. So I had to find a way around that. What I originally considered, simply updating main, was wholly unsatisfactory. That lead to using a link seam and creating a makefile. This might seem like a bit of work, and sure enough it was a bit of work. On the other hand, not losing the ability to test trumps a touch of what seems like inconvenience.
 

@@ -8,7 +8,7 @@ These instructions assume you have already followed [[cpptraining.GettingStarted
 * Start a command shell.
 * Go to where you extracted the files, which in my case is:// **c:\learncpp\cpputest**//
 * Make using make:
-[[code]]
+```
 C:\learncpp\cpputest>make
 compiling AllTests.cpp
 compiling AllocLetTestFreeTest.cpp
@@ -83,6 +83,6 @@ OK (296 tests, 291 ran, 794 checks, 5 ignored, 0 filtered out, 47 ms)
 
 
 C:\learncpp\cpputest>
-[[code]]
+```
 
 [[cpptraining|<--back]]

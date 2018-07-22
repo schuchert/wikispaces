@@ -51,7 +51,7 @@ What you can expect over the next several parts of this tutorial are a series of
 We will break our work across several iterations. Each iteration will last from a few to several hours. Within each iteration we will work on several "user stories" - or short statements about things we'd like to be able to observe in our system. Along with each user story we will have user acceptance criteria - things that if we can demonstrate, will show our system satisfies the user stories.
 
 So here's our algorithm for addressing each iteration:
-[[code]]
+```
   For each user story in iteration
     For each user acceptance test in user story
       if current user acceptance test is big/complex
@@ -68,7 +68,7 @@ So here's our algorithm for addressing each iteration:
       end
     end
    end
-[[code]]
+```
 
 ## The Iterations==
 If you are ready to move on, here are the four iterations:

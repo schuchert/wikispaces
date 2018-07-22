@@ -13,7 +13,7 @@ This is a complete, albeit simple, example using jMock. To get this running, you
 # Take each of the following files and add them into a project in your favorite IDE
 
 ## WithdrawalTest.java==
-[[code format="java5"]]
+```java
 package com.objectmentor.jmock;
 
 import static org.junit.Assert.assertEquals;
@@ -95,20 +95,20 @@ public class WithdrawalTest {
         assertTrue(expectedThrown);
     }
 }
-[[code]]
+```
 
 ## BankAccount.java==
-[[code format="java5"]]
+```java
 package com.objectmentor.jmock;
 
 public interface BankAccount {
     int getBalance();
     void deduct(int i);
 }
-[[code]]
+```
 
 ## Withdrawal.java==
-[[code format="java5"]]
+```java
 package com.objectmentor.jmock;
 
 public class Withdrawal {
@@ -136,16 +136,16 @@ public class Withdrawal {
         return executed;
     }
 }
-[[code]]
+```
 
 ## InsufficientFunds.java==
 
-[[code format="java5"]]
+```java
 package com.objectmentor.jmock;
 
 public class InsufficientFunds extends RuntimeException {
     private static final long serialVersionUID = 1L;
 }
-[[code]]
+```
 
 [[TDD Example Catalog|<--Back]]

@@ -6,7 +6,7 @@ Source files are here: [[file:AspectJExample2src.zip]]. If you need instructions
 Have a look at the following Main.main() method and the associated Address class.
 ----
 ## Main class==
-[[code format="java5"]]
+```java
 package ex2;
 
 public class Main {
@@ -20,10 +20,10 @@ public class Main {
 		a.setZip("75001");
 	}
 }
-[[code]]
+```
 ----
 ## Address class==
-[[code format="java5"]]
+```java
 package ex2;
 
 import java.io.Serializable;
@@ -76,7 +76,7 @@ public class Address implements Serializable {
 		this.zip = zip;
 	}
 }
-[[code]]
+```
 ----
 ## Assignment: Predict the Output==
 

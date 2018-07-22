@@ -63,7 +63,7 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 * Verify that only the correct target (UnitTests_oniPhoneSimulator) is selected.
 * Click //**Finish**//
 * Enter the following test code:
-[[code]]
+```
 //
 //  ItShouldHaveSmoke.m
 //  Tutorial
@@ -93,16 +93,16 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
     GHAssertEquals(@"", someVariableToInitialize, nil);
 }
 @end
-[[code]]
+```
 * Build, command-b
 * Run, command-r
 * You should see the simulator start. If you still had it running, XCode will warn you that it needs to stop the simulator. Select //**OK**// to do so.
 * When the simulator starts, click //**Run**//
 * Oops, the test is failing.
 * go back and edit your code. Chang the single assertion to:
-[[code]]
+```
     GHAssertEquals(@"Hello World", someVariableToInitialize, nil);
-[[code]]
+```
 * Build and re-run, hit command-r
 * Run the test suite again.
 

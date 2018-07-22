@@ -1,4 +1,4 @@
-[[code format="java5"]]
+```java
 package com.om.sharingwithoutguarding;
 
 public class ObjectWithValue {
@@ -12,4 +12,4 @@ public class ObjectWithValue {
         return value;
     }
 }
-[[code]]
+```

@@ -55,7 +55,7 @@ After releasing some of this into the wild, I started getting some feedback from
 One final thing you might want to consider is the ability to "look ahead". When handling function calls in an expression, without having a previous definition of functions, you cannot tell whether a symbol is a function call or a reference to a variable. I solved this by looking ahead to the next token to see if it was an open parenthesis: (. If it is, then the symbol represents a function call. If not, then it's just a variable.
 
 Here's one such test:
-[[code format="java5"]]
+```java
    @Test
    public void itCanPeekAhead() {
       ExpressionTokenizer tokenizer = new ExpressionTokenizer("f(3)");
@@ -64,7 +64,7 @@ Here's one such test:
       assertEquals("(", tokenizer.next());
       assertEquals("3", tokenizer.next());
    }
-[[code]]
+```
 
 ## Additional Information
 Here is a list of potential operators you might want to make sure you can handle:

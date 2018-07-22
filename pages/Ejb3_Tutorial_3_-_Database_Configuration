@@ -1,7 +1,7 @@
 ## # persistence.xml ===
 As we have seen with the previous EJB tutorials, the persistence.xml looks a little different for a JEE environment. Update the persistence.xml to resemble the following:
 **persistence.xml**
-[[code format="xml"]]
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>
    <persistence-unit name="lis">
@@ -12,7 +12,7 @@ As we have seen with the previous EJB tutorials, the persistence.xml looks a lit
       </properties>
    </persistence-unit>
 </persistence>
-[[code]]
+```
 
 ## # Data Source and Database ===
 This persistence.xml makes use of a data source that we mentioned [[Ejb 3 Tutorial 2 - Optional Data Source Configuration|here]]. We're using this so that we have a database we can look at as we work through our tests to make sure we're cleaning everything up properly.
@@ -24,6 +24,6 @@ The files you downloaded already contained changes in support of the hypersonic 
 # Make a new directory, called databases
 # Change to that directory
 # Start the database (requires you can execute a Java VM from the command line)
-[[code]]
+```
 java -cp ../lib/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb
-[[code]]
+```

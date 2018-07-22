@@ -8,9 +8,9 @@
 **jython**
 * Downloaded jython 2.5 from: [[http://downloads.sourceforge.net/jython/jython_installer-2.5.0.jar]] (note, as of when I did this, 2.1 was OK, but not 2.1.1, the docs said that 2.5 should be OK)
 * Executed jython install
-[[code]]
+```
 java -jar jython_installer-2.5.0.jar
-[[code]]
+```
 * Put it in ~/bin, which created ~/bin/jython2.5.0
 * Added ~/bin/jython2.5.0 to path in my .zlogin file
 * Killed my terminal screens and verified jython was now available

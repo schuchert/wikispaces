@@ -1,6 +1,6 @@
 * ==Leve2 header
 * should not be block style
-[[code format="ruby"]]
+```ruby
   def precedence_of(operator)
     case operator
 <span class="standout_code">      when '(': 99</span>
@@ -11,7 +11,7 @@
       else 1
     end
   end
-[[code]]
+```
 
 # Header1
 

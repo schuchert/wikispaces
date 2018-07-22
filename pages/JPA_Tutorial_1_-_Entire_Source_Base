@@ -1,5 +1,5 @@
 **Address.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import javax.persistence.Embeddable;
@@ -64,10 +64,10 @@ public class Address {
         this.zip = zip;
     }
 }
-[[code]]
+```
 
 **Person.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import javax.persistence.Embedded;
@@ -165,10 +165,10 @@ public class Person {
                 * getMiddleInitial();
     }
 }
-[[code]]
+```
 
 **Company.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import java.util.ArrayList;
@@ -255,10 +255,10 @@ public class Company {
         p.setJob(null);
     }
 }
-[[code]]
+```
 
 **TestBase.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import javax.persistence.EntityManager;
@@ -293,10 +293,10 @@ public class TestBase {
         em.close();
     }
 }
-[[code]]
+```
 
 **CompanyTest.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import static org.junit.Assert.assertEquals;
@@ -383,10 +383,10 @@ public class CompanyTest extends TestBase {
         assertEquals(0, foundCompany.getEmployees().size());
     }
 }
-[[code]]
+```
 
 **PersonTest.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import static org.junit.Assert.assertEquals;
@@ -439,4 +439,4 @@ public class PersonTest extends TestBase {
         }
     }
 }
-[[code]]
+```

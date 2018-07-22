@@ -5,15 +5,15 @@
 ----
 ## Research/Experiment==
 Do our pointcuts treat the following two code examples the same way?
-[[code]]
+```
     public Address() {
         setAddressLine1("");
     }
-[[code]]
+```
 versus.
-[[code]]
+```
    private String addressLine1 = "";
-[[code]]
+```
 ----
 ## Custom Business Method==
 Add a method to the Address class. Make sure the method changes the Address in some way. Extend the cflow pointcut definition to include this new method. Verify that calling this method does not cause change tracking to occur.

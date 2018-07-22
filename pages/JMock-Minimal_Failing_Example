@@ -1,6 +1,6 @@
 [[TDD Example Catalog|<--Back]]
 
-[[code format="java5"]]
+```java
 @Test
 public void aTestThatAlwaysFails() {
     context.checking(new Expectations() {
@@ -9,7 +9,7 @@ public void aTestThatAlwaysFails() {
     });
     testDoubleDie.roll();
 }
-[[code]]
+```
 
 Why does this fail? Assuming two things:
 * This test class is annotated with @RunWith(JMock.class)

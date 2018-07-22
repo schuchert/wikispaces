@@ -49,41 +49,41 @@ We need to updated getDao() in the following ways:
 * Make sure to remove the dao instance variable and fix any resulting compilation errors by replacing **dao** with **getDao()**
 
 Here is an updated version of that method:
-[[code format="java5"]]
+```java
     public PatronDao getDao() {
         return JBossUtil.lookup(PatronDao.class, "PatronDaoBean/local");
     }
-[[code]]
+```
 Notice two things about the name we provide. First, we use the unqualified name of the bean class, **PatronDaoBean**. Also notice we need to add **/local**. If you had a remote interface, you'd instead use **/Remote**. And if you leave this off, you'll get a bad cast exception. You might experiment with this to discover why.
 
 We also need to initialize the EJB Container. Add the following method:
-[[code format="java5"]]
+```java
     @BeforeClass
     public static void initContainer() {
         JBossUtil.startDeployer();
     }
-[[code]]
+```
 
 Finally, since we are now testing PatronDaoBean instead of PatronDao, we might want to rename the test to PatronDaoBeanTest.java.
 
 ## # Run the PatronDaoBeanTest Tests: First Failure
 
 When you run the unit tests (just PatronDaoBeanTest), they will all fail. If you review the stack trace in the JUnit window, you'll notice that all the lines that fail look something like this:
-[[code format="java5"]]
+```java
         getEm().persist(p);
-[[code]]
+```
 We're getting a null pointer exception on this line because getEm() returns null. There was a method with the @Before annotation that set the entity manager on the PatronDao. We no longer inherit from that class so we no longer get that initialization. However, this is not how we should be initializing that attribute anyway. We can use the container to perform this initialization. 
 
 We can have the container inject the entity manager (or an entity manager factory if you'd like) into our PatronDaoBean.
 
 To get an entity manager injected, we use the annotation @PersistenceContext on an attribute of type EntityManager. Since we inherit the entity manager attribute from a base class, we place that annotation in the base class, BaseDao, as follows:
-[[code format="java5"]]
+```java
 public abstract class BaseDao {
     @PersistenceContext(unitName = "lis")
     private EntityManager em;
     ...
 }
-[[code]]
+```
 
 Using the @PersistenceContext will tell the container to look up the named EntityManagerFactory, create an EntityManager for us and then place that entity manager into the variable, in this case em. This happens when we look up the PatronDao.
 
@@ -92,10 +92,10 @@ Execute the PatronDaoBeanTest tests only -- if you were to run all the tests in 
 ## # Second Attempt: Second Failure
 
 After adding in @PersistenceContext we get one test to pass and three to fail. If you look at the stack trace in the JUnit window, we see that the Patron class does not have a default constructor. We need to add a default constructor to Patron.java:
-[[code format="java5"]]
+```java
     public Patron() {
     }
-[[code]]
+```
 
 Add it and re-run the tests (again, just PatronDaoBeanTest).
 
@@ -128,7 +128,7 @@ There are 4 tests. One is to test removing a Patron so it runs clean. Another lo
 * updateAPatron
 
 Here are the updates to PatronDaoBeanTest:
-[[code format="java5"]]
+```java
     @Test
     public void createAPatron() {
         final Patron p = createAPatronImpl();
@@ -162,6 +162,6 @@ Here are the updates to PatronDaoBeanTest:
     private void removePatron(final Patron p) {
         getDao().removePatron(p.getId());
     }
-[[code]]
+```
 
 We used a try {} finally block to make sure after the test finishes that we call a support method, removePatron. The fix is trivial (so far). We also added a simple private method to actually perform the delete.

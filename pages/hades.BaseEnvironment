@@ -13,22 +13,22 @@ These instructions summarize/make heavy use of [[http://www.vogella.de/articles/
 
 Follow the instructions in the tutorial as is with the following three changes.
 * Update the Todo class' id filed by adding the following annotation:
-[[code format="java5"]]
+```java
 @SuppressWarnings("unused")
-[[code]]
+```
 
 * Update the persistence XML to always drop and re-create the tables:
 ** Replace this line:
-[[code]]
+```
 <property name="eclipselink.ddl-generation" value="create-tables" />
-[[code]]
+```
 ** With this line:
-[[code]]
+```
 <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
-[[code]]
+```
 
 * Instead of creating a main, create as a test:
-[[code format="java5"]]
+```java
 package shoe;
 
 import static org.junit.Assert.*;
@@ -84,4 +84,4 @@ public class SmokeTest {
 		return resultList;
 	}
 }
-[[code]]
+```

@@ -6,7 +6,7 @@ This is another example where the last test actually validates that certain mess
 
 ----
 **PointOfSaleTerminalTest**
-[[code format="java5"]]
+```java
 package com.objectmentor.post;
 
 import static org.junit.Assert.assertEquals;
@@ -111,11 +111,11 @@ public class PointOfSaleTerminalTest {
         pointOfSaleTerminal.generateSummaryReport();
     }
 }
-[[code]]
+```
 
 ----
 **PointOfSaleTerminal**
-[[code format="java5"]]
+```java
 package com.objectmentor.post;
 
 import java.util.LinkedList;
@@ -160,11 +160,11 @@ public class PointOfSaleTerminal {
         this.summaryReportPrinter = summaryReportPrinter;
     }
 }
-[[code]]
+```
 
 ----
 **SummaryReportPrinter**
-[[code format="java5"]]
+```java
 package com.objectmentor.post;
 
 public interface SummaryReportPrinter {
@@ -172,14 +172,14 @@ public interface SummaryReportPrinter {
     void displayTotalSales(int totalAmount);
     void displayBalance(int amount);
 }
-[[code]]
+```
 
 ----
 **Transaction**
-[[code format="java5"]]
+```java
 package com.objectmentor.post;
 
 public interface Transaction {
     int getAmountDue();
 }
-[[code]]
+```

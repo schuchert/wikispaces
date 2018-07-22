@@ -5,7 +5,7 @@ This section has an example of an abstract factory and two concrete implementati
 
 Here's the abstract factory class:
 **MathOperatorFactory.h**
-[[code format="cpp"]]
+```cpp
 # ifndef MATHOPERATORFACTORY_H
 # define MATHOPERATORFACTORY_H
 
@@ -22,10 +22,10 @@ public:
 };
 
 # endif
-[[code]]
+```
 
 **MathoOperatorFactory.cpp**
-[[code format="cpp"]]
+```cpp
 
 # include "MathOperatorFactory.h"
 
@@ -36,11 +36,11 @@ MathOperatorFactory::MathOperatorFactory(void)
 MathOperatorFactory::~MathOperatorFactory(void)
 {
 }
-[[code]]
+```
 
 Here's a basic factory that provides MathOperators using conditional and static variables within a method:
 **IfBasedMathOperatorFactory.cpp**
-[[code format="cpp"]]
+```cpp
 # include "IfBasedMathOperatorFactory.h"
 # include "Plus.h"
 # include "Minus.h"
@@ -74,11 +74,11 @@ MathOperator &IfBasedMathOperatorFactory::getOperatorNamed(const std::string &op
    if("/" == operatorName)
       return divide;
 }
-[[code]]
+```
 
 And here's one that uses words like "plus" and "factorial" instead of "+" and "!":
 **FullyNamedMathOperatorFactory**
-[[code format="cpp"]]
+```cpp
 # include "FullyNamedMathOperatorFactory.h"
 
 # include "Plus.h"
@@ -105,5 +105,5 @@ MathOperator &FullyNamedMathOperatorFactory::getOperatorNamed(const std::string 
    return  *mathOperator;
 }
 
-[[code]]
+```
 [[RpnCalculatorCppExampleImplementation|<--Back]]

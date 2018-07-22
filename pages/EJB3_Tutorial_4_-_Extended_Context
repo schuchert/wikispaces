@@ -15,16 +15,16 @@ Here are a few things to note (source for all of these items appears at the end 
 # Make sure you copy the **utils** directory from a previous tutorial.
 # Make sure you copy a **persistence.xml** from a previous tutorial.
 # Make sure you update the **persistence.xml**'s persistence-unit name:
-[[code format="xml"]]
+```xml
 <persistence-unit name="tolltag">
-[[code]]
+```
 
 ## The Entity Model
 
 For this example, we have a simple entity model. We have an Account that has a bidirectional one-to-many relationship with TollTag objects and a bidirectional one-to-many relationship with Vehicle objects. Normally, one-to-many relationships are lazily fetched. For this example, the relationship with TollTag objects is left as lazily fetched while the relationship with Vehicle objects is eagerly fetched. 
 
 **Account.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import java.util.ArrayList;
@@ -112,10 +112,10 @@ public class Account {
         tt.setAccount(null);
     }
 }
-[[code]]
+```
 
 **TollTag.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import javax.persistence.Column;
@@ -185,10 +185,10 @@ public class TollTag {
         return getTagNumber().hashCode();
     }
 }
-[[code]]
+```
 
 **Vehicle.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import javax.persistence.Entity;
@@ -291,12 +291,12 @@ public class Vehicle {
                 * getModel().hashCode() * getYear().hashCode();
     }
 }
-[[code]]
+```
 
 # # The Session Beans
 
 **AccountInventory.java**
-[[code format="java5"]]
+```java
 package session;
 
 import javax.ejb.Local;
@@ -345,10 +345,10 @@ public interface AccountInventory {
 
     void createAccount(final Account account);
 }
-[[code]]
+```
 
 **AccountInventoryBean.java**
-[[code format="java5"]]
+```java
 package session;
 
 import javax.ejb.Stateless;
@@ -405,10 +405,10 @@ public class AccountInventoryBean implements AccountInventory {
         getEm().flush();
     }
 }
-[[code]]
+```
 
 **AccountInventoryExtendedBean.java**
-[[code format="java5"]]
+```java
 package session;
 
 import javax.ejb.Remove;
@@ -467,7 +467,7 @@ public class AccountInventoryExtendedBean implements AccountInventory {
         getEm().flush();
     }
 }
-[[code]]
+```
 
 ## The Tests
 
@@ -479,7 +479,7 @@ This class performs the same two test algorithms two times each for a total of 4
 ||createExampleUsingTollTagsExtendedScoped||Extended||TollTags||Success||
 
 **AccountInventoryBeanTest.java**
-[[code format="java5"]]
+```java
 package session;
  
 import static org.junit.Assert.assertEquals;
@@ -587,7 +587,7 @@ public class AccountInventoryBeanTest {
         createExampleTestTollTagsImpl(getExtendedInventory());
     }
 }
-[[code]]
+```
 
 ## Exercises
 ### Test Passing
@@ -607,7 +607,7 @@ The interface seems to be a bit messed up with concepts that relate to both stat
 [[#OtherFiles]]
 ## Other Files
 **persistence.xml**
-[[code format="xml"]]
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>
    <persistence-unit name="tolltag">
@@ -617,7 +617,7 @@ The interface seems to be a bit messed up with concepts that relate to both stat
       </properties>
    </persistence-unit>
 </persistence>
-[[code]]
+```
 
 [[include page="Ejb3JBossUtilJava"]]
 [[EJB 3 and Java Persistence API|<--Back]]

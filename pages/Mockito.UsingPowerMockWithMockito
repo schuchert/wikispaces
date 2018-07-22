@@ -10,7 +10,7 @@ You can get a working copy of this code from my [[https://github.com/schuchert/s
 This example works with PowerMock 1.5:
 
 //**Code from: pom.xml**//
-[[code format="xml"]]
+```xml
 <dependency>
     <groupId>org.powermock</groupId>
     <artifactId>powermock-module-junit4</artifactId>
@@ -24,17 +24,17 @@ This example works with PowerMock 1.5:
     <version>1.5</version>
     <scope>test</scope>
 </dependency>
-[[code]]
+```
             
 And Mockito 1.9:
-[[code format="xml"]]
+```xml
 <dependency>
     <groupId>org.mockito</groupId>
     <artifactId>mockito-all</artifactId>
     <version>1.9.0</version>
     <scope>test</scope>
 </dependency>
-[[code]]
+```
 
 # The Basics
 When you want to take control of something not controllable by Mockito, you need to identify the class where you want to take that control. For example, if you are taking control of a static method, you name the class that has the static method. //**However**//, if you want to change what new X returns,// **you name the class that has the call to new**//.
@@ -45,12 +45,12 @@ There are a few things you need to do according to the instructions and then one
 ## The Annotations
 Each test class wanting to use PowerMock needs 2 annotations, with a third optional one for handling current shortcoming (as I see it) in PowerMock:
 //**Code from: MetricsRecorderTest**//
-[[code format="java5"]]
+```java
 @RunWith(PowerMockRunner.class)
 @PowerMockIgnore( {"javax.management.*"})
 @PrepareForTest({MetricsRecorder.class, SystemLoggerFactory.class})
 public class MetricsRecorderTest {
-[[code]]
+```
 ||~ Annotation ||~ Description ||
 || @RunWith|| This is a JUnit 4.x annotation to control the runner used for this particular test. You name a JUnit runner class. Other kinds of JUnit runners you might have come across: Cucumber.class (cucumber-jvm), SpringJUnit4ClassRunner.class (Spring tester), MockitoJUnitRunner.class (Mockito without PowreMock). Note, that the PowerMockRunner gives you a super-set of Mockito runner's features.||
 || @PowerMockIgnore || This is an optional annotation. We are using something that, underneath the covers, uses something that conflicts with how PowerMock replaces classes. This is not a problem with JMockIt (also had a problem with Emma and PowerMock leading me to prever JMockIt). If you happen to grab the code and run it, I recommend you comment this out and run the tests to see the exception that results, so you'll be aware of what to expect when it comes up somewhere else.||
@@ -60,19 +60,19 @@ public class MetricsRecorderTest {
 Next, you need to actually replace the static method. I want to replace the return value of a static method to return a Mockito-created object. Here's the problem code that I want to control:
 
 //**Code taken from MetricsRecorder**//
-[[code format="java5"]]
+```java
 SystemLogger logger = SystemLoggerFactory.get(className);
 logger.info("start : %s-%s", methodName, correlationId.get());
-[[code]]
+```
 The first line calls a static method. I want to control what that returns. Since I am targeting a static method, the code being changed is in the class of the static method. This is important, because the only class that needs special instrumentation is the SystemLoggerFactory class. To actually control the return value:
 
 //**Code from: MetricsRecorderTest**//
-[[code format="java5"]]
+```java
 public void replaceLogger() {
   PowerMockito.mockStatic(SystemLoggerFactory.class);
   when(SystemLoggerFactory.get(anyString())).thenReturn(logger);
 }
-[[code]]
+```
 
 The first line informs PowerMock of your intention to actually change the class. The next line sets up the staticMethod get(...) to return logger, which is initialized using an @Mock annotation.
 
@@ -85,22 +85,22 @@ What happens when you want to change a use of new? In Java, new is a keyword tha
 Note, you do not directly call the constructor, Java matches the constructor based on the parameters and does the invocation for you. Every place that uses new X does this. That is important, because if you want to take control of new X, you have to tell PowerMock to instrument the// **class with the call to new**//, not the class you're swapping out:
 
 //**Code from: MetricsRecorderTest**//
-[[code format="java5"]]
+```java
 public void replaceCorrelationId() throws Exception {
   PowerMockito.whenNew(CorrelationId.class).withAnyArguments().thenReturn(id);
   when(id.get()).thenReturn("1.1");
 }
-[[code]]
+```
 This causes calls to new of the class CorrelationId, taking any arguments, to return a controlled value (id, which is Mockito-created object).
 
 ### Annotation to Enable Control
 //**Code from: MetricsRecorderTest**//
-[[code format="java5"]]
+```java
 @RunWith(PowerMockRunner.class)
 @PowerMockIgnore( {"javax.management.*"})
 @PrepareForTest({MetricsRecorder.class, SystemLoggerFactory.class})
 public class MetricsRecorderTest {
-[[code]]
+```
 
 In this case, the test calls the class MetricsRecorder, which calls new CorrelationId(), so MetricsRecorder is the class added to the @PrepareForTest annotation.
 
@@ -121,7 +121,7 @@ However, PowerMock seems to be a fine solution and if you prefer more integrated
 
 # The Complete Source
 ## The Test File
-[[code format="java5"]]
+```java
 package shoe.example.metrics;
 
 import org.junit.Before;
@@ -183,10 +183,10 @@ public class MetricsRecorderTest {
     verify(logger, times(1)).info(anyString(), anyObject(), anyObject(), anyObject(), anyObject());
   }
 }
-[[code]]
+```
 
 ## The Production Code
-[[code format="java5"]]
+```java
 package shoe.example.metrics;
 
 import com.yammer.metrics.Metrics;
@@ -267,5 +267,5 @@ public class MetricsRecorder {
     return String.format("%s.%s.%s", app, hostName(), port);
   }
 }
-[[code]]
+```
 

@@ -26,7 +26,7 @@ For the remainder of this tutorial, when you see **<project>**, replace it with 
 We've taken the domain model from the previous EJB tutorial and added a "charge" object. An account has one to many charges associated with it. Otherwise, this domain model is unchanged from the previous tutorial.
 
 **Charge.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import java.util.Date;
@@ -96,10 +96,10 @@ public class Charge {
         this.id = id;
     }
 }
-[[code]]
+```
 
 To update the Account object, add a new relationship called "charges" as follows:
-[[code format="java5"]]
+```java
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
     private Collection<Charge> charges;
 
@@ -115,7 +115,7 @@ To update the Account object, add a new relationship called "charges" as follows
         getCharges().add(charge);
         charge.setAccount(this);
     }
-[[code]]
+```
 ----
 ## The Session Model
 We need to update the AccountInventory interface and the beans. Make the following changes:
@@ -125,7 +125,7 @@ We need to update the AccountInventory interface and the beans. Make the followi
 # # {{void addCharge(final String tollTagNumber, final double amount); }}
 # # {{double getTotalChargesOnAccountById(final Long id); }}
 # Create these methods in AccountInventoryBean:
-[[code format = "java5"]]
+```java
     public void addCharge(String tollTagNumber, double amount) {
         final Account account = findAccountByTagNumber(tollTagNumber);
         final Charge charge = new Charge(account, amount, Calendar
@@ -146,12 +146,12 @@ We need to update the AccountInventory interface and the beans. Make the followi
 
         return total;
     }
-[[code]]
+```
 ----
 ## Changes to util
 # Remove the DateTimeUtil class.
 # Update JBossUtil.startDeployer():
-[[code format="java5"]]
+```java
     public static void startDeployer() {
         if (!initialized) {
             redirectStreams();
@@ -166,11 +166,11 @@ We need to update the AccountInventory interface and the beans. Make the followi
             restoreStreams();
         }
     }
-[[code]]
+```
 ----
 ## The Message Driven Bean
 This is the heart of our next tutorial, the Message Driven Bean:
-[[code format="java5"]]
+```java
 package mdb;
 
 import javax.ejb.ActivationConfigProperty;
@@ -222,12 +222,12 @@ public class TollTagChargesMdb implements MessageListener {
         }
     }
 }
-[[code]]
+```
 
 This bean is created by the container as necessary (probably pooled at container start time). When the container sees a message, it starts a transaction (if necessary) and then waits for the onMessage to complete.
 ----
 ## The Test
-[[code format="java5"]]
+```java
 package mdb;
 
 import static org.junit.Assert.assertEquals;
@@ -318,7 +318,7 @@ public class TollTagChargedMdbTest {
                 account.getId()));
     }
 }
-[[code]]
+```
 ----
 ## Assignments/Questions
 What do you think about whether objects are managed or unmanaged while being processed by the MDB?
@@ -329,7 +329,7 @@ The test uses Thread.sleep(1000). Why does it do so? Experiment with that value,
 Here is the source for all of the classes not already provided in full above.
 
 **Account.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import java.util.ArrayList;
@@ -428,10 +428,10 @@ public class Account {
         tt.setAccount(null);
     }
 }
-[[code]]
+```
 
 **Charge.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import java.util.Date;
@@ -501,10 +501,10 @@ public class Charge {
         this.id = id;
     }
 }
-[[code]]
+```
 
 **TollTag.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import javax.persistence.Column;
@@ -574,10 +574,10 @@ public class TollTag {
         return getTagNumber().hashCode();
     }
 }
-[[code]]
+```
 
 **Vehicle.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import javax.persistence.Entity;
@@ -680,10 +680,10 @@ public class Vehicle {
                 * getModel().hashCode() * getYear().hashCode();
     }
 }
-[[code]]
+```
 
 **AccountInventory.java**
-[[code format="java5"]]
+```java
 package session;
 
 import javax.ejb.Local;
@@ -708,10 +708,10 @@ public interface AccountInventory {
 
     double getTotalChargesOnAccountById(final Long id);
 }
-[[code]]
+```
 
 **AccountInventoryBean.java**
-[[code format="java5"]]
+```java
 package session;
 
 import java.util.Calendar;
@@ -789,10 +789,10 @@ public class AccountInventoryBean implements AccountInventory {
         return total;
     }
 }
-[[code]]
+```
 
 **EqualsUtil.java**
-[[code format="java5"]]
+```java
 package util;
 
 /**
@@ -811,10 +811,10 @@ public class EqualsUtil {
 
     }
 }
-[[code]]
+```
 
 **JBossUtil.java**
-[[code format="java5"]]
+```java
 package util;
 
 import java.io.ByteArrayOutputStream;
@@ -975,10 +975,10 @@ public class JBossUtil {
         }
     }
 }
-[[code]]
+```
 
 **persistence.xml**
-[[code format="xml"]]
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>
    <persistence-unit name="tolltag">
@@ -988,10 +988,10 @@ public class JBossUtil {
       </properties>
    </persistence-unit>
 </persistence>
-[[code]]
+```
 
 **AccountInventoryBeanTest.java**
-[[code format="java5"]]
+```java
 package session;
 
 import org.junit.BeforeClass;
@@ -1041,10 +1041,10 @@ public class AccountInventoryBeanTest {
         }
     }
 }
-[[code]]
+```
 
 **tolltag-jms.xml**
-[[code format="xml"]]
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:schemaLocation="urn:jboss:bean-deployer bean-deployer_1_0.xsd"
@@ -1071,10 +1071,10 @@ public class AccountInventoryBeanTest {
        <property name="destinationName">tolltag</property>
    </bean>
 </deployment>
-[[code]]
+```
 
 **.classpath**
-[[code format="xml"]]
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
     <classpathentry kind="src" path="src"/>
@@ -1095,6 +1095,6 @@ public class AccountInventoryBeanTest {
         path="LIBS/jboss-EJB-3.0_Embeddable_ALPHA_9/lib/thirdparty-all.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
-[[code]]
+```
 
 [[EJB 3 and Java Persistence API|<--Back]]

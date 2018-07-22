@@ -3,11 +3,11 @@ If you see anything else, use the output to fix the problem.
 
 Here are some examples:
 **Forget -javaagent**
-[[code format="text"]]
+```terminal
 Exception in thread "main" java.lang.NoClassDefFoundError: schuchert/agent/Main
-[[code]]
+```
 Note: If you happen to have added Registrar.jar to your classpath, you'd see this instead:
-[[code format="text"]]
+```terminal
 No ClassFileTransformers
 	added by: schuchert.agent.ConfigurableClassFileTransformerRegistrar
 	using system property: schuchert.ClassFileTransformer
@@ -15,22 +15,22 @@ When starting VM, please specify the following two VM arguments:
 	-javaagent:Registrar.jar (or the name you're using)
 	-Dschuchert.ClassFileTransformer=<SomeClassInClassPath>
 		(e.g. schuchert.ClassFileTransformer=schuchert.agent.NullClassFileTransformer)
-[[code]]
+```
 
 **Mistype Jarname after -javaagent:**
-[[code format="text"]]
+```terminal
 Error opening zip file: Registrr.jar
 Error occurred during initialization of VM
 agent library failed to init: instrument
 Abort trap
-[[code]]
+```
 
 **Forget to define system property**
-[[code format="text"]]
-[[code]]
+```terminal
+```
 
 **System Property Points to Wrong/Mistyped/Missing class**
-[[code format="text"]]
+```terminal
 java.lang.ClassNotFoundException: BadClassName
 	at java.net.URLClassLoader$1.run(URLClassLoader.java:200)
 	at java.security.AccessController.doPrivileged(Native Method)
@@ -59,11 +59,11 @@ When starting VM, please specify the following two VM arguments:
 	-javaagent:Registrar.jar (or the name you're using)
 	-Dschuchert.ClassFileTransformer=<SomeClassInClassPath>
 		(e.g. schuchert.ClassFileTransformer=schuchert.agent.NullClassFileTransformer)
-[[code]]
+```
 
 **Not Running Main**
 Cannot give an example, other than if you simply mistype the name of the class:
-[[code format="text"]]
+```terminal
 Exception in thread "main" java.lang.NoClassDefFoundError: schuchert/agent/MainNameWrong
-[[code]]
+```
 [[image:Back.gif link="AnExampleJavaAgent"]]

@@ -6,7 +6,7 @@ In this final step for the tutorial, we'll create a second kind of resource, a D
 The first basic test is creating a dvd and checking it out to a Patron. This is a test we add to LibraryTest.java.
 
 **First test: Checkout a Dvd**
-[[code format="java5"]]
+```java
     @Test
     public void checkoutDvd() {
         final Patron p = createPatron();
@@ -20,9 +20,9 @@ The first basic test is creating a dvd and checking it out to a Patron. This is 
         return library.createDvd("Raiders of the Lost Ark", new Name("Steven",
                 "Spielberg"));
     }
-[[code]]
+```
 This test uses a new constant, **CURRENT_PLUS_6**, here's the change to LibraryTest to support that.
-[[code format="java5"]]
+```java
 public class LibraryTest extends EntityManagerBasedTest {
     private static Date CURRENT_PLUS_6; // add this attribute
 
@@ -41,11 +41,11 @@ public class LibraryTest extends EntityManagerBasedTest {
         c.add(Calendar.DAY_OF_MONTH, 1);
         CURRENT_PLUS_15 = c.getTime();
     }
-[[code]]
+```
 To get this to compile, we need to add support in the library class for creating a DVD. Here's that basic support:
 
 **Updating Library**
-[[code format="java5"]]
+```java
     public Dvd createDvd(final String title, final Name directorsName) {
         final Director director = new Director();
         director.setName(directorsName);
@@ -55,11 +55,11 @@ To get this to compile, we need to add support in the library class for creating
         getResourceDao().create(d);
         return d;
     }
-[[code]]
+```
 
 Notice that we have a director and a dvd in this example. Here are those classes:
 **Director.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import javax.persistence.Embedded;
@@ -95,10 +95,10 @@ public class Director {
         this.name = name;
     }
 }
-[[code]]
+```
 
 **Dvd.java**
-[[code format="java5"]]
+```java
 package entity;
 
 import java.util.Calendar;
@@ -152,11 +152,11 @@ public class Dvd extends Resource {
         this.director = director;
     }
 }
-[[code]]
+```
 
 **Resource.java**
 To get this to actually work, we need to use the @Inheritance annotation on resource. Here's the change:
-[[code format="java5"]]
+```java
 //...
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -165,13 +165,13 @@ import javax.persistence.InheritanceType;
 public abstract class Resource {
     //...
 }
-[[code]]
+```
 
 As mentioned before, there are three kinds of representations for hierarchy. We are using the so-called JOINED approach, which means there is a table per class. It turns out that we need to use this approach based on how we've defined Book. Why that is will be answered in a following assignment.
 
 **A Few More Tests**
 Here are a few more tests to verify basic functionality. These also belong in LibraryTest.java.
-[[code format="java5"]]
+```java
     @Test
     public void returnDvdLate() {
         final Dvd d = createDvd();
@@ -198,7 +198,7 @@ Here are a few more tests to verify basic functionality. These also belong in Li
         assertTrue(d.isOnLoanTo(p));
         assertTrue(b.isOnLoanTo(p));
     }
-[[code]]
+```
 
 ### Summary: Inheritance===
 That's pretty much it. If we had started with a base class called Resource, this work would have been trivial. Adding new subclasses is quite easy. Figuring out which representation may take a little experimentation, but it's easy to change.

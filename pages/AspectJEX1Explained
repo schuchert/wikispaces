@@ -20,7 +20,7 @@ I did not show you three things:
 
 ----
 ## MethodExecutionAspect.java
-[[code format="java5"]]
+```java
 01: package ex1;
 02: 
 03: import org.aspectj.lang.ProceedingJoinPoint;
@@ -45,7 +45,7 @@ I did not show you three things:
 22:         }
 23:     }
 24: }
-[[code]]
+```
 ### Interesting Lines
 ||Lines||Description||
 ||8||This class is an AspectJ aspect class. It will need to be registered in the aop.xml file to take effect.||
@@ -56,7 +56,7 @@ I did not show you three things:
 ||19||Call proceed() on "thisJoinPoint" to actually perform the original method execution.||
 ----
 ## aop.xml
-[[code format="xml"]]
+```xml
 01: <aspectj>
 02: 	<aspects>
 03: 		<aspect name="ex1.MethodExecutionAspect"/>
@@ -65,7 +65,7 @@ I did not show you three things:
 06: 		<include within="ex1.*"/>
 07: 	</weaver>
 08: </aspectj>
-[[code]]
+```
 ### Interesting Lines
 ||Lines||Description||
 ||3||Register ex1.MethodExecutionAspect as an apsect to apply to this VM||

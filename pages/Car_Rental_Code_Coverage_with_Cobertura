@@ -35,7 +35,7 @@ Here's the file so we can discuss it and configure it for your situation:
 ----
 [[#cobertura]]
 ## cobertura.xml
-[[code]]
+```
 01: <?xml version="1.0" encoding="UTF-8"?>
 02: <project name="cobertura" default="coverage-report">
 03: 
@@ -114,7 +114,7 @@ Here's the file so we can discuss it and configure it for your situation:
 76:       </cobertura-report>
 77:    </target>
 78: </project>
-[[code]]
+```
 ### Interesting Lines
 ||Line||Description||
 

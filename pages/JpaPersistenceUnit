@@ -1,7 +1,7 @@
 We now need to create the Persistent Unit definition. We are going to create a file called persistence.xml in the src/META-INF directory with the following contents:
 [[#Persistence_xml]]
 ### persistence.xml===
-[[code format="xml"]]
+```xml
 <persistence>
     <persistence-unit name="examplePersistenceUnit" 
                       transaction-type="RESOURCE_LOCAL">
@@ -21,7 +21,7 @@ We now need to create the Persistent Unit definition. We are going to create a f
         </properties>
     </persistence-unit>
 </persistence>
-[[code]]
+```
 
 ### The Steps===
 # Expand your **<project>**

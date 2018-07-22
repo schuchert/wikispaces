@@ -2,10 +2,10 @@
 
 # Example 2 Explained=
 Accessing a field in Java is a joinpoint exposed by the AspectJ joinpoint model. This is different from method execution in that captures things like the following: 
-[[code]]
+```
    this.aString = "value";              // Writing to a field called aString
    int tempValue = 3 * this.myIntValue; // Reading from a field called myIntValue
-[[code]]
+```
 Notice in both of these examples, we are somehow accessing an instance field of a class.
 
 This example examines all changes to fields on the Address object. When an attempt is made to set a field of a class, the aspect gets the current field value and then displays the current value and the value on the right hand side of assignment.
@@ -19,7 +19,7 @@ To make this example work, we need two additional things:
 * aop.xml
 ----
 ## FieldSetAspect.java==
-[[code format="java5"]]
+```java
 01: package ex2;
 02: 
 03: import java.lang.reflect.Field;
@@ -52,7 +52,7 @@ To make this example work, we need two additional things:
 30:         return thisJoinPoint.proceed();
 31:     }
 32: }
-[[code]]
+```
 ### Interesting Lines===
 ||Line||Description||
 ||10||This class is an aspect. This annotation denotes the following class as an aspect.||
@@ -65,7 +65,7 @@ To make this example work, we need two additional things:
 ||30||Actually perform the set
 ----
 ## aop.xml==
-[[code format="xml"]]
+```xml
 01: <aspectj>
 02: 	<aspects>
 03: 		<aspect name="ex2.FieldSetAspect"/>
@@ -74,7 +74,7 @@ To make this example work, we need two additional things:
 06: 		<include within="ex2.*"/>
 07: 	</weaver>
 08: </aspectj>
-[[code]]
+```
 ### Interesting Lines===
 ||Line||Description||
 ||3||Tell the weaver to use the aspect of type ex2.FieldSetAspect||

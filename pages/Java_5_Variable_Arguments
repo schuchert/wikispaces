@@ -18,7 +18,7 @@ Here is a typical example of using Log4J with a simple utility class that:
 ----
 [[#Mainv1]]
 ## Main.java
-[[code format="java5"]]
+```java
 01: package varargs.v1;
 02: 
 03: import org.apache.log4j.Logger;
@@ -37,7 +37,7 @@ Here is a typical example of using Log4J with a simple utility class that:
 16:         myLogger.debug("Problem with file: " + FILE_NAME + ". Please contact: " + ERROR_CONTACT);
 17:     }
 18: }
-[[code]]
+```
 
 ### Interesting Lines
 ||Line||Description||
@@ -48,13 +48,13 @@ So what is wrong with this example? Specifically, something is missing. In a rea
 
 ## Version 2
 This version only introduced the use of a new utility method on the String class. Instead of writing the following:
-[[code]]
+```
    System.out.println("You have scored: " + points + ", and made it to level: " + level);
-[[code]]
+```
 You can use the new method [[http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html|String.format]] and C-style format strings:
-[[code]]
+```
     String.format("You have scored: %d, and made it to level: %d", points, level);
-[[code]]
+```
 
 Note that String.format is an example of a method whose parameters are defined using variable arguments.
 
@@ -62,7 +62,7 @@ Here's the code for version 2:
 ----
 [[#Mainv2]]
 ## Main.java
-[[code format="java5"]]
+```java
 01: package varargs.v2;
 02: 
 03: import org.apache.log4j.Logger;
@@ -82,7 +82,7 @@ Here's the code for version 2:
 17:                 ERROR_CONTACT));
 18:     }
 19: }
-[[code]]
+```
 ### Interesting Lines
 ||Line||Description||
 ||16 - 17||Use the String.format method to produce the same output as before.||
@@ -93,11 +93,11 @@ Version 3 adds the missing element mentioned in version 1. Namely, in both versi
 The logger might not be displaying debug-level information. If it is not, then we have wasted time and memory on String manipulation. This is a typical problem with logging. It may not seem like much but from my experience it is a big deal. In a large system, you'll end up garbage collecting more often than necessary.
 
 There's an "easy" fix. You can ask the logger if the level you're going to output is currently enabled. If it is not, then you don't to the work:
-[[code]]
+```
    if(myLogger.isDebugEnabled()) {
       myLogger.debug(String.format("Problem with file: %s. Please contact: %s", FILE_NAME, ERROR_CONTACT));
    }
-[[code]]
+```
 
 It is ugly but it makes a big difference.
 
@@ -105,7 +105,7 @@ Here's the code modified to take this into consideration:
 ----
 [[#Mainv3]]
 ## Main.java
-[[code format="java5"]]
+```java
 01: package varargs.v3;
 02: 
 03: import org.apache.log4j.Logger;
@@ -127,7 +127,7 @@ Here's the code modified to take this into consideration:
 19:         }
 20:     }
 21: }
-[[code]]
+```
 ### Interesting Lines
 ||Line||Description||
 ||16 - 19||Now we are wrapping our calls to the logger just in case we are not currently printing debugging information.||
@@ -141,7 +141,7 @@ First let's look at the use of the code:
 ----
 [[#Mainv4]]
 ## Main.java
-[[code format="java5"]]
+```java
 01: package varargs.v4;
 02: 
 03: public final class Main {
@@ -158,7 +158,7 @@ First let's look at the use of the code:
 14:         myLogger.debug("Problem with file: %s. Please contact: %s", FILE_NAME, ERROR_CONTACT);
 15:     }
 16: }
-[[code]]
+```
 ### Interesting Lines
 ||Line||Description||
 ||14||What? This is just back to version 2, right?||
@@ -168,7 +168,7 @@ To make this work, we first introduce an interface that uses Java 5 Variable Arg
 ----
 [[#ILogger]]
 ## ILogger.java
-[[code format="java5"]]
+```java
 01: package varargs.v4;
 02: 
 03: public interface ILogger {
@@ -192,17 +192,17 @@ To make this work, we first introduce an interface that uses Java 5 Variable Arg
 21:     ILogger fatal(Throwable t, String formatString, Object... objects);
 22:     boolean isFataEnabled();
 23: }
-[[code]]
+```
 
 Next, we write a simple implementation for this interface. For now we'll just look at one of the methods:
-[[code]]
+```
 14:     public ILogger debug(final String formatString, final Object... objects) {
 15:         if (isDebugEnabled()) {
 16:             wrappedLogger.debug(String.format(formatString, objects));
 17:         }
 18:         return this;
 19:     }
-[[code]]
+```
 ### Interesting Lines
 ||Line||Description||
 ||14||This method uses variable arguments. You can tell this when you see **Object...**. It turns out that objects is simply an array of Objects. You can write objects[0] to get the first element (assuming there are some elements in it).||
@@ -215,7 +215,7 @@ Here is the full implementation:
 ----
 [[#LoggerImpl]]
 ## LoggerImpl.java
-[[code format="java5"]]
+```java
 01: package varargs.v4;
 02: 
 03: import org.apache.log4j.Level;
@@ -328,13 +328,13 @@ Here is the full implementation:
 110:     }
 111: 
 112: }
-[[code]]
+```
 
 And finally, for completeness, here are the final two files in this final example:
 ----
 [[#LoggingConfiguration]]
 ## LoggingConfiguration.java
-[[code format="java5"]]
+```java
 01: package varargs.v4;
 02: 
 03: import java.net.URL;
@@ -372,13 +372,13 @@ And finally, for completeness, here are the final two files in this final exampl
 35:     }
 36: 
 37: }
-[[code]]
+```
 ----
 [[#log4j_properties]]
 ## log4j.properties
-[[code]]
+```
 log4j.logger.org.springframework=WARN
-[[code]]
+```
 
 Notice that by using variable arguments we've:
 * Reduced what a developer needs to write and still get reasonable logging performance
@@ -392,20 +392,20 @@ But it does not come without some costs. If you wrap as demonstrated in the 3rd 
 # Summary
 
 **Define Variable Arguments**
-[[code]]
+```
     public void someMethod(Object... objects) {}
-[[code]]
+```
 
 **Calling a method that takes them**
-[[code]]
+```
     someObject.someMethod("Brett", 11234, object2, 'a');
-[[code]]
+```
 
 **Calling a method when you already have an array of objects**
-[[code]]
+```
     Object[] objects = new Object[]{"Brett", 11234, object2, 'a'};
     someObject.someMethod(objects);
-[[code]]
+```
 
 **Notes**
 * The variable argument parameter must be last

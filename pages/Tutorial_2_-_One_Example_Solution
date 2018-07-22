@@ -1,4 +1,4 @@
-[[code format="java5"]]
+```java
 package entity;
 
 import java.util.List;
@@ -261,4 +261,4 @@ public class QueriesTest extends Assert {
         em.createQuery("delete from Person").executeUpdate();
     }
 }
-[[code]]
+```

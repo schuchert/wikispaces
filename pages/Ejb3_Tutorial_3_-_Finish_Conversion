@@ -22,7 +22,7 @@ There's only one test left to convert, LibraryTest. We'll perform all of these c
 # Use @EJB to have the dao's injected
 
 Here's the top of LibraryBean:
-[[code format="java5"]]
+```java
 @Stateless
 public class LibraryBean implements Library {
     @EJB
@@ -35,7 +35,7 @@ public class LibraryBean implements Library {
     private LoanDao loanDao;
     // ...
 }
-[[code]]
+```
 
 **LibraryTest**
 # Rename LibraryTest --> LibraryBeanTest
@@ -48,7 +48,7 @@ Changes to LibraryBeanTest:
 We need to change how LibraryBeanTest sets itself up. Currently it has one @Before method and one @BeforeClass method. Ultimately we will have one @Before method and two @BeforeClass methods.
 
 We need to change **from** this:
-[[code format="java5"]]
+```java
     @Before
     public void setupLibrary() {
         final ResourceDaoBean rd = new ResourceDaoBean();
@@ -81,10 +81,10 @@ We need to change **from** this:
         CURRENT_PLUS_15 = c.getTime();
     }
 
-[[code]]
+```
 
 To the following:
-[[code format="java5"]]
+```java
     @Before
     public void setupLibrary() {
         library = JBossUtil.lookup(Library.class, "LibraryBean/local");
@@ -110,7 +110,7 @@ To the following:
         c.add(Calendar.DAY_OF_MONTH, 1);
         CURRENT_PLUS_15 = c.getTime();
     }
-[[code]]
+```
 
 While we're at it, we are no longer using the base classes so we can delete the following classes:
 * BaseDbDaoTest
@@ -126,7 +126,7 @@ The last line of the addBook method fails. After a little research it turns out 
 Here's a fact about the containAll() method on collections. It requires a proper definition of equals() and/or hashCode() depending on the type of collection. While Author has both hashCode and equals, both of these methods depend on Name.equals() and Name.hashCode(), neither of which are defined. So we need to add these missing methods to fix this problem.
 
 We need to add the following methods to Name.java:
-[[code format="java5"]]
+```java
     public boolean equals(final Object object) {
         if (object instanceof Name) {
             final Name rhs = (Name) object;
@@ -139,7 +139,7 @@ We need to add the following methods to Name.java:
     public int hashCode() {
         return getFirstName().hashCode() * getLastName().hashCode();
     }
-[[code]]
+```
 
 Run the test and after making this change, you'll notice that addBook passes.
 
@@ -148,7 +148,7 @@ When a method on a session bean throws an exception it will either return wrappe
 
 Here's a new exception:
 **EntityDoesNotExist Exception**
-[[code format="java5"]]
+```java
 package exception;
 
 import javax.ejb.ApplicationException;
@@ -173,14 +173,14 @@ public class EntityDoesNotExist extends RuntimeException {
         return key;
     }
 }
-[[code]]
+```
 
 Now we need to update two things:
 # Update the method to throw this new exception
 # Change the (expected = ) clause of the unit test
 
 Here's the updated method in LibraryBean:
-[[code format="java5"]]
+```java
     public Resource findResourceById(Long id) {
         final Resource r = getResourceDao().findById(id);
         if (r == null) {
@@ -188,22 +188,22 @@ Here's the updated method in LibraryBean:
         }
         return r;
     }
-[[code]]
+```
 
 And the updated test method:
-[[code format="java5"]]
+```java
     @Test(expected = EntityDoesNotExist.class)
     public void lookupBookThatDoesNotExist() {
         library.findResourceById(ID_DNE);
     }
-[[code]]
+```
 
 ### lookupPatronThatDoesNotExist===
 The test suffers from the Same problem as the above example. Do the same thing.
 
 ### checkoutBook===
 After digging into this problem a bit, you'll discover that Patron is missing equals() and hashCode():
-[[code format="java5"]]
+```java
     @Override
     public boolean equals(final Object rhs) {
         return rhs instanceof Patron
@@ -214,12 +214,12 @@ After digging into this problem a bit, you'll discover that Patron is missing eq
     public int hashCode() {
         return getId().hashCode();
     }
-[[code]]
+```
 
 ### returnBook===
 There are two problems with this test. First, we're using detached objects after they have been updated. Second, there's a lazily-initialized relationship. We'll fix the relationship first and the re-write the test to perform some additional lookups.
 
-[[code format="java5"]]
+```java
             library.checkout(p.getId(), CURRENT_DATE, b.getId());
 
             Patron foundPatron = library.findPatronById(p.getId());
@@ -235,7 +235,7 @@ There are two problems with this test. First, we're using detached objects after
             foundBook = library.findResourceById(b.getId());
             assertFalse(b.isCheckedOut());
             assertEquals(0, p.getFines().size());
-[[code]]
+```
 
 Once we make these changes and re-run the test, we get the following exception:
 {{java.lang.RuntimeException: org.jboss.tm.JBossRollbackException: }}
@@ -245,7 +245,7 @@ Once we make these changes and re-run the test, we get the following exception:
 {{deleted entity passed to persist: [entity.Loan#<null>]) }}
 
 OK, what does this mean? After some researching and guessing, you'll discover that this probably means you are trying to delete some object and doing so violates a foreign key constraint. It mentions Loan. If you do a little more digging, you'll find out that when you try to remove a loan from a collection of loans in a Patron, the loan is not removed. Why? No equals() or hashCode(). Here they are:
-[[code format="java5"]]
+```java
     @Override
     public boolean equals(final Object rhs) {
         return rhs instanceof Loan
@@ -257,26 +257,26 @@ OK, what does this mean? After some researching and guessing, you'll discover th
     public int hashCode() {
         return getResourceId().hashCode() * getPatronId().hashCode();
     }
-[[code]]
+```
 
 We need to make two more updates to get rid of this foreign key constraint.
 
 **Update LoanDaoBean**
-[[code format="java5"]]
+```java
     public void remove(final Loan l) {
         l.remove();
         getEm().flush();
         getEm().remove(l);
     }
-[[code]]
+```
 
 **Update Loan**
-[[code format="java5"]]
+```java
     public void remove() {
         getPatron().removeLoan(this);
         getResource().setLoan(null);
     }
-[[code]]
+```
 
 **One Final Change**
 Here's one more thing that has to do with how JPA reads JoinTables. In the case of our Loan join table, it will read two records for each one record. (Insert reference as to why.) There is an easy fix. In the Patron we store a List<Loan>, change this to Set<Loan> and update all of the related code in Loan get it to compile. There are two kinds of replacements you'll have to make:
@@ -329,7 +329,7 @@ Here's the order in which you can drop all records from the database:
 There are other orders you could use, but this one works.
 
 If you'd like to add a temporary method to your test class to clean up after each test, here is one that will do it:
-[[code format="java5"]]
+```java
     @After
     public void cleanupDatabase() {
         EntityManagerFactory f = Persistence.createEntityManagerFactory("lis");
@@ -348,7 +348,7 @@ If you'd like to add a temporary method to your test class to clean up after eac
         em.createNativeQuery("delete from address").executeUpdate();
         em.getTransaction().commit();
     }
-[[code]]
+```
 //**Notes**//
 **Additional Jar**
 To get this to work, you'll need to add an optional library to your classpath:
@@ -386,7 +386,7 @@ Finally, we need to make our test clean up after themselves. Along the way we're
 
 ### addBook===
 This one is straightforward. We can use the method removeBookAndAuthors in the ResourceDaoBeanTest:
-[[code format="java5"]]
+```java
     @Test
     public void addBook() {
         final Book b = createBook();
@@ -401,7 +401,7 @@ This one is straightforward. We can use the method removeBookAndAuthors in the R
             ResourceDaoBeanTest.removeBookAndAuthors(b);
         }
     }
-[[code]]
+```
 
 To test this, make sure your database is clean. Next, comment out or delete the cleanupDatabase method (and make sure to get the annotation). Run this test by itself and verify that nothing remains in the database after executing the test.
 
@@ -414,7 +414,7 @@ We have a method in PatronDaoBeanTest that we could use, but we need to make two
 # Make the metho PatronDaoBeanTest.getDao() static
 
 Once you've done that, you can change the test:
-[[code format="java5"]]
+```java
     @Test
     public void addPatron() {
         final Patron p = createPatron();
@@ -425,7 +425,7 @@ Once you've done that, you can change the test:
             PatronDaoBeanTest.removePatron(p);
         }
     }
-[[code]]
+```
 
 ### lookupPatronThatDoesNotExist===
 This test creates no objects so no cleanup is necessary.
@@ -434,7 +434,7 @@ This test creates no objects so no cleanup is necessary.
 When we checkout a book, we create a loan. So in addition to removing the two books and patrons that are created as a result of this test, we must also remove the loan.
 
 This one requires a bit more work. First the updated test:
-[[code format="java5"]]
+```java
     @Test
     public void checkoutBook() {
         final Book b1 = createBook();
@@ -459,10 +459,10 @@ This one requires a bit more work. First the updated test:
             ResourceDaoBeanTest.removeBookAndAuthors(b2);
         }
     }
-[[code]]
+```
 
 The finally block uses a method Library.removePatron that is new. We need to add it both to the Library interface and provide an implementation for this method in the LibraryBean:
-[[code format="java5"]]
+```java
     public void removePatron(Long id) {
         final Patron found = findPatronById(id);
 
@@ -486,21 +486,21 @@ The finally block uses a method Library.removePatron that is new. We need to add
     public void removeFine(final Fine f) {
         getResourceDao().removeFind(f);
     }
-[[code]]
+```
 
 We also added the method ResourceDao.removeFine. We need to add it to the interface and to ResourceDaoBean:
-[[code format="java5"]]
+```java
     public void removeFind(final Fine f) {
         final Fine found = getEm().find(Fine.class, f.getId());
         if (found != null) {
             getEm().remove(found);
         }
     }
-[[code]]
+```
 
 ### returnBook===
 Give the support for removing patrons, we can now use that in the returnBook test. Here's the skeleton:
-[[code format="java5"]]
+```java
         final Book b = createBook();
         final Patron p = createPatron();
         
@@ -512,7 +512,7 @@ Give the support for removing patrons, we can now use that in the returnBook tes
             library.removePatron(p.getId());
             ResourceDaoBeanTest.removeBookAndAuthors(b);
         }
-[[code]]
+```
 
 ### returnResourceLate===
 This test can use the same skeleton as returnBook to clean up after itself.
@@ -548,7 +548,7 @@ To fix this, we need to add just a bit of infrastructure. First the background. 
 The first option potentially creates a circular dependency and also has and entity dealing with the database, which we have not had to do so far. We'll take option 2. Here are all the necessary changes.
 
 **FinesPaidAndBalance**
-[[code format="java5"]]
+```java
 package complexreturns;
 
 import java.util.List;
@@ -572,10 +572,10 @@ public class FinesPaidAndBalance {
         return finesPaid;
     }
 }
-[[code]]
+```
 
 **Patron.pay**
-[[code format="java5"]]
+```java
     public FinesPaidAndBalance pay(final double amountTendered) {
         double totalFines = calculateTotalFines();
         if (totalFines <= amountTendered) {
@@ -588,10 +588,10 @@ public class FinesPaidAndBalance {
             throw new InsufficientFunds();
         }
     }
-[[code]]
+```
 
 **LibraryBean.tenderFine**
-[[code format="java5"]]
+```java
     public double tenderFine(final Long patronId, double amountTendered) {
         final Patron p = getPatronDao().retrieve(patronId);
         final FinesPaidAndBalance finesPaid = p.pay(amountTendered);
@@ -602,7 +602,7 @@ public class FinesPaidAndBalance {
 
         return finesPaid.getBalance();
     }
-[[code]]
+```
 
 ### payFineInsufficientFunds===
 Remove the created patron and book. Follow the skeleton from returnBook.

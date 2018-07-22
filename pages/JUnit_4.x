@@ -13,7 +13,7 @@ In JUnit 3.8.1, test classes inherited from TestCase. Among other things, doing 
 
 ### Java 5 to the rescue===
 The recommendation from [[http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52|JUnit 4.0 in 10 Minutes]] is to use [[http://java.sun.com/j2se/1.5.0/docs/guide/language/static-import.html|static imports]]from the org.junit.Assert class to get methods like assertEquals. The following excerpt is taken from [[JUnit 4.x#example1|Example 1]] below. Note the line numbers are from the original example. Line 3 is the static import, which is used on lines 29 and 30:
-[[code]]
+```
      03: import static org.junit.Assert.assertEquals;
      14: public class TestVehicle {
      26:     @Test
@@ -23,18 +23,18 @@ The recommendation from [[http://www.instrumentalservices.com/index.php?option=c
      30:         assertEquals(license, v.getLicense());
      31:     }
      41: }
-[[code]]
+```
 [[#AtTest]]
 [[JUnit 4.xAtTest|Click Here for more information on @Test.]]
 
 This works fine until you try to organize imports in Eclipse or use name completion (ctrl-space). Eclipse will not allow you to use name completion on something like assertFalse. You have to manually type in the name, and then manually add the import and things work fine. I'm lazy and I don't want to do this. My first attempt to fix this was the following:
-[[code]]
+```
      03: import static org.junit.Assert.*;
-[[code]]
+```
 Now I can use name completion on things like "assert" and Eclipse will give me my list of names. This works great until you organize imports. As soon as you do the line that contained the .* is replaced by one to many lines, one each for each of the assert* methods you've used.
 
 Since these methods are in the class org.junit.Assert, I've decided to switch to having my test classes inherit from Assert. This works just fine. It sort of defeats the purpose of using annotations to avoid having to use inheritance but it works well with my development environment so I'm happy. Here's an example taken from [[JUnit 4.x#example2|Example 2]]. Notice that by extending on line 17, I have easy access to assertEquals on lines 39 and 40. I understand that this violates the is-a interpretation of inheritance. It is not my preference but until we get better IDE support, it makes writing my tests a bit easier. Anything that supports writing tests is a good thing as far as I'm concerned.
-[[code]]
+```
 05: import org.junit.Assert;
 17: public class VehicleTypeComponentTest extends Assert {
 33: 
@@ -47,11 +47,11 @@ Since these methods are in the class org.junit.Assert, I've decided to switch to
 40:         assertEquals(vt.getState().getValue(), ValidState.valid);
 41:     }
 101: }
-[[code]]
+```
 [[#TimeBomb]]
 ## TimeBomb==
 What is a TimeBomb? Let's begin with an example. This is an excerpt from [[JUnit 4.x#example2|Example 2]]:
-[[code]]
+```
 05: import org.junit.Assert;
 15: import vehicle.util.TimeBomb;
 16: 
@@ -61,7 +61,7 @@ What is a TimeBomb? Let's begin with an example. This is an excerpt from [[JUnit
 94:         TimeBomb.throwUntil(16, 6, 2006, new ObjectInUse(VehicleType.class, "key"));
 95:     }
 96:
-[[code]]
+```
 [[#AtTestExpected]]
 [[JUnit 4.xAtTestWithExpected|Click here for more information on @Test(expected = ObjectInUse.class)]]
 
@@ -104,7 +104,7 @@ This section contains the full code for the examples mentioned above.
 [[#example1]]
 ### Example 1===
 **TestVehicle.java**
-[[code format="java5"]]
+```java
 01: package ztest.vehicle.domain;
 02: 
 03: import static org.junit.Assert.assertEquals;
@@ -122,28 +122,28 @@ This section contains the full code for the examples mentioned above.
 15:     private IssuingState state;
 16:     private VehicleLicense license;
 17:     private VehicleType type;
-[[code]]
+```
 [[#AtBefore]]
 [[JUnit 4.xBefore|For a description of @Before, click here.]]
-[[code format="java5"]]
+```java
 19:     @Before
 20:     public void setup() {
 21:         type = new VehicleType("Luxury");
 22:         state = new IssuingState("Iowa");
 23:         license = new VehicleLicense("LRX24J", state);
 24:     }
-[[code]]
+```
 [[JUnit 4.xAtTest|For a description of @Test, click here.]]
-[[code format="java5"]]
+```java
 26:     @Test
 27:     public void createSimpleVehicle() {
 28:         Vehicle v = new Vehicle("Ford", "Focus", 2005, "Green", type, license);
 29:         assertEquals(type, v.getType());
 30:         assertEquals(license, v.getLicense());
 31:     }
-[[code]]
+```
 [[JUnit 4.xSuite|For a description of the suite method, click here.]]
-[[code format="java5"]]
+```java
 33:     /**
 34:      * Provide backwards-compatibility with JUnit runner in Eclipse.
 35:      * 
@@ -153,12 +153,12 @@ This section contains the full code for the examples mentioned above.
 39:         return new JUnit4TestAdapter(TestVehicle.class);
 40:     }
 41: }
-[[code]]
+```
 ----
 [[#example2]]
 ### Example 2===
 **VehicleTypeComponentTest.java**
-[[code format="java5"]]
+```java
 01: package ztest.vehicle.component.vehicletype;
 02: 
 03: import junit.framework.JUnit4TestAdapter;
@@ -260,12 +260,12 @@ This section contains the full code for the examples mentioned above.
 99:         TimeBomb.throwUntil(16, 6, 2006, new ObjectInUse(VehicleType.class, "key"));
 100:     }
 101: }
-[[code]]
+```
 ----
 [[#example3]]
 ### Example 3===
 **RatePlanComponentTest.java** (partial)
-[[code format="java5"]]
+```java
 01: package ztest.vehicle.component.rateplan;
 02: 
 03: import junit.framework.JUnit4TestAdapter;
@@ -290,20 +290,20 @@ This section contains the full code for the examples mentioned above.
 36:     public static junit.framework.Test suite() {
 37:         return new JUnit4TestAdapter(RatePlanComponentTest.class);
 38:     }
-[[code]]
+```
 [[#AtBeforeClass]]
 [[JUnit 4.xAtBeforeClass|For a description of @BeforeClass, click here.]]
-[[code format="java5"]]
+```java
 40:     @BeforeClass
 41:     public static void createTestVehicleType() {
 42:         vtComponent = new VehicleTypeComponent();
 43:         vtComponent.createVehicleType(TEST_VEHICLE_TYPE_NAME, ValidState.valid);
 44:         vtComponent.createVehicleType(TEST_VEHICLE_TYPE_NAME_2, ValidState.valid);
 45:     }
-[[code]]
+```
 [[#AtAfterClass]]
 [[JUnit 4.xAtAfterClass|For a description of @AfterClass, click here.]]
-[[code format="java5"]]
+```java
 47:     @AfterClass
 48:     public static void removeTestVehicleType() {
 49:         vtComponent.removeVehicleTypeNamed(TEST_VEHICLE_TYPE_NAME);
@@ -315,10 +315,10 @@ This section contains the full code for the examples mentioned above.
 55:         component = new RatePlanComponent();
 56:         disableDeleting();
 57:     }
-[[code]]
+```
 [[#AtAfter]]
 [[JUnit 4.xAtAfter|For a description of @After, click here.]]
-[[code format="java5"]]
+```java
 59:     @After
 60:     public void removeCreatedRateplan() {
 61:         if (createdRatePlanName != null && createdRatePlanVehicleType != null) {
@@ -374,21 +374,21 @@ This section contains the full code for the examples mentioned above.
 111:         component.createRatePlan(rp);
 112:         component.createRatePlan(rp);
 113:     }
-[[code]]
+```
 [[#RegularMethod]]
 [[JUnit 4.xRegularMethod|What is this doing here? Click here.]]
-[[code format="java5"]]
+```java
 233:     private RatePlan instantiateBasicRatePlan(String name, String vehicleTypeName) {
 234:         createdRatePlanName = new Field<String>(name);
 235:         createdRatePlanVehicleType = new Field<VehicleType>(vtComponent.getVehicleTypeNamed(vehicleTypeName));
 236: 
 237:         return new RatePlan(createdRatePlanName, 0, 0, 0, 0, 0, createdRatePlanVehicleType, ValidState.valid);
 238:     }
-[[code]]
+```
 ----
 [[#TimeBombCode]]
 ### TimeBomb.java===
-[[code format="java5"]]
+```java
 01: package vehicle.util;
 02: 
 03: import java.util.Calendar;
@@ -404,5 +404,5 @@ This section contains the full code for the examples mentioned above.
 13:         }
 14:     }
 15: }
-[[code]]
+```
 [[JUnit 4.xTimeBombGenericCodeExplained|Click here for a detailed description of TimeBomb.]]

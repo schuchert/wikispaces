@@ -14,7 +14,7 @@
 After making these changes, we have 3 tests that pass and one that fails. The error in the JUnit stack trace looks like this: {{org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: entity.Book.authors, no session or session was closed}}
 
 Here's the actual test:
-[[code format="java5"]]
+```java
 01:    @Test
 02:    public void updateABook() {
 03:        final Book b = createABookImpl();
@@ -25,7 +25,7 @@ Here's the actual test:
 08:        assertTrue(found instanceof Book);
 09:        assertEquals(initialAuthorCount + 1, ((Book) found).getAuthors().size());
 10:    }
-[[code]]
+```
 
 If you double-click on the last line listed in the stack trace, it will show the last line, line 9, as the problem line. When we retrieve the authors() from found, there's no problem -- yet. When we ask the object returned from getAuthors() for its size(), we're accessing not a collection but a proxy to a collection. Remember that the object found is detached. Why? We are no longer in a method in the container, we have returned from the method. When we returned, the transaction committed and all objects in the persistence context were detached. The author’s relationship is lazily loaded by default (because it is a @ManyToMany and that's the default behavior).
 
@@ -35,40 +35,40 @@ We have three ways to fix this problem:
 # Change the test to send a message to the ResourceDao to ask for the number of authors associated with a particular book
 
 We'll take the easiest way out to fix this and make this relationship eagerly fetched rather than lazily fetched. Here's the change to Book.java:
-[[code format="java5"]]
+```java
     @ManyToMany(mappedBy = "booksWritten", cascade = { CascadeType.PERSIST,
             CascadeType.MERGE }, fetch = FetchType.EAGER)
     private Set<Author> authors;
-[[code]]
+```
 
 The change there is adding **fetch = FetchType.EAGER**
 
 ## # Try #2 ===
 When you run this, things still do not work. This is a bi-directional relationship. However, while we are adding an author to the book, we are not adding the book to the author. Remember that we must maintain both sides of a bi-directional relationship. Update the addAuthor() method in book to add the book to the author:
-[[code format="java5"]]
+```java
     public void addAuthor(final Author author) {
         getAuthors().add(author);
         author.addBook(this);
     }
-[[code]]
+```
 
 Run the tests in ResourceDaoBeanTest. Now more tests are failing. This is getting worse before it gets better.
 
 ## # Nearly Finally Fixed ===
 
 There's a method in Author.java that looks like this:
-[[code format="java5"]]
+```java
     public void addBook(final Book b) {
         booksWritten.add(b);
         b.addAuthor(this);
     }
-[[code]]
+```
 
 The problem is, the booksWritten attribute is never assigned. Here's a way to fix this:
 # Change booksWritten to getBookWritten()
 # Lazily initialize booksWritten
 
-[[code format="java5"]]
+```java
     public void addBook(final Book b) {
         getBooksWritten().add(b);
     }
@@ -80,7 +80,7 @@ The problem is, the booksWritten attribute is never assigned. Here's a way to fi
         
         return booksWritten;
     }
-[[code]]
+```
 
 ## # Finally All of ResourceDaoBaseTest Running ===
 
@@ -98,19 +98,19 @@ Type checking is not always bad, just mostly always. We won't even consider that
 # Make sure to actually call the remove method in the ResourceDao
 
 **Add abstract method to Resource**
-[[code format="java5"]]
+```java
     public abstract void remove();
-[[code]]
+```
 
 **Add empty implementation to Dvd**
-[[code format="java5"]]
+```java
     @Override
     public void remove() {
     }
-[[code]]
+```
 
 **Add implementation to Book**
-[[code format="java5"]]
+```java
     @Override
     public void remove() {
         for (Author a : getAuthors()) {
@@ -118,18 +118,18 @@ Type checking is not always bad, just mostly always. We won't even consider that
         }
         getAuthors().clear();
     }
-[[code]]
+```
 
 **Add removeBook to Author**
-[[code format="java5"]]
+```java
     public void removeBook(final Book book) {
         getBooksWritten().remove(book);
     }
-[[code]]
+```
 
 **Call the remove() method in ResourceDao**
 Just after looking up the resource and just before actually removing it, we need to call the remove() method on the Resource object:
-[[code format="java5"]]
+```java
     public void remove(Long id) {
         final Resource r = retrieve(id);
         if (r != null) {
@@ -138,7 +138,7 @@ Just after looking up the resource and just before actually removing it, we need
         }
         getEm().flush();
     }
-[[code]]
+```
 Run the tests and they now all pass.
 ----
 # # Test Isolation ==
@@ -155,7 +155,7 @@ We need to update each of the tests that create books and explicitly remove the 
 ## # Delete Author ===
 To delete authors, we'll create a new Dao for Authors:
 **AuthorDao**
-[[code format="java5"]]
+```java
 package session;
 
 import java.util.Set;
@@ -165,10 +165,10 @@ import entity.Author;
 public interface AuthorDao {
     void remove(final Set<Author> authors);
 }
-[[code]]
+```
 
 **AuthorDaoBean**
-[[code format="java5"]]
+```java
 package session;
 
 import java.util.Set;
@@ -192,12 +192,12 @@ public class AuthorDaoBean extends BaseDao implements AuthorDao {
         }
     }
 }
-[[code]]
+```
 
 ## # Update Test ===
 **Support Methods**
 First we need a few methods we can use to delete authors and books (we're working in ResourceDaoBeanTest, so this is a fine place to add these methods):
-[[code format="java5"]]
+```java
     public void removeAuthors(final Set<Author> authors) {
         JBossUtil.lookup(AuthorDao.class, "AuthorDaoBean/local")
                 .remove(authors);
@@ -208,13 +208,13 @@ First we need a few methods we can use to delete authors and books (we're workin
         getDao().remove(b.getId());
         removeAuthors(book.getAuthors());
     }
-[[code]]
+```
 
 These methods are static because we might want to use them from other tests. However, to make them static, we must change getDao() to be a static method as well.
 
 **Updated Tests**
 Here are the updated tests that now use the support methods.
-[[code format="java5"]]
+```java
     @Test
     public void createABook() {
         final Book b = createABookImpl();
@@ -254,7 +254,7 @@ Here are the updated tests that now use the support methods.
             removeBookAndAuthors(b);
         }
     }
-[[code]]
+```
 
 Notice that we re-assign the variable b just before the assert equals and it is that updated version of b that is sent to removeBookAndAuthors(). Why do you suppose we need to do that?
 

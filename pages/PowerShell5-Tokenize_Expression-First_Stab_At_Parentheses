@@ -6,15 +6,15 @@ The next is in the use of function calls.:
 
 For now, we want to pull out the () as tokens. We'll allow something at a higher level to determine the context.
 * Create a first test to see what happens when we use (:
-> [[code format="powershell"]]
+> ```powershell
         @{expression = '(a)'; expected = @('(', 'a', ')')}
-[[code]]
+```
 * Interesting, this works. I'm skeptical that we've got it working as needed. Knowing a little bit about the code, I'll add another test:
-> [[code format="powershell"]]
+> ```powershell
         @{expression = '(())'; expected = @('(', '(',')', ')')}
-[[code]]
+```
 * There's the failure I'm expecting:
-> [[code format="powershell"]]
+> ```powershell
     [-] Should convert (()) to ( ( ) ) 102ms
       Expected string length 1 but was 4. Strings differ at index 1.
       Expected: {(}
@@ -23,20 +23,20 @@ For now, we want to pull out the () as tokens. We'll allow something at a higher
       22:             $result[$i] | Should be $expected[$i]
       at Invoke-LegacyAssertion, C:\Program Files\WindowsPowerShell\Modules\Pester\4.0.8\Functions\Assertions\Should.ps1: line 190
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 22
-[[code]]
+```
 * Now it's time to update the code just a touch. Rather than changing how to handle operators, I'll add another match:
-> [[code format="powershell"]]
+> ```powershell
             if (-not $this.recordIfMatches([ref]$expression, '^([()])', $result)) {
                     if (-not $this.recordIfMatches([ref]$expression, '^([\d\w]+)', $result)) {
                         $this.recordIfMatches([ref]$expression, '^([^\d\w\s]+)', $result)
                     }
                 }
             }
-[[code]]
+```
 * Run your tests, that seems to work. 
 * Now is a good time to commit your code.
 After this, it seemed like there was a pattern in the code that I could represent with an array and a loop. Here's another version that also works. I'm not sure if I like this better or not.
-> [[code format="powershell"]]
+> ```powershell
     static [Array]$regex = @( '^([()])', '^([\d\w]+)', '^([^\d\w\s]+)' )
     [ArrayList]interpret([String]$expression) {
         $result = [ArrayList]::new()
@@ -52,5 +52,5 @@ After this, it seemed like there was a pattern in the code that I could represen
 
         return $result
     }
-[[code]]
+```
 [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.SimpleBinaryExpressions|<— Back]]  [[PowerShell5.TokenizeExpression|^^ Up ^^]] [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FunctionCalls|Next—>]]

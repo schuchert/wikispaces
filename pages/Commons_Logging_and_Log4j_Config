@@ -11,7 +11,7 @@ When I started using [[http://www.springframework.org/|Spring]], I need to inclu
 ----
 [[#LoggingConfiguration]]
 ## LoggingConfiguration.java
-[[code format="java5"]]
+```java
 01: package loggingutil;
 02: 
 03: import java.net.URL;
@@ -48,7 +48,7 @@ When I started using [[http://www.springframework.org/|Spring]], I need to inclu
 34:     }
 35: 
 36: }
-[[code]]
+```
 ### Interesting Lines
 ||Line||Description||
 ||11 - 13||I'm using [[http://eclipse-cs.sourceforge.net/|Checkstyle]] and [[http://pmd.sourceforge.net/integrations.html#eclipse|PMD]]. One of them has a rule that suggests classes with all static methods should have a private constructor to disallow instantiation.||
@@ -63,9 +63,9 @@ When I started using [[http://www.springframework.org/|Spring]], I need to inclu
 [[#log4j]]
 # # log4j.properties
 This file resides in the same directory as the source file for [[#LoggingConfiguration|LogginConfiguration.java]].
-[[code]]
+```
 01: log4j.logger.org.springframework=WARN
-[[code]]
+```
 ### Interesting Lines
 ||Line||Description||
 ||01||This sets the logging level from its default, DEBUG, to WARN. I did this to reduce the output produced by Spring. I've occasionally turned it back on to DEBUG to trace through things. However, I generally prefer my console to have little if any output so that what's there is something I know I need to pay attention to.||
@@ -74,7 +74,7 @@ This file resides in the same directory as the source file for [[#LoggingConfigu
 ## ILogger.java
 Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it does not have an interface that uses the features offered by Java 5 so instead of using Lof4J directly, I have returned this interface that publishes what I think is a better interface.
 
-[[code format="java5"]]
+```java
 01: package loggingutil;
 02: 
 03: public interface ILogger {
@@ -98,13 +98,13 @@ Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it 
 21: 
 22:     ILogger fatal(final Throwable t, final String formatString, final Object... params);
 23: }
-[[code]]
+```
 ### Interesting Lines
 There are not really any specifically interesting lines. Notice that every method's last parameter is a variable number of parameters. Take a look below at the implementation of this class.
 ----
 [[#Logger]]
 ## Logger.java
-[[code format="java5"]]
+```java
 01: package loggingutil;
 02: 
 03: import org.apache.log4j.Level;
@@ -186,7 +186,7 @@ There are not really any specifically interesting lines. Notice that every metho
 79:         return this;
 80:     }
 81: }
-[[code]]
+```
 ### Interesting Lines
 ||Line||Description||
 ||6||This class holds a reference to a Log4J logger instance. It publishes a different interface and adapts the new interface on to the Log4J interface.||
@@ -198,38 +198,38 @@ There are not really any specifically interesting lines. Notice that every metho
 ||19||Notice that Throwable is the **first** parameter. In the Log4J methods, the Throwable parameter is last. Since we are using variable arguments, we cannot put the Throwable parameter last so we instead make it the first one.||
 
 All of the methods follow the same pattern. Rather that writing the following code, which I've seen:
-[[code]]
+```
     Logger myLogger = ...; // get a Log4J Logger
     ...
     if(myLogger.isDebugEnabled()) {
        myLogger.debug("User Name: " + userName + " is not authorized for this operation.");
     }
-[[code]]
+```
 
 Of course, you might want to simplify this code to the following, and I've seen this even more often:
-[[code]]
+```
     Logger myLogger = ...; // get a Log4J Logger
     ...
     myLogger.debug("User Name: " + userName + " is not authorized for this operation.");
-[[code]]
+```
 
 The problem with this is that we perform the work of concatenating three strings even if the logger does not have debug level messages enabled. So the first form is ugly but better. The second form looks better, but performs potentially unnecessary work.
 
 This adapted interface gives us the following:
-[[code]]
+```
     Logger myLogger = ...; // get an ILogger
     ...
     myLogger.debug("User Name: %s is not authorized for this operation.", userName);
-[[code]]
+```
 
 This looks like the cleaner second version but it performs like the better first version.
 
 This example is not complete. It does not publish the logging levels, which really is still necessary. Consider the following example that is NOT fixed by this interface:
-[[code]]
+```
     Logger myLogger = ...; // get an ILogger
     ...
     myLogger.debug("User Name: %s is not authorized for this operation.", getUserNameFromJndi());
-[[code]]
+```
 Let’s say that the method getUserNameFromJndi() takes a long time. In this example, we called the method before calling the debug() method, so we did this extra work potentially unnecessarily.
 
 [[Tool Setup and Configuration Notes|<--Back]]

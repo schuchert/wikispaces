@@ -1,4 +1,4 @@
-[[code format="java5"]]
+```java
 01: package com.objectmentor.jmock;
 02: 
 03: import static org.junit.Assert.assertEquals;
@@ -31,7 +31,7 @@
 30:         // ...
 31:     }
 32: }
-[[code]]
+```
 
 ## Essential Lines
 ||**Line*||**Description**||
@@ -42,11 +42,11 @@
 ||23 - 26||Use the jMock API to create a test double of our die object.||
 
 Die is an interface:
-[[code format="java5"]]
+```java
 package com.objectmentor.jmock;
 
 public interface Die {
 	int roll();
 	int getFaceValue();
 }
-[[code]]
+```

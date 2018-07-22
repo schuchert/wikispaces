@@ -40,9 +40,9 @@ I could create a class in the test directory in the default package to verify th
 
 **CarRentalBeanFactoryTest.java**
 There is one line considered not covered by emma:
-[[code]]
+```
      CarRentalBeanFactory.getBean(CarRentalBeanFactoryTest.class);
-[[code]]
+```
 
 This line is meant to generate an exception. It does, the class passes but Emma does not consider this line covered. This is a shortcoming of Emma and I won't do anything about it.
 

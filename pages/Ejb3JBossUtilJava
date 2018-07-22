@@ -1,6 +1,6 @@
 ### JBossUtil.java===
 
-[[code format="java5"]]
+```java
 package util;
 
 import java.io.ByteArrayOutputStream;
@@ -163,10 +163,10 @@ public class JBossUtil {
 		}
 	}
 }
-[[code]]
+```
 
 **EqualsUtil.java**
-[[code format="java5"]]
+```java
 package util;
 
 /**
@@ -185,4 +185,4 @@ public class EqualsUtil {
 
     }
 }
-[[code]]
+```

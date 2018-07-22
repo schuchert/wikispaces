@@ -10,7 +10,7 @@ A guideline to live by…
 ----
 ## Dependent State
 Consider the following (incomplete) iterator:
-[[code format="java5"]]
+```java
 public class IntegerIterator 
 	implements Iterator<Integer>, Iterable<Integer> {
     private Integer nextValue = 0;
@@ -25,22 +25,22 @@ public class IntegerIterator
         return nextValue;
     }
 }
-[[code]]
+```
 ----
 ----
 ## Dependent State+Multi-Threaded
 Use this code in a test:
-[[code format="java5"]]
+```java
 IntegerIterator iterator = new IntegerIterator();
 
 for (Integer value : iterator) {
 }
 
 assertEquals(10000, iterator.getNextValue()
-[[code]]
+```
 
 What about this use:
-[[code foramt="java5"]]
+```java
 public class UseIntegerIterator implements Runnable {
     IntegerIterator iterator;
 
@@ -55,9 +55,9 @@ public class UseIntegerIterator implements Runnable {
         }
     }
 }
-[[code]]
+```
 And then in some test somewhere:
-[[code format="java5"]]
+```java
 IntegerIterator iterator = new IntegerIterator();
 Thread t1 = new Thread(new UseIntegerIterator(iterator));
 Thread t2 = new Thread(new UseIntegerIterator(iterator));
@@ -68,7 +68,7 @@ t2.join();
 
 assertEqual(10000, iterator.getNextValue()); // ?? 
 
-[[code]]
+```
 
 There's a problem. How can we fix it?
 * Client-based locking
@@ -77,7 +77,7 @@ There's a problem. How can we fix it?
 ----
 ## Client Based Locking
 The client (user) of the common data locks:
-[[code format="java5"]]
+```java
 public class UseIntegerIteratorClientBasedLocking 
     implements Runnable {
     public void run() {
@@ -91,12 +91,12 @@ public class UseIntegerIteratorClientBasedLocking
         }
     }
 }
-[[code]]
+```
 ----
 ----
 ## Server-Based Locking
 The server guards the dependent calls:
-[[code format="java5"]]
+```java
 package dependent.serverbasedlocking;
 
 public class IntegerIteratorServerLocked {
@@ -112,10 +112,10 @@ public class IntegerIteratorServerLocked {
         return nextValue;
     }
 }
-[[code]]
+```
 
 Here’s an updated client that now works:
-[[code format="java5"]]
+```java
 public void run() {
     while (true) {
         Integer next = iterator.getNextOrNull();
@@ -123,7 +123,7 @@ public void run() {
             break;
     }
 }
-[[code]]
+```
 
 Evaluate, between client-based and server-based locking
 * Which do you prefer?

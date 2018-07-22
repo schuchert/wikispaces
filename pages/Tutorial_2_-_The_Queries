@@ -35,28 +35,28 @@ Setup: None required
 
 **Search Using Query Parameter and Storing Result as List<?>**
 Setup: Insert one person record where the Person's first name = "Brett".
-[[code format="java5"]]
+```java
     final List<?> list = em.createQuery("from Person where p.firstName = ?1")
         .setParameter(1, "Brett").getResultList();
-[[code]]
+```
 
 **Search Using Query Parameter and Storing Result as List<Person>**
 Setup: Insert one person record where the Person's first name = "Brett".
-[[code format="java5"]]
+```java
     final List<Person> list = em.createQuery(
         "from Person where firstName = ?1").setParameter(1, "Brett")
         .getResultList();
-[[code]]
+```
 
 **Do Find by Primary Key and Queries Return == Objects**
 Setup: Insert one person record and store the primary key. Also make sure the first name of the person equals "Brett".
-[[code format="java5"]]
+```java
     final Person pByKey = em.find(Person.class, personKey);
 
     final Person pByWhere = (Person) em.createQuery(
         "SELECT p from Person p where firstName='Brett'")
         .getSingleResult();
-[[code]]
+```
 
 **Use Wrong Class Name**
 Setup: None required

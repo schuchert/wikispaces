@@ -1,6 +1,6 @@
 We've added a new session, LoanDao. It essentially provides a few queries dealing with loans such as finding all overdue books or finding all patrons with overdue books.
 **LoanDao.java**
-[[code format="java5"]]
+```java
 package session;
 
 import java.util.Date;
@@ -87,11 +87,11 @@ public class LoanDao extends BaseDao {
                 "patronId", patronId).getResultList();
     }
 }
-[[code]]
+```
 
 
 **Library.java**
-[[code format="java5"]]
+```java
 package session;
 
 import java.util.Date;
@@ -230,4 +230,4 @@ public class Library {
         return p.pay(amountTendered);
     }
 }
-[[code]]
+```
