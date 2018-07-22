@@ -1,33 +1,33 @@
 For more background on where I'm coming from, have a look at
-[Experiential Learning Notes]({{ site.pagesurl}}/ExperientialLearningNotes.md)
+[Experiential Learning Notes]({{ site.pagesurl}}/ExperientialLearningNotes)
 
 
 
-# [New Stuff]({{ site.pagesurl}}/NewStuff.md)
-{% include_relative NewStuff.md %}
+# [New Stuff]({{ site.pagesurl}}/NewStuff)
+{% include_relative NewStuff %}
 
 # Exercises
-* ## [Aspect Oriented Programming]({site.pagesurl}}/AspectOrientedProgramming.md)
+* ## [Aspect Oriented Programming]({site.pagesurl}}/AspectOrientedProgramming)
 
 # Notes
-* ## [Experiential Learning Notes]({{ site.pagesurl}}/ExperientialLearningNotes.md)
-* ## [Tool Setup and Configuration Notes]({{site.pagesurl}}/Tool_Setup_and_Configuration_Notes.md)
-* ## [The Mac]({{site.pagesurl}}/The_Mac.md)
+* ## [Experiential Learning Notes]({{ site.pagesurl}}/ExperientialLearningNotes)
+* ## [Tool Setup and Configuration Notes]({{site.pagesurl}}/Tool_Setup_and_Configuration_Notes)
+* ## [The Mac]({{site.pagesurl}}/The_Mac)
 
 # Language Stuff
-* ## [RubyNotes]({{site.pagesurl}}/RubyNotes.md)
-* ## [Smalltalk]({{site.pagesurl}}/Smalltalk.md)
-* ## [C++]({{site.pagesurl}}/Cxx.md)
+* ## [RubyNotes]({{site.pagesurl}}/RubyNotes)
+* ## [Smalltalk]({{site.pagesurl}}/Smalltalk)
+* ## [C++]({{site.pagesurl}}/Cxx)
 
 # Presentation Materials
-* ## [SDBestPractices2007]({{site.pagesurl}}/SDBestPractices2007.md)
+* ## [SDBestPractices2007]({{site.pagesurl}}/SDBestPractices2007)
 
 # My (otherwise unpublished) Articles
-* ## [Designing to Spring Templates]({{site.pagesurl}}/Designing_to_Spring_Templates.md)
-* ## [Design Pattern Examples]({{site.pagesurl}}/Design_Pattern_Examples.md)
-* ## [Fundamental Terms With Examples]({{site.pagesurl}}/Fundamental_Terms_With_Examples.md)
+* ## [Designing to Spring Templates]({{site.pagesurl}}/Designing_to_Spring_Templates)
+* ## [Design Pattern Examples]({{site.pagesurl}}/Design_Pattern_Examples)
+* ## [Fundamental Terms With Examples]({{site.pagesurl}}/Fundamental_Terms_With_Examples)
 
 # Old Book Work
-* ## [CSharpAndOop]({{site.pagesurl}}/CSharpAndOop.md)
-* ## [IntorductionToMicrocomputersAndDataProcessing]({{site.pagesurl}}/IntorductionToMicrocomputersAndDataProcessing.md)
+* ## [CSharpAndOop]({{site.pagesurl}}/CSharpAndOop)
+* ## [IntorductionToMicrocomputersAndDataProcessing]({{site.pagesurl}}/IntorductionToMicrocomputersAndDataProcessing)
 
