@@ -1,1 +1,11 @@
+title: Schuchert Wikispaces
+description: Port of schuchert.wikispaces.com
+twitter_username: schuchert
+github_username: schuchert
+makrdown: kramdown
+plugins:
+  - jekyll-feed
+url: "http://schuchert.github.io/wikispaces"
+repository: schuchert/wikispaces
+
 theme: jekyll-theme-midnight

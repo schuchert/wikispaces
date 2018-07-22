@@ -1,0 +1,7 @@
+[color]
+	ui = true
+[user]
+	name = Brett Schuchert
+	email = brett.schuchert@gmail.com
+[push]
+	default = matching
