@@ -108,7 +108,9 @@ This assumes you're running FitNesse on port 8080. Update the url with your port
 
 !define TEST_SYSTEM {slim}
 !define TEST_RUNNER {/Users/schuchert/src/cpp_fitnesse/cslim/CSlim_cslim}
+{% raw %}
 !define COMMAND_PATTERN {%m}
+{% endraw %}
 !define SLIM_VERSION {0.2}
 ```
 * Save the page.

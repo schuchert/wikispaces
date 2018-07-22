@@ -3,35 +3,35 @@ In these example, the variable "em" is an entity manger initialized just like it
 
 **Empty String**
 Setup: None required
-> {{em.createQuery(""); }}
+> ```em.createQuery(""); ```
 
 **Unknown Class**
 Setup: None required
-> {{em.createQuery("from IncorrectClassName"); }}
+> ```em.createQuery("from IncorrectClassName"); ```
 
 **Minimal "Get All"**
 Setup: None required
-> {{em.createQuery("from Person").getResultList(); }}
+> ```em.createQuery("from Person").getResultList(); ```
 
 **Successfully Get a Single Object**
 Setup: Insert exactly 1 Person entity in the database
-> {{final Person p = (Person) em.createQuery("from Person").getSingleResult(); }}
+> ```final Person p = (Person) em.createQuery("from Person").getSingleResult(); ```
 
 **Unsuccessfully Try to get a Single Object When There Are None**
 Setup: Make sure there are no Person entities in the database
-> {{ em.createQuery("from Person").getSingleResult(); }}
+> ``` em.createQuery("from Person").getSingleResult(); ```
 
 **Unsuccessfully Try to get a Single Object With Too Many**
 Setup: Insert two or more Person entities in the database
-> {{em.createQuery("from Person").getSingleResult(); }}
+> ```em.createQuery("from Person").getSingleResult(); ```
 
 **Find By Primary Key**
 Setup: Insert a Person in the database, make sure to get the key of the object inserted
-> {{final Person p = em.find(Person.class, personKey);}}
+> ```final Person p = em.find(Person.class, personKey);```
 
 **Unsuccessfully Find by Primary Key**
 Setup: None required
-> {{final Person p = em.find(Person.class, -42);}}
+> ```final Person p = em.find(Person.class, -42);```
 
 **Search Using Query Parameter and Storing Result as List<?>**
 Setup: Insert one person record where the Person's first name = "Brett".
@@ -60,24 +60,24 @@ Setup: Insert one person record and store the primary key. Also make sure the fi
 
 **Use Wrong Class Name**
 Setup: None required
-> {{em.createQuery("from PERSON").getSingleResult(); }}
+> ```em.createQuery("from PERSON").getSingleResult(); ```
 
 **Use Wrong Field Name**
 Setup: None required
-> {{em.createQuery("from Person p where p.FirstName='Brett'"); }}
+> ```em.createQuery("from Person p where p.FirstName='Brett'"); ```
 
 **Use Column Name Instead of Field Name**
 Setup: None required, but maybe insert a single person whose first name = "Brett".
-> {{ em.createQuery("from Person p where p.firstName='Brett'").getResultList(); }}
+> ``` em.createQuery("from Person p where p.firstName='Brett'").getResultList(); ```
 
 **Use a Parameter but Provide Wrong Index**
 Setup: None required
-> {{ em.createQuery("from Person p where p.firstName=?1").setParameter(0, "Brett"); }}
+> ``` em.createQuery("from Person p where p.firstName=?1").setParameter(0, "Brett"); ```
 
 **Set Parameter Where There are None: Version 1**
 Setup: None required
-> {{ em.createQuery("from Person p where p.firstName='Brett'").setParameter(1, "Brett"); }}
+> ``` em.createQuery("from Person p where p.firstName='Brett'").setParameter(1, "Brett"); ```
 
 **Set Parameter When There Are None: Version 2**
 Setup: None required
-> {{ em.createQuery("from Person p where p.firstName='?1'").setParameter(1, "Brett"); }}
+> ``` em.createQuery("from Person p where p.firstName='?1'").setParameter(1, "Brett"); ```

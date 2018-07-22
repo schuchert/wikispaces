@@ -122,8 +122,8 @@ We need to update the AccountInventory interface and the beans. Make the followi
 # Remove the AccountInventoryExtendedBean
 # Remove the finish() method from both the AccountInventory interface and the AccountInventoryBean class.
 # Add the following methods to AccountInventory:
-# # {{void addCharge(final String tollTagNumber, final double amount); }}
-# # {{double getTotalChargesOnAccountById(final Long id); }}
+# ```void addCharge(final String tollTagNumber, final double amount); ```
+# ```double getTotalChargesOnAccountById(final Long id);```
 # Create these methods in AccountInventoryBean:
 ```java
     public void addCharge(String tollTagNumber, double amount) {

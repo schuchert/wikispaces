@@ -18,7 +18,9 @@ In a nutshell, you are going to create a C# project, add some classes and then a
 * Add the required configuration to the top of your DigitalVideoRecorder page:
 ```
 !define TEST_SYSTEM {slim}
+{% raw %}
 !define COMMAND_PATTERN {%m -r fitSharp.Slim.Service.Runner,c:\tools\nslim\fitsharp.dll %p}
+{% endraw %}
 !define TEST_RUNNER {c:\tools\nslim\Runner.exe}
 ```
 
@@ -37,7 +39,9 @@ In a nutshell, you are going to create a C# project, add some classes and then a
 * Your page should now be:
 ```
 !define TEST_SYSTEM {slim}
+{% raw %}
 !define COMMAND_PATTERN {%m -r fitSharp.Slim.Service.Runner,c:\tools\nslim\fitsharp.dll %p}
+{% endraw %}
 !define TEST_RUNNER {c:\tools\nslim\Runner.exe}
 
 !path C:\Projects\C_Sharp\DigitalVideoRecorder\DigitalVideoRecorder\bin\Debug\DigitalVideoRecorder.dll

@@ -224,7 +224,9 @@ C:\src\cslim_vs2010>dir FitNesseRoot\CslimExamples
 
 !define TEST_SYSTEM {slim}
 !define TEST_RUNNER {c:\src\cslim_vs2010\cslim\fixtures\slim.exe}
+{% raw %}
 !define COMMAND_PATTERN {%m}
+{% endraw %}
 
 !define SLIM_VERSION {0.0}
 ```

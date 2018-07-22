@@ -238,11 +238,12 @@ There are two problems with this test. First, we're using detached objects after
 ```
 
 Once we make these changes and re-run the test, we get the following exception:
-{{java.lang.RuntimeException: org.jboss.tm.JBossRollbackException: }}
-{{Unable to commit, tx=TransactionImpl:XidImpl[FormatId=257, GlobalId=null:}}
-{{1164776892890/6, BranchQual=null:1164776892890, localId=0:6], status=}}
-{{STATUS_NO_TRANSACTION; - nested throwable: (javax.persistence.EntityNotFoundException:}}
-{{deleted entity passed to persist: [entity.Loan#<null>]) }}
+```
+java.lang.RuntimeException: org.jboss.tm.JBossRollbackException:
+Unable to commit, tx=TransactionImpl:XidImpl[FormatId=257, GlobalId=null:
+1164776892890/6, BranchQual=null:1164776892890, localId=0:6], status=
+STATUS_NO_TRANSACTION; - nested throwable: (javax.persistence.EntityNotFoundException:
+deleted entity passed to persist: [entity.Loan#<null>]) 
 
 OK, what does this mean? After some researching and guessing, you'll discover that this probably means you are trying to delete some object and doing so violates a foreign key constraint. It mentions Loan. If you do a little more digging, you'll find out that when you try to remove a loan from a collection of loans in a Patron, the loan is not removed. Why? No equals() or hashCode(). Here they are:
 ```java

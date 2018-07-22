@@ -24,7 +24,9 @@ That's a whole lot. However, this is an idiomatic use of jMock, so you'll be rep
 
 If you're using an IDE, I'd recommend typing the following:
 ```java
+{% raw %}
     context.checking(new Expectations() {{}});
+{% endraw %}
 ```
 Once you've done that, format your code and it will be a bit more clear where to express your expectations.
 

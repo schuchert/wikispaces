@@ -19,7 +19,7 @@ Create a visual representation of the database tables generated. Consider using 
 Update your UI to allow a user to add a new DVD and a Patron to check out dvd's.
 
 ### Name Equality===
-During the first offering of the class, one student asked about the Name object, which is used in an {{equals()}} and {{hashCode()}} method. It turns out that the unit tests written did not expose the fact that the Name class lacks these methosd.
+During the first offering of the class, one student asked about the Name object, which is used in an ```equals()``` and ```hashCode()``` method. It turns out that the unit tests written did not expose the fact that the Name class lacks these methosd.
 
 Here's a unit test, add it and get it to work:
 ```java

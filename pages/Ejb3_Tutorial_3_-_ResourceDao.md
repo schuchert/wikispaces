@@ -11,7 +11,8 @@
 # Add method with @BeforeClass annotation that initializes the container
 
 ## # Run Your Tests (ResourceDaoBeanTest): First Failures ===
-After making these changes, we have 3 tests that pass and one that fails. The error in the JUnit stack trace looks like this: {{org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: entity.Book.authors, no session or session was closed}}
+After making these changes, we have 3 tests that pass and one that fails. The error in the JUnit stack trace looks like this: 
+```org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: entity.Book.authors, no session or session was closed```
 
 Here's the actual test:
 ```java
