@@ -38,7 +38,7 @@ First the test:
 public class FakeVendorSynchronizationServiceTest {
    @Test
    public void convertsApproximately2PerSecond() throws Exception {
-       VendorSynchronizationService service = 
+       VendorSynchronizationService service 
            new FakeVendorSynchronizationService();
 
        long start = System.currentTimeMillis();

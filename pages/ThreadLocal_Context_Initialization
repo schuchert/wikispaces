@@ -67,7 +67,7 @@ Instead, we created another utility class that simply wrapped ThreadContext and 
 34: 	ISecurityCredentials getSecurityCredentials(ISessionKey key)
 35: 		throws RequestFailedException, UserSessionException
 36: 	{
-37: 		ILocalSecuritySession delegate = 
+37: 		ILocalSecuritySession delegate 
                             LocalSecuritySessionDelegateFactory.getDelegate();
 38: 		return delegate.getSecurityCredentials(key);
 39: 	}	

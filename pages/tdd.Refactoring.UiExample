@@ -621,7 +621,7 @@ This code was initially testable but the tests ran slowly, had a great deal of i
 While this example is trivial, the fundamental things you will want to do apply to your UI code. Actually, this approach is a general one that applies across technologies. It is worth practicing so making this kind of change is stored in muscle memory. In fact, you might consider this for a coding kata.
 
 ==Final Questions
-===What about the GUI code?=== 
+===What about the GUI code?
 Imagine if you had the business logic tested. What's left? Flow, enabling/disabling fields & buttons, UI look and feel, etc. Some of this you can automate with any number of testing tools. However, before you do that, you might want to make the system configurable such that you can have a body-less head. That is, a UI with a test double back end.
 
 Why? So that the UI tests you run verify flow, are reliable, run quickly, etc.

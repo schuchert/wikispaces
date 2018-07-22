@@ -1,7 +1,7 @@
 ==Introduction
 This page describes some of what it takes to successfully test thread-related code. The primary emphasis here is on supporting technology rather than techniques.
 
-==Broken Code== 
+==Broken Code
 Here is some simple production code:
 **//ClassWithThreadingProblem.java//**
 [[code format="java5"]]

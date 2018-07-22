@@ -1,9 +1,9 @@
-==Background== 
+==Background
 These are my preliminary notes on getting started with gradle. The last time I did any serious build work, I used ant, before that make and nmake; I missed using maven so coming into gradle was both easy and frustrating. Even though I did not use maven extensively, I knew its model well enough to get up and running somewhat quickly.
 
 Gradle requires a JVM; I work mostly on OS X, so I use JSE 1.6.0_24, but any version from 1.5 on should work fine. What follows assumes you already have a JVM running. I start in a shell and only at the end finally get into an IDE.
 
-==Install Gradle== 
+==Install Gradle
 Instructions for installing Gradle are [[http://www.gradle.org/installation.html|here]]. I'm summarizing them here, if you have any questions refer to the installation instructions.
 # [[http://www.gradle.org/downloads.html|Download Gradle]]. For these examples I happen to be using the 1.0-milestone-3 version of Gradle.
 # Unzip the file somewhere, say /users/Schuchert/bin
@@ -28,7 +28,7 @@ Total time: 4.304 secs
 [~]%
 [[code]]
 
-==Create Initial Project Structure== 
+==Create Initial Project Structure
 Gradle prefers convention over configuration and its default assumptions about project structure mirror those of Maven. For this example, let's assume that you'll create a single project directory (this is to keep things simple). Also, this example demonstrates working with Java, though Gradle supports several other languages.
 # Create a project directory, e.g. ~/src/gradle_example
 # Under that directory create src, src/main/, src/main/java, src/test, src/test/java
@@ -39,7 +39,7 @@ Gradle prefers convention over configuration and its default assumptions about p
 [~/src/gradle_example]% mkdir -p src/main/java src/main/resources src/test/java
 [[code]]
 
-==Create Basic Gradle Build File== 
+==Create Basic Gradle Build File
 This example uses java and will ultimately use Eclipse, so here's a basic build file that will support building and running tests if your project follows Maven layout conventions, uses JUnit and uses Maven Central to retrieve jar files:
 [[code]]
 apply plugin: 'java'
@@ -70,7 +70,7 @@ Total time: 9.219 secs
 [~/src/gradle_example]%
 [[code]]
 
-==Smoke Test With A Little Code== 
+==Smoke Test With A Little Code
 We're working at the command line. Java packages relate to directories. Now you'll create a couple of source files, one test, one production. I'll use the package //**demo.rpn**//:
 [[code]]
 [~/src/gradle_example]% mkdir -p src/test/java/demo/rpn src/main/java/demo/rpn
@@ -81,7 +81,7 @@ We're working at the command line. Java packages relate to directories. Now you'
 [~/src/gradle_example]% vi src/test/java/demo/rpn/RpnCalculatorShould.java
 [[code]]
 
-===RpnCalculatorShould.java=== 
+===RpnCalculatorShould.java
 [[code format="java5"]]
 package demo.rpn;
 
@@ -107,7 +107,7 @@ public class RpnCalculatorShould {
 [~/src/gradle_example]% vi src/main/java/demo/rpn/RpnCalculator.java
 [[code]]
 
-===RpnCalculator.java=== 
+===RpnCalculator.java
 [[code format="java5"]]
 package demo.rpn;
 
@@ -150,7 +150,7 @@ open build/reports/tests/index.html
 [[code]]
 
 My report shows one test running and passing.
-==On To Eclipse== 
+==On To Eclipse
 If you want to create project information for Eclipse, you need to do a few things:
 # Add //**apply plugin: 'eclipse'**//
 # Create the project structure using //**gradle eclipse**//
@@ -173,7 +173,7 @@ Note, this creates a //**project**// directory, not a workspace. You'll need to:
 # Import the project into eclipse
 
 In my example, I only created a top-level project directory, not a workspace directory. However, you can create an Eclipse workspace and include a symbolic link to the project. This is a bit out of scope for what I want to get covered. I only mention this here because it confused me a bit.
-==Preparing for git== 
+==Preparing for git
 No coding is complete without a mention of using a repository. We'll do a touch of preparation for git and check in our initial structure. In the top-level project directory create a file called //**.gitignore**//. For this example, and assuming you have executed the Eclipse step above:
 [[code]]
 build
@@ -218,7 +218,7 @@ Initialized empty Git repository in /Users/schuchert/src/gradle_example/.git/
 [~/src/gradle_example]%
 [[code]]
 
-==Congratulations== 
+==Congratulations
 The purpose of this was to give one specific example of using Gradle to build a new project from scratch. Here's a summary of the steps:
 # Create a project directory
 # Create an initial build.gradle file
@@ -229,7 +229,7 @@ The purpose of this was to give one specific example of using Gradle to build a 
 
 Hope this helps get you started a touch quicker. For more information on Gradle, have a look at its [[http://www.gradle.org/documentation.html|extensive documentation]].
 
-===Final Caution=== 
+===Final Caution
 Since we are using Maven repositories, that comes with the standard baggage associated with it. For example, if you are using a project that uses a particular release of another project, you might need to configure a few more things in the build.gradle file to make it possible to find everything. Here is an example file from another project I've been toying with:
 [[code]]
 apply plugin: 'java'

@@ -1,6 +1,6 @@
 [[toc]]
 [[FitNesse.Tutorials|<--Back]] -or- [[FitNesse.Tutorials.2|Next Tutorial-->]]
-=Introduction= 
+=Introduction
 This tutorial assumes some basic [[http://fitnesse.org/|FitNesse]] knowledge. If you need help installing or running [[http://fitnesse.org/|FitNesse]], please [[FitNesse.Tutorials.0|go here first]]. In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:
 * Create Decision tables in FitNesse
 * Make the tables execute by writing Fixtures
@@ -15,7 +15,7 @@ This tutorial assumes some basic [[http://fitnesse.org/|FitNesse]] knowledge. If
 This tutorial is primarily about getting you over the hurtle of the mechanics of getting tests to execute using [[http://fitnesse.org/|FitNesse]]. Even so, you will see some basic design considerations play out as well.
 
 Note, this tutorial assumes you are running [[http://fitnesse.org/|FitNesse]] on localhost at port 8080 [[http://localhost:8080]]. If you are not sure how to do that, [[FitNesse.Tutorials.0|try this tutorial]].
-=Background= 
+=Background
 [[http://FitNesse.org/FitNesse.SliM.DecisionTable|FitNesse.Slim Decision Tables]] are a common way to get test data into a System Under Test. A Decision table has three parts (only the first of which is actually required):
 # One Title Row - Names the fixture to execute, optionally includes constructor parameters
 # One Heading Row - Names of columns, which map to either setter methods or method calls (if they end in ?)
@@ -41,7 +41,7 @@ These methods can all take Strings or some, where there's a conversion available
 
 Finally, there are two data rows. Given the name of the fixture, this table's goal is to apparently add two programs to the schedule.
 
-==Creating this table== 
+==Creating this table
 Here are some preliminary steps to get this table created (there will be more later, this table is the skeleton of a test):
 * Browse to [[http://localhost:8080]].
 * Edit this page (click the **Edit** button - or, if not available, go to the following URL: [[http://localhost:8080/FrontPage?edit]]), add the following before the Release date line at the bottom (the location is arbitrary):
@@ -58,7 +58,7 @@ Here are some preliminary steps to get this table created (there will be more la
 
 Now you can execute the page. Click on the **Test** button. The tests will fail dues to a missing fixutre. [[http://fitnesse.org/|FitNesse]] will color the first row yellow and add the message "//Could not find fixture: AddProgramsToSchedule.//". Now you must create a Fixture class and add it to the test page.
 
-==Creating the Fixture== 
+==Creating the Fixture
 If you are planning on using Eclipse and working in Java, then you can get a repository from github: [[http://github.com/schuchert/fitnesse-tutorials/tree/master|fitnesse-tutorials]]. Review the instructions [[FitNesse.Tutorials.WorkingFromGitHub|here]].
 
 Creating a fixture involves:
@@ -135,7 +135,7 @@ Run the test and verify that the page passes successfully.
 
 While you are at it, you have your original test page from the first tutorial. You can verify it still passes as well.
 
-=Add Assertions= 
+=Add Assertions
 Right now, this table does not assert any results, which means the underlying fixture can do the same, which is not much. Let's extend this just a bit to have the table actually perform validation:
 [[code]]
 |Add Programs To Schedule                                                              |
@@ -153,10 +153,10 @@ Try running this page and FitNesse will complain that it cannot find the **creat
 
 Update your table and add the missing method. Verify that the test still passes. You'll notice there are three successful assertions.
 
-==What is this doing?== 
+==What is this doing?
 Adding a column with a ? at the end of its name requires that the fixture have a method with a matching name (remove spaces, use camel casing) with some return value. [[http://fitnesse.org/|FitNesse]] will execute that method and compare its return value to the value in the cell, marking it green or red for matching/not matching. If you happen to have a cell with no value, the return value will be displayed in the cell with a gray coloring. 
 
-=Make the Assertion have some Value= 
+=Make the Assertion have some Value
 There's nothing in the flow of this table that would cause a problem. However, what if we want to make sure adding a program on top of another is not possible? We can do that by adding one more row to the bottom of the table::
 [[code]]
 |Conflicts |Should not be added          |7      |5/12/2008|7:00      |30     |false   |
@@ -167,7 +167,7 @@ This demonstrates a conflict because the third program is on the same channel, d
 This is a non-typical use of the Decision table, but it certainly is legitimate. Assuming the slot is already occupied (even partially), this item should not be added to the schedule.
 
 Run it, you should have one failed assertion. Your code will need some way to know that one slot is already used. Here's one way to accomplish that:
-==Update AddProgramsToSchedule.java== 
+==Update AddProgramsToSchedule.java
 [[code format="java5"]]
 package com.om.example.dvr.fixtures;
 
@@ -238,7 +238,7 @@ public class AddProgramsToSchedule {
 }
 [[code]]
 
-==Create new Class: TimeSlot.java== 
+==Create new Class: TimeSlot.java
 Notice, this class is in a different package (com.om.example.dvr.domain).
 
 [[code format="java5"]]
@@ -394,7 +394,7 @@ When dealing with a language-provided collection, you should wrap it by default 
 * Doing some kind of work over the entire collection.
 * Responding in a domain-specific way to empty/full collections.
 [[include page="sidebar_end"]]
-=Deleting Something By Key= 
+=Deleting Something By Key
 We should be able to add a program, remove it and then add another at the same time slot. Here's just such a test and it uses something you might have noticed in the first tutorial:
 [[code]]
 |Add Programs To Schedule                                                                      |
@@ -419,7 +419,7 @@ Add the missing method. Verify that the test still passes. You'll notice there a
 
 
 As for the third id, you'll see that in a minute. To get this to run, you'll need to make several changes:
-==Add: Program.java== 
+==Add: Program.java
 [[code format="java5"]]
 package com.om.example.dvr.domain;
 
@@ -441,7 +441,7 @@ public class Program {
 }
 [[code]]
 
-==Update: Schedule.java== 
+==Update: Schedule.java
 [[code format="java5"]]
 package com.om.example.dvr.domain;
 
@@ -475,7 +475,7 @@ public class Schedule {
 }
 [[code]]
 
-==Update: AddProgramsToSchedule.java== 
+==Update: AddProgramsToSchedule.java
 [[code format="java5"]]
 package com.om.example.DVR.fixture;
 
@@ -538,7 +538,7 @@ This variable is available for the rest of the page. However, before we get to t
 
 Make the update and then you'll notice the third data row of the lastId? column is now n/a (in gray).
 
-==Finally, Delete by Key== 
+==Finally, Delete by Key
 Time to add another table and fixture:
 [[code]]
 |Remove Program By Id|$p|
@@ -649,7 +649,7 @@ import java.util.Iterator;
 
 Run your tests and you should see all tests green.
 
-==Not Doing the Work in the Constructor== 
+==Not Doing the Work in the Constructor
 If for some reason, you do not like to do the actual work done in the constructor, you can optionally write the table as follows:
 [[code]]
 |Remove Program By Id|
@@ -683,7 +683,7 @@ public class RemoveProgramById {
 [[code]]
 Note that this Fixture, as written, supports both styles. The real reason I wanted to include this last example was to demonstrate how you can cause a row of a decision table to be executed without include a column with a ? in its name. You add a method called **execute()**. [[http://fitnesse.org/|FitNesse]] will call that method, if it exists, after calling the last setter (the columns without ? in their name).
 
-=Conclusion and Summary= 
+=Conclusion and Summary
 Congratulations, you've completed this tutorial.
 
 This tutorial emphasizes Decision tables. There is still more to you can do with decision tables, but this covers most of what you'll need to know to effectively use decision tables. If you go to your fitness installation and go to FitNesse.SliM.DecisionTable ([[http://localhost:8080/FitNesse.SliM.DecisionTable]]), you can read the [[http://fitnesse.org/FitNesse.SliM.DecisionTable|FitNesse]]-provided documentation.

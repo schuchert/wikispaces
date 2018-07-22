@@ -4,7 +4,7 @@
 [[iPhone.setup.xcode3|Old Setup for XCode 3]]
 =The Video
 
-=Basic Application Setup= 
+=Basic Application Setup
 Note: This "works" and as I get better with XCode 4 I hope to improve this setup. If you know how to do this better, please let me know so I can learn about it and document it!
 
 If you want to get get to it, [[iPhone.SettingUpTheEnvionment#backgroundSkipped|then skip this section]].
@@ -112,7 +112,7 @@ Note that by default, the project you just created is selected. If you rush thou
 ** Build, command-b
 ** Run, command-r
 ** When the simulator starts, click on //**Run**//. There are no tests, so it finishes quickly.
-=Add a first test= 
+=Add a first test
 * Under //**Targets**//, right-click  //**UnitTests_oniPhoneSimulator**//
 * Select //**Add:New File**//
 * Under //**iOS:Cocoa Touch Class**//, just select //**Objective-C class**//
@@ -191,7 +191,7 @@ Now the hard part starts.
 * Create a new static library for your model code (keep model separate from UI
 * Link to it from the UI project
 * Link to it from the Unit Test Project
-=A Few Handy Shortcut Keys= 
+=A Few Handy Shortcut Keys
 || Command-r || run application ||
 || Command-b || quick open ||
 || F3 || mapped to Edit:Find:Jump to Definition ||

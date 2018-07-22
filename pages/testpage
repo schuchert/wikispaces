@@ -1,4 +1,4 @@
-* ==Leve2 header== 
+* ==Leve2 header
 * should not be block style
 [[code format="ruby"]]
   def precedence_of(operator)

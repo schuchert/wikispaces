@@ -1,6 +1,6 @@
 [[JUnit 4.x|<--Back]]
 
-=Time Bomb Generic Code Explained= 
+=Time Bomb Generic Code Explained
 Here's a use of TimeBomb (for context) taken from [[JUnit 4.x#example2|Example 2]]:
 [[code]]
 92:     @Test(expected = ObjectInUse.class)
@@ -37,7 +37,7 @@ I made throwUntil a generic method. Doing so allowed Java to determine at compil
 
 This is what I ended up using:
 [[#TimeBombCode]]
-==TimeBomb.java== 
+==TimeBomb.java
 [[code format="java5"]]
 01: package vehicle.util;
 02:

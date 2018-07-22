@@ -296,7 +296,7 @@ public class TollTagChargedMdbTest {
     @Test
     public void addCharge() throws Exception {
         final Queue queue = (Queue) getInitialContext().lookup("queue/tolltag");
-        final QueueConnectionFactory factory = 
+        final QueueConnectionFactory factory 
                   (QueueConnectionFactory) getInitialContext()
                   .lookup("java:/ConnectionFactory");
         final QueueConnection connection = factory.createQueueConnection();

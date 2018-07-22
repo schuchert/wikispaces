@@ -10,7 +10,7 @@ These do not include working in the express version. See the old section below f
 * When asked to convert project, click yes.
 * Execute the unit tests to make sure they work (ctrl-F5), you'll have some warnings in both the build and the output window. The warnings should all be related to the use of sprintf.
 
-===Each Time You Want a New Solution=== 
+===Each Time You Want a New Solution
 * Create a new solution with an Empty C++ Project (new, Empty C++ project)
 * Add a source file (select project, right-click, add, new item..., c++ file) to your Empty C++ project called RunAllTests.cpp:
 [[code format="cpp"]]
@@ -56,8 +56,8 @@ Press any key to continue . . .
 old
 ----
 ----
-===First Time Only=== 
-====Install CppUTest==== 
+===First Time Only
+====Install CppUTest
 * Download [[http://sourceforge.net/projects/cpputest/|CppUTest]].
 * Extract the zip into some directory.
 * Go into the CppUTest directory under which you extracted the zip file.
@@ -68,12 +68,12 @@ old
 ** If you use VS2005 Express, it won't have windows.h, which is needed for CppUtest.
 *** Google for PSDK-x86.exe and VS2005 and see all the complaints and how to fix.
 
-====Install DevExpress Refactor!==== 
+====Install DevExpress Refactor!
 * Install [[http://devexpress.com/Products/Visual_Studio_Add-in/RefactorCPP/|DevExpress Refactor!]] - This is a free refactoring tool for C++ in Developer Studio.
 * Note: You'll need to exit Developer Studio to install this product.
 * This tool has caused problems at times. When it works, it is a big help. If you experience problems with your IDE freezing, uninstall this to see if the problems go away.
 
-===Each Time You Want a New Solution=== 
+===Each Time You Want a New Solution
 * Create a new solution with an Empty C++ Project
 * Select the solution and select Add:Existing Project
 * Select the solution created when converting CppUTest

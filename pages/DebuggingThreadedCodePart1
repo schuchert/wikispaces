@@ -5,7 +5,7 @@ Writing unit tests for threaded code is hard. What follows is a simple example, 
 This page describes some of what it takes to successfully test thread-related code. The primary emphasis here is on supporting technology rather than techniques.
 
 [[DebuggingThreadedCodePart1#StepByStepInstructions|If you just want to get to the step-by-step instructions, click here.]]
-==Broken Code== 
+==Broken Code
 Here is some simple production code:
 **//ClassWithThreadingProblem.java//**
 [[code format="java5"]]
