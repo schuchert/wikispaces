@@ -9,3 +9,5 @@ url: "http://schuchert.github.io/wikispaces"
 repository: schuchert/wikispaces
 
 theme: jekyll-theme-midnight
+baseurl: /wikispaces
+pagesurl: /wikispaces/pages
