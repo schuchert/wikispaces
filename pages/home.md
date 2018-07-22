@@ -4,7 +4,7 @@ For more background on where I'm coming from, have a look at
 
 
 # [New Stuff]({{ site.pagesurl}}/NewStuff)
-{% include_relative NewStuff %}
+{% include_relative NewStuff.md %}
 
 # Exercises
 * ## [Aspect Oriented Programming]({site.pagesurl}}/AspectOrientedProgramming)
