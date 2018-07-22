@@ -80,7 +80,7 @@ public class Company {
 }
 [[code]]
 
-===Factor out Common Test Code===
+###Factor out Common Test Code===
 We have some common initialization we can move up into a base since we are going to have two tests classes, PersonTest and CompanyTest:
 **TestBase.java**
 [[code format="java5"]]
@@ -201,7 +201,7 @@ Run this unit test and make sure it is all green before going on (right-click in
 
 If you'd like to run all of your tests, right-click on the **test** folder, select **Run As:JUnit Test** and eclipse will execute all of your tests classes' test methods.
 
-===Hire some people===
+###Hire some people===
 We need to create some people and add them to the company. The PersonTest class already has some people. Rather than re-creating new people, let's update PersonTest to make those fields available. Update the a1, p1, a2, and p2 fields as follows:
 [[code format="java5"]]
     public static List<Person> generatePersonObjects() {
@@ -272,7 +272,7 @@ Now we'll add a new test into CompanyTest to verify that we can hire people:
     }
 [[code]]
 
-===Update persistence.xml===
+###Update persistence.xml===
 Again, given our environment, this step is optional.
 
 **persistence.xml**

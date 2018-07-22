@@ -1,9 +1,9 @@
 [[Designing to Spring Templates|<--Back]]
 
-=Designing to Spring Templates Source=
+#Designing to Spring Templates Source=
 This page has the full source in an Eclipse Archive file along with instructions for creating a workspace and setting up the workspace using the archive file.
 
-==Eclipse Archive File==
+##Eclipse Archive File==
 [[file:JdbcToSpringExample.zip]]
 This is an Eclipse 3.2 Archive file with two projects: 
 * JdbcToSpringTemplates

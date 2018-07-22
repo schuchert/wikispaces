@@ -1,13 +1,13 @@
 [[cpptraining#gettingfirsttestrunning|<--Back]]
 
-=Introduction
+#Introduction
 Now it is time to get a simple example running to verify everything works.
 
-=Before Continuing
+#Before Continuing
 Make sure you have [[cpptraining.GettingStartedWithEclipseCdt|already installed the CDT]] and [[cpptraining.GettingCppUTestCompiledUsingCDTToolSet|built CppUTest]]. For the remainder of this discussion, I'll assume that CppUTest was downloaded and built in the following directory: c:\workspaces\CppUTest2_1
 [[include page="cpptraining.SettingUpInitialProject"]]
 [[include page="cpptraining.ConfiguringTheProjectForCppUTest"]]
-=Creating A Test
+#Creating A Test
 * Now, add another source file called ActualSmokeTest.cpp:
 [[code format="cpp"]]
 #include <CppUTest/TestHarness.h>

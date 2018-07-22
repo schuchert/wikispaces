@@ -1,13 +1,13 @@
 [[Car Rental Example|<--Back]]
 
-=Car Rental Installation and Setup=
+#Car Rental Installation and Setup=
 
 This project uses Eclipse 3.2 and JDK 1.5.0_06. I have a few additional plugins installed into Eclipse. These are all optional:
 * [[http://eclipse-cs.sourceforge.net/|Checkstyle]], for details see: [[Checkstyle in Eclipse]].
 * [[http://pmd.sourceforge.net/integrations.html#eclipse|PMD]], for details see: [[PMD In Eclipse]].
 * Subversion on my PC and Subclipse. See: [[Subversion on XP]].
 
-==Libraries==
+##Libraries==
 **Required**
 This project also requires several libraries:
 * [[http://www.junit.org|JUnit 4.x]] (included with Eclipse 3.2)
@@ -19,17 +19,17 @@ This project also requires several libraries:
 * Code coverage with Emma, download [[http://emma.sourceforge.net/downloads.html|here]].
 * Code coverage with Cobertura, download [[http://cobertura.sourceforge.net/download.html|here]].
 
-=The Gory Details=
+#The Gory Details=
 Here are the full instructions. Note that if you've already downloaded/installed any of the above, you'll just need to use your directories instead of the examples provided here.
 
-==Download Everything==
+##Download Everything==
 # Download [[http://java.sun.com/j2se/1.5.0/download.jsp|Java JDK 1.5.0]]
 # Download [[http://www.eclipse.org/downloads/|Eclipse]]
 # Download [[http://www.springframework.org/download|Spring]] (get the one with dependencies: spring-framework-2.0-rc2-with-dependencies.zip)
 # Download [[file:CarRentalRelease1.zip]]
 # Download [[http://www.eclipse.org/aspectj/downloads.php|AspectJ 1.5.x]]
 
-==Install/Unzip Everything==
+##Install/Unzip Everything==
 # Install the Java JDK 1.5.0 anywhere you want. I used the defaults so it ended up in C:\Program Files\Java\jdk1.5.0_06. Eclipse should find it.
 # Unzip the Eclipse zip file anywhere. I used C:\Eclipse
 # Expand the Spring jar anywhere. I used C:\libs, which creates C:\libs\spring-framework-2.0-rc2
@@ -37,7 +37,7 @@ Here are the full instructions. Note that if you've already downloaded/installed
 # Create a place to store your Eclipse workspace, I used C:\workspaces\CarRentalExample
 # Extract [[file:CarRentalRelease1.zip]] to your workspace directory (C:\workspaces\CarRentalExample).
 
-==Eclipse/Environment Configuration==
+##Eclipse/Environment Configuration==
 # Start Eclipse (if you have not already done so) and select your workspace (in my case it is C:\AOP\Workspaces\aspectj)
 # Close the "Welcome" tab
 

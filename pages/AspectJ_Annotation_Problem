@@ -1,6 +1,6 @@
 [[AspectJ Annotation Start|<--Back]] [[AspectJ Annotation Possibilities|Next-->]]
 
-=Problem=
+#Problem=
 
 Right now, the solution provided in [[AspectJ Exercise 4|Exercise 4]] enables tracking changes on an object when any of its fields change. What if I wanted to ignore certain fields?
 

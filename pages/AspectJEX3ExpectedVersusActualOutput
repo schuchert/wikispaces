@@ -1,8 +1,8 @@
 [[AspectJ Example 2|<--Back]] [[AspectJEX3Possibilities|Next-->]]
 
-=Expected Versus Actual Output=
+#Expected Versus Actual Output=
 
-==Expected Output==
+##Expected Output==
 Is the what you guessed the output would be?
 [[code]]
 Exception in thread "main" java.io.NotSerializableException: ex3.Die
@@ -13,14 +13,14 @@ Exception in thread "main" java.io.NotSerializableException: ex3.Die
 [[code]]
 Notice that the Die class does not implement Serializable or Externalizable, so the Main.main() method should not have been able to Serialize the object.
 
-==Actual Output==
+##Actual Output==
 Here’s the actual output:
 [[code]]
 Serialization successful
 [[code]]
 By now you've figured out that the expected and actual output are generally not the same.
 
-==Assignment: Form a Theory==
+##Assignment: Form a Theory==
 Spend a few moments and try to figure out how to make this output happen. Write down those ideas. Please do so before continuing to the next section.
 
 [[AspectJ Example 2|<--Back]] [[AspectJEX3Possibilities|Next-->]]

@@ -1,7 +1,7 @@
 [[toc]]
 [[cpptraining#FitNesse|<<--Back]]
 
-=Decision Table
+#Decision Table
 Here is a basic table in FitNesse:
 **Example Decision Table**
 [[code]]
@@ -111,7 +111,7 @@ SLIM_END
 
 This particular Fixtures.c file registeres all thee fixtures mentioned on this page.
 
-=Script Table
+#Script Table
 Here is an example of a script table:
 **Example Script Table**
 [[code]]
@@ -216,7 +216,7 @@ SLIM_END
 }
 [[code]]
 
-=Query Table
+#Query Table
 Finally, the dreaded query table. The query table requires a bit more work to produce a result. So this section contains a table, a fixture and a utility class to help create the query results.
 **Example Query Table**
 [[code]]

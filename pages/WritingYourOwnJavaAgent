@@ -46,7 +46,7 @@ How do you get all of this to work? Here's what you'll need to do:
 # Star the VM with a command line parameter.
 
 And, of course, are the details for each of those steps.
-==Create an Implementation of [[http://java.sun.com/j2se/1.5.0/docs/api/java/lang/instrument/ClassFileTransformer.html|ClassFileTransformer]]
+##Create an Implementation of [[http://java.sun.com/j2se/1.5.0/docs/api/java/lang/instrument/ClassFileTransformer.html|ClassFileTransformer]]
 The [[JavaAgent#ClassAndPackageNamePrintingClassFileTransformer|class above]] is a complete example of a class that can "transform" a just-loaded class. By itself, it really does not do much. However, if you'd like to perform some custom transformation, you could create a new byte array, add in some Java Bytecodes and then return that class instead.
 
 Why would you do this? Here are a few examples:
@@ -55,7 +55,7 @@ Why would you do this? Here are a few examples:
 # Instrument a class to better thread-based testing (my reason for looking into this in the first place)
 # Etc.
 
-==Create a class with a [[http://java.sun.com/javase/6/docs/api/java/lang/instrument/package-summary.html|premain method]]
+##Create a class with a [[http://java.sun.com/javase/6/docs/api/java/lang/instrument/package-summary.html|premain method]]
 The class file transformer is not directly added to the class loader. Instead, you create another class with a method called premain that instantiates the class and registers it. Here is a complete example:
 [[code format="java5"]]
 package schuchert.agent;
@@ -72,7 +72,7 @@ public class RegisterMyClassFileTransformer {
 
 Why this indirection? I'm not exactly sure. However, I use it to write the registrar once and reuse it across projects. The act of registration is the same, what I want to register varies by project. The Registrar.jar file you'll download is essentially a simple "component" that allows for registration of a ClassFileTransformer you create in your project by specifying a system property. 
 
-==Create Jar File
+##Create Jar File
 When you add a class file transformer to the class loader, you must specify the name of a jar file. You cannot simply name a class in the classpath. So if the ClassAndPackageNamePrintingClassFileTransformer is in the class path, then you need to add the class RegisterMyClassFileTransformer to a jar file and add a manifest file to specify it.
 
 The jar file needs to have the following structure:
@@ -91,7 +91,7 @@ Premain-Class: com.javaagent.RegisterMyClassFileTransformer
 [[code]]
 
 NOTE: If you happen to download the Eclipse project mentioned [[AnExampleJavaAgent|here]], you can simply find the **RecreateJar.jardesc** file in the Eclipse project, right-click and select **Create JAR**.
-==Start the VM
+##Start the VM
 Finally, we need to star the VM:
 [[code format="text"]]
 java -javaagent:MyJarFile.jar <A Regular Class With A Main>

@@ -1,9 +1,9 @@
 [[toc]]
 [[Car Rental Code Coverage with Cobertura|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.exception|Next-->]]
 
-=Package: vehicle.type
+#Package: vehicle.type
 
-==Analysis
+##Analysis
 Here are the statistics for this package (sorted worse to best):
 ||Class||Coverage%||Line Count||Branch %||Line Count||Complexity||
 ||Validateable||N/A||N/A||N/A||N/A||0||
@@ -61,7 +61,7 @@ The tests do not execute the getGlobalErrors() method. I'll review this and see 
 **IntegerField**
 This class has 100% coverage so there are no required changes.
 
-==Results
+##Results
 After applying all of the changes metntioned above, here are the results:
 ||Classes||Line Coverage|| ||Branch Coverage|| ||Complexity||
 ||AbstractField||93%||42/45||100%||6/6||0||
@@ -111,6 +111,6 @@ Adding in the missing test methods improved the coverage. There still the matter
 
 
 
-==Conclusions
+##Conclusions
 
 [[Car Rental Code Coverage with Cobertura|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.exception|Next-->]]

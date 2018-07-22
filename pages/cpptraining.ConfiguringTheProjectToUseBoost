@@ -1,6 +1,6 @@
 [[cpptraining|<--Back]]
 
-=Configuring the Project to use Boost
+#Configuring the Project to use Boost
 * Edit your project's properties (right-click, properties)
 * Select// **C/C++ Build:Settings**//
 * Under// **GCC C++ Compiler:Includes**// enter the include directory for boost. 

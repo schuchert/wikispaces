@@ -1,7 +1,7 @@
-==Background
+##Background
 This example uses windows XP, cygwin and SDE lite 6.06.
 
-==Install The SDE
+##Install The SDE
 * Download the SDE lite from [[http://www.mips.com/products/software-tools/mips-sde-lite/|here]]. Note (free) registration is required.
 * Follow the install instructions in chapter 3 of the [[http://www.mips.com/media/files/MD00428-2B-SDE6X-SUM-01.17.pdf|SDE Programmer's Guide]], partially copied here for ease:
 ** Install cygin
@@ -15,7 +15,7 @@ sh /cygdrive/c/sde-6.06/bin/sdesetup.sh
 source /cygdrive/c/sde-6.06/bin/sdeenv.sh
 [[code]]
 
-==Get The Project
+##Get The Project
 The source files for the base projects are on github (or in class I can provide a thumb drive). The uri is// **git://github.com/schuchert/embedded_cpp_tdd.git**//.
 * In some base directory (preferably one without a space it its name) clone the git repository
 [[code]]
@@ -40,7 +40,7 @@ cpputest  dice_game  makefile.base  rpn_calc
 ||makefile.base||File||Common make stuff based on the makefiles provided by the examples in the sde||
 ||rpn_calc||Directory||Placeholder for second project||
 
-==Using It
+##Using It
 The makefile has a default SBD of GSIM32L. Simply typing make will built files that will work with the simulator and the debugger. You can also...
 ||~ Command||~ Effect||
 ||make||Build and link||

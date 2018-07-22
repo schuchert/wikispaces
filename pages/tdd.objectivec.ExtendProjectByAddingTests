@@ -1,7 +1,7 @@
-==Background
+##Background
 This material assumes you have already [[tdd.objectivec.XCodeProjectSetup|created an XCode project with these steps]].
 
-==Continue with next test
+##Continue with next test
 The next test adds the ability to set the accumulator's value:
 [[code format="c"]]
 -(void)testAllowItsAccumulatorToBeSet {
@@ -22,7 +22,7 @@ To:
 @property int accumulator;
 [[code]]
 
-==First Refactoring: Clean up duplication
+##First Refactoring: Clean up duplication
 In each of the tests, the code:
 * Allocates and initializes an RpnCalculator instance
 * Does some "real" work
@@ -86,4 +86,4 @@ Notice that the tests actually pass, but there are several warnings. The problem
 
 Everything is back to green.
 
-==Supporting basic math operations: addition
+##Supporting basic math operations: addition

@@ -1,4 +1,4 @@
-=Elevator Pitch
+#Elevator Pitch
 * **//For//** developers wishing to get practice creating systems using [[Test Driven Development|TDD]]
 * **//Who//** are interested in starting with user stories that follow the [[User Stories I.N.V.E.S.T|INVEST]] principle
 * **//Our//** RPN Calculator problem is a complete problem 
@@ -6,22 +6,22 @@
 * **//Unlike//** other problems that take you through the process step by step
 * **//Our Product//** only provides the starting point from which you are expected to begin practicing
 
-=User Stories
+#User Stories
 The following list of user stories form a [[Product Backlog]]. The are additionally sectioned by [[Releases]], each of which is given a [[Theme]].
 
-==Release 1 - Theme: Basic Math
+##Release 1 - Theme: Basic Math
 * [[RPN Calculator Addition|Addition]]
 * [[RPN Calculator Subtraction|Subtraction]]
 * [[RPN Calculator Multiplication|Multiplication]]
 * [[RPN Calculator Division|Division]]
 
-==Release 2 - Theme: Stack Management
+##Release 2 - Theme: Stack Management
 * [[RPN Calculator Review Stack|Review Stack]]
 * [[RPN Calculator Clear Stack|Clear Stack]]
 * [[RPN Calculator Insert into Stack|Insert into Stack]]
 * [[RPN Calculator Replace Item on Stack|Replace Item on Stack]]
 
-==Release 3 - Theme: Advanced Math
+##Release 3 - Theme: Advanced Math
 * [[RPN Calculator Square Root|Square Root]]
 * [[RPN Calculator Y to X|Y to X]]
 * [[RPN Calculator 1 over X|1 over X]]
@@ -31,10 +31,10 @@ The following list of user stories form a [[Product Backlog]]. The are additiona
 * [[RPN Calculator Exponentials|Exponentials]]
 * [[RPN Calculator Factorials|Factorials]]
 
-==Alternative Approach
+##Alternative Approach
 [[Rpn Calculator.WithRefactoringAndPatterns|As I've Actually Taught It]]
 
-=Getting Started
+#Getting Started
 
 Here are some steps to get you started:
 **Project Setup**
@@ -52,4 +52,4 @@ Here are some steps to get you started:
 # Repeat until all UAT's are done for the current user story
 # Repeat until all user stories for the current release are finished
 
-=[[RpnCalculatorCppExampleImplementation]]
+#[[RpnCalculatorCppExampleImplementation]]

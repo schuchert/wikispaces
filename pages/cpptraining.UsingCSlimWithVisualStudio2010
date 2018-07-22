@@ -9,7 +9,7 @@ What follows are instructions to get you started. Consider these Alpha instructi
 
 What follows are the instructions for building the supplied cslim examples and getting them to (mostly) run. After that, you'll be on your own to get a project up and running in Visual Studio.
 
-=Building The Examples
+#Building The Examples
 You can now build cslim using the command line tools of visual studio. I made my own clone of the github project so I could make a few minor changes. The changes include things that should be able to be moved into the main github repository. I've submitted a pull request. If the updates do get pulled, I'll update these notes accordingly.
 
 Now for the detailed instructions.
@@ -118,7 +118,7 @@ C:\src\cslim_vs2010\cslim>
 [[code]]
 
 Now that you have a compiled collection of fixtures, you are ready to install FitNesse, copy some pages and get tests to pass.
-=Install FitNesse
+#Install FitNesse
 * Download the fitnesse.jar from [[http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad]]. I use the EDGE build all of the time as its release criterion are the same as for the "official" release.
 * Copy (or move) the jar file you just downloaded into your top-level working directory (**C:\src\cslim_vs2010**)
 * Your directory should resemble the following:
@@ -167,7 +167,7 @@ Unpacking new version of FitNesse resources.  Please be patient.
         page version expiration set to 14 days.
 [[code]]
 **Note:** The first time you run FitNesse, it will expand the help wiki. This will not happen upon subsequent runs unless you replace fitnesse.jar with a newer version.
-==Copy Example Pages
+##Copy Example Pages
 * Create a new shell (because you're running FitNesse in your original shell)
 * The cslim distribution comes with some example pages. You'll want to copy a directory from one place to another to see those tests
 * The directory to copy// **from**// is: **cslim\fixtures\pages\**
@@ -216,7 +216,7 @@ C:\src\cslim_vs2010>dir FitNesseRoot\CslimExamples
                2 File(s)            310 bytes
                8 Dir(s)  32,117,567,488 bytes free
 [[code]]
-=Configure The Slim Implementation
+#Configure The Slim Implementation
 * You can now browse to the following URL to open up those examples: [[http://localhost:8080/CSlimExamples]]
 * You'll need to edit the page you just created and set its contents to:
 [[code]]
@@ -232,7 +232,7 @@ C:\src\cslim_vs2010>dir FitNesseRoot\CslimExamples
 ** If you get an exception related to a difference in the version of the slim protocol implemented by cslim versus the one expected by FitNesse, you'll need to change the "!define SLIM_VERSION {0.0}" to the version used by what cslim is implementing.
 ** There are problems with exception handling. I'll be looking into that but that causes the fixture called ExceptionsExample to fail. (These are alpha instructions after all!)
 ** The class TestSlim is part of the examples and it seems to be missing.
-=Where to go from here
+#Where to go from here
 If you want to use this in your own project, and use VS 2010, here are some bullets to get you started.
 * You'll need to link the library CSlim.lib created by the NMakefile
 * You'll need to add cslim\include\CSlim to your include path

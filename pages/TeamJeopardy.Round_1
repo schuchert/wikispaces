@@ -1,5 +1,5 @@
  ----
-==Eclipse Shortcuts==
+##Eclipse Shortcuts==
 **Question** When you want to organize imports you type this important key combination.
 **Answer** What is ctrl-shift-o
 
@@ -25,7 +25,7 @@
 **Answer** What is ctrl-1
 
 ----
-==Testing==
+##Testing==
 **Question** You're about to start solving a problem in Java. This is the first code you write.
 **Answer** What is a unit test?
 
@@ -45,7 +45,7 @@
 **Answer** What is test isolation?
 
 ----
-==Java==
+##Java==
 **Question** When objects are no longer reachable, the JVM gets rid of them using this.
 **Answer** What is garbage collection?
 
@@ -114,7 +114,7 @@
 
 
 ----
-==General OO==
+##General OO==
 **Question** When you perform software development based on decomposition by objects, you are doing this.
 **Answer** What is Object-Oriented Development?
 
@@ -146,7 +146,7 @@
 **Answer** What is the template method pattern?
 
 ----
-==UML==
+##UML==
 **Question** I'm showing this by using an arrow-head on a line.
 **Answer** What is navigability?
 
@@ -166,7 +166,7 @@
 **Answer** What is a concept/class?
 
 ----
-==Kitchen Sink==
+##Kitchen Sink==
 **Question** When you solve a problem, you always introduce these.
 **Answer** What is a problem.
 

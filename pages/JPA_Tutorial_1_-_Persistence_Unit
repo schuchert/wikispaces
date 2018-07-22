@@ -1,7 +1,7 @@
 We now need to create the Persistent Unit definition. Create a file called persistence.xml in the src/META-INF directory with the following contents:
 
 [[#persistence_xml]]
-===persistence.xml===
+###persistence.xml===
 [[code format="xml"]]
 <persistence>
     <persistence-unit name="examplePersistenceUnit" 
@@ -23,14 +23,14 @@ We now need to create the Persistent Unit definition. Create a file called persi
     </persistence-unit>
 </persistence>
 [[code]]
-===The Steps===
+###The Steps===
 # Expand your project (**JpaTutorial1**)
 # Select the **src/META-INF** directory
 # Right click and select **new:File**
 # Enter **persistence.xml** for the name and press **Finish** (Note: all lowercase. It won't make a difference on Windows XP but it will on Unix.)
 # Copy the contents (above) into the file and save it.
 
-===Verify This Works===
+###Verify This Works===
 # Select the **test**
 # Right-click on **entity** and select **new:Class**
 # Enter **PersonTest** and click **Finish**

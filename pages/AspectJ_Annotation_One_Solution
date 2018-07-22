@@ -1,6 +1,6 @@
 [[AspectJ Annotation Possibilities|<--Back]] [[AspectJ Annotation AllCode|Next-->]]
 
-=One Solution=
+#One Solution=
 This example is about using annotations so we will go with the 6th option. First, here’s what adding a field that we want to ignore might look like:
 
 [[code format="java5]]

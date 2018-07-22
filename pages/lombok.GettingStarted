@@ -1,7 +1,7 @@
-==Overview
+##Overview
 [[http://projectlombok.org/|Project Lombok]] uses a Java Annotation Processor and Java annotations to add boilerplate code to existing classes. The major IDEs also support Lombok in varying forms, making it viable for both command-line and IDE-based work. In this introduction, we'll begin by creating a project from scratch using a [[http://maven.apache.org/guides/introduction/introduction-to-archetypes.html|Maven Archetype]] and then migrate it to use [[http://projectlombok.org/|Project Lombok]] and [[http://www.slf4j.org/|Slf4j]]. Then we'll move on to seeing how it works in [[http://www.jetbrains.com/idea/download/|IntelliJ]] and then we'll migrate the project to use [[http://www.gradle.org/|Gradle]]. 
 
-==Create a Basic Project
+##Create a Basic Project
 We need a project, since this is about a tool, the any project will do. To avoid much of the work, let's use a Maven archetype to create a trival project with a single production class and a single test class using JUnit.
 
 First we'll create a place to put the project, then create the primordial project. For this example, I'll be working in my account: /Users/schuchert/src. Where I mention directories, remember to replace my directory with yours.
@@ -57,7 +57,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [[code]]
 
 Now we have basic project that uses Java and JUnit, so it's time to add Lombok to the project dependences and get things to work at the command line.
-==Adding Lombok
+##Adding Lombok
 The project created by the Maven archetype has a simple POM. It has a single dependency on JUnit. We'll make 3 changes: update the version of JUnit, add a dependency for Lombok, and add a dependency for Slf4j.
 
 * Update the pom.xml file with the changed dependencies:
@@ -185,7 +185,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 
 Note that we did not need to use "clean" this time because the last attempt to build failed.
 
-==Is anything going on?
+##Is anything going on?
 What this demonstrates may be trivial/subtle. To make sure you didn't miss it, consider the production code again:
 
 **//App.java**//
@@ -215,7 +215,7 @@ How can this code compile? There is not a local variable named log. There does n
 
 There are a number of annotations and there are even extensions to Lomboc for even more. However, sticking with just this one, how about working with an IDE?
 
-==Getting this to work in IntelliJ Idea
+##Getting this to work in IntelliJ Idea
 [[include page="sidebar_start"]][[include page="TheSwitchToIdea"]]
 [[include page="sidebar_end"]]
 * Open the pom.xml in Idea 13.
@@ -223,7 +223,7 @@ There are a number of annotations and there are even extensions to Lomboc for ev
 
 Starting with a Maven project, Idea will open the project and execute tests fine. We get the same results using the command line and in the IDE. While Idea supports this out of the box, there are some irritating code inspection errors. To fix this, you can install the Lomboc plugin and those also disappear.
 
-==Gradle
+##Gradle
 What if you are using Gradle instead of Maven? This is a quick set of steps to accomplish the same thing using gradle.
 
 * Create a build.gradle file. In the the gettingstarted directory:
@@ -306,7 +306,7 @@ BUILD SUCCESSFUL
 Total time: 5.195 secs
 [[code]]
 
-==Gradle and Idea 13
+##Gradle and Idea 13
 Idea support for gradle improved quite a bit in Idea 13. However, the annotation processing is not so cleanly handled by Idea + Gradle. If you import the build.gradle project, you'll need to turn on annotation processing to make the code compile successfully. If you do not IntelliJ will respond with a compilation error:
 [[code]]
 Error:(10, 9) java: cannot find symbol
@@ -314,5 +314,5 @@ Error:(10, 9) java: cannot find symbol
   location: class com.shoe.lombok.App
 [[code]]
 
-==Conclusion
+##Conclusion
 We've created a simple application and introduced Lombok. The jar file for Lombok needs to be in the classpath during compilation when working at the command line. This happens naturally when using Maven or Gradle by depending on Lombok. In an IDE, there are different ways to accomplish that. 

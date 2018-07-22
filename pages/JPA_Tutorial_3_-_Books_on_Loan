@@ -1,4 +1,4 @@
-==Books on Loan==
+##Books on Loan==
 You can start from this point usingthe following source files: [[file:JapTutorial3BeforeAddingLoan.jar]]
 
 The relationship between Patron and Book is:
@@ -11,7 +11,7 @@ A loan is associated with the//** association**// between Patron and Book. When 
 
 We are going to test our way into this.
 ----
-==Date Support==
+##Date Support==
 We're going to be working with dates extensively. Here is a utility class for working with dates and its test:
 **DateTimeUtil.java**
 [[code format="java5"]]
@@ -221,7 +221,7 @@ public class DateTimeUtilTest {
 }
 [[code]]
 
-==Review Existing Tests==
+##Review Existing Tests==
 We have the following Test classes in the session package:
 * BookDaoTest
 * LibraryTest
@@ -229,7 +229,7 @@ We have the following Test classes in the session package:
 
 BookDaoTest and PatronDao test deal with CRUD operations on Book and Patron. They don't really care about the structure of the objects since they just read/write Book and Patron objects. We might need to make changes to the Book and Patron entities to keep these tests passing, but we'll do that as tests fail.
 
-===Review Tests in LibraryDaoTest===
+###Review Tests in LibraryDaoTest===
 Here's our first test to review:
 [[code format="java5"]]
     @Test

@@ -1,6 +1,6 @@
 [[EJB 3 and Java Persistence API|<--Back]]
 
-=Getting Started with the JBoss Embedded Container=
+#Getting Started with the JBoss Embedded Container=
 
 This tutorial is a derivative (simplification really) of work done by JBoss. For the original material, look [[http://docs.jboss.org/ejb3/embedded/embedded.html|here]]. This tutorial's goals are:
 * Download and install the JBoss Embeddable EJB3 Container
@@ -10,22 +10,22 @@ This tutorial is a derivative (simplification really) of work done by JBoss. For
 
 Most of this tutorial is about configuration and utility methods. We will use those items for the remainder of the tutorials using the Embeddable EJB3 Container.
 ----
-==Background==
+##Background==
 [[include page="EJB3 Tutorial 1 - Background"]]
 ----
-==Download and Install==
+##Download and Install==
 [[include page="EJB3 Tutorial 1 - Download and Install"]]
 ----
-==Create and Configure the Eclipse Project==
+##Create and Configure the Eclipse Project==
 [[include page="EJB3 Tutorial 1 - Create and Configure"]]
 ----
-==Create a Local Stateless Session Bean==
+##Create a Local Stateless Session Bean==
 [[include page="EJB3 Tutorial 1 - Create Session Bean"]]
 ----
-==Container Initialization and Session Bean Lookup==
+##Container Initialization and Session Bean Lookup==
 [[include page="EJB3 Tutorial 1 - Initialization and Lookup"]]
 ----
-==Exercises==
+##Exercises==
 [[include page="EJB3 Tutorial 1 - Exercises"]]
 
 [[EJB 3 and Java Persistence API|<--Back]]

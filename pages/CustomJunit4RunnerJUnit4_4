@@ -1,8 +1,8 @@
 [[CustomJUnit4Runner|<<--Back]]
 
-=Writing a Custom JUnit 4 Test Runner
+#Writing a Custom JUnit 4 Test Runner
 
-==Introduction
+##Introduction
 (**Note** This example works with JUnit 4.4 and later and it requires Java 5 or later. It will not work with the JUnit shipped with Eclipse. So add JUnit4.4.jar to your class path in Eclipse when using this code.)
 
 This comes from a recent problem at a customer site. The customer had a number of automated tests written in JUnit. The tests were a mixture of unit tests and integration tests. To try and speed up the developer experience, we though that moving the integration-style tests into a separate source tree would solve the problem.
@@ -18,7 +18,7 @@ Here are a few assumptions:
 
 We settled on a simple approach. If there is a system property defined called// **ExecuteIntegrationTests**//, we run the integration tests, if not, we ignore them.
 
-===Original Idea
+###Original Idea
 The original idea was to use the @RunWith(...) annotation to use a custom JUnit4 Runner and then add to that an annotation @Integration to indicate something was an integration test. However, having both was redundant so we settled on simply specifying a custom runner, e.g.:
 
 [[code format="java5"]]
@@ -35,7 +35,7 @@ When this test is executed either:
 * All tests are executed if the environment variable// **ExecuteIntegrationTests**// is not defined
 
 To get integration tests to execute, simply add -DExecuteIntegrationTests to the command-line when running the JVM.
-==The Code
+##The Code
 After many trials and opening up the JUnit 4.4. source, this is what we came up with:
 ----
 ----

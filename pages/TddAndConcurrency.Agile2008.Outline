@@ -1,8 +1,8 @@
-= Part 0
+# Part 0
 Begin running driver that exercises [[TddAndConcurrency.ObjectWithValue|ObjectWithValue]] before the start.
 
 At start, David Nunn will present himself and myself.
-= Part 1: Prove it's broken
+# Part 1: Prove it's broken
 
 * Show trivial code example ([[TddAndConcurrency.ObjectWithValue|ObjectWithValue]])
 * Show results of running driver, the code is broken
@@ -22,7 +22,7 @@ At start, David Nunn will present himself and myself.
 *** Reduce numbers to 2 and 20 and then run it with ConTest
 *** Question: How do we trade-off repeatability and fast in this context?
 
-= Part 2: Deadlock and Dining Philosophers
+# Part 2: Deadlock and Dining Philosophers
 
 Problem: Imagine you have two pooled resources: one bucket of MQ connections and one bucket of database connections. Also imagine 4 operations: CRUD, each of which uses one connection and one database. Finally, assume these operations are fronted by some threaded environment, e.g. a web-server:
 * In your groups discuss the following:
@@ -40,7 +40,7 @@ Dining Philosophers:
 * List the big three algorithms
 * Quesitons/Comments
 
-= Part 3: Refactorig to SRP to test
+# Part 3: Refactorig to SRP to test
 
 Show example system that is not performing.
 * How can I assert my desired goal

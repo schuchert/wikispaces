@@ -1,6 +1,6 @@
 <span class="back_button">[[ruby.tutorials|Back]]</span>
 
-=Introduction
+#Introduction
 [[toc]]
 In this tutorial, you will develop a [[http://en.wikipedia.org/wiki/Reverse_Polish_notation|Reverse Polish Notation]] (RPN) calculator. According to [[http://en.wikipedia.org/wiki/Reverse_Polish_notation|Wikipedia]], PRN was developed by 1920 by Polish mathematician Jan Lukasiewicz, so the notation has some history. The purpose of this tutorial is to give you practice with BDD on an object with methods, rather than an object with one method, as in the first tutorial.
 
@@ -16,12 +16,12 @@ Unlike the first tutorial, this tutorial will:
 
 By the end of this tutorial, you'll be ready to start using story tests on a more complicated problem.
 
-==Note
+##Note
 This tutorial assumes you've either already worked through the first tutorial or are familiar with BDD and RSpec. If not, here are a few terms that come up early enough you'll need to know them:
 * Example - in RSpec parlance, this refers to a series of steps describing a use of the system. Before writing production code, you'll write an example. That example will not run most of the time, so you'll then create the production code necessary to get the example to pass.
 * Context - A context forms a common environment under-which Examples execute. A context may just be a name or it might include common setup and initialization as well as common clean-up. Contexts can be nested, which was demonstrated in the first tutorial.
 
-==Approach
+##Approach
 Unlike the first tutorial, this tutorial will be a bit more explicit in its steps. Where reasonable, each Example will follow the same flow:
 * **Title**: Proceeded by a solid line, this will be at Heading Level 1
 * **Overview**: The overview immediately follows the title
@@ -37,13 +37,13 @@ There will also be occasional side-bars on an as-needed basis.
 
 Before you get started on any Examples, however, we'll delve into the problem just a bit.
 
-=The Problem
+#The Problem
 An RPN calculator works by performing calculations on operands that the user has already entered. Here is an example scenario:
 [[code]]
 5 <enter>
 3 
 +
-= 8
+# 8
 [[code]]
 In this example, a user enters first 5 and then 3 and hits the + key to get the previous two operands 5 and 3, added together.
 
@@ -54,13 +54,13 @@ In general, using an RPN calculator obviates the need to use parenthesis. Consid
 That same expression could be calculated on an RPN calculator as follows:
 [[code]]
 5 <enter> 3 + 6 * 3 / 4 ^
-=65536
+#65536
 [[code]]
 
 An RPN calculator as a stack of previously entered values. The most recently entered numbers are the numbers that become available first (Last In First Out - LIFO). Consider this longer sequence:
 [[code]]
 3 <enter> 6 <enter> -8 <enter> 89 + sqrt - +
-=0
+#0
 [[code]]
 Here's the evaluation of the above expression:
 * 3, 6, -8 get places on the operand stack
@@ -72,14 +72,14 @@ Here's the evaluation of the above expression:
 * The final operator, +, another binary operator, takes as its first operand the top item on the stack, which is 3. For its right-hand operand, it takes the x register, -3. Adding, the result is 0, which becomes the value in the x register.
 * The stack is empty.
 
-==The x register
+##The x register
 The x register behaves like an accumulator. As you type numbers, those numbers get added to what is already there. When you type a non-number key, it applies itself. For example, the <enter> key really behaves like a unary operator. When you press <enter>, it takes the value in the x register and places it on the stack.
 * If the next key is part of a number, the x register is reset and the key pressed becomes the contents of the x register.
 * If the next key is not part of a number, then it applies as is.
 
 After any non-number key, the x register is "locked" and any attempt to change it results in it being reset.
 
-==Getting Started
+##Getting Started
 There are several major parts to this problem:
 * Handling input
 * Handling the stack and the x register properly
@@ -92,10 +92,10 @@ In addition, we'll add several things to make this a bit more interesting:
 
 Behavior Driven Development advocates starting outside in; start with the user experience and then work your way into the system. In this tutorial, you will not strictly be creating a user interface; you will, however, create the stuff necessary to build a user interface. The tutorial will start at the individual entry of keys and work up to basic math.
 
-==Your Work Area
+##Your Work Area
 * Create a directory to store all of your work. Unlike the first tutorial, you'll be working in multiple files this time.
 
-=The 0th Example
+#The 0th Example
 As with all problems, you need to pick a starting place. As with the first tutorial, you will create a basic example describing object creation. Next, you'll continue with a series of examples centered on basic input. Thinking further ahead at this point might constitute analysis paralysis. 
 
 **Example**
@@ -239,7 +239,7 @@ Not every Example will be so small and quick to create, but you should attempt t
 [[include page="sidebar_start"]][[include page="ruby.sidebar.ConcreteExampleHardwareSimulator"]]
 [[include page="sidebar_end"]]
 
-=Example: Accepting User Input
+#Example: Accepting User Input
 With the first Example running it is time to move on to basic user input. We have to make a decision already, where is the system boundary. Here are a few possibilities:
 # The system receives a series of events for buttons pressed, e.g., pressing "9" on the UI generates a 9-button pressed event, pressing "sqrt" on the UI generates a sqrt-button pressed event.
 # The system receives "digit" messages for digits or "function" messages for functions.
@@ -466,7 +466,7 @@ You also performed some basic refactoring on your Examples. While mentioned in t
 * You want to get to the point where your muscle memory is imbued with this kind of basic cleanup. The only way to get there is practice.
 * We removed a violation of the DRY principle. I believe Ruby Dave Thomas is credited with saying all design is an exercise in removing duplication. Regardless of who said it, I think it's a sound idea.
 
-=Example: Taking a decimal point as well
+#Example: Taking a decimal point as well
 The production code is hard-coded. Somehow you want to push your solution to remove that hard-coded value. One way to do that is to and another Example (don't do this):
 > [[code format="ruby"]]
   describe "Handling an even longer User Input of Numbers" do
@@ -699,7 +699,7 @@ class RpnCalculator
 end 
 [[code]]
 
-=Example: What Happens with Enter?
+#Example: What Happens with Enter?
 What happens when a user presses the <enter> key on the calculator:
 * The current value in the x_register is placed on the stack of previous operands.
 * Subsequent, the next numeric digit causes the x_register to reset, but pressing <enter> again causes that value to placed on the stack again.
@@ -826,7 +826,7 @@ Do you think pressing <enter> on a calculator is a function? Before I started th
 
 Have we made progress? Yes, we have extended the API of the calculator. What about checking in code with pending Examples, is that a good idea? I think it is OK, but it could cause problems. I prefer clean Example execution, so having several pending Examples is a bother. On the other hand, if I'm pairing with someone and one of us thinks of something worthy of validation, but it is not where we are working, we could write it down, email it, yell it to another team member, or we can put it in the code in an executable fashion.
 
-=Example: Checking that the x_register is reset-able
+#Example: Checking that the x_register is reset-able
 The next Example involves what happens after the <enter> key. You could have included this check in the previous Example, however keeping the tests small, focused and checking fewer things makes pinpointing problems easier.
 
 **Example**
@@ -975,7 +975,7 @@ Are you going to be perfect?
 
 No, you are going to miss stuff. That's why when you do find something, now is the time to handle it. If you cannot deal with it now, write it down on a piece of paper. Throw that piece of paper away in 2 days. If you haven't found the time to fix it by then, then by keeping the paper, you're just giving yourself undue stress.
 
-=Example: Should allow x_register to be entered again
+#Example: Should allow x_register to be entered again
 This one has been pending. While I was just about to get to that, a few ideas went through my head:
 * There's going to be a stack of numbers somewhere.
 * Once the calculator starts resetting, the code never stops, so the Examples have left work on the plate.
@@ -1038,7 +1038,7 @@ There's nothing to check-in right now.
 **Summary**
 You've added an Example. You are not sure if it is a good one or not. You've got two items on your punch list. Review this Example after you have addressed those other two items.
 
-=Example: Resetting after the first digit
+#Example: Resetting after the first digit
 Once an example sends the execute_function method, the RpnCalculator will continue to reset. You need to fix this.
 
 **Example**
@@ -1151,7 +1151,7 @@ You've pushed the solution a bit further and cleaned up some duplication. Specif
 
 You still have the question of whether there should or should not be a stack. And what about that pesky Example? You're keeping a punch-list, right?
 
-=Example: Enter actually puts values on the stack
+#Example: Enter actually puts values on the stack
 Up to this point, your examples have addressed the effect of the <enter> key on the x_register, but what about stored values? Consider the following:
 [[code]]
 7 <enter>
@@ -1205,7 +1205,7 @@ No need, no change.
 **Summary**
 This Example really just extended the API of the RpnCalcualtor. You might be feeling like it is time to get busy because of the two pending methods.
 
-=Example: Enter should increase the number of operands
+#Example: Enter should increase the number of operands
 The operator_count is hard-coded, this Example will make it harder to get away with that.
 
 **Example**
@@ -1322,7 +1322,7 @@ You have moved towards a more complete solution by introducing an array to hold 
 
 You also managed to get rid of the last hard-coded method, top. This one Example managed to move the production code forward quite a bit.
 
-=Example: The right thing is on the stack
+#Example: The right thing is on the stack
 Right now, there's no way to know if what is on the stack is the right thing on the stack. Most of the pieces are in place, in fact even though the code is fully covered by the Examples, the Examples do not reflect fully what your production code can do. It is time to exploit that.
 
 **Example**
@@ -1373,7 +1373,7 @@ No need, you did not do any refactoring.
 **Summary**
 You have added an example to verify that in fact the right values are getting put onto the stack. Your RpnCalculator is growing, but at what point is the RpnCalcualtor suffering from too much design debt? It is right now, but you'll see that after the next Example.
 
-=Example: What happens with an 'Empty' stack?
+#Example: What happens with an 'Empty' stack?
 The stack on an RpnCalculator is conceptually filled with 0's when it has no values. In fact, it is literally filed with 0's. So if you check the top of your RpnCalculator, calculator, it should return 0 when it is empty. The same is true for pop!. It should return 0 if the stack is empty.
 
 **Example**
@@ -1858,7 +1858,7 @@ class OperandStack
 end 
 [[code]]
 
-=Example: A Binary Operator
+#Example: A Binary Operator
 Some time ago you created your first Example to exercise the <enter> key. That resulted in the following method:
 [[code format="ruby"]]
   def execute_function(function_symbol)
@@ -1952,7 +1952,7 @@ This is all the refactoring you'll do right now. More is on the horizaon.
 **Summary**
 You've improved the execute_function but you have a stubbed-out + method. If you know a bit of Ruby, you might be chomping at the bits to evaluate a symbol, or use lambda and a hash. The code will get where it will, however, based on the Examples, rather than speculation.
 
-=Example: Work on +
+#Example: Work on +
 What should happen with + when there are no operands? Should it fail? Should it result in 0? If you're simulating an HP calculator, the result is 0. However, what it should do will be defined by the Examples you write.
 
 **Example**
@@ -1992,7 +1992,7 @@ No refactoring done, no need to check in again.
 **Summary**
 The + method no does work. It has one strange line, and there's still the issue of whether it modifies the stack correctly or not. Another thing occurred to me as well. After any operator, the x_register should be in "reset" mode.
 
-=Example: x_register in reset mode after +
+#Example: x_register in reset mode after +
 Like <enter>, after perform +, the next character typed should clear the x_register and write into it. That seems like a good thing to check next.
 
 **Example**
@@ -2061,7 +2061,7 @@ Even though small, you did make a change to your solution while keeping your Exa
 **Summary**
 There appears to be a pattern emerging. Two functions, enter and +, both of which change the calculator into "override_mode". Will other functions look like this? Yes. Will you be able to remove this duplication as well? Yes.
 
-=Example: What about the stack?
+#Example: What about the stack?
 Some time back the tutorial asked about whether the stack was treated properly. You could have put those checks into another Example, but the rationale for not doing that is to keep your tests small and focused for better pinpointing of problems and better assessment of the size of a break.
 
 It's time to come back to that, if for no other reason than to expression a "contract" that the + method (and all binary operators) will need to follow.
@@ -2134,7 +2134,7 @@ The next thing you might consider is how to better document getting parameters f
 **Summary**
 You now have the basics of the + operator worked out. You make resetting the x_register at least a little better. Now it is time to add some more operators to see how this current solution grows.
 
-=Example: Support for a new binary operator, -
+#Example: Support for a new binary operator, -
 Adding support for - will allow you to see how your solution grows as new math functions are supported. You have already vetted + fairly well, so adding - should be a snap.
 
 **Example**
@@ -2466,7 +2466,7 @@ What's left? There's still the issue of documenting what happens when you attemp
 
 This second issue is not addressed in this tutorial.
 
-=Example: Handling missing functions
+#Example: Handling missing functions
 So what happens when your calculator is asked to execute an unknown function?
 
 **Example**
@@ -2496,7 +2496,7 @@ This example really just captured something about your system that was not expli
 
 You won't always figure out to do that, so you've managed to recover gracefully.
 
-=Example: Add support for * and /
+#Example: Add support for * and /
 You have a working design for + and -, adding * and / should be a snap. First your calculator will support multiplication.
 
 **Example**
@@ -2558,7 +2558,7 @@ You've just finished out the basics for your calculator.
 RUNNING OUT, COPY AGAIN
 ----
 
-=Example x
+#Example x
 **Overview**
 **Example**
 **Check-In**
@@ -2566,7 +2566,7 @@ RUNNING OUT, COPY AGAIN
 **Check-In**
 **Summary**
 
-=Example x
+#Example x
 **Overview**
 **Example**
 **Check-In**

@@ -2,7 +2,7 @@
 
 You can save these Workspace Preferences so that when you create another Workspace you only need to file these in instead of following all of the previous setup steps.
 
-==Saving Configuration==
+##Saving Configuration==
 # Pull down the **File** menu
 # Select **Export**
 # Select **Preferences**
@@ -11,7 +11,7 @@ You can save these Workspace Preferences so that when you create another Workspa
 # Enter a file in **To preference file:**, e.g. C:\AOP\JBossAOPPrefs.epf
 # Click **Finish**
 
-==Restoring Configuration==
+##Restoring Configuration==
 # Pull down the **File** menu
 # Select **Import**
 # Select **Preferences**

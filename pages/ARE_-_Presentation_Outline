@@ -1,4 +1,4 @@
-=Background and Intent=
+#Background and Intent=
 This presentation serves as a 1 - 2 hour practice session on basic user story experience.
 
 For this series of exercises we will:
@@ -13,14 +13,14 @@ Near the end, we'll have one final exercise where your groups will be given an a
 We'll conclude with a "where do we go next" wrap-up.
 
 ----
-=Expectations=
+#Expectations=
 (Paraphrased from: [[http://www.ayeconference.com/Articles/Seeingyourownbigpicture.html|Seeing your own big picture]] by [[http://www.geraldmweinberg.com|Weinberg]].
 * How do you happen to be here? (Past)
 * How do you feel about being here? (Present)
 * What would you like to have happen? (Future)
 
 ----
-=Exercise 1=
+#Exercise 1=
 **Group Exercise**
 Discuss the following questions within your work group. Prepare to report back to the 
 * What is a requirement
@@ -36,17 +36,17 @@ Discuss the following questions within your work group. Prepare to report back t
 * What is one thing you could change tomorrow to address waste in your current process?
 
 ----
-=Exercise 2=
+#Exercise 2=
 **Group Exercise**
 Review provided project and develop a few ideas for things your system should do:
 
-==IPod® Killer==
+##IPod® Killer==
 Your company has recently acquired another company, which has designed yet another IPod® killer. The hardware will be available for preliminary shipment in 2 months but there is not really any kind of support for selling music. Your company has agreements with several record labels to be able to sell DCMA’ed versions of songs but not much of a web presence in this arena.
 
 The marketing department of your company has decided to take these two assets, record label agreements and this new, as yet unnamed IPod® killer, and produce a customer experience similar to ITunes®.
 You have approximately 2 ½ - 3 months to produce some kind of web presence that will make using this new device fun for its target audience.
 
-==Discussions with Product Owner==
+##Discussions with Product Owner==
 During initial discussions with the product owner, a few things may become clear (if asked):
 * The new player comes in a few forms but it can hold approximately 200, 400, 600 or 8000 songs.
 * The cost is roughly $150, $175, $200, $215
@@ -74,7 +74,7 @@ During initial discussions with the product owner, a few things may become clear
 * How does this "start" compare to your project starts?
 
 ----
-=Exercise 3=
+#Exercise 3=
 **Group Exercise**
 Who are your users? Who are the purchasers? In your groups, develop a list of candidate user roles for the provided project and give a brief description for each.
 
@@ -86,22 +86,22 @@ Who are your users? Who are the purchasers? In your groups, develop a list of ca
 * Do you notice any relationship between who you think will be using your system and what the system might be doing?
 
 ----
-=Example User Stories=
-==Online Itinerary Maintenance==
+#Example User Stories=
+##Online Itinerary Maintenance==
 * As a business traveler I want to reschedule a flight in the future so that I know I can still get home but finish an important business meeting
 * As a business traveler I want to cancel a flight because my schedule changes and if I don’t update it now I might forget and lose money
 * As a traveler’s representative I want to inform a business traveler of a delayed flight to keep them from spending their limited free time at the airport
-==Monopoly==
+##Monopoly==
 * A Player can land on go and receive $200
 * A Player can land on Reading Railroad and purchase it
 * A Player can land on Boardwalk and pay rent
-==Online Student Store==
+##Online Student Store==
 * I’m a student who wants to purchase books for my schedule
 * I’m a student who wants to purchase supplemental materials for a course
 * I’m a student who needs to get the cost for the books and materials of a semester’s schedule
 
 ----
-=Exercise 4=
+#Exercise 4=
 **Group Exercise**
 Pick one of your user roles. For this one user role, identify candidate user stories.
 
@@ -115,7 +115,7 @@ Pick one of your user roles. For this one user role, identify candidate user sto
 * Did you get any good ideas from the other teams?
 
 ----
-=Exercise 5=
+#Exercise 5=
 **Group Exercise**
 Pick a second user role and repeat the previous exercise.
 
@@ -129,11 +129,11 @@ Pick a second user role and repeat the previous exercise.
 * Can you take this back to your work and start using it?
 
 ----
-=Exercise 6=
+#Exercise 6=
 **Group Exercise**
 The facilitators will provide materials and basic instructions for the final project. You'll be expected to elicit requirements.
 ----
-=Summary/Where Next=
+#Summary/Where Next=
 **Discussion**
 Here are some questions to consider:
 * What do you take away from this?

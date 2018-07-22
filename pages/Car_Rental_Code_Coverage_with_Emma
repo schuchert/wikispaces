@@ -1,12 +1,12 @@
 [[Car Rental Example|<--Back]] [[Emma Code Coverage vehicle.type|Next-->]]
 
-=Code Coverage with Emma=
+#Code Coverage with Emma=
 
 This example is based on the [[Car Rental Example]]. If you want work through this example, you need to follow [[Car Rental Installation and Setup|these instructions]] first.
 
 In this example, we add code coverage to the Car Rental Application. We then examine the results, make some changes and finish with a few conclusions. 
 
-==Setup and Configuration==
+##Setup and Configuration==
 Emma does not currently come with a plugin, so in this example we'll use [[http://ant.apache.org/|Ant]] from within Eclipse. I'll warn you that I'm not much of an Ant user, so if you'd like to make recommendations, please feel free: schuchert@yahoo.com.
 
 Let's get started:
@@ -32,7 +32,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 
 # Here's the file so we can discuss it and configure it for your situation:
 [[#emma]]
-==emma.xml==
+##emma.xml==
 [[code]]
 01: <?xml version="1.0" encoding="UTF-8"?>
 02: <project name="emma_run" default="run">
@@ -128,12 +128,12 @@ Under CarRental there is an xml directory that contains two ant build files:
 92: 
 93: </project>
 [[code]]
-===Interesting Lines===
+###Interesting Lines===
 ||Line||Description||
 
 **Update Tests**
 
-==Execution==
+##Execution==
 Assuming you've updated the emma.xml file and set all of the relevant properties for your environment, then do the following:
 # Right-click on CarRental/xml/emma.xml
 # Select Run As:Ant Build
@@ -144,7 +144,7 @@ I considered adding the following line to emma.xml:
 >  <eclipse.refreshLocal resourcePath="CarRental" depth="infinite"/>
 This would force a refresh but it also requires that you run the ant script in the same VM as Eclipse.
 
-==Preliminary Analysis==
+##Preliminary Analysis==
 With your directory refreshed, you're ready to have a look at the output:
 # Expand the CarRental project.
 # Expand the emma_results directory.

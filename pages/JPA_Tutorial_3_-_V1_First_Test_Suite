@@ -1,4 +1,4 @@
-===The Unit Tests===
+###The Unit Tests===
 **A Little Context**
 Before we get started, this tutorial is deliberately organized in an inconvenient fashion. Why? My target reader is someone in a class I'm teaching (the material is open-source but still targeted). I do not want the student to be able to quickly just copy the whole thing and get it to work without having to put forth some effort. In a classroom situation, I have all of the source code available if I need to help a student get up to speed.
 
@@ -76,7 +76,7 @@ We create a patron then update it.
 
 Verify that when we try to find a patron that's not found, we get back null.
 
-===Supporting Code===
+###Supporting Code===
 We have several veterans returning from previous tutorials. And here they are:
 
 **PatronDaoTest**
@@ -150,7 +150,7 @@ After each test we'll rollback the transaction we created in the pre-test initia
     }
 [[code]]
 
-===The Entities===
+###The Entities===
 We need to create entities. These entities are a bit more well-specified that what you've seen in the previous tutorials. In most cases I believe the extra information is intuitive. Where it is not, I'll try to point out what is going on.
 
 **Address.java**

@@ -1,24 +1,24 @@
-=Getting Started
+#Getting Started
 I sent you a zip of the Eclipse project directory. While you can follow these steps, you can also ignore all of this and [[tw_interview.notes#skipahead|skip ahead]].
-==Get the source
+##Get the source
 The project resides on [[https://github.com/schuchert/tw_coding_interview|github]]. To acquire the source, you can do the following:
 * git clone git://github.com/schuchert/tw_coding_interview.git
 ** This creates a directory called tw_coding_interview under the current directory
 
-==Build & Run the Tests
+##Build & Run the Tests
 I used gradle as my build tool. To build and run the tests:
 * [[http://gradle.org/installation.html|Install gradle]]
 * cd tw_coding_interview/rover - the directory created from the git clone above
 * gradle test
 
-==Work in Eclipse
+##Work in Eclipse
 * gradle eclipse - this creates the necessary . files
 * Start eclipse
 * For your project directory, use the full path to the tw_coding_interview directory created above
 * Import the rover project
 
 [[#skipahead]]
-=The Code
+#The Code
 There is a main program that reads from an input file and writes output to System.out: com.tw.rover.main.Main. If you run that program you will see the expected output. You can also create other text files and provide their names (one per execution) as an optional command line parameter. This code is lightly tested by com.tw.rover.main.MainTest in the src/test/java source tree.
 
 There were no specific requirement for things like:
@@ -51,11 +51,11 @@ Here's a listing of the production classes and a one-liner describing each:
 ||RoverBuilder||Used by the MarsRoverSimulator, it takes the input stream and first creates a rover and the associates a command stream (e.g., MMRMMR) with the rover just created.||
 ||StringUtils||A simple class to capture some basic string manipulation.||
 
-==Class Diagram
+##Class Diagram
 This is a class diagram showing most of the classes listed above. This gives a general sense of dependency and containment and may help guide you through the code:
 [[image:MarsRoverSimulator.png]]
 
-=What Remains
+#What Remains
 This code takes a lot of liberty with negative tests. Since the instructions hinted at validation with tests and suggested clarification from the recruiter, I decided to take the liberty of somewhat aggressive input validation. In the real world, I'd do this as well but I'd try to get the domain expert involved throughout.
 
 I considered creating some automated tests with FitNesse but it seemed like overkill. However, visually drawing out an initial grid with rover locations, I think, would make for some compelling communication examples.

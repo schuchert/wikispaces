@@ -277,7 +277,7 @@ public class PatronDaoTest extends BaseDbDaoTest {
 } 
 [[code]]
 
-===The Dao Classes===
+###The Dao Classes===
 The BookDao looks a whole lot like the PatronDao:
 [[#BookDao]]
 **BookDao.java**
@@ -383,7 +383,7 @@ public class PatronDao extends BaseDao {
     }
 }
 [[code]]
-===The Entity Model===
+###The Entity Model===
 We’ve added support for a Book and along the way we had to add in a few more classes. After the second test suite, we’re up to the following entities:
 ||**Entity**||**Description**||
 ||Address||This entity represents the address for both an Author and a Patron. In the first tutorial we embedded this class. Now we’re allowing it to exist in its own table as a first-class citizen rather than embedding it.||

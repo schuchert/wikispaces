@@ -1,11 +1,11 @@
 [[AspectJ Self Study|<--Back]] [[ApsectJEX4ExpectedVersusActualOutput|Next-->]]
 
-=Predict the Output
+#Predict the Output
 Source files are here: [[file:AspectJExample4src.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject|here]].
 
 Have a look at the following Java files and, as before, predict the output.
 ----
-==Main.java
+##Main.java
 [[code format="java5"]]
 package ex4;
 
@@ -23,7 +23,7 @@ public class Main {
 [[code]]
 ----
 [[#Dao]]
-==Dao.java
+##Dao.java
 [[code format="java5"]]
 package ex4;
 
@@ -36,10 +36,10 @@ public class Dao {
 }
 [[code]]
 ----
-==Address.java
+##Address.java
 Address is unchanged from the previous example. It is a simple Java Bean style class with setters and getters.
 ----
-==Assignment: Predict the Output
+##Assignment: Predict the Output
 Please take a few moments to predict the output before moving on.
 
 [[AspectJ Self Study|<--Back]] [[ApsectJEX4ExpectedVersusActualOutput|Next-->]]

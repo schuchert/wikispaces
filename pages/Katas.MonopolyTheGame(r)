@@ -1,6 +1,6 @@
 [[Katas|<--Back]]
 
-=Background
+#Background
 In 1992 I started working for a company called ObjectSpace with Graham Glass and David Norris. At that time, Graham taught classes on Object Oriented Development in C++ and sometimes Smalltalk. I was brought on to help with the teaching and helped Graham formalize the classes somewhat. Some years before 1991, Graham had bought several board games and randomly selected Monopoly to use as implementation problem for his class on Object Oriented Programming in C++. That project turned out to be an excellent source for basic object oriented design problems, design patterns (which were not yet on the scene in any significant way) and even analysis.
 
 I have worked through Monopoly in several ways since 1992 when I joined ObjectSpace:
@@ -20,7 +20,7 @@ In the early days, Graham had the problem in his head (the phases, design altern
 
 In recent years, I have programmed it, though not as much as at the end of last century. Even so, when I'm teaching anything to do with design issues, I often go back to the very deep Monopoly well to find concrete examples of basic to advanced principles.
 
-=Approach
+#Approach
 Work through the problem as described [[Monopoly(r)|here]], completing one phase before going on to the next. This problem, as described, is meant to allow you to practice the fundamentals of object oriented programming. Keep that in mind as you approach it. You might want to review [[http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod|the S.O.L.I.D.]] principles. 
 
 Here are a few considerations:
@@ -31,7 +31,7 @@ Here are a few considerations:
 * I've work on this mostly using [[http://en.wikipedia.org/wiki/Big_Design_Up_Front|big design up front]] per "iteration" or "phase" (because I used this problem well before I was aware of automated unit testing or had first become [[http://c2.com/cgi/wiki?TestInfected|Test Infected]]). I now recommend using TDD or BDD on the problem, but you can certainly try to use [[http://en.wikipedia.org/wiki/Big_Design_Up_Front|big design up front]] and code from UML diagrams.
 * After you've tried this, approach it using a [[http://martinfowler.com/articles/mocksArentStubs.html#SoShouldIBeAClassicistOrAMockist|strict mockist approach]].
 
-=Why?
+#Why?
 Once you become very familiar with this problem (say 10 + times, maybe more), then you can use it as a means to learn something else. When you try it for the first time, you are trying to pick out classes, assign responsibilities, deal with subtle edge conditions, etc. Once you become quite familiar with the domain and typical design approaches, you can then use it to look at other techniques. Given a strong baseline understanding of this problem, you will have the ability to critically contrast a new technique on an old problem. For example, even after working on this problem over 100 times, when I tried working on it using [[http://mockito.org/|Mockito]], I had several micro a-ha experiences. Since I was so familiar with the problem, the different technique of taking a [[http://martinfowler.com/articles/mocksArentStubs.html#SoShouldIBeAClassicistOrAMockist|strict mockist approach]] gave me a "high contrast experience."
 
 Let me know how it goes for you!

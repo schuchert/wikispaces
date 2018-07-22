@@ -1,4 +1,4 @@
-===Create Java Project===
+###Create Java Project===
 Next we need to create a Java project. We'll keep the source separate from the bin directory:
 # Pull down the **File** menu and select **New:Project**
 # Select **Java Project** and click on **Next**
@@ -8,7 +8,7 @@ Next we need to create a Java project. We'll keep the source separate from the b
 # Select **Create separate source and output folders**
 # Click **Finish**
 
-===Create folders and packages===
+###Create folders and packages===
 # Expand your **<project>** folder
 # Select the **src** directory
 # Right-click, select **new:Folder**
@@ -16,7 +16,7 @@ Next we need to create a Java project. We'll keep the source separate from the b
 # Make sure **<project>** is still selected, right-click and select **New:Source Folder**
 # Enter **test** and click **OK**
 
-===Add Required Libraries===
+###Add Required Libraries===
 We now need to add two libraries. Note that these steps assume you've already worked through the first tutorial and are working in the same workspace. If you, you'll need to create user libraries. Review [[JPA Tutorial 1 - Eclipse Project Setup#AddRequiredLibraries|Creating User Libraries]].
 # Edit the project properties. Select your **<project>** and either press **alt-enter** or right-click and select properties.
 # Select **Java Build Path**
@@ -34,6 +34,6 @@ We now need to add two libraries. Note that these steps assume you've already wo
 
 If you'd like some background information on JUnit, please go [[JUnit 4.x|here]].
 
-===Configure Persistence Unit===
+###Configure Persistence Unit===
 [[include page="JpaPersistenceUnit"]]
 
