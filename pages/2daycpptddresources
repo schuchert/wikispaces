@@ -16,7 +16,7 @@ This is a list of resources for a 2-day C++ class covering a rage of topics incl
 ** [[CppRpnCalculatorTemplateMethodPatternExample|template method pattern]]
 ** [[CppRpnCalculatorAbstractFactoryPatternExample|abstract factory pattern]]
 
-==Projects==
+==Projects
 * RPN Calculator: Here's some source code for the [[RpnCalculatorCppExampleImplementation|Rpn Calculator in C++]] (RPN --> Reverse Polish Notation --> post-fix, think HP calculators)
 * Refactoring (with tests in place): [[file:CalculateRates_clean_code.zip]]
 * Refactoring (conditional logic to polymorphism): [[file:CalculateRates_conditional_to_polymorphism.zip]]
@@ -24,7 +24,7 @@ This is a list of resources for a 2-day C++ class covering a rage of topics incl
 * Characterization Tests: [[file:CalculateRates_characterization.zip]]
 * After polymorphism applied: [[file:CalculateRates_polymorphism_applied.zip]]
 
-==Working in Visual Studio with this Files==
+==Working in Visual Studio with this Files
 # Download zip file
 # Download CppUTest
 # Get it built in your version of visual studio

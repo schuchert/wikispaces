@@ -1,13 +1,13 @@
-=Overview=
+=Overview
 This is my plan for my talk at the Austin Java User's Group on February 28 2012. As with any plan I have, it's a placeholder but what actually happens depends on the conditions on the ground, so take it with a grain of salt.
 
-=Outline=
-==Part 0==
-===What===
+=Outline
+==Part 0
+===What
 * Working with legacy code
 * Dynamic Link Seams with modern mocking tools
 * How can tools help/hinder feedback (and what kind of feedback do we mean by that question)
-===How===
+===How
 * Code review with a list of things to consider fixing
 * Writing dynamic link seams to write automated unit checks
 * Discuss traditional legacy refactoring techniques
@@ -16,7 +16,7 @@ This is my plan for my talk at the Austin Java User's Group on February 28 2012.
 * Update dynamic link seam test to take legacy refactoring into consideration
 * Compare and contrast original and updated dynamic link seam-based unit check
 * Discuss the implications with respect to the amount of discipline required to not make a mess as it relates to different kinds of mocking tools
-==Part 1==
+==Part 1
 * Review some code ([[@https://github.com/schuchert/welc_examples_java_jmockit|original available on github]] )
 [[code format="java5"]]
 package com.schuchert.welc;
@@ -168,5 +168,5 @@ public class CurrencyConversion {
 ** General discussion
 * Change case:
 >> We want to develop an algorithm that will analyze currency conversion to see if we can find any deals due to asymmetries in the various conversion rates up to a certain length. This is essentially a graph traversal algorithm that finds loops of a certain length which have different costs to traverse. We need to grow this algorithm and possibly introduce some heuristics after we get the basic algorithm working. Problem is, it will be hard to get this right and we need to test it because it will be a multi-million dollar investment scheme.
-==Part 2==
+==Part 2
 Enter JMockIt. Here's a test to just exercise the code:

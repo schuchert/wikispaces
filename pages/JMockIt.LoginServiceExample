@@ -1,4 +1,4 @@
-=Getting Started=
+=Getting Started
 JMockIt is an interesting mocking library that actively does quite a bit of work for you if you simply configure your classpath correctly and use annotations. For this example I'll use the [[ref|Login Service from the Mockito tutorial I wrote]].
 
 * First you'll need to [[http://code.google.com/p/jmockit/downloads/list|download JMockIt]. As of this writing I used 0.999.8, which was "featured" at the time.
@@ -80,7 +80,7 @@ public class LoginService {
 
 Run your test and you'll get a passing test if you have the classpath set correctly.
 
-=How?=
+=How?
 If you open up the jmockit.jar, you'll find a the manifest file in its standard location:
 [[code]]
 META-INF/MANIFEST.MF
@@ -93,7 +93,7 @@ Agent-Class: mockit.internal.startup.Startup
 
 This line registers the class as a Java Agent. This means it will have access to classes as their bytecode is loaded. JMockIt looks at the class structure to see if there are annotations it cares about. If there are, then it processes that class and gives an updated version of the class back to the class loader. 
 
-=First Domain Test=
+=First Domain Test
 Now that you have the project setup and running, it's time to replace the// **fooShouldNotBeNull**// test with one that is relevant to our problem:
 //**LoginServiceShould**//
 [[code format="java5"]]
@@ -155,7 +155,7 @@ Now that you have the project setup and running, it's time to replace the// **fo
 ||40||Exercise the code under test.||
 ||42 - 47||Check, did what I want to have happen actually happen? Verify that the method incrementLoginCount() was called one time.||
 
-==Observations==
+==Observations
 The use of anonymous inner classes with instance initializers is not a new idea. It does lead to somewhat longer code for setup. I worry that as a result, the tendency will be for peopel to mix conceptually unrelated setup in the same block to avoid longer code. Looking at this and consdiering the equivalent in Mockito, I prefer the more terse form of Mockit, but this is perfectly fine. JMockIt has several features that Mockito does not, so this additial verbosity is probably going to be a worthwhile cost for additional power, but I'm not sure about this just yet.
 
 Finally, I've recently come to the conslution that// **no**// mock-library code should appear in the mainline code of a test. To understand/read/consume the test, I want it to be intention-revealing. JMockIT can certainly be read, but I don't want to have to read it to understand the point of the test. The same can be said of all the other mocking libraries. So here's a better example of how I want the tests to look:
@@ -201,7 +201,7 @@ Here are those private methods (extracted from the original test):
 	}
 [[code]]
 
-==Verify Account Revoked After Three Failed Attempts==
+==Verify Account Revoked After Three Failed Attempts
 [[code format="java5"]]
 	@Test
 	public void revokeAccountAfterThreeFailedLoginAttempts() {

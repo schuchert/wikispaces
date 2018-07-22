@@ -1,9 +1,9 @@
 [[toc]]
 [[EJB 3 and Java Persistence API|<--Back]]
-=Ejb3 Tutorial 6 - Security=
+=Ejb3 Tutorial 6 - Security
 This simple tutorial takes the solution from [[EJB3 Tutorial 5 - Message Driven Beans]] and augments the beans with the configuration information necessary to limit access declaratively.
 ----
-==Project Setup==
+==Project Setup
 We recommend you create a copy of your project (or if you are using revision control software, make sure to check-in and tag your work).
 
 We need to create a few basic files: users.properties and roles.properties.
@@ -33,7 +33,7 @@ student=user
 The comments from users.properties apply here.
 
 ----
-==Update Session Bean==
+==Update Session Bean
 Next we need to configure the bean with security information. As usual, we can use either XML or annotations. Here is an updated version of AccountInventoryBean.java:
 
 **AccountInventoryBean.java**
@@ -138,7 +138,7 @@ public interface AccountInventory {
 
 
 ----
-==Updated JBossUtil==
+==Updated JBossUtil
 We now need to update JBossUtil once more to read our security properties. The only method that has changed is startDeployer:
 [[code format="java5"]]
     public static void startDeployer() {
@@ -160,7 +160,7 @@ We now need to update JBossUtil once more to read our security properties. The o
 
 This method now reads in MDB configuration information in the first two calls to deployXmlResources and configures the security settings in the third line.
 ----
-==The Test==
+==The Test
 This test attempts one successful and four failed attempts. The names of the methods describe whether we expect success or failure:
 **AccountInventoryBeanTest.java**
 [[code format="java5"]]
@@ -277,7 +277,7 @@ public class AccountInventoryBeanTest {
 
 Notice that in all cases where the method is expected to generate an exception, we first catch EJBAccessException. EJBAccessException is a wrapper exception. We verify the contents by getting the wrapped exception and throwing it. We then let JUnit tell us if we got the exception we expected.
 ----
-==Questions==
+==Questions
 If you do not provide a RolesAllowed, what is the default?
 How do you set a different default value for all the methods in a class?
 

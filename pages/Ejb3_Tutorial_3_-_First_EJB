@@ -15,7 +15,7 @@ What about naming conventions? Every Session Bean has at least one interface and
 
 We are going to have to rename each of our beans and then create an interface. Luckily Eclipse will take care of most of this for us.
 
-=== Rename ===
+=== Rename
 
 We'll start with PatronDao. To Rename it:
 # Select PatronDao in the Package Explorer
@@ -23,11 +23,11 @@ We'll start with PatronDao. To Rename it:
 # Enter **PatronDaoBean** for the name
 # Press **OK**
 
-=== Make it a Stateless Session Bean ===
+=== Make it a Stateless Session Bean
 
 We need to annotate this class to declare it is a session bean. Annotate the class with @Stateless.
 
-=== Extract Interface ===
+=== Extract Interface
 
 Next, we need to extract the interface automatically:
 # Select PatronDaoBean in the Package Explorer
@@ -39,7 +39,7 @@ Next, we need to extract the interface automatically:
 # Optionally deselect **Declare interface methods 'abstract'**
 # Click **OK**
 
-=== Update Unit Test: PatronDaoTest ===
+=== Update Unit Test: PatronDaoTest
 
 The unit test inherits from BaseDbDaoTest. This adds support for creating dao's entity managers, etc. We don't want to do any of this, so we can safely remove the base class.
 
@@ -66,7 +66,7 @@ We also need to initialize the EJB Container. Add the following method:
 
 Finally, since we are now testing PatronDaoBean instead of PatronDao, we might want to rename the test to PatronDaoBeanTest.java.
 
-=== Run the PatronDaoBeanTest Tests: First Failure ===
+=== Run the PatronDaoBeanTest Tests: First Failure
 
 When you run the unit tests (just PatronDaoBeanTest), they will all fail. If you review the stack trace in the JUnit window, you'll notice that all the lines that fail look something like this:
 [[code format="java5"]]
@@ -89,7 +89,7 @@ Using the @PersistenceContext will tell the container to look up the named Entit
 
 Execute the PatronDaoBeanTest tests only -- if you were to run all the tests in the project you would get misleading errors at this point ("could not insert [entity.Address]").
 
-=== Second Attempt: Second Failure ===
+=== Second Attempt: Second Failure
 
 After adding in @PersistenceContext we get one test to pass and three to fail. If you look at the stack trace in the JUnit window, we see that the Patron class does not have a default constructor. We need to add a default constructor to Patron.java:
 [[code format="java5"]]
@@ -99,13 +99,13 @@ After adding in @PersistenceContext we get one test to pass and three to fail. I
 
 Add it and re-run the tests (again, just PatronDaoBeanTest).
 
-=== Go back and do the steps you just did for all the dao classes ===
+=== Go back and do the steps you just did for all the dao classes
 
 
-=== Success ===
+=== Success
 This fixes all the tests in PatronDaoBeanTests. For some reason when we ran this code in a JSE environment, it "worked" even though it did not comply with the standard. Overall this first conversion was fairly painless. However, before we go on, are out tests isolated? That is, after we execute the tests did we remember to remove everything we created?
 
-=== Review: Are We Isolated? ===
+=== Review: Are We Isolated?
 At this point we need a tool to review the contents of the data base. If you want to work directly in Eclipse, you can use Quantum DB. If you prefer to work outside of Eclipse (and frankly with a more powerful tool), then you might want to try SQuirrel Sql Client.
 
 If you start with a clean database and run the tests, 2 patrons are left in the database after the tests execute.

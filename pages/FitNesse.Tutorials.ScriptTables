@@ -1,5 +1,5 @@
 [[toc]][[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.ScenarioTables|Next Tutorial--->]]
-=Background: The Return of Smalltalk=
+=Background: The Return of Smalltalk
 This is a somewhat nostalgic background, you won't miss much if you [[FitNesse.Tutorials.ScriptTables#introduction|skip to the introduction]]. 
 
 [[http://fitnesse.org/FitNesse.SliM.ScriptTable|Script tables]] originally derive from Do Fixtures in [[http://sourceforge.net/projects/fitlibrary|fitlibrary]]. However, the design for Do Fixtures actually derives from Smalltalk. In smalltalk there are three kinds of messages:
@@ -48,11 +48,11 @@ generateProgrmas CreateDailyProgramNamed: 'D1" OnChannel: 8 StartingOn: '3/4/200
 
 The spirit of the keyword message in Smalltalk was revived in the design of the do fixture and then carried over into Slim.
 [[#introduction]]
-=Introduction=
+=Introduction
 In this tutorial, you'll continue working with the DVR problem, continuing right from where you left off in [[FitNesse.Tutorials.2|Query Tables Tutorial]]. You can use your code as is from the previous tutorial, or you can use the tag FitNesse.Tutorials.ScriptTables, review [[FitNesse.Tutorials.WorkingFromGitHub|here]] to figure out what to do with this tag.
 
 In this tutorial you will learn how to use script tables to express things with sequences of messages rather than rows of data that are either created or queried. It is typically possible to express in script tables what you can do with decision tables and query tables. The reverse is also true. typically it is a matter of habit or taste. Sometimes, however, one expression is simply better than another.
-=A First Script Table=
+=A First Script Table
 The basis of your work will come from this user story:
 >> As a avid TV watcher, I want to review my to do list by day to verify that my programs are getting recorded
 
@@ -77,7 +77,7 @@ There are three parts to this table:
 * Rows 2 - 3: Invoke a method to generate programs on a weekly schedule
 * Rows 4 - 5: Invoke a method to generate programs on a daily basis
 
-===Creating Page Hierarchy/Table===
+===Creating Page Hierarchy/Table
 * Create a new Test Suite: Edit the following URL: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples]]
 * Enter the following for its contents:
 [[code]]
@@ -89,7 +89,7 @@ There are three parts to this table:
 * See the page type to Test.
 * Run the test, verify that you see a warning (in yellow) of the missing Generate Programs class
 
-==Create Initial Fixture==
+==Create Initial Fixture
 As with other tables, this table needs a backing fixture:
 [[code format="java5"]]
 package com.om.example.dvr.fixtures;
@@ -111,7 +111,7 @@ public class GeneratePrograms {
 
 This is simply a skeleton of the fixture. Update your fixture and verify that your table executes and passes. (Note, depending on the version of FitNesse you are using, returning a "" might cause problems. If the above does not give a successful test execution, replace "" with "n/a".)
 
-==Write Fixture & Refactor==
+==Write Fixture & Refactor
 There is a lot of date-based logic spread throughout the fixtures and production code. This is a problem waiting to happen. Here's a recommendation to get this under control:
 * Put all date-related stuff in a single place
 * Prepare to use this singe place to create instances of dates as well
@@ -260,7 +260,7 @@ public class GeneratePrograms {
 [[code]]
 
 Make sure with all of these changes, your page passes.
-==Schedule Items in To Do List==
+==Schedule Items in To Do List
 Now that you've generated a schedule with several programs, it is time to create season passes. This fixture already exists:
 [[code]]
 |Create Season Pass For|W1|7|
@@ -276,7 +276,7 @@ Note, as the fixture is written, it takes parameters on the constructor. To use 
 
 If you run your test, you should still see all green. As with previous tutorials, getting all green is not that difficult when there are no assertions in a test. Now it is time to verify something. To do that, it's time to return to Query Tables.
 
-==Assert Contents==
+==Assert Contents
 Now it is time to review the to do list by date rather than by program id. Here's just a fixture:
 [[code]]
 |Query:Episodes in to do list on|3/4/2008   |
@@ -356,7 +356,7 @@ public class EpisodesInToDoListOn {
 
 Make all of these changes and execute your test. Notice anything? The first table shows that D1:E1 and D2:E1 are both missing. Apparently something is wrong with the code. There's not enough context to really know what is happening. Maybe we took too large of a leap. How can you fix this?
 
-===Switching to Unit Tests===
+===Switching to Unit Tests
 Here is a JUnit analog of the test page:
 **Create: GenerateProgramsTest.java**
 [[code format="java5"]]
@@ -515,7 +515,7 @@ Which leads to a fix of an improperly extracted method:
 
 Run your unit tests, they should all now pass. At this point if you are not convinced that the tutorial took too big of a step trying to use primarily acceptance tests to drive the work, then you have a high threshold of pain. That was too much much broken stuff for too long along with too much time spent in the debugger.
 
-==Verify Your Acceptance Tests==
+==Verify Your Acceptance Tests
 Now things seem to be working fine and the test passes. What about the entire suite? Run it. Notice that there was a reason why the AddProgramsToSchedule.execute() method did not throw an exception. Now that test fails with an exception. What can we conclude from this?
 * First, it's good we have a suite. One button click and it's quick to spot the mistake.
 * Writing one fixture to use another fixture, while OK, can lean to different goals.
@@ -568,7 +568,7 @@ Finally, let's verify that in fact this change to the createOneProgram method ac
 
 Make sure this test passes before moving to the next section.
 
-=A Second Example=
+=A Second Example
 Here are a few addons to the table to show a few additional features of Script tables:
 [[code]]
 !|Script                    |Generate Programs                                                                              |
@@ -624,7 +624,7 @@ public class GeneratePrograms {
 
 Run your test and verify it passes. Rerun the suite and verify it passes.
 
-=Summary=
+=Summary
 Congratulations, you've finished another tutorial and learned about Script tables. Script tables are a convenient way to introduce code-like sequences into your tests. They derive their design from Smalltalk keyword messages but other than that, they behave like other Slim tables:
 * They are backed with a fixture
 * They have one or more method invocations, one per line.

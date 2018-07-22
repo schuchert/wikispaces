@@ -1,5 +1,5 @@
 [[Katas|<--Back]]
-=Background=
+=Background
 While working on the [[Katas.ShuntingYardAlgorithm|Shunting Yard Algorithm Kata]], it became apparent that one part of the problem is taking an expression and determining its various parts, or turning it into a sequence of tokens. In my original attempts at the Shunting Yard Algorithm, I ignored the problem. I made sure each token in the input string was separated by spaces. For example:
 * ( 3 + 4 ) / 5 * f ( g ( 4 , 3 , 2 ) ) instead of
 * (3+4)/5*f(g(4,3,2))
@@ -18,14 +18,14 @@ At one point, I tried a spiked refactoring, creating an expression token iterato
 
 What follows is a description of the problem in terms of tests and expected results. Note that as of this writing, the tests drive the implementation from taking a single string and creating an iterator that gives you a series of tokens as strings. It is reasonable to build some kind of "token" object rather than just a string. However, this kata does not go in that direction.
 
-=The Problem=
+=The Problem
 A mathematical expression consists of a sequence of numbers, variables, operators, function calls and parentheses. Processing such an expression requires clearly knowing its various parts. One way to process such an expression is to develop a [[http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form|B.N.F]] representation and then use some kind of parser library (e.g., [[http://en.wikipedia.org/wiki/Yacc|Y.A.C.C.]]) to parse it.
 
 Alternatively, you can build a parser from the ground up using a series of more expressive micro tests, and that's what kata is about. As with the [[Katas.ShuntingYardAlgorith|Shunting Yard Algorithm Kata]], this one is designed around a series of examples and expected results. 
 
 What follows is a series of examples to drive your work and some supplemental materials you may choose to use to create further tests.
 
-==The Examples==
+==The Examples
 Here is a list of examples that should build the majority of the tokenizer:
 ||~ Example||~ Resulting Tokens||~ Description||
 ||<empty>||<empty>||Standard first test. Creates production code. Begins creation of API.||
@@ -41,7 +41,7 @@ Here is a list of examples that should build the majority of the tokenizer:
 ||"(3.42 + 6) * a"||"(", "3.42", "+", "6", ")", "*", "a"||Verify floating point numbers work.||
 ||"a_13(f(4+5,1+a*2,(8+b)*10))"||"a_13", "(", "f", "(", "4", "+", "5", ",", "1", "+", "a", "*", "2", ",", "(", "8", "+", "b", ")", "*", "10", ")", ")"||A final "scary" expression to make sure it will work for the final shunting yard algorithm.||
 [[#MoreExamples]]
-==More Examples==
+==More Examples
 After releasing some of this into the wild, I started getting some feedback from, among other people Mitch B ([[http://cleverlytitled.blogspot.com/]]). What follows are a few more tests for edge conditions and other no-so-happy-path-related things. Thanks to Mitch for pointing out these tests as well as providing an improved implementation:
 
 ||~ Example ||~ Results ||~ Description ||
@@ -51,7 +51,7 @@ After releasing some of this into the wild, I started getting some feedback from
 ||"(3+2)*7"||"(", "3", "+", "2", ")", "*", "7"||This seems like other tests and your solution might work out of the box. Mine originally did, but when I make more heavy use of the regular expression implementation in Java// **and**// used the new for syntax to read the tokens, this failed because my implementation of hasNext() was not [[http://en.wikipedia.org/wiki/Idempotent|Idempotent]].||
 ||"3@+2"||"3", <error>||This is similar to the previous error conditions but it involves an embedded error rather than something at the end of an expression. As I made heavier use of the regular expression library, I broke what was passing.||
 
-==Peek==
+==Peek
 One final thing you might want to consider is the ability to "look ahead". When handling function calls in an expression, without having a previous definition of functions, you cannot tell whether a symbol is a function call or a reference to a variable. I solved this by looking ahead to the next token to see if it was an open parenthesis: (. If it is, then the symbol represents a function call. If not, then it's just a variable.
 
 Here's one such test:
@@ -66,7 +66,7 @@ Here's one such test:
    }
 [[code]]
 
-==Additional Information==
+==Additional Information
 Here is a list of potential operators you might want to make sure you can handle:
 ||~ Operators||~ Description||
 ||++ ``  `` --||Increment/Decrement||
@@ -95,7 +95,7 @@ Here is a list of potential operators you might want to make sure you can handle
 ||<<= >>=||Left shift by, right shift by||
 ||&= ^= |=||Bitwise add by, bitwise xor by, bitwise or by||
 ||,||Comma operator/function parameter separator.||
-=The Approach=
+=The Approach
 Use the examples provided as a basis for the first tests. For each of the tests:
 * Add the next one on the list (it will probably fail)
 * While keeping the code compiling and all previouslly written tests passing, get the new test to pass

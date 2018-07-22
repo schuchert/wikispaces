@@ -1,4 +1,4 @@
-==Under OS X==
+==Under OS X
 **robotframework**
 * Downloaded source from: [[http://robotframework.googlecode.com/files/robotframework-2.1.tar.gz]]
 * Extracted it into ~/src/, which created ~/src/robotframework-2.1

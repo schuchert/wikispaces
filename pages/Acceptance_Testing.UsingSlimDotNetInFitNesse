@@ -1,20 +1,20 @@
 [[toc]]
 [[FitNesse.Tutorials|<--Back]]
 
-=Rapid Intro to using Slim with .Net=
+=Rapid Intro to using Slim with .Net
 Thanks to Mike Stockdale for both writing the slim .Net implementation as well as helping me to get this working.
 ----
-===Get SliM.net===
+===Get SliM.net
 Note, this tool is called fitsharp, but it is actually an implementation of Slim for FitNesse. So while this title of this section does not patch the tool title, it better represents what the tool is.
 # Download a release zip from [[http://github.com/jediwhale/fitsharp/downloads|jediwhale's github account]]. Note, as of this update, the release version is called [[http://github.com/downloads/jediwhale/fitsharp/release.1.6.zip|release.1.6.zip]].
 # Extract the zip's contents to some directory (I'll use c:\tools\nslim)
 # This creates a directory structure as follows:
 [[image:ExtractedNSlim.jpg]]
 ----
-===Get FitNesse===
+===Get FitNesse
 [[include page="FitNesse.Installing"]]
 ----
-===Starting FitNesse===
+===Starting FitNesse
 All of the tutorials assume you are running FitNesse on port 8080. These instructions show you how to start FitNesse on port 8080.
 # Start a command prompt (shell)
 # CD to your install directory and then go fitnesse directory created above
@@ -44,7 +44,7 @@ FitNesse (v20090406) Started...
 	page version expiration set to 14 days.
 [[code]]
 ----
-===Update root page in FitNesse===
+===Update root page in FitNesse
 Note, recent versions of FitNesse (after September 2009) do not require this step. The instructions will still work, there just won't be any work for you. And as mentioned above, these steps assume you're running FitNesse on your machine at port 8080, update the URL as necessary.
 # Go to the following URL: http://localhost:8080/root
 # Remove the following entries (if they are there)
@@ -55,7 +55,7 @@ Note, recent versions of FitNesse (after September 2009) do not require this ste
 
 In fact, it is safe to remove everything from the root page (and probably a good idea).
 ----
-===Create a page with necessary configuration===
+===Create a page with necessary configuration
 Note, if you are just using FitNesse for .Net, then you could put this information on the root page (that's what I'd recommend in fact). For this example, I recommend using [[http://localhost:8080/FirstExample]].
 [[code]]
 !define TEST_SYSTEM {slim}
@@ -68,7 +68,7 @@ Note, if you are just using FitNesse for .Net, then you could put this informati
 
 Other than updating the directories, you can use this as is. It can be on a page by itself (e.g. on the root page or a page at the top of your test hierarchy).
 ----
-===Add references to your dll's===
+===Add references to your dll's
 * Use a !path statement to add each dll in your solution.
 [[code]]
 !path C:\projects\slim_example\slim_example\obj\Debug\slim_example.dll
@@ -80,7 +80,7 @@ Other than updating the directories, you can use this as is. It can be on a page
 |slim_example|
 [[code]]
 ----
-===Add a Test Table===
+===Add a Test Table
 Create a table. This is an example of a decision table taken from FitNesse itself. You can see the complete example at: http://localhost:8080/FitNesse.SliM.DecisionTable (of course update the URL as necessary).
 [[code]]
 |should I buy milk|
@@ -92,7 +92,7 @@ Create a table. This is an example of a decision table taken from FitNesse itsel
 |      0       |    no     |      1                |    no      |
 [[code]]
 
-===Here's the complete page===
+===Here's the complete page
 This is all of the above as a single page, which is what I actually did for this eample:
 [[code]]
 !define TEST_SYSTEM {slim}
@@ -113,7 +113,7 @@ This is all of the above as a single page, which is what I actually did for this
 |      0       |    no     |      1                |    no      |
 [[code]]
 ----
-===Create the Fixture Code===
+===Create the Fixture Code
 Here's the C# class that supports the "should I buy milk" decision table:
 [[code format="csharp"]]
 using System;

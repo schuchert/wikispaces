@@ -1,13 +1,13 @@
-=C++ Project Outline=
+=C++ Project Outline
 Developer Studio 2008 Project Directories: [[file:cpptdd.zip]]
 
-==Projects==
+==Projects
 * Rpn Calculator
 * Legacy Refactoring
 * Replacing Switch with Polymorphism
 * Open Project
 
-==Rpn Calculator==
+==Rpn Calculator
 This project introduces the mechanics of TDD in C++. Along the way, you will:
 * Create several unit tests
 * Refactor your code
@@ -17,7 +17,7 @@ This project introduces the mechanics of TDD in C++. Along the way, you will:
 ** Abstract factory pattern
 ** Use test doubles to test pure-virtual class
 
-===Behaviors===
+===Behaviors
 **Round 1**
 * XRegister should be 0 after creation
 
@@ -38,14 +38,14 @@ This project introduces the mechanics of TDD in C++. Along the way, you will:
 **Move to Strategy Pattern**
 **Create Template Method using Test Doubles**
 
-==Legacy Refactoring/Characterization Testing==
+==Legacy Refactoring/Characterization Testing
 Given a wad of code, write characterization tests for it. Once you've characterized it, use the tests to safely refactor the code.
 
-==Replacing Switch with Polymorphism==
+==Replacing Switch with Polymorphism
 Take the previous example through one more refactoring.
 
-==Logging In Example==
+==Logging In Example
 Work on a project on your own with guidance.
 
-==Monopoly (if time permits)==
+==Monopoly (if time permits)
  

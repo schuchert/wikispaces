@@ -1,8 +1,8 @@
-=Version 1=
+=Version 1
 One template parameter, LoadedDie that can return two values.
 
 
-=Version 2=
+=Version 2
 In this version, the Dice Game takes two template parameters. Notice that because of this, we cannot put them into a vector.
 
 //**DiceGame_TwoTemplateParametersTest.h**//
@@ -82,7 +82,7 @@ void DiceGame_TwoTemplateParameters<T1, T2>::play() {
 }
 [[code]]
 
-=Version 3=
+=Version 3
 In this version, the LoadedDie are instead "LoadedDieWithTwoAlternatinvValues", where the two values are template parameters. The DiceGame takes one template parameter.
 //**DiceGame_UsingTemplatesTest.cpp**//
 [[code format="cpp"]]

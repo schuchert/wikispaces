@@ -1,7 +1,7 @@
-==Overview==
+==Overview
 This page describes the steps I follow to setup an Eclipse-based project for developing a new Wicket project. These steps are really just a detailed version of what you can find at: [[http://wicket.apache.org/quickstart.html|the Wicket quickstart page]].
 
-==Create a Space==
+==Create a Space
 * Begin by creating a source directory. For this example, I'll create a directory called CheesrWorkspace (example project from the [[http://www.amazon.com/Wicket-Action-Martijn-Dashorst/dp/1932394982/ref=sr_1_1?ie=UTF8&s=books&qid=1253681267&sr=8-1|Wicket in Action]] book.
 [[code]]
 macintosh-4% cd ~/src
@@ -16,7 +16,7 @@ macintosh-4%
 
 Note: I'll be using git for revision control, so I also added in that last step to init this newly-created subdirectory as a git repository.
 
-==Create Project Using Maven 2==
+==Create Project Using Maven 2
 There's a simple form you can fill out on [[http://wicket.apache.org/quickstart.html|the Wicket quickstart page]] to create a maven command that will create the project structure.
 
 * Fill out the form (I used com.om for the groupid and Cheesr for the artifactid), which produces the following command:
@@ -67,7 +67,7 @@ macintosh-4% mvn archetype:create -DarchetypeGroupId=org.apache.wicket \
 macintosh-4% 
 [[code]]
 
-==Update POM==
+==Update POM
 By default, the project depends on JUnit 3.x, so I update the POM.xml to instead depend on a newer version of JUnit.
 
 * Edit pom.xml under the Cheesr directory
@@ -89,7 +89,7 @@ macintosh-4% vi pom.xml
 <version>4.7</version>
 [[code]]
 
-==Create Eclipse Project Information==
+==Create Eclipse Project Information
 Now that you have an updated POM, you can create the eclipse project. The [[http://wicket.apache.org/quickstart.html|the Wicket quickstart page]] has instructions at the bottom. 
 
 * Make sure you are in the project directory created by the initial mvn command.
@@ -139,7 +139,7 @@ macintosh-4% mvn eclipse:eclipse -DdownloadSources=true
 macintosh-4% 
 [[code]]
 
-==Start Eclipse and Create Java Project==
+==Start Eclipse and Create Java Project
 Now we need to start Eclipse and make a few minor corrections:
 
 * Start Eclipse.
@@ -164,7 +164,7 @@ The generated classpath uses a classpath variable: M2_REPO. Fix that next:
 * Click **Ok**
 * When asked to rebuild all, select **Yes**
 
-==Verify Everything Works==
+==Verify Everything Works
 You can start you server to verify that it is working:
 * Find the Start.java class under src/test/java (in the one package created in the first step above)
 * Run it as a Java application

@@ -1,6 +1,6 @@
 [[image:up.gif link="Vancouver_PPP_Exercise_Ch8and9"]] [[image:forward.gif link="PPPChapter9Exercise"]]
 
-==Part 1: Unit 8==
+==Part 1: Unit 8
 
 The diagram provided describes the dependencies between many of the classes from the project 2 solution. It also shows "components". The larger box represents the middle-tier as it is released to the UI team. The smaller box represents the all of the UI tier, which is developed by a different team. Review this diagram and look for the following:
 * Are there any "obvious" clusters of heavily related classes?

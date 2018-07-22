@@ -4,7 +4,7 @@ JPA Tutorial 3 - FAQ
 * **When do Named Queries get compiled?** //When you create the EntityManager factory.//
 * **Is there something that can use to see the db structure based on the mappings?** //After the entitymanager creates the db, use something like DB Visualizer//
 
-===What did we learn/observe so far (mid-day)?===
+===What did we learn/observe so far (mid-day)?
 * varargs for methods
 * cascading types - persist, all, refresh. propagates operations (merge/update/persist/refresh) across entities. Saves you from having to persist things.
 * jpa requires jdk 1.5
@@ -12,7 +12,7 @@ JPA Tutorial 3 - FAQ
 * debugging good
 * eclipse can gen hashcode/equals
 
-===What did we learn/observe so far (end of day)?===
+===What did we learn/observe so far (end of day)?
 * Brett: Why we use a DAO //Encapsulates data access, hides entity manager calls. Brett: Seperation of Concerns.//
 * Brett: Contrast the Library to the DAO's //Library is not an entity. Library is the 'go-between' (brett: facade design pattern).//
 * //Brett: Set em with a setter....why?// When you get your objects, they're fully configured (nice). Brett: makes it more testable
@@ -47,7 +47,7 @@ Questions//
 * //Need to break up tutorial a bit more.//
 
 
-===//Responses to questions in the exercises//===
+===//Responses to questions in the exercises//
 * A Patron can return a book while having an overdue book
 **Below are the tests to check everything:**
 And the new feature that doesn't allow to checkout with overdue books.
