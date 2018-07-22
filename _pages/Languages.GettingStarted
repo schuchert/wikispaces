@@ -1,0 +1,9 @@
+Luckily I already have macports installed, so to add both I simply used it:
+[[code]]
+> sudo port install scala 2.7.1
+> sudo port install erlang
+[[code]]
+
+Of course I'm at a hotel, so it takes some time to do both of these.
+
+I'm going to start working at the command line before I try to get some eclipse plugins to work with either. Keep the number of new things low.

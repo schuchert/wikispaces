@@ -1,0 +1,5 @@
+<span class="sidebar_title"> I did too much</span>
+When I wrote "the solution" to the "should cause next digit to reset the x_register" Example, I put this logic in my code. I then realized that it was doing nothing to support any Examples so I removed it. 
+
+I then decided to create a test, the one you just worked on, to justify the need to reset the variable. If I had been working with a pairing partner, I'd hope my co-pilot would have called me on violating the third rule of TDD/BDD.
+ 

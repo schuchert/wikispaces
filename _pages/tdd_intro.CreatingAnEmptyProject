@@ -1,0 +1,103 @@
+=Create a new project=
+* Use the default maven archetype:
+> [[code]]
+mvn archetype:generate <<enter>>
+[[code]]
+* Accept default project (note: the number will change from time to time, it is 670 in this example)
+> [[code]]
+Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 670: <<enter>>
+[[code]]
+* Accept the default version
+> [[code]]
+5: 1.0
+6: 1.1
+Choose a number: 6: <<enter>>
+> [[code]]
+* Enter a group id (e.g., com.shoe)
+> [[code]]
+Define value for property 'groupId': : com.shoe <<enter>>
+[[code]]
+* Enter artifact (project name, e.g., paginator)
+> [[code]]
+Define value for property 'artifactId': : paginator <<enter>>
+[[code]]
+* Accept default version
+> [[code]]
+Define value for property 'version':  1.0-SNAPSHOT: : <<enter>>
+[[code]]
+* Enter default package (e.g., com.shoe.paginator <enter>)
+> [[code]]
+Define value for property 'package':  com.shoe: : com.shoe.paginator <<enter>>
+[[code]]
+* Confirm the configuration
+> [[code]]
+Confirm properties configuration:
+groupId: com.shoe
+artifactId: paginator
+version: 1.0-SNAPSHOT
+package: com.shoe.paginator
+ Y: : <<enter>>
+[[code]]
+=Check the project=
+* Change to directory created (e.g., cd paginator)
+> [[code]]
+cd paginator <<enter>> 
+[[code]]
+* Run the tests
+> [[code]]
+mvn test
+<<snip>>
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.shoe.paginator.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.466 s
+[INFO] Finished at: 2015-10-26T00:40:22-05:00
+[INFO] Final Memory: 14M/166M
+[INFO] ------------------------------------------------------------------------
+[[code]]
+=Modernize the project=
+* Edit pom.xml
+* Change JUnit version to 4.12
+* Modify the target Java version (paste above <dependencies>:
+> [[code]]
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+[[code]]
+* Reconfirm build
+> [[code]]
+mvn test <<enter>>
+[[code]]
+* Remove source files created by mvn archetype:generate above
+> [[code]]
+find . -name \*.java | xargs rm
+[[code]]
+= Optionally create a git repo out of this directory=
+> [[code]]
+git init
+echo "target" > .gitignore
+git add pom.xml .gitignore
+git commit -m "Initial commit"
+[[code]]
+=You are ready to open pom.xml in an ide=
+[[media type="vimeo" key="143582262" height="313" width="500"]]

@@ -1,0 +1,14 @@
+<span class="sidebar_title"> Failing Tests: Not Idle Chit-Chat</span>
+This is not idle speculation, I've been on projects where this dynamic occurred. One example involved a situation where "certain tests" (this is TDD, not BDD) just failed and people tended to not worry about them. A developer added a new key-value pair to a hash table. This caused a test to fail. He figured that the test was failing for some other reason, so he ignored it.
+
+In fact here's what was happening:
+* The hashtable was in an object being written as a blob
+* The new key-value pair pushed the object just over the limit of the blob size (4076 bytes -- 5000 bytes, limit was 4096)
+* So his change was breaking the test, but not always because sometimes the data was just small enough to fit.
+
+If tests fail for the wrong reasons, it makes it easy for someone to assume that what they just did could not possibly break the test. Often that just means an assumption is about to be exposed for what it is.
+
+The DRY principle also covers test coverage.
+
+So what can you do? How about accepting a decimal point in the number?
+ 
