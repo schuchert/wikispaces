@@ -59,7 +59,9 @@ In fact, it is safe to remove everything from the root page (and probably a good
 Note, if you are just using FitNesse for .Net, then you could put this information on the root page (that's what I'd recommend in fact). For this example, I recommend using [[http://localhost:8080/FirstExample]].
 ```
 !define TEST_SYSTEM {slim}
+{% raw %}
 !define COMMAND_PATTERN {%m -r fitSharp.Slim.Service.Runner,c:\tools\nslim\fitsharp.dll %p}
+{% endraw %}
 !define TEST_RUNNER {c:\tools\nslim\Runner.exe}
 ```
 * The first line overrides FitNesse's default of executing tests using fit. Note that it is also possible to run in different VM's with this command as well.
@@ -96,7 +98,9 @@ Create a table. This is an example of a decision table taken from FitNesse itsel
 This is all of the above as a single page, which is what I actually did for this eample:
 ```
 !define TEST_SYSTEM {slim}
+{% raw %}
 !define COMMAND_PATTERN {%m -r fitSharp.Slim.Service.Runner,c:\tools\nslim\fitsharp.dll %p}
+{% endraw %}
 !define TEST_RUNNER {c:\tools\nslim\Runner.exe}
 
 !path C:\projects\slim_example\slim_example\obj\Debug\slim_example.dll

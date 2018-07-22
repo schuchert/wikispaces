@@ -112,7 +112,9 @@ Now that you have FitNesse started, create a top-level page for all of your work
 
 !define TEST_SYSTEM {slim}
 !define TEST_RUNNER {/Users/schuchert/src/waat/workspace/RpnCalculatorFixtures/Debug/RpnCalculatorFixtures}
+{% raw %}
 !define COMMAND_PATTERN {%m}
+{% endraw %}
 ```
 * Confirm this page has a **Suite** button. If not, edit its properties so it is a suite and save those properties.
 

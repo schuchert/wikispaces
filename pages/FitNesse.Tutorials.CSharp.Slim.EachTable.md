@@ -26,7 +26,9 @@ Here is the configuration information I used for the following examples:
 Given this information, the following definitions will make these examples work:
 ```
 !define TEST_SYSTEM {slim}
+{% raw %}
 !define COMMAND_PATTERN {%m -r fitSharp.Slim.Service.Runner,c:\tools\nslim\fitsharp.dll %p}
+{% endraw %}
 !define TEST_RUNNER {c:\tools\nslim\Runner.exe}
  
 !path C:\projects\slim_example\slim_example\obj\Debug\slim_example.dll
