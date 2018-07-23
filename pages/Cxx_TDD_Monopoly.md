@@ -39,11 +39,11 @@ In this example, I've used the following tools:
 
 ## Overview
 When we talk about TDD, you'll often hear "Red, Green, Refactor." This is a light-weight way to remind us of the steps we take while practicing TDD. In practice there are more than three steps:
-||**Color**||**You do what?**||**What can you expect?**||
-||Red||Write a test||The test will not compile yet, because there's no supporting code||
-||Red||Get the test to compile||Add minimal code to get your test to compile. It sill will not pass.||
-||Green||Get the test to pass||Write enough code to get the test to pass. Try not to write any more than necessary.||
-||Refactor||Remove code smells||See if you have any code smells such as duplicated code, long methods, etc. and change the code without change its behavior||
+|**Color**|**You do what?**|**What can you expect?**|
+|Red|Write a test|The test will not compile yet, because there's no supporting code|
+|Red|Get the test to compile|Add minimal code to get your test to compile. It sill will not pass.|
+|Green|Get the test to pass|Write enough code to get the test to pass. Try not to write any more than necessary.|
+|Refactor|Remove code smells|See if you have any code smells such as duplicated code, long methods, etc. and change the code without change its behavior|
 
 (The Red, Green come from JUnit, which is Java-centric unit test tool with a long history.)
 

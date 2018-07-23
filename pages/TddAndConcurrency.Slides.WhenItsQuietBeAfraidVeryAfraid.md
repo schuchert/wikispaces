@@ -30,14 +30,14 @@ Since a thread can be preempted at any time…
 ## It is actually worse
 ++value turns into 7 byte-codes:
 * Assume the value field has a value of 42
-||**Byte-code**||**Description**||**Operand Stack After**||
-||aload 0||Load local variable 0 onto the stack. In a non-static method, local variable 0 is always the "this" pointer, or the object that received the most recent message.||this||
-||dup||Place a copy of the top operand on the operand stack back onto the operand stack.||this, this||
-||getfield value||Retrieve the field named "value" from the object pointed to on the top of the operand stack, which is "this". Put the resulting value back on to the top of the operand stack.||this, 42||
-||iconst_1||Put the constant value 1 onto the operand stack.||this, 42, 1||
-||iadd||Perform integer addition on the top two items on the operand stack and place the result back on the operand stack.||this, 43||
-||putfield value||Put the top item on the stack (43) in the "value" field of the object pointed to by the next to top item on the operand stack (this).||<<empty>>||
-||return||Return back to the place where this method was called.||||
+|**Byte-code**|**Description**|**Operand Stack After**|
+|aload 0|Load local variable 0 onto the stack. In a non-static method, local variable 0 is always the "this" pointer, or the object that received the most recent message.|this|
+|dup|Place a copy of the top operand on the operand stack back onto the operand stack.|this, this|
+|getfield value|Retrieve the field named "value" from the object pointed to on the top of the operand stack, which is "this". Put the resulting value back on to the top of the operand stack.|this, 42|
+|iconst_1|Put the constant value 1 onto the operand stack.|this, 42, 1|
+|iadd|Perform integer addition on the top two items on the operand stack and place the result back on the operand stack.|this, 43|
+|putfield value|Put the top item on the stack (43) in the "value" field of the object pointed to by the next to top item on the operand stack (this).|<<empty>>|
+|return|Return back to the place where this method was called.||
 ----
 ----
 ## How Many Possibilities?

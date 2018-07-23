@@ -98,7 +98,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 77: }
 ```
 ### Interesting Lines
-||Line||Description||
+|Line|Description|
 ----
 [[#Example2]]
 ## Example2.java
@@ -168,7 +168,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 63: }
 ```
 ### Interesting Lines
-||Line||Description||
+|Line|Description|
 ----
 [[#JdbcExample]]
 ## JdbcExample.java
@@ -198,6 +198,6 @@ In this case, we've factored out much of the code in the a base class called Abs
 23: }
 ```
 ### Interesting Lines
-||Line||Description||
+|Line|Description|
 
 [<--Back]({{ site.pagesurl}}/Spring Templates Typical JDBC) [Next-->]({{ site.pagesurl}}/Spring Templates JDBC Strategy Is A Template)

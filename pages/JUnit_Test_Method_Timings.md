@@ -102,22 +102,22 @@ If you do not use a src directory and just store your projects at the top level,
 66: }
 ```
 ### Interesting Lines
-||Line||Description||
-||24||Use a [simple configurator]({{ site.pagesurl}}/Commons Loggins and Log4j Config) to get a logging configuration.||
-||25||Create an output file name that's based on the [Java user.home](http://java.sun.com/docs/books/tutorial/essential/system/properties.html) property. On my machine, this is the directory "C:\Documents and Settings\brett.schuchert". On a Unix machine, it will probably be equal to "~".||
-||26||Dos uses \ and Unix uses /. Using / in Java works on both PC's and Unix boxes, so replace all of the \ with /.||
-||27 - 28||Output where the log file is placing information to System.err. It will show up as red in Eclipse and I flush the output so it should appear somewhere near the top. You can safely remove this line once you know where the output goes.||
-||29 - 30||Create a file appender based on the name we've already calculated. In my case, outFileName is "C:/Documents and Settings/brett.schuchert/UnitTestTimings.txt". **NOTE** This is a file appender, it will keep adding new timing information to the end of the file. If you want a clean run, you'll need to move the file, rename it, etc. (Or update this example.)||
-||31||Remove all other appenders to this to completely control the output.||
-||32||Add our appender as the only appender to this logger.||
-||38 - 41||Define a pointcut that captures test methods annotated with @Test. (JUnit 4.x style test methods.)||
-||43 - 46||Define a pointcut that captures methods named test*, that are in TestCase and all of its subclasses. (JUnit 3.8 style test methods.)||
-||51||Around the execution of JUnit 3.8 or JUnit 4.x test methods, do the following.||
-||54 - 56||Get the fully-qualified name of the method, e.g. vehicle.domain.PhoneTest.failureInvalidExtension.||
-||58||Record the time just before executing the method.||
-||60||Execute the test method.||
-||61 - 64||Regardless of how the test method returns (normally, because of an exception), record the completion time and log the result.||
-||63||Use the new String.format method to format my output.||
+|Line|Description|
+|24|Use a [simple configurator]({{ site.pagesurl}}/Commons Loggins and Log4j Config) to get a logging configuration.|
+|25|Create an output file name that's based on the [Java user.home](http://java.sun.com/docs/books/tutorial/essential/system/properties.html) property. On my machine, this is the directory "C:\Documents and Settings\brett.schuchert". On a Unix machine, it will probably be equal to "~".|
+|26|Dos uses \ and Unix uses /. Using / in Java works on both PC's and Unix boxes, so replace all of the \ with /.|
+|27 - 28|Output where the log file is placing information to System.err. It will show up as red in Eclipse and I flush the output so it should appear somewhere near the top. You can safely remove this line once you know where the output goes.|
+|29 - 30|Create a file appender based on the name we've already calculated. In my case, outFileName is "C:/Documents and Settings/brett.schuchert/UnitTestTimings.txt". **NOTE** This is a file appender, it will keep adding new timing information to the end of the file. If you want a clean run, you'll need to move the file, rename it, etc. (Or update this example.)|
+|31|Remove all other appenders to this to completely control the output.|
+|32|Add our appender as the only appender to this logger.|
+|38 - 41|Define a pointcut that captures test methods annotated with @Test. (JUnit 4.x style test methods.)|
+|43 - 46|Define a pointcut that captures methods named test*, that are in TestCase and all of its subclasses. (JUnit 3.8 style test methods.)|
+|51|Around the execution of JUnit 3.8 or JUnit 4.x test methods, do the following.|
+|54 - 56|Get the fully-qualified name of the method, e.g. vehicle.domain.PhoneTest.failureInvalidExtension.|
+|58|Record the time just before executing the method.|
+|60|Execute the test method.|
+|61 - 64|Regardless of how the test method returns (normally, because of an exception), record the completion time and log the result.|
+|63|Use the new String.format method to format my output.|
 ----
 [[#aop]]
 ## aop.xml
@@ -132,7 +132,7 @@ If you do not use a src directory and just store your projects at the top level,
 08: </aspectj>
 ```
 ### Interesting Lines
-||Line||Description||
-||3||The fully-qualified name of an aspect. Add this aspect to the list of aspects to weave at runtime. If you change the name of the aspect or change its package, you must update this fully-qualified name.||
-||6||The list of packages to be woven. You'll need to change this to match your packages. The part before .. is the beginning of the package names I used (see the picture above). The ..* means everything from that name down. So in my case, I have packages like vehicle.component and vehicle.validation and vehicle.component.validation, all of which match vehicle..*.||
+|Line|Description|
+|3|The fully-qualified name of an aspect. Add this aspect to the list of aspects to weave at runtime. If you change the name of the aspect or change its package, you must update this fully-qualified name.|
+|6|The list of packages to be woven. You'll need to change this to match your packages. The part before .. is the beginning of the package names I used (see the picture above). The ..* means everything from that name down. So in my case, I have packages like vehicle.component and vehicle.validation and vehicle.component.validation, all of which match vehicle..*.|
 [<--Back]({{ site.pagesurl}}/Some Example Aspects)

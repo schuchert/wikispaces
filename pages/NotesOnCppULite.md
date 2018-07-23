@@ -86,17 +86,17 @@ Note:
 
 CppUTest [assertion methods](http://xunitpatterns.com/Assertion%20Method.html):
 
-||**Macro**||**Parameters**||**Description**||
-||CHECK||condition||Verify condition is true. If not, report the name and line of the file where the condition fails using the preprocessor-defined macros ``__FILE__``, ``__LINE__``.||
-||CHECK_LOCATION||condition,file,line||Verify condition is true. If not, report the file and line provided to th macro.||
-||CHECK_EQUAL||expected,actual||Check that actual is equal to expected and report if they are not. For this to work, expected and actual are compared using != and when an error is reported, there needs to be a function called StringFrom that converts the result to a SimpleString (see SimpleString.h) or a const char*.||
-||STRCMP_EQUAL||expected,actual||Compare two char*'s using strcmp. If they are not equal, report the ``__FILE__ ``and ``__LINE__`` where the check was made.||
-||STRCMP_EQUAL_LOCATION||expected,actual,file,line||Same as STRCMP_EQUAL, you provide the file and line information..||
-||LONGS_EQUAL||expected,actual||Compare two integer values (long or smaller) for equality. If they are not equal, report the ``__FILE__`` and ``__LINE__`` where the check occurred.||
-||LONGS_EQUAL_LOCATION||expected,actual,file,line||Same as LONGS_EQUAL, you define the file and line information.||
-||DOUBLES_EQUAL||expected,actual||Same as LONGS_EQUAL but using doubles.||
-||DOUBLES_EQUAL_LOCATION||expected,actual,file,line||Same as DOUBLES_EQUAL, you provide the file and line information.||
-||FAIL||text||Fail at this line and report text as the reason.||
-||FAIL_LOCATION||text,file,line||Same as FAIL, you provide the file and line information.||
-||FAIL_TEST||text,file,line||Same as FAIL_LOCATION.||
-||FAIL_TEST_LOCATION||text,file,line||Same as FAIL_LOCATION.||
+|**Macro**|**Parameters**|**Description**|
+|CHECK|condition|Verify condition is true. If not, report the name and line of the file where the condition fails using the preprocessor-defined macros ``__FILE__``, ``__LINE__``.|
+|CHECK_LOCATION|condition,file,line|Verify condition is true. If not, report the file and line provided to th macro.|
+|CHECK_EQUAL|expected,actual|Check that actual is equal to expected and report if they are not. For this to work, expected and actual are compared using != and when an error is reported, there needs to be a function called StringFrom that converts the result to a SimpleString (see SimpleString.h) or a const char*.|
+|STRCMP_EQUAL|expected,actual|Compare two char*'s using strcmp. If they are not equal, report the ``__FILE__ ``and ``__LINE__`` where the check was made.|
+|STRCMP_EQUAL_LOCATION|expected,actual,file,line|Same as STRCMP_EQUAL, you provide the file and line information..|
+|LONGS_EQUAL|expected,actual|Compare two integer values (long or smaller) for equality. If they are not equal, report the ``__FILE__`` and ``__LINE__`` where the check occurred.|
+|LONGS_EQUAL_LOCATION|expected,actual,file,line|Same as LONGS_EQUAL, you define the file and line information.|
+|DOUBLES_EQUAL|expected,actual|Same as LONGS_EQUAL but using doubles.|
+|DOUBLES_EQUAL_LOCATION|expected,actual,file,line|Same as DOUBLES_EQUAL, you provide the file and line information.|
+|FAIL|text|Fail at this line and report text as the reason.|
+|FAIL_LOCATION|text,file,line|Same as FAIL, you provide the file and line information.|
+|FAIL_TEST|text,file,line|Same as FAIL_LOCATION.|
+|FAIL_TEST_LOCATION|text,file,line|Same as FAIL_LOCATION.|

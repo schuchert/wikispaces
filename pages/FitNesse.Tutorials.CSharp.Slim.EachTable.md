@@ -9,22 +9,22 @@ This tutorial simply demonstrates each of the kinds of tables available in Slim 
 
 # Table Types
 In Slim there are 5 major table types and one minor type (the import table):
-|| Decision Table || A decision table allows individual rows to execute, one at a type. Typically used to insert data into the system for testing. This replaces the Column Fixture Table from Fit. ||
-|| Query Table || A query table allows you to specify a number of rows expected from querying the system. Surplus or missing rows are clearly labeled. This replaces the Row Fixture Table from Fit. ||
-|| Script Table || Individual rows represent individual method invocations. Can make tests more expressive, often used by developers looking for something more familiar. This replaces the doFixture from Fit Library. ||
-|| Scenario Table || Describes a logical sequence of steps, the details of which can be deferred to different script tables. There is no equivalent to this table type in Fit or Fit Library. ||
-|| Table Table || The body of the table is given to the fixture to do as it seems fit. This is equivalent to the Table Table from Fit. ||
-|| Import Table || Lists namespaces to be searched for classes when executing tests. This is equivalent to the import table from Fit. ||
+| Decision Table | A decision table allows individual rows to execute, one at a type. Typically used to insert data into the system for testing. This replaces the Column Fixture Table from Fit. |
+| Query Table | A query table allows you to specify a number of rows expected from querying the system. Surplus or missing rows are clearly labeled. This replaces the Row Fixture Table from Fit. |
+| Script Table | Individual rows represent individual method invocations. Can make tests more expressive, often used by developers looking for something more familiar. This replaces the doFixture from Fit Library. |
+| Scenario Table | Describes a logical sequence of steps, the details of which can be deferred to different script tables. There is no equivalent to this table type in Fit or Fit Library. |
+| Table Table | The body of the table is given to the fixture to do as it seems fit. This is equivalent to the Table Table from Fit. |
+| Import Table | Lists namespaces to be searched for classes when executing tests. This is equivalent to the import table from Fit. |
 
 # The Examples
 Here is the configuration information I used for the following examples:
-|| Location of FitNesse || C:\tools\fitnesse ||
-|| Command to start FitNesse || run -p 8080 ||
-|| Version of Slim || 1.2 ||
-|| Location of Slim || C:\tools\nslim ||
-|| Location of C# Solution || C:\projects\slim_example\slim_example.sln ||
-|| Location of generated DLL || C:\projects\slim_example\slim_example\bin\Debug ||
-|| Full path to top-level of FitNesse Tests || http://localhost:8080/CsharpWithSlim ||
+| Location of FitNesse | C:\tools\fitnesse |
+| Command to start FitNesse | run -p 8080 |
+| Version of Slim | 1.2 |
+| Location of Slim | C:\tools\nslim |
+| Location of C# Solution | C:\projects\slim_example\slim_example.sln |
+| Location of generated DLL | C:\projects\slim_example\slim_example\bin\Debug |
+| Full path to top-level of FitNesse Tests | http://localhost:8080/CsharpWithSlim |
 
 Given this information, the following definitions will make these examples work:
 ```

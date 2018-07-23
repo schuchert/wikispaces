@@ -54,22 +54,22 @@ public class BlankLineTest {
 ```
 
 For each test we have a string we test and an expected result (true or false). Here are each of those values:
-||**Literal String**||**Expected**||**Test Name**||
-||""||true||emptyLineInBlank||
-||"  \t   "||true||spaceTabIsBlank||
-||"   "||true||spacesAreBlank||
-||"\n"||true||justNewlineIsBlank||
-||"a"||false||justAIsNotBlank||
-||"    q"||false||spacesNotSpaceNotBlank||
+|**Literal String**|**Expected**|**Test Name**|
+|""|true|emptyLineInBlank|
+|"  \t   "|true|spaceTabIsBlank|
+|"   "|true|spacesAreBlank|
+|"\n"|true|justNewlineIsBlank|
+|"a"|false|justAIsNotBlank|
+|"    q"|false|spacesNotSpaceNotBlank|
 
 As you can imagine, every time we want to verify another combination we add another test method.
 
 JUnit has an idiom for this kind of test. Use a parameterized test. To do so, we use the following steps:
-||1||5||Replace the default runner using the annotation @RunWith||
-||2||11 - 12||Add a public static method annotated with @Parameters that returns a Collection||
-||3||13 - 20||Build a collection where each entry is an array of values||
-||4||27 - 30||Add a constructor that takes parameters whose types are compatible with the values in the arrays stored in the collection and store the values passed||
-||5||32 - 35||Add a single test method that uses those values passed in to the constructor||
+|1|5|Replace the default runner using the annotation @RunWith|
+|2|11 - 12|Add a public static method annotated with @Parameters that returns a Collection|
+|3|13 - 20|Build a collection where each entry is an array of values|
+|4|27 - 30|Add a constructor that takes parameters whose types are compatible with the values in the arrays stored in the collection and store the values passed|
+|5|32 - 35|Add a single test method that uses those values passed in to the constructor|
 
 That's a lot of steps. Here's an example:
 **BlankLineParameterizedTest.java**

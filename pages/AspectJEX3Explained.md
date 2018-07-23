@@ -30,10 +30,10 @@ To make this example work, we need two additional things:
 12: }
 ```
 ### Interesting Lines
-||Line||Description||
-||8||As we have seen with other examples, we denote this class as an apsect. Using annotations we are able to use AspectJ without a special compiler by using the @Aspect syntax.||
-||10||We use the @DeclareParents annotation to modify the next line. What is in the ("") is the class being targeted. The next line defined a field (instance variable). The net effect is that we add the type on the next line as an interface that the class on line 10 will now implement.||
-||11||Define an instance variable for this class/aspect. Becuase this line is annotated with @DeclareParents, the type of this variable is added as an interface to the ex3.Die class.||
+|Line|Description|
+|8|As we have seen with other examples, we denote this class as an apsect. Using annotations we are able to use AspectJ without a special compiler by using the @Aspect syntax.|
+|10|We use the @DeclareParents annotation to modify the next line. What is in the ("") is the class being targeted. The next line defined a field (instance variable). The net effect is that we add the type on the next line as an interface that the class on line 10 will now implement.|
+|11|Define an instance variable for this class/aspect. Becuase this line is annotated with @DeclareParents, the type of this variable is added as an interface to the ex3.Die class.|
 ----
 ## aop.xml
 ```xml
@@ -47,9 +47,9 @@ To make this example work, we need two additional things:
 08: </aspectj>
 ```
 ### Interesting Lines
-||Line||Description||
-||3||List the aspect we want to weave into our code||
-||6||Apply the aspect to all classes in the package ex3||
+|Line|Description|
+|3|List the aspect we want to weave into our code|
+|6|Apply the aspect to all classes in the package ex3|
 ----
 ## Main.java
 ```java
@@ -125,11 +125,11 @@ To make this example work, we need two additional things:
 70: }
 ```
 ### Interesting Lines
-||Line||Description||
-||16||Create a ByteArrayOutputStream from the underlying Die object. Rather than create a file on the file system, we instead serialize to a byte array for this example.||
-||17||Read the byte array, which is assumed to be a serialized Die object.||
-||19||Check to see if the faceValue before writing is the same as the faceValue after writing.||
-||28 - 43||Use standard Java Serialization to attempt to write the Die object. If the Die class did not implement Serializable, this would fail with a java.io.NotSerializable exception. We made it Serializable using an aspect so this succeeds. We create a ByteArrayOutpuStream and serialize the Die in memory rather than to a file. This is quick way to clone an object.||
-||45 - 59||We would not get to this method if the serializeObject() did not work. This method takes a ByteArrayOutputStream's byte array and attempts to read an object stored in the byte array.||
+|Line|Description|
+|16|Create a ByteArrayOutputStream from the underlying Die object. Rather than create a file on the file system, we instead serialize to a byte array for this example.|
+|17|Read the byte array, which is assumed to be a serialized Die object.|
+|19|Check to see if the faceValue before writing is the same as the faceValue after writing.|
+|28 - 43|Use standard Java Serialization to attempt to write the Die object. If the Die class did not implement Serializable, this would fail with a java.io.NotSerializable exception. We made it Serializable using an aspect so this succeeds. We create a ByteArrayOutpuStream and serialize the Die in memory rather than to a file. This is quick way to clone an object.|
+|45 - 59|We would not get to this method if the serializeObject() did not work. This method takes a ByteArrayOutputStream's byte array and attempts to read an object stored in the byte array.|
 
 [<--Back]({{ site.pagesurl}}/AspectJEX3SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJEX3ApplyYourself)

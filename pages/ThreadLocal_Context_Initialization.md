@@ -94,18 +94,18 @@ Instead, we created another utility class that simply wrapped ThreadContext and 
 55: }
 ```
 Interesting Lines
-||Line||Description||
-||19||The pointcut ejbMethod matches all methods on SessionBeans or its subclasses.||
-||20 - 24||There are a few EJBs that support security. We never want these to be part of this aspect.||
-||26||Define the man ponintcut for this aspect.||
-||27||The target(receiver of the message) must be a SessionBean or a subclass.||
-||28||The first parameter to the method must be ISessionKey, there can be zero or more additional parameters.||
-||29||It must be an ejbMethod().||
-||30||It must not be in the control flow of the call of ejbMethod. That is, if I'm already executing an ejbMethod() and that calls another ejbMethod, do not do wrap that call as well. It only needs to happen once at the "top" of the EJB call stack.||
-||31||Skip the security-related EJB's.||
-||45 - 46||Record first the session key and then the security credentials. Note that getting the security credentials might cause a TimedOut exception to be thrown. If this happens, the finally block will remove the already-recorded session key.||
-||48||Run the underlying EJB method.||
-||52||Regardless of how you are leaving this code, make sure to clean up the ThreadLocal variables. The container probably maintains a thread pool and we don't want to leave trash in our threads.||
+|Line|Description|
+|19|The pointcut ejbMethod matches all methods on SessionBeans or its subclasses.|
+|20 - 24|There are a few EJBs that support security. We never want these to be part of this aspect.|
+|26|Define the man ponintcut for this aspect.|
+|27|The target(receiver of the message) must be a SessionBean or a subclass.|
+|28|The first parameter to the method must be ISessionKey, there can be zero or more additional parameters.|
+|29|It must be an ejbMethod().|
+|30|It must not be in the control flow of the call of ejbMethod. That is, if I'm already executing an ejbMethod() and that calls another ejbMethod, do not do wrap that call as well. It only needs to happen once at the "top" of the EJB call stack.|
+|31|Skip the security-related EJB's.|
+|45 - 46|Record first the session key and then the security credentials. Note that getting the security credentials might cause a TimedOut exception to be thrown. If this happens, the finally block will remove the already-recorded session key.|
+|48|Run the underlying EJB method.|
+|52|Regardless of how you are leaving this code, make sure to clean up the ThreadLocal variables. The container probably maintains a thread pool and we don't want to leave trash in our threads.|
 ----
 [[#ThreadContext]]
 # # ThreadContext.java

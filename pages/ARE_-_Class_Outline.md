@@ -264,19 +264,19 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** User (x4)
 ** Product Owner (x4)
 ** Business Analyst (x4)
-||Item||Formula||Minimum||
-||3x5 Cards||1 + 1 for every 2 students||2||
-||PostIts(r)||1 + 1 per every 2 students||2||
-||Static Images||1 + 1 for every 4 students||2||
-||Dry Erase Markers(4 pack)||1 + 1 for every 4 students||2||
-||Slides||1 for every student||#Students||
-||Book||1 per student||# Students||
-||6-sided dice||1 + 1 for every 4 students||2||
-||Decks of Playing cards||1 + 1 for every 4 students||2||
+|Item|Formula|Minimum|
+|3x5 Cards|1 + 1 for every 2 students|2|
+|PostIts(r)|1 + 1 per every 2 students|2|
+|Static Images|1 + 1 for every 4 students|2|
+|Dry Erase Markers(4 pack)|1 + 1 for every 4 students|2|
+|Slides|1 for every student|#Students|
+|Book|1 per student|# Students|
+|6-sided dice|1 + 1 for every 4 students|2|
+|Decks of Playing cards|1 + 1 for every 4 students|2|
 
-||Ref||Title||
-||Cohn06||User Stories Applied - For Agile Software Development||
-||G&W89||Exploring Requirements - Quality Before Design||
+|Ref|Title|
+|Cohn06|User Stories Applied - For Agile Software Development|
+|G&W89|Exploring Requirements - Quality Before Design|
 ----
 ## Design Problems
 * [[ITunesCompetetorDesignProblem]]

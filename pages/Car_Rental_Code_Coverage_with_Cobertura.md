@@ -119,7 +119,7 @@ Here's the file so we can discuss it and configure it for your situation:
 78: </project>
 ```
 ### Interesting Lines
-||Line||Description||
+|Line|Description|
 
 ## Execution
 Assuming you've updated the cobertura.xml file and set all of the relevant properties for your environment, then do the following:
@@ -139,21 +139,21 @@ With your directory refreshed, you're ready to have a look at the output:
 # Expand the reports directory.
 # Double click on index.xml (I've noticed that this sometimes fails when I'm using RAD. If this happens to you, just open this with your favorite browser).
 # Here's a summary of my numbers by package:
-||Package||#Classes||Line Coverage||covered/total||Branch Coverage||covered/total||Complexity||
-||All_Packages||88||85%||1680/1984||88%||120/136||1.3125||
-||vehicle.component.rateplan||2||87%||256/295||100%||5/5||0||
-||vehicle.component.rentalagreement||2||96%||73/76||100%||5/5||0||
-||vehicle.component.vehicle||2||85%||66/78||89%||8/9||0||
-||vehicle.component.vehicletype||2||86%||100/116||80%||4/5||0||
-||vehicle.configuration||2||71%||22/31||100%||3/3||0||
-||vehicle.domain||27||86%||503/587||73%||16/22||0||
-||vehicle.exception||5||69%||9/13||N/A||N/A||1.0||
-||vehicle.integration||8||87%||143/164||100%||2/2||1.0||
-||vehicle.integration.inmemory||5||91%||140/154||96%||44/46||2.333||
-||vehicle.reference||1||81%||22/27||100%||1/1||0||
-||vehicle.type||13||67%||109/163||60%||6/10||0||
-||vehicle.util||4||87%||33/38||100%||4/4||4.0||
-||vehicle.validation||16||84%||204/242||92%||22/24||0||
+|Package|#Classes|Line Coverage|covered/total|Branch Coverage|covered/total|Complexity|
+|All_Packages|88|85%|1680/1984|88%|120/136|1.3125|
+|vehicle.component.rateplan|2|87%|256/295|100%|5/5|0|
+|vehicle.component.rentalagreement|2|96%|73/76|100%|5/5|0|
+|vehicle.component.vehicle|2|85%|66/78|89%|8/9|0|
+|vehicle.component.vehicletype|2|86%|100/116|80%|4/5|0|
+|vehicle.configuration|2|71%|22/31|100%|3/3|0|
+|vehicle.domain|27|86%|503/587|73%|16/22|0|
+|vehicle.exception|5|69%|9/13|N/A|N/A|1.0|
+|vehicle.integration|8|87%|143/164|100%|2/2|1.0|
+|vehicle.integration.inmemory|5|91%|140/154|96%|44/46|2.333|
+|vehicle.reference|1|81%|22/27|100%|1/1|0|
+|vehicle.type|13|67%|109/163|60%|6/10|0|
+|vehicle.util|4|87%|33/38|100%|4/4|4.0|
+|vehicle.validation|16|84%|204/242|92%|22/24|0|
 
 If we pay attention to just the line coverage, we see a range from 67% to 96%. Let's work with just this value and try to "improve it". The ultimate goal is 100% line coverage and 100% branch coverage. However, in practice getting this may take much longer than it is worth. Even so, we'll strive for at least 90% or better in every package.
 

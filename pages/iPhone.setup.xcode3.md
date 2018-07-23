@@ -112,14 +112,14 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 Congratulations, you have your first test working.
 # Set Unit Test Executable Settings
 Review// **GHUnitIOSTestMain.m**//. Notice that it recommends editing your unit test executable and setting the following properties:
-||~ Property Name||~ Default Value||~ Recommended Setting ||
-||NSDebugEnabled||                        NO      ||YES||
-||NSZombieEnabled||                       NO       ||YES||
-||NSDeallocateZombies||                   NO       ||YES||
-||NSHangOnUncaughtException||             NO       ||YES||
-||NSEnableAutoreleasePool||YES||NO||
-||NSAutoreleaseFreedObjectCheckEnabled||NO||YES||
-||GHUNIT_AUTORUN||NO||YES||
+|~ Property Name|~ Default Value|~ Recommended Setting |
+|NSDebugEnabled|                        NO      |YES|
+|NSZombieEnabled|                       NO       |YES|
+|NSDeallocateZombies|                   NO       |YES|
+|NSHangOnUncaughtException|             NO       |YES|
+|NSEnableAutoreleasePool|YES|NO|
+|NSAutoreleaseFreedObjectCheckEnabled|NO|YES|
+|GHUNIT_AUTORUN|NO|YES|
 Note, the last one is one I recommend. This will make your tests run automatically.
 
 To make create these environment settings:
@@ -136,10 +136,10 @@ Now the hard part starts.
 * Link to it from the UI project
 * Link to it from the Unit Test Project
 # A Few Handy Shortcut Keys
-|| Command-r || run application ||
-|| Command-b || quick open ||
-|| F3 || mapped to Edit:Find:Jump to Definition ||
-|| Command-alt up-arrow || Switch between .h and .m ||
+| Command-r | run application |
+| Command-b | quick open |
+| F3 | mapped to Edit:Find:Jump to Definition |
+| Command-alt up-arrow | Switch between .h and .m |
 
 
 [<-- Back]({{ site.pagesurl}}/iPhone)

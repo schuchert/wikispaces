@@ -47,11 +47,11 @@ public class LoginServiceTest {
 ```
 
 ## Test Description
-||**Part 1**|| This test first creates a test-double for an IAccount. There's no actual account class, just the interface. This test-double is configured so that no matter what password is sent to it, it will always return true when asked if a provided password matches its password.||
-||**Part 2**||Create a test-double for an IAccountRepository. Associate the test-double IAccount with the test-double IAccountRepository. When asking for any account with an id equal to any string, return the account test-double created at the start of this method.||
-||**Part 3**||Create a LoginService, injecting the IAcccountRepsitory in the constructor. This is an example of Inversion of Control, rather than the LoginService knowing which IAccountRepository to talk to, it is told which one to talk to. So while the LoginService knows which messages to send to an IAccountRepository, it is not responsible for deciding to// **which**// instance it should send messages.||
-||**Part 4**||Actually send a login message, looking for account with id "brett" and a password of "password". Notice that if things are configured correctly, any account id will match as will any password.||
-||**Part 5**||Use the Mockito method verify (confirm) that the method setLoggedIn(true) was called exactly once.||
+|**Part 1**| This test first creates a test-double for an IAccount. There's no actual account class, just the interface. This test-double is configured so that no matter what password is sent to it, it will always return true when asked if a provided password matches its password.|
+|**Part 2**|Create a test-double for an IAccountRepository. Associate the test-double IAccount with the test-double IAccountRepository. When asking for any account with an id equal to any string, return the account test-double created at the start of this method.|
+|**Part 3**|Create a LoginService, injecting the IAcccountRepsitory in the constructor. This is an example of Inversion of Control, rather than the LoginService knowing which IAccountRepository to talk to, it is told which one to talk to. So while the LoginService knows which messages to send to an IAccountRepository, it is not responsible for deciding to// **which**// instance it should send messages.|
+|**Part 4**|Actually send a login message, looking for account with id "brett" and a password of "password". Notice that if things are configured correctly, any account id will match as will any password.|
+|**Part 5**|Use the Mockito method verify (confirm) that the method setLoggedIn(true) was called exactly once.|
 
 ## Things Created for Compilation
 To get this test to compile (but not yet pass), I had to create a few interfaces and add some methods to them. I also had to create a LoginService class:
@@ -143,11 +143,11 @@ After three consecutive failed login attempts to the account, the account shall 
 ```
 ## Test Description
 As before, there are 5 parts to this test:
-||**Part 1**||Create an IAccount test-double. Unlike the first test, this test double never matches any password.||
-||**Part 2**||Create an IAccountRepository test-double and register the IAccount test-double with it for any account id.||
-||**Part 3**||Create the LoginService as before, injecting the IAccountRepository test-double.||
-||**Part 4**||Attempt to login three times, each time should fail.||
-||**Part 5**||Finally, verify that the account was set to revoked after three times.||
+|**Part 1**|Create an IAccount test-double. Unlike the first test, this test double never matches any password.|
+|**Part 2**|Create an IAccountRepository test-double and register the IAccount test-double with it for any account id.|
+|**Part 3**|Create the LoginService as before, injecting the IAccountRepository test-double.|
+|**Part 4**|Attempt to login three times, each time should fail.|
+|**Part 5**|Finally, verify that the account was set to revoked after three times.|
 
 Notice that this test does not check that setLogedIn is not called. It certainly could and that would make it in a sense more complete. On the other hand, it would also tie the test verification to the underlying implementation and also be testing something that might better be created as its own test (so that's officially on the punch-list for later implementation).
 
@@ -314,10 +314,10 @@ This test is a little longer because it requires more setup. Rather than possibl
 Since my primary purpose of this tutorial is practice using Mockito, I'll leave it as is until I notice additional duplication.
 
 There are 4 parts to this test:
-||**Part 1**||Set the password matching to false on the account.||
-||**Part 2**||Create a second account, with a never-matching password and register it with the account repository. Notice that this uses a particular account name, "schuchert". Mockito, notices more specific// **when**// clauses over more general ones, so adding this after saying "for any string" is OK. This is a convenient default behavior (or is that behaviour as they would spell it?-).||
-||**Part 3**||Login two times to the first account (both failing), then log in to a second account, also failing. That's three failures in a row, but to two different accounts, so no account should be revoked.||
-||**Part 4**||Verify that the secondAccount is not revoked.||
+|**Part 1**|Set the password matching to false on the account.|
+|**Part 2**|Create a second account, with a never-matching password and register it with the account repository. Notice that this uses a particular account name, "schuchert". Mockito, notices more specific// **when**// clauses over more general ones, so adding this after saying "for any string" is OK. This is a convenient default behavior (or is that behaviour as they would spell it?-).|
+|**Part 3**|Login two times to the first account (both failing), then log in to a second account, also failing. That's three failures in a row, but to two different accounts, so no account should be revoked.|
+|**Part 4**|Verify that the secondAccount is not revoked.|
 
 ## Things Created for Compilation
 This test compiles without any new methods. It does fail with the following exception:

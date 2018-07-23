@@ -358,9 +358,9 @@ The first bullet above is currently handled at the top of the page with a large 
 ```
 
 The first list of the ScenarioTable describes the input parameters to the table. This table has three parameters:
-|| number || The number of programs the DVR should be able to record at the same time. ||
-|| seasonPasses || A list of season passes, which will be parsed by the underlying method and then created ||
-|| toDoList || A list of programs that should be in the to do list ||
+| number | The number of programs the DVR should be able to record at the same time. |
+| seasonPasses | A list of season passes, which will be parsed by the underlying method and then created |
+| toDoList | A list of programs that should be in the to do list |
 
 Notice that this table expresses what needs to be done.// **Question**//, what is the name of the fixture?// **Answer**// None, yet. In fact, add this table after the large decision table that creates the program schedule. Execute the test and it should still pass. Why? This is a declaration of a sequence of steps, but it is not used anywhere.
 
@@ -478,9 +478,9 @@ The next table names the scenario. Notice that each of the parts of the name are
 Once the first line names the scenario, the next line names parameters. The names must match the names used in the scenario table.
 
 The third row describes one complete use of the scenario. In this case:
-|| 1 || The DVR should be able to record one thing at a time ||
-|| D5_1:5,D6_1:6 || A comma separated list of Program Name:Channel pairs. ||
-|| D5_1:7 || A short hand notation for D5_1, D5_2 ... D5_7 ||
+| 1 | The DVR should be able to record one thing at a time |
+| D5_1:5,D6_1:6 | A comma separated list of Program Name:Channel pairs. |
+| D5_1:7 | A short hand notation for D5_1, D5_2 ... D5_7 |
 
 You can use what ever syntax makes sense. You will have to parse it in the fixture, so you should something easy to deal with. However, if you have to choose between easy to program and easy to write in the acceptance test, I strongly encourage the latter. Why? Make it easy to express the tests. You'll have fewer fixtures than tests, so put the pain in a single place rather than many places. This is just another example of the DRY principle.
 

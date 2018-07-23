@@ -132,7 +132,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 93: </project>
 ```
 ### Interesting Lines
-||Line||Description||
+|Line|Description|
 
 **Update Tests**
 
@@ -156,21 +156,21 @@ With your directory refreshed, you're ready to have a look at the output:
 # Because this is just the top-level file from my machine, it is missing some links.
 # Here's a summary of my numbers by package:
 
-||name||class, %||method, %||block, %||line, %||
-||all classes||94% (78/83)||83% (527/636)||80% (6040/7578)||81% (1579.7/1956)||
-||vehicle.type||83% (10/12)||68% (56/82)||63% (437/692)||67% (104.4/155)||
-||vehicle.configuration||100%(2/2)||80% (8/10)||67% (73/109)||68% (21/31)||
-||vehicle.integration||100%(4/4)||84% (37/44)||71% (470/662)||72% (118.7/164)||
-||vehicle.component.vehicletype||100%(2/2)||77% (23/30)||73% (320/438)||71% (82.5/116)||
-||vehicle.component.rateplan||100%(2/2)||87% (46/53)||76% (804/1061)||74% (219.1/295)||
-||vehicle.reference||100%(1/1)||62% (5/8)||78% (84/108)||81% (22/27)||
-||vehicle.component.vehicle||100%(2/2)||87% (20/23)||83% (216/259)||81% (63.4/78)||
-||vehicle.domain||100%(26/26)||86% (199/231)||84% (1908/2275)||87% (502/575)||
-||vehicle.validation||88% (14/16)||85% (58/68)||84% (669/793)||85% (198/234)||
-||vehicle.util||100%(4/4)||80% (12/15)||85% (109/128)||84% (32/38)||
-||vehicle.exception||80% (4/5)||67% (4/6)||89% (70/79)||69% (9/13)||
-||vehicle.component.rentalagreement||100%(2/2)||95% (21/22)||89% (230/257)||90% (68.2/76)||
-||vehicle.integration.inmemory||100%(5/5)||86% (38/44)||91% (650/717)||90% (139.4/154)||
+|name|class, %|method, %|block, %|line, %|
+|all classes|94% (78/83)|83% (527/636)|80% (6040/7578)|81% (1579.7/1956)|
+|vehicle.type|83% (10/12)|68% (56/82)|63% (437/692)|67% (104.4/155)|
+|vehicle.configuration|100%(2/2)|80% (8/10)|67% (73/109)|68% (21/31)|
+|vehicle.integration|100%(4/4)|84% (37/44)|71% (470/662)|72% (118.7/164)|
+|vehicle.component.vehicletype|100%(2/2)|77% (23/30)|73% (320/438)|71% (82.5/116)|
+|vehicle.component.rateplan|100%(2/2)|87% (46/53)|76% (804/1061)|74% (219.1/295)|
+|vehicle.reference|100%(1/1)|62% (5/8)|78% (84/108)|81% (22/27)|
+|vehicle.component.vehicle|100%(2/2)|87% (20/23)|83% (216/259)|81% (63.4/78)|
+|vehicle.domain|100%(26/26)|86% (199/231)|84% (1908/2275)|87% (502/575)|
+|vehicle.validation|88% (14/16)|85% (58/68)|84% (669/793)|85% (198/234)|
+|vehicle.util|100%(4/4)|80% (12/15)|85% (109/128)|84% (32/38)|
+|vehicle.exception|80% (4/5)|67% (4/6)|89% (70/79)|69% (9/13)|
+|vehicle.component.rentalagreement|100%(2/2)|95% (21/22)|89% (230/257)|90% (68.2/76)|
+|vehicle.integration.inmemory|100%(5/5)|86% (38/44)|91% (650/717)|90% (139.4/154)|
 
 
 

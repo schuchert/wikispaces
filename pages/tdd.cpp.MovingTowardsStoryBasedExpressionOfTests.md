@@ -12,16 +12,16 @@ Recently, I took a bit of a different approach to writing the tests as a way to 
 # Typical Tests
 Typically, I introduce this problem similar to how Bob introduces it (it is his problem after all), with the following test cases:
 
-||~ value||~ expected results||
-||1|| ||
-||2|| 2 ||
-||3|| 3 ||
-||4|| 2, 2 ||
-||5|| 5 ||
-||6|| 2, 3 ||
-||7|| 7 ||
-||8|| 2, 2, 2||
-||1024||2, 2, 2, 2, 2, 2, 2, 2, 2, 2||
+|~ value|~ expected results|
+|1| |
+|2| 2 |
+|3| 3 |
+|4| 2, 2 |
+|5| 5 |
+|6| 2, 3 |
+|7| 7 |
+|8| 2, 2, 2|
+|1024|2, 2, 2, 2, 2, 2, 2, 2, 2, 2|
  
 Here is one way to write these tests using [CppUTest](http://www.cpputest.org/):
 **PrimeFactorsOperator.cpp**

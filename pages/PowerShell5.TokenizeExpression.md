@@ -5,11 +5,11 @@ title: PowerShell5.TokenizeExpression
 
 # Overview
 The next problem is an implementation of the [The Shunting Yard Algorithm Kata]({{ site.pagesurl}}/Katas.ShuntingYardAlgorithm). To implement this algorithm, we need to be able to break a complex expression into its logical parts. For example:
-||~ Expression||
-||4+5||4||+||5||
-||a * 3 + 1||a||*||3||+||1||
-||(4 + 5) * x||(||4||+||5||)||*||x||
-||f(g(q^6))||f||(||g||(||q||^||6||)||)||
+|~ Expression|
+|4+5|4|+|5|
+|a * 3 + 1|a|*|3|+|1|
+|(4 + 5) * x|(|4|+|5|)|*|x|
+|f(g(q^6))|f|(|g|(|q|^|6|)|)|
 
 Here are some notes and observations from these examples:
 * Generally, whitespace is ignored, and isn't even necessary

@@ -27,23 +27,23 @@ For instructions on working from github: [[FitNesse.Tutorials.WorkingFromGitHub]
 
 [[#JavaTutorials]]
 # Java Tutorials Ready to be Used
-|| ===[Getting Started]({{ site.pagesurl}}/FitNesse.Tutorials.0)=== ||
-|| ===[Introduction To Decision Tables]({{ site.pagesurl}}/FitNesse.Tutorials.1)=== ||
-|| ===[Introduction To Query Tables]({{ site.pagesurl}}/FitNesse.Tutorials.2)=== ||
-|| ===[Script Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScriptTables)=== ||
-|| ===[Scenario Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables)=== ||
-|| ===[Table Tables]({{ site.pagesurl}}/FitNesse.Tutorials.TableTables)=== ||
-|| ===[Alternative Script Table Syntax]({{ site.pagesurl}}/FitNesse.Tutorials.AlternativeScriptTableSyntax)=== ||
+| ===[Getting Started]({{ site.pagesurl}}/FitNesse.Tutorials.0)=== |
+| ===[Introduction To Decision Tables]({{ site.pagesurl}}/FitNesse.Tutorials.1)=== |
+| ===[Introduction To Query Tables]({{ site.pagesurl}}/FitNesse.Tutorials.2)=== |
+| ===[Script Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScriptTables)=== |
+| ===[Scenario Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables)=== |
+| ===[Table Tables]({{ site.pagesurl}}/FitNesse.Tutorials.TableTables)=== |
+| ===[Alternative Script Table Syntax]({{ site.pagesurl}}/FitNesse.Tutorials.AlternativeScriptTableSyntax)=== |
 
 # C# Tutorials
-|| ===[C# W/Slim, Each Table Type]({{ site.pagesurl}}/FitNesse.Tutorials.CSharp.Slim.EachTable)=== || ===[Print](http://schuchert.wikispaces.com/FitNesse.Tutorials.CSharp.Slim.EachTable?f=print)===||
+| ===[C# W/Slim, Each Table Type]({{ site.pagesurl}}/FitNesse.Tutorials.CSharp.Slim.EachTable)=== | ===[Print](http://schuchert.wikispaces.com/FitNesse.Tutorials.CSharp.Slim.EachTable?f=print)===|
 
 # Under Construction
-|| ===[Converting Tests to use more of a Story Style]({{ site.pagesurl}}/FitNesse.Tutorials.ConvertingToStoryStyle)=== || [Print](http://schuchert.wikispaces.com/FitNesse.Tutorials.ConvertingToStoryStyle?f=print) ||
+| ===[Converting Tests to use more of a Story Style]({{ site.pagesurl}}/FitNesse.Tutorials.ConvertingToStoryStyle)=== | [Print](http://schuchert.wikispaces.com/FitNesse.Tutorials.ConvertingToStoryStyle?f=print) |
 
 # Writeups more than Tutorials: To Be Migrated
-|| ===[Using Table Table for DSL-esque Test Setup]({{ site.pagesurl}}/Acceptance Testing.FitNesse.TableTableExample)=== || [Print](http://schuchert.wikispaces.com/Acceptance+Testing.FitNesse.TableTableExample?f=print) ||
+| ===[Using Table Table for DSL-esque Test Setup]({{ site.pagesurl}}/Acceptance Testing.FitNesse.TableTableExample)=== | [Print](http://schuchert.wikispaces.com/Acceptance+Testing.FitNesse.TableTableExample?f=print) |
 
 # Originals Already Incorporated Into Tutorial Series
-|| ===[Scenario Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables)=== || [Print](http://schuchert.wikispaces.com/FitNesse.Tutorials.ScenarioTables?f=print) ||
-|| ===[Rapid Intro to Using Slim.Net]({{ site.pagesurl}}/Acceptance Testing.UsingSlimDotNetInFitNesse)=== || [Print](http://schuchert.wikispaces.com/Acceptance+Testing.UsingSlimDotNetInFitNesse?f=print) ||
+| ===[Scenario Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables)=== | [Print](http://schuchert.wikispaces.com/FitNesse.Tutorials.ScenarioTables?f=print) |
+| ===[Rapid Intro to Using Slim.Net]({{ site.pagesurl}}/Acceptance Testing.UsingSlimDotNetInFitNesse)=== | [Print](http://schuchert.wikispaces.com/Acceptance+Testing.UsingSlimDotNetInFitNesse?f=print) |

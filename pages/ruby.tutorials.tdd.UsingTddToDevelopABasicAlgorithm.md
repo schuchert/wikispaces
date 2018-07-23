@@ -17,18 +17,18 @@ Good Luck!
 Synopsis: The Shunting Yard Algorithm takes an expression in infix notation and converts it to reverse polish notation.
 
 Here are a few examples:
-||~ Infix ||~ RPN ||
-|| 1 + 3 || 1 3 + ||
-|| 1 + 3 - 4 || 1 3 + 4 - ||
-|| 1 + 3 * 2 || 1 3 2 * + ||
-|| 3 + 1 * 4 - 2 / 3 || 3 1 4 * + 2 3 / - ||
-|| a + b || a b + ||
-|| ( 4 + 5 ) * 3 || 4 5 + 3 * ||
-|| ( ( 1 + 3 ) / ( 9 - 5 ) ) * ( 2 + 3 ) || 1 3 + 9 5 - / 2 3 + * ||
-|| f ( 3 ) || 3 f ||
-|| f ( 4 , 1 , a , d ) || 4 1 a d f ||
-|| f ( g ( ( 1 + 3 ) * 4 ) / x ( y ( z ) ) ) || 1 3 + 4 * g z y x / f ||
-|| a = b += 5 || a b 5 += = ||
+|~ Infix |~ RPN |
+| 1 + 3 | 1 3 + |
+| 1 + 3 - 4 | 1 3 + 4 - |
+| 1 + 3 * 2 | 1 3 2 * + |
+| 3 + 1 * 4 - 2 / 3 | 3 1 4 * + 2 3 / - |
+| a + b | a b + |
+| ( 4 + 5 ) * 3 | 4 5 + 3 * |
+| ( ( 1 + 3 ) / ( 9 - 5 ) ) * ( 2 + 3 ) | 1 3 + 9 5 - / 2 3 + * |
+| f ( 3 ) | 3 f |
+| f ( 4 , 1 , a , d ) | 4 1 a d f |
+| f ( g ( ( 1 + 3 ) * 4 ) / x ( y ( z ) ) ) | 1 3 + 4 * g z y x / f |
+| a = b += 5 | a b 5 += = |
 
 To better understand the algorithm, consider spending some time reading it [here](http://en.wikipedia.org/wiki/Shunting_yard_algorithm). However, after reviewing the algorithm, you might come up with several issues that your code will need to handle. Here's a list of those issues:
 **Basics**

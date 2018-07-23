@@ -139,12 +139,12 @@ The minimal requirement for the fixture is a doTable method as shown above. Sinc
 
 * Execute this test and review the output (click on the yellow triangle with an ! in it):
 ```
-||1|2|3|4|5|6|7|8|9|10|11|12|13|14|
+|1|2|3|4|5|6|7|8|9|10|11|12|13|14|
 |200|aaaa|BBcc|cccc|ccDD|DDee|efff|ffff|fffg|gggg|gggh|hhii|jklm|nopq|rstt|
 |247|aaaa|BBBB|cccc|DDDD|eeee|FFFF|gggg|HHHH|iiii|JJJJ|kkkk|LLLL|mmmm|NNNN|
 |302|aaBB|ccDD|eeFF|ggHH|iiJJ|kkLL|mmNN|ooPP|qqRR|ssTT|uuVV|wwww|wwXX|XXXy|
-|501||||||aaBB|ccDD|eeFF|ggHH|iiJJ|kkLL|mmNN|ooPP|qqRR|
-|556||__aa|BBcc|DDee|FFgg|HHii|JJkk|LLmm|NNoo|PPqq|RRss|TTuu|VVxx|xxxx|
+|501|||aaBB|ccDD|eeFF|ggHH|iiJJ|kkLL|mmNN|ooPP|qqRR|
+|556|__aa|BBcc|DDee|FFgg|HHii|JJkk|LLmm|NNoo|PPqq|RRss|TTuu|VVxx|xxxx|
 ```
 
 Does this look familiar? This gives a hint at just what a table-table does. FitNesse simply passes in the entire table (minus the first row) in the form of a list of a list of strings:

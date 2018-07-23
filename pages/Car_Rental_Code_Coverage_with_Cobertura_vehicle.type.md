@@ -8,20 +8,20 @@ title: Car_Rental_Code_Coverage_with_Cobertura_vehicle.type
 
 ## Analysis
 Here are the statistics for this package (sorted worse to best):
-||Class||Coverage%||Line Count||Branch %||Line Count||Complexity||
-||Validateable||N/A||N/A||N/A||N/A||0||
-||EnumField||0%||0/10||N/A||N/A||0||
-||ObjectField||0%||0/10||N/A||N/A||0||
-||AbstractObject||55%||6/11||0%||0/1||0||
-||ListField||57%||12/21||0%||0/1||0||
-||FloatField||58%||7/12||N/A||N/A||0||
-||FieldChangedStatus||67%||2/3||0%||0/1||0||
-||ValidationStatus||67%||2/3||0%||0/1||0||
-||StringField||75%||9/12||N/A||N/A||0||
-||ClassAndMessage||82%||9/11||N/A||N/A||0||
-||AbstractField||84%||38/45||100%||6/6||0||
-||Result||94%||17/18||N/A||N/A||0||
-||IntegerField||100%||7/7||N/A||N/A||0||
+|Class|Coverage%|Line Count|Branch %|Line Count|Complexity|
+|Validateable|N/A|N/A|N/A|N/A|0|
+|EnumField|0%|0/10|N/A|N/A|0|
+|ObjectField|0%|0/10|N/A|N/A|0|
+|AbstractObject|55%|6/11|0%|0/1|0|
+|ListField|57%|12/21|0%|0/1|0|
+|FloatField|58%|7/12|N/A|N/A|0|
+|FieldChangedStatus|67%|2/3|0%|0/1|0|
+|ValidationStatus|67%|2/3|0%|0/1|0|
+|StringField|75%|9/12|N/A|N/A|0|
+|ClassAndMessage|82%|9/11|N/A|N/A|0|
+|AbstractField|84%|38/45|100%|6/6|0|
+|Result|94%|17/18|N/A|N/A|0|
+|IntegerField|100%|7/7|N/A|N/A|0|
 
 **Validateable**
 This class is an interface so there's nothing to report here.
@@ -66,27 +66,27 @@ This class has 100% coverage so there are no required changes.
 
 ## Results
 After applying all of the changes metntioned above, here are the results:
-||Classes||Line Coverage|| ||Branch Coverage|| ||Complexity||
-||AbstractField||93%||42/45||100%||6/6||0||
-||AbstractFieldTest||100%||15/15||100%||2/2||0||
-||AbstractObject||64%||7/11||100%||1/1||0||
-||AbstractObjectTest||100%||6/6||N/A||N/A||0||
-||AbstractObjectTest$StringTester||100%||4/4||N/A||N/A||0||
-||ClassAndMessage||100%||11/11||N/A||N/A||0||
-||ClassAndMessageTest||100%||10/10||100%||2/2||0||
-||FieldChangedStatus||100%||3/3||100%||1/1||0||
-||FieldChangedStatusTest||100%||4/4||N/A||N/A||0||
-||FloatField||100%||8/8||N/A||N/A||0||
-||FloatFieldTest||100%||7/7||100%||1/1||0||
-||IntegerField||100%||7/7||N/A||N/A||0||
-||ListField||92%||23/25||100%||1/1||0||
-||ListFieldTest||100%||26/26||N/A||N/A||0||
-||Result||100%||18/18||N/A||N/A||0||
-||ResultTest||100%||7/7||100%||1/1||0||
-||StringField||100%||9/9||N/A||N/A||0||
-||Validateable||N/A||N/A||N/A||N/A||0||
-||ValidationStatus||100%||3/3||100%||1/1||0||
-||ValidationStatusTest||100%||4/4||N/A||N/A||0||
+|Classes|Line Coverage| |Branch Coverage| |Complexity|
+|AbstractField|93%|42/45|100%|6/6|0|
+|AbstractFieldTest|100%|15/15|100%|2/2|0|
+|AbstractObject|64%|7/11|100%|1/1|0|
+|AbstractObjectTest|100%|6/6|N/A|N/A|0|
+|AbstractObjectTest$StringTester|100%|4/4|N/A|N/A|0|
+|ClassAndMessage|100%|11/11|N/A|N/A|0|
+|ClassAndMessageTest|100%|10/10|100%|2/2|0|
+|FieldChangedStatus|100%|3/3|100%|1/1|0|
+|FieldChangedStatusTest|100%|4/4|N/A|N/A|0|
+|FloatField|100%|8/8|N/A|N/A|0|
+|FloatFieldTest|100%|7/7|100%|1/1|0|
+|IntegerField|100%|7/7|N/A|N/A|0|
+|ListField|92%|23/25|100%|1/1|0|
+|ListFieldTest|100%|26/26|N/A|N/A|0|
+|Result|100%|18/18|N/A|N/A|0|
+|ResultTest|100%|7/7|100%|1/1|0|
+|StringField|100%|9/9|N/A|N/A|0|
+|Validateable|N/A|N/A|N/A|N/A|0|
+|ValidationStatus|100%|3/3|100%|1/1|0|
+|ValidationStatusTest|100%|4/4|N/A|N/A|0|
 
 
 **EnumField & ObjectField**

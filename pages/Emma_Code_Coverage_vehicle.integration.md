@@ -6,11 +6,11 @@ title: Emma_Code_Coverage_vehicle.integration
 # Emma Code Coverage vehicle.integration Package
 
 This package starts with 72% coverage. Here are the details for each class:
-||name||class, %||method, %||block, %||line, %|| 
-||IVehicleDaoTest.java||100% (1/1)||78%  (7/9)||51%  (64/126)||52%  (14/27)||
-||IRatePlanDaoTest.java||100% (1/1)||78%  (7/9)||56%  (69/123)||55%  (15/27)||
-||IRentalAgreementDaoTest.java||100% (1/1)||92%  (12/13)||75%  (134/179)||76%  (40.8/54)||
-||IVehicleTypeDaoTest.java||100% (1/1)||85%  (11/13)||87%  (203/234)||87%  (48.9/56)||
+|name|class, %|method, %|block, %|line, %| 
+|IVehicleDaoTest.java|100% (1/1)|78%  (7/9)|51%  (64/126)|52%  (14/27)|
+|IRatePlanDaoTest.java|100% (1/1)|78%  (7/9)|56%  (69/123)|55%  (15/27)|
+|IRentalAgreementDaoTest.java|100% (1/1)|92%  (12/13)|75%  (134/179)|76%  (40.8/54)|
+|IVehicleTypeDaoTest.java|100% (1/1)|85%  (11/13)|87%  (203/234)|87%  (48.9/56)|
 
 ## The Plan
 **IVehicleDaoTest.java**

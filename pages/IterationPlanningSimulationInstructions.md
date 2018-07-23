@@ -27,40 +27,40 @@ If during any iteration your total remaining story points is < half of your pred
  
 ## Tables
 ### Iterations 1 - 2
-||//Actual//||**Roll**||**Change**||//Story//||**Roll**||**Change**||//+/- Story Points//||
-||//Velocity//||1||-3d6||//Points//||1||-3d6||Roll 1 = 3d6||
-||//equals//||2||-2d6||//Added//||2||-2d6||Roll 2 = 3d6||
-||//IVG//||3||-1d6||//or//||3||-1d6||Change = Roll 1 - Roll 2||
-||//+/-//||4||+1d6||//Removed//||4||+1d6||can be||
-||//-->//||5||+2d6||//-->//||5||+2d6||positive||
-|| ||6||+3d6|| ||6||+3d6||or negative||
+|//Actual//|**Roll**|**Change**|//Story//|**Roll**|**Change**|//+/- Story Points//|
+|//Velocity//|1|-3d6|//Points//|1|-3d6|Roll 1 = 3d6|
+|//equals//|2|-2d6|//Added//|2|-2d6|Roll 2 = 3d6|
+|//IVG//|3|-1d6|//or//|3|-1d6|Change = Roll 1 - Roll 2|
+|//+/-//|4|+1d6|//Removed//|4|+1d6|can be|
+|//-->//|5|+2d6|//-->//|5|+2d6|positive|
+| |6|+3d6| |6|+3d6|or negative|
 
 ### Iteration 3 - 5
-||//Actual//||**Roll**||**Change**||//Story//||**Roll**||**Change**||//+/- Story Points//||
-||//Velocity//||1||-2d6||//Points//||1||-3d6||Roll 1 = 2d6||
-||//equals//||2||-1d6||//Added//||2||-2d6||Roll 2 = 2d6||
-||//IVG//||3||-1d6||//or//||3||-1d6||Change = Roll 1 - Roll 2||
-||//+/-//||4||+1d6||//Removed//||4||+1d6||can be||
-||//-->//||5||+1d6||//-->//||5||+2d6||positive||
-|| ||6||+2d6|| ||6||+3d6||or negative||
+|//Actual//|**Roll**|**Change**|//Story//|**Roll**|**Change**|//+/- Story Points//|
+|//Velocity//|1|-2d6|//Points//|1|-3d6|Roll 1 = 2d6|
+|//equals//|2|-1d6|//Added//|2|-2d6|Roll 2 = 2d6|
+|//IVG//|3|-1d6|//or//|3|-1d6|Change = Roll 1 - Roll 2|
+|//+/-//|4|+1d6|//Removed//|4|+1d6|can be|
+|//-->//|5|+1d6|//-->//|5|+2d6|positive|
+| |6|+2d6| |6|+3d6|or negative|
 
 ### Iterations 6 - 9
-||//Actual//||**Roll**||**Change**||//Story//||**Roll**||**Change**||//+/- Story Points//||
-||//Velocity//||1||-2d6||//Points//||1||-1d6||Roll 1 = 2d6||
-||//equals//||2||-1d6||//Added//||2||-1d6||Roll 2 = 2d6||
-||//IVG//||3||0||//or//||3||0||Change = Roll 1 - Roll 2||
-||//+/-//||4||0||//Removed//||4||0||can be||
-||//-->//||5||+1d6||//-->//||5||+1d6||positive||
-|| ||6||+2d6|| ||6||+1d6||or negative||
+|//Actual//|**Roll**|**Change**|//Story//|**Roll**|**Change**|//+/- Story Points//|
+|//Velocity//|1|-2d6|//Points//|1|-1d6|Roll 1 = 2d6|
+|//equals//|2|-1d6|//Added//|2|-1d6|Roll 2 = 2d6|
+|//IVG//|3|0|//or//|3|0|Change = Roll 1 - Roll 2|
+|//+/-//|4|0|//Removed//|4|0|can be|
+|//-->//|5|+1d6|//-->//|5|+1d6|positive|
+| |6|+2d6| |6|+1d6|or negative|
 
 ### Iterations 10+
-||//Actual//||**Roll**||**Change**||//Story//||**Roll**||**Change**||//+/- Story Points//||
-||//Velocity//||1||-1d6||//Points//||1||-1d6||Roll 1 = 1d6||
-||//equals//||2||-1d6 / 2||//Added//||2||-1d6 / 2||Roll 2 = 1d6||
-||//IVG//||3||0||//or//||3||0||Change = Roll 1 - Roll 2||
-||//+/-//||4||0||//Removed//||4||0||can be||
-||//-->//||5||+1d6 / 2||//-->//||5||+1d6 / 2||positive||
-|| ||6||+1d6|| ||6||+1d6||or negative||
+|//Actual//|**Roll**|**Change**|//Story//|**Roll**|**Change**|//+/- Story Points//|
+|//Velocity//|1|-1d6|//Points//|1|-1d6|Roll 1 = 1d6|
+|//equals//|2|-1d6 / 2|//Added//|2|-1d6 / 2|Roll 2 = 1d6|
+|//IVG//|3|0|//or//|3|0|Change = Roll 1 - Roll 2|
+|//+/-//|4|0|//Removed//|4|0|can be|
+|//-->//|5|+1d6 / 2|//-->//|5|+1d6 / 2|positive|
+| |6|+1d6| |6|+1d6|or negative|
 ----
 ## Example
 **Iteration 1**
@@ -146,12 +146,12 @@ Roll 1 = 15, Roll 2 = 12 --> +3
 Initial = 15 - completed (17) + points added/removed (-5) + changes(3) ==> -4 (we finished!)
 
 ### Example Summary
-||Iter#||Est. Velocity||Actual||Beg. SP||Added SP||Estimate Changes||Ending SP||
-||1||10||24||65||9||1||51||
-||2||24||15||51||8||2||46||
-||3||15||16||46||-4||-2||24||
-||4||16||11||24||-9||9||15||
-||5||11||17||15||-5||3||-4(0)||
+|Iter#|Est. Velocity|Actual|Beg. SP|Added SP|Estimate Changes|Ending SP|
+|1|10|24|65|9|1|51|
+|2|24|15|51|8|2|46|
+|3|15|16|46|-4|-2|24|
+|4|16|11|24|-9|9|15|
+|5|11|17|15|-5|3|-4(0)|
 
 ## Velocity Graph
 A velocity graph charts velocity over iterations. You can use it to:

@@ -3,10 +3,10 @@ title: JMock-Verify_Method_Called_With_Value
 ---
 [<--Back]({{ site.pagesurl}}/TDD Example Catalog)
 
-||**Line**||**Effect**||
-||5||Ignore any calls of the method getBalance() on the account object. Note if we don't do this, then calling getBalance one or more times will cause the test to fail.||
-||6||The method getBalance() will return 2500 every time it is called. We've effectively stubbed this method.||
-||7||We will call the method deduct() exactly once on the account object. When it is called, the value 1500 will be the value of the parameter passed.||
+|**Line**|**Effect**|
+|5|Ignore any calls of the method getBalance() on the account object. Note if we don't do this, then calling getBalance one or more times will cause the test to fail.|
+|6|The method getBalance() will return 2500 every time it is called. We've effectively stubbed this method.|
+|7|We will call the method deduct() exactly once on the account object. When it is called, the value 1500 will be the value of the parameter passed.|
 
 ```java
 01: @Test

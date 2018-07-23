@@ -55,30 +55,30 @@ What happens if we change line 5 to use ++ instead? It is still atomic?
 In this case, the answer is it can be interrupted, it is not atomic.
 
 Before we go any further, here are three definitions that will be important:
-||**Term**||**Definition**||
-||[frame](http://java.sun.com/docs/books/jvms/second_edition/html/Instructions.doc.html)||Every method invocation requires a frame. The frame includes the return address, any parameters passed into the method and the local variables defined in the method. This is a standard technique used to define a [call stack](http://en.wikipedia.org/wiki/Call_stack), which is used by modern languages to allow for basic function/method invocation and to allow for recursive invocation.||
-||[Local Variable](http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#15722)||Any variables defined in the method. All non-static methods have at least one variable,// **this**//, which represents the current object; the object that received the most recent message (in the current thread), which caused the method invocation.||
-||[Operand Stack](http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#28851)||Many of the instructions in the Java Virtual machine take parameters. The operand stack is where those parameters are put. The stack is a standard [LIFO](http://en.wikipedia.org/wiki/LIFO) data structure.||
+|**Term**|**Definition**|
+|[frame](http://java.sun.com/docs/books/jvms/second_edition/html/Instructions.doc.html)|Every method invocation requires a frame. The frame includes the return address, any parameters passed into the method and the local variables defined in the method. This is a standard technique used to define a [call stack](http://en.wikipedia.org/wiki/Call_stack), which is used by modern languages to allow for basic function/method invocation and to allow for recursive invocation.|
+|[Local Variable](http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#15722)|Any variables defined in the method. All non-static methods have at least one variable,// **this**//, which represents the current object; the object that received the most recent message (in the current thread), which caused the method invocation.|
+|[Operand Stack](http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#28851)|Many of the instructions in the Java Virtual machine take parameters. The operand stack is where those parameters are put. The stack is a standard [LIFO](http://en.wikipedia.org/wiki/LIFO) data structure.|
 So what constitutes an atomic operation in Java? A simple definition would be: The execution of a single [Instruction](http://java.sun.com/docs/books/jvms/second_edition/html/Instructions.doc.html) as defined in the [Java VM Specification](http://java.sun.com/docs/books/jvms/second_edition/html/VMSpecTOC.doc.html). At least that was my old mental model. This is a gross oversimplification - in fact, I don't think it is even a good mental model, but I haven't got one to replace it yet. To really understand what an atomic operation is in Java, you must understand the Java memory model. Suffice it to say, assigning a 32-bit value (in this case an int) into a field is guaranteed to be atomic.
 
 Even so, let's have a look at the details of this one line of Java code. The instruction set for the first example, where we assign 1 to the field value, is:
-||**mnemonic**||**description**||**Operand Stack After**||
-||ALOAD 0||Load the 0th variable onto the operand stack. What is the 0th variable? It is// **this**//. It is the current object. When this method was called, the receiver of the message, an instance of ClassWithThreadingProblem, was pushed into the local variable array of the [frame](http://java.sun.com/docs/books/jvms/second_edition/html/Instructions.doc.html) created for method invocation. This is always the first variable put in every instance method.||this||
-||ICONST_1||Load the constant value 1 onto the operand stack.||this, 1||
-||PUTFIELD value||Store the top value on the stack (which is 1) into the field **value** of the object referred to by the object reference one away from the top of the stack.||<empty>||
+|**mnemonic**|**description**|**Operand Stack After**|
+|ALOAD 0|Load the 0th variable onto the operand stack. What is the 0th variable? It is// **this**//. It is the current object. When this method was called, the receiver of the message, an instance of ClassWithThreadingProblem, was pushed into the local variable array of the [frame](http://java.sun.com/docs/books/jvms/second_edition/html/Instructions.doc.html) created for method invocation. This is always the first variable put in every instance method.|this|
+|ICONST_1|Load the constant value 1 onto the operand stack.|this, 1|
+|PUTFIELD value|Store the top value on the stack (which is 1) into the field **value** of the object referred to by the object reference one away from the top of the stack.|<empty>|
 
 So isn't that three instructions? It is. However, these three instructions are guaranteed to essentially be atomic because while the thread executing them could be interrupted, the information for the PUTFIELD instruction (the constant value 1 on the top of the stack and the reference to **this** one below the top, along with the field **value**) cannot be touched by another thread so when the assignment occurs, we are guaranteed that the value 1 will be stored in the field i. The operation is atomic.
 
 That same guarantee does// **not//** not apply for 64 bit types (e.g. longs and doubles) since assigning to a 64-bit variables requires two 32-bit assignments.
 
 If we look at the second operation, ++, it gets even worse (assume that value holds 42 at the beginning of this method):
-||**mnemonic**||**description**||**Operand Stack After**||
-||ALOAD 0||Load// **this**// onto the operand stack.||this||
-||DUP ||Copy the top of the stack. We now have two copies of// **this**// on the operand stack.||this, this||
-||GETFIELD lastId||Retrieve the value o the field lastId and store it on the stack. d ||this, 42||
-||ICONST_1||Add the constant 1 to the stack. ||this, 42, 1||
-||IADD||Integer add the top two values on the operand stack and store the result back on the operand stack.||this, 43||
-||PUTFIELD value||Store the top value on the operand stack, 43, into the field value of the current object, represented by the next-to-top value on the operand stack,// **this**//.||<empty>||
+|**mnemonic**|**description**|**Operand Stack After**|
+|ALOAD 0|Load// **this**// onto the operand stack.|this|
+|DUP |Copy the top of the stack. We now have two copies of// **this**// on the operand stack.|this, this|
+|GETFIELD lastId|Retrieve the value o the field lastId and store it on the stack. d |this, 42|
+|ICONST_1|Add the constant 1 to the stack. |this, 42, 1|
+|IADD|Integer add the top two values on the operand stack and store the result back on the operand stack.|this, 43|
+|PUTFIELD value|Store the top value on the operand stack, 43, into the field value of the current object, represented by the next-to-top value on the operand stack,// **this**//.|<empty>|
 
 There are several places where this sequence of steps could be interrupted. One bad case is where two threads both call the same method on the same object. The first thread completes the first three instructions, up to GETFIELD, and the is interrupted. A second thread takes over and performed the entire method, incrementing value by one. Then the first thread picks up where it left off. It has the// **old**// value on its operand stack. It adds one and stores the result. This results in adding one two times and only incrementing by one because two threads stepped on each other.
 ----
@@ -135,18 +135,18 @@ Here is such a test:
 38: }
 ```
 ### Interesting Lines
-||Line||Description||
-||10||Create a single instance of ClassWithThreadingProblem. Note, we must use the final keyword since we use it below in an anonymous inner class||
-||12 - 16||Create an anonymous inner class that uses the single instance of ClassWithThreadingProblem||
-||18||Run this code "enough" times to demonstrate that the code failed, but not so much that the test "takes too long." This is a balancing act, we don't want to wait too long to demonstrate failure. Picking this number is hard - although later we'll see that we can greatly reduce this number.||
-||19||Remember the starting value. This test is trying to prove that the code in ClassWithThreadingProblem is broken. If this test// **passes**//, it proved that the code was// **broken**//. If this test// **fails**//, the test was unable to prove the the code is broken.||
-||20||We expect the final value to be 2 more than the current value.||
-||22 - 23||Create two threads, both of which use the object we created in lines 12 - 16. This gives us the potential of two threads trying to use our single instance of ClassWithThreadingProblem and interfering with each other.||
-||24 - 25||Make our two threads eligible to run.||
-||26 - 27||Wait for both threads to finish before we check the results.||
-||29||Record the actual final value.||
-||31 - 35||Did our endingId differ from what we expected? If so, return - end the test - we've proven that the code is broken. If not, try again. Report the iteration number at which we demonstrated the error.||
-||36||If we got to here, our test was unable to prove the production code was broken so we have failed. Either the code is not broken or we didn't run enough iterations to get the failure condition to occur.||
+|Line|Description|
+|10|Create a single instance of ClassWithThreadingProblem. Note, we must use the final keyword since we use it below in an anonymous inner class|
+|12 - 16|Create an anonymous inner class that uses the single instance of ClassWithThreadingProblem|
+|18|Run this code "enough" times to demonstrate that the code failed, but not so much that the test "takes too long." This is a balancing act, we don't want to wait too long to demonstrate failure. Picking this number is hard - although later we'll see that we can greatly reduce this number.|
+|19|Remember the starting value. This test is trying to prove that the code in ClassWithThreadingProblem is broken. If this test// **passes**//, it proved that the code was// **broken**//. If this test// **fails**//, the test was unable to prove the the code is broken.|
+|20|We expect the final value to be 2 more than the current value.|
+|22 - 23|Create two threads, both of which use the object we created in lines 12 - 16. This gives us the potential of two threads trying to use our single instance of ClassWithThreadingProblem and interfering with each other.|
+|24 - 25|Make our two threads eligible to run.|
+|26 - 27|Wait for both threads to finish before we check the results.|
+|29|Record the actual final value.|
+|31 - 35|Did our endingId differ from what we expected? If so, return - end the test - we've proven that the code is broken. If not, try again. Report the iteration number at which we demonstrated the error.|
+|36|If we got to here, our test was unable to prove the production code was broken so we have failed. Either the code is not broken or we didn't run enough iterations to get the failure condition to occur.|
 ----
 OK, I've lied. This test will not reliably (or even frequently) demonstrate that the code we're testing is broken. 
 

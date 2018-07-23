@@ -43,9 +43,9 @@ Here is a typical example of using Log4J with a simple utility class that:
 ```
 
 ### Interesting Lines
-||Line||Description||
-||14||Use a utility class to retrieve a logger for my class.||
-||16||Use the logger.||
+|Line|Description|
+|14|Use a utility class to retrieve a logger for my class.|
+|16|Use the logger.|
 
 So what is wrong with this example? Specifically, something is missing. In a real application, line 16 should be wrapped in some conditional logic. Don't worry if you're not sure about this, it's coming up.
 
@@ -87,8 +87,8 @@ Here's the code for version 2:
 19: }
 ```
 ### Interesting Lines
-||Line||Description||
-||16 - 17||Use the String.format method to produce the same output as before.||
+|Line|Description|
+|16 - 17|Use the String.format method to produce the same output as before.|
 
 ## Version 3
 Version 3 adds the missing element mentioned in version 1. Namely, in both version 1 and version 2, we are formatting a String, performing string concatenation, allocating memory, etc. when it might not be necessary.
@@ -132,8 +132,8 @@ Here's the code modified to take this into consideration:
 21: }
 ```
 ### Interesting Lines
-||Line||Description||
-||16 - 19||Now we are wrapping our calls to the logger just in case we are not currently printing debugging information.||
+|Line|Description|
+|16 - 19|Now we are wrapping our calls to the logger just in case we are not currently printing debugging information.|
 
 This is ugly, error prone and a pain, right? But it really does make a big difference. What if you could make this happen automagically?
 
@@ -163,9 +163,9 @@ First let's look at the use of the code:
 16: }
 ```
 ### Interesting Lines
-||Line||Description||
-||14||What? This is just back to version 2, right?||
-||12||This was Logger, now it is ILogger.||
+|Line|Description|
+|14|What? This is just back to version 2, right?|
+|12|This was Logger, now it is ILogger.|
 
 To make this work, we first introduce an interface that uses Java 5 Variable Arguments:
 ----
@@ -207,10 +207,10 @@ Next, we write a simple implementation for this interface. For now we'll just lo
 19:     }
 ```
 ### Interesting Lines
-||Line||Description||
-||14||This method uses variable arguments. You can tell this when you see **Object...**. It turns out that objects is simply an array of Objects. You can write objects[0] to get the first element (assuming there are some elements in it).||
-||15||Our wrapper performs the isDebugEnabled() check for us rather than having to do it everywhere where we use the logger.||
-||16||This line uses the String.format method we introduced in Version 2. It was a necessary step. Notice that we pass in a variable number of arguments and we simply pass those arguments on to the String.format method.||
+|Line|Description|
+|14|This method uses variable arguments. You can tell this when you see **Object...**. It turns out that objects is simply an array of Objects. You can write objects[0] to get the first element (assuming there are some elements in it).|
+|15|Our wrapper performs the isDebugEnabled() check for us rather than having to do it everywhere where we use the logger.|
+|16|This line uses the String.format method we introduced in Version 2. It was a necessary step. Notice that we pass in a variable number of arguments and we simply pass those arguments on to the String.format method.|
 
 This version was not possible before variable arguments. We might have some overhead in the passing of parameters but we have much more elegant code that does what it should without burdening the programmer.
 

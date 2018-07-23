@@ -475,11 +475,11 @@ public class AccountInventoryExtendedBean implements AccountInventory {
 ## The Tests
 
 This class performs the same two test algorithms two times each for a total of 4 test methods:
-||**Name**||**Scope**||**Accesses**||**Expected**||
-||createExampleUsingVehiclesTransactionScoped||Transaction||Vehicles||Success||
-||createExampleUsingVehiclesExtendedScoped||Extended||Vehicles||Success||
-||createExampleUsingTollTagsTransactionScoped||Transaction||TollTags||Fails||
-||createExampleUsingTollTagsExtendedScoped||Extended||TollTags||Success||
+|**Name**|**Scope**|**Accesses**|**Expected**|
+|createExampleUsingVehiclesTransactionScoped|Transaction|Vehicles|Success|
+|createExampleUsingVehiclesExtendedScoped|Extended|Vehicles|Success|
+|createExampleUsingTollTagsTransactionScoped|Transaction|TollTags|Fails|
+|createExampleUsingTollTagsExtendedScoped|Extended|TollTags|Success|
 
 **AccountInventoryBeanTest.java**
 ```java

@@ -11,12 +11,12 @@ Along the way we'll introduce a light-weight use of the boost library as well to
 
 # The Back 40
 First let's create a simple set of 40 locations based on a file. Here's an example of what that file might look like:
-||**type**||**name**||
-||go||Go||
-||location||Mediterranean Avenue||
-||location||Community Chest||
-||location||Baltic Avenue||
-||it||Income Tax||
+|**type**|**name**|
+|go|Go|
+|location|Mediterranean Avenue|
+|location|Community Chest|
+|location|Baltic Avenue|
+|it|Income Tax|
 
 We need something that will construct the correct kind of Location based on the first column and give it the name in the second column. We also need to make sure to connect each of the locations to each other and form a circle.
 
@@ -28,8 +28,8 @@ Here we go...
 
 # Red: Our First Test
 Here's our first goal, create a "board" of one location. We'll use for our data set the following:
-||**type**||**name**||
-||location||LocationName||
+|**type**|**name**|
+|location|LocationName|
 
 Here's our test (in a new test file):
 **BoardBuilderTest.hpp**
@@ -59,12 +59,12 @@ Here's our test (in a new test file):
 ```
 
 Here's a breakdown:
-||**Line**||**Description**||
-||15||I do not want to actually use a real file and deal with file I/O so I'm going to use a string as my source of data.||
-||16||the C++ standard library offers the class istringstream that allows us to create an istream from a string. This allows my unit under test to read from a "file" that's in memory.||
-||18||I'm calling a class method (static method) called buildBoard on the class BoardBuilder. This method takes a stream representing our locations and returns back the first location listed in the file. Remember that our locations form a circular list so having just the "first" location gives us all of them. This method is performing dynamic memory allocation so rather than return a standard pointer, I return a shared pointer that automatically will cause the underlying memory to get deleted when I return from this method. This is not a perfect solution, but we're working our way there.||
-||19||First I want to verify that the location I got back has an expected name (this is a new method we'll need to add to Location.||
-||20||Next, I want to make sure that the list is circular. It's size is one, so the next of start should be itself.||
+|**Line**|**Description**|
+|15|I do not want to actually use a real file and deal with file I/O so I'm going to use a string as my source of data.|
+|16|the C++ standard library offers the class istringstream that allows us to create an istream from a string. This allows my unit under test to read from a "file" that's in memory.|
+|18|I'm calling a class method (static method) called buildBoard on the class BoardBuilder. This method takes a stream representing our locations and returns back the first location listed in the file. Remember that our locations form a circular list so having just the "first" location gives us all of them. This method is performing dynamic memory allocation so rather than return a standard pointer, I return a shared pointer that automatically will cause the underlying memory to get deleted when I return from this method. This is not a perfect solution, but we're working our way there.|
+|19|First I want to verify that the location I got back has an expected name (this is a new method we'll need to add to Location.|
+|20|Next, I want to make sure that the list is circular. It's size is one, so the next of start should be itself.|
 
 ## Red: Get it to compile
 We have to extend our location class and we have to create a BoardBilder class. Here they are:
@@ -145,15 +145,15 @@ We've already updated location with a new attribute, name. We need to fill out o
 ```
 
 Here's the breakdown:
-||**Line**||**Description**||
-||7||Define a tokenizer from the boost library that will use a character separator to split strings (lines) into individual tokens||
-||9 - 10||Use the non-member function getline which reads from an istream into a std::string. This reads up to a new line or end of file.||
-||12||Define our separator character to be a tab.||
-||13||Create a tokenizer for the line we read from the istream, splitting the line by tab chracters, as defined by our char_separator.||
-||16||*it gives us the first token (always a string) and then the ++ moves the iterator to the next token.||
-||17||Read the second token, the name of the location.||
-||19||Create our shared pointer holding onto a new location created using a new constructor, which we'll have to add to the location class.||
-||20||Connect the location to itself to make the list circular.||
+|**Line**|**Description**|
+|7|Define a tokenizer from the boost library that will use a character separator to split strings (lines) into individual tokens|
+|9 - 10|Use the non-member function getline which reads from an istream into a std::string. This reads up to a new line or end of file.|
+|12|Define our separator character to be a tab.|
+|13|Create a tokenizer for the line we read from the istream, splitting the line by tab chracters, as defined by our char_separator.|
+|16|*it gives us the first token (always a string) and then the ++ moves the iterator to the next token.|
+|17|Read the second token, the name of the location.|
+|19|Create our shared pointer holding onto a new location created using a new constructor, which we'll have to add to the location class.|
+|20|Connect the location to itself to make the list circular.|
 
 Notice that there's quite a bit of hard-coding going on here. That's OK, we're going to use a series of tests to incrementally improved and refactor this code.
 
@@ -170,9 +170,9 @@ We do not have a lot of duplicate code, but we do have code that might seem inco
 Now is a great time to check in your work.
 
 ## Red: Create two locations in a circle
-||**type**||**name**||
-||location||Location1||
-||location||Location2||
+|**type**|**name**|
+|location|Location1|
+|location|Location2|
 
 We want to create two locations in a circle. Here's a test:
 ```cpp
@@ -251,10 +251,10 @@ So you might consider getting rid of this test but I'd recommend leaving it in t
 
 # Red: Time To Create Different Types
 OK, now we need to make sure that while the board is building locations, it can do so with different types. For example:
-||**type**||**name**||
-||go||Go||
-||location||l1||
-||it||Income Tax||
+|**type**|**name**|
+|go|Go|
+|location|l1|
+|it|Income Tax|
 
 This describes a board with three locations and three different kinds of locations (based on the first column).
 

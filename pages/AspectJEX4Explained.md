@@ -120,10 +120,10 @@ Again, doesn't really apply. However, it *is* interesting that we know whether o
 10: }
 ```
 ### Interesting Lines
-||Line||Description||
-||6||This is an aspect.||
-||8||We are adding a parent interface to the class ex4.Address. This interface will have methods that must be implemented. The implementation of those methods will be provided by ex4.TrackedObjectMixin.||
-||9||The class ex4.Address will implement the interface ex4.ITrackedObject. As alreay mentioned, ex4.ITrackedObject has methods that must be implemented; and they will be by ex4.TrackedObjectMixin.||
+|Line|Description|
+|6|This is an aspect.|
+|8|We are adding a parent interface to the class ex4.Address. This interface will have methods that must be implemented. The implementation of those methods will be provided by ex4.TrackedObjectMixin.|
+|9|The class ex4.Address will implement the interface ex4.ITrackedObject. As alreay mentioned, ex4.ITrackedObject has methods that must be implemented; and they will be by ex4.TrackedObjectMixin.|
 ----
 [[#ItrackedObject]]
 ## ITrackedObject.java
@@ -217,16 +217,16 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 51: }
 ```
 ### Interesting Lines
-||Line||Description||
-||11||This is an aspect.||
-||13||Define a pointcut called "skipTrackedObject" that excludes all fields in TrackedObjectMixin. Why? See the exercises section.||
-||17||Define a pointcut called "allFields" that will match all fields in the ex4.Address class.||
-||21||Around all pointcuts that are "allFields" but not any fields in TrackedObjectMixin execute the method trackFieldAssignment().||
-||23||Notice Object rhs is a parameter. AspectJ fills that in with the object appearing on the right side of the assignment operator (=). Thus the name rhs, for Right Hand Side.||
-||24||Beause of how I defined the pointcut, I know I only match field setting, so I can downcast this to give me more specific methods.||
-||26 - 29||Retrieve the current value of the field being set.||
-||31 - 36||If the current value equals the value on the right side of the assignment operator, do not perform the set, just return. Otherwise perform the set and make the underling target object, an instance of the Address class, as changed.||
-||39 - 50||A simple utility method to handle comparison of 2 objects where either object might be null.||
+|Line|Description|
+|11|This is an aspect.|
+|13|Define a pointcut called "skipTrackedObject" that excludes all fields in TrackedObjectMixin. Why? See the exercises section.|
+|17|Define a pointcut called "allFields" that will match all fields in the ex4.Address class.|
+|21|Around all pointcuts that are "allFields" but not any fields in TrackedObjectMixin execute the method trackFieldAssignment().|
+|23|Notice Object rhs is a parameter. AspectJ fills that in with the object appearing on the right side of the assignment operator (=). Thus the name rhs, for Right Hand Side.|
+|24|Beause of how I defined the pointcut, I know I only match field setting, so I can downcast this to give me more specific methods.|
+|26 - 29|Retrieve the current value of the field being set.|
+|31 - 36|If the current value equals the value on the right side of the assignment operator, do not perform the set, just return. Otherwise perform the set and make the underling target object, an instance of the Address class, as changed.|
+|39 - 50|A simple utility method to handle comparison of 2 objects where either object might be null.|
 ----
 [[#SaveMethodAspect]]
 ## SaveMethodAspect.java
@@ -266,14 +266,14 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 32: }
 ```
 ### Interesting Lines
-||Line||Description||
-||8||This is an aspect||
-||10||Create a pointcut called daoSaveMethod that matched a method of any access level, *, named ex4.Dao.save, taking any parameters "(..)".||
-||14||Around all joinpoints defined by daoSaveMethod, execute the method skipSaveIfUnchanged.||
-||17||For this example, we know we only call save() with an Address object. Get the address object that was passed to the save() method from thisJoinPoint.||
-||18||We know Address implements ITrackedObject because we have an aspect that introduces that interface. Address, however, is not aware of this fact.||
-||21 - 27||Check to see if the Address instance is changed. If it is, call the save() method. If not, do not call the save method and instead report that the object is unchanged.||
-||29||Regardless of what happened, set the object back to unchanged. Is this always safe?||
+|Line|Description|
+|8|This is an aspect|
+|10|Create a pointcut called daoSaveMethod that matched a method of any access level, *, named ex4.Dao.save, taking any parameters "(..)".|
+|14|Around all joinpoints defined by daoSaveMethod, execute the method skipSaveIfUnchanged.|
+|17|For this example, we know we only call save() with an Address object. Get the address object that was passed to the save() method from thisJoinPoint.|
+|18|We know Address implements ITrackedObject because we have an aspect that introduces that interface. Address, however, is not aware of this fact.|
+|21 - 27|Check to see if the Address instance is changed. If it is, call the save() method. If not, do not call the save method and instead report that the object is unchanged.|
+|29|Regardless of what happened, set the object back to unchanged. Is this always safe?|
 ----
 [[#aop]]
 ## aop.xml
@@ -290,8 +290,8 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 10: </aspectj>
 ```
 ### Interesting Lines
-||Line||Description|
-||3 - 5||List the 3 aspects we want to have woven in.||
-||8||We want to weave all classes whose package starts with ex4.||
+|Line|Description|
+|3 - 5|List the 3 aspects we want to have woven in.|
+|8|We want to weave all classes whose package starts with ex4.|
 
 [<--Back]({{ site.pagesurl}}/AspectJEX4SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJEX4ApplyYourself)

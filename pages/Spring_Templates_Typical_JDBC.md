@@ -129,6 +129,6 @@ Since this is NOT a JDBC example but rather I use JDBC as a vehicle to better un
 100: }
 ```
 ### Interesting Lines
-||Line||Description||
+|Line|Description|
 TBD
 [<--Back]({{ site.pagesurl}}/Designing to Spring Templates)  [Next-->]({{ site.pagesurl}}/Spring Templates JDBC Using Template Method Pattern)

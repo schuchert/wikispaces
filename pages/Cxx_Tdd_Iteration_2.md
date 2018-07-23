@@ -45,9 +45,9 @@ Here is a simple test to verify this rule:
 ```
 
 There are two lines worthy of note:
-||**Line**||**Description**||
-||10||This line is the “event” that causes the player to receive money. Note that we are sending in a pointer to a player. If you remember from Game, it works with pointers. This allows for polymorphic behavior in the player. Using a reference would also work, however we’re already using pointers elsewhere, so we’ll stick with pointers here as well.||
-||11||Apparently the player requires a new method, getBalance().||
+|**Line**|**Description**|
+|10|This line is the “event” that causes the player to receive money. Note that we are sending in a pointer to a player. If you remember from Game, it works with pointers. This allows for polymorphic behavior in the player. Using a reference would also work, however we’re already using pointers elsewhere, so we’ll stick with pointers here as well.|
+|11|Apparently the player requires a new method, getBalance().|
 
 Right now this test won’t compile. Here are the changes to get this to compile. 
 
@@ -160,9 +160,9 @@ Notice that the Player never sends a message to a Location. Notice also that our
 * Players being moved
 
 The particulars here are relative to the Location. There are a series of basic assignment of responsibility rules from Craig Larman called the GRASP patterns. As we come across relevant patterns, we’ll discuss them. There are two of the nine GRASP patterns that apply here:
-||**Name**||**Desscription**||
-||Polymorphism||Assign responsibility to the place where the behavior varies.||
-||Expert||Put responsibility with the object that as the information to perform it.||
+|**Name**|**Desscription**|
+|Polymorphism|Assign responsibility to the place where the behavior varies.|
+|Expert|Put responsibility with the object that as the information to perform it.|
 
 These two general assignment of responsibility patterns guide us to want to place responsibility in this as yet undefined class location.  Why do these patterns apply to this situation?
 * Expert: The object that has the “knowledge” of what to do when you land on it is the location: Go, Luxury Tax, Income Tax, Go To Jail.
@@ -224,11 +224,11 @@ Next we need to update Player.hpp:
 22: if
 ```
 
-||**Line**||**Description**||
-||5||Forward declare the class Location. We do not actually do anything with the definition of Location since we only use pointers to Locations, so a forward declaration is all we need to get the header file to be correct and complete.||
-||12||We’ve changed this line to return an attribute, myLocation, which is simply a pointer to a Player. Since we’re just working with Pointers, C++ knows all it needs to know with a forward declaration of Player. We’ve also changed this line to include an implicit inline implementation of the method so we’ll need to remove the method in the source file.||
-||13|| We’ve updated this line to take a Location pointer. Notice that even though we are “using” the loc formal parameter, since it is a pointer, C++ knows all it needs to know to compile the line and thus we don’t need to see the class definition, just its declaration.||
-||18||We’ve changed the type from int to Location*||
+|**Line**|**Description**|
+|5|Forward declare the class Location. We do not actually do anything with the definition of Location since we only use pointers to Locations, so a forward declaration is all we need to get the header file to be correct and complete.|
+|12|We’ve changed this line to return an attribute, myLocation, which is simply a pointer to a Player. Since we’re just working with Pointers, C++ knows all it needs to know with a forward declaration of Player. We’ve also changed this line to include an implicit inline implementation of the method so we’ll need to remove the method in the source file.|
+|13| We’ve updated this line to take a Location pointer. Notice that even though we are “using” the loc formal parameter, since it is a pointer, C++ knows all it needs to know to compile the line and thus we don’t need to see the class definition, just its declaration.|
+|18|We’ve changed the type from int to Location*|
 
 Now we need to update Player.cpp. There are two changes:
 # The old takeATurn assumed myLocation was an int. It is now a pointer. For now, simply remove all of the code and leave the method empty.
@@ -302,13 +302,13 @@ How about this (rather big) change:
 31:	}
 32: …
 ```
-||**Line**||**Description**||
-||4||We’ll now be using Location in our test so we need to include it.||
-||6 – 14||Here’s a mock version of the Dice class that allows us to make it return a fixed value. Note, we’re relying on polymorphic behavior for both roll() and faceValue(), so we’ll need to make sure we’re using a pointer or reference to a Dice object and that those methods are virtual.||
-||19||Create a mock dice that will always “roll” 2.||
-||20 – 24||Create three Location objects. Start’s next is loc1. Loc1’s next is loc2. When the player rolls the dice and get back 2, they better end up on loc2.||
-||27||Now we’re setting the Player’s starting location to a Location rather than an int.||
-||30||Make sure they end up where we expect them to.||
+|**Line**|**Description**|
+|4|We’ll now be using Location in our test so we need to include it.|
+|6 – 14|Here’s a mock version of the Dice class that allows us to make it return a fixed value. Note, we’re relying on polymorphic behavior for both roll() and faceValue(), so we’ll need to make sure we’re using a pointer or reference to a Dice object and that those methods are virtual.|
+|19|Create a mock dice that will always “roll” 2.|
+|20 – 24|Create three Location objects. Start’s next is loc1. Loc1’s next is loc2. When the player rolls the dice and get back 2, they better end up on loc2.|
+|27|Now we’re setting the Player’s starting location to a Location rather than an int.|
+|30|Make sure they end up where we expect them to.|
 
 Here’s the update to Dice.hpp:
 ```cpp
@@ -447,12 +447,12 @@ Here’s an updated version of our test class that removes this duplicated code:
 There are quite a few changes. The quick summary is that test harnesses have methods you can write for setup and teardown before and after **each** test. Before each test we create player, dice and locations. We execute each test and then after each test we clean up all the memory we just allocated.
 
 Here’s a more detailed description of our changes:
-||**Line**||**Description**||
-||17 – 22||Declare as instance variables all of the common variables used for each method.||
-||25 – 34||Initialize all of our instance variables, essentially doing the work we were doing in each of our tests here. **Note** you do not call this method, CxxTest calls this method for you. It gets called **before** each test.||
-||36 – 42||Clean up after ourselves. Release all of the memory we allocated in the setUp method. **Note** we do not call this method. CxxTest automatically calls this method **after** each test.||
-||44 – 49||Note how this test is now much shorter.||
-||51 – 56||Same comment, short test.||
+|**Line**|**Description**|
+|17 – 22|Declare as instance variables all of the common variables used for each method.|
+|25 – 34|Initialize all of our instance variables, essentially doing the work we were doing in each of our tests here. **Note** you do not call this method, CxxTest calls this method for you. It gets called **before** each test.|
+|36 – 42|Clean up after ourselves. Release all of the memory we allocated in the setUp method. **Note** we do not call this method. CxxTest automatically calls this method **after** each test.|
+|44 – 49|Note how this test is now much shorter.|
+|51 – 56|Same comment, short test.|
 
 ## Refacotring: Defined
 We refactor systems to (hopefully) improve the implementation of a system without changing its behavior. There are two words of note in that last sentence: improve, behavior.

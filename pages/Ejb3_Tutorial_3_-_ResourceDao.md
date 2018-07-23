@@ -148,11 +148,11 @@ Run the tests and they now all pass.
 # # Test Isolation 
 
 Now that all of our tests in ResourceDaoBeanTest pass, we need to clean up after ourselves. Here are the stats:
-||Table||# Rows||
-||Author||7||
-||Book||2||
-||Author_Book||5||
-||Resource||2||
+|Table|# Rows|
+|Author|7|
+|Book|2|
+|Author_Book|5|
+|Resource|2|
 
 We need to update each of the tests that create books and explicitly remove the books and authors created. It turns out we do not need to explicitly remove anything from Author_Book. Just updating the bi-directional relationships properly will fix that problem.
 

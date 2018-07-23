@@ -388,12 +388,12 @@ public class PatronDao extends BaseDao {
 ```
 ### The Entity Model
 We’ve added support for a Book and along the way we had to add in a few more classes. After the second test suite, we’re up to the following entities:
-||**Entity**||**Description**||
-||Address||This entity represents the address for both an Author and a Patron. In the first tutorial we embedded this class. Now we’re allowing it to exist in its own table as a first-class citizen rather than embedding it.||
-||Author||Books and Authors have a bi-directional, many to many relationship with each other. That is, a book has one to many Authors and an Author has one to many books. This entity represents one author and maintains a Set<Book> representing each of its books. We treat the Author as the secondary part of the relationship and the book as Primary.||
-||Book||The book is a key entity in our system. It maintains a set of Authors and is considered the master of the bi-directional relationship. In version 1 of our system, the relationship between Books and Patrons is direct. We’ll change that in version 2.||
-||Name||Authors and Patrons both have a name. Rather than duplicate the definition of names in both classes, we create a Name entity. This entity is embeddable, meaning its attributes will be stored as columns in the entities in which it is contained rather than as rows in a table all of its own.||
-||Patron||The patron borrows books, so it has a Set<Books> as well as an embedded Name.||
+|**Entity**|**Description**|
+|Address|This entity represents the address for both an Author and a Patron. In the first tutorial we embedded this class. Now we’re allowing it to exist in its own table as a first-class citizen rather than embedding it.|
+|Author|Books and Authors have a bi-directional, many to many relationship with each other. That is, a book has one to many Authors and an Author has one to many books. This entity represents one author and maintains a Set<Book> representing each of its books. We treat the Author as the secondary part of the relationship and the book as Primary.|
+|Book|The book is a key entity in our system. It maintains a set of Authors and is considered the master of the bi-directional relationship. In version 1 of our system, the relationship between Books and Patrons is direct. We’ll change that in version 2.|
+|Name|Authors and Patrons both have a name. Rather than duplicate the definition of names in both classes, we create a Name entity. This entity is embeddable, meaning its attributes will be stored as columns in the entities in which it is contained rather than as rows in a table all of its own.|
+|Patron|The patron borrows books, so it has a Set<Books> as well as an embedded Name.|
 
 Now let’s review the code for each of these entities. As with previous examples, pay attention to the embedded comments.
 

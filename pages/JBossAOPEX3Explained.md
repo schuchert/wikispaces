@@ -120,12 +120,12 @@ This is only part of the jboss-aop.xml file. It's the part that says to add an i
 11: </introduction>
 ```
 ### Interesting Lines
-||Line||Description||
-||1||Indicates to which classes this introduction applies. Wild-cards are OK.||
-||2 - 10||Add this mixin into the Address class. This mixin consists of three parts, an interface to add to Address, an implementation of that interface and a constructor to call for that mixin class.||
-||4||ITrackedObject is the interface to add to Address.||
-||6||TrackedObjectMixin implements ITrackedObject and will provide the implementation for Address. Essentially, all of the methods described in ITrackedObject will be added to Address. The implementation of those methods will be to call a the same method on instance variable added to an address.||
-||8||When creating a new instance of Address, call this constructor on TrackedObjectMixin.||
+|Line|Description|
+|1|Indicates to which classes this introduction applies. Wild-cards are OK.|
+|2 - 10|Add this mixin into the Address class. This mixin consists of three parts, an interface to add to Address, an implementation of that interface and a constructor to call for that mixin class.|
+|4|ITrackedObject is the interface to add to Address.|
+|6|TrackedObjectMixin implements ITrackedObject and will provide the implementation for Address. Essentially, all of the methods described in ITrackedObject will be added to Address. The implementation of those methods will be to call a the same method on instance variable added to an address.|
+|8|When creating a new instance of Address, call this constructor on TrackedObjectMixin.|
 ----
 ## ITrackedObject.java
 This is simply an interface that has the methods for a Java-bean style boolean interface.
@@ -212,12 +212,12 @@ The SetInterceptor first intercepts each assignment to a field (as we have seen 
 44 }
 ```
 ### Interesting Lines
-||Line||Description||
-||15||If this is not a set (FieldWriteInvocation), just continue what you were doing.||
-||18 – 19||Get the new value (what appears on the Right Hand Side of "=").||
-||20 – 22||Get the current value of the field (what appears on the Left Hand Side of "=").||
-||25||If the values are already equal, do not perform the assignment and return.||
-||27 – 28||The values are different, set changed to true on the introduced mixin then perform the assignment.||
+|Line|Description|
+|15|If this is not a set (FieldWriteInvocation), just continue what you were doing.|
+|18 – 19|Get the new value (what appears on the Right Hand Side of "=").|
+|20 – 22|Get the current value of the field (what appears on the Left Hand Side of "=").|
+|25|If the values are already equal, do not perform the assignment and return.|
+|27 – 28|The values are different, set changed to true on the introduced mixin then perform the assignment.|
 ----
 ## SaveMethodInterceptor.java
 The SaveMethodInterceptor surrounds all calls to Dao.save(..). When called, it checks to see if the object passed into Dao.save(..) is or is not changed. If it is not changed, the call to Dao.save(..) never happens. Before completing, the changed state is set to false since either it was already false or it was true but then saved. As with the SetInterceptor, SaveMethodInterceptor is using behavior that has been introduced. Specifically, it uses isChanged() and setChanged(). 
@@ -253,9 +253,9 @@ The SaveMethodInterceptor surrounds all calls to Dao.save(..). When called, it c
 29: }
 ```
 ### Interesting Lines
-||18 - 20||If the state is changed, allow the save() to happen.||
-||20 - 24||The state is not changed, do not call save().||
-||26||Regardless of what happened, always set the state to unchanged.||
+|18 - 20|If the state is changed, allow the save() to happen.|
+|20 - 24|The state is not changed, do not call save().|
+|26|Regardless of what happened, always set the state to unchanged.|
 ----
 ## jboss-aop.xml
 Here is the full aspect configuration:
@@ -289,10 +289,10 @@ Here is the full aspect configuration:
 27: </aop>
 ```
 ### Interesting Lines
-||15||Ignore changes to all fields defined in TrackedObjectMixin. This is absloutely necessary. If you forget this, when any field is changed, the SetInterceptor will set changed=true. When that happens, the SetInterceptor will notice that the changed field is changing from false to true and will set the changed state to true. When that happens, the SetInterceptor will notice that the changed field is changing from false to truen and will set the changed state to true. Repeat ad nausem (or until you get a stack overflow error).||
-||16||Capture sets of fields in all classes that implement ITrackedObject.||
-||18 – 20||When any field in any class that implements ITrackedObject is set (other than TrackedObjectMixin), e,g. this.name = "Brett", intercept that set with the class SetInterceptor.||
-||22 – 26||Intercept Dao->save(...) and allow the SaveMethodInterceptor to have a look first.||
+|15|Ignore changes to all fields defined in TrackedObjectMixin. This is absloutely necessary. If you forget this, when any field is changed, the SetInterceptor will set changed=true. When that happens, the SetInterceptor will notice that the changed field is changing from false to true and will set the changed state to true. When that happens, the SetInterceptor will notice that the changed field is changing from false to truen and will set the changed state to true. Repeat ad nausem (or until you get a stack overflow error).|
+|16|Capture sets of fields in all classes that implement ITrackedObject.|
+|18 – 20|When any field in any class that implements ITrackedObject is set (other than TrackedObjectMixin), e,g. this.name = "Brett", intercept that set with the class SetInterceptor.|
+|22 – 26|Intercept Dao->save(...) and allow the SaveMethodInterceptor to have a look first.|
 
 
 [<--Back]({{ site.pagesurl}}/JBossAOPEX3SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/JBossAOPEX3ApplyYourself)

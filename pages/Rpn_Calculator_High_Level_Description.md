@@ -21,11 +21,11 @@ Basic calculations on an Rpn Calculator are different from "normal" calculators.
 ## Basic Arithmetic
 Basic arithmetic generally involves entering one or more operands and then hitting an operator. The operands come before the operator. Consider each row in the table a separate example, each staring with a fresh calculator:
 
-||~ Calculation ||~ Result||
-||342 <enter> 5 <*>||> 1710||
-||4 <*> ||> 0 ||
-||5.3 <enter> 2 <-> ||> 3.3 ||
-||5 <n!> ||> 120 ||
+|~ Calculation |~ Result|
+|342 <enter> 5 <*>|> 1710|
+|4 <*> |> 0 |
+|5.3 <enter> 2 <-> |> 3.3 |
+|5 <n!> |> 120 |
 
 Notice that earlier operands are "to the left" while later operands are "to the right". E.g., 5.3 <enter> 2 <-> resulted in 3.3, not -3.3.
 
@@ -33,14 +33,14 @@ Notice that earlier operands are "to the left" while later operands are "to the 
 A basic HP calculator has 4 registers: x, y, z, t -- the x register is also known as the accumulator. The <enter> key pushes things on the stack. What follows is an example of what the stack looks like in a little more detail. Note that for our purposes, we can have any number of values rather than just 4.
 
 In this example, each row is a continuation of the previous rows. This is one big example:
-||~ Value Entered ||~ X||~ Y||~ Z||~ T||
-||> 45 ||> 45 ||> 0 ||> 0 ||> 0 ||
-|| <enter> ||> 45 ||> 45 ||> 0 ||> 0 ||
-||> 1 ||> 1||> 45 ||> 0 ||> 0 ||
-|| <enter> ||> 1 ||> 1 ||> 45 ||> 0 ||
-||> 56 ||> 56 ||> 1 ||> 45 ||> 0 ||
-|| <enter> ||> 56 ||> 56 ||> 1 ||> 45 ||
-||> 66 ||> 66 ||> 56 ||> 1 ||> 45 ||
+|~ Value Entered |~ X|~ Y|~ Z|~ T|
+|> 45 |> 45 |> 0 |> 0 |> 0 |
+| <enter> |> 45 |> 45 |> 0 |> 0 |
+|> 1 |> 1|> 45 |> 0 |> 0 |
+| <enter> |> 1 |> 1 |> 45 |> 0 |
+|> 56 |> 56 |> 1 |> 45 |> 0 |
+| <enter> |> 56 |> 56 |> 1 |> 45 |
+|> 66 |> 66 |> 56 |> 1 |> 45 |
 
 ## Entry Mode
 The calculator has three "modes" of data entry:
@@ -50,16 +50,16 @@ The calculator has three "modes" of data entry:
 * Upon pressing other operators, e.g., +, -, n~, y^x, the operator acquires its operands, performs the calculation, places the result back in the X register (pushes actually). The next digit press causes the X register to be copied (rather than replaced), and then the calculator continues accumulating values in the X register.
 
 Here is another example. And as with the previous example, each row builds on the previous rows:
-||~ Entry ||~ X||~ Y||~ Z||~ T||
-||> 123 ||> 123||> 0||> 0||> 0||
-||<enter>||> 123||> 123||> 0||> 0||
-||> 43||> 43||> 123||> 0||> 0||
-||+||166||> 0||> 0||> 0||
-||> 321||> 321||> 166||> 0||> 0||
-||<enter>||> 321||> 321||> 166||> 0||
-||<enter>||> 321||> 321||> 321||> 166||
-||+||> 642||> 321||> 166||> 0||
-||-||> -321||> 166||> 0||> 0||
-||+||> -155||> 0||> 0||> 0||
-||-||> 155||> 0||> 0||> 0||
-||-||> -155||> 0||> 0||> 0||
+|~ Entry |~ X|~ Y|~ Z|~ T|
+|> 123 |> 123|> 0|> 0|> 0|
+|<enter>|> 123|> 123|> 0|> 0|
+|> 43|> 43|> 123|> 0|> 0|
+|+|166|> 0|> 0|> 0|
+|> 321|> 321|> 166|> 0|> 0|
+|<enter>|> 321|> 321|> 166|> 0|
+|<enter>|> 321|> 321|> 321|> 166|
+|+|> 642|> 321|> 166|> 0|
+|-|> -321|> 166|> 0|> 0|
+|+|> -155|> 0|> 0|> 0|
+|-|> 155|> 0|> 0|> 0|
+|-|> -155|> 0|> 0|> 0|

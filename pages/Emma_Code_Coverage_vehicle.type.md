@@ -6,19 +6,19 @@ title: Emma_Code_Coverage_vehicle.type
 # Emma Code Coverage vehicle.type Package
 
 Looking into the details of just this package, we have the following stats:
-||name||class, %||method, %||block, %||line, %||
-||EnumField.java||0%  (0/1)||0% (0/5)||0% (0/21)||0% (0/9) ||
-||ObjectField.java||0% (0/1)||0% (0/4)||0% (0/27)||0% (0/9) ||
-||ListField.java||100% (1/1)||56% (5/9)||38% (26/69)||55% (11/20) ||
-||FieldChangedStatus.java||100% (1/1)|| 50% (2/4)||41% (29/70)|| 67% (2/3) ||
-||AbstractObject.java||100% (1/1)||80% (4/5)||41% (17/41)||60% (6/10) ||
-||ClassAndMessage.java||100% (1/1)||67% (4/6)|| 50% (20/40)|| 82% (9/11) ||
-||FloatField.java||100% (1/1)||50% (3/6)|| 61% (17/28)|| 55% (6/11) ||
-||ValidationStatus.java||100% (1/1)||50% (2/4)||66% (79/120)|| 67% (2/3) ||
-||StringField.java||100% (1/1)||83% (5/6)||87% (39/45)||73% (8/11) ||
-||AbstractField.java||100% (1/1)||95% (20/21)||88% (138/156)||85% (37.4/44) ||
-||Result.java||100% (1/1)||89% (8/9)||95% (55/58)||94% (17/18) ||
-||IntegerField.java||100% (1/1)||100% (3/3)||100% (17/17)|| 100% (6/6) ||
+|name|class, %|method, %|block, %|line, %|
+|EnumField.java|0%  (0/1)|0% (0/5)|0% (0/21)|0% (0/9) |
+|ObjectField.java|0% (0/1)|0% (0/4)|0% (0/27)|0% (0/9) |
+|ListField.java|100% (1/1)|56% (5/9)|38% (26/69)|55% (11/20) |
+|FieldChangedStatus.java|100% (1/1)| 50% (2/4)|41% (29/70)| 67% (2/3) |
+|AbstractObject.java|100% (1/1)|80% (4/5)|41% (17/41)|60% (6/10) |
+|ClassAndMessage.java|100% (1/1)|67% (4/6)| 50% (20/40)| 82% (9/11) |
+|FloatField.java|100% (1/1)|50% (3/6)| 61% (17/28)| 55% (6/11) |
+|ValidationStatus.java|100% (1/1)|50% (2/4)|66% (79/120)| 67% (2/3) |
+|StringField.java|100% (1/1)|83% (5/6)|87% (39/45)|73% (8/11) |
+|AbstractField.java|100% (1/1)|95% (20/21)|88% (138/156)|85% (37.4/44) |
+|Result.java|100% (1/1)|89% (8/9)|95% (55/58)|94% (17/18) |
+|IntegerField.java|100% (1/1)|100% (3/3)|100% (17/17)| 100% (6/6) |
 
 The first thing to notice is that EnumField.java and ObjectField.java have no coverage. These are some classes I created in some preliminary work that I stopped using as I refactored. It is time to get rid of these classes but I did realize that until running Emma for the first time.
 
@@ -79,27 +79,27 @@ It has 100% coverage.
 
 ## The Results
 After making the above changes, we now have the following package-level resuls:
-||name||class, %||method, %||block, %||line, %||
-||vehicle.type||100% (16/16)||98% (92/94)|| 94% (797/846)|| 94% (173.9/185) ||
+|name|class, %|method, %|block, %|line, %|
+|vehicle.type|100% (16/16)|98% (92/94)| 94% (797/846)| 94% (173.9/185) |
 
 The specific results for the classes are here:
-||name||class, %||method, %||block, %||line, %||
-||AbstractObject.java||100%(1/1)||100%(5/5)||56% (23/41)||68% (6.8/10)||
-||AbstractField.java||100%(1/1)||95% (20/21)||88% (138/156)||85% (37.4/44)||
-||FieldChangedStatus.java||100%(1/1)||100%(4/4)||93% (65/70)||96% (2.9/3)||
-||Result.java||100%(1/1)||89% (8/9)||95% (55/58)||94% (17/18)||
-||ValidationStatus.java||100%(1/1)||100%(4/4)||96% (115/120)||96% (2.9/3)||
-||AbstractObjectTest.java||100%(1/1)||100%(3/3)||100%(14/14)||100%(4/4)||
-||ClassAndMessage.java||100%(1/1)||100%(6/6)||100%(40/40)||100%(11/11)||
-||ClassAndMessageTest.java||100%(1/1)||100%(4/4)||100%(26/26)||100%(7/7)||
-||FieldChangedStatusTest.java||100%(1/1)||100%(3/3)||100%(17/17)||100%(5/5)||
-||FloatField.java||100%(1/1)||100%(4/4)||100%(21/21)||100%(7/7)||
-||FloatFieldTest.java||100%(1/1)||100%(3/3)||100%(23/23)||100%(6/6)||
-||IntegerField.java||100%(1/1)||100%(3/3)||100%(17/17)||100%(6/6)||
-||ListField.java||100%(1/1)||100%(10/10)||100%(73/73)||100%(21/21)||
-||ListFieldTest.java||100%(1/1)||100%(7/7)||100%(114/114)||100%(27/27)||
-||StringField.java||100%(1/1)||100%(5/5)||100%(39/39)||100%(8/8)||
-||ValidationStatusTest.java||100%(1/1)||100%(3/3)||100%(17/17)||100%(5/5)||
+|name|class, %|method, %|block, %|line, %|
+|AbstractObject.java|100%(1/1)|100%(5/5)|56% (23/41)|68% (6.8/10)|
+|AbstractField.java|100%(1/1)|95% (20/21)|88% (138/156)|85% (37.4/44)|
+|FieldChangedStatus.java|100%(1/1)|100%(4/4)|93% (65/70)|96% (2.9/3)|
+|Result.java|100%(1/1)|89% (8/9)|95% (55/58)|94% (17/18)|
+|ValidationStatus.java|100%(1/1)|100%(4/4)|96% (115/120)|96% (2.9/3)|
+|AbstractObjectTest.java|100%(1/1)|100%(3/3)|100%(14/14)|100%(4/4)|
+|ClassAndMessage.java|100%(1/1)|100%(6/6)|100%(40/40)|100%(11/11)|
+|ClassAndMessageTest.java|100%(1/1)|100%(4/4)|100%(26/26)|100%(7/7)|
+|FieldChangedStatusTest.java|100%(1/1)|100%(3/3)|100%(17/17)|100%(5/5)|
+|FloatField.java|100%(1/1)|100%(4/4)|100%(21/21)|100%(7/7)|
+|FloatFieldTest.java|100%(1/1)|100%(3/3)|100%(23/23)|100%(6/6)|
+|IntegerField.java|100%(1/1)|100%(3/3)|100%(17/17)|100%(6/6)|
+|ListField.java|100%(1/1)|100%(10/10)|100%(73/73)|100%(21/21)|
+|ListFieldTest.java|100%(1/1)|100%(7/7)|100%(114/114)|100%(27/27)|
+|StringField.java|100%(1/1)|100%(5/5)|100%(39/39)|100%(8/8)|
+|ValidationStatusTest.java|100%(1/1)|100%(3/3)|100%(17/17)|100%(5/5)|
 
 (Note, at the end of this, you'll be provided a link with the changes for all of these refactorings.)
 

@@ -37,12 +37,12 @@ title: jMock_JUnit_4_Die_Skeleton
 ```
 
 ## Essential Lines
-||**Line*||**Description**||
-||14||Tell JUnit to use the JMock runner instead of the default runner. This causes all validation of the use of your mocks after your test finishes.||
-||16 - 18||Backwards compatibility with old versions of ant. The tests in this class will run with systems expecting a JUnit 3.x style class.||
-||20||The handle into use the jMock API.||
-||21||An object we plan to mock.||
-||23 - 26||Use the jMock API to create a test double of our die object.||
+|**Line*|**Description**|
+|14|Tell JUnit to use the JMock runner instead of the default runner. This causes all validation of the use of your mocks after your test finishes.|
+|16 - 18|Backwards compatibility with old versions of ant. The tests in this class will run with systems expecting a JUnit 3.x style class.|
+|20|The handle into use the jMock API.|
+|21|An object we plan to mock.|
+|23 - 26|Use the jMock API to create a test double of our die object.|
 
 Die is an interface:
 ```java

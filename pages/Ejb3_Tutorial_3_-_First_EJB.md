@@ -9,12 +9,12 @@ Here is a list of the classes we'll convert to Session Beans:
 * ResourceDao
 
 What about naming conventions? Every Session Bean has at least one interface and one class. We need to pick a name for the interface and the class. One convention is to add "Bean" after the name of the interface. So if we had an interface called RepairFacility, then the implementation would be called RepairFacilityBean. We'll use this convention and end up with the following names:
-||~ Original||~ Interface||~ Bean||
-||BookDao||BookDao||BookDaoBean||
-||Library||Library||LibraryBean||
-||LoanDao||LoanDao||LoanDaoBean||
-||PatronDao||PatronDao||PatronDaoBean||
-||ResourceDao||ResourceDao||ResourceDaoBean||
+|~ Original|~ Interface|~ Bean|
+|BookDao|BookDao|BookDaoBean|
+|Library|Library|LibraryBean|
+|LoanDao|LoanDao|LoanDaoBean|
+|PatronDao|PatronDao|PatronDaoBean|
+|ResourceDao|ResourceDao|ResourceDaoBean|
 
 We are going to have to rename each of our beans and then create an interface. Luckily Eclipse will take care of most of this for us.
 

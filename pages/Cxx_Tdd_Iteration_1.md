@@ -44,18 +44,18 @@ Here's the very first thing we'll write:
 ```
 
 **Description**
-||**Line**||**Description**||
-||1||The key include file for CxxText. CxxTest consists of header files and some source files that get included. You need to make sure your build system can find CxxTest's header files but other than that one requirement, there's nothing else you'll need to do to make CxxTest work.||
-||2||We are going to be using this as-yet-to-be-created class. Since we are actually **using** it, we must include it. We cannot simply forward declare the Die type.||
-||3||This class represents a test suite. This naming standard comes from a long-established convention in the JUnit community: Name of unit under test (Die) + Test -> DieTest. The class itself must inherit from TestSuite, which is in the CxxTest namespace.||
-||4||All of your test methods will need to be public. Otherwise the code generator will generate code that won't compile because the generated code will attempt to call a private method.||
-||5||All test methods: return void, take no parameters and are named testXXX. That's a convention you must follow unless you plan to write your own code generator.||
-||6||Create a die, the unit under test, that we'll actually use in this test.||
-||7||We're attempting to verify that when rolled, a die will return values from [1..6]. So we create a vector of int's with an index from [0..6]. We'll keep track of how many times a die generates each value and we use the index size of 7 to avoid having to subtract one.||
-||9||Testing **random** stuff is tough. Testing is a **sampling** technique. So this test is going to execute 10,000 times, with the hope that 10,000 reduces our risk essentially to near 0.||
-||10||Roll the die and increment the value in the array whose index is equal to the die's roll. What happens if the die rolls a value < 0 or > 6? This test will fail and we'll know it. So I don't need to check outside of that range, the result will be a failing test, which is fine.||
-||13||Make sure we never rolled 0. TS_ASSERT_EQUALS is a **macro**, notice that the line does not end with a semi-colon (;). You could add one, it won't hurt, but it is not necessary. TS_ASSERT_EQUALS uses the operator equal-equal to compare the value on the left with the value on the right. If operator equal-equal returns false, then then you'll get a failed test.||
-||14 - 15||Verify that the values in the vector at index [1..6] are "reasonable." You might think that 100 3's, for example, is not enough given 10,000 roles. This test is just trying to make sure we're relatively certain that the unit under test, Die, works well.||
+|**Line**|**Description**|
+|1|The key include file for CxxText. CxxTest consists of header files and some source files that get included. You need to make sure your build system can find CxxTest's header files but other than that one requirement, there's nothing else you'll need to do to make CxxTest work.|
+|2|We are going to be using this as-yet-to-be-created class. Since we are actually **using** it, we must include it. We cannot simply forward declare the Die type.|
+|3|This class represents a test suite. This naming standard comes from a long-established convention in the JUnit community: Name of unit under test (Die) + Test -> DieTest. The class itself must inherit from TestSuite, which is in the CxxTest namespace.|
+|4|All of your test methods will need to be public. Otherwise the code generator will generate code that won't compile because the generated code will attempt to call a private method.|
+|5|All test methods: return void, take no parameters and are named testXXX. That's a convention you must follow unless you plan to write your own code generator.|
+|6|Create a die, the unit under test, that we'll actually use in this test.|
+|7|We're attempting to verify that when rolled, a die will return values from [1..6]. So we create a vector of int's with an index from [0..6]. We'll keep track of how many times a die generates each value and we use the index size of 7 to avoid having to subtract one.|
+|9|Testing **random** stuff is tough. Testing is a **sampling** technique. So this test is going to execute 10,000 times, with the hope that 10,000 reduces our risk essentially to near 0.|
+|10|Roll the die and increment the value in the array whose index is equal to the die's roll. What happens if the die rolls a value < 0 or > 6? This test will fail and we'll know it. So I don't need to check outside of that range, the result will be a failing test, which is fine.|
+|13|Make sure we never rolled 0. TS_ASSERT_EQUALS is a **macro**, notice that the line does not end with a semi-colon (;). You could add one, it won't hurt, but it is not necessary. TS_ASSERT_EQUALS uses the operator equal-equal to compare the value on the left with the value on the right. If operator equal-equal returns false, then then you'll get a failed test.|
+|14 - 15|Verify that the values in the vector at index [1..6] are "reasonable." You might think that 100 3's, for example, is not enough given 10,000 roles. This test is just trying to make sure we're relatively certain that the unit under test, Die, works well.|
 
 This is our first test, so let's state the goals of a unit test:
 * **Automated**: You write the test so that it performs its setup, execution, validation and cleanup automatically. You spend the "extra" time to do this because we'll run these *a lot* so time spent making these automated will pay back big.

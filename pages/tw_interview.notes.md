@@ -39,20 +39,20 @@ I treated setup of the Plateau and Rovers as all or nothing and I used exception
 
 Here's a listing of the production classes and a one-liner describing each:
 
-||~ Name ||~ Intention ||
-||Coordinate||Represents a read-only X,Y value independent of whether it makes sense on the Plateau. Given a direction it can calculate a new Coordinate.  ||
-||Direction||A somewhat cute Enumeration. It has N,E,S,W for the directions and it stores x and y offsets to assist in next coordinate calculations. Also, it can calculate left and right from a given direction.||
-||InvalidCommandStream||A RuntimeException for something in a command stream that is not understood.||
-||InvalidCoordinates||A RuntimeException for a number that is meant to be read as an int for a coordinate but cannot be parsed.||
-||MarsRoverSimulator||The "system" class. It contains a list of rovers and a plateau, which it builds (indirectly) from a BufferedReader.||
-||MovementFailure||A read-only object describing one failed movement.||
-||MovementFailures||A wrapped collection of the above.||
-||MovementValidationMediator||Knowing if a calculated coordinate is safe (on the grid, not going to hit a rover) requires coordination of a lot of different classes. I created the mediator test-first and then updated movement to use it to validate safe movement.||
-||Plateau||It represents a grid with 0,0 at the lower-left and a provided X,Y as the upper right corner.||
-||PlateauBuilder||Used by the MarsRoverSimulator, it takes the input stream and builds just the Plateau from the input stream.||
-||Rover||Represents one rover with a coordinate and a facing direction.||
-||RoverBuilder||Used by the MarsRoverSimulator, it takes the input stream and first creates a rover and the associates a command stream (e.g., MMRMMR) with the rover just created.||
-||StringUtils||A simple class to capture some basic string manipulation.||
+|~ Name |~ Intention |
+|Coordinate|Represents a read-only X,Y value independent of whether it makes sense on the Plateau. Given a direction it can calculate a new Coordinate.  |
+|Direction|A somewhat cute Enumeration. It has N,E,S,W for the directions and it stores x and y offsets to assist in next coordinate calculations. Also, it can calculate left and right from a given direction.|
+|InvalidCommandStream|A RuntimeException for something in a command stream that is not understood.|
+|InvalidCoordinates|A RuntimeException for a number that is meant to be read as an int for a coordinate but cannot be parsed.|
+|MarsRoverSimulator|The "system" class. It contains a list of rovers and a plateau, which it builds (indirectly) from a BufferedReader.|
+|MovementFailure|A read-only object describing one failed movement.|
+|MovementFailures|A wrapped collection of the above.|
+|MovementValidationMediator|Knowing if a calculated coordinate is safe (on the grid, not going to hit a rover) requires coordination of a lot of different classes. I created the mediator test-first and then updated movement to use it to validate safe movement.|
+|Plateau|It represents a grid with 0,0 at the lower-left and a provided X,Y as the upper right corner.|
+|PlateauBuilder|Used by the MarsRoverSimulator, it takes the input stream and builds just the Plateau from the input stream.|
+|Rover|Represents one rover with a coordinate and a facing direction.|
+|RoverBuilder|Used by the MarsRoverSimulator, it takes the input stream and first creates a rover and the associates a command stream (e.g., MMRMMR) with the rover just created.|
+|StringUtils|A simple class to capture some basic string manipulation.|
 
 ## Class Diagram
 This is a class diagram showing most of the classes listed above. This gives a general sense of dependency and containment and may help guide you through the code:
