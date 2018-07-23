@@ -5,7 +5,7 @@ title: TypemockIsolator.LegacyRefactoringExample
 This work derives from an earlier presentation in Java from Berlin:
 [[@http://vimeo.com/31927512]]
 
-The general outline follows the one here: [[http://schuchert.wikispaces.com/JMockIt.AStoryAboutTooMuchPower]]
+The general outline follows the one here: <http://schuchert.wikispaces.com/JMockIt.AStoryAboutTooMuchPower>
 
 # Overview
 Imagine you have a bit of legacy code you need to use to get your work done. For example, say you've been slated with finding currency conversion "deals". That is, given a number of currencies, there is a path that makes money due to asymmetries in conversions. Here's some C# code to get currency conversions:

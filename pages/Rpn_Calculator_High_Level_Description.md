@@ -5,11 +5,11 @@ title: Rpn_Calculator_High_Level_Description
 I got the idea for using a calculator for a TDD problem from a few different people. The first time I tried it, I decided to create an Rpn calculator rather than an infix calculator because I'm a geek and I prefer them. I rediscovered that Rpn calculators are generally easier to create. HP demonstrated this in 1967 with a $5000, 4-function, 3-number calculator that weighed just under 50 pounds, which was an amazing accomplishment.
 
 # Background
-An [Rpn](http://en.wikipedia.org/wiki/Reverse_Polish_notation) Calculator allows you to calculate results without having to use parenthesis. Here is an image of an HP 10 calculator (from [[http://www.hpmuseum.org]]):
+An [Rpn](http://en.wikipedia.org/wiki/Reverse_Polish_notation) Calculator allows you to calculate results without having to use parenthesis. Here is an image of an HP 10 calculator (from <http://www.hpmuseum.org>):
 [[image:http://www.hpmuseum.org/10c.jpg align="center"]]
 A few more links:
 * [Here is the manual for my HP 32SII.](http://ec1.images-amazon.com/media/i3d/01/A/man-migrate/MANUAL000014738.pdf)
-* [[http://www.hpmuseum.org/]]
+* <http://www.hpmuseum.org/>
 * [Interesting read of the early history of HP's calculators](http://www.hpmuseum.org/hp9100.htm).
 
 Note that for this problem I generally do not fully simulate the calculator. There is one significant difference, which I'll leave as an exercise for you to discover.

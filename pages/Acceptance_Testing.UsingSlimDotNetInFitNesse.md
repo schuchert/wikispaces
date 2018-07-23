@@ -59,7 +59,7 @@ Note, recent versions of FitNesse (after September 2009) do not require this ste
 In fact, it is safe to remove everything from the root page (and probably a good idea).
 ----
 ### Create a page with necessary configuration
-Note, if you are just using FitNesse for .Net, then you could put this information on the root page (that's what I'd recommend in fact). For this example, I recommend using [[http://localhost:8080/FirstExample]].
+Note, if you are just using FitNesse for .Net, then you could put this information on the root page (that's what I'd recommend in fact). For this example, I recommend using <http://localhost:8080/FirstExample>.
 ```
     !define TEST_SYSTEM {slim}
     {% raw %}

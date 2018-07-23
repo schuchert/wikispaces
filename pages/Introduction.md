@@ -44,7 +44,7 @@ What did you experience when given the verbal instructions?
 
 ----
 ## Manifesto for Agile Software Development
-### [[http://agilemanifesto.org/]]
+### <http://agilemanifesto.org/>
 
 ### Agile Preferences
 * //**Individuals and interactions**// over processes and tools

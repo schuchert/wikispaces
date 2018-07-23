@@ -45,7 +45,7 @@ Here is a list of examples that should build the majority of the tokenizer:
 ||"a_13(f(4+5,1+a*2,(8+b)*10))"||"a_13", "(", "f", "(", "4", "+", "5", ",", "1", "+", "a", "*", "2", ",", "(", "8", "+", "b", ")", "*", "10", ")", ")"||A final "scary" expression to make sure it will work for the final shunting yard algorithm.||
 [[#MoreExamples]]
 ## More Examples
-After releasing some of this into the wild, I started getting some feedback from, among other people Mitch B ([[http://cleverlytitled.blogspot.com/]]). What follows are a few more tests for edge conditions and other no-so-happy-path-related things. Thanks to Mitch for pointing out these tests as well as providing an improved implementation:
+After releasing some of this into the wild, I started getting some feedback from, among other people Mitch B (<http://cleverlytitled.blogspot.com/>). What follows are a few more tests for edge conditions and other no-so-happy-path-related things. Thanks to Mitch for pointing out these tests as well as providing an improved implementation:
 
 ||~ Example ||~ Results ||~ Description ||
 ||"4 + 5 *  '"||"4", "+", "5", "*", <error>||The trailing single-tick is not a valid token so the tokenizer should generate an error upon reaching that token. It should be possible to get the tokens before it:  "4", "+", "5", "*".||

@@ -81,13 +81,13 @@ There are three parts to this table:
 * Rows 4 - 5: Invoke a method to generate programs on a daily basis
 
 ### Creating Page Hierarchy/Table
-* Create a new Test Suite: Edit the following URL: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples]]
+* Create a new Test Suite: Edit the following URL: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples>
 * Enter the following for its contents:
 ```
 !contents -R2 -g -p -f -h
 ```
 * Save this and set the page type to Suite.
-* Edit the following URL (to add a child page): [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples.CreatingManyProgramsExample]]
+* Edit the following URL (to add a child page): <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples.CreatingManyProgramsExample>
 * Copy the table above into the contents of the page (replacing the !contents line)
 * See the page type to Test.
 * Run the test, verify that you see a warning (in yellow) of the missing Generate Programs class
@@ -591,7 +591,7 @@ This table demonstrates some things you have not yet used:
 * If the line starts with one of a few keywords (check/check not/reject/ensure/show), then the name of the method begins in cell 2 and and the parameters are in the odd numbered cells. If not, then the name of the method begins in cell 1 and the parameters are in the even numbered cells.
 
 Create this table:
-* Go to the following URL: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples.AnotherExample]].
+* Go to the following URL: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples.AnotherExample>.
 * Replace the contents with the above table.
 * Save your changes.
 * Change the page type to a Test.

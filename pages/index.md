@@ -15,7 +15,7 @@ For more background on where I'm coming from, have a look at [[ExperientialLearn
 > == [[CSharpAndOop]]
 
 # My blog 
-> ==[[http://brettschuchert.blogspot.com/]]
+> ==<http://brettschuchert.blogspot.com/>
 
 # Pictures 
 > == [My pictures at PBase](http://www.pbase.com/brett_schuchert)

@@ -63,10 +63,10 @@ There is one problem with this setup. On DVRs, the length of the program is not 
 What you will do in the remainder of this tutorial is create a fixture to handle this new table type. Once you've done that, you'll recreate some of the tests from the previous tutorial using the table table for the setup.
 # Creating the table
 As with the previous tutorials, you'll create these tests under their own sub-hierarchy:
-* Create a suite-page for these tests here: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples]]
+* Create a suite-page for these tests here: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples>
 * Just save the page as is (with the !contents ...)
 * Change its type to a suite page (//**Note**//, as of 4/15/09, FitNesse has been updated to automatically set the page type to a suite if it ends in "Examples". If you build from source or you happen to have a recent release with this feature built, you might not need to set the type to suite.)
-* Add a SetUp page. If the link exists on the [suite page](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples), you can click it (this feature was there, then removed and I added it back in again). If not, then go to this URL to create the setup page: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp]]
+* Add a SetUp page. If the link exists on the [suite page](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples), you can click it (this feature was there, then removed and I added it back in again). If not, then go to this URL to create the setup page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp>
 * Set its contents to:
 ```
 !include <DigitalVideoRecorderExamples.SetUp
@@ -89,8 +89,8 @@ As with the previous tutorials, you'll create these tests under their own sub-hi
 
 Notice that this borrows the Scenario table and script table from the [SetUp](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.SetUp) page in the [previous tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables). In this tutorial, the only new table is a new Table Table to populate the program schedule. 
 
-Next, we need a test that uses this [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp]]
-* Create a new test page: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.DvrThatCanRecordTwoProgramsAtaTimeExample]]
+Next, we need a test that uses this <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp>
+* Create a new test page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.DvrThatCanRecordTwoProgramsAtaTimeExample>
 * Set its contents to: 
 ```
 |Scenario|A Two Recorder Dvr With These Season Passes|seasonPasses|Should Have These Episodes In To Do List|toDoList|

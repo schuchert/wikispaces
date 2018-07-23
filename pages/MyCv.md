@@ -402,7 +402,7 @@ Reviewed approximately 30 books on various subjects, including:
 * Aspect Oriented Programming with Aspect J
 * JPA and EJP 3
 * Test Driven Development/Behavior Driven Development in several languages including: C++, Scala, Java, Ruby, C#
-* Several more, please refer to; [[http://schuchert.wikispaces.com]]
+* Several more, please refer to; <http://schuchert.wikispaces.com>
 * Improving the testability of UI Code
 * Testing concurrent applications
 

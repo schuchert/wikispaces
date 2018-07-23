@@ -1,12 +1,12 @@
 ---
 title: hades.BaseEnvironment
 ---
-These instructions summarize/make heavy use of [[http://www.vogella.de/articles/JavaPersistenceAPI/article.html]].
+These instructions summarize/make heavy use of <http://www.vogella.de/articles/JavaPersistenceAPI/article.html>.
 
 * Download a mocking library. This example uses [JMockIt](http://code.google.com/p/jmockit/downloads/list) - version 0.999.9. You will need the following jar file// **as the first entry**// in your classpath:
 ** jmockit.jar
 
-(These next two steps are here for convenience, they are taken directly from [[http://www.vogella.de/articles/JavaPersistenceAPI/article.html]]
+(These next two steps are here for convenience, they are taken directly from <http://www.vogella.de/articles/JavaPersistenceAPI/article.html>
 * Download a JPA implementation. This example uses [http://www.eclipse.org/eclipselink/downloads/|EclipseLink]] - version eclipselink-2.2.0.v20110202-r8913, which is the reference implementation. You will need the following two jar files in your classpath:
 ** eclipselink.jar
 ** javax.persistence_2.0.X.jar

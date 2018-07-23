@@ -25,16 +25,16 @@ That's as much background as we want to discuss before getting you started on yo
 ## Setting up your Environment
 What follows are one-time environment setup steps. These instructions are high-level. This book is augmented with on-line materials to keep the heavily changing material in a fluid format. So what follows are high-level details to get started. For each section, there is a link to the most up to date instructions.
 ### Install Java 1.6
-Please refer to [[http://www.java.com/en/download/manual.jsp]] for details.
+Please refer to <http://www.java.com/en/download/manual.jsp> for details.
 
 Note that any version from 1.6 or later should work.
 
 ### Install Eclipse
-Please refer to [[http://www.eclipse.org/downloads/]] for details. Note that several versions will work, make sure to download a version with a Java support.
+Please refer to <http://www.eclipse.org/downloads/> for details. Note that several versions will work, make sure to download a version with a Java support.
 
 There is nothing particular to Eclipse that will make it work better than, say NetBeans or IntelliJ. I happen to use it and the on-line demonstrations will be in Eclipse.
 ### Download Mockito
-Download Mockito from here: [[http://code.google.com/p/mockito/downloads/list]]. As of the last time I updated the version number, I was using 1.8.2.
+Download Mockito from here: <http://code.google.com/p/mockito/downloads/list>. As of the last time I updated the version number, I was using 1.8.2.
 
 ### Install FitNesse
 [[include page="FitNesse.Installing"]]

@@ -37,7 +37,7 @@ Given this information, the following definitions will make these examples work:
 !path C:\projects\slim_example\slim_example\obj\Debug\slim_example.dll
 ```
 
-Also, all of classes for these tables reside in the same namespace, so an import table will help with that. The import table must appear on the page that is executing. Simply putting it in the top level page will not work. Instead, make it a SetUp page. Here's the contents of [[http://localhost:8080/CsharpWithSlimExamples.SetUp]]:
+Also, all of classes for these tables reside in the same namespace, so an import table will help with that. The import table must appear on the page that is executing. Simply putting it in the top level page will not work. Instead, make it a SetUp page. Here's the contents of <http://localhost:8080/CsharpWithSlimExamples.SetUp>:
 ```
 | import |
 | slim_example |
@@ -54,7 +54,7 @@ CsharpWithSlimExamples
   TableTableExample
 ```
 ## Decision Table
-Here's a example of a decision table ([[http://localhost:8080/CsharpWithSlimExamples.DecisionTableExample]]):
+Here's a example of a decision table (<http://localhost:8080/CsharpWithSlimExamples.DecisionTableExample>):
 ```
 |Create Shows|5/6/2009                                                               |
 |Name        |Episode                      |Channel|Start Time|Duration|Id?          |
@@ -118,7 +118,7 @@ The one thing not yet discussed is the Execute() method. This method is called a
 
 As mentioned above, the last row will take the result of the Id() method, Dr. Who:12, and assign that value to $lastProgram.
 ## Query Table
-Now for a query table ([[http://localhost:8080/CsharpWithSlimExamples.QueryTableExample]]):
+Now for a query table (<http://localhost:8080/CsharpWithSlimExamples.QueryTableExample>):
 ```
 !|Query:Get Programs On A Given Day And Channel|3/4/2009|3                 |
 |Name                                          |Episode |StartTime|Duration|
@@ -204,7 +204,7 @@ namespace slim_example
 }
 ```
 ## Script Table
-A script table allows you more control over information going into methods. You can call different methods with a variable number of parameters. Here is one example ([[http://localhost:8080/CsharpWithSlimExamples.ScriptTableExample]]):
+A script table allows you more control over information going into methods. You can call different methods with a variable number of parameters. Here is one example (<http://localhost:8080/CsharpWithSlimExamples.ScriptTableExample>):
 ```
 !|Script                    |Generate Programs                                                                              |
 |$P1=                       |Create Weekly Program Named|W1|On Channel|7|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8 |
@@ -257,7 +257,7 @@ namespace slim_example
 }
 ```
 ## Scenario Table
-A scenario table describes a logical sequence of steps. By itself it does not require a backing class. Here is an example scenario table ([[http://localhost:8080/CsharpWithSlimExamples.ScenarioTableExample]]):
+A scenario table describes a logical sequence of steps. By itself it does not require a backing class. Here is an example scenario table (<http://localhost:8080/CsharpWithSlimExamples.ScenarioTableExample>):
 ```
 !|Scenario                   |dvrCanSimultaneouslyRecord|number|andWithThese|seasonPasses|shouldHaveTheFollowing|toDoList|
 |givenDvrCanRecord           |@number                                                                                    |
@@ -290,7 +290,7 @@ This particular naming style derives from a [story running tool called Cucumber]
 
 As mentioned, scenario tables do not require any class to exist. However, when a page// **uses**// a scenario, then the most recent script is will require some methods based on most recently mentioned script.
 
-Here is a complete page that([[http://localhost:8080/CsharpWithSlimExamples.ScenarioTableExample]]):
+Here is a complete page that(<http://localhost:8080/CsharpWithSlimExamples.ScenarioTableExample>):
 * Defines a scenario
 * Mentioned a random script
 * Uses the scenario
@@ -338,7 +338,7 @@ namespace slim_example
 }
 ```
 ## Table Table
-With a table table, you are given the table, minus the first row, and can do anything you wish. Here is one such example ([[http://localhost:8080/CsharpWithSlimExamples.TableTableExample]]):
+With a table table, you are given the table, minus the first row, and can do anything you wish. Here is one such example (<http://localhost:8080/CsharpWithSlimExamples.TableTableExample>):
 ```
 !|Table:CreateOneDayProgramGuide|1:00|3/4/2008|
 |   |1   |2   |3   |4   |5   |6   |7   |8   |9   |10  |11  |12  |13  |14  |

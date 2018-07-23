@@ -81,7 +81,7 @@ Finally, verify that there are 7 episodes of D5_1 and 0 of D6_1 (since your curr
 |D5_1|E7|3/10/2008|20:00|
 ```
 
-Create this page with the 4 tables (one script, two decision tables and one query table). Call it ScenarioTableExamples and place it under DigitalVideoRecorder. Here's a URL (assuming you are running FitNesse on port 8080): [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples]]
+Create this page with the 4 tables (one script, two decision tables and one query table). Call it ScenarioTableExamples and place it under DigitalVideoRecorder. Here's a URL (assuming you are running FitNesse on port 8080): <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples>
 
 You'll also need to set the page type to test.
 
@@ -120,7 +120,7 @@ To fix the first problem, you'll need to update DateUtil:
 Make sure this seeming innocuous change did not break any unit tests (it should not). Also make sure all other acceptance tests are still passing (oops, it does). Before you fix the problem with the current acceptance test, you should fix the problem introduced// **by**// the new acceptance test - or rather the one exploited by the current unit test. The [TearDown](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown) page resets the program guide, but it does not reset the to do list.
 
 ## Cleaning Up Between Tests, Part Dux
-The TearDown page [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown]] uses the ClearProgramSchedule fixture to, well, clear the program schedule. Should you update the ClearProgramSchedule to also clear the todo list, or should you create a second fixture, say ClearToDoList? There's no clear answer as either will work. Using a single fixture will couple these two separate concerns (a possible violation of the [Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf)). Using two fixtures will make things more explicit, but also leave the possibility of forgetting to do both together. (Ultimately there's a better solution, put all of these key objects in a single place and reset that, however, this tutorial does not take that approach.)
+The TearDown page <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown> uses the ClearProgramSchedule fixture to, well, clear the program schedule. Should you update the ClearProgramSchedule to also clear the todo list, or should you create a second fixture, say ClearToDoList? There's no clear answer as either will work. Using a single fixture will couple these two separate concerns (a possible violation of the [Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf)). Using two fixtures will make things more explicit, but also leave the possibility of forgetting to do both together. (Ultimately there's a better solution, put all of these key objects in a single place and reset that, however, this tutorial does not take that approach.)
 
 In your domain, these two concepts might actually be intertwined by design. If you believe that clearing the program guide should logically cause the to to list to be cleared, then update the fixture. If you think instead that these are orthogonal concerns, then create a second fixture and call it. This tutorial is going to treat these as separate concerns.
 * Update TearDown Page:
@@ -373,7 +373,7 @@ Now it is type to attempt to use it. To use it you'll need to do several things:
 Luckily, we already have a working test, so this is a good time to change its format. In the spirit of refactoring, let's leave this test as is (it is passing), and instead create a new test that does what we want. This will require a bit more work, but it will give us a working test to verify we have not broken the production code, so it is a much less risky approach.
 
 ## Create New Page
-* First, create the following page [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordOneProgramAtaTimeExample]] (//**Note**//: The AtaTime part of the name is important, FitNesse will not recognize a wikiword with two capital letters back to back, so rather than calling the page ...AtATime..., I named it ...AtaTime...)
+* First, create the following page <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordOneProgramAtaTimeExample> (//**Note**//: The AtaTime part of the name is important, FitNesse will not recognize a wikiword with two capital letters back to back, so rather than calling the page ...AtATime..., I named it ...AtaTime...)
 * Replace the !contents with the following: 
 ```
 !|Scenario|dvrCanSimultaneouslyRecord|number|andWithThese|seasonPasses|shouldHaveTheFollowing|toDoList|
@@ -398,7 +398,7 @@ Luckily, we already have a working test, so this is a good time to change its fo
 
 * Set the page to a test page.
 
-* The original large Decision Table should be put in a SetUp page. Go to the following URL and paste the following table: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.SetUp]]
+* The original large Decision Table should be put in a SetUp page. Go to the following URL and paste the following table: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.SetUp>
 ```
 !include <DigitalVideoRecorderExamples.SetUp
 
@@ -426,9 +426,9 @@ Luckily, we already have a working test, so this is a good time to change its fo
 |check|TotalEpisodesCreated|140|
 ```
 
-* Next, remove that same table from: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples]]
+* Next, remove that same table from: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples>
 * Run your ScenarioTableExamples test, it should still work.
-* Create a new page: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.OriginalExample]] and paste the remainder of the original table:
+* Create a new page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.OriginalExample> and paste the remainder of the original table:
 ```
 |Create Season Pass For|D5_1|5|
 
@@ -445,13 +445,13 @@ Luckily, we already have a working test, so this is a good time to change its fo
 |D5_1|E7|3/10/2008|20:00|
 ```
 * Set the page type to test, execute it and make sure it still works.
-* Update the [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples]] page, convert it to a Suite test.
+* Update the <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples> page, convert it to a Suite test.
 * Change its contents to:
 ```
 !contents
 ```
 * Hit the suite button, the original example should still pass.
-* Go back to the [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordOneProgramAtaTimeExample]] and change its page type to test.
+* Go back to the <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordOneProgramAtaTimeExample> and change its page type to test.
 * Run the test, it should also pass.
 
 ## Migrate new page to Scenario Test
@@ -612,7 +612,7 @@ Update your fixture and verify that your test passes.
 # Now Add A Different Use
 Next, you'll try a degenerate case. What happens if there no programs can be recorded? Rather than write about it, express it as a test.
 
-* Create a new page: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordZeroProgramsAtaTimeExample]]
+* Create a new page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordZeroProgramsAtaTimeExample>
 * Update its contents to:
 ```
 !|Scenario|dvrCanSimultaneouslyRecord|number|andWithThese|seasonPasses|shouldHaveTheFollowing|toDoList|
@@ -728,7 +728,7 @@ Notice that the Scenario Table is duplicated?
 * Verify your tests still pass.
 
 # Now Support 2 Recordings at a Time
-* Create another page: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordTwoProgramsAtaTimeExample]]
+* Create another page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordTwoProgramsAtaTimeExample>
 * Create the basic test:
 ```
 |Dvr Can Simultaneously Record And With These Should Have The Following|
@@ -751,7 +751,7 @@ Wow! That worked. Almost seems too simple. Sure enough, the basic functionality 
 * Advanced Scenario Example
 
 ## Clean Up
-Some time back you created a page called: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.OriginalExample]]. You have two options:
+Some time back you created a page called: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.OriginalExample>. You have two options:
 * Remove it, you've rewritten it.
 * Leave it as is so you have something to compare the Scenario table with.
 
@@ -759,7 +759,7 @@ In my solution I'm going to remove it. You can pick you poison.
 
 Before leaving this section, execute the suite one final time. Did everything pass? In my example I have a failed test: ScriptTableExamples.CreatingManyProgramsExample. It runs by itself but not in the top level suite (though it does run in the intermediate level suite. This suggests cross-test contamination.
 
-After a little research, it turns out that the following test is causing an unwanted side-effect: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordZeroProgramsAtaTimeExample]]. How? It sets the number of recorders in the DVR to 0. This is set on an instance. As written, the system is not removing stale instances but rather clearing lists. There are several ways to fix this:
+After a little research, it turns out that the following test is causing an unwanted side-effect: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordZeroProgramsAtaTimeExample>. How? It sets the number of recorders in the DVR to 0. This is set on an instance. As written, the system is not removing stale instances but rather clearing lists. There are several ways to fix this:
 * On the page that is failing, manually set the number of recordings:
 ```
 |Script|Dvr Recording|
@@ -811,7 +811,7 @@ public class ClearToDoList {
 Make these changes, run:
 * Your unit tests, they should all pass
 * The individual page that was failing (http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples.CreatingManyProgramsExample?test), should pass
-* The suite ([[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples?suite]]), should pass
+* The suite (<http://localhost:8080/FrontPage.DigitalVideoRecorderExamples?suite>), should pass
 
 It is important to frequently run your unit tests and acceptance tests to make sure a change did not break something. Note that the fix involved making changes to fixture-based code only. So the production code was OK, the problem was in the test-support code. Breaking things like this is going to happen. The important thing is to get it fixed before you check in. This suggests:
 * The tests run quickly enough that it is feasible for you to run them frequently.

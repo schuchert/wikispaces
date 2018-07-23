@@ -3,9 +3,9 @@ title: tdd.objectivec.XCodeProjectSetup
 ---
 ## Why?
 It took a bit of digging to come up with the steps required to get basic unit testing working in XCode. These steps borrow heavily from the following sites (in no order, because I don't remember what all it took to get this working):
-* [[http://chanson.livejournal.com/182472.html]]
-* [[http://developer.apple.com/tools/unittest.html]]
-* [[http://www.devworld.apple.com/mac/library/documentation/DeveloperTools/Conceptual/UnitTesting/Xcode_Unit_Testing.pdf]]
+* <http://chanson.livejournal.com/182472.html>
+* <http://developer.apple.com/tools/unittest.html>
+* <http://www.devworld.apple.com/mac/library/documentation/DeveloperTools/Conceptual/UnitTesting/Xcode_Unit_Testing.pdf>
 
 Much of my confusion comes from the difference between using "raw" Objective-C (relatively easy) versus XCode and all that implies. In any case, that's the environment I'll be using for courses, so that's what I need to be able to get working.
 

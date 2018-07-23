@@ -10,7 +10,7 @@ title: iPhone.XCode_4.2.SettingUpAStaticLibrary
 
 # Create Project
 For this example, I'l use a C library called Matt's Arbitrary Precision Math library - one I use in my RpnCalculator
-* Download the library from [[http://www.tc.umn.edu/~ringx004/mapm-4.9.5a.tar.gz]]
+* Download the library from <http://www.tc.umn.edu/~ringx004/mapm-4.9.5a.tar.gz>
 * Create workspace for your project
 * Create a number of targets 
 * ...

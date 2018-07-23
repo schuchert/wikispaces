@@ -30,9 +30,9 @@ title: NodeJsDiary
 * The gentoo installation failed once again (. I'm going to work on the VM instead.
 * Updated virtualbox guest extensions now.
 ** OK, that was not enough. Luckily, [this site mentions a gem](http://kvz.io/blog/2013/01/16/vagrant-tip-keep-virtualbox-guest-additions-in-sync/) that will check and update the guest extensions. It looks like it is working. It is taking a minute or so.
-** Nope, that did not work. This is a day full of yaks. Trying manually from [[http://software.darrenthetiger.com/2012/01/installing-virtualbox-guest-additions-on-a-vagrant-lucid64-box/]].
+** Nope, that did not work. This is a day full of yaks. Trying manually from <http://software.darrenthetiger.com/2012/01/installing-virtualbox-guest-additions-on-a-vagrant-lucid64-box/>.
 ----
-* Made some progress with vm, trying to more easily install. Installing [[http://downloads.vagrantup.com/tags/v1.0.0]]
+* Made some progress with vm, trying to more easily install. Installing <http://downloads.vagrantup.com/tags/v1.0.0>
 ** This is looking promising. It's using the 32-bit precise base box, but for experimentation that's ok.
 ** Going all command line is also fine, vi ftw!
 ** Success. Back to the book.
@@ -40,14 +40,14 @@ title: NodeJsDiary
 * Late in the evening, read a bit more and then read a link: [Understanding node.js](http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb)
 
 # 23 Feb 2014
-* Finished free book, bought the book off of leanpub, as well as another in a package deal [[https://leanpub.com/b/node]]
-* Also got another book he's working on (mentioned in The Node Beginner Book) [[https://leanpub.com/nodecraftsman]]
+* Finished free book, bought the book off of leanpub, as well as another in a package deal <https://leanpub.com/b/node>
+* Also got another book he's working on (mentioned in The Node Beginner Book) <https://leanpub.com/nodecraftsman>
 * Noticed I was using raw vi and vim was not installed.
 ** Manually installed it, then figured, it's a VM - not the way to do it.
 ** Added chef script to install vim
 ** Removed manually installed vim and then reprovisioned VM
 ** Back to working through the book, things going smoothly after much yak-shaving yesterday
-*** Ok, some yak shaving... Manually installing [[https://github.com/amix/vimrc]]. If I like it, I'll chef it.
+*** Ok, some yak shaving... Manually installing <https://github.com/amix/vimrc>. If I like it, I'll chef it.
 *** Wait, git not installed. Copied vim cookbook and renamed vim to git, now git is also installed. Given that, I'll do the same with the vim configurations
 ----
 * Spending a lot of time on the VIM thing.

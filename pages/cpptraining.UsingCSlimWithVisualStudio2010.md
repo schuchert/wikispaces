@@ -24,7 +24,7 @@ C:\src>mkdir cslim_vs2010
 C:\src>cd cslim_vs2010
 C:\src\cslim_vs2010>
 ```
-* Grab the source from github ([[https://github.com/dougbradbury/cslim]])
+* Grab the source from github (<https://github.com/dougbradbury/cslim>)
 * The url for the the clone is: **git@github.com:schuchert/cslim.git**
 ```
 C:\src\cslim_vs2010>git clone git@github.com:schuchert/cslim.git
@@ -122,7 +122,7 @@ C:\src\cslim_vs2010\cslim>
 
 Now that you have a compiled collection of fixtures, you are ready to install FitNesse, copy some pages and get tests to pass.
 # Install FitNesse
-* Download the fitnesse.jar from [[http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad]]. I use the EDGE build all of the time as its release criterion are the same as for the "official" release.
+* Download the fitnesse.jar from <http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad>. I use the EDGE build all of the time as its release criterion are the same as for the "official" release.
 * Copy (or move) the jar file you just downloaded into your top-level working directory (**C:\src\cslim_vs2010**)
 * Your directory should resemble the following:
 ```
@@ -220,7 +220,7 @@ C:\src\cslim_vs2010>dir FitNesseRoot\CslimExamples
                8 Dir(s)  32,117,567,488 bytes free
 ```
 # Configure The Slim Implementation
-* You can now browse to the following URL to open up those examples: [[http://localhost:8080/CSlimExamples]]
+* You can now browse to the following URL to open up those examples: <http://localhost:8080/CSlimExamples>
 * You'll need to edit the page you just created and set its contents to:
 ```
 !contents -R2 -g -p -f -h

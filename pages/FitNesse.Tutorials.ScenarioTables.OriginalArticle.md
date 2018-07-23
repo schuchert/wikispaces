@@ -88,7 +88,7 @@ By default, FitNesse uses fit to execute tests. To instead configure FitNesse to
 * On FrontPage
 * On root
 
-In these examples, I am sticking to Slim by default. Also, I started FitNesse on port 8080. Therefore, to edit the root page, I entered the following url: [[http://localhost:8080/root?edit]]. I then added the following line at the bottom of the page:
+In these examples, I am sticking to Slim by default. Also, I started FitNesse on port 8080. Therefore, to edit the root page, I entered the following url: <http://localhost:8080/root?edit>. I then added the following line at the bottom of the page:
 ```
 !define TEST_SYSTEM {slim}
 ``` 

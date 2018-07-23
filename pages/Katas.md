@@ -16,8 +16,8 @@ title: Katas
 * [Prime Factors Kata](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata)
 
 ## Katas By (Prag)Dave Thomas
-* [[http://www.codekata.com/]]
-* [[http://codekata.pragprog.com/2007/01/code_kata_backg.html#more]]
+* <http://www.codekata.com/>
+* <http://codekata.pragprog.com/2007/01/code_kata_backg.html#more>
 
 ## Other Related Links
 * [Kata Catalog](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue)
@@ -27,4 +27,4 @@ title: Katas
 * [TDD As If You Mean It](http://www.parlezuml.com/softwarecraftsmanship/sessions/tdd_as_if_you_meant_it.htm)
 
 ## Individual Suggestions
-* [War Card Game](http://en.wikipedia.org/wiki/War_%28card_game%29) - Submitted by Paul Smith [[http://twitter.com/eatmybits]]
+* [War Card Game](http://en.wikipedia.org/wiki/War_%28card_game%29) - Submitted by Paul Smith <http://twitter.com/eatmybits>

@@ -108,7 +108,7 @@ FitNesse (v20100711) Started...
 ```
 ## Creating Top-Level Test Suite
 Now that you have FitNesse started, create a top-level page for all of your work.
-* Edit the following URL: [[http://localhost:8080/RpnExamples]]
+* Edit the following URL: <http://localhost:8080/RpnExamples>
 * Edit its content to be:
 ```
 !contents -R2 -g -p -f -h
@@ -123,7 +123,7 @@ Now that you have FitNesse started, create a top-level page for all of your work
 
 The TEST_RUNNER makes reference to a project/executable we have not yet created. Don't worry, it'll be there soon.
 ## Creating First Test
-* Go to the following URL and click edit: [[http://localhost:8080/RpnExamples.BinaryOperatorExecution]]
+* Go to the following URL and click edit: <http://localhost:8080/RpnExamples.BinaryOperatorExecution>
 * Click on the **Edit** button and set its contents to:
 ```
 !|ExecuteBinaryOperator    |
@@ -377,14 +377,14 @@ getaddrinfo: nodename nor servname provided, or not known
 
 # Running the Test
 You should be able to run your FitNesse test and get to green.
-* Go back to the following URL: [[http://localhost:8080/RpnExamples]]
+* Go back to the following URL: <http://localhost:8080/RpnExamples>
 * Click on the **Suite** button
 * You should see all green.
 * You might see an error regarding a difference in protocol. That's under construction. The cslim library should be updated in the near future (August 2010 I hope).
 # Working with a Script Table
 Now it is time to program the calculator. First a test, then the fixture code.
 ## The Test
-Create the following test at: [[http://localhost:8080/RpnExamples.SumOfPrimesExample]]
+Create the following test at: <http://localhost:8080/RpnExamples.SumOfPrimesExample>
 ```
 !|script           |ProgramTheCalculator|
 |startProgramCalled|sumOfPrimeFactors   |
@@ -507,7 +507,7 @@ Here is an example of a query table:
 |drop                       |
 ```
 
-Create this page at: [[http://localhost:8080/RpnExamples.AlphaNamedOperatorsExample]]
+Create this page at: <http://localhost:8080/RpnExamples.AlphaNamedOperatorsExample>
 
 Now you'll need to create a fixture. Create a new source file called **AlphaNamedOperators.cpp**:
 ```cpp

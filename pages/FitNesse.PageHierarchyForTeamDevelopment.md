@@ -91,15 +91,15 @@ The rest of this example uses a simulated project called "Dvr" for DigitalVideoR
 
 ### Creating Server Page Hierarchy
 #### Top Level Environment
-* Go to [[http://localhost:9080/]]
+* Go to <http://localhost:9080/>
 * You should see the FitNesse start page.
-* Update the URL to [[http://localhost:9080/DvrServerEnvironment]]
+* Update the URL to <http://localhost:9080/DvrServerEnvironment>
 * FitNesse will prompt you to create the page.
 * Simply save this page.
 * Edit the page properties, set the type to// **suite**//.
 
 #### Common Environment
-* Go to [[http://localhost:9080/DvrServerEnvironment.CommonEnviornment]]
+* Go to <http://localhost:9080/DvrServerEnvironment.CommonEnviornment>
 * On this page, set the contents to:
 ```terminal
 !define TEST_SYSTEM {slim}
@@ -112,13 +112,13 @@ The rest of this example uses a simulated project called "Dvr" for DigitalVideoR
 
 #### Create a top-level suite page
 While not strictly necessary, this top-level page will remain stable while the common environment page might change. It is reasonable to merge the common environment and top-level suite pages, this example keeps them separate.
-* Go to [[http://localhost:9080/DvrServerEnvironment.CommonEnviornment.AllTests]]
+* Go to <http://localhost:9080/DvrServerEnvironment.CommonEnviornment.AllTests>
 * Simply save this page
 * Edit the page properties, set the type to// **suite**//.
 
 #### Create a Common Setup
 This SetUp page will apply to all children test pages that do not have SetUp pages. If you need to have multiple setup pages, you can use an import statement.
-* Go to [[http://localhost:9080/DvrServerEnvironment.CommonEnviornment.AllTests.SetUp]]
+* Go to <http://localhost:9080/DvrServerEnvironment.CommonEnviornment.AllTests.SetUp>
 * Set the page contents to:
 ```terminal
 |import|
@@ -127,7 +127,7 @@ This SetUp page will apply to all children test pages that do not have SetUp pag
 
 #### Create an Example Test
 This is a simple test we'll use to verify that things are working.
-* Create a test page under the top level suite by going to this link: [[http://localhost:9080/DvrServerEnvironment.CommonEnviornment.AllTests.SimpleExample]]. This page is a sibling of the SetUp page, so it will automatically pickup the SetUp page. Also note that since the page name ends in "Example" it will automatically be created as a test page.
+* Create a test page under the top level suite by going to this link: <http://localhost:9080/DvrServerEnvironment.CommonEnviornment.AllTests.SimpleExample>. This page is a sibling of the SetUp page, so it will automatically pickup the SetUp page. Also note that since the page name ends in "Example" it will automatically be created as a test page.
 * Set this page's contents to:
 ```terminal
 !|IsThisTheServer|
@@ -150,7 +150,7 @@ public class IsThisTheServer {
 }
 ```
 The server needs to know where to look for java classes. We will configure this on the server configuration page. By default, Eclipse will compile this and put the classes in /Users/schuchert/src/FitNesseLinkPageExample/server/bin. You might need to search for the top-level class directory.
-* Edit the server configuration page by going to this link: [[http://localhost:9080/DvrServerEnvironment]]
+* Edit the server configuration page by going to this link: <http://localhost:9080/DvrServerEnvironment>
 * Set the page contents to (//**note**// update the directory to where you created your Eclipse workspace):
 ```terminal
 !path /Users/schuchert/src/FitNesseLinkPageExample/server/bin
@@ -161,7 +161,7 @@ The server needs to know where to look for java classes. We will configure this 
 
 #### Setting up Developer Machine
 The procedure is much the same for the developer machine, with a little less setup.
-* Create the Developer Environment Page by clicking on this link: [[http://localhost:8080/DvrDeveloperEnvironment]]
+* Create the Developer Environment Page by clicking on this link: <http://localhost:8080/DvrDeveloperEnvironment>
 * Rather than going back and editing this, set the contents of this page to the following:
 ```terminal
 !path /Users/schuchert/src/FitNesseLinkPageExample/developer/bin
@@ -193,7 +193,7 @@ public class IsThisTheServer {
 Notice that this is the same class and package, but a different implementation. What makes FitNesse select one fixture class versus the other is the !path statement on the local environment pages. (This is similar to what Michael Feathers calls a Link Seam.)
 
 Verify that your test fails with a red error (indicating class found but assertion did not pass).
-* Go back to: [[http://localhost:8080/DvrDeveloperEnvironment]]
+* Go back to: <http://localhost:8080/DvrDeveloperEnvironment>
 * Click the// **Suite**// button. The test should execute but fail, expected true but was false.
 
 ## Congratulations

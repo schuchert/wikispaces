@@ -69,10 +69,10 @@ I ask them during the AlternatingHandGripExercise to remember the feelings assoc
 Sometimes I relate this model to [The Seven Stages of Expertise in Software Engineering](http://www.wayland-informatics.com/The%20Seven%20Stages%20of%20Expertise%20in%20Software.htm). When I do, I joke and say my goal is to get you to be less productive.
 
 ## Other Sources on the Satir Model
-Now We're in Chaos: [[http://www.chacocanyon.com/pointlookout/010919.shtml]]
+Now We're in Chaos: <http://www.chacocanyon.com/pointlookout/010919.shtml>
 
 The Satir Change Model attempts to describe how change occurs for an individual. We can use it in our courses to give students an idea of what they are going to face when learning/experiencing new material.
 
-The above link is written by Rick brenner: [[http://www.chacocanyon.com/aboutrick.shtml]].
+The above link is written by Rick brenner: <http://www.chacocanyon.com/aboutrick.shtml>.
 
 [<--Back]({{ site.pagesurl}}/ExperientialLearningNotes)

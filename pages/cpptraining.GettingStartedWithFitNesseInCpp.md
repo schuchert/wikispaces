@@ -104,7 +104,7 @@ FitNesse (v20100711) Started...
 ```
 # Create Top-Level Page
 This assumes you're running FitNesse on port 8080. Update the url with your port as necessary.
-* Create a new top-level page at: [[http://localhost:8080/CslimFirstExamples]]
+* Create a new top-level page at: <http://localhost:8080/CslimFirstExamples>
 * Edit the contents. Set it to (note, update// **/User/schuchert**// with your top-level directory):
 ```
 !contents -R2 -g -p -f -h
@@ -117,7 +117,7 @@ This assumes you're running FitNesse on port 8080. Update the url with your port
 !define SLIM_VERSION {0.2}
 ```
 * Save the page.
-* Create a sub-page at the following URL: [[http://localhost:8080/CslimFirstExamples.DecisionTableExample]]
+* Create a sub-page at the following URL: <http://localhost:8080/CslimFirstExamples.DecisionTableExample>
 * Edit the contents. Set it to (note, to make the columns line up, use the// **Format**// button):
 ```
 |Modulus                 |

@@ -48,4 +48,4 @@ These tutorials form the basis of a 1-week class. They are listed below by categ
 * [[QuantumDB Configuration]]
 
 # Additional Resources
-* [[http://www.caucho.com/resin-3.0/amber/amber-table.xtp]]
+* <http://www.caucho.com/resin-3.0/amber/amber-table.xtp>

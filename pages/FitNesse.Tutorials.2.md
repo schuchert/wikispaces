@@ -153,7 +153,7 @@ There are many ways to create pages in FitNesse. You can:
 
 We want to create a SetUp page that will be available for all pages under DigitalVideoRecorder, so:
 * Go that page
-* At the bottom, there will be a __[?]__ next to the word SetUp. Click it. (If for some reason there is no such page, simply enter [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.SetUp]]
+* At the bottom, there will be a __[?]__ next to the word SetUp. Click it. (If for some reason there is no such page, simply enter <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.SetUp>
 * Set the contents of the SetUp page to:
 ```
 |import|
@@ -163,7 +163,7 @@ We want to create a SetUp page that will be available for all pages under Digita
 * Verify that your suite still passes.
 
 ## Summary of Page Hierarchy
-* You created a top level page, [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples]] and made it a suite with some common configuration information.
+* You created a top level page, <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples> and made it a suite with some common configuration information.
 * You refactored(moved) DecisionTableExample under that page.
 * You removed the common configuration from DecisionTableExample
 * You put the import statement in a SetUp page as a sibling of DecisionTableExample
@@ -195,7 +195,7 @@ Near the top of this tutorial, there was a table with a lot of data. You have no
 ```
 
 Create this page:
-* Go to the URL: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.QueryTableExample]].
+* Go to the URL: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.QueryTableExample>.
 * Remove the !contents and copy the table above to the page
 * Save your changes.
 * Notice that the SetUp page is not there? The **Test** button is also missing. Turn this page into a test page.
@@ -665,7 +665,7 @@ And finally, this requires another change to SeasonPassManager (overly simplisti
 
 ## Update Path
 Your new code uses two jar files (downloaded from above). You need to add these to the class path:
-* Go to your suite page : [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples]]
+* Go to your suite page : <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples>
 * Edit your top-level page and add a third !path statement (update the path accordingly):
 ```
 !path /Users/schuchert/src/fitnesse-tutorials/DVR/lib/**.jar
@@ -702,7 +702,7 @@ The last option leads to more tests so there's a balance between it and adding c
 ## Refactor the Tests
 * Start by turning QueryTableExample into a Suite.
 * Next, rename it so it is instead QueryTableExamples (Refactor button, find rename, enter new name, click on rename button)
-* Create a SetUp page for your newly renamed page (click on the __[?]__ next to SetUp near the bottom of the page (if for some reason it is not there, then go to [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.QueryTableExamples.SetUp]])
+* Create a SetUp page for your newly renamed page (click on the __[?]__ next to SetUp near the bottom of the page (if for some reason it is not there, then go to <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.QueryTableExamples.SetUp>)
 * Set the contents of the setup page to:
 ```
 |Add Programs To Schedule                         |
@@ -858,7 +858,7 @@ We have some options:
 
 Either of the last two options are fine. Given we have not created a TearDown page, that's the option I'll pick:
 * Go to the DigitalVideoRecorderExamples page.
-* Click on the __[?]__ next to TearDown. (If that link is missing, then go to: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown]].)
+* Click on the __[?]__ next to TearDown. (If that link is missing, then go to: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown>.)
 * Set the contents to:
 ```
 |Clear Program Schedule|

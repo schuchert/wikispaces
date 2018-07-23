@@ -17,7 +17,7 @@ This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If 
 
 This tutorial is primarily about getting you over the hurtle of the mechanics of getting tests to execute using [FitNesse](http://fitnesse.org/). Even so, you will see some basic design considerations play out as well.
 
-Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on localhost at port 8080 [[http://localhost:8080]]. If you are not sure how to do that, [try this tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.0).
+Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on localhost at port 8080 <http://localhost:8080>. If you are not sure how to do that, [try this tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.0).
 # Background
 [FitNesse.Slim Decision Tables](http://FitNesse.org/FitNesse.SliM.DecisionTable) are a common way to get test data into a System Under Test. A Decision table has three parts (only the first of which is actually required):
 # One Title Row - Names the fixture to execute, optionally includes constructor parameters
@@ -46,13 +46,13 @@ Finally, there are two data rows. Given the name of the fixture, this table's go
 
 ## Creating this table
 Here are some preliminary steps to get this table created (there will be more later, this table is the skeleton of a test):
-* Browse to [[http://localhost:8080]].
-* Edit this page (click the **Edit** button - or, if not available, go to the following URL: [[http://localhost:8080/FrontPage?edit]]), add the following before the Release date line at the bottom (the location is arbitrary):
+* Browse to <http://localhost:8080>.
+* Edit this page (click the **Edit** button - or, if not available, go to the following URL: <http://localhost:8080/FrontPage?edit>), add the following before the Release date line at the bottom (the location is arbitrary):
 ```
 >DecisionTableExample
 ```
 * Save your changes (click the **Save** button)
-* Click on the linked question mark, which will take you to: [[http://localhost:8080/FrontPage.DecisionTableExample?edit&nonExistent=true]]
+* Click on the linked question mark, which will take you to: <http://localhost:8080/FrontPage.DecisionTableExample?edit&nonExistent=true>
 * Copy the table contents into the page replacing the !contents ... that is already there.
 * Save the page (click **Save**).
 * Edit the page's properties (click **Properties**).
@@ -689,7 +689,7 @@ Note that this Fixture, as written, supports both styles. The real reason I want
 # Conclusion and Summary
 Congratulations, you've completed this tutorial.
 
-This tutorial emphasizes Decision tables. There is still more to you can do with decision tables, but this covers most of what you'll need to know to effectively use decision tables. If you go to your fitness installation and go to FitNesse.SliM.DecisionTable ([[http://localhost:8080/FitNesse.SliM.DecisionTable]]), you can read the [FitNesse](http://fitnesse.org/FitNesse.SliM.DecisionTable)-provided documentation.
+This tutorial emphasizes Decision tables. There is still more to you can do with decision tables, but this covers most of what you'll need to know to effectively use decision tables. If you go to your fitness installation and go to FitNesse.SliM.DecisionTable (<http://localhost:8080/FitNesse.SliM.DecisionTable>), you can read the [FitNesse](http://fitnesse.org/FitNesse.SliM.DecisionTable)-provided documentation.
 
 However, you've learned several things in this tutorial:
 * How to tell [FitNesse](http://fitnesse.org/) to use Slim instead of fit (its default)
