@@ -2,7 +2,7 @@
 title: EJB3_Tutorial_4_-_Extended_Context
 ---
 {:toc}
-[[EJB 3 and Java Persistence API|<--Back]]
+[<--Back]({{ site.pagesurl }}/EJB 3 and Java Persistence API)
 
 # Ejb3 Tutorial 4 - Extended Context
 A Stateful session bean can optionally use an extended context. An extended context maintains its managed objects between transactions or even in situation where a method is not using transactions. All objects accessed or created hang around until the bean goes away. This normally happens when a client executes a method that has been denoted as a Remove method (annotated with @Remove or declared as such in XML).
@@ -623,4 +623,4 @@ The interface seems to be a bit messed up with concepts that relate to both stat
 ```
 
 [[include page="Ejb3JBossUtilJava"]]
-[[EJB 3 and Java Persistence API|<--Back]]
+[<--Back]({{ site.pagesurl }}/EJB 3 and Java Persistence API)

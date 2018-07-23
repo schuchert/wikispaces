@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_Apply
 ---
-[[AspectJ Annotation AllCode|<--Back]] [[AspectJ Annotation Start|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ Annotation AllCode|<--Back]] [[AspectJ Annotation Start)
 
 # Apply
 
@@ -23,8 +23,8 @@ Compare and contrast that solution with the one described on [[AspectJ Annotatio
 **Challenge:** Implement your solution
 ----
 ## Advanced: Mixing CFlow and Annotations
-If you have not already done so, work through [[AspectJ CFlow|CFlow Example]].
+If you have not already done so, work through [CFlow Example]({{ site.pagesurl }}/AspectJ CFlow).
 
 Create a new annotation, @IgnoreMethod, that works just like @IgnoreField. Only this time, all changes are ignored if they happen either directly in this method or the cflow of this method.
 
-[[AspectJ Annotation AllCode|<--Back]] [[AspectJ Annotation Start|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ Annotation AllCode|<--Back]] [[AspectJ Annotation Start)

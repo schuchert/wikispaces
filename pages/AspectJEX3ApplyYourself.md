@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3ApplyYourself
 ---
-[[AspectJEX3Explained|<--Back]] [[AspectJEX3AssignmentApplications|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJEX3Explained|<--Back]] [[AspectJEX3AssignmentApplications)
 
 # Apply Yourself
 Here are some assignments to practice and reinforce what you've learned.
@@ -23,4 +23,4 @@ Add another interface to the Die class, have it implement Cloneable instead of S
 ## Introduce two interfaces
 Now change the aspect so that Die implements **both** Cloneable and Serializable.
 
-[[AspectJEX3Explained|<--Back]] [[AspectJEX3AssignmentApplications|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJEX3Explained|<--Back]] [[AspectJEX3AssignmentApplications)

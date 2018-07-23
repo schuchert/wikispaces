@@ -1,7 +1,7 @@
 ---
 title: PrinciplesOfProductDevelopmentFlow.ManagingQueues
 ---
-[[PrinciplesOfProductDevelopmentFlow|Back]]
+[Back]({{ site.pagesurl }}/PrinciplesOfProductDevelopmentFlow)
 
 **Q1:    The Principle of Invisible Inventory **
 > Product development inventory is physically and financially invisible
@@ -51,4 +51,4 @@ title: PrinciplesOfProductDevelopmentFlow.ManagingQueues
 **Q16:    The Intervention Principle**
 > We cannot rely on randomness to correct a random queue
 
-[[PrinciplesOfProductDevelopmentFlow|Back]]
+[Back]({{ site.pagesurl }}/PrinciplesOfProductDevelopmentFlow)

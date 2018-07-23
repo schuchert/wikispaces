@@ -9,7 +9,7 @@ title: Agile_Courseware
 
 ## [[Test Driven Development]]
 
-## [[Tdd.Boost.CPP|Tdd with Boost in C++]]
+## [Tdd with Boost in C++]({{ site.pagesurl }}/Tdd.Boost.CPP)
 
 ## [[Team Jeopardy]]
 

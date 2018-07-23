@@ -1,7 +1,7 @@
 ---
 title: PowerShell5.TokenizeExpression
 ---
-[[PowerShell5|<--Back]]
+[<--Back]({{ site.pagesurl }}/PowerShell5)
 
 # Overview
 The next problem is an implementation of the [[Katas.ShuntingYardAlgorithm|The Shunting Yard Algorithm Kata]]. To implement this algorithm, we need to be able to break a complex expression into its logical parts. For example:
@@ -20,11 +20,11 @@ Initially, we only want to break expressions into their logical parts. Notice, w
 # Getting Started
 Create a directory into which we will store all of the test code and the production. Given that this example leads into the [[Katas.ShuntingYardAlgorithm|The Shunting Yard Algorithm Kata]], I'll create C:\Users\Brett\shunting_yard_algorithm.
 
-## [[PowerShell5 Tokenize Expression First Failing Test|First FailingTest]]
-## [[PowerShell5.TokenizeExpression.SimpleBinaryExpressions|Simple Binary Expressions]]
-## [[PowerShell5.TokenizeExpression.FirstStabAtParentheses|First Stab At Parentheses]]
-## [[PowerShell5.TokenizeExpression.FunctionCalls|FunctionCalls]]
-## [[PowerShell5.TokenizeExpression.ConvertTokenizerToAnEnumerator|Convert Tokenizer to an Enumerator]]
-## [[PowerShell5.TokenizeExpression.FinalishVersion|My Final-ishVersion]]
-## [[PowerShell5.TokenizeExpression.AtOnePage|Tutorial As One Page]]
-[[PowerShell5|<--Back]]
+## [First FailingTest]({{ site.pagesurl }}/PowerShell5 Tokenize Expression First Failing Test)
+## [Simple Binary Expressions]({{ site.pagesurl }}/PowerShell5.TokenizeExpression.SimpleBinaryExpressions)
+## [First Stab At Parentheses]({{ site.pagesurl }}/PowerShell5.TokenizeExpression.FirstStabAtParentheses)
+## [FunctionCalls]({{ site.pagesurl }}/PowerShell5.TokenizeExpression.FunctionCalls)
+## [Convert Tokenizer to an Enumerator]({{ site.pagesurl }}/PowerShell5.TokenizeExpression.ConvertTokenizerToAnEnumerator)
+## [My Final-ishVersion]({{ site.pagesurl }}/PowerShell5.TokenizeExpression.FinalishVersion)
+## [Tutorial As One Page]({{ site.pagesurl }}/PowerShell5.TokenizeExpression.AtOnePage)
+[<--Back]({{ site.pagesurl }}/PowerShell5)

@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3ApplicationsOfIntroduction
 ---
-[[AspectJEX3AssignmentApplications|<--Back]] [[AspectJEX3AssignmentIssues|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJEX3AssignmentApplications|<--Back]] [[AspectJEX3AssignmentIssues)
 
 # Applications of Introductions
 
@@ -11,4 +11,4 @@ Here are some ideas I've heard people mention:
 * Implementing multiple inheritance
 * ...
 
-[[AspectJEX3AssignmentApplications|<--Back]] [[AspectJEX3AssignmentIssues|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJEX3AssignmentApplications|<--Back]] [[AspectJEX3AssignmentIssues)

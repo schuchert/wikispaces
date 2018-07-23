@@ -8,4 +8,4 @@ As a player, I can buy an unowned property when I land on it during a turn.
 * Land on a Property that I own, nothing happens.
 * Pass over an unowned Property, nothing happens.
 
-[[Monopoly(r) Release 3 User Stories|<--Back]]
+[<--Back]({{ site.pagesurl }}/Monopoly(r) Release 3 User Stories)

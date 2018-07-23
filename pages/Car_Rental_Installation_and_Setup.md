@@ -1,7 +1,7 @@
 ---
 title: Car_Rental_Installation_and_Setup
 ---
-[[Car Rental Example|<--Back]]
+[<--Back]({{ site.pagesurl }}/Car Rental Example)
 
 # Car Rental Installation and Setup
 
@@ -108,4 +108,4 @@ These steps are optional if you've installed Eclipse and the various libs in the
 # Select PMD:Check Code with PMD
 # Do this every so often after you've made changes to the code to see what PMD has to say about your changes.
 
-[[Car Rental Example|<--Back]]
+[<--Back]({{ site.pagesurl }}/Car Rental Example)

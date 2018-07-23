@@ -2,10 +2,10 @@
 title: NewTddStuff
 ---
 # PowerShell 5
-* [[PowerShell5|PowerShell 5]]
+* [PowerShell 5]({{ site.pagesurl }}/PowerShell5)
 # Two Day Tdd Resources
 * [[RpnCalculatorCppExampleImplementation]]
 * [[2daycpptddresources]]
 * [[2dayjavatddresources]]
-* [[Tdd.Problems|Problems]]
-* [[Tdd.3_DayOutline|3 Day Outline]]
+* [Problems]({{ site.pagesurl }}/Tdd.Problems)
+* [3 Day Outline]({{ site.pagesurl }}/Tdd.3_DayOutline)

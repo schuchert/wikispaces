@@ -1,8 +1,8 @@
 ---
 title: JBossAOPEX3ApplicationsOfIntroductions
 ---
-[[JBossAOPEX3AssignmentApplications|<--Back]] [[JBossEX3AssignmentIssues|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossAOPEX3AssignmentApplications|<--Back]] [[JBossEX3AssignmentIssues)
 
 TBD
 
-[[JBossAOPEX3AssignmentApplications|<--Back]] [[JBossEX3AssignmentIssues|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossAOPEX3AssignmentApplications|<--Back]] [[JBossEX3AssignmentIssues)

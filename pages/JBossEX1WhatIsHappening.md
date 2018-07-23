@@ -1,7 +1,7 @@
 ---
 title: JBossEX1WhatIsHappening
 ---
-[[JBossEX1Possibilities|<--Back]] [[JBossEX1SoWhatIsHappening|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossEX1Possibilities|<--Back]] [[JBossEX1SoWhatIsHappening)
 
 ## What Is Happening
 Let’s take a step back. We just thought of ways this might have happened. When we did that, we were thinking in terms of “how” or implementation. Before we continue, let’s think of “what” is happening. You might think of this as “requirements” or “a use case”.
@@ -9,4 +9,4 @@ Let’s take a step back. We just thought of ways this might have happened. When
 ## Assignment: Describe What
 So your next assignment is to write down a description of what is happening. As you write your description, consider writing it without resorting to too much technological terminology. Please do so before continuing on to the next section.
 
-[[JBossEX1Possibilities|<--Back]] [[JBossEX1SoWhatIsHappening|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossEX1Possibilities|<--Back]] [[JBossEX1SoWhatIsHappening)

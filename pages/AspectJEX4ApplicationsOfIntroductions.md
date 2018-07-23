@@ -1,8 +1,8 @@
 ---
 title: AspectJEX4ApplicationsOfIntroductions
 ---
-[[AspectJEX4AssignmentApplications|<--Back]] [[AspectJEX4AssignmentIssues|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJEX4AssignmentApplications|<--Back]] [[AspectJEX4AssignmentIssues)
 
 TBD
 
-[[AspectJEX4AssignmentApplications|<--Back]] [[AspectJEX4AssignmentIssues|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJEX4AssignmentApplications|<--Back]] [[AspectJEX4AssignmentIssues)

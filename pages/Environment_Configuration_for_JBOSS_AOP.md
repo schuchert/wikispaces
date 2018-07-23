@@ -19,7 +19,7 @@ These examples require JBoss AOP 1.5.0. They were originally written using 1.3.4
 Download JBoss AOP from [[http://www.jboss.com/products/list/downloads#aop|here]].
 
 ## Eclipse Configuration for JBoss AOP
-The following additional configuration sets will set your Eclipse configuration up the way I've set it up for all of these examples. You can click on individual links or just follow the [[Eclipse VM Configuration for JBoss AOP|Next-->]] link below:
+The following additional configuration sets will set your Eclipse configuration up the way I've set it up for all of these examples. You can click on individual links or just follow the [Next-->]({{ site.pagesurl }}/Eclipse VM Configuration for JBoss AOP) link below:
 * [[Eclipse VM Configuration for JBoss AOP]]
 * [[Eclipse Classpath Variable for JBoss AOP]]
 * [[Eclipse Java Language Preferences for JBoss AOP]]
@@ -37,4 +37,4 @@ The following additional configuration sets will set your Eclipse configuration 
 * [[JBoss AOP Example 2]]
 * [[JBoss AOP Example 3]]
 
-[[JBoss AOP Self Study|<--Back]] [[Eclipse VM Configuration for JBoss AOP|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBoss AOP Self Study|<--Back]] [[Eclipse VM Configuration for JBoss AOP)

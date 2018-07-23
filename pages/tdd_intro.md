@@ -1,4 +1,4 @@
 ---
 title: tdd_intro
 ---
-[[tdd_intro.CreatingAnEmptyProject|Creating an Empty Project]] 
+[Creating an Empty Project]({{ site.pagesurl }}/tdd_intro.CreatingAnEmptyProject) 

@@ -2,7 +2,7 @@
 title: JPA_Tutorial_1_-_Getting_Started
 ---
 {:toc}
-[[EJB 3 and Java Persistence API|<--Back]]
+[<--Back]({{ site.pagesurl }}/EJB 3 and Java Persistence API)
 
 # Introduction
 This first tutorial gives you an opportunity to work with:
@@ -49,4 +49,4 @@ Links to the individual pages:
 [[JPA Tutorial 1 - Entire Source Base]]
 [[JPA Tutorial 1 - FAQ]]
 
-[[EJB 3 and Java Persistence API|<--Back]]
+[<--Back]({{ site.pagesurl }}/EJB 3 and Java Persistence API)

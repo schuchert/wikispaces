@@ -1,7 +1,7 @@
 ---
 title: JBossEX1SoWhatIsHappening
 ---
-[[JBossEX1WhatIsHappening|<--Back]] [[JBossEX1Explained|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossEX1WhatIsHappening|<--Back]] [[JBossEX1Explained)
 
 ## So What Is Happening?
 Here are some descriptions I’ve heard some people mention:
@@ -11,4 +11,4 @@ Here are some descriptions I’ve heard some people mention:
 * We modify every method execution. Before and after the method execution we display the name of the method.
 * ...
 
-[[JBossEX1WhatIsHappening|<--Back]] [[JBossEX1Explained|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossEX1WhatIsHappening|<--Back]] [[JBossEX1Explained)

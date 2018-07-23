@@ -1,7 +1,7 @@
 ---
 title: tddisnotenough.GRASP
 ---
-[[tddisnotenough#GRASP|<==Back]]
+[<==Back]({{ site.pagesurl }}/tddisnotenough#GRASP)
 
 ||~ Name||~ Summary Description||
 ||Information Expert||Assign responsibility to the thing that has the information.||
@@ -12,4 +12,4 @@ title: tddisnotenough.GRASP
 ||Pure Fabrication||Create a class that does not come from the domain to assist in maintaining high cohesion and low coupling.||
 ||Protected Variations||Protect things by finding the change points and wrapping them behind an interface. Use polymorphism to introduce variance.||
 
-[[tddisnotenough#GRASP|<==Back]]
+[<==Back]({{ site.pagesurl }}/tddisnotenough#GRASP)

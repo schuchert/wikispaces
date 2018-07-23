@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX3ExpectedVersusActualOutput
 ---
-[[JBoss AOP Example 3|<--Back]] [[JBossAOPEX3Possibilities|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBoss AOP Example 3|<--Back]] [[JBossAOPEX3Possibilities)
 
 # Expected Versus Actual Output
 ## Expected Output
@@ -24,4 +24,4 @@ Not saving: class ex3.Address, it is unchanged
 ## Assignment: Form a Theory
 Spend a few moments and try to figure out how to make this output happen. Write down those ideas. Please do so before continuing to the next section.
 
-[[JBoss AOP Example 3|<--Back]] [[JBossAOPEX3Possibilities|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBoss AOP Example 3|<--Back]] [[JBossAOPEX3Possibilities)

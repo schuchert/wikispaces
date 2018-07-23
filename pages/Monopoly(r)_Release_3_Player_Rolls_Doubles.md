@@ -16,4 +16,4 @@ For each of these tests, there could be several side effects:
 * Player might land on Go To Jail, etc.
 Do you think we need to include these conditions in these test? Why or why not?
 
-[[Monopoly(r) Release 3 User Stories|<--Back]]
+[<--Back]({{ site.pagesurl }}/Monopoly(r) Release 3 User Stories)

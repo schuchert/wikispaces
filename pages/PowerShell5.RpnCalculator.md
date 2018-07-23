@@ -1,6 +1,6 @@
 ---
 title: PowerShell5.RpnCalculator
 ---
-[[PowerShell5|<--Back]]
-This will fuse [[RPN+Calculator|The Rpn Calculator]], which is one of my favorite practice problems.
-[[PowerShell5|<--Back]]
+[<--Back]({{ site.pagesurl }}/PowerShell5)
+This will fuse [The Rpn Calculator]({{ site.pagesurl }}/RPN+Calculator), which is one of my favorite practice problems.
+[<--Back]({{ site.pagesurl }}/PowerShell5)

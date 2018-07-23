@@ -1,7 +1,7 @@
 ---
 title: AspectJEX2Explained
 ---
-[[AspectJEX2SoWhatIsHappening|<--Back]] [[AspectJEX2ApplyYourself|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJEX2SoWhatIsHappening|<--Back]] [[AspectJEX2ApplyYourself)
 
 # Example 2 Explained
 Accessing a field in Java is a joinpoint exposed by the AspectJ joinpoint model. This is different from method execution in that captures things like the following: 
@@ -82,4 +82,4 @@ To make this example work, we need two additional things:
 ||Line||Description||
 ||3||Tell the weaver to use the aspect of type ex2.FieldSetAspect||
 ||6||Apply this aspect only to classes whose package start with ex2.||
-[[AspectJEX2SoWhatIsHappening|<--Back]] [[AspectJEX2ApplyYourself|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJEX2SoWhatIsHappening|<--Back]] [[AspectJEX2ApplyYourself)

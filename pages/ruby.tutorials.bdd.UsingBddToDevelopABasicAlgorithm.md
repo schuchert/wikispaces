@@ -1,7 +1,7 @@
 ---
 title: ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm
 ---
-[[ruby.tutorials|<--Back]]
+[<--Back]({{ site.pagesurl }}/ruby.tutorials)
 
 # Overview
 {:toc}
@@ -2655,5 +2655,5 @@ Here is the last version I ended up with after the tutorial. You result may vary
     end
 ```
 
-[[ruby.tutorials|<--Back]]
+[<--Back]({{ site.pagesurl }}/ruby.tutorials)
 

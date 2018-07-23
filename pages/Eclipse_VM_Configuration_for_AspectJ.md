@@ -1,7 +1,7 @@
 ---
 title: Eclipse_VM_Configuration_for_AspectJ
 ---
-[[Environment Configuration for AspectJ|<--Back]] [[Eclipse Classpath Variable for AspectJ|Next-->]]
+[Next-->]({{ site.pagesurl }}/Environment Configuration for AspectJ|<--Back]] [[Eclipse Classpath Variable for AspectJ)
 
 Your goal is to configure the Java VM to include one additional parameter:
 > -javaagent:/AOP/aspectj/lib/aspectjweaver.jar
@@ -18,4 +18,4 @@ In Eclipse:
 
 > [[image:JBossAOPJREConfiguration.jpg]]
 
-[[Environment Configuration for AspectJ|<--Back]] [[Eclipse Classpath Variable for AspectJ|Next-->]]
+[Next-->]({{ site.pagesurl }}/Environment Configuration for AspectJ|<--Back]] [[Eclipse Classpath Variable for AspectJ)

@@ -1,7 +1,7 @@
 ---
 title: PrinciplesOfProductDevelopmentFlow.ReducingBatchSize
 ---
-[[PrinciplesOfProductDevelopmentFlow|Back]]
+[Back]({{ site.pagesurl }}/PrinciplesOfProductDevelopmentFlow)
 
 **B1:    The Batch Size Queueing Principle **
 > Reducing batch size reduces cycle time
@@ -69,4 +69,4 @@ title: PrinciplesOfProductDevelopmentFlow.ReducingBatchSize
 **B22:    The Principle of Dynamic Batch Size**
 > Adjust batch size dynamically to response to changing economics
 
-[[PrinciplesOfProductDevelopmentFlow|Back]]
+[Back]({{ site.pagesurl }}/PrinciplesOfProductDevelopmentFlow)

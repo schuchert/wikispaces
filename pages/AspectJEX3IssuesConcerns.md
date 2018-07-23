@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3IssuesConcerns
 ---
-[[AspectJEX3AssignmentIssues|<--Back]] [[AspectJ Example 4|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJEX3AssignmentIssues|<--Back]] [[AspectJ Example 4)
 
 # Issues/Concerns
 Here are some issues and concerns that I've heard people mention:
@@ -11,4 +11,4 @@ Here are some issues and concerns that I've heard people mention:
 * We can no longer know the hierarchy at compile time
 * ...
 
-[[AspectJEX3AssignmentIssues|<--Back]] [[AspectJ Example 4|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJEX3AssignmentIssues|<--Back]] [[AspectJ Example 4)

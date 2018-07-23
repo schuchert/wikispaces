@@ -9,4 +9,4 @@ title: ndc
 >> ==[[FitNesse.Tutorials|Tutorials]]
 
 # The Slides
->> ==[[file:NdcTutorialExecutableStories.pdf|Slides]]
+>> ==[Slides]({{ site.pagesurl }}/file:NdcTutorialExecutableStories.pdf)

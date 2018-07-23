@@ -8,4 +8,4 @@ As a game, if a Player is in jail when it is their turn, I give them the option 
 ** Player pays. Player moved to Just Visiting and takes normal turn.
 ** Player does not pay, Player takes turn.
 
-[[Monopoly(r) Release 4 User Stories|<--Back]]
+[<--Back]({{ site.pagesurl }}/Monopoly(r) Release 4 User Stories)

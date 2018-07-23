@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_Observation
 ---
-[[AspectJ Annotation Experience|<--Back]] [[AspectJ Annotation Thinking|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ Annotation Experience|<--Back]] [[AspectJ Annotation Thinking)
 
 # AspectJ Annotation: Observation
 
@@ -12,4 +12,4 @@ Now review what you've just experience. Take a few moments and write down answer
 * What in the code do you think is driving the effect?
 * How do you think this is accomplished?
 
-[[AspectJ Annotation Experience|<--Back]] [[AspectJ Annotation Thinking|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ Annotation Experience|<--Back]] [[AspectJ Annotation Thinking)

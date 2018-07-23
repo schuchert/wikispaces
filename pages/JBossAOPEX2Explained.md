@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX2Explained
 ---
-[[JBossAOPEX2SoWhatIsHappening|<--Back]] [[JBossAOPEX2ApplyYourself|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossAOPEX2SoWhatIsHappening|<--Back]] [[JBossAOPEX2ApplyYourself)
 
 # Example 2 Explained
 Accessing a field in Java is a joinpoint exposed by the JBoss AOP joinpoint model. This is different from method execution in that captures things like the following: 
@@ -75,4 +75,4 @@ To make this example work, we need two additional things:
 ||3 - 4||Define a pointcut that matches all sets of private fields of type String on all classes called Address. If we wanted to get all types, we could replace "java.lang.String" with "*". If we didn't care if the field was private, simply leave private out.||
 ||6 - 8||Bind the pointcut defined above to the SetInterceptor class.||
 
-[[JBossAOPEX2SoWhatIsHappening|<--Back]] [[JBossAOPEX2ApplyYourself|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossAOPEX2SoWhatIsHappening|<--Back]] [[JBossAOPEX2ApplyYourself)

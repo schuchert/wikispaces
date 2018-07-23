@@ -1,7 +1,7 @@
 ---
 title: AspectJ_CFlowExplained
 ---
-[[AspectJ CFlowSoWhatIsHappening|<--Back]] [[AspectJ CFlowApplyYourself|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ CFlowSoWhatIsHappening|<--Back]] [[AspectJ CFlowApplyYourself)
 
 # CFlow
 CFlow, or control flow, allows the selection of pointcuts based on the program flow at runtime. Most of the pointcuts you've reviewed so far have probably been selectable at weave time. For example, call matches pointcuts that call a particular method; execution matches the execution of code whose signature matches. AspectJ determines both of these examples without having to execute the program.
@@ -121,7 +121,7 @@ What follows is a breakdown of all the code for this example.
 09: }
 ```
 ### Interesting Lines
-This class is unchanged from [[AspectJEX4Explained#Dao|Example 4]].
+This class is unchanged from [Example 4]({{ site.pagesurl }}/AspectJEX4Explained#Dao).
 ----
 [[#FieldSetAspect]]
 ## FieldSetAspect.java
@@ -202,7 +202,7 @@ This class is unchanged from [[AspectJEX4Explained#Dao|Example 4]].
 10: }
 ```
 ### Interesting Lines
-None. This is unchanged from [[AspectJEX4Explained#InnerTypeAspect|Example 4]].
+None. This is unchanged from [Example 4]({{ site.pagesurl }}/AspectJEX4Explained#InnerTypeAspect).
 ----
 [[#ITrackedObject]]
 ## ITrackedObject.java
@@ -216,7 +216,7 @@ None. This is unchanged from [[AspectJEX4Explained#InnerTypeAspect|Example 4]].
 07: }
 ```
 ### Interesting Lines
-None. This is unchanged from [[AspectJEX4Explained#ItrackedObject|Example 4]].
+None. This is unchanged from [Example 4]({{ site.pagesurl }}/AspectJEX4Explained#ItrackedObject).
 ----
 [[#Main]]
 ## Main.java
@@ -237,7 +237,7 @@ None. This is unchanged from [[AspectJEX4Explained#ItrackedObject|Example 4]].
 ```
 ### Interesting Lines
 ||Line||Description||
-||5||We construct an address. In [[AspectJ Example 4] this did not cause a change because construction did not cause anything to be initialized. In [[AspectJEX4ApplyYourself#ExperimentConstructorUpdatesAddress| this exercise]] we found out that if it had, it would cause Address to be changed. We managed to change that by using cflow.||
+||5||We construct an address. In [ this exercise]({{ site.pagesurl }}/AspectJ Example 4] this did not cause a change because construction did not cause anything to be initialized. In [[AspectJEX4ApplyYourself#ExperimentConstructorUpdatesAddress) we found out that if it had, it would cause Address to be changed. We managed to change that by using cflow.||
 ----
 [[#SaveMethodAspect]]
 ## SaveMethodAspect.java
@@ -276,7 +276,7 @@ None. This is unchanged from [[AspectJEX4Explained#ItrackedObject|Example 4]].
 32: }
 ```
 ### Interesting Lines
-None. This class is unchanged from [[AspectJEX4Explained#SaveMethodAspect|Example 4]].
+None. This class is unchanged from [Example 4]({{ site.pagesurl }}/AspectJEX4Explained#SaveMethodAspect).
 ----
 [[#TrackedObjectMixin]]
 ## TrackedObjectMixin.java
@@ -316,6 +316,6 @@ None. This class is unchanged from [[AspectJEX4Explained#TrackedObjectMixin|Exam
 10: </aspectj>
 ```
 ### Interesting Lines
-None. This class is unchanged from [[AspectJEX4Explained#aop|Example 4]].
+None. This class is unchanged from [Example 4]({{ site.pagesurl }}/AspectJEX4Explained#aop).
 
-[[AspectJ CFlowSoWhatIsHappening|<--Back]] [[AspectJ CFlowApplyYourself|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ CFlowSoWhatIsHappening|<--Back]] [[AspectJ CFlowApplyYourself)

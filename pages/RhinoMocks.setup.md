@@ -6,6 +6,6 @@ title: RhinoMocks.setup
 * [[http://www.ayende.com/projects/rhino-mocks/downloads.aspx|Download Rhino from here.]]. Note you'll need to pick a version that matches the version of .Net your project uses.
 * Extract the zip somewhere (I used c:\libs\Rhino)
 * Add a Reference to your project: Project:Add Reference (Browse Tab), search for the Rhino.Mocks.dll and add it.
-* Here is a stand-alone example showing how to do a few common things in Rhino: [[RhinoMock.examples.BasicUsage|Basic Usage Example]].
-* Here is a simple example that tests a LoginService with all of the dependencies left as interfaces: [[RhinoMocks.examples.SampleLoginApplication|Sample Login Application]].
+* Here is a stand-alone example showing how to do a few common things in Rhino: [Basic Usage Example]({{ site.pagesurl }}/RhinoMock.examples.BasicUsage).
+* Here is a simple example that tests a LoginService with all of the dependencies left as interfaces: [Sample Login Application]({{ site.pagesurl }}/RhinoMocks.examples.SampleLoginApplication).
 

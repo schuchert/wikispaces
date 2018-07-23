@@ -1,10 +1,10 @@
 ---
 title: JUnit_4.xAtAfter
 ---
-[[JUnit 4.x#AtAfter|<--Back]]
+[<--Back]({{ site.pagesurl }}/JUnit 4.x#AtAfter)
 
 # @After
-@After is the opposite of [[JUnit 4.xAtBefore|@Before]]. It is executed after each unit test. JUnit prior to version 4.0 had an equivalent method, tearDown, you could optionally define in a test class to get similar behavior. There are differences:
+@After is the opposite of [@Before]({{ site.pagesurl }}/JUnit 4.xAtBefore). It is executed after each unit test. JUnit prior to version 4.0 had an equivalent method, tearDown, you could optionally define in a test class to get similar behavior. There are differences:
 * You can call your method anything you want.
 * You can have more than one.
 * Any methods annotated with @After in superclasses are executed **//after//** methods in the derived class. That is, they execute bottom to top, just the opposite of top to bottom.
@@ -30,4 +30,4 @@ And here's the equivalent in JUnit before 4.0.
 65:     }
 ```
 
-[[JUnit 4.x#AtAfter|<--Back]]
+[<--Back]({{ site.pagesurl }}/JUnit 4.x#AtAfter)

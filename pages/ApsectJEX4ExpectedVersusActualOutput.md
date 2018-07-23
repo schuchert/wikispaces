@@ -1,7 +1,7 @@
 ---
 title: ApsectJEX4ExpectedVersusActualOutput
 ---
-[[AspectJ Example 4|<--Back]] [[AspectJEX4Possibilities|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ Example 4|<--Back]] [[AspectJEX4Possibilities)
 
 # Expected Versus Actual Output
 ## Expected Output
@@ -24,4 +24,4 @@ Not saving: class ex3.Address, it is unchanged
 ## Assignment: Form a Theory
 Spend a few moments and try to figure out how to make this output happen. Write down those ideas. Please do so before continuing to the next section.
 
-[[AspectJ Example 4|<--Back]] [[AspectJEX4Possibilities|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ Example 4|<--Back]] [[AspectJEX4Possibilities)

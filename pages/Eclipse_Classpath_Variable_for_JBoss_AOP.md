@@ -1,7 +1,7 @@
 ---
 title: Eclipse_Classpath_Variable_for_JBoss_AOP
 ---
-[[Eclipse VM Configuration for JBoss AOP|<--Back]] [[Eclipse Java Language Preferences for JBoss AOP|Next-->]]
+[Next-->]({{ site.pagesurl }}/Eclipse VM Configuration for JBoss AOP|<--Back]] [[Eclipse Java Language Preferences for JBoss AOP)
 
 In Eclipse, do the following:
 # Pull down the **Windows** menu
@@ -17,4 +17,4 @@ In Eclipse, do the following:
 
 Note, if you installed JBoss AOP somewhere else or used a different version, update the above entry accordingly.
 
-[[Eclipse VM Configuration for JBoss AOP|<--Back]] [[Eclipse Java Language Preferences for JBoss AOP|Next-->]]
+[Next-->]({{ site.pagesurl }}/Eclipse VM Configuration for JBoss AOP|<--Back]] [[Eclipse Java Language Preferences for JBoss AOP)

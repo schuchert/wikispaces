@@ -1,7 +1,7 @@
 ---
 title: Checkstyle_in_Eclipse
 ---
-[[Tool Setup and Configuration Notes|<--Back]]
+[<--Back]({{ site.pagesurl }}/Tool Setup and Configuration Notes)
 
 **Install Checkstyle**
 # Start Eclipse
@@ -20,4 +20,4 @@ title: Checkstyle_in_Eclipse
 # Set your project's Checkstyle preferences by right-clicking on it, ...
 
 
-[[Tool Setup and Configuration Notes|<--Back]]
+[<--Back]({{ site.pagesurl }}/Tool Setup and Configuration Notes)

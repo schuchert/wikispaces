@@ -1,8 +1,8 @@
 ---
 title: ExtractingSourceFilesIntoProject
 ---
-[[Environment Configuration for JBOSS AOP|<--Back JBoss AOP]] -or- [[JBoss AOP Example 1]]
-[[Environment Configuration for AspectJ|<--Back AspectJ]] -or- [[AspectJ Example 1]]
+[<--Back JBoss AOP]] -or- [[JBoss AOP Example 1]({{ site.pagesurl }}/Environment Configuration for JBOSS AOP)
+[<--Back AspectJ]] -or- [[AspectJ Example 1]({{ site.pagesurl }}/Environment Configuration for AspectJ)
 
 # These ZIP files assume you have a separate source and output folder as described in [[Eclipse Java Project Preferences for JBoss AOP]]
 # Create an Eclipse project
@@ -13,5 +13,5 @@ title: ExtractingSourceFilesIntoProject
 # Extract the downloaded ZIP into the project's directory
 # Back in Eclipse, right-click on the project and select **Refresh**
 
-[[Environment Configuration for JBOSS AOP|<--Back JBoss AOP]] -or- [[JBoss AOP Example 1]]
-[[Environment Configuration for AspectJ|<--Back AspectJ]] -or- [[AspectJ Example 1]]
+[<--Back JBoss AOP]] -or- [[JBoss AOP Example 1]({{ site.pagesurl }}/Environment Configuration for JBOSS AOP)
+[<--Back AspectJ]] -or- [[AspectJ Example 1]({{ site.pagesurl }}/Environment Configuration for AspectJ)

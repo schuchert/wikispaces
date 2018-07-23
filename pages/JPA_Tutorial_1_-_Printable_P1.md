@@ -1,7 +1,7 @@
 ---
 title: JPA_Tutorial_1_-_Printable_P1
 ---
-[[EJB 3 and Java Persistence API|<-Back]]
+[<-Back]({{ site.pagesurl }}/EJB 3 and Java Persistence API)
 
 # JPA Tutorial 3 - A Mini Application PI
 
@@ -16,4 +16,4 @@ In this example we start with a simple domain model and migrate it just a bit to
 ## V1 First Test Suite
 [[include page="JPA Tutorial 3 - V1 First Test Suite"]]
 
-[[EJB 3 and Java Persistence API|<-Back]]
+[<-Back]({{ site.pagesurl }}/EJB 3 and Java Persistence API)

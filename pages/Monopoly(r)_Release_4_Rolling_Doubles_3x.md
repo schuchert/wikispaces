@@ -8,4 +8,4 @@ As a player, when I roll doubles three times in a row during the same turn, I Go
 * Roll doubles 3 times in a row, pass or land on go during first two rolls. Balance increases by $200. Player is in Jail.
 * Roll doubles 2 times in a row. Player is not in Jail.
 
-[[Monopoly(r) Release 4 User Stories|<--Back]]
+[<--Back]({{ site.pagesurl }}/Monopoly(r) Release 4 User Stories)

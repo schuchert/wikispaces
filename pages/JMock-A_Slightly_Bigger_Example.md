@@ -1,7 +1,7 @@
 ---
 title: JMock-A_Slightly_Bigger_Example
 ---
-[[TDD Example Catalog|<--Back]]
+[<--Back]({{ site.pagesurl }}/TDD Example Catalog)
 
 ## Introduction
 This is a complete, albeit simple, example using jMock. To get this running, you'll need to do the following
@@ -151,4 +151,4 @@ public class InsufficientFunds extends RuntimeException {
 }
 ```
 
-[[TDD Example Catalog|<--Back]]
+[<--Back]({{ site.pagesurl }}/TDD Example Catalog)

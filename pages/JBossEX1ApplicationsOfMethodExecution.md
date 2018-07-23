@@ -1,7 +1,7 @@
 ---
 title: JBossEX1ApplicationsOfMethodExecution
 ---
-[[JBossEX1AssignmentApplications|<--Back]] [[JBossEX1AssignmentIssues|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossEX1AssignmentApplications|<--Back]] [[JBossEX1AssignmentIssues)
 
 ## Applications of Method Execution
 Here are some things I’ve heard people mention:
@@ -10,4 +10,4 @@ Here are some things I’ve heard people mention:
 * Copying method execution to a second target automatically
 * …
 
-[[JBossEX1AssignmentApplications|<--Back]] [[JBossEX1AssignmentIssues|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossEX1AssignmentApplications|<--Back]] [[JBossEX1AssignmentIssues)

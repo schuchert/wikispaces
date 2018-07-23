@@ -2,11 +2,11 @@
 title: Car_Rental_Code_Coverage_with_Cobertura
 ---
 {:toc}
-[[Car Rental Example|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.type|Next-->]]
+[Next-->]({{ site.pagesurl }}/Car Rental Example|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.type)
 
 # Code Coverage with Cobertura
 
-This example is based on the [[Car Rental Example]]. If you want work through this example, you need to follow [[Car Rental Installation and Setup|these instructions]] first.
+This example is based on the [these instructions]({{ site.pagesurl }}/Car Rental Example]]. If you want work through this example, you need to follow [[Car Rental Installation and Setup) first.
 
 In this example, we add code coverage to the Car Rental Application. We then examine the results, make some changes and finish with a few conclusions. 
 
@@ -20,10 +20,10 @@ Let's get started:
 # Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
 
 **suite() method**
-Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [[JUnit 4.xSuite|suite()]] method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
+Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [suite()]({{ site.pagesurl }}/JUnit 4.xSuite) method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
  
 **Ant Script**
-When you followed [[Car Rental Installation and Setup|these instructions]], you should have created a workspace with three projects:
+When you followed [these instructions]({{ site.pagesurl }}/Car Rental Installation and Setup), you should have created a workspace with three projects:
 * CarRental
 * LoggingUtils
 * ToolConfiguration
@@ -174,4 +174,4 @@ Let's begin by working from the worst pacakge to the best package. This gives us
 
 Even though the last two packages already have 90% coverage, we'll review them anyway.
 
-[[Car Rental Example|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.type|Next-->]]
+[Next-->]({{ site.pagesurl }}/Car Rental Example|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.type)

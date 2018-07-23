@@ -6,15 +6,15 @@ title: TDD_Example_Catalog
 * [[Full Coverage when Expecting an Exception]]
 
 # jMock 2.0
-* [[JMock-Demystifying The Beast|Demystifying The Beast]]
-* [[JMock-Fixed Return Value|Fixed Return Value]]
-* [[JMock-Verify Method Called Exactly Once|Verify Method Called Exactly Once]]
-* [[JMock-Verify Method Called With Value|Verify Method Called With Value]]
-* [[JMock-Minimal Failing Example|Minimal Failing Example]]
-* [[JMock-A Slightly Bigger Example|A Slightly Bigger Example]]
-* [[JMock-Example validating sequencing of method invocations|Example validating sequencing of method invocations]]
+* [Demystifying The Beast]({{ site.pagesurl }}/JMock-Demystifying The Beast)
+* [Fixed Return Value]({{ site.pagesurl }}/JMock-Fixed Return Value)
+* [Verify Method Called Exactly Once]({{ site.pagesurl }}/JMock-Verify Method Called Exactly Once)
+* [Verify Method Called With Value]({{ site.pagesurl }}/JMock-Verify Method Called With Value)
+* [Minimal Failing Example]({{ site.pagesurl }}/JMock-Minimal Failing Example)
+* [A Slightly Bigger Example]({{ site.pagesurl }}/JMock-A Slightly Bigger Example)
+* [Example validating sequencing of method invocations]({{ site.pagesurl }}/JMock-Example validating sequencing of method invocations)
 
 # RhinoMock
-* [[RhinoMocks.setup|Setup]]
-* [[RhinoMock.examples.BasicUsage|Basic Usage Examples]]
-* [[RhinoMocks.examples.SampleLoginApplication|Sample Login Application]]
+* [Setup]({{ site.pagesurl }}/RhinoMocks.setup)
+* [Basic Usage Examples]({{ site.pagesurl }}/RhinoMock.examples.BasicUsage)
+* [Sample Login Application]({{ site.pagesurl }}/RhinoMocks.examples.SampleLoginApplication)

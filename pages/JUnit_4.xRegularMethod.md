@@ -1,9 +1,9 @@
 ---
 title: JUnit_4.xRegularMethod
 ---
-[[JUnit 4.x#RegularMethod|<--Back]]
+[<--Back]({{ site.pagesurl }}/JUnit 4.x#RegularMethod)
 
 # Regular Methods
 This is just a regular method. It has no special meaning in JUnit 4.0.
 
-[[JUnit 4.x#RegularMethod|<--Back]]
+[<--Back]({{ site.pagesurl }}/JUnit 4.x#RegularMethod)

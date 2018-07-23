@@ -1,7 +1,7 @@
 ---
 title: AspectJ_CFlow_ExpectedVersusActualOutput
 ---
-[[AspectJ CFlow|<--Back]] [[AspectJ CFlowFormTheory|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ CFlow|<--Back]] [[AspectJ CFlowFormTheory)
 
 ## Expected Output
 Did you guess the output would look something like this? (Note this would be the output if we did not use the cflow pointcut.)
@@ -20,7 +20,7 @@ Saving: class cf.Address
 Not saving: class cf.Address, it is unchanged
 ```
 
-[[AspectJ CFlow|<--Back]] [[AspectJ CFlowFormTheory|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ CFlow|<--Back]] [[AspectJ CFlowFormTheory)
 
 
 

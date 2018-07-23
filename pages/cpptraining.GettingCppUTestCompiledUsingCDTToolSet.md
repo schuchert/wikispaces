@@ -1,10 +1,10 @@
 ---
 title: cpptraining.GettingCppUTestCompiledUsingCDTToolSet
 ---
-[[cpptraining#gettingfirsttestrunning|<--Back]]
+[<--Back]({{ site.pagesurl }}/cpptraining#gettingfirsttestrunning)
 
 # Background
-These steps assume you are using the CDT's tool set. Before following these instructions, please make sure you have [[cpptraining.GettingStartedWithEclipseCdt|followed these instructions first.]]
+These steps assume you are using the CDT's tool set. Before following these instructions, please make sure you have [followed these instructions first.]({{ site.pagesurl }}/cpptraining.GettingStartedWithEclipseCdt)
 
 # Steps
 * Update your path to include the// **bin**// directories under mingw and msys. These directories were installed under the Eclipse directory when installing the [[http://code.google.com/a/eclipselabs.org/p/wascana/|wascana plugin]]. In my particular case, I installed Eclipse under C:\learncpp\eclipse, so I added to my path for all DOS shells: 
@@ -112,4 +112,4 @@ C:\workspaces\CppUTest>
 ```
 
 
-[[cpptraining#gettingfirsttestrunning|<--Back]]
+[<--Back]({{ site.pagesurl }}/cpptraining#gettingfirsttestrunning)

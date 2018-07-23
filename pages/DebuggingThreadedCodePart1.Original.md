@@ -24,7 +24,7 @@ The name should be a hint that it has problems, and it does. If a single instanc
 Think it is not possible? It is. 
 ----
 ## What is an atomic operation in the JVM?
-You can safely [[DebuggingThreadedCodePart1.Original#SkipOverBytecodeInformation|skip]] this section if you are not interested in the bit-head information.
+You can safely [skip]({{ site.pagesurl }}/DebuggingThreadedCodePart1.Original#SkipOverBytecodeInformation) this section if you are not interested in the bit-head information.
 
 What is an atomic operation? Any operation that cannot be interrupted from when it starts to when it completes. For example, in the following code, line 5, where 1 is assigned to i, is atomic. It cannot be interrupted:
 ```java
@@ -183,7 +183,7 @@ At a first glance, that is the primary purpose of [[http://www.haifa.ibm.com/pro
 Describing how [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] actually accomplishes this, and what other features it offers, is better described by several [[http://www.haifa.ibm.com/projects/verification/contest/publications.html|publications.]]
 ----
 ## Manual Instrumentation is for the Birds
-A short time before writing this, I wrote something on using the -javaagent VM argument for dynamic instrumentation ([[JavaAgent]]) of classes while they are loaded into the Java VM. I wrote that in support of applying [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] instrumentation automatically using so-called dynamic instrumentation. I do not not like the manual step of instrumenting my classes with [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] every time I was ready to run my tests.
+A short time before writing this, I wrote something on using the -javaagent VM argument for dynamic instrumentation ([ConTest]({{ site.pagesurl }}/JavaAgent]]) of classes while they are loaded into the Java VM. I wrote that in support of applying [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] instrumentation automatically using so-called dynamic instrumentation. I do not not like the manual step of instrumenting my classes with [[http://www.haifa.ibm.com/projects/verification/contest/index.html) every time I was ready to run my tests.
 
 To instrument your classes using [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]], you issue a command like the following:
 ```terminal
@@ -203,7 +203,7 @@ This does require some command-line parameters when starting the JVM (or some on
 
 The first (one time) step, makes sure every time my IDE runs the Java VM, it passes parameters to the Java VM. Those parameters cause the registration of a class that uses the [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] instrumentation infrastructure on each individual class loaded so I can avoid the manual step of instrumentation.
 
-If you want to read more on how that happens, go [[JavaAgent|here]].
+If you want to read more on how that happens, go [here]({{ site.pagesurl }}/JavaAgent).
 ----
 ## Trying It Yourself
 Here's a jar file you can use that will give you the same results: [[file:Registrar.jar]]

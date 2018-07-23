@@ -10,4 +10,4 @@ As a Player, landing on Income Tax forces me to pay the smaller of 10% of my tot
 * During a turn, a Player with an initial total worth of $2000 lands on Income Tax. The balance decreases by $200.
 * During a turn, a Player passes over Income Tax. Nothing happens.
 
-[[Monopoly(r) Release 2 User Stories|<--Back]]
+[<--Back]({{ site.pagesurl }}/Monopoly(r) Release 2 User Stories)

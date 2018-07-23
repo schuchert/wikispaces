@@ -1,16 +1,16 @@
 ---
 title: iPhone.SettingUpTheEnvionment
 ---
-{:toc}[[iPhone|<-- Back]]
+{:toc}[<-- Back]({{ site.pagesurl }}/iPhone)
 
 # UNDER CONSTRUCTION
-[[iPhone.setup.xcode3|Old Setup for XCode 3]]
+[Old Setup for XCode 3]({{ site.pagesurl }}/iPhone.setup.xcode3)
 # The Video
 
 # Basic Application Setup
 Note: This "works" and as I get better with XCode 4 I hope to improve this setup. If you know how to do this better, please let me know so I can learn about it and document it!
 
-If you want to get get to it, [[iPhone.SettingUpTheEnvionment#backgroundSkipped|then skip this section]].
+If you want to get get to it, [then skip this section]({{ site.pagesurl }}/iPhone.SettingUpTheEnvionment#backgroundSkipped).
 These notes are for XCode 4 and GHUnit 0.4.28. Each project I set up will have a minimum of 3 projects:
 * The project containing the view-specific code
 * The project containing the Unit Tests
@@ -201,4 +201,4 @@ Now the hard part starts.
 || Command-alt up-arrow || Switch between .h and .m ||
 
 
-[[iPhone|<-- Back]]
+[<-- Back]({{ site.pagesurl }}/iPhone)

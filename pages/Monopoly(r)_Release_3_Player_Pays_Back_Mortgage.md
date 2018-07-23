@@ -9,4 +9,4 @@ As a Player, I can pay back the mortgage on a property.
 * Player tries to pay for property that is not owned. Fails.
 * Player tries to pay for property they do not own. Fails.
 
-[[Monopoly(r) Release 3 User Stories|<--Back]]
+[<--Back]({{ site.pagesurl }}/Monopoly(r) Release 3 User Stories)

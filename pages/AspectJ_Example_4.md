@@ -1,10 +1,10 @@
 ---
 title: AspectJ_Example_4
 ---
-[[AspectJ Self Study|<--Back]] [[ApsectJEX4ExpectedVersusActualOutput|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ Self Study|<--Back]] [[ApsectJEX4ExpectedVersusActualOutput)
 
 # Predict the Output
-Source files are here: [[file:AspectJExample4src.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject|here]].
+Source files are here: [here]({{ site.pagesurl }}/file:AspectJExample4src.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject).
 
 Have a look at the following Java files and, as before, predict the output.
 ----
@@ -45,4 +45,4 @@ Address is unchanged from the previous example. It is a simple Java Bean style c
 ## Assignment: Predict the Output
 Please take a few moments to predict the output before moving on.
 
-[[AspectJ Self Study|<--Back]] [[ApsectJEX4ExpectedVersusActualOutput|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ Self Study|<--Back]] [[ApsectJEX4ExpectedVersusActualOutput)

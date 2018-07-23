@@ -1,7 +1,7 @@
 ---
 title: JMock-Verify_Method_Called_With_Value
 ---
-[[TDD Example Catalog|<--Back]]
+[<--Back]({{ site.pagesurl }}/TDD Example Catalog)
 
 ||**Line**||**Effect**||
 ||5||Ignore any calls of the method getBalance() on the account object. Note if we don't do this, then calling getBalance one or more times will cause the test to fail.||
@@ -41,5 +41,5 @@ title: JMock-Verify_Method_Called_With_Value
     }
 ```
 
-[[TDD Example Catalog|<--Back]]
+[<--Back]({{ site.pagesurl }}/TDD Example Catalog)
 

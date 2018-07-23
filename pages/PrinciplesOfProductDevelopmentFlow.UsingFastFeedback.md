@@ -1,7 +1,7 @@
 ---
 title: PrinciplesOfProductDevelopmentFlow.UsingFastFeedback
 ---
-[[PrinciplesOfProductDevelopmentFlow|Back]]
+[Back]({{ site.pagesurl }}/PrinciplesOfProductDevelopmentFlow)
 
 **FF1:    The Principle of Maximum Economic Influence **
 > Focus control on project and process parameters with the highest economic influence
@@ -76,4 +76,4 @@ title: PrinciplesOfProductDevelopmentFlow.UsingFastFeedback
 > Time counts more than money
 
 
-[[PrinciplesOfProductDevelopmentFlow|Back]]
+[Back]({{ site.pagesurl }}/PrinciplesOfProductDevelopmentFlow)

@@ -1,7 +1,7 @@
 ---
 title: ShortExerciseOutlineExplained
 ---
-[[ShortExerciseOutlineThinking|<--Back]] [[ShortExerciseOutlineExercises|Next-->]]
+[Next-->]({{ site.pagesurl }}/ShortExerciseOutlineThinking|<--Back]] [[ShortExerciseOutlineExercises)
 
 # Explained
 While not part of the learning cycle per-se, I'm adding this step for three reasons:
@@ -10,4 +10,4 @@ While not part of the learning cycle per-se, I'm adding this step for three reas
 * This is a place to put additional notes that might not have been discussed in the group. 
 * If you are working on your own, it would be handy to have this information. 
 
-[[ShortExerciseOutlineThinking|<--Back]] [[ShortExerciseOutlineExercises|Next-->]]
+[Next-->]({{ site.pagesurl }}/ShortExerciseOutlineThinking|<--Back]] [[ShortExerciseOutlineExercises)

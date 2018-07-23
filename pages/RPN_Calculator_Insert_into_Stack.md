@@ -8,4 +8,4 @@ As a user I want to be able to insert a new number after an existing number on t
 * [41] 1 <enter> 19 <insert> -> [19, 41]
 * [] 4 <enter> 19 <insert> --> []/error
 
-[[RPN Calculator|<--Back]]
+[<--Back]({{ site.pagesurl }}/RPN Calculator)

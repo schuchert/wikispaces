@@ -22,7 +22,7 @@ We need something that will construct the correct kind of Location based on the 
 
 Of course, we'll test our way into this.
 
-To accomplish all of this, we're going to use the Boost C++ library and the C++ standard library. Here are a few example building blocks: [[Cxx Monopoly Building Blocks|C++ Monopoly Building Blocks]].
+To accomplish all of this, we're going to use the Boost C++ library and the C++ standard library. Here are a few example building blocks: [C++ Monopoly Building Blocks]({{ site.pagesurl }}/Cxx Monopoly Building Blocks).
 
 Here we go...
 

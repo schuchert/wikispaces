@@ -27,7 +27,7 @@ In practice, this style of review really seems to engage people, is fun and the 
 
 Here's a set of class and source files that will allow you to play:
 > [[file:temp.7z]]
-# Extract this [[www.7-zip.org|7-ZIP]] file somewhere, say C:\jeopardy
+# Extract this [7-ZIP]({{ site.pagesurl }}/www.7-zip.org) file somewhere, say C:\jeopardy
 # Make sure a 1.5 JVE is available to run the client and server
 # Start a dos shell
 # Execute the server, it requires three parameters: <name of boardfile> <port to listen on> <time_in_seconds_allowed_to_answer>

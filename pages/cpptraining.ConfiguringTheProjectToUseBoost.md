@@ -1,7 +1,7 @@
 ---
 title: cpptraining.ConfiguringTheProjectToUseBoost
 ---
-[[cpptraining|<--Back]]
+[<--Back]({{ site.pagesurl }}/cpptraining)
 
 # Configuring the Project to use Boost
 * Edit your project's properties (right-click, properties)
@@ -36,4 +36,4 @@ TEST(Dates, CanBeLinkedIn) {
 * Important: The CppUTest header files need to be included// **last**//.
 * Build and run your tests. You're really just checking that you can compile and link.
 
-[[cpptraining|<--Back]]
+[<--Back]({{ site.pagesurl }}/cpptraining)

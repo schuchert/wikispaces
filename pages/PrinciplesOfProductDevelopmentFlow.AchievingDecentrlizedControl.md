@@ -1,7 +1,7 @@
 ---
 title: PrinciplesOfProductDevelopmentFlow.AchievingDecentrlizedControl
 ---
-[[PrinciplesOfProductDevelopmentFlow|Back]]
+[Back]({{ site.pagesurl }}/PrinciplesOfProductDevelopmentFlow)
 
 **D1:    The Second Perishability Principle **
 > Decentralize control for problems and opportunities that age poorly
@@ -73,4 +73,4 @@ title: PrinciplesOfProductDevelopmentFlow.AchievingDecentrlizedControl
 > Trust is built through experience
 
 
-[[PrinciplesOfProductDevelopmentFlow|Back]]
+[Back]({{ site.pagesurl }}/PrinciplesOfProductDevelopmentFlow)

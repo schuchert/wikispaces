@@ -3,4 +3,4 @@ title: DesignPrinciples
 ---
 This page collects recurring things I mention while teaching various classes.
 
-[[DesignPrinciples.TheBigIdea|The Big Idea]]
+[The Big Idea]({{ site.pagesurl }}/DesignPrinciples.TheBigIdea)

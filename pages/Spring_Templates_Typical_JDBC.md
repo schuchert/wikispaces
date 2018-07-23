@@ -1,7 +1,7 @@
 ---
 title: Spring_Templates_Typical_JDBC
 ---
-[[Designing to Spring Templates|<--Back]]  [[Spring Templates JDBC Using Template Method Pattern|Next-->]]
+[Next-->]({{ site.pagesurl }}/Designing to Spring Templates|<--Back]]  [[Spring Templates JDBC Using Template Method Pattern)
 
 # Using JDBC Directly
 This is the base example. In it we:
@@ -131,4 +131,4 @@ Since this is NOT a JDBC example but rather I use JDBC as a vehicle to better un
 ### Interesting Lines
 ||Line||Description||
 TBD
-[[Designing to Spring Templates|<--Back]]  [[Spring Templates JDBC Using Template Method Pattern|Next-->]]
+[Next-->]({{ site.pagesurl }}/Designing to Spring Templates|<--Back]]  [[Spring Templates JDBC Using Template Method Pattern)

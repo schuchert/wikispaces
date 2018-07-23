@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX2IssuesConcerns
 ---
-[[JBossAOPEX2AssignmentIssues|<--Back]] [[JBoss AOP Example 3|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossAOPEX2AssignmentIssues|<--Back]] [[JBoss AOP Example 3)
 
 # Issues/Concerns
 Here are some issues and concerns that I've heard people mention:
@@ -10,4 +10,4 @@ Here are some issues and concerns that I've heard people mention:
 * How do you know what is happening in what order and when
 * ...
 
-[[JBossAOPEX2AssignmentIssues|<--Back]] [[JBoss AOP Example 3|Next-->]]
+[Next-->]({{ site.pagesurl }}/JBossAOPEX2AssignmentIssues|<--Back]] [[JBoss AOP Example 3)

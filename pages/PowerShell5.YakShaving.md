@@ -1,7 +1,7 @@
 ---
 title: PowerShell5.YakShaving
 ---
-[[PowerShell5|<--Back]]
+[<--Back]({{ site.pagesurl }}/PowerShell5)
 # Overview
 All of these tutorials are written using Windows 10 Professional, PowerShell 5.1, [[https://github.com/pester/Pester|Pester]], and [[https://code.visualstudio.com/download|Visual Studio Code]]. Here are the specifics.
 * Windows 10 Professional, Version 1703
@@ -95,4 +95,4 @@ Custom key bindings to run the custom tasks:
     ]
 ```
 
-[[PowerShell5|<--Back]]
+[<--Back]({{ site.pagesurl }}/PowerShell5)

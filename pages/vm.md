@@ -8,4 +8,4 @@ As of Number 2013, all tutorials and videos I record will be done using a virtua
 * Clone the following git repo TBD
 * Start a shell, type "vagrant up"
 
-[[vm.compiling.phantomjs2.ubuntu|Compiling phantomjs2 on Ubuntu 15.10]]
+[Compiling phantomjs2 on Ubuntu 15.10]({{ site.pagesurl }}/vm.compiling.phantomjs2.ubuntu)

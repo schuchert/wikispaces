@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Example_1_PrintLayout
 ---
-[[AspectJ Self Study|<--Back]]
+[<--Back]({{ site.pagesurl }}/AspectJ Self Study)
 
 [[include page="AspectJ Example 1"]]
 [[include page="AspectJEX1ExpectedVersusActualOutput"]]
@@ -17,4 +17,4 @@ title: AspectJ_Example_1_PrintLayout
 [[include page="AspectJEX1AssignmentIssues"]]
 [[include page="AspectJEX1IssuesConcerns"]]
 
-[[AspectJ Self Study|<--Back]]
+[<--Back]({{ site.pagesurl }}/AspectJ Self Study)

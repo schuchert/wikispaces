@@ -10,9 +10,9 @@ You'll work on two exercises:
 * Part 1: After reviewing the Principles of Component Cohesion, we'll try to extract out a component from the below diagram for a new client of our system.
 * Part 2: After reviewing the Principles of Component Coupling, we'll evaluate your results, compare them with the starting point and take another swag at componentization.
 
-> [[image:forward.gif link="PPPChapter8Exercise"]] [[PPPChapter8Exercise|Part 1: Unit 8 Exercise]] [[http://schuchert.wikispaces.com/PPPChapter8Exercise?f=print|Print]]
-> [[image:forward.gif link="PPPChapter9Exercise"]] [[PPPChapter9Exercise|Part 2: Unit 9 Exercise]] [[http://schuchert.wikispaces.com/PPPChapter9Exercise?f=print|Print]]
-> [[image:forward.gif link="PPPChapter9RepackagingExercise"]] [[PPPChapter9RepackagingExercise|Part 3: Repackaging Exercise]] [[http://schuchert.wikispaces.com/PPPChapter9RepackagingExercise?f=print|Print]]
+> [Print]({{ site.pagesurl }}/image:forward.gif link="PPPChapter8Exercise"]] [[PPPChapter8Exercise|Part 1: Unit 8 Exercise]] [[http://schuchert.wikispaces.com/PPPChapter8Exercise?f=print)
+> [Print]({{ site.pagesurl }}/image:forward.gif link="PPPChapter9Exercise"]] [[PPPChapter9Exercise|Part 2: Unit 9 Exercise]] [[http://schuchert.wikispaces.com/PPPChapter9Exercise?f=print)
+> [Print]({{ site.pagesurl }}/image:forward.gif link="PPPChapter9RepackagingExercise"]] [[PPPChapter9RepackagingExercise|Part 3: Repackaging Exercise]] [[http://schuchert.wikispaces.com/PPPChapter9RepackagingExercise?f=print)
 
 
 [[image:Back.gif link="Hidden"]]

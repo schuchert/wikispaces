@@ -9,31 +9,31 @@ These tutorials take you through TDD and BDD using Ruby, your favorite editor an
 These tutorials are meant to be followed in order.
 
 ### Setup
-* [[ruby.tutorials.SettingUp|Setting Up]]
+* [Setting Up]({{ site.pagesurl }}/ruby.tutorials.SettingUp)
 
 ----
 
 ### Test Drive Development using Test::Unit
-||[[ruby.tutorials.tdd.UsingTddToDevelopABasicAlgorithm|Using TDD to Develop a Basic Algorithm]]||**[[http://schuchert.wikispaces.com/ruby.tutorials.tdd.UsingTddToDevelopABasicAlgorithm?f=print|Print]]**||
-||[[ruby.tutorials.tdd.UsingTddToDevelopAnRpnCalculator|Using TDD to Develop an RPN Calculator]]|| TBD PRINT ||
-||[[ruby.tutorials.tdd.UsingTddToDevelopAPartialMonopolySolution|Using TDD to Develop a Partial Monopoly Solution]] || TBD PRINT ||
+||[Print]({{ site.pagesurl }}/ruby.tutorials.tdd.UsingTddToDevelopABasicAlgorithm|Using TDD to Develop a Basic Algorithm]]||**[[http://schuchert.wikispaces.com/ruby.tutorials.tdd.UsingTddToDevelopABasicAlgorithm?f=print)**||
+||[Using TDD to Develop an RPN Calculator]({{ site.pagesurl }}/ruby.tutorials.tdd.UsingTddToDevelopAnRpnCalculator)|| TBD PRINT ||
+||[Using TDD to Develop a Partial Monopoly Solution]({{ site.pagesurl }}/ruby.tutorials.tdd.UsingTddToDevelopAPartialMonopolySolution) || TBD PRINT ||
 
 ----
 
 ### Behavior Driven Development with RSpec
-||[[ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm|Using BDD to Develop a Basic Algorithm]] || **[[http://schuchert.wikispaces.com/ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm?f=print|Print]]** ||
-||[[ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator|Using BDD to Develop an RPN Calculator]]  || **[[http://schuchert.wikispaces.com/ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator?f=print|Print]]** ||
-||[[ruby.tutorials.bdd.UsingBddToDevelopAPartialMonopolySolution|Using BDD to Develop a Partial Monopoly Solution]] || **TBD PRINT** ||
+||[Print]({{ site.pagesurl }}/ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm|Using BDD to Develop a Basic Algorithm]] || **[[http://schuchert.wikispaces.com/ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm?f=print)** ||
+||[Print]({{ site.pagesurl }}/ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator|Using BDD to Develop an RPN Calculator]]  || **[[http://schuchert.wikispaces.com/ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator?f=print)** ||
+||[Using BDD to Develop a Partial Monopoly Solution]({{ site.pagesurl }}/ruby.tutorials.bdd.UsingBddToDevelopAPartialMonopolySolution) || **TBD PRINT** ||
 || Developing a Lost and Found System || TBD PRINT ||
 
 ----
 
 ### Code Smells and Basic Refactoring
-* [[ruby.tutorials.refactoring.WritingCharacterizationTests|Writing Characterization Tests]]
-* [[ruby.tutorials.refactoring.CleaningUpTheCode|Cleaning up the Code]]
+* [Writing Characterization Tests]({{ site.pagesurl }}/ruby.tutorials.refactoring.WritingCharacterizationTests)
+* [Cleaning up the Code]({{ site.pagesurl }}/ruby.tutorials.refactoring.CleaningUpTheCode)
 
 ----
 
 ### Final Problem
-* [[ruby.tutorials.FinalProblem|Final Problem]]
+* [Final Problem]({{ site.pagesurl }}/ruby.tutorials.FinalProblem)
 

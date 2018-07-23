@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1ApplyYourself
 ---
-[[AspectJVMConfigurationBlackMagic|<--Back]] [[AspectJEX1AssignmentApplications|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJVMConfigurationBlackMagic|<--Back]] [[AspectJEX1AssignmentApplications)
 
 ## Apply Yourself
 Here is a series of exercises you can try yourself to confirm what you've learned so far. Doing these assignments should really solidify your understanding of this first example.
@@ -33,4 +33,4 @@ Currently, the provided Monopoly® source code produces game output in the Game.
 
 **Assessment:** Does doing this make sense? Is this a cross-cutting concern? How might you apply this kind of idea in a realistic situation?
 
-[[AspectJVMConfigurationBlackMagic|<--Back]] [[AspectJEX1AssignmentApplications|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJVMConfigurationBlackMagic|<--Back]] [[AspectJEX1AssignmentApplications)

@@ -1,9 +1,9 @@
 ---
 title: AspectJ_CFlowAssignmentIssues
 ---
-[[AspectJ CFlowApplications|<--Back]] [[AspectJ CFlowIssuesConcerns|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ CFlowApplications|<--Back]] [[AspectJ CFlowIssuesConcerns)
 
 ## Assignment: Issues
 Write down at least three problems and/or concerns with this technique. Please do so before moving on.
 
-[[AspectJ CFlowApplications|<--Back]] [[AspectJ CFlowIssuesConcerns|Next-->]]
+[Next-->]({{ site.pagesurl }}/AspectJ CFlowApplications|<--Back]] [[AspectJ CFlowIssuesConcerns)

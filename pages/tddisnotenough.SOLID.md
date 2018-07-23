@@ -1,7 +1,7 @@
 ---
 title: tddisnotenough.SOLID
 ---
-[[tddisnotenough#SOLID|<==Back]]
+[<==Back]({{ site.pagesurl }}/tddisnotenough#SOLID)
 
 [[http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod|From Uncle Bob]]
 
@@ -11,4 +11,4 @@ title: tddisnotenough.SOLID
 ||I||Interface Segregation||Interfaces should be focused (small) & client specific||
 ||D||Dependency Inversion||Dependencies should go from concrete to abstract||
 
-[[tddisnotenough#SOLID|<==Back]]
+[<==Back]({{ site.pagesurl }}/tddisnotenough#SOLID)
