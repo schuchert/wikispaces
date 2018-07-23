@@ -1,10 +1,10 @@
 ---
 title: JUnit_4.xTimeBombGenericCodeExplained
 ---
-[<--Back]({{ site.pagesurl }}/JUnit 4.x)
+[[JUnit 4.x|<--Back]]
 
 # Time Bomb Generic Code Explained
-Here's a use of TimeBomb (for context) taken from [Example 2]({{ site.pagesurl }}/JUnit 4.x#example2):
+Here's a use of TimeBomb (for context) taken from [[JUnit 4.x#example2|Example 2]]:
 ```
 92:     @Test(expected = ObjectInUse.class)
 93:     public void removeUsedValidType() {
@@ -88,4 +88,4 @@ Back to the original use:
 ```
 Java matches the first three int parameters as before. Next, Java notices that the 4th parameter's compile-time type is "ObjectInUse". As already mentioned, ObjectInUse is a RuntimeException, so this line compiles and we do not need either a try/catch or a throws clause.
 
-[<--Back]({{ site.pagesurl }}/JUnit 4.x)
+[[JUnit 4.x|<--Back]]

@@ -15,7 +15,7 @@ If you just want the source, download it here: [[file:CarRentalRelease1.zip]].
 > **[[Car Rental Installation and Setup]]** - how to get this project set up for your use.
 
 ### Code Coverage
-> **[Emma]({{ site.pagesurl }}/Car Rental Code Coverage with Emma]]** - how to perform Code Coverage with [[http://emma.sourceforge.net/)
-> **[Cobertura]({{ site.pagesurl }}/Car Rental Code Coverage with Cobertura]]** - how to perform Code Coverage with [[http://cobertura.sourceforge.net/)
+> **[[Car Rental Code Coverage with Emma]]** - how to perform Code Coverage with [[http://emma.sourceforge.net/|Emma]]
+> **[[Car Rental Code Coverage with Cobertura]]** - how to perform Code Coverage with [[http://cobertura.sourceforge.net/|Cobertura]]
 
 

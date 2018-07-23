@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_Thinking
 ---
-[Next-->]({{ site.pagesurl }}/AspectJ Annotation Observation|<--Back]] [[AspectJ Annotation Explained)
+[[AspectJ Annotation Observation|<--Back]] [[AspectJ Annotation Explained|Next-->]]
 
 # AspectJ Annotation: Thinking
 
@@ -12,4 +12,4 @@ Taking your observations into consideration, take a moment to do the following t
 * Contrast this with some of the other experiences you've already had in the subject area.
 * How might you mix this idea with others you've already seen?
 
-[Next-->]({{ site.pagesurl }}/AspectJ Annotation Observation|<--Back]] [[AspectJ Annotation Explained)
+[[AspectJ Annotation Observation|<--Back]] [[AspectJ Annotation Explained|Next-->]]

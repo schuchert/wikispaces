@@ -2,12 +2,12 @@
 title: TddAndConcurrency.Agile2008.Outline
 ---
 # Part 0
-Begin running driver that exercises [ObjectWithValue]({{ site.pagesurl }}/TddAndConcurrency.ObjectWithValue) before the start.
+Begin running driver that exercises [[TddAndConcurrency.ObjectWithValue|ObjectWithValue]] before the start.
 
 At start, David Nunn will present himself and myself.
 # Part 1: Prove it's broken
 
-* Show trivial code example ([ObjectWithValue]({{ site.pagesurl }}/TddAndConcurrency.ObjectWithValue))
+* Show trivial code example ([[TddAndConcurrency.ObjectWithValue|ObjectWithValue]])
 * Show results of running driver, the code is broken
 * Ask by table:
 ** Help me demonstrate that this code is broken with a test

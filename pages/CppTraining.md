@@ -3,52 +3,52 @@ title: CppTraining
 ---
 [[#gettingstartedjuno]]
 # Getting Started 2012, Eclipse Juno
-## [Getting Stated with CDT in Eclipse Juno]({{ site.pagesurl }}/cpptraining.GettingStartedWithEclipseCdt.Juno)
-## [Getting CppUTest Compiled Using Juno CDT Tool Set]({{ site.pagesurl }}/cpptraining.GettingCppUTestCompiledUsingCDTToolSet.Juno)
-## [Getting first CppUTest Running in Juno]({{ site.pagesurl }}/cpptraining.GettingCppUTestRunningUsingCdt.Juno)
+## [[cpptraining.GettingStartedWithEclipseCdt.Juno|Getting Stated with CDT in Eclipse Juno]]
+## [[cpptraining.GettingCppUTestCompiledUsingCDTToolSet.Juno|Getting CppUTest Compiled Using Juno CDT Tool Set]]
+## [[cpptraining.GettingCppUTestRunningUsingCdt.Juno|Getting first CppUTest Running in Juno]]
 
 [[#gettingfirsttestrunning]]
 # Getting Your First Test Running(Eclipse)
-## [Getting The CDT Running]({{ site.pagesurl }}/cpptraining.GettingStartedWithEclipseCdt)
-## [Getting CppUTest Compiled Using CDT Tool Set]({{ site.pagesurl }}/cpptraining.GettingCppUTestCompiledUsingCDTToolSet)
-## [Getting CppUTest Running]({{ site.pagesurl }}/cpptraining.GettingCppUTestRunning)
+## [[cpptraining.GettingStartedWithEclipseCdt|Getting The CDT Running]]
+## [[cpptraining.GettingCppUTestCompiledUsingCDTToolSet|Getting CppUTest Compiled Using CDT Tool Set]]
+## [[cpptraining.GettingCppUTestRunning|Getting CppUTest Running]]
 
 [[#gettingfirsttestrunningvisualstudio]]
 # Getting Your First Test Running(Developer Studio)
-## [Getting Started with Visual Studio]({{ site.pagesurl }}/cpptraining.GettingStartedWithVisualStudio)
-## [Building CppUTest for Visual Studio]({{ site.pagesurl }}/cpptraining.BuildingCppUTestForVisualStudio)
-## [Getting CppUTest Running in Visual Studio]({{ site.pagesurl }}/cpptraining.GettingCppUTestRunningInVisualStudio)
-## [Acquiring Embedded Tdd C++ Files Without Git]({{ site.pagesurl }}/cpptraining.AcquiringEmbeddedTddCppFilesWithoutGit)
+## [[cpptraining.GettingStartedWithVisualStudio|Getting Started with Visual Studio]]
+## [[cpptraining.BuildingCppUTestForVisualStudio|Building CppUTest for Visual Studio]]
+## [[cpptraining.GettingCppUTestRunningInVisualStudio|Getting CppUTest Running in Visual Studio]]
+## [[cpptraining.AcquiringEmbeddedTddCppFilesWithoutGit|Acquiring Embedded Tdd C++ Files Without Git]]
 
 [[#boost]]
 # Working with Boost
-## [Getting and Building Boost in minggw]({{ site.pagesurl }}/cpptraining.GettingAndBuildingBoostInMingw)
-## [Using Boost With mingw And Eclipse]({{ site.pagesurl }}/cpptraining.UsingBoostWithMingwAndEclipse)
+## [[cpptraining.GettingAndBuildingBoostInMingw|Getting and Building Boost in minggw]]
+## [[cpptraining.UsingBoostWithMingwAndEclipse|Using Boost With mingw And Eclipse]]
 
 [[#cpp0x]]
 # Using C++0x With gcc 4.4
-## [Configuring gcc to use C++0x in Eclipse Cdt]({{ site.pagesurl }}/cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt)
+## [[cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt|Configuring gcc to use C++0x in Eclipse Cdt]]
 
 [[#vector]]
 # Examples of Standard Algorithms
-## [Summing a Vector]({{ site.pagesurl }}/cpptraining.SummingAVector)
+## [[cpptraining.SummingAVector|Summing a Vector]]
 
 [[#embedded]]
 # Embedded
-## [Getting Started with the SDE]({{ site.pagesurl }}/cpptraining.sde.gettingstarted)
+## [[cpptraining.sde.gettingstarted|Getting Started with the SDE]]
 
 [[#welc]]
 # Working Effectively with Legacy Code
-## [Project Download]({{ site.pagesurl }}/cpptraining.welc.projectdownload)
+## [[cpptraining.welc.projectdownload|Project Download]]
 
 [[#DependencyInjectionOptions]]
 # Dependency Injection of Die Objects into Dice Game
-## [Base Problem]({{ site.pagesurl }}/cpptraining.dependencyinjection.dicegame.baseproblem)
-## [Using Basic OOP]({{ site.pagesurl }}/cpptraining.dependencyinjection.dicegame.oop)
-## [Using Template Arguments]({{ site.pagesurl }}/cpptraining.dependencyinjection.dicegame.templatearguments)
-## [Using Preprocessor Seam]({{ site.pagesurl }}/cpptraining.dependencyinjection.dicegame.preprocessorseam)
-## [Link Seam]({{ site.pagesurl }}/cpptraining.dependencyinjection.dicegame.linkerseam)
-## [Backdoor]({{ site.pagesurl }}/cpptraining.dependencyinjection.dicegame.backdoor)
+## [[cpptraining.dependencyinjection.dicegame.baseproblem|Base Problem]]
+## [[cpptraining.dependencyinjection.dicegame.oop|Using Basic OOP]]
+## [[cpptraining.dependencyinjection.dicegame.templatearguments|Using Template Arguments]]
+## [[cpptraining.dependencyinjection.dicegame.preprocessorseam|Using Preprocessor Seam]]
+## [[cpptraining.dependencyinjection.dicegame.linkerseam|Link Seam]]
+## [[cpptraining.dependencyinjection.dicegame.backdoor|Backdoor]]
 
 [[#LinksToDesignPatterns]]
 # Links to Design Patterns
@@ -64,16 +64,16 @@ title: CppTraining
 
 [[#FitNesse]]
 # FitNesse
-## [Getting Started w/FitNesse in C++]({{ site.pagesurl }}/cpptraining.GettingStartedWithFitNesseInCpp)
-## [Examples of Each Fixture Type]({{ site.pagesurl }}/cpptraining.ExamlesOfEachFixtureType)
-## [Executing Binary Operators]({{ site.pagesurl }}/cpptraining.ExecutingBinaryOperators)
-## [Using CSlim with Visual Studio 2010]({{ site.pagesurl }}/cpptraining.UsingCSlimWithVisualStudio2010)
+## [[cpptraining.GettingStartedWithFitNesseInCpp|Getting Started w/FitNesse in C++]]
+## [[cpptraining.ExamlesOfEachFixtureType|Examples of Each Fixture Type]]
+## [[cpptraining.ExecutingBinaryOperators|Executing Binary Operators]]
+## [[cpptraining.UsingCSlimWithVisualStudio2010|Using CSlim with Visual Studio 2010]]
 
 [[#cucumber]]
 # Cucumber calling C++
-## [Cucumber Examples Calling C++]({{ site.pagesurl }}/cpptraining.CucumberExamplesCallingCpp)
+## [[cpptraining.CucumberExamplesCallingCpp|Cucumber Examples Calling C++]]
 
 [[#CppAndOodTheLeastYouNeedToKnow]]
 # C++ Book I'm Slowly Working On
-## [C++ and Object Oriented Design, The Least You Need to Know]({{ site.pagesurl }}/cpptraining.CppAndOodTheLeastYouNeedToKnow)
-## [C++ and TDD Course]({{ site.pagesurl }}/cpptraining.CppAndTdd)
+## [[cpptraining.CppAndOodTheLeastYouNeedToKnow|C++ and Object Oriented Design, The Least You Need to Know]]
+## [[cpptraining.CppAndTdd|C++ and TDD Course]]

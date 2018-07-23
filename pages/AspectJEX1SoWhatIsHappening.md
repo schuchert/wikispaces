@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1SoWhatIsHappening
 ---
-[Next-->]({{ site.pagesurl }}/AspectJEX1WhatIsHappening|<--Back]] [[AspectJEX1Explained)
+[[AspectJEX1WhatIsHappening|<--Back]] [[AspectJEX1Explained|Next-->]]
 
 ## So What Is Happening?
 Here are some descriptions I’ve heard some people mention:
@@ -11,4 +11,4 @@ Here are some descriptions I’ve heard some people mention:
 * We modify every method execution. Before and after the method execution we display the name of the method.
 * ...
 
-[Next-->]({{ site.pagesurl }}/AspectJEX1WhatIsHappening|<--Back]] [[AspectJEX1Explained)
+[[AspectJEX1WhatIsHappening|<--Back]] [[AspectJEX1Explained|Next-->]]

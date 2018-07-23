@@ -1,7 +1,7 @@
 ---
 title: TddAndConcurrency.Slides.DoOneThingWellWell
 ---
-[Next-->]({{ site.pagesurl }}/TddAndConcurrency.Slides|<--Back]] | [[TddAndConcurrency.Slides|^Top^]]| [[TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid)
+[[TddAndConcurrency.Slides|<--Back]] | [[TddAndConcurrency.Slides|^Top^]]| [[TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid|Next-->]]
 
 # Do One Thing ... Well ... Well
 
@@ -95,4 +95,4 @@ Extract Classes:
 * Dependency Injection
 * Server Update
 
-[Next-->]({{ site.pagesurl }}/TddAndConcurrency.Slides|<--Back]] | [[TddAndConcurrency.Slides|^Top^]]| [[TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid)
+[[TddAndConcurrency.Slides|<--Back]] | [[TddAndConcurrency.Slides|^Top^]]| [[TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid|Next-->]]

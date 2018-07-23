@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Self_Study
 ---
-[<--Back]({{ site.pagesurl }}/AspectOrientedProgramming)
+[[AspectOrientedProgramming|<--Back]]
 
 AOP is an abbreviation for Aspect Oriented Programming. For now, that’s all you’re going to get for a definition. Why is that? Because this set of exercises assist you in defining AOP for yourself. You’d do that anyway; we all do, so these notes work off that fact. 
 
@@ -17,15 +17,15 @@ Before you begin, you'll need to setup and configure your environment. To do tha
 Note, these examples are written to mimic how I present them in a workshop environment. That is deliberate. I'm hoping you'll work through these examples on your own similar to how I'd have people work through them in a workshop environment.
 
 Examples meant to get you up to speed on self-defining what AOP means:
-* [PrintLayout]({{ site.pagesurl }}/AspectJ Example 1]] or you can get the [[AspectJ Example 1 PrintLayout)
+* [[AspectJ Example 1]] or you can get the [[AspectJ Example 1 PrintLayout|PrintLayout]]
 * [[AspectJ Example 2]]
 * [[AspectJ Example 3]]
 * [[AspectJ Example 4]]
 
 The following examples and exercises may be performed in any order. The listing below seems to work alright:
-* [CFlow]({{ site.pagesurl }}/AspectJ CFlow)
-* [Annotation Start]({{ site.pagesurl }}/AspectJ Annotation Start)
-* [Generics Start]({{ site.pagesurl }}/AspectJ Generics Start)
+* [[AspectJ CFlow|CFlow]]
+* [[AspectJ Annotation Start|Annotation Start]]
+* [[AspectJ Generics Start|Generics Start]]
 * [[AspectJ Research Docs]]
 * [[AspectJ Object Versioning]]
 * [[AspectJ Observer Pattern]]
@@ -41,4 +41,4 @@ External links:
 
 Work In Progress/Field Stones
 * [[AOP Field Stones]]
-[<--Back]({{ site.pagesurl }}/AspectOrientedProgramming)
+[[AspectOrientedProgramming|<--Back]]

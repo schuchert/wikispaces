@@ -1,9 +1,9 @@
 ---
 title: iPhone.BasicOperators
 ---
-[<-- Back]({{ site.pagesurl }}/iPhone)
+[[iPhone|<-- Back]]
 
 [[media type="custom" key="7608371"]]
 
 
-[<-- Back]({{ site.pagesurl }}/iPhone)
+[[iPhone|<-- Back]]

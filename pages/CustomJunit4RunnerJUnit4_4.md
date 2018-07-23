@@ -1,7 +1,7 @@
 ---
 title: CustomJunit4RunnerJUnit4_4
 ---
-[<<--Back]({{ site.pagesurl }}/CustomJUnit4Runner)
+[[CustomJUnit4Runner|<<--Back]]
 
 # Writing a Custom JUnit 4 Test Runner
 

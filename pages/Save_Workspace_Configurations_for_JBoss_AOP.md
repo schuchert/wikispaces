@@ -1,7 +1,7 @@
 ---
 title: Save_Workspace_Configurations_for_JBoss_AOP
 ---
-[Next-->]({{ site.pagesurl }}/Eclipse Java Project Preferences for JBoss AOP|<--Back]] [[Environment Configuration for JBOSS AOP)
+[[Eclipse Java Project Preferences for JBoss AOP|<--Back]] [[Environment Configuration for JBOSS AOP|Next-->]]
 
 You can save these Workspace Preferences so that when you create another Workspace you only need to file these in instead of following all of the previous setup steps.
 
@@ -23,4 +23,4 @@ You can save these Workspace Preferences so that when you create another Workspa
 # Make sure **Import all** is selected
 # Click **Finish**
 
-[Next-->]({{ site.pagesurl }}/Eclipse Java Project Preferences for JBoss AOP|<--Back]] [[Environment Configuration for JBOSS AOP)
+[[Eclipse Java Project Preferences for JBoss AOP|<--Back]] [[Environment Configuration for JBOSS AOP|Next-->]]

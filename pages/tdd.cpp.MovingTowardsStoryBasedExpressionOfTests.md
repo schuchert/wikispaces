@@ -367,7 +367,7 @@ TEST_GROUP(PrimeFactorsOperatorTest) {
 };
 ```
 
-These tests are somewhat influenced by BDD and some experience I've had using [[http://rspec.info|RSpec]]. One thing these tests exhibit from my RSpec experience is that some of the steps with the test have a side-effect of storing intermediate information used later in the test. This often happens within an RSpec example as well. You can see several detailed [Ruby examples here]({{ site.pagesurl }}/ruby.tutorials) for some examples of this style of testing.
+These tests are somewhat influenced by BDD and some experience I've had using [[http://rspec.info|RSpec]]. One thing these tests exhibit from my RSpec experience is that some of the steps with the test have a side-effect of storing intermediate information used later in the test. This often happens within an RSpec example as well. You can see several detailed [[ruby.tutorials|Ruby examples here]] for some examples of this style of testing.
 # Story-Runner Influenced Tests
 Here is another, probably over the top, version of the tests using more of a story-runner influence. This comes from my recent experience working through a beta version of [[http://www.pragprog.com/titles/achbd/the-rspec-book|The RSpec Book]] and specifically using [[http://wiki.github.com/aslakhellesoy/cucumber|Cucumber]].
 

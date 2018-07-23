@@ -3,7 +3,7 @@ title: Mockito.LoginServiceExample
 ---
 {:toc}
 # Getting Started
-I'm assuming you can [[http://mockito.org/|download Mockito]] and get it in your classpath. So I'll start with tests that implement some of the requirements from [here]({{ site.pagesurl }}/Tdd.Problems.LoggingIn).
+I'm assuming you can [[http://mockito.org/|download Mockito]] and get it in your classpath. So I'll start with tests that implement some of the requirements from [[Tdd.Problems.LoggingIn|here]].
 
 However, in a nutshell:
 * Download mockito-all-1.7.jar [[http://mockito.org/|from here]].
@@ -17,7 +17,7 @@ What follows is a series of tests to get enough production code written to sugge
 * All types used or needed by the underling LoginService will be created via Mockito
 * I'm going to use Loose mocks - that is, you can call anything you want and the underling object will not complain
 * I'm going to minimally verify the expected resulting interactions (one assertion per test)
-* I'll start with only refactoring the unit tests, refactoring the production code is in [the next part]({{ site.pagesurl }}/Mockito.LoginServiceExample#refactorproduction).
+* I'll start with only refactoring the unit tests, refactoring the production code is in [[Mockito.LoginServiceExample#refactorproduction|the next part]].
 
 # Test 1: Basic Happy Path
 When a user logs in successfully with a valid account id and password, the account's state is set to logged in. Here's a way to test that:

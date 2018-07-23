@@ -3,6 +3,6 @@ title: Monopoly_Release_5_User_Stories
 ---
 Here are the user stories for release 5.
 
-* [Player Lands On Community Chest or Chance]({{ site.pagesurl }}/Monopoly(r) Release 5 Player Lands On Community Chest or Chance)
+* [[Monopoly(r) Release 5 Player Lands On Community Chest or Chance|Player Lands On Community Chest or Chance]]
 
-[<--Back]({{ site.pagesurl }}/Monopoly(r)#Release5)
+[[Monopoly(r)#Release5|<--Back]]

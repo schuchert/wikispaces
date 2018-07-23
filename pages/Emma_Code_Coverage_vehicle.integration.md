@@ -1,7 +1,7 @@
 ---
 title: Emma_Code_Coverage_vehicle.integration
 ---
-[Next-->]({{ site.pagesurl }}/Emma Code Coverage vehicle.configuration|<--Back]] [[Emma Code Coverage vehicle.component.vehicletype)
+[[Emma Code Coverage vehicle.configuration|<--Back]] [[Emma Code Coverage vehicle.component.vehicletype|Next-->]]
 
 # Emma Code Coverage vehicle.integration Package
 
@@ -49,4 +49,4 @@ Then the test would have not generated a false positive.
 
 ## The Results
 
-[Next-->]({{ site.pagesurl }}/Emma Code Coverage vehicle.configuration|<--Back]] [[Emma Code Coverage vehicle.component.vehicletype)
+[[Emma Code Coverage vehicle.configuration|<--Back]] [[Emma Code Coverage vehicle.component.vehicletype|Next-->]]

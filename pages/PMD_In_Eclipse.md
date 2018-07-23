@@ -1,7 +1,7 @@
 ---
 title: PMD_In_Eclipse
 ---
-[<--Back]({{ site.pagesurl }}/Tool Setup and Configuration Notes)
+[[Tool Setup and Configuration Notes|<--Back]]
 
 # Using PMD in Eclipse
 
@@ -22,4 +22,4 @@ title: PMD_In_Eclipse
 # Click OK to close Windows:Preferences
 # When prompted to perform a full rebuild, select yes.
 
-[<--Back]({{ site.pagesurl }}/Tool Setup and Configuration Notes)
+[[Tool Setup and Configuration Notes|<--Back]]

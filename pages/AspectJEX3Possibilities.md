@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3Possibilities
 ---
-[Next-->]({{ site.pagesurl }}/AspectJEX3ExpectedVersusActualOutput|<--Back]] [[AspectJEX3WhatIsHappening)
+[[AspectJEX3ExpectedVersusActualOutput|<--Back]] [[AspectJEX3WhatIsHappening|Next-->]]
 
 # Possibilities
 Did you have any ideas? Here are some ideas I’ve heard:
@@ -10,4 +10,4 @@ Did you have any ideas? Here are some ideas I’ve heard:
 * Force Die to implement Serializable
 * …
 
-[Next-->]({{ site.pagesurl }}/AspectJEX3ExpectedVersusActualOutput|<--Back]] [[AspectJEX3WhatIsHappening)
+[[AspectJEX3ExpectedVersusActualOutput|<--Back]] [[AspectJEX3WhatIsHappening|Next-->]]

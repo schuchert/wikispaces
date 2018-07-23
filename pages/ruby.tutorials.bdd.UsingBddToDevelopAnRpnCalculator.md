@@ -1,7 +1,7 @@
 ---
 title: ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator
 ---
-<span class="back_button">[Back]({{ site.pagesurl }}/ruby.tutorials)</span>
+<span class="back_button">[[ruby.tutorials|Back]]</span>
 
 # Introduction
 {:toc}
@@ -2576,4 +2576,4 @@ RUNNING OUT, COPY AGAIN
 **Check-In**
 **Summary**
 
-<span class="back_button">[Back]({{ site.pagesurl }}/ruby.tutorials)</span>
+<span class="back_button">[[ruby.tutorials|Back]]</span>

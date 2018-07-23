@@ -42,8 +42,8 @@ For instructions on working from github: [[FitNesse.Tutorials.WorkingFromGitHub]
 || ===[[FitNesse.Tutorials.ConvertingToStoryStyle|Converting Tests to use more of a Story Style]]=== || [[http://schuchert.wikispaces.com/FitNesse.Tutorials.ConvertingToStoryStyle?f=print|Print]] ||
 
 # Writeups more than Tutorials: To Be Migrated
-|| ===[Print]({{ site.pagesurl }}/Acceptance Testing.FitNesse.TableTableExample|Using Table Table for DSL-esque Test Setup]]=== || [[http://schuchert.wikispaces.com/Acceptance+Testing.FitNesse.TableTableExample?f=print) ||
+|| ===[[Acceptance Testing.FitNesse.TableTableExample|Using Table Table for DSL-esque Test Setup]]=== || [[http://schuchert.wikispaces.com/Acceptance+Testing.FitNesse.TableTableExample?f=print|Print]] ||
 
 # Originals Already Incorporated Into Tutorial Series
 || ===[[FitNesse.Tutorials.ScenarioTables|Scenario Tables]]=== || [[http://schuchert.wikispaces.com/FitNesse.Tutorials.ScenarioTables?f=print|Print]] ||
-|| ===[Print]({{ site.pagesurl }}/Acceptance Testing.UsingSlimDotNetInFitNesse|Rapid Intro to Using Slim.Net]]=== || [[http://schuchert.wikispaces.com/Acceptance+Testing.UsingSlimDotNetInFitNesse?f=print) ||
+|| ===[[Acceptance Testing.UsingSlimDotNetInFitNesse|Rapid Intro to Using Slim.Net]]=== || [[http://schuchert.wikispaces.com/Acceptance+Testing.UsingSlimDotNetInFitNesse?f=print|Print]] ||

@@ -1,7 +1,7 @@
 ---
 title: AspectJEX2ExpectedVersusActualOutput
 ---
-[Next-->]({{ site.pagesurl }}/AspectJ Example 2|<--Back]] [[AspectJEX2Possibilities)
+[[AspectJ Example 2|<--Back]] [[AspectJEX2Possibilities|Next-->]]
 
 # Expected Versus Actual Output
 
@@ -20,4 +20,4 @@ Setting zip from 75001 to 75001
 ## Assignment: Form a Theory
 Spend a few moments and try to figure out how to make this output happen. Write down those ideas. Please do so before continuing to the next section.
 
-[Next-->]({{ site.pagesurl }}/AspectJ Example 2|<--Back]] [[AspectJEX2Possibilities)
+[[AspectJ Example 2|<--Back]] [[AspectJEX2Possibilities|Next-->]]

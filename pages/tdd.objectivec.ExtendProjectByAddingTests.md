@@ -2,7 +2,7 @@
 title: tdd.objectivec.ExtendProjectByAddingTests
 ---
 ## Background
-This material assumes you have already [created an XCode project with these steps]({{ site.pagesurl }}/tdd.objectivec.XCodeProjectSetup).
+This material assumes you have already [[tdd.objectivec.XCodeProjectSetup|created an XCode project with these steps]].
 
 ## Continue with next test
 The next test adds the ability to set the accumulator's value:

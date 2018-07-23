@@ -9,4 +9,4 @@ As a player, I can mortgage a property during my turn.
 * Player tires to mortgage property that is not owned. Fails.
 * Player tries to mortgage property that they do not own. Fails.
 
-[<--Back]({{ site.pagesurl }}/Monopoly(r) Release 3 User Stories)
+[[Monopoly(r) Release 3 User Stories|<--Back]]

@@ -15,12 +15,12 @@ This is a list of resources for a 2-day C++ class covering a rage of topics incl
 ** extract class
 ** extract method
 * Design Patterns
-** [strategy pattern]({{ site.pagesurl }}/CppRpnCalculatorStrategyPatternExample)
-** [template method pattern]({{ site.pagesurl }}/CppRpnCalculatorTemplateMethodPatternExample)
-** [abstract factory pattern]({{ site.pagesurl }}/CppRpnCalculatorAbstractFactoryPatternExample)
+** [[CppRpnCalculatorStrategyPatternExample|strategy pattern]]
+** [[CppRpnCalculatorTemplateMethodPatternExample|template method pattern]]
+** [[CppRpnCalculatorAbstractFactoryPatternExample|abstract factory pattern]]
 
 ## Projects
-* RPN Calculator: Here's some source code for the [Rpn Calculator in C++]({{ site.pagesurl }}/RpnCalculatorCppExampleImplementation) (RPN --> Reverse Polish Notation --> post-fix, think HP calculators)
+* RPN Calculator: Here's some source code for the [[RpnCalculatorCppExampleImplementation|Rpn Calculator in C++]] (RPN --> Reverse Polish Notation --> post-fix, think HP calculators)
 * Refactoring (with tests in place): [[file:CalculateRates_clean_code.zip]]
 * Refactoring (conditional logic to polymorphism): [[file:CalculateRates_conditional_to_polymorphism.zip]]
 ** [[ReplaceSwitchWithPolymorphismDetailedRefactoringInstructions]]

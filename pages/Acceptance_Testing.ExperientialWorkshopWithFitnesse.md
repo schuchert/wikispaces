@@ -47,4 +47,4 @@ I.N.V.E.S.T.
 ## Exercise: Installing FitNesse
  
 
-## [Concert Registration]({{ site.pagesurl }}/Acceptance Testing.ExperientialWorkshopWithFitnesse.ConcertRegistration)
+## [[Acceptance Testing.ExperientialWorkshopWithFitnesse.ConcertRegistration|Concert Registration]]

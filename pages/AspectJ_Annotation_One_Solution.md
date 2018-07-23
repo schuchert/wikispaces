@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_One_Solution
 ---
-[Next-->]({{ site.pagesurl }}/AspectJ Annotation Possibilities|<--Back]] [[AspectJ Annotation AllCode)
+[[AspectJ Annotation Possibilities|<--Back]] [[AspectJ Annotation AllCode|Next-->]]
 
 # One Solution
 This example is about using annotations so we will go with the 6th option. First, here’s what adding a field that we want to ignore might look like:
@@ -52,4 +52,4 @@ The second pointcut, allFields, includes the new syntax. Notice the first part o
 ```
 @annotation.IgnoreField is the fully-qualified name of the annotation. ! means not. Read this as “the setting of any fields that do NOT have the annotation IgnoreField on them.”
 
-[Next-->]({{ site.pagesurl }}/AspectJ Annotation Possibilities|<--Back]] [[AspectJ Annotation AllCode)
+[[AspectJ Annotation Possibilities|<--Back]] [[AspectJ Annotation AllCode|Next-->]]

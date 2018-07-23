@@ -912,7 +912,7 @@ Finally, you've experience test cross-chatter and one way to clean it up. That's
 At this point, you've learned enough about FitNesse with the first three tutorials to be fairly effective. There's more to learn, e.g.,
 * Script Tables (TBD)
 * [[FitNesse.Tutorials.ScenarioTables|Scenario Tables]]
-* [Table Tables]({{ site.pagesurl }}/Acceptance Testing.FitNesse.TableTableExample)
+* [[Acceptance Testing.FitNesse.TableTableExample|Table Tables]]
 
 Even so, you can do quite a bit right now.
 

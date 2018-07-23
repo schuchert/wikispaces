@@ -1,7 +1,7 @@
 ---
 title: JAR_Files_for_AspectJ
 ---
-[<--Back]({{ site.pagesurl }}/Environment Configuration for AspectJ)
+[[Environment Configuration for AspectJ|<--Back]]
 
 Every project using AspectJ needs several JAR files. You defined a classpath variable in [[Eclipse Classpath Variable for AspectJ]]. We now need to use that classpath variable:
 
@@ -15,4 +15,4 @@ Every project using AspectJ needs several JAR files. You defined a classpath var
 # Click **OK**
 # Click **OK**
 
-[<--Back]({{ site.pagesurl }}/Environment Configuration for AspectJ)
+[[Environment Configuration for AspectJ|<--Back]]

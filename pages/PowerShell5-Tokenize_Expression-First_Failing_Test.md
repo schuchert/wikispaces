@@ -1,7 +1,7 @@
 ---
 title: PowerShell5-Tokenize_Expression-First_Failing_Test
 ---
-[Next-->]({{ site.pagesurl }}/PowerShell5.TokenizeExpression|^^ Up ^^]]  [[PowerShell5.TokenizeExpression.SimpleBinaryExpressions)
+[[PowerShell5.TokenizeExpression|^^ Up ^^]]  [[PowerShell5.TokenizeExpression.SimpleBinaryExpressions|Next-->]]
 Now it's time to create the first test. We'll start with a failing test, and do something simple to get it to work.
 * Create a new file called Tokenizer.Tests.ps1:
 ```powershell
@@ -153,4 +153,4 @@ Throughout working on this problem, I'll be using git to make working snapshots.
     On branch master
     nothing to commit, working tree clean
 ```
-[Next-->]({{ site.pagesurl }}/PowerShell5.TokenizeExpression|^^ Up]]  [[PowerShell5.TokenizeExpression.SimpleBinaryExpressions)
+[[PowerShell5.TokenizeExpression|^^ Up]]  [[PowerShell5.TokenizeExpression.SimpleBinaryExpressions|Next-->]]

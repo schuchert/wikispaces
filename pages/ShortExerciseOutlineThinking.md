@@ -1,7 +1,7 @@
 ---
 title: ShortExerciseOutlineThinking
 ---
-[Next-->]({{ site.pagesurl }}/ShortExerciseOutlineObservation|<--Back]] [[ShortExerciseOutlineExplained)
+[[ShortExerciseOutlineObservation|<--Back]] [[ShortExerciseOutlineExplained|Next-->]]
 
 # Short Exercise Outline Thinking
 Third, I'll ask the person to attempt to generalize from their experience:
@@ -11,4 +11,4 @@ Third, I'll ask the person to attempt to generalize from their experience:
 * Contrast this with some of the other experiences you've already had in the subject area.
 * How might you mix this idea with others you've already seen?
 
-[Next-->]({{ site.pagesurl }}/ShortExerciseOutlineObservation|<--Back]] [[ShortExerciseOutlineExplained)
+[[ShortExerciseOutlineObservation|<--Back]] [[ShortExerciseOutlineExplained|Next-->]]

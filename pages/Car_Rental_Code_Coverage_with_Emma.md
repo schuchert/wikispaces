@@ -1,11 +1,11 @@
 ---
 title: Car_Rental_Code_Coverage_with_Emma
 ---
-[Next-->]({{ site.pagesurl }}/Car Rental Example|<--Back]] [[Emma Code Coverage vehicle.type)
+[[Car Rental Example|<--Back]] [[Emma Code Coverage vehicle.type|Next-->]]
 
 # Code Coverage with Emma
 
-This example is based on the [these instructions]({{ site.pagesurl }}/Car Rental Example]]. If you want work through this example, you need to follow [[Car Rental Installation and Setup) first.
+This example is based on the [[Car Rental Example]]. If you want work through this example, you need to follow [[Car Rental Installation and Setup|these instructions]] first.
 
 In this example, we add code coverage to the Car Rental Application. We then examine the results, make some changes and finish with a few conclusions. 
 
@@ -19,10 +19,10 @@ Let's get started:
 # Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
 
 **suite() method**
-Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [suite()]({{ site.pagesurl }}/JUnit 4.xSuite) method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
+Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [[JUnit 4.xSuite|suite()]] method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
  
 **Ant Script**
-When you followed [these instructions]({{ site.pagesurl }}/Car Rental Installation and Setup), you should have created a workspace with three projects:
+When you followed [[Car Rental Installation and Setup|these instructions]], you should have created a workspace with three projects:
 * CarRental
 * LoggingUtils
 * ToolConfiguration
@@ -182,4 +182,4 @@ So I have roughly 81% code coverage with 106 unit tests and I have a few problem
 
 Over the next several sections, we will look at each package with less than 80% code coverage, assess each class and plan out our changes. For you to follow along, you'll need to execute the Emma ant script and then look at the classes to understand the assessments.
 
-[Next-->]({{ site.pagesurl }}/Car Rental Example|<--Back]] [[Emma Code Coverage vehicle.type)
+[[Car Rental Example|<--Back]] [[Emma Code Coverage vehicle.type|Next-->]]

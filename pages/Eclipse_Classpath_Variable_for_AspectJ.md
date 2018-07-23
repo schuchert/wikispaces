@@ -1,7 +1,7 @@
 ---
 title: Eclipse_Classpath_Variable_for_AspectJ
 ---
-[Next-->]({{ site.pagesurl }}/Eclipse VM Configuration for AspectJ|<--Back]] [[Eclipse Java Language Preferences for AspectJ)
+[[Eclipse VM Configuration for AspectJ|<--Back]] [[Eclipse Java Language Preferences for AspectJ|Next-->]]
 
 In Eclipse, do the following:
 # Pull down the **Windows** menu
@@ -17,4 +17,4 @@ In Eclipse, do the following:
 
 Note, if you installed AspectJ somewhere else or used a different version, update the above entry accordingly.
 
-[Next-->]({{ site.pagesurl }}/Eclipse VM Configuration for AspectJ|<--Back]] [[Eclipse Java Language Preferences for AspectJ)
+[[Eclipse VM Configuration for AspectJ|<--Back]] [[Eclipse Java Language Preferences for AspectJ|Next-->]]

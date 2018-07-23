@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_Possibilities
 ---
-[Next-->]({{ site.pagesurl }}/AspectJ Annotation Problem|<--Back]] [[AspectJ Annotation One Solution)
+[[AspectJ Annotation Problem|<--Back]] [[AspectJ Annotation One Solution|Next-->]]
 
 # Possibilities
 What ideas did you come up with? How about some of these ideas:
@@ -50,4 +50,4 @@ It does make non-aspect code aware of the aspect design.
 **Option 7 - Your Ideas**
 What were your ideas? I'd like to hear them. I'll add them and credit you (with your permission). Email me: schuchert@yahoo.com.
 
-[Next-->]({{ site.pagesurl }}/AspectJ Annotation Problem|<--Back]] [[AspectJ Annotation One Solution)
+[[AspectJ Annotation Problem|<--Back]] [[AspectJ Annotation One Solution|Next-->]]

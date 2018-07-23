@@ -1,10 +1,10 @@
 ---
 title: JBoss_AOP_Example_2
 ---
-[Next-->]({{ site.pagesurl }}/JBoss AOP Self Study|<--Back]] [[JBossAOPEX2ExpectedVersusActualOutput)
+[[JBoss AOP Self Study|<--Back]] [[JBossAOPEX2ExpectedVersusActualOutput|Next-->]]
 
 # Predict the Output
-Source files are here: [here]({{ site.pagesurl }}/file:JBossAOPExample2src.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject).
+Source files are here: [[file:JBossAOPExample2src.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject|here]].
 
 Have a look at the following Main.main() method and the associated Address class.
 ----
@@ -85,4 +85,4 @@ public class Address implements Serializable {
 
 Given these 2 classes, predict the output. Please do so before continuing.
 
-[Next-->]({{ site.pagesurl }}/JBoss AOP Self Study|<--Back]] [[JBossAOPEX2ExpectedVersusActualOutput)
+[[JBoss AOP Self Study|<--Back]] [[JBossAOPEX2ExpectedVersusActualOutput|Next-->]]

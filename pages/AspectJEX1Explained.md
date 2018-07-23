@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1Explained
 ---
-[Next-->]({{ site.pagesurl }}/AspectJEX1SoWhatIsHappening|<--Back]] [[AspectJVMConfigurationBlackMagic)
+[[AspectJEX1SoWhatIsHappening|<--Back]] [[AspectJVMConfigurationBlackMagic|Next-->]]
 
 ## Example 1 Explained
 Capturing method execution is often what people first think of when considering AOP.
@@ -78,4 +78,4 @@ Note, this file needs to be in a directory called META-INF in the classpath. Her
 # Create a file called aop.xml in that folder
 # Cut and paste the contents
 
-[Next-->]({{ site.pagesurl }}/AspectJEX1SoWhatIsHappening|<--Back]] [[AspectJVMConfigurationBlackMagic)
+[[AspectJEX1SoWhatIsHappening|<--Back]] [[AspectJVMConfigurationBlackMagic|Next-->]]

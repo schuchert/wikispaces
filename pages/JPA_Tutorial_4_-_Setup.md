@@ -14,7 +14,7 @@ If you start with the jar file, here are the steps to get started:
 # In Eclipse, select your project and refresh it (right-click, refresh)
 
 ### Start Database Server
-This set of source files assumes you've setup and started a Hypersonic server. The instructions to do so are [JPA in JSE Settings]({{ site.pagesurl }}/QuantumDb Configuration|here]]. Note that these instructions are both for configuring your database and configuring QuantumDb. If you are not using the QuantumDb plug-in, just pay attention to the sections on [[QuantumDb Configuration#StartYourDatabase|Start Your Database]] and [[QuantumDb Configuration#JPAinJSE).
+This set of source files assumes you've setup and started a Hypersonic server. The instructions to do so are [[QuantumDb Configuration|here]]. Note that these instructions are both for configuring your database and configuring QuantumDb. If you are not using the QuantumDb plug-in, just pay attention to the sections on [[QuantumDb Configuration#StartYourDatabase|Start Your Database]] and [[QuantumDb Configuration#JPAinJSE|JPA in JSE Settings]].
 
 ### Verify Your Project Works
 # Select your project in Eclipse

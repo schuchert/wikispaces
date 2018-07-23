@@ -1,7 +1,7 @@
 ---
 title: AspectJEX4ApplyYourself
 ---
-[Next-->]({{ site.pagesurl }}/AspectJEX4Explained|<--Back]] [[AspectJEX4AssignmentApplications)
+[[AspectJEX4Explained|<--Back]] [[AspectJEX4AssignmentApplications|Next-->]]
 
 # Apply Yourself
 ## Avoid unnecessary checking
@@ -9,7 +9,7 @@ Change the SetInterceptor so that if the object is already changed, it does not 
 ----
 [[#Unexpected Recursion]]
 ## Experiment: Unexpected Recursion
-Line 13 of [FieldSetAspect.java]({{ site.pagesurl }}/AspectJEX4Explained#FieldSetAspect) file defines a pointcut meant to avoid recursion. Line 21 actually uses that pointcut. Change line 21 by removing “&& skipTrackedObject()” and run main(). Describe why happens.
+Line 13 of [[AspectJEX4Explained#FieldSetAspect|FieldSetAspect.java]] file defines a pointcut meant to avoid recursion. Line 21 actually uses that pointcut. Change line 21 by removing “&& skipTrackedObject()” and run main(). Describe why happens.
 
 Make sure to change FieldSetAspect.java back to its original value.
 ----
@@ -24,6 +24,6 @@ Currently the constructor does not change anything. Update the constructor to se
 Create a class that allows you to keep track of the history of rolls of individual Die objects. Introduce that history class into the Die class and track the history of individual die objects. At the end of the program, display the history information.
 ----
 ## Thought: Why return null?
-[FieldSetAspect.java]({{ site.pagesurl }}/AspectJEX4Explained#FieldSetAspect) returns null on line 32. Could this cause any side effects? Can you suggest any alternatives?
+[[AspectJEX4Explained#FieldSetAspect|FieldSetAspect.java]] returns null on line 32. Could this cause any side effects? Can you suggest any alternatives?
 
-[Next-->]({{ site.pagesurl }}/AspectJEX4Explained|<--Back]] [[AspectJEX4AssignmentApplications)
+[[AspectJEX4Explained|<--Back]] [[AspectJEX4AssignmentApplications|Next-->]]

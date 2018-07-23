@@ -1,7 +1,7 @@
 ---
 title: JUnit_4.xAtTestWithExpected
 ---
-[<--Back]({{ site.pagesurl }}/JUnit 4.x#AtTestExpected)
+[[JUnit 4.x#AtTestExpected|<--Back]]
 
 # @Test(expected``=``SomeException.class)
 Prior to JUnit 4, if I wanted to write a test that verified a certain exception was thrown, I'd write something like the following:
@@ -15,7 +15,7 @@ public void testSomething() {
    }
 }
 ```
-This is a bit awkward so in JUnit 4, you can now tell the annotation that when this test runs, you expect the result to be an exception. Here's a snippet taken from [Example 2]({{ site.pagesurl }}/JUnit 4.x#example2):
+This is a bit awkward so in JUnit 4, you can now tell the annotation that when this test runs, you expect the result to be an exception. Here's a snippet taken from [[JUnit 4.x#example2|Example 2]]:
 ```
 51:     @Test(expected = ObjectExists.class)
 52:     public void createVehicleTypeWhenNameAlreadyExists() {
@@ -43,4 +43,4 @@ I mention this to make it clear that @Test(expected=...) does not allow you to i
 ```
 The use of @Test(expected=...) removes the need for several lines of boilerplate code.
 
-[<--Back]({{ site.pagesurl }}/JUnit 4.x#AtTestExpected)
+[[JUnit 4.x#AtTestExpected|<--Back]]

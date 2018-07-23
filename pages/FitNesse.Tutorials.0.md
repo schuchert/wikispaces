@@ -32,7 +32,7 @@ FitNesse (v20100103) Started...
 To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[!-WikiWord-!][FitNesse.WikiWord]] to the page.
 
 | '''To Learn More...'''|
-| [''What is [[FitNesse][FitNesse.FitNesse]({{ site.pagesurl }}/A One-Minute Description][FitNesse.OneMinuteDescription]])? Start here.''|
+| [[A One-Minute Description][FitNesse.OneMinuteDescription]]|''What is [[FitNesse][FitNesse.FitNesse]]? Start here.''|
 | [[A Two-Minute Example][FitNesse.TwoMinuteExample]]|''A brief example. Read this one next.''|
 | [[User Guide][FitNesse.UserGuide]]|''Answer the rest of your questions here.''|
 | [[Acceptance Tests][FitNesse.SuiteAcceptanceTests]]|''FitNesse's suite of Acceptance Tests''|

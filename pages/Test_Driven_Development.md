@@ -11,17 +11,17 @@ This page contains examples to use when practicing or teaching [[Test Driven Dev
 Here are a few stand-alone examples: [[TDD Example Catalog]]
 
 # Projects
-* [print]({{ site.pagesurl }}/RPN Calculator]] ([[http://schuchert.wikispaces.com/RpnCalculatorPrintable?f=print))
-* [print]({{ site.pagesurl }}/Monopoly(r)]]  ([[http://schuchert.wikispaces.com/MonopolyPrintable?f=print))
+* [[RPN Calculator]] ([[http://schuchert.wikispaces.com/RpnCalculatorPrintable?f=print|print]])
+* [[Monopoly(r)]]  ([[http://schuchert.wikispaces.com/MonopolyPrintable?f=print|print]])
 
 # Use in a C++ Class
-Here is the beginnings of an example TDD session using the [C++]({{ site.pagesurl }}/Monopoly(r)]] as the basis and [[Cxx TDD Monopoly) as the language.
+Here is the beginnings of an example TDD session using the [[Monopoly(r)]] as the basis and [[Cxx TDD Monopoly|C++]] as the language.
 
-## [Notes on CppUTest]({{ site.pagesurl }}/tdd.cpp.NotesOnCppUTest)
+## [[tdd.cpp.NotesOnCppUTest|Notes on CppUTest]]
 ## [[NotesOnCppULite|Notes on CppULite]]
 ## [[TwoDayTddJavaEclipseWorkspace]]
-## [C++ Project Outline]({{ site.pagesurl }}/tdd.cpp.ProjectOutline)
-## [Moving towards a story-based expression of tests]({{ site.pagesurl }}/tdd.cpp.MovingTowardsStoryBasedExpressionOfTests)
+## [[tdd.cpp.ProjectOutline|C++ Project Outline]]
+## [[tdd.cpp.MovingTowardsStoryBasedExpressionOfTests|Moving towards a story-based expression of tests]]
 
 # Use in a Java Class
 
@@ -45,4 +45,4 @@ Next, use the [[Monopoly(r)]] problem.
 * [[Moq]]
 
 # For Objective-C
-* [Getting Started in XCode]({{ site.pagesurl }}/tdd.objectivec.XCodeProjectSetup)
+* [[tdd.objectivec.XCodeProjectSetup|Getting Started in XCode]]

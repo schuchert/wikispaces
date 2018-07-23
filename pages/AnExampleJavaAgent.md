@@ -14,7 +14,7 @@ java -javaagent:Registrar.jar -Dschuchert.ClassFileTransformer=schuchert.agent.N
 Congratulations, everything seems to be working
 ```
 
-If you see anything else, [check here]({{ site.pagesurl }}/ProblemsRunningJavaAgentSmokeTest)
+If you see anything else, [[ProblemsRunningJavaAgentSmokeTest|check here]]
 ----
 ## Contents of Jar
 The Registrar.jar file contains several things, including source and class files and even a JUnit 4 test. IF you want to actually run that test, you'll need to have the following in your class path:

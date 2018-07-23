@@ -6,7 +6,7 @@ I'm attempting to create materials people will find useful for learning some too
 For more background on where I'm coming from, have a look at [[ExperientialLearningNotes]].
 
 # Exercises 
-> == [Aspect Oriented Programming]({{ site.pagesurl }}/AspectOrientedProgramming) 
+> == [[AspectOrientedProgramming|Aspect Oriented Programming]] 
 
 # Notes 
 > == [[ExperientialLearningNotes]] 

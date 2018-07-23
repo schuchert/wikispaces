@@ -1,7 +1,7 @@
 ---
 title: JUnit_4.xAtAfterClass
 ---
-[<--Back]({{ site.pagesurl }}/JUnit 4.x#AtAfterClass)
+[[JUnit 4.x#AtAfterClass|<--Back]]
 
 # @AfterClass
 There is no analog to @AfterClass before JUnit 4.0. It is run once after all unit tests in a given class have executed.
@@ -17,4 +17,4 @@ Notice that the method is both public and static. This is required:
 51:     }
 ```
 
-[<--Back]({{ site.pagesurl }}/JUnit 4.x#AtAfterClass)
+[[JUnit 4.x#AtAfterClass|<--Back]]

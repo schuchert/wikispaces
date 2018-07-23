@@ -2,19 +2,19 @@
 title: cpptraining.SummingAVector
 ---
 {:toc}
-[<-- Back]({{ site.pagesurl }}/cpptraining#vector)
+[[cpptraining#vector|<-- Back]]
 
 # Overview
 This is a series of examples that demonstrate how to get the sum of a vector of primitives, then objects, and finally shared pointers to objects. It starts with one typical way of accomplishing the task. It then goes into several more examples. The final example will probably seem like quite a huge leap over the next to last example. At that point, there will be another series of examples that builds up to that final example.
 
 # Requirements
 These examples use The Eclipse CDT, mingw, CppUTest 2.1 and gcc 4.4. If you need to setup the entire environment, here are those steps:
-* [Getting The CDT Running]({{ site.pagesurl }}/cpptraining.GettingStartedWithEclipseCdt)
-* [Getting CppUTest Compiled Using CDT Tool Set]({{ site.pagesurl }}/cpptraining.GettingCppUTestCompiledUsingCDTToolSet)
-* [Getting CppUTest Running]({{ site.pagesurl }}/cpptraining.GettingCppUTestRunning)
-* [Getting and Building Boost in minggw]({{ site.pagesurl }}/cpptraining.GettingAndBuildingBoostInMingw)
-* [Using Boost With mingw And Eclipse]({{ site.pagesurl }}/cpptraining.UsingBoostWithMingwAndEclipse)
-* [Configuring gcc to use C++0x in Eclipse Cdt]({{ site.pagesurl }}/cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt)
+* [[cpptraining.GettingStartedWithEclipseCdt|Getting The CDT Running]]
+* [[cpptraining.GettingCppUTestCompiledUsingCDTToolSet|Getting CppUTest Compiled Using CDT Tool Set]]
+* [[cpptraining.GettingCppUTestRunning|Getting CppUTest Running]]
+* [[cpptraining.GettingAndBuildingBoostInMingw|Getting and Building Boost in minggw]]
+* [[cpptraining.UsingBoostWithMingwAndEclipse|Using Boost With mingw And Eclipse]]
+* [[cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt|Configuring gcc to use C++0x in Eclipse Cdt]]
 
 # Getting Started
 Here is a trivial example of creating a sum over a vector of ints:
@@ -620,4 +620,4 @@ TEST(plusAndBind, vsp_Value) {
 }
 ```
 
-[<-- Back]({{ site.pagesurl }}/cpptraining#vector)
+[[cpptraining#vector|<-- Back]]

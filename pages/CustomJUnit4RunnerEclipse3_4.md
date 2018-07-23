@@ -1,7 +1,7 @@
 ---
 title: CustomJUnit4RunnerEclipse3_4
 ---
-[<<--Back]({{ site.pagesurl }}/CustomJUnit4Runner)
+[[CustomJUnit4Runner|<<--Back]]
 # Writing a Custom JUnit 4 Test Runner
 
 ## Introduction

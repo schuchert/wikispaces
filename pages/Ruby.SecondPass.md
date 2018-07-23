@@ -1,4 +1,4 @@
 ---
 title: Ruby.SecondPass
 ---
-[Rails Configuration on OS X]({{ site.pagesurl }}/Ruby.RailsConfiguration.OSX)
+[[Ruby.RailsConfiguration.OSX|Rails Configuration on OS X]]

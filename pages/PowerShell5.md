@@ -2,8 +2,8 @@
 title: PowerShell5
 ---
 # PowerShell 5
-* [Shave The Yaks]({{ site.pagesurl }}/PowerShell5.YakShaving)
-* [ Getting Started]({{ site.pagesurl }}/PowerShell5.GettingSetUp)
-* [Tokenize an Expression]({{ site.pagesurl }}/PowerShell5.TokenizeExpression) 
-* [Shunting Yard Algorithm]({{ site.pagesurl }}/PowerShell5.ShuntingYardAlgorithm)
-* [Rpn Calculator]({{ site.pagesurl }}/PowerShell5.RpnCalculator)
+* [[PowerShell5.YakShaving|Shave The Yaks]]
+* [[PowerShell5.GettingSetUp| Getting Started]]
+* [[PowerShell5.TokenizeExpression|Tokenize an Expression]] 
+* [[PowerShell5.ShuntingYardAlgorithm|Shunting Yard Algorithm]]
+* [[PowerShell5.RpnCalculator|Rpn Calculator]]

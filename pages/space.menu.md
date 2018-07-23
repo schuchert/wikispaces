@@ -1,16 +1,16 @@
 ---
 title: space.menu
 ---
-[My CV]({{ site.pagesurl }}/MyCv)
-[C++ Training]({{ site.pagesurl }}/cpptraining)
-[New Stuff]({{ site.pagesurl }}/NewStuff)
+[[MyCv|My CV]]
+[[cpptraining|C++ Training]]
+[[NewStuff|New Stuff]]
 [[FitNesse.Tutorials|FitNessse Tutorials]]
-[Experiential Learning]({{ site.pagesurl }}/ExperientialLearningNotes)
+[[ExperientialLearningNotes|Experiential Learning]]
 [[RubyNotes]]
-[EJB & JPA]({{ site.pagesurl }}/EJB 3 and Java Persistence API)
+[[EJB 3 and Java Persistence API|EJB & JPA]]
 [[Agile Courseware]]
 [[Articles|Unpublished Articles]]
-[Tool Configuration]({{ site.pagesurl }}/Tool Setup and Configuration Notes)
+[[Tool Setup and Configuration Notes|Tool Configuration]]
 [[AOP]]
-[C# & OOP]({{ site.pagesurl }}/CSharpAndOop)
+[[CSharpAndOop|C# & OOP]]
 [[home|Back to the Top]]

@@ -1,7 +1,7 @@
 ---
 title: ruby.tutorials.tdd.UsingTddToDevelopABasicAlgorithm
 ---
-[<--Back]({{ site.pagesurl }}/ruby.tutorials)
+[[ruby.tutorials|<--Back]]
 
 # Overview
 {:toc}
@@ -2162,5 +2162,5 @@ class ShuntingYardAlgorithmTest < Test::Unit::TestCase
 end
 ```
 
-[<--Back]({{ site.pagesurl }}/ruby.tutorials)
+[[ruby.tutorials|<--Back]]
 

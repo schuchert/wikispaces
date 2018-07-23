@@ -1,7 +1,7 @@
 ---
 title: TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid
 ---
-[Next-->]({{ site.pagesurl }}/TddAndConcurrency.Slides.DoOneThingWellWell|<--Back]] | [[TddAndConcurrency.Slides|^Top^]] | [[TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo)
+[[TddAndConcurrency.Slides.DoOneThingWellWell|<--Back]] | [[TddAndConcurrency.Slides|^Top^]] | [[TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo|Next-->]]
 
 # When It's Quiet Be Afraid, Very Afraid
 
@@ -105,5 +105,5 @@ Let’s demonstrate that this code is broken
 
 [[media type="file" key="ConcurrencyDemo_increasingChangesOfFindingDefect.mov"]]
 
-[Next-->]({{ site.pagesurl }}/TddAndConcurrency.Slides.DoOneThingWellWell|<--Back]] | [[TddAndConcurrency.Slides|^Top^]] | [[TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo)
+[[TddAndConcurrency.Slides.DoOneThingWellWell|<--Back]] | [[TddAndConcurrency.Slides|^Top^]] | [[TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo|Next-->]]
 

@@ -1,4 +1,4 @@
 ---
 title: pictures
 ---
-[Spider In Front Yard]({{ site.pagesurl }}/pictures.SpiderInFrontYard)
+[[pictures.SpiderInFrontYard|Spider In Front Yard]]

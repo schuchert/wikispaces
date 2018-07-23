@@ -4,9 +4,9 @@ title: FitNesse.Tutorials.TableTables
 {:toc}[[FitNesse.Tutorials|<--Back]] -or- [[FitNesse.Tutorials.AlternativeScriptTableSyntax|Next Tutorial-->]]
 
 # Background
-This is a tutorial loosely based on [That writeup]({{ site.pagesurl }}/Acceptance Testing.FitNesse.TableTableExample|this writeup]]. [[Acceptance Testing.FitNesse.TableTableExample) describes using table table to implement test data setup to make determining expected results easier. You can read that for a slightly different take. That example was written after the fact and somewhat cleaned up. It also is not a tutorial; it is really a summary of what you'll be doing in this tutorial.
+This is a tutorial loosely based on [[Acceptance Testing.FitNesse.TableTableExample|this writeup]]. [[Acceptance Testing.FitNesse.TableTableExample|That writeup]] describes using table table to implement test data setup to make determining expected results easier. You can read that for a slightly different take. That example was written after the fact and somewhat cleaned up. It also is not a tutorial; it is really a summary of what you'll be doing in this tutorial.
 
-In this tutorial, you'll review the setup for a previous test and then build the test setup in a way that will much better relate to the domain. Unlike the [original table table example]({{ site.pagesurl }}/Acceptance Testing.FitNesse.TableTableExample), this one will seem a lot more like a plausible development effort.
+In this tutorial, you'll review the setup for a previous test and then build the test setup in a way that will much better relate to the domain. Unlike the [[Acceptance Testing.FitNesse.TableTableExample|original table table example]], this one will seem a lot more like a plausible development effort.
 
 # Getting Started
 As with the other tutorials, you can continue from the work you've done on the [[FitNesse.Tutorials.ScenarioTables|previous tutorial]], or you can [[FitNesse.Tutorials.WorkingFromGitHub|use the source]] and start at the tag: FitNesse.Tutorials.TableTables.Start.

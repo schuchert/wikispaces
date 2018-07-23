@@ -1,7 +1,7 @@
 ---
 title: AspectJ_CFlowApplyYourself
 ---
-[Next-->]({{ site.pagesurl }}/AspectJ CFlowExplained|<--Back]] [[AspectJ CFlowAssignmentApplications)
+[[AspectJ CFlowExplained|<--Back]] [[AspectJ CFlowAssignmentApplications|Next-->]]
 
 # Apply Yourself
 
@@ -28,4 +28,4 @@ Sometimes during normal program flow, I want to avoid change tracking (an actual
 
 Next, make that method use reflection or anonymous inner classes. When you call that method, it calls either a method provided by name (reflrction), or it executes a method on an instance passed in (anonymous inner class). This allows any functionality to be executed while still avoidibg change tracking.
 ----
-[Next-->]({{ site.pagesurl }}/AspectJ CFlowExplained|<--Back]] [[AspectJ CFlowAssignmentApplications)
+[[AspectJ CFlowExplained|<--Back]] [[AspectJ CFlowAssignmentApplications|Next-->]]

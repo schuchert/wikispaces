@@ -23,7 +23,7 @@ public class JpaApiTests {
 }
 ```
 
-This creates two fields. We then use the JUnit 4 @Before annotation to initialize that before the execution of each individual unit test. For details, please see [here]({{ site.pagesurl }}/JUnit 4.xBefore).
+This creates two fields. We then use the JUnit 4 @Before annotation to initialize that before the execution of each individual unit test. For details, please see [[JUnit 4.xBefore|here]].
 
 ### Per test method cleanup
 ```java
@@ -33,7 +33,7 @@ This creates two fields. We then use the JUnit 4 @Before annotation to initializ
         emf.close();
     }
 ```
-This example uses the JUnit 4 @After annotation to cleanup up resources we've allocation after the execution of each individual unit test. For details, please see [here]({{ site.pagesurl }}/JUnit 4.xAtAfter).
+This example uses the JUnit 4 @After annotation to cleanup up resources we've allocation after the execution of each individual unit test. For details, please see [[JUnit 4.xAtAfter|here]].
 
 ### One-time logger initialization
 ```java
@@ -43,7 +43,7 @@ This example uses the JUnit 4 @After annotation to cleanup up resources we've al
         Logger.getLogger("org").setLevel(Level.ERROR);
     }
 ```
-This example uses the JUnit 4 @BeforeClass annotation to perform one-time initialization for the whole class. For details, please see [here]({{ site.pagesurl }}/JUnit 4.xAtBeforeClass).
+This example uses the JUnit 4 @BeforeClass annotation to perform one-time initialization for the whole class. For details, please see [[JUnit 4.xAtBeforeClass|here]].
 
 In this case, the first line in the method performs basic configuration of the Log4J logging system. The second line sets the default logging level for any class whose package starts with **org** to ERROR. This significantly reduces the output. It is possible to reduce the output one level further by setting it to FATAL.
 

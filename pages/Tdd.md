@@ -1,6 +1,6 @@
 ---
 title: Tdd
 ---
-## [Hello World Tdd Style in C++]({{ site.pagesurl }}/Tdd.HelloWorld.Cpp)
+## [[Tdd.HelloWorld.Cpp|Hello World Tdd Style in C++]]
 
-## [Example of the Transformation Priority Premise]({{ site.pagesurl }}/Tdd.TransformationPriorityPremiseExample)
+## [[Tdd.TransformationPriorityPremiseExample|Example of the Transformation Priority Premise]]

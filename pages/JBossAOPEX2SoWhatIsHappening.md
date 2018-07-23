@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX2SoWhatIsHappening
 ---
-[Next-->]({{ site.pagesurl }}/JBossAOPEX2WhatIsHappening|<--Back]] [[JBossAOPEX2Explained)
+[[JBossAOPEX2WhatIsHappening|<--Back]] [[JBossAOPEX2Explained|Next-->]]
 
 # So what is happening?
 Here are some descriptions I’ve heard:
@@ -9,4 +9,4 @@ Here are some descriptions I’ve heard:
 * We are adding to variable assignment.
 * ...
 
-[Next-->]({{ site.pagesurl }}/JBossAOPEX2WhatIsHappening|<--Back]] [[JBossAOPEX2Explained)
+[[JBossAOPEX2WhatIsHappening|<--Back]] [[JBossAOPEX2Explained|Next-->]]

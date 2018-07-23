@@ -1,9 +1,9 @@
 ---
 title: cpptraining.GettingCppUTestCompiledUsingCDTToolSet.Juno
 ---
-[<--back]({{ site.pagesurl }}/cpptraining)
+[[cpptraining|<--back]]
 # Overview
-These instructions assume you have already followed [these instructions]({{ site.pagesurl }}/cpptraining.GettingStartedWithEclipseCdt.Juno).
+These instructions assume you have already followed [[cpptraining.GettingStartedWithEclipseCdt.Juno|these instructions]].
 
 ## Instructions
 * Download [[http://sourceforge.net/projects/cpputest/files/cpputest/v3.1/CppUTest-v3.1.zip/download|CppUTest]] (as of this writing, I'm using version 3.1.
@@ -88,4 +88,4 @@ OK (296 tests, 291 ran, 794 checks, 5 ignored, 0 filtered out, 47 ms)
 C:\learncpp\cpputest>
 ```
 
-[<--back]({{ site.pagesurl }}/cpptraining)
+[[cpptraining|<--back]]

@@ -1,7 +1,7 @@
 ---
 title: AlternatingHandGripExercise
 ---
-[<--Back]({{ site.pagesurl }}/ExperientialLearningNotes)
+[[ExperientialLearningNotes|<--Back]]
 
 # Alternating Hand Grips 
 This is an exercise developed by Jerry Weinberg http://www.geraldmweinberg.com. I've used this exercise extensively in situations where I'm going to have the same group of people for several days (3 or more).
@@ -36,4 +36,4 @@ On the other hand, if we're just setting context for a course and using this as 
 ## Final Recommendations 
 Keep the list of what the students had to say visible for the entire course. When you start to notice resistance, frustration, or some sign that a student is somewhere else, ask them where they are on the list.
 
-[<--Back]({{ site.pagesurl }}/ExperientialLearningNotes)
+[[ExperientialLearningNotes|<--Back]]

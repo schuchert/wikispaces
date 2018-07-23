@@ -11,4 +11,4 @@ As a player, I pay rent when I land on a Property that is owned by someone else.
 ** If landing on Real Estate and not all in the same Property Group are owned, rent is stated rent value.
 ** If landing on Real Estate and Owner owns all in the same Property Group, rent is 2 times stated rent value.
 
-[<--Back]({{ site.pagesurl }}/Monopoly(r) Release 3 User Stories)
+[[Monopoly(r) Release 3 User Stories|<--Back]]

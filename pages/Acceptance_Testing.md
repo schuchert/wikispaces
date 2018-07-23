@@ -1,8 +1,8 @@
 ---
 title: Acceptance_Testing
 ---
-## [Experiential Workshop With FitNesse]({{ site.pagesurl }}/Acceptance Testing.ExperientialWorkshopWithFitnesse)
+## [[Acceptance Testing.ExperientialWorkshopWithFitnesse|Experiential Workshop With FitNesse]]
 
-## [Using Slim.Net in FitNesse]({{ site.pagesurl }}/Acceptance Testing.UsingSlimDotNetInFitNesse)
+## [[Acceptance Testing.UsingSlimDotNetInFitNesse|Using Slim.Net in FitNesse]]
 
-## [Using the FitNesse.SliM Table Table]({{ site.pagesurl }}/Acceptance Testing.FitNesse.TableTableExample)
+## [[Acceptance Testing.FitNesse.TableTableExample|Using the FitNesse.SliM Table Table]]

@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1ApplicationsOfMethodExecution
 ---
-[Next-->]({{ site.pagesurl }}/AspectJEX1AssignmentApplications|<--Back]] [[AspectJEX1AssignmentIssues)
+[[AspectJEX1AssignmentApplications|<--Back]] [[AspectJEX1AssignmentIssues|Next-->]]
 
 ## Applications of Method Execution
 Here are some things I’ve heard people mention:
@@ -10,4 +10,4 @@ Here are some things I’ve heard people mention:
 * Copying method execution to a second target automatically
 * …
 
-[Next-->]({{ site.pagesurl }}/AspectJEX1AssignmentApplications|<--Back]] [[AspectJEX1AssignmentIssues)
+[[AspectJEX1AssignmentApplications|<--Back]] [[AspectJEX1AssignmentIssues|Next-->]]

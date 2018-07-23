@@ -1,7 +1,7 @@
 ---
 title: Ejb3_Tutorial_1_-_Printable
 ---
-[<--Back]({{ site.pagesurl }}/EJB 3 and Java Persistence API)
+[[EJB 3 and Java Persistence API|<--Back]]
 
 # Getting Started with the JBoss Embedded Container
 
@@ -31,4 +31,4 @@ Most of this tutorial is about configuration and utility methods. We will use th
 ## Exercises
 [[include page="EJB3 Tutorial 1 - Exercises"]]
 
-[<--Back]({{ site.pagesurl }}/EJB 3 and Java Persistence API)
+[[EJB 3 and Java Persistence API|<--Back]]

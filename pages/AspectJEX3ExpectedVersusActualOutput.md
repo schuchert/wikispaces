@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3ExpectedVersusActualOutput
 ---
-[Next-->]({{ site.pagesurl }}/AspectJ Example 2|<--Back]] [[AspectJEX3Possibilities)
+[[AspectJ Example 2|<--Back]] [[AspectJEX3Possibilities|Next-->]]
 
 # Expected Versus Actual Output
 
@@ -26,4 +26,4 @@ By now you've figured out that the expected and actual output are generally not 
 ## Assignment: Form a Theory
 Spend a few moments and try to figure out how to make this output happen. Write down those ideas. Please do so before continuing to the next section.
 
-[Next-->]({{ site.pagesurl }}/AspectJ Example 2|<--Back]] [[AspectJEX3Possibilities)
+[[AspectJ Example 2|<--Back]] [[AspectJEX3Possibilities|Next-->]]

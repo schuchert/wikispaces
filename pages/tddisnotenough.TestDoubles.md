@@ -1,7 +1,7 @@
 ---
 title: tddisnotenough.TestDoubles
 ---
-[<==Back]({{ site.pagesurl }}/tddisnotenough#TestDoubles)
+[[tddisnotenough#TestDoubles|<==Back]]
 
 From Gerard Meszaros - [[http://xunitpatterns.com/Test%20Double%20Patterns.html]].
 ||~ Name||~ Description||
@@ -12,4 +12,4 @@ From Gerard Meszaros - [[http://xunitpatterns.com/Test%20Double%20Patterns.html]
 ||Mock||Has & Validates expectations||
 ||Saboteur||Designed to always fail, e.g., always throws an exception.||
 
-[<==Back]({{ site.pagesurl }}/tddisnotenough#TestDoubles)
+[[tddisnotenough#TestDoubles|<==Back]]

@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX3ApplyYourself
 ---
-[Next-->]({{ site.pagesurl }}/JBossAOPEX3Explained|<--Back]] [[JBossAOPEX3AssignmentApplications)
+[[JBossAOPEX3Explained|<--Back]] [[JBossAOPEX3AssignmentApplications|Next-->]]
 
 # Apply Yourself
 ## Avoid unnecessary checking
@@ -25,6 +25,6 @@ Create a class that allows you to keep track of the history of rolls of individu
 A class must implement java.io.Serializable to be saved using an ObjectOutputStream. The Die class provided earlier does not implement java.io.Serializable. Write an introduction that adds java.io.Serializable to the Die class and then write a program that creates an instance, writes it to a file using ObjectOutputStream and then reads it back in.
 ----
 ## Thought: Why return null?
-[SetInterceptor.java]({{ site.pagesurl }}/JBossAOPEX3Explained#SetInterceptor) returns null on line 25. Could this cause any side effects? Can you suggest any alternatives?
+[[JBossAOPEX3Explained#SetInterceptor|SetInterceptor.java]] returns null on line 25. Could this cause any side effects? Can you suggest any alternatives?
 
-[Next-->]({{ site.pagesurl }}/JBossAOPEX3Explained|<--Back]] [[JBossAOPEX3AssignmentApplications)
+[[JBossAOPEX3Explained|<--Back]] [[JBossAOPEX3AssignmentApplications|Next-->]]

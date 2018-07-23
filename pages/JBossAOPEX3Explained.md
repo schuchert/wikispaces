@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX3Explained
 ---
-[Next-->]({{ site.pagesurl }}/JBossAOPEX3SoWhatIsHappening|<--Back]] [[JBossAOPEX3ApplyYourself)
+[[JBossAOPEX3SoWhatIsHappening|<--Back]] [[JBossAOPEX3ApplyYourself|Next-->]]
 
 # Example 3 Explained
 In this example, we add Introductions (adding an interface + implementation of that interface to an existing class) and field setting as well as method execution. In the Field Setting example we simply reported existing and new values. Now we use that information and track whether an object has changed.
@@ -295,4 +295,4 @@ Here is the full aspect configuration:
 ||22 – 26||Intercept Dao->save(...) and allow the SaveMethodInterceptor to have a look first.||
 
 
-[Next-->]({{ site.pagesurl }}/JBossAOPEX3SoWhatIsHappening|<--Back]] [[JBossAOPEX3ApplyYourself)
+[[JBossAOPEX3SoWhatIsHappening|<--Back]] [[JBossAOPEX3ApplyYourself|Next-->]]

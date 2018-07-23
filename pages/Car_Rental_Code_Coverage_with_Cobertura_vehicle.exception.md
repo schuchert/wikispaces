@@ -1,7 +1,7 @@
 ---
 title: Car_Rental_Code_Coverage_with_Cobertura_vehicle.exception
 ---
-[Next-->]({{ site.pagesurl }}/Car Rental Code Coverage with Cobertura vehicle.type|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.configuration)
+[[Car Rental Code Coverage with Cobertura vehicle.type|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.configuration|Next-->]]
 
 # Package: vehicle.exception
 
@@ -12,4 +12,4 @@ title: Car_Rental_Code_Coverage_with_Cobertura_vehicle.exception
 ## Conclusions
 
 
-[Next-->]({{ site.pagesurl }}/Car Rental Code Coverage with Cobertura vehicle.type|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.configuration)
+[[Car Rental Code Coverage with Cobertura vehicle.type|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.configuration|Next-->]]

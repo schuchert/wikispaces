@@ -1,7 +1,7 @@
 ---
 title: cpptraining.GettingStartedWithFitNesseInCpp
 ---
-[<--Back]({{ site.pagesurl }}/cpptraining#FitNesse)
+[[cpptraining#FitNesse|<--Back]]
 
 # Initial Downloads
 ## Download [[http://github.com/dougbradbury/cslim/tree/master|cslim from github]]
@@ -232,4 +232,4 @@ Linking CSlim_cslim
 If you see mostly green, congratulations. As of this writing, there's an exception on the slim protocol version. Once this gets fixed, I'll update these instructions
 
 
-[<--Back]({{ site.pagesurl }}/cpptraining#FitNesse)
+[[cpptraining#FitNesse|<--Back]]
