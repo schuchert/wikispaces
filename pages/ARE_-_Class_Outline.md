@@ -1,3 +1,6 @@
+---
+title: ARE_-_Class_Outline
+---
 # Outline
 ## Introductions
 ### Course Overview

@@ -1,3 +1,6 @@
+---
+title: Php
+---
 **Install**
 * Pear: [[http://pear.php.net/manual/en/installation.getting.php]]
 >> OS X: [[http://clickontyler.com/blog/2008/01/how-to-install-pear-in-mac-os-x-leopard/]]

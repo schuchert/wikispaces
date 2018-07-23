@@ -1,3 +1,6 @@
+---
+title: home
+---
 For more background on where I'm coming from, have a look at
 [Experiential Learning Notes]({{ site.pagesurl}}/ExperientialLearningNotes)
 

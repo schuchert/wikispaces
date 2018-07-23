@@ -1,3 +1,6 @@
+---
+title: ApsectJEX4ExpectedVersusActualOutput
+---
 [[AspectJ Example 4|<--Back]] [[AspectJEX4Possibilities|Next-->]]
 
 # Expected Versus Actual Output

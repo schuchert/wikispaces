@@ -1,3 +1,6 @@
+---
+title: AspectJ_Annotation_One_Solution
+---
 [[AspectJ Annotation Possibilities|<--Back]] [[AspectJ Annotation AllCode|Next-->]]
 
 # One Solution

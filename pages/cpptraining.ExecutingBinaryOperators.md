@@ -1,3 +1,6 @@
+---
+title: cpptraining.ExecutingBinaryOperators
+---
 {:toc}
 [[cpptraining#FitNesse|<--Back]]
 

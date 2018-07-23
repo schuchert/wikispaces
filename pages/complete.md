@@ -1,3 +1,6 @@
+---
+title: complete
+---
 Complete is a tough word to define for a project. Often, when a developer says something is "complete" or "done" s/he is saying "I've coded it." In fact, this is nowhere near complete.
 
 Here are a minimal set of characteristics to define something as complete:

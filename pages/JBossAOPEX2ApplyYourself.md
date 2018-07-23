@@ -1,3 +1,6 @@
+---
+title: JBossAOPEX2ApplyYourself
+---
 [[JBossAOPEX2Explained|<--Back]] [[JBossAOPEX2AssignmentApplications|Next-->]]
 
 # Apply Yourself

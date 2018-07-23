@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.ScenarioTables
+---
 {:toc}[[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.TableTables|Next Tutorial--->]]
 
 # //Note//

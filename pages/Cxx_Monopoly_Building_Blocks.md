@@ -1,3 +1,6 @@
+---
+title: Cxx_Monopoly_Building_Blocks
+---
 All of these examples run under cygwin. In addition to cygwin, these examples use the boost library (which can be installed as part of cygwin) and cxxunit, which you can download.
 
 # Building

@@ -1,3 +1,6 @@
+---
+title: JUnit_4.xAtTestWithExpected
+---
 [[JUnit 4.x#AtTestExpected|<--Back]]
 
 # @Test(expected``=``SomeException.class)

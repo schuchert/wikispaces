@@ -1,3 +1,6 @@
+---
+title: AspectJEX1IssuesConcerns
+---
 [[AspectJEX1AssignmentIssues|<--Back]] [[AspectJ Example 2|Next-->]]
 
 ## Issues/Concerns

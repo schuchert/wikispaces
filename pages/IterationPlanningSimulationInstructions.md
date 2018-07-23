@@ -1,3 +1,6 @@
+---
+title: IterationPlanningSimulationInstructions
+---
 ## Introduction
 This is a simple game using dice to simulate a project([[what if you do not have dice]]). The primary goal is to give the players:
 * a basic understanding of what goes into and comes out of an iteration

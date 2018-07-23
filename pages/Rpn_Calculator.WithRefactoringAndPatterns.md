@@ -1,3 +1,6 @@
+---
+title: Rpn_Calculator.WithRefactoringAndPatterns
+---
 Describe the calculator (unlimited stack BTW, but a stack of 4 is a nice option)
 Ask them what they'd like to see first
 Get an idea of what they want for a system boundary

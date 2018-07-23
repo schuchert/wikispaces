@@ -1,3 +1,6 @@
+---
+title: Eclipse_VM_Configuration_for_AspectJ
+---
 [[Environment Configuration for AspectJ|<--Back]] [[Eclipse Classpath Variable for AspectJ|Next-->]]
 
 Your goal is to configure the Java VM to include one additional parameter:

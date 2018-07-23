@@ -1,3 +1,6 @@
+---
+title: Parameterized_Test
+---
 [[TDD Example Catalog|<--Back]]
 
 Imagine we have a series of tests where for each test we perform some operation and then verify the results. The only thing that varies is the data we send into the operation and the expected result. Here's how we might brute force this:

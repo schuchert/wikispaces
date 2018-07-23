@@ -1,3 +1,6 @@
+---
+title: JMockIt.AStoryAboutTooMuchPower
+---
 # A Story About Too Much Power
 
 Notes:

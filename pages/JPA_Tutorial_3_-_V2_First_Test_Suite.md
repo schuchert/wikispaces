@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_3_-_V2_First_Test_Suite
+---
 In this second version, we add the following features:
 * We track when a book was checked out and when it is due
 * We calculate fines when returning books

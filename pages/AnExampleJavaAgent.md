@@ -1,3 +1,6 @@
+---
+title: AnExampleJavaAgent
+---
 [[image:Back.gif link="JavaAgent"]]
 ## Smoke Test
 * Download this jar file [[file:Registrar.jar]]

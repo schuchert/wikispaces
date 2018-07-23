@@ -1,3 +1,6 @@
+---
+title: NewStuff
+---
 * ## [Principles of Product Development Flow]({{ site.pagesurl }}/PrinciplesOfProductDevelopmentFlow)
 * ## [Lombok]({{ site.pagesurl }}/lombok)
 * ## [Setting Up the VM]({{ site.pagesurl }}/vm)

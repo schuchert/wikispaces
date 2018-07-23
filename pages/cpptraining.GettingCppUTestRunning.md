@@ -1,3 +1,6 @@
+---
+title: cpptraining.GettingCppUTestRunning
+---
 [[cpptraining#gettingfirsttestrunning|<--Back]]
 
 # Introduction

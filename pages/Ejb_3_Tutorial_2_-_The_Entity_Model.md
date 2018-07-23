@@ -1,3 +1,6 @@
+---
+title: Ejb_3_Tutorial_2_-_The_Entity_Model
+---
 ### Creating the Entity Model
 We need to create our entity model. There are three classes in it:
 * Address

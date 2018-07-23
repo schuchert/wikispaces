@@ -1,1 +1,4 @@
+---
+title: InnovationGames
+---
 [[InnovationGames.SpeedBoat]]

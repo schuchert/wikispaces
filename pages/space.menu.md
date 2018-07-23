@@ -1,3 +1,6 @@
+---
+title: space.menu
+---
 [[MyCv|My CV]]
 [[cpptraining|C++ Training]]
 [[NewStuff|New Stuff]]

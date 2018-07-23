@@ -1,3 +1,6 @@
+---
+title: AspectJ_Annotation_Observation
+---
 [[AspectJ Annotation Experience|<--Back]] [[AspectJ Annotation Thinking|Next-->]]
 
 # AspectJ Annotation: Observation

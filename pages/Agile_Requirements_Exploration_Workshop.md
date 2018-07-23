@@ -1,3 +1,6 @@
+---
+title: Agile_Requirements_Exploration_Workshop
+---
 # Overview
 This is a 2 - 4 hour workshop meant to give a feeling for writing user stories and acceptance tests for those stories. Throughout this workshop, we have people working in groups of approximately 4 people. 1 person is the product owner and three people are developers.
 

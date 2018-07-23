@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_2_Passing_over_Go
+---
 As a player, I receive $200 when I pass over Go.
 
 ### User Acceptance Tests

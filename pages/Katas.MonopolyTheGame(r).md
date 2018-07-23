@@ -1,3 +1,6 @@
+---
+title: Katas.MonopolyTheGame
+---
 [[Katas|<--Back]]
 
 # Background

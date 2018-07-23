@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.ConvertingToStoryStyle
+---
 [[FitNesse.Tutorials|<--Back]]
 
 # Placeholder

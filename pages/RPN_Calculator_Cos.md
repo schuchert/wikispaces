@@ -1,3 +1,6 @@
+---
+title: RPN_Calculator_Cos
+---
 As a user I want to be able to calculate the cos of an angle in degrees so that I don't have to perform the calculation manually.
 
 

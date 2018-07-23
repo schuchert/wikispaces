@@ -1,3 +1,6 @@
+---
+title: Context_Free_Questions
+---
 # Context Free Questions
 These come from [[http://www.geraldmweinberg.com/books.html|Exploring Requirements: Quality Before Design]] by Gause & Weinberg.
 ## Process

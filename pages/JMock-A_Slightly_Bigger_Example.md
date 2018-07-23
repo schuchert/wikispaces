@@ -1,3 +1,6 @@
+---
+title: JMock-A_Slightly_Bigger_Example
+---
 [[TDD Example Catalog|<--Back]]
 
 ## Introduction

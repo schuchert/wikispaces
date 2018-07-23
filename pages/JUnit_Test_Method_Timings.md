@@ -1,3 +1,6 @@
+---
+title: JUnit_Test_Method_Timings
+---
 [[Some Example Aspects|<--Back]]
 
 Some time ago I wanted to get a rough idea of which unit tests were taking the longest time to run so I could run those tests under a profiler and profile my code. We had tests that ran both in container and out of container so I decided to write all of the output to a log. The output looked like the following (I've rewritten the aspect for public consumption and applied it to an example I'm building for another class):

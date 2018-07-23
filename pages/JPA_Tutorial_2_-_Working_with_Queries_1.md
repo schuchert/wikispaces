@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_2_-_Working_with_Queries_1
+---
 {:toc}
 [[EJB 3 and Java Persistence API|<--Back]]
 

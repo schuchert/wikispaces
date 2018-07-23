@@ -1,3 +1,6 @@
+---
+title: Car_Rental_Installation_and_Setup
+---
 [[Car Rental Example|<--Back]]
 
 # Car Rental Installation and Setup

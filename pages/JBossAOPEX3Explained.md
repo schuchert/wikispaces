@@ -1,3 +1,6 @@
+---
+title: JBossAOPEX3Explained
+---
 [[JBossAOPEX3SoWhatIsHappening|<--Back]] [[JBossAOPEX3ApplyYourself|Next-->]]
 
 # Example 3 Explained

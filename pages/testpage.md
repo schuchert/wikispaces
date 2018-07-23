@@ -1,3 +1,6 @@
+---
+title: testpage
+---
 * ==Leve2 header
 * should not be block style
 ```ruby

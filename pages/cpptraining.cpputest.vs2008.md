@@ -1,3 +1,6 @@
+---
+title: cpptraining.cpputest.vs2008
+---
 # Overview
 These instructions are for Version 2.3 of CppUTest and Visual Studio 2008.
 

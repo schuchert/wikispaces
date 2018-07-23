@@ -1,3 +1,6 @@
+---
+title: cpptraining.GettingStartedWithVisualStudio
+---
 [[cpptraining#gettingfirsttestrunningvisualstudio|<--Back]]
 
 Visual Studio is a commercial product. Either you already have it installed or you have a license for the product. If so, the you can skip to the next step, [[cpptraining.BuildingCppUTestForVisualStudio|Building CppUTest for Visual Studio]]. If you are here because you are going to use Visual Studio but do not yet have it, you're still in luck:

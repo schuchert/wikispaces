@@ -1,3 +1,6 @@
+---
+title: Hide_the_Ugly
+---
 Hide the Ugly is a way to think about design. First a definition for design:
 > Design is the art of selecting the solution that sucks the least
 

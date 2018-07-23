@@ -1,3 +1,6 @@
+---
+title: CitiesAndStuff
+---
 # Oklahoma City
 My current home town.
 * Yoga: [[Life Mastery Services|http://www.lifemasteryservices.com/]].

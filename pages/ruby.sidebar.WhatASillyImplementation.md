@@ -1,3 +1,6 @@
+---
+title: ruby.sidebar.WhatASillyImplementation
+---
 <span class="sidebar_title"> What a silly implementation!</span>
 What about the hard-coded return value? Why not just write the code now, it's clear what needs to be done. This is an issue of balancing what you know and the risk that what you know is incorrect.
 

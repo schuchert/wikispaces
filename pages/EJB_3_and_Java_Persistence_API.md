@@ -1,3 +1,6 @@
+---
+title: EJB_3_and_Java_Persistence_API
+---
 # EJB 3 and Java Persistence API Tutorials
 
 These tutorials form the basis of a 1-week class. They are listed below by category but they are meant to be followed in a particular order. Note that these tutorials build on each other. For example, there are things "missing" in JPA Tutorial 3 that get resolved in EJB3 Tutorial 3.

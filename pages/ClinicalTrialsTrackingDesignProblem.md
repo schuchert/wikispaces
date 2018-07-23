@@ -1,3 +1,6 @@
+---
+title: ClinicalTrialsTrackingDesignProblem
+---
 [[include page="ClinicalTrialsTrackingDesignProblemGeneral"]]
 
 ----

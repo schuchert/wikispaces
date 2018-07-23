@@ -1,3 +1,6 @@
+---
+title: AspectJEX1Possibilities
+---
 [[AspectJEX1FormTheory|<--Back]] [[AspectJEX1WhatIsHappening|Next-->]]
 
 ## Possibilities

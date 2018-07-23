@@ -1,3 +1,6 @@
+---
+title: Tutorial_2_-_One_Example_Solution
+---
 ```java
 package entity;
 

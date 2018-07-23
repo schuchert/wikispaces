@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_5_Player_Lands_On_Community_Chest_or_Chance
+---
 As a Player, when I land on Community Chest or Chance I must play a card.
 
 ### User Acceptance Tests

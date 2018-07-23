@@ -1,3 +1,6 @@
+---
+title: AspectJ_Generics_Start
+---
 # AspectJ Generics Start
 
 I know I'm going to need several examples, so this is where I'll be putting them. I don't have anything just yet. If you have recommendations, please let me know: schuchert@yahoo.com.

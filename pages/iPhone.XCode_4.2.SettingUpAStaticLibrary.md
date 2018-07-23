@@ -1,3 +1,6 @@
+---
+title: iPhone.XCode_4.2.SettingUpAStaticLibrary
+---
 # Add XCode Templates
 * Using git, clone this repo: https://github.com/kstenerud/iOS-Universal-Framework
 * There are detailed instructions there (thank you to Karl for that!)

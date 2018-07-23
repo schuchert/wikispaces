@@ -1,3 +1,6 @@
+---
+title: JBossEX1AssignmentApplications
+---
 [[JBossEX1ApplyYourself|<--Back]] [[JBossEX1ApplicationsOfMethodExecution|Next-->]]
 
 ## Assignment: Applications

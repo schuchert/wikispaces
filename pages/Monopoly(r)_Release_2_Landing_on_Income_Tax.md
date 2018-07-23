@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_2_Landing_on_Income_Tax
+---
 As a Player, landing on Income Tax forces me to pay the smaller of 10% of my total worth or $200.
 
 ### User Acceptance Tests

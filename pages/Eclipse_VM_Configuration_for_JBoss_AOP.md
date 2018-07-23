@@ -1,3 +1,6 @@
+---
+title: Eclipse_VM_Configuration_for_JBoss_AOP
+---
 [[Environment Configuration for JBOSS AOP|<--Back]] [[Eclipse Classpath Variable for JBoss AOP|Next-->]]
 
 Your goal is to configure the Java VM to include one additional parameter:

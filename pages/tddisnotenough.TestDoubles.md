@@ -1,3 +1,6 @@
+---
+title: tddisnotenough.TestDoubles
+---
 [[tddisnotenough#TestDoubles|<==Back]]
 
 From Gerard Meszaros - [[http://xunitpatterns.com/Test%20Double%20Patterns.html]].

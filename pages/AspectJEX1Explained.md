@@ -1,3 +1,6 @@
+---
+title: AspectJEX1Explained
+---
 [[AspectJEX1SoWhatIsHappening|<--Back]] [[AspectJVMConfigurationBlackMagic|Next-->]]
 
 ## Example 1 Explained

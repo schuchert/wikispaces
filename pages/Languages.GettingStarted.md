@@ -1,3 +1,6 @@
+---
+title: Languages.GettingStarted
+---
 Luckily I already have macports installed, so to add both I simply used it:
 ```
 > sudo port install scala 2.7.1

@@ -1,3 +1,6 @@
+---
+title: FitNesse.PageHierarchyForTeamDevelopment
+---
 {:toc}
 ## Background
 There are several ways to organize a team's use of FitNesse. This document mentions one and describes a second one in some detail. The two models are the "FitNesse as an Editor" model and the "FitNesse Server" model.

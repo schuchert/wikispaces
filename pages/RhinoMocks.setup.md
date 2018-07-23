@@ -1,3 +1,6 @@
+---
+title: RhinoMocks.setup
+---
 * Download and install [[http://www.nunit.org/index.php?p=download|NUnit]].
 * Add a reference to NUnit in you project: Project:Add Reference (.NET Tab), search for NUnit.framework and add it.
 * [[http://www.ayende.com/projects/rhino-mocks/downloads.aspx|Download Rhino from here.]]. Note you'll need to pick a version that matches the version of .Net your project uses.

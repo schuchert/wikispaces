@@ -1,3 +1,6 @@
+---
+title: Abstractness
+---
 $$
 A = \frac{N_a}{N}
 $$

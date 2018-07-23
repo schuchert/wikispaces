@@ -1,3 +1,6 @@
+---
+title: Fundamental_Terms_With_Examples
+---
 These are terms that often come up in classes I teach and I often use the same examples for certain terms, so I'm starting to capture them and write them down.
 
 # Concepts Related to OO Terminology

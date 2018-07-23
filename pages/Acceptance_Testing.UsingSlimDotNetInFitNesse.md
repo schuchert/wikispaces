@@ -1,3 +1,6 @@
+---
+title: Acceptance_Testing.UsingSlimDotNetInFitNesse
+---
 {:toc}
 [[FitNesse.Tutorials|<--Back]]
 

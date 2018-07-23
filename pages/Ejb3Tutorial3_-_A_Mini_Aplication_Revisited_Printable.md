@@ -1,3 +1,6 @@
+---
+title: Ejb3Tutorial3_-_A_Mini_Aplication_Revisited_Printable
+---
 [[EJB 3 and Java Persistence API|<--back]]
 
 # EJB3 Tutorial 3 - A Mini Application 

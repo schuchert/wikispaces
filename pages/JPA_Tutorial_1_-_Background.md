@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_1_-_Background
+---
 In this first tutorial we are going to perform some basic inserts, removes and queries against a database. 
 
 JPA allows us to work with entity classes, which are denoted as such using the annotation @Entity or configured in an XML file (we'll call this **persistence meta information**). When we acquire the **Entity Manager Factory** using the **Persistence** class, the **Entity Manager Factory** finds and processes the **persistence meta information**.

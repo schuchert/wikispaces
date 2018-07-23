@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_3_Player_Pays_Rent
+---
 As a player, I pay rent when I land on a Property that is owned by someone else.
 
 ### User Acceptance Tests

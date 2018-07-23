@@ -1,3 +1,6 @@
+---
+title: tddisnotenough.CodeSmells
+---
 [[tddisnotenough#CodeSmells|<==Back]]
 
 A few of Fowler's Smells.

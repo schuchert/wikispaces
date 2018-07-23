@@ -1,3 +1,6 @@
+---
+title: AspectJ_CFlowApplications
+---
 [[AspectJ CFlowAssignmentApplications|<--Back]] [[AspectJ CFlowAssignmentIssues|Next-->]]
 
 ## Applications of CFlow

@@ -1,3 +1,6 @@
+---
+title: Ejb3_Tutorial_3_-_Database_Configuration
+---
 ## # persistence.xml 
 As we have seen with the previous EJB tutorials, the persistence.xml looks a little different for a JEE environment. Update the persistence.xml to resemble the following:
 **persistence.xml**

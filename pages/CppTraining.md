@@ -1,3 +1,6 @@
+---
+title: CppTraining
+---
 [[#gettingstartedjuno]]
 # Getting Started 2012, Eclipse Juno
 ## [[cpptraining.GettingStartedWithEclipseCdt.Juno|Getting Stated with CDT in Eclipse Juno]]

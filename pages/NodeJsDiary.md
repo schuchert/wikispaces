@@ -1,3 +1,6 @@
+---
+title: NodeJsDiary
+---
 # Background
 * I'm rolling off a project at the end of February 2014. I have two options for my next gig:
 ** West Coast: Work as a consultant across multiple projects, coaching, mentoring, and helping with getting a grasp on domains across projects, think [[http://www.sapiensworks.com/blog/post/2012/04/17/DDD-The-Bounded-Context-Explained.aspx|bounded context]]. Projects are typical Java/Spring, etc. The tech stack is comfortable, not accountable for delivery. I see this as hard but cushy. Nice location, travel so-so. Mature, large project. It's in an "enterprise" setting that, while it has its issues, has been getting better for some time.

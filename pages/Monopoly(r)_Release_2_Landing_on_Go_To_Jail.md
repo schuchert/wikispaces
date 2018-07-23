@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_2_Landing_on_Go_To_Jail
+---
 As a Player, when I land on Go To Jail during a turn I move directly to Just Visiting.
 
 ### User Acceptance Tests

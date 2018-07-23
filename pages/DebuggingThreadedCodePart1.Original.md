@@ -1,3 +1,6 @@
+---
+title: DebuggingThreadedCodePart1.Original
+---
 ## Introduction
 This page describes some of what it takes to successfully test thread-related code. The primary emphasis here is on supporting technology rather than techniques.
 

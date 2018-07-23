@@ -1,3 +1,6 @@
+---
+title: gradle.GettingStarted
+---
 ## Background
 These are my preliminary notes on getting started with gradle. The last time I did any serious build work, I used ant, before that make and nmake; I missed using maven so coming into gradle was both easy and frustrating. Even though I did not use maven extensively, I knew its model well enough to get up and running somewhat quickly.
 

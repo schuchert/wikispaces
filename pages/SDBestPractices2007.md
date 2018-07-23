@@ -1,3 +1,6 @@
+---
+title: SDBestPractices2007
+---
 This page contains various stages of a project used as an example for code coverage. You'll need several things for this to work:
 # [[http://java.sun.com/javase/downloads/index.jsp|The Java Development Kit]]
 # [[http://www.eclipse.org/downloads/|Eclipse]]

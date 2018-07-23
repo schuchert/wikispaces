@@ -1,3 +1,6 @@
+---
+title: GmOnStartCompetetorDesignProblemGeneral
+---
 ## GM OnStart® Competitor
 GM offers a product called OnStart®, which provides several in-car features. Ford, with sagging sales, recently said they are going to have an on-board computer built into several models of cars for similar functionality. Other manufacturers are considering similar systems but this is outside of their core competence.
 

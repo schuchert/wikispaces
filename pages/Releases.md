@@ -1,3 +1,6 @@
+---
+title: Releases
+---
 Often a product is too big to put into the wild all at once. It might also be the case that while we could release the whole thing into the wild we might want to take smaller steps for a number of reasons:
 * Some things are not well defined and won't be so without further research
 * Some things are not well defined and won't be until users see something

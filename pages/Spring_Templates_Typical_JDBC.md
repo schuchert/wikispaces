@@ -1,3 +1,6 @@
+---
+title: Spring_Templates_Typical_JDBC
+---
 [[Designing to Spring Templates|<--Back]]  [[Spring Templates JDBC Using Template Method Pattern|Next-->]]
 
 # Using JDBC Directly

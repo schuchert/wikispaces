@@ -1,3 +1,6 @@
+---
+title: AspectJEX4SoWhatIsHappening
+---
 [[AspectJEX4WhatIsHappening|<--Back]] [[AspectJEX4Explained|Next-->]]
 
 # So What Is Happening?

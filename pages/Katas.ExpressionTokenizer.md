@@ -1,3 +1,6 @@
+---
+title: Katas.ExpressionTokenizer
+---
 [[Katas|<--Back]]
 # Background
 While working on the [[Katas.ShuntingYardAlgorithm|Shunting Yard Algorithm Kata]], it became apparent that one part of the problem is taking an expression and determining its various parts, or turning it into a sequence of tokens. In my original attempts at the Shunting Yard Algorithm, I ignored the problem. I made sure each token in the input string was separated by spaces. For example:

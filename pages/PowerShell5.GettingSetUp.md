@@ -1,3 +1,6 @@
+---
+title: PowerShell5.GettingSetUp
+---
 [[PowerShell5|<--Back]]
 
 # Overview

@@ -1,3 +1,6 @@
+---
+title: AspectJ_CFlowFormTheory
+---
 [[AspectJ CFlow ExpectedVersusActualOutput|<--Back]] [[AspectJ CFlowPossibilities|Next-->]]
 
 ## Assignment: Form a Theory

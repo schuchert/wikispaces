@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_1_-_Printable_P2
+---
 [[EJB 3 and Java Persistence API|<--Back]]
 # Part II
 

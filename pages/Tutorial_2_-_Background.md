@@ -1,3 +1,6 @@
+---
+title: Tutorial_2_-_Background
+---
 In this tutorial, you experiment with queries to get a feel for how the interface actually behaves. For this tutorial we stick to using JUnit 4 to write a "test" for each of our tutorials.
 
 ### Background

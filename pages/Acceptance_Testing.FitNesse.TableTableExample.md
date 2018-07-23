@@ -1,3 +1,6 @@
+---
+title: Acceptance_Testing.FitNesse.TableTableExample
+---
 {:toc}
 [[FitNesse.Tutorials|<--Back]]
 

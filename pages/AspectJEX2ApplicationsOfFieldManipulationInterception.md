@@ -1,3 +1,6 @@
+---
+title: AspectJEX2ApplicationsOfFieldManipulationInterception
+---
 [[AspectJEX2AssignmentApplications|<--Back]] [[AspectJEX2AssignmentIssues|Next-->]]
 
 # Applications of Field Manipulation Interception

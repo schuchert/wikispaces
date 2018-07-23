@@ -1,3 +1,6 @@
+---
+title: JBossAOPEX3ExpectedVersusActualOutput
+---
 [[JBoss AOP Example 3|<--Back]] [[JBossAOPEX3Possibilities|Next-->]]
 
 # Expected Versus Actual Output

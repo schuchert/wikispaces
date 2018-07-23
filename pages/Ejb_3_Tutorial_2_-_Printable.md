@@ -1,3 +1,6 @@
+---
+title: Ejb_3_Tutorial_2_-_Printable
+---
 # Session Bean and JPA
 
 This tutorial revisits the entities from [[JPA Tutorial 1 - Getting Started]] and introduces a DAO, which gets its entity manager auto-wired.

@@ -1,3 +1,6 @@
+---
+title: JBossEX1FormTheory
+---
 [[JBossEX1ExpectedVersusActualOutput|<--Back]] [[JBossEX1Possibilities|Next-->]]
 
 ## Assignment: Form a Theory

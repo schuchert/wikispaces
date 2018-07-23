@@ -1,3 +1,6 @@
+---
+title: Ejb_3_Tutorial_2_-_Optional_Data_Source_Configuration
+---
 The persistence.xml file mentions the possibility of using your own data source rather than the default data source to hit a different database.
 
 When you use the embedded container, it looks for a file called embedded-jboss-beans.xml for its datasources (and several other things). In the one that ships with the ALPHA 9 release, you'll see the following two entries near the bottom:

@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_4_-_Inheritance_and_Polymorphic_Queries
+---
 {:toc}
 [[EJB 3 and Java Persistence API|<-Back]]
 # Inheritance and Polymorphic Queries

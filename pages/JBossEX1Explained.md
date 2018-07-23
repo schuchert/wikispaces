@@ -1,3 +1,6 @@
+---
+title: JBossEX1Explained
+---
 [[JBossEX1SoWhatIsHappening|<--Back]] [[JBossVMConfigurationBlackMagic|Next-->]]
 
 ## Example 1 Explained

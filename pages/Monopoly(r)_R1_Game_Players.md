@@ -1,3 +1,6 @@
+---
+title: Monopoly_R1_Game_Players
+---
 As a game, I can have between 2 and 8 players with an initial random ordering.
 
 ### User Acceptance Tests

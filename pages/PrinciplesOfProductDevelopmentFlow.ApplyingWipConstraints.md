@@ -1,3 +1,6 @@
+---
+title: PrinciplesOfProductDevelopmentFlow.ApplyingWipConstraints
+---
 [[PrinciplesOfProductDevelopmentFlow|Back]]
 
 **W1:    The Principle of WIP Constraints** 

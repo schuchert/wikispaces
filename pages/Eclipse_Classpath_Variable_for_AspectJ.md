@@ -1,3 +1,6 @@
+---
+title: Eclipse_Classpath_Variable_for_AspectJ
+---
 [[Eclipse VM Configuration for AspectJ|<--Back]] [[Eclipse Java Language Preferences for AspectJ|Next-->]]
 
 In Eclipse, do the following:

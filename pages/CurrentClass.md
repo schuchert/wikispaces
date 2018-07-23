@@ -1,3 +1,6 @@
+---
+title: CurrentClass
+---
 git clone https://github.com/schuchert/jeopardy.git
 cd jeopardy
 mvn package

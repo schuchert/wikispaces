@@ -1,3 +1,6 @@
+---
+title: TddIsNotEnough
+---
 [[#GRASP]]
 ## [[schuchert:tddisnotenough.GRASP|GRASP]]
 >> Also see [[http://en.wikipedia.org/wiki/GRASP_(object-oriented_design)|on wikipedia]]

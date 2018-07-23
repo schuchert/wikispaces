@@ -1,3 +1,6 @@
+---
+title: JBossEX2AssignmentIssues
+---
 [[JBossAOPEX2ApplicationsOfFieldManipulationInterception|<--Back]] [[JBossAOPEX2IssuesConcerns|Next-->]]
 
 # Assignment: Issues/Concerns

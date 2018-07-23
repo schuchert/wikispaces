@@ -1,3 +1,6 @@
+---
+title: PrinciplesOfProductDevelopmentFlow.AchievingDecentrlizedControl
+---
 [[PrinciplesOfProductDevelopmentFlow|Back]]
 
 **D1:    The Second Perishability Principle **

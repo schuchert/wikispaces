@@ -1,3 +1,6 @@
+---
+title: Ejb3_Tutorial3_-_JBoss_Util
+---
 This project requires the JBoss Util class from [[Ejb 3 Tutorial 2 - Starting the Container]]:
 # Open your previous tutorial's project
 # Expand the **src** folder

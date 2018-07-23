@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.CSharp.Slim.EachTable
+---
 {:toc}
 [[FitNesse.Tutorials|<--Back]]
 

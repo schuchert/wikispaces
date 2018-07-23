@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_3_Game_Offers_Mortgage_Options
+---
 As a game, I give each Player the option to mortgage properties or pay for mortgages at the beginning and end of their turn.
 
 ### User Acceptance Tests

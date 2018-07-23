@@ -1,3 +1,6 @@
+---
+title: RPN_Calculator_Y_to_X
+---
 As a user I want to be able to raise one number to the power of another number so that I don't have to calculate this manually.
 
 ### UAT

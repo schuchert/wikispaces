@@ -1,3 +1,6 @@
+---
+title: TddAndConcurrency.Agile2008
+---
 I was underwhelmed with the approach I used at Architecture and Design World. I though too many slides and not enough interactivity. In retrospect, I though that since I had less time I should use more formality. In retrospect this was the wrong decision - and probably a lazy one at that. I think I should have attempted to cover less and be maintain the interactivity. 
 
 I have 3 hours for Agile 2008 so I'm going back to the interactive format.

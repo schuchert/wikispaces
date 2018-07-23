@@ -1,3 +1,6 @@
+---
+title: JMock-Example_validating_sequencing_of_method_invocations
+---
 This is another example where the last test actually validates that certain messages happen in a particular order. The test is called **generatesCorrectSummaryReport** and it creates a jMock "Sequence" that verifies the following:
 * The method **SummaryReportPrinter.displayTransactionSummary** is called 5 times in a row with the values: 10, 20, 30, 40, 50
 * Next, the method **SummaryReportPrinter.displayTotalSales** is called with a value of 150

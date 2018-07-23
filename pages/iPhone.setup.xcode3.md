@@ -1,3 +1,6 @@
+---
+title: iPhone.setup.xcode3
+---
 [[iPhone|<-- Back]]
 
 # The Video

@@ -1,3 +1,6 @@
+---
+title: AspectOrientedProgramming
+---
 [[home|<--Back]]
 
 Welcome to my Aspect Oriented Programming Page. My intention is to publish materials mean to assist you in learning about Aspect Oriented Programming on your own. Much of this work is either the basis for or used in an AOP course I currently teach.

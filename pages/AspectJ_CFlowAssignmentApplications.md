@@ -1,3 +1,6 @@
+---
+title: AspectJ_CFlowAssignmentApplications
+---
 [[AspectJ CFlowApplyYourself|<--Back]] [[AspectJ CFlowApplications|Next-->]]
 
 ## Assignment: Applications

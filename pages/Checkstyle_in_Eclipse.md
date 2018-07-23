@@ -1,3 +1,6 @@
+---
+title: Checkstyle_in_Eclipse
+---
 [[Tool Setup and Configuration Notes|<--Back]]
 
 **Install Checkstyle**

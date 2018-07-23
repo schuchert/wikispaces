@@ -1,3 +1,6 @@
+---
+title: cpptraining.ConfiguringTheProjectToUseBoost
+---
 [[cpptraining|<--Back]]
 
 # Configuring the Project to use Boost

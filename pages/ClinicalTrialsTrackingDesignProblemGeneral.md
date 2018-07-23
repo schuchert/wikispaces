@@ -1,3 +1,6 @@
+---
+title: ClinicalTrialsTrackingDesignProblemGeneral
+---
 ## Clinical Trials Tracking
 Small clinics are popping up all over performing specialized clinical trials and observations. One common example is labs specializing in sleep studies and sleep disorders.
 

@@ -1,3 +1,6 @@
+---
+title: cpptraining.ConfiguringTheProjectForCppUTest
+---
 # Configuring the Project for CppUTest
 * Edit your project's properties (right-click, properties)
 * Select// **C/C++ Build:Settings**//

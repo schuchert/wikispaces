@@ -1,3 +1,6 @@
+---
+title: Commons_Logging_and_Log4j_Config
+---
 {:toc}
 [[Tool Setup and Configuration Notes|<--Back]]
 

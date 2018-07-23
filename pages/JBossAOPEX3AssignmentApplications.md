@@ -1,3 +1,6 @@
+---
+title: JBossAOPEX3AssignmentApplications
+---
 [[JBossAOPEX3ApplyYourself|<--Back]] [[JBossAOPEX3ApplicationsOfIntroductions|Next-->]]
 
 # Assignment: Applications

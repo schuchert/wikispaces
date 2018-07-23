@@ -1,3 +1,6 @@
+---
+title: vm.compiling.phantomjs2.ubuntu
+---
 These notes come from two sources:
 * [[http://phantomjs.org/build.html|Build phantomjs2]] 
 * [[https://codereview.qt-project.org/#/c/107921/3/Source/JavaScriptCore/runtime/JSObject.cpp|Patch with forward declares]]

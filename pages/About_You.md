@@ -1,3 +1,6 @@
+---
+title: About_You
+---
 # Tell Me About Yourself
 * Your Name
 * what you hope to get out of the class

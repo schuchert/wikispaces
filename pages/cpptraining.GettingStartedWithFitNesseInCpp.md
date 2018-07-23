@@ -1,3 +1,6 @@
+---
+title: cpptraining.GettingStartedWithFitNesseInCpp
+---
 [[cpptraining#FitNesse|<--Back]]
 
 # Initial Downloads

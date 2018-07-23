@@ -1,3 +1,6 @@
+---
+title: Agile_Courseware
+---
 ## [[Katas]]
 
 ## [[Agile Requirements Exploration]]

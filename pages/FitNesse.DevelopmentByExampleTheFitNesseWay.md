@@ -1,3 +1,6 @@
+---
+title: FitNesse.DevelopmentByExampleTheFitNesseWay
+---
 # Outline
 # Chapter 0: FitNesse in a Nutshell
 * Setting up your environment

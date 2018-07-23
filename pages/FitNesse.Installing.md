@@ -1,3 +1,6 @@
+---
+title: FitNesse.Installing
+---
 # Download FitNesse from [[http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad|fitnesse.org]]
 # Place the downloaded zip file in some directory (hint, this next step creates a directory called FitNesse// **under//** where you execute this command). For reference, I'll be using ~/src/. The next step will create ~/src/FitNesse
 # Execute the jar file once to get it extracted:

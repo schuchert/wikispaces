@@ -1,3 +1,6 @@
+---
+title: AspectJ_Example_1_PrintLayout
+---
 [[AspectJ Self Study|<--Back]]
 
 [[include page="AspectJ Example 1"]]

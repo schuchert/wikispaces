@@ -1,3 +1,6 @@
+---
+title: ruby.sidebar.IDidTooMuch
+---
 <span class="sidebar_title"> I did too much</span>
 When I wrote "the solution" to the "should cause next digit to reset the x_register" Example, I put this logic in my code. I then realized that it was doing nothing to support any Examples so I removed it. 
 

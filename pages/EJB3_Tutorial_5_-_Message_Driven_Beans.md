@@ -1,3 +1,6 @@
+---
+title: EJB3_Tutorial_5_-_Message_Driven_Beans
+---
 {:toc}
 [[EJB 3 and Java Persistence API|<--Back]]
 

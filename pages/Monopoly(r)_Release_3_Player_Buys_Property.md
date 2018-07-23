@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_3_Player_Buys_Property
+---
 As a player, I can buy an unowned property when I land on it during a turn.
 
 ### User Acceptance Tests

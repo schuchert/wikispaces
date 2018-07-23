@@ -1,3 +1,6 @@
+---
+title: TddAndConcurrency.Slides.DoOneThingWellWell
+---
 [[TddAndConcurrency.Slides|<--Back]] | [[TddAndConcurrency.Slides|^Top^]]| [[TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid|Next-->]]
 
 # Do One Thing ... Well ... Well

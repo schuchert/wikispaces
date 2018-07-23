@@ -1,3 +1,6 @@
+---
+title: JAR_Files_for_JBoss_AOP
+---
 [[Environment Configuration for JBOSS AOP|<--Back]]
 
 Every project using JBoss AOP needs several JAR files. You defined a classpath variable in [[Eclipse Classpath Variable for JBoss AOP]]. We now need to use that classpath variable:

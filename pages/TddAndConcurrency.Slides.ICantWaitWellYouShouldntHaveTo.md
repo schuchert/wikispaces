@@ -1,3 +1,6 @@
+---
+title: TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo
+---
 [[TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid|<--Back]] | [[TddAndConcurrency.Slides|^Top^]] | [[TddAndConcurrency.Slides.KeepItAwayFromMe|Next-->]]
 
 # I Can't Wait Well You Shouldn't Have To

@@ -1,3 +1,6 @@
+---
+title: AspectJEX4Possibilities
+---
 [[ApsectJEX4ExpectedVersusActualOutput|<--Back]] [[AspectJEX4WhatIsHappening|Next-->]]
 
 # Possibilities

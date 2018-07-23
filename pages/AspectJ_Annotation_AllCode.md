@@ -1,3 +1,6 @@
+---
+title: AspectJ_Annotation_AllCode
+---
 [[AspectJ Annotation One Solution|<--Back]] [[AspectJ Annotation Apply|Next-->]]
 
 # Annotation All Code

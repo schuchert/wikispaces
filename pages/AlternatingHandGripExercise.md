@@ -1,3 +1,6 @@
+---
+title: AlternatingHandGripExercise
+---
 [[ExperientialLearningNotes|<--Back]]
 
 # Alternating Hand Grips 

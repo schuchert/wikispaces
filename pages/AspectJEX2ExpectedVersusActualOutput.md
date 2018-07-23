@@ -1,3 +1,6 @@
+---
+title: AspectJEX2ExpectedVersusActualOutput
+---
 [[AspectJ Example 2|<--Back]] [[AspectJEX2Possibilities|Next-->]]
 
 # Expected Versus Actual Output

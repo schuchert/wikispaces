@@ -1,3 +1,6 @@
+---
+title: PiagetModel
+---
 [[ExperientialLearningNotes|<--Back]]
 
 # Piaget's Model of Learning Process 

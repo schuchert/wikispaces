@@ -1,3 +1,6 @@
+---
+title: User_Story
+---
 A user story
 * Describes something that will be of value to a user or customer
 * Has three parts

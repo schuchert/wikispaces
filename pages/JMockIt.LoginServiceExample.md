@@ -1,3 +1,6 @@
+---
+title: JMockIt.LoginServiceExample
+---
 # Getting Started
 JMockIt is an interesting mocking library that actively does quite a bit of work for you if you simply configure your classpath correctly and use annotations. For this example I'll use the [[ref|Login Service from the Mockito tutorial I wrote]].
 

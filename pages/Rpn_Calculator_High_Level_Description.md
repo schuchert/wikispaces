@@ -1,3 +1,6 @@
+---
+title: Rpn_Calculator_High_Level_Description
+---
 # Introduction
 I got the idea for using a calculator for a TDD problem from a few different people. The first time I tried it, I decided to create an Rpn calculator rather than an infix calculator because I'm a geek and I prefer them. I rediscovered that Rpn calculators are generally easier to create. HP demonstrated this in 1967 with a $5000, 4-function, 3-number calculator that weighed just under 50 pounds, which was an amazing accomplishment.
 

@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_4_Pay_to_Get_Out_of_Jail
+---
 As a plyaer, when I'm in Jail at the beginning of my turn I can pay $50 to take a normal turn.
 
 ### User Acceptance Tests

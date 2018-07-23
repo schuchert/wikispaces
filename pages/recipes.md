@@ -1,3 +1,6 @@
+---
+title: recipes
+---
 # Desserts
 ## Chocolate Bars
 * 8 oz 100% baker's chocolate

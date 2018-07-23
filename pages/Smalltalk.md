@@ -1,3 +1,6 @@
+---
+title: Smalltalk
+---
 This stuff was all submitted by David Nunn's recent visit down Smalltalk lane. Dave used Smalltalk extensively back in the early 90's and had much more experience with the language than I did.
 
 # Smalltalk Code

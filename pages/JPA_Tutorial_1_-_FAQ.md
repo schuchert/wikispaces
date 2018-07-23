@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_1_-_FAQ
+---
 ## JPA Tutorial 1 - FAQ
  * **What's the entity Manager?**  //Object cache which persists entities.  Manages any objects with the @Entity annotation.  Allows starting/stopping transactions, crud'ing database.  "Your facade to working with the database"//
 * **Is hibernate using an in-memory database?**  //Hibernate is one implementation of JPA.  It connects to the database through a jdbc url.  The database we use in the early exercises is Hypersonic SQL.//

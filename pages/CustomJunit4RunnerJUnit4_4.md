@@ -1,3 +1,6 @@
+---
+title: CustomJunit4RunnerJUnit4_4
+---
 [[CustomJUnit4Runner|<<--Back]]
 
 # Writing a Custom JUnit 4 Test Runner

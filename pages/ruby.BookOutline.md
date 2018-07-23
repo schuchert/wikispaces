@@ -1,3 +1,6 @@
+---
+title: ruby.BookOutline
+---
 # RDD : Resume Driven Design
 > ==or how I learned Ruby and got a better job
 

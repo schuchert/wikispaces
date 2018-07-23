@@ -1,3 +1,6 @@
+---
+title: AspectJVMConfigurationBlackMagic
+---
 [[AspectJEX1Explained|<--Back]] [[AspectJEX1ApplyYourself|Next-->]]
 
 ## VM Configuration: Black Magic

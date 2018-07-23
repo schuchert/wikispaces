@@ -1,3 +1,6 @@
+---
+title: Wikispaces_Style_Sheet
+---
 # Wikispaces Stylesheet
 
 This is the stylesheet I use for Wikispaces. I've changed the line height for paragraphs to make them smaller. I've increased the font size for code and java5 code and decreased the distance between lines as well.

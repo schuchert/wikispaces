@@ -1,3 +1,6 @@
+---
+title: 2daycpptddresources
+---
 This is a list of resources for a 2-day C++ class covering a rage of topics including:
 * Test Drive Development
 * Refactoring (Martin - Refactoring)

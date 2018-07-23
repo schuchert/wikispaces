@@ -1,3 +1,6 @@
+---
+title: AspectJ_Annotation_Explained
+---
 [[AspectJ Annotation Thinking|<--Back]] [[AspectJ Annotation Exercises|Next-->]]
 
 # Annotation Explained

@@ -1,3 +1,6 @@
+---
+title: PowerShell5-Tokenize_Expression-Convert_Tokenizer_To_An_Enumerator
+---
 [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FunctionCalls|<—Back]]  [[PowerShell5.TokenizeExpression|^^ Up ^^]]  [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FinalishVersion|Next—>]]
 The Tokenizer converts a whole expression into an array of tokens. Now we'll convert it to an [[https://msdn.microsoft.com/en-us/library/system.collections.ienumerator(v=vs.110).aspx|Enumerator]].
 

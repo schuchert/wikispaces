@@ -1,3 +1,6 @@
+---
+title: JUnit_4.xAtAfterClass
+---
 [[JUnit 4.x#AtAfterClass|<--Back]]
 
 # @AfterClass

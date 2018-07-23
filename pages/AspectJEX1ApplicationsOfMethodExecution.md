@@ -1,3 +1,6 @@
+---
+title: AspectJEX1ApplicationsOfMethodExecution
+---
 [[AspectJEX1AssignmentApplications|<--Back]] [[AspectJEX1AssignmentIssues|Next-->]]
 
 ## Applications of Method Execution

@@ -1,3 +1,6 @@
+---
+title: AspectJEX2WhatIsHappening
+---
 [[AspectJEX2Possibilities|<--Back]] [[AspectJEX2SoWhatIsHappening|Next-->]]
 
 # Assignment: What is happening?

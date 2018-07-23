@@ -1,3 +1,6 @@
+---
+title: ExtractingSourceFilesIntoProject
+---
 [[Environment Configuration for JBOSS AOP|<--Back JBoss AOP]] -or- [[JBoss AOP Example 1]]
 [[Environment Configuration for AspectJ|<--Back AspectJ]] -or- [[AspectJ Example 1]]
 

@@ -1,3 +1,6 @@
+---
+title: Emma_Code_Coverage_vehicle.type
+---
 [[Car Rental Code Coverage with Emma|<--Back]] [[Emma Code Coverage vehicle.configuration|Next-->]]
 
 # Emma Code Coverage vehicle.type Package

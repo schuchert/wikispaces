@@ -1,3 +1,6 @@
+---
+title: PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses
+---
 [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.SimpleBinaryExpressions|<— Back]]  [[PowerShell5.TokenizeExpression|^^ Up ^^]] [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FunctionCalls|Next—>]]
 There are two ways in which our tokenizer might encounter parenthesis. The first is to group a lower-precedence operator, as in:
 * (3 + 4) * 6

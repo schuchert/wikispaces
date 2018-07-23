@@ -1,3 +1,6 @@
+---
+title: PowerShell5-Tokenize_Expression-Function_Calls
+---
 [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstStabAtParentheses|<— Back]]  [[PowerShell5.TokenizeExpression|^^ Up ^^]]  [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.ConvertTokenizerToAnEnumerator|Next—>]][
 Finally, function calls. This might already work. Let's write an experiment and see what the results are:
 ```powershell

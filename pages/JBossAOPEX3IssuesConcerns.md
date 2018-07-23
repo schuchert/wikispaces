@@ -1,3 +1,6 @@
+---
+title: JBossAOPEX3IssuesConcerns
+---
 [[JBossEX3AssignmentIssues|<--Back]] [[JBoss AOP Self Study|Next-->]]
 
 TBD

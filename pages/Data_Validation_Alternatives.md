@@ -1,3 +1,6 @@
+---
+title: Data_Validation_Alternatives
+---
 This example is rewritten from scratch and derivative of work I've been involved with from 9/2002 - 9 /2006. So while the example might seem a bit contrived, it comes from an actual system used in production at a major Car Rental company. In the original example, we implemented field-based change tracking using AspectJ. In this example, I instead decided to create field objects that track change status directly to see how it might have been had we taken this approach.
 
 The context includes roughly 15 projects based on a common architecture with a total of about 60 developers, most of whom were retrained from COBOL to Java through a process of mentoring.

@@ -1,3 +1,6 @@
+---
+title: JMock-Minimal_Failing_Example
+---
 [[TDD Example Catalog|<--Back]]
 
 ```java

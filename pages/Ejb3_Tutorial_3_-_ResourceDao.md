@@ -1,3 +1,6 @@
+---
+title: Ejb3_Tutorial_3_-_ResourceDao
+---
 ## # Update Dao 
 # Rename ResourceDao --> ResourceDaoBean
 # Add @Stateless annotation to ResourceDaoBean

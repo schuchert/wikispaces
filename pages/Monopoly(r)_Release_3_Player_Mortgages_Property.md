@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_3_Player_Mortgages_Property
+---
 As a player, I can mortgage a property during my turn.
 
 ### User Acceptance Tests

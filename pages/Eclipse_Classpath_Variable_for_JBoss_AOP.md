@@ -1,3 +1,6 @@
+---
+title: Eclipse_Classpath_Variable_for_JBoss_AOP
+---
 [[Eclipse VM Configuration for JBoss AOP|<--Back]] [[Eclipse Java Language Preferences for JBoss AOP|Next-->]]
 
 In Eclipse, do the following:

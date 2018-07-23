@@ -1,3 +1,6 @@
+---
+title: DvrDesignProblem
+---
 [[include page="DvrDesignProblemGeneral"]]
 
 ----

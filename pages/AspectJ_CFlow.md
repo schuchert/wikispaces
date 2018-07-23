@@ -1,3 +1,6 @@
+---
+title: AspectJ_CFlow
+---
 [[AspectJ Self Study|<--Back]] [[AspectJ CFlow ExpectedVersusActualOutput|Next-->]]
 
 Source files are here: [[file:AspectJCFlowsrc.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject|here]].

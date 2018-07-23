@@ -1,3 +1,6 @@
+---
+title: RailsHostingExperiences
+---
 Yesterday I began trying to setup a Ruby on Rails (RoR) application at hosting provider ocssolutions.com. The people there seem very nice and are currently helping me make things go. There are a lot of moving parts to what i'm trying to accomplish, but i'm not trying to do anything fancy so hopefully we'll get it knocked out fairly quickly.
 
 My goals are to:

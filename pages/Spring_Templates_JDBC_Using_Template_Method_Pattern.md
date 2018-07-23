@@ -1,3 +1,6 @@
+---
+title: Spring_Templates_JDBC_Using_Template_Method_Pattern
+---
 [[Spring Templates Typical JDBC|<--Back]] [[Spring Templates JDBC Strategy Is A Template|Next-->]]
 
 # JDBC Using the Template Method Pattern

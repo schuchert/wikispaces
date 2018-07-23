@@ -1,3 +1,6 @@
+---
+title: Katas.ShuntingYardAlgorithm
+---
 [[Katas|<--Back]]
 # Background
 The [[http://en.wikipedia.org/wiki/Shunting_yard_algorithm|Shunting Yard Algorithm]], written by [[http://en.wikipedia.org/wiki/Edsger_Dijkstra|Dijkstra]], converts an infix expression into a post-fix expression. For example, the expression:

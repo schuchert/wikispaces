@@ -1,3 +1,6 @@
+---
+title: Car_Rental_Code_Coverage_with_Emma
+---
 [[Car Rental Example|<--Back]] [[Emma Code Coverage vehicle.type|Next-->]]
 
 # Code Coverage with Emma

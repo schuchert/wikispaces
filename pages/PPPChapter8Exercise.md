@@ -1,3 +1,6 @@
+---
+title: PPPChapter8Exercise
+---
 [[image:up.gif link="Vancouver_PPP_Exercise_Ch8and9"]] [[image:forward.gif link="PPPChapter9Exercise"]]
 
 ## Part 1: Unit 8

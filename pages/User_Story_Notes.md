@@ -1,3 +1,6 @@
+---
+title: User_Story_Notes
+---
 # Examples
 ## Online Itinerary Maintenance
 * As a business traveler I want to reschedule a flight in the future so that I know I can still get home but finish an important business meeting

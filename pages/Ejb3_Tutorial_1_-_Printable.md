@@ -1,3 +1,6 @@
+---
+title: Ejb3_Tutorial_1_-_Printable
+---
 [[EJB 3 and Java Persistence API|<--Back]]
 
 # Getting Started with the JBoss Embedded Container

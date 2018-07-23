@@ -1,3 +1,6 @@
+---
+title: Ejb3EclipseProjectSetupAndConfiguration
+---
 ### Create the Project
 # Pull down the **File** menu and select **new:project**
 # Select **Java Project**

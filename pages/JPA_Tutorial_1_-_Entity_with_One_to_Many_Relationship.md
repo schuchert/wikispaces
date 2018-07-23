@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_1_-_Entity_with_One_to_Many_Relationship
+---
 Now we'll make a company. In this first tutorial we're keeping things simple so we'll just create a Company that has a 1 to many relationship with People, who are its employees:
 
 [[#Company]]

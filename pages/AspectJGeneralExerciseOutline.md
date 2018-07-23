@@ -1,3 +1,6 @@
+---
+title: AspectJGeneralExerciseOutline
+---
 [[AspectJ Example 1|<--Back]]
 
 ## General Exercise Outline

@@ -1,3 +1,6 @@
+---
+title: EJB3_Tutorial_2_-_Session_Bean_and_JPA
+---
 {:toc}
 [[EJB 3 and Java Persistence API|<--Back]]
 # Session Bean and JPA

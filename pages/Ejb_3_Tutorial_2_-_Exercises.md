@@ -1,3 +1,6 @@
+---
+title: Ejb_3_Tutorial_2_-_Exercises
+---
 ## Fetching and Lazy Initialization
 The Company entity has one attribute where we've specified the fetch type. Review the employees attribute in Company.java. Remove the **```fetch = FetchType.EAGER```** and execute the tests.  
 

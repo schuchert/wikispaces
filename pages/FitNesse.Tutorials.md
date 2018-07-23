@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials
+---
 # Note on Table Representation
 Most tables shown in these tutorials look something like this:
 ```

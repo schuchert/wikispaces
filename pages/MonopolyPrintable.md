@@ -1,3 +1,6 @@
+---
+title: MonopolyPrintable
+---
 [[include page="Monopoly(r)"]]
 ----
 ## Release 1

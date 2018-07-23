@@ -1,3 +1,6 @@
+---
+title: Template_Method
+---
 # Template Method Pattern
 This is an example of the [[http://en.wikipedia.org/wiki/Design_Patterns|GoF design pattern]] [[http://en.wikipedia.org/wiki/Template_method_pattern|Template Method]]. Here's an example taken from [[http://en.wikipedia.org/wiki/Monopoly_(game)|Monopoly]].
 

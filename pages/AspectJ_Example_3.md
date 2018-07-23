@@ -1,3 +1,6 @@
+---
+title: AspectJ_Example_3
+---
 [[AspectJ Self Study|<--Back]] [[AspectJEX3ExpectedVersusActualOutput|Next-->]]
 
 # Predict the Output

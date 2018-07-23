@@ -1,3 +1,6 @@
+---
+title: cpptraining.sde.gettingstarted
+---
 ## Background
 This example uses windows XP, cygwin and SDE lite 6.06.
 

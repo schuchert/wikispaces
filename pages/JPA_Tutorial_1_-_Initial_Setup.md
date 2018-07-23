@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_1_-_Initial_Setup
+---
 This example requires Java 5 (JDK 1.5) or later and Eclipse 3.2 or later. This page gives you a link to all of the downloads you'll need to get to get started. While I might mention specific version numbers, it's a good bet that newer versions should work as well... of course that's not always the case.
 
 **//Note://** We need the jar file that contains javax.persistence and the various annotations associated with JPA. You can either download JEE or get it from somewhere else. For this series of tutorials, we eventually use the JBoss EJB3 Embeddable container, so we'll use that to avoid an extra 150+ meg download for one jar file.

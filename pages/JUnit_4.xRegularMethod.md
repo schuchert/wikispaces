@@ -1,3 +1,6 @@
+---
+title: JUnit_4.xRegularMethod
+---
 [[JUnit 4.x#RegularMethod|<--Back]]
 
 # Regular Methods

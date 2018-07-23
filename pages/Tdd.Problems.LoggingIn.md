@@ -1,3 +1,6 @@
+---
+title: Tdd.Problems.LoggingIn
+---
 There are several rules for logging in to our system:
 * When logging in, a user provides a user name and password
 * The user name is a non-blank, unique string containing just about any characters.

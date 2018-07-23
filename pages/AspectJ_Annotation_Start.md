@@ -1,3 +1,6 @@
+---
+title: AspectJ_Annotation_Start
+---
 I'm still trying out different formats. I have the long format as demonstrated by [[AspectJ Example 1|Example 1]], [[AspectJ Example 2|Example 2]], [[AspectJ Example 3|Example 3]] and [[AspectJ Example 4|Example 4]]. I've got two different approaches for this example:
 
 ## [[AspectJ Annotation Experience|Version 1]]

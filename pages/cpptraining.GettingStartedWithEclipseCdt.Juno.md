@@ -1,3 +1,6 @@
+---
+title: cpptraining.GettingStartedWithEclipseCdt.Juno
+---
 [[cpptraining|<--back]]
 # Overview
 Picking up work on my C++ book again so I figured it was time to start using Juno (Eclipse circa '12). Here are the preliminary steps.

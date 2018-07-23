@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_1_-_Exercises
+---
 ## Questions
 * Describe what the @Entity annotation means to a class.
 * Describe what the @Id annotation means to a class.

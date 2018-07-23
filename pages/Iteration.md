@@ -1,3 +1,6 @@
+---
+title: Iteration
+---
 An iteration is a fundamental building block of all [[http://agilemanifesto.org/|agile]] processes. It is also a fundamental part of the [[http://en.wikipedia.org/wiki/Rational_Unified_Process|Unified Process]] and pretty much all forms of object-oriented software development processes advocate iterative development.
 
 An iteration is **short**, lasting between 2 - 4 weeks typically (1 week is a bit short but possible, more than 4 weeks and you increase the risk of wasting effort).

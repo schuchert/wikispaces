@@ -1,3 +1,6 @@
+---
+title: Acceptance_Testing.ExperientialWorkshopWithFitnesse
+---
  =Experiential Acceptance Testing Workshop with FitNesse
 This is a variable-length introduction to acceptance testing. The first confirmed presentation will be at SD West. There are other possibilities.
 

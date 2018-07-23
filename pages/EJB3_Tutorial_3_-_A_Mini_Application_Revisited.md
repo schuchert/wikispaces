@@ -1,3 +1,6 @@
+---
+title: EJB3_Tutorial_3_-_A_Mini_Application_Revisited
+---
 {:toc}
 [[EJB 3 and Java Persistence API|<--back]]
 

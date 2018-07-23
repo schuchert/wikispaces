@@ -1,3 +1,6 @@
+---
+title: martin_fowler_blog_wip.DipInTheWild
+---
 ## Overview
 You can safely skip to [[martin_fowler_blog_wip.DipInTheWild#article|the article]].
 

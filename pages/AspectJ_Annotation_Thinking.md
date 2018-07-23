@@ -1,3 +1,6 @@
+---
+title: AspectJ_Annotation_Thinking
+---
 [[AspectJ Annotation Observation|<--Back]] [[AspectJ Annotation Explained|Next-->]]
 
 # AspectJ Annotation: Thinking

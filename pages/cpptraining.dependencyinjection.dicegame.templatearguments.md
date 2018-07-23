@@ -1,3 +1,6 @@
+---
+title: cpptraining.dependencyinjection.dicegame.templatearguments
+---
 # Version 1
 One template parameter, LoadedDie that can return two values.
 

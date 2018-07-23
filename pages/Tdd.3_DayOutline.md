@@ -1,3 +1,6 @@
+---
+title: Tdd.3_DayOutline
+---
 # Introduction
 This is approximately the outline I use for a 3-day TDD course. I've used this outline in Java, C# and C++. How far I get depends on the students and the language. The flow can vary based on where the students want to go, their experience, etc.
 

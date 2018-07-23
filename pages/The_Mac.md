@@ -1,3 +1,6 @@
+---
+title: The_Mac
+---
 # My Life with a Mac
 
 Last Friday I took the plunge and switched (mostly) from a Windows-based system to a Mac. My new employer, [[http://www.objectmentor.com|Object mentor]] provided me with a new laptop. This page captures a few notes and experiences.

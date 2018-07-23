@@ -1,3 +1,6 @@
+---
+title: JBossEX1ExpectedVersusActualOutput
+---
 [[JBoss AOP Example 1|<--Back]] [[JBossEX1FormTheory|Next-->]]
 
 ## Expected Output

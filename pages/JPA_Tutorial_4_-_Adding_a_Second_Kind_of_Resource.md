@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_4_-_Adding_a_Second_Kind_of_Resource
+---
 Considering the amount of work required to get ready to add a resource, you might think that creating a hierarchy and then performing so-called polymorphic queries is difficult. It isn't. The difficulty of moving towards supporting a hierarchy is that we started with a concrete class and wanted to later introduce an abstract concept, the Resource.
 
 In this final step for the tutorial, we'll create a second kind of resource, a DVD and then write some basic tests.

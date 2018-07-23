@@ -1,3 +1,6 @@
+---
+title: CppRpnCalculatorAbstractFactoryPatternExample
+---
 [[RpnCalculatorCppExampleImplementation|<--Back]]
 
 ## Abstract Factory Pattern Example

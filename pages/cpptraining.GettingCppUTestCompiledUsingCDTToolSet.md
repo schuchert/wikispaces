@@ -1,3 +1,6 @@
+---
+title: cpptraining.GettingCppUTestCompiledUsingCDTToolSet
+---
 [[cpptraining#gettingfirsttestrunning|<--Back]]
 
 # Background

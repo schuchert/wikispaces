@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_3_-_Project_Setup
+---
 For the rest of this section, when you see **<project>**, replace it with **JpaTutorial3**
 [[include page="JPA Tutorial Project Setup"]]
 

@@ -1,3 +1,6 @@
+---
+title: PrinciplesOfProductDevelopmentFlow.ManagingQueues
+---
 [[PrinciplesOfProductDevelopmentFlow|Back]]
 
 **Q1:    The Principle of Invisible Inventory **

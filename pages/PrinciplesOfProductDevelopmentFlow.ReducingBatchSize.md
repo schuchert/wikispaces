@@ -1,3 +1,6 @@
+---
+title: PrinciplesOfProductDevelopmentFlow.ReducingBatchSize
+---
 [[PrinciplesOfProductDevelopmentFlow|Back]]
 
 **B1:    The Batch Size Queueing Principle **

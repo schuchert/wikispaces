@@ -1,3 +1,6 @@
+---
+title: cpptraining.CppAndOodTheLeastYouNeedToKnow
+---
 [[cpptraining#CppAndOodTheLeastYouNeedToKnow|<--Back]]
 
 This is a work in progress. I've already been rejected by Pragmatic Press. Not sure that it's really publishable in a dead-tree form. In any case, feedback appreciated.

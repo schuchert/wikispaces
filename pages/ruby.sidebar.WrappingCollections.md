@@ -1,3 +1,6 @@
+---
+title: ruby.sidebar.WrappingCollections
+---
 <span class="sidebar_title"> Wrapping Collections</span>
 Do it!
 

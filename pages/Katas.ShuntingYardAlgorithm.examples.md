@@ -1,3 +1,6 @@
+---
+title: Katas.ShuntingYardAlgorithm.examples
+---
 ||~ Example Infix Expression ||~ Expected Postfix Result||~ Notes ||
 || <empty string> || <empty string> ||A good place to start, you'll create the basic translator class and get a value back.||
 || <null> || <empty string> ||Make sure you handle one error case, a null string, by returning a reasonable default value of an empty string.||

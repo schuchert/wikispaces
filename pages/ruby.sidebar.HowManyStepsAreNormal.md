@@ -1,3 +1,6 @@
+---
+title: ruby.sidebar.HowManyStepsAreNormal
+---
 <span class="sidebar_title"> How Many Steps are// Normal//?</span>
 If you are not familiar with TDD/BDD, then you might think all of these small steps are crazy. Maybe they are, however since writing code is a learned behavior, any practice might be as crazy as the next. So please try to stick it out and keep working with these "small" steps. Actually, calling them small is even a value judgment. Small compared to what? What you have been doing in the past? Sure, but then maybe these steps are just the right size and you've been taking large steps?
 

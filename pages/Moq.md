@@ -1,3 +1,6 @@
+---
+title: Moq
+---
 In May of 2009 I worked with a group in Canada that was using Moq so I got my first exposure to that library. As far as mocking libraries go, it's one of my favorite (for statically-typed languages). It takes advantage of both Generics as well as Lambdas, so it's well designed, uses contemporary features and seems to work rather well.
 
 ||

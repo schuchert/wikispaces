@@ -1,3 +1,6 @@
+---
+title: AspectJEX1AssignmentIssues
+---
 [[AspectJEX1ApplicationsOfMethodExecution|<--Back]] [[AspectJEX1IssuesConcerns|Next-->]]
 
 ## Assignment: Issues

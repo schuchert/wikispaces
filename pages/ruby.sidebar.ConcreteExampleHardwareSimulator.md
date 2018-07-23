@@ -1,3 +1,6 @@
+---
+title: ruby.sidebar.ConcreteExampleHardwareSimulator
+---
 <span class="sidebar_title"> A Concrete Example of a Hardware Simulator</span>
 In mid 2008, I worked with a great group of people on the East Coast. My task was to use their current problem as source material and to take them through TDD (not BDD) on their problem.
 

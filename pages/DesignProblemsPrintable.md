@@ -1,3 +1,6 @@
+---
+title: DesignProblemsPrintable
+---
 [[include page="ITunesCompetetorDesignProblem"]]
 ----
 ----

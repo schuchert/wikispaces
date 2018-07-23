@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_4_Roll_Doubles_to_Get_Out_of_Jail
+---
 As a Player in Jail, I can try to roll doubles and get out of Jail for free.
 
 ### User Acceptance Tests

@@ -1,3 +1,6 @@
+---
+title: AspectJ_Annotation_Problem
+---
 [[AspectJ Annotation Start|<--Back]] [[AspectJ Annotation Possibilities|Next-->]]
 
 # Problem

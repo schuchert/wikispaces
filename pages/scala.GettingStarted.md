@@ -1,3 +1,6 @@
+---
+title: scala.GettingStarted
+---
 * Install Scala
 >> I used mac ports
 

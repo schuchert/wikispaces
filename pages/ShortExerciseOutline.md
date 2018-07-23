@@ -1,3 +1,6 @@
+---
+title: ShortExerciseOutline
+---
 # Short Exercise Outline
 These exercises have 4 steps:
 * Doing/Concrete Experience

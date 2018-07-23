@@ -1,3 +1,6 @@
+---
+title: ruby.sidebar.AllGreen
+---
 <span class="sidebar_title"> All Green</span>
 All green refers to the state of the executing Example; it means all Examples are executing and passing. This terminology derives from unit testing in Smalltalk and then popularized by JUnit. In Smalltalk, their process was:
 * Red: Create a failing test

@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.AlternativeScriptTableSyntax
+---
 {:toc}
 [[FitNesse.Tutorials|<--Back]]
 # Introduction

@@ -1,3 +1,6 @@
+---
+title: ReplaceSwitchWithPolymorphismDetailedRefactoringInstructions
+---
 ## Introduciton
 These are rough notes I kept while performing the refactoring. They may not make sense to you. You have a few options:
 * Review the refactorings in Martin Fowler's book

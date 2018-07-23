@@ -1,3 +1,6 @@
+---
+title: PowerShell5-Tokenize_Expression-As_One_Page
+---
 [[include page="PowerShell5-Tokenize Expression-First Failing Test" title="First Failing Test"]]
 [[include page="PowerShell5-Tokenize Expression-Simple Binary Expressions" title="Simle Binary Expressions"]]
 [[include page="PowerShell5-Tokenize Expression-First Stab At Parentheses"  title="First Stab at Parentheses"]]

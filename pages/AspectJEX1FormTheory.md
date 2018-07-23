@@ -1,3 +1,6 @@
+---
+title: AspectJEX1FormTheory
+---
 [[AspectJEX1ExpectedVersusActualOutput|<--Back]] [[AspectJEX1Possibilities|Next-->]]
 
 ## Assignment: Form a Theory

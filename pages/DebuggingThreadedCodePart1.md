@@ -1,3 +1,6 @@
+---
+title: DebuggingThreadedCodePart1
+---
 # Background
 Writing unit tests for threaded code is hard. What follows is a simple example, along with instructions on how to improve your chances of finding threading errors in your code. I've updated this as of February 2010. [[DebuggingThreadedCodePart1.Original|If you are looking for the original material, click here]].
 

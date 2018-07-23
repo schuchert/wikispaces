@@ -1,3 +1,6 @@
+---
+title: VideoAlbums
+---
 # C++
 ## Dice Game using TDD
 [[http://www.vimeo.com/album/254486]]

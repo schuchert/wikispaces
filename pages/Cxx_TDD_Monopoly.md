@@ -1,3 +1,6 @@
+---
+title: Cxx_TDD_Monopoly
+---
 # Introduction
 
 This tutorial takes you from the ground up working with a unit testing tool called [[http://cxxtest.sourceforge.net/|CxxTest]]. It uses the user stories and acceptance tests from [[Monopoly(r)]] as the basis of requirements and works through four iterations. We'll use the traditional Red:Green:Refactor approach to TDD.

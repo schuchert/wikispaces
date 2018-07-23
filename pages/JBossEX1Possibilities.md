@@ -1,3 +1,6 @@
+---
+title: JBossEX1Possibilities
+---
 [[JBossEX1FormTheory|<--Back]] [[JBossEX1WhatIsHappening|Next-->]]
 
 ## Possibilities

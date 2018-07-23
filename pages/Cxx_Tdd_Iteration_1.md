@@ -1,3 +1,6 @@
+---
+title: Cxx_Tdd_Iteration_1
+---
 # Getting Started
 This tutorial uses a game similar to Monopoly(r) as a basis for our work. The rules we implement are not exactly the same as Monopoly(r) because the point is not Monopoly(r), it's TDD. If you just want to see what the end results for this iteration look like, then [[Cxx Tdd Iteration 1#EndGame|look here]].
 

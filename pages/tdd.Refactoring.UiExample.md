@@ -1,3 +1,6 @@
+---
+title: tdd.Refactoring.UiExample
+---
 # Legacy Refactoring: Improving Testability of UI Code
 
 ## Introduction

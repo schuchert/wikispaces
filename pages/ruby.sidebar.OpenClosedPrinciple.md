@@ -1,3 +1,6 @@
+---
+title: ruby.sidebar.OpenClosedPrinciple
+---
 <span class="sidebar_title"> Open/Closed Principle</span>
 The [[http://en.wikipedia.org/wiki/Open/closed_principle|Open/Closed Principle]] suggests that a class, once released into the wild, should not change again except for fixing errors. In Eiffel, this meant leaving a class alone and extending from it to add new behavior. In general, this can also mean depending on an abstraction (interface or abstract base class) and then adding subclasses to complete the behavior.
 

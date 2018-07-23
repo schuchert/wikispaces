@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.0
+---
 {:toc}
 [[FitNesse.Tutorials|<--Back]]
 # Install FitNesse

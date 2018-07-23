@@ -1,3 +1,6 @@
+---
+title: CppRpnCalculatorStrategyPatternExample
+---
 [[RpnCalculatorCppExampleImplementation|<--Back]]
 ## Strategy Pattern Example
 Review first the abstract base classes of all strategies (in this case, math operators):

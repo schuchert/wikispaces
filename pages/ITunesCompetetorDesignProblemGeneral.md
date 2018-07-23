@@ -1,3 +1,6 @@
+---
+title: ITunesCompetetorDesignProblemGeneral
+---
 ## ITunes® Competitor
 Your company has recently formed a partnership with a Chinese company that is working on yet another IPod® killer. Samples of the hardware will be available in one month, with actual production hardware becoming available in limited supplies in 2 - 3 months.
 

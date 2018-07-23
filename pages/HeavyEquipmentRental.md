@@ -1,3 +1,6 @@
+---
+title: HeavyEquipmentRental
+---
 # Heavy Equipment Rental Repair Shop
 
 ## The Problem

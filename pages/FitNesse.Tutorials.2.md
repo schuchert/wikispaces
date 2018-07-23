@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.2
+---
 {:toc}
 [[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.ScriptTables|Next Tutorial--->]]
 # Introduction

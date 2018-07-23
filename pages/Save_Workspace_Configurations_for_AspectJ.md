@@ -1,3 +1,6 @@
+---
+title: Save_Workspace_Configurations_for_AspectJ
+---
 [[Eclipse Java Project Preferences for AspectJ|<--Back]] [[Environment Configuration for AspectJ|Next-->]]
 
 You can save these Workspace Preferences so that when you create another Workspace you only need to file these in instead of following all of the previous setup steps.

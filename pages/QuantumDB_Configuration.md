@@ -1,3 +1,6 @@
+---
+title: QuantumDB_Configuration
+---
 # QuantumDb Configuration
 
 QuantumDb is an Eclipse plugin that lets you view a database. This is a quick start guide.

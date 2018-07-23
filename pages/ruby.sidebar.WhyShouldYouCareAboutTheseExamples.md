@@ -1,3 +1,6 @@
+---
+title: ruby.sidebar.WhyShouldYouCareAboutTheseExamples
+---
 <span class="sidebar_title"> Why should you care about the examples?</span>
 Automated tests give us amazing leverage. If something is not quite right, hard to understand or inefficient, then you might need to change it. What would happen if you could change the implementation of something and know with near certainty that you did not break anything? What if your requirements change and force a redesign? Maybe you are just adding to an existing class. Did what you just do break it? How can you know? The answer is automated tests (or examples in this case). What if you need to build something from the ground up? If you happen to be rewriting something with existing examples, then you have an executable specification from which to work.
 

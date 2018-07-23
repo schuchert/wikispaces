@@ -1,3 +1,6 @@
+---
+title: GmOnStarCompetetorDesignProblem
+---
 [[include page="GmOnStartCompetetorDesignProblemGeneral"]]
 
 ----

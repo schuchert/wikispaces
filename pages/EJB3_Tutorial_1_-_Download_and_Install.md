@@ -1,3 +1,6 @@
+---
+title: EJB3_Tutorial_1_-_Download_and_Install
+---
 This tutorial assumes you already have Eclipse 3.2 and a Java 5 JDK installed. If not, please review [[JPA Tutorial 1 - Initial Setup|this]].
 
 ### Download

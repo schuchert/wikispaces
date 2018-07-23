@@ -1,3 +1,6 @@
+---
+title: AspectJEX2AssignmentApplications
+---
 [[AspectJEX2ApplyYourself|<--Back]] [[AspectJEX2ApplicationsOfFieldManipulationInterception|Next-->]]
 
 # Assignment: Applications

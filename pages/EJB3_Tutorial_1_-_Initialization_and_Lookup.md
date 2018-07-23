@@ -1,3 +1,6 @@
+---
+title: EJB3_Tutorial_1_-_Initialization_and_Lookup
+---
 There's a bit of boilerplate code to get the JBoss EJB3 Embeddable Container initialized before we can look up our session bean. For now we'll just use this code so we won't describe it in any detail here.
 
 By the way, I recommend you cut and past this code rather than type it.

@@ -1,3 +1,6 @@
+---
+title: Articles
+---
 # Brett's (otherwise unpublished) Articles
 > ==[[JUnit 4.x]]
 > == [[Designing to Spring Templates]] 

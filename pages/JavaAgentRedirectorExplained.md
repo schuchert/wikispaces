@@ -1,3 +1,6 @@
+---
+title: JavaAgentRedirectorExplained
+---
 [[image:Back.gif link="JavaAgent"]]
 ## Background
 The only requirement for a class used to register a Java Agent is a premain method:

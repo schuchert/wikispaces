@@ -1,3 +1,6 @@
+---
+title: DvrDesignProblemGeneral
+---
 ## Digital Video Recorder
 Trying to beat the competition to develop a better set-top box, the company you work for has designed a new DVR with built-in MPEG-4 encoding, hardware based high-definition HD up and down sampling (it can handle 720 I and P and 1080 I and P), all with a terabyte of storage and 2GB of memory. It also includes two HDMI ports, Ethernet connectivity, optical outputs, etc.
 

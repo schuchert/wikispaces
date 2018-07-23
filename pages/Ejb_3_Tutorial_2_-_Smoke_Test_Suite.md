@@ -1,3 +1,6 @@
+---
+title: Ejb_3_Tutorial_2_-_Smoke_Test_Suite
+---
 Here is a quick test suite to verify that things basically work. To create this test:
 # Expand your project (**Ejb3Tutorial2**)
 # Select the **test** source folder

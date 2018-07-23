@@ -1,3 +1,6 @@
+---
+title: Emma_Code_Coverage_vehicle.integration
+---
 [[Emma Code Coverage vehicle.configuration|<--Back]] [[Emma Code Coverage vehicle.component.vehicletype|Next-->]]
 
 # Emma Code Coverage vehicle.integration Package

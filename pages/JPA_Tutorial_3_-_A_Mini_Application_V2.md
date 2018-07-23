@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_3_-_A_Mini_Application_V2
+---
 [[EJB 3 and Java Persistence API|<-Back]]
 
 # JPA Tutorial 3 - A Mini Application

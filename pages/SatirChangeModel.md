@@ -1,3 +1,6 @@
+---
+title: SatirChangeModel
+---
 [[ExperientialLearningNotes|<--Back]]
 
 # Satir Change Model

@@ -1,3 +1,6 @@
+---
+title: TimeTrackingForAConsultingCompanyGeneral
+---
 ## Time Tracking for a Consulting Company
 A consulting company has a large percentage of traveling consultants. Currently, time and expenses are tracked by sending an email with an excel spreadsheet. This does not scale well and the company is experiencing heavy growth. 
 

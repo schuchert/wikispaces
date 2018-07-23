@@ -1,3 +1,6 @@
+---
+title: jMock_JUnit_4_Die_Skeleton
+---
 ```java
 01: package com.objectmentor.jmock;
 02: 

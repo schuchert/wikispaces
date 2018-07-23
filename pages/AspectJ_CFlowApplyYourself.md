@@ -1,3 +1,6 @@
+---
+title: AspectJ_CFlowApplyYourself
+---
 [[AspectJ CFlowExplained|<--Back]] [[AspectJ CFlowAssignmentApplications|Next-->]]
 
 # Apply Yourself

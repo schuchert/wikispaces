@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_Project_Setup
+---
 ### Create Java Project
 Next we need to create a Java project. We'll keep the source separate from the bin directory:
 # Pull down the **File** menu and select **New:Project**

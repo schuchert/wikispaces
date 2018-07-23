@@ -1,3 +1,6 @@
+---
+title: AspectJ_Annotation_Possibilities
+---
 [[AspectJ Annotation Problem|<--Back]] [[AspectJ Annotation One Solution|Next-->]]
 
 # Possibilities

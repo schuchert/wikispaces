@@ -1,3 +1,6 @@
+---
+title: AgileTestingDays2010
+---
 # Rpn Calculator Source w/ FitNesse Tests
 
 * You'll need a jvm already installed for this example to work

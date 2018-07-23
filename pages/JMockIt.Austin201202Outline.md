@@ -1,3 +1,6 @@
+---
+title: JMockIt.Austin201202Outline
+---
 # Overview
 This is my plan for my talk at the Austin Java User's Group on February 28 2012. As with any plan I have, it's a placeholder but what actually happens depends on the conditions on the ground, so take it with a grain of salt.
 

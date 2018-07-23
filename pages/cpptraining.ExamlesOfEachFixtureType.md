@@ -1,3 +1,6 @@
+---
+title: cpptraining.ExamlesOfEachFixtureType
+---
 {:toc}
 [[cpptraining#FitNesse|<<--Back]]
 

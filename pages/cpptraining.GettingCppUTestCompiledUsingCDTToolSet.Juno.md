@@ -1,3 +1,6 @@
+---
+title: cpptraining.GettingCppUTestCompiledUsingCDTToolSet.Juno
+---
 [[cpptraining|<--back]]
 # Overview
 These instructions assume you have already followed [[cpptraining.GettingStartedWithEclipseCdt.Juno|these instructions]].

@@ -1,3 +1,6 @@
+---
+title: ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm
+---
 [[ruby.tutorials|<--Back]]
 
 # Overview

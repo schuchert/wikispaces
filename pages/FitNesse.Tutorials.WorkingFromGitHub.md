@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.WorkingFromGitHub
+---
 [[FitNesse.Tutorials|<--Back]]
 
 You can get the start of this project from [[http://github.com/schuchert/fitnesse-tutorials/tree/master|github]] and then import it into an Eclipse workspace rather than starting completely from scratch. The start of each tutorial will use the following tag format: <FullPageName>.Start, for example the first tutorial is called FitNesse.Tutorials.0, so add ".Start" to that and you'll get "FitNesse.Tutorails.0.Start" as the tag. Each tutorial will list the tag.

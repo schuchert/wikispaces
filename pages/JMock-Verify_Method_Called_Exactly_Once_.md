@@ -1,3 +1,6 @@
+---
+title: JMock-Verify_Method_Called_Exactly_Once_
+---
 [[TDD Example Catalog|<--Back]]
 
 ## Verify a sequence of methods

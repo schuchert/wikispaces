@@ -1,3 +1,6 @@
+---
+title: JBossAOPEX2ApplicationsOfFieldManipulationInterception
+---
 [[JBossAOPEX2AssignmentApplications|<--Back]] [[JBossEX2AssignmentIssues|Next-->]]
 
 # Applications of Field Manipulation Interception

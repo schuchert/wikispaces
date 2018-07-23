@@ -1,3 +1,6 @@
+---
+title: scala
+---
 Placeholder page for Scala work
 
 * [[scala.GettingStarted|Getting Started]]

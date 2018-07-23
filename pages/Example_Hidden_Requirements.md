@@ -1,3 +1,6 @@
+---
+title: Example_Hidden_Requirements
+---
 These are some possible example "hidden" requirements that the students must manage to get out of you:
 * 2 Stories (or at least 2 stories or between 2 and 4 stories)
 * 1st floor must have all cards facing out

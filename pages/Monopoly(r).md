@@ -1,3 +1,6 @@
+---
+title: Monopoly
+---
 This example uses the game [[http://www.hasbro.com/monopoly/|Monopoly]] as the basis for learning Object Oriented Design following both a [[Test Driven Development]] approach as well as a [[Test First Development]] approach. In this example we only use the game as a basis but change the rules as necessary to emphasize certain kinds of design problems.
 
 This problem is different from the [[RPN Calculator]] in that we do not start with user stories but rather a description of each release. In a classroom setting, we'd start each release with a user story workshop to determine possible work. We'd then sequence the user stories and being implemented the user stories.

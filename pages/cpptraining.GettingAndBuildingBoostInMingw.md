@@ -1,3 +1,6 @@
+---
+title: cpptraining.GettingAndBuildingBoostInMingw
+---
 [[cpptraining#boost|<--Back]]
 
 # Overview

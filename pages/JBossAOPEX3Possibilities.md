@@ -1,3 +1,6 @@
+---
+title: JBossAOPEX3Possibilities
+---
 [[JBossAOPEX3ExpectedVersusActualOutput|<--Back]] [[JBossAOPEX3WhatIsHappening|Next-->]]
 
 # Possibilities

@@ -1,3 +1,6 @@
+---
+title: PowerShell5.TokenizeExpression
+---
 [[PowerShell5|<--Back]]
 
 # Overview

@@ -1,3 +1,6 @@
+---
+title: Eclipse_Java_Language_Preferences_for_AspectJ
+---
 [[Eclipse Classpath Variable for AspectJ|<--Back]] [[Eclipse Java Project Preferences for AspectJ|Next-->]]
 
 We need Eclipse to use Java 5 syntax. To do so, do the following:

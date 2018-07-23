@@ -1,3 +1,6 @@
+---
+title: ClinicalTrialsTrackingDesignProblemProductOwner
+---
 ## Clinical Trials Tracking Product Owner
 
 As the product owner, you have a little more information. Feel free to share this if you are asked about it:

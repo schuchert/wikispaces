@@ -1,3 +1,6 @@
+---
+title: AspectJEX1AssignmentApplications
+---
 [[AspectJEX1ApplyYourself|<--Back]] [[AspectJEX1ApplicationsOfMethodExecution|Next-->]]
 
 ## Assignment: Applications

@@ -1,3 +1,6 @@
+---
+title: JBoss_AOP_Example_1
+---
 [[JBoss AOP Example 1|<--Back]] [[JBossEX1ExpectedVersusActualOutput|Next-->]]
 
 Source files are here: [[file:JBossEX1Source.jar]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject|here]].

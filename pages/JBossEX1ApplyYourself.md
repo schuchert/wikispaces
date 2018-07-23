@@ -1,3 +1,6 @@
+---
+title: JBossEX1ApplyYourself
+---
 [[JBossVMConfigurationBlackMagic|<--Back]] [[JBossEX1AssignmentApplications|Next-->]]
 
 ## Apply Yourself

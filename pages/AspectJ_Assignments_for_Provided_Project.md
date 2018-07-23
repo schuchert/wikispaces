@@ -1,3 +1,6 @@
+---
+title: AspectJ_Assignments_for_Provided_Project
+---
 # AspectJ Assignments for Provided Project
 
 These assignments are to be used on [[Car Rental Example]]. Please set up that project before working on any of these projects.

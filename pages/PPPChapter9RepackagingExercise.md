@@ -1,3 +1,6 @@
+---
+title: PPPChapter9RepackagingExercise
+---
 [[image:up.gif link="Vancouver_PPP_Exercise_Ch8and9"]]
 
 In parts 1 and 2 we practiced creating components from an existing system using pencil and paper. Now we'll take that one step further and create a component from actual code.

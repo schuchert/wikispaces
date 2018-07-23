@@ -1,2 +1,5 @@
+---
+title: wicket
+---
 [[wicket.GettingStarted]]
 

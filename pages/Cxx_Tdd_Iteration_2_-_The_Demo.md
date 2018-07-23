@@ -1,3 +1,6 @@
+---
+title: Cxx_Tdd_Iteration_2_-_The_Demo
+---
 # Demo Goals
 So far we only have test output to show for all of our hard work. Wouldn't it be nice if we could demonstrate our system with output? In reality, a product owner would probably require such a demo, so here's a list of things we want to accomplish with our demo:
 * Be able to create 40 locations with the correct name

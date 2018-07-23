@@ -1,3 +1,6 @@
+---
+title: Full_Coverage_when_Expecting_an_Exception
+---
 [[TDD Example Catalog|<--Back]]
 
 In JUnit 4 we might write the following:

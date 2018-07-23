@@ -1,3 +1,6 @@
+---
+title: AspectJEX4Explained
+---
 [[AspectJEX4SoWhatIsHappening|<--Back]] [[AspectJEX4ApplyYourself|Next-->]]
 
 # Example 4 Explained

@@ -1,3 +1,6 @@
+---
+title: JMock-Demystifying_the_Beast
+---
 [[TDD Example Catalog|<--Back]]
 
 jMock makes a use of two Java language features, one you may have never used:

@@ -1,3 +1,6 @@
+---
+title: tdd.objectivec.XCodeProjectSetup
+---
 ## Why?
 It took a bit of digging to come up with the steps required to get basic unit testing working in XCode. These steps borrow heavily from the following sites (in no order, because I don't remember what all it took to get this working):
 * [[http://chanson.livejournal.com/182472.html]]

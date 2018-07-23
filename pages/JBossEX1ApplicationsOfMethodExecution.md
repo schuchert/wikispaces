@@ -1,3 +1,6 @@
+---
+title: JBossEX1ApplicationsOfMethodExecution
+---
 [[JBossEX1AssignmentApplications|<--Back]] [[JBossEX1AssignmentIssues|Next-->]]
 
 ## Applications of Method Execution

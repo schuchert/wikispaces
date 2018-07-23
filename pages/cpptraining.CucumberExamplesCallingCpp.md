@@ -1,3 +1,6 @@
+---
+title: cpptraining.CucumberExamplesCallingCpp
+---
 [[cpptraining#ruby|<--Back]]
 
 ## Preliminary Setup

@@ -1,3 +1,6 @@
+---
+title: PowerShell5-Tokenize_Expression-Finalish_Version
+---
 [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.ConvertTokenizerToAnEnumerator|<—Back]]  [[PowerShell5.TokenizeExpression|^^ Up ^^]]
 After the adding support for functions, I figured that was enough. However, once I looked at the final version, I found one thing worth cleaning up. The regular expressions are a bit confusing, but I'm OK with them. However, giving them names would clean up the code a touch for the next person (probably me) that had to support it. Here's a quick refactoring of that:
 ```powershell

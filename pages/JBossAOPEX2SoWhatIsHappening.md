@@ -1,3 +1,6 @@
+---
+title: JBossAOPEX2SoWhatIsHappening
+---
 [[JBossAOPEX2WhatIsHappening|<--Back]] [[JBossAOPEX2Explained|Next-->]]
 
 # So what is happening?

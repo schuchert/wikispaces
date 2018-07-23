@@ -1,3 +1,6 @@
+---
+title: JBoss_AOP_Self_Study
+---
 [[AspectOrientedProgramming|<--Back]]
 
 AOP is an abbreviation for Aspect Oriented Programming. For now, that’s all you’re going to get for a definition.

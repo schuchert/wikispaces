@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_3_User_Stories
+---
 Here are the stories for Release 3:
 * [[Monopoly(r) Release 3 Player Buys Property|Buy Property]]
 * [[Monopoly(r) Release 3 Player Pays Rent|Pay Rent]]

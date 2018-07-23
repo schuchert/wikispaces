@@ -1,3 +1,6 @@
+---
+title: JBossEX1WhatIsHappening
+---
 [[JBossEX1Possibilities|<--Back]] [[JBossEX1SoWhatIsHappening|Next-->]]
 
 ## What Is Happening

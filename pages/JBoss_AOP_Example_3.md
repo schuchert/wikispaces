@@ -1,3 +1,6 @@
+---
+title: JBoss_AOP_Example_3
+---
 [[JBoss AOP Self Study|<--Back]] [[JBossAOPEX3ExpectedVersusActualOutput|Next-->]]
 
 # Predict the Output

@@ -1,3 +1,6 @@
+---
+title: AspectJ_Annotation_Exercises
+---
 [[AspectJ Annotation Thinking|<--Back]] [[AspectJ Annotation Start|Next-->]]
 
 # AspectJ Annotation: Exercises

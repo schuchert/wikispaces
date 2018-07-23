@@ -1,3 +1,6 @@
+---
+title: RPN_Calculator_Tan
+---
 As a user I want to be able to calculate the tan of an angle in degrees so that I don't have to perform the calculation manually.
 
 

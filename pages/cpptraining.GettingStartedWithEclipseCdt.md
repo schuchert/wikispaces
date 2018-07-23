@@ -1,3 +1,6 @@
+---
+title: cpptraining.GettingStartedWithEclipseCdt
+---
 [[cpptraining#gettingfirsttestrunning|<--Back]]
 
 # Overview

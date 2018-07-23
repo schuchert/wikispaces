@@ -1,3 +1,6 @@
+---
+title: Ejb_3_Tutorial_2_-_The_Dao_and_its_Interface
+---
 We will create a session bean that wraps access to the company behind a session bean interface. This is another example of the Data Access Object (dao) pattern. This is one of the typical ways we use a session bean.
 
 This dao looks pretty much the same as the session bean from our first EJB example. As with the first example, we've placed the interface in one package and the implementation (the session bean) in a second interface.

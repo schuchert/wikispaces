@@ -1,3 +1,6 @@
+---
+title: LearningCycle
+---
 [[ExperientialLearningNotes|<--Back]]
 # Learning Cycles
 Learning Cycles describe a path for a learning experience. For more background on experiential learning cycles, look [[http://reviewing.co.uk/research/learning.cycles.htm|here]].

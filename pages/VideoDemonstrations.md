@@ -1,3 +1,6 @@
+---
+title: VideoDemonstrations
+---
 These are the videos I've published online.
 
 [[http://vimeo.com/user3159463/videos|My Videos]] 

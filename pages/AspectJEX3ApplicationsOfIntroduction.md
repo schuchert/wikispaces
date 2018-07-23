@@ -1,3 +1,6 @@
+---
+title: AspectJEX3ApplicationsOfIntroduction
+---
 [[AspectJEX3AssignmentApplications|<--Back]] [[AspectJEX3AssignmentIssues|Next-->]]
 
 # Applications of Introductions

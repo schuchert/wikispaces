@@ -1,3 +1,6 @@
+---
+title: AspectJEX3AssignmentApplications
+---
 [[AspectJEX3ApplyYourself|<--Back]] [[AspectJEX3ApplicationsOfIntroduction|Next-->]]
 
 # Assignment: Applications

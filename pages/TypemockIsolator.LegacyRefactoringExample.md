@@ -1,3 +1,6 @@
+---
+title: TypemockIsolator.LegacyRefactoringExample
+---
 # Background
 This work derives from an earlier presentation in Java from Berlin:
 [[@http://vimeo.com/31927512]]

@@ -1,3 +1,6 @@
+---
+title: sbe.WorkItemsInSchedule
+---
 ## Before
 ```smalltalk
 Feature: Handling Scheduling Conflicts

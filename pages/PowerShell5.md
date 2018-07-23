@@ -1,3 +1,6 @@
+---
+title: PowerShell5
+---
 # PowerShell 5
 * [[PowerShell5.YakShaving|Shave The Yaks]]
 * [[PowerShell5.GettingSetUp| Getting Started]]

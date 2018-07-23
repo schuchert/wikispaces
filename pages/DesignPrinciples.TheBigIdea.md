@@ -1,3 +1,6 @@
+---
+title: DesignPrinciples.TheBigIdea
+---
 Imagine the following partial system:
 
 [[image:AccessVersion0.png]]

@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_1_-_Eclipse_Project_Setup
+---
 Next we need to start eclipse and create a workspace.
 
 ### Create Initial Project

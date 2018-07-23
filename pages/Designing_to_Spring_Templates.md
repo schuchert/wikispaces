@@ -1,3 +1,6 @@
+---
+title: Designing_to_Spring_Templates
+---
 [[home|<--Back]] [[Spring Templates Typical JDBC|Next-->]]
 
 # Designing to Spring Templates 

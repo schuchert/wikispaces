@@ -1,3 +1,6 @@
+---
+title: cpptraining.BuildingCppUTestForVisualStudio
+---
 [[cpptraining#gettingfirsttestrunningvisualstudio|<--Back]]
 
 Now it is time to build the library you will be using for writing micro tests:

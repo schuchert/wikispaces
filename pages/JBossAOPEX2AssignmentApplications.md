@@ -1,3 +1,6 @@
+---
+title: JBossAOPEX2AssignmentApplications
+---
 [[JBossAOPEX2ApplyYourself|<--Back]] [[JBossAOPEX2ApplicationsOfFieldManipulationInterception|Next-->]]
 
 # Assignment: Applications

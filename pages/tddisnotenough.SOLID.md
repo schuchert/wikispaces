@@ -1,3 +1,6 @@
+---
+title: tddisnotenough.SOLID
+---
 [[tddisnotenough#SOLID|<==Back]]
 
 [[http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod|From Uncle Bob]]

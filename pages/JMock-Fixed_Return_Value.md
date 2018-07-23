@@ -1,3 +1,6 @@
+---
+title: JMock-Fixed_Return_Value
+---
 [[TDD Example Catalog|<--Back]]
 
 This test method exists in a [[jMock JUnit 4 Die Skeleton]].

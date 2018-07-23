@@ -1,3 +1,6 @@
+---
+title: Katas.RecursiveDecentIterator
+---
 [[Katas|<--Back]]
 ## Problem
 You need to get a list of all of the files in a directory system (or walk a n-ary tree really). You want to provide one file at a time to the caller. For example, given the following directory structure:

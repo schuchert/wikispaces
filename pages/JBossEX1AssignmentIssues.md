@@ -1,3 +1,6 @@
+---
+title: JBossEX1AssignmentIssues
+---
 [[JBossEX1ApplicationsOfMethodExecution|<--Back]] [[JBossEX1IssuesConcerns|Next-->]]
 
 ## Assignment: Issues

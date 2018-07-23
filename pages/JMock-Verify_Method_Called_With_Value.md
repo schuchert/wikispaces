@@ -1,3 +1,6 @@
+---
+title: JMock-Verify_Method_Called_With_Value
+---
 [[TDD Example Catalog|<--Back]]
 
 ||**Line**||**Effect**||

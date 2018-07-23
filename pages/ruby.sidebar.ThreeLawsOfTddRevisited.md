@@ -1,3 +1,6 @@
+---
+title: ruby.sidebar.ThreeLawsOfTddRevisited
+---
 <span class="sidebar_title">The Three Laws of TDD Revisited</span>
 Here are Robert Martin's three laws of TDD written from a BDD perspective:
 # Write no production code without a failing Example

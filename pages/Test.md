@@ -1,3 +1,6 @@
+---
+title: Test
+---
 <span class="slide-begin">
 # Heading 1
 

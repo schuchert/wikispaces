@@ -1,3 +1,6 @@
+---
+title: TddAndConcurrency.Slides.KeepItAwayFromMe
+---
 [[TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo|<--Back]] | [[TddAndConcurrency.Slides|^Top^]] | [[TddAndConcurrency.Slides.FinaNotes|Next-->]]
 
 # Keep It Away From Me

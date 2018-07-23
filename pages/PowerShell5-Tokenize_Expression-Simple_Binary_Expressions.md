@@ -1,3 +1,6 @@
+---
+title: PowerShell5-Tokenize_Expression-Simple_Binary_Expressions
+---
 [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstFailingTest|<— Back]]  [[PowerShell5.TokenizeExpression|^^ Up ^^]] [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstStabAtParentheses|Next—>]]
 # Overview
 Now that we have a trivial first test, we'll begin growing the implementation one test at a time. We'll be following [[http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd|Uncle Bob's Three Rules of TDD]], summarized here as:

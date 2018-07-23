@@ -1,3 +1,6 @@
+---
+title: AspectJEX3ApplyYourself
+---
 [[AspectJEX3Explained|<--Back]] [[AspectJEX3AssignmentApplications|Next-->]]
 
 # Apply Yourself

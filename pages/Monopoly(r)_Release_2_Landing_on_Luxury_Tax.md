@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_2_Landing_on_Luxury_Tax
+---
 As a Player, when I land on Luxury Tax, I pay $75.
 
 ### User Acceptance Tests

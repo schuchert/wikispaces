@@ -1,3 +1,6 @@
+---
+title: TddAndConcurrency.Agile2008.Outline
+---
 # Part 0
 Begin running driver that exercises [[TddAndConcurrency.ObjectWithValue|ObjectWithValue]] before the start.
 

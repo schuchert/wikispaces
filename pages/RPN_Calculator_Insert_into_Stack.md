@@ -1,3 +1,6 @@
+---
+title: RPN_Calculator_Insert_into_Stack
+---
 As a user I want to be able to insert a new number after an existing number on the stack so that I can add something in I forgot.
 
 ### UAT

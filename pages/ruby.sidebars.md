@@ -1,3 +1,6 @@
+---
+title: ruby.sidebars
+---
 [[include page="ruby.sidebar.ThreeLawsOfTddRevisited" editable="true"]]
 
 [[include page="ruby.sidebar.ExamplesPassingWithoutValidation" editable="true"]]

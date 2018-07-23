@@ -1,3 +1,6 @@
+---
+title: RhinoMocks.examples.SampleLoginApplication
+---
 **LoginServiceTest**
 ```csharp
 using NUnit.Framework;

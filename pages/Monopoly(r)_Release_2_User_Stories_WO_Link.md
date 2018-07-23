@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_2_User_Stories_WO_Link
+---
 The following stories along with their user acceptance tests cover release 2:
 * [[Monopoly(r) Release 2 Landing on Go|Landing on Go]]
 * [[Monopoly(r) Release 2 Passing over Go|Passing over Go]]

@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_4_-_Different_Kinds_of_Resources
+---
 What happens when you perform a query on a type that has subclasses? That's the purpose of this tutorial's transformations. In [[JPA Tutorial 3 - A Mini Application]], we assumed Patrons could only check out books. Now they can checkout Books or DVDs (once we've got two different kinds of resources, adding a third is not a big deal).
 
 It turns out support for inheritance in queries (as well as JPA) is built in. In fact, you do not actually need to do anything other than have one entity inherit from another entity to get everything to work. There are three ways to represent inheritance:

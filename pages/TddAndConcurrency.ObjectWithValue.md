@@ -1,3 +1,6 @@
+---
+title: TddAndConcurrency.ObjectWithValue
+---
 ```java
 package com.om.sharingwithoutguarding;
 

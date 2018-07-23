@@ -1,3 +1,6 @@
+---
+title: IntroductionToMicrocomputersAndDataProcessing
+---
 Here it is. The first book I ever wrote in its nearly final form
 >> :[[file:IntroductionToMicrocomputersAndDataProcessing.pdf]]
 Go ahead, have a look. For free. Its original copyright is from 1988, so it’s old. Read on if you are curious about its history. But have a look for a particular take on history. It’s a blast from my past. Keep in mind that many of the graphics I drew on computer, pixel by pixel in some cases. I’m especially proud of keyboard on page 10, the shape of the 3.5” floppy dries on the PS/2, Model 25 on page 14 and the Platter layout on page 222. (These are document page numbers, not PDF page numbers.)

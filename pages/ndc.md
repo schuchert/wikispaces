@@ -1,3 +1,6 @@
+---
+title: ndc
+---
 # The Problem We'll Be Using
 >> ==[[http://schuchert.wikispaces.com/DvrDesignProblem?f=print|Dvr Problem Description (print)]]
 

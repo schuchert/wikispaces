@@ -1,3 +1,6 @@
+---
+title: hades.BaseEnvironment
+---
 These instructions summarize/make heavy use of [[http://www.vogella.de/articles/JavaPersistenceAPI/article.html]].
 
 * Download a mocking library. This example uses [[http://code.google.com/p/jmockit/downloads/list|JMockIt]] - version 0.999.9. You will need the following jar file// **as the first entry**// in your classpath:

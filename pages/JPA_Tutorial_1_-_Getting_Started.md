@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_1_-_Getting_Started
+---
 {:toc}
 [[EJB 3 and Java Persistence API|<--Back]]
 

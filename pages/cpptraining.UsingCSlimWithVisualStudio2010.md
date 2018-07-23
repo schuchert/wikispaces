@@ -1,3 +1,6 @@
+---
+title: cpptraining.UsingCSlimWithVisualStudio2010
+---
 {:toc}
 [[cpptraining#FitNesse|<--Back]]
 

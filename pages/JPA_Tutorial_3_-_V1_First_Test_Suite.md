@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_3_-_V1_First_Test_Suite
+---
 ### The Unit Tests
 **A Little Context**
 Before we get started, this tutorial is deliberately organized in an inconvenient fashion. Why? My target reader is someone in a class I'm teaching (the material is open-source but still targeted). I do not want the student to be able to quickly just copy the whole thing and get it to work without having to put forth some effort. In a classroom situation, I have all of the source code available if I need to help a student get up to speed.

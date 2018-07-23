@@ -1,3 +1,6 @@
+---
+title: ruby.sidebar.ExampleStylesAndYourAudience
+---
 <span class="sidebar_title"> Example styles and Your audience</span>
 Which do you prefer? You have seen three different forms:
 # First, you saw Examples simply using the calculator.

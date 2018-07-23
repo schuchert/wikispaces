@@ -1,3 +1,6 @@
+---
+title: JUnit_4.xSuite
+---
 [[JUnit 4.x|<--Back to JUnit 4.x]]
 
 # Suite Method for Backwards Compatibility

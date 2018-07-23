@@ -1,3 +1,6 @@
+---
+title: Eclipse_Java_Language_Preferences_for_JBoss_AOP
+---
 [[Eclipse Classpath Variable for JBoss AOP|<--Back]] [[Eclipse Java Project Preferences for JBoss AOP|Next-->]]
 
 We need Eclipse to use Java 5 syntax. To do so, do the following:

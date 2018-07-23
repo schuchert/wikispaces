@@ -1,3 +1,6 @@
+---
+title: Red_Green_Refactor
+---
 Red:Green:Refactor comes from JUnit. A Red bar means one or more tests failed. Green means all tests passed. You refactor when things are green so you know you didn't break anything
 * Red: Write one test, the test probably won't compile
 * Red: Get the test to compile, the test probably won't pass

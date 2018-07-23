@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_3_-_Books_on_Loan
+---
 ## Books on Loan
 You can start from this point usingthe following source files: [[file:JapTutorial3BeforeAddingLoan.jar]]
 

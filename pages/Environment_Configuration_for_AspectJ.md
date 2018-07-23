@@ -1,3 +1,6 @@
+---
+title: Environment_Configuration_for_AspectJ
+---
 You'll need the Sun JDK, Eclipse and AspectJ to run these examples.
 
 ## JDK

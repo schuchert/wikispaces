@@ -1,3 +1,6 @@
+---
+title: TddAndConcurrency.Slides.RandomStuff
+---
 [[TddAndConcurrency.Slides.FinaNotes|<--Back]] | [[TddAndConcurrency.Slides|^Top^]] | [[TddAndConcurrency.Slides|Next-->]]
 
 # TDD & Concurrency

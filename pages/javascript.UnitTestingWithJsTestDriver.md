@@ -1,3 +1,6 @@
+---
+title: javascript.UnitTestingWithJsTestDriver
+---
 # Overview
 I'm learning JavaScript (again, and for real this time, I hope). After reading [[@http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742|JavaScript: The Good Parts]] and several online pages, I set out to try some basic TDD in JavaScript. For these instructions (and the soon to be created instructional video), I'm using the following tool set:
 * Chrome (configured for auto updating)

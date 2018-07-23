@@ -1,3 +1,6 @@
+---
+title: ShortExerciseOutlineExperience
+---
 [[ShortExerciseOutline|<--Back]] [[ShortExerciseOutlineObservation|Next-->]]
 
 # Short Exercise Outline Experience

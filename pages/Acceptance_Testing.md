@@ -1,3 +1,6 @@
+---
+title: Acceptance_Testing
+---
 ## [[Acceptance Testing.ExperientialWorkshopWithFitnesse|Experiential Workshop With FitNesse]]
 
 ## [[Acceptance Testing.UsingSlimDotNetInFitNesse|Using Slim.Net in FitNesse]]

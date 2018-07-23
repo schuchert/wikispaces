@@ -1,3 +1,6 @@
+---
+title: ProblemsRunningJavaAgentSmokeTest
+---
 [[image:Back.gif link="AnExampleJavaAgent"]]
 If you see anything else, use the output to fix the problem.
 

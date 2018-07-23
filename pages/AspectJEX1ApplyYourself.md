@@ -1,3 +1,6 @@
+---
+title: AspectJEX1ApplyYourself
+---
 [[AspectJVMConfigurationBlackMagic|<--Back]] [[AspectJEX1AssignmentApplications|Next-->]]
 
 ## Apply Yourself

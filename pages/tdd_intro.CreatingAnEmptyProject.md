@@ -1,3 +1,6 @@
+---
+title: tdd_intro.CreatingAnEmptyProject
+---
 # Create a new project
 * Use the default maven archetype:
 ```

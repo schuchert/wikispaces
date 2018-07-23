@@ -1,3 +1,6 @@
+---
+title: cpptraining.SummingAVector
+---
 {:toc}
 [[cpptraining#vector|<-- Back]]
 

@@ -1,3 +1,6 @@
+---
+title: tdd.cpp.MovingTowardsStoryBasedExpressionOfTests
+---
 # Introduction
 Bob Martin has an excellent Tdd Kata called [[http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata|The Prime Factors Kata]]. When I teach Tdd, I often use this as part of the [[RPN Calculator]] problem. I have the students add two operators:
 * Sum of the stack

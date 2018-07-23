@@ -1,3 +1,6 @@
+---
+title: 3Questions-Smalltalk
+---
 # The Three Questions
 Brett taught several Smalltalk questions in the early 90's. From teaching the class, he came up with three questions, or rather, the three question categories. Nearly all questions in the Smalltalk class fell under three categories:
 * What is it?

@@ -1,3 +1,6 @@
+---
+title: Eclipse_Java_Project_Preferences_for_JBoss_AOP
+---
 [[Eclipse Java Language Preferences for JBoss AOP|<--Back]] [[Save Workspace Configurations for JBoss AOP|Next-->]]
 
 In these examples, I have Eclipse configured to use separate src and bin directories. This is an optional step.

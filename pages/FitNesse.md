@@ -1,3 +1,6 @@
+---
+title: FitNesse
+---
 ## [[FitNesse.Tutorials|Tutorials]]
 
 [[FitNesse.UsingTheSource|Using The Source]]

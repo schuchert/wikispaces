@@ -1,3 +1,6 @@
+---
+title: WritingYourOwnJavaAgent
+---
 [[image:Back.gif link="JavaAgent"]]
 A Java Agent, once registered with the class loader, has a single method:
 ```java

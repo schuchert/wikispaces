@@ -1,3 +1,6 @@
+---
+title: Ejb3JBossUtilJava
+---
 ### JBossUtil.java
 
 ```java

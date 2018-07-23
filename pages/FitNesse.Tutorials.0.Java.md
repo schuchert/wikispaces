@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.0.Java
+---
 {:toc}
 # Create Eclipse Project
 In a nutshell, you are going to create a Java project, add some classes and then add the bin directory to the FitNesse path so that FitNesse can find and execute your Java Fixtures.

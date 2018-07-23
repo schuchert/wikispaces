@@ -1,3 +1,6 @@
+---
+title: TddAndConcurrency.Slides.FinaNotes
+---
 [[TddAndConcurrency.Slides.KeepItAwayFromMe|<--Back]] | [[TddAndConcurrency.Slides|^Top^]] | [[TddAndConcurrency.Slides.RandomStuff|Next-->]]
 
 # Final Notes

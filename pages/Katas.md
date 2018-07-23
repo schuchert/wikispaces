@@ -1,3 +1,6 @@
+---
+title: Katas
+---
 ## Katas I've Created
 * [[Katas.RecursiveDecentIterator|Recursive Decent Iterator]]
 * [[Katas.ExpressionTokenizer|Expression Tokenizer]]

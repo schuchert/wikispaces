@@ -1,3 +1,6 @@
+---
+title: Ejb3_and_Jpa_using_JBoss_Notes
+---
 # Ejb3 and Jpa using JBoss Notes
 
 This is a summary of the course outline, feel and guiding principles behind its structure.

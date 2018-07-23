@@ -1,3 +1,6 @@
+---
+title: ShortExerciseOutlineExercises
+---
 [[ShortExerciseOutlineThinking|<--Back]] [[ShortExerciseOutline|Next-->]]
 
 # Short Exercise Outline Exercises

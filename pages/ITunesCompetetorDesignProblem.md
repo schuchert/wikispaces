@@ -1,3 +1,6 @@
+---
+title: ITunesCompetetorDesignProblem
+---
 [[include page="ITunesCompetetorDesignProblemGeneral"]]
 
 ----

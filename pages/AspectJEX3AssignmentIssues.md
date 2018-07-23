@@ -1,3 +1,6 @@
+---
+title: AspectJEX3AssignmentIssues
+---
 [[AspectJEX3ApplicationsOfIntroduction|<--Back]] [[AspectJEX3IssuesConcerns|Next-->]]
 
 # Assignment: Issues/Concerns

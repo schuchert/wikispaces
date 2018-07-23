@@ -1,3 +1,6 @@
+---
+title: cpptraining.UsingBoostWithMingwAndEclipse
+---
 [[cpptraining#boost|<--Back]]
 
 # Overview

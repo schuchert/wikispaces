@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.TableTables
+---
 {:toc}[[FitNesse.Tutorials|<--Back]] -or- [[FitNesse.Tutorials.AlternativeScriptTableSyntax|Next Tutorial-->]]
 
 # Background

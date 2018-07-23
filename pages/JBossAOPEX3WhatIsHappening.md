@@ -1,3 +1,6 @@
+---
+title: JBossAOPEX3WhatIsHappening
+---
 [[JBossAOPEX3Possibilities|<--Back]] [[JBossAOPEX3SoWhatIsHappening|Next-->]]
 
 # Assignment: What Is Happening?

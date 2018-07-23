@@ -1,3 +1,6 @@
+---
+title: Acceptance_Testing.ExperientialWorkshopWithFitnesse.ConcertRegistration
+---
 ## Overview
 
 A local promoter wants to take advantage of the mobile technology that already exists at most of their concerts. They want to allow fans to:

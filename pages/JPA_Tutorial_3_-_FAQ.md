@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_3_-_FAQ
+---
 JPA Tutorial 3 - FAQ
 * **Phone number length is set to 11 in the annotation in the exercise, but phone numbers are 12. What's happening?** //It will get truncated (in hypersonic)//
 * **TDD: Is there a tool (eclipse plugin) to generate a concrete class based on a test case?** //Use Quick-fix (Ctrl-1 or click the icon on the sidebar) to create the class, and stub methods.//

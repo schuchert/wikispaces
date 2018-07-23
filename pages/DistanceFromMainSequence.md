@@ -1,3 +1,6 @@
+---
+title: DistanceFromMainSequence
+---
 $$
 D = | A + I - 1 |
 $$

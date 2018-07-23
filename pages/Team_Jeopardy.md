@@ -1,3 +1,6 @@
+---
+title: Team_Jeopardy
+---
 [[Team Jeopardy User Stories]]
 
 Team Jeopardy is loosely based on the game Jeopardy. Here are the similarities:

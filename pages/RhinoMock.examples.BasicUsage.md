@@ -1,3 +1,6 @@
+---
+title: RhinoMock.examples.BasicUsage
+---
 ```csharp
 using System;
 using NUnit.Framework;

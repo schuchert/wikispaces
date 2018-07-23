@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.ScriptTables
+---
 {:toc}[[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.ScenarioTables|Next Tutorial--->]]
 # Background: The Return of Smalltalk
 This is a somewhat nostalgic background, you won't miss much if you [[FitNesse.Tutorials.ScriptTables#introduction|skip to the introduction]]. 

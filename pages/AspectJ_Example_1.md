@@ -1,3 +1,6 @@
+---
+title: AspectJ_Example_1
+---
 [[AspectJ Self Study|<--Back]] [[AspectJEX1ExpectedVersusActualOutput|Next-->]]
 
 Source files are here: [[file:AspectJEx1src.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject|here]].

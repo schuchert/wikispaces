@@ -1,3 +1,6 @@
+---
+title: ruby.tutorials.SettingUp
+---
 [[image:Back.gif link="ruby.tutorials"]]
 
 # T.B.D.

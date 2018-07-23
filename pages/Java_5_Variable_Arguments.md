@@ -1,3 +1,6 @@
+---
+title: Java_5_Variable_Arguments
+---
 {:toc}
 [[Articles|<--Back]]
 

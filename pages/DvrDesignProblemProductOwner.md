@@ -1,3 +1,6 @@
+---
+title: DvrDesignProblemProductOwner
+---
 ## Digital Video Recorder Product Owner
 During initial discussions with the product owner, a few things might become clear (if asked):
 * The system downloads program information over Ethernet. It offers a dial-up service for a small monthly fee, but the Ethernet service is free.

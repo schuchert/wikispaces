@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_2_Landing_on_Go
+---
 As a player, when I land on go I get $200 as my salary for staying in the game.
 
 ### User Acceptance Tests

@@ -1,3 +1,6 @@
+---
+title: Design_Problems
+---
 This is a collection of design problems you can use for coursework.
 
 * [[ITunesCompetetorDesignProblem]]

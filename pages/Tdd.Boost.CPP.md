@@ -1,3 +1,6 @@
+---
+title: Tdd.Boost.CPP
+---
 I'm just getting started ... want to see something, ask:
 >> schuchert at yahoo dot com
 >> schuchert at objectmentor dot com

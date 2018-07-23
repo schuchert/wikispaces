@@ -1,3 +1,6 @@
+---
+title: RpnCalculatorPrintable
+---
 [[include page="RPN Calculator"]]
 ----
 ## Release 1

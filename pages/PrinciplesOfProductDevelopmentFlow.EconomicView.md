@@ -1,3 +1,6 @@
+---
+title: PrinciplesOfProductDevelopmentFlow.EconomicView
+---
 [[PrinciplesOfProductDevelopmentFlow|Back]]
 
 **E1: The Principle of Quantified Overall Economics**

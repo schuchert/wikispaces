@@ -1,3 +1,6 @@
+---
+title: FitNesse.UsingTheSource
+---
 # Getting Started With Source
 
 ## First, acquire the source from github:

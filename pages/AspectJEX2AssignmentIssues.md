@@ -1,3 +1,6 @@
+---
+title: AspectJEX2AssignmentIssues
+---
 [[AspectJEX2ApplicationsOfFieldManipulationInterception|<--Back]] [[AspectJEX2IssuesConcerns|Next-->]]
 
 # Assignment: Issues/Concerns

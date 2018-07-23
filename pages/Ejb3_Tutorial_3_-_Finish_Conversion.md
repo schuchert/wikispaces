@@ -1,3 +1,6 @@
+---
+title: Ejb3_Tutorial_3_-_Finish_Conversion
+---
 We have the following classes to convert:
 * LoanDao
 * BookDao

@@ -1,3 +1,6 @@
+---
+title: TddAndConcurrency.Slides
+---
 [[TddAndConcurrency|<--Back]]
 
 * ==[[TddAndConcurrency.Slides.DoOneThingWellWell|Do one thing … well … well]]

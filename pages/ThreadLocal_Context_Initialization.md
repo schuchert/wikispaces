@@ -1,3 +1,6 @@
+---
+title: ThreadLocal_Context_Initialization
+---
 We have a multi-tiered application where all of the business rules and implemented behind EJBs (session or message-driven). We wrote our own support for single sign-on across roughly 15 applications and that security context is used in a few places:
 * The Application Coordination tier for both authentication and authorization
 * Business tier for some field-level validation

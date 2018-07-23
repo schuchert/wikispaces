@@ -1,3 +1,6 @@
+---
+title: what_if_you_do_not_have_dice
+---
 ## No Dice?
 Find three coins of different denominations. For this example I'll assume you are using a penny, nickel and a dime.
 

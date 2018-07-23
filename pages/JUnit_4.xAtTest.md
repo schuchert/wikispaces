@@ -1,3 +1,6 @@
+---
+title: JUnit_4.xAtTest
+---
 [[JUnit 4.x#AtTest|<--Back]]
 # @Test
 To denote a method as a test method you use the @Test annotation. The following example demonstrates nearly everything you need to know to get your first test running in Eclipse 2.x - 3.x:

@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_4_User_Stories
+---
 Here are the user stories for release 4:
 * [[Monopoly(r) Release 4 Landing on Go To Jail|Landing on Go To Jail]]
 * [[Monopoly(r) Release 4 Rolling Doubles 3x|Rolling Doubles 3x]]

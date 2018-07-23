@@ -1,3 +1,6 @@
+---
+title: JPA_Tutorial_3_-_The_Problem
+---
 We want to implement a simple system to track books and eventually other resources for a library. This page covers the requirements for Version 1. The problem as stated is bigger than what this tutorial implements. Parts are left as exercises that are scheduled into a course or advanced exercises for students who finish their work early.
 
 ### Checking out a Book

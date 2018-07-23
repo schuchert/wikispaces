@@ -1,3 +1,6 @@
+---
+title: Monopoly_Release_4_Games_Offers_Player_Option_to_Pay_to_Get_Out_of_Jail
+---
 As a game, if a Player is in jail when it is their turn, I give them the option of paying $50 to get out of Jail.
 
 ### User Acceptance Tests

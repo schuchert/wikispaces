@@ -1,3 +1,6 @@
+---
+title: ITunesCompetetorDesignProblemProductOwner
+---
 ## ITunes® Competitor Product Owner
 As a product owner, you have a little more information available to you. Here is some information you can share with your development team if they think to ask you about it: 
 * There are four models - all solid state:

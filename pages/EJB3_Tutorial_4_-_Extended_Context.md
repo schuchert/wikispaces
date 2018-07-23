@@ -1,3 +1,6 @@
+---
+title: EJB3_Tutorial_4_-_Extended_Context
+---
 {:toc}
 [[EJB 3 and Java Persistence API|<--Back]]
 

@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.1
+---
 {:toc}
 [[FitNesse.Tutorials|<--Back]] -or- [[FitNesse.Tutorials.2|Next Tutorial-->]]
 # Introduction

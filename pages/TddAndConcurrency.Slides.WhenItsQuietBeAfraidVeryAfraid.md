@@ -1,3 +1,6 @@
+---
+title: TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid
+---
 [[TddAndConcurrency.Slides.DoOneThingWellWell|<--Back]] | [[TddAndConcurrency.Slides|^Top^]] | [[TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo|Next-->]]
 
 # When It's Quiet Be Afraid, Very Afraid

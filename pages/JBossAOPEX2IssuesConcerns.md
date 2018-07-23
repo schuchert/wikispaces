@@ -1,3 +1,6 @@
+---
+title: JBossAOPEX2IssuesConcerns
+---
 [[JBossAOPEX2AssignmentIssues|<--Back]] [[JBoss AOP Example 3|Next-->]]
 
 # Issues/Concerns

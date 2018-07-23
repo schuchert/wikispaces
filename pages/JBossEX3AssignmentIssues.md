@@ -1,3 +1,6 @@
+---
+title: JBossEX3AssignmentIssues
+---
 [[JBossAOPEX3ApplicationsOfIntroductions|<-Back]] [[JBossAOPEX3IssuesConcerns|Next-->]]
 
 # Assignment: Issues/Concerns

@@ -1,3 +1,6 @@
+---
+title: Environment_Configuration_for_JBOSS_AOP
+---
 You'll need the Sun JDK, Eclipse and JBoss AOP to run these examples.
 
 ## JDK

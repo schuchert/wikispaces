@@ -1,3 +1,6 @@
+---
+title: cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt
+---
 [[cpptraining#cpp0x|<-- Back]]
 
 # Overview

@@ -1,3 +1,6 @@
+---
+title: JBossVMConfigurationBlackMagic
+---
 [[JBossEX1Explained|<--Back]] [[JBossEX1ApplyYourself|Next-->]]
 
 ## VM Configuration: Black Magic

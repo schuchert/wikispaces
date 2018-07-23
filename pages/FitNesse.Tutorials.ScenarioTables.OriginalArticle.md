@@ -1,3 +1,6 @@
+---
+title: FitNesse.Tutorials.ScenarioTables.OriginalArticle
+---
 # Motivation
 This tutorial exists because I did not really understand Scenario Tables even though I was using them. At a customer site, I noticed a developer had an Uber Scenario Table representing a scenario with complete flexibility in all of its parameters (and this was a good thing). However, when it was time to make tests use the scenario table, he wanted to fill in some of the parameters with fixed values for several tests and did so by copying the table (this was a bad thing).
 
