@@ -18,18 +18,18 @@ Good Luck!
 Synopsis: The Shunting Yard Algorithm takes an expression in infix notation and converts it to reverse polish notation.
 
 Here are a few examples:
-||~ Infix||~ RPN||
-||1 + 3||1 3 +||
-||1 + 3 - 4||1 3 + 4 -||
-||1 + 3 * 2||1 3 2 * +||
-||3 + 1 * 4 - 2 / 3||3 1 4 * + 2 3 / -||
-||a + b||a b +||
-||( 4 + 5 ) * 3||4 5 + 3 *||
-||( ( 1 + 3 ) / ( 9 - 5 ) ) * ( 2 + 3 )||1 3 + 9 5 - / 2 3 + *||
-||f ( 3 )||3 f||
-||f ( 4 , 1 , a , d )||4 1 a d f||
-||f ( g ( ( 1 + 3 ) * 4 ) / x ( y ( z ) ) )||1 3 + 4 * g z y x / f||
-||a = b += 5||a b 5 += =||
+|~ Infix|~ RPN|
+|1 + 3|1 3 +|
+|1 + 3 - 4|1 3 + 4 -|
+|1 + 3 * 2|1 3 2 * +|
+|3 + 1 * 4 - 2 / 3|3 1 4 * + 2 3 / -|
+|a + b|a b +|
+|( 4 + 5 ) * 3|4 5 + 3 *|
+|( ( 1 + 3 ) / ( 9 - 5 ) ) * ( 2 + 3 )|1 3 + 9 5 - / 2 3 + *|
+|f ( 3 )|3 f|
+|f ( 4 , 1 , a , d )|4 1 a d f|
+|f ( g ( ( 1 + 3 ) * 4 ) / x ( y ( z ) ) )|1 3 + 4 * g z y x / f|
+|a = b += 5|a b 5 += =|
 
 To better understand the algorithm, consider spending some time reading it [[http://en.wikipedia.org/wiki/Shunting_yard_algorithm|here]]. However, after reviewing the algorithm, you might come up with several issues that your code will need to handle. Here's a list of those issues:
 **Basics**
@@ -74,21 +74,21 @@ For this exercise, you're going to keep things fairly simple:
 * Create a directory somewhere that can hold your Ruby source code
 * In that directory, create a file called shunting_yard_algorithm_spec.rb with the following contents:
 ```ruby
-describe "Basic Algorithm Usage" do
-end
+    describe "Basic Algorithm Usage" do
+    end
 ```
 
 This describes a "context" under which examples can execute.
 
 * Save the file and verify everything is working:
-```
-Macintosh-7% spec -f s shunting_yard_algorithm_spec.rb
-
-Basic Algorithm Usage
-
-Finished in 0.003543 seconds
-
-0 examples, 0 failures
+```terminal
+    Macintosh-7% spec -f s shunting_yard_algorithm_spec.rb
+    
+    Basic Algorithm Usage
+    
+    Finished in 0.003543 seconds
+    
+    0 examples, 0 failures
 ```
 
 Congratulations, you have successfully written a context in RSpec. It's missing any actual examples, and that is what you will add next.
@@ -98,26 +98,26 @@ You will create an example whose primary purpose is to get the production class 
 
 * Add an example to get your context (an "it" introduces a so-called example):
 ```ruby
-describe "Basic Algorithm Usage" do
-  it "should should convert '' to ''"
-end
+    describe "Basic Algorithm Usage" do
+      it "should should convert '' to ''"
+    end
 ```
 
 [[include page="sidebar_start"]][[include page="ruby.sidebar.RubyFilesUseSpaces"]][[include page="sidebar_end"]]
 
 * Run your example again:
-```
-Macintosh-7% spec -f s shunting_yard_algorithm_spec.rb
-
-Basic Algorithm Usage
-- should should convert '' to '' (PENDING: Not Yet Implemented)
-
-Pending:
-Basic Algorithm Usage should should convert '' to '' (Not Yet Implemented)
-
-Finished in 0.012712 seconds
-
-1 example, 0 failures, 1 pending
+```terminal
+    Macintosh-7% spec -f s shunting_yard_algorithm_spec.rb
+    
+    Basic Algorithm Usage
+    - should should convert '' to '' (PENDING: Not Yet Implemented)
+    
+    Pending:
+    Basic Algorithm Usage should should convert '' to '' (Not Yet Implemented)
+    
+    Finished in 0.012712 seconds
+    
+    1 example, 0 failures, 1 pending
 ```
 
 The// **it**// indicates something that the production code should do. Right now this example is a placeholder and, as indicated, is not yet implemented. This is a great way to capture ideas that won't actually cause things to fail. Just jot down your ideas and them go back and work on one at a time. **Warning**: don't get too far ahead. You will probably find out for yourself that the very examples you want to create change as you make progress on the production code. It's OK to write one or a few, but// **do not**// try to get all the examples added but unimplemented before you start completing examples.
@@ -131,23 +131,25 @@ Next, make the example "complete" in the sense that RSpec will no longer indicat
 ```
 
 * Run your examples to confirm that everything is passing:
-```
-Macintosh-7% spec -f s shunting_yard_algorithm_spec.rb
-
-Basic Algorithm Usage
-- should should convert '' to ''
-
-Finished in 0.012612 seconds
-
-1 example, 0 failures
+```terminal
+    Macintosh-7% spec -f s shunting_yard_algorithm_spec.rb
+    
+    Basic Algorithm Usage
+    - should should convert '' to ''
+    
+    Finished in 0.012612 seconds
+    
+    1 example, 0 failures
 ```
 
 At this point, you have a complete context with all of its examples passing. You want to get back to this condition frequently. You need to create an example that somehow drives the development of new production code. Every example you'll write will have at least three parts:
-||~ Phase||~ Description||
-||**//Setup//**||Create everything necessary for an example to execute. Create instances, connect objects, put things into a well-defined, known starting point. For this exercise, you'll always start with a fresh "converter" before each test.||
-||**//Execution//**||Given a known-starting point, exercise the production code in some way with the intent of generating an expected result.||
-||**//Validation//**||You knew the starting point (you control that), you know how you exercised the production code, verify that the production code did what you expected it to do.||
-||**//Teardown//**||Not always necessary, you should write your examples such that they leave no footprint that could cause other examples to fail. For this tutorial, you will not have any teardown requirements because every example will begin with an in-memory object create before// **each**// example executes.||
+^
+|---|---|
+|Phase|Description|
+|**//Setup//**|Create everything necessary for an example to execute. Create instances, connect objects, put things into a well-defined, known starting point. For this exercise, you'll always start with a fresh "converter" before each test.|
+|**//Execution//**|Given a known-starting point, exercise the production code in some way with the intent of generating an expected result.|
+|**//Validation//**|You knew the starting point (you control that), you know how you exercised the production code, verify that the production code did what you expected it to do.|
+|**//Teardown//**|Not always necessary, you should write your examples such that they leave no footprint that could cause other examples to fail. For this tutorial, you will not have any teardown requirements because every example will begin with an in-memory object create before// **each**// example executes.|
 
 You're going to take small steps to keep things running and passing often. Sometimes these small steps will seem too small. When you think that, ask yourself "compared to what?". If something is too small, that's because you're expecting to work in larger chunks. Fine, try this and see if it fits. At the end of the tutorial if you haven't warmed up to the idea, you still learned something useful.
 
@@ -975,9 +977,9 @@ Congratulations, you've successfully removed duplication and kept your tests pas
 
 * Now is a great time to check in your work.
 ```
-Macintosh-7% git commit -a
-Created commit d6bf591: Refactored duplicated code.
- 1 files changed, 7 insertions(+), 3 deletions(-)
+    Macintosh-7% git commit -a
+    Created commit d6bf591: Refactored duplicated code.
+     1 files changed, 7 insertions(+), 3 deletions(-)
 ```
 
 # Example: Two Operators of Different Precedence
@@ -985,10 +987,7 @@ The next nudge to your production code is adding the idea of precedence. You won
 
 Rather than giving you the source for the tests, I'll use a neat feature that allows me to draw some LaTex style formulas.
 
-* Create the following example under the "Binary Operators" context:
-$$
-1\ *\ 3\ +\ 2\ \ \rightarrow \ \ 1\ 3\ *\ 2\ +
-$$ 
+* Create the following example under the "Binary Operators" context: $$ 1\ *\ 3\ +\ 2\ \ \rightarrow \ \ 1\ 3\ *\ 2\ + $$ 
 
 * Run your example. What happens?
 
@@ -1000,9 +999,8 @@ Notice that this test passed as is. This means one of the following things:
 In this case, I gave you a poor example. Maybe I though we were adding support for a new operator, but the original code defaulted to thinking something was an operator if it wasn't a number. The result of this particular test does not force any changes since the code interprets * as an operator and the algorithm writes the stored operator all the time. So you need to change the example.
 
 Here's something a very different test from the first:
-$$
-1\ +\ 3\ *\ 2\ \ \rightarrow \ \ 1\ 3\ 2\ *\ +
-$$ 
+^
+$$ 1\ +\ 3\ *\ 2\ \ \rightarrow \ \ 1\ 3\ 2\ *\ + $$ 
 
 Notice that if you follow traditional precedence rules, multiplication happens before addition. So by writing an example with addition before multiplication, it will force your production code to hold on to the + operator longer. Did you notice that whereas the previous results contained an operator embedded within the numbers, now both operators are at the end, with the first one ending up last (very different indeed).
 
@@ -1394,26 +1392,23 @@ So far you've handled a single operator and up to two operators and some basic p
 * Handling, more than one something (maybe just two) - often adds an "if" somewhere
 * Handling many somethings - often converts an "if" to a "while" - something I heard Uncle Bob say in one of his TDD tutorials
 
-* Create an example for the following (add it to the "Binary Operators" context, maybe it "should handle interleaved operators of different precedence"):
-$$
-3\ +\ 1\ *\ 4\ -\ 2\ /\ 3\ \ \rightarrow \ \ 3\ 1\ 4\ *\ +\ 2\ 3\ /\ -
-$$
+* Create an example for the following (add it to the "Binary Operators" context, maybe it "should handle interleaved operators of different precedence"): $$ 3\ +\ 1\ *\ 4\ -\ 2\ /\ 3\ \ \rightarrow \ \ 3\ 1\ 4\ *\ +\ 2\ 3\ /\ - $$
 
 * Execute the example to see how your algorithm responds. You should see a failure similar to this:
 ```
-... <snip> ...
-- should handle interleaved operators of different precedence (FAILED - 1)
-
-1)
-'Shunting Yard Algorithm Binary Operators should handle interleaved operators of different precedence' FAILED
-expected: "3 1 4 * + 2 3 / -",
-     got: "3 1 4 * + 2 - 3 /" (using ==)
-./shunting_yard_algorithm_spec.rb:74:in `should_equal'
-./shunting_yard_algorithm_spec.rb:109:
-
-Finished in 0.023779 seconds
-
-6 examples, 1 failure
+    ... <snip> ...
+    - should handle interleaved operators of different precedence (FAILED - 1)
+    
+    1)
+    'Shunting Yard Algorithm Binary Operators should handle interleaved operators of different precedence' FAILED
+    expected: "3 1 4 * + 2 3 / -",
+         got: "3 1 4 * + 2 - 3 /" (using ==)
+    ./shunting_yard_algorithm_spec.rb:74:in `should_equal'
+    ./shunting_yard_algorithm_spec.rb:109:
+    
+    Finished in 0.023779 seconds
+    
+    6 examples, 1 failure
 ```
 
 * A quick review of how the code determines operator precedence suggests adding '/' into the mix:
@@ -1439,10 +1434,7 @@ However, it looks like you've got a decent general solution. You'll need to regi
 * Function calls and nested function calls, e.g., f(g(5))
 
 # Example: Handling Variables
-It is time to revisit an earlier test, only this time you'll use variables:
-$$
-a\ +\ b\ \ \rightarrow \ \ a\ b\ +
-$$
+It is time to revisit an earlier test, only this time you'll use variables: $$ a\ +\ b\ \ \rightarrow \ \ a\ b\ + $$
 
 * Rename the "Constants" context to "Operands"
 
@@ -1508,10 +1500,7 @@ In this section you'll start by properly parsing parenthesis. Then you'll make s
 [[include page="sidebar_start"]][[include page="ruby.sidebar.WhatIsAnalysis"]][[include page="sidebar_end"]]
 
 ## Example: Removing ( )
-Begin by writing a new context called "Handling ( )'s" and adding an example that verifies the removal of ( )'s from an otherwise empty expression:
-$$
-(\ )\ \ \rightarrow 
-$$
+Begin by writing a new context called "Handling ( )'s" and adding an example that verifies the removal of ( )'s from an otherwise empty expression: $$ (\ )\ \ \rightarrow $$
 
 * Create this context and example:
 ```ruby
@@ -1566,29 +1555,29 @@ Finished in 0.027261 seconds
 
 * Run your examples and notice that everything is now passing:
 ```
-Macintosh-7% spec -f s shunting_yard_algorithm_spec.rb
-
-Shunting Yard Algorithm
-
-Shunting Yard Algorithm Basic Algorithm Usage
-- should should convert '' to ''
-
-Shunting Yard Algorithm Operands
-- should convert a single constant to itself, e.g., 42 ==> 42
-- should handle variables as well as constants
-
-Shunting Yard Algorithm Binary Operators
-- should convert 5 + 3 ==> 5 3 +
-- should convert 1 + 3 - 4 ==> 1 3 + 4 -
-- should put higher precedence operators before lower ones
-- should handle interleaved operators of different precedence
-
-Shunting Yard Algorithm Handling ( )'s
-- should remove ( ) from an otherwise empty expression
-
-Finished in 0.026796 seconds
-
-8 examples, 0 failures
+    Macintosh-7% spec -f s shunting_yard_algorithm_spec.rb
+    
+    Shunting Yard Algorithm
+    
+    Shunting Yard Algorithm Basic Algorithm Usage
+    - should should convert '' to ''
+    
+    Shunting Yard Algorithm Operands
+    - should convert a single constant to itself, e.g., 42 ==> 42
+    - should handle variables as well as constants
+    
+    Shunting Yard Algorithm Binary Operators
+    - should convert 5 + 3 ==> 5 3 +
+    - should convert 1 + 3 - 4 ==> 1 3 + 4 -
+    - should put higher precedence operators before lower ones
+    - should handle interleaved operators of different precedence
+    
+    Shunting Yard Algorithm Handling ( )'s
+    - should remove ( ) from an otherwise empty expression
+    
+    Finished in 0.026796 seconds
+    
+    8 examples, 0 failures
 ```
 
 * Check your work in.
@@ -1596,10 +1585,7 @@ Finished in 0.026796 seconds
 [[include page="sidebar_start"]][[include page="ruby.sidebar.DIdYouJustWriteTooMuchProductionCode"]][[include page="sidebar_end"]]
 
 ## Example: ( ) around expression works
-Next, verify that ( )'s around an expression still works.
-$$
-(\ 4\ *\ a\ )\ \ \rightarrow \ \ 4\ a\ *
-$$
+Next, verify that ( )'s around an expression still works.  $$ (\ 4\ *\ a\ )\ \ \rightarrow \ \ 4\ a\ * $$
 
 * Create this example (it "should simply remove ( ) around an expression") and see whether it works or not.
 
@@ -1617,29 +1603,29 @@ This demonstrates the whole purpose of ( ), change the natural precedence rules.
 * Here is one way to make it "work":
 **handle_paren**
 ```ruby
-  def handle_paren(token)
-    if token == '('
-      @operators << token
-    else
-      if @operators.last != '('
-        add_to_result @operators.pop  
-      end 
-      @operators.pop
-    end
-  end
+      def handle_paren(token)
+        if token == '('
+          @operators << token
+        else
+          if @operators.last != '('
+            add_to_result @operators.pop  
+          end 
+          @operators.pop
+        end
+      end
 ```
 
 **precedence_of**
 ```ruby
-  def precedence_of(operator)
-    case operator
-      when '(': -1
-      when ')': -1
-      when '*': 10
-      when '/': 10
-      else 1
-    end
-  end
+      def precedence_of(operator)
+        case operator
+          when '(': -1
+          when ')': -1
+          when '*': 10
+          when '/': 10
+          else 1
+        end
+      end
 ```
 
 While this does work, it seems strange to define the precedence of ( )', which make things happen sooner, as -1 - or the lowest thing so far. 
@@ -1647,22 +1633,22 @@ While this does work, it seems strange to define the precedence of ( )', which m
 * Make another change to improve this somewhat:
 **Update precedence_of to have larger numbers for ( and )**:
 ```ruby
-  def precedence_of(operator)
-    case operator
-      when '(': 99
-      when ')': 99
-      when '*': 10
-      when '/': 10
-      else 1
-    end
-  end
+      def precedence_of(operator)
+        case operator
+          when '(': 99
+          when ')': 99
+          when '*': 10
+          when '/': 10
+          else 1
+        end
+      end
 ```
 **Update add_remaining_operators to stop at '('**:
 ```ruby
-  def add_remaining_operators
-    add_to_result @operators.pop while 
-        @operators.length > 0 && @operators.last != '('
-  end
+      def add_remaining_operators
+        add_to_result @operators.pop while 
+            @operators.length > 0 && @operators.last != '('
+      end
 ```
 
 * Make these changes, verify your tests pass.
@@ -1673,9 +1659,9 @@ With all tests passing, you can perform some minor plastic surgery. The @operato
 
 * First, extract a method:
 ```ruby
-  def under_logical_top
-    @operators.length > 0 && @operators.last != '('
-  end
+      def under_logical_top
+        @operators.length > 0 && @operators.last != '('
+      end
 ```
 
 * Verify that your tests still pass.
@@ -1714,10 +1700,7 @@ With all tests passing, you can perform some minor plastic surgery. The @operato
 * Check in your code.
 
 ## Example: Nested ( )'s
-Moving along, you'll now have a look at supporting nested ( ). Here's a test to give it try:
-$$
-(\ (\ 1\ +\ 3\ )\ /\ (\ 9\ -\ 5\ )\ )\ *\ (\ 2\ +\ 3\ )\ \ \rightarrow\ \ 1\ 3\ +\ 9\ 5\ -\ /\ 2\ 3\ +\ *
-$$
+Moving along, you'll now have a look at supporting nested ( ). Here's a test to give it try: $$ (\ (\ 1\ +\ 3\ )\ /\ (\ 9\ -\ 5\ )\ )\ *\ (\ 2\ +\ 3\ )\ \ \rightarrow\ \ 1\ 3\ +\ 9\ 5\ -\ /\ 2\ 3\ +\ * $$
 
 * Create this test and see what happens.
 
@@ -1745,37 +1728,35 @@ How do you get started? In a situation like this, you'll probably experience som
 Just to be sure, you'll start with an example.
 
 ## Example: Basic Function Call
-Here's a simple test that describes what you want to have happen:
-$$
-f\ (\ 3\ )\ \ \rightarrow\ \ 3\ f
-$$
+Here's a simple test that describes what you want to have happen: $$ f\ (\ 3\ )\ \ \rightarrow\ \ 3\ f $$
 
 * Create a new context and example, see that it in fact fails:
 ```ruby
-  describe "Handling function invocations" do
-    it "should put the function name after the ( )'s" do
-      a_conversion_of 'f ( 3 )'
-      should_equal '3 f'
+    describe "Handling function invocations" do
+      it "should put the function name after the ( )'s" do
+        a_conversion_of 'f ( 3 )'
+        should_equal '3 f'
+      end
     end
-  end
 ```
 
 As expected, this example fails. To support this example you are going to separate the generation of the output from the formatting of the output. Let's get back to all tests passing first.
 * Add: pending 'Requires refactoring of @result' as the first line of your example.
 
 * Verify your examples "pass":
-```
-... <snip> ...
-Shunting Yard Algorithm Handling function invocations
-- should put the function name after the ( )'s (PENDING: Requires refactoring of @result)
-
-Pending:
-Shunting Yard Algorithm Handling function invocations should put the function name after the ( )'s 
-(Requires refactoring of @result)
-
-Finished in 0.031281 seconds
-
-11 examples, 0 failures, 1 pending
+^
+```bash
+    <snip>
+    Shunting Yard Algorithm Handling function invocations
+    - should put the function name after the ( )'s (PENDING: Requires refactoring of @result)
+    
+    Pending:
+    Shunting Yard Algorithm Handling function invocations should put the function name after the ( )'s 
+    (Requires refactoring of @result)
+    
+    Finished in 0.031281 seconds
+    
+    11 examples, 0 failures, 1 pending
 ```
 
 ### Refactoring
@@ -2027,26 +2008,23 @@ Now remove the duplication of regular expressions used for handling names. There
 Did this last change seem silly or over the top? Consider this, the first part of the logical expression uses a regular expression, the second part did not, it called a function. You wanted to use a function on the second part to have a single definition of what is a name. Doing that forced a change in is_operand that made its implementation exist at different levels of abstraction. This simple change is a classic refactoring and leads to clean code. That is, code that someone else might have a chance to read and understand.
 
 # Example: Multiple parameters to a function
-Now it's time to add multiple parameters to a function. Here is one example:
-$$
-f\ (\ 4\ ,\ 1\ ,\ a\ ,\ d\ )\ \ \rightarrow \ \ 4\ 1\ a\ d\ f
-$$
+Now it's time to add multiple parameters to a function. Here is one example: $$ f\ (\ 4\ ,\ 1\ ,\ a\ ,\ d\ )\ \ \rightarrow \ \ 4\ 1\ a\ d\ f $$
 
 * Add an example under the "Handling function invocations" context and see what happens.
 
 * Since the , is interpreted as an operator, the results are not quite what you hoped:
 ```
-1)
-'Shunting Yard Algorithm Handling function invocations should put multiple parameters separated by
- ,'s in order first' FAILED
-expected: "4 1 a d f",
-     got: "4 1 , a , d , f" (using ==)
-./shunting_yard_algorithm_spec.rb:122:in `should_equal'
-./shunting_yard_algorithm_spec.rb:191:
-
-Finished in 0.033487 seconds
-
-12 examples, 1 failure
+    1)
+    'Shunting Yard Algorithm Handling function invocations should put multiple parameters separated by
+     ,'s in order first' FAILED
+    expected: "4 1 a d f",
+         got: "4 1 , a , d , f" (using ==)
+    ./shunting_yard_algorithm_spec.rb:122:in `should_equal'
+    ./shunting_yard_algorithm_spec.rb:191:
+    
+    Finished in 0.033487 seconds
+    
+    12 examples, 1 failure
 ```
 
 The [[http://en.wikipedia.org/wiki/Shunting_yard_algorithm|Shunting Yard Algorithm]] has a top-level clause for function parameter separator, so this suggests a change back in the process method:
@@ -2088,14 +2066,14 @@ An astute observer will notice that the body of handle_argument_separator does t
 
 * Update handle_argument_separator and process_right_paren to use this method:
 ```ruby
-  def handle_argument_separator
-    record_operators_to_matching_paren
-  end
-
-  def process_right_paren
-    record_operators_to_matching_paren
-    @operators.pop
-  end
+    def handle_argument_separator
+      record_operators_to_matching_paren
+    end
+  
+    def process_right_paren
+      record_operators_to_matching_paren
+      @operators.pop
+    end
 ```
 
 * Make sure your examples are passing.
@@ -2105,36 +2083,35 @@ An astute observer will notice that the body of handle_argument_separator does t
 # Example: What About Something Complex?
 Here's an example to see if something a bit more complex works with what you've written so far:
 ```ruby
-  describe "Big Examples" do
-    it "should handle a large example with several levels of nesting" do
-      a_conversion_of 'f ( g ( ( 1 + 3 ) * 4 ) / x ( y ( z ) ) )'
-     should_equal  '1 3 + 4 * g z y x / f'
+    describe "Big Examples" do
+      it "should handle a large example with several levels of nesting" do
+        a_conversion_of 'f ( g ( ( 1 + 3 ) * 4 ) / x ( y ( z ) ) )'
+       should_equal  '1 3 + 4 * g z y x / f'
+      end
     end
-  end
 ```
 
 * Running your examples should resemble:
-Your failure should resemble:
-```
-1)
-'Shunting Yard Algorithm Big Examples should handle a large example with several levels of nesting' FAILED
-expected: "1 3 + 4 * g z y x / f",
-     got: "1 3 + 4 * z y x / g f" (using ==)
-./shunting_yard_algorithm_spec.rb:136:in `should_equal'
-./shunting_yard_algorithm_spec.rb:212:
-
-Finished in 0.03769 seconds
-
-13 examples, 1 failure
+```terminal
+    1)
+    'Shunting Yard Algorithm Big Examples should handle a large example with several levels of nesting' FAILED
+    expected: "1 3 + 4 * g z y x / f",
+         got: "1 3 + 4 * z y x / g f" (using ==)
+    ./shunting_yard_algorithm_spec.rb:136:in `should_equal'
+    ./shunting_yard_algorithm_spec.rb:212:
+    
+    Finished in 0.03769 seconds
+    
+    13 examples, 1 failure
 ```
 
 The problem is that when balancing ) with (, there's the chance that it's being done because of an expression or a function call. You can fix this:
 ```ruby
-  def process_right_paren
-    record_operators_to_matching_paren
-    @operators.pop
-    add_to_result @operators.pop if is_name @operators.last
-  end
+    def process_right_paren
+      record_operators_to_matching_paren
+      @operators.pop
+      add_to_result @operators.pop if is_name @operators.last
+    end
 ```
 
 * Make this change and verify your examples all pass.
@@ -2144,16 +2121,16 @@ The problem is that when balancing ) with (, there's the chance that it's being 
 ## A Quick Refactoring
 Some time ago, you added a method called under_logical_top. You can use that method in places where the code checks for a '('. A quick search of the code reveals just one,:
 ```ruby
-  def record_operators_to_matching_paren
-    add_to_result @operators.pop while @operators.last != '('
-  end
+    def record_operators_to_matching_paren
+      add_to_result @operators.pop while @operators.last != '('
+    end
 ```
 
 * Change this to use under_logical_top:
 ```ruby
- def record_operators_to_matching_paren
-    add_to_result @operators.pop while under_logical_top
-  end
+    def record_operators_to_matching_paren
+      add_to_result @operators.pop while under_logical_top
+    end
 ```
 
 * Make this change, run your examples and check in when your tests pass
@@ -2162,26 +2139,26 @@ This refactoring is something that comes as a result of noticing code duplicatio
 
 Along those lines, there's three places where your code calls @operators <<. Two times in process_left_paren and handle_operator. Logically these places are pushing something to be handled later. Your code can better document intent by handling that in a function:
 ```ruby
-  def record_operator(operator)
-    @operators << operator
-  end
+    def record_operator(operator)
+      @operators << operator
+    end
 ```
 
 * Add this method, and make sure your tests pass.
 
 * Make the following updates:
 ```ruby
-  def process_left_paren
-    if last_result_pushed_is_function_name
-      record_operator @outputTokens.pop
+    def process_left_paren
+      if last_result_pushed_is_function_name
+        record_operator @outputTokens.pop
+      end
+      record_operator '('
     end
-    record_operator '('
-  end
-
-  def handle_operator(operator)
-    add_higher_precedence_operators_to_result operator
-    record_operator operator
-  end
+  
+    def handle_operator(operator)
+      add_higher_precedence_operators_to_result operator
+      record_operator operator
+    end
 ```
 
 * Make these changes, verify all of your examples still pass.
@@ -2192,9 +2169,9 @@ Another random check of the code reveals that there are four places that call @o
 
 * Add the following method:
 ```ruby
-  def last_operator!
-    @operators.pop
-  end
+    def last_operator!
+      @operators.pop
+    end
 ```
 
 * Add this method and make sure your examples still run.
@@ -2218,38 +2195,37 @@ There are several other methods than change your underlying object. In that spir
 This may seem like a bit of work, but consider this: The class is not thread safe. If the convert method were instead called convert!, it might better document that fact. Given that this is an exercise, this recommendation is left to your discretion.
 
 # Example: Operator Associativity
-Next, your code needs to address operator associativity. For example, 4 + 5 - 6 produces 4 5 + 6 - because + and - are left associative but otherwise at the same precedence. However, a = b += 5 produces a b 5 += =. First, b is incremented by 5 and then a equals that result. If these operators were left associative, the result would instead be: a b = 5 += (it's even worse, because the result of = would the an lvalue of the rvalue - whew!), so a would equal b// **before**// it was incremented by 5. And, as mentioned, the return value of = would be the thing on the right instead of the left to make the thing work in the first place.
+Next, your code needs to address operator associativity. For example, 
+$$ 4 + 5 - 6 $$ produces $$ 4 5 + 6 - $$ because + and - are left associative but 
+otherwise at the same precedence. However, a = b += 5 produces a b 5 += =. First, b is incremented by 5 and then a equals that result. If these operators were left associative, the result would instead be: a b = 5 += (it's even worse, because the result of = would the an lvalue of the rvalue - whew!), so a would equal b// **before**// it was incremented by 5. And, as mentioned, the return value of = would be the thing on the right instead of the left to make the thing work in the first place.
 
-That gives a great test:
-$$
-a\ =\ b\ += 5\ \ \rightarrow\ \ a\ b\ 5\ +=\
-$$
+That gives a great test: $$ a\ =\ b\ += 5\ \ \rightarrow\ \ a\ b\ 5\ +=\ $$
 
 * Create a new Context and example:
 ```ruby
-  describe "Operator Associativity" do
-    it "Should handle right-associative operators" do
-      a_conversion_of 'a = b += 5'
-      should_equal 'a b 5 += ='
+    describe "Operator Associativity" do
+      it "Should handle right-associative operators" do
+        a_conversion_of 'a = b += 5'
+        should_equal 'a b 5 += ='
+      end
     end
-  end
 ```
 
 It appears that the calculation is processed incorrectly because these operators are treated as the same precedence and left to right associative:
-```
-Shunting Yard Algorithm Operator Associativity
-- Should handle right-associative operators (FAILED - 1)
-
-1)
-'Shunting Yard Algorithm Operator Associativity Should handle right-associative operators' FAILED
-expected: "a b 5 += =",
-     got: "a b = 5 +=" (using ==)
-./shunting_yard_algorithm_spec.rb:149:in `should_equal'
-./shunting_yard_algorithm_spec.rb:232:
-
-Finished in 0.05 seconds
-
-14 examples, 1 failure
+```terminal
+    Shunting Yard Algorithm Operator Associativity
+    - Should handle right-associative operators (FAILED - 1)
+    
+    1)
+    'Shunting Yard Algorithm Operator Associativity Should handle right-associative operators' FAILED
+    expected: "a b 5 += =",
+         got: "a b = 5 +=" (using ==)
+    ./shunting_yard_algorithm_spec.rb:149:in `should_equal'
+    ./shunting_yard_algorithm_spec.rb:232:
+    
+    Finished in 0.05 seconds
+    
+    14 examples, 1 failure
 ```
 
 This is in fact what is happening because the process method has three checks, is_paren, is_function_argument_separator, is_operand, none of which match, so by default, += and = are treated as operators. A review of the shunting algorithm says this about such operators (paraphrased):
@@ -2259,28 +2235,28 @@ Since your code handles this logic in add_higher_precedence_operators_to_result,
 
 * Try the following change to see if it fixes the broken test and does not break other tests:
 ```ruby
-  def add_higher_precedence_operators_to_result(token)
-    if @operators.length > 0
-      p1 = precedence_of(token)
-      p2 = precedence_of(@operators.last)
-
-      if associativity_of(token) == :right_to_left && p1 < p2
-        add_remaining_operators
-      end
-
-      if associativity_of(token) == :left_to_right && p1 <= p2
-        add_remaining_operators
+    def add_higher_precedence_operators_to_result(token)
+      if @operators.length > 0
+        p1 = precedence_of(token)
+        p2 = precedence_of(@operators.last)
+  
+        if associativity_of(token) == :right_to_left && p1 < p2
+          add_remaining_operators
+        end
+  
+        if associativity_of(token) == :left_to_right && p1 <= p2
+          add_remaining_operators
+        end
       end
     end
-  end
-
-  def associativity_of(token) 
-    case token
-      when '=': :right_to_left
-      when '+=': :right_to_left
-      else :left_to_right
+  
+    def associativity_of(token) 
+      case token
+        when '=': :right_to_left
+        when '+=': :right_to_left
+        else :left_to_right
+      end
     end
-  end
 ```
 
 This "works", all examples pass. But can the code be any better? (Nearly rhetorical question, assume the answer is yes.) And what about the name of the method?
@@ -2289,42 +2265,42 @@ This "works", all examples pass. But can the code be any better? (Nearly rhetori
 
 * Here is a better version of the same thing, breaking out some of the logic into a supporting method. Try this version and see that it works:
 ```ruby
-  def add_higher_precedence_operators_to_result(token)
-    if @operators.length > 0 && should_happen_first(@operators.last, token)
-      add_remaining_operators
+    def add_higher_precedence_operators_to_result(token)
+      if @operators.length > 0 && should_happen_first(@operators.last, token)
+        add_remaining_operators
+      end
     end
-  end
-
-  def should_happen_first(topOp, token)
-    if associativity_of(token) == :left_to_right
-      precedence_of(token) <= precedence_of(topOp)
-    else
-      precedence_of(token) < precedence_of(topOp)
+  
+    def should_happen_first(topOp, token)
+      if associativity_of(token) == :left_to_right
+        precedence_of(token) <= precedence_of(topOp)
+      else
+        precedence_of(token) < precedence_of(topOp)
+      end
     end
-  end
 ```
 
 * While you are in refactoring mode, you have two places where the expression @operators.length > 0 exits; create a method for that:
 ```ruby
-  def there_are_pending_operators
-    @operators.length > 0
-  end
+    def there_are_pending_operators
+      @operators.length > 0
+    end
 ```
 
 * Update add_higher_precedence_operators_to_result
 ```ruby
-  def add_higher_precedence_operators_to_result(token)
-    if there_are_pending_operators && should_happen_first(@operators.last, token)
-      add_remaining_operators
+    def add_higher_precedence_operators_to_result(token)
+      if there_are_pending_operators && should_happen_first(@operators.last, token)
+        add_remaining_operators
+      end
     end
-  end
 ```
 
 * Update under_logical_top
 ```ruby
-  def under_logical_top
-    there_are_pending_operators && @operators.last != '('
-  end
+    def under_logical_top
+      there_are_pending_operators && @operators.last != '('
+    end
 ```
 
 * Get your tests passing
@@ -2335,9 +2311,9 @@ There's one more thing to change before it's time to call this refactoring side-
 
 * Rename this method to add_operators_that_should_happen_before(token):
 ```ruby
-  def add_operators_that_should_happen_before(token)
-    ...
-  end
+    def add_operators_that_should_happen_before(token)
+      ...
+    end
 ```
 Make sure to update handle_operator, which is the one place that calls the method.
 
@@ -2362,9 +2338,9 @@ However, you've made amazing progress on this work. You've:
 
 # Review
 **The Three Laws**
-# Write no production code without a failing test.
-# Write only enough of a test such that it fails (and not compiling is failing)
-# Write just enough production code to get the tests to pass
+* Write no production code without a failing test.
+* Write only enough of a test such that it fails (and not compiling is failing)
+* Write just enough production code to get the tests to pass
 
 **Refactoring**
 The three laws are not enough. You refactored code: Remember, refactoring means to change the structure without changing the behavior. In your case, the examples define "the behavior". So long as those examples remain passing, you're refactoring.
@@ -2383,300 +2359,300 @@ See [[http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/013235
 
 # A Final Version
 Here is the final report of all of the examples you created:
-```
-Macintosh-7% spec -f s shunting_yard_algorithm_spec.rb
-
-Shunting Yard Algorithm
-
-Shunting Yard Algorithm Basic Algorithm Usage
-- should should convert '' to ''
-
-Shunting Yard Algorithm Operands
-- should convert a single constant to itself, e.g., 42 ==> 42
-- should handle variables as well as constants
-
-Shunting Yard Algorithm Binary Operators
-- should convert 5 + 3 ==> 5 3 +
-- should convert 1 + 3 - 4 ==> 1 3 + 4 -
-- should put higher precedence operators before lower ones
-- should handle interleaved operators of different precedence
-
-Shunting Yard Algorithm Handling ( )'s
-- should remove ( ) from an otherwise empty expression
-- () should cause lower precedence op's to happen before higher op's
-- should handle nested ( )'s
-
-Shunting Yard Algorithm Handling function invocations
-- should put the function name after the ( )'s
-- should put multiple parameters separated by ,'s in order first
-
-Shunting Yard Algorithm Big Examples
-- should handle a large example with several levels of nesting
-
-Shunting Yard Algorithm Operator Associativity
-- Should handle right-associative operators
-
-Finished in 0.040223 seconds
-
-14 examples, 0 failures
+```terminal
+    Macintosh-7% spec -f s shunting_yard_algorithm_spec.rb
+    
+    Shunting Yard Algorithm
+    
+    Shunting Yard Algorithm Basic Algorithm Usage
+    - should should convert '' to ''
+    
+    Shunting Yard Algorithm Operands
+    - should convert a single constant to itself, e.g., 42 ==> 42
+    - should handle variables as well as constants
+    
+    Shunting Yard Algorithm Binary Operators
+    - should convert 5 + 3 ==> 5 3 +
+    - should convert 1 + 3 - 4 ==> 1 3 + 4 -
+    - should put higher precedence operators before lower ones
+    - should handle interleaved operators of different precedence
+    
+    Shunting Yard Algorithm Handling ( )'s
+    - should remove ( ) from an otherwise empty expression
+    - () should cause lower precedence op's to happen before higher op's
+    - should handle nested ( )'s
+    
+    Shunting Yard Algorithm Handling function invocations
+    - should put the function name after the ( )'s
+    - should put multiple parameters separated by ,'s in order first
+    
+    Shunting Yard Algorithm Big Examples
+    - should handle a large example with several levels of nesting
+    
+    Shunting Yard Algorithm Operator Associativity
+    - Should handle right-associative operators
+    
+    Finished in 0.040223 seconds
+    
+    14 examples, 0 failures
 ```
 
 Here is the last version I ended up with after the tutorial. You result may vary based on where you added methods. Which one is right? Yours or mine? Both, as long as the examples pass:
 ```ruby
-class ShuntingYardAlgorithm
-  def init
-    @outputTokens = []
-    @operators = []
-  end
-
-  def convert(expression)
-    init
-    convert_expression expression 
-    produce_result
-  end
-
-  def produce_result
-    @outputTokens.join(' ')
-  end
-
-  def convert_expression(expression)
-    expression.split(' ').each { |t| process t  }
-    add_remaining_operators
-  end
-
-  def add_to_result(token)
-    @outputTokens << token
-  end
-
-  def is_operand(token)
-    is_number(token) || is_name(token)
-  end
-
-  def is_number(token)
-    token =~ /^\d+$/ 
-  end
-
-  def is_name(str)
-    str =~ /^[a-zA-Z0-9$_]+$/
-  end
-
-  def last_result_pushed_is_function_name
-    is_name @outputTokens.last
-  end
-
-  def process(token)
-    if is_paren token 
-      handle_paren token  
-    elsif is_function_argument_separator token
-      handle_argument_separator
-    elsif is_operand token 
-      handle_number token 
-    else
-      handle_operator token 
+    class ShuntingYardAlgorithm
+      def init
+        @outputTokens = []
+        @operators = []
+      end
+    
+      def convert(expression)
+        init
+        convert_expression expression 
+        produce_result
+      end
+    
+      def produce_result
+        @outputTokens.join(' ')
+      end
+    
+      def convert_expression(expression)
+        expression.split(' ').each { |t| process t  }
+        add_remaining_operators
+      end
+    
+      def add_to_result(token)
+        @outputTokens << token
+      end
+    
+      def is_operand(token)
+        is_number(token) || is_name(token)
+      end
+    
+      def is_number(token)
+        token =~ /^\d+$/ 
+      end
+    
+      def is_name(str)
+        str =~ /^[a-zA-Z0-9$_]+$/
+      end
+    
+      def last_result_pushed_is_function_name
+        is_name @outputTokens.last
+      end
+    
+      def process(token)
+        if is_paren token 
+          handle_paren token  
+        elsif is_function_argument_separator token
+          handle_argument_separator
+        elsif is_operand token 
+          handle_number token 
+        else
+          handle_operator token 
+        end
+      end
+      
+      def is_function_argument_separator(token)
+        token == ','
+      end
+      
+      def handle_argument_separator
+        record_operators_to_matching_paren
+      end
+    
+     def record_operators_to_matching_paren
+        add_to_result last_operator! while under_logical_top
+      end
+    
+      def last_operator!
+        @operators.pop
+      end
+    
+      def is_paren(token)
+        token =~ /[\(\)]/
+      end
+    
+      def handle_paren(token)
+        if token == '('
+          process_left_paren
+        else
+          process_right_paren
+        end
+      end
+    
+      def process_left_paren
+        if last_result_pushed_is_function_name
+          record_operator @outputTokens.pop
+        end
+        record_operator '('
+      end
+    
+      def process_right_paren
+        record_operators_to_matching_paren
+        last_operator!
+        add_to_result last_operator! if is_name @operators.last
+      end
+    
+      def handle_number(number)
+          add_to_result number 
+      end
+    
+      def handle_operator(operator)
+        add_operators_that_should_happen_before operator
+        record_operator operator
+      end
+    
+      def record_operator(operator)
+        @operators << operator
+      end
+    
+      def record_operators_to_matching_paren
+        add_to_result last_operator! while @operators.last != '('
+      end
+    
+      def add_operators_that_should_happen_before(token)
+        if there_are_pending_operators && should_happen_first(@operators.last, token)
+          add_remaining_operators
+        end
+      end
+    
+      def should_happen_first(topOp, token)
+        if associativity_of(token) == :left_to_right
+          precedence_of(token) <= precedence_of(topOp)
+        else
+          precedence_of(token) < precedence_of(topOp)
+        end
+      end
+    
+      def precedence_of(operator)
+        case operator
+          when '(': 99
+          when ')': 99
+          when '*': 10
+          when '/': 10
+          else 1
+        end
+      end
+    
+      def associativity_of(token) 
+        case token
+          when '=': :right_to_left
+          when '+=': :right_to_left
+          else :left_to_right
+        end
+      end
+    
+      def add_remaining_operators
+        add_to_result last_operator! while under_logical_top
+      end
+    
+      def under_logical_top
+        there_are_pending_operators && @operators.last != '('
+      end
+    
+      def there_are_pending_operators
+        @operators.length > 0
+      end
     end
-  end
-  
-  def is_function_argument_separator(token)
-    token == ','
-  end
-  
-  def handle_argument_separator
-    record_operators_to_matching_paren
-  end
-
- def record_operators_to_matching_paren
-    add_to_result last_operator! while under_logical_top
-  end
-
-  def last_operator!
-    @operators.pop
-  end
-
-  def is_paren(token)
-    token =~ /[\(\)]/
-  end
-
-  def handle_paren(token)
-    if token == '('
-      process_left_paren
-    else
-      process_right_paren
+    
+    describe "Shunting Yard Algorithm" do
+      before(:each) do
+        @algorithm = ShuntingYardAlgorithm.new
+      end
+    
+      def a_conversion_of expression
+        @expression = expression
+      end
+    
+      def should_equal expected
+        result = @algorithm.convert @expression
+        result.should == expected
+      end
+    
+      describe "Basic Algorithm Usage" do
+        it "should should convert '' to ''" do
+          a_conversion_of ''
+          should_equal ''
+        end
+      end
+    
+      describe "Operands" do
+        it "should convert a single constant to itself, e.g., 42 ==> 42" do
+          a_conversion_of '42'
+          should_equal '42'
+        end
+    
+        it "should handle variables as well as constants" do
+          a_conversion_of 'a + b'
+          should_equal 'a b +'
+        end
+      end
+    
+      describe "Binary Operators" do
+        it "should convert 5 + 3 ==> 5 3 +" do
+          a_conversion_of '5 + 3'
+          should_equal '5 3 +'
+        end
+    
+        it "should convert 1 + 3 - 4 ==> 1 3 + 4 -" do
+          a_conversion_of '1 + 3 - 4'
+          should_equal '1 3 + 4 -'
+        end
+    
+        it "should put higher precedence operators before lower ones" do
+          a_conversion_of '1 + 3 * 2'
+          should_equal '1 3 2 * +'
+        end
+    
+        it "should handle interleaved operators of different precedence" do
+          a_conversion_of '3 + 1 * 4 - 2 / 3'
+          should_equal '3 1 4 * + 2 3 / -'
+        end
+      end
+    
+      describe "Handling ( )'s" do
+        it "should remove ( ) from an otherwise empty expression" do
+          a_conversion_of '( )'
+          should_equal ''
+        end
+    
+        it "() should cause lower precedence op's to happen before higher op's" do
+          a_conversion_of '( 4 + 5 ) * 3'
+          should_equal '4 5 + 3 *'
+        end
+    
+        it "should handle nested ( )'s" do
+          a_conversion_of '( ( 1 + 3 ) / ( 9 - 5 ) ) * ( 2 + 3 )'
+          should_equal '1 3 + 9 5 - / 2 3 + *'
+        end
+      end
+    
+      describe "Handling function invocations" do
+        it "should put the function name after the ( )'s" do
+          a_conversion_of 'f ( 3 )'
+          should_equal '3 f'
+        end
+    
+        it "should put multiple parameters separated by ,'s in order first" do
+          a_conversion_of 'f ( 4 , 1 , a , d )'
+          should_equal '4 1 a d f'
+        end
+      end
+    
+      describe "Big Examples" do
+        it "should handle a large example with several levels of nesting" do
+          a_conversion_of 'f ( g ( ( 1 + 3 ) * 4 ) / x ( y ( z ) ) )'
+          should_equal  '1 3 + 4 * g z y x / f'
+        end
+      end
+    
+      describe "Operator Associativity" do
+        it "Should handle right-associative operators" do
+          a_conversion_of 'a = b += 5'
+          should_equal 'a b 5 += ='
+        end
+      end
     end
-  end
-
-  def process_left_paren
-    if last_result_pushed_is_function_name
-      record_operator @outputTokens.pop
-    end
-    record_operator '('
-  end
-
-  def process_right_paren
-    record_operators_to_matching_paren
-    last_operator!
-    add_to_result last_operator! if is_name @operators.last
-  end
-
-  def handle_number(number)
-      add_to_result number 
-  end
-
-  def handle_operator(operator)
-    add_operators_that_should_happen_before operator
-    record_operator operator
-  end
-
-  def record_operator(operator)
-    @operators << operator
-  end
-
-  def record_operators_to_matching_paren
-    add_to_result last_operator! while @operators.last != '('
-  end
-
-  def add_operators_that_should_happen_before(token)
-    if there_are_pending_operators && should_happen_first(@operators.last, token)
-      add_remaining_operators
-    end
-  end
-
-  def should_happen_first(topOp, token)
-    if associativity_of(token) == :left_to_right
-      precedence_of(token) <= precedence_of(topOp)
-    else
-      precedence_of(token) < precedence_of(topOp)
-    end
-  end
-
-  def precedence_of(operator)
-    case operator
-      when '(': 99
-      when ')': 99
-      when '*': 10
-      when '/': 10
-      else 1
-    end
-  end
-
-  def associativity_of(token) 
-    case token
-      when '=': :right_to_left
-      when '+=': :right_to_left
-      else :left_to_right
-    end
-  end
-
-  def add_remaining_operators
-    add_to_result last_operator! while under_logical_top
-  end
-
-  def under_logical_top
-    there_are_pending_operators && @operators.last != '('
-  end
-
-  def there_are_pending_operators
-    @operators.length > 0
-  end
-end
-
-describe "Shunting Yard Algorithm" do
-  before(:each) do
-    @algorithm = ShuntingYardAlgorithm.new
-  end
-
-  def a_conversion_of expression
-    @expression = expression
-  end
-
-  def should_equal expected
-    result = @algorithm.convert @expression
-    result.should == expected
-  end
-
-  describe "Basic Algorithm Usage" do
-    it "should should convert '' to ''" do
-      a_conversion_of ''
-      should_equal ''
-    end
-  end
-
-  describe "Operands" do
-    it "should convert a single constant to itself, e.g., 42 ==> 42" do
-      a_conversion_of '42'
-      should_equal '42'
-    end
-
-    it "should handle variables as well as constants" do
-      a_conversion_of 'a + b'
-      should_equal 'a b +'
-    end
-  end
-
-  describe "Binary Operators" do
-    it "should convert 5 + 3 ==> 5 3 +" do
-      a_conversion_of '5 + 3'
-      should_equal '5 3 +'
-    end
-
-    it "should convert 1 + 3 - 4 ==> 1 3 + 4 -" do
-      a_conversion_of '1 + 3 - 4'
-      should_equal '1 3 + 4 -'
-    end
-
-    it "should put higher precedence operators before lower ones" do
-      a_conversion_of '1 + 3 * 2'
-      should_equal '1 3 2 * +'
-    end
-
-    it "should handle interleaved operators of different precedence" do
-      a_conversion_of '3 + 1 * 4 - 2 / 3'
-      should_equal '3 1 4 * + 2 3 / -'
-    end
-  end
-
-  describe "Handling ( )'s" do
-    it "should remove ( ) from an otherwise empty expression" do
-      a_conversion_of '( )'
-      should_equal ''
-    end
-
-    it "() should cause lower precedence op's to happen before higher op's" do
-      a_conversion_of '( 4 + 5 ) * 3'
-      should_equal '4 5 + 3 *'
-    end
-
-    it "should handle nested ( )'s" do
-      a_conversion_of '( ( 1 + 3 ) / ( 9 - 5 ) ) * ( 2 + 3 )'
-      should_equal '1 3 + 9 5 - / 2 3 + *'
-    end
-  end
-
-  describe "Handling function invocations" do
-    it "should put the function name after the ( )'s" do
-      a_conversion_of 'f ( 3 )'
-      should_equal '3 f'
-    end
-
-    it "should put multiple parameters separated by ,'s in order first" do
-      a_conversion_of 'f ( 4 , 1 , a , d )'
-      should_equal '4 1 a d f'
-    end
-  end
-
-  describe "Big Examples" do
-    it "should handle a large example with several levels of nesting" do
-      a_conversion_of 'f ( g ( ( 1 + 3 ) * 4 ) / x ( y ( z ) ) )'
-      should_equal  '1 3 + 4 * g z y x / f'
-    end
-  end
-
-  describe "Operator Associativity" do
-    it "Should handle right-associative operators" do
-      a_conversion_of 'a = b += 5'
-      should_equal 'a b 5 += ='
-    end
-  end
-end
 ```
 
 [[ruby.tutorials|<--Back]]

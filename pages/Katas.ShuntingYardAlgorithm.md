@@ -4,26 +4,23 @@ title: Katas.ShuntingYardAlgorithm
 [[Katas|<--Back]]
 # Background
 The [[http://en.wikipedia.org/wiki/Shunting_yard_algorithm|Shunting Yard Algorithm]], written by [[http://en.wikipedia.org/wiki/Edsger_Dijkstra|Dijkstra]], converts an infix expression into a post-fix expression. For example, the expression:
->> $$
-3 + 4
-$$
->> becomes
->> $$
-3\;4\;+
-$$
+^
+|---|---|---|
+|$$ 3 + 4 $$|becomes|$$ 3\;4\;+ $$|
 
 # Precedence and Associativity
 What makes this difficult is that operators, generally, have some notion of precedence in most languages. For example, multiplication typically has a higher precedence than addition. So the expression 3 + 5 * 6 is 33 (multiplication happens first) rather than 40.
 
 There's also the issue of associativity. For example, 3 + 4 + 5 happens left-to-right, or it is left-associative. On the other hand, assignment is right-associative. For example, a = b = c = 4, all values receive the value 4 because c = 4 is performed first, while b is assigned to the// **result**// of the assignment of c, which is 4.
 
-For the purposes of this exercise, consider these [[http://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B#Operator_precedence|precednece rules from C++]].
+For the purposes of this exercise, consider these [precedence rules from C++](http://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B#Operator_precedence).
 
 Note: This kata is in flux, I've added the link to the C++ operators but the examples use ^ as "to the power of" rather than bitwise negate. Follow the examples until I update the list of tests.
 
 # Examples
 Here is a series of examples with expected results:
->> [[include page="Katas.ShuntingYardAlgorithm.examples"]]
+{% include_relative Katas.ShuntingYardAlgorithm.examples.md %}
+
 
 # One Approach
 The examples above are taken from a recent (June 2009) personal walk-through of the algorithm. I was surprised by my results and the ease with which I was able to implement the algorithm. 

@@ -6,14 +6,12 @@ D = | A + I - 1 |
 $$
 
 Where:
-||
-$$
-A 
-$$ || **Abstractness** ||
 
-||
 $$
-I
-$$ || **Instability** ||
- 
+A = Abstractness 
+$$
+^
+$$
+I = Instability
+$$
 
