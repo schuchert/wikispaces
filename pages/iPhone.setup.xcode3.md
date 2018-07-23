@@ -14,7 +14,7 @@ These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in 
 * Select your device type. It is probably iPad (by default), but I chose //**iPhone**// for this example. It's a sticky selection, however, so it will probably be your last setting.
 * Provide a name and a location. For this example, I'll use //**/Users/schuchert/src/ObjectiveC**// as the directory and //**Tutorial**// as the name.
 * You should now be able to run your application. Use command-r to see that your application runs, bringing up the simulator (quit the simulator when you're done or at least switch back to XCode):
-[[image:IPhoneSimulatorRunning.gif]]
+![](images/IPhoneSimulatorRunning.gif)
 
 # Adding GH-Unit
 * Download GH-Unit [from here](https://github.com/gabriel/gh-unit/archives/master).
@@ -23,7 +23,7 @@ These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in 
 What follows derives heavily from [the gh-unit documentation](http://gabriel.github.com/gh-unit/_installing.html).
 # Add a new Target
 * Add a new target to your project. Right-click (control-click) on //**Targets**// and select //**Add:New Target..**//
-[[image:CreateNewTarget.jpg]]
+![](images/CreateNewTarget.jpg)
 * Select //**iOS:Cocoa Touch:Application**//
 * Give it a descriptive name, for this tutorial I'll use //**UnitTests_onIPhoneSimulator**//
 * Add the following frameworks in the following dialog that pops up:

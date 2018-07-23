@@ -162,7 +162,7 @@ A velocity graph charts velocity over iterations. You can use it to:
 * Research drastic changes
 * See if the project is stabilizing or not
 
-[[image:DiceGameVelocityGraph.gif]]
+![](images/DiceGameVelocityGraph.gif)
 
 ## Burn-Down Chart
 Iteration to iteration, how is your project progressing to completion? The burn-down chart gives you an idea of what is happening on your project.
@@ -170,10 +170,10 @@ Iteration to iteration, how is your project progressing to completion? The burn-
 * If it wildly fluctuates, you probably need some controls on the user stories going on
 * If it seems there is a discrepancy between how much work is getting done and the chart, it might suggest hidden work or work that is just not being considered as part of the overall effort
 
-[[image:IterationPlanningSimulationBurndown.gif]]
+![](images/IterationPlanningSimulationBurndown.gif)
 
 ## Story Points Completed
 This is another way to look at work. In this case we're looking at the work completed, rather than the work remaining.
 
-[[image:IterationPlanningSimulationPointsCompleted.gif]]
+![](images/IterationPlanningSimulationPointsCompleted.gif)
 * If the slope of this graph is very different from the reverse of the slope of the burn-down chart, that indicates that there was some amount of churn in stories, either the adding or removing stories, or the estimates

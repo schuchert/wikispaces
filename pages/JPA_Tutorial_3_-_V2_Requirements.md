@@ -3,11 +3,11 @@ title: JPA_Tutorial_3_-_V2_Requirements
 ---
 In the first version of our simple system, we had a 1 to many relationship from Patron to Book and a many to 1 relationship from Book to Patron. On a UML diagram, this looks like the following (only showing this one relationship):
 
-[[image:PatronToBookV1.gif]]
+![](images/PatronToBookV1.gif)
 
 In reality, this relationship might better be described as:
 
-[[image:PatronToBookV2.gif]]
+![](images/PatronToBookV2.gif)
 
 If you take the UML interpretation of this diagram, it says that when a Patron and Book come together, there are attributes associated withe the **relationship** between them.
 

@@ -189,7 +189,7 @@ public class Main {
 ```
 
 If you run this example, you'll see a rather ugly UI (the original one from Joseph Buschmann looks much better and uses different input widgets for the different kinds of additional information fields - the ugliness is all mine):
-[[image:UiRefactoringExampleUI.png]]
+![](images/UiRefactoringExampleUI.png)
 
 You might notice that there currently is no test code for this example. That is by design. To get to this point I had to run it and manually check it.  This code is small enough and the example trivial enough that I got away with it (so far).
 

@@ -56,7 +56,7 @@ Here's a listing of the production classes and a one-liner describing each:
 
 ## Class Diagram
 This is a class diagram showing most of the classes listed above. This gives a general sense of dependency and containment and may help guide you through the code:
-[[image:MarsRoverSimulator.png]]
+![](images/MarsRoverSimulator.png)
 
 # What Remains
 This code takes a lot of liberty with negative tests. Since the instructions hinted at validation with tests and suggested clarification from the recruiter, I decided to take the liberty of somewhat aggressive input validation. In the real world, I'd do this as well but I'd try to get the domain expert involved throughout.

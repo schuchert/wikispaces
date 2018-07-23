@@ -20,7 +20,7 @@ FitNesse (v20100103) Started...
 	page version expiration set to 14 days.
 ```
 * Verify you see a friendly FitNesse web page when you open [your browser here](http://localhost:8080/) (I built this from source and it might be different from what you see when you start FitNesse, but it should be close - you won't see the tree on the left until sometime in 4/2009)
-[[image:FitNesseStartScreen.gif]]
+![](images/FitNesseStartScreen.gif)
 
 # Configure FitNesse for Slim
 * Click the **Edit** button on the home page. You will see something close to the following:
@@ -44,10 +44,10 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 >DigitalVideoRecorder
 ```
 * Click **Save** and you should see something similar to this near the bottom of the page:
-[[image:AddFirstSubpage.gif]]
+![](images/AddFirstSubpage.gif)
 
 * Click on the [?], you'll see the following:
-[[image:EditFirstPage.gif]]
+![](images/EditFirstPage.gif)
 
 * Replace the !contents line with the following:
 ```
@@ -62,15 +62,15 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 ```
 
 * Click **Save** and you should see something similar to the following:
-[[image:FirstPageRendered.gif]]
+![](images/FirstPageRendered.gif)
 
 * This is not yet a test page (if you create a test page whose name either ends or starts with "Test", FitNesse will make it a test page by default). To make it a test page, click on the **Properties** button.
 * Change the Page Type to **Test** (if your version of FitNesse is older, you might simply put a check in the **Test** box).
 * Click **Save Properties**. Now you should see the **Test** button:
-[[image:TestButtonEnabled.gif]]
+![](images/TestButtonEnabled.gif)
 
 * Click on the **Test** button, your test will fail with yellow (meaning something was not found) warnings:
-[[image:FirstFailure.gif]]
+![](images/FirstFailure.gif)
  **//Note//**: If you get an error similar to "Testing was interrupted ...", add the following line to your page (this will probably only happen if you build from source):
 ```
 !path fitnesse.jar

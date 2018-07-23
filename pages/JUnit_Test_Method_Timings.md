@@ -25,7 +25,7 @@ The aspect and its associated aop.xml file are listed below. Before you can use 
 # [[Eclipse Java Project Preferences for AspectJ]]
 
 Once you've done all of that, you'll want to put the Test Method Timing Aspect class in the same project where your test classes reside. You'll also need to create a META-INF directory directly under the source directory of your test classes and add the aop.xml file there. Here's an example of what my project looks like:
-[[image:ProjectLayout.gif]]
+![](images/ProjectLayout.gif)
 
 Notice that I have separate src and test directories. It turns out that both of these, when compiled, are merged into a common bin directory, so you can create the META-INF directory in either place. I've chosen to put it under the test directory. You'll also notice that I've put the project test.timingaspect under the test directory as well. (These projects are under [Subversion](http://schuchert.wikispaces.com/Subversion+on+XP), which might explain why my icons look different from yours in Eclipse.
 

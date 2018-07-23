@@ -6,14 +6,14 @@ In this first tutorial we are going to perform some basic inserts, removes and q
 JPA allows us to work with entity classes, which are denoted as such using the annotation @Entity or configured in an XML file (we'll call this **persistence meta information**). When we acquire the **Entity Manager Factory** using the **Persistence** class, the **Entity Manager Factory** finds and processes the **persistence meta information**.
 
 To work with a database using JPA, we need an **Entity Manager**. Before we can do that, we need to create an **Entity Manager Factory.** 
-> [[image:EntityManagerFactory.jpeg]]
+> ![](images/EntityManagerFactory.jpeg)
 ----
-> [[image:PersistenceSequence.jpg]]
+> ![](images/PersistenceSequence.jpg)
 
 To acquire an **Entity Manager Factory**, we use the class **javax.persistence.Persistence**. It reads a file called persistence.xml in the META-INF directory. It then creates the named **Entity Manager Factory**, which processes persistence meta information stored in XML files or annotations (we only use annotations).
 
 Creating an **Entity Manager** once we have the **Entity Manager Factory** is simple:
-> [[image:CreateEntityManager.jpeg]]
+> ![](images/CreateEntityManager.jpeg)
 
 Once we have an **Entity Manager**, we can ask it to perform several operations such as persisting or removing an entity from the database or creating a query.
 

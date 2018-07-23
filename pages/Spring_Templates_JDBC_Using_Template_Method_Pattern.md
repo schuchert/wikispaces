@@ -12,7 +12,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 * Execute a query
 
 ## Class Diagram
-[[image:DesigningToSpringTemplates.v2.gif]]
+![](images/DesigningToSpringTemplates.v2.gif)
 
 ## The Source
 ----

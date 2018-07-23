@@ -30,7 +30,7 @@ These steps describe what you'll need to do to set up a framework, not an applic
 * Click// **Save**//
 
 At this point, you should have a window that resembles the following:
-[[image:ObjectiveCRpnCalculatorProjectCreated.jpg]]
+![](images/ObjectiveCRpnCalculatorProjectCreated.jpg)
 
 ## Configuring for Unit Tests
 * Under// **Groups & Files**//, select// **RpnCalculator**// and// **right-click**// (ctrl-click), select// **Add:New Target**//
@@ -39,7 +39,7 @@ At this point, you should have a window that resembles the following:
 * Under// **Target Name**// enter some descriptive name. I'll use// **UnitTests**//.
 * Click// **Finish**//
 * This should bring up the info window on the target:
-[[image:UnitTestsInfoWindow.jpg]]
+![](images/UnitTestsInfoWindow.jpg)
 * Under the Direct Dependencies pane, click the// **+**// and add a dependency to// **RpnCalculator**// (double-click on// **RpnCalculator**//)
 * Close the info window
 
@@ -84,7 +84,7 @@ Let's assume the for building you'll want to run the tests every time.
 * Bring up the// **Build**// window:// **command-shift-B**// or// **Build:Build Results**//
 * Click// **Build**//
 * The test should fail:
-[[image:BuildResultsFailed.jpg]]
+![](images/BuildResultsFailed.jpg)
 
 ## Get the test to pass
 * Update the assertion line in ANewlyCreatedCalculatorShould from:
@@ -97,7 +97,7 @@ To:
 ```
 * Save and re-build.
 * All tests should be passing:
-[[image:BuildResultsPassing.jpg]]
+![](images/BuildResultsPassing.jpg)
 
 ## Really Getting it all Tied Together
 Now it's time to get the RpnCalculator framework linked into the test target. 
@@ -148,17 +148,17 @@ This example imports a type that does not yet exist. So add it:
 ```
 
 If you build now, you will get a linking error. Try it:
-[[image:BuildFailedWithLinkingError.jpg]]
+![](images/BuildFailedWithLinkingError.jpg)
 
 To Fix this:
 * In the main window, under// **Groups & Files**//, select// **RpnCalculator**//
 * In the top-most right pane, you'll see a list view; the first column has the name// **File Name**//.
 * Scroll down until you see// **RpnCalculator.framework**//
 * On the far-right side of that pane is a column with check boxes. Find the check box for the row containing// **RpnCalculator.framework**// and enable it:
-[[image:AddingToLink.jpg]]
+![](images/AddingToLink.jpg)
 * Build again (Command-Shift B, click the build button)
 * You should have a successful build:
-[[image:BuildSucceeded.jpg]]
+![](images/BuildSucceeded.jpg)
 
 ## Congratulations
 You have a project configured to run unit tests when built.

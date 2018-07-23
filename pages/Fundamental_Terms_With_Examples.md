@@ -37,7 +37,7 @@ When I land on a board location, what happens?
 - If I **land on** Community Chest, I get a card and then something happens there
 
 Here's an example hierarchy:
-[[image:PartialBoardLocationHierarchy.gif]]
+![](images/PartialBoardLocationHierarchy.gif)
 
 Imagine I have different kinds of Board Locations (read this as different classes). I have a class for Go To Jail, Go, Railroads, Community Chest, Luxury Tax, Jail, Utilities, etc. Each of these classes responds to the message **land on**. However, each one responds a bit differently.
 

@@ -38,7 +38,7 @@ This is one mechanism you can use to allow for execution of tests with machine-r
 
 ## Overview
 The picture gives a high level view. In a nutshell:
-[[image:TargetFitNessePageConfiguration.jpg]]
+![](images/TargetFitNessePageConfiguration.jpg)
 
 //**On The Server**//
 * FitNesse is installed in some convenient location, with its FitNesseRoot directory and fitnesse.jar as siblings in some physical directory.

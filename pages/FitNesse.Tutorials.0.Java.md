@@ -59,7 +59,7 @@ Next, you'll need to know where Eclipse is placing your compiled Java classes.
 ```
 
 * Click on the **Test** button, you should see some green and yellow now:
-[[image:FixtureClassFound.gif]]
+![](images/FixtureClassFound.gif)
 
 You have two tables in your page. The first table is an import table, it tells FitNesse to import that package or namespace (e.g. if you're working with .Net). That is, when looking for fixture classes (classes that process tables), look in this package. If you want to import multiple packages or namespaces, use multiple rows (or duplicate the entire table).
 
@@ -98,7 +98,7 @@ public class CreatePrograms {
 
 # Verify Your Tests Pass
 * Go back to your browser and click the **Test** button. You should see the following:
-[[image:AllGreenFirstTime.gif]]
+![](images/AllGreenFirstTime.gif)
 
 # [Return and Complete Your Tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.0#Congratulations)
  
