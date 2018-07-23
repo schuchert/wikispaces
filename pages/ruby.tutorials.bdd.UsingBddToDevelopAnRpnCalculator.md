@@ -40,27 +40,27 @@ Before you get started on any Examples, however, we'll delve into the problem ju
 # The Problem
 An RPN calculator works by performing calculations on operands that the user has already entered. Here is an example scenario:
 ```
-5 <enter>
-3 
-+
-# 8
+    5 <enter>
+    3 
+    +
+    = 8
 ```
 In this example, a user enters first 5 and then 3 and hits the + key to get the previous two operands 5 and 3, added together.
 
 In general, using an RPN calculator obviates the need to use parenthesis. Consider the following:
-[[math]]
-((5 + 3) * 6 / 3) ^ 4
-[[math]]
+
+    ((5 + 3) * 6 / 3) ^ 4
+
 That same expression could be calculated on an RPN calculator as follows:
 ```
-5 <enter> 3 + 6 * 3 / 4 ^
-# 65536
+    5 <enter> 3 + 6 * 3 / 4 ^
+    = 65536
 ```
 
 An RPN calculator as a stack of previously entered values. The most recently entered numbers are the numbers that become available first (Last In First Out - LIFO). Consider this longer sequence:
 ```
-3 <enter> 6 <enter> -8 <enter> 89 + sqrt - +
-# 0
+    3 <enter> 6 <enter> -8 <enter> 89 + sqrt - +
+    = 0
 ```
 Here's the evaluation of the above expression:
 * 3, 6, -8 get places on the operand stack
@@ -101,78 +101,78 @@ As with all problems, you need to pick a starting place. As with the first tutor
 **Example**
 Here is a first Example for this problem:
 ```ruby
-describe "Basic Creation" do
-  it "should be non-null after creation" do
-    calculator = RpnCalculator.new
-  end
-end
+    describe "Basic Creation" do
+      it "should be non-null after creation" do
+        calculator = RpnCalculator.new
+      end
+    end
 ```
 * Create this Example in your directory, call the file "rpn_calculator_spec.rb"
 
 * Execute the Example, it fails:
-> ```ruby
-Macintosh-7% spec -f s -c rpn_calculator_spec.rb
-
-Basic Creation
-- should be non-null after creation (ERROR - 1)
-
-1)
-NameError in 'Basic Creation should be non-null after creation'
-uninitialized constant RpnCalculator
-./rpn_calculator_spec.rb:3:
-
-Finished in 0.013091 seconds
-
-1 example, 1 failure
+```ruby
+    Macintosh-7% spec -f s -c rpn_calculator_spec.rb
+    
+    Basic Creation
+    - should be non-null after creation (ERROR - 1)
+    
+    1)
+    NameError in 'Basic Creation should be non-null after creation'
+    uninitialized constant RpnCalculator
+    ./rpn_calculator_spec.rb:3:
+    
+    Finished in 0.013091 seconds
+    
+    1 example, 1 failure
 ```
 The -c option adds color to the output. You won't see the color in this tutorial. Also, if you are running this in a DOS terminal window, then you'll want to leave this option off.
 
 The message describes an unknown constant, RpnCalcualtor. You'll need to create that class.
 
 * Create the following Ruby class in a file called rpn_calculator.rb:
-> ```ruby
-class RpnCalculator
-end
+```ruby
+    class RpnCalculator
+    end
 ```
 
 * Update rpn_calculator_spec.rb to require the file you just created:
-> ```ruby
-require 'rpn_calculator'
-
-describe "Basic Creation" do
-  ...
-end
+```ruby
+    require 'rpn_calculator'
+    
+    describe "Basic Creation" do
+      ...
+    end
 ```
 
 * Run your Example again, you should be all green:
-> ```ruby
-Macintosh-7% spec -f s -c rpn_calculator_spec.rb
-
-Basic Creation
-- should be non-null after creation
-
-Finished in 0.0123 seconds
-
-1 example, 0 failures
+```ruby
+    Macintosh-7% spec -f s -c rpn_calculator_spec.rb
+    
+    Basic Creation
+    - should be non-null after creation
+    
+    Finished in 0.0123 seconds
+    
+    1 example, 0 failures
 ```
 
 OK, you have an Example but it does not contain any verification. So one more change and one more execution.
 
 * Update the Example to validate calculator:
-> ```ruby
+```ruby
     calculator.should_not be nil
 ```
 
 * Run your Example again, you should be all green:
-> ```bash
-Macintosh-7% spec -f s -c rpn_calculator_spec.rb
-
-Basic Creation
-- should be non-null after creation
-
-Finished in 0.0123 seconds
-
-1 example, 0 failures
+```bash
+    Macintosh-7% spec -f s -c rpn_calculator_spec.rb
+    
+    Basic Creation
+    - should be non-null after creation
+    
+    Finished in 0.0123 seconds
+    
+    1 example, 0 failures
 ```
 
 [[include page="sidebar_start"]][[include page="ruby.sidebar.ExamplesPassingWithoutValidation"]][[include page="sidebar_end"]]
@@ -182,17 +182,17 @@ Finished in 0.0123 seconds
 **Check-In**
 You are all green, so it is time to check in your work. As with the previous tutorial, I'll be using git:
 ```
-Macintosh-7% ls
-rpn_calculator.rb  rpn_calculator_spec.rb  wikiwriteup.txt
-Macintosh-7% git init
-Initialized empty Git repository in /Users/schuchert/src/ruby/bdd_tutorial_2/.git/
-Macintosh-7% git add *   
-Macintosh-7% git commit
-Created initial commit 05273da: First spec passing.
- 3 files changed, 354 insertions(+), 0 deletions(-)
- create mode 100644 rpn_calculator.rb
- create mode 100644 rpn_calculator_spec.rb
- create mode 100644 wikiwriteup.txt
+    Macintosh-7% ls
+    rpn_calculator.rb  rpn_calculator_spec.rb  wikiwriteup.txt
+    Macintosh-7% git init
+    Initialized empty Git repository in /Users/schuchert/src/ruby/bdd_tutorial_2/.git/
+    Macintosh-7% git add *   
+    Macintosh-7% git commit
+    Created initial commit 05273da: First spec passing.
+     3 files changed, 354 insertions(+), 0 deletions(-)
+     create mode 100644 rpn_calculator.rb
+     create mode 100644 rpn_calculator_spec.rb
+     create mode 100644 wikiwriteup.txt
 ```
 
 Note that in this example I have a file you will not have, wikiwriteup.txt. That's the raw material used for format the wikipage you are now reading.
@@ -207,19 +207,19 @@ Since there was no need to refactor, there's no need to check in again.
 You created two files:
 **rpn_calculator_spec.rb**
 ```ruby
-require 'rpn_calculator'
-
-describe "Basic Creation" do
-  it "should be non-null after creation" do
-    calculator = RpnCalculator.new
-    calculator.should_not be nil
-  end
-end
+    require 'rpn_calculator'
+    
+    describe "Basic Creation" do
+      it "should be non-null after creation" do
+        calculator = RpnCalculator.new
+        calculator.should_not be nil
+      end
+    end
 ```
 **rpn_calculator**
 ```ruby
-class RpnCalculator
-end
+    class RpnCalculator
+    end
 ```
 
 This may seem like a trivial start, and that is by design. What have you verified so far:
@@ -241,9 +241,9 @@ Not every Example will be so small and quick to create, but you should attempt t
 
 # Example: Accepting User Input
 With the first Example running it is time to move on to basic user input. We have to make a decision already, where is the system boundary. Here are a few possibilities:
-# The system receives a series of events for buttons pressed, e.g., pressing "9" on the UI generates a 9-button pressed event, pressing "sqrt" on the UI generates a sqrt-button pressed event.
-# The system receives "digit" messages for digits or "function" messages for functions.
-# The system receives messages such as a complete number, enter, + and so on.
+* The system receives a series of events for buttons pressed, e.g., pressing "9" on the UI generates a 9-button pressed event, pressing "sqrt" on the UI generates a sqrt-button pressed event.
+* The system receives "digit" messages for digits or "function" messages for functions.
+* The system receives messages such as a complete number, enter, + and so on.
 
 There are other alternatives, and to some extent, the selection is arbitrary. There is no decision on the UI technology there's no way to know the eventing mechanism, if applicable. Even so, you can make progress based on some logical representation and then adapt between the real UI technology and the system you've developed.
 
@@ -256,12 +256,12 @@ Since the particulars of the UI are irrelevant, this tutorial will move forward 
 **Example**
 Here is the beginning of an example:
 ```ruby
-describe "Handling User Input of Numbers" do
-  it "should store a series of digits in the x register" do
-    calculator = RpnCalculator.new
-    calculator.digit_pressed '4'
-  end
-end
+    describe "Handling User Input of Numbers" do
+      it "should store a series of digits in the x register" do
+        calculator = RpnCalculator.new
+        calculator.digit_pressed '4'
+      end
+    end
 ```
 
 There's more to be written, but as soon as the message "digit_pressed" is sent to a calculator, the Example will fail.
@@ -269,94 +269,94 @@ There's more to be written, but as soon as the message "digit_pressed" is sent t
 * Create this Example, adding it to rpn_calculator_spec.rb.
 
 * Execute the Example, you should see an error similar to the following:
-> ```
-1)
-NoMethodError in 'Handling User Input of Numbers should store a series of digits in the x register'
-undefined method `digit_pressed' for #<RpnCalculator:0x58kkc80c>
-./rpn_calculator_spec.rb:12:
-
-Finished in 0.015707 seconds
-
-2 examples, 1 failure
+```bash
+    1)
+    NoMethodError in 'Handling User Input of Numbers should store a series of digits in the x register'
+    undefined method `digit_pressed' for #<RpnCalculator:0x58kkc80c>
+    ./rpn_calculator_spec.rb:12:
+    
+    Finished in 0.015707 seconds
+    
+    2 examples, 1 failure
 ```
 
 Assuming you worked through the first BDD tutorial, this is familiar ground. You need to add a method to get this to compiled (you've just finished applying law 2 of the 3 laws of BDD).
 
 * Update RpnCalculator:
-> ```ruby
-class RpnCalculator
-  def digit_pressed(digit)
-  end
-end
+```ruby
+    class RpnCalculator
+      def digit_pressed(digit)
+      end
+    end
 ```
 
 * Verify that your Example now executes successfully.
 
 * Complete the Example:
-> ```ruby
-describe "Handling User Input of Numbers" do
-  it "should store a series of digits in the x register" do
-    calculator = RpnCalculator.new
-    calculator.digit_pressed '4'
-    calculator.digit_pressed '2'
-    calculator.x_register.should == 42
-  end
-end
+```ruby
+    describe "Handling User Input of Numbers" do
+      it "should store a series of digits in the x register" do
+        calculator = RpnCalculator.new
+        calculator.digit_pressed '4'
+        calculator.digit_pressed '2'
+        calculator.x_register.should == 42
+      end
+    end
 ```
 
 * Execute your examples, one will fail:
-> ```
-1)
-NoMethodError in 'Handling User Input of Numbers should store a series of digits in the x register'
-undefined method `x_register' for #<RpnCalculator:0x58c5dc>
-./rpn_calculator_spec.rb:14:
-
-Finished in 0.015999 seconds
-
-2 examples, 1 failure
+```
+    1)
+    NoMethodError in 'Handling User Input of Numbers should store a series of digits in the x register'
+    undefined method `x_register' for #<RpnCalculator:0x58c5dc>
+    ./rpn_calculator_spec.rb:14:
+    
+    Finished in 0.015999 seconds
+    
+    2 examples, 1 failure
 ```
 
 As with the previous failure, this failure is a result of a missing method.
 
 * First, create the method in RpnCalculator to get your code to compiling:
-> ```ruby
-  def x_register
-  end
+```ruby
+    def x_register
+    end
 ```
 
 * Run your Example, make sure it is failing:
-> ```
-1)
-'Handling User Input of Numbers should store a series of digits in the x register' FAILED
-expected: 42,
-     got: nil (using ==)
-./rpn_calculator_spec.rb:14:
-
-Finished in 0.016444 seconds
-
-2 examples, 1 failure
+```bash
+    1)
+    'Handling User Input of Numbers should store a series of digits in the x register' FAILED
+    expected: 42,
+         got: nil (using ==)
+    ./rpn_calculator_spec.rb:14:
+    
+    Finished in 0.016444 seconds
+    
+    2 examples, 1 failure
 ```
 
 * Now, do the simplest thing that could work, AKA fast-green bar, AKA, Uncle Bob's TDD rules, #3:
-> ```ruby
-  def x_register
-    42
-  end
+```ruby
+    def x_register
+      42
+    end
 ```
 
 * Finally, run your Examples to make sure they are passing:
-> ```
-Macintosh-7% spec -f s -c rpn_calculator_spec.rb
-
-Basic Creation
-- should be non-null after creation
-
-Handling User Input of Numbers
-- should store a series of digits in the x register
-
-Finished in 0.014956 seconds
-
-2 examples, 0 failures
+```
+    Macintosh-7% spec -f s -c rpn_calculator_spec.rb
+    
+    Basic Creation
+    - should be non-null after creation
+    
+    Handling User Input of Numbers
+    - should store a series of digits in the x register
+    
+    Finished in 0.014956 seconds
+    
+    2 examples, 0 failures
 ```
 
 [[include page="sidebar_start"]][[include page="ruby.sidebar.WhyTwoStepsInsteadOfJustOne"]][[include page="sidebar_end"]]
@@ -365,10 +365,10 @@ Finished in 0.014956 seconds
 
 **Check-In**
 * Check in your work:
-> ```
-Macintosh-7% git commit -a
-Created commit 727745f: Added basic support for handling digits.
- 3 files changed, 215 insertions(+), 2 deletions(-)
+```
+    Macintosh-7% git commit -a
+    Created commit 727745f: Added basic support for handling digits.
+     3 files changed, 215 insertions(+), 2 deletions(-)
 ```
 
 **Refactor**
@@ -378,72 +378,72 @@ Review of the Examples, however, does. There is some minor duplication. Both Exa
 
 * Create a containing context:
 > **Above the first describe**
-> ```ruby
-describe "RPN Calculator" do
+```ruby
+    describe "RPN Calculator" do
 ```
 > **After the last end**
-> ```ruby
-end
+```ruby
+    end
 ```
 > **Update the spacing - that's one command in VI, the best-ever editor**
-> ```ruby
-describe "RPN Calculator"
-  describe "Basic Creation" do
-    ...
-  end
-
-  describe "Handling User Input of Numbers" do
-    ...
-  end
-end
+```ruby
+    describe "RPN Calculator"
+      describe "Basic Creation" do
+        ...
+      end
+    
+      describe "Handling User Input of Numbers" do
+        ...
+      end
+    end
 ```
 
 * Verify that your Examples still execute:
-> ```bash
-Macintosh-7% spec -f s -c rpn_calculator_spec.rb
-
-RPN Calculator
-
-RPN Calculator Basic Creation
-- should be non-null after creation
-
-RPN Calculator Handling User Input of Numbers
-- should store a series of digits in the x register
-
-Finished in 0.016923 seconds
-
-2 examples, 0 failures
+```bash
+    Macintosh-7% spec -f s -c rpn_calculator_spec.rb
+    
+    RPN Calculator
+    
+    RPN Calculator Basic Creation
+    - should be non-null after creation
+    
+    RPN Calculator Handling User Input of Numbers
+    - should store a series of digits in the x register
+    
+    Finished in 0.016923 seconds
+    
+    2 examples, 0 failures
 ```
 
 * Add a common setup to your outer-context:
-> ```ruby
-  before(:each) do
-    @calculator = RpnCalculator.new
-  end
+```ruby
+    before(:each) do
+      @calculator = RpnCalculator.new
+    end
 ```
 
 * Verify your Examples still run.
 
 * Update the first Example to use the initialized calculator:
-> ```ruby
-  describe "Basic Creation" do
-    it "should be non-null after creation" do
-      @calculator.should_not be nil
+```ruby
+    describe "Basic Creation" do
+      it "should be non-null after creation" do
+        @calculator.should_not be nil
+      end
     end
-  end
 ```
 
 * Verify your Examples still run.
 
 * Update the second Example as well:
-> ```ruby
-  describe "Handling User Input of Numbers" do
-    it "should store a series of digits in the x register" do
-      @calculator.digit_pressed '4'
-      @calculator.digit_pressed '2'
-      @calculator.x_register.should == 42
+```ruby
+    describe "Handling User Input of Numbers" do
+      it "should store a series of digits in the x register" do
+        @calculator.digit_pressed '4'
+        @calculator.digit_pressed '2'
+        @calculator.x_register.should == 42
+      end
     end
-  end
 ```
 
 * Verify your Examples still run.
@@ -452,11 +452,11 @@ You might be tempted to do more at this point. For example, you know you'll be a
 
 **Check-In**
 * Check in your work:
-> ```
-Macintosh-7% git commit -a
-Created commit b203185: Removed duplication of calculator initialization.
- 2 files changed, 128 insertions(+), 18 deletions(-)
- rewrite rpn_calculator_spec.rb (90%)
+```
+    Macintosh-7% git commit -a
+    Created commit b203185: Removed duplication of calculator initialization.
+     2 files changed, 128 insertions(+), 18 deletions(-)
+     rewrite rpn_calculator_spec.rb (90%)
 ```
 
 **Summary**
@@ -468,16 +468,16 @@ You also performed some basic refactoring on your Examples. While mentioned in t
 
 # Example: Taking a decimal point as well
 The production code is hard-coded. Somehow you want to push your solution to remove that hard-coded value. One way to do that is to and another Example (don't do this):
-> ```ruby
-  describe "Handling an even longer User Input of Numbers" do
-    it "should store a series of digits in the x register" do
-      @calculator.digit_pressed '1'
-      @calculator.digit_pressed '2'
-      @calculator.digit_pressed '4'
-      @calculator.digit_pressed '3' 
-      @calculator.digit_pressed '2' 
-      @calculator.x_register.should == 12432
-    end
+```ruby
+      describe "Handling an even longer User Input of Numbers" do
+        it "should store a series of digits in the x register" do
+          @calculator.digit_pressed '1'
+          @calculator.digit_pressed '2'
+          @calculator.digit_pressed '4'
+          @calculator.digit_pressed '3' 
+          @calculator.digit_pressed '2' 
+          @calculator.x_register.should == 12432
+        end
 ```
 
 On the one hand, this will force some more work in the production code. On the other hand, this Example is a proper superset of the first Example. That is, this Example completely covers the first Example, so, pragmatically, you should remove the first Example. More Examples does not necessarily mean better Examples. Each Example should push the solution a little further and avoid duplicating the work of another Example. Why?
@@ -502,67 +502,67 @@ Here is another example that fits extends the functionality just a little but wi
 * Create this Example.
 
 * Run your Examples, you should have one failure:
-> ```
-... <snip> ...
-- should handle a string of digits with an embedded . (FAILED - 1)
-
-1)
-'RPN Calculator Handling User Input of Numbers should handle a string of digits with an embedded .' FAILED
-expected: 13.31,
-     got: 42 (using ==)
-./rpn_calculator_spec.rb:27:
-
-Finished in 0.018738 seconds
-
-3 examples, 1 failure
+```
+    ... <snip> ...
+    - should handle a string of digits with an embedded . (FAILED - 1)
+    
+    1)
+    'RPN Calculator Handling User Input of Numbers should handle a string of digits with an embedded .' FAILED
+    expected: 13.31,
+         got: 42 (using ==)
+    ./rpn_calculator_spec.rb:27:
+    
+    Finished in 0.018738 seconds
+    
+    3 examples, 1 failure
 ```
 
 Now it is time to do something more than hard-code the response.
 
 * Add an initialization method to your RpnCalculator class:
-> ```ruby
-  def initialize
-    @input = ''
-  end
+```ruby
+      def initialize
+        @input = ''
+      end
 ```
 
 * Update the digit_pressed method to record the digit:
-> ```ruby
-  def digit_pressed(digit)
-    @input << digit.to_s
-  end
+```ruby
+      def digit_pressed(digit)
+        @input << digit.to_s
+      end
 ```
 
 * Update the x_register method to use the recorded input:
-> ```ruby
-  def x_register
-    @input.to_f
-  end
+```ruby
+      def x_register
+        @input.to_f
+      end
 ```
 
 * Run your Examples, you should be all green:
-> ```
-Macintosh-7% spec -f s -c rpn_calculator_spec.rb
-
-RPN Calculator
-
-RPN Calculator Basic Creation
-- should be non-null after creation
-
-RPN Calculator Handling User Input of Numbers
-- should store a series of digits in the x register
-- should handle a string of digits with an embedded .
-
-Finished in 0.018312 seconds
-
-3 examples, 0 failures
+```
+    Macintosh-7% spec -f s -c rpn_calculator_spec.rb
+    
+    RPN Calculator
+    
+    RPN Calculator Basic Creation
+    - should be non-null after creation
+    
+    RPN Calculator Handling User Input of Numbers
+    - should store a series of digits in the x register
+    - should handle a string of digits with an embedded .
+    
+    Finished in 0.018312 seconds
+    
+    3 examples, 0 failures
 ```
 **Check-In**
 * It is once again time to check in your code. Everything is green:
-> ```
-Macintosh-7% git commit -a
-Created commit e10de87: Added support for numbers with decimals.
- 3 files changed, 135 insertions(+), 2 deletions(-)
+```
+    Macintosh-7% git commit -a
+    Created commit e10de87: Added support for numbers with decimals.
+     3 files changed, 135 insertions(+), 2 deletions(-)
 ```
 
 And as a reminder, the reason there are so many insertions in this example is because my checkins include updates to the source file used to generate the page you are reading.
@@ -575,20 +575,20 @@ Before making any improvements, you need a reason to make the improvement. It is
 How about allowing your Example to provide a number, which is then "typed" for you?
 
 * Add a method to the containing context:
-> ```ruby
-describe "RPN Calculator" do
-  ...
-  def enter_number(number)
-    number.to_s.each_char{ |d| @calculator.digit_pressed d }
-  end
-  ...
-end
+```ruby
+    describe "RPN Calculator" do
+      ...
+      def enter_number(number)
+        number.to_s.each_char{ |d| @calculator.digit_pressed d }
+      end
+      ...
+    end
 ```
 
 * Run your Examples, they should still pass.
 
 * Update the "Handling User Input of Numbers" example:
-> ```ruby
+```ruby
     it "should store a series of digits in the x register" do
       enter_number 42
       @calculator.x_register.should == 42
@@ -598,7 +598,7 @@ end
 * Run your Examples, they should still pass.
 
 * Update the "should handle a string of digits with an embedded ." Example:
-> ```ruby
+```ruby
     it "should handle a string of digits with an embedded ." do
       enter_number 13.31
       @calculator.x_register.should == 13.31
@@ -608,39 +608,39 @@ end
 * Run your Examples, they should still pass.
 
 * Finally, the second Example does not start with should, which is a pretty well-followed practice. So fix it:
-> ```ruby
-  describe "Handling integers" do
-    it "should store a series of digits in the x register" do
-      enter_number 42
-      @calculator.x_register.should == 42
-    end
+```ruby
+      describe "Handling integers" do
+        it "should store a series of digits in the x register" do
+          enter_number 42
+          @calculator.x_register.should == 42
+        end
 ```
 
 
 * Run your Examples, they should still pass.
-> ```bash
-Macintosh-7% spec -f s -c rpn_calculator_spec.rb
-
-RPN Calculator
-
-RPN Calculator Basic Creation
-- should be non-null after creation
-
-RPN Calculator Handling integers
-- should store a series of digits in the x register
-- should handle a string of digits with an embedded .
-
-Finished in 0.017654 seconds
-
-3 examples, 0 failures
+```bash
+    Macintosh-7% spec -f s -c rpn_calculator_spec.rb
+    
+    RPN Calculator
+    
+    RPN Calculator Basic Creation
+    - should be non-null after creation
+    
+    RPN Calculator Handling integers
+    - should store a series of digits in the x register
+    - should handle a string of digits with an embedded .
+    
+    Finished in 0.017654 seconds
+    
+    3 examples, 0 failures
 ```
 
 **Check-In**
 * Check in your changes:
-> ```
-Macintosh-7% git commit -a
-Created commit a465d16: Removed duplication in writing examples taking numbes.
- 2 files changed, 56 insertions(+), 24 deletions(-)
+```
+    Macintosh-7% git commit -a
+    Created commit a465d16: Removed duplication in writing examples taking numbes.
+     2 files changed, 56 insertions(+), 24 deletions(-)
 ```
 
 **Summary**
@@ -651,52 +651,52 @@ There is one strange thing, your code uses "digit_pressed" for the digits 0 thro
 Here is a snapshot of what your code should resemble at this point:
 **rpn_calculator_spec.rb**
 ```ruby
-require 'rpn_calculator'
-
-describe "RPN Calculator" do
-  before(:each) do
-    @calculator = RpnCalculator.new
-  end
-
-  def enter_number(number)
-    number.to_s.each_char{ |d| @calculator.digit_pressed d }
-  end
-
-  describe "Basic Creation" do
-    it "should be non-null after creation" do
-      @calculator.should_not be nil
+    require 'rpn_calculator'
+    
+    describe "RPN Calculator" do
+      before(:each) do
+        @calculator = RpnCalculator.new
+      end
+    
+      def enter_number(number)
+        number.to_s.each_char{ |d| @calculator.digit_pressed d }
+      end
+    
+      describe "Basic Creation" do
+        it "should be non-null after creation" do
+          @calculator.should_not be nil
+        end
+      end
+    
+      describe "Handling integers" do
+        it "should store a series of digits in the x register" do
+          enter_number 42
+          @calculator.x_register.should == 42
+        end
+    
+        it "should handle a string of digits with an embedded ." do
+          enter_number 13.31
+          @calculator.x_register.should == 13.31
+        end
+      end
     end
-  end
-
-  describe "Handling integers" do
-    it "should store a series of digits in the x register" do
-      enter_number 42
-      @calculator.x_register.should == 42
-    end
-
-    it "should handle a string of digits with an embedded ." do
-      enter_number 13.31
-      @calculator.x_register.should == 13.31
-    end
-  end
-end
 ```
 
 **rpn_calculator.rb**
 ```ruby
-class RpnCalculator
-  def initialize
-    @input = ''
-  end
-    
-  def digit_pressed(digit)
-    @input << digit.to_s
-  end 
-    
-  def x_register
-    @input.to_f
-  end
-end 
+    class RpnCalculator
+      def initialize
+        @input = ''
+      end
+        
+      def digit_pressed(digit)
+        @input << digit.to_s
+      end 
+        
+      def x_register
+        @input.to_f
+      end
+    end 
 ```
 
 # Example: What Happens with Enter?
@@ -709,37 +709,37 @@ In fact, as you will see, pressing a non-numeric key generally "locks-down" the 
 **Example**
 Here is a Context with three as yet to be defined Examples:
 ```ruby
-  describe "Handling the <enter> key" do
-    it "should copy x_register to top of stack" 
-  
-    it "should cause next digit to reset the x_register" 
-
-    it "should allow the x_register to be <entered> again" 
-  end
+      describe "Handling the <enter> key" do
+        it "should copy x_register to top of stack" 
+      
+        it "should cause next digit to reset the x_register" 
+    
+        it "should allow the x_register to be <entered> again" 
+      end
 ```
 
 * Add this context as a sub-context of the RPN Calculator context.
 
 * Execute your Examples, you should notice that these three are listed as pending:
-> ```
-RPN Calculator Handling the <enter> key
-- should copy x_register to top of stack (PENDING: Not Yet Implemented)
-- should cause next digit to reset the x_register (PENDING: Not Yet Implemented)
-- should allow the x_register to be <entered> again (PENDING: Not Yet Implemented)
-
-Pending:
-RPN Calculator Handling the <enter> key should copy x_register to top of stack (Not Yet Implemented)
-RPN Calculator Handling the <enter> key should cause next digit to reset the x_register (Not Yet Implemented)
-RPN Calculator Handling the <enter> key should allow the x_register to be <entered> again (Not Yet Implemented)
-
-Finished in 0.022477 seconds
-
-6 examples, 0 failures, 3 pending
+```terminal
+    RPN Calculator Handling the <enter> key
+    - should copy x_register to top of stack (PENDING: Not Yet Implemented)
+    - should cause next digit to reset the x_register (PENDING: Not Yet Implemented)
+    - should allow the x_register to be <entered> again (PENDING: Not Yet Implemented)
+    
+    Pending:
+    RPN Calculator Handling the <enter> key should copy x_register to top of stack (Not Yet Implemented)
+    RPN Calculator Handling the <enter> key should cause next digit to reset the x_register (Not Yet Implemented)
+    RPN Calculator Handling the <enter> key should allow the x_register to be <entered> again (Not Yet Implemented)
+    
+    Finished in 0.022477 seconds
+    
+    6 examples, 0 failures, 3 pending
 ```
 
 Before you can write any of these, you have to make a decision about how to indicate that the <enter> key was pressed. Here are a few options:
-# Add a method, enter_pressed.
-# Add a method, execute_function(:enter)
+* Add a method, enter_pressed.
+* Add a method, execute_function(:enter)
 
 Is there a clear winner? There are trade-offs:
 * The first option suggests a "wide" API. That is, the number of methods on the PN Calculator grows as its functionality grows. This might sound "normal" but it could be a violation of the Open/Closed Principle.
@@ -751,7 +751,7 @@ Is there a clear winner? There are trade-offs:
 This tutorial will take the second approach.
 
 * Add to the first Example (make sure to add the 'do' after the first line):
-> ```ruby
+```ruby
     it "should copy x_register to top of stack" do
       enter_number 654
       @calculator.execute_function(:enter)
@@ -761,25 +761,25 @@ This tutorial will take the second approach.
 Why stop here? This Example is now failing because it invokes a method that does not yet exist.
 
 * Run your Examples to verify this:
-> ```
-1)
-NoMethodError in 'RPN Calculator Handling the <enter> key should copy x_register to top of stack'
-undefined method `execute_function' for #<RpnCalculator:0x587ac8 @input="654">
-./rpn_calculator_spec.rb:33:
-
-Finished in 0.023074 seconds
-
-6 examples, 1 failure, 2 pending
+```
+    1)
+    NoMethodError in 'RPN Calculator Handling the <enter> key should copy x_register to top of stack'
+    undefined method `execute_function' for #<RpnCalculator:0x587ac8 @input="654">
+    ./rpn_calculator_spec.rb:33:
+    
+    Finished in 0.023074 seconds
+    
+    6 examples, 1 failure, 2 pending
 ```
 
 * Get the example back to Green by adding a method in RpnCalculator:
-> ```ruby
-  def execute_function(function_symbol)
-  end
+```ruby
+      def execute_function(function_symbol)
+      end
 ```
 
 * Continue with the Example:
-> ```ruby
+```ruby
     it "should copy x_register to top of stack" do
       enter_number 654
       @calculator.execute_function(:enter)
@@ -790,10 +790,10 @@ Finished in 0.023074 seconds
 This both completes the Example and causes it not to work because the top method does not exist. You can verify this by running your Examples.
 
 * Add a top method:
-> ```ruby
-  def top
-    654
-  end
+```ruby
+      def top
+        654
+      end
 ```
 
 Did you notice I just had you "cheat". You should have:
@@ -808,11 +808,11 @@ Did you notice that? If not, see how easy it is to slide backwards?
 **Check-In**
 You have all passing Examples, but two are not implemented. Should you check in your work?
 * Sure:
-> ```
-Macintosh-7% !g
-git commit -a
-Created commit f77e000: Added support for the "enter" function.
- 3 files changed, 148 insertions(+), 7 deletions(-)
+```
+    Macintosh-7% !g
+    git commit -a
+    Created commit f77e000: Added support for the "enter" function.
+     3 files changed, 148 insertions(+), 7 deletions(-)
 ```
 
 **Refactor**
@@ -841,55 +841,55 @@ Here's an example that seems to express the idea:
 ```
 
 * Create this Example and then run you Examples:
-> ```
-1)
-'RPN Calculator Handling the <enter> key should cause next digit to reset the x_register' FAILED
-expected: 1,
-     got: 6541.0 (using ==)
-./rpn_calculator_spec.rb:41:
-
-Finished in 0.023285 seconds
-
-6 examples, 1 failure, 1 pending
+```
+    1)
+    'RPN Calculator Handling the <enter> key should cause next digit to reset the x_register' FAILED
+    expected: 1,
+         got: 6541.0 (using ==)
+    ./rpn_calculator_spec.rb:41:
+    
+    Finished in 0.023285 seconds
+    
+    6 examples, 1 failure, 1 pending
 ```
 
 Notice that the 1 entered was appended to the x_register. So looks like this test pushes our current production code. You might also have observed that the support method named "enter_number" is really a bit off. Since <enter> has a meaning now, this method's name should be changed. That, however, is a refactoring so you should wait until you have all Examples passing (it OK to leave the pending Example pending).
 
 * Update the calculator to work with the new Example:
-> ```
-  def digit_pressed(digit)
-    @input = '' if @x_register_should_reset
-    x_register_should_reset = false
-    @input << digit.to_s
-  end
-  
-  def execute_function(function_symbol)
-    @x_register_should_reset = true
-  end
+```
+      def digit_pressed(digit)
+        @input = '' if @x_register_should_reset
+        x_register_should_reset = false
+        @input << digit.to_s
+      end
+      
+      def execute_function(function_symbol)
+        @x_register_should_reset = true
+      end
 ```
 
 * Run your Examples, they should pass:
-> ```
-RPN Calculator Handling the <enter> key
-- should copy x_register to top of stack
-- should cause next digit to reset the x_register
-- should allow the x_register to be <entered> again (PENDING: Not Yet Implemented)
-
-Pending:
-RPN Calculator Handling the <enter> key should allow the x_register to be <entered> again (Not Yet Implemented)
-
-Finished in 0.022283 seconds
-
-6 examples, 0 failures, 1 pending
+```
+    RPN Calculator Handling the <enter> key
+    - should copy x_register to top of stack
+    - should cause next digit to reset the x_register
+    - should allow the x_register to be <entered> again (PENDING: Not Yet Implemented)
+    
+    Pending:
+    RPN Calculator Handling the <enter> key should allow the x_register to be <entered> again (Not Yet Implemented)
+    
+    Finished in 0.022283 seconds
+    
+    6 examples, 0 failures, 1 pending
 ```
 
 **Check-In**
 * Now is a good time to check in, even though you have a pending Example:
-> ```
-Macintosh-7% !g
-git commit -a
-Created commit d8902e3: Added resetting of x_register after :enter
- 3 files changed, 65 insertions(+), 3 deletions(-)
+```
+    Macintosh-7% !g
+    git commit -a
+    Created commit d8902e3: Added resetting of x_register after :enter
+     3 files changed, 65 insertions(+), 3 deletions(-)
 ```
 
 **Refactor**
@@ -900,11 +900,11 @@ Here's a list of things that you might consider for refactoring:
 
 **enter_number**
 You can either change its name or make it do what it says. Flip a coin, you probably do not have enough information to make that decision just yet. However, in the spirit of keeping things clean, I did make a decision. I kept the method name and changed its implementation:
-> ```ruby
-  def enter_number(number)
-    number.to_s.each_char{ |d| @calculator.digit_pressed d }
-    @calculator.execute_function(:enter)
-  end
+```ruby
+      def enter_number(number)
+        number.to_s.each_char{ |d| @calculator.digit_pressed d }
+        @calculator.execute_function(:enter)
+      end
 ```
 
 * Run your Examples, nothing is broken.
@@ -912,20 +912,20 @@ You can either change its name or make it do what it says. Flip a coin, you prob
 **Violation of DRY between digit_pressed and initialize**
 This is one of those cases where duplication might be OK because right now initialize is simple but it is likely to get more complex later. I was originally going to change the implementation to this (don't do this):
 ```ruby
-  def digit_pressed(digit)
-    initialize if @x_register_should_reset
-    x_register_should_reset = false
-    @input << digit.to_s
-  end
+      def digit_pressed(digit)
+        initialize if @x_register_should_reset
+        x_register_should_reset = false
+        @input << digit.to_s
+      end
 ```
 
 However, before I made that change, it occurred to me that coupling to the initialize method will probably cause problems later. Even though I'd catch that when Executing my Examples, I instead decided to introduce a simple method that documents the intent.
 
 * Add a new method:
-> ```ruby
-  def reset_input
-    @input = ''
-  end
+```ruby
+      def reset_input
+        @input = ''
+      end
 ```
 
 * Verify that nothing broke.
@@ -953,18 +953,17 @@ When these Examples reflect the update to the enter_number method, the duplicati
 
 **Check-In**
 * Check in your work.
-> ```
-Macintosh-7% !g
-git commit -a
-Created commit a8fec92: Refactored input resetting, enter_number now 
- 3 files changed, 75 insertions(+), 8 deletions(-)
+```
+    Macintosh-7% !g
+    git commit -a
+    Created commit a8fec92: Refactored input resetting, enter_number now 
+     3 files changed, 75 insertions(+), 8 deletions(-)
 ```
 
 **Summary**
 The behavior of the calculator has grown. The it also is beginning to handle the <enter> functionality. You removed duplication in the production code. It was small, and trivial and probably seemed like nothing. However, here's a principle from Jerry Weinberg:
-[[math]]
-Nothing + Nothing + Nothing == Something
-[[math]]
+
+> Nothing + Nothing + Nothing == Something
 
 If you are not maintaining your code and constantly cleaning it up, then it is decaying. Even if your code is not changing, it is decaying because the market is changing, the users' understanding of your system is changing, something is changing.
 
@@ -984,7 +983,7 @@ Those two items are officially on the punch-list. For now, let's get back to all
 
 **Example**
 * Create the following example:
-> ```ruby
+```ruby
     it "should allow the x_register to be <entered> again" do
       enter_number 654
       @calculator.execute_function(:enter)
@@ -994,26 +993,26 @@ Those two items are officially on the punch-list. For now, let's get back to all
 ```
 
 * Run your Examples:
-> ```
-Macintosh-7% spec -f s -c rpn_calculator_spec.rb
-
-RPN Calculator
-
-RPN Calculator Basic Creation
-- should be non-null after creation
-
-RPN Calculator Handling integers
-- should store a series of digits in the x register
-- should handle a string of digits with an embedded .
-
-RPN Calculator Handling the <enter> key
-- should copy x_register to top of stack
-- should cause next digit to reset the x_register
-- should allow the x_register to be <entered> again
-
-Finished in 0.022528 seconds
-
-6 examples, 0 failures
+```
+    Macintosh-7% spec -f s -c rpn_calculator_spec.rb
+    
+    RPN Calculator
+    
+    RPN Calculator Basic Creation
+    - should be non-null after creation
+    
+    RPN Calculator Handling integers
+    - should store a series of digits in the x register
+    - should handle a string of digits with an embedded .
+    
+    RPN Calculator Handling the <enter> key
+    - should copy x_register to top of stack
+    - should cause next digit to reset the x_register
+    - should allow the x_register to be <entered> again
+    
+    Finished in 0.022528 seconds
+    
+    6 examples, 0 failures
 ```
 
 Well everything is all green. So this Example might not be adding value. Rather than immediately delete it, keep a note to review it after completing the first two items on the punch-list.
@@ -1022,11 +1021,11 @@ Well everything is all green. So this Example might not be adding value. Rather 
 Should you check in? You might not be sure about the Example, but you've got that to review after just a few more Examples. Even so, go ahead and commit. If you remove the Example later, your RCS tool can handle the workload.
 
 * Commit:
-> ```
-Macintosh-7% !g
-git commit -a
-Created commit 437ee9f: Added candidate Example. Might remove it shortly,.
- 2 files changed, 51 insertions(+), 8 deletions(-)
+```
+    Macintosh-7% !g
+    git commit -a
+    Created commit 437ee9f: Added candidate Example. Might remove it shortly,.
+     2 files changed, 51 insertions(+), 8 deletions(-)
 ```
 
 **Refactor**
@@ -1043,7 +1042,7 @@ Once an example sends the execute_function method, the RpnCalculator will contin
 
 **Example**
 * Create the following example.
-> ```ruby
+```ruby
     it "should only reset after the first digit and not subsequent digits" do
       enter_number 654
       enter_number 27
@@ -1052,18 +1051,18 @@ Once an example sends the execute_function method, the RpnCalculator will contin
 ```
 
 * Run your Examples, notice the failure:
-> ```
-- should only reset after the first digit and not subsequent digits (FAILED - 1)
-
-1)
-'RPN Calculator Handling the <enter> key should only reset after the first digit and not subsequent digits' FAILED
-expected: 27,
-     got: 7.0 (using ==)
-./rpn_calculator_spec.rb:53:
-
-Finished in 0.023869 seconds
-
-7 examples, 1 failure
+```
+    - should only reset after the first digit and not subsequent digits (FAILED - 1)
+    
+    1)
+    'RPN Calculator Handling the <enter> key should only reset after the first digit and not subsequent digits' FAILED
+    expected: 27,
+         got: 7.0 (using ==)
+    ./rpn_calculator_spec.rb:53:
+    
+    Finished in 0.023869 seconds
+    
+    7 examples, 1 failure
 ```
 
 The problem is, the "reset state" is set in execute_function but never reset.
@@ -1071,21 +1070,21 @@ The problem is, the "reset state" is set in execute_function but never reset.
 There are two ways to fix this:
 **Update the digit_pressed method**
 ```ruby
-  def digit_pressed(digit)
-    if @x_register_should_reset
-      reset_input 
-      @x_register_should_reset = false
-    end
-    @input << digit.to_s
-  end
+      def digit_pressed(digit)
+        if @x_register_should_reset
+          reset_input 
+          @x_register_should_reset = false
+        end
+        @input << digit.to_s
+      end
 ```
 
 Or **Update the reset_input method**
 ```ruby
-  def reset_input
-    @input = ''
-    @x_register_should_reset = false
-  end
+      def reset_input
+        @input = ''
+        @x_register_should_reset = false
+      end
 ```
 
 Either will work. In fact, doing both works. Question, to which method does the responsibility seem to bind? If you tought reset_input, you're right.
@@ -1093,38 +1092,38 @@ Either will work. In fact, doing both works. Question, to which method does the 
 * Fix this by updating the reset_input method.
 
 * Make sure your Examples pass:
-> ```
-Macintosh-7% spec -f s -c rpn_calculator_spec.rb
-
-RPN Calculator
-
-RPN Calculator Basic Creation
-- should be non-null after creation
-
-RPN Calculator Handling integers
-- should store a series of digits in the x register
-- should handle a string of digits with an embedded .
-
-RPN Calculator Handling the <enter> key
-- should copy x_register to top of stack
-- should cause next digit to reset the x_register
-- should allow the x_register to be <entered> again
-- should only reset after the first digit and not subsequent digits
-
-Finished in 0.025639 seconds
-
-7 examples, 0 failures
+```
+    Macintosh-7% spec -f s -c rpn_calculator_spec.rb
+    
+    RPN Calculator
+    
+    RPN Calculator Basic Creation
+    - should be non-null after creation
+    
+    RPN Calculator Handling integers
+    - should store a series of digits in the x register
+    - should handle a string of digits with an embedded .
+    
+    RPN Calculator Handling the <enter> key
+    - should copy x_register to top of stack
+    - should cause next digit to reset the x_register
+    - should allow the x_register to be <entered> again
+    - should only reset after the first digit and not subsequent digits
+    
+    Finished in 0.025639 seconds
+    
+    7 examples, 0 failures
 ```
 
 [[include page="sidebar_start"]][[include page="ruby.sidebar.IDidTooMuch"]][[include page="sidebar_end"]]
 
 **Check-In**
 * Check in your work, you've made some good progress:
-> ```
-Macintosh-7% !g
-git commit -a
-Created commit e1a018b: Added Example to verify that resetting was turned off.
- 3 files changed, 139 insertions(+), 5 deletions(-)
+```
+    Macintosh-7% !g
+    git commit -a
+    Created commit e1a018b: Added Example to verify that resetting was turned off.
+     3 files changed, 139 insertions(+), 5 deletions(-)
 ```
 
 **Refactor**
@@ -1154,9 +1153,9 @@ You still have the question of whether there should or should not be a stack. An
 # Example: Enter actually puts values on the stack
 Up to this point, your examples have addressed the effect of the <enter> key on the x_register, but what about stored values? Consider the following:
 ```
-7 <enter>
-14 <enter>
-99
+    7 <enter>
+    14 <enter>
+    99
 ```
 What can you say about the RpnCalculator?
 * The x_register has a value of 99. 
@@ -1185,10 +1184,10 @@ This Example suggests that after the first <enter> you should have two operands 
 * Add the missing method with an empty implementation.
 
 * Get the example to pass:
-> ```ruby
-  def available_operands
-    2
-  end
+```ruby
+      def available_operands
+        2
+      end
 ```
 
 * Verify that all of your Examples now pass.
@@ -1219,62 +1218,62 @@ The operator_count is hard-coded, this Example will make it harder to get away w
 * Create this Example. Notice that since you added no new API calls to the RpnCalculator's interface, you can write the complete Example while following the second law of TDD/BDD.
 
 * Verify that your Example fails:
-> ```
-- should increase the operand count after each <enter> (FAILED - 1)
-
-1)
-'RPN Calculator Handling the <enter> key should increase the operand count after each <enter>' FAILED
-expected: 3,
-     got: 2 (using ==)
-./rpn_calculator_spec.rb:62:
-
-Finished in 0.026028 seconds
-
-9 examples, 1 failure
+```
+    - should increase the operand count after each <enter> (FAILED - 1)
+    
+    1)
+    'RPN Calculator Handling the <enter> key should increase the operand count after each <enter>' FAILED
+    expected: 3,
+         got: 2 (using ==)
+    ./rpn_calculator_spec.rb:62:
+    
+    Finished in 0.026028 seconds
+    
+    9 examples, 1 failure
 ```
 
 There are two ways to make this work. Here's one way to get this to pass (don't do this):
 **Update initialize**
 ```ruby
-  def initialize
-    reset_input
-    @op_count = 1
-  end
+      def initialize
+        reset_input
+        @op_count = 1
+      end
 ```
 **Update execute_function**
 ```ruby
-  def execute_function(function_symbol)
-    @x_register_should_reset = true
-    @op_count += 1
-  end 
+      def execute_function(function_symbol)
+        @x_register_should_reset = true
+        @op_count += 1
+      end 
 ```
 **Update operand_count**
 ```ruby
-  def available_operands
-    @op_count
-  end
+      def available_operands
+        @op_count
+      end
 ```
 
 Alternatively, you can use an array and actually store the values entered (notice, you change the same methods, add the same amount of code):
 **Update initialize**
 ```ruby
-  def initialize
-    reset_input
-    @operands = []
-  end
+      def initialize
+        reset_input
+        @operands = []
+      end
 ```
 **Update execute_function**
 ```ruby
-  def execute_function(function_symbol)
-    @x_register_should_reset = true
-    @operands << x_register
-  end
+      def execute_function(function_symbol)
+        @x_register_should_reset = true
+        @operands << x_register
+      end
 ```
 **Update operand_count**
 ```ruby
-  def available_operands
-    @operands.length + 1
-  end
+      def available_operands
+        @operands.length + 1
+      end
 ```
 
 Which of these is the least amount of code that will get the Example to pass? Both involve 3 lines of code added to 3 methods. One uses an integer, one uses an array, and an array is more complex than an integer, though in Ruby they are both objects. 
@@ -1304,7 +1303,7 @@ The second solution is a good one and it is not over design given the domain con
 A quick review of the code shows a hard-coded top method. Now that you have a stack in place, can you simply return the "top" of the array?
 
 * Experiment, change the implementation of top:
-> ```
+```
   def top
     @operands.last
   end 
@@ -1328,16 +1327,16 @@ Right now, there's no way to know if what is on the stack is the right thing on 
 **Example**
 Here is an example that verifies the stack behavior of the RpnCalculator:
 ```ruby
-  describe "Stack" do
-    it "should contain the correct items in the correct order" do
-      enter_number 4
-      enter_number 19
-      enter_number -1
-      @calculator.pop!.should == -1
-      @calculator.pop!.should == 19
-      @calculator.pop!.should == 4
-    end
-  end 
+      describe "Stack" do
+        it "should contain the correct items in the correct order" do
+          enter_number 4
+          enter_number 19
+          enter_number -1
+          @calculator.pop!.should == -1
+          @calculator.pop!.should == 19
+          @calculator.pop!.should == 4
+        end
+      end 
 ```
 
 First observation: This code will not run because there is no pop! method on the RpnCalcualtor.
@@ -1345,18 +1344,18 @@ First observation: This code will not run because there is no pop! method on the
 * Create the Example, verify that the test fails as expected.
 
 * Add an empty pop! method to verify that the Example fails for the right reason:
-> ```ruby
-  def pop!
-  end
+```ruby
+      def pop!
+      end
 ```
 
 * Run your Examples.
 
 * Implement pop!:
-> ```ruby
-  def pop!
-    @operands.pop
-  end
+```ruby
+      def pop!
+        @operands.pop
+      end
 ```
 
 * Verify that your Examples pass.
@@ -1390,36 +1389,36 @@ These two are closely related, so here, for the first time, are two complete exa
 ```
 
 * Create these Examples, they will both fail the same way:
-> ```
-- should return 0 when pop!'ing from an empty stack (FAILED - 1)
-- should return 0 for top when stack empty (FAILED - 2)
-
-1)
-'RPN Calculator Stack should return 0 when pop!'ing from an empty stack' FAILED
-expected: 0,
-     got: nil (using ==)
-./rpn_calculator_spec.rb:77:
-
-2)
-'RPN Calculator Stack should return 0 for top when stack empty' FAILED
-expected: 0,
-     got: nil (using ==)
-./rpn_calculator_spec.rb:81:
-
-Finished in 0.031744 seconds
-
-12 examples, 2 failures
+```
+    - should return 0 when pop!'ing from an empty stack (FAILED - 1)
+    - should return 0 for top when stack empty (FAILED - 2)
+    
+    1)
+    'RPN Calculator Stack should return 0 when pop!'ing from an empty stack' FAILED
+    expected: 0,
+         got: nil (using ==)
+    ./rpn_calculator_spec.rb:77:
+    
+    2)
+    'RPN Calculator Stack should return 0 for top when stack empty' FAILED
+    expected: 0,
+         got: nil (using ==)
+    ./rpn_calculator_spec.rb:81:
+    
+    Finished in 0.031744 seconds
+    
+    12 examples, 2 failures
 ```
 
 * When code pop's values off of an empty array, the array returns nil. The same thing happens when code calls top. This will fix both of your failing Examples:
-> ```ruby
-  def top
-    @operands.length > 0 ? @operands.last : 0
-  end
-      
-  def pop!
-    @operands.length > 0 ? @operands.pop : 0
-  end
+```ruby
+      def top
+        @operands.length > 0 ? @operands.last : 0
+      end
+          
+      def pop!
+        @operands.length > 0 ? @operands.pop : 0
+      end
 ```
 
 * Make these changes and verify all of your Examples are passing.
@@ -1440,22 +1439,22 @@ However, in Ruby, classes are never closed. You can add methods to a class anyti
 
 This is crazy. Here is an example of how you could do that (don't do this):
 ```ruby
-  def create_operand_stack
-    stack = []
-    def stack.pop!
-      return length > 0 ? super : 0
-    end
-
-    def stack.top
-      return length > 0 ? last : 0
-    end
-    stack
-  end
-
-  custom_stack = create_operand_stack
-
-  puts custom_stack.top == 0
-  puts custom_stack.pop! == 0
+      def create_operand_stack
+        stack = []
+        def stack.pop!
+          return length > 0 ? super : 0
+        end
+    
+        def stack.top
+          return length > 0 ? last : 0
+        end
+        stack
+      end
+    
+      custom_stack = create_operand_stack
+    
+      puts custom_stack.top == 0
+      puts custom_stack.pop! == 0
 ```
 
 The result from running this will be "true" printed twice. But if you try to simply create an array, you will not see the same results. Neither method is defined on the Array class.
@@ -1471,33 +1470,33 @@ Before you start, did you notice that the Context for the last three Examples wa
 Next, you are going to do some "big" changes. It won't take long, but this will be the longest amount of time the tutorial will have you work before you can see your Examples running. Note your reaction to the change.
 
 * Change the structure of rpn_calculator_spec.rb:
-> ```ruby
-describe "RPN Calculator" do
-  ...
-end
-
-describe "Stack" do
-  ...
-end
+```ruby
+    describe "RPN Calculator" do
+      ...
+    end
+    
+    describe "Stack" do
+      ...
+    end
 ```
 
 If you ran your examples now, the ones in the Stack context will fail. Why? Because they no longer pick up the automatically-created calculator object form the before in the "RPN Calculator" context.
 
 * Update the "Stack" context:
-> ```ruby
-describe "OperandStack" do
-  before (:each) do
-    @stack = OperandStack.new
-  end
-
-  it "should return 0 when pop!'ing from an empty stack" do
-    @stack.pop!.should == 0
-  end
-
-  it "should return 0 for top when stack empty" do
-    @stack.top.should == 0
-  end
-end
+```ruby
+    describe "OperandStack" do
+      before (:each) do
+        @stack = OperandStack.new
+      end
+    
+      it "should return 0 when pop!'ing from an empty stack" do
+        @stack.pop!.should == 0
+      end
+    
+      it "should return 0 for top when stack empty" do
+        @stack.top.should == 0
+      end
+    end
 ```
 
 This still won't pass. There's no OperandStack class.
@@ -1505,103 +1504,103 @@ This still won't pass. There's no OperandStack class.
 * Move the entire OperandStack context into a new file called "operand_stack_spec.rb".
 
 * Now your rpn_calculator_spec will pass:
-> ```ruby
-Macintosh-7% spec -f s -c rpn_calculator_spec.rb     
-
-RPN Calculator
-
-RPN Calculator Basic Creation
-- should be non-null after creation
-
-RPN Calculator Handling integers
-- should store a series of digits in the x register
-- should handle a string of digits with an embedded .
-
-RPN Calculator Handling the <enter> key
-- should copy x_register to top of stack
-- should cause next digit to reset the x_register
-- should allow the x_register to be <entered> again
-- should only reset after the first digit and not subsequent digits
-- should have two operands available after one <enter>
-- should increase the operand count after each <enter>
-- should contain the correct items in the correct order
-
-Finished in 0.027715 seconds
-
-10 examples, 0 failures
+```bash
+    Macintosh-7% spec -f s -c rpn_calculator_spec.rb     
+    
+    RPN Calculator
+    
+    RPN Calculator Basic Creation
+    - should be non-null after creation
+    
+    RPN Calculator Handling integers
+    - should store a series of digits in the x register
+    - should handle a string of digits with an embedded .
+    
+    RPN Calculator Handling the <enter> key
+    - should copy x_register to top of stack
+    - should cause next digit to reset the x_register
+    - should allow the x_register to be <entered> again
+    - should only reset after the first digit and not subsequent digits
+    - should have two operands available after one <enter>
+    - should increase the operand count after each <enter>
+    - should contain the correct items in the correct order
+    
+    Finished in 0.027715 seconds
+    
+    10 examples, 0 failures
 ```
 
 * Next, create a new class called OperandStack in a file called opeand_stack.rb:
-> ```ruby
-class OperandStack
-  def initialize
-    @operands = []
-  end
-  
-  def top
-    @operands.length > 0 ? @operands.last : 0
-  end
-
-  def available_operands
-    @operands.length + 1
-  end
-
-  def pop!
-    @operands.length > 0 ? @operands.pop : 0
-  end
-  
-  def <<(value)
-    @operands << value
-  end
-end
+```ruby
+    class OperandStack
+      def initialize
+        @operands = []
+      end
+      
+      def top
+        @operands.length > 0 ? @operands.last : 0
+      end
+    
+      def available_operands
+        @operands.length + 1
+      end
+    
+      def pop!
+        @operands.length > 0 ? @operands.pop : 0
+      end
+      
+      def <<(value)
+        @operands << value
+      end
+    end
 ```
 
 Note that these are mostly just//** copies**// of methods from RpnCalculator. There is one new method, <<, which just delegates to a method of the same name.
 
 * Verify that your operand_stack_spec.rb now passes:
-> ```
-Macintosh-7% spec -f s -c operand_stack_spec.rb
-
-OperandStack
-- should return 0 when pop!'ing from an empty stack
-- should return 0 for top when stack empty
-
-Finished in 0.013598 seconds
-
-2 examples, 0 failures
+```
+    Macintosh-7% spec -f s -c operand_stack_spec.rb
+    
+    OperandStack
+    - should return 0 when pop!'ing from an empty stack
+    - should return 0 for top when stack empty
+    
+    Finished in 0.013598 seconds
+    
+    2 examples, 0 failures
 ```
 
 Did you fully test this class? No. What you instead did was extract a class and then copy the tests that were directly testing it. You are not writing new code, you are refactoring the solution.
 
 * Run all of your Examples, everything should be passing:
-> ```
-Macintosh-7% spec -f s -c *_spec.rb
-
-OperandStack
-- should return 0 when pop!'ing from an empty stack
-- should return 0 for top when stack empty
-
-RPN Calculator
-
-RPN Calculator Basic Creation
-- should be non-null after creation
-
-RPN Calculator Handling integers
-- should store a series of digits in the x register
-- should handle a string of digits with an embedded .
-
-RPN Calculator Handling the <enter> key
-- should copy x_register to top of stack
-- should cause next digit to reset the x_register
-- should allow the x_register to be <entered> again
-- should only reset after the first digit and not subsequent digits
-- should have two operands available after one <enter>
-- should increase the operand count after each <enter>
-- should contain the correct items in the correct order
-
-Finished in 0.029495 seconds
-
-12 examples, 0 failures
+```
+    Macintosh-7% spec -f s -c *_spec.rb
+    
+    OperandStack
+    - should return 0 when pop!'ing from an empty stack
+    - should return 0 for top when stack empty
+    
+    RPN Calculator
+    
+    RPN Calculator Basic Creation
+    - should be non-null after creation
+    
+    RPN Calculator Handling integers
+    - should store a series of digits in the x register
+    - should handle a string of digits with an embedded .
+    
+    RPN Calculator Handling the <enter> key
+    - should copy x_register to top of stack
+    - should cause next digit to reset the x_register
+    - should allow the x_register to be <entered> again
+    - should only reset after the first digit and not subsequent digits
+    - should have two operands available after one <enter>
+    - should increase the operand count after each <enter>
+    - should contain the correct items in the correct order
+    
+    Finished in 0.029495 seconds
+    
+    12 examples, 0 failures
 ```
 
 **Intra-refactoring Check-In**
@@ -1613,57 +1612,57 @@ Now you should refactor the RpnCalcualtor to use your newly-created class. As wi
 * Add "require 'operand_stack' to the beginning of your rpn_calculator.rb file.
 
 * Update the initialize method:
-> ```ruby
-  def initialize
-    reset_input 
-    @operands = []
-    @operand_stack = OperandStack.new
-  end
+```ruby
+      def initialize
+        reset_input 
+        @operands = []
+        @operand_stack = OperandStack.new
+      end
 ```
 
 * Run your Examples, everything should still pass.
 
 * Update execute_function to duplicate the work of storing the x_register:
-> ```ruby
-  def execute_function(function_symbol)
-    @x_register_should_reset = true
-    @operands << x_register
-    @operand_stack << x_register
-  end
+```ruby
+      def execute_function(function_symbol)
+        @x_register_should_reset = true
+        @operands << x_register
+        @operand_stack << x_register
+      end
 ```
 
 * Run your Examples, everything should still pass.
 
 * Update top:
-> ```ruby
-  def top
-    @operand_stack.top
-  end
+```ruby
+      def top
+        @operand_stack.top
+      end
 ```
 
 * Run your Examples, everything should still pass.
 
 * Update pop!:
-> ```ruby
-  def pop!
-    @operand_stack.pop!
-  end
+```ruby
+      def pop!
+        @operand_stack.pop!
+      end
 ```
 
 * Reviewing available_operands, you notice that there's no length method on Operand stack. So add it:
-> ```ruby
-  def length
-    @operands.length
-  end
+```ruby
+      def length
+        @operands.length
+      end
 ```
 
 * Run your Examples, everything should still pass.
 
 * Update available_operands:
-> ```ruby
-  def available_operands
-    @operand_stack.length + 1
-  end
+```ruby
+      def available_operands
+        @operand_stack.length + 1
+      end
 ```
 
 * At this point, you can remove all code that refers to @operands (you'll change 2 places).
@@ -1691,180 +1690,180 @@ When you are just learning TDD or BDD, this kind of stuff is going to happen. Le
 Here's one example of what all of your code should look like about now.
 **rpn_calculator_spec.rb**
 ```ruby
-require 'rpn_calculator'
-  
-describe "RPN Calculator" do
-  before(:each) do
-     @calculator = RpnCalculator.new
-  end 
+    require 'rpn_calculator'
+      
+    describe "RPN Calculator" do
+      before(:each) do
+         @calculator = RpnCalculator.new
+      end 
+        
+      def enter_number(number) 
+        number.to_s.each_char{ |d| @calculator.digit_pressed d }
+        @calculator.execute_function(:enter)
+      end
+      
+      describe "Basic Creation" do
+        it "should be non-null after creation" do
+          @calculator.should_not be nil
+        end
+      end
+      
+      describe "Handling integers" do
+        it "should store a series of digits in the x register" do
+          enter_number 42
+          @calculator.x_register.should == 42
+        end
     
-  def enter_number(number) 
-    number.to_s.each_char{ |d| @calculator.digit_pressed d }
-    @calculator.execute_function(:enter)
-  end
-  
-  describe "Basic Creation" do
-    it "should be non-null after creation" do
-      @calculator.should_not be nil
+        it "should handle a string of digits with an embedded ." do
+          enter_number 13.31
+          @calculator.x_register.should == 13.31
+        end
+      end
+    
+      describe "Handling the <enter> key" do
+        before(:each) do
+           enter_number 654
+        end
+    
+        it "should copy x_register to top of stack" do
+          @calculator.top.should == 654
+        end
+    
+        it "should cause next digit to reset the x_register" do
+          @calculator.digit_pressed 1
+          @calculator.x_register.should == 1
+        end
+    
+        it "should allow the x_register to be <entered> again" do
+          @calculator.execute_function(:enter)
+          @calculator.top.should == 654
+          @calculator.x_register.should == 654
+        end
+    
+        it "should only reset after the first digit and not subsequent digits" do
+          enter_number 27
+          @calculator.x_register.should == 27
+        end
+    
+        it "should have two operands available after one <enter>" do
+          @calculator.available_operands.should == 2
+        end
+    
+        it "should increase the operand count after each <enter>" do
+          enter_number 13
+          @calculator.available_operands.should == 3
+        end
+    
+        it "should contain the correct items in the correct order" do
+          enter_number 4
+          enter_number 19
+          enter_number -1
+          @calculator.pop!.should == -1
+          @calculator.pop!.should == 19
+          @calculator.pop!.should == 4
+        end
+      end
     end
-  end
-  
-  describe "Handling integers" do
-    it "should store a series of digits in the x register" do
-      enter_number 42
-      @calculator.x_register.should == 42
-    end
-
-    it "should handle a string of digits with an embedded ." do
-      enter_number 13.31
-      @calculator.x_register.should == 13.31
-    end
-  end
-
-  describe "Handling the <enter> key" do
-    before(:each) do
-       enter_number 654
-    end
-
-    it "should copy x_register to top of stack" do
-      @calculator.top.should == 654
-    end
-
-    it "should cause next digit to reset the x_register" do
-      @calculator.digit_pressed 1
-      @calculator.x_register.should == 1
-    end
-
-    it "should allow the x_register to be <entered> again" do
-      @calculator.execute_function(:enter)
-      @calculator.top.should == 654
-      @calculator.x_register.should == 654
-    end
-
-    it "should only reset after the first digit and not subsequent digits" do
-      enter_number 27
-      @calculator.x_register.should == 27
-    end
-
-    it "should have two operands available after one <enter>" do
-      @calculator.available_operands.should == 2
-    end
-
-    it "should increase the operand count after each <enter>" do
-      enter_number 13
-      @calculator.available_operands.should == 3
-    end
-
-    it "should contain the correct items in the correct order" do
-      enter_number 4
-      enter_number 19
-      enter_number -1
-      @calculator.pop!.should == -1
-      @calculator.pop!.should == 19
-      @calculator.pop!.should == 4
-    end
-  end
-end
 ```
 
 **rpn_calculator.rb**
 ```ruby
-require 'operand_stack'
-
-class RpnCalculator
-  def initialize
-    reset_input
-    @operand_stack = OperandStack.new
-  end
-
-  def digit_pressed(digit)
-    reset_input if @x_register_should_reset
-    @input << digit.to_s
-  end
-
-  def reset_input
-    @input = ''
-    @x_register_should_reset = false
-  end
-
-  def x_register
-    @input.to_f
-  end
-
-  def execute_function(function_symbol)
-    @x_register_should_reset = true
-    @operand_stack << x_register
-  end
-
-  def top
-    @operand_stack.top
-  end
-
-  def available_operands
-    @operand_stack.length + 1
-  end
-
-  def pop!
-    @operand_stack.pop!
-  end
-end
+    require 'operand_stack'
+    
+    class RpnCalculator
+      def initialize
+        reset_input
+        @operand_stack = OperandStack.new
+      end
+    
+      def digit_pressed(digit)
+        reset_input if @x_register_should_reset
+        @input << digit.to_s
+      end
+    
+      def reset_input
+        @input = ''
+        @x_register_should_reset = false
+      end
+    
+      def x_register
+        @input.to_f
+      end
+    
+      def execute_function(function_symbol)
+        @x_register_should_reset = true
+        @operand_stack << x_register
+      end
+    
+      def top
+        @operand_stack.top
+      end
+    
+      def available_operands
+        @operand_stack.length + 1
+      end
+    
+      def pop!
+        @operand_stack.pop!
+      end
+    end
 ```
 
 **operand_stack_spec.rb**
 ```ruby
-require "operand_stack"
-  
-describe "OperandStack" do
-  before (:each) do
-    @stack = OperandStack.new
-  end 
-    
-  it "should return 0 when pop!'ing from an empty stack" do
-    @stack.pop!.should == 0
-  end 
-    
-  it "should return 0 for top when stack empty" do
-    @stack.top.should == 0
-  end 
-end 
+    require "operand_stack"
+      
+    describe "OperandStack" do
+      before (:each) do
+        @stack = OperandStack.new
+      end 
+        
+      it "should return 0 when pop!'ing from an empty stack" do
+        @stack.pop!.should == 0
+      end 
+        
+      it "should return 0 for top when stack empty" do
+        @stack.top.should == 0
+      end 
+    end 
 ```
 
 **operand_stack.rb**
 ```ruby
-class OperandStack
-  def initialize
-    @operands = []
-  end 
+    class OperandStack
+      def initialize
+        @operands = []
+      end 
+        
+      def top
+        @operands.length > 0 ? @operands.last : 0
+      end
+      
+      def available_operands
+        @operands.length + 1
+      end
     
-  def top
-    @operands.length > 0 ? @operands.last : 0
-  end
-  
-  def available_operands
-    @operands.length + 1
-  end
-
-  def pop!
-    @operands.length > 0 ? @operands.pop : 0
-  end
-  
-  def <<(value)
-    @operands << value
-  end
-  
-  def length
-    @operands.length
-  end
-end 
+      def pop!
+        @operands.length > 0 ? @operands.pop : 0
+      end
+      
+      def <<(value)
+        @operands << value
+      end
+      
+      def length
+        @operands.length
+      end
+    end 
 ```
 
 # Example: A Binary Operator
 Some time ago you created your first Example to exercise the <enter> key. That resulted in the following method:
 ```ruby
-  def execute_function(function_symbol)
-    @x_register_should_reset = true
-    @operand_stack << x_register
-  end
+      def execute_function(function_symbol)
+        @x_register_should_reset = true
+        @operand_stack << x_register
+      end
 ```
 
 Now it is time start executing more functions. The first function you'll support is +.
@@ -1872,39 +1871,39 @@ Now it is time start executing more functions. The first function you'll support
 **Example**
 Here is a basic example to get started:
 ```
-  describe "Basic Math Operators" do
-    it "should add the x_regiser and the top of the stack" do
-      enter_number 46
-      @calculator.execute_function(:+)
-      @calculator.x_register.should == 92
-    end
-  end
+      describe "Basic Math Operators" do
+        it "should add the x_regiser and the top of the stack" do
+          enter_number 46
+          @calculator.execute_function(:+)
+          @calculator.x_register.should == 92
+        end
+      end
 ```
 
 Why is the result 92? The support method enter_number
 * Create this Example and run it. The result is not quite right:
-> ```
-1)
-'RPN Calculator Basic Math Operators should add the x_regiser and the top of the stack' FAILED
-expected: 700,
-     got: 46.0 (using ==)
-./rpn_calculator_spec.rb:79:
-
-Finished in 0.03118 seconds
-
-13 examples, 1 failure
+```
+    1)
+    'RPN Calculator Basic Math Operators should add the x_regiser and the top of the stack' FAILED
+    expected: 700,
+         got: 46.0 (using ==)
+    ./rpn_calculator_spec.rb:79:
+    
+    Finished in 0.03118 seconds
+    
+    13 examples, 1 failure
 ```
 
 * Getting this to pass is a "snap":
-> ```ruby
-  def execute_function(function_symbol)
-    if function_symbol == :enter
-      @x_register_should_reset = true
-      @operand_stack << x_register
-    elsif
-      @input = 92.to_s
-    end
-  end
+```ruby
+      def execute_function(function_symbol)
+        if function_symbol == :enter
+          @x_register_should_reset = true
+          @operand_stack << x_register
+        elsif
+          @input = 92.to_s
+        end
+      end
 ```
 
 * Get your Examples passing.
@@ -1920,28 +1919,28 @@ OK, the method you just updated, execute_function, is a bit of a mess. It does t
 So you'll separate this for now.
 
 * Extract two methods, enter, +:
-> ```ruby
-  def enter
-    @x_register_should_reset = true
-    @operand_stack << x_register
-  end 
-      
-  def +
-    @input = 92.to_s
-  end
+```ruby
+      def enter
+        @x_register_should_reset = true
+        @operand_stack << x_register
+      end 
+          
+      def +
+        @input = 92.to_s
+      end
 ```
 
 * Make sure your Examples still pass.
 
 * Update the execute_function to use those two methods:
-> ```ruby
-  def execute_function(function_symbol)
-    if function_symbol == :enter
-      enter
-    else
-      self.+
-    end
-  end
+```ruby
+      def execute_function(function_symbol)
+        if function_symbol == :enter
+          enter
+        else
+          self.+
+        end
+      end
 ```
 
 * Update your RpnCalculator, verify that your Examples are all passing.
@@ -1966,11 +1965,11 @@ What should happen with + when there are no operands? Should it fail? Should it 
 * Create this Example. Verify that it fails.
 
 * Update the + method to actually do some work.
-> ```ruby
-  def enter
-    @x_register_should_reset = true
-    @operand_stack << x_register
-  end
+```ruby
+      def enter
+        @x_register_should_reset = true
+        @operand_stack << x_register
+      end
 ```
 
 * Run your Example, make sure it works.
@@ -2006,27 +2005,27 @@ Like <enter>, after perform +, the next character typed should clear the x_regis
 ```
 
 * Create this Example. Run it and you'll notice that it fails:
-> ```
-1)
-'RPN Calculator Basic Math Operators should reset the x_register after +' FAILED
-expected: 8,
-     got: 9.08 (using ==)
-./rpn_calculator_spec.rb:91:
-
-Finished in 0.032479 seconds
-
-16 examples, 1 failure
+```
+    1)
+    'RPN Calculator Basic Math Operators should reset the x_register after +' FAILED
+    expected: 8,
+         got: 9.08 (using ==)
+    ./rpn_calculator_spec.rb:91:
+    
+    Finished in 0.032479 seconds
+    
+    16 examples, 1 failure
 ```
 
 * Make a quick change to the + method to fix this:
-> ```ruby
-  def +
-    lhs = @operand_stack.pop!
-    rhs = x_register
-    result = lhs + rhs
-    @input = result.to_s
-    @x_register_should_reset = true
-  end
+```ruby
+      def +
+        lhs = @operand_stack.pop!
+        rhs = x_register
+        result = lhs + rhs
+        @input = result.to_s
+        @x_register_should_reset = true
+      end
 ```
 
 * Run your Examples, they should all pass.
@@ -2043,10 +2042,10 @@ There is a duplicated line in the enter and + methods:
 At the very least, this line of code could be put into a well-named method.
 
 * Create a new method (if your IDE supports Extract method, use it):
-> ```ruby
-  def set_override_mode
-    @x_register_should_reset = true
-  end
+```ruby
+      def set_override_mode
+        @x_register_should_reset = true
+      end
 ```
 
 * Make sure your Examples still pass.
@@ -2102,24 +2101,24 @@ The last two Examples are OK, though do you believe that the differences between
 
 Start by making an improvement to the bottom part of the + method:
 * Add a new method that is private (since private sets subsequent methods, make this the last method in your RpnCalculatorClass):
-> ```ruby
-  private
-  def reset_x_register(value)
-    @input = value.to_s
-    set_override_mode
-  end
+```ruby
+      private
+      def reset_x_register(value)
+        @input = value.to_s
+        set_override_mode
+      end
 ```
 
 * Verify your Examples still pass.
 
 * Update +:
-> ```ruby
-  def +
-    lhs = @operand_stack.pop!
-    rhs = x_register
-    result = lhs + rhs
-    reset_x_register result
-  end
+```ruby
+      def +
+        lhs = @operand_stack.pop!
+        rhs = x_register
+        result = lhs + rhs
+        reset_x_register result
+      end
 ```
 
 * Verify your Examples still pass.
@@ -2155,35 +2154,35 @@ Were you surprised by the result? The results suggest that instead of -, your ca
 
 A quick review of execute_function should give you a clue:
 ```ruby
-  def execute_function(function_symbol)
-    if function_symbol == :enter
-      enter
-    else
-      self.+
-    end
-  end
+      def execute_function(function_symbol)
+        if function_symbol == :enter
+          enter
+        else
+          self.+
+        end
+      end
 ```
 
 So if something is not :enter, then it is :+. Add that to your punch-list:
 * Your execute_function should fail if the operator is not found.
 
 * However, you are not working on that Example. So update this method to call -:
-> ```ruby
-  def execute_function(function_symbol)
-    if function_symbol == :enter
-      enter
-    elsif function_symbol == :+
-      self.+
-    elsif function_symbol == :-
-      self.-
-    end
-  end
+```ruby
+      def execute_function(function_symbol)
+        if function_symbol == :enter
+          enter
+        elsif function_symbol == :+
+          self.+
+        elsif function_symbol == :-
+          self.-
+        end
+      end
 ```
 
 * Now your code is missing the function - (which you discovered by running your Examples, right?), so add it:
-> ```ruby
-  def -
-  end
+```ruby
+      def -
+      end
 ```
 
 * Run your Example, now it should be failing for the right reason (value did not match).
@@ -2193,13 +2192,13 @@ You have two obvious choices here:
 * Create a duplicate of the + method and change it to be -
 
 * Rather than following the third rule, you can safely duplicate the + method and update it (you'll be refactoring this soon anyway):
-> ```ruby
-  def -
-    lhs = @operand_stack.pop!
-    rhs = x_register
-    result = lhs - rhs
-    reset_x_register result
-  end
+```ruby
+      def -
+        lhs = @operand_stack.pop!
+        rhs = x_register
+        result = lhs - rhs
+        reset_x_register result
+      end
 ```
 
 * Verify that all of your Examples are passing.
@@ -2209,21 +2208,21 @@ Check in, you have a lot on your punch-list.
 
 **Refactor**
 There are several things on your punch-list:
-# Adding a new operator requires too much work: update a method, add a new method, and write that method. More importantly, it requires changing an existing method which is in direct violation of the open/close principle.
-# The execute_function does not indicate if the function does not exist.
-# There is duplicated code between the + and - methods. (This was on your list, wasn't it?)
-# The difference between enter_number and digit_pressed seems isn't obvious.
-# The Examples should not have such a mix of lines that use fields and support methods.
+* Adding a new operator requires too much work: update a method, add a new method, and write that method. More importantly, it requires changing an existing method which is in direct violation of the open/close principle.
+* The execute_function does not indicate if the function does not exist.
+* There is duplicated code between the + and - methods. (This was on your list, wasn't it?)
+* The difference between enter_number and digit_pressed seems isn't obvious.
+* The Examples should not have such a mix of lines that use fields and support methods.
 
 Looks like you have a lot of work.
 
 First, if you have been chomping at the bits to fix execute_function, now is the time to do so:
 
 * Update execute_function:
-> ```ruby
-  def execute_function(function_symbol)
-    self.send(function_symbol)
-  end
+```ruby
+      def execute_function(function_symbol)
+        self.send(function_symbol)
+      end
 ```
 
 * Run your Examples to verify that they all pass.
@@ -2241,31 +2240,31 @@ Even so, this is an improvement and it follows a Ruby idiom.
 Next, you'll remove the violation of the DRY principle:
 
 * Add a new private method to your RpnCalculator method:
-> ```ruby
-  def execute_binary_operator
-    lhs = @operand_stack.pop!
-    rhs = x_register
-    result = yield lhs, rhs
-    reset_x_register result
-  end
+```ruby
+      def execute_binary_operator
+        lhs = @operand_stack.pop!
+        rhs = x_register
+        result = yield lhs, rhs
+        reset_x_register result
+      end
 ```
 
 * Make sure your Examples still pass.
 
 * Update the + method:
-> ```ruby
-  def +
-    execute_binary_operator { |lhs, rhs| lhs + rhs }
-  end
+```ruby
+      def +
+        execute_binary_operator { |lhs, rhs| lhs + rhs }
+      end
 ```
 
 * Run your Examples, make sure they still pass.
 
 * Update the - method:
-> ```ruby
-  def +
-    execute_binary_operator { |lhs, rhs| lhs + rhs }
-  end
+```ruby
+      def +
+        execute_binary_operator { |lhs, rhs| lhs + rhs }
+      end
 ```
 
 * Run your Examples, make sure they still pass.
@@ -2275,24 +2274,24 @@ Looks like you've managed to fix the first three things on your punch-list with 
 Before calling this refactoring session done, clean up your Examples to make this a bit more self-explanatory.
 
 * Add some new support methods (put these at the same place as enter_number):
-> ```ruby
-  def type(number)
-    number.to_s.each_char{ |d| @calculator.digit_pressed d }
-  end
-
-  def press(a_symbol)
-    @calculator.send(a_symbol)
-  end
-
-  def validate_x_register(expected)
-    @calculator.x_register.should == expected
-  end
+```ruby
+      def type(number)
+        number.to_s.each_char{ |d| @calculator.digit_pressed d }
+      end
+    
+      def press(a_symbol)
+        @calculator.send(a_symbol)
+      end
+    
+      def validate_x_register(expected)
+        @calculator.x_register.should == expected
+      end
 ```
 
 * Make sure your examples still pass.
 
 * Update "should subtract the first ...":
-> ```ruby
+```ruby
     it "should subtract the first number entered from the second" do
       type 4
       press :enter
@@ -2308,143 +2307,143 @@ Before calling this refactoring session done, clean up your Examples to make thi
 
 However, just to place a (somewhat arbitrary) stake in the ground, here's an updated version of rpn_calculator_spec.rb:
 ```ruby
-require 'rpn_calculator'
-
-describe "RPN Calculator" do
-  before(:each) do
-     @calculator = RpnCalculator.new
-  end
-
-  def type(number)
-    number.to_s.each_char{ |d| @calculator.digit_pressed d }
-  end
-
-  def press(a_symbol)
-    @calculator.execute_function a_symbol
-  end
-
-  def validate_x_register(expected)
-    @calculator.x_register.should == expected
-  end
-
-  def validate_top(expected)
-    @calculator.top.should == expected
-  end
-
-  def validate_operands(expected)
-    @calculator.available_operands.should == expected
-  end
-
-  def validate_pop!(expected)
-    @calculator.pop!.should == expected
-  end
-
-  describe "Basic Creation" do
-    it "should be non-null after creation" do
-      @calculator.should_not be nil
+    require 'rpn_calculator'
+    
+    describe "RPN Calculator" do
+      before(:each) do
+         @calculator = RpnCalculator.new
+      end
+    
+      def type(number)
+        number.to_s.each_char{ |d| @calculator.digit_pressed d }
+      end
+    
+      def press(a_symbol)
+        @calculator.execute_function a_symbol
+      end
+    
+      def validate_x_register(expected)
+        @calculator.x_register.should == expected
+      end
+    
+      def validate_top(expected)
+        @calculator.top.should == expected
+      end
+    
+      def validate_operands(expected)
+        @calculator.available_operands.should == expected
+      end
+    
+      def validate_pop!(expected)
+        @calculator.pop!.should == expected
+      end
+    
+      describe "Basic Creation" do
+        it "should be non-null after creation" do
+          @calculator.should_not be nil
+        end
+      end
+      
+      describe "Handling integers" do
+        it "should store a series of digits in the x register" do
+          type 42
+          press :enter
+          validate_x_register 42
+        end
+    
+        it "should handle a string of digits with an embedded ." do
+          type 13.31
+          validate_x_register 13.31
+        end
+      end
+    
+      describe "Handling the <enter> key" do
+        before(:each) do
+          type 654
+          press :enter
+        end
+    
+        it "should copy x_register to top of stack" do
+          validate_top 654
+        end
+    
+        it "should cause next digit to reset the x_register" do
+          @calculator.digit_pressed 1
+          @calculator.x_register.should == 1
+        end
+    
+        it "should allow the x_register to be <entered> again" do
+          press :enter
+          validate_top 654  
+          validate_x_register 654
+        end
+    
+        it "should only reset after the first digit and not subsequent digits" do
+          type 27
+          validate_x_register 27
+        end
+    
+        it "should have two operands available after one <enter>" do
+          validate_operands 2
+        end
+    
+        it "should increase the operand count after each <enter>" do
+          type 13
+          press :enter
+          validate_operands 3
+        end
+    
+        it "should contain the correct items in the correct order" do
+          type 4
+          press :enter
+          type 19
+          press :enter
+          type -1
+          press :enter
+          validate_pop! -1
+          validate_pop! 19
+          validate_pop! 4
+        end
+      end
+    
+      describe "Basic Math Operators" do
+        it "should add the x_regiser and the top of the stack" do
+          type 46
+          press :enter
+          press :+
+          validate_x_register 92
+        end
+    
+        it "should result in 0 when the calculator is empty" do
+          press :+
+          validate_x_register 0
+        end
+    
+        it "should reset the x_register after +" do
+          type 9
+          press :+
+          type 8
+          validate_x_register 8
+        end
+    
+        it "should should reduce the stack by one" do
+          type 9
+          press :enter
+          type 8
+          press :enter
+          press :+
+          @calculator.available_operands.should == 2
+        end
+    
+        it "should subtract the first number entered from the second" do
+          type 4
+          press :enter  
+          type 9
+          press :-
+          validate_x_register -5
+        end
+      end
     end
-  end
-  
-  describe "Handling integers" do
-    it "should store a series of digits in the x register" do
-      type 42
-      press :enter
-      validate_x_register 42
-    end
-
-    it "should handle a string of digits with an embedded ." do
-      type 13.31
-      validate_x_register 13.31
-    end
-  end
-
-  describe "Handling the <enter> key" do
-    before(:each) do
-      type 654
-      press :enter
-    end
-
-    it "should copy x_register to top of stack" do
-      validate_top 654
-    end
-
-    it "should cause next digit to reset the x_register" do
-      @calculator.digit_pressed 1
-      @calculator.x_register.should == 1
-    end
-
-    it "should allow the x_register to be <entered> again" do
-      press :enter
-      validate_top 654  
-      validate_x_register 654
-    end
-
-    it "should only reset after the first digit and not subsequent digits" do
-      type 27
-      validate_x_register 27
-    end
-
-    it "should have two operands available after one <enter>" do
-      validate_operands 2
-    end
-
-    it "should increase the operand count after each <enter>" do
-      type 13
-      press :enter
-      validate_operands 3
-    end
-
-    it "should contain the correct items in the correct order" do
-      type 4
-      press :enter
-      type 19
-      press :enter
-      type -1
-      press :enter
-      validate_pop! -1
-      validate_pop! 19
-      validate_pop! 4
-    end
-  end
-
-  describe "Basic Math Operators" do
-    it "should add the x_regiser and the top of the stack" do
-      type 46
-      press :enter
-      press :+
-      validate_x_register 92
-    end
-
-    it "should result in 0 when the calculator is empty" do
-      press :+
-      validate_x_register 0
-    end
-
-    it "should reset the x_register after +" do
-      type 9
-      press :+
-      type 8
-      validate_x_register 8
-    end
-
-    it "should should reduce the stack by one" do
-      type 9
-      press :enter
-      type 8
-      press :enter
-      press :+
-      @calculator.available_operands.should == 2
-    end
-
-    it "should subtract the first number entered from the second" do
-      type 4
-      press :enter  
-      type 9
-      press :-
-      validate_x_register -5
-    end
-  end
-end
 ```
 
 * Get to where all of your Examples are passing.
@@ -2471,11 +2470,11 @@ So what happens when your calculator is asked to execute an unknown function?
 
 **Example**
 ```ruby
-  describe "Handling Functions" do
-    it "should raise an exception if attempting to run missing function" do
-      lambda { press :bogus_function_name }.should raise_error NoMethodError
-    end
-  end
+      describe "Handling Functions" do
+        it "should raise an exception if attempting to run missing function" do
+          lambda { press :bogus_function_name }.should raise_error NoMethodError
+        end
+      end
 ```
 
 * Create this new Context and verify that it passes.
@@ -2513,10 +2512,10 @@ You have a working design for + and -, adding * and / should be a snap. First yo
 * Create this example. Run it and verify that your test fails with a missing method.
 
 * Create the method:
-> ```ruby
-  def *
-    execute_binary_operator { |lhs, rhs| lhs * rhs }
-  end 
+```ruby
+      def *
+        execute_binary_operator { |lhs, rhs| lhs * rhs }
+      end 
 ```
 
 * Verify that your Examples pass.
@@ -2533,10 +2532,10 @@ That was so quick, before checking in add one more example:
 ```
 
 * Add the missing method:
-> ```ruby
-  def /
-    execute_binary_operator { |lhs, rhs| lhs / rhs }
-  end
+```ruby
+      def /
+        execute_binary_operator { |lhs, rhs| lhs / rhs }
+      end
 ```
 
 * Verify that your Examples pass.

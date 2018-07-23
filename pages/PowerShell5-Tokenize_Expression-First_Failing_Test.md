@@ -1,99 +1,99 @@
 [[PowerShell5.TokenizeExpression|^^ Up ^^]]  [[PowerShell5.TokenizeExpression.SimpleBinaryExpressions|Next-->]]
 Now it's time to create the first test. We'll start with a failing test, and do something simple to get it to work.
 * Create a new file called Tokenizer.Tests.ps1:
-> ```powershell
-Describe "Tokenizing an in-fix expression" {
-
-  It "Should convert a single number into a single token" {
-    $tokenizer = [Tokenizer]::new()
-
-    $tokens = $tokenizer.interpret("42")
-
-    $tokens[0] | Should be "42"
-  }
-}
+```powershell
+    Describe "Tokenizing an in-fix expression" {
+    
+      It "Should convert a single number into a single token" {
+        $tokenizer = [Tokenizer]::new()
+    
+        $tokens = $tokenizer.interpret("42")
+    
+        $tokens[0] | Should be "42"
+      }
+    }
 ```
 * Run your (now failing tests):
-> ```powershell
-PS C:\Users\Brett\shunting_yard_algorithm> Invoke-Pester
-Executing all tests in '.'
-
-Executing script C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1
-
-  Describing Tokenizing an in-fix expression
-    [-] Should convert a single number into a single token 58ms
-      RuntimeException: Unable to find type [Tokenizer].
-      at <ScriptBlock>, C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1: line 4
-Tests completed in 58ms
-Tests Passed: 0, Failed: 1, Skipped: 0, Pending: 0, Inconclusive: 0
+```powershell
+    PS C:\Users\Brett\shunting_yard_algorithm> Invoke-Pester
+    Executing all tests in '.'
+    
+    Executing script C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1
+    
+      Describing Tokenizing an in-fix expression
+        [-] Should convert a single number into a single token 58ms
+          RuntimeException: Unable to find type [Tokenizer].
+          at <ScriptBlock>, C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1: line 4
+    Tests completed in 58ms
+    Tests Passed: 0, Failed: 1, Skipped: 0, Pending: 0, Inconclusive: 0
 ```
 This failed, and it seems it failed for a reasonable reason. It doesn't know about the type Tokenizer. To remedy this, we'll create a module and import it into the test.
 * Create a new filed called Tokenizer.psm1:
-> ```powershell
-class Tokenizer {
-}
+```powershell
+    class Tokenizer {
+    }
 ```
 * At the top of Tokenizer.Tests.ps1, add the following line:
-> ```powershell
-using module '.\Tokenizer.psm1'
-
-Describe "Tokenizing an in-fix expression" {
-# ...
+```powershell
+    using module '.\Tokenizer.psm1'
+    
+    Describe "Tokenizing an in-fix expression" {
+    # ...
 ```
 * Run your tests and see that the error has changed a bit:
-> ```powershell
-PS C:\Users\Brett\shunting_yard_algorithm> Invoke-Pester
-Executing all tests in '.'
-
-Executing script C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1
-
-  Describing Tokenizing an in-fix expression
-    [-] Should convert a single number into a single token 69ms
-      RuntimeException: Method invocation failed because [Tokenizer] does not contain a method named 'interpret'.
-      at <ScriptBlock>, C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1: line 8
-Tests completed in 69ms
-Tests Passed: 0, Failed: 1, Skipped: 0, Pending: 0, Inconclusive: 0
+```powershell
+    PS C:\Users\Brett\shunting_yard_algorithm> Invoke-Pester
+    Executing all tests in '.'
+    
+    Executing script C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1
+    
+      Describing Tokenizing an in-fix expression
+        [-] Should convert a single number into a single token 69ms
+          RuntimeException: Method invocation failed because [Tokenizer] does not contain a method named 'interpret'.
+          at <ScriptBlock>, C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1: line 8
+    Tests completed in 69ms
+    Tests Passed: 0, Failed: 1, Skipped: 0, Pending: 0, Inconclusive: 0
 ```
 Closer, let's get to a passing test. Again, we'll do just enough to get the test passing.
 * Update Tokenizer.psm1:
-> ```powershell
-using namespace System.Collections
-
-class Tokenizer {
-  [ArrayList]interpret([String]$expression) {
-    $result = [ArrayList]::new()
-    $result.Add($expression)
-    return $result
-  }
-}
+```powershell
+    using namespace System.Collections
+    
+    class Tokenizer {
+      [ArrayList]interpret([String]$expression) {
+        $result = [ArrayList]::new()
+        $result.Add($expression)
+        return $result
+      }
+    }
 ```
 * Run your test (expecting things to pass):
-> ```powershell
-PS C:\Users\Brett\shunting_yard_algorithm> Invoke-Pester
-Executing all tests in '.'
-
-Executing script C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1
-
-  Describing Tokenizing an in-fix expression
-    [-] Should convert a single number into a single token 47ms
-      RuntimeException: Method invocation failed because [Tokenizer] does not contain a method named 'interpret'.
-      at <ScriptBlock>, C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1: line 8
-Tests completed in 47ms
-Tests Passed: 0, Failed: 1, Skipped: 0, Pending: 0, Inconclusive: 0
+```powershell
+    PS C:\Users\Brett\shunting_yard_algorithm> Invoke-Pester
+    Executing all tests in '.'
+    
+    Executing script C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1
+    
+      Describing Tokenizing an in-fix expression
+        [-] Should convert a single number into a single token 47ms
+          RuntimeException: Method invocation failed because [Tokenizer] does not contain a method named 'interpret'.
+          at <ScriptBlock>, C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1: line 8
+    Tests completed in 47ms
+    Tests Passed: 0, Failed: 1, Skipped: 0, Pending: 0, Inconclusive: 0
 ```
 This might be unexpected. If so, that's good because when unexpected thigns happen, we're about to learn something.
 
 In this case, running Pester directly as we are updates the current shell. There are several solutions, but a trivial one is to run "powershell invoke-pester":
-> ```powershell
-PS C:\Users\Brett\shunting_yard_algorithm> powershell invoke-pester
-Executing all tests in '.'
-
-Executing script C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1
-
-  Describing Tokenizing an in-fix expression
-    [+] Should convert a single number into a single token 683ms
-Tests completed in 683ms
-Tests Passed: 1, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0
+```powershell
+    PS C:\Users\Brett\shunting_yard_algorithm> powershell invoke-pester
+    Executing all tests in '.'
+    
+    Executing script C:\Users\Brett\shunting_yard_algorithm\Tokenizer.Tests.ps1
+    
+      Describing Tokenizing an in-fix expression
+        [+] Should convert a single number into a single token 683ms
+    Tests completed in 683ms
+    Tests Passed: 1, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0
 ```
 ## Summary
 There are many common complaints about TDD in such a simple start:
@@ -112,42 +112,42 @@ Now that we have an API, we can focus on trying to grow the algorithm to make it
 Throughout working on this problem, I'll be using git to make working snapshots. I might even put this code into my github account. I'll show a few of the git commands I'm using now, then as we move through the rest of this, I'll mention good times to at least locally commit your work.
 ## Initialize And Initial Push
 * Make your shunting_yard_algorithm directory a git repo
-> ```powershell
-PS C:\Users\Brett\shunting_yard_algorithm> git init
-Initialized empty Git repository in C:/Users/Brett/shunting_yard_algorithm/.git/
+```powershell
+    PS C:\Users\Brett\shunting_yard_algorithm> git init
+    Initialized empty Git repository in C:/Users/Brett/shunting_yard_algorithm/.git/
 ```
 * Now add all the things:
-> ```powershell
-PS C:\Users\Brett\shunting_yard_algorithm> git add .\Tokenizer.*
+```powershell
+    PS C:\Users\Brett\shunting_yard_algorithm> git add .\Tokenizer.*
 ```
 * Verify only the things we want to add have been added:
-> ```powershell
-PS C:\Users\Brett\shunting_yard_algorithm> git status
-On branch master
-
-No commits yet
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-
-        new file:   Tokenizer.Tests.ps1
-        new file:   Tokenizer.psm1
+```powershell
+    PS C:\Users\Brett\shunting_yard_algorithm> git status
+    On branch master
+    
+    No commits yet
+    
+    Changes to be committed:
+      (use "git rm --cached <file>..." to unstage)
+    
+            new file:   Tokenizer.Tests.ps1
+            new file:   Tokenizer.psm1
 ```
 * Make your first commit into your local git repo:
-> ```powershell
-PS C:\Users\Brett\shunting_yard_algorithm> git commit -m "Initial commit"
+```powershell
+    PS C:\Users\Brett\shunting_yard_algorithm> git commit -m "Initial commit"
 ```
 * And look at the results:
-> ```powershell
-[master (root-commit) 94fee3e] Initial commit
- 2 files changed, 17 insertions(+)
- create mode 100644 Tokenizer.Tests.ps1
- create mode 100644 Tokenizer.psm1
+```powershell
+    [master (root-commit) 94fee3e] Initial commit
+     2 files changed, 17 insertions(+)
+     create mode 100644 Tokenizer.Tests.ps1
+     create mode 100644 Tokenizer.psm1
 ```
 * You can verify that there are no local changes remaining:
-> ```powershell
-PS C:\Users\Brett\shunting_yard_algorithm> git status
-On branch master
-nothing to commit, working tree clean
+```powershell
+    PS C:\Users\Brett\shunting_yard_algorithm> git status
+    On branch master
+    nothing to commit, working tree clean
 ```
 [[PowerShell5.TokenizeExpression|^^ Up]]  [[PowerShell5.TokenizeExpression.SimpleBinaryExpressions|Next-->]]

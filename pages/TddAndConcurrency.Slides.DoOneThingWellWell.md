@@ -9,28 +9,28 @@
 * Single responsibility principle
 * Square law of computation
 
- It’s even more important here
-> ===Why?
-----
-----
+It’s even more important here
+^
+> Why?
+
 ## A Simple Server
  Imagine a server that forever…
 * Waits for a client connection, 
 * Gets a message
 * Processes it
 ```java
-ServerSocket serverSocket = new ServerSocket(8009);
-
-while (true) {
-    Socket socket = null;
-    try {
-         socket = serverSocket.accept();
-         String message = getMessage(socket);
-         process(message);
-    } finally {
-         close(socket);
+    ServerSocket serverSocket = new ServerSocket(8009);
+    
+    while (true) {
+        Socket socket = null;
+        try {
+             socket = serverSocket.accept();
+             String message = getMessage(socket);
+             process(message);
+        } finally {
+             close(socket);
+        }
     }
-}
 ```
 ----
 ----
@@ -41,10 +41,10 @@ while (true) {
 * Awaits a response
 * Disconnects from the server
 ```java
-Socket socket = new Socket("localhost", PORT);
-sendMessage(socket);
-getMessage(socket);
-socket.close();
+    Socket socket = new Socket("localhost", PORT);
+    sendMessage(socket);
+    getMessage(socket);
+    socket.close();
 ```
 ----
 ----
@@ -58,17 +58,17 @@ Threads to the rescue, right?
 ## How do we test?
  What makes this hard to test?
 * Direct dependency on Sockets
-> ```java
-ServerSocket serverSocket = new ServerSocket(8009);
-Socket socket = null;
-socket = serverSocket.accept();
-close(socket);
+```java
+    ServerSocket serverSocket = new ServerSocket(8009);
+    Socket socket = null;
+    socket = serverSocket.accept();
+    close(socket);
 ```
 
 * Embedded logic not exposed
-> ```java
-getMessage(socket);
-process(message);
+```java
+    getMessage(socket);
+    process(message);
 ```
 
 * Class violates Single Responsibility

@@ -24,72 +24,72 @@ Set up custom tasks to run pester. One will run all tests, while the other will 
 * Then **Configure Tasks**
 * If this is the first time you've configured tasks, select **Other** as the template to use. 
 * Finally, paste the following JSON into the custom tasks window
-> ```javascript
-{
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "_runner": "terminal",
-    "windows" : {
-        "command":"powershell.exe"
-    },
-    "presentation": {
-        "reveal": "always",
-        "panel": "new"
-    },
-    "tasks": [
-        {
-            "taskName": "Run.AllTests",
-            "type": "shell",
-            "command": "Invoke-Pester",
-            "problemMatcher": [
-                "$pester"
-            ],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "dedicated"
-            }
+```javascript
+    {
+        // See https://go.microsoft.com/fwlink/?LinkId=733558
+        // for the documentation about the tasks.json format
+        "version": "2.0.0",
+        "_runner": "terminal",
+        "windows" : {
+            "command":"powershell.exe"
         },
-        {
-            "taskName": "Run.CurrentFile",
-            "type": "shell",
-            "command": "Invoke-Pester",
-            "args": [
-                "${file}"
-            ],
-            "problemMatcher": [
-                "$pester"
-            ],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "dedicated"
+        "presentation": {
+            "reveal": "always",
+            "panel": "new"
+        },
+        "tasks": [
+            {
+                "taskName": "Run.AllTests",
+                "type": "shell",
+                "command": "Invoke-Pester",
+                "problemMatcher": [
+                    "$pester"
+                ],
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "dedicated"
+                }
+            },
+            {
+                "taskName": "Run.CurrentFile",
+                "type": "shell",
+                "command": "Invoke-Pester",
+                "args": [
+                    "${file}"
+                ],
+                "problemMatcher": [
+                    "$pester"
+                ],
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "dedicated"
+                }
             }
-        }
-    ]
-}
+        ]
+    }
 ```
 Custom key bindings to run the custom tasks:
 * Select **File::Preferences::Keyboard Shortcuts**
 * Next, click on the link at the top of the window for **keybindings.json**
 * The left window contains the default values. Edit the right window to override the default values. Copy the following key bindings:
-> ```javascript
-[{
-    "key": "ctrl+shift+alt+t",
-    "command": "workbench.action.tasks.runTask",
-    "args": "Run.AllTests",
-    "when": "editorTextFocus"
-},
-{
-    "key": "ctrl+shift+alt+f",
-    "command": "workbench.action.tasks.runTask",
-    "args": "Run.CurrentFile",
-    "when": "editorTextFocus"
-}
-]
+```javascript
+    [{
+        "key": "ctrl+shift+alt+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Run.AllTests",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+f",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Run.CurrentFile",
+        "when": "editorTextFocus"
+    }
+    ]
 ```
 
 [[PowerShell5|<--Back]]

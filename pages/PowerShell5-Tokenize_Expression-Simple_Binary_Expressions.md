@@ -1,9 +1,9 @@
 [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstFailingTest|<— Back]]  [[PowerShell5.TokenizeExpression|^^ Up ^^]] [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstStabAtParentheses|Next—>]]
 # Overview
 Now that we have a trivial first test, we'll begin growing the implementation one test at a time. We'll be following [[http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd|Uncle Bob's Three Rules of TDD]], summarized here as:
-# Write no production code without a failing test
-# Write just enough of a test to get the test to fail
-# Write just enough production code to get the test to pass
+* Write no production code without a failing test
+* Write just enough of a test to get the test to fail
+* Write just enough production code to get the test to pass
 
 We will additionally do the following:
 * Keep existing tests passing while making the new ones pass
@@ -20,7 +20,7 @@ We'll strive to do only one of these at a time and only switch to another one of
 # Moving Towards Binary Expression
 Rather than immediately going to a full binary expression, we'll add a test with a number and an operator.
 * Create a new test:
-> ```powershell
+```powershell
      It "Should convert a number and a single operator to two tokens" {
        $tokenizer = [Tokenizer]::new()
     
@@ -32,7 +32,7 @@ Rather than immediately going to a full binary expression, we'll add a test with
      }
 ```
 * Run your tests, you should see an error similar to:
-> ```powershell
+```powershell
   Describing Tokenizing an in-fix expression
     [+] Should convert a single number into a single token 530ms
     [-] Should convert a number and a single operator to two tokens 150ms
@@ -47,7 +47,7 @@ Tests completed in 681ms
 Tests Passed: 1, Failed: 1, Skipped: 0, Pending: 0, Inconclusive: 0
 ```
 * A little bit of regex magic allows us to get the tests passing:
-> ```powershell
+```powershell
  [ArrayList]interpret([String]$expression) {
    $result = [ArrayList]::new()
 
@@ -62,12 +62,12 @@ Tests Passed: 1, Failed: 1, Skipped: 0, Pending: 0, Inconclusive: 0
 * Run your tests, they are passing.
 When I wrote that code, I was tempted to add a check to verify something I suspected. Rather than do that, with all of the tests passing, I suggest going back to the first test and making a change. There's near duplication between the two tests. Make them more similar.
 * Update the first test:
-> ```powershell
+```powershell
        $tokens[0] | Should be '42'
        $tokens.Count | Should be 1
 ```
 * Run the tests, you'll notice now that the first test fails:
-> ```powershell
+```powershell
   Describing Tokenizing an in-fix expression
     [-] Should convert a single number into a single token 597ms
       Expected: {1}
@@ -78,7 +78,7 @@ When I wrote that code, I was tempted to add a check to verify something I suspe
     [+] Should convert a number and a single operator to two tokens 204ms
 ```
 * Suspicion confirmed, update the code:
-> ```powershell
+```powershell
         if ($expression.Length -ne 0) {
             $result.Add($expression)
         }
@@ -88,7 +88,7 @@ When I wrote that code, I was tempted to add a check to verify something I suspe
 * Run your tests, and it's back to passing.
 Now we might be ready for a complete binary expression. Let's give that a try, then we'll do some refactoring of the tests.
 * Add a new test:
-> ```powershell
+```powershell
      It "Should convert a binary expression into three tokens" {
        $tokenizer = [Tokenizer]::new()
     
@@ -101,7 +101,7 @@ Now we might be ready for a complete binary expression. Let's give that a try, t
      }
 ```
 * Sure enough, running the tests shows that we're not quite done with a binary expression:
-> ```powershell
+```powershell
     [-] Should convert a binary expression into three tokens 155ms
       Expected string length 1 but was 3. Strings differ at index 1.
       Expected: {*}
@@ -112,7 +112,7 @@ Now we might be ready for a complete binary expression. Let's give that a try, t
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 30
 ```
 * We need to do this more than once, and check for digits and not digits. This will do it:
-> ```powershell
+```powershell
     [ArrayList]interpret([String]$expression) {
         $result = [ArrayList]::new()
 
@@ -135,7 +135,7 @@ Now we might be ready for a complete binary expression. Let's give that a try, t
 ```
 * Run your tests, they should pass.
 * A quick check after your tests are passing will verify that the final if is not necessary:
-> ```powershell
+```powershell
     [ArrayList]interpret([String]$expression) {
         $result = [ArrayList]::new()
 
@@ -156,37 +156,37 @@ Now we might be ready for a complete binary expression. Let's give that a try, t
 * Run your tests, they should be passing.
 * Now is a great time to commit your changes because we are going to refactor and if things go badly, this is a good place to be able to easily get back to.
 * Noticing some duplication and after a two successful tries, I ended up with the following:
-> ```powershell
-using namespace System.Collections
-
-class Tokenizer {
-    [boolean]recordIfMatches([ref]$expression, $regex, $result) {
-        if ($expression.Value -match ($regex)) {
-            $result.Add($Matches[1])
-            $expression.Value = $expression.Value.Substring($Matches[1].Length)
-            return $true
-        }
-        return $false
-    }
-
-    [ArrayList]interpret([String]$expression) {
-        $result = [ArrayList]::new()
-
-        while ($expression.Length -ne 0) {
-            if (-not $this.recordIfMatches([ref]$expression, '^(\d+)', $result)) {
-                $this.recordIfMatches([ref]$expression, '^([^\d])', $result)
+```powershell
+    using namespace System.Collections
+    
+    class Tokenizer {
+        [boolean]recordIfMatches([ref]$expression, $regex, $result) {
+            if ($expression.Value -match ($regex)) {
+                $result.Add($Matches[1])
+                $expression.Value = $expression.Value.Substring($Matches[1].Length)
+                return $true
             }
+            return $false
         }
-
-        return $result
+    
+        [ArrayList]interpret([String]$expression) {
+            $result = [ArrayList]::new()
+    
+            while ($expression.Length -ne 0) {
+                if (-not $this.recordIfMatches([ref]$expression, '^(\d+)', $result)) {
+                    $this.recordIfMatches([ref]$expression, '^([^\d])', $result)
+                }
+            }
+    
+            return $result
+        }
     }
-}
 ```
 I'm not a PowerShell expert and I do not know how common/popular/idiomatic the use of [ref] is, but it nicely collapses the code. I even notice something that will come up later (I see a pattern I've not noticed before). So I'll chose some tests to exploit that. But before doing that, thre's a few more things to do with our tests in terms of refactoring and test cases.
 
 The test file has a bit of duplication. It's time to collapse that. To do so, we'll use the -TestCases feature of Pester.
 * Update your test by adding a new test, which duplicates the first test:
-> ```powershell
+```powershell
     It "Should convert <expression> to <expected>" -TestCases @(
         @{expression = '42'; expected = @('42')}
     ) {
@@ -202,53 +202,53 @@ The test file has a bit of duplication. It's time to collapse that. To do so, we
     }
 ```
 * Run your tests, and they all pass:
-> ```powershell
-  Describing Tokenizing an in-fix expression
-    [+] Should convert a single number into a single token 535ms
-    [+] Should convert a number and a single operator to two tokens 78ms
-    [+] Should convert a binary expression into three tokens 23ms
-    [+] Should convert 42 to 42 54ms
-Tests completed in 691ms
-Tests Passed: 4, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0
+```powershell
+      Describing Tokenizing an in-fix expression
+        [+] Should convert a single number into a single token 535ms
+        [+] Should convert a number and a single operator to two tokens 78ms
+        [+] Should convert a binary expression into three tokens 23ms
+        [+] Should convert 42 to 42 54ms
+    Tests completed in 691ms
+    Tests Passed: 4, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0
 ```
 * This new tests duplicates the first test, so it is safe to remove it. While you are at it, convert the other two tests into this last one:
-> ```powershell
-using module '.\Tokenizer.psm1'
-
-Describe "Tokenizing an in-fix expression" {
-    It "Should convert <expression> to <expected>" -TestCases @(
-        @{expression = '42'; expected = @('42')}
-        @{expression = '123+'; expected = @('123', '+')}
-        @{expression = '99*34'; expected = @('99', '*', '34')}
-    ) {
-        param($expression, $expected)
-        $tokenizer = [Tokenizer]::new()
+```powershell
+    using module '.\Tokenizer.psm1'
     
-        $result = $tokenizer.interpret($expression)
-
-        for ($i = 0; $i -lt $result.Count; ++$i) {
-            $result[$i] | Should be $expected[$i]
+    Describe "Tokenizing an in-fix expression" {
+        It "Should convert <expression> to <expected>" -TestCases @(
+            @{expression = '42'; expected = @('42')}
+            @{expression = '123+'; expected = @('123', '+')}
+            @{expression = '99*34'; expected = @('99', '*', '34')}
+        ) {
+            param($expression, $expected)
+            $tokenizer = [Tokenizer]::new()
+        
+            $result = $tokenizer.interpret($expression)
+    
+            for ($i = 0; $i -lt $result.Count; ++$i) {
+                $result[$i] | Should be $expected[$i]
+            }
+            $result.Count | Should be $result.Count
         }
-        $result.Count | Should be $result.Count
     }
-}
 ```
 Now back to checking/extending the behavior. Let's make sure our code handles white space, and more than one operator, multi-character operators, and even variables.
 * Add a new test case:
-> ```powershell
+```powershell
         @{expression = '1+2+3+4'; expected = @('1', '+', '2', '+', '3', '+', '4')}
 ```
 * Run the tests, this seems to work fine. The while loop covers an expression as long as we need.
 * Now let's make our code handle variables. Add another test case:
-> ```powershell
+```powershell
         @{expression = 'a'; expected = @('a')}
 ```
 I was initially surprised this worked, but that's the issue with regular expressions. They are often more flexible than you at first realize. The letters are not digits, which is how we are checking for digits versus operators. Knowing this, I'm going to change that test case to a multi-letter variable because I want to start with a broken test.
-> ```powershell
+```powershell
         @{expression = 'foo+bar'; expected = @('foo', '+', 'bar')}
 ```
 * This fails as I expected:
-> ```powershell
+```powershell
     [-] Should convert foo+bar to foo = bar 88ms
       Expected string length 3 but was 1. Strings differ at index 1.
       Expected: {foo}
@@ -259,16 +259,16 @@ I was initially surprised this worked, but that's the issue with regular express
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 18
 ```
 * Here's a quick fix to make this work:
-> ```powershell
+```powershell
             if (-not $this.recordIfMatches([ref]$expression, '^([\d\w]+)', $result)) {
 ```
 Note that the regular expression was simply \d+ and now it is [\d\w]+. This might seem too clever, too simple or maybe it seems like I'm cheating. In fact, if that's the case, then to "prove" I'm cheating, you want to find a test that will cause my code to break. However, I'm fine with that solution for now. If this were a real problem, I think I'd have a known list of operators and check for them explicitly. However, this is a simple example and so I'm OK with simple tests and simple solutions.
 * What about a multi-character operator? Add a new test:
-> ```powershell
+```powershell
         @{expression = '++foo'; expected = @('++', 'foo')}
 ```
 * Run your tests, and this fails.
-> ```powershell
+```powershell
     [-] Should convert ++foo to ++ foo 80ms
       Expected string length 2 but was 1. Strings differ at index 1.
       Expected: {++}
@@ -279,11 +279,11 @@ Note that the regular expression was simply \d+ and now it is [\d\w]+. This migh
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 19
 ```
 * Update the regular expression to fix this:
-> ```powershell
+```powershell
                 $this.recordIfMatches([ref]$expression, '^([^\d]+)', $result)
 ```
 * When I run the tests, I find my confidence was too high:
-> ```powershell
+```powershell
     [-] Should convert foo+bar to foo + bar 78ms
       Expected string length 1 but was 4. Strings differ at index 1.
       Expected: {+}
@@ -302,7 +302,7 @@ Note that the regular expression was simply \d+ and now it is [\d\w]+. This migh
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 19
 ```
 * The second regular expression was originally the opposite of the first, but we added \w to the first, so we need to do the same for the second one:
-> ```powershell
+```powershell
                 $this.recordIfMatches([ref]$expression, '^([^\d\w]+)', $result)
 ```
 That's a good lesson. I though it was simple, and it was, just not in the way I though. My tests allowed me to experiment, learn, adjust and make progress.
@@ -312,11 +312,11 @@ Now let's handle white space. We can match white space much like we do everythin
         @{expression = '   foo  + -bar  = baz   '; expected = @('foo', '+', '-', 'bar', '=', 'baz')}
 ```
 * Once again, my confidence has bitten me. I figured I could simply replace all of the white space:
-> ```powershell
+```powershell
         $expression = $expression -replace('\s+','')
 ```
 * Close, but no cigar:
-> ```powershell
+```powershell
     [-] Should convert    foo  + -bar  = baz    to foo + - bar = baz 83ms
       Expected string length 1 but was 2. Strings differ at index 1.
       Expected: {+}
@@ -327,7 +327,7 @@ Now let's handle white space. We can match white space much like we do everythin
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 20
 ```
 * Here's a second attempt:
-> ```powershell
+```powershell
         while ($expression.Length -ne 0) {
             $expression = $expression -replace ('^\s+', '')
             if (-not $this.recordIfMatches([ref]$expression, '^([\d\w]+)', $result)) {
@@ -336,7 +336,7 @@ Now let's handle white space. We can match white space much like we do everythin
         }
 ```
 * There are three changes. First, the regeular expression is in the while loop. Second, it only matches at the beginning of the string, third, the bottom regular expression is also excluding \s (white space characters). However, those changes results in passing tests:
-> ```powershell
+```powershell
   Describing Tokenizing an in-fix expression
     [+] Should convert 42 to 42 577ms
     [+] Should convert 123+ to 123 + 84ms
