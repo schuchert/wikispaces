@@ -22,7 +22,7 @@ At one point, I tried a spiked refactoring, creating an expression token iterato
 What follows is a description of the problem in terms of tests and expected results. Note that as of this writing, the tests drive the implementation from taking a single string and creating an iterator that gives you a series of tokens as strings. It is reasonable to build some kind of "token" object rather than just a string. However, this kata does not go in that direction.
 
 # The Problem
-A mathematical expression consists of a sequence of numbers, variables, operators, function calls and parentheses. Processing such an expression requires clearly knowing its various parts. One way to process such an expression is to develop a [[http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form|B.N.F]] representation and then use some kind of parser library (e.g., [[http://en.wikipedia.org/wiki/Yacc|Y.A.C.C.]]) to parse it.
+A mathematical expression consists of a sequence of numbers, variables, operators, function calls and parentheses. Processing such an expression requires clearly knowing its various parts. One way to process such an expression is to develop a [B.N.F](http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form) representation and then use some kind of parser library (e.g., [Y.A.C.C.](http://en.wikipedia.org/wiki/Yacc)) to parse it.
 
 Alternatively, you can build a parser from the ground up using a series of more expressive micro tests, and that's what kata is about. As with the [[Katas.ShuntingYardAlgorith|Shunting Yard Algorithm Kata]], this one is designed around a series of examples and expected results. 
 
@@ -51,7 +51,7 @@ After releasing some of this into the wild, I started getting some feedback from
 ||"4 + 5 *  '"||"4", "+", "5", "*", <error>||The trailing single-tick is not a valid token so the tokenizer should generate an error upon reaching that token. It should be possible to get the tokens before it:  "4", "+", "5", "*".||
 ||"value+++4"||"value", "++", "+", "4"||This is valid Java/C++. Notice that the largest token it taken from +++. This is how both Java and C++ would parse such an expression.||
 ||"5~€"||<error>||This may be a duplicate of the first example. I added several different tests. However, there's no whitespace, so this might force your implementation a little bit.||
-||"(3+2)*7"||"(", "3", "+", "2", ")", "*", "7"||This seems like other tests and your solution might work out of the box. Mine originally did, but when I make more heavy use of the regular expression implementation in Java// **and**// used the new for syntax to read the tokens, this failed because my implementation of hasNext() was not [[http://en.wikipedia.org/wiki/Idempotent|Idempotent]].||
+||"(3+2)*7"||"(", "3", "+", "2", ")", "*", "7"||This seems like other tests and your solution might work out of the box. Mine originally did, but when I make more heavy use of the regular expression implementation in Java// **and**// used the new for syntax to read the tokens, this failed because my implementation of hasNext() was not [Idempotent](http://en.wikipedia.org/wiki/Idempotent).||
 ||"3@+2"||"3", <error>||This is similar to the previous error conditions but it involves an embedded error rather than something at the end of an expression. As I made heavier use of the regular expression library, I broke what was passing.||
 
 ## Peek

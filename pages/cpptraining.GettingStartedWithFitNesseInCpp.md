@@ -4,7 +4,7 @@ title: cpptraining.GettingStartedWithFitNesseInCpp
 [[cpptraining#FitNesse|<--Back]]
 
 # Initial Downloads
-## Download [[http://github.com/dougbradbury/cslim/tree/master|cslim from github]]
+## Download [cslim from github](http://github.com/dougbradbury/cslim/tree/master)
 This requires a git client. 
 * Create a top-level directory in which to work (this example uses ~/src/cpp_fitnesse)
 ```
@@ -25,7 +25,7 @@ walk 4ac0cbd8d58cfe9c353142a5363bd39718f43acf
 ```
 ## Get CppUTest
 The README.txt in the root of the cslim directory just created uses CppUTest.
-* [[http://sourceforge.net/projects/cpputest/|Download CppUTest from sourceforge]]
+* [Download CppUTest from sourceforge](http://sourceforge.net/projects/cpputest/)
 * Extract the zip, creating a sibling directory to cslim called cpputest. The top-level directory name should be ~/src/cpp_fitnesse/cpputest
 * Switch to that directory and build cpputest:
 ```
@@ -49,7 +49,7 @@ Running CppUTest_tests
 OK (171 tests, 167 ran, 599 checks, 4 ignored, 0 filtered out, 10 ms)
 ```
 ## Get FitNesse
-* [[http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad|Download fitnesse.jar]], these instructions were created using the edge build #398, dated July 11, 2010, 12:49, but the release at fitnesse.org should work fine.
+* [Download fitnesse.jar](http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad), these instructions were created using the edge build #398, dated July 11, 2010, 12:49, but the release at fitnesse.org should work fine.
 * Move fitnesse.jar into ~src/cpp_fitnesse/
 * The directory should look like this before you run fitnesse for the first time:
 ```

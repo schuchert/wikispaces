@@ -1,7 +1,7 @@
 ---
 title: Katas.NextPreviousPaginatorForWebPages
 ---
-On July 24th I attended the [[http://openbeta.extendedbeta.com/barcamp.html|Barcamp at the OkC Coco]]. I met several people from [[http://ninecollective.com/|ninecollective]] (great logo). We merged their idea of a C# dojo and mine of a TDD clinic and decided to do a Dojo. [[http://twitter.com/rauhr|Ryan Rauk (twitter: @rahur)]] recommended we create a simple paginator for scrolling through a large list of items.
+On July 24th I attended the [Barcamp at the OkC Coco](http://openbeta.extendedbeta.com/barcamp.html). I met several people from [ninecollective](http://ninecollective.com/) (great logo). We merged their idea of a C# dojo and mine of a TDD clinic and decided to do a Dojo. [Ryan Rauk (twitter: @rahur)](http://twitter.com/rauhr) recommended we create a simple paginator for scrolling through a large list of items.
 
 Here's an example: Imagine you have 1000 items to list, 10 items per page. If you are on the 20th page, you should see links like the following for next and previous:
 ```

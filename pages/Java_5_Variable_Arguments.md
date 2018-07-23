@@ -54,7 +54,7 @@ This version only introduced the use of a new utility method on the String class
 ```
    System.out.println("You have scored: " + points + ", and made it to level: " + level);
 ```
-You can use the new method [[http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html|String.format]] and C-style format strings:
+You can use the new method [String.format](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html) and C-style format strings:
 ```
     String.format("You have scored: %d, and made it to level: %d", points, level);
 ```
@@ -419,6 +419,6 @@ Here is the source code for all 4 versions in an Eclipse 3.2 archive file.
 [[file:VariableArgumentsExample.zip]]
 
 # Other Resources
-* [[http://surguy.net/articles/removing-log-messages.xml|Speeding up Log4J in Java 1.5]]
+* [Speeding up Log4J in Java 1.5](http://surguy.net/articles/removing-log-messages.xml)
 
 [[Articles|<--Back]]

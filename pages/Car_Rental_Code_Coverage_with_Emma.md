@@ -10,11 +10,11 @@ This example is based on the [[Car Rental Example]]. If you want work through th
 In this example, we add code coverage to the Car Rental Application. We then examine the results, make some changes and finish with a few conclusions. 
 
 ## Setup and Configuration
-Emma does not currently come with a plugin, so in this example we'll use [[http://ant.apache.org/|Ant]] from within Eclipse. I'll warn you that I'm not much of an Ant user, so if you'd like to make recommendations, please feel free: schuchert@yahoo.com.
+Emma does not currently come with a plugin, so in this example we'll use [Ant](http://ant.apache.org/) from within Eclipse. I'll warn you that I'm not much of an Ant user, so if you'd like to make recommendations, please feel free: schuchert@yahoo.com.
 
 Let's get started:
 **Download**
-# Download Emma from [[http://emma.sourceforge.net/downloads.html|here]]. Note I downloaded emma-2.0.5312.zip for this example.
+# Download Emma from [here](http://emma.sourceforge.net/downloads.html). Note I downloaded emma-2.0.5312.zip for this example.
 # Extract the jar somewhere. I used c:\libs\, which created the directory C:\libs\emma-2.0.5312.
 # Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
 
@@ -31,7 +31,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 * cobertura.xml
 * emma.xml
 
-(By the way, let me give credit where it's due, I got most of this from [[http://emma.sourceforge.net/userguide/ar01s03.html|Getting Started with Emma using Ant]].
+(By the way, let me give credit where it's due, I got most of this from [Getting Started with Emma using Ant](http://emma.sourceforge.net/userguide/ar01s03.html).
 
 # Here's the file so we can discuss it and configure it for your situation:
 [[#emma]]

@@ -3,11 +3,11 @@ title: Mockito.UsingPowerMockWithMockito
 ---
 {:toc}
 # Overview
-Sometimes there's some low-level code, or badly written code, that makes verifying its behavior difficult. In this example, I'll show a few examples of mixing [[https://code.google.com/p/powermock/|PowerMock]] in with [[https://code.google.com/p/mockito/|Mockito]] to take control of:
+Sometimes there's some low-level code, or badly written code, that makes verifying its behavior difficult. In this example, I'll show a few examples of mixing [PowerMock](https://code.google.com/p/powermock/) in with [Mockito](https://code.google.com/p/mockito/) to take control of:
 * static methods
 * calls to new
 
-You can get a working copy of this code from my [[https://github.com/schuchert/spring_aop|spring_aop github repo]].
+You can get a working copy of this code from my [spring_aop github repo](https://github.com/schuchert/spring_aop).
 
 ## Maven Dependencies
 This example works with PowerMock 1.5:
@@ -108,7 +108,7 @@ public class MetricsRecorderTest {
 In this case, the test calls the class MetricsRecorder, which calls new CorrelationId(), so MetricsRecorder is the class added to the @PrepareForTest annotation.
 
 # Summary
-It's nice that PowerMock integrates nicely with Mockito. There's a mismatch between using JMockIt and Mockito, but that could be an advantage. Using tools like PowerMock and JMockIt suggest that [[http://martinfowler.com/articles/modernMockingTools.html|maybe your design isn't so great]].
+It's nice that PowerMock integrates nicely with Mockito. There's a mismatch between using JMockIt and Mockito, but that could be an advantage. Using tools like PowerMock and JMockIt suggest that [maybe your design isn't so great](http://martinfowler.com/articles/modernMockingTools.html).
 
 I had problems with PowerMock not playing nice with emma, a code coverage tool, when executed from Gradle. Emma does instrumentation and it's instrumentation mechanism conflicted with what was going on in JMX. 
 

@@ -4,10 +4,10 @@ title: Commons_Logging_and_Log4j_Config
 {:toc}
 [[Tool Setup and Configuration Notes|<--Back]]
 
-When I started using [[http://www.springframework.org/|Spring]], I need to include some logging and basic configuration. This page gives the details for the entire setup I'm using.
+When I started using [Spring](http://www.springframework.org/), I need to include some logging and basic configuration. This page gives the details for the entire setup I'm using.
 
 # # Log 4j
-# Download log4j from [[http://logging.apache.org/site/binindex.cgi|here]] (in my case, I downloaded the [[http://www.springframework.org/|Spring]] jar with dependencies from [[http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644|here]], which includes Log4j).
+# Download log4j from [here](http://logging.apache.org/site/binindex.cgi) (in my case, I downloaded the [Spring](http://www.springframework.org/) jar with dependencies from [here](http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644), which includes Log4j).
 # Extract the jar somewhere
 # Add the jar to your Eclipse project
 # Create a simple configurator, see LogginConfiguration.java, and a simple configuration file, see [[#log4j|log4j.properties]].
@@ -54,8 +54,8 @@ When I started using [[http://www.springframework.org/|Spring]], I need to inclu
 ```
 ### Interesting Lines
 ||Line||Description||
-||11 - 13||I'm using [[http://eclipse-cs.sourceforge.net/|Checkstyle]] and [[http://pmd.sourceforge.net/integrations.html#eclipse|PMD]]. One of them has a rule that suggests classes with all static methods should have a private constructor to disallow instantiation.||
-||15 - 24||When loading this class, perform basic Log4j configuration, line 17. In addition, Spring, by default, produces quite a bit of output. The output is useful but I generally don't want it unless I'm debugging a problem. So I load a simple properties file that sets the default logging for [[http://www.springframework.org/|Spring]] to WARN. If I need to switch to DEBUG, I simply edit [[#log4j|log4j.properties]].||
+||11 - 13||I'm using [Checkstyle](http://eclipse-cs.sourceforge.net/) and [PMD](http://pmd.sourceforge.net/integrations.html#eclipse). One of them has a rule that suggests classes with all static methods should have a private constructor to disallow instantiation.||
+||15 - 24||When loading this class, perform basic Log4j configuration, line 17. In addition, Spring, by default, produces quite a bit of output. The output is useful but I generally don't want it unless I'm debugging a problem. So I load a simple properties file that sets the default logging for [Spring](http://www.springframework.org/) to WARN. If I need to switch to DEBUG, I simply edit [[#log4j|log4j.properties]].||
 ||17||Generate a URL for the resource named LOG4J_PROPS. I use the same classloader used for this class, and ask it to find the named resource. This returns either a URL to the location of the file or null.||
 ||18 - 21||If the resource is not found (null returned), log a fatal error to the console and do nothing else. Hopefully someone will notice it. I don't want this class' static initializer to fail because if it does it will cause classes that use it to fail since the class will not be loaded. This is an important point to make, generally you should not allow a static initializer to fail because what you'll see is an error about the class not being found but the actual error was lost when the static initialzier failed.||
 ||19 - 20||If I'm unable to locate the URL, get a logger and log a fatal message.||
@@ -194,9 +194,9 @@ There are not really any specifically interesting lines. Notice that every metho
 ||Line||Description||
 ||6||This class holds a reference to a Log4J logger instance. It publishes a different interface and adapts the new interface on to the Log4J interface.||
 ||12 - 17||A typical problem with logging is that of string concatenation. A way to avoid this is to check the logging level performing any string concatenation. That makes for ugly code. With variable arguments to methods, we can pass in a format string and the parameters to be sent into the format string, check the logging level and only actually perform the string formatting if the logging level is enabled. Each of these methods does exactly that.||
-||12||Take in a [[http://java.sun.com/j2se/1.5.0/docs/api/java/util/Formatter.html#syntax|format string]] and a variable number of arguments.||
+||12||Take in a [format string](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Formatter.html#syntax) and a variable number of arguments.||
 ||13||Is debug output enables for my contained logger?||
-||14||Degugging is enabled, use the static method [[http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...)|String.format]] passing in the variables arguments received by this method into the format method. The result of that is sent to the underlying Log4J logger.||
+||14||Degugging is enabled, use the static method [String.format](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...)) passing in the variables arguments received by this method into the format method. The result of that is sent to the underlying Log4J logger.||
 ||16||Return myself to allow for method chaining.||
 ||19||Notice that Throwable is the **first** parameter. In the Log4J methods, the Throwable parameter is last. Since we are using variable arguments, we cannot put the Throwable parameter last so we instead make it the first one.||
 

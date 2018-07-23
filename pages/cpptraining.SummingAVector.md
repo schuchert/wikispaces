@@ -328,7 +328,7 @@ void callBoth() {
 ```
 This template method,// **execute**//, imposes one requirement on its type F; Instances of f must respond to// **operator()**//. A function like// **foo**// does, as demonstrated in the first line of// **callBoth**//. The instance of the functor// **std::plus<int>**// also responds to// **operator()**//. This code compiles and defines two implementations of the// **execute**// function.
 ## Binding Both Parameters
-Notice how the template method// **execute**// hard-codes the values of the parameters called on either// **foo**// or// **std::plus<int>**//? This is called [[http://en.wikipedia.org/wiki/Currying|Currying]]. This code demonstrates the same thing using// **boost::bind**//:
+Notice how the template method// **execute**// hard-codes the values of the parameters called on either// **foo**// or// **std::plus<int>**//? This is called [Currying](http://en.wikipedia.org/wiki/Currying). This code demonstrates the same thing using// **boost::bind**//:
 ```cpp
 TEST(plusAndBind, bindBothParameters) {
   Value v(42);

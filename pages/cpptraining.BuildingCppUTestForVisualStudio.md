@@ -4,7 +4,7 @@ title: cpptraining.BuildingCppUTestForVisualStudio
 [[cpptraining#gettingfirsttestrunningvisualstudio|<--Back]]
 
 Now it is time to build the library you will be using for writing micro tests:
-* [[http://sourceforge.net/projects/cpputest/files/cpputest/v2.3/CppUTest-v2.3.zip/download|Download CppUTest V 2.3]]
+* [Download CppUTest V 2.3](http://sourceforge.net/projects/cpputest/files/cpputest/v2.3/CppUTest-v2.3.zip/download)
 ** Note: You can go to [[http://sourceforge.net/projects/cpputest/]] and click the download button. These instructions are based off of CppUTest 2.3, so the link above is a direct download of v 2.3.
 * Extract the zip to a directory, for the remainder of these and subsequent instructions, the installation directory will be// **C:\projects\CppUTest**//
 ** Note: the zip does not contain a top-level directory, so you'll want to create one.

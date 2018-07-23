@@ -3,7 +3,7 @@ title: Katas.ShuntingYardAlgorithm
 ---
 [[Katas|<--Back]]
 # Background
-The [[http://en.wikipedia.org/wiki/Shunting_yard_algorithm|Shunting Yard Algorithm]], written by [[http://en.wikipedia.org/wiki/Edsger_Dijkstra|Dijkstra]], converts an infix expression into a post-fix expression. For example, the expression:
+The [Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm), written by [Dijkstra](http://en.wikipedia.org/wiki/Edsger_Dijkstra), converts an infix expression into a post-fix expression. For example, the expression:
 ^
 |---|---|---|
 |$$ 3 + 4 $$|becomes|$$ 3\;4\;+ $$|
@@ -102,7 +102,7 @@ This worked OK, but occasionally I wanted to run just one test. This does not se
 # Getting Started
 Here is one possible start to this problem (with the first three tests added and passing):
 **The Test**
-Note: Occasionally I experiment with different ways of writing unit tests with JUnit. This is one such example where I attempt to simulate the [[http://www.martinfowler.com/bliki/BusinessReadableDSL.html|domain specific language]] used by [[http://cukes.info/|cucumber]].
+Note: Occasionally I experiment with different ways of writing unit tests with JUnit. This is one such example where I attempt to simulate the [domain specific language](http://www.martinfowler.com/bliki/BusinessReadableDSL.html) used by [cucumber](http://cukes.info/).
 ```java
 package com.om.shuntingyardalgorithm;
 

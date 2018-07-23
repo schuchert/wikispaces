@@ -4,9 +4,9 @@ title: FitNesse.Tutorials.2
 {:toc}
 [[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.ScriptTables|Next Tutorial--->]]
 # Introduction
-A Query table is a means of performing a single query and verifying the results. A typical test might use [[http://fitnesse.org/FitNesse.UserGuide.SliM.DecisionTable|Slim Decision Tables]] to insert a large data set and then Query tables to verify that the correct sub-set of the data is returned from the query.
+A Query table is a means of performing a single query and verifying the results. A typical test might use [Slim Decision Tables](http://fitnesse.org/FitNesse.UserGuide.SliM.DecisionTable) to insert a large data set and then Query tables to verify that the correct sub-set of the data is returned from the query.
 
-This tutorial begins with a basic introduction of Query tables, but it assumes a basic understanding of Decision tables. If you are not familiar with Decision Tables, work through [[FitNesse.Tutorials.1|this tutorial first]]. Along the way, we'll look at what it takes to produce query results manually and then review a small tool available from [[http://github.com/schuchert/queryresultbuilder/tree/master|github]] to produce these results automatically.
+This tutorial begins with a basic introduction of Query tables, but it assumes a basic understanding of Decision tables. If you are not familiar with Decision Tables, work through [[FitNesse.Tutorials.1|this tutorial first]]. Along the way, we'll look at what it takes to produce query results manually and then review a small tool available from [github](http://github.com/schuchert/queryresultbuilder/tree/master) to produce these results automatically.
 
 As a final note, this tutorial picks up where [[FitNesse.Tutorials.1|this tutorial]] left off. However, you can start with these source files using the tag FitNesse.Tutorials.2.Start, see [[FitNesse.Tutorials.WorkingFromGitHub|here]] for details:
 
@@ -85,7 +85,7 @@ Since you've just changed the fixture, you should go back to your DecisionTableE
 
 ## Introducing a Test Suite
 A test suite is simply a page above other pages that is set to be a suite. FitNesse will look at all of its children and execute the pages under it that are set to test pages. To do this, you'll need to create the suite and move existing pages under it:
-* Go to the [[http://localhost:8080/FrontPage|FrontPage]].
+* Go to the [FrontPage](http://localhost:8080/FrontPage).
 * Edit the page and add the following near the bottom:
 ```
 >DigitalVideoRecorderExamples
@@ -94,7 +94,7 @@ A test suite is simply a page above other pages that is set to be a suite. FitNe
 * Click on the [?] hyperlink
 * Create the page and simply accept the !contents ...
 * Save the page
-* Go back to the [[http://localhost:8080/FrontPage|FrontPage]]
+* Go back to the [FrontPage](http://localhost:8080/FrontPage)
 * Click on your DecisionTableExample
 * Click the **Refactor** Button
 * Under the **Move** section enter the following: FrontPage.DigitalVideoRecorderExamples
@@ -208,7 +208,7 @@ Now we need to create a season pass. That's a new table and fixture. Here's a ta
 |$ID=                       |
 ```
 
-This table's goal is to send a message to the production code to create a season pass for the program named p1 on channel 9. When this happens, I want to have available the ID of the program found to use later. The first row provides the name and constructor arguments. The next row indicates calling a method called idOfProgramScheduled(), whose return will provide that information, which [[http://fitnesse.org|FitNesse]] will then assign to the symbol ID.
+This table's goal is to send a message to the production code to create a season pass for the program named p1 on channel 9. When this happens, I want to have available the ID of the program found to use later. The first row provides the name and constructor arguments. The next row indicates calling a method called idOfProgramScheduled(), whose return will provide that information, which [FitNesse](http://fitnesse.org) will then assign to the symbol ID.
 
 Now, when this happens, what do we expect for results? I could provide a description in text of my expectations, but better yet, I'll express it as an expected result:
 ```
@@ -425,7 +425,7 @@ That was just enough to get the unit test passing. It may not seem complete, but
    }
 ```
 
-We need to replace that with code that will turn an object or list into a list into a list of list of list of strings. There is a utility available that can help: [[http://github.com/schuchert/queryresultbuilder/tree/master| github - Query Result Builder]]. You can download and build the jar file, or you can simple download the following two jar files and add them to your class path in both your IDE and FitNesse:
+We need to replace that with code that will turn an object or list into a list into a list of list of list of strings. There is a utility available that can help: [ github - Query Result Builder](http://github.com/schuchert/queryresultbuilder/tree/master). You can download and build the jar file, or you can simple download the following two jar files and add them to your class path in both your IDE and FitNesse:
 * [[file:QueryResultBuilder.jar]]
 * [[file:ReflectionUtil.jar]]
 

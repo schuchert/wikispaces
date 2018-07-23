@@ -2,7 +2,7 @@
 title: Template_Method
 ---
 # Template Method Pattern
-This is an example of the [[http://en.wikipedia.org/wiki/Design_Patterns|GoF design pattern]] [[http://en.wikipedia.org/wiki/Template_method_pattern|Template Method]]. Here's an example taken from [[http://en.wikipedia.org/wiki/Monopoly_(game)|Monopoly]].
+This is an example of the [GoF design pattern](http://en.wikipedia.org/wiki/Design_Patterns) [Template Method](http://en.wikipedia.org/wiki/Template_method_pattern). Here's an example taken from [Monopoly](http://en.wikipedia.org/wiki/Monopoly_(game)).
 
 Imagine the game of Monopoly. There are several kinds of (read this as classes of) squares, e.g. Go, Go To Jail, Free Parking, Real Estate. Under Real Estate there are three kinds:
 * Railroads

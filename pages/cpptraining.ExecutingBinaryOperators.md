@@ -9,8 +9,8 @@ These steps assuem you have already worked through the tutorial: [[cpptraining.G
 
 # Building the RpnCalcualtor
 You can find the source for the RpnCalculator at two github locations:
-* [[http://github.com/schuchert/RpnCalculatorInCpp|Here is production code]]
-* [[http://github.com/schuchert/RpnCalculatorInCppTests|Here is the test code]]
+* [Here is production code](http://github.com/schuchert/RpnCalculatorInCpp)
+* [Here is the test code](http://github.com/schuchert/RpnCalculatorInCppTests)
 
 ## Building the Basic Structure
 * Create a top-level directory for all of your work. I'll be using ~/src/waat

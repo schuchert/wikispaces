@@ -3,7 +3,7 @@ title: hades.BaseEnvironment
 ---
 These instructions summarize/make heavy use of [[http://www.vogella.de/articles/JavaPersistenceAPI/article.html]].
 
-* Download a mocking library. This example uses [[http://code.google.com/p/jmockit/downloads/list|JMockIt]] - version 0.999.9. You will need the following jar file// **as the first entry**// in your classpath:
+* Download a mocking library. This example uses [JMockIt](http://code.google.com/p/jmockit/downloads/list) - version 0.999.9. You will need the following jar file// **as the first entry**// in your classpath:
 ** jmockit.jar
 
 (These next two steps are here for convenience, they are taken directly from [[http://www.vogella.de/articles/JavaPersistenceAPI/article.html]]
@@ -11,7 +11,7 @@ These instructions summarize/make heavy use of [[http://www.vogella.de/articles/
 ** eclipselink.jar
 ** javax.persistence_2.0.X.jar
 
-* Download a database. This example uses [[http://db.apache.org/derby/derby_downloads.html|Derby]] - version 10.8.1.2. You will the following jar file in your classpath:
+* Download a database. This example uses [Derby](http://db.apache.org/derby/derby_downloads.html) - version 10.8.1.2. You will the following jar file in your classpath:
 ** derby.jar
 
 Follow the instructions in the tutorial as is with the following three changes.

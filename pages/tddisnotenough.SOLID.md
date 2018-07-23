@@ -3,7 +3,7 @@ title: tddisnotenough.SOLID
 ---
 [[tddisnotenough#SOLID|<==Back]]
 
-[[http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod|From Uncle Bob]]
+[From Uncle Bob](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
 
 ||S||Single Responsibility||Single Reason to Change||
 ||O||Open/Closed||Open for extension closed to change||

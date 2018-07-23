@@ -2,10 +2,10 @@
 title: wicket.GettingStarted
 ---
 ## Overview
-This page describes the steps I follow to setup an Eclipse-based project for developing a new Wicket project. These steps are really just a detailed version of what you can find at: [[http://wicket.apache.org/quickstart.html|the Wicket quickstart page]].
+This page describes the steps I follow to setup an Eclipse-based project for developing a new Wicket project. These steps are really just a detailed version of what you can find at: [the Wicket quickstart page](http://wicket.apache.org/quickstart.html).
 
 ## Create a Space
-* Begin by creating a source directory. For this example, I'll create a directory called CheesrWorkspace (example project from the [[http://www.amazon.com/Wicket-Action-Martijn-Dashorst/dp/1932394982/ref=sr_1_1?ie=UTF8&s=books&qid=1253681267&sr=8-1|Wicket in Action]] book.
+* Begin by creating a source directory. For this example, I'll create a directory called CheesrWorkspace (example project from the [Wicket in Action](http://www.amazon.com/Wicket-Action-Martijn-Dashorst/dp/1932394982/ref=sr_1_1?ie=UTF8&s=books&qid=1253681267&sr=8-1) book.
 ```
 macintosh-4% cd ~/src
 /Users/schuchert/src
@@ -20,7 +20,7 @@ macintosh-4%
 Note: I'll be using git for revision control, so I also added in that last step to init this newly-created subdirectory as a git repository.
 
 ## Create Project Using Maven 2
-There's a simple form you can fill out on [[http://wicket.apache.org/quickstart.html|the Wicket quickstart page]] to create a maven command that will create the project structure.
+There's a simple form you can fill out on [the Wicket quickstart page](http://wicket.apache.org/quickstart.html) to create a maven command that will create the project structure.
 
 * Fill out the form (I used com.om for the groupid and Cheesr for the artifactid), which produces the following command:
 ```
@@ -93,7 +93,7 @@ macintosh-4% vi pom.xml
 ```
 
 ## Create Eclipse Project Information
-Now that you have an updated POM, you can create the eclipse project. The [[http://wicket.apache.org/quickstart.html|the Wicket quickstart page]] has instructions at the bottom. 
+Now that you have an updated POM, you can create the eclipse project. The [the Wicket quickstart page](http://wicket.apache.org/quickstart.html) has instructions at the bottom. 
 
 * Make sure you are in the project directory created by the initial mvn command.
 * Execute: mvn eclipse:eclipse -DdownloadSources=true

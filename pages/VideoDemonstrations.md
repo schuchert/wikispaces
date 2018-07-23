@@ -3,7 +3,7 @@ title: VideoDemonstrations
 ---
 These are the videos I've published online.
 
-[[http://vimeo.com/user3159463/videos|My Videos]] 
+[My Videos](http://vimeo.com/user3159463/videos) 
 
 Here are links to the final source code (I've recently been asked for this, so I'll add them on demand):
 

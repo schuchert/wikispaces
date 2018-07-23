@@ -7,10 +7,10 @@ title: cpptraining.GettingCppUTestCompiledUsingCDTToolSet
 These steps assume you are using the CDT's tool set. Before following these instructions, please make sure you have [[cpptraining.GettingStartedWithEclipseCdt|followed these instructions first.]]
 
 # Steps
-* Update your path to include the// **bin**// directories under mingw and msys. These directories were installed under the Eclipse directory when installing the [[http://code.google.com/a/eclipselabs.org/p/wascana/|wascana plugin]]. In my particular case, I installed Eclipse under C:\learncpp\eclipse, so I added to my path for all DOS shells: 
+* Update your path to include the// **bin**// directories under mingw and msys. These directories were installed under the Eclipse directory when installing the [wascana plugin](http://code.google.com/a/eclipselabs.org/p/wascana/). In my particular case, I installed Eclipse under C:\learncpp\eclipse, so I added to my path for all DOS shells: 
 >> //**C:\learncpp\eclipse\mingw\bin;C:\learncpp\eclipse\msys\bin **//
 
-* Download CppUTest (version 2.3 as of this writing): [[http://sourceforge.net/projects/cpputest/|CppUTest at Sourceforge]]
+* Download CppUTest (version 2.3 as of this writing): [CppUTest at Sourceforge](http://sourceforge.net/projects/cpputest/)
 * Extract the zip somewhere (I'll be using c:\learncpp\CppUTest23 for this example)
 * Switch to the install directory
 ```

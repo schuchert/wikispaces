@@ -4,15 +4,15 @@ title: Test_Driven_Development
 # Introduction
 
 This page contains examples to use when practicing or teaching [[Test Driven Development]] (TDD).
-* [[http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd|The Three Rules of TDD]]
+* [The Three Rules of TDD](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd)
 * [[Red Green Refactor]]
 
 # Examples
 Here are a few stand-alone examples: [[TDD Example Catalog]]
 
 # Projects
-* [[RPN Calculator]] ([[http://schuchert.wikispaces.com/RpnCalculatorPrintable?f=print|print]])
-* [[Monopoly(r)]]  ([[http://schuchert.wikispaces.com/MonopolyPrintable?f=print|print]])
+* [[RPN Calculator]] ([print](http://schuchert.wikispaces.com/RpnCalculatorPrintable?f=print))
+* [[Monopoly(r)]]  ([print](http://schuchert.wikispaces.com/MonopolyPrintable?f=print))
 
 # Use in a C++ Class
 Here is the beginnings of an example TDD session using the [[Monopoly(r)]] as the basis and [[Cxx TDD Monopoly|C++]] as the language.

@@ -5,11 +5,11 @@ Imagine the following partial system:
 
 [[image:AccessVersion0.png]]
 
-These various boxes represent classes in your system, each of which is touching the database. While technically each probably uses interfaces to connect to the database, in any case, the details of that interaction are still at a lower level of abstraction than your production code. In that sense, this represents a violation of the [[http://www.objectmentor.com/resources/articles/dip.pdf|Dependency Inversion Principle]].
+These various boxes represent classes in your system, each of which is touching the database. While technically each probably uses interfaces to connect to the database, in any case, the details of that interaction are still at a lower level of abstraction than your production code. In that sense, this represents a violation of the [Dependency Inversion Principle](http://www.objectmentor.com/resources/articles/dip.pdf).
 
-In addition, it is quite likely that each of those classes are doing duplicated work to make that connection, so you are also probably violating the [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY principle]].
+In addition, it is quite likely that each of those classes are doing duplicated work to make that connection, so you are also probably violating the [DRY principle](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
-This is a classic problem that is fractal in nature. That is, it happens at multiple levels. At the level of architecture, this would be multiple classes in one layer touching multiple classes in a lower layer. The solution that problem is to us some kind of [[http://en.wikipedia.org/wiki/Facade_pattern|facade]]. Within a single class, there is duplicated code accessing some external resource, rather than a few internal utility methods to do the work.
+This is a classic problem that is fractal in nature. That is, it happens at multiple levels. At the level of architecture, this would be multiple classes in one layer touching multiple classes in a lower layer. The solution that problem is to us some kind of [facade](http://en.wikipedia.org/wiki/Facade_pattern). Within a single class, there is duplicated code accessing some external resource, rather than a few internal utility methods to do the work.
 
 Here is a simple reconfiguration of this system that represents a significant improvement:
 
@@ -29,6 +29,6 @@ Now the next question is this: How do classes requiring the Dao get an instance 
 
 The first option is a poor one since to create an instance requires use of the "new" keyword. The new keyword is the second highest form of coupling; the first being inheritance.
 
-In this situation, the dependent class is provided the dao though some kind of [[http://en.wikipedia.org/wiki/Dependency_injection|dependency injection]]. Once the dependency is injected, it becomes possible to create per-test [[http://xunitpatterns.com/Test%20Double.html|test doubles]] to remove the database from most tests:
+In this situation, the dependent class is provided the dao though some kind of [dependency injection](http://en.wikipedia.org/wiki/Dependency_injection). Once the dependency is injected, it becomes possible to create per-test [test doubles](http://xunitpatterns.com/Test%20Double.html) to remove the database from most tests:
 
 [[image:AccessVersion3.png]]

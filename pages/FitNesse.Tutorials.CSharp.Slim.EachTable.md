@@ -286,7 +286,7 @@ After the first row, subsequent rows describe individual steps and optionally re
 * whenICreateSeasonPasses
 * thenTheToDoListShouldContain
 
-This particular naming style derives from a [[http://cukes.info/|story running tool called Cucumber]]. The first line starting with the word "given" is something related to test setup. The second line, starting with "when" is an execution step. The final step, starting with "then" is a validation step. This has nothing to do with FitNesse, this is just a style of writing tests.
+This particular naming style derives from a [story running tool called Cucumber](http://cukes.info/). The first line starting with the word "given" is something related to test setup. The second line, starting with "when" is an execution step. The final step, starting with "then" is a validation step. This has nothing to do with FitNesse, this is just a style of writing tests.
 
 As mentioned, scenario tables do not require any class to exist. However, when a page// **uses**// a scenario, then the most recent script is will require some methods based on most recently mentioned script.
 
