@@ -5,7 +5,7 @@ title: Ejb3_Tutorial_1_-_Printable
 
 # Getting Started with the JBoss Embedded Container
 
-This tutorial is a derivative (simplification really) of work done by JBoss. For the original material, look [here](http://docs.jboss.org/ejb3/embedded/embedded.html). This tutorial's goals are:
+This tutorial is a derivative (simplification really) of work done by JBoss. For the original material, look [[http://docs.jboss.org/ejb3/embedded/embedded.html|here]]. This tutorial's goals are:
 * Download and install the JBoss Embeddable EJB3 Container
 * Create and configure an Eclipse project to be able to use the container
 * Create a simple "hello world" style local stateless session bean

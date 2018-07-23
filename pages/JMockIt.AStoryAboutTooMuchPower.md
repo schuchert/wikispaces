@@ -5,9 +5,9 @@ title: JMockIt.AStoryAboutTooMuchPower
 
 Notes:
 * In this article I talk about JMockIt. However, these comments generally apply to that class of mocking frameworks. This list includes (at least): JMockIt, Typemock Isolator, PowerMock. These are the current breed of mocking tools - all very powerful.
-* This is maybe a touch terse. I'm considering putting this into a more tutorial-like for, see, for example, [this example with Mockito.](http://schuchert.wikispaces.com/Mockito.LoginServiceExample) However, as that's a lot of work, I'll use a pull model and wait for someone to say they'd like that (hint).
+* This is maybe a touch terse. I'm considering putting this into a more tutorial-like for, see, for example, [[http://schuchert.wikispaces.com/Mockito.LoginServiceExample|this example with Mockito.]] However, as that's a lot of work, I'll use a pull model and wait for someone to say they'd like that (hint).
 
-[I gave a talk in Berlin November 10, 2011](http://vimeo.com/31927512). The subject was ostensibly about legacy refactoring. It was really about a lot of things, the starting point being legacy refactoring. Rather than using problems out of a class on legacy refactoring, I wanted something fresh and shiny. In the past, I started the talk with the following contrived example:
+[[http://vimeo.com/31927512|I gave a talk in Berlin November 10, 2011]]. The subject was ostensibly about legacy refactoring. It was really about a lot of things, the starting point being legacy refactoring. Rather than using problems out of a class on legacy refactoring, I wanted something fresh and shiny. In the past, I started the talk with the following contrived example:
 ```java
 public SomeClass {
 	public static void problemsAhead() {
@@ -94,7 +94,7 @@ Here is the first method in its original form:
 		}
 	}
 ```
-Note, all of this code is [avaiable for download on github](https://github.com/schuchert/welc_examples_java_jmockit). Also, it does do some basic currency conversion.
+Note, all of this code is [[https://github.com/schuchert/welc_examples_java_jmockit|avaiable for download on github]]. Also, it does do some basic currency conversion.
 
 This code is traditionally to hard to test without changing it somewhat. However, I wanted to give a try and I managed to execute this test without changing it, and without an internet connection, with the following code:
 ```java

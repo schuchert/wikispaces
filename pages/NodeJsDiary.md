@@ -3,22 +3,22 @@ title: NodeJsDiary
 ---
 # Background
 * I'm rolling off a project at the end of February 2014. I have two options for my next gig:
-** West Coast: Work as a consultant across multiple projects, coaching, mentoring, and helping with getting a grasp on domains across projects, think [bounded context](http://www.sapiensworks.com/blog/post/2012/04/17/DDD-The-Bounded-Context-Explained.aspx). Projects are typical Java/Spring, etc. The tech stack is comfortable, not accountable for delivery. I see this as hard but cushy. Nice location, travel so-so. Mature, large project. It's in an "enterprise" setting that, while it has its issues, has been getting better for some time.
-** East Coast: Tech lead (responsible for delivery). Tech. stack includes [node.js](http://yobriefca.se/blog/2013/04/29/micro-service-architecture/|micro services]] and is based on [[http://en.wikipedia.org/wiki/Nodejs). I've dabbled with JavaScript but just on the cusp of groking, I get distracted. This would get me there I suspect. Location not as nice but pretty good. Travel good. Good people (like West Coast), though I've worked with a few of them and I'd like to again.
+** West Coast: Work as a consultant across multiple projects, coaching, mentoring, and helping with getting a grasp on domains across projects, think [[http://www.sapiensworks.com/blog/post/2012/04/17/DDD-The-Bounded-Context-Explained.aspx|bounded context]]. Projects are typical Java/Spring, etc. The tech stack is comfortable, not accountable for delivery. I see this as hard but cushy. Nice location, travel so-so. Mature, large project. It's in an "enterprise" setting that, while it has its issues, has been getting better for some time.
+** East Coast: Tech lead (responsible for delivery). Tech. stack includes [[http://yobriefca.se/blog/2013/04/29/micro-service-architecture/|micro services]] and is based on [[http://en.wikipedia.org/wiki/Nodejs|node.js]]. I've dabbled with JavaScript but just on the cusp of groking, I get distracted. This would get me there I suspect. Location not as nice but pretty good. Travel good. Good people (like West Coast), though I've worked with a few of them and I'd like to again.
 * Both assignments are good for different reasons, so I'm letting ThoughWorks decide for me.
 * I'm leaning towards the East coast because it's all new tech and it would be a challenge for me to start using my brain again (Java/Spring/etc. doesn't require much thought anymore for me). Along those lines, I'm installing node.js and working through a book. 
 ** Because I'm preparing for node.js, I'll almost certainly end up on the West coast, so I'm probably jinxing myself )
 
 # Day 1: Saturday Feb 22, 2014
-* Began reading last night, found what I think will be exactly what I need: [The Node Beginner Book](http://www.nodebeginner.org/)
+* Began reading last night, found what I think will be exactly what I need: [[http://www.nodebeginner.org/|The Node Beginner Book]]
 ** I'll work through the free 21 pages then buy the book. From what I've read already, I ready to buy the book. But I'll wait to confirm what I already suspect, it'll really help me.
-* Yak shaving... Need to install some stuff, taking the [Gentoo approach](http://www.gentoo.org/proj/en/gentoo-alt/prefix/bootstrap.xml)
-* Note, since I'm using OS X, I only needed to download [bootstrap-prefix.sh](http://prefix.gentooexperimental.org/hg/prefix-tree/raw-file/default/scripts/bootstrap-prefix.sh)
+* Yak shaving... Need to install some stuff, taking the [[http://www.gentoo.org/proj/en/gentoo-alt/prefix/bootstrap.xml|Gentoo approach]]
+* Note, since I'm using OS X, I only needed to download [[http://prefix.gentooexperimental.org/hg/prefix-tree/raw-file/default/scripts/bootstrap-prefix.sh|bootstrap-prefix.sh]]
 ** To run the script, it appeared to need to be in my working directory. When I tried to run it in ~/src while the script was in ~/Downloads, it didn't do anything.
 ** I used 8 cores instead of 5 for the installation. Not noticing any slowing down while typing text into a web form
 ** I used the following install location: /Users/schuchert/bin/gentoo (no spaces allowed)
 * Blocked... The installation of gentoo has failed. I *suspect* it's due to the version of gcc I'm using (4.8). The installation requires gcc 4.2. By the time we get to gcc 4.8 it supports C99. The failure relates to something that is not allowed in C99. Rather than fight the build script, I'm going to use ports to install an older version (starting with gcc 4.5) and then trying again.
-** And of course this failed... Think it's time to [wipe port off my system](https://guide.macports.org/chunked/installing.macports.uninstalling.html) and then see with what I'm left...
+** And of course this failed... Think it's time to [[https://guide.macports.org/chunked/installing.macports.uninstalling.html|wipe port off my system]] and then see with what I'm left...
 ** This is// **exactly**// why I should use a VM! 
 ** That will be two yaks removed from my goal
 ** before I do that, after uninstalling all of my ports, I'm trying again. I am not starting clean, that could be an issue. We'll see.
@@ -26,10 +26,10 @@ title: NodeJsDiary
 * In parallel to installing Gentoo, I'm working on creating a new vagrant box, because impatient.
 ** Of course, need to upgrade virtualbox to the latest version
 ** And probably vagrant to boot (yep, 1.3.5 to 1.4.3)
-** Using [this page](http://dev.alexishevia.com/2013/09/setting-up-nodejs-dev-environment-with.html) with one change, using a 64 bit rather than a 32 bit version of the OS.
+** Using [[http://dev.alexishevia.com/2013/09/setting-up-nodejs-dev-environment-with.html|this page]] with one change, using a 64 bit rather than a 32 bit version of the OS.
 * The gentoo installation failed once again (. I'm going to work on the VM instead.
 * Updated virtualbox guest extensions now.
-** OK, that was not enough. Luckily, [this site mentions a gem](http://kvz.io/blog/2013/01/16/vagrant-tip-keep-virtualbox-guest-additions-in-sync/) that will check and update the guest extensions. It looks like it is working. It is taking a minute or so.
+** OK, that was not enough. Luckily, [[http://kvz.io/blog/2013/01/16/vagrant-tip-keep-virtualbox-guest-additions-in-sync/|this site mentions a gem]] that will check and update the guest extensions. It looks like it is working. It is taking a minute or so.
 ** Nope, that did not work. This is a day full of yaks. Trying manually from [[http://software.darrenthetiger.com/2012/01/installing-virtualbox-guest-additions-on-a-vagrant-lucid64-box/]].
 ----
 * Made some progress with vm, trying to more easily install. Installing [[http://downloads.vagrantup.com/tags/v1.0.0]]
@@ -37,7 +37,7 @@ title: NodeJsDiary
 ** Going all command line is also fine, vi ftw!
 ** Success. Back to the book.
 ----
-* Late in the evening, read a bit more and then read a link: [Understanding node.js](http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb)
+* Late in the evening, read a bit more and then read a link: [[http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb|Understanding node.js]]
 
 # 23 Feb 2014
 * Finished free book, bought the book off of leanpub, as well as another in a package deal [[https://leanpub.com/b/node]]

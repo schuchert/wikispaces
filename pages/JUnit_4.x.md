@@ -3,7 +3,7 @@ title: JUnit_4.x
 ---
 # JUnit 4.1
 {:toc}
-If you've used JUnit prior to version 4.0 (e.g. you've been using JUnit in Eclipse version 2.0 to 3.1.2) then here is the first place you want to go to get up to speed: [JUnit 4.0 in 10 Minutes]]. If you are not somewhat familiar with JUnit 4, you can probably follow this material. However, after code examples that use JUnit 4 specific features, you'll notice a [[Click Here](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52) link that will give you more detailed information.
+If you've used JUnit prior to version 4.0 (e.g. you've been using JUnit in Eclipse version 2.0 to 3.1.2) then here is the first place you want to go to get up to speed: [[http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52|JUnit 4.0 in 10 Minutes]]. If you are not somewhat familiar with JUnit 4, you can probably follow this material. However, after code examples that use JUnit 4 specific features, you'll notice a [[Click Here]] link that will give you more detailed information.
 
 Now that I've used it a bit in Eclipse 3.1.2, I've got an initial recommendation and some examples:
 * Using the [assert*]({{ site.pagesurl }}/JUnit 4.x#assertAsterisk) methods
@@ -15,7 +15,7 @@ Now that I've used it a bit in Eclipse 3.1.2, I've got an initial recommendation
 In JUnit 3.8.1, test classes inherited from TestCase. Among other things, doing so gave the code access to several assert methods like assertEquals. JUnit 4.x no longer makes this requirement. Of course every solution introduces problems. In this case, I no longer have easy access to assertEquals and other such methods.
 
 ### Java 5 to the rescue
-The recommendation from [static imports](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52|JUnit 4.0 in 10 Minutes]] is to use [[http://java.sun.com/j2se/1.5.0/docs/guide/language/static-import.html)from the org.junit.Assert class to get methods like assertEquals. The following excerpt is taken from [Example 1]({{ site.pagesurl }}/JUnit 4.x#example1) below. Note the line numbers are from the original example. Line 3 is the static import, which is used on lines 29 and 30:
+The recommendation from [[http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52|JUnit 4.0 in 10 Minutes]] is to use [[http://java.sun.com/j2se/1.5.0/docs/guide/language/static-import.html|static imports]]from the org.junit.Assert class to get methods like assertEquals. The following excerpt is taken from [Example 1]({{ site.pagesurl }}/JUnit 4.x#example1) below. Note the line numbers are from the original example. Line 3 is the static import, which is used on lines 29 and 30:
 ```
      03: import static org.junit.Assert.assertEquals;
      14: public class TestVehicle {
@@ -68,7 +68,7 @@ What is a TimeBomb? Let's begin with an example. This is an excerpt from [Exampl
 [[#AtTestExpected]]
 [Click here for more information on @Test(expected = ObjectInUse.class)]({{ site.pagesurl }}/JUnit 4.xAtTestWithExpected)
 
-This example probably needs a little more background. As mentioned in [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52), we use the @Test annotation to denote a method as a test case. It can take an optional argument of //**expected**//. This test is meant to attempt to remove a VehicleType that is used by other ob jets. So, in this case, read @Test(expected = ObjectInUse.class) as "when this test executes, I expect the exception ObjectInUse to be thrown."
+This example probably needs a little more background. As mentioned in [[http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52|JUnit 4.0 in 10 Minutes]], we use the @Test annotation to denote a method as a test case. It can take an optional argument of //**expected**//. This test is meant to attempt to remove a VehicleType that is used by other ob jets. So, in this case, read @Test(expected = ObjectInUse.class) as "when this test executes, I expect the exception ObjectInUse to be thrown."
 
 If I had a Dao (data access object) that used an underlying database, the request would generate a low-level SQL exception related to a constraint violation. Right now I'm just mocking everything out so I don't have that underlying support. I'll add it to the mock but until I do, I want a place holder for this test.
 

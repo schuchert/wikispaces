@@ -7,16 +7,16 @@ This example requires Java 5 (JDK 1.5) or later and Eclipse 3.2 or later. This p
 
 ### Download Everything
 First the basic stuff:
-# Download [JSE 5](http://java.sun.com/javase/downloads/index_jdk5.jsp) (choose just JDK 5.0 (there will be an update after it))
-# Download [Eclipse](http://www.eclipse.org/downloads/)
+# Download [[http://java.sun.com/javase/downloads/index_jdk5.jsp|JSE 5]] (choose just JDK 5.0 (there will be an update after it))
+# Download [[http://www.eclipse.org/downloads/|Eclipse]]
 
 Next, the libraries:
-# Download [Hibernate 3.3.1 GA](http://sourceforge.net/project/showfiles.php?group_id=40712&package_id=127784&release_id=625684)
-# Download [Hibernate Annotations 3.4.0 GA](http://sourceforge.net/project/showfiles.php?group_id=40712&package_id=139933)
-# Download [Hibernate Entity Manager 3.4.0.GA](http://sourceforge.net/project/showfiles.php?group_id=40712&package_id=156160)
-# Download [HSQL Database Engine 1.8.0.10](http://sourceforge.net/project/platformdownload.php?group_id=23316&sel_platform=14519)
-# Download [SLF4J 1.5.8](http://www.slf4j.org/download.html)
-# Download [Open EJB 3.1.1](http://openejb.apache.org/download.html)
+# Download [[http://sourceforge.net/project/showfiles.php?group_id=40712&package_id=127784&release_id=625684|Hibernate 3.3.1 GA]]
+# Download [[http://sourceforge.net/project/showfiles.php?group_id=40712&package_id=139933|Hibernate Annotations 3.4.0 GA]]
+# Download [[http://sourceforge.net/project/showfiles.php?group_id=40712&package_id=156160|Hibernate Entity Manager 3.4.0.GA]]
+# Download [[http://sourceforge.net/project/platformdownload.php?group_id=23316&sel_platform=14519|HSQL Database Engine 1.8.0.10]]
+# Download [[http://www.slf4j.org/download.html|SLF4J 1.5.8]]
+# Download [[http://openejb.apache.org/download.html|Open EJB 3.1.1]]
 
 ## # Setup the JDK & Eclipse
 # Install the JSE 5.

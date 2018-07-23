@@ -9,7 +9,7 @@ I'm still looking for the right place to host my work in subversion. Until then,
 Here's what I did to get that up and running. Note, all of this stuff is available online. I'm just putting it here for a very quick reference.
 
 # # Install Software
-# Download subversion XP binaries from [here](http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=91). Note I'm using 1.3.2.
+# Download subversion XP binaries from [[http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=91|here]]. Note I'm using 1.3.2.
 # Install it. I happened to install it C:\Subversion
 
 # # Configure Repository
@@ -19,7 +19,7 @@ Here's what I did to get that up and running. Note, all of this stuff is availab
 Note my directory is c:\Repository
 
 # # Configure Subversion as an XP Service
-# Download a tool to install subversion as a service from [here](http://clanlib.org/~mbn/svnservice/)
+# Download a tool to install subversion as a service from [[http://clanlib.org/~mbn/svnservice/|here]]
 # Extract this somewhere. I just extracted it to C:\Subversion\bin to make life easy
 # Use the tool to install subversion as a service: snvservice -install -d -r c:\Repository
 Note, by using -r c:\Repository, my URL will be svn://localhost/, if you didn't use -R c:\Repository, your URL would be svn://localhost/Repository

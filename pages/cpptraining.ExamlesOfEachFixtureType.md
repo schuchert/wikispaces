@@ -305,7 +305,7 @@ SLIM_END
 }
 ```
 
-This code makes use of a utility class QueryResultAccumulator. This is [available in source from github](http://github.com/schuchert/CSlimCppExtensions) (warning, as of this writing it's in a raw form):
+This code makes use of a utility class QueryResultAccumulator. This is [[http://github.com/schuchert/CSlimCppExtensions|available in source from github]] (warning, as of this writing it's in a raw form):
 **QueryResultAccumulator.h**
 ```cpp
 # pragma once

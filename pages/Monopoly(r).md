@@ -1,7 +1,7 @@
 ---
 title: Monopoly
 ---
-This example uses the game [Monopoly]] as the basis for learning Object Oriented Design following both a [[Test Driven Development]] approach as well as a [[Test First Development](http://www.hasbro.com/monopoly/) approach. In this example we only use the game as a basis but change the rules as necessary to emphasize certain kinds of design problems.
+This example uses the game [[http://www.hasbro.com/monopoly/|Monopoly]] as the basis for learning Object Oriented Design following both a [[Test Driven Development]] approach as well as a [[Test First Development]] approach. In this example we only use the game as a basis but change the rules as necessary to emphasize certain kinds of design problems.
 
 This problem is different from the [[RPN Calculator]] in that we do not start with user stories but rather a description of each release. In a classroom setting, we'd start each release with a user story workshop to determine possible work. We'd then sequence the user stories and being implemented the user stories.
 
@@ -77,7 +77,7 @@ Community chest and chance each have a single stack of cards. There is one stack
 When a player lands on either of these locations, the next card (from the top of the deck) is removed, the player must follow the instructions on the card. The card is the placed back onto the deck at the bottom.
 
 There are several kinds of community chest and chance cards. To find out more, see:
-* [List of Chance Cards](http://en.wikipedia.org/wiki/Chance_cards)
-* [List of Community Chest Cards](http://en.wikipedia.org/wiki/Community_Chest_cards)
+* [[http://en.wikipedia.org/wiki/Chance_cards|List of Chance Cards]]
+* [[http://en.wikipedia.org/wiki/Community_Chest_cards|List of Community Chest Cards]]
 
 [User Stories]({{ site.pagesurl }}/Monopoly(r) Release 5 User Stories)

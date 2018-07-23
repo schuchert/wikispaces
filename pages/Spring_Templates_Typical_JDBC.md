@@ -17,7 +17,7 @@ Please see the notes on this example below the code.
 [[image:DesigningToSpringTemplates.v1.gif width="775"]]
 
 ## Important Note
-All of these examples are configured to use [hsqldb](http://www.hsqldb.org/) which is a free database that supports both in-memory operation as well as using the disk (and other configurations). I've set it up to work strictly in memory. This means:
+All of these examples are configured to use [[http://www.hsqldb.org/|hsqldb]] which is a free database that supports both in-memory operation as well as using the disk (and other configurations). I've set it up to work strictly in memory. This means:
 * Every time an application starts, we need to re-create the schema
 * We lose all of the data at exit
 

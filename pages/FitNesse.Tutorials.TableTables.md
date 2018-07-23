@@ -66,7 +66,7 @@ As with the previous tutorials, you'll create these tests under their own sub-hi
 * Create a suite-page for these tests here: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples]]
 * Just save the page as is (with the !contents ...)
 * Change its type to a suite page (//**Note**//, as of 4/15/09, FitNesse has been updated to automatically set the page type to a suite if it ends in "Examples". If you build from source or you happen to have a recent release with this feature built, you might not need to set the type to suite.)
-* Add a SetUp page. If the link exists on the [suite page]], you can click it (this feature was there, then removed and I added it back in again). If not, then go to this URL to create the setup page: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples)
+* Add a SetUp page. If the link exists on the [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples|suite page]], you can click it (this feature was there, then removed and I added it back in again). If not, then go to this URL to create the setup page: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp]]
 * Set its contents to:
 ```
 !include <DigitalVideoRecorderExamples.SetUp
@@ -87,7 +87,7 @@ As with the previous tutorials, you'll create these tests under their own sub-hi
 |Script|Dvr Recording|
 ```
 
-Notice that this borrows the Scenario table and script table from the [previous tutorial](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.SetUp|SetUp]] page in the [[FitNesse.Tutorials.ScenarioTables). In this tutorial, the only new table is a new Table Table to populate the program schedule. 
+Notice that this borrows the Scenario table and script table from the [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.SetUp|SetUp]] page in the [[FitNesse.Tutorials.ScenarioTables|previous tutorial]]. In this tutorial, the only new table is a new Table Table to populate the program schedule. 
 
 Next, we need a test that uses this [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp]]
 * Create a new test page: [[http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.DvrThatCanRecordTwoProgramsAtaTimeExample]]

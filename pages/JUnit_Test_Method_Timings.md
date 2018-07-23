@@ -18,7 +18,7 @@ The first column is 10 digits wide and is the number of milliseconds to run the 
 This example uses Log4J. To configure Log4J, I first used a [simple configurator]({{ site.pagesurl }}/Commons Logging and Log4j Config). Then I programmatic ally set up an appender in the Aspect so that my logging configuration would not have aspect-based logging information in it (thereby keeping the crosscutting concern more localized).
 
 The aspect and its associated aop.xml file are listed below. Before you can use them, you'll want to set up your environment(warning, you'll have to use your browser's back button to get back to here from these links):
-# Download AspectJ [here](http://www.eclipse.org/aspectj/downloads.php).
+# Download AspectJ [[http://www.eclipse.org/aspectj/downloads.php|here]].
 # [[Eclipse VM Configuration for AspectJ]]
 # [[Eclipse Classpath Variable for AspectJ]]
 # [[Eclipse Java Language Preferences for AspectJ]]
@@ -27,7 +27,7 @@ The aspect and its associated aop.xml file are listed below. Before you can use 
 Once you've done all of that, you'll want to put the Test Method Timing Aspect class in the same project where your test classes reside. You'll also need to create a META-INF directory directly under the source directory of your test classes and add the aop.xml file there. Here's an example of what my project looks like:
 [[image:ProjectLayout.gif]]
 
-Notice that I have separate src and test directories. It turns out that both of these, when compiled, are merged into a common bin directory, so you can create the META-INF directory in either place. I've chosen to put it under the test directory. You'll also notice that I've put the project test.timingaspect under the test directory as well. (These projects are under [Subversion](http://schuchert.wikispaces.com/Subversion+on+XP), which might explain why my icons look different from yours in Eclipse.
+Notice that I have separate src and test directories. It turns out that both of these, when compiled, are merged into a common bin directory, so you can create the META-INF directory in either place. I've chosen to put it under the test directory. You'll also notice that I've put the project test.timingaspect under the test directory as well. (These projects are under [[http://schuchert.wikispaces.com/Subversion+on+XP|Subversion]], which might explain why my icons look different from yours in Eclipse.
 
 If you do not use a src directory and just store your projects at the top level, then your META-INF directory will be directly under your project.
 ----
@@ -104,7 +104,7 @@ If you do not use a src directory and just store your projects at the top level,
 ### Interesting Lines
 ||Line||Description||
 ||24||Use a [simple configurator]({{ site.pagesurl }}/Commons Loggins and Log4j Config) to get a logging configuration.||
-||25||Create an output file name that's based on the [Java user.home](http://java.sun.com/docs/books/tutorial/essential/system/properties.html) property. On my machine, this is the directory "C:\Documents and Settings\brett.schuchert". On a Unix machine, it will probably be equal to "~".||
+||25||Create an output file name that's based on the [[http://java.sun.com/docs/books/tutorial/essential/system/properties.html|Java user.home]] property. On my machine, this is the directory "C:\Documents and Settings\brett.schuchert". On a Unix machine, it will probably be equal to "~".||
 ||26||Dos uses \ and Unix uses /. Using / in Java works on both PC's and Unix boxes, so replace all of the \ with /.||
 ||27 - 28||Output where the log file is placing information to System.err. It will show up as red in Eclipse and I flush the output so it should appear somewhere near the top. You can safely remove this line once you know where the output goes.||
 ||29 - 30||Create a file appender based on the name we've already calculated. In my case, outFileName is "C:/Documents and Settings/brett.schuchert/UnitTestTimings.txt". **NOTE** This is a file appender, it will keep adding new timing information to the end of the file. If you want a clean run, you'll need to move the file, rename it, etc. (Or update this example.)||

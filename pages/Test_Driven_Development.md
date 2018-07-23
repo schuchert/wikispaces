@@ -4,7 +4,7 @@ title: Test_Driven_Development
 # Introduction
 
 This page contains examples to use when practicing or teaching [[Test Driven Development]] (TDD).
-* [The Three Rules of TDD](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd)
+* [[http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd|The Three Rules of TDD]]
 * [[Red Green Refactor]]
 
 # Examples

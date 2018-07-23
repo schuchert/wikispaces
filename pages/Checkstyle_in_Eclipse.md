@@ -5,7 +5,7 @@ title: Checkstyle_in_Eclipse
 
 **Install Checkstyle**
 # Start Eclipse
-# Follow [here](http://eclipse-cs.sourceforge.net/) and follow the Download & Installation section.
+# Follow [[http://eclipse-cs.sourceforge.net/|here]] and follow the Download & Installation section.
 
 **Configuring Checkstyle**
 # Download this file: [[file:CheckstyleConfig.xml]]. I recommend putting this file in your workspace directory

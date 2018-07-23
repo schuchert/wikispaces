@@ -2,10 +2,10 @@
 title: tdd.cpp.MovingTowardsStoryBasedExpressionOfTests
 ---
 # Introduction
-Bob Martin has an excellent Tdd Kata called [The Prime Factors Kata]]. When I teach Tdd, I often use this as part of the [[RPN Calculator](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata) problem. I have the students add two operators:
+Bob Martin has an excellent Tdd Kata called [[http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata|The Prime Factors Kata]]. When I teach Tdd, I often use this as part of the [[RPN Calculator]] problem. I have the students add two operators:
 * Sum of the stack
 * Prime Factors
-Then I have them create a composite operator and build an instance using a sum of prime factors and the prime factors of the sum. Really, this is just an excuse to use the [Composite Pattern](http://en.wikipedia.org/wiki/Composite_pattern) in conjunction with the strategy pattern.
+Then I have them create a composite operator and build an instance using a sum of prime factors and the prime factors of the sum. Really, this is just an excuse to use the [[http://en.wikipedia.org/wiki/Composite_pattern|Composite Pattern]] in conjunction with the strategy pattern.
 
 Recently, I took a bit of a different approach to writing the tests as a way to demonstrate alternative approaches to writing unit tests. After the class I continued experimenting with various forms and what I ended up on a plane ride from Cleveland to Chicago was pretty interesting, at least to me. What the rest of this article contains is number of versions of the same tests written in different ways.
 
@@ -23,7 +23,7 @@ Typically, I introduce this problem similar to how Bob introduces it (it is his 
 ||8|| 2, 2, 2||
 ||1024||2, 2, 2, 2, 2, 2, 2, 2, 2, 2||
  
-Here is one way to write these tests using [CppUTest](http://www.cpputest.org/):
+Here is one way to write these tests using [[http://www.cpputest.org/|CppUTest]]:
 **PrimeFactorsOperator.cpp**
 ```cpp
 # include <CppUTest/TestHarness.h>
@@ -109,7 +109,7 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
 }
 ```
 
-# [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) Violation?
+# [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] Violation?
 There is a lot of duplication in this test code. Often, test code might have more duplication than production code to make it easier to understand without hunting around. Even so, this really seems to abuse duplication unnecessarily. Here is the same thing simply cleaned up a bit:
 ```cpp
 # include <CppUTest/TestHarness.h>
@@ -367,9 +367,9 @@ TEST_GROUP(PrimeFactorsOperatorTest) {
 };
 ```
 
-These tests are somewhat influenced by BDD and some experience I've had using [RSpec](http://rspec.info). One thing these tests exhibit from my RSpec experience is that some of the steps with the test have a side-effect of storing intermediate information used later in the test. This often happens within an RSpec example as well. You can see several detailed [Ruby examples here]({{ site.pagesurl }}/ruby.tutorials) for some examples of this style of testing.
+These tests are somewhat influenced by BDD and some experience I've had using [[http://rspec.info|RSpec]]. One thing these tests exhibit from my RSpec experience is that some of the steps with the test have a side-effect of storing intermediate information used later in the test. This often happens within an RSpec example as well. You can see several detailed [Ruby examples here]({{ site.pagesurl }}/ruby.tutorials) for some examples of this style of testing.
 # Story-Runner Influenced Tests
-Here is another, probably over the top, version of the tests using more of a story-runner influence. This comes from my recent experience working through a beta version of [Cucumber](http://www.pragprog.com/titles/achbd/the-rspec-book|The RSpec Book]] and specifically using [[http://wiki.github.com/aslakhellesoy/cucumber).
+Here is another, probably over the top, version of the tests using more of a story-runner influence. This comes from my recent experience working through a beta version of [[http://www.pragprog.com/titles/achbd/the-rspec-book|The RSpec Book]] and specifically using [[http://wiki.github.com/aslakhellesoy/cucumber|Cucumber]].
 
 For these unit tests, I believe this is overkill. However, it does show another way to express tests:
 ```cpp
@@ -512,7 +512,7 @@ In some respects, this looks close to the original version. BDD makes several su
 * Use a standard (ubiquitous) language to describe examples or stories
 * Think in terms of examples or behavior, not tests (this is really more a problem with using the word test in test driven development)
 
-In this example, the thing I've introduced is the use of a ubiquitous language to express the behavior of my system. As I mentioned above, I believe this is overkill for a unit-level test. Even so, it certainly is interesting to me to see a test structured in this way in C++. Among other story runners, [Cucumber](http://wiki.github.com/aslakhellesoy/cucumber) uses the following standard words to express steps in a story or feature:
+In this example, the thing I've introduced is the use of a ubiquitous language to express the behavior of my system. As I mentioned above, I believe this is overkill for a unit-level test. Even so, it certainly is interesting to me to see a test structured in this way in C++. Among other story runners, [[http://wiki.github.com/aslakhellesoy/cucumber|Cucumber]] uses the following standard words to express steps in a story or feature:
 * Given - an assumption about the setup/pre-conditions of the system before the story unfolds
 * When - the event that causes the setup/pre-conditions to be used by the system to produce results
 * Then - the expected results/post-conditions
@@ -522,7 +522,7 @@ Unlike Ruby, C++ doesn't really offer a very expressive way to make this look un
 * It can make tests more expressive
 * It uses the test fixture for setup, teardown and intermediate results - making it a collector or context under which the test operates.
 
-This second point is a bit ironic coming from me. There's a design pattern from Smalltalk called [self-shunt](http://www.objectmentor.com/resources/articles/SelfShunPtrn.pdf). I'm not a big fan of that pattern, but that pattern shares similarities with the second bullet. So I might have to reassess that pattern.
+This second point is a bit ironic coming from me. There's a design pattern from Smalltalk called [[http://www.objectmentor.com/resources/articles/SelfShunPtrn.pdf|self-shunt]]. I'm not a big fan of that pattern, but that pattern shares similarities with the second bullet. So I might have to reassess that pattern.
 
 # One Final Version
 In Cucumber, often the "And" step includes one thing to check. There's no reason to disallow more than one thing to check. Given the a previous solution using variable arguments, it seems OK to bring that back to clean up the examples that have so many "And" lines:
@@ -660,7 +660,7 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
 ``` 
 
 # Conclusion
-We started with a fairly standard set of tests. There was some duplication, but there is a wide array of opinions on just how much the [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] principle impacts the clarity of tests. Duplication is bad, but if [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] is the solution, then what problems might it introduce? (One of Jerry Weinberg's principles of problem solving is that "Every Solution introduces problems.") In the case of tests, applying the [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle can lead to hard to understand tests. 
+We started with a fairly standard set of tests. There was some duplication, but there is a wide array of opinions on just how much the [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] principle impacts the clarity of tests. Duplication is bad, but if [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] is the solution, then what problems might it introduce? (One of Jerry Weinberg's principles of problem solving is that "Every Solution introduces problems.") In the case of tests, applying the [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] principle can lead to hard to understand tests. 
 
 Even so, the first version seemed to have unnecessary duplication. That's where the second version made some improvements. However, one thing the second version lacked was a good way to check multiple results. It instead called a method each time for each of the expected results. In the last case, 1024, it uses a for-loop. This certainly makes the test pass and it can be interpreted, but that's sort of the point of writing expressive tests; they are easier to read and are expressed in a more natural language.
 
@@ -670,7 +670,7 @@ Finally, I wanted to try to express the tests using a story-based style using a 
 
 Here are a few things I hope you'll take away from reading this:
 * There are many ways to express tests
-* Even though we want to make tests self-evident, possibly not strictly following the [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle, there's duplication and then there's// **duplication*//.
+* Even though we want to make tests self-evident, possibly not strictly following the [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]] principle, there's duplication and then there's// **duplication*//.
 * Using intermediate test steps that record information in the test fixture can make for interesting possibilities. It made me personally reevaluate my dislike of the self-shunt pattern.
 * You can take it too far. The story-based tests are interesting and appropriate for story/feature level functionality (acceptance tests anyone?) but probably are overkill for unit-level testing.
 

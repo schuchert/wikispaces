@@ -4,8 +4,8 @@ title: Car_Rental_Example
 # Car Rental Example
 
 This project is used in several places across this wikispace (or will be at some point). It requires Java 5 (JDK 1.5) and uses Eclipse 3.2:
-* [Java JDK 1.5.0](http://java.sun.com/j2se/1.5.0/download.jsp).
-* [Eclipse](http://www.eclipse.org/downloads/)
+* [[http://java.sun.com/j2se/1.5.0/download.jsp|Java JDK 1.5.0]].
+* [[http://www.eclipse.org/downloads/|Eclipse]]
 
 If you just want the source, download it here: [[file:CarRentalRelease1.zip]].
 

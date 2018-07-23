@@ -4,7 +4,7 @@ title: FitNesse.Tutorials.AlternativeScriptTableSyntax
 {:toc}
 [[FitNesse.Tutorials|<--Back]]
 # Introduction
-Sometime in the beginning of 2010, Bob Martin started working on an alternative way to write script tables to provide something that looks more like a style used in tools like [cucumber](http://cukes.info/). While still somewhat preliminary, this tutorial gives you a brief introduction to using this alternative style. Before getting into details, there are a few things I'll note:
+Sometime in the beginning of 2010, Bob Martin started working on an alternative way to write script tables to provide something that looks more like a style used in tools like [[http://cukes.info/|cucumber]]. While still somewhat preliminary, this tutorial gives you a brief introduction to using this alternative style. Before getting into details, there are a few things I'll note:
 * Ultimately what gets executed in the fixture is the same thing that gets executed using "regular" scripts
 * All processing is done by FitNesse before sending test information into Slim.
 * There are two parts:

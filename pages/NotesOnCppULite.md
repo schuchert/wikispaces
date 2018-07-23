@@ -60,7 +60,7 @@ TEST(StateBasedLoginValidator, firstLoginSuccessful) {
 }
 ```
 ### TEST_GROUP
-A test group is how you create a [test fixture](http://xunitpatterns.com/test%20fixture%20-%20xUnit.html). This actually creates a class with **CppUTestGroup** as a prefix. So this creates the following definitions:
+A test group is how you create a [[http://xunitpatterns.com/test%20fixture%20-%20xUnit.html|test fixture]]. This actually creates a class with **CppUTestGroup** as a prefix. So this creates the following definitions:
 ```cpp
 int externTestGroupStateBasedLoginValidator = 0;
 struct CppUTestGroupStateBasedLoginValidator : public Utest
@@ -68,8 +68,8 @@ struct CppUTestGroupStateBasedLoginValidator : public Utest
 What follows is {};, which finish off the creation of the class
 
 There are several things worth pointing out:
-* **TEST_SETUP** is a per-test [fixture setup](http://xunitpatterns.com/fixture%20setup.html) function. that is, each time one of the tests run, this setup method will be called.
-* **TEST_TEARDOWN** is a per-test [fixture teardown](http://xunitpatterns.com/fixture%20teardown.html). After the test executes, this code is called.
+* **TEST_SETUP** is a per-test [[http://xunitpatterns.com/fixture%20setup.html|fixture setup]] function. that is, each time one of the tests run, this setup method will be called.
+* **TEST_TEARDOWN** is a per-test [[http://xunitpatterns.com/fixture%20teardown.html|fixture teardown]]. After the test executes, this code is called.
 
 If you happen to use any classes that use things from std:: such as std::string std::vector, you'll find out that you'll want to use new and delete in the setup and teardown methods, or CppUTest will report some memory leaks.
 
@@ -82,9 +82,9 @@ class testGroupfirstLoginSuccessfulTest : public CppUTestGroupfirstLoginSuccessf
 ```
 
 Note:
-* **CHECK** verifies that some Boolean condition is true. This is one of number of available [assertion methods](http://xunitpatterns.com/Assertion%20Method.html).
+* **CHECK** verifies that some Boolean condition is true. This is one of number of available [[http://xunitpatterns.com/Assertion%20Method.html|assertion methods]].
 
-CppUTest [assertion methods](http://xunitpatterns.com/Assertion%20Method.html):
+CppUTest [[http://xunitpatterns.com/Assertion%20Method.html|assertion methods]]:
 
 ||**Macro**||**Parameters**||**Description**||
 ||CHECK||condition||Verify condition is true. If not, report the name and line of the file where the condition fails using the preprocessor-defined macros ``__FILE__``, ``__LINE__``.||

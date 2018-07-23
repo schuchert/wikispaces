@@ -1,8 +1,8 @@
 ---
 title: PowerShell5-Tokenize_Expression-Convert_Tokenizer_To_An_Enumerator
 ---
-[^^ Up ^^](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FunctionCalls|<—Back]]  [Next—>]({{ site.pagesurl }}/PowerShell5.TokenizeExpression)  [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FinalishVersion)
-The Tokenizer converts a whole expression into an array of tokens. Now we'll convert it to an [Enumerator](https://msdn.microsoft.com/en-us/library/system.collections.ienumerator(v=vs.110).aspx).
+[[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FunctionCalls|<—Back]]  [Next—>]({{ site.pagesurl }}/PowerShell5.TokenizeExpression|^^ Up ^^]]  [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FinalishVersion)
+The Tokenizer converts a whole expression into an array of tokens. Now we'll convert it to an [[https://msdn.microsoft.com/en-us/library/system.collections.ienumerator(v=vs.110).aspx|Enumerator]].
 
 We are going to convert this in place while maintaining the tests.
 
@@ -273,4 +273,4 @@ Notice that we have no tests for Reset? It is required to get the code to run bu
 ``` 
 * Run your tests, they all pass.
 
-[^^ Up ^^](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FunctionCalls|<—Back]]  [Next—>]({{ site.pagesurl }}/PowerShell5.TokenizeExpression)  [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FinalishVersion)
+[[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FunctionCalls|<—Back]]  [Next—>]({{ site.pagesurl }}/PowerShell5.TokenizeExpression|^^ Up ^^]]  [[http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FinalishVersion)

@@ -2,7 +2,7 @@
 title: Context_Free_Questions
 ---
 # Context Free Questions
-These come from [Exploring Requirements: Quality Before Design](http://www.geraldmweinberg.com/books.html) by Gause & Weinberg.
+These come from [[http://www.geraldmweinberg.com/books.html|Exploring Requirements: Quality Before Design]] by Gause & Weinberg.
 ## Process
 * Who is the client for X?
 * What is a highly successful solution really worth to the client?

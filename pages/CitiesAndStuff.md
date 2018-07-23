@@ -7,13 +7,13 @@ My current home town.
 * NPR: 105.7 FM
 
 # Malvern, PA
-* Yoga: [Power Yoga Works](http://www.poweryogaworks.com/)
+* Yoga: [[http://www.poweryogaworks.com/|Power Yoga Works]]
 * There's a great Indian Restaurant about three doors down.
 
 # Salt Lake City, UT
-* Yoga: [City Centered Utah](http://www.centeredcityyoga.com/)
+* Yoga: [[http://www.centeredcityyoga.com/|City Centered Utah]]
 * There's a great Indian Restaurant Star of India, 55 E 400 S, Salt Lake City, UT, (801) 363-7555
 
 # Charlotte, NC
-* Yoga: [Charlotte Yoga](http://www.charlotteyoga.com/)
+* Yoga: [[http://www.charlotteyoga.com/|Charlotte Yoga]]
 * There's an excellent sushi place, Sushi 101, next door.

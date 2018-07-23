@@ -4,7 +4,7 @@ title: AgileTestingDays2010
 # Rpn Calculator Source w/ FitNesse Tests
 
 * You'll need a jvm already installed for this example to work
-* Download the zip file: [Archive.zip](http://schuchert.wikispaces.com/file/view/Archive.zip)
+* Download the zip file: [[http://schuchert.wikispaces.com/file/view/Archive.zip|Archive.zip]]
 * Create a directory to hold its contents
 * Extract the file into that directory
 * You'll see three entires (maybe a few more):

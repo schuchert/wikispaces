@@ -5,7 +5,7 @@ title: Ejb3AndJpaProjectSetup
 
 # Download this file: [[file:JpaAndEjb3.7z]]
 # Download this file: [[file:Ejb3AndJpaPrefs.epf]]
-# Use [7-zip](http://www.7-zip.org/) to expand this file somewhere (for this example we'll use C:/workspaces)
+# Use [[http://www.7-zip.org/|7-zip]] to expand this file somewhere (for this example we'll use C:/workspaces)
 # Start Eclipse
 # Select the directory where you extracted this file and add to it JpaAndEjb3 (C:/workspaces/JpaAndEjb3)
 # Pull down the **File** menu and select **Import**

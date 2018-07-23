@@ -11,7 +11,7 @@ Add a second set of around advice to FieldSetAspect.java. This around advice sho
 **Challenge:** Only report the first time a field is accessed. After that, silently ignore fields with @IgnoreField on them.
 ----
 ## EJB 3
-The EJB 3 specification uses annotations to describe Enterprise Beans. For examples, review this article [Page 2](http://www.devx.com/Java/Article/30045|Getting Started with EJB 3.0 and Enterprise Bean Components]]. [[http://www.devx.com/Java/Article/30045/0/page/2) shows examples of what it takes to create a stateless bean.
+The EJB 3 specification uses annotations to describe Enterprise Beans. For examples, review this article [[http://www.devx.com/Java/Article/30045|Getting Started with EJB 3.0 and Enterprise Bean Components]]. [[http://www.devx.com/Java/Article/30045/0/page/2|Page 2]] shows examples of what it takes to create a stateless bean.
 
 Describe how you might use annotations taking into consideration the way EJB 3.0 works.
 ----

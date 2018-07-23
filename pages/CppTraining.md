@@ -52,15 +52,15 @@ title: CppTraining
 
 [[#LinksToDesignPatterns]]
 # Links to Design Patterns
-## [Strategy](http://en.wikipedia.org/wiki/Strategy_pattern)
-## [Template Method](http://en.wikipedia.org/wiki/Template_method_pattern)
-## [Factory method](http://en.wikipedia.org/wiki/Abstract_factory_pattern|Factory Pattern]] & [[http://en.wikipedia.org/wiki/Factory_method_pattern)
-## [Composite](http://en.wikipedia.org/wiki/Composite_pattern)
-## [State](http://en.wikipedia.org/wiki/State_pattern)
+## [[http://en.wikipedia.org/wiki/Strategy_pattern|Strategy]]
+## [[http://en.wikipedia.org/wiki/Template_method_pattern|Template Method]]
+## [[http://en.wikipedia.org/wiki/Abstract_factory_pattern|Factory Pattern]] & [[http://en.wikipedia.org/wiki/Factory_method_pattern|Factory method]]
+## [[http://en.wikipedia.org/wiki/Composite_pattern|Composite]]
+## [[http://en.wikipedia.org/wiki/State_pattern|State]]
 
 [[#solid]]
 # Solid Principles
-## [From Uncle Bob](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
+## [[http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod|From Uncle Bob]]
 
 [[#FitNesse]]
 # FitNesse

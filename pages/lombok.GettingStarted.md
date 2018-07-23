@@ -2,7 +2,7 @@
 title: lombok.GettingStarted
 ---
 ## Overview
-[Gradle](http://projectlombok.org/|Project Lombok]] uses a Java Annotation Processor and Java annotations to add boilerplate code to existing classes. The major IDEs also support Lombok in varying forms, making it viable for both command-line and IDE-based work. In this introduction, we'll begin by creating a project from scratch using a [[http://maven.apache.org/guides/introduction/introduction-to-archetypes.html|Maven Archetype]] and then migrate it to use [[http://projectlombok.org/|Project Lombok]] and [[http://www.slf4j.org/|Slf4j]]. Then we'll move on to seeing how it works in [[http://www.jetbrains.com/idea/download/|IntelliJ]] and then we'll migrate the project to use [[http://www.gradle.org/). 
+[[http://projectlombok.org/|Project Lombok]] uses a Java Annotation Processor and Java annotations to add boilerplate code to existing classes. The major IDEs also support Lombok in varying forms, making it viable for both command-line and IDE-based work. In this introduction, we'll begin by creating a project from scratch using a [[http://maven.apache.org/guides/introduction/introduction-to-archetypes.html|Maven Archetype]] and then migrate it to use [[http://projectlombok.org/|Project Lombok]] and [[http://www.slf4j.org/|Slf4j]]. Then we'll move on to seeing how it works in [[http://www.jetbrains.com/idea/download/|IntelliJ]] and then we'll migrate the project to use [[http://www.gradle.org/|Gradle]]. 
 
 ## Create a Basic Project
 We need a project, since this is about a tool, the any project will do. To avoid much of the work, let's use a Maven archetype to create a trival project with a single production class and a single test class using JUnit.

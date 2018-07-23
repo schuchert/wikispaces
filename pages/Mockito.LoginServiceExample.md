@@ -3,16 +3,16 @@ title: Mockito.LoginServiceExample
 ---
 {:toc}
 # Getting Started
-I'm assuming you can [download Mockito](http://mockito.org/) and get it in your classpath. So I'll start with tests that implement some of the requirements from [here]({{ site.pagesurl }}/Tdd.Problems.LoggingIn).
+I'm assuming you can [[http://mockito.org/|download Mockito]] and get it in your classpath. So I'll start with tests that implement some of the requirements from [here]({{ site.pagesurl }}/Tdd.Problems.LoggingIn).
 
 However, in a nutshell:
-* Download mockito-all-1.7.jar [from here](http://mockito.org/).
+* Download mockito-all-1.7.jar [[http://mockito.org/|from here]].
 * Create a new Java project in your favorite IDE
 * Add that jar to your project's classpath
 * Add JUnit 4 to your project's classpath
 
 # Writing The Tests
-What follows is a series of tests to get enough production code written to suggest a better implementation. The first purpose of this tutorial is to demonstrate using Mockito for all types other than the underling LoginService. This is close to a [classic mockist approach](http://martinfowler.com/articles/mocksArentStubs.html#SoShouldIBeAClassicistOrAMockist), though it varies in that I'm emphasizing testing interaction rather than state and deliberately trying to write stable tests that do not depend too much on the underling implementation. In support of this: 
+What follows is a series of tests to get enough production code written to suggest a better implementation. The first purpose of this tutorial is to demonstrate using Mockito for all types other than the underling LoginService. This is close to a [[http://martinfowler.com/articles/mocksArentStubs.html#SoShouldIBeAClassicistOrAMockist|classic mockist approach]], though it varies in that I'm emphasizing testing interaction rather than state and deliberately trying to write stable tests that do not depend too much on the underling implementation. In support of this: 
 * All types used or needed by the underling LoginService will be represented as Interfaces (Interfaces will start with an I).
 * All types used or needed by the underling LoginService will be created via Mockito
 * I'm going to use Loose mocks - that is, you can call anything you want and the underling object will not complain
@@ -499,12 +499,12 @@ The first issue suggests spending some time on an Account class and then moving 
 
 If you do this, then you'll be able to simplify the LoginServiceTest class because some of the tests will no longer belong there and instead will exist on the AccountTest. Creating AccountTest and Account classes is left as an exercise to the reader.
 
-The second issue suggests the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern). And in fact, that's the next section. 
+The second issue suggests the [[http://en.wikipedia.org/wiki/State_pattern|GoF State pattern]]. And in fact, that's the next section. 
 [[#refactorproduction]]
 # Refactoring LoginService
-In the real system, there were more requirements and the stream of requirements were fed to me over months. The underlying login service I created looked something like this simple version, just bigger. On the real project, the code became very hard to manage because I was not practicing refacoring aggressively enough at the time. I realized that the underlying solution would be made better by applying the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern). In the actual solution, the LoginService had several methods, with many of the methods' responses dependent on either the state of the login service or the account. 
+In the real system, there were more requirements and the stream of requirements were fed to me over months. The underlying login service I created looked something like this simple version, just bigger. On the real project, the code became very hard to manage because I was not practicing refacoring aggressively enough at the time. I realized that the underlying solution would be made better by applying the [[http://en.wikipedia.org/wiki/State_pattern|GoF State pattern]]. In the actual solution, the LoginService had several methods, with many of the methods' responses dependent on either the state of the login service or the account. 
 
-I made the change and sure enough supporting new requirements was// **much**// easier. The remainder of this tutorial involves refactoring the current solution to use the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern).
+I made the change and sure enough supporting new requirements was// **much**// easier. The remainder of this tutorial involves refactoring the current solution to use the [[http://en.wikipedia.org/wiki/State_pattern|GoF State pattern]].
 
 [[#CoolDiagram]]
 Here's where we're going:
@@ -548,7 +548,7 @@ Here's our starting point:
    }
 ```
 
-This refactoring is a simplified version of [Replace Type Code with State/Strategy](http://www.refactoring.com/catalog/replaceTypeCodeWithStateStrategy.html). What we'll do is somewhat simpler because we do not have a type code. Rather, the underlying code is state-based and it is this observation, along with difficulty of managing the code, that suggests following the refactoring steps described in Martin Fowler's Refactoring book to get to the state pattern. And that is what follows.
+This refactoring is a simplified version of [[http://www.refactoring.com/catalog/replaceTypeCodeWithStateStrategy.html|Replace Type Code with State/Strategy]]. What we'll do is somewhat simpler because we do not have a type code. Rather, the underlying code is state-based and it is this observation, along with difficulty of managing the code, that suggests following the refactoring steps described in Martin Fowler's Refactoring book to get to the state pattern. And that is what follows.
 
 ## Create Hierarchy
 Remember that refactoring is an attempt to improve the structure of the code without affecting the code's behavior. In our case, the behavior is defined by our existing unit tests. We'll take many small steps that have two goals in mind:
@@ -860,7 +860,7 @@ To get this to pass, you'll need to make a few additions:
    }
 ```
 
-(Note: I'm cheating a bit here, I'm adding the previousAccountId as a field in this class. It will eventually be removed from the abstract base class as it does not apply to the AwaitingFirstLoginAttempt class. This is an example of avoiding violating the [Liskov Substitution Principle](http://www.objectmentor.com/resources/articles/lsp.pdf).)
+(Note: I'm cheating a bit here, I'm adding the previousAccountId as a field in this class. It will eventually be removed from the abstract base class as it does not apply to the AwaitingFirstLoginAttempt class. This is an example of avoiding violating the [[http://www.objectmentor.com/resources/articles/lsp.pdf|Liskov Substitution Principle]].)
 
 **Add setState to LoginService**
 ```java
@@ -933,9 +933,9 @@ Here are some remaining cleanup steps (after each change, make sure your tests s
 * Remove failedAttempts from LoginServiceState and also all other states that currently don't use it.
 * Remove previousAccountId from LoginServiceState.
 
-Notice that there's a lot of duplication in each of the three derived classes. Now, you'll introduce the [Gof Template Method Pattern](http://en.wikipedia.org/wiki/Template_method_pattern).
+Notice that there's a lot of duplication in each of the three derived classes. Now, you'll introduce the [[http://en.wikipedia.org/wiki/Template_method_pattern|Gof Template Method Pattern]].
 
-## Introduce the [Gof Template Method Pattern](http://en.wikipedia.org/wiki/Template_method_pattern)
+## Introduce the [[http://en.wikipedia.org/wiki/Template_method_pattern|Gof Template Method Pattern]]
 The template method pattern expresses an algorithm in a base class with extension points implemented in a derived class. The extension points are:
 * Called by a method that implements the algorithm in the base class.
 * Declared abstract in the base class.
@@ -943,7 +943,7 @@ The template method pattern expresses an algorithm in a base class with extensio
 
 Some external client issues a command, say X() as in the diagram above. The method X() has a number of steps (three in this example). The first and third steps are implemented in the base class. There is one part of the algorithm, the second step, that varies. Rather than attempt to implement it, the base class defers to an abstract method. The derived classes implement that abstract method to complete the algorithm.
 
-Consider the game [Monopoly](http://en.wikipedia.org/wiki/Monopoly_(game)). There are three kinds of locations around the board which players may purchase. These three kinds of locations are:
+Consider the game [[http://en.wikipedia.org/wiki/Monopoly_(game)|Monopoly]]. There are three kinds of locations around the board which players may purchase. These three kinds of locations are:
 * Railroads
 * Property
 * Utilities
@@ -1050,7 +1050,7 @@ public class AfterSecondFailedLoginAttempt extends LoginServiceState {
 After these four changes, make sure your code compiles and the tests pass.
 
 ## Final Cleanup, Part Two
-When I looked at the login method in the LoginServcieState I realized there was a missing test. I also did not like the violation of the [Dependency Inversion Principle](http://www.objectmentor.com/resources/articles/dip.pdf). So we'll fix those two things.
+When I looked at the login method in the LoginServcieState I realized there was a missing test. I also did not like the violation of the [[http://www.objectmentor.com/resources/articles/dip.pdf|Dependency Inversion Principle]]. So we'll fix those two things.
 
 ### Add a Missing Test
 There is a problem with the current implementation of LoginServiceState.login, but there are no tests to verify that the problem exists. Rather than tell you what the problem is, here is one final test:
@@ -1080,8 +1080,8 @@ After this line:
 
 What the first test does and why this fix works is left to the reader as an exercise.
 
-### Remove [Dependency Inversion Principle](http://www.objectmentor.com/resources/articles/dip.pdf) Violation
-The abstract class LoginServiceState depends on the concrete LoginService class, which violates the [Dependency Inversion Principle](http://www.objectmentor.com/resources/articles/dip.pdf). This is probably OK given that the state pattern is really a way to take part of the implementation of a class and extract it to a hierarchy. The combination of LoginService plus the LoginServiceState hierarchy is really a single logical unit. 
+### Remove [[http://www.objectmentor.com/resources/articles/dip.pdf|Dependency Inversion Principle]] Violation
+The abstract class LoginServiceState depends on the concrete LoginService class, which violates the [[http://www.objectmentor.com/resources/articles/dip.pdf|Dependency Inversion Principle]]. This is probably OK given that the state pattern is really a way to take part of the implementation of a class and extract it to a hierarchy. The combination of LoginService plus the LoginServiceState hierarchy is really a single logical unit. 
 
 Even so, let's take this to its logical (extreme) conclusion as a way to demonstrate taking something too far.
 
@@ -1137,7 +1137,7 @@ Replace all uses of LoginService with LoginServiceContext in the LoginServiceSta
 Make sure your code compiles and your tests pass.
 
 # Summary
-Congratulations. You started by writing tests using Mockito. Once you had a number of tests in place, you refactored your production code from a bunch of nested if statements (an embedded state machine) to use the [Gof Template Method Pattern](http://en.wikipedia.org/wiki/State_pattern|GoF State pattern]]. Once you got that working and cleaned up, you removed further duplication by introducing the [[http://en.wikipedia.org/wiki/Template_method_pattern).
+Congratulations. You started by writing tests using Mockito. Once you had a number of tests in place, you refactored your production code from a bunch of nested if statements (an embedded state machine) to use the [[http://en.wikipedia.org/wiki/State_pattern|GoF State pattern]]. Once you got that working and cleaned up, you removed further duplication by introducing the [[http://en.wikipedia.org/wiki/Template_method_pattern|Gof Template Method Pattern]].
 
 If you want to update your resume, it's time to add:
 * Test Driven Development

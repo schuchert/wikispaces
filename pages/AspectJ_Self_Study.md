@@ -36,8 +36,8 @@ Once you've worked through all of the above examples, you'll next want to work o
 External links:
 * http://www.newaspects.com/resources.php
 * http://www.eclipse.org/aspectj/doc/released/faq.html#q:buildingsource
-* [Separation of Concerns with Procedures, Annotations, Advice and Pointcuts](http://www.st.informatik.tu-darmstadt.de/database/publications/data/soc-w-paap-124.pdf?id=125)
-* [AOP@Work: AOP myths and realities](http://www-128.ibm.com/developerworks/java/library/j-aopwork15/)
+* [[http://www.st.informatik.tu-darmstadt.de/database/publications/data/soc-w-paap-124.pdf?id=125|Separation of Concerns with Procedures, Annotations, Advice and Pointcuts]]
+* [[http://www-128.ibm.com/developerworks/java/library/j-aopwork15/|AOP@Work: AOP myths and realities]]
 
 Work In Progress/Field Stones
 * [[AOP Field Stones]]

@@ -66,7 +66,7 @@ I next explain the model and let them know that they will be going through this 
 
 I ask them during the AlternatingHandGripExercise to remember the feelings associated with the exercise. This is a way for the student to have a quick mind-body experience. Later, when they are in the midst of chaos, they might remember the exercise and realize they are in chaos. If so, then they are must better of than before they were aware of this model.
 
-Sometimes I relate this model to [The Seven Stages of Expertise in Software Engineering](http://www.wayland-informatics.com/The%20Seven%20Stages%20of%20Expertise%20in%20Software.htm). When I do, I joke and say my goal is to get you to be less productive.
+Sometimes I relate this model to [[http://www.wayland-informatics.com/The%20Seven%20Stages%20of%20Expertise%20in%20Software.htm|The Seven Stages of Expertise in Software Engineering]]. When I do, I joke and say my goal is to get you to be less productive.
 
 ## Other Sources on the Satir Model
 Now We're in Chaos: [[http://www.chacocanyon.com/pointlookout/010919.shtml]]

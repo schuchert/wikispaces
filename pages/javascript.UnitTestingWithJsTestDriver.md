@@ -34,7 +34,7 @@ load:
 % java -jar JsTestDriver-1.3.3d.jar --port 9876
 ```
 * Open up browser/create a tab and then browse to localhost:9876.
-* Click on the //**[Capture This Browser](http://localhost:9876/capture)**// link. You'll see a window with the following information:
+* Click on the //**[[http://localhost:9876/capture|Capture This Browser]]**// link. You'll see a window with the following information:
 ```
                  JsTestDriver
 Last:1326495229968 | Next:1997 | Server:Waiting...

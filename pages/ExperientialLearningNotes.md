@@ -13,6 +13,6 @@ This page is the place where I've replicated notes I created from that workshop 
 > ==[[ShortExerciseOutline]]
 
 # External Links
-> ==[Experiential Learning Cycles](http://reviewing.co.uk/research/learning.cycles.htm)
-> ==[infed on kolb](http://www.infed.org/biblio/b-explrn.htm)
+> ==[[http://reviewing.co.uk/research/learning.cycles.htm|Experiential Learning Cycles]]
+> ==[[http://www.infed.org/biblio/b-explrn.htm|infed on kolb]]
 

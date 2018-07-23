@@ -52,14 +52,14 @@ In this case, the answer is it can be interrupted, it is not atomic.
 
 Before we go any further, here are three definitions that will be important:
 ||**Term**||**Definition**||
-||[call stack](http://java.sun.com/docs/books/jvms/second_edition/html/Instructions.doc.html|frame]]||Every method invocation requires a frame. The frame includes the return address, any parameters passed into the method and the local variables defined in the method. This is a standard technique used to define a [[http://en.wikipedia.org/wiki/Call_stack), which is used by modern languages to allow for basic function/method invocation and to allow for recursive invocation.||
-||[Local Variable](http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#15722)||Any variables defined in the method. All non-static methods have at least one variable,// **this**//, which represents the current object; the object that received the most recent message (in the current thread), which caused the method invocation.||
-||[LIFO](http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#28851|Operand Stack]]||Many of the instructions in the Java Virtual machine take parameters. The operand stack is where those parameters are put. The stack is a standard [[http://en.wikipedia.org/wiki/LIFO) data structure.||
-So what constitutes an atomic operation in Java? A simple definition would be: The execution of a single [Java VM Specification](http://java.sun.com/docs/books/jvms/second_edition/html/Instructions.doc.html|Instruction]] as defined in the [[http://java.sun.com/docs/books/jvms/second_edition/html/VMSpecTOC.doc.html). At least that was my old mental model. This is a gross oversimplification - in fact, I don't think it is even a good mental model, but I haven't got one to replace it yet. To really understand what an atomic operation is in Java, you must understand the Java memory model. Suffice it to say, assigning a 32-bit value (in this case an int) into a field is guaranteed to be atomic.
+||[[http://java.sun.com/docs/books/jvms/second_edition/html/Instructions.doc.html|frame]]||Every method invocation requires a frame. The frame includes the return address, any parameters passed into the method and the local variables defined in the method. This is a standard technique used to define a [[http://en.wikipedia.org/wiki/Call_stack|call stack]], which is used by modern languages to allow for basic function/method invocation and to allow for recursive invocation.||
+||[[http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#15722|Local Variable]]||Any variables defined in the method. All non-static methods have at least one variable,// **this**//, which represents the current object; the object that received the most recent message (in the current thread), which caused the method invocation.||
+||[[http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#28851|Operand Stack]]||Many of the instructions in the Java Virtual machine take parameters. The operand stack is where those parameters are put. The stack is a standard [[http://en.wikipedia.org/wiki/LIFO|LIFO]] data structure.||
+So what constitutes an atomic operation in Java? A simple definition would be: The execution of a single [[http://java.sun.com/docs/books/jvms/second_edition/html/Instructions.doc.html|Instruction]] as defined in the [[http://java.sun.com/docs/books/jvms/second_edition/html/VMSpecTOC.doc.html|Java VM Specification]]. At least that was my old mental model. This is a gross oversimplification - in fact, I don't think it is even a good mental model, but I haven't got one to replace it yet. To really understand what an atomic operation is in Java, you must understand the Java memory model. Suffice it to say, assigning a 32-bit value (in this case an int) into a field is guaranteed to be atomic.
 
 Even so, let's have a look at the details of this one line of Java code. The instruction set for the first example, where we assign 1 to the field value, is:
 ||**mnemonic**||**description**||**Operand Stack After**||
-||ALOAD 0||Load the 0th variable onto the operand stack. What is the 0th variable? It is// **this**//. It is the current object. When this method was called, the receiver of the message, an instance of ClassWithThreadingProblem, was pushed into the local variable array of the [frame](http://java.sun.com/docs/books/jvms/second_edition/html/Instructions.doc.html) created for method invocation. This is always the first variable put in every instance method.||this||
+||ALOAD 0||Load the 0th variable onto the operand stack. What is the 0th variable? It is// **this**//. It is the current object. When this method was called, the receiver of the message, an instance of ClassWithThreadingProblem, was pushed into the local variable array of the [[http://java.sun.com/docs/books/jvms/second_edition/html/Instructions.doc.html|frame]] created for method invocation. This is always the first variable put in every instance method.||this||
 ||ICONST_1||Load the constant value 1 onto the operand stack.||this, 1||
 ||PUTFIELD value||Store the top value on the stack (which is 1) into the field **value** of the object referred to by the object reference one away from the top of the stack.||<empty>||
 
@@ -167,25 +167,25 @@ Yet, even with all of these things, you might still not find threading problems 
 Yes.
 ----
 ## Tool Support for Thread-Based Code
-There is a tool from IBM called [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) that will instrument classes to make it more likely that such non-thread-safe code more reliably fails.
+There is a tool from IBM called [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] that will instrument classes to make it more likely that such non-thread-safe code more reliably fails.
 
-//Note, I do not have any direct relationship with IBM or the team that developed [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html). A colleague of mine pointed me to it and I've worked with it a little bit. I noticed vast improvement in my ability to find threading issues after a few minutes of using it.//
+//Note, I do not have any direct relationship with IBM or the team that developed [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]]. A colleague of mine pointed me to it and I've worked with it a little bit. I noticed vast improvement in my ability to find threading issues after a few minutes of using it.//
 
-Here's an outline of how to use [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html):
+Here's an outline of how to use [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]]:
 # Write tests and production code, making sure there are tests specifically designed to simulate multiple users under varying loads, as mentioned above
-# Instrument test and production code [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html)
+# Instrument test and production code [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]]
 # Run the tests
 
-When I instrumented my code with [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]], my success rate went from roughly 10% to roughly 100%. I think in practice 10% is too high since I happened to see the code fail in one run of a series of 10 back-to-back runs. However, I had not seen it fail before nor since. The value of 100% is probably a bit high as well. I checked the value of the loop variable for several runs, and the test was able to demonstrate that the code was faulty early in the loop. Here are the loop values for several runs of the test: 13, 23, 0, 54, 16, 14, 6, 69, 107, 49, 2. That is, [[http://www.haifa.ibm.com/projects/verification/contest/index.html)-instrumented classes failed much earlier and with much greater reliability. Every time I have run the test after instrumentation, it demonstrates the code failed. However, I cannot say with certainty that the test will expose the problem 100% of the time. Even so, there's at least one order, and probably closer to 2 orders of magnitude improvement in our ability to discover problems in our thread-based code.
+When I instrumented my code with [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]], my success rate went from roughly 10% to roughly 100%. I think in practice 10% is too high since I happened to see the code fail in one run of a series of 10 back-to-back runs. However, I had not seen it fail before nor since. The value of 100% is probably a bit high as well. I checked the value of the loop variable for several runs, and the test was able to demonstrate that the code was faulty early in the loop. Here are the loop values for several runs of the test: 13, 23, 0, 54, 16, 14, 6, 69, 107, 49, 2. That is, [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]]-instrumented classes failed much earlier and with much greater reliability. Every time I have run the test after instrumentation, it demonstrates the code failed. However, I cannot say with certainty that the test will expose the problem 100% of the time. Even so, there's at least one order, and probably closer to 2 orders of magnitude improvement in our ability to discover problems in our thread-based code.
 
-At a first glance, that is the primary purpose of [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]]. It instruments your classes so that during execution time, [[http://www.haifa.ibm.com/projects/verification/contest/index.html) adds so-called noise into the execution of your tests. By doing so, it increases the number of ways in which the threads in your tests interleave with each other, which increases the likelihood of exposing unsafe execution orderings. However, it additionally remembers the order in which things occurred, so it is also possible that it can help you figure out why your code broke so you have a better chance of fixing it.
+At a first glance, that is the primary purpose of [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]]. It instruments your classes so that during execution time, [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] adds so-called noise into the execution of your tests. By doing so, it increases the number of ways in which the threads in your tests interleave with each other, which increases the likelihood of exposing unsafe execution orderings. However, it additionally remembers the order in which things occurred, so it is also possible that it can help you figure out why your code broke so you have a better chance of fixing it.
 
-Describing how [publications.](http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] actually accomplishes this, and what other features it offers, is better described by several [[http://www.haifa.ibm.com/projects/verification/contest/publications.html)
+Describing how [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] actually accomplishes this, and what other features it offers, is better described by several [[http://www.haifa.ibm.com/projects/verification/contest/publications.html|publications.]]
 ----
 ## Manual Instrumentation is for the Birds
-A short time before writing this, I wrote something on using the -javaagent VM argument for dynamic instrumentation ([ConTest]({{ site.pagesurl }}/JavaAgent]]) of classes while they are loaded into the Java VM. I wrote that in support of applying [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) instrumentation automatically using so-called dynamic instrumentation. I do not not like the manual step of instrumenting my classes with [[http://www.haifa.ibm.com/projects/verification/contest/index.html) every time I was ready to run my tests.
+A short time before writing this, I wrote something on using the -javaagent VM argument for dynamic instrumentation ([ConTest]({{ site.pagesurl }}/JavaAgent]]) of classes while they are loaded into the Java VM. I wrote that in support of applying [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] instrumentation automatically using so-called dynamic instrumentation. I do not not like the manual step of instrumenting my classes with [[http://www.haifa.ibm.com/projects/verification/contest/index.html) every time I was ready to run my tests.
 
-To instrument your classes using [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html), you issue a command like the following:
+To instrument your classes using [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]], you issue a command like the following:
 ```terminal
 java -classpath ConTest.jar com.ibm.contest.instrumentation.Instrument Class1.class
 ```
@@ -196,12 +196,12 @@ I was able to us this class to write a very quick dynamic instrumentor. First I 
 # Uses a new instance of ClassStreamInstrumentor to instrument loaded classes (checking for classes to skip)
 # Return those instrumented bytes
 
-This does require some command-line parameters when starting the JVM (or some one-time IDE configuration). But this works. So my process to use [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) is this:
+This does require some command-line parameters when starting the JVM (or some one-time IDE configuration). But this works. So my process to use [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] is this:
 # (one time)Configure my IDE to add a few parameters to the execution of the Java VM running my tests
 # Write my tests and production code
 # Execute my tests
 
-The first (one time) step, makes sure every time my IDE runs the Java VM, it passes parameters to the Java VM. Those parameters cause the registration of a class that uses the [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) instrumentation infrastructure on each individual class loaded so I can avoid the manual step of instrumentation.
+The first (one time) step, makes sure every time my IDE runs the Java VM, it passes parameters to the Java VM. Those parameters cause the registration of a class that uses the [[http://www.haifa.ibm.com/projects/verification/contest/index.html|ConTest]] instrumentation infrastructure on each individual class loaded so I can avoid the manual step of instrumentation.
 
 If you want to read more on how that happens, go [here]({{ site.pagesurl }}/JavaAgent).
 ----
@@ -210,7 +210,7 @@ Here's a jar file you can use that will give you the same results: [[file:Regist
 
 To use this jar:
 # Download the file Registrar.jar
-# [Download ConTest](http://www.alphaworks.ibm.com/tech/contest/download?open&S_TACT=105AGX59&S_CMP=GR)
+# [[http://www.alphaworks.ibm.com/tech/contest/download?open&S_TACT=105AGX59&S_CMP=GR|Download ConTest]]
 # Add the ConTest.jar to your classpath
 # Start the VM with the following command (I've added some whitespace to make this readable):
 ```terminal

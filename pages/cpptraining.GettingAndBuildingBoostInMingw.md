@@ -12,9 +12,9 @@ At this point you should have:
 Next, you'll download and build the boost library.
 
 # The Steps
-* Download the Boost build tool bjam: [BJam Download Page](http://sourceforge.net/projects/boost/files/boost-jam/). As of this writing, I used 3.1.18.
+* Download the Boost build tool bjam: [[http://sourceforge.net/projects/boost/files/boost-jam/|BJam Download Page]]. As of this writing, I used 3.1.18.
 * Extract this zip file somewhere. In my case, I extracted to C:\workspaces, which created C:\workspaces\boost-jam-3.1.18-1-ntx86.
-* Download the Boost library from [Boost download page](http://sourceforge.net/projects/boost/files/boost/1.43.0/). As of this writing, I used 1.43.0.
+* Download the Boost library from [[http://sourceforge.net/projects/boost/files/boost/1.43.0/|Boost download page]]. As of this writing, I used 1.43.0.
 * Extract this zip file somewhere. In my case I extracted to C:\workspaces, which created C:\workspaces\boost_1_43_0.  (Note that you'll need roughly 3 gb of storage to extract and build the boost library.)
 * Make sure that BJam, mingw\bin and msys\bin are in your PATH. Here is a batch file that can do that:
 ```

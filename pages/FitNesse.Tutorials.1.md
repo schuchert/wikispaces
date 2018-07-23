@@ -4,7 +4,7 @@ title: FitNesse.Tutorials.1
 {:toc}
 [[FitNesse.Tutorials|<--Back]] -or- [[FitNesse.Tutorials.2|Next Tutorial-->]]
 # Introduction
-This tutorial assumes some basic [go here first](http://fitnesse.org/|FitNesse]] knowledge. If you need help installing or running [[http://fitnesse.org/|FitNesse]], please [[FitNesse.Tutorials.0). In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:
+This tutorial assumes some basic [[http://fitnesse.org/|FitNesse]] knowledge. If you need help installing or running [[http://fitnesse.org/|FitNesse]], please [[FitNesse.Tutorials.0|go here first]]. In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:
 * Create Decision tables in FitNesse
 * Make the tables execute by writing Fixtures
 * Get the tests to pass by updating both the Fixture code and by creating production code
@@ -15,17 +15,17 @@ This tutorial assumes some basic [go here first](http://fitnesse.org/|FitNesse]]
 * Learn how to coordinate between different fixtures
 * Learn how to review output from your fixture code
 
-This tutorial is primarily about getting you over the hurtle of the mechanics of getting tests to execute using [FitNesse](http://fitnesse.org/). Even so, you will see some basic design considerations play out as well.
+This tutorial is primarily about getting you over the hurtle of the mechanics of getting tests to execute using [[http://fitnesse.org/|FitNesse]]. Even so, you will see some basic design considerations play out as well.
 
-Note, this tutorial assumes you are running [try this tutorial](http://fitnesse.org/|FitNesse]] on localhost at port 8080 [[http://localhost:8080]]. If you are not sure how to do that, [[FitNesse.Tutorials.0).
+Note, this tutorial assumes you are running [[http://fitnesse.org/|FitNesse]] on localhost at port 8080 [[http://localhost:8080]]. If you are not sure how to do that, [[FitNesse.Tutorials.0|try this tutorial]].
 # Background
-[FitNesse.Slim Decision Tables](http://FitNesse.org/FitNesse.SliM.DecisionTable) are a common way to get test data into a System Under Test. A Decision table has three parts (only the first of which is actually required):
+[[http://FitNesse.org/FitNesse.SliM.DecisionTable|FitNesse.Slim Decision Tables]] are a common way to get test data into a System Under Test. A Decision table has three parts (only the first of which is actually required):
 # One Title Row - Names the fixture to execute, optionally includes constructor parameters
 # One Heading Row - Names of columns, which map to either setter methods or method calls (if they end in ?)
 # Zero or more Data Rows - rows of data used to either provide data into a system or data used to compare to values returned from the fixture
 
 [[#firstDecisionTable]]
-Here is an example [FitNesse](http://fitnesse.org/) decision table:
+Here is an example [[http://fitnesse.org/|FitNesse]] decision table:
 ```
 |Add Programs To Schedule                                                     |
 |name      |episode                      |channel|date     |start time|minutes|
@@ -33,7 +33,7 @@ Here is an example [FitNesse](http://fitnesse.org/) decision table:
 |Doctor Who|The One where He Saves the UK|12     |5/17/2008|8:00      |60     |
 ```
 
-The first row names the fixture. In this case, [FitNesse](http://fitnesse.org/|FitNesse]] will look for a class called AddProgramsToSchedule. The second row lists the column names. [[http://fitnesse.org/) will look for the following methods in AddProgramsToSchedule:
+The first row names the fixture. In this case, [[http://fitnesse.org/|FitNesse]] will look for a class called AddProgramsToSchedule. The second row lists the column names. [[http://fitnesse.org/|FitNesse]] will look for the following methods in AddProgramsToSchedule:
 * setName(...)
 * setEpisode(...)
 * setChannel(...)
@@ -59,10 +59,10 @@ Here are some preliminary steps to get this table created (there will be more la
 * Set the page type to a test page (depending on the version of fitness, this is either a check-box or a radio button). Note, if a page name starts with or ends with the word test, the page type will be set to test by default.
 * Save the property change (click the **Save Properties** button).
 
-Now you can execute the page. Click on the **Test** button. The tests will fail dues to a missing fixutre. [FitNesse](http://fitnesse.org/) will color the first row yellow and add the message "//Could not find fixture: AddProgramsToSchedule.//". Now you must create a Fixture class and add it to the test page.
+Now you can execute the page. Click on the **Test** button. The tests will fail dues to a missing fixutre. [[http://fitnesse.org/|FitNesse]] will color the first row yellow and add the message "//Could not find fixture: AddProgramsToSchedule.//". Now you must create a Fixture class and add it to the test page.
 
 ## Creating the Fixture
-If you are planning on using Eclipse and working in Java, then you can get a repository from github: [here](http://github.com/schuchert/fitnesse-tutorials/tree/master|fitnesse-tutorials]]. Review the instructions [[FitNesse.Tutorials.WorkingFromGitHub).
+If you are planning on using Eclipse and working in Java, then you can get a repository from github: [[http://github.com/schuchert/fitnesse-tutorials/tree/master|fitnesse-tutorials]]. Review the instructions [[FitNesse.Tutorials.WorkingFromGitHub|here]].
 
 Creating a fixture involves:
 * Creating class.
@@ -100,15 +100,15 @@ public class AddProgramsToSchedule {
 ```
 
 There are still a few things you need to do to make the page use this class:
-* Inform [FitNesse](http://fitnesse.org/) you want to use Slim versus fit:
+* Inform [[http://fitnesse.org/|FitNesse]] you want to use Slim versus fit:
 ```
 !define TEST_SYSTEM {slim}
 ```
-* Inform [FitNesse](http://fitnesse.org/) where to look for your class files (update this directory as appropriate):
+* Inform [[http://fitnesse.org/|FitNesse]] where to look for your class files (update this directory as appropriate):
 ```
 !path /Users/schuchert/src/fitnesse-tutorials/DVR/bin
 ```
-* Inform [FitNesse](http://fitnesse.org/) the package/namespace in which to look:
+* Inform [[http://fitnesse.org/|FitNesse]] the package/namespace in which to look:
 ```
 |import|
 |com.om.example.dvr.fixtures|
@@ -157,7 +157,7 @@ Try running this page and FitNesse will complain that it cannot find the **creat
 Update your table and add the missing method. Verify that the test still passes. You'll notice there are three successful assertions.
 
 ## What is this doing?
-Adding a column with a ? at the end of its name requires that the fixture have a method with a matching name (remove spaces, use camel casing) with some return value. [FitNesse](http://fitnesse.org/) will execute that method and compare its return value to the value in the cell, marking it green or red for matching/not matching. If you happen to have a cell with no value, the return value will be displayed in the cell with a gray coloring. 
+Adding a column with a ? at the end of its name requires that the fixture have a method with a matching name (remove spaces, use camel casing) with some return value. [[http://fitnesse.org/|FitNesse]] will execute that method and compare its return value to the value in the cell, marking it green or red for matching/not matching. If you happen to have a cell with no value, the return value will be displayed in the cell with a gray coloring. 
 
 # Make the Assertion have some Value
 There's nothing in the flow of this table that would cause a problem. However, what if we want to make sure adding a program on top of another is not possible? We can do that by adding one more row to the bottom of the table::
@@ -273,7 +273,7 @@ Make these changes to your code and see that your tests now pass. Now your fixtu
 
 Another issue is that the "AddProgramsToSchedule" class is starting to get somewhat big. Fixtures are enabling technology and as such should primarily handle data translation and then delegate to production code.
 
-Along those lines, "buildStartDateTime" also exhibits feature envy. The "Schedule" is currently just a "List<TimeSlot>", but it might warrant its own class. While this tutorial's focus is [FitNesse](http://fitnesse.org/), this fixture contains business logic. You do not want any business logic in your fixture code, so that's the next thing to fix.
+Along those lines, "buildStartDateTime" also exhibits feature envy. The "Schedule" is currently just a "List<TimeSlot>", but it might warrant its own class. While this tutorial's focus is [[http://fitnesse.org/|FitNesse]], this fixture contains business logic. You do not want any business logic in your fixture code, so that's the next thing to fix.
 
 To fix this, we can introduce a new class and perform some basic re-factoring:
 **Schedule.java**
@@ -519,9 +519,9 @@ Once you've made these updates, execute the table. You should notice three value
 
 In all cases:
 * the value returned is displayed,
-* the cells are empty, so [FitNesse](http://fitnesse.org/) just displays the results.
+* the cells are empty, so [[http://fitnesse.org/|FitNesse]] just displays the results.
 
-In the first case, there is a variable assignment, which [FitNesse](http://fitnesse.org/) dutifully assigned.
+In the first case, there is a variable assignment, which [[http://fitnesse.org/|FitNesse]] dutifully assigned.
 
 This variable is available for the rest of the page. However, before we get to that we do have a problem. The lastId? is set upon a successful program add, but it is not reset if the program is not added. Here is a quick fix to improve that:
 **AddProgramsToScheule.created**
@@ -574,7 +574,7 @@ What to do:
 * Create the RemoveProgramById fixture
 * Run you tests.
 
-When you run your tests, do you notice a problem? The tests pass! Maybe you expected the second attempt to add would fail, but it appears to work. This illustrates something [FitNesse](http://fitnesse.org/) does; each table causes a new instance of the fixture to be created, even on the same page. How can you tell this? If you want to verify it, you could simply add a print statement to the constructor and view the output. I've already done that. Here's the print statement:
+When you run your tests, do you notice a problem? The tests pass! Maybe you expected the second attempt to add would fail, but it appears to work. This illustrates something [[http://fitnesse.org/|FitNesse]] does; each table causes a new instance of the fixture to be created, even on the same page. How can you tell this? If you want to verify it, you could simply add a print statement to the constructor and view the output. I've already done that. Here's the print statement:
 **Example: Added to AddProgramsToSchedule fixture**
 ```java
    private static int numberCreated = 0;
@@ -584,7 +584,7 @@ When you run your tests, do you notice a problem? The tests pass! Maybe you expe
    }
 ```
 
-Adding this and then executing the tests, [FitNesse](http://fitnesse.org/) will display a yellow triangle with the label "Output Captured". Clicking on that triangle, you'll see the output captured during test execution::
+Adding this and then executing the tests, [[http://fitnesse.org/|FitNesse]] will display a yellow triangle with the label "Output Captured". Clicking on that triangle, you'll see the output captured during test execution::
 ```
 Standard Output:
 
@@ -684,15 +684,15 @@ public class RemoveProgramById {
    }
 }
 ```
-Note that this Fixture, as written, supports both styles. The real reason I wanted to include this last example was to demonstrate how you can cause a row of a decision table to be executed without include a column with a ? in its name. You add a method called **execute()**. [FitNesse](http://fitnesse.org/) will call that method, if it exists, after calling the last setter (the columns without ? in their name).
+Note that this Fixture, as written, supports both styles. The real reason I wanted to include this last example was to demonstrate how you can cause a row of a decision table to be executed without include a column with a ? in its name. You add a method called **execute()**. [[http://fitnesse.org/|FitNesse]] will call that method, if it exists, after calling the last setter (the columns without ? in their name).
 
 # Conclusion and Summary
 Congratulations, you've completed this tutorial.
 
-This tutorial emphasizes Decision tables. There is still more to you can do with decision tables, but this covers most of what you'll need to know to effectively use decision tables. If you go to your fitness installation and go to FitNesse.SliM.DecisionTable ([FitNesse](http://localhost:8080/FitNesse.SliM.DecisionTable]]), you can read the [[http://fitnesse.org/FitNesse.SliM.DecisionTable)-provided documentation.
+This tutorial emphasizes Decision tables. There is still more to you can do with decision tables, but this covers most of what you'll need to know to effectively use decision tables. If you go to your fitness installation and go to FitNesse.SliM.DecisionTable ([[http://localhost:8080/FitNesse.SliM.DecisionTable]]), you can read the [[http://fitnesse.org/FitNesse.SliM.DecisionTable|FitNesse]]-provided documentation.
 
 However, you've learned several things in this tutorial:
-* How to tell [FitNesse](http://fitnesse.org/) to use Slim instead of fit (its default)
+* How to tell [[http://fitnesse.org/|FitNesse]] to use Slim instead of fit (its default)
 * How to import packages (works for namespaces as well)
 * How to create a decision table
 * You've learned that a decision table has three parts:
@@ -704,16 +704,16 @@ However, you've learned several things in this tutorial:
 * How to use variables in Decision tables (both writing and reading)
 * Learned the difference between setter columns and method call columns
 ** A column with just text in its name will map to a public method called setX, where X is the name of the column.
-** A column with a ? at the end of its name is a method call, which causes [FitNesse](http://fitnesse.org/) to invoke a method and use the returned value for possible verification.
+** A column with a ? at the end of its name is a method call, which causes [[http://fitnesse.org/|FitNesse]] to invoke a method and use the returned value for possible verification.
 * Learned how to call a constructor in a decision table
 * Discovered the relationship between tables, fixtures and instances of fixture classes
 * Learn how to coordinate between different fixtures
 * Learn how to review output from your fixture code
-* Learned that you can add an execute() method, which [FitNesse](http://fitnesse.org/) will call for you after calling the setters.
+* Learned that you can add an execute() method, which [[http://fitnesse.org/|FitNesse]] will call for you after calling the setters.
 * Learned that a fixture is just a plane old class, it does not inherit from anything.
 * Learned that the methods to be called must be public.
 * Learned that fixtures should not have any production logic in them.
-* Learned that if you put output in your code, [FitNesse](http://fitnesse.org/) will capture it and you'll be able to see it
+* Learned that if you put output in your code, [[http://fitnesse.org/|FitNesse]] will capture it and you'll be able to see it
 ** Note, while you can debug this, your fixtures should be so simple that this is seldom necessary. If you find yourself doing this often, consider simplifying your fixtures. If that's not possible, write unit tests for your complex fixture code.
 * Learned that each of the data rows in your fixture is executed in order, top-to-bottom.
 
