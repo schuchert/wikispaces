@@ -2,7 +2,7 @@
 title: Car_Rental_Code_Coverage_with_Cobertura
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/Car Rental Example)  [Next-->]({{ site.pagesurl}}/Car Rental Code Coverage with Cobertura vehicle.type)
+[<--Back]({{ site.pagesurl}}/Car_Rental_Example)  [Next-->]({{ site.pagesurl}}/Car_Rental_Code_Coverage_with_Cobertura_vehicle.type)
 
 # Code Coverage with Cobertura
 
@@ -15,9 +15,9 @@ Cobertura does not currently come with a plugin, so in this example we'll use [A
 
 Let's get started:
 **Download**
-# Download Cobertura from [here](http://cobertura.sourceforge.net/download.html). Note I downloaded version 1.8 for this example.
-# Extract the jar somewhere. I used c:\libs\, which created the directory C:\libs\cobertura-1.8.
-# Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
+* Download Cobertura from [here](http://cobertura.sourceforge.net/download.html). Note I downloaded version 1.8 for this example.
+* Extract the jar somewhere. I used c:\libs\, which created the directory C:\libs\cobertura-1.8.
+* Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
 
 **suite() method**
 Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [suite()]({{ site.pagesurl}}/JUnit 4.xSuite) method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
@@ -35,6 +35,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 (By the way, let me give credit where it's due, I got most of this from [Cobertura Ant Task Reference](http://cobertura.sourceforge.net/anttaskreference.html).
 
 Here's the file so we can discuss it and configure it for your situation:
+
 ----
 [[#cobertura]]
 ## cobertura.xml
@@ -118,27 +119,28 @@ Here's the file so we can discuss it and configure it for your situation:
 77:    </target>
 78: </project>
 ```
-### Interesting Lines
-|Line|Description|
 
 ## Execution
 Assuming you've updated the cobertura.xml file and set all of the relevant properties for your environment, then do the following:
-# Right-click on CarRental/xml/cobertura.xml
-# Select Run As:Ant Build
-# Wait for a few seconds (about 5 - 10 in my case)
-# Note that this ant file adds a directory called **cobertrua_results** under the CarRental directory with the execution results. To see this (if you don't automatically see it after executing this ant task), select CarRental, right-click and select refresh (or hit F5).
+* Right-click on CarRental/xml/cobertura.xml
+* Select Run As:Ant Build
+* Wait for a few seconds (about 5 - 10 in my case)
+* Note that this ant file adds a directory called **cobertrua_results** under the CarRental directory with the execution results. To see this (if you don't automatically see it after executing this ant task), select CarRental, right-click and select refresh (or hit F5).
 
 I considered adding the following line to cobertura.xml:
->  <eclipse.refreshLocal resourcePath="CarRental" depth="infinite"/>
+```<eclipse.refreshLocal resourcePath="CarRental" depth="infinite"/>```
 This would force a refresh but it also requires that you run the ant script in the same VM as Eclipse.
 
 ## Preliminary Analysis
 With your directory refreshed, you're ready to have a look at the output:
-# Expand the CarRental project.
-# Expand the cobertura_results directory.
-# Expand the reports directory.
-# Double click on index.xml (I've noticed that this sometimes fails when I'm using RAD. If this happens to you, just open this with your favorite browser).
-# Here's a summary of my numbers by package:
+* Expand the CarRental project.
+* Expand the cobertura_results directory.
+* Expand the reports directory.
+* Double click on index.xml (I've noticed that this sometimes fails when I'm using RAD. If this happens to you, just open this with your favorite browser).
+* Here's a summary of my numbers by package:
+
+^
+|-|-|-|-|-|-|-|
 |Package|#Classes|Line Coverage|covered/total|Branch Coverage|covered/total|Complexity|
 |All_Packages|88|85%|1680/1984|88%|120/136|1.3125|
 |vehicle.component.rateplan|2|87%|256/295|100%|5/5|0|
@@ -174,4 +176,4 @@ Let's begin by working from the worst pacakge to the best package. This gives us
 
 Even though the last two packages already have 90% coverage, we'll review them anyway.
 
-[<--Back]({{ site.pagesurl}}/Car Rental Example)  [Next-->]({{ site.pagesurl}}/Car Rental Code Coverage with Cobertura vehicle.type)
+[<--Back]({{ site.pagesurl}}/Car_Rental_Example)  [Next-->]({{ site.pagesurl}}/Car_Rental_Code_Coverage_with_Cobertura_vehicle.type)

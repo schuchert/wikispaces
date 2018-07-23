@@ -264,6 +264,7 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** User (x4)
 ** Product Owner (x4)
 ** Business Analyst (x4)
+
 |Item|Formula|Minimum|
 |3x5 Cards|1 + 1 for every 2 students|2|
 |PostIts(r)|1 + 1 per every 2 students|2|
@@ -274,37 +275,43 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 |6-sided dice|1 + 1 for every 4 students|2|
 |Decks of Playing cards|1 + 1 for every 4 students|2|
 
+^
+|----|----|
 |Ref|Title|
 |Cohn06|User Stories Applied - For Agile Software Development|
-|G&W89|Exploring Requirements - Quality Before Design|
+|G&Weinberg89|Exploring Requirements - Quality Before Design|
+
 ----
 ## Design Problems
-* [[ITunesCompetetorDesignProblem]]
-* [[GmOnStarCompetetorDesignProblem]]
-* [[TimeTrackingForConsultingCompanyDesignProblem]]
-* [[ClinicalTrialsTrackingDesignProblem]]
-* [[DvrDesignProblem]]
+* [ITunes]({{site.pagesurl}}/ITunesCompetetorDesignProblem)
+* [GmOnStar]({{site.pagesurl}}/GmOnStarCompetetorDesignProblem)
+* [Time Tracking]({{site.pagesurl}}/TimeTrackingForConsultingCompanyDesignProblem)
+* [Clinical Trial]({{site.pagesurl}}/ClinicalTrialsTrackingDesignProblem)
+* [Dvr]({{site.pagesurl}}/DvrDesignProblem)
+
 ----
 # Notes
-* For the purpose, **Sprint** <--> **Iteration**
-**Group** --> Small group, approximately 4 people
-**Class** --> Entire class
+For the purpose, 
+* **Sprint** <--> **Iteration**
+* **Group** --> Small group, approximately 4 people
+* **Class** --> Entire class
 ----
+
 # Work in Progress
-# [[Introduction]]
-# [[Setting the Context]]
-# [[The Elevator Pitch]]
-# [[Brainstorming]]
-# [[User Stories]]
-# [[Stakeholder Analysis]]
-# [[User Roles]]
-# [[User Stories Revisited]]
-# [[Acceptance Testing User Stories]]
-# [[Story Guidelines]]
-# [[Lightweight Domain Analysis]]
-# [[Must, Should, Could, Won't]]
-# [[Making Meetings Work]]
-# [[Estimation and Story Points]]
-# [[Release Planning]]
-# [[Iteration Alpha and Omega]]
-# [[ATM Exercise]]
+* [Introduction]({{site.pagesurl}}/Introduction)
+* [Setting the Context]({{site.pagesurl}}/Setting_the_Context)
+* [The Elevator Pitch]({{site.pagesurl}}/The_Elevator_Pitch)
+* [Brainstorming]({{site.pagesurl}}/Brainstorming)
+* [User Stories]({{site.pagesurl}}/User_Stories)
+* [Stakeholder Analysis]({{site.pagesurl}}/Stakeholder_Analysis)
+* [User Roles]({{site.pagesurl}}/User_Roles)
+* [User Stories Revisited]({{site.pagesurl}}/User_Stories_Revisited)
+* [Acceptance Testing User Stories]({{site.pagesurl}}/Acceptance_Testing_User_Stories)
+* [Story Guidelines]({{site.pagesurl}}/Story_Guidelines)
+* [Lightweight Domain Analysis]({{site.pagesurl}}/Lightweight_Domain_Analysis)
+* [Must, Should, Could, Won't]({{site.pagesurl}}/Must,_Should,_Could,_Won't)
+* [Making Meetings Work]({{site.pagesurl}}/Making Meetings_Work)
+* [Estimation and Story Points]({{site.pagesurl}}/Estimation_and_Story_Points)
+* [Release Planning]({{site.pagesurl}}/Release_Planning)
+* [Iteration Alpha and Omega]({{site.pagesurl}}/Iteration_Alpha_and_Omega)
+* [ATM Exercise]({{site.pagesurl}}/ATM_Exercise)

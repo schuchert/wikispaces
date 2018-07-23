@@ -2,15 +2,16 @@
 title: Commons_Logging_and_Log4j_Config
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/Tool Setup and Configuration Notes)
+[<--Back]({{ site.pagesurl}}/Tool_Setup_and_Configuration_Notes)
 
 When I started using [Spring](http://www.springframework.org/), I need to include some logging and basic configuration. This page gives the details for the entire setup I'm using.
 
-# # Log 4j
-# Download log4j from [here](http://logging.apache.org/site/binindex.cgi) (in my case, I downloaded the [Spring](http://www.springframework.org/) jar with dependencies from [here](http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644), which includes Log4j).
-# Extract the jar somewhere
-# Add the jar to your Eclipse project
-# Create a simple configurator, see LogginConfiguration.java, and a simple configuration file, see [log4j.properties]({{ site.pagesurl}}/#log4j).
+## Log 4j
+* Download log4j from [here](http://logging.apache.org/site/binindex.cgi) (in my case, I downloaded the [Spring](http://www.springframework.org/) jar with dependencies from [here](http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644), which includes Log4j).
+* Extract the jar somewhere
+* Add the jar to your Eclipse project
+* Create a simple configurator, see LogginConfiguration.java, and a simple configuration file, see [log4j.properties]({{ site.pagesurl}}/#log4j).
+
 ----
 [[#LoggingConfiguration]]
 ## LoggingConfiguration.java
@@ -53,6 +54,8 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 36: }
 ```
 ### Interesting Lines
+^
+|-|-|
 |Line|Description|
 |11 - 13|I'm using [Checkstyle](http://eclipse-cs.sourceforge.net/) and [PMD](http://pmd.sourceforge.net/integrations.html#eclipse). One of them has a rule that suggests classes with all static methods should have a private constructor to disallow instantiation.|
 |15 - 24|When loading this class, perform basic Log4j configuration, line 17. In addition, Spring, by default, produces quite a bit of output. The output is useful but I generally don't want it unless I'm debugging a problem. So I load a simple properties file that sets the default logging for [Spring](http://www.springframework.org/) to WARN. If I need to switch to DEBUG, I simply edit [log4j.properties]({{ site.pagesurl}}/#log4j).|
@@ -63,13 +66,16 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 |22|I did find the URL, go ahead a process the contents of this property file.|
 |26 - 28|Just in case I want to get a logger, I have a simple method that will give me an [ILogger]({{ site.pagesurl}}/Commons Logging and Log4j Config#ILogger) for a given class. Notice that I'm not using Sun's or Lor4J's Logger. Why? I change the interface to support both a variable number of parameters and automatic log level checking. So no place in my code beyond this configuration utility is aware of Log4J. I know I'm going to use Log4J so is there any value in wrapping it? In this case I am not simply wrapping it by actually adapting its interface.|
 |30 - 34|The comment says it all. If you want to look like you are initializing the logging infrastructure, call initialize. It's an empty method, but by referencing it, the class will get loaded and the logger will get initialized because of the static initializer on lines 12 - 15.|
+
 [[#log4j]]
-# # log4j.properties
+## log4j.properties
 This file resides in the same directory as the source file for [LogginConfiguration.java]({{ site.pagesurl}}/#LoggingConfiguration).
-```
+```java
 01: log4j.logger.org.springframework=WARN
 ```
 ### Interesting Lines
+^
+|-|-|
 |Line|Description|
 |01|This sets the logging level from its default, DEBUG, to WARN. I did this to reduce the output produced by Spring. I've occasionally turned it back on to DEBUG to trace through things. However, I generally prefer my console to have little if any output so that what's there is something I know I need to pay attention to.|
 ----
@@ -104,6 +110,7 @@ Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it 
 ```
 ### Interesting Lines
 There are not really any specifically interesting lines. Notice that every method's last parameter is a variable number of parameters. Take a look below at the implementation of this class.
+
 ----
 [[#Logger]]
 ## Logger.java
@@ -191,6 +198,8 @@ There are not really any specifically interesting lines. Notice that every metho
 81: }
 ```
 ### Interesting Lines
+^
+|-|-|
 |Line|Description|
 |6|This class holds a reference to a Log4J logger instance. It publishes a different interface and adapts the new interface on to the Log4J interface.|
 |12 - 17|A typical problem with logging is that of string concatenation. A way to avoid this is to check the logging level performing any string concatenation. That makes for ugly code. With variable arguments to methods, we can pass in a format string and the parameters to be sent into the format string, check the logging level and only actually perform the string formatting if the logging level is enabled. Each of these methods does exactly that.|
@@ -201,7 +210,7 @@ There are not really any specifically interesting lines. Notice that every metho
 |19|Notice that Throwable is the **first** parameter. In the Log4J methods, the Throwable parameter is last. Since we are using variable arguments, we cannot put the Throwable parameter last so we instead make it the first one.|
 
 All of the methods follow the same pattern. Rather that writing the following code, which I've seen:
-```
+```java
     Logger myLogger = ...; // get a Log4J Logger
     ...
     if(myLogger.isDebugEnabled()) {
@@ -210,7 +219,7 @@ All of the methods follow the same pattern. Rather that writing the following co
 ```
 
 Of course, you might want to simplify this code to the following, and I've seen this even more often:
-```
+```java
     Logger myLogger = ...; // get a Log4J Logger
     ...
     myLogger.debug("User Name: " + userName + " is not authorized for this operation.");
@@ -219,7 +228,7 @@ Of course, you might want to simplify this code to the following, and I've seen 
 The problem with this is that we perform the work of concatenating three strings even if the logger does not have debug level messages enabled. So the first form is ugly but better. The second form looks better, but performs potentially unnecessary work.
 
 This adapted interface gives us the following:
-```
+```java
     Logger myLogger = ...; // get an ILogger
     ...
     myLogger.debug("User Name: %s is not authorized for this operation.", userName);
@@ -228,11 +237,11 @@ This adapted interface gives us the following:
 This looks like the cleaner second version but it performs like the better first version.
 
 This example is not complete. It does not publish the logging levels, which really is still necessary. Consider the following example that is NOT fixed by this interface:
-```
+```java
     Logger myLogger = ...; // get an ILogger
     ...
     myLogger.debug("User Name: %s is not authorized for this operation.", getUserNameFromJndi());
 ```
 Let’s say that the method getUserNameFromJndi() takes a long time. In this example, we called the method before calling the debug() method, so we did this extra work potentially unnecessarily.
 
-[<--Back]({{ site.pagesurl}}/Tool Setup and Configuration Notes)
+[<--Back]({{ site.pagesurl}}/Tool_Setup_and_Configuration_Notes)

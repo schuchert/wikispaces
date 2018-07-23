@@ -1,7 +1,7 @@
 ---
 title: Car_Rental_Code_Coverage_with_Emma
 ---
-[<--Back]({{ site.pagesurl}}/Car Rental Example) [Next-->]({{ site.pagesurl}}/Emma Code Coverage vehicle.type)
+[<--Back]({{ site.pagesurl}}/Car_Rental_Example) [Next-->]({{ site.pagesurl}}/Emma_Code_Coverage_vehicle.type)
 
 # Code Coverage with Emma
 
@@ -14,9 +14,9 @@ Emma does not currently come with a plugin, so in this example we'll use [Ant](h
 
 Let's get started:
 **Download**
-# Download Emma from [here](http://emma.sourceforge.net/downloads.html). Note I downloaded emma-2.0.5312.zip for this example.
-# Extract the jar somewhere. I used c:\libs\, which created the directory C:\libs\emma-2.0.5312.
-# Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
+* Download Emma from [here](http://emma.sourceforge.net/downloads.html). Note I downloaded emma-2.0.5312.zip for this example.
+* Extract the jar somewhere. I used c:\libs\, which created the directory C:\libs\emma-2.0.5312.
+* Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
 
 **suite() method**
 Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [suite()]({{ site.pagesurl}}/JUnit 4.xSuite) method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
@@ -132,16 +132,16 @@ Under CarRental there is an xml directory that contains two ant build files:
 93: </project>
 ```
 ### Interesting Lines
-|Line|Description|
+N/A.
 
 **Update Tests**
 
 ## Execution
 Assuming you've updated the emma.xml file and set all of the relevant properties for your environment, then do the following:
-# Right-click on CarRental/xml/emma.xml
-# Select Run As:Ant Build
-# Wait for a few seconds (about 5 - 10 in my case)
-# Note that this ant file adds a directory called **emma_results** under the CarRental directory with the execution results. To see this (if you don't automatically see it after executing this ant task), select CarRental, right-click and select refresh (or hit F5).
+* Right-click on CarRental/xml/emma.xml
+* Select Run As:Ant Build
+* Wait for a few seconds (about 5 - 10 in my case)
+* Note that this ant file adds a directory called **emma_results** under the CarRental directory with the execution results. To see this (if you don't automatically see it after executing this ant task), select CarRental, right-click and select refresh (or hit F5).
 
 I considered adding the following line to emma.xml:
 >  <eclipse.refreshLocal resourcePath="CarRental" depth="infinite"/>
@@ -149,13 +149,14 @@ This would force a refresh but it also requires that you run the ant script in t
 
 ## Preliminary Analysis
 With your directory refreshed, you're ready to have a look at the output:
-# Expand the CarRental project.
-# Expand the emma_results directory.
-# Double click on coverage.html.
-# Here's what I get when I run it (well almost): [[file:coverage.html]]
-# Because this is just the top-level file from my machine, it is missing some links.
-# Here's a summary of my numbers by package:
-
+* Expand the CarRental project.
+* Expand the emma_results directory.
+* Double click on coverage.html.
+* Here's what I get when I run it (well almost): [[file:coverage.html]]
+* Because this is just the top-level file from my machine, it is missing some links.
+* Here's a summary of my numbers by package:
+^
+|-|-|-|-|-|
 |name|class, %|method, %|block, %|line, %|
 |all classes|94% (78/83)|83% (527/636)|80% (6040/7578)|81% (1579.7/1956)|
 |vehicle.type|83% (10/12)|68% (56/82)|63% (437/692)|67% (104.4/155)|
@@ -173,7 +174,6 @@ With your directory refreshed, you're ready to have a look at the output:
 |vehicle.integration.inmemory|100%(5/5)|86% (38/44)|91% (650/717)|90% (139.4/154)|
 
 
-
 So I have roughly 81% code coverage with 106 unit tests and I have a few problem areas:
 * vehicle.type
 * vehicle.configuration
@@ -182,4 +182,4 @@ So I have roughly 81% code coverage with 106 unit tests and I have a few problem
 
 Over the next several sections, we will look at each package with less than 80% code coverage, assess each class and plan out our changes. For you to follow along, you'll need to execute the Emma ant script and then look at the classes to understand the assessments.
 
-[<--Back]({{ site.pagesurl}}/Car Rental Example) [Next-->]({{ site.pagesurl}}/Emma Code Coverage vehicle.type)
+[<--Back]({{ site.pagesurl}}/Car_Rental_Example) [Next-->]({{ site.pagesurl}}/Emma_Code_Coverage_vehicle.type)

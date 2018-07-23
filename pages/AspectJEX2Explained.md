@@ -14,12 +14,13 @@ Notice in both of these examples, we are somehow accessing an instance field of 
 This example examines all changes to fields on the Address object. When an attempt is made to set a field of a class, the aspect gets the current field value and then displays the current value and the value on the right hand side of assignment.
 
 Remember that when we’re working with AOP, we have to consider “what” and “where”.  For this example:
-> **What:** Capture assignment to fields and display the current value and the next value.
-> **Where:** Every field in the Address class.
+* **What:** Capture assignment to fields and display the current value and the next value.
+* **Where:** Every field in the Address class.
 
 To make this example work, we need two additional things:
 * FieldSetaspect.java
 * aop.xml
+
 ----
 ## FieldSetAspect.java
 ```java
@@ -56,7 +57,10 @@ To make this example work, we need two additional things:
 31:     }
 32: }
 ```
+
 ### Interesting Lines
+^
+|-|-|
 |Line|Description|
 |10|This class is an aspect. This annotation denotes the following class as an aspect.|
 |14|This is a pointcut. There is one argument, rhs, of type Object (see line 15). We are capturing "set()", or fields being written. We are watching all fields of the type java.lang.String in the class ex2.Address.|
@@ -65,8 +69,8 @@ To make this example work, we need two additional things:
 |19|This method is called around all attempts to set fields in the ex2.Address class. It takes ProceedingJoinPoint (optional but typically used) and an Object, rhs (Right Hand Side). The second parameter is what appears on the right side of the assignment operator, e.g. this.myField ``=`` "aString", rhs == "aString".|
 |21|We know we bound this method to a set() joinpoint, so we can down-cast to FieldSignature and get more specific, relevant information.|
 |23 - 26|Get the current value of the underlying field being set.|
-|30|Actually perform the set
-----
+|30|Actually perform the set|
+
 ## aop.xml
 ```xml
 01: <aspectj>
@@ -78,8 +82,12 @@ To make this example work, we need two additional things:
 07: 	</weaver>
 08: </aspectj>
 ```
+
 ### Interesting Lines
+^
+|-|-|
 |Line|Description|
 |3|Tell the weaver to use the aspect of type ex2.FieldSetAspect|
 |6|Apply this aspect only to classes whose package start with ex2.|
+
 [<--Back]({{ site.pagesurl}}/AspectJEX2SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJEX2ApplyYourself)

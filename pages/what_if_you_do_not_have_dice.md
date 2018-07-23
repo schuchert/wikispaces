@@ -11,6 +11,7 @@ Pick one to be the "high" value (dime)
 Flip all three (together if you like) and record heads or tails for each coin.
 
 Use the following table to figure out what you "rolled":
+^
 |**High**|**Medium**|**Low**|**Value**|
 |**Dime**|**Nickel**|**Penny**|**Rolled**|
 |tails|tails|tails|re-flip|

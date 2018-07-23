@@ -62,21 +62,21 @@ In [previous tutorial]({{ site.pagesurl}}/cpptraining.GettingStartedWithFitNesse
 * Create a new workspace. Select the directory containing two github projects you just checked out. In my case that's **Users/schuchert/src/waat/workspace**
 * Close the Welcome to Eclipse tab.
 * Edit the Eclipse properties:
-> Under General:Workspce, enable **Refresh automatically**
-> Under Eclipse properties:C/C++:Build:Environment, define some environment variables:
->> **CSLIM_BASE** = **/Users/schuchert/src/cslim/cslim**
->> **CPPUTEST_BASE** = **/Users/schuchert/src/cslim/cpputest**
-> On my Mac, I additionally set:
->> **GPP** = **/usr/local/bin/g++**
-> This allows me to use g++ 4.4 or 4.5 instead of 4.2
+** Under General:Workspce, enable **Refresh automatically**
+** Under Eclipse properties:C/C++:Build:Environment, define some environment variables:
+*** **CSLIM_BASE** = **/Users/schuchert/src/cslim/cslim**
+*** **CPPUTEST_BASE** = **/Users/schuchert/src/cslim/cpputest**
+** On my Mac, I additionally set:
+*** **GPP** = **/usr/local/bin/g++**
+** This allows me to use g++ 4.4 or 4.5 instead of 4.2
 * Apply those changes.
 * Next, select **File:Import**
 * Under **General** select **Existing Projects into Workspace**
 * Click **Next**
 * Click the **Browse** button then simply press OK
 * You should see listed two projects
-> RpnCalculatorInCpp
-> RpnCalculatorInCppTests
+** RpnCalculatorInCpp
+** RpnCalculatorInCppTests
 * Both of these projects should be selected by default.
 * Click **Finish**
 * Eclipse will probably attempt to build **RpnCalculatorInCppTests**, but it will fail because the other project must be build first.
@@ -110,6 +110,7 @@ FitNesse (v20100711) Started...
 Now that you have FitNesse started, create a top-level page for all of your work.
 * Edit the following URL: <http://localhost:8080/RpnExamples>
 * Edit its content to be:
+
 ```
 !contents -R2 -g -p -f -h
 
@@ -131,6 +132,7 @@ The TEST_RUNNER makes reference to a project/executable we have not yet created.
 |3  |4  |-       |-1       |
 |5  |6  |*       |30       |
 ```
+
 * This project is neither a test or suite page by default (it has to do with the page's name). So click on its **Properties** button, select the **Test** radio button and then click on **Save Properties**
 
 This page makes reference to a fixture that does not yet exist. As in the previous step, don't worry. That's next.
@@ -144,6 +146,7 @@ Now you're going to add a third project to contain your fixtures. This involves 
 * The provided code uses features of G++ 4.4 and above, specifically the compiler flag// **-std=c++0x**//. The primary thing is the use of the standard class shared_ptr. As of the TR1 standard, this class' namespace is std::tr1::. In the upcoming standard, the class is additionally in std::. To fix this, edit the project's properties. Under C/C++ Build:Settings/C++  Compiler: Miscellaneous, add -std=c++0x (that's zero, not o) to the Other flags.
 You'll need to copy in two boilerplate files, create the fixture class and then set up libraries and include paths.
 * Add a new file called **Main.c** and set its contents:
+
 ```cpp
 # include "SocketServer.h"
 # include "SlimConnectionHandler.h"
@@ -209,11 +212,12 @@ You'll notice several warnings about unknown header files. Let's fix that before
 * Edit the project's properties.
 * Under **C/C++ Build:Settings**, select the C Compiler settings (That's C not C++!)
 * Select the **Includes** and make the following additions:
-> **"${CSLIM_BASE}/include/CSlim"**
-> **"${CSLIM_BASE}/include/Com"**
+** **"${CSLIM_BASE}/include/CSlim"**
+** **"${CSLIM_BASE}/include/Com"**
 * Save your changes (click **Apply** then **OK**, or just **OK** if you're feeling lucky)
 
 Next, create another new file called **Fixtures.c**: 
+
 ```cpp
 # include "Fixtures.h"
 
@@ -226,6 +230,7 @@ I'm having you preemptively add in the name of a fixture you have yet to write.
 
 Now it's time to create the fixture. Since this is a mechanics tutorial, I'll give you the fixture source code:
 **ExecuteBinaryOperator.cpp**
+
 ```cpp
 # include <stdlib.h>
 # include <stdio.h>
@@ -306,17 +311,19 @@ You'll notice a few more warnings about unknown include files. You'll add a few 
 * Edit the project's properties
 * Select **C/C++ Build:Settings**
 * Now select **GCC C++ Compiler** (or similar) and under **Includes** add:
-> **${workspace_loc:/RpnCalculatorInCpp}**
-> **"${CSLIM_BASE}/include/CSlim"**
+** **${workspace_loc:/RpnCalculatorInCpp}**
+** **"${CSLIM_BASE}/include/CSlim"**
 * Apply those changes.
 
 Notice that there's still one missing header file. This is in another library that I've written to make writing C++ cslim fixtures a bit easer:
 * Go back to your workspace directory
 * Clone the CSlimCppExtensions project from github with the following command: 
+
 ```
 git clone git://github.com/schuchert/CSlimCppExtensions.git
 ```
 * Here's what that will look like:
+
 ```
 [~/src/waat/workspace]% git clone git://github.com/schuchert/CSlimCppExtensions.git
 Initialized empty Git repository in /Users/schuchert/src/waat/workspace/CSlimCppExtensions/.git/
@@ -327,6 +334,7 @@ Receiving objects: 100% (16/16), 5.95 KiB, done.
 Resolving deltas: 100% (1/1), done.
 [~/src/waat/workspace]% 
 ```
+
 * Back in Eclipse, **File:Import**
 * Select **General:Existing Projects into Workspace**
 * Click **Browse** and then **Ok**
@@ -334,14 +342,18 @@ Resolving deltas: 100% (1/1), done.
 * Click on **Finish**
 * Select the project, right-click and select build.
 * //**Warning**//: As of this writing, there is a "missing" method in the cslim library. You'll need to make two changes to the cslim library that you've downloaded to resolve this.
+
 ### Updating CSlim Library
 **<cslim_base>/include/CSlim/SlimListSerializer.h**
 Add the following function declaration to the header file:
+
 ```cpp
 void SlimList_Release(char *serializedList);
 ```
+
 **<cslim_base>/src/CSlim/SlimListSerializer.h**
 Add a function declaration to the source file:
+
 ```cpp
 void SlimList_Release(char *serializedList) {
   if(serializedList != 0)
@@ -359,18 +371,19 @@ Now if you try to build the project, it will compile but it will not link.
 * Edit the project's settings
 * Find the linker settings under **C/C++ Build:Linker**
 * Edit the **Libraries** and add the following list:
-> **CSlim**
-> **RpnCalculatorInCpp**
-> **CppUTest**
-> **CSlimCppExtensions**
+** **CSlim**
+** **RpnCalculatorInCpp**
+** **CppUTest**
+** **CSlimCppExtensions**
 * Edit he **Library search path** and add the following list:
-> **${workspace_loc:/RpnCalculatorInCpp/Debug}**
-> **${CSLIM_BASE}/lib**
-> **${CPPUTEST_BASE}/lib**
-> **${workspace_loc:/CSlimCppExtensions/Debug}**
+** **${workspace_loc:/RpnCalculatorInCpp/Debug}**
+** **${CSLIM_BASE}/lib**
+** **${CPPUTEST_BASE}/lib**
+** **${workspace_loc:/CSlimCppExtensions/Debug}**
 * Save your changes and build again
 
 You should now be able to run this executable. If you do, you'll see in red text:
+
 ```
 getaddrinfo: nodename nor servname provided, or not known
 ```
@@ -381,10 +394,13 @@ You should be able to run your FitNesse test and get to green.
 * Click on the **Suite** button
 * You should see all green.
 * You might see an error regarding a difference in protocol. That's under construction. The cslim library should be updated in the near future (August 2010 I hope).
+
 # Working with a Script Table
 Now it is time to program the calculator. First a test, then the fixture code.
+
 ## The Test
 Create the following test at: <http://localhost:8080/RpnExamples.SumOfPrimesExample>
+
 ```
 !|script           |ProgramTheCalculator|
 |startProgramCalled|sumOfPrimeFactors   |
@@ -397,8 +413,10 @@ Create the following test at: <http://localhost:8080/RpnExamples.SumOfPrimesExam
 ```
 
 This creates a new operator called "sumOfPrimesFactors" and then executes it. To make this work, you'll need to create a new fixture and register it.
+
 ## Creating the Fixture
 Create a new source filed called **ProgramTheCalcualtor.cpp**. Here's the source:
+
 ```cpp
 # include <stdlib.h>
 # include <stdio.h>
@@ -481,6 +499,7 @@ SLIM_END
 ```
 
 To get this working, you'll need to register the fixture by updated **Fixtures.c**:
+
 ```cpp
 # include "Fixtures.h"
 
@@ -491,8 +510,10 @@ SLIM_END
 ```
 
 Once you make these changes and rebuild, you should have a passing test.
+
 # The Query Table
 Here is an example of a query table:
+
 ```
 !|Query: AlphaNamedOperators|
 |op                         |
@@ -510,6 +531,7 @@ Here is an example of a query table:
 Create this page at: <http://localhost:8080/RpnExamples.AlphaNamedOperatorsExample>
 
 Now you'll need to create a fixture. Create a new source file called **AlphaNamedOperators.cpp**:
+
 ```cpp
 # include <ctype.h>
 # include <stdlib.h>
@@ -578,6 +600,7 @@ SLIM_CREATE_FIXTURE(AlphaNamedOperators)
 ```
 
 To get this registered, you'll have to update **Fixtures.c**:
+
 ```cpp
 # include "Fixtures.h"
 

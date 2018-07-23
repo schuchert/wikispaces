@@ -8,6 +8,8 @@ title: Car_Rental_Code_Coverage_with_Cobertura_vehicle.type
 
 ## Analysis
 Here are the statistics for this package (sorted worse to best):
+^
+|-|-|-|-|-|-|-|
 |Class|Coverage%|Line Count|Branch %|Line Count|Complexity|
 |Validateable|N/A|N/A|N/A|N/A|0|
 |EnumField|0%|0/10|N/A|N/A|0|
@@ -66,6 +68,8 @@ This class has 100% coverage so there are no required changes.
 
 ## Results
 After applying all of the changes metntioned above, here are the results:
+^
+|-|-|-|-|-|-|
 |Classes|Line Coverage| |Branch Coverage| |Complexity|
 |AbstractField|93%|42/45|100%|6/6|0|
 |AbstractFieldTest|100%|15/15|100%|2/2|0|

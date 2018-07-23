@@ -50,6 +50,8 @@ I did not show you three things:
 24: }
 ```
 ### Interesting Lines
+^
+|-|-|
 |Lines|Description|
 |8|This class is an AspectJ aspect class. It will need to be registered in the aop.xml file to take effect.|
 |10|Define a **pointcut**. This is **where** the aspect applies. In this case it applies to execution of methods of any access level (the first *), in the class ex1.MethodExecutionExample, with any name (the second *) taking any parameters (..).|
@@ -57,7 +59,7 @@ I did not show you three things:
 |14|**Around** the exeuction of a pointcut do something. Around logic replaces the method. The around takes care of everything, including calling the original code. This around logic applies to all **joinpoints** captured by the **pointcut** called allMethods().|
 |15|This is the method that replaces the underlying method execution (all methods in the class ex1.MethodExecutionExample). It takes one parameter, a ProceedingJoinPoint, which is automatically provided by AspectJ. (More on what parameters can go here later.)|
 |19|Call proceed() on "thisJoinPoint" to actually perform the original method execution.|
-----
+
 ## aop.xml
 ```xml
 01: <aspectj>
@@ -69,13 +71,17 @@ I did not show you three things:
 07: 	</weaver>
 08: </aspectj>
 ```
+
 ### Interesting Lines
+^
+|-|-|
 |Lines|Description|
 |3|Register ex1.MethodExecutionAspect as an apsect to apply to this VM|
 |6|Only apply the registered aspects with classes whose package starts with ex1.|
+
 Note, this file needs to be in a directory called META-INF in the classpath. Here's an easy way to make this happen in eclipse:
-# Create a folder called META-INF under a source directory
-# Create a file called aop.xml in that folder
-# Cut and paste the contents
+* Create a folder called META-INF under a source directory
+* Create a file called aop.xml in that folder
+* Cut and paste the contents
 
 [<--Back]({{ site.pagesurl}}/AspectJEX1SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJVMConfigurationBlackMagic)

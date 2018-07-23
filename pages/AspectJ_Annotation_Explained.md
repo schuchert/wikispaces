@@ -1,10 +1,9 @@
 ---
 title: AspectJ_Annotation_Explained
 ---
-[<--Back]({{ site.pagesurl}}/AspectJ Annotation Thinking) [Next-->]({{ site.pagesurl}}/AspectJ Annotation Exercises)
+[<--Back]({{ site.pagesurl}}/AspectJ_Annotation_Thinking) [Next-->]({{ site.pagesurl}}/AspectJ_Annotation_Exercises)
 
 # Annotation Explained
-----
 ## Main.java
 ```java
 01: package annotation;
@@ -21,9 +20,11 @@ title: AspectJ_Annotation_Explained
 ```
 ### Interesting Lines
 There are arguably no interesting lines in this class. All of the work is done via aspects and annotations.
+
+|---|---|
 |Line|Description|
 |6|This is the first place where we direclty change the address instance. In other examples, changes to Address instance are tracked by the FieldSetAspect. In this case, as we will see, this change is ignored.|
-----
+
 ## Dao.java
 ```java
 01: package annotation;
@@ -38,6 +39,7 @@ There are arguably no interesting lines in this class. All of the work is done v
 ```
 ### Interesting Lines
 This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#Dao).
+
 ----
 ## Address.java
 ```java
@@ -111,13 +113,15 @@ This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 ```
 ### Interesting Lines
 There are 4 changes to this class.
-# We've added a new attribute, ignoredField.
-# We've added a setter
-# We've added a getter
-# We applied the @IgnoreField annotation to the ignoredField.
+* We've added a new attribute, ignoredField.
+* We've added a setter
+* We've added a getter
+* We applied the @IgnoreField annotation to the ignoredField.
+
+|---|---|
 |Line|Description|
 |13|@IgnoreField is an annotation that targets fields. We apply the annotation to the field named ignoredField. This does nothing directly to the field. This is just information associated with the field that will later be used by the SetFieldAspect.|
-----
+
 ## IgnoreField.java
 ```java
 01: package annotation;
@@ -137,12 +141,15 @@ There are 4 changes to this class.
 15:     String value() default "";
 16: }
 ```
+
 ### Interesting Lines
 We create a new kind of annotation. This annotation by itself only allows adding information to some element type. In this case, it is a field. This does not actively do anything. However, this annotation and a chagne to the SetFieldAspect combine to cause fields with this annotation to be ignored.
+
+|---|---|
 |Line|Description|
 |12|This annotation's lifetime is **//RUNTIME//**. This means it is available even after the class has been loaded and used in a VM. Contrast that with **//SOURCE//** - thrown out after compilation and **//CLASS//** - recorded in the class file but not retained by the VM. See [RetentionPolicy](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/annotation/RetentionPolicy.html) for details.|
 |13|This annotation targets **//FIELD//**s. There are several other options. For details, see [ElementType](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/annotation/ElementType.html).|
-----
+
 ## FieldSetAspect.java
 ```java
 01: package annotation;
@@ -200,14 +207,17 @@ We create a new kind of annotation. This annotation by itself only allows adding
 53:     }
 54: }
 ```
+
 ### Interesting Lines
 The key change to this class is on line 17 where we ignore fields with the annotation IgnoreField. Otherwise this aspect is mostly unchanged from previous examples. (In fact, this verion of the aspect includes changes for the [CFlow]({{ site.pagesurl}}/AspectJ CFlow) exmample on lines 21 - 23.
+
+|---|---|
 |Line|Description|
 |13 - 15|Define a pointcut that covers the setting of all fields included in the class TrackedObjectMixin. We will use this later with ! to exclude these fields. This is to avoid a recursion problem. The details of why were covered by an exercise. To see that exercise, click [here]({{ site.pagesurl}}/AspectJEX4ApplyYourself#Unexpected Recursion).|
 |17 - 19|Define a pointcut that captures the setting of all fields in the AddressClass except for those that have the annotation IgnoreField. AspectJ uses @Annotation to describe an annotation. In this case, we negate it so we're saying "does not have the annotation". This is the only change required to any of the aspects to support skipping individual fields.|
 |21 - 23|This is described elsewhere. See [[AspectJ CFlow Explained]].|
 |25|This Around advice applies to pointcuts that setters in Address but do not have the annotation IgnoreField AND NOT any pointcuts in the TrackedObjectMixin class AND NOT any pointcuts that happen in in the call of a constructor or anything called by the constructor. It's a lot to deal with, but by breaking it up into smaller pointcuts, it tends to be easier to understand and more manageable.|
-----
+
 ## SaveMethodAspect.java
 ```java
 01: package annotation;
@@ -242,6 +252,7 @@ The key change to this class is on line 17 where we ignore fields with the annot
 30: }
 ```
 This Aspect is unchanged from [Example 4]({{ site.pagesurl}}/AspectJ Example 4). For details, see [Example 4 SaveMethodAspect]({{ site.pagesurl}}/AspectJEX4Explained#SaveMethodAspect).
+
 ----
 ## InnerTypeAspect.java
 ```java
@@ -257,6 +268,7 @@ This Aspect is unchanged from [Example 4]({{ site.pagesurl}}/AspectJ Example 4).
 10: }
 ```
 This Aspect is unchanged from [Example 4 InnerTypeAspect]({{ site.pagesurl}}/AspectJEX4Explained#InnerTypeAspect).
+
 ----
 ## ITrackedObject.java
 ```java
@@ -269,6 +281,7 @@ This Aspect is unchanged from [Example 4 InnerTypeAspect]({{ site.pagesurl}}/Asp
 07: }
 ```
 This interface is unchanged from [Example 4 ITrackedObject]({{ site.pagesurl}}/AspectJEX4Explained#ITrackedObject).
+
 ----
 ## TrackedObjectMixin.java
 ```java
@@ -289,7 +302,9 @@ This interface is unchanged from [Example 4 ITrackedObject]({{ site.pagesurl}}/A
 15:     }
 16: }
 ```
+
 This interface is unchanged from [Example 4 TrackedObjectMixin]({{ site.pagesurl}}/AspectJEX4Explained#TrackedObjectMixin).
+
 ----
 ## aop.xml
 ```
@@ -306,4 +321,4 @@ This interface is unchanged from [Example 4 TrackedObjectMixin]({{ site.pagesurl
 ```
 This file is unchanged from [Example 4 aop.xml]({{ site.pagesurl}}/AspectJEX4Explained#aop).
 
-[<--Back]({{ site.pagesurl}}/AspectJ Annotation Thinking) [Next-->]({{ site.pagesurl}}/AspectJ Annotation Exercises)
+[<--Back]({{ site.pagesurl}}/AspectJ_Annotation_Thinking) [Next-->]({{ site.pagesurl}}/AspectJ_Annotation_Exercises)

@@ -1,13 +1,13 @@
 ---
 title: AspectJ_CFlowExplained
 ---
-[<--Back]({{ site.pagesurl}}/AspectJ CFlowSoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJ CFlowApplyYourself)
+[<--Back]({{ site.pagesurl}}/AspectJ_CFlowSoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJ_CFlowApplyYourself)
 
 # CFlow
 CFlow, or control flow, allows the selection of pointcuts based on the program flow at runtime. Most of the pointcuts you've reviewed so far have probably been selectable at weave time. For example, call matches pointcuts that call a particular method; execution matches the execution of code whose signature matches. AspectJ determines both of these examples without having to execute the program.
 
 What about wanting to capture a pointcut so long as it is not called while in another method? In our example, we want to disable change tracking if changes occur either directly in a constructor or are called as a result of a (below in the stack trace) of a constructor. For example:
-```
+```java
 01 public Address() {
 02    this.name = "Brett";
 03    setName("Schuchert");
@@ -29,8 +29,9 @@ What about wanting to capture a pointcut so long as it is not called while in an
 19    a.someMethod();
 20 }
 ```
+
 The pointcut "set(* Address.name)" matches lines 2 and 8. In this code example, we have the following sequences that cause the pointcut to be encountered at runtime:
-```
+```terminal
     a. 17 --> 2               // no change tracking
     b.        3 --> 8         // no change tracking
     c.        4 --> 13 --> 8  // no change tracking
@@ -42,6 +43,7 @@ So in the dynamic execution of this program, we encounter a pointcut matching se
 So any of the above lines that pass through the constructor in Address will be ruled out. That includes: a, b and c. The other two, d and e, get to the same pointcuts. However, they do not pass through the constructor, so they are not excluded by the cflow expression.
 
 What follows is a breakdown of all the code for this example.
+
 ----
 [[#Address]]
 ## Address.java
@@ -104,9 +106,11 @@ What follows is a breakdown of all the code for this example.
 56: }
 ```
 ### Interesting Lines
+^
+|---|---|
 |Line|Description|
 |14|This line causes a field to be set. If we did not do this, then we would not see any changes to the address object at construction time and this cflow example would have no motivation.|
-----
+
 [[#Dao]]
 ## Dao.java
 ```java
@@ -122,6 +126,7 @@ What follows is a breakdown of all the code for this example.
 ```
 ### Interesting Lines
 This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#Dao).
+
 ----
 [[#FieldSetAspect]]
 ## FieldSetAspect.java
@@ -182,11 +187,14 @@ This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 54:     }
 55: }
 ```
+
 ### Interesting Lines
+^
+|-|-|
 |Line|Description|
 |21 - 23|We define a pointcut called constructors. Working right to left, we have: cf.ITrackedObject+.new (..), which means constructors (new) taking any parameters (..) off of the class cf.ITrackedObject+, or any class that implements ITrackedObject. We introduce this class to Address via another Aspect (see [[#InnerTypeAspect]]). Next, we have: (execution(cf.ITrackedObject+.new (..))), which means the execution of this method. So we are modifying the bytecode associated with the constructor, not the call of the constructor. Finally, we put that whole thing in cflow(...). This says any pointcuts that we hit from the execution of all constructors in any class that implements ITrackedObject. If we wanted to keep the pointcuts in the constructor but capture anything below that, we could have used **//cflowbelow//**.|
 |25|This is where we actually use the constructors pointcut. Notice we negate it using !. This means that the following Around advice, called trackFieldAssignment, will not execute if we happen to hit any of the constructor pointcuts. Since the around advice does not apply to constructors, any changes that happen there or below will NOT cause change tracking to occur.|
-----
+
 [[#InnerTypeAspect]]
 ## InnerTypeAspect.java
 ```java
@@ -203,6 +211,7 @@ This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 ```
 ### Interesting Lines
 None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#InnerTypeAspect).
+
 ----
 [[#ITrackedObject]]
 ## ITrackedObject.java
@@ -217,6 +226,7 @@ None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 ```
 ### Interesting Lines
 None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#ItrackedObject).
+
 ----
 [[#Main]]
 ## Main.java
@@ -235,10 +245,13 @@ None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 12:     }
 13: }
 ```
+
 ### Interesting Lines
+^
+|-|-|
 |Line|Description|
 |5|We construct an address. In [[AspectJ Example 4] this did not cause a change because construction did not cause anything to be initialized. In [ this exercise]({{ site.pagesurl}}/AspectJEX4ApplyYourself#ExperimentConstructorUpdatesAddress) we found out that if it had, it would cause Address to be changed. We managed to change that by using cflow.|
-----
+
 [[#SaveMethodAspect]]
 ## SaveMethodAspect.java
 ```java
@@ -275,8 +288,10 @@ None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 31:     }
 32: }
 ```
+
 ### Interesting Lines
 None. This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#SaveMethodAspect).
+
 ----
 [[#TrackedObjectMixin]]
 ## TrackedObjectMixin.java
@@ -298,8 +313,10 @@ None. This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Expl
 15:     }
 16: }
 ```
+
 ### Interesting Lines
 None. This class is unchanged from [[AspectJEX4Explained#TrackedObjectMixin|Example 4].
+
 ----
 [[#aop]]
 ## aop.xml
@@ -315,7 +332,8 @@ None. This class is unchanged from [[AspectJEX4Explained#TrackedObjectMixin|Exam
 09: 	</weaver>
 10: </aspectj>
 ```
+
 ### Interesting Lines
 None. This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#aop).
 
-[<--Back]({{ site.pagesurl}}/AspectJ CFlowSoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJ CFlowApplyYourself)
+[<--Back]({{ site.pagesurl}}/AspectJ_CFlowSoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJ_CFlowApplyYourself)

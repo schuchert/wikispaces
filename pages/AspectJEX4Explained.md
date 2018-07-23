@@ -26,9 +26,12 @@ This is the driver class that starts everything. Looking at this code, it does n
 12: 	}
 13: }
 ```
+
 ### Interesting Lines
 There are no interesting lines here. Something to point out about this example is the significant change that happens without making changes to existing Java classes.
+
 ----
+
 [[#Dao]]
 ## Dao.java
 This Dao is simulated. The point of this example is that we can intercept calls to some thing, a DAO in this case, and change the path of execution based on any condition. This class is unaware of any introductions. 
@@ -45,6 +48,7 @@ This Dao is simulated. The point of this example is that we can intercept calls 
 ```
 ### Interesting Lines
 Again, there are no interesting lines. The client, Main.main(), did not change. The Dao.save() method also did not change. However, we are tracking whether or not objects changed and not calling Dao.save() if the object is not changed.
+
 ----
 ## Address.java
 The thing to notice is that it is unaware of whether it is changed or not. This is a simple java bean style class with attributes, setters and getters and a no-argument constructor (in this case a default constructor). 
@@ -104,6 +108,7 @@ The thing to notice is that it is unaware of whether it is changed or not. This 
 ```
 ### Interesting Lines
 Again, doesn't really apply. However, it *is* interesting that we know whether or not this object has changed even though looking at the class it's hard to see how.
+
 ----
 [[#InnerTypeAspect]]
 ## InnerTypeAspect.java
@@ -120,11 +125,13 @@ Again, doesn't really apply. However, it *is* interesting that we know whether o
 10: }
 ```
 ### Interesting Lines
+^
+|-|-|
 |Line|Description|
 |6|This is an aspect.|
 |8|We are adding a parent interface to the class ex4.Address. This interface will have methods that must be implemented. The implementation of those methods will be provided by ex4.TrackedObjectMixin.|
 |9|The class ex4.Address will implement the interface ex4.ITrackedObject. As alreay mentioned, ex4.ITrackedObject has methods that must be implemented; and they will be by ex4.TrackedObjectMixin.|
-----
+
 [[#ItrackedObject]]
 ## ITrackedObject.java
 This is simply an interface that has the methods for a Java-bean style boolean interface.
@@ -136,8 +143,10 @@ This is simply an interface that has the methods for a Java-bean style boolean i
 05:    void setChanged(boolean changed);
 06: }
 ```
+
 ### InterestingLines
 There are really no interesting lines, just the definition of an interface.
+
 ----
 [[#TrackedObjectMixin]]
 ## TrackedObjectMixin.java
@@ -216,7 +225,10 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 50:     }
 51: }
 ```
+
 ### Interesting Lines
+^
+|-|-|
 |Line|Description|
 |11|This is an aspect.|
 |13|Define a pointcut called "skipTrackedObject" that excludes all fields in TrackedObjectMixin. Why? See the exercises section.|
@@ -227,7 +239,7 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 |26 - 29|Retrieve the current value of the field being set.|
 |31 - 36|If the current value equals the value on the right side of the assignment operator, do not perform the set, just return. Otherwise perform the set and make the underling target object, an instance of the Address class, as changed.|
 |39 - 50|A simple utility method to handle comparison of 2 objects where either object might be null.|
-----
+
 [[#SaveMethodAspect]]
 ## SaveMethodAspect.java
 The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks to see if the object passed into Dao.save(..) is or is not changed. If it is not changed, the call to Dao.save(..) never happens. Before completing, the changed state is set to false since either it was already false or it was true but then saved. As with the FieldSetAspect, SaveMethodAspect is using behavior that has been introduced. Specifically, it uses isChanged() and setChanged(). 
@@ -266,6 +278,8 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 32: }
 ```
 ### Interesting Lines
+^
+|-|-|
 |Line|Description|
 |8|This is an aspect|
 |10|Create a pointcut called daoSaveMethod that matched a method of any access level, *, named ex4.Dao.save, taking any parameters "(..)".|
@@ -274,7 +288,7 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 |18|We know Address implements ITrackedObject because we have an aspect that introduces that interface. Address, however, is not aware of this fact.|
 |21 - 27|Check to see if the Address instance is changed. If it is, call the save() method. If not, do not call the save method and instead report that the object is unchanged.|
 |29|Regardless of what happened, set the object back to unchanged. Is this always safe?|
-----
+
 [[#aop]]
 ## aop.xml
 ```
@@ -290,6 +304,8 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 10: </aspectj>
 ```
 ### Interesting Lines
+^
+|-|-|
 |Line|Description|
 |3 - 5|List the 3 aspects we want to have woven in.|
 |8|We want to weave all classes whose package starts with ex4.|
