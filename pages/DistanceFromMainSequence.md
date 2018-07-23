@@ -1,16 +1,16 @@
-[[math]]
+$$
 D = | A + I - 1 |
-[[math]]
+$$
 
 Where:
 ||
-[[math]]
+$$
 A 
-[[Math]] || **Abstractness** ||
+$$ || **Abstractness** ||
 
 ||
-[[math]]
+$$
 I
-[[math]] || **Instability** ||
+$$ || **Instability** ||
  
 

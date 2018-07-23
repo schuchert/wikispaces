@@ -983,9 +983,9 @@ The next nudge to your production code is adding the idea of precedence. You won
 Rather than giving you the source for the tests, I'll use a neat feature that allows me to draw some LaTex style formulas.
 
 * Create the following example under the "Binary Operators" context:
-[[math]]
+$$
 1\ *\ 3\ +\ 2\ \ \rightarrow \ \ 1\ 3\ *\ 2\ +
-[[math]] 
+$$ 
 
 * Run your example. What happens?
 
@@ -997,9 +997,9 @@ Notice that this test passed as is. This means one of the following things:
 In this case, I gave you a poor example. Maybe I though we were adding support for a new operator, but the original code defaulted to thinking something was an operator if it wasn't a number. The result of this particular test does not force any changes since the code interprets * as an operator and the algorithm writes the stored operator all the time. So you need to change the example.
 
 Here's something a very different test from the first:
-[[math]]
+$$
 1\ +\ 3\ *\ 2\ \ \rightarrow \ \ 1\ 3\ 2\ *\ +
-[[math]] 
+$$ 
 
 Notice that if you follow traditional precedence rules, multiplication happens before addition. So by writing an example with addition before multiplication, it will force your production code to hold on to the + operator longer. Did you notice that whereas the previous results contained an operator embedded within the numbers, now both operators are at the end, with the first one ending up last (very different indeed).
 
@@ -1392,9 +1392,9 @@ So far you've handled a single operator and up to two operators and some basic p
 * Handling many somethings - often converts an "if" to a "while" - something I heard Uncle Bob say in one of his TDD tutorials
 
 * Create an example for the following (add it to the "Binary Operators" context, maybe it "should handle interleaved operators of different precedence"):
-[[math]]
+$$
 3\ +\ 1\ *\ 4\ -\ 2\ /\ 3\ \ \rightarrow \ \ 3\ 1\ 4\ *\ +\ 2\ 3\ /\ -
-[[math]]
+$$
 
 * Execute the example to see how your algorithm responds. You should see a failure similar to this:
 ```
@@ -1437,9 +1437,9 @@ However, it looks like you've got a decent general solution. You'll need to regi
 
 # Example: Handling Variables
 It is time to revisit an earlier test, only this time you'll use variables:
-[[math]]
+$$
 a\ +\ b\ \ \rightarrow \ \ a\ b\ +
-[[math]]
+$$
 
 * Rename the "Constants" context to "Operands"
 
@@ -1506,9 +1506,9 @@ In this section you'll start by properly parsing parenthesis. Then you'll make s
 
 ## Example: Removing ( )
 Begin by writing a new context called "Handling ( )'s" and adding an example that verifies the removal of ( )'s from an otherwise empty expression:
-[[math]]
+$$
 (\ )\ \ \rightarrow 
-[[math]]
+$$
 
 * Create this context and example:
 ```ruby
@@ -1594,9 +1594,9 @@ Finished in 0.026796 seconds
 
 ## Example: ( ) around expression works
 Next, verify that ( )'s around an expression still works.
-[[math]]
+$$
 (\ 4\ *\ a\ )\ \ \rightarrow \ \ 4\ a\ *
-[[math]]
+$$
 
 * Create this example (it "should simply remove ( ) around an expression") and see whether it works or not.
 
@@ -1604,9 +1604,9 @@ Since this appears to work, you might consider whether keeping this example is u
 
 ## Example: ( ) around expression causes lower precedence operator to happen first
 Here is a key test that should exercise something new:
-[[math]]
+$$
 (\ 4\ +\ 5\ )\ *\ 3\ \rightarrow \ 4\ 5\ +\ 3\ *
-[[math]]
+$$
 This demonstrates the whole purpose of ( ), change the natural precedence rules.
 
 * Remove the previous example and add this example, verify that it fails.
@@ -1712,9 +1712,9 @@ With all tests passing, you can perform some minor plastic surgery. The @operato
 
 ## Example: Nested ( )'s
 Moving along, you'll now have a look at supporting nested ( ). Here's a test to give it try:
-[[math]]
+$$
 (\ (\ 1\ +\ 3\ )\ /\ (\ 9\ -\ 5\ )\ )\ *\ (\ 2\ +\ 3\ )\ \ \rightarrow\ \ 1\ 3\ +\ 9\ 5\ -\ /\ 2\ 3\ +\ *
-[[math]]
+$$
 
 * Create this test and see what happens.
 
@@ -1743,9 +1743,9 @@ Just to be sure, you'll start with an example.
 
 ## Example: Basic Function Call
 Here's a simple test that describes what you want to have happen:
-[[math]]
+$$
 f\ (\ 3\ )\ \ \rightarrow\ \ 3\ f
-[[math]]
+$$
 
 * Create a new context and example, see that it in fact fails:
 ```ruby
@@ -2025,9 +2025,9 @@ Did this last change seem silly or over the top? Consider this, the first part o
 
 # Example: Multiple parameters to a function
 Now it's time to add multiple parameters to a function. Here is one example:
-[[math]]
+$$
 f\ (\ 4\ ,\ 1\ ,\ a\ ,\ d\ )\ \ \rightarrow \ \ 4\ 1\ a\ d\ f
-[[math]]
+$$
 
 * Add an example under the "Handling function invocations" context and see what happens.
 
@@ -2218,9 +2218,9 @@ This may seem like a bit of work, but consider this: The class is not thread saf
 Next, your code needs to address operator associativity. For example, 4 + 5 - 6 produces 4 5 + 6 - because + and - are left associative but otherwise at the same precedence. However, a = b += 5 produces a b 5 += =. First, b is incremented by 5 and then a equals that result. If these operators were left associative, the result would instead be: a b = 5 += (it's even worse, because the result of = would the an lvalue of the rvalue - whew!), so a would equal b// **before**// it was incremented by 5. And, as mentioned, the return value of = would be the thing on the right instead of the left to make the thing work in the first place.
 
 That gives a great test:
-[[math]]
+$$
 a\ =\ b\ += 5\ \ \rightarrow\ \ a\ b\ 5\ +=\
-[[math]]
+$$
 
 * Create a new Context and example:
 ```ruby

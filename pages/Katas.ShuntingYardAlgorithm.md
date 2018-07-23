@@ -1,13 +1,13 @@
 [[Katas|<--Back]]
 # Background
 The [[http://en.wikipedia.org/wiki/Shunting_yard_algorithm|Shunting Yard Algorithm]], written by [[http://en.wikipedia.org/wiki/Edsger_Dijkstra|Dijkstra]], converts an infix expression into a post-fix expression. For example, the expression:
->> [[math]]
+>> $$
 3 + 4
-[[math]]
+$$
 >> becomes
->> [[math]]
+>> $$
 3\;4\;+
-[[math]]
+$$
 
 # Precedence and Associativity
 What makes this difficult is that operators, generally, have some notion of precedence in most languages. For example, multiplication typically has a higher precedence than addition. So the expression 3 + 5 * 6 is 33 (multiplication happens first) rather than 40.

@@ -23,38 +23,38 @@ We also just learned about several metrics we can use to evaluate our components
 ----
 What are the values for the original diagram?
 **Middle Tier**
-[[math]]
+$$
 C_E = 0
-[[math]]
-[[math]]
+$$
+$$
 C_A = 7
-[[math]]
-[[math]]
+$$
+$$
 I = \frac{0}{0+7} = 0
-[[math]]
-[[math]]
+$$
+$$
 A = \frac{2}{14} = 0.143
-[[math]]
-[[math]]
+$$
+$$
 D = |0.143 + 0 - 1| = 0.857
-[[math]] 
+$$ 
 
 **UI Tier**
-[[math]]
+$$
 C_E = 7
-[[math]]
-[[math]]
+$$
+$$
 C_A = 0
-[[math]]
-[[math]]
+$$
+$$
 I = \frac{7}{7+0} = 1
-[[math]]
-[[math]]
+$$
+$$
 A = \frac{1}{5} = 0.2
-[[math]]
-[[math]]
+$$
+$$
 D = |1 + .2 - 1| = 0.2
-[[math]] 
+$$ 
 
 ----
 What to do next?
