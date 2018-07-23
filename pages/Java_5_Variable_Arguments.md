@@ -2,17 +2,17 @@
 title: Java_5_Variable_Arguments
 ---
 {:toc}
-[[Articles|<--Back]]
+[<--Back]({{ site.pagesurl}}/Articles)
 
 # Java 5 Variable Arguments
 
 This article uses Log4J as a vehicle to describe Java 5 Variable Augments through a concrete example.
 
 There are 4 versions of the same program:
-* [[Java 5 Variable Arguments#Mainv1|Version 1]]: A typical use that does not wrap as is typical
-* [[Java 5 Variable Arguments#Mainv2|Version 2]]: Same as version 1 but uses a convenience method in the String class
-* [[Java 5 Variable Arguments#Mainv3|Version 3]]: Shows what we should do using the existing interface
-* [[Java 5 Variable Arguments#Mainv4|Version 4]]: Shows a new interface using Java 5 variable arguments
+* [Version 1]({{ site.pagesurl}}/Java 5 Variable Arguments#Mainv1): A typical use that does not wrap as is typical
+* [Version 2]({{ site.pagesurl}}/Java 5 Variable Arguments#Mainv2): Same as version 1 but uses a convenience method in the String class
+* [Version 3]({{ site.pagesurl}}/Java 5 Variable Arguments#Mainv3): Shows what we should do using the existing interface
+* [Version 4]({{ site.pagesurl}}/Java 5 Variable Arguments#Mainv4): Shows a new interface using Java 5 variable arguments
 
 ## Version 1
 Here is a typical example of using Log4J with a simple utility class that:
@@ -421,4 +421,4 @@ Here is the source code for all 4 versions in an Eclipse 3.2 archive file.
 # Other Resources
 * [Speeding up Log4J in Java 1.5](http://surguy.net/articles/removing-log-messages.xml)
 
-[[Articles|<--Back]]
+[<--Back]({{ site.pagesurl}}/Articles)

@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX2ApplyYourself
 ---
-[[JBossAOPEX2Explained|<--Back]] [[JBossAOPEX2AssignmentApplications|Next-->]]
+[<--Back]({{ site.pagesurl}}/JBossAOPEX2Explained) [Next-->]({{ site.pagesurl}}/JBossAOPEX2AssignmentApplications)
 
 # Apply Yourself
 Here are some assignments to practice and reinforce what you've learned.
@@ -25,4 +25,4 @@ Using the provided Die class, write a program that rolls the die 1000 times. Nex
 ## Thought Problem
 In Monopoly there is a rule that if you roll three consecutive doubles during a turn, the player goes to jail. Think about ways you might begin to approach this problem using AOP. Once you’ve done that, ask yourself it if makes sense to do so. Is this a cross-cutting concern?
 
-[[JBossAOPEX2Explained|<--Back]] [[JBossAOPEX2AssignmentApplications|Next-->]]
+[<--Back]({{ site.pagesurl}}/JBossAOPEX2Explained) [Next-->]({{ site.pagesurl}}/JBossAOPEX2AssignmentApplications)

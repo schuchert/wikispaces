@@ -24,7 +24,7 @@ The name should be a hint that it has problems, and it does. If a single instanc
 Think it is not possible? It is. 
 ----
 ## What is an atomic operation in the JVM?
-You can safely [[DebuggingThreadedCodePart1.Original#SkipOverBytecodeInformation|skip]] this section if you are not interested in the bit-head information.
+You can safely [skip]({{ site.pagesurl}}/DebuggingThreadedCodePart1.Original#SkipOverBytecodeInformation) this section if you are not interested in the bit-head information.
 
 What is an atomic operation? Any operation that cannot be interrupted from when it starts to when it completes. For example, in the following code, line 5, where 1 is assigned to i, is atomic. It cannot be interrupted:
 ```java
@@ -203,7 +203,7 @@ This does require some command-line parameters when starting the JVM (or some on
 
 The first (one time) step, makes sure every time my IDE runs the Java VM, it passes parameters to the Java VM. Those parameters cause the registration of a class that uses the [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) instrumentation infrastructure on each individual class loaded so I can avoid the manual step of instrumentation.
 
-If you want to read more on how that happens, go [[JavaAgent|here]].
+If you want to read more on how that happens, go [here]({{ site.pagesurl}}/JavaAgent).
 ----
 ## Trying It Yourself
 Here's a jar file you can use that will give you the same results: [[file:Registrar.jar]]

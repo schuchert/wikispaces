@@ -1,9 +1,9 @@
 ---
 title: FitNesse.Tutorials.ScriptTables
 ---
-{:toc}[[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.ScenarioTables|Next Tutorial--->]]
+{:toc}[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) or [Next Tutorial--->]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables)
 # Background: The Return of Smalltalk
-This is a somewhat nostalgic background, you won't miss much if you [[FitNesse.Tutorials.ScriptTables#introduction|skip to the introduction]]. 
+This is a somewhat nostalgic background, you won't miss much if you [skip to the introduction]({{ site.pagesurl}}/FitNesse.Tutorials.ScriptTables#introduction). 
 
 [Script tables](http://fitnesse.org/FitNesse.SliM.ScriptTable) originally derive from Do Fixtures in [fitlibrary](http://sourceforge.net/projects/fitlibrary). However, the design for Do Fixtures actually derives from Smalltalk. In smalltalk there are three kinds of messages:
 * Unary: no parameters
@@ -52,7 +52,7 @@ generateProgrmas CreateDailyProgramNamed: 'D1" OnChannel: 8 StartingOn: '3/4/200
 The spirit of the keyword message in Smalltalk was revived in the design of the do fixture and then carried over into Slim.
 [[#introduction]]
 # Introduction
-In this tutorial, you'll continue working with the DVR problem, continuing right from where you left off in [[FitNesse.Tutorials.2|Query Tables Tutorial]]. You can use your code as is from the previous tutorial, or you can use the tag FitNesse.Tutorials.ScriptTables, review [[FitNesse.Tutorials.WorkingFromGitHub|here]] to figure out what to do with this tag.
+In this tutorial, you'll continue working with the DVR problem, continuing right from where you left off in [Query Tables Tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.2). You can use your code as is from the previous tutorial, or you can use the tag FitNesse.Tutorials.ScriptTables, review [here]({{ site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub) to figure out what to do with this tag.
 
 In this tutorial you will learn how to use script tables to express things with sequences of messages rather than rows of data that are either created or queried. It is typically possible to express in script tables what you can do with decision tables and query tables. The reverse is also true. typically it is a matter of habit or taste. Sometimes, however, one expression is simply better than another.
 # A First Script Table
@@ -639,7 +639,7 @@ While not demonstrated:
 * The first line can take additional parameters, which are passed into the constructor
 * The actual method name cells can be left blank after the first, in which case the name of the method will be shorter.
 
-Now that you have worked with all of the basic table types, you might consider looking into [[FitNesse.Tutorials.ScenarioTables|Scenario Tables]] or [[FitNesse.Tutorials.TableTables|Table Tables]].
+Now that you have worked with all of the basic table types, you might consider looking into [Scenario Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables) or [Table Tables]({{ site.pagesurl}}/FitNesse.Tutorials.TableTables).
 
-[[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.ScenarioTables|Next Tutorial--->]]
+[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) or [Next Tutorial--->]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables)
  

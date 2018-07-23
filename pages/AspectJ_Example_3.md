@@ -1,10 +1,10 @@
 ---
 title: AspectJ_Example_3
 ---
-[[AspectJ Self Study|<--Back]] [[AspectJEX3ExpectedVersusActualOutput|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJ Self Study) [Next-->]({{ site.pagesurl}}/AspectJEX3ExpectedVersusActualOutput)
 
 # Predict the Output
-Source files are here: [[file:AspectJExample3src.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject|here]].
+Source files are here: [[file:AspectJExample3src.zip]]. If you need instructions on what do with these files, try [here]({{ site.pagesurl}}/ExtractingSourceFilesIntoProject).
 
 Have a look at the following Die class and the associated Main.main() method that serializes the Die.
 ----
@@ -112,4 +112,4 @@ public class Main {
 ## Assignment: Predict the Output
 Given these 2 classes, predict the output. Please do so before continuing.
 
-[[AspectJ Self Study|<--Back]] [[AspectJEX3ExpectedVersusActualOutput|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJ Self Study) [Next-->]({{ site.pagesurl}}/AspectJEX3ExpectedVersusActualOutput)

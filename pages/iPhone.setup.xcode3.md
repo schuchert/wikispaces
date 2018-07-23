@@ -1,7 +1,7 @@
 ---
 title: iPhone.setup.xcode3
 ---
-[[iPhone|<-- Back]]
+[<-- Back]({{ site.pagesurl}}/iPhone)
 
 # The Video
 [[media type="custom" key="8643826"]]
@@ -142,4 +142,4 @@ Now the hard part starts.
 || Command-alt up-arrow || Switch between .h and .m ||
 
 
-[[iPhone|<-- Back]]
+[<-- Back]({{ site.pagesurl}}/iPhone)

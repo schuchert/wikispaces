@@ -2,7 +2,7 @@
 title: Cxx_Tdd_Iteration_1
 ---
 # Getting Started
-This tutorial uses a game similar to Monopoly(r) as a basis for our work. The rules we implement are not exactly the same as Monopoly(r) because the point is not Monopoly(r), it's TDD. If you just want to see what the end results for this iteration look like, then [[Cxx Tdd Iteration 1#EndGame|look here]].
+This tutorial uses a game similar to Monopoly(r) as a basis for our work. The rules we implement are not exactly the same as Monopoly(r) because the point is not Monopoly(r), it's TDD. If you just want to see what the end results for this iteration look like, then [look here]({{ site.pagesurl}}/Cxx Tdd Iteration 1#EndGame).
 
 This iteration's theme is: **Player Movement**
 [[include page="Monopoly(r) Release 1 Theme Description"]]
@@ -13,7 +13,7 @@ This iteration's theme is: **Player Movement**
 Here is our current user story:
 [[include page="Monopoly(r) R1 Player Movement"]]
 
-Our first test seems seems simple enough. A player takes a turn and moves around the board. However, let's break this down into a few parts so we can take some simple steps (note for this first test we're moving between [[Test Driven Development|TDD]] and [[Test First Development|TFD]]):
+Our first test seems seems simple enough. A player takes a turn and moves around the board. However, let's break this down into a few parts so we can take some simple steps (note for this first test we're moving between [TDD]({{ site.pagesurl}}/Test Driven Development) and [TFD]({{ site.pagesurl}}/Test First Development)):
 * Players move in the game using dice, so let's start by creating a single die object.
 * When we have a single die object, we'll create a Dice object to manage rolling the pair.
 * Then we'll have a player use the Dice to take a turn
@@ -563,7 +563,7 @@ By default, this make file:
 * links everything into an application
 * executes the application (thereby running your tests)
 
-If you review the [[Cxx Tdd Iteration 1#EndGame|End Game]] section, you'll see the makefile I've been using that additionally includes targets for checking working with subversion.
+If you review the [End Game]({{ site.pagesurl}}/Cxx Tdd Iteration 1#EndGame) section, you'll see the makefile I've been using that additionally includes targets for checking working with subversion.
 
 ## Finally: Test the Player
 We are finally ready to work up to our acceptance test. As a reminder, we started with the following user acceptance test:

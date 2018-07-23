@@ -2,13 +2,13 @@
 title: FitNesse.Tutorials.2
 ---
 {:toc}
-[[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.ScriptTables|Next Tutorial--->]]
+[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) or [Next Tutorial--->]({{ site.pagesurl}}/FitNesse.Tutorials.ScriptTables)
 # Introduction
 A Query table is a means of performing a single query and verifying the results. A typical test might use [Slim Decision Tables](http://fitnesse.org/FitNesse.UserGuide.SliM.DecisionTable) to insert a large data set and then Query tables to verify that the correct sub-set of the data is returned from the query.
 
-This tutorial begins with a basic introduction of Query tables, but it assumes a basic understanding of Decision tables. If you are not familiar with Decision Tables, work through [[FitNesse.Tutorials.1|this tutorial first]]. Along the way, we'll look at what it takes to produce query results manually and then review a small tool available from [github](http://github.com/schuchert/queryresultbuilder/tree/master) to produce these results automatically.
+This tutorial begins with a basic introduction of Query tables, but it assumes a basic understanding of Decision tables. If you are not familiar with Decision Tables, work through [this tutorial first]({{ site.pagesurl}}/FitNesse.Tutorials.1). Along the way, we'll look at what it takes to produce query results manually and then review a small tool available from [github](http://github.com/schuchert/queryresultbuilder/tree/master) to produce these results automatically.
 
-As a final note, this tutorial picks up where [[FitNesse.Tutorials.1|this tutorial]] left off. However, you can start with these source files using the tag FitNesse.Tutorials.2.Start, see [[FitNesse.Tutorials.WorkingFromGitHub|here]] for details:
+As a final note, this tutorial picks up where [this tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.1) left off. However, you can start with these source files using the tag FitNesse.Tutorials.2.Start, see [here]({{ site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub) for details:
 
 # Beginning
 Consider the following user story:
@@ -19,7 +19,7 @@ To test this functionality, it looks like we need to check several things, here 
 * The schedule should have some the same program on different channels
 * The schedule should have some duplicate episodes as well.
 
-We're going to grow our way into this. Before we can do that, we need to create a program schedule. You've already solved this problem in the [[FitNesse.Tutorials.2|previous tutorial]](right?). So all we need to do is use a previous fixture and create original programming. Rather than try to create real programs and episodes, this example just creates a large amount of data and it also includes the configuration stuff:
+We're going to grow our way into this. Before we can do that, we need to create a program schedule. You've already solved this problem in the [previous tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.2)(right?). So all we need to do is use a previous fixture and create original programming. Rather than try to create real programs and episodes, this example just creates a large amount of data and it also includes the configuration stuff:
 ```
 |Add Programs To Schedule                         |
 |name|episode|channel|date     |start time|minutes|
@@ -39,7 +39,7 @@ We're going to grow our way into this. Before we can do that, we need to create 
 |P1  |E1     |9      |5/17/2008|7:00      |60     |
 ```
 
-The goal of this table is to create several entires in the program schedule. However, the Fixture as written from the [[FitNesse.Tutorials.2|previous tutorial]] performs the actual creation in the **created()** method. We have a few options:
+The goal of this table is to create several entires in the program schedule. However, the Fixture as written from the [previous tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.2) performs the actual creation in the **created()** method. We have a few options:
 * Just add the created? column with blank cells. This will get the record created and let us know for sure everything worked.
 * Add an execute method to make the creation happen without having to add the column.
 * Add the created? column with true values. This will verify that your data set is not in error.
@@ -911,9 +911,9 @@ Finally, you've experience test cross-chatter and one way to clean it up. That's
 
 At this point, you've learned enough about FitNesse with the first three tutorials to be fairly effective. There's more to learn, e.g.,
 * Script Tables (TBD)
-* [[FitNesse.Tutorials.ScenarioTables|Scenario Tables]]
-* [[Acceptance Testing.FitNesse.TableTableExample|Table Tables]]
+* [Scenario Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables)
+* [Table Tables]({{ site.pagesurl}}/Acceptance Testing.FitNesse.TableTableExample)
 
 Even so, you can do quite a bit right now.
 
-[[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.ScriptTables|Next Tutorial--->]]
+[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) or [Next Tutorial--->]({{ site.pagesurl}}/FitNesse.Tutorials.ScriptTables)

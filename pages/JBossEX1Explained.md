@@ -1,7 +1,7 @@
 ---
 title: JBossEX1Explained
 ---
-[[JBossEX1SoWhatIsHappening|<--Back]] [[JBossVMConfigurationBlackMagic|Next-->]]
+[<--Back]({{ site.pagesurl}}/JBossEX1SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/JBossVMConfigurationBlackMagic)
 
 ## Example 1 Explained
 Capturing method execution is often what people first think of when considering AOP. This example is modified from one provided with the JBoss AOP documentation under docs/aspect-framework/examples/method-execution.
@@ -70,4 +70,4 @@ Calls to the MethodInterceptor.invoke() method are placed into target classes ba
 ||2 – 3||Define a pointcut, a selection of joinpoints. This creates a name, MethodExecution, which matches the execution of all public methods on MethodExecutionExample named anything (->*) taking any parameters (..). Defining a pointcut itself does not make anything happen. Next we associate the pointcut with an interceptor.||
 ||5 - 8||When any of the joinpoints matched by the MethodExecution pointcut are hit, call the invoke method of the MethodInterceptor class instead. That is, the invoke() method decides what to do instead of the original code.||
 
-[[JBossEX1SoWhatIsHappening|<--Back]] [[JBossVMConfigurationBlackMagic|Next-->]]
+[<--Back]({{ site.pagesurl}}/JBossEX1SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/JBossVMConfigurationBlackMagic)

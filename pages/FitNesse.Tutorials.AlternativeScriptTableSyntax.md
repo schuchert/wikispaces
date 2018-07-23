@@ -2,7 +2,7 @@
 title: FitNesse.Tutorials.AlternativeScriptTableSyntax
 ---
 {:toc}
-[[FitNesse.Tutorials|<--Back]]
+[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)
 # Introduction
 Sometime in the beginning of 2010, Bob Martin started working on an alternative way to write script tables to provide something that looks more like a style used in tools like [cucumber](http://cukes.info/). While still somewhat preliminary, this tutorial gives you a brief introduction to using this alternative style. Before getting into details, there are a few things I'll note:
 * Ultimately what gets executed in the fixture is the same thing that gets executed using "regular" scripts
@@ -12,7 +12,7 @@ Sometime in the beginning of 2010, Bob Martin started working on an alternative 
 ** a new way to represent script tables
 
 # Not Starting from Scratch
-I'm bolting this tutorial on more than a year after writing the other tutorials. So I'm starting with the last checkin into github and creating all new tables for this example. I might eventually integrate this into the tutorial suite at some point in the future, but for now if you want to get started, [[FitNesse.Tutorials.WorkingFromGitHub|follow the instructions here]]. When switching to tags, use the following tag: //**FitNesse.FitNesse.Tutorials.TableTables.Finished**//.
+I'm bolting this tutorial on more than a year after writing the other tutorials. So I'm starting with the last checkin into github and creating all new tables for this example. I might eventually integrate this into the tutorial suite at some point in the future, but for now if you want to get started, [follow the instructions here]({{ site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub). When switching to tags, use the following tag: //**FitNesse.FitNesse.Tutorials.TableTables.Finished**//.
 
 # An Example Revisited
 As mentioned, this tutorial stands alone and is bolted on. As such, I'm going to provide a stand-alone page to get you started assuming you have no existing FitNesse pages already. What I realized picking this up a year later is I neglected to include the FitNesseRoot in git. I'll fix that on a rewrite.
@@ -70,7 +70,7 @@ The first three lines are traditionally on a top-level (hierarchy-wise) page. Si
 Note that the import table must either be on this page or included in a SetUp page. Import tables are not otherwise inherited.
 
 ## Table Table to populate a program schedule
-This next section populates a program schedule. The left-most column lists channel numbers. The cells across represent program names. Each program consists of a sequence of equal, case-sensitive letters. This example is copied from the [[FitNesse.Tutorials.TableTables|Tables Tables Tutorial]]. This could be in a SetUp page or on the same page.
+This next section populates a program schedule. The left-most column lists channel numbers. The cells across represent program names. Each program consists of a sequence of equal, case-sensitive letters. This example is copied from the [Tables Tables Tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.TableTables). This could be in a SetUp page or on the same page.
 
 ```
 |Table:Create One Day Program Guide|1:00|3/4/2008                                                        |
@@ -248,4 +248,4 @@ The parameter @number is replaced with its assigned value 1. Next, FitNesse look
 The remaining lines are matched, substituted and executed in a similar manner and the test executes.
 
 This is not exactly correct. FitNesse does all of the matching and substituting. It then sends this processed test to Slim, which looks up the appropriate class, DvrRecording, and method. So all of the execution happens after all of the matching and substitution.
-[[FitNesse.Tutorials|<--Back]]
+[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)

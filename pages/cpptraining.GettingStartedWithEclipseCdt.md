@@ -1,7 +1,7 @@
 ---
 title: cpptraining.GettingStartedWithEclipseCdt
 ---
-[[cpptraining#gettingfirsttestrunning|<--Back]]
+[<--Back]({{ site.pagesurl}}/cpptraining#gettingfirsttestrunning)
 
 # Overview
 This instructions help you get started using Eclipse and the CDT to develop C++ systems under Windows.
@@ -14,9 +14,9 @@ These instructions are essentially a duplication of: [Wascana Eclipse C/C++ IDE 
 # Steps
 Note: If you install the 64-bit JDK, install the 64-bit Eclipse. Same with 32-bit.
 
-* Install a JDK (this is to run Eclipse): [[@http://java.sun.com/javase/downloads/widget/jdk6.jsp|Jdk 1.6 Install]]
-* Download and install the Helios version of eclipse with the Eclipse CDT: [[@http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers-includes-incubating-components/indigosr1|Helios]]
-* Add the wascana plugin from the following Eclipse update site: [[@http://svn.codespot.com/a/eclipselabs.org/wascana/repo| Wascana Update Site]]
+* Install a JDK (this is to run Eclipse): [Jdk 1.6 Install]({{ site.pagesurl}}/@http://java.sun.com/javase/downloads/widget/jdk6.jsp)
+* Download and install the Helios version of eclipse with the Eclipse CDT: [Helios]({{ site.pagesurl}}/@http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers-includes-incubating-components/indigosr1)
+* Add the wascana plugin from the following Eclipse update site: [ Wascana Update Site]({{ site.pagesurl}}/@http://svn.codespot.com/a/eclipselabs.org/wascana/repo)
 ** Start eclipse
 ** Go to// **Help::Install New Software...**//
 ** Paste http://svn.codespot.com/a/eclipselabs.org/wascana/repo/ in the// **Work with:**// box
@@ -38,4 +38,4 @@ That's it, works quite well. This gives support for compiling and debugging C++ 
 * Build and run it, notice the output in the console window
 * Debug it, you should see it pause just before beginning main()
 
-[[cpptraining#gettingfirsttestrunning|<--Back]]
+[<--Back]({{ site.pagesurl}}/cpptraining#gettingfirsttestrunning)

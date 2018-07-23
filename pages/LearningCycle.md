@@ -1,7 +1,7 @@
 ---
 title: LearningCycle
 ---
-[[ExperientialLearningNotes|<--Back]]
+[<--Back]({{ site.pagesurl}}/ExperientialLearningNotes)
 # Learning Cycles
 Learning Cycles describe a path for a learning experience. For more background on experiential learning cycles, look [here](http://reviewing.co.uk/research/learning.cycles.htm).
 # Example Learning Cycles 
@@ -38,4 +38,4 @@ Note that we did not give the student any answers, the underling ideas are their
 ## Application
 Next, we give the students a similar problem they can apply their new information to as a means to validating their information.
 
-[[ExperientialLearningNotes|<--Back]]
+[<--Back]({{ site.pagesurl}}/ExperientialLearningNotes)

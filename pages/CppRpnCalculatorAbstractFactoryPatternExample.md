@@ -1,7 +1,7 @@
 ---
 title: CppRpnCalculatorAbstractFactoryPatternExample
 ---
-[[RpnCalculatorCppExampleImplementation|<--Back]]
+[<--Back]({{ site.pagesurl}}/RpnCalculatorCppExampleImplementation)
 
 ## Abstract Factory Pattern Example
 This section has an example of an abstract factory and two concrete implementations. The abstract factory returns math operators used by a calculator. The operators are examples of the Strategy pattern, aka function object, functor. 
@@ -109,4 +109,4 @@ MathOperator &FullyNamedMathOperatorFactory::getOperatorNamed(const std::string 
 }
 
 ```
-[[RpnCalculatorCppExampleImplementation|<--Back]]
+[<--Back]({{ site.pagesurl}}/RpnCalculatorCppExampleImplementation)

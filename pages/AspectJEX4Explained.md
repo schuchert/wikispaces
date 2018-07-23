@@ -1,7 +1,7 @@
 ---
 title: AspectJEX4Explained
 ---
-[[AspectJEX4SoWhatIsHappening|<--Back]] [[AspectJEX4ApplyYourself|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJEX4SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJEX4ApplyYourself)
 
 # Example 4 Explained
 This example combines all of the previous examples together. In this example, we add Introductions (adding an interface + implementation of that interface to an existing class) and field setting as well as method execution. In the Field Setting example we simply reported existing and new values. Now we use that information and track whether an object has changed.
@@ -294,4 +294,4 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 ||3 - 5||List the 3 aspects we want to have woven in.||
 ||8||We want to weave all classes whose package starts with ex4.||
 
-[[AspectJEX4SoWhatIsHappening|<--Back]] [[AspectJEX4ApplyYourself|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJEX4SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJEX4ApplyYourself)

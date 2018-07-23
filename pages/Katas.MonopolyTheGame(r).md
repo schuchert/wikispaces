@@ -1,7 +1,7 @@
 ---
 title: Katas.MonopolyTheGame
 ---
-[[Katas|<--Back]]
+[<--Back]({{ site.pagesurl}}/Katas)
 
 # Background
 In 1992 I started working for a company called ObjectSpace with Graham Glass and David Norris. At that time, Graham taught classes on Object Oriented Development in C++ and sometimes Smalltalk. I was brought on to help with the teaching and helped Graham formalize the classes somewhat. Some years before 1991, Graham had bought several board games and randomly selected Monopoly to use as implementation problem for his class on Object Oriented Programming in C++. That project turned out to be an excellent source for basic object oriented design problems, design patterns (which were not yet on the scene in any significant way) and even analysis.
@@ -19,12 +19,12 @@ I have worked through Monopoly in several ways since 1992 when I joined ObjectSp
 
 So without knowing it, I've personally used Monopoly as a Kata for over 15 years. 
 
-In the early days, Graham had the problem in his head (the phases, design alternatives, etc.). Just before I started teaching the class, he wrote a document to summarize his approach. I took his writeup and over a series of several applications formalized the approach and the particular requirements we picked to force certain analysis and design issues in certain directions. I've reproduced and somewhat expanded those requirements [[Monopoly(r)|here]]. Actually, at that time I created slides for our C++ and Smalltalk classes - this was a mistake because the formality of the class was too much (a good lesson learned for me on class design). Later on, [Craig Larman](http://www.craiglarman.com/) joined the company and at one point, he and I mapped out our C++ and Smalltalk classes to try and them them as consistent as possible.
+In the early days, Graham had the problem in his head (the phases, design alternatives, etc.). Just before I started teaching the class, he wrote a document to summarize his approach. I took his writeup and over a series of several applications formalized the approach and the particular requirements we picked to force certain analysis and design issues in certain directions. I've reproduced and somewhat expanded those requirements [here]({{ site.pagesurl}}/Monopoly(r)). Actually, at that time I created slides for our C++ and Smalltalk classes - this was a mistake because the formality of the class was too much (a good lesson learned for me on class design). Later on, [Craig Larman](http://www.craiglarman.com/) joined the company and at one point, he and I mapped out our C++ and Smalltalk classes to try and them them as consistent as possible.
 
 In recent years, I have programmed it, though not as much as at the end of last century. Even so, when I'm teaching anything to do with design issues, I often go back to the very deep Monopoly well to find concrete examples of basic to advanced principles.
 
 # Approach
-Work through the problem as described [[Monopoly(r)|here]], completing one phase before going on to the next. This problem, as described, is meant to allow you to practice the fundamentals of object oriented programming. Keep that in mind as you approach it. You might want to review [the S.O.L.I.D.](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) principles. 
+Work through the problem as described [here]({{ site.pagesurl}}/Monopoly(r)), completing one phase before going on to the next. This problem, as described, is meant to allow you to practice the fundamentals of object oriented programming. Keep that in mind as you approach it. You might want to review [the S.O.L.I.D.](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) principles. 
 
 Here are a few considerations:
 * Repeat this several times over a period of months, let it sink in. Think of this as process, not a "coding event."
@@ -39,4 +39,4 @@ Once you become very familiar with this problem (say 10 + times, maybe more), th
 
 Let me know how it goes for you!
 
-[[Katas|<--Back]]
+[<--Back]({{ site.pagesurl}}/Katas)

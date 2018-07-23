@@ -1,12 +1,12 @@
 ---
 title: FitNesse
 ---
-## [[FitNesse.Tutorials|Tutorials]]
+## [Tutorials]({{ site.pagesurl}}/FitNesse.Tutorials)
 
-[[FitNesse.UsingTheSource|Using The Source]]
+[Using The Source]({{ site.pagesurl}}/FitNesse.UsingTheSource)
  
-[[Acceptance Testing.UsingSlimDotNetInFitNesse|Using Slim.Net with FitNesse]]
+[Using Slim.Net with FitNesse]({{ site.pagesurl}}/Acceptance Testing.UsingSlimDotNetInFitNesse)
 
-## [[FitNesse.DevelopmentByExampleTheFitNesseWay|Development by Example, the FitNesse Way]]
+## [Development by Example, the FitNesse Way]({{ site.pagesurl}}/FitNesse.DevelopmentByExampleTheFitNesseWay)
 
-## [[FitNesse.PageHierarchyForTeamDevelopment|PageHierarchyForTeamDevelopment]]
+## [PageHierarchyForTeamDevelopment]({{ site.pagesurl}}/FitNesse.PageHierarchyForTeamDevelopment)

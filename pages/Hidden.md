@@ -6,5 +6,5 @@ title: Hidden
 * [[file:SRC_RAD_Object_Mentor.zip]]
 
 ## Exercises
-* [[Vancouver_PPP_Exercise_Ch8and9|Componentization Exercise]] [Print](http://schuchert.wikispaces.com/ComponentizationExercisePrintable?f=print)
+* [Componentization Exercise]({{ site.pagesurl}}/Vancouver_PPP_Exercise_Ch8and9) [Print](http://schuchert.wikispaces.com/ComponentizationExercisePrintable?f=print)
 

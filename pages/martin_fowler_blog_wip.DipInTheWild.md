@@ -2,7 +2,7 @@
 title: martin_fowler_blog_wip.DipInTheWild
 ---
 ## Overview
-You can safely skip to [[martin_fowler_blog_wip.DipInTheWild#article|the article]].
+You can safely skip to [the article]({{ site.pagesurl}}/martin_fowler_blog_wip.DipInTheWild#article).
 
 This is my WIP for an article for Martin Fowler's blog. The first cut is going to be a novelization of a talk I recently gave in Sweden. The materials for that (code and pdf of slides) are [on github](https://github.com/schuchert/spring_aop).
 

@@ -1,12 +1,12 @@
 ---
 title: FitNesse.Tutorials.ScenarioTables
 ---
-{:toc}[[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.TableTables|Next Tutorial--->]]
+{:toc}[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) or [Next Tutorial--->]({{ site.pagesurl}}/FitNesse.Tutorials.TableTables)
 
 # //Note//
-The [[FitNesse.Tutorials.ScenarioTables.OriginalArticle|original article]] is here. This page is a rewritten version that ties in with the previous tutorials.
+The [original article]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables.OriginalArticle) is here. This page is a rewritten version that ties in with the previous tutorials.
 # Introduction
-This tutorial picks up where the [[FitNesse.Tutorials.ScriptTables|previous one]] finished. If you'd like to start at this tutorial with a fresh source base, use the tag: //**FitNesse.Tutorials.ScenarioTables.Start**// and [[FitNesse.Tutorials.WorkingFromGitHub|review these notes on working with the source from github]].
+This tutorial picks up where the [previous one]({{ site.pagesurl}}/FitNesse.Tutorials.ScriptTables) finished. If you'd like to start at this tutorial with a fresh source base, use the tag: //**FitNesse.Tutorials.ScenarioTables.Start**// and [review these notes on working with the source from github]({{ site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub).
 
 Scenario tables are a way to express a sequence of abstract steps. Unlike the other table types you've probably worked with, scenario tables are not necessarily backed by a particular fixture. In fact, if you simply declare a sequence of steps in a scenario table, FitNesse will not attempt to do anything with it; you will not need a backing fixture. However, as soon as you define concrete tests that use the scenario table, then you'll need to make sure a fixture is in place. It is possible for the same Scenario table to be backed by different fixtures for different uses.
 
@@ -820,9 +820,9 @@ It is important to frequently run your unit tests and acceptance tests to make s
 This will not happen by chance, you must design your system to allow for it, anticipate that things will break, and when the break, fix them fast!
 
 # Advanced: Scenario Table Calling Scenario Table
-This is an optional section. [[FitNesse.Tutorials.ScenarioTables#summary|You can safely skip it]].
+This is an optional section. [You can safely skip it]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables#summary).
 
-This section is the motivation for the [[FitNesse.Tutorials.ScenarioTables.OriginalArticle|original article]] so it seems appropriate to include a shortened version here. If you want to understand the inner workings, read [[FitNesse.Tutorials.ScenarioTables.OriginalArticle|original article]]. It is not a tutorial, so there will not be any work beyond the reading effort.
+This section is the motivation for the [original article]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables.OriginalArticle) so it seems appropriate to include a shortened version here. If you want to understand the inner workings, read [original article]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables.OriginalArticle). It is not a tutorial, so there will not be any work beyond the reading effort.
 
 Have a look at the last table you created:
 ```
@@ -834,7 +834,7 @@ Have a look at the last table you created:
 
 Notice that the first column is 2? In fact, the way these pages have been split, the first column will always be 2. Can you remove that duplication? 
 
-The answer is yes you can. You can create a new scenario table that uses the first scenario table. That's what the rest of this section will describe. It will leave out some of the details. For a better understanding of what is happening under the covers, read [[FitNesse.Tutorials.ScenarioTables.OriginalArticle|original article]].
+The answer is yes you can. You can create a new scenario table that uses the first scenario table. That's what the rest of this section will describe. It will leave out some of the details. For a better understanding of what is happening under the covers, read [original article]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables.OriginalArticle).
 
 This requires two steps:
 * Define a new Scenario in terms of an existing scenario.
@@ -890,7 +890,7 @@ If you add these two tables and run the test, it will work. Notice that the page
 
 I don't recommend keeping the first table and the last table since they result in the exact same test.
 
-This example use of a scenario calling another scenario is overkill. Review the [[FitNesse.Tutorials.ScenarioTables.OriginalArticle|original article]] for a better example and a much more detailed explanation. This technique is useful when you have a complex abstract test scenario and you'll end up performing many tests using the same sequence of steps. The abstract scenario might require many parameters. However, for a given test, you might only need to vary 1. In that case, this is a good way to both capture the basic steps and then execute them.
+This example use of a scenario calling another scenario is overkill. Review the [original article]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables.OriginalArticle) for a better example and a much more detailed explanation. This technique is useful when you have a complex abstract test scenario and you'll end up performing many tests using the same sequence of steps. The abstract scenario might require many parameters. However, for a given test, you might only need to vary 1. In that case, this is a good way to both capture the basic steps and then execute them.
 [[#summary]]
 # Summary
 Congratulations. At this point, if you've worked through each of the tutorials, you are only lacking experience with Table Tables. You now know how to work effectively with FitNesse and Slim. You picked up several test refactoring and organization techniques along the way. You even saw a data-driven test in JUunit.
@@ -904,7 +904,7 @@ The key subject for this tutorial is Scenaro Tables:
 * The name of a scenario table is similar to how methods are named in script tables.
 * Scenario tables can call other scenario tables. There is no inherent limit in FitNesse, but the table should be readable by a human.
 
-At this point you should consider finishing your knowledge of FitNesse.Slim tables and work on the [[FitNesse.Tutorials.TableTables|Table Table Tutorial]].
+At this point you should consider finishing your knowledge of FitNesse.Slim tables and work on the [Table Table Tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.TableTables).
 
 
-[[FitNesse.Tutorials|<--Back]] or [[FitNesse.Tutorials.TableTables|Next Tutorial--->]]
+[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) or [Next Tutorial--->]({{ site.pagesurl}}/FitNesse.Tutorials.TableTables)

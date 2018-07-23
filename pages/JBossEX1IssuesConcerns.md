@@ -1,7 +1,7 @@
 ---
 title: JBossEX1IssuesConcerns
 ---
-[[JBossEX1AssignmentIssues|<--Back]] [[JBoss AOP Example 2|Next-->]]
+[<--Back]({{ site.pagesurl}}/JBossEX1AssignmentIssues) [Next-->]({{ site.pagesurl}}/JBoss AOP Example 2)
 
 ## Issues/Concerns
 Here are some issues/concerns I’ve heard people mention:
@@ -10,4 +10,4 @@ Here are some issues/concerns I’ve heard people mention:
 * This can be done using regular OO techniques
 * …
 
-[[JBossEX1AssignmentIssues|<--Back]] [[JBoss AOP Example 2|Next-->]]
+[<--Back]({{ site.pagesurl}}/JBossEX1AssignmentIssues) [Next-->]({{ site.pagesurl}}/JBoss AOP Example 2)

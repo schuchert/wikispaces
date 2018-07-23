@@ -1,10 +1,10 @@
 ---
 title: AspectJ_CFlowApplications
 ---
-[[AspectJ CFlowAssignmentApplications|<--Back]] [[AspectJ CFlowAssignmentIssues|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJ CFlowAssignmentApplications) [Next-->]({{ site.pagesurl}}/AspectJ CFlowAssignmentIssues)
 
 ## Applications of CFlow
 Here are some things I’ve heard people mention:
 * …
 
-[[AspectJ CFlowAssignmentApplications|<--Back]] [[AspectJ CFlowAssignmentIssues|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJ CFlowAssignmentApplications) [Next-->]({{ site.pagesurl}}/AspectJ CFlowAssignmentIssues)

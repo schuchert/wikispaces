@@ -1,8 +1,8 @@
 ---
 title: JBossAOPEX3IssuesConcerns
 ---
-[[JBossEX3AssignmentIssues|<--Back]] [[JBoss AOP Self Study|Next-->]]
+[<--Back]({{ site.pagesurl}}/JBossEX3AssignmentIssues) [Next-->]({{ site.pagesurl}}/JBoss AOP Self Study)
 
 TBD
 
-[[JBossEX3AssignmentIssues|<--Back]] [[JBoss AOP Self Study|Next-->]]
+[<--Back]({{ site.pagesurl}}/JBossEX3AssignmentIssues) [Next-->]({{ site.pagesurl}}/JBoss AOP Self Study)

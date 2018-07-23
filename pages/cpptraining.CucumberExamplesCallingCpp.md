@@ -1,7 +1,7 @@
 ---
 title: cpptraining.CucumberExamplesCallingCpp
 ---
-[[cpptraining#ruby|<--Back]]
+[<--Back]({{ site.pagesurl}}/cpptraining#ruby)
 
 ## Preliminary Setup
 * Install ruby
@@ -246,4 +246,4 @@ Deleting calc
 Deleting calc
 Deleting calc
 ```
-[[cpptraining#ruby|<--Back]]
+[<--Back]({{ site.pagesurl}}/cpptraining#ruby)

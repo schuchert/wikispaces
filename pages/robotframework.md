@@ -1,5 +1,5 @@
 ---
 title: robotframework
 ---
-[[robotframework.GettingStarted|Getting Started]]
+[Getting Started]({{ site.pagesurl}}/robotframework.GettingStarted)
  

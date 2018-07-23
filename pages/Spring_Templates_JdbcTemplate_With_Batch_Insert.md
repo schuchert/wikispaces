@@ -1,8 +1,8 @@
 ---
 title: Spring_Templates_JdbcTemplate_With_Batch_Insert
 ---
-[[Spring Templates JdbcTemplate|<--Back]] [[Designing to Spring Templates|Next-->]]
+[<--Back]({{ site.pagesurl}}/Spring Templates JdbcTemplate) [Next-->]({{ site.pagesurl}}/Designing to Spring Templates)
 
 
 
-[[Spring Templates JdbcTemplate|<--Back]] [[Designing to Spring Templates|Next-->]]
+[<--Back]({{ site.pagesurl}}/Spring Templates JdbcTemplate) [Next-->]({{ site.pagesurl}}/Designing to Spring Templates)

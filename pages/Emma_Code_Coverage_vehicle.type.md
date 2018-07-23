@@ -1,7 +1,7 @@
 ---
 title: Emma_Code_Coverage_vehicle.type
 ---
-[[Car Rental Code Coverage with Emma|<--Back]] [[Emma Code Coverage vehicle.configuration|Next-->]]
+[<--Back]({{ site.pagesurl}}/Car Rental Code Coverage with Emma) [Next-->]({{ site.pagesurl}}/Emma Code Coverage vehicle.configuration)
 
 # Emma Code Coverage vehicle.type Package
 
@@ -105,4 +105,4 @@ The specific results for the classes are here:
 
 Have we made any real improvements? Have we tested methods that are likely to fail? That is something that you'd have to decide for yourself. I'm not convinced that we've accomplished very much other than removing unused classes and methods.
 
-[[Car Rental Code Coverage with Emma|<--Back]] [[Emma Code Coverage vehicle.configuration|Next-->]]
+[<--Back]({{ site.pagesurl}}/Car Rental Code Coverage with Emma) [Next-->]({{ site.pagesurl}}/Emma Code Coverage vehicle.configuration)

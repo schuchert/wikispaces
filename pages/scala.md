@@ -3,6 +3,6 @@ title: scala
 ---
 Placeholder page for Scala work
 
-* [[scala.GettingStarted|Getting Started]]
-* [[scala.specs|Scala Specs]]
-* [[scala.example.rpn|rpn calculator for feedback]]
+* [Getting Started]({{ site.pagesurl}}/scala.GettingStarted)
+* [Scala Specs]({{ site.pagesurl}}/scala.specs)
+* [rpn calculator for feedback]({{ site.pagesurl}}/scala.example.rpn)

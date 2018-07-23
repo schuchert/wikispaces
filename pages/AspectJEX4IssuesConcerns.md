@@ -1,8 +1,8 @@
 ---
 title: AspectJEX4IssuesConcerns
 ---
-[[AspectJEX4AssignmentIssues|<--Back]] [[AspectJ Self Study|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJEX4AssignmentIssues) [Next-->]({{ site.pagesurl}}/AspectJ Self Study)
 
 TBD
 
-[[AspectJEX4AssignmentIssues|<--Back]] [[AspectJ Self Study|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJEX4AssignmentIssues) [Next-->]({{ site.pagesurl}}/AspectJ Self Study)

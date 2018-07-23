@@ -1,11 +1,11 @@
 ---
 title: JBossAOPEX2Possibilities
 ---
-[[JBossAOPEX2ExpectedVersusActualOutput|<--Back]] [[JBossAOPEX2WhatIsHappening|Next-->]]
+[<--Back]({{ site.pagesurl}}/JBossAOPEX2ExpectedVersusActualOutput) [Next-->]({{ site.pagesurl}}/JBossAOPEX2WhatIsHappening)
 
 # Possibilities
 Did you have any ideas? Here are some ideas I’ve heard:
 * Wrap all of the set methods like in the first example
 * …
 
-[[JBossAOPEX2ExpectedVersusActualOutput|<--Back]] [[JBossAOPEX2WhatIsHappening|Next-->]]
+[<--Back]({{ site.pagesurl}}/JBossAOPEX2ExpectedVersusActualOutput) [Next-->]({{ site.pagesurl}}/JBossAOPEX2WhatIsHappening)

@@ -2,7 +2,7 @@
 title: FitNesse.Tutorials.0
 ---
 {:toc}
-[[FitNesse.Tutorials|<--Back]]
+[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)
 # Install FitNesse
 * Install a JVM 1.6 or later.
 * [Download FitNesse](http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad)
@@ -76,8 +76,8 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 !path fitnesse.jar
 ```
 
-# [[FitNesse.Tutorials.0.Java|Continue Tutorial in Java]]
-# [[FitNesse.Tutorials.0.CSharp|Continue Tutorial in C#]]
+# [Continue Tutorial in Java]({{ site.pagesurl}}/FitNesse.Tutorials.0.Java)
+# [Continue Tutorial in C#]({{ site.pagesurl}}/FitNesse.Tutorials.0.CSharp)
 
 [[#Congratulations]]
 # Congratulations
@@ -94,7 +94,7 @@ Congratulations, you've finished the first tutorial. In this tutorial you:
 * You've assigned the result of a method (the id() method) to a variable, ID.
 
 # What's Next
-* Continue working on the [[FitNesse.Tutorials.1|next tutorials]] (I recommend in the order listed). 
+* Continue working on the [next tutorials]({{ site.pagesurl}}/FitNesse.Tutorials.1) (I recommend in the order listed). 
 * Learn how to make tests that actually execute production code.
 * Learn how to use a Table Table to implement a "fluent" or DSL-based table
-[[FitNesse.Tutorials|<--Back]] -or- [[FitNesse.Tutorials.1|Next Tutorial-->]]
+[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) -or- [Next Tutorial-->]({{ site.pagesurl}}/FitNesse.Tutorials.1)

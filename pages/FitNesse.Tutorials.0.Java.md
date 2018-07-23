@@ -5,7 +5,7 @@ title: FitNesse.Tutorials.0.Java
 # Create Eclipse Project
 In a nutshell, you are going to create a Java project, add some classes and then add the bin directory to the FitNesse path so that FitNesse can find and execute your Java Fixtures.
 
-You can either [[FitNesse.Tutorials.WorkingFromGitHub|start with source from github]] and skip to the next section or:
+You can either [start with source from github]({{ site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub) and skip to the next section or:
 * Start Eclipse
 * Create a new Workspace (I used /Users/schuchert/src/fitnesse-tutorials/ as the directory)
 * Create a Java Project (I used DVR)
@@ -100,5 +100,5 @@ public class CreatePrograms {
 * Go back to your browser and click the **Test** button. You should see the following:
 [[image:AllGreenFirstTime.gif]]
 
-# [[FitNesse.Tutorials.0#Congratulations|Return and Complete Your Tutorial]]
+# [Return and Complete Your Tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.0#Congratulations)
  

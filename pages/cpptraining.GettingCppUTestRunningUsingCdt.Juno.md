@@ -1,9 +1,9 @@
 ---
 title: cpptraining.GettingCppUTestRunningUsingCdt.Juno
 ---
-[[cpptraining|<--back]]
+[<--back]({{ site.pagesurl}}/cpptraining)
 # Overview
-These instructions assume you have already worked through:[[cpptraining.GettingStartedWithEclipseCdt.Juno|this]] and then [[cpptraining.GettingCppUTestCompiledUsingCDTToolSet.Juno|that]]. 
+These instructions assume you have already worked through:[this]({{ site.pagesurl}}/cpptraining.GettingStartedWithEclipseCdt.Juno) and then [that]({{ site.pagesurl}}/cpptraining.GettingCppUTestCompiledUsingCDTToolSet.Juno). 
 
 With a working Eclipse Juno + CDT and MinGW and CppUTest built, you are ready to create your first project.
 
@@ -62,4 +62,4 @@ Hit ctrl-F11 to build and run your tests:
 ```
 OK (0 tests, 0 ran, 0 checks, 0 ignored, 0 filtered out, 0 ms)
 ```
-[[cpptraining|<--back]]
+[<--back]({{ site.pagesurl}}/cpptraining)

@@ -1,8 +1,8 @@
 ---
 title: iPhone.RefactoringTheInterface
 ---
-[[iPhone|<-- Back]]
+[<-- Back]({{ site.pagesurl}}/iPhone)
 
 [[media type="custom" key="7608383"]]
 
-[[iPhone|<-- Back]]
+[<-- Back]({{ site.pagesurl}}/iPhone)

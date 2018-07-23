@@ -1,4 +1,4 @@
 ---
 title: cpptraining.cpputest
 ---
-[[cpptraining.cpputest.vs2008|Getting started with VS 2008]]
+[Getting started with VS 2008]({{ site.pagesurl}}/cpptraining.cpputest.vs2008)

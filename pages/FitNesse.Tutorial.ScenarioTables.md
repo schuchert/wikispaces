@@ -2,7 +2,7 @@
 title: FitNesse.Tutorial.ScenarioTables
 ---
 # Not Even Yet Under Construction
-[[FitNesse.Tutorials|<--Back]]
+[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)
 
-[[FitNesse.Tutorials|<--Back]]
+[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)
  

@@ -1,7 +1,7 @@
 ---
 title: AspectJ_CFlowPossibilities
 ---
-[[AspectJ CFlowFormTheory|<--Back]] [[AspectJ CFlowWhatIsHappening|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJ CFlowFormTheory) [Next-->]({{ site.pagesurl}}/AspectJ CFlowWhatIsHappening)
 
 ## Possibilities
 Did you have any ideas? Here are some ideas I’ve heard some people mention:
@@ -10,4 +10,4 @@ Did you have any ideas? Here are some ideas I’ve heard some people mention:
 * If you are in a constructor, or a method called by a constructor, do not go into the around advice.
 * ... 
 
-[[AspectJ CFlowFormTheory|<--Back]] [[AspectJ CFlowWhatIsHappening|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJ CFlowFormTheory) [Next-->]({{ site.pagesurl}}/AspectJ CFlowWhatIsHappening)

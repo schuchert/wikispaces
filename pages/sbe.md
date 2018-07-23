@@ -3,4 +3,4 @@ title: sbe
 ---
 Collecting stuff related to Specification by Example
 
-[[sbe.WorkItemsInSchedule|Work Items In A Schedule]]
+[Work Items In A Schedule]({{ site.pagesurl}}/sbe.WorkItemsInSchedule)

@@ -1,7 +1,7 @@
 ---
 title: Katas.ShuntingYardAlgorithm
 ---
-[[Katas|<--Back]]
+[<--Back]({{ site.pagesurl}}/Katas)
 # Background
 The [Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm), written by [Dijkstra](http://en.wikipedia.org/wiki/Edsger_Dijkstra), converts an infix expression into a post-fix expression. For example, the expression:
 ^
@@ -183,4 +183,4 @@ Here's a zip of the source files we created during the dojo:
 
 Here's a version I've worked on a bit more:
 [[file:ShuntingYardAlgorithm.zip]]
-[[Katas|<--Back]]
+[<--Back]({{ site.pagesurl}}/Katas)

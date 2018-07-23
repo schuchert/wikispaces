@@ -20,7 +20,7 @@ This is my plan for my talk at the Austin Java User's Group on February 28 2012.
 * Compare and contrast original and updated dynamic link seam-based unit check
 * Discuss the implications with respect to the amount of discipline required to not make a mess as it relates to different kinds of mocking tools
 ## Part 1
-* Review some code ([[@https://github.com/schuchert/welc_examples_java_jmockit|original available on github]] )
+* Review some code ([original available on github]({{ site.pagesurl}}/@https://github.com/schuchert/welc_examples_java_jmockit) )
 ```java
 package com.schuchert.welc;
 

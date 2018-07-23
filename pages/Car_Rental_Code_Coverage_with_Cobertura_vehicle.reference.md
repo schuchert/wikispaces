@@ -1,7 +1,7 @@
 ---
 title: Car_Rental_Code_Coverage_with_Cobertura_vehicle.reference
 ---
-[[Car Rental Code Coverage with Cobertura vehicle.configuration|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.validation|Next-->]]
+[<--Back]({{ site.pagesurl}}/Car Rental Code Coverage with Cobertura vehicle.configuration)  [Next-->]({{ site.pagesurl}}/Car Rental Code Coverage with Cobertura vehicle.validation)
 
 
-[[Car Rental Code Coverage with Cobertura vehicle.configuration|<--Back]]  [[Car Rental Code Coverage with Cobertura vehicle.validation|Next-->]]
+[<--Back]({{ site.pagesurl}}/Car Rental Code Coverage with Cobertura vehicle.configuration)  [Next-->]({{ site.pagesurl}}/Car Rental Code Coverage with Cobertura vehicle.validation)

@@ -1,7 +1,7 @@
 ---
 title: cpptraining.CppAndOodTheLeastYouNeedToKnow
 ---
-[[cpptraining#CppAndOodTheLeastYouNeedToKnow|<--Back]]
+[<--Back]({{ site.pagesurl}}/cpptraining#CppAndOodTheLeastYouNeedToKnow)
 
 This is a work in progress. I've already been rejected by Pragmatic Press. Not sure that it's really publishable in a dead-tree form. In any case, feedback appreciated.
 
@@ -16,4 +16,4 @@ Older Updates:
 
 [[file:CppAndOodTheLeastYouNeedToKnow.pdf]]
 
-[[cpptraining#CppAndOodTheLeastYouNeedToKnow|<--Back]]
+[<--Back]({{ site.pagesurl}}/cpptraining#CppAndOodTheLeastYouNeedToKnow)

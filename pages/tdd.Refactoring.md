@@ -3,4 +3,4 @@ title: tdd.Refactoring
 ---
 This is a placeholder page for refactoring examples.
 
-[[tdd.Refactoring.UiExample|UI Refactoring Example]]
+[UI Refactoring Example]({{ site.pagesurl}}/tdd.Refactoring.UiExample)

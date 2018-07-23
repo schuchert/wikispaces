@@ -1,9 +1,9 @@
 ---
 title: Emma_Code_Coverage_vehicle.exception
 ---
-[[Emma Code Coverage vehicle.reference|<--Back]] [[Emma Code Coverage Summary|Next-->]]
+[<--Back]({{ site.pagesurl}}/Emma Code Coverage vehicle.reference) [Next-->]({{ site.pagesurl}}/Emma Code Coverage Summary)
 
 
 
 
-[[Emma Code Coverage vehicle.reference|<--Back]] [[Emma Code Coverage Summary|Next-->]]
+[<--Back]({{ site.pagesurl}}/Emma Code Coverage vehicle.reference) [Next-->]({{ site.pagesurl}}/Emma Code Coverage Summary)

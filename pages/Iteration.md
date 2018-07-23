@@ -9,7 +9,7 @@ For a given project, the iteration length should be **consistent**. If you start
 
 At the end of an iteration, work should be **done** or [[complete]].
 
-It is better to use more people doing fewer things in an iteration to return to [[complete|completeness]] more frequently. Why? If you have a lot of work unfinished at the end of an iteration, then it is harder to make significant direction changes.
+It is better to use more people doing fewer things in an iteration to return to [completeness]({{ site.pagesurl}}/complete) more frequently. Why? If you have a lot of work unfinished at the end of an iteration, then it is harder to make significant direction changes.
 
 It is better to finish less work than not meet the end of iteration deadline.
 

@@ -1,8 +1,8 @@
 ---
 title: Emma_Code_Coverage_Summary
 ---
-[[Emma Code Coverage vehicle.exception|<--Back]] [[Car Rental Code Coverage with Emma|Next-->]]
+[<--Back]({{ site.pagesurl}}/Emma Code Coverage vehicle.exception) [Next-->]({{ site.pagesurl}}/Car Rental Code Coverage with Emma)
 
 
 
-[[Emma Code Coverage vehicle.exception|<--Back]] [[Car Rental Code Coverage with Emma|Next-->]]
+[<--Back]({{ site.pagesurl}}/Emma Code Coverage vehicle.exception) [Next-->]({{ site.pagesurl}}/Car Rental Code Coverage with Emma)

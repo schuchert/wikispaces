@@ -1,7 +1,7 @@
 ---
 title: SatirChangeModel
 ---
-[[ExperientialLearningNotes|<--Back]]
+[<--Back]({{ site.pagesurl}}/ExperientialLearningNotes)
 
 # Satir Change Model
 
@@ -75,4 +75,4 @@ The Satir Change Model attempts to describe how change occurs for an individual.
 
 The above link is written by Rick brenner: [[http://www.chacocanyon.com/aboutrick.shtml]].
 
-[[ExperientialLearningNotes|<--Back]]
+[<--Back]({{ site.pagesurl}}/ExperientialLearningNotes)

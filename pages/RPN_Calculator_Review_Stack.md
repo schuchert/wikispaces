@@ -8,4 +8,4 @@ As a user I want to be able to review the contents of the stack so that I can co
 * [] <display> -> []
 * [] 6 <display> [6]
 
-[[RPN Calculator|<--Back]]
+[<--Back]({{ site.pagesurl}}/RPN Calculator)

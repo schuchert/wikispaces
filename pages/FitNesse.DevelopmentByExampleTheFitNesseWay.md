@@ -65,7 +65,7 @@ Tutorial Sequence 1: Technical Introduction to FitNesse Tables and Fixtures
 * Chapter describing the features of FitNesse used in previous tutorial
 * Validating data using Query Tables (see: [[FitNesse.Tutorials.2][FitNesse Query Tables]])
 * Chapter describing the features of FitNesse used in previous tutorial
-* Expressing flow using Script Tables: (see: [[FitNesse.Tutorials.ScriptTables|FitNesse Script Tables]])
+* Expressing flow using Script Tables: (see: [FitNesse Script Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScriptTables))
 * Chapter describing the features of FitNesse used in the previous tutorial
 * Creating an Abstract Test Description using Scenario-Tables (see: [[FitNesse.Tutorials.ScenarioTables][FitNesse Scenario Tables]])
 * Chapter describing the features of FitNesse used in the previous tutorial

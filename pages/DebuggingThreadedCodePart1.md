@@ -2,12 +2,12 @@
 title: DebuggingThreadedCodePart1
 ---
 # Background
-Writing unit tests for threaded code is hard. What follows is a simple example, along with instructions on how to improve your chances of finding threading errors in your code. I've updated this as of February 2010. [[DebuggingThreadedCodePart1.Original|If you are looking for the original material, click here]].
+Writing unit tests for threaded code is hard. What follows is a simple example, along with instructions on how to improve your chances of finding threading errors in your code. I've updated this as of February 2010. [If you are looking for the original material, click here]({{ site.pagesurl}}/DebuggingThreadedCodePart1.Original).
 
 ## Introduction
 This page describes some of what it takes to successfully test thread-related code. The primary emphasis here is on supporting technology rather than techniques.
 
-[[DebuggingThreadedCodePart1#StepByStepInstructions|If you just want to get to the step-by-step instructions, click here.]]
+[If you just want to get to the step-by-step instructions, click here.]({{ site.pagesurl}}/DebuggingThreadedCodePart1#StepByStepInstructions)
 ## Broken Code
 Here is some simple production code:
 **//ClassWithThreadingProblem.java//**
@@ -28,7 +28,7 @@ The name should be a hint that it has problems, and it does. If a single instanc
 Think it is not possible? It is. 
 ----
 ## What is an atomic operation in the JVM?
-You can safely [[DebuggingThreadedCodePart1#SkipOverBytecodeInformation|skip]] this section if you are not interested in the bit-head information.
+You can safely [skip]({{ site.pagesurl}}/DebuggingThreadedCodePart1#SkipOverBytecodeInformation) this section if you are not interested in the bit-head information.
 
 What is an atomic operation? Any operation that cannot be interrupted from when it starts to when it completes. For example, in the following code, line 5, where 1 is assigned to value, is atomic. It cannot be interrupted:
 ```java

@@ -1,9 +1,9 @@
 ---
 title: Katas.ExpressionTokenizer
 ---
-[[Katas|<--Back]]
+[<--Back]({{ site.pagesurl}}/Katas)
 # Background
-While working on the [[Katas.ShuntingYardAlgorithm|Shunting Yard Algorithm Kata]], it became apparent that one part of the problem is taking an expression and determining its various parts, or turning it into a sequence of tokens. In my original attempts at the Shunting Yard Algorithm, I ignored the problem. I made sure each token in the input string was separated by spaces. For example:
+While working on the [Shunting Yard Algorithm Kata]({{ site.pagesurl}}/Katas.ShuntingYardAlgorithm), it became apparent that one part of the problem is taking an expression and determining its various parts, or turning it into a sequence of tokens. In my original attempts at the Shunting Yard Algorithm, I ignored the problem. I made sure each token in the input string was separated by spaces. For example:
 * ( 3 + 4 ) / 5 * f ( g ( 4 , 3 , 2 ) ) instead of
 * (3+4)/5*f(g(4,3,2))
 
@@ -24,7 +24,7 @@ What follows is a description of the problem in terms of tests and expected resu
 # The Problem
 A mathematical expression consists of a sequence of numbers, variables, operators, function calls and parentheses. Processing such an expression requires clearly knowing its various parts. One way to process such an expression is to develop a [B.N.F](http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form) representation and then use some kind of parser library (e.g., [Y.A.C.C.](http://en.wikipedia.org/wiki/Yacc)) to parse it.
 
-Alternatively, you can build a parser from the ground up using a series of more expressive micro tests, and that's what kata is about. As with the [[Katas.ShuntingYardAlgorith|Shunting Yard Algorithm Kata]], this one is designed around a series of examples and expected results. 
+Alternatively, you can build a parser from the ground up using a series of more expressive micro tests, and that's what kata is about. As with the [Shunting Yard Algorithm Kata]({{ site.pagesurl}}/Katas.ShuntingYardAlgorith), this one is designed around a series of examples and expected results. 
 
 What follows is a series of examples to drive your work and some supplemental materials you may choose to use to create further tests.
 
@@ -110,4 +110,4 @@ Use the examples provided as a basis for the first tests. For each of the tests:
 My first version was long (don't have a count). My next version was shorter (127 lines). My next version was shorter still (93) lines. I found an intermediate form that was roughly 50 lines. My final version was 26 lines and I lengthened it to 33 lines to make the regular expressions easier to follow. In all cases, the numbers are for// **text**// lines, which include the package statement, import statements, blank lines, etc. The shortest version I wrote (by couting source lines) was 7 lines of code (email me and I'll provide it).
 
 Oh, and the longest method in my final version has 4 lines (including one blank line), there are two conditionals in the entire solution. Of course, that's making heavy use of the regular expression support in Java.
-[[Katas|<--Back]]
+[<--Back]({{ site.pagesurl}}/Katas)

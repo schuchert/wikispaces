@@ -1,7 +1,7 @@
 ---
 title: JPA_Tutorial_1_-_Printable_P2
 ---
-[[EJB 3 and Java Persistence API|<--Back]]
+[<--Back]({{ site.pagesurl}}/EJB 3 and Java Persistence API)
 # Part II
 
 ## V1 Second Test Suite
@@ -46,5 +46,5 @@ title: JPA_Tutorial_1_-_Printable_P2
 ## Printable Version
 [[JPA Tutorial 3 - Printable]]
 
-[[EJB 3 and Java Persistence API|<--Back]]
+[<--Back]({{ site.pagesurl}}/EJB 3 and Java Persistence API)
  

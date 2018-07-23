@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1IssuesConcerns
 ---
-[[AspectJEX1AssignmentIssues|<--Back]] [[AspectJ Example 2|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJEX1AssignmentIssues) [Next-->]({{ site.pagesurl}}/AspectJ Example 2)
 
 ## Issues/Concerns
 Here are some issues/concerns I’ve heard people mention:
@@ -10,4 +10,4 @@ Here are some issues/concerns I’ve heard people mention:
 * This can be done using regular OO techniques
 * …
 
-[[AspectJEX1AssignmentIssues|<--Back]] [[AspectJ Example 2|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJEX1AssignmentIssues) [Next-->]({{ site.pagesurl}}/AspectJ Example 2)

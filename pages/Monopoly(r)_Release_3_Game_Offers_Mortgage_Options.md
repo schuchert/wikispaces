@@ -13,4 +13,4 @@ As a game, I give each Player the option to mortgage properties or pay for mortg
 * At end of turn, Player is given option to pay back mortgage and does so.
 * At end of turn, Player is given option to pay back mortgage but does not.
 
-[[Monopoly(r) Release 3 User Stories|<--Back]]
+[<--Back]({{ site.pagesurl}}/Monopoly(r) Release 3 User Stories)

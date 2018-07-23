@@ -1,9 +1,9 @@
 ---
 title: AspectJ_CFlow
 ---
-[[AspectJ Self Study|<--Back]] [[AspectJ CFlow ExpectedVersusActualOutput|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJ Self Study) [Next-->]({{ site.pagesurl}}/AspectJ CFlow ExpectedVersusActualOutput)
 
-Source files are here: [[file:AspectJCFlowsrc.zip]]. If you need instructions on what do with these files, try [[ExtractingSourceFilesIntoProject|here]].
+Source files are here: [[file:AspectJCFlowsrc.zip]]. If you need instructions on what do with these files, try [here]({{ site.pagesurl}}/ExtractingSourceFilesIntoProject).
 
 # Predict the Output
 In this exercise, you have all of the information you need to predict the output, unlike Examples 1 - 4.
@@ -63,4 +63,4 @@ public class Main {
 ## Predict the output
 In the previous version of Address.java, the constructor did nothing, now the constructor sets one of the fields. So is it changed or not? Review the third pointcut in FieldSetAspect.java. Question, what is the output?
 
-[[AspectJ Self Study|<--Back]] [[AspectJ CFlow ExpectedVersusActualOutput|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJ Self Study) [Next-->]({{ site.pagesurl}}/AspectJ CFlow ExpectedVersusActualOutput)

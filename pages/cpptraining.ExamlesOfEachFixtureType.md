@@ -2,7 +2,7 @@
 title: cpptraining.ExamlesOfEachFixtureType
 ---
 {:toc}
-[[cpptraining#FitNesse|<<--Back]]
+[<<--Back]({{ site.pagesurl}}/cpptraining#FitNesse)
 
 # Decision Table
 Here is a basic table in FitNesse:
@@ -418,4 +418,4 @@ char* QueryResultAccumulator::produceFinalResults() {
 }
 ```
 
-[[cpptraining#FitNesse|<--Back]]
+[<--Back]({{ site.pagesurl}}/cpptraining#FitNesse)

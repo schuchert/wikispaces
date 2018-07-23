@@ -1,7 +1,7 @@
 ---
 title: AspectJGeneralExerciseOutline
 ---
-[[AspectJ Example 1|<--Back]]
+[<--Back]({{ site.pagesurl}}/AspectJ Example 1)
 
 ## General Exercise Outline
 
@@ -22,4 +22,4 @@ These exercises are written in a particular order in an attempt to help you lear
 
 This is an attempt to provide a self-paced experiential learning experience sans an instructor.
 
-[[AspectJ Example 1|<--Back]]
+[<--Back]({{ site.pagesurl}}/AspectJ Example 1)

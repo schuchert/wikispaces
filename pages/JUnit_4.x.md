@@ -6,16 +6,16 @@ title: JUnit_4.x
 If you've used JUnit prior to version 4.0 (e.g. you've been using JUnit in Eclipse version 2.0 to 3.1.2) then here is the first place you want to go to get up to speed: [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52). If you are not somewhat familiar with JUnit 4, you can probably follow this material. However, after code examples that use JUnit 4 specific features, you'll notice a [[Click Here]] link that will give you more detailed information.
 
 Now that I've used it a bit in Eclipse 3.1.2, I've got an initial recommendation and some examples:
-* Using the [[JUnit 4.x#assertAsterisk|assert*]] methods
-* Using a [[JUnit 4.x#TimeBomb|TimeBomb]] as a test place holder.
-* [[JUnit 4.xTimeBombGenericCodeExplained|TimeBomb Generic Code Explained]]
+* Using the [assert*]({{ site.pagesurl}}/JUnit 4.x#assertAsterisk) methods
+* Using a [TimeBomb]({{ site.pagesurl}}/JUnit 4.x#TimeBomb) as a test place holder.
+* [TimeBomb Generic Code Explained]({{ site.pagesurl}}/JUnit 4.xTimeBombGenericCodeExplained)
 
 [[#assertAsterisk]]
 ## Using the assert* methods
 In JUnit 3.8.1, test classes inherited from TestCase. Among other things, doing so gave the code access to several assert methods like assertEquals. JUnit 4.x no longer makes this requirement. Of course every solution introduces problems. In this case, I no longer have easy access to assertEquals and other such methods.
 
 ### Java 5 to the rescue
-The recommendation from [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52) is to use [static imports](http://java.sun.com/j2se/1.5.0/docs/guide/language/static-import.html)from the org.junit.Assert class to get methods like assertEquals. The following excerpt is taken from [[JUnit 4.x#example1|Example 1]] below. Note the line numbers are from the original example. Line 3 is the static import, which is used on lines 29 and 30:
+The recommendation from [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52) is to use [static imports](http://java.sun.com/j2se/1.5.0/docs/guide/language/static-import.html)from the org.junit.Assert class to get methods like assertEquals. The following excerpt is taken from [Example 1]({{ site.pagesurl}}/JUnit 4.x#example1) below. Note the line numbers are from the original example. Line 3 is the static import, which is used on lines 29 and 30:
 ```
      03: import static org.junit.Assert.assertEquals;
      14: public class TestVehicle {
@@ -28,7 +28,7 @@ The recommendation from [JUnit 4.0 in 10 Minutes](http://www.instrumentalservice
      41: }
 ```
 [[#AtTest]]
-[[JUnit 4.xAtTest|Click Here for more information on @Test.]]
+[Click Here for more information on @Test.]({{ site.pagesurl}}/JUnit 4.xAtTest)
 
 This works fine until you try to organize imports in Eclipse or use name completion (ctrl-space). Eclipse will not allow you to use name completion on something like assertFalse. You have to manually type in the name, and then manually add the import and things work fine. I'm lazy and I don't want to do this. My first attempt to fix this was the following:
 ```
@@ -36,7 +36,7 @@ This works fine until you try to organize imports in Eclipse or use name complet
 ```
 Now I can use name completion on things like "assert" and Eclipse will give me my list of names. This works great until you organize imports. As soon as you do the line that contained the .* is replaced by one to many lines, one each for each of the assert* methods you've used.
 
-Since these methods are in the class org.junit.Assert, I've decided to switch to having my test classes inherit from Assert. This works just fine. It sort of defeats the purpose of using annotations to avoid having to use inheritance but it works well with my development environment so I'm happy. Here's an example taken from [[JUnit 4.x#example2|Example 2]]. Notice that by extending on line 17, I have easy access to assertEquals on lines 39 and 40. I understand that this violates the is-a interpretation of inheritance. It is not my preference but until we get better IDE support, it makes writing my tests a bit easier. Anything that supports writing tests is a good thing as far as I'm concerned.
+Since these methods are in the class org.junit.Assert, I've decided to switch to having my test classes inherit from Assert. This works just fine. It sort of defeats the purpose of using annotations to avoid having to use inheritance but it works well with my development environment so I'm happy. Here's an example taken from [Example 2]({{ site.pagesurl}}/JUnit 4.x#example2). Notice that by extending on line 17, I have easy access to assertEquals on lines 39 and 40. I understand that this violates the is-a interpretation of inheritance. It is not my preference but until we get better IDE support, it makes writing my tests a bit easier. Anything that supports writing tests is a good thing as far as I'm concerned.
 ```
 05: import org.junit.Assert;
 17: public class VehicleTypeComponentTest extends Assert {
@@ -53,7 +53,7 @@ Since these methods are in the class org.junit.Assert, I've decided to switch to
 ```
 [[#TimeBomb]]
 ## TimeBomb
-What is a TimeBomb? Let's begin with an example. This is an excerpt from [[JUnit 4.x#example2|Example 2]]:
+What is a TimeBomb? Let's begin with an example. This is an excerpt from [Example 2]({{ site.pagesurl}}/JUnit 4.x#example2):
 ```
 05: import org.junit.Assert;
 15: import vehicle.util.TimeBomb;
@@ -66,7 +66,7 @@ What is a TimeBomb? Let's begin with an example. This is an excerpt from [[JUnit
 96:
 ```
 [[#AtTestExpected]]
-[[JUnit 4.xAtTestWithExpected|Click here for more information on @Test(expected = ObjectInUse.class)]]
+[Click here for more information on @Test(expected = ObjectInUse.class)]({{ site.pagesurl}}/JUnit 4.xAtTestWithExpected)
 
 This example probably needs a little more background. As mentioned in [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52), we use the @Test annotation to denote a method as a test case. It can take an optional argument of //**expected**//. This test is meant to attempt to remove a VehicleType that is used by other ob jets. So, in this case, read @Test(expected = ObjectInUse.class) as "when this test executes, I expect the exception ObjectInUse to be thrown."
 
@@ -96,9 +96,9 @@ If you can use the forth option, that's the way to go. For this example, which I
 **Option 5**
 This leaves the TimeBomb example. This test expects an exception to be thrown. I'm using the TimeBomb class to throw the necessary exception until some time in the future. If I have not remembered to go back and write this test by that future date, TimeBomb will stop throwing the exception and the test will start to fail. It allows me to put a place holder in with an //**active**// reminder to fix it at some point in the future.
 
-I've used this on what has grown to a team of around 60 people (from 6) all working on different applications based on a common architecture. We've been using this kind of thing now for over 3 years and it seems to remain a valuable technique. You can review the code for [[JUnit 4.x#TimeBombCode|TimeBomb]] below. Since I've written it from scratch on this example, it's pretty small. As I need more methods, I'll add them. It's the idea that is valuable, not the implementation.
+I've used this on what has grown to a team of around 60 people (from 6) all working on different applications based on a common architecture. We've been using this kind of thing now for over 3 years and it seems to remain a valuable technique. You can review the code for [TimeBomb]({{ site.pagesurl}}/JUnit 4.x#TimeBombCode) below. Since I've written it from scratch on this example, it's pretty small. As I need more methods, I'll add them. It's the idea that is valuable, not the implementation.
 
-If you're interested in a complex and detailed explanation of the implementation of TimeBomb, [[JUnit 4.xTimeBombGenericCodeExplained|click here for a detailed description.]]
+If you're interested in a complex and detailed explanation of the implementation of TimeBomb, [click here for a detailed description.]({{ site.pagesurl}}/JUnit 4.xTimeBombGenericCodeExplained)
 
 ----
 ## Complete Examples
@@ -127,7 +127,7 @@ This section contains the full code for the examples mentioned above.
 17:     private VehicleType type;
 ```
 [[#AtBefore]]
-[[JUnit 4.xBefore|For a description of @Before, click here.]]
+[For a description of @Before, click here.]({{ site.pagesurl}}/JUnit 4.xBefore)
 ```java
 19:     @Before
 20:     public void setup() {
@@ -136,7 +136,7 @@ This section contains the full code for the examples mentioned above.
 23:         license = new VehicleLicense("LRX24J", state);
 24:     }
 ```
-[[JUnit 4.xAtTest|For a description of @Test, click here.]]
+[For a description of @Test, click here.]({{ site.pagesurl}}/JUnit 4.xAtTest)
 ```java
 26:     @Test
 27:     public void createSimpleVehicle() {
@@ -145,7 +145,7 @@ This section contains the full code for the examples mentioned above.
 30:         assertEquals(license, v.getLicense());
 31:     }
 ```
-[[JUnit 4.xSuite|For a description of the suite method, click here.]]
+[For a description of the suite method, click here.]({{ site.pagesurl}}/JUnit 4.xSuite)
 ```java
 33:     /**
 34:      * Provide backwards-compatibility with JUnit runner in Eclipse.
@@ -295,7 +295,7 @@ This section contains the full code for the examples mentioned above.
 38:     }
 ```
 [[#AtBeforeClass]]
-[[JUnit 4.xAtBeforeClass|For a description of @BeforeClass, click here.]]
+[For a description of @BeforeClass, click here.]({{ site.pagesurl}}/JUnit 4.xAtBeforeClass)
 ```java
 40:     @BeforeClass
 41:     public static void createTestVehicleType() {
@@ -305,7 +305,7 @@ This section contains the full code for the examples mentioned above.
 45:     }
 ```
 [[#AtAfterClass]]
-[[JUnit 4.xAtAfterClass|For a description of @AfterClass, click here.]]
+[For a description of @AfterClass, click here.]({{ site.pagesurl}}/JUnit 4.xAtAfterClass)
 ```java
 47:     @AfterClass
 48:     public static void removeTestVehicleType() {
@@ -320,7 +320,7 @@ This section contains the full code for the examples mentioned above.
 57:     }
 ```
 [[#AtAfter]]
-[[JUnit 4.xAtAfter|For a description of @After, click here.]]
+[For a description of @After, click here.]({{ site.pagesurl}}/JUnit 4.xAtAfter)
 ```java
 59:     @After
 60:     public void removeCreatedRateplan() {
@@ -379,7 +379,7 @@ This section contains the full code for the examples mentioned above.
 113:     }
 ```
 [[#RegularMethod]]
-[[JUnit 4.xRegularMethod|What is this doing here? Click here.]]
+[What is this doing here? Click here.]({{ site.pagesurl}}/JUnit 4.xRegularMethod)
 ```java
 233:     private RatePlan instantiateBasicRatePlan(String name, String vehicleTypeName) {
 234:         createdRatePlanName = new Field<String>(name);
@@ -408,4 +408,4 @@ This section contains the full code for the examples mentioned above.
 14:     }
 15: }
 ```
-[[JUnit 4.xTimeBombGenericCodeExplained|Click here for a detailed description of TimeBomb.]]
+[Click here for a detailed description of TimeBomb.]({{ site.pagesurl}}/JUnit 4.xTimeBombGenericCodeExplained)

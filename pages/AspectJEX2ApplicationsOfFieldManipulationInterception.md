@@ -1,7 +1,7 @@
 ---
 title: AspectJEX2ApplicationsOfFieldManipulationInterception
 ---
-[[AspectJEX2AssignmentApplications|<--Back]] [[AspectJEX2AssignmentIssues|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJEX2AssignmentApplications) [Next-->]({{ site.pagesurl}}/AspectJEX2AssignmentIssues)
 
 # Applications of Field Manipulation Interception
 
@@ -11,4 +11,4 @@ Here are some ideas I've heard people mention:
 * Tracking field access for logging or security reasons
 * ...
 
-[[AspectJEX2AssignmentApplications|<--Back]] [[AspectJEX2AssignmentIssues|Next-->]]
+[<--Back]({{ site.pagesurl}}/AspectJEX2AssignmentApplications) [Next-->]({{ site.pagesurl}}/AspectJEX2AssignmentIssues)

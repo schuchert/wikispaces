@@ -1,11 +1,11 @@
 ---
 title: FirstPass
 ---
- So I want to learn Ruby using a [[Test Drive Development|TDD]] approach. So I started by installing [The Ruby Development Tools](http://rubyeclipse.sourceforge.net/download.rdt.html|) Eclipse plugin.
+ So I want to learn Ruby using a [TDD]({{ site.pagesurl}}/Test Drive Development) approach. So I started by installing [The Ruby Development Tools](http://rubyeclipse.sourceforge.net/download.rdt.html|) Eclipse plugin.
 
 Well it turns out to run Ruby you still need to install a [Ruby Interpreter](http://rubyforge.org/frs/?group_id=167), which I did.
 
-Here are some very early examples trying to use [[Test Drive Development|TDD]]:
+Here are some very early examples trying to use [TDD]({{ site.pagesurl}}/Test Drive Development):
 
 ----
 [[#DieTest]]

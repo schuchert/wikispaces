@@ -1,7 +1,7 @@
 ---
 title: CppRpnCalculatorTemplateMethodPatternExample
 ---
-[[RpnCalculatorCppExampleImplementation|<--Back]]
+[<--Back]({{ site.pagesurl}}/RpnCalculatorCppExampleImplementation)
 ## Template Method Pattern Example
 Review the method BinaryOperator::execute. Notice how it is concrete, but it refers to a method called executeImpl, which is declared pure virtual. That's the extension point. Review Plus, Minus, Multiply, Divide to see how each extends the base class by only implementing the method executeImpl.
 
@@ -80,4 +80,4 @@ int Plus::executeImpl(int lhs, int rhs) {
 }
 ```
 
-[[RpnCalculatorCppExampleImplementation|<--Back]]
+[<--Back]({{ site.pagesurl}}/RpnCalculatorCppExampleImplementation)

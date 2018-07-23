@@ -114,5 +114,5 @@ namespace DigitalVideoRecorder
 * Switch back to your browser, click on the **Test** button. You should see something similar to this:
 [[image:CSharpCongratulations.gif width="800" height="548"]]
 
-# [[FitNesse.Tutorials.0#Congratulations|Return and Complete Your Tutorial]]
+# [Return and Complete Your Tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.0#Congratulations)
  

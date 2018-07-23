@@ -1,7 +1,7 @@
 ---
 title: JUnit_4.xAtTest
 ---
-[[JUnit 4.x#AtTest|<--Back]]
+[<--Back]({{ site.pagesurl}}/JUnit 4.x#AtTest)
 # @Test
 To denote a method as a test method you use the @Test annotation. The following example demonstrates nearly everything you need to know to get your first test running in Eclipse 2.x - 3.x:
 ```
@@ -11,7 +11,7 @@ To denote a method as a test method you use the @Test annotation. The following 
      26:     @Test
      27:     public void createSimpleVehicle() {
 ```
-The only thing you'd need to add to make this work in Eclipse is a [[JUnit 4.xSuite|suite method]]. Adding that, you'd be able to run this class as a JUnit test and it would give you the familiar JUnit execution dialog.
+The only thing you'd need to add to make this work in Eclipse is a [suite method]({{ site.pagesurl}}/JUnit 4.xSuite). Adding that, you'd be able to run this class as a JUnit test and it would give you the familiar JUnit execution dialog.
 
 ## Interesting Lines
 ||Line||Description||
@@ -25,4 +25,4 @@ In JUnit prior to 4.0, this would have been written as follows:
      27:     public void testCreateSimpleVehicle() {
 ```
 
-[[JUnit 4.x#AtTest|<--Back]]
+[<--Back]({{ site.pagesurl}}/JUnit 4.x#AtTest)

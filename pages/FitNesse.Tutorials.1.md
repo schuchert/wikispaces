@@ -2,9 +2,9 @@
 title: FitNesse.Tutorials.1
 ---
 {:toc}
-[[FitNesse.Tutorials|<--Back]] -or- [[FitNesse.Tutorials.2|Next Tutorial-->]]
+[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) -or- [Next Tutorial-->]({{ site.pagesurl}}/FitNesse.Tutorials.2)
 # Introduction
-This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If you need help installing or running [FitNesse](http://fitnesse.org/), please [[FitNesse.Tutorials.0|go here first]]. In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:
+This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If you need help installing or running [FitNesse](http://fitnesse.org/), please [go here first]({{ site.pagesurl}}/FitNesse.Tutorials.0). In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:
 * Create Decision tables in FitNesse
 * Make the tables execute by writing Fixtures
 * Get the tests to pass by updating both the Fixture code and by creating production code
@@ -17,7 +17,7 @@ This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If 
 
 This tutorial is primarily about getting you over the hurtle of the mechanics of getting tests to execute using [FitNesse](http://fitnesse.org/). Even so, you will see some basic design considerations play out as well.
 
-Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on localhost at port 8080 [[http://localhost:8080]]. If you are not sure how to do that, [[FitNesse.Tutorials.0|try this tutorial]].
+Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on localhost at port 8080 [[http://localhost:8080]]. If you are not sure how to do that, [try this tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.0).
 # Background
 [FitNesse.Slim Decision Tables](http://FitNesse.org/FitNesse.SliM.DecisionTable) are a common way to get test data into a System Under Test. A Decision table has three parts (only the first of which is actually required):
 # One Title Row - Names the fixture to execute, optionally includes constructor parameters
@@ -62,7 +62,7 @@ Here are some preliminary steps to get this table created (there will be more la
 Now you can execute the page. Click on the **Test** button. The tests will fail dues to a missing fixutre. [FitNesse](http://fitnesse.org/) will color the first row yellow and add the message "//Could not find fixture: AddProgramsToSchedule.//". Now you must create a Fixture class and add it to the test page.
 
 ## Creating the Fixture
-If you are planning on using Eclipse and working in Java, then you can get a repository from github: [fitnesse-tutorials](http://github.com/schuchert/fitnesse-tutorials/tree/master). Review the instructions [[FitNesse.Tutorials.WorkingFromGitHub|here]].
+If you are planning on using Eclipse and working in Java, then you can get a repository from github: [fitnesse-tutorials](http://github.com/schuchert/fitnesse-tutorials/tree/master). Review the instructions [here]({{ site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub).
 
 Creating a fixture involves:
 * Creating class.
@@ -72,7 +72,7 @@ Creating a fixture involves:
 * Updating the classpath on your page (or hierarchically above it) to point to your executable code
 * Using an import table to name the package/namespace of the class (or fully qualifying the fixture name in the table)
 
-For full details on these steps, you can review the material [[FitNesse.Tutorials.0.Java|here if you're planning on working in Java]] or [[FitNesse.Tutorials.0.CSharp|here if you're planning on working in C#]].
+For full details on these steps, you can review the material [here if you're planning on working in Java]({{ site.pagesurl}}/FitNesse.Tutorials.0.Java) or [here if you're planning on working in C#]({{ site.pagesurl}}/FitNesse.Tutorials.0.CSharp).
 
 Here is one such fixture (in Java) that will get this test to "pass". Since there are no assertions, this really isn't a very good test yet, but it does make it easier to get it all green.
 ```java
@@ -717,5 +717,5 @@ However, you've learned several things in this tutorial:
 ** Note, while you can debug this, your fixtures should be so simple that this is seldom necessary. If you find yourself doing this often, consider simplifying your fixtures. If that's not possible, write unit tests for your complex fixture code.
 * Learned that each of the data rows in your fixture is executed in order, top-to-bottom.
 
-After working with decision tables, the next tutorial which makes sense is [[FitNesse.Tutorials.2|this one on query tables]].
-[[FitNesse.Tutorials|<--back]] -or- [[FitNesse.Tutorials.2|Next Tutorial-->]]
+After working with decision tables, the next tutorial which makes sense is [this one on query tables]({{ site.pagesurl}}/FitNesse.Tutorials.2).
+[<--back]({{ site.pagesurl}}/FitNesse.Tutorials) -or- [Next Tutorial-->]({{ site.pagesurl}}/FitNesse.Tutorials.2)

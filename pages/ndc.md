@@ -6,7 +6,7 @@ title: ndc
 
 # FitNesse
 >> ==[Download](http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad)
->> ==[[FitNesse.Tutorials|Tutorials]]
+>> ==[Tutorials]({{ site.pagesurl}}/FitNesse.Tutorials)
 
 # The Slides
->> ==[[file:NdcTutorialExecutableStories.pdf|Slides]]
+>> ==[Slides]({{ site.pagesurl}}/file:NdcTutorialExecutableStories.pdf)

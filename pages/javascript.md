@@ -2,4 +2,4 @@
 title: javascript
 ---
 # Unit Testing
-## [[javascript.UnitTestingWithJsTestDriver|Unit Testing with JsTestDriver]]
+## [Unit Testing with JsTestDriver]({{ site.pagesurl}}/javascript.UnitTestingWithJsTestDriver)

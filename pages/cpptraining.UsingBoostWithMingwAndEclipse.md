@@ -1,10 +1,10 @@
 ---
 title: cpptraining.UsingBoostWithMingwAndEclipse
 ---
-[[cpptraining#boost|<--Back]]
+[<--Back]({{ site.pagesurl}}/cpptraining#boost)
 
 # Overview
-Now that you've [[cpptraining.GettingAndBuildingBoostInMingw|successfully build boot]], it is finally time to use it in a project.
+Now that you've [successfully build boot]({{ site.pagesurl}}/cpptraining.GettingAndBuildingBoostInMingw), it is finally time to use it in a project.
 
 # Overview of the Steps
 * Create an Eclipse project
@@ -15,4 +15,4 @@ Now that you've [[cpptraining.GettingAndBuildingBoostInMingw|successfully build 
 [[include page="cpptraining.ConfiguringTheProjectForCppUTest"]]
 [[include page="cpptraining.ConfiguringTheProjectToUseBoost"]]
 
-[[cpptraining#boost|<--Back]]
+[<--Back]({{ site.pagesurl}}/cpptraining#boost)

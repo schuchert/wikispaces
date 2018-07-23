@@ -1,7 +1,7 @@
 ---
 title: PiagetModel
 ---
-[[ExperientialLearningNotes|<--Back]]
+[<--Back]({{ site.pagesurl}}/ExperientialLearningNotes)
 
 # Piaget's Model of Learning Process 
 "The learner was neither an 'empty vessel' to be filled with knowledge nor a 'blank slate' on which knowledge could be inscribed, but a system that learned through its own interaction with its environment." -- Learning by Design: Constructing Experiential Learning Programs, Weinberg & Weinberg. 
@@ -37,4 +37,4 @@ In reality, these are opposite ends of a spectrum. A given learner will often us
 ## New Knowledge 
 As a result of the entire experience, the learner has new knowledge. This is something the learner constructed him/herself. We cannot control what the learner has learned but we can guide it through the design of experiential learning situations. 
 
-[[ExperientialLearningNotes|<--Back]]
+[<--Back]({{ site.pagesurl}}/ExperientialLearningNotes)

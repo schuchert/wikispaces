@@ -1,7 +1,7 @@
 ---
 title: tddisnotenough.CodeSmells
 ---
-[[tddisnotenough#CodeSmells|<==Back]]
+[<==Back]({{ site.pagesurl}}/tddisnotenough#CodeSmells)
 
 A few of Fowler's Smells.
 
@@ -17,4 +17,4 @@ A few of Fowler's Smells.
 
 [Here's a complete list.](http://c2.com/cgi/wiki?CodeSmell)
 
-[[tddisnotenough#CodeSmells|<==Back]]
+[<==Back]({{ site.pagesurl}}/tddisnotenough#CodeSmells)
