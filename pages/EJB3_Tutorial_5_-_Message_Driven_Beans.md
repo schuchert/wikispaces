@@ -5,7 +5,7 @@ title: EJB3_Tutorial_5_-_Message_Driven_Beans
 [<--Back]({{ site.pagesurl }}/EJB 3 and Java Persistence API)
 
 # Ejb3 Tutorial 5 - Message Drive Beans
-This tutorial is a derivative of one of the [[http://docs.jboss.org/ejb3/embedded/embedded-tutorial/mdb-standalone/|JBoss tutorials]] written using the embeddable container. In this tutorial we take the domain from [[EJB3 Tutorial 4 - Extended Context]] and add a new idea.
+This tutorial is a derivative of one of the [JBoss tutorials]] written using the embeddable container. In this tutorial we take the domain from [[EJB3 Tutorial 4 - Extended Context](http://docs.jboss.org/ejb3/embedded/embedded-tutorial/mdb-standalone/) and add a new idea.
 ----
 ## The Requirements
 Imagine a system where there are several toll tag reporting stations, each of which need to be able to quickly record vehicles passing through a toll both quickly. They do not have time to wait for a message to some back-end system to complete before the next car passes through. This is a typical example where we want to use asynchronous messaging. 

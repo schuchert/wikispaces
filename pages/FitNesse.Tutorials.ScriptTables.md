@@ -5,7 +5,7 @@ title: FitNesse.Tutorials.ScriptTables
 # Background: The Return of Smalltalk
 This is a somewhat nostalgic background, you won't miss much if you [[FitNesse.Tutorials.ScriptTables#introduction|skip to the introduction]]. 
 
-[[http://fitnesse.org/FitNesse.SliM.ScriptTable|Script tables]] originally derive from Do Fixtures in [[http://sourceforge.net/projects/fitlibrary|fitlibrary]]. However, the design for Do Fixtures actually derives from Smalltalk. In smalltalk there are three kinds of messages:
+[fitlibrary](http://fitnesse.org/FitNesse.SliM.ScriptTable|Script tables]] originally derive from Do Fixtures in [[http://sourceforge.net/projects/fitlibrary). However, the design for Do Fixtures actually derives from Smalltalk. In smalltalk there are three kinds of messages:
 * Unary: no parameters
 * Binary: + * %
 * Keyword: inject:into:, to:do:, ifTrue:, ifTrue:ifFalse:

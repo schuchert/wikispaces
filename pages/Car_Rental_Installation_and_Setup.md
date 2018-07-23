@@ -6,31 +6,31 @@ title: Car_Rental_Installation_and_Setup
 # Car Rental Installation and Setup
 
 This project uses Eclipse 3.2 and JDK 1.5.0_06. I have a few additional plugins installed into Eclipse. These are all optional:
-* [[http://eclipse-cs.sourceforge.net/|Checkstyle]], for details see: [[Checkstyle in Eclipse]].
-* [[http://pmd.sourceforge.net/integrations.html#eclipse|PMD]], for details see: [[PMD In Eclipse]].
+* [Checkstyle]], for details see: [[Checkstyle in Eclipse](http://eclipse-cs.sourceforge.net/).
+* [PMD]], for details see: [[PMD In Eclipse](http://pmd.sourceforge.net/integrations.html#eclipse).
 * Subversion on my PC and Subclipse. See: [[Subversion on XP]].
 
 ## Libraries
 **Required**
 This project also requires several libraries:
-* [[http://www.junit.org|JUnit 4.x]] (included with Eclipse 3.2)
-* [[http://www.springframework.org/download|Spring]], I used Spring 2.0-RC2
-* Commons Logging, which you can get if you download **//spring-framework-2.0-rc2-with-dependencies.zip//** instead of spring-framework-2.0-rc2.zip from [[http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644|Spring Downloads]]
-* [[http://www.eclipse.org/aspectj/downloads.php|AspectJ 1.5.x]]
+* [JUnit 4.x](http://www.junit.org) (included with Eclipse 3.2)
+* [Spring](http://www.springframework.org/download), I used Spring 2.0-RC2
+* Commons Logging, which you can get if you download **//spring-framework-2.0-rc2-with-dependencies.zip//** instead of spring-framework-2.0-rc2.zip from [Spring Downloads](http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644)
+* [AspectJ 1.5.x](http://www.eclipse.org/aspectj/downloads.php)
 
 **Optional**
-* Code coverage with Emma, download [[http://emma.sourceforge.net/downloads.html|here]].
-* Code coverage with Cobertura, download [[http://cobertura.sourceforge.net/download.html|here]].
+* Code coverage with Emma, download [here](http://emma.sourceforge.net/downloads.html).
+* Code coverage with Cobertura, download [here](http://cobertura.sourceforge.net/download.html).
 
 # The Gory Details
 Here are the full instructions. Note that if you've already downloaded/installed any of the above, you'll just need to use your directories instead of the examples provided here.
 
 ## Download Everything
-# Download [[http://java.sun.com/j2se/1.5.0/download.jsp|Java JDK 1.5.0]]
-# Download [[http://www.eclipse.org/downloads/|Eclipse]]
-# Download [[http://www.springframework.org/download|Spring]] (get the one with dependencies: spring-framework-2.0-rc2-with-dependencies.zip)
+# Download [Java JDK 1.5.0](http://java.sun.com/j2se/1.5.0/download.jsp)
+# Download [Eclipse](http://www.eclipse.org/downloads/)
+# Download [Spring](http://www.springframework.org/download) (get the one with dependencies: spring-framework-2.0-rc2-with-dependencies.zip)
 # Download [[file:CarRentalRelease1.zip]]
-# Download [[http://www.eclipse.org/aspectj/downloads.php|AspectJ 1.5.x]]
+# Download [AspectJ 1.5.x](http://www.eclipse.org/aspectj/downloads.php)
 
 ## Install/Unzip Everything
 # Install the Java JDK 1.5.0 anywhere you want. I used the defaults so it ended up in C:\Program Files\Java\jdk1.5.0_06. Eclipse should find it.

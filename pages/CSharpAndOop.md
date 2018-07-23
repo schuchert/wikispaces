@@ -11,5 +11,5 @@ In any case, here's a PDF of the work I had completed:
 
 
 ## Back into C#
-So here it is 5+ years later and I'm relearning C# for various reasons. Things have changed since then. Where as before I was test [[http://junit.sourceforge.net/doc/testinfected/testing.htm|test infected]], now I practice [[http://schuchert.wikispaces.com/Test+Driven+Development|TDD]]. Back then I used VI and a DOS shell, now I use Microsoft Visual Developer Studio 2005 with ReSharper installed. Here's a few notes from getting started:
+So here it is 5+ years later and I'm relearning C# for various reasons. Things have changed since then. Where as before I was test [TDD](http://junit.sourceforge.net/doc/testinfected/testing.htm|test infected]], now I practice [[http://schuchert.wikispaces.com/Test+Driven+Development). Back then I used VI and a DOS shell, now I use Microsoft Visual Developer Studio 2005 with ReSharper installed. Here's a few notes from getting started:
 * [Day 1]({{ site.pagesurl }}/Relearning C Sharp - Day1)

@@ -8,9 +8,9 @@ Typical enterprise systems are build on a multi-tiered system. There are usually
 
 There might be a few more, but for now this list of tiers will suite us well.
 
-Our first two tests produced Data Access Objects ([[http://java.sun.com/blueprints/corej2eepatterns/Patterns/DataAccessObject.html|dao]])'s. These two dao's hide the details of getting books and patrons. They fall under the integration layer.
+Our first two tests produced Data Access Objects ([dao](http://java.sun.com/blueprints/corej2eepatterns/Patterns/DataAccessObject.html))'s. These two dao's hide the details of getting books and patrons. They fall under the integration layer.
 
-Now it is time to add a higher-level concept, the Library. The Library class represents a [[http://en.wikipedia.org/wiki/Fa%C3%A7ade_pattern|Facade]] to the underlying system. This so-called facade will be the primary interface to the middle tier of our system. 
+Now it is time to add a higher-level concept, the Library. The Library class represents a [Facade](http://en.wikipedia.org/wiki/Fa%C3%A7ade_pattern) to the underlying system. This so-called facade will be the primary interface to the middle tier of our system. 
 
 Of course, along the way we'll end up doing yet more refactoring to accommodate this new suite of tests.
 

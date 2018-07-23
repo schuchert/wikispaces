@@ -6,8 +6,8 @@ title: QuantumDB_Configuration
 QuantumDb is an Eclipse plugin that lets you view a database. This is a quick start guide.
 
 ## Download and Install
-# Download GEF (a required package) from [[http://www.eclipse.org/downloads/download.php?file=/tools/gef/downloads/drops/R-3.2.1-200609211617/GEF-ALL-3.2.1.zip|here]]
-# Download QuantumDb from [[http://sourceforge.net/project/showfiles.php?group_id=7746&package_id=57047|here]]
+# Download GEF (a required package) from [here](http://www.eclipse.org/downloads/download.php?file=/tools/gef/downloads/drops/R-3.2.1-200609211617/GEF-ALL-3.2.1.zip)
+# Download QuantumDb from [here](http://sourceforge.net/project/showfiles.php?group_id=7746&package_id=57047)
 # Open the GEF zip file and extract just the **plugins** and **features** directories directly into you eclipse installation (c:\eclipse)
 # Open the QuantumDb zip file and extract just the **plugins** and **features** directories directly into your eclipse installation (c:\eclipse)
 # Restart Eclipse

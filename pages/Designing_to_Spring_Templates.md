@@ -16,11 +16,11 @@ The Spring Templates tend to take care of certain responsibilities for you to ma
 * Opens resources at the beginning of some action.
 * Processes a provided request represented as an object using those resources
 * Cleans up those resources upon completion of the work
-* Maps any exceptions that happen to a "logical" [[http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Runtime.html|Runtime]] exception.
+* Maps any exceptions that happen to a "logical" [Runtime](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Runtime.html) exception.
 
-The question this article tries to answer is "How did they come up with that design?" What series of steps did they go through to get from the typical work of using, for example, JDBC to what is the [[http://www.springframework.org/docs/api/org/springframework/jdbc/core/JdbcTemplate.html|Spring JdbcTemplate]]?
+The question this article tries to answer is "How did they come up with that design?" What series of steps did they go through to get from the typical work of using, for example, JDBC to what is the [Spring JdbcTemplate](http://www.springframework.org/docs/api/org/springframework/jdbc/core/JdbcTemplate.html)?
 
-To get from "normal" JDBC to the [[http://www.springframework.org/docs/api/org/springframework/jdbc/core/JdbcTemplate.html|Spring JdbcTemplate]] we'll go through a total of 9 steps, although two of the steps introduce batch operations. Those steps are:
+To get from "normal" JDBC to the [Spring JdbcTemplate](http://www.springframework.org/docs/api/org/springframework/jdbc/core/JdbcTemplate.html) we'll go through a total of 9 steps, although two of the steps introduce batch operations. Those steps are:
 
 # [Typical JDBC]({{ site.pagesurl }}/Spring Templates Typical JDBC)
 # [JDBC Using Template Method Pattern]({{ site.pagesurl }}/Spring Templates JDBC Using Template Method Pattern)

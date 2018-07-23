@@ -135,4 +135,4 @@ Finally, throw an exception if the account is not found.
 ## What I Do in Class
 Notice that these tests are not in the same order I created them. Even so, I have the students work through one test at a time. Generally I have them avoid refactoring the underlying LoginService. They can, but I warn them that the solution goes in some strange directions.
 
-After they have all of these tests passing, I describe the [[http://en.wikipedia.org/wiki/State_pattern|GoF State pattern]]. Then I walk them through (or have them try on their own before walking them through) refactoring their LoginService to use the State pattern.
+After they have all of these tests passing, I describe the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern). Then I walk them through (or have them try on their own before walking them through) refactoring their LoginService to use the State pattern.

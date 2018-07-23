@@ -17,10 +17,10 @@ These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in 
 [[image:IPhoneSimulatorRunning.gif]]
 
 # Adding GH-Unit
-* Download GH-Unit [[https://github.com/gabriel/gh-unit/archives/master|from here]].
+* Download GH-Unit [from here](https://github.com/gabriel/gh-unit/archives/master).
 * Unzip this file. For this example, I'll unzip it to// **/Users/schuchert/src/iPhone/Libraries**//. This will create the directory// **GHUnitIOS.framework**// under that directory.
 
-What follows derives heavily from [[http://gabriel.github.com/gh-unit/_installing.html|the gh-unit documentation]].
+What follows derives heavily from [the gh-unit documentation](http://gabriel.github.com/gh-unit/_installing.html).
 # Add a new Target
 * Add a new target to your project. Right-click (control-click) on //**Targets**// and select //**Add:New Target..**//
 [[image:CreateNewTarget.jpg]]
@@ -40,7 +40,7 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 * Add: -all_load
 * Close that dialog.
 * Find the file //**UnitTests_oniPhoneSimulator-Info.plist**// and edit it. You'll find an entry at the bottom, //**Main nib file base name**// with the entry //**MainWindow**//. Simply remove the value (clear the field).
-* Add the //**GHUnitIOSTestMain.m**// to your project. You can find a copy on github [[https://github.com/gabriel/gh-unit/raw/master/Project-IPhone/GHUnitIOSTestMain.m|here]]
+* Add the //**GHUnitIOSTestMain.m**// to your project. You can find a copy on github [here](https://github.com/gabriel/gh-unit/raw/master/Project-IPhone/GHUnitIOSTestMain.m)
 * To do this:
 ** Download the file somewhere (my download location is// **~/Downloads**//)
 ** Expand //**Targets**//

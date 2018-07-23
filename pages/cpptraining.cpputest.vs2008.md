@@ -5,7 +5,7 @@ title: cpptraining.cpputest.vs2008
 These instructions are for Version 2.3 of CppUTest and Visual Studio 2008.
 
 # Setup for Visual Studio 2008
-* [[http://sourceforge.net/projects/cpputest/files/cpputest/v2.3/CppUTest-v2.3.zip/download|Download CppUTest]]
+* [Download CppUTest](http://sourceforge.net/projects/cpputest/files/cpputest/v2.3/CppUTest-v2.3.zip/download)
 * Extract the zip file somewhere, I'll be using// **C:\libs\CppUTest**//
 * Go to the extracted CppUTest and open the file// **CppUTest.sln**// 
 * Build the solution:// **ctrl-shift-b**//

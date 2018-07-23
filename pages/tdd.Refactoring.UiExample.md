@@ -7,8 +7,8 @@ title: tdd.Refactoring.UiExample
 In September 2009 I taught a TDD & Refactoring class in Chicago with a great group of people. One of the questions that came up (and always comes up) is testing UI code.
 
 UI could be graphical, textual, web-based, etc., but the techniques are the the same:
-* Apply the [[http://www.objectmentor.com/resources/articles/srp.pdf|SRP]] heavily.
-* Use the [[http://xunitpatterns.com/Humble%20Object.html|humble dialog(object) pattern]].
+* Apply the [SRP](http://www.objectmentor.com/resources/articles/srp.pdf) heavily.
+* Use the [humble dialog(object) pattern](http://xunitpatterns.com/Humble%20Object.html).
 
 A more general principle is:
 >> Do not mix production code with enabling technologies.
@@ -18,7 +18,7 @@ These are good ideas; sometimes it helps to consider a concrete example.
 
 In this class one of the students (Joseph Buschmann) brought me a simple, focused example he had created in C#. I started writing a Java version before I got permission to use his C# code, so since I had already re-created a simpler version in Java using Swing, that's what this example uses. Note: This is the first Swing code I've written in 7+ years, so do not plan to be impressed with it.
 
-What follows is an example of improving testability using some of the principles above along with some of [[http://www.objectmentor.com/omTeam/feathers_m.html|Michael Feather's]] [[http://www.informit.com/store/product.aspx?isbn=0131177052|Legacy Refactorings]].
+What follows is an example of improving testability using some of the principles above along with some of [Legacy Refactorings](http://www.objectmentor.com/omTeam/feathers_m.html|Michael Feather's]] [[http://www.informit.com/store/product.aspx?isbn=0131177052).
 
 ## Background
 Imagine you want to capture supplemental information about some product in your system. This additional information can either be text, html or a url.  To capture it, you've created a UI control that captures the information and then validates it.
@@ -27,7 +27,7 @@ Imagine you want to capture supplemental information about some product in your 
 Here is the code for a program. Now this is certainly not complete and it certainly is not as complex as the code you have to deal with. Even so, it should be enough to demonstrate a few fundamentals.
 
 ### Credit Where It's Due
-The idea for this example is from Joseph Buschmann. The Java code I've written borrows heavily from the Java tutorial. Specifically: [[http://java.sun.com/docs/books/tutorial/uiswing/components/button.html#radiobutton|How to Use Radio Buttons]].
+The idea for this example is from Joseph Buschmann. The Java code I've written borrows heavily from the Java tutorial. Specifically: [How to Use Radio Buttons](http://java.sun.com/docs/books/tutorial/uiswing/components/button.html#radiobutton).
 
 ### The Code
 Here is such a program (greatly simplified when transitioned from C# to Java):
@@ -263,7 +263,7 @@ There's another issue to consider. Assume, for the moment, that the new requirem
 So while this approach works (and in my environment these tests pass), let's consider a second approach.
 
 ## Applying WELC Refactorings
-In [[http://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052|Working Effectively with Legacy Code,]]Michael Feathers describes several refactorings you can apply that have the following characteristics:
+In [Working Effectively with Legacy Code,](http://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052)Michael Feathers describes several refactorings you can apply that have the following characteristics:
 * They are (as all refactorings) behavior preserving
 * They are (typically) smaller than many of the Fowler refactorings
 * They introduce what Michal calls "seams" to make the code testable.
@@ -432,7 +432,7 @@ This is moving in the right direction. Now the update to the original validateUr
 ```
 There are still problems:
 * There's a circular dependency between the two classes.
-* This new version depends on something that uses UI gunk (which I think is a violation of the [[http://www.objectmentor.com/resources/articles/dip.pdf|Dependency Inversion Principle]]).
+* This new version depends on something that uses UI gunk (which I think is a violation of the [Dependency Inversion Principle](http://www.objectmentor.com/resources/articles/dip.pdf)).
 * It makes testing worse because we have to pass in an AdditionalDetailsPanel
 
 There's a simple fix, however. We can extract an interface to capture the methods we need to improve the situation:

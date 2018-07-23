@@ -12,4 +12,4 @@ This is a collection of design problems you can use for coursework.
 
 ----
 
-## [[http://schuchert.wikispaces.com/DesignProblemsPrintable?f=print|All as one Printable]]
+## [All as one Printable](http://schuchert.wikispaces.com/DesignProblemsPrintable?f=print)

@@ -22,7 +22,7 @@ They are written this way to make them appear about how they appear in FitNesse 
 
 If you prefer the first but want to enter the second button, look for the// **format**// button near the// **Save**// button in Fitnesse.
 
-# Working From [[http://github.com/schuchert/fitnesse-tutorials/tree/master|Schuchert's GitHub Repository]]
+# Working From [Schuchert's GitHub Repository](http://github.com/schuchert/fitnesse-tutorials/tree/master)
 For instructions on working from github: [[FitNesse.Tutorials.WorkingFromGitHub]]
 
 [[#JavaTutorials]]
@@ -36,14 +36,14 @@ For instructions on working from github: [[FitNesse.Tutorials.WorkingFromGitHub]
 || ===[[FitNesse.Tutorials.AlternativeScriptTableSyntax|Alternative Script Table Syntax]]=== ||
 
 # C# Tutorials
-|| ===[[FitNesse.Tutorials.CSharp.Slim.EachTable|C# W/Slim, Each Table Type]]=== || ===[[http://schuchert.wikispaces.com/FitNesse.Tutorials.CSharp.Slim.EachTable?f=print|Print]]===||
+|| ===[[FitNesse.Tutorials.CSharp.Slim.EachTable|C# W/Slim, Each Table Type]]=== || ===[Print](http://schuchert.wikispaces.com/FitNesse.Tutorials.CSharp.Slim.EachTable?f=print)===||
 
 # Under Construction
-|| ===[[FitNesse.Tutorials.ConvertingToStoryStyle|Converting Tests to use more of a Story Style]]=== || [[http://schuchert.wikispaces.com/FitNesse.Tutorials.ConvertingToStoryStyle?f=print|Print]] ||
+|| ===[[FitNesse.Tutorials.ConvertingToStoryStyle|Converting Tests to use more of a Story Style]]=== || [Print](http://schuchert.wikispaces.com/FitNesse.Tutorials.ConvertingToStoryStyle?f=print) ||
 
 # Writeups more than Tutorials: To Be Migrated
 || ===[Print]({{ site.pagesurl }}/Acceptance Testing.FitNesse.TableTableExample|Using Table Table for DSL-esque Test Setup]]=== || [[http://schuchert.wikispaces.com/Acceptance+Testing.FitNesse.TableTableExample?f=print) ||
 
 # Originals Already Incorporated Into Tutorial Series
-|| ===[[FitNesse.Tutorials.ScenarioTables|Scenario Tables]]=== || [[http://schuchert.wikispaces.com/FitNesse.Tutorials.ScenarioTables?f=print|Print]] ||
+|| ===[[FitNesse.Tutorials.ScenarioTables|Scenario Tables]]=== || [Print](http://schuchert.wikispaces.com/FitNesse.Tutorials.ScenarioTables?f=print) ||
 || ===[Print]({{ site.pagesurl }}/Acceptance Testing.UsingSlimDotNetInFitNesse|Rapid Intro to Using Slim.Net]]=== || [[http://schuchert.wikispaces.com/Acceptance+Testing.UsingSlimDotNetInFitNesse?f=print) ||

@@ -2,8 +2,8 @@
 title: vm.compiling.phantomjs2.ubuntu
 ---
 These notes come from two sources:
-* [[http://phantomjs.org/build.html|Build phantomjs2]] 
-* [[https://codereview.qt-project.org/#/c/107921/3/Source/JavaScriptCore/runtime/JSObject.cpp|Patch with forward declares]]
+* [Build phantomjs2](http://phantomjs.org/build.html) 
+* [Patch with forward declares](https://codereview.qt-project.org/#/c/107921/3/Source/JavaScriptCore/runtime/JSObject.cpp)
 
 The steps are repeated here because the order is different from the base instructions:
 * I'm using a VM, so make sure you have plenty of RAM. 4gm was inconsistent, so I bumped mine up to 7 just in case.
@@ -19,7 +19,7 @@ The steps are repeated here because the order is different from the base instruc
     cd phantomjs
     git checkout 2.0
 ```
-* Apply the changes from [[https://codereview.qt-project.org/#/c/107921/3/Source/JavaScriptCore/runtime/JSObject.cpp|Patch with forward declares]]. If you trust me, here's a patch you can directly apply:[[file:0001-Added-forward-defs-to-get-code-to-compile.patch]].
+* Apply the changes from [Patch with forward declares]]. If you trust me, here's a patch you can directly apply:[[file:0001-Added-forward-defs-to-get-code-to-compile.patch](https://codereview.qt-project.org/#/c/107921/3/Source/JavaScriptCore/runtime/JSObject.cpp).
 * Build phantomjs2 (this should detect the number of cores and parallelize the build, if not you can add --jobs 4, for example)
 ```bash
     ./build.sh --confirm

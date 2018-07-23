@@ -5,9 +5,9 @@ title: ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm
 
 # Overview
 {:toc}
-This tutorial presents the mechanics of BDD, refactoring and touches on continuous integration by implementing the **[[http://en.wikipedia.org/wiki/Shunting_yard_algorithm|Shunting Yard Algorithm]]**. The point of this tutorial is** //not**// to write a solution to this algorithm. The algorithm is a vehicle for practicing the mechanics of BDD. Having said that, you will end up solving much of the algorithm.
+This tutorial presents the mechanics of BDD, refactoring and touches on continuous integration by implementing the **[Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm)**. The point of this tutorial is** //not**// to write a solution to this algorithm. The algorithm is a vehicle for practicing the mechanics of BDD. Having said that, you will end up solving much of the algorithm.
 
-This tutorial has been written for you to actually read and type. The [[http://en.wikipedia.org/wiki/Kinesthetic_learning|Kinesthetic Learning]] experience of actually typing the code, running the tests and checking in the work significantly reinforces learning habits that will serve you well. Much of what you practice in this tutorial can eventually become habit/muscle memory with enough practice. Consider this an opportunity to start. You'll get frequent feedback throughout. And while this may represent a very different way of working from what you are used to, here are a few comments:
+This tutorial has been written for you to actually read and type. The [Kinesthetic Learning](http://en.wikipedia.org/wiki/Kinesthetic_learning) experience of actually typing the code, running the tests and checking in the work significantly reinforces learning habits that will serve you well. Much of what you practice in this tutorial can eventually become habit/muscle memory with enough practice. Consider this an opportunity to start. You'll get frequent feedback throughout. And while this may represent a very different way of working from what you are used to, here are a few comments:
 * What you are practicing now is just something you've learned, so this really is no different.
 * Try it for the duration of this tutorial. It will only be a few hours of your time, so if you find it useless after that time, stop doing it.
 
@@ -31,7 +31,7 @@ Here are a few examples:
 |f ( g ( ( 1 + 3 ) * 4 ) / x ( y ( z ) ) )|1 3 + 4 * g z y x / f|
 |a = b += 5|a b 5 += =|
 
-To better understand the algorithm, consider spending some time reading it [[http://en.wikipedia.org/wiki/Shunting_yard_algorithm|here]]. However, after reviewing the algorithm, you might come up with several issues that your code will need to handle. Here's a list of those issues:
+To better understand the algorithm, consider spending some time reading it [here](http://en.wikipedia.org/wiki/Shunting_yard_algorithm). However, after reviewing the algorithm, you might come up with several issues that your code will need to handle. Here's a list of those issues:
 **Basics**
 * Read tokens from a string (assume space-separated for now)
 * Return space-separated tokens in a string
@@ -315,7 +315,7 @@ A great time to check in is anytime your tests are passing. So after you've writ
 * If you subsequently mess up, you can revert back using the tool
 * Other people can see your work sooner (that can be scary, but since you're writing unit tests now, you're already a leg up on the average bear)
 
-This tutorial briefly demonstrated [[http://git.or.cz/|git]]. I// **strongly** // encourage you to use some revision control tool throughout. This goes back to learning by doing. Thinking about doing this will not activate your brain in the same way doing it will. If you want more details on using git, read [[http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html|the git tutorial]].
+This tutorial briefly demonstrated [the git tutorial](http://git.or.cz/|git]]. I// **strongly** // encourage you to use some revision control tool throughout. This goes back to learning by doing. Thinking about doing this will not activate your brain in the same way doing it will. If you want more details on using git, read [[http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html).
 
 * Add this directory into a revision control system and make sure it is checked in:
 ```
@@ -2027,7 +2027,7 @@ Now it's time to add multiple parameters to a function. Here is one example: $$ 
     12 examples, 1 failure
 ```
 
-The [[http://en.wikipedia.org/wiki/Shunting_yard_algorithm|Shunting Yard Algorithm]] has a top-level clause for function parameter separator, so this suggests a change back in the process method:
+The [Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm) has a top-level clause for function parameter separator, so this suggests a change back in the process method:
 **Update process**:
 ```ruby
   def process(token)
@@ -2355,7 +2355,7 @@ There are some basics to consider when refactoring:
 * Be written at one level of abstraction
 * Getting the meaning from a method should not require a lot of reading.
 
-See [[http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=pd_bbs_sr_1?ie=UTF8&s=books&qid=1222313221&sr=8-1|Martin's Clean Code]] book for more on, well, writing clean code.
+See [Martin's Clean Code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=pd_bbs_sr_1?ie=UTF8&s=books&qid=1222313221&sr=8-1) book for more on, well, writing clean code.
 
 # A Final Version
 Here is the final report of all of the examples you created:

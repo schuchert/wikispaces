@@ -15,6 +15,6 @@ A few of Fowler's Smells.
 ||Feature Envy||One class uses another class¿ members||
 ||Switch Statements||Duplicated switches/if-else's over same criterion||
 
-[[http://c2.com/cgi/wiki?CodeSmell|Here's a complete list.]]
+[Here's a complete list.](http://c2.com/cgi/wiki?CodeSmell)
 
 [<==Back]({{ site.pagesurl }}/tddisnotenough#CodeSmells)

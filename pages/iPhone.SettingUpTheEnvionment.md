@@ -72,12 +72,12 @@ Note that by default, the project you just created is selected. If you rush thou
 * This is not correct as it is no different from the first project.
 
 ### Update the Unit Test Project
-* [[https://github.com/gabriel/gh-unit/downloads|Download GHUnit]] and unzip the file somewhere. I'm using 0.4.28 and I downloaded the file to ~/Downloads. The unziped directory is ~/Downloads/GHUnitIOS.framework
+* [Download GHUnit](https://github.com/gabriel/gh-unit/downloads) and unzip the file somewhere. I'm using 0.4.28 and I downloaded the file to ~/Downloads. The unziped directory is ~/Downloads/GHUnitIOS.framework
 * Add this as a dependent framework to your project by dragging GHUnitIOS.framework on to your UnitTests project
 * Under the Destination enable "Copy items...". When you check in this one directory into your repository, it will be a stand-alone, build-able unit.
 * Click// **Finish**//
 * Under// **Supporting Files**// find and edit// **main.m**//
-* Update its contents by copying the file from [[https://github.com/gabriel/gh-unit/raw/master/Project-IPhone/GHUnitIOSTestMain.m|here]].
+* Update its contents by copying the file from [here](https://github.com/gabriel/gh-unit/raw/master/Project-IPhone/GHUnitIOSTestMain.m).
 * If you run at this point, you'll get an exception. You'll need to add a few flags to the target's configuration
 ### Update the Unit Test Target
 * Select your// **UnitTests**// project

@@ -7,9 +7,9 @@ title: cpptraining.GettingStartedWithEclipseCdt
 This instructions help you get started using Eclipse and the CDT to develop C++ systems under Windows.
 
 # Many Thanks To
-After many tries and false paths, I finally got a fully working environment fairly easily. Thank you to [[http://cdtdoug.blogspot.com/|Doug Schaefer]] ([[http://twitter.com/dougschaefer|Twitter]]), Eclipse CDT Project Lead.
+After many tries and false paths, I finally got a fully working environment fairly easily. Thank you to [Twitter](http://cdtdoug.blogspot.com/|Doug Schaefer]] ([[http://twitter.com/dougschaefer)), Eclipse CDT Project Lead.
 
-These instructions are essentially a duplication of: [[http://code.google.com/a/eclipselabs.org/p/wascana/|Wascana Eclipse C/C++ IDE for Windows Developers]].
+These instructions are essentially a duplication of: [Wascana Eclipse C/C++ IDE for Windows Developers](http://code.google.com/a/eclipselabs.org/p/wascana/).
 
 # Steps
 Note: If you install the 64-bit JDK, install the 64-bit Eclipse. Same with 32-bit.

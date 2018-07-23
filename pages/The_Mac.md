@@ -3,7 +3,7 @@ title: The_Mac
 ---
 # My Life with a Mac
 
-Last Friday I took the plunge and switched (mostly) from a Windows-based system to a Mac. My new employer, [[http://www.objectmentor.com|Object mentor]] provided me with a new laptop. This page captures a few notes and experiences.
+Last Friday I took the plunge and switched (mostly) from a Windows-based system to a Mac. My new employer, [Object mentor](http://www.objectmentor.com) provided me with a new laptop. This page captures a few notes and experiences.
 
 ## The Machine
 I've been waiting for the Intel Santa Rosa chip set to make it to a laptop. I also wanted a laptop with a good video card. Enter the updated Mac's. Here's the vital stats:

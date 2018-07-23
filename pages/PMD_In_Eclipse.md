@@ -7,7 +7,7 @@ title: PMD_In_Eclipse
 
 **Install PMD**
 # Start Eclipse
-# Follow [[http://pmd.sourceforge.net/integrations.html#eclipse|these instructions]] (if you are not set to the Eclipse section, click on Eclipse in the list)
+# Follow [these instructions](http://pmd.sourceforge.net/integrations.html#eclipse) (if you are not set to the Eclipse section, click on Eclipse in the list)
 # Restart Eclipse
 
 **Set up Preferences**

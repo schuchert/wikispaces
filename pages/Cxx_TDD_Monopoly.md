@@ -3,7 +3,7 @@ title: Cxx_TDD_Monopoly
 ---
 # Introduction
 
-This tutorial takes you from the ground up working with a unit testing tool called [[http://cxxtest.sourceforge.net/|CxxTest]]. It uses the user stories and acceptance tests from [[Monopoly(r)]] as the basis of requirements and works through four iterations. We'll use the traditional Red:Green:Refactor approach to TDD.
+This tutorial takes you from the ground up working with a unit testing tool called [CxxTest]]. It uses the user stories and acceptance tests from [[Monopoly(r)](http://cxxtest.sourceforge.net/) as the basis of requirements and works through four iterations. We'll use the traditional Red:Green:Refactor approach to TDD.
 
 ## Assumptions
 * Writing reliable code is more important than writing "efficient" code
@@ -35,7 +35,7 @@ In this example, I've used the following tools:
 * makedepend built into Cygwin
 * Subversion client built into Cygwin
 * [Subversion server]({{ site.pagesurl }}/Subversion on XP)
-* [[http://cxxtest.sourceforge.net/|CxxTest]] version 3.10.1
+* [CxxTest](http://cxxtest.sourceforge.net/) version 3.10.1
 
 ## Overview
 When we talk about TDD, you'll often hear "Red, Green, Refactor." This is a light-weight way to remind us of the steps we take while practicing TDD. In practice there are more than three steps:

@@ -5,7 +5,7 @@ title: FitNesse.Tutorials.0
 [[FitNesse.Tutorials|<--Back]]
 # Install FitNesse
 * Install a JVM 1.6 or later.
-* [[http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad|Download FitNesse]]
+* [Download FitNesse](http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad)
 * Go to that directory and execute "java -jar fitnesse.jar -p 8080"
 ```terminal
 Macintosh-8% java -jar fitnesse.jar -p 8080
@@ -19,7 +19,7 @@ FitNesse (v20100103) Started...
 	html page factory: fitnesse.html.HtmlPageFactory
 	page version expiration set to 14 days.
 ```
-* Verify you see a friendly FitNesse web page when you open [[http://localhost:8080/|your browser here]] (I built this from source and it might be different from what you see when you start FitNesse, but it should be close - you won't see the tree on the left until sometime in 4/2009)
+* Verify you see a friendly FitNesse web page when you open [your browser here](http://localhost:8080/) (I built this from source and it might be different from what you see when you start FitNesse, but it should be close - you won't see the tree on the left until sometime in 4/2009)
 [[image:FitNesseStartScreen.gif]]
 
 # Configure FitNesse for Slim

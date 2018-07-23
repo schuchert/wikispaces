@@ -11,11 +11,11 @@ This example is based on the [these instructions]({{ site.pagesurl }}/Car Rental
 In this example, we add code coverage to the Car Rental Application. We then examine the results, make some changes and finish with a few conclusions. 
 
 ## Setup and Configuration
-Cobertura does not currently come with a plugin, so in this example we'll use [[http://ant.apache.org/|Ant]] from within Eclipse. I'll warn you that I'm not much of an Ant user, so if you'd like to make recommendations, please feel free: schuchert@yahoo.com.
+Cobertura does not currently come with a plugin, so in this example we'll use [Ant](http://ant.apache.org/) from within Eclipse. I'll warn you that I'm not much of an Ant user, so if you'd like to make recommendations, please feel free: schuchert@yahoo.com.
 
 Let's get started:
 **Download**
-# Download Cobertura from [[http://cobertura.sourceforge.net/download.html|here]]. Note I downloaded version 1.8 for this example.
+# Download Cobertura from [here](http://cobertura.sourceforge.net/download.html). Note I downloaded version 1.8 for this example.
 # Extract the jar somewhere. I used c:\libs\, which created the directory C:\libs\cobertura-1.8.
 # Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
 
@@ -32,7 +32,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 * cobertura.xml
 * emma.xml
 
-(By the way, let me give credit where it's due, I got most of this from [[http://cobertura.sourceforge.net/anttaskreference.html|Cobertura Ant Task Reference]].
+(By the way, let me give credit where it's due, I got most of this from [Cobertura Ant Task Reference](http://cobertura.sourceforge.net/anttaskreference.html).
 
 Here's the file so we can discuss it and configure it for your situation:
 ----

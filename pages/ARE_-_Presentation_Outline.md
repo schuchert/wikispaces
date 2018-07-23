@@ -17,7 +17,7 @@ We'll conclude with a "where do we go next" wrap-up.
 
 ----
 # Expectations
-(Paraphrased from: [[http://www.ayeconference.com/Articles/Seeingyourownbigpicture.html|Seeing your own big picture]] by [[http://www.geraldmweinberg.com|Weinberg]].
+(Paraphrased from: [Weinberg](http://www.ayeconference.com/Articles/Seeingyourownbigpicture.html|Seeing your own big picture]] by [[http://www.geraldmweinberg.com).
 * How do you happen to be here? (Past)
 * How do you feel about being here? (Present)
 * What would you like to have happen? (Future)

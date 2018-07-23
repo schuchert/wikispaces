@@ -4,7 +4,7 @@ title: PowerShell5.GettingSetUp
 [<--Back]({{ site.pagesurl }}/PowerShell5)
 
 # Overview
-For this point forward, we assume you have a working environment. To verify this, here is a a quick [[https://en.wikipedia.org/wiki/Smoke_testing_(software)|smoke test]] of your environment to make sure things work well enough to proceed. After this, we'll look at implementing an algorithm to practice the [[https://en.wikipedia.org/wiki/Test-driven_development|TDD]] cycle. Finally, we'll dig into a larger problem to look into [[https://en.wikipedia.org/wiki/Object-oriented_programming|OOP]] and [[https://en.wikipedia.org/wiki/Software_design_pattern|Design Patterns]].
+For this point forward, we assume you have a working environment. To verify this, here is a a quick [Design Patterns](https://en.wikipedia.org/wiki/Smoke_testing_(software)|smoke test]] of your environment to make sure things work well enough to proceed. After this, we'll look at implementing an algorithm to practice the [[https://en.wikipedia.org/wiki/Test-driven_development|TDD]] cycle. Finally, we'll dig into a larger problem to look into [[https://en.wikipedia.org/wiki/Object-oriented_programming|OOP]] and [[https://en.wikipedia.org/wiki/Software_design_pattern).
 # Primordial Beginnings
 A good start is to verify that you can run tests, they fail, and you can make them pass. So to get started, open up an instance of PowerShell and try the following:
 * Create a directory to store your work, I'll use C:\Users\Brett:

@@ -18,7 +18,7 @@ Worked as a technical lead for a customer-facing application developed to test o
 Working as both a technical BA as well as an evangelist for the introduction and use of a corporation-wide service-enabling software harness. Embedded with four teams transforming their in-store sales experience, mentoring team members on technical issues, assisting in the adoption of the harness, and working with the team developing the harness by giving feedback on those adoption experiences.
 ----
 **Technical Lead, Airline Carrier**
-Working as a tech. lead for a team of several developers in the development of [[http://www.faa.gov/about/office_org/headquarters_offices/agc/pol_adjudication/agc200/Part117/|FAR 117]] rules for tracking crew flight time. This is a required to fly system with a hard deadline of January 4, 2014 for complete implementation and data deadline starting 28 days earlier. Developed functionality and coached other developers in both coding and agile practices. Supported several production-live versions leading up to the final release on December 6, 2013.
+Working as a tech. lead for a team of several developers in the development of [FAR 117](http://www.faa.gov/about/office_org/headquarters_offices/agc/pol_adjudication/agc200/Part117/) rules for tracking crew flight time. This is a required to fly system with a hard deadline of January 4, 2014 for complete implementation and data deadline starting 28 days earlier. Developed functionality and coached other developers in both coding and agile practices. Supported several production-live versions leading up to the final release on December 6, 2013.
 
 Also worked on dev-ops related items including: automated build for continuous integration, scripting of developer virtual machines.
 
@@ -87,7 +87,7 @@ Developed and offered an 8-week boot camp on agile software development from Jav
 **Transformational Services Instructor**
 Custom Course Development: Agile Requirements Management
 
-Developed in tandem with [[http://www.craiglarman.com/|Craig Larman]] a custom 2-day requirements workshop merging agile and lean principles and offered this course back to back in Israel.
+Developed in tandem with [Craig Larman](http://www.craiglarman.com/) a custom 2-day requirements workshop merging agile and lean principles and offered this course back to back in Israel.
 
 ----
 

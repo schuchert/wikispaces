@@ -5,7 +5,7 @@ title: ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator
 
 # Introduction
 {:toc}
-In this tutorial, you will develop a [[http://en.wikipedia.org/wiki/Reverse_Polish_notation|Reverse Polish Notation]] (RPN) calculator. According to [[http://en.wikipedia.org/wiki/Reverse_Polish_notation|Wikipedia]], PRN was developed by 1920 by Polish mathematician Jan Lukasiewicz, so the notation has some history. The purpose of this tutorial is to give you practice with BDD on an object with methods, rather than an object with one method, as in the first tutorial.
+In this tutorial, you will develop a [Wikipedia](http://en.wikipedia.org/wiki/Reverse_Polish_notation|Reverse Polish Notation]] (RPN) calculator. According to [[http://en.wikipedia.org/wiki/Reverse_Polish_notation), PRN was developed by 1920 by Polish mathematician Jan Lukasiewicz, so the notation has some history. The purpose of this tutorial is to give you practice with BDD on an object with methods, rather than an object with one method, as in the first tutorial.
 
 As with the first tutorial, this tutorial covers:
 * The three laws of TDD
@@ -1434,7 +1434,7 @@ Review the following methods: pop!, top, available_operators. What do they all h
 
 Is this bad? Yes, it suggests that the RpnCalculator is doing work that should be pushed into the array. What? That's right, the array is not pulling its weight. This is a legitimate case for wrapping a collection class and giving it domain-specific behavior (semantics). 
 
-There is a name for methods in classes working exclusively with data in other objects. It is a code smell called [[http://sis36.berkeley.edu/projects/streek/agile/bad-smells-in-code.html#Feature+Envy|Feature Envy]]. 
+There is a name for methods in classes working exclusively with data in other objects. It is a code smell called [Feature Envy](http://sis36.berkeley.edu/projects/streek/agile/bad-smells-in-code.html#Feature+Envy). 
 
 Normally, at this point I'd say "you cannot change a system-defined class, so you either need to subclass or wrap and adapt". That is, create a subclass of Array, change the top method and add the pop method. Or, create a new class called something like OperandStack that holds a single instance of an array.
 

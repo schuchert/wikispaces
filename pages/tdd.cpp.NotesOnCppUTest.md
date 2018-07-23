@@ -5,7 +5,7 @@ title: tdd.cpp.NotesOnCppUTest
 These do not include working in the express version. See the old section below for some additional details to get this working.
 
 ## First Time Only
-* Download [[http://sourceforge.net/projects/cpputest/|CppUTest]].
+* Download [CppUTest](http://sourceforge.net/projects/cpputest/).
 * Extract the zip into some directory (e.g. C:\projects\CppTdd\CppUTest).
 * Go into the CppUTest directory under which you extracted the zip file.
 * Double-click on CppUTest.dsw.
@@ -61,7 +61,7 @@ old
 ----
 ### First Time Only
 #### Install CppUTest
-* Download [[http://sourceforge.net/projects/cpputest/|CppUTest]].
+* Download [CppUTest](http://sourceforge.net/projects/cpputest/).
 * Extract the zip into some directory.
 * Go into the CppUTest directory under which you extracted the zip file.
 * Double-click on CppUTest.dsw.
@@ -72,7 +72,7 @@ old
 *** Google for PSDK-x86.exe and VS2005 and see all the complaints and how to fix.
 
 #### Install DevExpress Refactor!
-* Install [[http://devexpress.com/Products/Visual_Studio_Add-in/RefactorCPP/|DevExpress Refactor!]] - This is a free refactoring tool for C++ in Developer Studio.
+* Install [DevExpress Refactor!](http://devexpress.com/Products/Visual_Studio_Add-in/RefactorCPP/) - This is a free refactoring tool for C++ in Developer Studio.
 * Note: You'll need to exit Developer Studio to install this product.
 * This tool has caused problems at times. When it works, it is a big help. If you experience problems with your IDE freezing, uninstall this to see if the problems go away.
 

@@ -38,7 +38,7 @@ In this course we are trying to give you enough experience with a subset of all 
 ## Materials
 * One Course Binder with Tutorials and notes
 * One CD with required files
-* One Copy of [[http://www.amazon.com/Enterprise-JavaBeans-3-0-Bill-Burke/dp/059600978X/sr=8-2/qid=1165793312/ref=pd_bbs_2/103-7006222-7899056?ie=UTF8&s=books|Enterprise Java Beans 3.0 (5th Edition)]]
+* One Copy of [Enterprise Java Beans 3.0 (5th Edition)](http://www.amazon.com/Enterprise-JavaBeans-3-0-Bill-Burke/dp/059600978X/sr=8-2/qid=1165793312/ref=pd_bbs_2/103-7006222-7899056?ie=UTF8&s=books)
 * One generic pen
 
 ## Outline

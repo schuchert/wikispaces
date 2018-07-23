@@ -2,10 +2,10 @@
 title: ndc
 ---
 # The Problem We'll Be Using
->> ==[[http://schuchert.wikispaces.com/DvrDesignProblem?f=print|Dvr Problem Description (print)]]
+>> ==[Dvr Problem Description (print)](http://schuchert.wikispaces.com/DvrDesignProblem?f=print)
 
 # FitNesse
->> ==[[http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad|Download]]
+>> ==[Download](http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad)
 >> ==[[FitNesse.Tutorials|Tutorials]]
 
 # The Slides

@@ -7,8 +7,8 @@ These are my preliminary notes on getting started with gradle. The last time I d
 Gradle requires a JVM; I work mostly on OS X, so I use JSE 1.6.0_24, but any version from 1.5 on should work fine. What follows assumes you already have a JVM running. I start in a shell and only at the end finally get into an IDE.
 
 ## Install Gradle
-Instructions for installing Gradle are [[http://www.gradle.org/installation.html|here]]. I'm summarizing them here, if you have any questions refer to the installation instructions.
-# [[http://www.gradle.org/downloads.html|Download Gradle]]. For these examples I happen to be using the 1.0-milestone-3 version of Gradle.
+Instructions for installing Gradle are [here](http://www.gradle.org/installation.html). I'm summarizing them here, if you have any questions refer to the installation instructions.
+# [Download Gradle](http://www.gradle.org/downloads.html). For these examples I happen to be using the 1.0-milestone-3 version of Gradle.
 # Unzip the file somewhere, say /users/Schuchert/bin
 # This will create a directory under the installation directory called something like //**gradle-1.0-milestone-3/**//
 # Add the bin directory under the extracted directory to your path. In my particular case, the path is: /Users/schuchert/bin/gradle-1.0-milestone-3/bin/
@@ -230,7 +230,7 @@ The purpose of this was to give one specific example of using Gradle to build a 
 # Optionally create the Eclipse project structure
 # Put your work into git
 
-Hope this helps get you started a touch quicker. For more information on Gradle, have a look at its [[http://www.gradle.org/documentation.html|extensive documentation]].
+Hope this helps get you started a touch quicker. For more information on Gradle, have a look at its [extensive documentation](http://www.gradle.org/documentation.html).
 
 ### Final Caution
 Since we are using Maven repositories, that comes with the standard baggage associated with it. For example, if you are using a project that uses a particular release of another project, you might need to configure a few more things in the build.gradle file to make it possible to find everything. Here is an example file from another project I've been toying with:
