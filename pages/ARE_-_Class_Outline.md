@@ -267,7 +267,7 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 
 |Item|Formula|Minimum|
 |3x5 Cards|1 + 1 for every 2 students|2|
-|PostIts(r)|1 + 1 per every 2 students|2|
+|PostIts|1 + 1 per every 2 students|2|
 |Static Images|1 + 1 for every 4 students|2|
 |Dry Erase Markers(4 pack)|1 + 1 for every 4 students|2|
 |Slides|1 for every student|#Students|

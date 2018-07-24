@@ -5,7 +5,7 @@ title: Katas
 * [Recursive Decent Iterator]({{ site.pagesurl}}/Katas.RecursiveDecentIterator)
 * [Expression Tokenizer]({{ site.pagesurl}}/Katas.ExpressionTokenizer)
 * [Shunting Yard Algorithm]({{ site.pagesurl}}/Katas.ShuntingYardAlgorithm)
-* [Monopoly(r) The Game]({{ site.pagesurl}}/Katas.MonopolyTheGame(r))
+* [Monopoly The Game]({{ site.pagesurl}}/Katas.MonopolyTheGame)
 * [Really Basic Robo Rally]({{ site.pagesurl}}/Katas.ReallyBasicRoboRally)
 
 ## Katas I've Come Across in Dojo's

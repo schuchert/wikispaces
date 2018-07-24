@@ -28,9 +28,9 @@ Since a thread can be preempted at any time…
 ----
 ----
 ## It is actually worse
-++value turns into 7 byte-codes:
-* Assume the value field has a value of 42
-|**Byte-code**|**Description**|**Operand Stack After**|
+++value turns into 7 byte-codes. Assume the value field has a value of 42.
+
+| Byte-code | Description | Operand Stack After |
 |aload 0|Load local variable 0 onto the stack. In a non-static method, local variable 0 is always the "this" pointer, or the object that received the most recent message.|this|
 |dup|Place a copy of the top operand on the operand stack back onto the operand stack.|this, this|
 |getfield value|Retrieve the field named "value" from the object pointed to on the top of the operand stack, which is "this". Put the resulting value back on to the top of the operand stack.|this, 42|
@@ -38,8 +38,9 @@ Since a thread can be preempted at any time…
 |iadd|Perform integer addition on the top two items on the operand stack and place the result back on the operand stack.|this, 43|
 |putfield value|Put the top item on the stack (43) in the "value" field of the object pointed to by the next to top item on the operand stack (this).|<<empty>>|
 |return|Return back to the place where this method was called.||
+
 ----
-----
+
 ## How Many Possibilities?
 Assume the following:
 Two threads
@@ -49,8 +50,9 @@ Two threads
 Answer the following:
 * How many possible ways can those two threads execute?
 * What are the possible results?
+
 ----
-----
+
 ## Answers
 How many possible orderings?
 * 3,432
@@ -69,8 +71,9 @@ How many possible outcomes?
 * value incremented by 1
 
 How?
+
 ----
-----
+
 ## Sharing Without Guarding
 ```java
 @Test
@@ -95,8 +98,9 @@ public void multipleThreadsFail() throws InterruptedException {
         50000 == object.getValue());
 }
 ```
+
 ----
-----
+
 ## Demo
 Let’s demonstrate that this code is broken
 * We’ll simply run the tests and hope they fail

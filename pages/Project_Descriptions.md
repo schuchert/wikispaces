@@ -2,7 +2,7 @@
 title: Project_Descriptions
 ---
 ## Monopoly
-* [[Monopoly(r)]]
+* [[Monopoly]]
 * [[Cxx TDD Monopoly]]
 * [[Template Method]]
 * [[MonopolyPrintable]]

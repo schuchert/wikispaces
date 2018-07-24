@@ -11,15 +11,15 @@ It turns out support for inheritance in queries (as well as JPA) is built in. In
 For now we'll stick with the default setting. Why? Which option you choose will impact performance, the database schema, how normalized your database is, but it will not affect how you write your code.
 
 Step one we need to update our basic system. To do this we'll do the following:
-# Introduce a new entity type called Resource
-# Make the book entity inherit from the Resource entity
-# Move attributes and methods from book that apply to all resources up to the Resource class
-# Change the BookDao to be a ResourceDao
-# Re-introduce a stripped down BookDao to support searching by ISBN (which we'll assume apply to books but not DVD's)
-# Update all the methods that take books and replace them with resources (where appropriate)
-# Update the methods returning Book and have them instead return Resource (and List<Book> --> List<Resource>)
-# Update all references to Book and replace them with Resource
-# Update all the comments that talk about books to talk about resources
+* Introduce a new entity type called Resource
+* Make the book entity inherit from the Resource entity
+* Move attributes and methods from book that apply to all resources up to the Resource class
+* Change the BookDao to be a ResourceDao
+* Re-introduce a stripped down BookDao to support searching by ISBN (which we'll assume apply to books but not DVD's)
+* Update all the methods that take books and replace them with resources (where appropriate)
+* Update the methods returning Book and have them instead return Resource (and List<Book> --> List<Resource>)
+* Update all references to Book and replace them with Resource
+* Update all the comments that talk about books to talk about resources
 
 You get the idea, it's a lot of work to make this change. That's why we'll do this first and make sure all of our tests pass before we actually add a second kind of resource.
 

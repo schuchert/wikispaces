@@ -1,9 +1,9 @@
 ---
 title: tddisnotenough.WELC
 ---
-[<==Back]({{ site.pagesurl}}/tddisnotenough#WELC)
+[<==Back]({{ site.pagesurl}}/TddIsNotEnough#WELC)
 
-|~ Name|~ Page|~ Summary|
+|Name|Page|Summary|
 |Adapt Parameter|326|Change parameter to an adapter when you cannot use extract interface|
 |Break Out Method Object|330|Convert method using instance data into a class with a ctor and single method|
 |Encapsulate Global References|339|Move access to global data into access via a class to allow for variations during test|
@@ -16,4 +16,4 @@ title: tddisnotenough.WELC
 |Subclass and override method|401|Test creates subclass & passes it in/requires some IoC|
 |Sprout Method, Sprout Class|59, 63|Create a method or class out of existing code.|
 
-[<==Back]({{ site.pagesurl}}/tddisnotenough#WELC)
+[<==Back]({{ site.pagesurl}}/TddIsNotEnough#WELC)

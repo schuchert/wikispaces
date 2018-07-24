@@ -28,15 +28,18 @@ public void landOn(Player p) {
 ```
 
 How do you calculate rent? Here are the three ways you calculate rent:
+^
+|-|-|
 |Type|Algorithm|
 |Railroad|25 * number of railroads owned by same player|
 |Utility|4 * current dice roll if only one owned or 10 * current dice roll if both are owned (contrary to popular belief, both do not have to be owned by the same player to get 10X and you do not re-roll the dice either)|
 |Property|Some base value modified by houses or hotels on the property|
 
+
 Notice that the rules for landing are the same:
-# If the {railroad, utility, property} is mortgaged or owned by the current player do nothing
-# If the {railroad, utility, property} is owned, then (because of the first check) the current player owes money to the owner
-# If the {railroad, utility, property} is not owned, then the current player has the option of buying it
+* If the {railroad, utility, property} is mortgaged or owned by the current player do nothing
+* If the {railroad, utility, property} is owned, then (because of the first check) the current player owes money to the owner
+* If the {railroad, utility, property} is not owned, then the current player has the option of buying it
 
 The only step that varies is the calculation of the rent. So we create an abstract base class, called Real Estate, that implements the landOn method AND has one abstract method:
 ```

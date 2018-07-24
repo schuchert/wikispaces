@@ -11,9 +11,9 @@ As a result, we end up passing along session keys and security credentials every
 We wanted to minimize passing around these parameters everywhere. We considered the Wormhole pattern but ruled it out as a bit too much for most people to follow (although, in defense of the pattern, I think it's not too bad and it follows a form, so it's repeatable). Instead, we stole from the Wormhole pattern, which makes use of the fact that certain information is stored on ThreadLocal variables, and instead wrapped most of our EJB entry methods to make this information available.
 
 Below you'll find two classes. The first, [Context Recorder]({{ site.pagesurl}}/ThreadLocal Context Initialization#ContextRecorder), does 3 things.
-# Upon the first entry into an EJB Session method, it records the security key and security credentials into a ThreadLocal variable.
-# It executes the underlying method.
-# It clears out the ThreadLocal variables.
+* Upon the first entry into an EJB Session method, it records the security key and security credentials into a ThreadLocal variable.
+* It executes the underlying method.
+* It clears out the ThreadLocal variables.
 
 It does not directly interact with ThreadLocal variables. Instead, it uses a class called [Thread Context]({{ site.pagesurl}}/ThreadLocal Context Initialization#ThreadContext) to both record and clear the thread local variables.
 
@@ -27,8 +27,9 @@ So if some piece of code needs access to the security credentials or session key
 ```
 
 The ThreadContext class resides in a utility project that does not have direct access to the types ISessionKey or ISecurityCredentials. That's why there's no convenience methods to access those specific types on the interface to ThreadContext.
-
+^
 Instead, we created another utility class that simply wrapped ThreadContext and performed the cast for us and put this in the same project where ISessionKey and ISecurityCredentials reside.
+
 ----
 [[#ContextRecorder]]
 # # ContextRecorder.java
@@ -93,7 +94,10 @@ Instead, we created another utility class that simply wrapped ThreadContext and 
 54: 	}	
 55: }
 ```
+
 Interesting Lines
+^
+|--|--|
 |Line|Description|
 |19|The pointcut ejbMethod matches all methods on SessionBeans or its subclasses.|
 |20 - 24|There are a few EJBs that support security. We never want these to be part of this aspect.|
@@ -106,9 +110,10 @@ Interesting Lines
 |45 - 46|Record first the session key and then the security credentials. Note that getting the security credentials might cause a TimedOut exception to be thrown. If this happens, the finally block will remove the already-recorded session key.|
 |48|Run the underlying EJB method.|
 |52|Regardless of how you are leaving this code, make sure to clean up the ThreadLocal variables. The container probably maintains a thread pool and we don't want to leave trash in our threads.|
+
 ----
 [[#ThreadContext]]
-# # ThreadContext.java
+## ThreadContext.java
 ```java
 01: package com.hertz.common.util.thread;
 02: 

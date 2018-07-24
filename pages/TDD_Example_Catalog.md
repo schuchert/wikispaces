@@ -2,8 +2,8 @@
 title: TDD_Example_Catalog
 ---
 # JUnit
-* [[Parameterized Test]]
-* [[Full Coverage when Expecting an Exception]]
+* [Parameterized Test]({{ site.pagesurl}}/Parameterized_Test)
+* [Full Coverage when Expecting an Exception]({{ site.pagesurl }}/Full_Coverage_when_Expecting_an_Exception)
 
 # jMock 2.0
 * [Demystifying The Beast]({{ site.pagesurl}}/JMock-Demystifying The Beast)

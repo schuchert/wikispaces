@@ -12,10 +12,10 @@ Here are a few stand-alone examples: [[TDD Example Catalog]]
 
 # Projects
 * [[RPN Calculator]] ([print](http://schuchert.wikispaces.com/RpnCalculatorPrintable?f=print))
-* [[Monopoly(r)]]  ([print](http://schuchert.wikispaces.com/MonopolyPrintable?f=print))
+* [[Monopoly]]  ([print](http://schuchert.wikispaces.com/MonopolyPrintable?f=print))
 
 # Use in a C++ Class
-Here is the beginnings of an example TDD session using the [[Monopoly(r)]] as the basis and [C++]({{ site.pagesurl}}/Cxx TDD Monopoly) as the language.
+Here is the beginnings of an example TDD session using the [[Monopoly]] as the basis and [C++]({{ site.pagesurl}}/Cxx TDD Monopoly) as the language.
 
 ## [Notes on CppUTest]({{ site.pagesurl}}/tdd.cpp.NotesOnCppUTest)
 ## [Notes on CppULite]({{ site.pagesurl}}/NotesOnCppULite)
@@ -27,7 +27,7 @@ Here is the beginnings of an example TDD session using the [[Monopoly(r)]] as th
 
 Use a TDD approach for the [[RPN Calculator]]. 
 
-Next, use the [[Monopoly(r)]] problem. 
+Next, use the [[Monopoly]] problem. 
 * For each "release"
 ** User story workshop 
 ** Sequence user stories 

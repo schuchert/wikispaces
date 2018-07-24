@@ -2,16 +2,16 @@
 title: Cxx_Tdd_Iteration_1
 ---
 # Getting Started
-This tutorial uses a game similar to Monopoly(r) as a basis for our work. The rules we implement are not exactly the same as Monopoly(r) because the point is not Monopoly(r), it's TDD. If you just want to see what the end results for this iteration look like, then [look here]({{ site.pagesurl}}/Cxx Tdd Iteration 1#EndGame).
+This tutorial uses a game similar to Monopoly as a basis for our work. The rules we implement are not exactly the same as Monopoly because the point is not Monopoly, it's TDD. If you just want to see what the end results for this iteration look like, then [look here]({{ site.pagesurl}}/Cxx Tdd Iteration 1#EndGame).
 
 This iteration's theme is: **Player Movement**
-[[include page="Monopoly(r) Release 1 Theme Description"]]
+[[include page="Monopoly Release 1 Theme Description"]]
 
-[[include page="Monopoly(r) Release 1 User Stories WO Link"]]
+[[include page="Monopoly Release 1 User Stories WO Link"]]
 
 ## Our First User Story
 Here is our current user story:
-[[include page="Monopoly(r) R1 Player Movement"]]
+[[include page="Monopoly R1 Player Movement"]]
 
 Our first test seems seems simple enough. A player takes a turn and moves around the board. However, let's break this down into a few parts so we can take some simple steps (note for this first test we're moving between [TDD]({{ site.pagesurl}}/Test Driven Development) and [TFD]({{ site.pagesurl}}/Test First Development)):
 * Players move in the game using dice, so let's start by creating a single die object.

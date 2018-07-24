@@ -1,11 +1,12 @@
 ---
 title: Parameterized_Test
 ---
-[<--Back]({{ site.pagesurl}}/TDD Example Catalog)
+[<--Back]({{ site.pagesurl}}/TDD_Example_Catalog)
 
 Imagine we have a series of tests where for each test we perform some operation and then verify the results. The only thing that varies is the data we send into the operation and the expected result. Here's how we might brute force this:
 
 **BlankLineTest.java**
+
 ```java
 package com.objectmentor.parameterized;
 
@@ -54,6 +55,7 @@ public class BlankLineTest {
 ```
 
 For each test we have a string we test and an expected result (true or false). Here are each of those values:
+^
 |**Literal String**|**Expected**|**Test Name**|
 |""|true|emptyLineInBlank|
 |"  \t   "|true|spaceTabIsBlank|
@@ -65,6 +67,7 @@ For each test we have a string we test and an expected result (true or false). H
 As you can imagine, every time we want to verify another combination we add another test method.
 
 JUnit has an idiom for this kind of test. Use a parameterized test. To do so, we use the following steps:
+^
 |1|5|Replace the default runner using the annotation @RunWith|
 |2|11 - 12|Add a public static method annotated with @Parameters that returns a Collection|
 |3|13 - 20|Build a collection where each entry is an array of values|
@@ -122,4 +125,4 @@ That's a lot of steps. Here's an example:
 36: }
 ```
 
-[<--Back]({{ site.pagesurl}}/TDD Example Catalog)
+[<--Back]({{ site.pagesurl}}/TDD_Example_Catalog)

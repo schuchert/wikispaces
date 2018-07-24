@@ -13,7 +13,8 @@ This is a recurring theme through all of the examples. The only real difference 
 
 Please see the notes on this example below the code.
 
-# # Class Relationships 
+## Class Relationships 
+![Class Relationships](images/DesigningToSpringTemplates.v1.gif)
 [[image:DesigningToSpringTemplates.v1.gif width="775"]]
 
 ## Important Note
@@ -24,6 +25,7 @@ All of these examples are configured to use [hsqldb](http://www.hsqldb.org/) whi
 Since this is NOT a JDBC example but rather I use JDBC as a vehicle to better understand the design behind the Spring templates, I figure this is a reasonable solution.
 
 ----
+
 [[#JdbcExample]]
 ## JdbcExample.java
 ```java
@@ -129,6 +131,9 @@ Since this is NOT a JDBC example but rather I use JDBC as a vehicle to better un
 100: }
 ```
 ### Interesting Lines
+^
 |Line|Description|
+
 TBD
+
 [<--Back]({{ site.pagesurl}}/Designing to Spring Templates)  [Next-->]({{ site.pagesurl}}/Spring Templates JDBC Using Template Method Pattern)

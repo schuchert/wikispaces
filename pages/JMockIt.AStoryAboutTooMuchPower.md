@@ -133,7 +133,7 @@ This code performs vertical mocking (or nested mocking). Here is a quick descrip
 # The JUnit runner loads the class and runs the test
 # As the test executes, it first creates a hand-rolled test double, a stub, that returns just enough of a web page that the underlying code will have something to parse
 # Next, using a NonStrictExpectation, the test, using JMockIt, causes the classes DefualtHttpClient, HttpResponse and HttpEntity to be removed form the class loader and then replaced by stubs of those classes. As a bonus, each of the classes listed as attributes of the anonymous inner classes are also initialized with a mocked instance.
-# Next, the instance initializer in the NonStrictExpectation then informs JMockIt what to return from a few of the methods. The end result is that the code will not use any real classes in the HttpClient jar file (essentially creating a dynamic load-time seam). What it will do is get a stream that has just enough text it in to make the underlying code "work". And it does, which is pretty amazing. This tool is The Force(r) in a jar file.
+# Next, the instance initializer in the NonStrictExpectation then informs JMockIt what to return from a few of the methods. The end result is that the code will not use any real classes in the HttpClient jar file (essentially creating a dynamic load-time seam). What it will do is get a stream that has just enough text it in to make the underlying code "work". And it does, which is pretty amazing. This tool is The Force in a jar file.
 
 This is a pretty ugly test but it is maintainable? In fact, it's not too bad. While I took this further in the talk that evening, the next day in class I used it to perform a more traditional legacy refactoring.
 

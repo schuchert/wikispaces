@@ -1,7 +1,7 @@
 ---
 title: ruby.tutorials.tdd.UsingTddToDevelopABasicAlgorithm
 ---
-[<--Back]({{ site.pagesurl}}/ruby.tutorials)
+[<--Back]({{ site.pagesurl}}/ruby.Tutorials)
 
 # Overview
 {:toc}
@@ -17,7 +17,9 @@ Good Luck!
 Synopsis: The Shunting Yard Algorithm takes an expression in infix notation and converts it to reverse polish notation.
 
 Here are a few examples:
-|~ Infix |~ RPN |
+^
+|-|-|
+|Infix |RPN |
 | 1 + 3 | 1 3 + |
 | 1 + 3 - 4 | 1 3 + 4 - |
 | 1 + 3 * 2 | 1 3 2 * + |
@@ -219,7 +221,7 @@ end
 ```
 
 * Run your tests:
-```
+```terminal
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -232,6 +234,7 @@ Macintosh-7%
 Great, your test is back to working. You just finished the execution part. Now it is time to have your test verify the results it expected, and that's the next step.
 ## Verify
 * Update your test to perform validation:
+
 ```ruby
   def test_empty_string_results_in_same
     algorithm = ShuntingYardAlgorithm.new
@@ -241,7 +244,8 @@ Great, your test is back to working. You just finished the execution part. Now i
 ```
 
 * Run your test:
-```
+
+```terminal
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -267,7 +271,7 @@ end
 ```
 
 * Run your test:
-```
+```terminal
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -287,7 +291,7 @@ A great time to check in is anytime your tests are passing. So after you've writ
 This tutorial briefly demonstrated [git](http://git.or.cz/). I //**strongly**// encourage you to use some revision control tool throughout. This goes back to learning by doing. Thinking about doing this will not activate your brain in the same way doing it will. If you want more details on using git, read [the git tutorial](http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html).
 
 * Add this directory into a revision control system and make sure it is checked in:
-```
+```terminal
 Macintosh-7% git init
 Initialized empty Git repository in /Users/schuchert/src/ruby/tutorial1/.git/
 Macintosh-7% git add shunting_yard_algorithm_test.rb 
@@ -321,9 +325,9 @@ end
 This probably seems small, however you have described the API of the class used to translate between an infix and RPN notation.
 
 In addition, you practiced Martin's three laws of TDD (paraphrased):
-# Write no production code without a failing test
-# Write only enough of a test so that it fails
-# Write only enough production code to make the test pass
+* Write no production code without a failing test
+* Write only enough of a test so that it fails
+* Write only enough production code to make the test pass
 
 This is what you did.
 * You first created a basic unit test that referred to a missing class (laws 1 and 2)
@@ -350,7 +354,7 @@ Now you'll work with both constants and basic operators like + and -. As you wor
 Notice that it was OK to write this entire test before stopping to check. The test does not add any new methods to the existing class. Indeed, going forward with this example you can write complete test methods. This is because the thing you are writing has a simple API. Even so, eventually your test writing will get to this point on any unit under test.
 
 * Run your tests:
-```
+```terminal
 Macintosh-7% ruby shunting_yard_algorithm_test.rb   
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -380,7 +384,7 @@ end
 ```
 
 * Run your tests to make sure things pass:
-```
+```terminal
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -393,7 +397,7 @@ Macintosh-7%
 Congratulations, you've just made it through another application of the three laws of TDD. Since all tests are passing, now is a great time to check in your work.
 
 * So, check in your work already::
-```
+```terminal
 Macintosh-7% git add shunting_yard_algorithm_test.rb
 Macintosh-7% git commit
 Created commit a284610: Added support for constants
@@ -413,7 +417,7 @@ Macintosh-7%
 ```
 
 * Run your tests to verify you have not broken anything:
-```
+```terminal
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -470,7 +474,7 @@ Macintosh-7%
 ```
 
 * Run your tests to verify you have not broken anything:
-```
+```terminal
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -488,7 +492,7 @@ Macintosh-7%
 ```
 
 * Run your tests to verify you have not broken anything:
-```
+```terminal
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -526,7 +530,7 @@ end
 ```
 
 * Finally, now is a great time to check in your work with a comment like "Removed duplication in the test code."
-```
+```terminal
 Macintosh-7% git add .
 Macintosh-7% git commit
 Created commit bec791e: Removed duplication in the test code.
@@ -551,7 +555,7 @@ Now you'll add a test of addition:
 [[include page="sidebar_start"]][[include page="ruby.sidebar.RubyAndParens"]][[include page="sidebar_end"]]
 
 * Run your tests to see how it fails:
-```
+```terminal
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -592,7 +596,7 @@ This is a big jump from nothing. This indicates that maybe the test that does to
 Of course, this doesn't work.
 
 * Running your tests, you'll notice the following errors:
-```
+```terminal
 <"1 3 +"> expected but was
 <" 1 3 +">.
   2) Failure:
@@ -794,7 +798,7 @@ Notice that if you follow traditional precedence rules, multiplication happens b
 ```
 
 * Run this test and you'll notice the following failure:
-```
+```terminal
   1) Failure:
 test_two_operators_lower_precedence_first(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:45:in `assert_expression_becomes'
@@ -1118,7 +1122,7 @@ So far you've handled a single operator and up to two operators and some basic p
 * Create a test for the following: $$ 3\ +\ 1\ *\ 4\ -\ 2\ /\ 3\ \ \rightarrow \ \ 3\ 1\ 4\ *\ +\ 2\ 3\ /\ - $$ 
 
 * Execute the test to see how your algorithm responds. You should see a failure similar to this:
-```
+```terminal
   1) Failure:
 test_several_operators_mixed_precedence(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:73:in `assert_expression_becomes'
@@ -1154,7 +1158,7 @@ It is time to revisit an earlier test, only this time you'll use variables: $$ a
 * Create this as a test and see how the test fails.
 
 * You should see something similar to:
-```
+```terminal
   1) Failure:
 test_adding_variables(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:74:in `assert_expression_becomes'
@@ -1193,7 +1197,7 @@ Begin by writing a test that verifies the removal of ()'s from an otherwise empt
 
 * You can fix this and follow the current approach used in the class by making a change to process and adding a few methods:
 **process**
-```
+```ruby
   def process(token)
     if is_paren(token)
       handle_paren(token) 
@@ -1621,7 +1625,7 @@ Now it's time to add multiple parameters to a function. Here is one example: $$ 
 * Create a test for this and see what happens.
 
 * Since the , is interpreted as an operator, the results are not quite what you hoped:
-```
+```terminal
   1) Failure:
 test_function_with_multiple_parameters(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:126:in `assert_expression_becomes'
@@ -1632,7 +1636,7 @@ test_function_with_multiple_parameters(ShuntingYardAlgorithmTest)
 
 The [Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm) has a top-level clause for function parameter separator, so this suggests a change back in the process method:
 **Update process**:
-```
+```ruby
   def process(token)
     if is_paren(token)
       handle_paren(token)
@@ -1646,7 +1650,7 @@ The [Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorit
   end
 ```
 **Add method definitions for the new new methods**:
-```
+```ruby
   def is_function_argument_separator(token)
     token == ','
   end
@@ -1694,7 +1698,7 @@ Here's a test to see if something a bit more complex works with what you've writ
 * Add this to your test, then see what happens.
 
 Your failure should resemble:
-```
+```terminal
   1) Failure:
 test_nested_function_call_with_embedded_operators(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:140:in `assert_expression_becomes'
@@ -1799,7 +1803,7 @@ That gives a great test: $$ a\ =\ b\ += 5\ \ \rightarrow\ \ a\ b\ 5\ +=\ $$
 * Create this test and see how it fails.
 
 It appears that the calculation is processed incorrectly because these operators are treated as the same precedence and left to right associative:
-```
+```terminal
   1) Failure:
 test_right_associative_operators(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:149:in `assert_expression_becomes'
@@ -1914,9 +1918,9 @@ However, you've made amazing progress on this work. You've:
 
 # Review
 **The Three Laws**
-# Write no production code without a failing test.
-# Write only enough of a test such that it fails (and not compiling is failing)
-# Write just enough production code to get the tests to pass
+* Write no production code without a failing test.
+* Write only enough of a test such that it fails (and not compiling is failing)
+* Write just enough production code to get the tests to pass
 
 **Refactoring**
 The three laws are not enough. You refactored code: Remember, refactoring means to change the structure without changing the behavior. In your case, the tests define "the behavior". So long as those tests remain passing, you're refactoring.
@@ -2162,5 +2166,5 @@ class ShuntingYardAlgorithmTest < Test::Unit::TestCase
 end
 ```
 
-[<--Back]({{ site.pagesurl}}/ruby.tutorials)
+[<--Back]({{ site.pagesurl}}/ruby.Tutorials)
 

@@ -14,16 +14,16 @@ These tutorials are meant to be followed in order.
 ----
 
 ### Test Drive Development using Test::Unit
-|[Using TDD to Develop a Basic Algorithm]({{ site.pagesurl}}/ruby.tutorials.tdd.UsingTddToDevelopABasicAlgorithm)|**[Print](http://schuchert.wikispaces.com/ruby.tutorials.tdd.UsingTddToDevelopABasicAlgorithm?f=print)**|
-|[Using TDD to Develop an RPN Calculator]({{ site.pagesurl}}/ruby.tutorials.tdd.UsingTddToDevelopAnRpnCalculator)| TBD PRINT |
-|[Using TDD to Develop a Partial Monopoly Solution]({{ site.pagesurl}}/ruby.tutorials.tdd.UsingTddToDevelopAPartialMonopolySolution) | TBD PRINT |
+* [Using TDD to Develop a Basic Algorithm]({{ site.pagesurl}}/ruby.tutorials.tdd.UsingTddToDevelopABasicAlgorithm)
+* [Using TDD to Develop an RPN Calculator]({{ site.pagesurl}}/ruby.tutorials.tdd.UsingTddToDevelopAnRpnCalculator)
+* [Using TDD to Develop a Partial Monopoly Solution]({{ site.pagesurl}}/ruby.tutorials.tdd.UsingTddToDevelopAPartialMonopolySolution) 
 
 ----
 
 ### Behavior Driven Development with RSpec
-|[Using BDD to Develop a Basic Algorithm]({{ site.pagesurl}}/ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm) | **[Print](http://schuchert.wikispaces.com/ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm?f=print)** |
-|[Using BDD to Develop an RPN Calculator]({{ site.pagesurl}}/ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator)  | **[Print](http://schuchert.wikispaces.com/ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator?f=print)** |
-|[Using BDD to Develop a Partial Monopoly Solution]({{ site.pagesurl}}/ruby.tutorials.bdd.UsingBddToDevelopAPartialMonopolySolution) | **TBD PRINT** |
+* [Using BDD to Develop a Basic Algorithm]({{ site.pagesurl}}/ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm) 
+* [Using BDD to Develop an RPN Calculator]({{ site.pagesurl}}/ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator)  
+* [Using BDD to Develop a Partial Monopoly Solution]({{ site.pagesurl}}/ruby.tutorials.bdd.UsingBddToDevelopAPartialMonopolySolution) 
 | Developing a Lost and Found System | TBD PRINT |
 
 ----
