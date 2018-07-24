@@ -17,10 +17,10 @@ Before you begin, you'll need to setup and configure your environment. To do tha
 Note, these examples are written to mimic how I present them in a workshop environment. That is deliberate. I'm hoping you'll work through these examples on your own similar to how I'd have people work through them in a workshop environment.
 
 Examples meant to get you up to speed on self-defining what AOP means:
-* [[AspectJ Example 1]] or you can get the [PrintLayout]({{ site.pagesurl}}/AspectJ Example 1 PrintLayout)
-* [[AspectJ Example 2]]
-* [[AspectJ Example 3]]
-* [[AspectJ Example 4]]
+* [[AspectJ_Example_1]] or you can get the [PrintLayout]({{ site.pagesurl}}/AspectJ_Example_1 PrintLayout)
+* [[AspectJ_Example_2]]
+* [[AspectJ_Example_3]]
+* [[AspectJ_Example_4]]
 
 The following examples and exercises may be performed in any order. The listing below seems to work alright:
 * [CFlow]({{ site.pagesurl}}/AspectJ CFlow)

@@ -40,4 +40,4 @@ Finally, I'll provide a list of exercises to:
 # Expand what the original exercise was doing
 # Attempt to find some limits to the technique
 
-This form is meant to be a condensed form of the one used on examples like [[AspectJ Example 1]].
+This form is meant to be a condensed form of the one used on examples like [[AspectJ_Example_1]].

@@ -250,7 +250,7 @@ None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 ^
 |-|-|
 |Line|Description|
-|5|We construct an address. In [[AspectJ Example 4] this did not cause a change because construction did not cause anything to be initialized. In [ this exercise]({{ site.pagesurl}}/AspectJEX4ApplyYourself#ExperimentConstructorUpdatesAddress) we found out that if it had, it would cause Address to be changed. We managed to change that by using cflow.|
+|5|We construct an address. In [[AspectJ_Example_4] this did not cause a change because construction did not cause anything to be initialized. In [ this exercise]({{ site.pagesurl}}/AspectJEX4ApplyYourself#ExperimentConstructorUpdatesAddress) we found out that if it had, it would cause Address to be changed. We managed to change that by using cflow.|
 
 [[#SaveMethodAspect]]
 ## SaveMethodAspect.java

@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_Start
 ---
-I'm still trying out different formats. I have the long format as demonstrated by [Example 1]({{ site.pagesurl}}/AspectJ Example 1), [Example 2]({{ site.pagesurl}}/AspectJ Example 2), [Example 3]({{ site.pagesurl}}/AspectJ Example 3) and [Example 4]({{ site.pagesurl}}/AspectJ Example 4). I've got two different approaches for this example:
+I'm still trying out different formats. I have the long format as demonstrated by [Example 1]({{ site.pagesurl}}/AspectJ_Example_1), [Example 2]({{ site.pagesurl}}/AspectJ_Example_2), [Example 3]({{ site.pagesurl}}/AspectJ_Example_3) and [Example 4]({{ site.pagesurl}}/AspectJ_Example_4). I've got two different approaches for this example:
 
 ## [Version 1]({{ site.pagesurl}}/AspectJ Annotation Experience)
 This version follows [[ShortExerciseOutline]] as described in the [[Experiential Learning]] section.

@@ -6,7 +6,7 @@ title: AspectJ_Annotation_Experience
 # AspectJ Annotation: Experience
 Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If you'd like to know how to set up a project using it, [click here]({{ site.pagesurl}}/ExtractingSourceFilesIntoProject).
 
-This example is written in a way that it is meant to follow: [[AspectJ Example 3]] and [[AspectJ Example 4]]. I specifically leave out details unchanged from those examples.
+This example is written in a way that it is meant to follow: [[AspectJ_Example_3]] and [[AspectJ_Example_4]]. I specifically leave out details unchanged from those examples.
 
 Now we'll introduce selecting pointcuts augmented by annotations. Begin by reviewing the following Java files and the expected output. Based on all of that information, your assignment is to describe what is happening and try to guess how it is happening. Note that the code provided here is somewhat stripped down to reduce what you have to look at. Later, we provide the full source in the [Explained]({{ site.pagesurl}}/AspectJ Annotation Explained) section.
 ----

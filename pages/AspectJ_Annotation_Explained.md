@@ -251,7 +251,7 @@ The key change to this class is on line 17 where we ignore fields with the annot
 29:     }
 30: }
 ```
-This Aspect is unchanged from [Example 4]({{ site.pagesurl}}/AspectJ Example 4). For details, see [Example 4 SaveMethodAspect]({{ site.pagesurl}}/AspectJEX4Explained#SaveMethodAspect).
+This Aspect is unchanged from [Example 4]({{ site.pagesurl}}/AspectJ_Example_4). For details, see [Example 4 SaveMethodAspect]({{ site.pagesurl}}/AspectJEX4Explained#SaveMethodAspect).
 
 ----
 ## InnerTypeAspect.java

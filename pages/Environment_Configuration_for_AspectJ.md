@@ -33,9 +33,9 @@ The following additional configuration sets will set your Eclipse configuration 
 * [[ExtractingSourceFilesIntoProject]]
 
 ## On to the examples
-* [[AspectJ Example 1]]
-* [[AspectJ Example 2]]
-* [[AspectJ Example 3]]
-* [[AspectJ Example 4]]
+* [[AspectJ_Example_1]]
+* [[AspectJ_Example_2]]
+* [[AspectJ_Example_3]]
+* [[AspectJ_Example_4]]
 
 [<--Back]({{ site.pagesurl}}/AspectJ Self Study) [Next-->]({{ site.pagesurl}}/Eclipse VM Configuration for AspectJ)

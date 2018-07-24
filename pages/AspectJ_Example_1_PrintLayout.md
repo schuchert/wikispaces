@@ -3,7 +3,7 @@ title: AspectJ_Example_1_PrintLayout
 ---
 [<--Back]({{ site.pagesurl}}/AspectJ Self Study)
 
-[[include page="AspectJ Example 1"]]
+[[include page="AspectJ_Example_1"]]
 [[include page="AspectJEX1ExpectedVersusActualOutput"]]
 [[include page="AspectJEX1FormTheory"]]
 [[include page="AspectJEX1Possibilities"]]

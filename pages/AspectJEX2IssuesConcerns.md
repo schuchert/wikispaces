@@ -1,7 +1,7 @@
 ---
 title: AspectJEX2IssuesConcerns
 ---
-[<--Back]({{ site.pagesurl}}/AspectJEX2AssignmentIssues) [Next-->]({{ site.pagesurl}}/AspectJ Example 3)
+[<--Back]({{ site.pagesurl}}/AspectJEX2AssignmentIssues) [Next-->]({{ site.pagesurl}}/AspectJ_Example_3)
 
 # Issues/Concerns
 Here are some issues and concerns that I've heard people mention:
@@ -10,4 +10,4 @@ Here are some issues and concerns that I've heard people mention:
 * How do you know what is happening in what order and when
 * ...
 
-[<--Back]({{ site.pagesurl}}/AspectJEX2AssignmentIssues) [Next-->]({{ site.pagesurl}}/AspectJ Example 3)
+[<--Back]({{ site.pagesurl}}/AspectJEX2AssignmentIssues) [Next-->]({{ site.pagesurl}}/AspectJ_Example_3)

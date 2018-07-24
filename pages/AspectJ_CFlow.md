@@ -9,7 +9,7 @@ Source files are here: [[file:AspectJCFlowsrc.zip]]. If you need instructions on
 In this exercise, you have all of the information you need to predict the output, unlike Examples 1 - 4.
 
 ## Code to Review
- This example closely follows [[AspectJ Example 4]], the only changes are the addition of a constructor to the Address class and an update to the pointcuts in FieldSetAspect.
+ This example closely follows [[AspectJ_Example_4]], the only changes are the addition of a constructor to the Address class and an update to the pointcuts in FieldSetAspect.
 ----
 ### Address.java
 Note, just a partial listing.
