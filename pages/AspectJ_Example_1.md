@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Example_1
 ---
-[<--Back]({{ site.pagesurl}}/AspectJ Self Study) [Next-->]({{ site.pagesurl}}/AspectJEX1ExpectedVersusActualOutput)
+[<--Back]({{_site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/AspectJEX1ExpectedVersusActualOutput)
 
 Source files are here: [[file:AspectJEx1src.zip]]. If you need instructions on what do with these files, try [here]({{ site.pagesurl}}/ExtractingSourceFilesIntoProject).
 
@@ -61,4 +61,4 @@ public class MethodExecutionExample {
 ## Predict the output
 Before continuing on, please predict the output from these two files.
 
-[<--Back]({{ site.pagesurl}}/AspectJ Self Study) [Next-->]({{ site.pagesurl}}/AspectJEX1ExpectedVersusActualOutput)
+[<--Back]({{_site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/AspectJEX1ExpectedVersusActualOutput)

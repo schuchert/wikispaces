@@ -310,7 +310,7 @@ For the purpose,
 * [Story Guidelines]({{site.pagesurl}}/Story_Guidelines)
 * [Lightweight Domain Analysis]({{site.pagesurl}}/Lightweight_Domain_Analysis)
 * [Must, Should, Could, Won't]({{site.pagesurl}}/Must,_Should,_Could,_Won't)
-* [Making Meetings Work]({{site.pagesurl}}/Making Meetings_Work)
+* [Making Meetings Work]({{site.pagesurl}}/Making_Meetings_Work)
 * [Estimation and Story Points]({{site.pagesurl}}/Estimation_and_Story_Points)
 * [Release Planning]({{site.pagesurl}}/Release_Planning)
 * [Iteration Alpha and Omega]({{site.pagesurl}}/Iteration_Alpha_and_Omega)

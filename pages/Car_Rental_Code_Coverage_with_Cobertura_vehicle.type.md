@@ -2,7 +2,7 @@
 title: Car_Rental_Code_Coverage_with_Cobertura_vehicle.type
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/Car Rental Code Coverage with Cobertura)  [Next-->]({{ site.pagesurl}}/Car Rental Code Coverage with Cobertura vehicle.exception)
+[<--Back]({{_site.pagesurl}}/Car_Rental_Code_Coverage_with_Cobertura)  [Next-->]({{_site.pagesurl}}/Car_Rental_Code_Coverage_with_Cobertura_vehicle.exception)
 
 # Package: vehicle.type
 
@@ -120,4 +120,4 @@ Adding in the missing test methods improved the coverage. There still the matter
 
 ## Conclusions
 
-[<--Back]({{ site.pagesurl}}/Car Rental Code Coverage with Cobertura)  [Next-->]({{ site.pagesurl}}/Car Rental Code Coverage with Cobertura vehicle.exception)
+[<--Back]({{_site.pagesurl}}/Car_Rental_Code_Coverage_with_Cobertura)  [Next-->]({{_site.pagesurl}}/Car_Rental_Code_Coverage_with_Cobertura_vehicle.exception)

@@ -1,10 +1,10 @@
 ---
 title: Spring_Templates_JDBC_Using_Template_Method_Pattern
 ---
-[<--Back]({{ site.pagesurl}}/Spring Templates Typical JDBC) [Next-->]({{ site.pagesurl}}/Spring Templates JDBC Strategy Is A Template)
+[<--Back]({{_site.pagesurl}}/Spring_Templates_Typical_JDBC) [Next-->]({{_site.pagesurl}}/Spring_Templates_JDBC_Strategy_Is_A_Template)
 
 # JDBC Using the Template Method Pattern
-This version uses the [GoF design pattern](http://en.wikipedia.org/wiki/Design_Patterns) [Template Method](http://en.wikipedia.org/wiki/Template_method_pattern). For more details, take a look at this [Template Method Pattern Example]({{ site.pagesurl}}/Template Method Pattern).
+This version uses the [GoF design pattern](http://en.wikipedia.org/wiki/Design_Patterns) [Template Method](http://en.wikipedia.org/wiki/Template_method_pattern). For more details, take a look at this [Template Method Pattern Example]({{_site.pagesurl}}/Template_Method_Pattern).
 
 In this case, we've factored out much of the code in the a base class called AbstractTemplateMethod. We have one concrete implementation of this class called Example2. The driver class, JdbcExample, now uses Exmaple2 to:
 * Install the schema
@@ -200,4 +200,4 @@ In this case, we've factored out much of the code in the a base class called Abs
 ### Interesting Lines
 |Line|Description|
 
-[<--Back]({{ site.pagesurl}}/Spring Templates Typical JDBC) [Next-->]({{ site.pagesurl}}/Spring Templates JDBC Strategy Is A Template)
+[<--Back]({{_site.pagesurl}}/Spring_Templates_Typical_JDBC) [Next-->]({{_site.pagesurl}}/Spring_Templates_JDBC_Strategy_Is_A_Template)

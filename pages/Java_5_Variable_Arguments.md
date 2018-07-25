@@ -9,10 +9,10 @@ title: Java_5_Variable_Arguments
 This article uses Log4J as a vehicle to describe Java 5 Variable Augments through a concrete example.
 
 There are 4 versions of the same program:
-* [Version 1]({{ site.pagesurl}}/Java 5 Variable Arguments#Mainv1): A typical use that does not wrap as is typical
-* [Version 2]({{ site.pagesurl}}/Java 5 Variable Arguments#Mainv2): Same as version 1 but uses a convenience method in the String class
-* [Version 3]({{ site.pagesurl}}/Java 5 Variable Arguments#Mainv3): Shows what we should do using the existing interface
-* [Version 4]({{ site.pagesurl}}/Java 5 Variable Arguments#Mainv4): Shows a new interface using Java 5 variable arguments
+* [Version 1]({{_site.pagesurl}}/Java_5_Variable_Arguments#Mainv1): A typical use that does not wrap as is typical
+* [Version 2]({{_site.pagesurl}}/Java_5_Variable_Arguments#Mainv2): Same as version 1 but uses a convenience method in the String class
+* [Version 3]({{_site.pagesurl}}/Java_5_Variable_Arguments#Mainv3): Shows what we should do using the existing interface
+* [Version 4]({{_site.pagesurl}}/Java_5_Variable_Arguments#Mainv4): Shows a new interface using Java 5 variable arguments
 
 ## Version 1
 Here is a typical example of using Log4J with a simple utility class that:

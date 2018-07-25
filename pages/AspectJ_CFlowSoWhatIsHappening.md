@@ -1,7 +1,7 @@
 ---
 title: AspectJ_CFlowSoWhatIsHappening
 ---
-[<--Back]({{ site.pagesurl}}/AspectJ CFlowWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJ CFlowExplained)
+[<--Back]({{_site.pagesurl}}/AspectJ_CFlowWhatIsHappening) [Next-->]({{_site.pagesurl}}/AspectJ_CFlowExplained)
 
 ## So What Is Happening?
 Here are some descriptions I’ve heard some people mention:
@@ -10,4 +10,4 @@ Here are some descriptions I’ve heard some people mention:
 * The execution control flow enables or disables pointcuts.
 * ...
 
-[<--Back]({{ site.pagesurl}}/AspectJ CFlowWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJ CFlowExplained)
+[<--Back]({{_site.pagesurl}}/AspectJ_CFlowWhatIsHappening) [Next-->]({{_site.pagesurl}}/AspectJ_CFlowExplained)

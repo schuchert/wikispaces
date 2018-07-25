@@ -5,7 +5,7 @@ title: FitNesse
 
 [Using The Source]({{ site.pagesurl}}/FitNesse.UsingTheSource)
  
-[Using Slim.Net with FitNesse]({{ site.pagesurl}}/Acceptance Testing.UsingSlimDotNetInFitNesse)
+[Using Slim.Net with FitNesse]({{_site.pagesurl}}/Acceptance_Testing.UsingSlimDotNetInFitNesse)
 
 ## [Development by Example, the FitNesse Way]({{ site.pagesurl}}/FitNesse.DevelopmentByExampleTheFitNesseWay)
 

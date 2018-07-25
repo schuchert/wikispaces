@@ -2,7 +2,7 @@
 title: EJB3_Tutorial_1_-_Getting_Started_with_JBoss_Embedded_Container
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/EJB 3 and Java Persistence API)
+[<--Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
 
 # Getting Started with the JBoss Embedded Container
 
@@ -32,4 +32,4 @@ Most of this tutorial is about configuration and utility methods. We will use th
 ## Exercises
 [[include page="EJB3 Tutorial 1 - Exercises"]]
 
-[<--Back]({{ site.pagesurl}}/EJB 3 and Java Persistence API)
+[<--Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)

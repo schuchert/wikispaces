@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Example_3
 ---
-[<--Back]({{ site.pagesurl}}/AspectJ Self Study) [Next-->]({{ site.pagesurl}}/AspectJEX3ExpectedVersusActualOutput)
+[<--Back]({{_site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/AspectJEX3ExpectedVersusActualOutput)
 
 # Predict the Output
 Source files are here: [[file:AspectJExample3src.zip]]. If you need instructions on what do with these files, try [here]({{ site.pagesurl}}/ExtractingSourceFilesIntoProject).
@@ -112,4 +112,4 @@ public class Main {
 ## Assignment: Predict the Output
 Given these 2 classes, predict the output. Please do so before continuing.
 
-[<--Back]({{ site.pagesurl}}/AspectJ Self Study) [Next-->]({{ site.pagesurl}}/AspectJEX3ExpectedVersusActualOutput)
+[<--Back]({{_site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/AspectJEX3ExpectedVersusActualOutput)

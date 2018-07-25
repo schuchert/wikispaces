@@ -2,7 +2,7 @@
 title: JPA_Tutorial_2_-_Working_with_Queries_1
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/EJB 3 and Java Persistence API)
+[<--Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
 
 # JPA Tutorial 2 - Working with Queries 1
 [[include page="Tutorial 2 - Background"]]
@@ -40,4 +40,4 @@ For this next section, where you see **<project>**, replace it with **JpaTutoria
 [[Tutorial 2 - Second Example]]
 [[Tutorial 2 - One Example Solution]]
 
-[<--Back]({{ site.pagesurl}}/EJB 3 and Java Persistence API)
+[<--Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)

@@ -11,4 +11,4 @@ As a user I want to be able to calculate the sin of an angle in degrees so that 
 * [180] <sin> -> [0]
 * [270] <sin> -> [-1]
 
-[<--Back]({{ site.pagesurl}}/RPN Calculator)
+[<--Back]({{_site.pagesurl}}/RPN_Calculator)

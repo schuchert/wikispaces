@@ -1,7 +1,7 @@
 ---
 title: AspectJ_CFlowIssuesConcerns
 ---
-[<--Back]({{ site.pagesurl}}/AspectJ CFlowAssignmentIssues) [Next-->]({{ site.pagesurl}}/AspectJ Self Study)
+[<--Back]({{_site.pagesurl}}/AspectJ_CFlowAssignmentIssues) [Next-->]({{_site.pagesurl}}/AspectJ_Self_Study)
 
 ## Issues/Concerns
 Here are some issues/concerns I’ve heard people mention:
@@ -10,4 +10,4 @@ Here are some issues/concerns I’ve heard people mention:
 * This can be done using regular OO techniques
 * …
 
-[<--Back]({{ site.pagesurl}}/AspectJ CFlowAssignmentIssues) [Next-->]({{ site.pagesurl}}/AspectJ Self Study)
+[<--Back]({{_site.pagesurl}}/AspectJ_CFlowAssignmentIssues) [Next-->]({{_site.pagesurl}}/AspectJ_Self_Study)

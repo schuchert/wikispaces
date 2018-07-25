@@ -1,7 +1,7 @@
 ---
 title: Eclipse_Java_Project_Preferences_for_AspectJ
 ---
-[<--Back]({{ site.pagesurl}}/Eclipse Java Language Preferences for AspectJ) [Next-->]({{ site.pagesurl}}/Save Workspace Configurations for AspectJ)
+[<--Back]({{_site.pagesurl}}/Eclipse_Java_Language_Preferences_for_AspectJ) [Next-->]({{_site.pagesurl}}/Save_Workspace_Configurations_for_AspectJ)
 
 In these examples, I have Eclipse configured to use separate src and bin directories. This is an optional step.
 
@@ -15,4 +15,4 @@ In Eclipse:
 # In **Output folder name:** enter **bin** (this is the default value)
 # Click **OK**
 
-[<--Back]({{ site.pagesurl}}/Eclipse Java Language Preferences for AspectJ) [Next-->]({{ site.pagesurl}}/Save Workspace Configurations for AspectJ)
+[<--Back]({{_site.pagesurl}}/Eclipse_Java_Language_Preferences_for_AspectJ) [Next-->]({{_site.pagesurl}}/Save_Workspace_Configurations_for_AspectJ)

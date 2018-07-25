@@ -2,7 +2,7 @@
 title: EJB3_Tutorial_5_-_Message_Driven_Beans
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/EJB 3 and Java Persistence API)
+[<--Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
 
 # Ejb3 Tutorial 5 - Message Drive Beans
 This tutorial is a derivative of one of the [JBoss tutorials](http://docs.jboss.org/ejb3/embedded/embedded-tutorial/mdb-standalone/) written using the embeddable container. In this tutorial we take the domain from [[EJB3 Tutorial 4 - Extended Context]] and add a new idea.
@@ -1100,4 +1100,4 @@ public class AccountInventoryBeanTest {
 </classpath>
 ```
 
-[<--Back]({{ site.pagesurl}}/EJB 3 and Java Persistence API)
+[<--Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)

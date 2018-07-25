@@ -1,7 +1,7 @@
 ---
 title: JBossEX1ExpectedVersusActualOutput
 ---
-[<--Back]({{ site.pagesurl}}/JBoss AOP Example 1) [Next-->]({{ site.pagesurl}}/JBossEX1FormTheory)
+[<--Back]({{_site.pagesurl}}/JBoss_AOP_Example_1) [Next-->]({{ site.pagesurl}}/JBossEX1FormTheory)
 
 ## Expected Output
 Did you guess the output would look something like this?
@@ -39,4 +39,4 @@ Entering: public static void ex1.MethodExecutionExample.staticMethod()
 Leaving: public static void ex1.MethodExecutionExample.staticMethod()
 ```
 
-[<--Back]({{ site.pagesurl}}/JBoss AOP Example 1) [Next-->]({{ site.pagesurl}}/JBossEX1FormTheory)
+[<--Back]({{_site.pagesurl}}/JBoss_AOP_Example_1) [Next-->]({{ site.pagesurl}}/JBossEX1FormTheory)
