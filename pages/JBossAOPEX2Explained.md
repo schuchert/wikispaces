@@ -14,13 +14,13 @@ Notice in both of these examples, we are somehow accessing an instance field of 
 This example examines all changes to fields on the Address object. When an attempt is made to set a field of a class, the interceptor gets the current field value and then displays the current value and the value on the right hand side of assignment.
 
 Remember that when we’re working with AOP, we have to consider “what” and “where”.  For this example:
-> **What:** Capture assignment to fields and display the current value and the next value.
-> **Where:** Every field in the Address class.
+* **What:** Capture assignment to fields and display the current value and the next value.
+* **Where:** Every field in the Address class.
 
 To make this example work, we need two additional things:
 * SetInterceptor.java
 * jboss-aop.xml
-----
+
 ## SetInterceptor.java
 ```java
 01: package ex2;
@@ -53,12 +53,13 @@ To make this example work, we need two additional things:
 28: }
 ```
 ### Interesting Lines
+
 |Line|Description|
 |14|This is the method called whenever the a field is set that matches the pointcut. We can choose to allow the get/set to continue by calling invocation.invokeNext(). We can do work before or after that depending on our needs.|
 |15|We only care about sets, if the type of this invocation is not a FieldWriteInvocation (set), simply return the result of performing the invocation.invokeNext(). The only other option is accessing a field, so allow the access to happen and return the value.|
 |19|Get the value on the right-hand side of the assignment operator.|
 |20 - 22|Get the current value of the field.|
-----
+
 ## jboss-aop.xml
 ```xml
 01: <aop>
@@ -70,7 +71,9 @@ To make this example work, we need two additional things:
 07:    
 08: </aop>
 ```
+
 ### Interesting Lines
+
 |Line|Description|
 |3 - 4|Define a pointcut that matches all sets of private fields of type String on all classes called Address. If we wanted to get all types, we could replace "java.lang.String" with "*". If we didn't care if the field was private, simply leave private out.|
 |6 - 8|Bind the pointcut defined above to the SetInterceptor class.|

@@ -5,6 +5,7 @@ title: iPhone.setup.xcode3
 
 # The Video
 [media_type="custom"_key="8643826"]({{site.pagesurl}}/media_type="custom"_key="8643826")
+
 # Basic Application Setup
 These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in this version, you can assume these steps are fragile. If they fail for you, please send me an email (schuchert -at- yahoo -dot- com) and let me know the version of XCode you are using. I'll see if I can figure it out. If you've solved the problem, let me know and I'll update these notes. Or, if you are feeling ambitious, I'll give you permission to update the notes.
 
@@ -23,6 +24,7 @@ These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in 
 What follows derives heavily from [the gh-unit documentation](http://gabriel.github.com/gh-unit/_installing.html).
 # Add a new Target
 * Add a new target to your project. Right-click (control-click) on //**Targets**// and select //**Add:New Target..**//
+
 ![](images/CreateNewTarget.jpg)
 * Select //**iOS:Cocoa Touch:Application**//
 * Give it a descriptive name, for this tutorial I'll use //**UnitTests_onIPhoneSimulator**//
@@ -56,6 +58,7 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 ** Build, command-b
 ** Run, command-r
 ** When the simulator starts, click on //**Run**//. There are no tests, so it finishes quickly.
+
 # Add a first test
 * Under //**Targets**//, right-click  //**UnitTests_oniPhoneSimulator**//
 * Select //**Add:New File**//
@@ -66,7 +69,8 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 * Verify that only the correct target (UnitTests_oniPhoneSimulator) is selected.
 * Click //**Finish**//
 * Enter the following test code:
-```
+
+```obj-c
 //
 //  ItShouldHaveSmoke.m
 //  Tutorial
@@ -97,6 +101,7 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 }
 @end
 ```
+
 * Build, command-b
 * Run, command-r
 * You should see the simulator start. If you still had it running, XCode will warn you that it needs to stop the simulator. Select //**OK**// to do so.
@@ -111,6 +116,7 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 
 Congratulations, you have your first test working.
 # Set Unit Test Executable Settings
+
 Review// **GHUnitIOSTestMain.m**//. Notice that it recommends editing your unit test executable and setting the following properties:
 |~ Property Name|~ Default Value|~ Recommended Setting |
 |NSDebugEnabled|                        NO      |YES|
@@ -120,6 +126,7 @@ Review// **GHUnitIOSTestMain.m**//. Notice that it recommends editing your unit 
 |NSEnableAutoreleasePool|YES|NO|
 |NSAutoreleaseFreedObjectCheckEnabled|NO|YES|
 |GHUNIT_AUTORUN|NO|YES|
+
 Note, the last one is one I recommend. This will make your tests run automatically.
 
 To make create these environment settings:
@@ -128,6 +135,7 @@ To make create these environment settings:
 * Right-click, Get Info (command-I)
 * In the bottom window, click the +, add a field and set its value
 * Re-run your tests to make sure they work as expected
+
 Now the hard part starts.
 
 # Now Really Setting Things Up
@@ -136,10 +144,10 @@ Now the hard part starts.
 * Link to it from the UI project
 * Link to it from the Unit Test Project
 # A Few Handy Shortcut Keys
+
 | Command-r | run application |
 | Command-b | quick open |
 | F3 | mapped to Edit:Find:Jump to Definition |
 | Command-alt up-arrow | Switch between .h and .m |
-
 
 [<-- Back]({{ site.pagesurl}}/iPhone)

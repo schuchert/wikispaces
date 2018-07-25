@@ -53,7 +53,7 @@ Calls to the MethodInterceptor.invoke() method are placed into target classes ba
 |Lines|Description|
 |18|This line calls the provided invocation object's invokeNext() method. Since we only have one aspect, this calls the target method. If we had multiple aspects targeting the same method, invoke next would call the next aspect to do its thing. What happens if instead of calling invocation.invokeNext() you just return? Well the method will not be called. If you do this, you must return something that can be converted to the expected return type.|
 |12|Note the signature returns Object. If the underlying method has a void return or if it returns a primitive, you still use Object. The details are taken care of for you.|
-----
+
 ### jboss-aop.xml
 ```xml
 01: <aop> 
@@ -66,6 +66,7 @@ Calls to the MethodInterceptor.invoke() method are placed into target classes ba
 08:    </bind> 
 09: </aop> 
 ```
+
 |Lines|Description|
 |2 – 3|Define a pointcut, a selection of joinpoints. This creates a name, MethodExecution, which matches the execution of all public methods on MethodExecutionExample named anything (->*) taking any parameters (..). Defining a pointcut itself does not make anything happen. Next we associate the pointcut with an interceptor.|
 |5 - 8|When any of the joinpoints matched by the MethodExecution pointcut are hit, call the invoke method of the MethodInterceptor class instead. That is, the invoke() method decides what to do instead of the original code.|

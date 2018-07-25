@@ -6,18 +6,18 @@ In this first tutorial we are going to perform some basic inserts, removes and q
 JPA allows us to work with entity classes, which are denoted as such using the annotation @Entity or configured in an XML file (we'll call this **persistence meta information**). When we acquire the **Entity Manager Factory** using the **Persistence** class, the **Entity Manager Factory** finds and processes the **persistence meta information**.
 
 To work with a database using JPA, we need an **Entity Manager**. Before we can do that, we need to create an **Entity Manager Factory.** 
-> ![](images/EntityManagerFactory.jpeg)
-----
-> ![](images/PersistenceSequence.jpg)
+![](images/EntityManagerFactory.jpeg)
+
+![](images/PersistenceSequence.jpg)
 
 To acquire an **Entity Manager Factory**, we use the class **javax.persistence.Persistence**. It reads a file called persistence.xml in the META-INF directory. It then creates the named **Entity Manager Factory**, which processes persistence meta information stored in XML files or annotations (we only use annotations).
 
 Creating an **Entity Manager** once we have the **Entity Manager Factory** is simple:
-> ![](images/CreateEntityManager.jpeg)
+![](images/CreateEntityManager.jpeg)
 
 Once we have an **Entity Manager**, we can ask it to perform several operations such as persisting or removing an entity from the database or creating a query.
 
-|~ Term|~ Description|
+| Term | Description |
 |javax.persistence.Persistence|This is a class used as an entry point for using JPA. The primary method you'll use on this class is createEntityManagerFactory("someName") to retrieve an entity manager factory with the name "someName". This class **//requires//** a file called **persistence.xml** to be in the class path under a directory called **META-INF**. |
 | EntityManagerFactory | An instance of this class provides a way to create entity managers. Entity Managers are not multi-thread safe so we need a way to create one per thread. This class provides that functionality. The Entity Manager Factory is the in-memory representation of a Persistence Unit. |
 | EntityManager | An Entity Manager is **the** interface in your underlying storage mechanism. It provides methods for persisting, merging, removing, retrieving and querying objects. It is **not** multi-thread safe so we need one per thread. The Entity Manager also serves as a first level cache. It maintains changes and then attempts to optimize changes to the database by batching them up when the transaction completes. |

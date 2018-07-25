@@ -18,7 +18,7 @@ There are 4 versions of the same program:
 Here is a typical example of using Log4J with a simple utility class that:
 * Configures Log4J
 * Returns the logger for a provided class
-----
+
 [#Mainv1]({{site.pagesurl}}/#Mainv1)
 ## Main.java
 ```java
@@ -43,6 +43,7 @@ Here is a typical example of using Log4J with a simple utility class that:
 ```
 
 ### Interesting Lines
+
 |Line|Description|
 |14|Use a utility class to retrieve a logger for my class.|
 |16|Use the logger.|
@@ -62,7 +63,7 @@ You can use the new method [String.format](http://java.sun.com/j2se/1.5.0/docs/a
 Note that String.format is an example of a method whose parameters are defined using variable arguments.
 
 Here's the code for version 2:
-----
+
 [#Mainv2]({{site.pagesurl}}/#Mainv2)
 ## Main.java
 ```java
@@ -86,7 +87,9 @@ Here's the code for version 2:
 18:     }
 19: }
 ```
+
 ### Interesting Lines
+
 |Line|Description|
 |16 - 17|Use the String.format method to produce the same output as before.|
 
@@ -105,7 +108,7 @@ There's an "easy" fix. You can ask the logger if the level you're going to outpu
 It is ugly but it makes a big difference.
 
 Here's the code modified to take this into consideration:
-----
+
 [#Mainv3]({{site.pagesurl}}/#Mainv3)
 ## Main.java
 ```java
@@ -132,6 +135,7 @@ Here's the code modified to take this into consideration:
 21: }
 ```
 ### Interesting Lines
+
 |Line|Description|
 |16 - 19|Now we are wrapping our calls to the logger just in case we are not currently printing debugging information.|
 
@@ -141,7 +145,7 @@ This is ugly, error prone and a pain, right? But it really does make a big diffe
 This version has the advantages of versions 1 and 2 in terms of what you write. It also has most of the advantages of version 3 in terms of not doing work unnecessarily.
 
 First let's look at the use of the code:
-----
+
 [#Mainv4]({{site.pagesurl}}/#Mainv4)
 ## Main.java
 ```java
@@ -163,12 +167,13 @@ First let's look at the use of the code:
 16: }
 ```
 ### Interesting Lines
+
 |Line|Description|
 |14|What? This is just back to version 2, right?|
 |12|This was Logger, now it is ILogger.|
 
 To make this work, we first introduce an interface that uses Java 5 Variable Arguments:
-----
+
 [#ILogger]({{site.pagesurl}}/#ILogger)
 ## ILogger.java
 ```java
@@ -206,7 +211,9 @@ Next, we write a simple implementation for this interface. For now we'll just lo
 18:         return this;
 19:     }
 ```
+
 ### Interesting Lines
+
 |Line|Description|
 |14|This method uses variable arguments. You can tell this when you see **Object...**. It turns out that objects is simply an array of Objects. You can write objects[0] to get the first element (assuming there are some elements in it).|
 |15|Our wrapper performs the isDebugEnabled() check for us rather than having to do it everywhere where we use the logger.|
@@ -334,7 +341,7 @@ Here is the full implementation:
 ```
 
 And finally, for completeness, here are the final two files in this final example:
-----
+
 [#LoggingConfiguration]({{site.pagesurl}}/#LoggingConfiguration)
 ## LoggingConfiguration.java
 ```java
@@ -376,7 +383,7 @@ And finally, for completeness, here are the final two files in this final exampl
 36: 
 37: }
 ```
-----
+
 [#log4j_properties]({{site.pagesurl}}/#log4j_properties)
 ## log4j.properties
 ```

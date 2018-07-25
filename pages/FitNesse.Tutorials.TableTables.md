@@ -46,6 +46,7 @@ Next, consider the following simplifications:
 * Rather than specify each starting time, make the length of the name related to the program length, e.g., 4 letters is 1 hour, 1 letter is 15 minutes.
 
 With these changes, read this program guide:
+
 ```
 |Table:Create One Day Program Guide|1:00|3/4/2008| 
 |   |1   |2   |3   |4   |5   |6   |7   |8   |9   |10  |11  |12  |13  |14  |
@@ -61,6 +62,7 @@ Why do this? When I was testing the logic of selecting the correct programs with
 There is one problem with this setup. On DVRs, the length of the program is not related to the length of its name. This is an artificial simplification to make the table representation look decent. Even so, in practice this representation made writing tests easier at the expense of a more complex fixture, and that's the right choice to make.
 
 What you will do in the remainder of this tutorial is create a fixture to handle this new table type. Once you've done that, you'll recreate some of the tests from the previous tutorial using the table table for the setup.
+
 # Creating the table
 As with the previous tutorials, you'll create these tests under their own sub-hierarchy:
 * Create a suite-page for these tests here: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples>
@@ -68,6 +70,7 @@ As with the previous tutorials, you'll create these tests under their own sub-hi
 * Change its type to a suite page (//**Note**//, as of 4/15/09, FitNesse has been updated to automatically set the page type to a suite if it ends in "Examples". If you build from source or you happen to have a recent release with this feature built, you might not need to set the type to suite.)
 * Add a SetUp page. If the link exists on the [suite page](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples), you can click it (this feature was there, then removed and I added it back in again). If not, then go to this URL to create the setup page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp>
 * Set its contents to:
+
 ```
 !include <DigitalVideoRecorderExamples.SetUp
 
@@ -92,6 +95,7 @@ Notice that this borrows the Scenario table and script table from the [SetUp](ht
 Next, we need a test that uses this <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp>
 * Create a new test page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.DvrThatCanRecordTwoProgramsAtaTimeExample>
 * Set its contents to: 
+
 ```
 |Scenario|A Two Recorder Dvr With These Season Passes|seasonPasses|Should Have These Episodes In To Do List|toDoList|
 |Dvr Can Simultaneously Record | 2 | And With These |@seasonPasses|Should Have The Following|@toDoList|
@@ -100,10 +104,12 @@ Next, we need a test that uses this <http://localhost:8080/FrontPage.DigitalVide
 |seasonPasses                                |toDoList                               |
 |cccccccc:200,FF:302                         |cccccccc:E:1-1,FF:E:1-1                |
 ```
+
 * You might need to set this page to a test page. As of 4/15/09, the FitNesse source will automatically set the test page type for pages that begin with or end with the word "Example" (in addition to the word "Test"). However, you might not have the latest release.
 * Finally, you have a complete test with SetUp and TearDown code. Run it and notice that the test fails. It cannot find the class "Create One Day Program Guide", which is required by the Table Table.
 ## Create the Fixture
 * Create version 1 of the fixture:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -138,6 +144,7 @@ The minimal requirement for the fixture is a doTable method as shown above. Sinc
 ```
 
 * Execute this test and review the output (click on the yellow triangle with an ! in it):
+
 ```
 |1|2|3|4|5|6|7|8|9|10|11|12|13|14|
 |200|aaaa|BBcc|cccc|ccDD|DDee|efff|ffff|fffg|gggg|gggh|hhii|jklm|nopq|rstt|
@@ -148,14 +155,15 @@ The minimal requirement for the fixture is a doTable method as shown above. Sinc
 ```
 
 Does this look familiar? This gives a hint at just what a table-table does. FitNesse simply passes in the entire table (minus the first row) in the form of a list of a list of strings:
-* The outside list represents the collection of rows. The first entry is actually the second row of the actual table, FitNesse does not pass in the row naming the fixture. (We're goig to ignore that row altogether in this tutorial, it's there for documentation).
+* The outside list represents the collection of rows. The first entry is actually the second row of the actual table, FitNesse does not pass in the row naming the fixture. (We're going to ignore that row altogether in this tutorial, it's there for documentation).
 * The inside list represents the individual cells within a given row. In our case, the first cell is the channel. The remaining cells represent an hour of programming.
 
 With that basic understanding, now it is time to process an individual row. This fixture (and in general, table-table fixtures) can be complex enough to warrant unit test code. Why is that? You are trying to make a table that is easy for a non-programmer to be able to use effectively; something that is closer to the problem domain. Because the table is closer to the domain and further away from the implementation, it will require some amount of coding.
 # Switch to Unit Testing
-Our fixture needs to be able process a series of rows, each of which represent the a channel of programming. That's where we'll start with unit testing.
+Our fixture needs to be able process a series of rows, each of which represent a channel of programming. That's where we'll start with unit testing.
 ## Create the First Test
-* This first test simply puts most of the basic API in palce:
+* This first test simply puts most of the basic API in place:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -176,8 +184,10 @@ public class ProgramGuideRowParserTest {
    }
 }
 ```
-//**Purpose**//: The purpose of this test is to being defining the API by which row parsing will happen.
+
+**Purpose**: The purpose of this test is to being defining the API by which row parsing will happen.
 * Here's the minimal code to make this test pass:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -193,9 +203,11 @@ public class ProgramGuideRowParser {
    }
 }
 ```
+
 * Run the test, make sure it passes.
 * Next, add another test with one program and notice that this requires several changes:
 **Update: ProgramGuideRowParserTest, Add new test**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -246,7 +258,9 @@ public class ProgramGuideRowParserTest {
    }
 }
 ```
+
 **Update ProgramGuidRowPaser: Add constructor and method**
+
 ```java
    public ProgramGuideRowParser(Date buildDate) {
    }
@@ -254,9 +268,12 @@ public class ProgramGuideRowParserTest {
    public void setChannel(int channel) {
    }
 ```
+
 * Run your tests, they fail.
 * Add missing equals() methods:
+
 **Update: TimeSlot**:
+
 ```java
    @Override
    public boolean equals(Object other) {
@@ -268,7 +285,9 @@ public class ProgramGuideRowParserTest {
             && startDateTime.equals(rhs.startDateTime);
    }
 ```
+
 **Update: Program**
+
 ```java
    @Override
    public boolean equals(Object other) {
@@ -281,6 +300,7 @@ public class ProgramGuideRowParserTest {
    }
 ```
 * Finally, update the production code to get this test passing:
+
 ```java
 public class ProgramGuideRowParser {
    private int channel;
@@ -307,11 +327,13 @@ public class ProgramGuideRowParser {
 }
 ```
 * Run your tests, they should pass.
-//**Note**//: Did you notice that you just added equals() methods to Program and TimeSlot without adding unit tests to those same classes? Is this a problem? These methods are complex enough that there is certainly some risk in adding them. Also, in Java it is standard practice to write hashCode() when writing equals() just in case the object is used as a key in a Map. However, the code does not sore these objects as keys in Maps, so writing a hashCode() method, while conventional, is not really necessary.
+**Note**: Did you notice that you just added equals() methods to Program and TimeSlot without adding unit tests to those same classes? Is this a problem? These methods are complex enough that there is certainly some risk in adding them. Also, in Java it is standard practice to write hashCode() when writing equals() just in case the object is used as a key in a Map. However, the code does not sore these objects as keys in Maps, so writing a hashCode() method, while conventional, is not really necessary.
 
 These methods were written in response to a test, something more than a unit test, but a test none the less. Whether to add tests for the equals() method beyond what we've already written is not a clear yes or no decision, so I'll leave that to the reader since this is more about working with FitNesse than unit testing (in the book version of this tutorial, however, I'll probably take the other approach).
+
 ## Next Test: Getting Program Length Correct
 * Add this test:
+
 ```java
    @Test
    public void oneThirtyMinuteProgram() throws ParseException {
@@ -324,8 +346,10 @@ These methods were written in response to a test, something more than a unit tes
       assertEquals(expected, result.get(0));
    }
 ```
+
 * Run it and verify that it does not pass. 
 * Next, update the production code in ProgramGuideRowParser:
+
 ```java
    public List<Program> parse(String programsInCells) {
       List<Program> result = new LinkedList<Program>();
@@ -341,10 +365,13 @@ These methods were written in response to a test, something more than a unit tes
       return result;
    }
 ```
+
 * Run your tests, make sure they pass.
-//**Note**//: This is a somewhat refactored method. It will get longer and shorter as you work through this parsing exercise.
+**Note**: This is a somewhat refactored method. It will get longer and shorter as you work through this parsing exercise.
+
 ## Next Test: Handle two 30 minute programs
 * Add a new test (and update the @Before method):
+
 ```java
    @Before
    public void init() throws ParseException {
@@ -368,10 +395,13 @@ These methods were written in response to a test, something more than a unit tes
       assertEquals(expected1, result.get(1));
    }
 ```
-//**Note**//: You can remove the parser.setChannel(204) from the other two @Test methods since that duplicated method has be pushed up into the @Before method.
+
+**Note**: You can remove the parser.setChannel(204) from the other two @Test methods since that duplicated method has be pushed up into the @Before method.
 * Run your tests, the new one will.
 * Now make several updates to make this next test pass (and notice that the code is getting unruly):
+
 **Update: ProgramGuideRowParser.java**
+
 ```java
    public List<Program> parse(String programsInCells) {
       List<Program> result = new LinkedList<Program>();
@@ -420,7 +450,9 @@ These methods were written in response to a test, something more than a unit tes
       return DateUtil.instance().addMinutesTo(fromDate, lengthInMinutes);
    }
 ```
+
 **Update: DateUtil.java**
+
 ```java
    public Date addMinutesTo(Date fromDate, int minutes) {
       Calendar calendar = Calendar.getInstance();
@@ -430,8 +462,10 @@ These methods were written in response to a test, something more than a unit tes
    }
 ```
 * Run your tests, make sure they pass.
+
 ## Next Test: Ignore _ in name
 * FitNesse removes extra spaces on either side of the cell. To represent "no program", the example uses _. Here's a test that verifies the production code handles _'s correctly:
+
 ```java
    @Test
    public void underscoredIgnored() throws ParseException {
@@ -443,8 +477,10 @@ These methods were written in response to a test, something more than a unit tes
       assertEquals(expected, result.get(0));
    }
 ```
+
 * After adding this test, verify that it fails.
 * Now, update the parser to handle this condition (note, this is after several rounds of refactoring, with much refactoring still left):
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -515,9 +551,13 @@ public class ProgramGuideRowParser {
    }
 }
 ```
+
 * Run your tests, make sure the pass.
+
 ## Next Test: A cell with all spaces handled correctly
+
 * FitNesse will take an empty cell and pass in "", so here's a test to make sure the production code works: 
+
 ```java
    @Test
    public void emptyCellsHandeledCorrectly() throws ParseException {
@@ -529,8 +569,10 @@ public class ProgramGuideRowParser {
       assertEquals(expected, result.get(0));
    }
 ```
+
 * Run your tests, verify this new one fails.
 * Update your parser to get this test to pass:
+
 ```java
    public List<Program> parse(String programsInCells) {
       List<Program> result = new LinkedList<Program>();
@@ -546,9 +588,13 @@ public class ProgramGuideRowParser {
       return programs;
    }
 ```
+
 * Run your tests, make sure they pass.
+
 ## Final Test: One Big Row
+
 This algorithm is either close to complete or complete. Here's a final test that will bring everything together:
+
 ```java
    @Test
    public void verifyComplexParse() throws ParseException {
@@ -559,8 +605,10 @@ This algorithm is either close to complete or complete. Here's a final test that
       assertEquals(expectedLastProgram, result.get(4));
    }
 ```
+
 * Run your tests, make sure this new test fails (the underlying code is close but not quite there).
 * Here's the update to the parse method (post-refactoring):
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -645,15 +693,18 @@ public class ProgramGuideRowParser {
    }
 }
 ```
+
 * Make this change, verify that your tests pass.
 * Make sure all of your unit tests still pass.
 * Switch back to your browser and verify that all acceptance tests still pass (other than the one failing test).
+
 # Bringing it all together
 Now that you can parse a single row, there are a few things left before your table-table fixture will be ready:
 * Parse a row that contains both a channel and all of the programs.
 * Take all of the programs from all of the rows and add them to the program schedule.
 
 This will require several more steps, so let's get started.
+
 ## Refactor: The Name is wrong
 The name of the parser class is wrong, it only parses the programs not the whole row (it does not handle the channel).
 * Rename the class ProgramGuideRowParser --> ProgramGuideProgramCellsParser.
@@ -663,6 +714,7 @@ The name of the parser class is wrong, it only parses the programs not the whole
 
 ## Create the Real ProgramGuideRowParser
 * Create a new test class, ProgramGuideRowParserTest:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -688,8 +740,11 @@ public class ProgramGuideRowParserTest {
    }
 }
 ```
+
 * This requires two new classes:
+
 **Create: ProgramBuilderUtil.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -709,7 +764,9 @@ public class ProgramBuilderUtil {
    }
 }
 ```
+
 **Create: ProgramGuideRowParser**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -744,18 +801,24 @@ public class ProgramGuideRowParser {
    }
 }
 ```
+
 * Also, the new class ProgramBuilderUtil was extracted from the previous class:
+
 **Update: ProgramGuideProgramCellsParserTest.java**
+
 ```java
    private Program buildProgram(String date, String time, String name, int channel,
          int duration) throws ParseException {
       return ProgramBuilderUtil.buildProgram(date, time, name, channel, duration);
    }
 ```
+
 * Run all of your unit tests, make sure everything passes.
+
 ## Finally, upate the Table Fixture
 All the pieces are in place, now it's just a matter of creating the programs:
 * Update the CreateOneDayProgramGuide.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -801,7 +864,9 @@ public class CreateOneDayProgramGuide {
    }
 }
 ```
+
 * You'll need to add one method to Schedule:
+
 ```java
    public void addProgram(Program program) {
       if (conflictsWithOtherTimeSlots(program.timeSlot))
@@ -812,11 +877,14 @@ public class CreateOneDayProgramGuide {
 ```
 * Make sure all of your unit tests pass.
 * Make sure all of your acceptance tests pass.
+
 # Final Cleanup
 I made some false starts. For example, rather than having the ProgramGuideRowParser take in a String, it could easily have taken in a List<String> and did all of its work based on that. Also, the DvrRecording fixture requires a range of episodes, but the way this program fixture works, it only creates one episode per program. I'm sure you could review the fixtures and also the unit tests and production code and find several more places to refactor. Before you leave this tutorial, let's finish up with some basic refactoring of the Fixtures.
+
 ## Allow for a Single Episode
 After a little experimentation with the DvrRecording fixture, I discovered a simple change that allows a single value rather than a range. I tried a few values and ran the tests after each time.
 * Make the following update to DvrRecording (note, only the return statement in each of these methods changed):
+
 ```java
    private int extractLowerRangeFrom(String episodeSet) {
       // snip
@@ -830,16 +898,20 @@ After a little experimentation with the DvrRecording fixture, I discovered a sim
       return 1;
 	}
 ```
+
 * Run all of your unit tests, make sure they still pass.
 * Run all of your acceptance tests, make sure the still pass.
 * Update your acceptance test:
+
 ```
 |A Two Recorder Dvr With These Season Passes Should Have These Episodes In To Do List|
 |seasonPasses                                |toDoList                               |
 |cccccccc:200,FF:302                         |cccccccc:E:1,FF:E:1                    |
 ```
+
 * Run your acceptance test, make sure they all pass. Close, but not quite.
 * Make one more change to the DvrRecording fixture:
+
 ```java
    private int extractUpperRangeFrom(String episodeSet) {
       String[] values = episodeSet.split(":");
@@ -850,9 +922,12 @@ After a little experimentation with the DvrRecording fixture, I discovered a sim
       return 1;
    }
 ```
+
 * Run all of your unit tests and acceptance tests, they should all pass.
+
 ## Change ProgramGuideRowParser to take a List<String> instead of a String
 * Update ProgramGuideRowParserTest:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -888,7 +963,9 @@ public class ProgramGuideRowParserTest {
    }
 }
 ```
+
 * Update ProgramGuidRowParser:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -925,7 +1002,9 @@ public class ProgramGuideRowParser {
    }
 }
 ```
+
 * Update CreateOneDayProgramGuide:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -959,8 +1038,10 @@ public class CreateOneDayProgramGuide {
    }
 }
 ```
+
 * Run your unit tests, verify they still pass.
 * Run your acceptance tests, make sure they still pass.
+
 # Conclusion and Summary
 Congratulations, you have finished this tutorial.
 

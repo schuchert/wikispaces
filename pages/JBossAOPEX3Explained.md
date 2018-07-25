@@ -8,7 +8,6 @@ In this example, we add Introductions (adding an interface + implementation of t
 
 First, we introduce an interface, ITrackedObject, to Address. The implementation of this interface provides a single boolean field, changed, and the methods to maintain that field. Then, as fields are set, we check the existing value and and the new value. If there is a change, we set the changed state. Finally, we have a simulated Dao (Data Access Object) that can save the Address object. We intercept calls to the save() method and do not actually save the Dao if it is changed. We also change the state back to changed=false after a call to Dao.save().
 
-----
 ## Main.java
 This is the driver class that starts everything. Looking at this code, it does not seem to do too much...and it doesn't. 
 ```java
@@ -28,7 +27,7 @@ This is the driver class that starts everything. Looking at this code, it does n
 ```
 ### Interesting Lines
 There are no interesting lines here. Something to point out about this example is the significant change that happens without making changes to existing Java classes.
-----
+
 ## Dao.java
 This Dao is simulated. The point of this example is that we can intercept calls to some thing, a DAO in this case, and change the path of execution based on any condition. This class is unaware of any introductions. 
 ```java
@@ -42,9 +41,10 @@ This Dao is simulated. The point of this example is that we can intercept calls 
 08: 	}
 09: }
 ```
+
 ### Interesting Lines
 Again, there are no interesting lines. The client, Main.main(), did not change. The Dao.save() method also did not change. However, we are tracking whether or not objects changed and not calling Dao.save() if the object is not changed.
-----
+
 ## Address.java
 The thing to notice is that it is unaware of whether it is changed or not. This is a simple java bean style class with attributes, setters and getters and a no-argument constructor (in this case a default constructor). 
 ```java
@@ -103,7 +103,7 @@ The thing to notice is that it is unaware of whether it is changed or not. This 
 ```
 ### Interesting Lines
 Again, doesn't really apply. However, it *is* interesting that we know whether or not this object has changed even though looking at the class it's hard to see how.
-----
+
 ## The Introduction
 This is only part of the jboss-aop.xml file. It's the part that says to add an interface, ITrackedObject, to Address and provides an implementation of that interface in the form of TrackedObjectMixin: 
 ```xml
@@ -120,13 +120,14 @@ This is only part of the jboss-aop.xml file. It's the part that says to add an i
 11: </introduction>
 ```
 ### Interesting Lines
+
 |Line|Description|
 |1|Indicates to which classes this introduction applies. Wild-cards are OK.|
 |2 - 10|Add this mixin into the Address class. This mixin consists of three parts, an interface to add to Address, an implementation of that interface and a constructor to call for that mixin class.|
 |4|ITrackedObject is the interface to add to Address.|
 |6|TrackedObjectMixin implements ITrackedObject and will provide the implementation for Address. Essentially, all of the methods described in ITrackedObject will be added to Address. The implementation of those methods will be to call a the same method on instance variable added to an address.|
 |8|When creating a new instance of Address, call this constructor on TrackedObjectMixin.|
-----
+
 ## ITrackedObject.java
 This is simply an interface that has the methods for a Java-bean style boolean interface.
 ```java
@@ -137,7 +138,7 @@ This is simply an interface that has the methods for a Java-bean style boolean i
 05    void setChanged(boolean changed);
 06 }
 ```
-----
+
 ## TrackedObjectMixin.java
 This is an implementation of ITrackedObject. Our goal is to augment Address with this interface/implementation without Address' knowledge. Furthermore, we want to augment Dao.save(..) to not save unnecessarily; we do this without its knowledge as well.
 ```java
@@ -158,7 +159,7 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 15    }
 16 }
 ```
-----
+
 [#SetInterceptor]({{site.pagesurl}}/#SetInterceptor)
 ## SetInterceptor.java
 The SetInterceptor first intercepts each assignment to a field (as we have seen in other examples) but now it gets the current value and checks to see if the new value is different. If the new value is different, the SetInterceptor sets the underlying target object's changed state to true. There are three things worth noting:
@@ -212,13 +213,14 @@ The SetInterceptor first intercepts each assignment to a field (as we have seen 
 44 }
 ```
 ### Interesting Lines
+
 |Line|Description|
 |15|If this is not a set (FieldWriteInvocation), just continue what you were doing.|
 |18 – 19|Get the new value (what appears on the Right Hand Side of "=").|
 |20 – 22|Get the current value of the field (what appears on the Left Hand Side of "=").|
 |25|If the values are already equal, do not perform the assignment and return.|
 |27 – 28|The values are different, set changed to true on the introduced mixin then perform the assignment.|
-----
+
 ## SaveMethodInterceptor.java
 The SaveMethodInterceptor surrounds all calls to Dao.save(..). When called, it checks to see if the object passed into Dao.save(..) is or is not changed. If it is not changed, the call to Dao.save(..) never happens. Before completing, the changed state is set to false since either it was already false or it was true but then saved. As with the SetInterceptor, SaveMethodInterceptor is using behavior that has been introduced. Specifically, it uses isChanged() and setChanged(). 
 ```java
@@ -253,10 +255,12 @@ The SaveMethodInterceptor surrounds all calls to Dao.save(..). When called, it c
 29: }
 ```
 ### Interesting Lines
+
+|Line|Description|
 |18 - 20|If the state is changed, allow the save() to happen.|
 |20 - 24|The state is not changed, do not call save().|
 |26|Regardless of what happened, always set the state to unchanged.|
-----
+
 ## jboss-aop.xml
 Here is the full aspect configuration:
 ```xml
@@ -289,10 +293,11 @@ Here is the full aspect configuration:
 27: </aop>
 ```
 ### Interesting Lines
+
+|Line|Description|
 |15|Ignore changes to all fields defined in TrackedObjectMixin. This is absloutely necessary. If you forget this, when any field is changed, the SetInterceptor will set changed=true. When that happens, the SetInterceptor will notice that the changed field is changing from false to true and will set the changed state to true. When that happens, the SetInterceptor will notice that the changed field is changing from false to truen and will set the changed state to true. Repeat ad nausem (or until you get a stack overflow error).|
 |16|Capture sets of fields in all classes that implement ITrackedObject.|
 |18 – 20|When any field in any class that implements ITrackedObject is set (other than TrackedObjectMixin), e,g. this.name = "Brett", intercept that set with the class SetInterceptor.|
 |22 – 26|Intercept Dao->save(...) and allow the SaveMethodInterceptor to have a look first.|
-
 
 [<--Back]({{ site.pagesurl}}/JBossAOPEX3SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/JBossAOPEX3ApplyYourself)

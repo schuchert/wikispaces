@@ -5,6 +5,7 @@ title: iPhone.SettingUpTheEnvionment
 
 # UNDER CONSTRUCTION
 [Old Setup for XCode 3]({{ site.pagesurl}}/iPhone.setup.xcode3)
+
 # The Video
 
 # Basic Application Setup
@@ -38,6 +39,7 @@ These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in 
 ** File::New Workspace (^⌘N)
 ** Select a folder for the workspace. For this example I'll use:// **/Users/Schuchert/src/iPhoneDemo**//. I'll also be putting all of the project directories in this same folder. You'll need to create a directory somewhere.
 ** Enter a name for the project. I used iPhoneDemo
+
 ## Creating the View Project
 * Add a project:// **File::New Project**// (⇧⌘N)
 * Select// **iOS::Application**// on the left side
@@ -48,8 +50,8 @@ These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in 
 * For this example do not select either "Use Core Data" or "Include Unit Tests"
 * Click// **Next**//
 * When Prompted for a directory, select the same directory that you put the workspace file in. In my case that is// **/Users/Schuchert/src/iPhoneDemo**//
-* Click// **Create**//
-* Make sure the right Scheme is selected. It should be the// **Project Name | iPhone 4.3 Simulator**//. If you happen to have your registered iPhone connected, it may select to install and run on your iPhone by default. 
+* Click **Create**
+* Make sure the right Scheme is selected. It should be the Project Name iPhone 4.3 Simulator. If you happen to have your registered iPhone connected, it may select to install and run on your iPhone by default. 
 * Confirm your project works by running it and seeing that the iPhone simulator starts up (⌘R)
 
 ## Creating the GHUnit Project
@@ -79,6 +81,7 @@ Note that by default, the project you just created is selected. If you rush thou
 * Under// **Supporting Files**// find and edit// **main.m**//
 * Update its contents by copying the file from [here](https://github.com/gabriel/gh-unit/raw/master/Project-IPhone/GHUnitIOSTestMain.m).
 * If you run at this point, you'll get an exception. You'll need to add a few flags to the target's configuration
+
 ### Update the Unit Test Target
 * Select your// **UnitTests**// project
 * Select the// **UnitTests**// target in the middle column
@@ -99,7 +102,6 @@ Note that by default, the project you just created is selected. If you rush thou
 
 # Adding the Model as a Static Library
 
-
 * To do this:
 ** Download the file somewhere (my download location is// **~/Downloads**//)
 ** Expand //**Targets**//
@@ -115,6 +117,7 @@ Note that by default, the project you just created is selected. If you rush thou
 ** Build, command-b
 ** Run, command-r
 ** When the simulator starts, click on //**Run**//. There are no tests, so it finishes quickly.
+
 # Add a first test
 * Under //**Targets**//, right-click  //**UnitTests_oniPhoneSimulator**//
 * Select //**Add:New File**//
@@ -125,7 +128,8 @@ Note that by default, the project you just created is selected. If you rush thou
 * Verify that only the correct target (UnitTests_oniPhoneSimulator) is selected.
 * Click //**Finish**//
 * Enter the following test code:
-```
+
+```objc
 //
 //  ItShouldHaveSmoke.m
 //  Tutorial
@@ -156,12 +160,14 @@ Note that by default, the project you just created is selected. If you rush thou
 }
 @end
 ```
+
 * Build, command-b
 * Run, command-r
 * You should see the simulator start. If you still had it running, XCode will warn you that it needs to stop the simulator. Select //**OK**// to do so.
 * When the simulator starts, click //**Run**//
 * Oops, the test is failing.
 * go back and edit your code. Chang the single assertion to:
+
 ```
     GHAssertEquals(@"Hello World", someVariableToInitialize, nil);
 ```
@@ -169,9 +175,11 @@ Note that by default, the project you just created is selected. If you rush thou
 * Run the test suite again.
 
 Congratulations, you have your first test working.
+
 # Set Unit Test Executable Settings
 Review// **GHUnitIOSTestMain.m**//. Notice that it recommends editing your unit test executable and setting the following properties:
-|~ Property Name|~ Default Value|~ Recommended Setting |
+
+| Property Name | Default Value | Recommended Setting |
 |NSDebugEnabled|                        NO      |YES|
 |NSZombieEnabled|                       NO       |YES|
 |NSDeallocateZombies|                   NO       |YES|
@@ -179,6 +187,7 @@ Review// **GHUnitIOSTestMain.m**//. Notice that it recommends editing your unit 
 |NSEnableAutoreleasePool|YES|NO|
 |NSAutoreleaseFreedObjectCheckEnabled|NO|YES|
 |GHUNIT_AUTORUN|NO|YES|
+
 Note, the last one is one I recommend. This will make your tests run automatically.
 
 To make create these environment settings:
@@ -187,6 +196,7 @@ To make create these environment settings:
 * Right-click, Get Info (command-I)
 * In the bottom window, click the +, add a field and set its value
 * Re-run your tests to make sure they work as expected
+
 Now the hard part starts.
 
 # Now Really Setting Things Up
@@ -194,11 +204,12 @@ Now the hard part starts.
 * Create a new static library for your model code (keep model separate from UI
 * Link to it from the UI project
 * Link to it from the Unit Test Project
+
 # A Few Handy Shortcut Keys
+
 | Command-r | run application |
 | Command-b | quick open |
 | F3 | mapped to Edit:Find:Jump to Definition |
 | Command-alt up-arrow | Switch between .h and .m |
-
 
 [<-- Back]({{ site.pagesurl}}/iPhone)

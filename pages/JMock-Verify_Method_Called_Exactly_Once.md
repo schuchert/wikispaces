@@ -1,5 +1,5 @@
 ---
-title: JMock-Verify_Method_Called_Exactly_Once_
+title: JMock-Verify_Method_Called_Exactly_Once
 ---
 [<--Back]({{site.pagesurl}}/TDD_Example_Catalog)
 

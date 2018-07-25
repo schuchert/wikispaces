@@ -11,18 +11,20 @@ This is a somewhat nostalgic background, you won't miss much if you [skip to the
 * Keyword: inject:into:, to:do:, ifTrue:, ifTrue:ifFalse:
 
 Here are a few examples:
+
 ```
 aCollection inject: 0 into: [a, b | a + b]
 balance > withdrawalAmount ifTrue: [allowTransation] ifFalse: [disallow transaction]
 ```
 
-In the first line, one message inject:into: is sent to the object referred to by the variable aCollection. The parameters are 0 and [a, b | a + b], both objects. In the second example there are two messages: >, ifTrue:ifFalse:. The binary method > is sent to balance with the parameter withdrawalAmount. That method returns either true or false. The result of that evaluation (true or false) is then sent the message ifTrue:ifFalse: with the two blocks (blocks are created using []). If the result is true, then the implementation of instance method ifTrue:ifFalse:, on the True class, will execute/evaluate the first block passed in and ignore the second block. If the result is false, then the message ifTrue:ifFalse: will be sent to the single instance of False, which executes the second block and ignores the first block. 
+In the first line, one message inject:into: is sent to the object referred to by the variable aCollection. The parameters are 0 and ```[a, b | a + b]```, both objects. In the second example there are two messages: >, ifTrue:ifFalse:. The binary method > is sent to balance with the parameter withdrawalAmount. That method returns either true or false. The result of that evaluation (true or false) is then sent the message ifTrue:ifFalse: with the two blocks (blocks are created using []). If the result is true, then the implementation of instance method ifTrue:ifFalse:, on the True class, will execute/evaluate the first block passed in and ignore the second block. If the result is false, then the message ifTrue:ifFalse: will be sent to the single instance of False, which executes the second block and ignores the first block. 
 
 Conceptually there is no conditional logic, it's all messages, methods and polymorphism.
 
 Keyword messages, messages with one or more parameters, have parameters intermingled with the parts of the name of the method.
 
 Here is an example of a script table from the end of this tutorial:
+
 ```
 1: !|Script                    |Generate Programs                                                                              |
 2: |$P1=                       |Create Weekly Program Named|W1|On Channel|7|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8 |
@@ -40,6 +42,7 @@ The name of this Fixture is GeneratePrograms. The Fixture class needs two method
 You'll create this at the end of this tutorial.
 
 This table style does lend itself to nicely naming Java/C#/C++ methods. The Smalltalk version, however does not look so bad (with the caveat that while it looks nice, it makes passing in many parameters a bit too easy):
+
 ```
 | generateProgrmas, B |
 generateProgrmas := GenerateProgrmas new.
@@ -48,16 +51,17 @@ generatePrograms TotalEpisodesCreated.
 generateProgrmas CreateDailyProgramNamed: 'D1" OnChannel: 8 StartingOn: '3/4/2008' At: '20:30" Length: 30 Episodes 56.
 ...
 ```
-
 The spirit of the keyword message in Smalltalk was revived in the design of the do fixture and then carried over into Slim.
+
 [#introduction]({{site.pagesurl}}/#introduction)
 # Introduction
 In this tutorial, you'll continue working with the DVR problem, continuing right from where you left off in [Query Tables Tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.2). You can use your code as is from the previous tutorial, or you can use the tag FitNesse.Tutorials.ScriptTables, review [here]({{ site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub) to figure out what to do with this tag.
 
 In this tutorial you will learn how to use script tables to express things with sequences of messages rather than rows of data that are either created or queried. It is typically possible to express in script tables what you can do with decision tables and query tables. The reverse is also true. typically it is a matter of habit or taste. Sometimes, however, one expression is simply better than another.
+
 # A First Script Table
 The basis of your work will come from this user story:
->> As a avid TV watcher, I want to review my to do list by day to verify that my programs are getting recorded
+* As a avid TV watcher, I want to review my to do list by day to verify that my programs are getting recorded
 
 To make this happen, we need to:
 * Create a program schedule
@@ -67,6 +71,7 @@ To make this happen, we need to:
 Even though you have already created tables and fixtures to add programs to the program schedule, you'll experiment with other ways of adding programs to the program schedule using a Script Table. Technically, you can get a similar effect with Decision Tables. However, you might find one style easier than another in any given situation, so knowing script tables simply gives you more expressive power in your test writing.
 
 Rather than using our original AddProgramToSchedule fixture, this is a new way to generate large amounts of programs:
+
 ```
 !|Script|Generate Programs                                                                      |
 |Create Weekly Program Named|W1|On Channel|7|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8 |
@@ -83,9 +88,11 @@ There are three parts to this table:
 ### Creating Page Hierarchy/Table
 * Create a new Test Suite: Edit the following URL: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples>
 * Enter the following for its contents:
+
 ```
 !contents -R2 -g -p -f -h
 ```
+
 * Save this and set the page type to Suite.
 * Edit the following URL (to add a child page): <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples.CreatingManyProgramsExample>
 * Copy the table above into the contents of the page (replacing the !contents line)
@@ -94,6 +101,7 @@ There are three parts to this table:
 
 ## Create Initial Fixture
 As with other tables, this table needs a backing fixture:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -122,7 +130,9 @@ There is a lot of date-based logic spread throughout the fixtures and production
 Why? This gives you the ability to set the system date and run the system with a different date/time. This is a need in many systems. In our DVR example it is not a problem (yet) so we'll start with a simple DateUtil class that implements itself as a singleton. This gives us the ability to introduce a test double later on if necessary.
 
 Here is the new class, DateUtil, to capture all of the date formatting carried out by various parts of the solution. I added this to account for violations of the DRY principle. Rather than walk you through all of that, I'm simply providing my changes.
+
 **Create: DateUtil.java**
+
 ```java
 package com.om.example.util;
 
@@ -173,6 +183,7 @@ public class DateUtil {
 ```
 
 **Update: AddProgramsToSchedule**
+
 ```java
    public void execute() throws ParseException {
       try {
@@ -185,9 +196,10 @@ public class DateUtil {
       }
    }
 ```
-//**Note**//: When you make this change, you'll have an unused method, **buildStartDateTime**. Remove it.
+**Note**: When you make this change, you'll have an unused method, **buildStartDateTime**. Remove it.
 
 **Update: TimeSlotPropertyHandler**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -216,6 +228,7 @@ public class TimeSlotPropertyHandler extends PropertyHandler {
 ```
 
 **Update: GeneratePrograms**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -263,8 +276,10 @@ public class GeneratePrograms {
 ```
 
 Make sure with all of these changes, your page passes.
+
 ## Schedule Items in To Do List
 Now that you've generated a schedule with several programs, it is time to create season passes. This fixture already exists:
+
 ```
 |Create Season Pass For|W1|7|
 
@@ -281,6 +296,7 @@ If you run your test, you should still see all green. As with previous tutorials
 
 ## Assert Contents
 Now it is time to review the to do list by date rather than by program id. Here's just a fixture:
+
 ```
 |Query:Episodes in to do list on|3/4/2008   |
 |programName                    |episodeName|
@@ -296,7 +312,9 @@ Now it is time to review the to do list by date rather than by program id. Here'
 ```
 
 Here's the code to make this work:
+
 **Create: EpisodesInToDoListOn.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -327,6 +345,7 @@ public class EpisodesInToDoListOn {
 ```
 
 **Update: DateUtil.java**
+
 ```java
    public boolean isSameDate(Date startDateTime, Date date) {
       return formatDate(startDateTime).equals(formatDate(date));
@@ -338,6 +357,7 @@ public class EpisodesInToDoListOn {
 ```
 
 **Update: Program.java**
+
 ```java
    public boolean isOn(Date date) {
       return DateUtil.instance().isSameDate(timeSlot.startDateTime, date);
@@ -361,7 +381,9 @@ Make all of these changes and execute your test. Notice anything? The first tabl
 
 ### Switching to Unit Tests
 Here is a JUnit analog of the test page:
+
 **Create: GenerateProgramsTest.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -411,6 +433,7 @@ Running this test indicates a similar problem (expected 4 by only found 2 in in 
 Stepping through, I noticed that attempting to add the first Episode of D1 and D2 caused a problem with a conflicting program. This should not be happening, so that's where to check next. As I was running this, I also notice that I forgot to set the length of the episode.
 
 **Update: GeneratePrograms.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -462,7 +485,9 @@ public class GeneratePrograms {
 ```
 
 After a little time with the debugger, it because clear where the exception was getting lost:
+
 **Update: AddProgramsToSchculed.execute()**
+
 ```java
    public void execute() throws ParseException {
       try {
@@ -478,7 +503,9 @@ After a little time with the debugger, it because clear where the exception was 
 ```
  
 A quick test of the DateUtil.buildDate method shows a problem:
+
 **Create: DateUtilTest.java**
+
 ```java
 package com.om.example.util;
 
@@ -508,7 +535,9 @@ public class DateUtilTest {
 ```
 
 Which leads to a fix of an improperly extracted method:
+
 **Update: DateUtil.java**
+
 ```java
    public Date buildDate(String date, String startTime) throws ParseException {
       String dateTime = String.format("%s|%s", date, startTime);
@@ -525,7 +554,9 @@ Now things seem to be working fine and the test passes. What about the entire su
 * Using Fixtures in Unit Tests may drive a different design that using them from FitNesse pages.
 
 This can be fixed:
+
 **Update: GeneratePrograms.java**
+
 ```java
    private void createOneProgram(String programName, int channel, String startTime,
          int minutes, String nextStartDate, int i) throws ParseException {
@@ -542,6 +573,7 @@ This can be fixed:
 ``` 
 
 **Restore: AddProgramsToSchedule.java**
+
 ```java
    public void execute() throws ParseException {
       try {
@@ -558,7 +590,9 @@ This can be fixed:
 Run your unit tests, they should pass. Run your top-level suite, everything should be back to passing. 
 
 Finally, let's verify that in fact this change to the createOneProgram method actually does as expected. Attempt to force the exception to be thrown from createOneProgram:
+
 **Add Test To: GenerateProgramsTest**
+
 ```java
    @Test(expected = ConflictingProgramException.class)
    public void GeneratingConflictingProgramsThrowsException() throws Exception {
@@ -573,6 +607,7 @@ Make sure this test passes before moving to the next section.
 
 # A Second Example
 Here are a few addons to the table to show a few additional features of Script tables:
+
 ```
 !|Script                    |Generate Programs                                                                              |
 |$P1=                       |Create Weekly Program Named|W1|On Channel|7|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8 |
@@ -582,7 +617,6 @@ Here are a few addons to the table to show a few additional features of Script t
 |Create Daily Program Named |D2|On Channel|8|Starting On|3/4/2008|at|22:00|Length|30|Episodes|56                            |
 |check                      |TotalEpisodesCreated|128                                                                       |
 ```
-
 This table demonstrates some things you have not yet used:
 * Using a ! at the beginning of a table tells FitNesse to not treat potential wiki words as wikiwords. E.g., TotalEpisodesCreated is a wikiword. If you do not include !, then this will not be treated as a method call.
 * Variable assignment (line 2). The variable $P1 will be set to whatever is returned by the method called CreateWeeklyProgramNamedOnChannelStartingOnAtLengthEpisodes.
@@ -597,7 +631,9 @@ Create this table:
 * Change the page type to a Test.
 
 This requires a few changes to the existing fixture:
+
 **Update: GeneratePrograms.java**
+
 ```java
 public class GeneratePrograms {
    AddProgramsToSchedule addProgramsToSchedule = new AddProgramsToSchedule();

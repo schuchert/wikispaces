@@ -26,6 +26,8 @@ Since few IDE's are JUnit 4 aware, JUnit 4 offers a class for backwards compatib
 40:     }
 ```
 ## Interesting Lines
+^
+|-|-|
 |Line|Description|
 |4|This is the import for the JUnit4TestAdapter. Of course, if your in Eclipse, you can just start typing JUnit4 then hit ctrl-space for command line completing (assuming JUnit 4 is in the project's class path|
 |38 - 40|Nearly boilerplate code. The only thing you'll need to change is the parameter passed in to the constructor. Instead of TestVehicle.class, you'll pass in YourClass.class.|

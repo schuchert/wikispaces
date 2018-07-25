@@ -388,6 +388,7 @@ public class PatronDao extends BaseDao {
 ```
 ### The Entity Model
 We’ve added support for a Book and along the way we had to add in a few more classes. After the second test suite, we’re up to the following entities:
+
 |**Entity**|**Description**|
 |Address|This entity represents the address for both an Author and a Patron. In the first tutorial we embedded this class. Now we’re allowing it to exist in its own table as a first-class citizen rather than embedding it.|
 |Author|Books and Authors have a bi-directional, many to many relationship with each other. That is, a book has one to many Authors and an Author has one to many books. This entity represents one author and maintains a Set<Book> representing each of its books. We treat the Author as the secondary part of the relationship and the book as Primary.|

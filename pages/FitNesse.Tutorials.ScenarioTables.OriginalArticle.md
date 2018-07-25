@@ -6,7 +6,8 @@ This tutorial exists because I did not really understand Scenario Tables even th
 
 We discussed this with Bob Martin and he recognized this as a form of [currying from functional programming](http://en.wikipedia.org/wiki/Currying). Scenario tables are really just one or more function invocations on a fixture (know as the Actor in FitNesse, see Sidebar: 
 [Scenario Actors]({{site.pagesurl}}/FitNesse.Tutorials.ScenarioTables#Scenario_Actors)) with parameters passed in. What the developer wanted was a form of this table(function) taking fewer parameters(currying), with some of the parameters hard coded. E.g.,
->> [include_page="FitNesse.Tutorials.ScenarioTables.CurryingFunctions"]({{site.pagesurl}}/include_page="FitNesse.Tutorials.ScenarioTables.CurryingFunctions")
+
+{% include_relative FitNesse.Tutorials.ScenarioTables.CurryingFunctions.md %}
 
 Bob magically did this using FitNesse.SliM-based tables and then I spent quite a bit of time trying to understand the mechanics. As a result, I figured I better write something to remember this because while now it is obvious, it was not at the time.
 
@@ -108,40 +109,49 @@ This does attempt to use the scenario. The first row names the scenario (see Sid
 
 [include_page="sidebar_start"]({{site.pagesurl}}/include_page="sidebar_start")<span class="sidebar_title">Scenario Names</span>
 Consider the Scenario defined above. How does FitNesse determine its name?
-# FitNesse only considers the first row
-# FitNesse strips off the word Scenario
-# FitNesse then uses the first cell (after scenario is dropped) and all subsequent alternating cells
-# Finally, FitNesse concatenates all of the remaining parts and uses consistent camel-case notation
+* FitNesse only considers the first row
+* FitNesse strips off the word Scenario
+* FitNesse then uses the first cell (after scenario is dropped) and all subsequent alternating cells
+* Finally, FitNesse concatenates all of the remaining parts and uses consistent camel-case notation
 
 The example above starts with:
+
 ```
 !|Scenario     |attempt|times    |loginsTo   |accountName|with     |password|andIn|status|expecting|result|
 ```
+
 Now drop Scenario:
+
 ```
 |attempt|times    |loginsTo   |accountName|with     |password|andIn|status|expecting|result|
 ```
+
 Next, starting with attempt, only include the alternating cells:
+
 ```
 |attempt|logins to|with|andIn|expecting|
 ```
+
 Finally, put them all together (separate the parts of the name with spaces and use upper or lower case lettering).
+
 ```
+
 Attempt Logins To With And In Expecting 
 ```
-[include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
+%{ include_relative [include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 [include_page="sidebar_start"]({{site.pagesurl}}/include_page="sidebar_start")<span class="sidebar_title"> Important! Scenario Parameter Matching</span>
 This example uses a decision table to execute the scenario. A decision table has a minimum of three rows:
-# First row indicates the name of the fixture (or scenario in this case)
-# Second row defines column headers (ignored in this case because it is a scenario)
-# Third row is the first of potentially many executions
+* First row indicates the name of the fixture (or scenario in this case)
+* Second row defines column headers (ignored in this case because it is a scenario)
+* Third row is the first of potentially many executions
 
 FitNesse matches parameters //**by order**//, not name. The second row is a nice way to document your intentions but think of a scenario as one or more method invocations. Method invocations in most languages are matched by order, not type. That's how FitNesse performs the matching.
 [include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 # From Red/Yellow to Green
 The Scenario is Red (if you create this page and executed it, that's what you'll see). However, when you open up the scenario, it shows several yellow rows, indicating a missing class. Here a Java class to make this test fully pass (for you C# users, this is basically the same):
+
 ```java
 package com.om.example.scenario;
 
@@ -164,6 +174,7 @@ Note, the page needs to be updated for this to run. You need to add:
 * An import statement so FitNesse can find the class in the package.
 
 Here is a complete version of that page:
+
 ```
 !path /Users/schuchert/workspaces/FitNesseTutorialScenarioTables/ScnearioExample/bin
 
@@ -180,8 +191,10 @@ Here is a complete version of that page:
 |times|accountName|password|status          |result           |
 |1    |brett      |secret  |valid           |success          |
 ```
+
 # More Than 1 Test
 Now that you have one test, it's not a big leap to turn this into more tests:
+
 ```
 |Attempt Logins To With And In Expecting                      |
 |times|accountName|password|status          |result           |
@@ -192,6 +205,7 @@ Now that you have one test, it's not a big leap to turn this into more tests:
 ```
 
 If you update the table and then the Java source, you should see 4 passing scenarios:
+
 ```java
 package com.om.example.scenario;
 
@@ -230,6 +244,7 @@ By the way, this same principle applies to writing unit tests.
 [include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 Did you notice the duplication in this table? We can improve on this table by creating a new Scenario that uses the old scenario. The new scenario will take in fewer parameters and hard-code some of original Scenario's parameters. Here is just such a table:
+
 ```
 |Scenario|Attempt Single Login With Status|status  |Expecting|result                                       |
 |attempt |1                               |loginsTo|brett    |with  |secret|andIn|@status|expecting|@result|
@@ -248,6 +263,7 @@ This is in fact all just text substitution. FitNesse:
 * FitNesse then notices that the scenario now names maps to a Fixture called AttemptLoginAndValidateResults (based on the start line in the scenario).
 
 How do you invoked this new scenario?
+
 ```
 |Attempt Single Login With Status Expecting|
 |status          |result                   |
@@ -258,6 +274,7 @@ How do you invoked this new scenario?
 ```
 
 Here is the entire page with all of these tables together on the same page:
+
 ```
 !path /Users/schuchert/workspaces/FitNesseTutorialScenarioTables/ScnearioExample/bin
 

@@ -10,6 +10,7 @@ In this second version, we add the following features:
 
 Along the way, we make a lot of additions and changes. Based on the updated LibraryTest, here is a list of all the changes I made to get things to work (note if you choose to start from the test and make things work yourself, you results may vary):
 **src/entity**
+
 |Book|Now has an optional Loan object instead of a direct reference to a Patron.|
 |Fine|New class, represents an individual fine generated from returning one book late. A Patron has zero to many of these.|
 |Loan|New class, represents the information related to the **relationship** between Patron and Book. A Patron has a One to Many relationship with Loan while a book as a One to One that is optional (can be null).|
@@ -17,21 +18,26 @@ Along the way, we make a lot of additions and changes. Based on the updated Libr
 |Patron|Now has a One to Many relationship with both Loan and Fines. It also has several new methods in support of those new/changed attributes.|
 
 **src/exception**
+
 |BookNotCheckedOut|New exception class. Thrown when trying to return a book that is not checked out.|
 |InsufficientFunds|New exception class. Thrown when Patron tries to pay fines but does not tender enough cash.|
 |PatronHasFines|New exception class. Thrown when Patron tries to check out a book but already has fines.|
 
 **src/session**
+
 |Library|Substantially changed in support of the new requirements.|
 |LoanDao|New class. Provides some simple query support directly related to loan class.|
 
 **src/util**
+
 |DateTimeUtil|A new class. Provides some basic date/time utilities.|
 
 **test/session**
+
 |LibraryTest|Several new tests in support of new functionality.|
 
 **test/util**
+
 |DateTimeUtilTest|Several test in support of new utility class.|
 
 ### New Utility
@@ -272,8 +278,8 @@ public class PatronHasFines extends RuntimeException {
 Many of the original tests are different from the previous version. Additionally, there are many new tests. Here is the test. Once you get this in to your system, you might want to simply get all of the tests methods to compile and then get the tests to pass. 
 
 Doing so is approaching formal TDD. It is different in a few important respects:
-# You are given the tests rather than writing them yourself
-# You are working on many tests at once rather than just one (or a **very** few) at a time
+* You are given the tests rather than writing them yourself
+* You are working on many tests at once rather than just one (or a **very** few) at a time
 
 Even so, this suite of test fully express the new set of requirements for version 2.
 ```java
