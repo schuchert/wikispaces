@@ -6,6 +6,7 @@ This page describes the steps I follow to setup an Eclipse-based project for dev
 
 ## Create a Space
 * Begin by creating a source directory. For this example, I'll create a directory called CheesrWorkspace (example project from the [Wicket in Action](http://www.amazon.com/Wicket-Action-Martijn-Dashorst/dp/1932394982/ref=sr_1_1?ie=UTF8&s=books&qid=1253681267&sr=8-1) book.
+
 ```
 macintosh-4% cd ~/src
 /Users/schuchert/src
@@ -23,6 +24,7 @@ Note: I'll be using git for revision control, so I also added in that last step 
 There's a simple form you can fill out on [the Wicket quickstart page](http://wicket.apache.org/quickstart.html) to create a maven command that will create the project structure.
 
 * Fill out the form (I used com.om for the groupid and Cheesr for the artifactid), which produces the following command:
+
 ```
 mvn archetype:create -DarchetypeGroupId=org.apache.wicket \
    -DarchetypeArtifactId=wicket-archetype-quickstart \
@@ -30,6 +32,7 @@ mvn archetype:create -DarchetypeGroupId=org.apache.wicket \
 ```
 
 * Execute that command:
+
 ```
 macintosh-4% pwd
 /Users/schuchert/src/CheesrWorkspace
@@ -74,6 +77,7 @@ macintosh-4%
 By default, the project depends on JUnit 3.x, so I update the POM.xml to instead depend on a newer version of JUnit.
 
 * Edit pom.xml under the Cheesr directory
+
 ```
 macintosh-4% cd Cheesr 
 /Users/schuchert/src/CheesrWorkspace/Cheesr
@@ -97,6 +101,7 @@ Now that you have an updated POM, you can create the eclipse project. The [the W
 
 * Make sure you are in the project directory created by the initial mvn command.
 * Execute: mvn eclipse:eclipse -DdownloadSources=true
+
 ```
 macintosh-4% pwd
 /Users/schuchert/src/CheesrWorkspace/Cheesr
@@ -173,6 +178,7 @@ You can start you server to verify that it is working:
 * Run it as a Java application
 * Start a browser (or browse to the following URL in Eclipse): http://localhost:8080/
 * You should see something like the following:
+
 ```
 Wicket Quickstart Archetype Homepage
 
