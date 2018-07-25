@@ -1,7 +1,7 @@
 ---
 title: cpptraining.GettingCppUTestCompiledUsingCDTToolSet
 ---
-[<--Back]({{ site.pagesurl}}/cpptraining#gettingfirsttestrunning)
+[<--Back]({{ site.pagesurl}}/CppTraining#gettingfirsttestrunning)
 
 # Background
 These steps assume you are using the CDT's tool set. Before following these instructions, please make sure you have [followed these instructions first.]({{ site.pagesurl}}/cpptraining.GettingStartedWithEclipseCdt)
@@ -112,4 +112,4 @@ C:\workspaces\CppUTest>
 ```
 
 
-[<--Back]({{ site.pagesurl}}/cpptraining#gettingfirsttestrunning)
+[<--Back]({{ site.pagesurl}}/CppTraining#gettingfirsttestrunning)

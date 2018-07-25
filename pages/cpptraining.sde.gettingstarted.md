@@ -37,7 +37,8 @@ Administrator@brettlschuccf48 /cygdrive/c/src/embedded_cpp_tdd
 $ ls
 cpputest  dice_game  makefile.base  rpn_calc
 ```
-|~ Name |~ Kind|~ Description |
+
+| Name | Kind| Description |
 |cpputest |Directory|Source for C++ U Test, V 2.3 |
 |dice_game|Directory|Placeholder for first project|
 |makefile.base|File|Common make stuff based on the makefiles provided by the examples in the sde|
@@ -45,7 +46,8 @@ cpputest  dice_game  makefile.base  rpn_calc
 
 ## Using It
 The makefile has a default SBD of GSIM32L. Simply typing make will built files that will work with the simulator and the debugger. You can also...
-|~ Command|~ Effect|
+
+| Command| Effect|
 |make|Build and link|
 |make clean|Clean all files created during the build|
 |make run|Build if necessary and execute the tests|

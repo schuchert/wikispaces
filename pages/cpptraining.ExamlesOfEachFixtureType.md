@@ -2,7 +2,7 @@
 title: cpptraining.ExamlesOfEachFixtureType
 ---
 {:toc}
-[<<--Back]({{ site.pagesurl}}/cpptraining#FitNesse)
+[<<--Back]({{ site.pagesurl}}/CppTraining#FitNesse)
 
 # Decision Table
 Here is a basic table in FitNesse:
@@ -34,27 +34,27 @@ Here's cslim code that can handle this table:
 # include "SlimUtils.h"
  
 struct ExecuteBinaryOperator {
-	ExecuteBinaryOperator() {
-		lastValue[0] = 0;
-	}
+    ExecuteBinaryOperator() {
+        lastValue[0] = 0;
+    }
 
-	int execute() {
-		RpnCalculator calculator(factory);
-		calculator.enterNumber(lhs);
-		calculator.enterNumber(rhs);
-		calculator.executeOperator(op);
-		return calculator.getX();
-	}
+    int execute() {
+        RpnCalculator calculator(factory);
+        calculator.enterNumber(lhs);
+        calculator.enterNumber(rhs);
+        calculator.executeOperator(op);
+        return calculator.getX();
+    }
 
-	static ExecuteBinaryOperator* From(void *fixtureStorage) {
-		return reinterpret_cast<ExecuteBinaryOperator*>(fixtureStorage);
-	}
+    static ExecuteBinaryOperator* From(void *fixtureStorage) {
+        return reinterpret_cast<ExecuteBinaryOperator*>(fixtureStorage);
+    }
 
-	OperatorFactory factory;
-	int lhs;
-	int rhs;
-	std::string op;
-	char lastValue[32];
+    OperatorFactory factory;
+    int lhs;
+    int rhs;
+    std::string op;
+    char lastValue[32];
 };
 
 extern "C" {
@@ -63,7 +63,7 @@ void* ExecuteBinaryOperator_Create(StatementExecutor* errorHandler, SlimList* ar
 }
  
 void ExecuteBinaryOperator_Destroy(void* self) {
-	delete ExecuteBinaryOperator::From(self);
+    delete ExecuteBinaryOperator::From(self);
 }
  
 static char* setLhs(void* fixture, SlimList* args) {
@@ -144,15 +144,15 @@ And here's an example fixture that can handle this table. Note, I used g++ 4.4 (
 # include "Fixtures.h"
 
 struct ProgramTheCalculator {
-	ProgramTheCalculator() : calculator(factory) {
-	}
+    ProgramTheCalculator() : calculator(factory) {
+    }
 
-	static ProgramTheCalculator* From(void *fixtureStorage) {
-		return reinterpret_cast<ProgramTheCalculator*>(fixtureStorage);
-	}
+    static ProgramTheCalculator* From(void *fixtureStorage) {
+        return reinterpret_cast<ProgramTheCalculator*>(fixtureStorage);
+    }
 
-	OperatorFactory factory;
-	RpnCalculator calculator;
+    OperatorFactory factory;
+    RpnCalculator calculator;
 };
 
 extern "C" {
@@ -162,7 +162,7 @@ void* ProgramTheCalculator_Create(StatementExecutor* errorHandler, SlimList* arg
 }
 
 void ProgramTheCalculator_Destroy(void *fixture) {
-	delete ProgramTheCalculator::From(fixture);
+    delete ProgramTheCalculator::From(fixture);
 }
 
 static char* startProgramCalled(void *fixture, SlimList *args) {
@@ -198,12 +198,12 @@ static char* execute(void *fixture, SlimList *args) {
 static char* stackHasThenThenThenIs(void *fixture, SlimList *args) {
     auto *self = ProgramTheCalculator::From(fixture);
     for(int i = 0; i < 4; ++i) {
-    		if(self->calculator.getX() != getIntAt(args, i))
-    			return remove_const("false");
-    		self->calculator.executeOperator("drop");
+            if(self->calculator.getX() != getIntAt(args, i))
+                return remove_const("false");
+            self->calculator.executeOperator("drop");
     }
 
-  	return remove_const("true");
+      return remove_const("true");
 }
 
 SLIM_CREATE_FIXTURE(ProgramTheCalculator)
@@ -248,58 +248,58 @@ Now the fixture to handle it:
 # include "QueryResultAccumulator.h"
 
 struct SingleCharacterNameOperators {
-	OperatorFactory factory;
-	RpnCalculator calculator;
-	QueryResultAccumulator accumulator;
+    OperatorFactory factory;
+    RpnCalculator calculator;
+    QueryResultAccumulator accumulator;
 
-	SingleCharacterNameOperators() :
-		calculator(factory) {
-	}
+    SingleCharacterNameOperators() :
+        calculator(factory) {
+    }
 
-	~SingleCharacterNameOperators() {
-	}
+    ~SingleCharacterNameOperators() {
+    }
 
-	static SingleCharacterNameOperators* From(void *fixtureStorage) {
-		return reinterpret_cast<SingleCharacterNameOperators*> (fixtureStorage);
-	}
+    static SingleCharacterNameOperators* From(void *fixtureStorage) {
+        return reinterpret_cast<SingleCharacterNameOperators*> (fixtureStorage);
+    }
 
-	void conditionallyAddOperatorNamed(const std::string &name) {
-		if (name.size() == 1) {
-			accumulator.addFieldNamedWithValue("op", name);
-			accumulator.finishCurrentObject();
-		}
-	}
+    void conditionallyAddOperatorNamed(const std::string &name) {
+        if (name.size() == 1) {
+            accumulator.addFieldNamedWithValue("op", name);
+            accumulator.finishCurrentObject();
+        }
+    }
 
-	char *buildResult() {
-		v_string names = calculator.allOperatorNames();
-		return buildResult(names);
-	}
+    char *buildResult() {
+        v_string names = calculator.allOperatorNames();
+        return buildResult(names);
+    }
 
-	char *buildResult(v_string &names) {
-		for (v_string::iterator iter = names.begin(); iter != names.end(); ++iter)
-			conditionallyAddOperatorNamed(*iter);
+    char *buildResult(v_string &names) {
+        for (v_string::iterator iter = names.begin(); iter != names.end(); ++iter)
+            conditionallyAddOperatorNamed(*iter);
 
-		return accumulator.produceFinalResults();
-	}
+        return accumulator.produceFinalResults();
+    }
 };
 
 extern "C" {
 void* SingleCharacterNameOperators_Create(StatementExecutor* errorHandler,
-		SlimList* args) {
-	return new SingleCharacterNameOperators;
+        SlimList* args) {
+    return new SingleCharacterNameOperators;
 }
 
 void SingleCharacterNameOperators_Destroy(void *fixture) {
-	delete SingleCharacterNameOperators::From(fixture);
+    delete SingleCharacterNameOperators::From(fixture);
 }
 
 static char* query(void *fixture, SlimList *args) {
-	auto *self = SingleCharacterNameOperators::From(fixture);
-	return self->buildResult();
+    auto *self = SingleCharacterNameOperators::From(fixture);
+    return self->buildResult();
 }
 
 SLIM_CREATE_FIXTURE(SingleCharacterNameOperators)
-	SLIM_FUNCTION(query)
+    SLIM_FUNCTION(query)
 SLIM_END
 
 }
@@ -317,32 +317,32 @@ class SlimList;
 # include <string>
 class QueryResultAccumulator {
 public:
-	typedef std::vector<SlimList*> v_SlimList;
-	typedef v_SlimList::iterator iterator;
+    typedef std::vector<SlimList*> v_SlimList;
+    typedef v_SlimList::iterator iterator;
 
-	QueryResultAccumulator();
-	virtual ~QueryResultAccumulator();
+    QueryResultAccumulator();
+    virtual ~QueryResultAccumulator();
 
-	void finishCurrentObject();
-	void addFieldNamedWithValue(const std::string &name, const std::string &value);
-	char *produceFinalResults();
-
-private:
-	SlimList* allocate();
-	void releaseAll();
-	void setInitialConditions();
+    void finishCurrentObject();
+    void addFieldNamedWithValue(const std::string &name, const std::string &value);
+    char *produceFinalResults();
 
 private:
-	v_SlimList created;
-	SlimList *list;
-	SlimList *currentObject;
-	int lastFieldCount;
-	int currentFieldCount;
-	char *result;
+    SlimList* allocate();
+    void releaseAll();
+    void setInitialConditions();
 
 private:
-	QueryResultAccumulator(const QueryResultAccumulator&);
-	QueryResultAccumulator& operator=(const QueryResultAccumulator&);
+    v_SlimList created;
+    SlimList *list;
+    SlimList *currentObject;
+    int lastFieldCount;
+    int currentFieldCount;
+    char *result;
+
+private:
+    QueryResultAccumulator(const QueryResultAccumulator&);
+    QueryResultAccumulator& operator=(const QueryResultAccumulator&);
 };
 
 # endif
@@ -360,62 +360,62 @@ extern "C" {
 }
 
 QueryResultAccumulator::QueryResultAccumulator() : result(0) {
-	setInitialConditions();
+    setInitialConditions();
 }
 
 QueryResultAccumulator::~QueryResultAccumulator() {
-	releaseAll();
-	SlimList_Release(result);
+    releaseAll();
+    SlimList_Release(result);
 }
 
 void QueryResultAccumulator::setInitialConditions() {
-	releaseAll();
-	list = allocate();
-	currentObject = allocate();
-	lastFieldCount = -1;
-	currentFieldCount = -1;
+    releaseAll();
+    list = allocate();
+    currentObject = allocate();
+    lastFieldCount = -1;
+    currentFieldCount = -1;
 }
 
 SlimList* QueryResultAccumulator::allocate() {
-	SlimList *list = SlimList_Create();
-	created.push_back(list);
-	return list;
+    SlimList *list = SlimList_Create();
+    created.push_back(list);
+    return list;
 }
 
 void QueryResultAccumulator::releaseAll() {
-	for (iterator i = created.begin(); i != created.end(); ++i)
-		SlimList_Destroy(*i);
-	created.clear();
+    for (iterator i = created.begin(); i != created.end(); ++i)
+        SlimList_Destroy(*i);
+    created.clear();
 }
 
 void QueryResultAccumulator::finishCurrentObject() {
-	if(lastFieldCount >= 0 && lastFieldCount != currentFieldCount)
-		throw DifferentFieldCountsInObjects(lastFieldCount, currentFieldCount);
+    if(lastFieldCount >= 0 && lastFieldCount != currentFieldCount)
+        throw DifferentFieldCountsInObjects(lastFieldCount, currentFieldCount);
 
-	SlimList_AddList(list, currentObject);
-	currentObject = allocate();
+    SlimList_AddList(list, currentObject);
+    currentObject = allocate();
 
-	lastFieldCount = currentFieldCount;
-	currentFieldCount = -1;
+    lastFieldCount = currentFieldCount;
+    currentFieldCount = -1;
 }
 
 void QueryResultAccumulator::addFieldNamedWithValue(const std::string &name, const std::string &value) {
-	SlimList *fieldList = allocate();
-	SlimList_AddString(fieldList, name.c_str());
-	SlimList_AddString(fieldList, value.c_str());
-	SlimList_AddList(currentObject, fieldList);
-	++currentFieldCount;
+    SlimList *fieldList = allocate();
+    SlimList_AddString(fieldList, name.c_str());
+    SlimList_AddString(fieldList, value.c_str());
+    SlimList_AddList(currentObject, fieldList);
+    ++currentFieldCount;
 }
 
 char* QueryResultAccumulator::produceFinalResults() {
-	if(currentFieldCount != -1)
-		throw InvalidStateException("Current object not written");
+    if(currentFieldCount != -1)
+        throw InvalidStateException("Current object not written");
 
-	SlimList_Release(result);
-	result = SlimList_Serialize(list);
-	setInitialConditions();
-	return result;
+    SlimList_Release(result);
+    result = SlimList_Serialize(list);
+    setInitialConditions();
+    return result;
 }
 ```
 
-[<--Back]({{ site.pagesurl}}/cpptraining#FitNesse)
+[<--Back]({{ site.pagesurl}}/CppTraining#FitNesse)

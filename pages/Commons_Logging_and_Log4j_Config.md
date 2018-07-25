@@ -12,7 +12,7 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 * Add the jar to your Eclipse project
 * Create a simple configurator, see LogginConfiguration.java, and a simple configuration file, see [log4j.properties]({{ site.pagesurl}}/#log4j).
 
-----
+
 [#LoggingConfiguration]({{site.pagesurl}}/#LoggingConfiguration)
 ## LoggingConfiguration.java
 ```java
@@ -70,6 +70,7 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 [#log4j]({{site.pagesurl}}/#log4j)
 ## log4j.properties
 This file resides in the same directory as the source file for [LogginConfiguration.java]({{ site.pagesurl}}/#LoggingConfiguration).
+
 ```java
 01: log4j.logger.org.springframework=WARN
 ```
@@ -78,7 +79,7 @@ This file resides in the same directory as the source file for [LogginConfigurat
 |-|-|
 |Line|Description|
 |01|This sets the logging level from its default, DEBUG, to WARN. I did this to reduce the output produced by Spring. I've occasionally turned it back on to DEBUG to trace through things. However, I generally prefer my console to have little if any output so that what's there is something I know I need to pay attention to.|
-----
+
 [#ILogger]({{site.pagesurl}}/#ILogger)
 ## ILogger.java
 Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it does not have an interface that uses the features offered by Java 5 so instead of using Lof4J directly, I have returned this interface that publishes what I think is a better interface.
@@ -198,6 +199,7 @@ There are not really any specifically interesting lines. Notice that every metho
 81: }
 ```
 ### Interesting Lines
+
 ^
 |-|-|
 |Line|Description|
@@ -210,6 +212,7 @@ There are not really any specifically interesting lines. Notice that every metho
 |19|Notice that Throwable is the **first** parameter. In the Log4J methods, the Throwable parameter is last. Since we are using variable arguments, we cannot put the Throwable parameter last so we instead make it the first one.|
 
 All of the methods follow the same pattern. Rather that writing the following code, which I've seen:
+
 ```java
     Logger myLogger = ...; // get a Log4J Logger
     ...

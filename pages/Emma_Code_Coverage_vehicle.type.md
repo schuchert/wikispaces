@@ -6,6 +6,7 @@ title: Emma_Code_Coverage_vehicle.type
 # Emma Code Coverage vehicle.type Package
 
 Looking into the details of just this package, we have the following stats:
+
 |name|class, %|method, %|block, %|line, %|
 |EnumField.java|0%  (0/1)|0% (0/5)|0% (0/21)|0% (0/9) |
 |ObjectField.java|0% (0/1)|0% (0/4)|0% (0/27)|0% (0/9) |
@@ -79,10 +80,12 @@ It has 100% coverage.
 
 ## The Results
 After making the above changes, we now have the following package-level resuls:
+
 |name|class, %|method, %|block, %|line, %|
 |vehicle.type|100% (16/16)|98% (92/94)| 94% (797/846)| 94% (173.9/185) |
 
 The specific results for the classes are here:
+
 |name|class, %|method, %|block, %|line, %|
 |AbstractObject.java|100%(1/1)|100%(5/5)|56% (23/41)|68% (6.8/10)|
 |AbstractField.java|100%(1/1)|95% (20/21)|88% (138/156)|85% (37.4/44)|

@@ -2,7 +2,7 @@
 title: cpptraining.ExecutingBinaryOperators
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/cpptraining#FitNesse)
+[<--Back]({{ site.pagesurl}}/CppTraining#FitNesse)
 
 # Background
 These steps assuem you have already worked through the tutorial: [Getting Started With FitNesse in C++]({{ site.pagesurl}}/cpptraining.GettingStartedWithFitNesseInCpp).
@@ -53,7 +53,7 @@ remote: Total 37 (delta 9), reused 0 (delta 0)
 Receiving objects: 100% (37/37), 8.87 KiB, done.
 Resolving deltas: 100% (9/9), done.
 [~/src/waat/workspace]% ls
-RpnCalculatorInCpp/		RpnCalculatorInCppTests/
+RpnCalculatorInCpp/        RpnCalculatorInCppTests/
 [~/src/waat/workspace]% 
 ```
 
@@ -99,12 +99,12 @@ Since you've already worked through [Getting Started With FitNesse in C++]({{ si
 /Users/schuchert/src/cpp_fitnesse
 [~/src/cpp_fitnesse]% java -jar fitnesse.jar -p 8080
 FitNesse (v20100711) Started...
-	port:              8080
-	root page:         fitnesse.wiki.FileSystemPage at ./FitNesseRoot
-	logger:            none
-	authenticator:     fitnesse.authentication.PromiscuousAuthenticator
-	html page factory: fitnesse.html.HtmlPageFactory
-	page version expiration set to 14 days.
+    port:              8080
+    root page:         fitnesse.wiki.FileSystemPage at ./FitNesseRoot
+    logger:            none
+    authenticator:     fitnesse.authentication.PromiscuousAuthenticator
+    html page factory: fitnesse.html.HtmlPageFactory
+    page version expiration set to 14 days.
 ```
 ## Creating Top-Level Test Suite
 Now that you have FitNesse started, create a top-level page for all of your work.
@@ -164,47 +164,47 @@ char * handle_slim_message(char * message);
 
 int connection_handler(int socket)
 {
-	int result = 0;
-	TcpComLink * comLink = TcpComLink_Create(socket);
-	SlimConnectionHandler* connection = SlimConnectionHandler_Create(&TcpComLink_send, &TcpComLink_recv, (void*)comLink);
-	SlimConnectionHandler_RegisterSlimMessageHandler(connection, &handle_slim_message);
+    int result = 0;
+    TcpComLink * comLink = TcpComLink_Create(socket);
+    SlimConnectionHandler* connection = SlimConnectionHandler_Create(&TcpComLink_send, &TcpComLink_recv, (void*)comLink);
+    SlimConnectionHandler_RegisterSlimMessageHandler(connection, &handle_slim_message);
 
-	result = SlimConnectionHandler_Run(connection);
+    result = SlimConnectionHandler_Run(connection);
 
-	SlimConnectionHandler_Destroy(connection);
-	TcpComLink_Destroy(comLink);
-	
-	return result;
+    SlimConnectionHandler_Destroy(connection);
+    TcpComLink_Destroy(comLink);
+    
+    return result;
 }
 
 static StatementExecutor * statementExecutor;
 static ListExecutor * listExecutor;
 int main(int ac, char** av)
 {
-	statementExecutor = StatementExecutor_Create();
-	AddFixtures(statementExecutor);
-	
-	listExecutor = ListExecutor_Create(statementExecutor);
-	
-	SocketServer* server = SocketServer_Create();
-	SocketServer_register_handler(server, &connection_handler);
-		
-	int result = SocketServer_Run(server, av[1]);
-	
-	SocketServer_Destroy(server);
-	ListExecutor_Destroy(listExecutor);
-	StatementExecutor_Destroy(statementExecutor);
-	return result;
+    statementExecutor = StatementExecutor_Create();
+    AddFixtures(statementExecutor);
+    
+    listExecutor = ListExecutor_Create(statementExecutor);
+    
+    SocketServer* server = SocketServer_Create();
+    SocketServer_register_handler(server, &connection_handler);
+        
+    int result = SocketServer_Run(server, av[1]);
+    
+    SocketServer_Destroy(server);
+    ListExecutor_Destroy(listExecutor);
+    StatementExecutor_Destroy(statementExecutor);
+    return result;
 }
 
 char * handle_slim_message(char * message)
 {
-	SlimList* instructions = SlimList_Deserialize(message);
-	SlimList* results = ListExecutor_Execute(listExecutor, instructions);
-	char * response = SlimList_Serialize(results);
-	SlimList_Destroy(results);
-	SlimList_Destroy(instructions);
-	return response;
+    SlimList* instructions = SlimList_Deserialize(message);
+    SlimList* results = ListExecutor_Execute(listExecutor, instructions);
+    char * response = SlimList_Serialize(results);
+    SlimList_Destroy(results);
+    SlimList_Destroy(instructions);
+    return response;
 }
 ```
 
@@ -241,27 +241,27 @@ Now it's time to create the fixture. Since this is a mechanics tutorial, I'll gi
 # include "SlimUtils.h"
  
 struct ExecuteBinaryOperator {
-	ExecuteBinaryOperator() {
-		lastValue[0] = 0;
-	}
+    ExecuteBinaryOperator() {
+        lastValue[0] = 0;
+    }
 
-	int execute() {
-		RpnCalculator calculator(factory);
-		calculator.enterNumber(lhs);
-		calculator.enterNumber(rhs);
-		calculator.executeOperator(op);
-		return calculator.getX();
-	}
+    int execute() {
+        RpnCalculator calculator(factory);
+        calculator.enterNumber(lhs);
+        calculator.enterNumber(rhs);
+        calculator.executeOperator(op);
+        return calculator.getX();
+    }
 
-	static ExecuteBinaryOperator* From(void *fixtureStorage) {
-		return reinterpret_cast<ExecuteBinaryOperator*>(fixtureStorage);
-	}
+    static ExecuteBinaryOperator* From(void *fixtureStorage) {
+        return reinterpret_cast<ExecuteBinaryOperator*>(fixtureStorage);
+    }
 
-	OperatorFactory factory;
-	int lhs;
-	int rhs;
-	std::string op;
-	char lastValue[32];
+    OperatorFactory factory;
+    int lhs;
+    int rhs;
+    std::string op;
+    char lastValue[32];
 };
 
 extern "C" {
@@ -270,7 +270,7 @@ void* ExecuteBinaryOperator_Create(StatementExecutor* errorHandler, SlimList* ar
 }
  
 void ExecuteBinaryOperator_Destroy(void* self) {
-	delete ExecuteBinaryOperator::From(self);
+    delete ExecuteBinaryOperator::From(self);
 }
  
 static char* setLhs(void* fixture, SlimList* args) {
@@ -481,9 +481,9 @@ static char* execute(void *fixture, SlimList *args) {
 }
 
 static char* getX(void *fixture, SlimList *args) {
-	ProgramTheCalculator *self = ProgramTheCalculator::From(fixture);
-	snprintf(self->lastResult, sizeof(self->lastResult), "%d", self->calculator.getX());
-	return self->lastResult;
+    ProgramTheCalculator *self = ProgramTheCalculator::From(fixture);
+    snprintf(self->lastResult, sizeof(self->lastResult), "%d", self->calculator.getX());
+    return self->lastResult;
 }
 
 SLIM_CREATE_FIXTURE(ProgramTheCalculator)
@@ -543,58 +543,58 @@ Now you'll need to create a fixture. Create a new source file called **AlphaName
 # include "QueryResultAccumulator.h"
 
 struct AlphaNamedOperators {
-	OperatorFactory factory;
-	RpnCalculator calculator;
-	QueryResultAccumulator accumulator;
+    OperatorFactory factory;
+    RpnCalculator calculator;
+    QueryResultAccumulator accumulator;
 
-	AlphaNamedOperators() :
-		calculator(factory) {
-	}
+    AlphaNamedOperators() :
+        calculator(factory) {
+    }
 
-	~AlphaNamedOperators() {
-	}
+    ~AlphaNamedOperators() {
+    }
 
-	static AlphaNamedOperators* From(void *fixtureStorage) {
-		return reinterpret_cast<AlphaNamedOperators*> (fixtureStorage);
-	}
+    static AlphaNamedOperators* From(void *fixtureStorage) {
+        return reinterpret_cast<AlphaNamedOperators*> (fixtureStorage);
+    }
 
-	void conditionallyAddOperatorNamed(const std::string &name) {
-		if (isalpha(name[0])) {
-			accumulator.addFieldNamedWithValue("op", name);
-			accumulator.finishCurrentObject();
-		}
-	}
+    void conditionallyAddOperatorNamed(const std::string &name) {
+        if (isalpha(name[0])) {
+            accumulator.addFieldNamedWithValue("op", name);
+            accumulator.finishCurrentObject();
+        }
+    }
 
-	char *buildResult() {
-		v_string names = calculator.allOperatorNames();
-		return buildResult(names);
-	}
+    char *buildResult() {
+        v_string names = calculator.allOperatorNames();
+        return buildResult(names);
+    }
 
-	char *buildResult(v_string &names) {
-		for (v_string::iterator iter = names.begin(); iter != names.end(); ++iter)
-			conditionallyAddOperatorNamed(*iter);
+    char *buildResult(v_string &names) {
+        for (v_string::iterator iter = names.begin(); iter != names.end(); ++iter)
+            conditionallyAddOperatorNamed(*iter);
 
-		return accumulator.produceFinalResults();
-	}
+        return accumulator.produceFinalResults();
+    }
 };
 
 extern "C" {
 void* AlphaNamedOperators_Create(StatementExecutor* errorHandler,
-		SlimList* args) {
-	return new AlphaNamedOperators;
+        SlimList* args) {
+    return new AlphaNamedOperators;
 }
 
 void AlphaNamedOperators_Destroy(void *fixture) {
-	delete AlphaNamedOperators::From(fixture);
+    delete AlphaNamedOperators::From(fixture);
 }
 
 static char* query(void *fixture, SlimList *args) {
-	auto *self = AlphaNamedOperators::From(fixture);
-	return self->buildResult();
+    auto *self = AlphaNamedOperators::From(fixture);
+    return self->buildResult();
 }
 
 SLIM_CREATE_FIXTURE(AlphaNamedOperators)
-	SLIM_FUNCTION(query)SLIM_END
+    SLIM_FUNCTION(query)SLIM_END
 
 }
 ```
@@ -613,4 +613,4 @@ SLIM_END
 
 Save and rebuild. You should now have a passing test. If you run the entire suite, all three tests should pass.
 
-[<--Back]({{ site.pagesurl}}/cpptraining#FitNesse)
+[<--Back]({{ site.pagesurl}}/CppTraining#FitNesse)

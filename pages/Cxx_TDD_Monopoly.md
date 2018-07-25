@@ -39,6 +39,7 @@ In this example, I've used the following tools:
 
 ## Overview
 When we talk about TDD, you'll often hear "Red, Green, Refactor." This is a light-weight way to remind us of the steps we take while practicing TDD. In practice there are more than three steps:
+
 |**Color**|**You do what?**|**What can you expect?**|
 |Red|Write a test|The test will not compile yet, because there's no supporting code|
 |Red|Get the test to compile|Add minimal code to get your test to compile. It sill will not pass.|

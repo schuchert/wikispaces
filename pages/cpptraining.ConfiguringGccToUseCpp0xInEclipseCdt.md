@@ -1,7 +1,7 @@
 ---
 title: cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt
 ---
-[<-- Back]({{ site.pagesurl}}/cpptraining#cpp0x)
+[<-- Back]({{ site.pagesurl}}/CppTraining#cpp0x)
 
 # Overview
 This is a description of why I chose to use C++0x for some examples and how to configure gcc to allow for C++0x. If you are interested in the how, [just skip to the steps]({{ site.pagesurl}}/cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt#thesteps).
@@ -52,4 +52,4 @@ These steps assume you are using the latest version of the Eclipse CDT along wit
 
 Note, the initial examples do you actually require you to compile boost as they use header-only features of the boost library.
 
-[<-- Back]({{ site.pagesurl}}/cpptraining#cpp0x)
+[<-- Back]({{ site.pagesurl}}/CppTraining#cpp0x)

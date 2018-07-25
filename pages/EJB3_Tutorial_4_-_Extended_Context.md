@@ -5,19 +5,22 @@ title: EJB3_Tutorial_4_-_Extended_Context
 [<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)
 
 # Ejb3 Tutorial 4 - Extended Context
+
 A Stateful session bean can optionally use an extended context. An extended context maintains its managed objects between transactions or even in situation where a method is not using transactions. All objects accessed or created hang around until the bean goes away. This normally happens when a client executes a method that has been denoted as a Remove method (annotated with @Remove or declared as such in XML).
 
 This short tutorial demonstrates some of the differences between these two types of container-managed contexts.
 
 ## Project Setup
+
 The instructions for setting up your project mirror those from the first tutorial: [EJB3_Tutorial_1_-_Create_and_Configure]({{site.pagesurl}}/EJB3_Tutorial_1_-_Create_and_Configure).
 
 For the remainder of this tutorial, when you see **<project>**, replace it with **Ejb3Tutorial4**.
 [include_page="Ejb3EclipseProjectSetupAndConfiguration"]({{site.pagesurl}}/include_page="Ejb3EclipseProjectSetupAndConfiguration")
 Here are a few things to note (source for all of these items appears at the end after the assignments [EJB3_Tutorial_4_-_Extended_Context#OtherFiles]({{site.pagesurl}}/EJB3_Tutorial_4_-_Extended_Context#OtherFiles):
-# Make sure you copy the **utils** directory from a previous tutorial.
-# Make sure you copy a **persistence.xml** from a previous tutorial.
-# Make sure you update the **persistence.xml**'s persistence-unit name:
+* Make sure you copy the **utils** directory from a previous tutorial.
+* Make sure you copy a **persistence.xml** from a previous tutorial.
+* Make sure you update the **persistence.xml**'s persistence-unit name:
+
 ```xml
 <persistence-unit name="tolltag">
 ```
@@ -27,6 +30,7 @@ Here are a few things to note (source for all of these items appears at the end 
 For this example, we have a simple entity model. We have an Account that has a bidirectional one-to-many relationship with TollTag objects and a bidirectional one-to-many relationship with Vehicle objects. Normally, one-to-many relationships are lazily fetched. For this example, the relationship with TollTag objects is left as lazily fetched while the relationship with Vehicle objects is eagerly fetched. 
 
 **Account.java**
+
 ```java
 package entity;
 
@@ -118,6 +122,7 @@ public class Account {
 ```
 
 **TollTag.java**
+
 ```java
 package entity;
 
@@ -191,6 +196,7 @@ public class TollTag {
 ```
 
 **Vehicle.java**
+
 ```java
 package entity;
 
@@ -299,6 +305,7 @@ public class Vehicle {
 ## The Session Beans
 
 **AccountInventory.java**
+
 ```java
 package session;
 
@@ -351,6 +358,7 @@ public interface AccountInventory {
 ```
 
 **AccountInventoryBean.java**
+
 ```java
 package session;
 
@@ -411,6 +419,7 @@ public class AccountInventoryBean implements AccountInventory {
 ```
 
 **AccountInventoryExtendedBean.java**
+
 ```java
 package session;
 
@@ -475,6 +484,7 @@ public class AccountInventoryExtendedBean implements AccountInventory {
 ## The Tests
 
 This class performs the same two test algorithms two times each for a total of 4 test methods:
+
 |**Name**|**Scope**|**Accesses**|**Expected**|
 |createExampleUsingVehiclesTransactionScoped|Transaction|Vehicles|Success|
 |createExampleUsingVehiclesExtendedScoped|Extended|Vehicles|Success|
@@ -482,6 +492,7 @@ This class performs the same two test algorithms two times each for a total of 4
 |createExampleUsingTollTagsExtendedScoped|Extended|TollTags|Success|
 
 **AccountInventoryBeanTest.java**
+
 ```java
 package session;
  
@@ -593,11 +604,13 @@ public class AccountInventoryBeanTest {
 ```
 
 ## Exercises
+
 ### Test Passing
+
 There are 3 ways to make the one failing test pass:
-# Touch the collection before returning from the method
-# Change the query from using getEm().find(...) to instead use a named query such as "SELECT a FROM Account a JOIN FETCH a.tollTags WHERE a.id = :id"
-# Add fetch = FetchType.EAGER to the attribute, but note that if you do, you might need to change the type from Collection<TollTag> to Set<TollTag> due to a limitation in implementation of the entity manager.
+* Touch the collection before returning from the method
+* Change the query from using getEm().find(...) to instead use a named query such as "SELECT a FROM Account a JOIN FETCH a.tollTags WHERE a.id = :id"
+* Add fetch = FetchType.EAGER to the attribute, but note that if you do, you might need to change the type from Collection<TollTag> to Set<TollTag> due to a limitation in implementation of the entity manager.
 
 Experiment with each of these options.
 
@@ -609,7 +622,9 @@ The interface seems to be a bit messed up with concepts that relate to both stat
 
 [#OtherFiles]({{site.pagesurl}}/#OtherFiles)
 ## Other Files
+
 **persistence.xml**
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>
@@ -623,4 +638,5 @@ The interface seems to be a bit messed up with concepts that relate to both stat
 ```
 
 [include_page="Ejb3JBossUtilJava"]({{site.pagesurl}}/include_page="Ejb3JBossUtilJava")
+
 [<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)

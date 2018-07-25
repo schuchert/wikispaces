@@ -44,6 +44,7 @@ Here's the very first thing we'll write:
 ```
 
 **Description**
+
 |**Line**|**Description**|
 |1|The key include file for CxxText. CxxTest consists of header files and some source files that get included. You need to make sure your build system can find CxxTest's header files but other than that one requirement, there's nothing else you'll need to do to make CxxTest work.|
 |2|We are going to be using this as-yet-to-be-created class. Since we are actually **using** it, we must include it. We cannot simply forward declare the Die type.|
@@ -56,6 +57,7 @@ Here's the very first thing we'll write:
 |10|Roll the die and increment the value in the array whose index is equal to the die's roll. What happens if the die rolls a value < 0 or > 6? This test will fail and we'll know it. So I don't need to check outside of that range, the result will be a failing test, which is fine.|
 |13|Make sure we never rolled 0. TS_ASSERT_EQUALS is a **macro**, notice that the line does not end with a semi-colon (;). You could add one, it won't hurt, but it is not necessary. TS_ASSERT_EQUALS uses the operator equal-equal to compare the value on the left with the value on the right. If operator equal-equal returns false, then then you'll get a failed test.|
 |14 - 15|Verify that the values in the vector at index [1..6] are "reasonable." You might think that 100 3's, for example, is not enough given 10,000 roles. This test is just trying to make sure we're relatively certain that the unit under test, Die, works well.|
+
 
 This is our first test, so let's state the goals of a unit test:
 * **Automated**: You write the test so that it performs its setup, execution, validation and cleanup automatically. You spend the "extra" time to do this because we'll run these *a lot* so time spent making these automated will pay back big.
@@ -112,6 +114,7 @@ int Die::roll() {
 
 We need one more piece of boilerplate code to bring this altogether: 
 **main.cpp**
+
 ```cpp
 # include <cxxtest/ErrorPrinter.h>
 
@@ -126,10 +129,11 @@ int main( int argc, char* argv[]) {
 We're going to start by first generating and executing our tests using the command line. Once we've managed to do that, we'll introduce a makefile to handle all of our steps for us.
 
 **The Steps**
-# Use cxxtestgen, which comes with CxxTest, to generate the source file for your tests
-# Compile and link everything
-# Run your tests
-# Review results
+* Use cxxtestgen, which comes with CxxTest, to generate the source file for your tests
+* Compile and link everything
+* Run your tests
+* Review results
+
 ```
 $ <path to cxx dir>/cxxtestgen.pl DieTest.hpp -o tests.cpp
 $ g++ *.cpp -I <path to cxx dir> -o main
@@ -205,7 +209,7 @@ As I was developing this first iteration, I was constantly trying to improve my 
 As a consultant, I notice people thinking I'm crazy about the idea of checking in multiple times per day (and integrating with everybody else who's also checking in multiple times per day). It's possible, I've done it on teams up to 60 people. It doesn't happen for free, you have to start with the goal in mind.
 
 I mention all of this because you might think the makefile is overkill for this project. You might not, it all depends on how you prefer to work.
-----
+
 ## Test 2: Red: Reasonable Initial Value
 Next, we want to make sure that when we create a die object, it has a reasonable initial value. Here's one way to test that:
 ```cpp
@@ -629,8 +633,8 @@ int Player::location() {
 ```
 
 We have two steps that remain:
-# Update the makefile
-# run the tests
+* Update the makefile
+* run the tests
 
 **Update the Makefile**
 We need to add PlayerTest.hpp to the TESTS macro:
@@ -1181,13 +1185,13 @@ public:
 Note: Given that this mock is only for use in the GameTest class, I'd recommend putting it at the top of GameTest.hpp.
 
 In this case we're using traditional "strong" polmorphism. We are replacing the behavior of the Player class's takeATurn() member function. There are seven steps to get strong polymorphism in C++:
-# Write a base class (Player)
-# Write a derived class (TurnCountingPlayerMock)
-# Create an instance of the derived class (we'll do this in a test)
-# Write a method in the base class (takeATurn)
-# Make the method in the base class virtual
-# Override method in derived class (our mock has its own takeATurn)
-# Call the method via a pointer to an object or a reference to an object (we'll have to do so in the play() method in game)
+* Write a base class (Player)
+* Write a derived class (TurnCountingPlayerMock)
+* Create an instance of the derived class (we'll do this in a test)
+* Write a method in the base class (takeATurn)
+* Make the method in the base class virtual
+* Override method in derived class (our mock has its own takeATurn)
+* Call the method via a pointer to an object or a reference to an object (we'll have to do so in the play() method in game)
 
 Here is a test in GameTest.hpp that will use this mock player:
 ```cpp
@@ -1313,10 +1317,12 @@ To paraphrase Douglas Adams, if the system ever has all of its tests running, it
 * Add output to your system:
 ** Try to do it without changing any of the existing classes or header files in your system.
 [#EndGame]({{site.pagesurl}}/#EndGame)
+
 # End Game
 This section contains all of the complete Iteration 1 source files with no explanations.
-----
+
 ## makefile
+
 ```
 # ----------------------------------------------------------------------------
 # Add all files contain cxxtest unit tests to the following macro
@@ -1397,8 +1403,8 @@ tests.o: gentests
 -include $(MD_FILE)
 ```
 
-----
 ## DieTest.hpp
+
 ```cpp
 # include <cxxtest/TestSuite.h>
 # include <vector>
@@ -1436,8 +1442,8 @@ public:
 };
 ```
 
-----
 ## Die.hpp
+
 ```cpp
 # ifndef Die_hpp
 # define Die_hpp
@@ -1456,8 +1462,8 @@ private:
 # endif
 ```
 
-----
 ## Die.cpp
+
 ```cpp
 # include <climits>
 # include <stdlib.h>
@@ -1482,8 +1488,8 @@ int Die::faceValue() {
 }
 ```
 
-----
 ## DiceTest.hpp
+
 ```cpp
 # include <cxxtest/TestSuite.h>
 # include <vector>
@@ -1508,8 +1514,8 @@ public:
 };
 ```
 
-----
 ## Dice.hpp
+
 ```cpp
 # ifndef Dice_hpp
 # define Dice_hpp
@@ -1532,8 +1538,8 @@ private:
 # endif
 ```
 
-----
 ## Dice.cpp
+
 ```cpp
 # include "Dice.hpp"
 # include "Die.hpp"
@@ -1568,8 +1574,8 @@ int Dice::roll() {
 }
 ```
 
-----
 ## PlayerTest.hpp
+
 ```cpp
 # include <cxxtest/TestSuite.h>
 # include "Dice.hpp"
@@ -1595,8 +1601,8 @@ public:
 };
 ```
 
-----
 ## Player.hpp
+
 ```cpp
 # ifndef Player_hpp
 # define Player_hpp
@@ -1622,8 +1628,8 @@ private:
 # endif
 ```
 
-----
 ## Player.cpp
+
 ```cpp
 # include "Player.hpp"
 # include "Dice.hpp"
@@ -1652,8 +1658,8 @@ void Player::setLocation(int location) {
 }
 ```
 
-----
 ## GameTest.hpp
+
 ```cpp
 # include <cxxtest/TestSuite.h>
 # include <vector>
@@ -1745,8 +1751,8 @@ public:
 };
 ```
 
-----
 ## InvalidPlayerCount.hpp
+
 ```cpp
 # ifndef InvalidPlayerCount_hpp
 # define InvalidPlayerCount_hpp
@@ -1765,8 +1771,8 @@ public:
 # endif
 ```
 
-----
 ## Game.hpp
+
 ```cpp
 # ifndef Game_hpp
 # define Game_hpp
@@ -1794,8 +1800,8 @@ private:
 # endif
 ```
 
-----
 ## Game.cpp
+
 ```cpp
 # include <algorithm>
 # include "Game.hpp"
@@ -1837,8 +1843,8 @@ Player *Game::getPlayer(int playerNumber) {
 }
 ```
 
-----
 ## Main.cpp
+
 ```cpp
 # include <cxxtest/ErrorPrinter.h>
 
@@ -1847,5 +1853,4 @@ int main( int argc, char* argv[]) {
 	errorPrinter.run();
 	return 0;
 }
- 
 ```

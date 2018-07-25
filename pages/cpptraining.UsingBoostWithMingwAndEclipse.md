@@ -1,7 +1,7 @@
 ---
 title: cpptraining.UsingBoostWithMingwAndEclipse
 ---
-[<--Back]({{ site.pagesurl}}/cpptraining#boost)
+[<--Back]({{ site.pagesurl}}/CppTraining#boost)
 
 # Overview
 Now that you've [successfully build boot]({{ site.pagesurl}}/cpptraining.GettingAndBuildingBoostInMingw), it is finally time to use it in a project.
@@ -15,4 +15,4 @@ Now that you've [successfully build boot]({{ site.pagesurl}}/cpptraining.Getting
 [include_page="cpptraining.ConfiguringTheProjectForCppUTest"]({{site.pagesurl}}/include_page="cpptraining.ConfiguringTheProjectForCppUTest")
 [include_page="cpptraining.ConfiguringTheProjectToUseBoost"]({{site.pagesurl}}/include_page="cpptraining.ConfiguringTheProjectToUseBoost")
 
-[<--Back]({{ site.pagesurl}}/cpptraining#boost)
+[<--Back]({{ site.pagesurl}}/CppTraining#boost)

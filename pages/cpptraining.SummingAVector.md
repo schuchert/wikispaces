@@ -2,7 +2,7 @@
 title: cpptraining.SummingAVector
 ---
 {:toc}
-[<-- Back]({{ site.pagesurl}}/cpptraining#vector)
+[<-- Back]({{ site.pagesurl}}/CppTraining#vector)
 
 # Overview
 This is a series of examples that demonstrate how to get the sum of a vector of primitives, then objects, and finally shared pointers to objects. It starts with one typical way of accomplishing the task. It then goes into several more examples. The final example will probably seem like quite a huge leap over the next to last example. At that point, there will be another series of examples that builds up to that final example.
@@ -620,4 +620,4 @@ TEST(plusAndBind, vsp_Value) {
 }
 ```
 
-[<-- Back]({{ site.pagesurl}}/cpptraining#vector)
+[<-- Back]({{ site.pagesurl}}/CppTraining#vector)
