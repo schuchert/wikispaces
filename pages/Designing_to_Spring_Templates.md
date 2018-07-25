@@ -1,7 +1,7 @@
 ---
 title: Designing_to_Spring_Templates
 ---
-[[home|<--Back]] [Next-->]({{site.pagesurl}}/Spring_Templates_Typical_JDBC)
+[Home]({{site.pagesurl}}/home) [Next-->]({{site.pagesurl}}/Spring_Templates_Typical_JDBC)
 
 # Designing to Spring Templates 
 
@@ -22,18 +22,18 @@ The question this article tries to answer is "How did they come up with that des
 
 To get from "normal" JDBC to the [Spring JdbcTemplate](http://www.springframework.org/docs/api/org/springframework/jdbc/core/JdbcTemplate.html) we'll go through a total of 9 steps, although two of the steps introduce batch operations. Those steps are:
 
-# [Typical JDBC]({{site.pagesurl}}/Spring_Templates_Typical_JDBC)
-# [JDBC Using Template Method Pattern]({{site.pagesurl}}/Spring_Templates_JDBC_Using_Template_Method_Pattern)
-# [JDBC Strategy Is A Template]({{site.pagesurl}}/Spring_Templates_JDBC_Strategy_Is_A_Template)
-# [JDBC Template Uses Strategy V1]({{site.pagesurl}}/Spring_Templates_JDBC_Template_Uses_Strategy_V1)
-# [JDBC Template Uses Strategy V2]({{site.pagesurl}}/Spring_Templates_JDBC_Template_Uses_Strategy_V2)
-# [JDBC Template Uses Strategy V3]({{site.pagesurl}}/Spring_Templates_JDBC_Template_Uses_Strategy_V3)
-# [JDBC Template Uses Strategy V4]({{site.pagesurl}}/Spring_Templates_JDBC_Template_Uses_Strategy_V4)
-# [Spring JdbcTemplate]({{site.pagesurl}}/Spring_Templates_JdbcTemplate)
-# [Spring Templates with Batch Insert]({{site.pagesurl}}/Spring_Templates_JdbcTemplate_With_Batch_Insert)
+* [Typical JDBC]({{site.pagesurl}}/Spring_Templates_Typical_JDBC)
+* [JDBC Using Template Method Pattern]({{site.pagesurl}}/Spring_Templates_JDBC_Using_Template_Method_Pattern)
+* [JDBC Strategy Is A Template]({{site.pagesurl}}/Spring_Templates_JDBC_Strategy_Is_A_Template)
+* [JDBC Template Uses Strategy V1]({{site.pagesurl}}/Spring_Templates_JDBC_Template_Uses_Strategy_V1)
+* [JDBC Template Uses Strategy V2]({{site.pagesurl}}/Spring_Templates_JDBC_Template_Uses_Strategy_V2)
+* [JDBC Template Uses Strategy V3]({{site.pagesurl}}/Spring_Templates_JDBC_Template_Uses_Strategy_V3)
+* [JDBC Template Uses Strategy V4]({{site.pagesurl}}/Spring_Templates_JDBC_Template_Uses_Strategy_V4)
+* [Spring JdbcTemplate]({{site.pagesurl}}/Spring_Templates_JdbcTemplate)
+* [Spring Templates with Batch Insert]({{site.pagesurl}}/Spring_Templates_JdbcTemplate_With_Batch_Insert)
 
 Note, once you select on any of the above links, the next and previous links will take you through the above links in order and will not get you back here (unless you are on the first or last item in the list).
 
 I'd appreciate any feedback you have to offer. Please write me: schuchert@yahoo.com.
 
-[[home|<--Back]] [Next-->]({{site.pagesurl}}/Spring_Templates_Typical_JDBC)
+[Home]({{site.pagesurl}}/home) [Next-->]({{site.pagesurl}}/Spring_Templates_Typical_JDBC)

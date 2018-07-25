@@ -1,6 +1,8 @@
 ---
 title: space.menu
 ---
+[Back to the Top]({{site.pagesurl}}/home)
+
 [My CV]({{ site.pagesurl}}/MyCv)
 [C++ Training]({{ site.pagesurl}}/cpptraining)
 [New Stuff]({{ site.pagesurl}}/NewStuff)
@@ -13,4 +15,5 @@ title: space.menu
 [Tool Configuration]({{site.pagesurl}}/Tool_Setup_and_Configuration_Notes)
 [AOP]({{site.pagesurl}}/AOP)
 [C# & OOP]({{ site.pagesurl}}/CSharpAndOop)
-[[home|Back to the Top]]
+
+[Back to the Top]({{site.pagesurl}}/home)
