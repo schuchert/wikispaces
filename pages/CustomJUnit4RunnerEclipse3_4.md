@@ -5,7 +5,7 @@ title: CustomJUnit4RunnerEclipse3_4
 # Writing a Custom JUnit 4 Test Runner
 
 ## Introduction
-(**Note** This example works with the JUnit 4 that is shipped with Eclipse 3.4M7 but it should work with any version of JUnit 4, even 4.4. With JUnit 4.4, you'll get warnings since some of the classes are deprecated. You can use the [[other version]] instead (e.g. in IntelliJ or from the command line.)
+(**Note** This example works with the JUnit 4 that is shipped with Eclipse 3.4M7 but it should work with any version of JUnit 4, even 4.4. With JUnit 4.4, you'll get warnings since some of the classes are deprecated. You can use the [[other_version]] instead (e.g. in IntelliJ or from the command line.)
 
 This comes from a recent problem at a customer site. The customer had a number of automated tests written in JUnit. The tests were a mixture of unit tests and integration tests. To try and speed up the developer experience, we though that moving the integration-style tests into a separate source tree would solve the problem.
 

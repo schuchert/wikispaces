@@ -1,42 +1,42 @@
 ---
 title: RpnCalculatorPrintable
 ---
-[[include page="RPN Calculator"]]
+[[include_page="RPN_Calculator"]]
 ----
 ## Release 1
 ### Addition
-[[include page="RPN Calculator Addition"]]
+[[include_page="RPN_Calculator_Addition"]]
 ### Subtraction
-[[include page="RPN Calculator Subtraction"]]
+[[include_page="RPN_Calculator_Subtraction"]]
 ### Multiplication
-[[include page="RPN Calculator Multiplication"]]
+[[include_page="RPN_Calculator_Multiplication"]]
 ### Division
-[[include page="RPN Calculator Division"]]
+[[include_page="RPN_Calculator_Division"]]
 ----
 ## Release 2
 ### Review Stack
-[[include page="RPN Calculator Review Stack"]]
+[[include_page="RPN_Calculator_Review_Stack"]]
 ### Clear Stack
-[[include page="RPN Calculator Clear Stack"]]
+[[include_page="RPN_Calculator_Clear_Stack"]]
 ### Insert into Stack
-[[include page="RPN Calculator Insert into Stack"]]
+[[include_page="RPN_Calculator_Insert_into_Stack"]]
 ### Replace Item on Stack
-[[include page="RPN Calculator Replace Item on Stack"]]
+[[include_page="RPN_Calculator_Replace_Item_on_Stack"]]
 ----
 ## Release 3
 ### Square Root
-[[include page="RPN Calculator Square Root"]]
+[[include_page="RPN_Calculator_Square_Root"]]
 ### Y to X
-[[include page="RPN Calculator Y to X"]]
+[[include_page="RPN_Calculator_Y_to_X"]]
 ### 1 over X
-[[include page="RPN Calculator 1 over X"]]
+[[include_page="RPN_Calculator_1_over_X"]]
 ### Sin
-[[include page="RPN Calculator Sin"]]
+[[include_page="RPN_Calculator_Sin"]]
 ### Cos
-[[include page="RPN Calculator Cos"]]
+[[include_page="RPN_Calculator_Cos"]]
 ### Tan
-[[include page="RPN Calculator Tan"]]
+[[include_page="RPN_Calculator_Tan"]]
 ### Exponentials
-[[include page="RPN Calculator Exponentials"]]
+[[include_page="RPN_Calculator_Exponentials"]]
 ### Factorials
-[[include page="RPN Calculator Factorials"]]
+[[include_page="RPN_Calculator_Factorials"]]

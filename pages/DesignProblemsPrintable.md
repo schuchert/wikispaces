@@ -1,19 +1,19 @@
 ---
 title: DesignProblemsPrintable
 ---
-[[include page="ITunesCompetetorDesignProblem"]]
+[[include_page="ITunesCompetetorDesignProblem"]]
 ----
 ----
-[[include page="GmOnStarCompetetorDesignProblem"]]
+[[include_page="GmOnStarCompetetorDesignProblem"]]
 ----
 ----
-[[include page="TimeTrackingForConsultingCompanyDesignProblem"]]
+[[include_page="TimeTrackingForConsultingCompanyDesignProblem"]]
 ----
 ----
-[[include page="ClinicalTrialsTrackingDesignProblem"]]
+[[include_page="ClinicalTrialsTrackingDesignProblem"]]
 ----
 ----
-[[include page="DvrDesignProblem"]]
+[[include_page="DvrDesignProblem"]]
 ----
 ----
-[[include page="HeavyEquipmentRental"]]
+[[include_page="HeavyEquipmentRental"]]

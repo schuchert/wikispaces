@@ -3,28 +3,28 @@ title: Ejb_3_Tutorial_2_-_Printable
 ---
 # Session Bean and JPA
 
-This tutorial revisits the entities from [[JPA Tutorial 1 - Getting Started]] and introduces a DAO, which gets its entity manager auto-wired.
+This tutorial revisits the entities from [[JPA_Tutorial_1_-_Getting_Started]] and introduces a DAO, which gets its entity manager auto-wired.
 ----
 ## Setting Up Your Project
-[[include page="Ejb 3 Tutorial 2 - Setting Up Your Project"]]
+[[include_page="Ejb_3_Tutorial_2_-_Setting_Up_Your_Project"]]
 ----
 ## The Entity Model
-[[include page="Ejb 3 Tutorial 2 - The Entity Model"]]
+[[include_page="Ejb_3_Tutorial_2_-_The_Entity_Model"]]
 ----
 ## The Dao and its Interface
-[[include page="Ejb 3 Tutorial 2 - The Dao and its Interface"]]
+[[include_page="Ejb_3_Tutorial_2_-_The_Dao_and_its_Interface"]]
 ----
 ## Starting JBoss EJB 3 Embeddable Container
-[[include page="Ejb 3 Tutorial 2 - Starting the Container"]]
+[[include_page="Ejb_3_Tutorial_2_-_Starting_the_Container"]]
 ----
 ## Smoke Test Suite
-[[include page="Ejb 3 Tutorial 2 - Smoke Test Suite"]]
+[[include_page="Ejb_3_Tutorial_2_-_Smoke_Test_Suite"]]
 ----
 ## Optional: Data Source Configuration
-[[include page="Ejb 3 Tutorial 2 - Optional Data Source Configuration"]]
+[[include_page="Ejb_3_Tutorial_2_-_Optional_Data_Source_Configuration"]]
 ----
 ## Optional: QuantumDb Setup and Configuration
-[[include page="QuantumDB Configuration"]]
+[[include_page="QuantumDB_Configuration"]]
 ----
 ## Exercises
-[[include page="Ejb 3 Tutorial 2 - Exercises"]]
+[[include_page="Ejb_3_Tutorial_2_-_Exercises"]]

@@ -7,7 +7,7 @@ title: AspectJEX4ApplyYourself
 ## Avoid unnecessary checking
 Change the SetInterceptor so that if the object is already changed, it does not check the current and previous value.
 ----
-[[#Unexpected Recursion]]
+[[#Unexpected_Recursion]]
 ## Experiment: Unexpected Recursion
 Line 13 of [FieldSetAspect.java]({{ site.pagesurl}}/AspectJEX4Explained#FieldSetAspect) file defines a pointcut meant to avoid recursion. Line 21 actually uses that pointcut. Change line 21 by removing “&& skipTrackedObject()” and run main(). Describe why happens.
 

@@ -6,9 +6,9 @@ title: Car_Rental_Installation_and_Setup
 # Car Rental Installation and Setup
 
 This project uses Eclipse 3.2 and JDK 1.5.0_06. I have a few additional plugins installed into Eclipse. These are all optional:
-* [Checkstyle](http://eclipse-cs.sourceforge.net/), for details see: [[Checkstyle in Eclipse]].
-* [PMD](http://pmd.sourceforge.net/integrations.html#eclipse), for details see: [[PMD In Eclipse]].
-* Subversion on my PC and Subclipse. See: [[Subversion on XP]].
+* [Checkstyle](http://eclipse-cs.sourceforge.net/), for details see: [[Checkstyle_in_Eclipse]].
+* [PMD](http://pmd.sourceforge.net/integrations.html#eclipse), for details see: [[PMD_In_Eclipse]].
+* Subversion on my PC and Subclipse. See: [[Subversion_on_XP]].
 
 ## Libraries
 **Required**
@@ -100,8 +100,8 @@ These steps are optional if you've installed Eclipse and the various libs in the
 # All 100 tests should pass
 
 **Optional: Code Coverage**
-* [[Car Rental Code Coverage with Emma]]
-* [[Car Rental Code Coverage with Cobertura]]
+* [[Car_Rental_Code_Coverage_with_Emma]]
+* [[Car_Rental_Code_Coverage_with_Cobertura]]
 
 **Optional: Run PMD**
 # Right-click on the project

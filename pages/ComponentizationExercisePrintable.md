@@ -1,6 +1,6 @@
 ---
 title: ComponentizationExercisePrintable
 ---
-[[include page="Vancouver_PPP_Exercise_Ch8and9"]]
-[[include page="PPPChapter8Exercise"]]
-[[include page="PPPChapter9Exercise"]]
+[[include_page="Vancouver_PPP_Exercise_Ch8and9"]]
+[[include_page="PPPChapter8Exercise"]]
+[[include_page="PPPChapter9Exercise"]]

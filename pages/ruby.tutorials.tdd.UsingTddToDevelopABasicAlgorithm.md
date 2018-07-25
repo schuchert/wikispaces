@@ -104,8 +104,8 @@ You will create a test whose primary purpose is to get the production class crea
   end
 ```
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.RubyFilesUseSpaces"]]
-[[include page="sidebar_end"]]
+[[include page="sidebar_start"]][[include_page="ruby.sidebar.RubyFilesUseSpaces"]]
+[[include_page="sidebar_end"]]
 
 Note: In Test::Unit, a test class must inherit from Test::Unit::TestCase and all all methods you want to be executed as test must start with the name "test".
 
@@ -405,9 +405,9 @@ Created commit a284610: Added support for constants
 Macintosh-7%
 ```
 ## Refactor The Unit Tests
-[[include page="sidebar_start"]][[include page="ruby.sidebar.HowManyStepsAreNormal"]][[include page="sidebar_end"]]
+[[include page="sidebar_start"]][[include page="ruby.sidebar.HowManyStepsAreNormal"]][[include_page="sidebar_end"]]
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.WhyShouldYouCareAboutTheTests"]][[include page="sidebar_end"]]
+[[include page="sidebar_start"]][[include page="ruby.sidebar.WhyShouldYouCareAboutTheTests"]][[include_page="sidebar_end"]]
 
 * Update your unit test by adding a setup method:
 ```ruby
@@ -538,7 +538,7 @@ Created commit bec791e: Removed duplication in the test code.
 Macintosh-7% 
 ```
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.Refactoring"]][[include page="sidebar_end"]]
+[[include page="sidebar_start"]][[include page="ruby.sidebar.Refactoring"]][[include_page="sidebar_end"]]
 
 Now is a great time to kick back, listen to some tunes, get a glass of ice tea and add TDD to your resume.
 
@@ -552,7 +552,7 @@ Now you'll add a test of addition:
   end
 ```
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.RubyAndParens"]][[include page="sidebar_end"]]
+[[include page="sidebar_start"]][[include page="ruby.sidebar.RubyAndParens"]][[include_page="sidebar_end"]]
 
 * Run your tests to see how it fails:
 ```terminal
@@ -751,7 +751,7 @@ By simply adding the current operator if it is non-null, your code should now be
 
 * Now is a great time to check your work it because you are about to refactor. Go ahead, it should only take a second.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.CheckingInIsSlow"]][[include page="sidebar_end"]]
+[[include page="sidebar_start"]][[include page="ruby.sidebar.CheckingInIsSlow"]][[include_page="sidebar_end"]]
 
 * Create a new method that writes the current operator if it is not null:
 ```ruby
@@ -1188,7 +1188,7 @@ So something is an operand if it is a sequence of digits of length 1 or more or 
 # Test: Handling ()
 In this section you'll start by properly parsing parenthesis. Then you'll make sure that ()'s work with simple expressions and finally you'll make sure that ()'s cause lower precedence operators to happen before higher-precedence operators.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.WhatIsAnalysis"]][[include page="sidebar_end"]]
+[[include page="sidebar_start"]][[include page="ruby.sidebar.WhatIsAnalysis"]][[include_page="sidebar_end"]]
 
 ## Test: Removing ()
 Begin by writing a test that verifies the removal of ()'s from an otherwise empty expression: $$ (\ )\ \ \rightarrow $$
@@ -1221,7 +1221,7 @@ Begin by writing a test that verifies the removal of ()'s from an otherwise empt
 
 * Check your work in.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.DIdYouJustWriteTooMuchProductionCode"]][[include page="sidebar_end"]]
+[[include page="sidebar_start"]][[include page="ruby.sidebar.DIdYouJustWriteTooMuchProductionCode"]][[include_page="sidebar_end"]]
 
 ## Test: () around expression works
 Next, verify that ()'s around an expression still works.  $$ (\ 4\ *\ a\ )\ \ \rightarrow \ \ 4\ a\ * $$ 

@@ -1,8 +1,8 @@
 ---
 title: ClinicalTrialsTrackingDesignProblem
 ---
-[[include page="ClinicalTrialsTrackingDesignProblemGeneral"]]
+[[include_page="ClinicalTrialsTrackingDesignProblemGeneral"]]
 
 ----
 
-[[include page="ClinicalTrialsTrackingDesignProblemProductOwner"]]
+[[include_page="ClinicalTrialsTrackingDesignProblemProductOwner"]]

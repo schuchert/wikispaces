@@ -20,14 +20,14 @@ Download AspectJ [here](http://www.eclipse.org/aspectj/downloads.php).
 
 ## Eclipse Configuration for AspectJ
 The following additional configuration sets will set your Eclipse configuration up the way I've set it up for all of these examples. You can click on individual links or just follow the [Next-->]({{site.pagesurl}}/Eclipse_VM_Configuration_for_AspectJ) link below:
-* [[Eclipse VM Configuration for AspectJ]]
-* [[Eclipse Classpath Variable for AspectJ]]
-* [[Eclipse Java Language Preferences for AspectJ]]
-* [[Eclipse Java Project Preferences for AspectJ]]
-* [[Save Workspace Configurations for AspectJ]]
+* [[Eclipse_VM_Configuration_for_AspectJ]]
+* [[Eclipse_Classpath_Variable_for_AspectJ]]
+* [[Eclipse_Java_Language_Preferences_for_AspectJ]]
+* [[Eclipse_Java_Project_Preferences_for_AspectJ]]
+* [[Save_Workspace_Configurations_for_AspectJ]]
 
 ## Eclipse Project JAR Files
-* [[JAR Files for AspectJ]]
+* [[JAR_Files_for_AspectJ]]
 
 ## Using Provided Source Code in ZIP Files
 * [[ExtractingSourceFilesIntoProject]]

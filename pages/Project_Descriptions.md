@@ -3,14 +3,14 @@ title: Project_Descriptions
 ---
 ## Monopoly
 * [[Monopoly]]
-* [[Cxx TDD Monopoly]]
-* [[Template Method]]
+* [[Cxx_TDD_Monopoly]]
+* [[Template_Method]]
 * [[MonopolyPrintable]]
 
 ## Rpn Calculator
-* [[Rpn Calculator High Level Description]]
-* [[RPN Calculator]]
-* [[Rpn Calculator.WithRefactoringAndPatterns]]
+* [[Rpn_Calculator_High_Level_Description]]
+* [[RPN_Calculator]]
+* [[Rpn_Calculator.WithRefactoringAndPatterns]]
 * [[ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator]]
 * [[RpnCalculatorPrintable]]
 

@@ -1,7 +1,7 @@
 ---
 title: Test_First_Development
 ---
-Many people do not make a distinction between [[Test Driven Development]] and Test First Development or Test First Coding. On this site, we make the following distinction. When using a Test First approach, we proceed tests with some amount of design work. 
+Many people do not make a distinction between [[Test_Driven_Development]] and Test First Development or Test First Coding. On this site, we make the following distinction. When using a Test First approach, we proceed tests with some amount of design work. 
 
 For example, we might begin with a simple [UML Communication diagram](http://www.agilemodeling.com/artifacts/communicationDiagram.htm). Once we've completed the diagram, we then will use unit tests to test our way into the design.
 

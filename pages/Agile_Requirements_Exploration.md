@@ -1,5 +1,5 @@
 ---
 title: Agile_Requirements_Exploration
 ---
-[[ARE - Presentation Outline]]
-[[ARE - Class Outline]]
+[[ARE_-_Presentation_Outline]]
+[[ARE_-_Class_Outline]]

@@ -1,44 +1,44 @@
 ---
 title: ruby.sidebars
 ---
-[[include page="ruby.sidebar.ThreeLawsOfTddRevisited" editable="true"]]
+[[include_page="ruby.sidebar.ThreeLawsOfTddRevisited"_editable="true"]]
 
-[[include page="ruby.sidebar.ExamplesPassingWithoutValidation" editable="true"]]
+[[include_page="ruby.sidebar.ExamplesPassingWithoutValidation"_editable="true"]]
 
-[[include page="ruby.sidebar.AllGreen" editable="true"]]
+[[include_page="ruby.sidebar.AllGreen"_editable="true"]]
 
-[[include page="ruby.sidebar.ConcreteExampleHardwareSimulator" editable="true"]]
+[[include_page="ruby.sidebar.ConcreteExampleHardwareSimulator"_editable="true"]]
 
-[[include page="ruby.sidebar.WhyTwoStepsInsteadOfJustOne" editable="true"]]
+[[include_page="ruby.sidebar.WhyTwoStepsInsteadOfJustOne"_editable="true"]]
 
-[[include page="ruby.sidebar.WhatASillyImplementation" editable="true"]]
+[[include_page="ruby.sidebar.WhatASillyImplementation"_editable="true"]]
 
-[[include page="ruby.sidebar.NotIdleChitChat" editable="true"]]
+[[include_page="ruby.sidebar.NotIdleChitChat"_editable="true"]]
 
-[[include page="ruby.sidebar.OpenClosedPrinciple" editable="true"]]
+[[include_page="ruby.sidebar.OpenClosedPrinciple"_editable="true"]]
 
-[[include page="ruby.sidebar.JustHowMuchCanYouFollowTheThreeLaws" editable="true"]]
+[[include_page="ruby.sidebar.JustHowMuchCanYouFollowTheThreeLaws"_editable="true"]]
 
-[[include page="ruby.sidebar.IDidTooMuch" editable="true"]]
+[[include_page="ruby.sidebar.IDidTooMuch"_editable="true"]]
 
-[[include page="ruby.sidebar.WrappingCollections" editable="true"]]
+[[include_page="ruby.sidebar.WrappingCollections"_editable="true"]]
 
-[[include page="ruby.sidebar.ExampleStylesAndYourAudience" editable="true"]]
+[[include_page="ruby.sidebar.ExampleStylesAndYourAudience"_editable="true"]]
 
-[[include page="ruby.sidebar.RubyFilesUseSpaces" editable="true"]]
+[[include_page="ruby.sidebar.RubyFilesUseSpaces"_editable="true"]]
 
-[[include page="ruby.sidebar.HowManyStepsAreNormal" editable="true"]]
+[[include_page="ruby.sidebar.HowManyStepsAreNormal"_editable="true"]]
 
-[[include page="ruby.sidebar.WhyShouldYouCareAboutTheseExamples" editable="true"]]
+[[include_page="ruby.sidebar.WhyShouldYouCareAboutTheseExamples"_editable="true"]]
 
-[[include page="ruby.sidebar.CheckingInIsSlow" editable="true"]]
+[[include_page="ruby.sidebar.CheckingInIsSlow"_editable="true"]]
 
-[[include page="ruby.sidebar.WhatIsAnalysis" editable="true"]]
+[[include_page="ruby.sidebar.WhatIsAnalysis"_editable="true"]]
 
-[[include page="ruby.sidebar.DIdYouJustWriteTooMuchProductionCode" editable="true"]]
+[[include_page="ruby.sidebar.DIdYouJustWriteTooMuchProductionCode"_editable="true"]]
 
-[[include page="ruby.sidebar.Refactoring" editable="true"]]
+[[include_page="ruby.sidebar.Refactoring"_editable="true"]]
 
-[[include page="ruby.sidebar.RubyAndParens" editable="true"]]
+[[include_page="ruby.sidebar.RubyAndParens"_editable="true"]]
 
-[[include page="ruby.sidebar.WhyShouldYouCareAboutTheTests" editable="true"]]
+[[include_page="ruby.sidebar.WhyShouldYouCareAboutTheTests"_editable="true"]]

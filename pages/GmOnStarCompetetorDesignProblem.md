@@ -1,8 +1,8 @@
 ---
 title: GmOnStarCompetetorDesignProblem
 ---
-[[include page="GmOnStartCompetetorDesignProblemGeneral"]]
+[[include_page="GmOnStartCompetetorDesignProblemGeneral"]]
 
 ----
 
-[[include page="GmOnStartCompetetorDesignProblemProductOwner"]]
+[[include_page="GmOnStartCompetetorDesignProblemProductOwner"]]

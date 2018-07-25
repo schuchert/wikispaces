@@ -103,4 +103,4 @@ Define value for property 'package':  com.shoe: : com.shoe.paginator <<enter>>
     git commit -m "Initial commit"
 ```
 # You are ready to open pom.xml in an ide
-[[media type="vimeo" key="143582262" height="313" width="500"]]
+[[media_type="vimeo"_key="143582262"_height="313"_width="500"]]

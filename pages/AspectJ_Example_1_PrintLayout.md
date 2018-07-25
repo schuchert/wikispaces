@@ -3,18 +3,18 @@ title: AspectJ_Example_1_PrintLayout
 ---
 [<--Back]({{site.pagesurl}}/AspectJ_Self_Study)
 
-[[include page="AspectJ_Example_1"]]
-[[include page="AspectJEX1ExpectedVersusActualOutput"]]
-[[include page="AspectJEX1FormTheory"]]
-[[include page="AspectJEX1Possibilities"]]
-[[include page="AspectJEX1WhatIsHappening"]]
-[[include page="AspectJEX1SoWhatIsHappening"]]
-[[include page="AspectJEX1Explained"]]
-[[include page="AspectJVMConfigurationBlackMagic"]]
-[[include page="AspectJEX1ApplyYourself"]]
-[[include page="AspectJEX1AssignmentApplications"]]
-[[include page="AspectJEX1ApplicationsOfMethodExecution"]]
-[[include page="AspectJEX1AssignmentIssues"]]
-[[include page="AspectJEX1IssuesConcerns"]]
+[[include_page="AspectJ_Example_1"]]
+[[include_page="AspectJEX1ExpectedVersusActualOutput"]]
+[[include_page="AspectJEX1FormTheory"]]
+[[include_page="AspectJEX1Possibilities"]]
+[[include_page="AspectJEX1WhatIsHappening"]]
+[[include_page="AspectJEX1SoWhatIsHappening"]]
+[[include_page="AspectJEX1Explained"]]
+[[include_page="AspectJVMConfigurationBlackMagic"]]
+[[include_page="AspectJEX1ApplyYourself"]]
+[[include_page="AspectJEX1AssignmentApplications"]]
+[[include_page="AspectJEX1ApplicationsOfMethodExecution"]]
+[[include_page="AspectJEX1AssignmentIssues"]]
+[[include_page="AspectJEX1IssuesConcerns"]]
 
 [<--Back]({{site.pagesurl}}/AspectJ_Self_Study)

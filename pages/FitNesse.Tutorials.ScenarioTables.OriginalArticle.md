@@ -6,7 +6,7 @@ This tutorial exists because I did not really understand Scenario Tables even th
 
 We discussed this with Bob Martin and he recognized this as a form of [currying from functional programming](http://en.wikipedia.org/wiki/Currying). Scenario tables are really just one or more function invocations on a fixture (know as the Actor in FitNesse, see Sidebar: 
 [Scenario Actors]({{site.pagesurl}}/FitNesse.Tutorials.ScenarioTables#Scenario_Actors)) with parameters passed in. What the developer wanted was a form of this table(function) taking fewer parameters(currying), with some of the parameters hard coded. E.g.,
->> [[include page="FitNesse.Tutorials.ScenarioTables.CurryingFunctions"]]
+>> [[include_page="FitNesse.Tutorials.ScenarioTables.CurryingFunctions"]]
 
 Bob magically did this using FitNesse.SliM-based tables and then I spent quite a bit of time trying to understand the mechanics. As a result, I figured I better write something to remember this because while now it is obvious, it was not at the time.
 
@@ -17,8 +17,8 @@ In a nutshell, if you have a standard sequence of steps you need to follow as pa
 
 The steps in a Scenario table ultimately become method invocations on an Actor (more on this later). Since a Scenario table potentially executes multiple steps and does not return anything, validation for a test will typically reside in the scenario table. In this respect, they may seem like a data-driven test from xUnit. However, a Scenario table makes demands on the fixture(actor) to which it binds. That is, if a scenario table ultimately invokes a function called X, then that function must exist on the fixture to which the invocation binds. In this respect, a scenario has similarities with interfaces or abstract methods. At one point, I though of them as similar to Ruby modules, but that model wasn't correct since Scenario tables impose a requirement, they do not add methods to anything. The requirements are imposed on the ultimate actor.
 
-[[#Scenario Actors]]
-[[include page="sidebar_start"]]<span class="sidebar_title">Scenario Actors</span>
+[[#Scenario_Actors]]
+[[include_page="sidebar_start"]]<span class="sidebar_title">Scenario Actors</span>
 A Scenario table puts requirements on some class, know as its actor. The Actor can be set in one of three ways:
 * Using a start line in a Scenario, as [demonstrated below]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables#ExampleOfStartInScenario)
 * Introducing a Script table and then giving it a Start line:
@@ -40,7 +40,7 @@ This is somewhat simplified, but it gets the point across.
 Scenarios with Actors and scripts set the "global actor". So it might seem that a script before a decision table using a scenario would change the actor. It does,// **but**// the decision table is really a call to the Scenario, so the Scenario, which is basically a text substitution, occurs after the script and sets the global actor.
 
 Bob is considering switching to a stack-based scheme to avoid pollution of the actor across siblings. In this scheme, if a sibling introduces an actor, when the test concludes, the actor will be reset to what it was just before the test executed. This removes a possible dependence upon the execution order of tests. For example, imagine a test that uses a scenario but does not itself set the actor. If the tests is run by itself it would fail. However, if another test runs before it and sets the global actor, then the test might pass. A stack-based scheme would address this kind of problem. The test would consistently fail in both situations. 
-[[include page="sidebar_end"]]
+[[include_page="sidebar_end"]]
 [[#skipPastScenarioActorsSidebar]]
 # Using Scenario Tables
 Imagine you have a need to perform some test that requires several steps. You want to perform those same steps across several test cases where all parts of the test can be parameterized, even the expected results. For example, image you want to validate a Login Service with the following requirements (these are actual requirements from a project I worked on, these are not made up - well at least not by me):
@@ -82,7 +82,7 @@ Here's an example test page with this scenario:
 |attempt|@times|loginsTo         |@accountName|with       |@password                                       |
 |check         |lastLoginResultIs|@result                                                                  |
 ```
-[[include page="sidebar_start"]]<span class="sidebar_title">Using Slim versus Fit in FitNesse</span>
+[[include_page="sidebar_start"]]<span class="sidebar_title">Using Slim versus Fit in FitNesse</span>
 By default, FitNesse uses fit to execute tests. To instead configure FitNesse to use Slim, you must redefine the TEST_SYSTEM variable for the page you want to use Slim. Variable definitions are searched up the page hierarchy. Assuming this page is under the FrontPage (that's how I created it, though it could easily be a sibling of the FrontPage instead), then there are three places where this variable could be defined:
 * The page itself
 * On FrontPage
@@ -94,7 +94,7 @@ In these examples, I am sticking to Slim by default. Also, I started FitNesse on
 ``` 
 
 You might wonder, can you execute some tests using Slim and some using Fit. You can. The TEST_SYSTEM variable is inherited along the page hierarchy (which is normally like a directory structure). Of course, FitNesse allows for symbolic links, so the hierarchy is not necessarily a simple tree.
-[[include page="sidebar_end"]]
+[[include_page="sidebar_end"]]
 If you attempt to execute this test (once you've set its page type to test), not much happens. You'll see a yellow bar indicating that nothing ran. A scenario by itself does not execute.
 
 So now we'll use this scenario in a decision table:
@@ -106,7 +106,7 @@ So now we'll use this scenario in a decision table:
 
 This does attempt to use the scenario. The first row names the scenario (see Sidebar: Scenario Names). The next row names the parameters. The final row matches the parameters to the invocation of the scenario (see Sidebar: Important! Scenario Parameter Matching). 
 
-[[include page="sidebar_start"]]<span class="sidebar_title">Scenario Names</span>
+[[include_page="sidebar_start"]]<span class="sidebar_title">Scenario Names</span>
 Consider the Scenario defined above. How does FitNesse determine its name?
 # FitNesse only considers the first row
 # FitNesse strips off the word Scenario
@@ -129,16 +129,16 @@ Finally, put them all together (separate the parts of the name with spaces and u
 ```
 Attempt Logins To With And In Expecting 
 ```
-[[include page="sidebar_end"]]
+[[include_page="sidebar_end"]]
 
-[[include page="sidebar_start"]]<span class="sidebar_title"> Important! Scenario Parameter Matching</span>
+[[include_page="sidebar_start"]]<span class="sidebar_title"> Important! Scenario Parameter Matching</span>
 This example uses a decision table to execute the scenario. A decision table has a minimum of three rows:
 # First row indicates the name of the fixture (or scenario in this case)
 # Second row defines column headers (ignored in this case because it is a scenario)
 # Third row is the first of potentially many executions
 
 FitNesse matches parameters //**by order**//, not name. The second row is a nice way to document your intentions but think of a scenario as one or more method invocations. Method invocations in most languages are matched by order, not type. That's how FitNesse performs the matching.
-[[include page="sidebar_end"]]
+[[include_page="sidebar_end"]]
 
 # From Red/Yellow to Green
 The Scenario is Red (if you create this page and executed it, that's what you'll see). However, when you open up the scenario, it shows several yellow rows, indicating a missing class. Here a Java class to make this test fully pass (for you C# users, this is basically the same):
@@ -223,11 +223,11 @@ public class AttemptLoginAndValidateResults {
 }
 ```
 
-[[include page="sidebar_start"]]<span class="sidebar_title">This is Just FitNesse</span>
+[[include_page="sidebar_start"]]<span class="sidebar_title">This is Just FitNesse</span>
 FitNesse is a tool that allows you to write automated (acceptance) tests against production code. The Java code I'm providing does not execute against production code. Why? I'm trying to focus on just FitNesse. The backing code for a Login Service, while possibly interesting, is irrelevant to FitNesse. FitNesse calls Slim, Slim calls your Fixture code. Your fixture code calls the production code. Therefore, to demonstrate FitNesse, I only need to show as far as the Fixture code because neither FitNesse nor Slim call your production code, the Fixtures you write do that.
 
 By the way, this same principle applies to writing unit tests.
-[[include page="sidebar_end"]]
+[[include_page="sidebar_end"]]
 
 Did you notice the duplication in this table? We can improve on this table by creating a new Scenario that uses the old scenario. The new scenario will take in fewer parameters and hard-code some of original Scenario's parameters. Here is just such a table:
 ```

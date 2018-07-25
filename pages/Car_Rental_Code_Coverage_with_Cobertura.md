@@ -6,7 +6,7 @@ title: Car_Rental_Code_Coverage_with_Cobertura
 
 # Code Coverage with Cobertura
 
-This example is based on the [[Car Rental Example]]. If you want work through this example, you need to follow [these instructions]({{site.pagesurl}}/Car_Rental_Installation_and_Setup) first.
+This example is based on the [[Car_Rental_Example]]. If you want work through this example, you need to follow [these instructions]({{site.pagesurl}}/Car_Rental_Installation_and_Setup) first.
 
 In this example, we add code coverage to the Car Rental Application. We then examine the results, make some changes and finish with a few conclusions. 
 

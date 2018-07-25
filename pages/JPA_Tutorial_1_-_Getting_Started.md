@@ -14,39 +14,39 @@ You'll write the code such that the environment creates the database schema base
 
 Good luck!
 # JPA Tutorial 1: Background
-[[include page="JPA Tutorial 1 - Background"]]
+[[include_page="JPA_Tutorial_1_-_Background"]]
 # JPA Initial Setup
-[[include page="JPA Tutorial 1 - Initial Setup"]]
+[[include_page="JPA_Tutorial_1_-_Initial_Setup"]]
 [[#EclipseProjectSetup]]
 # Eclipse Project Setup
-[[include page="JPA Tutorial 1 - Eclipse Project Setup"]]
+[[include_page="JPA_Tutorial_1_-_Eclipse_Project_Setup"]]
 # Persistence Unit Configuration
-[[include page="JPA Tutorial 1 - Persistence Unit"]]
+[[include_page="JPA_Tutorial_1_-_Persistence_Unit"]]
 # Create Your First Entity
-[[include page="JPA Tutorial 1 - First Entity"]]
+[[include_page="JPA_Tutorial_1_-_First_Entity"]]
 # Add an Embedded Entity
-[[include page="JPA Tutorial 1 - Embedded Entity"]]
+[[include_page="JPA_Tutorial_1_-_Embedded_Entity"]]
 # Add an Entity with a One to Many Relationship
-[[include page="JPA Tutorial 1 - Entity with One to Many Relationship"]]
+[[include_page="JPA_Tutorial_1_-_Entity_with_One_to_Many_Relationship"]]
 # Make a Relationship Bi-Directional
-[[include page="JPA Tutorial 1 - Make Relationship Bi-directional"]]
+[[include_page="JPA_Tutorial_1_-_Make_Relationship_Bi-directional"]]
 # Exercises
-[[include page="JPA Tutorial 1 - Exercises"]]
+[[include_page="JPA_Tutorial_1_-_Exercises"]]
 # Entire Source Base
-[[include page="JPA Tutorial 1 - Entire Source Base"]]
+[[include_page="JPA_Tutorial_1_-_Entire_Source_Base"]]
 # FAQ
-[[include page="JPA Tutorial 1 - FAQ"]]
+[[include_page="JPA_Tutorial_1_-_FAQ"]]
 Links to the individual pages:
-[[JPA Tutorial 1 - Background]]
-[[JPA Tutorial 1 - Initial Setup]]
-[[JPA Tutorial 1 - Eclipse Project Setup]]
-[[JPA Tutorial 1 - Persistence Unit]]
-[[JPA Tutorial 1 - First Entity]]
-[[JPA Tutorial 1 - Embedded Entity]]
-[[JPA Tutorial 1 - Entity with One to Many Relationship]]
-[[JPA Tutorial 1 - Make Relationship Bi-directional]]
-[[JPA Tutorial 1 - Exercises]]
-[[JPA Tutorial 1 - Entire Source Base]]
-[[JPA Tutorial 1 - FAQ]]
+[[JPA_Tutorial_1_-_Background]]
+[[JPA_Tutorial_1_-_Initial_Setup]]
+[[JPA_Tutorial_1_-_Eclipse_Project_Setup]]
+[[JPA_Tutorial_1_-_Persistence_Unit]]
+[[JPA_Tutorial_1_-_First_Entity]]
+[[JPA_Tutorial_1_-_Embedded_Entity]]
+[[JPA_Tutorial_1_-_Entity_with_One_to_Many_Relationship]]
+[[JPA_Tutorial_1_-_Make_Relationship_Bi-directional]]
+[[JPA_Tutorial_1_-_Exercises]]
+[[JPA_Tutorial_1_-_Entire_Source_Base]]
+[[JPA_Tutorial_1_-_FAQ]]
 
 [<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)

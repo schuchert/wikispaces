@@ -1,4 +1,4 @@
 ---
 title: InnovationGames.SpeedBoat
 ---
-[[media type="custom" key="5029807"]]
+[[media_type="custom"_key="5029807"]]

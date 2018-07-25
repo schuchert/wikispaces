@@ -167,7 +167,7 @@ Here is the code from SeasonPassManager responsible for populating the to do lis
 
 A quick review of this code and you'll notice it only checks to see if a duplicate program is already in the to do list. It does not check to see if there are any conflicts. One program conflicts with another if the time slots span each other. This logic is somewhat complex and well suited to a series of unit tests.
 
-Since this is not a tutorial on TDD (at least not directly), here are the unit tests for a new unit test on DateUtil that determines if two date/time ranges conflict with each other. This is an example of a JUnit 4 [[Parameterized Test]]:
+Since this is not a tutorial on TDD (at least not directly), here are the unit tests for a new unit test on DateUtil that determines if two date/time ranges conflict with each other. This is an example of a JUnit 4 [[Parameterized_Test]]:
 **Create: DateUtilConflictsInTimeWithTest.java**
 ```java
 package com.om.example.util;

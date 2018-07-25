@@ -5,15 +5,15 @@ title: JPA_Tutorial_2_-_Working_with_Queries_1
 [<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)
 
 # JPA Tutorial 2 - Working with Queries 1
-[[include page="Tutorial 2 - Background"]]
+[[include_page="Tutorial_2_-_Background"]]
 ----
 ## The Queries
-[[include page="Tutorial 2 - The Queries"]]
+[[include_page="Tutorial_2_-_The_Queries"]]
 ----
 ## JPA Tutorial 2 Project Setup
 For this next section, where you see **<project>**, replace it with **JpaTutorial2**.
 
-[[include page="JPA Tutorial Project Setup"]]
+[[include_page="JPA_Tutorial_Project_Setup"]]
 ### Copy Entities From JpaTutorial1
 # Open up your **Tutorial1** project
 # Expand the **src** folder
@@ -24,20 +24,20 @@ For this next section, where you see **<project>**, replace it with **JpaTutoria
 # Right-click, select Paste
 ----
 ## A First Test/Example
-[[include page="Tutorial 2 - The First Example"]]
+[[include_page="Tutorial_2_-_The_First_Example"]]
 ----
 ## Second Example and Refactoring
-[[include page="Tutorial 2 - Second Example"]]
+[[include_page="Tutorial_2_-_Second_Example"]]
 ----
 ## One Possible Solution
-[[include page="Tutorial 2 - One Example Solution"]]
+[[include_page="Tutorial_2_-_One_Example_Solution"]]
 ----
 ## Individual Page Links
-[[Tutorial 2 - Background]]
-[[Tutorial 2 - The Queries]]
-[[JPA Tutorial Project Setup]]
-[[Tutorial 2 - The First Example]]
-[[Tutorial 2 - Second Example]]
-[[Tutorial 2 - One Example Solution]]
+[[Tutorial_2_-_Background]]
+[[Tutorial_2_-_The_Queries]]
+[[JPA_Tutorial_Project_Setup]]
+[[Tutorial_2_-_The_First_Example]]
+[[Tutorial_2_-_Second_Example]]
+[[Tutorial_2_-_One_Example_Solution]]
 
 [<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)

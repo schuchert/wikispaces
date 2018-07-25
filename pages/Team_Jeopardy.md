@@ -1,7 +1,7 @@
 ---
 title: Team_Jeopardy
 ---
-[[Team Jeopardy User Stories]]
+[[Team_Jeopardy_User_Stories]]
 
 Team Jeopardy is loosely based on the game Jeopardy. Here are the similarities:
 * We have a number of players (any number can play, most recently I tried with 4 groups of 4 and then 6 groups of 2, I preferred the 6 groups of 2)
@@ -48,8 +48,8 @@ Here's a set of class and source files that will allow you to play:
 # Repeat until you run out of questions.
 
 Here are some example sets of AnswerQuestions:
-* Week 1: Java Programming Weeks [[TeamJeopardy.Round 1]]
-* Week 2: Project Week [[TeamJeopardy.Round 2]]
+* Week 1: Java Programming Weeks [[TeamJeopardy.Round_1]]
+* Week 2: Project Week [[TeamJeopardy.Round_2]]
 * Week 3: OOAD Course Week:
 * Week 4: Project Week 2
 * Week 5: JWEB Class

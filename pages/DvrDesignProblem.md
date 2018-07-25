@@ -1,8 +1,8 @@
 ---
 title: DvrDesignProblem
 ---
-[[include page="DvrDesignProblemGeneral"]]
+[[include_page="DvrDesignProblemGeneral"]]
 
 ----
 
-[[include page="DvrDesignProblemProductOwner"]]
+[[include_page="DvrDesignProblemProductOwner"]]

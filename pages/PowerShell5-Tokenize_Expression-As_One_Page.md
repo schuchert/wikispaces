@@ -1,9 +1,9 @@
 ---
 title: PowerShell5-Tokenize_Expression-As_One_Page
 ---
-[[include page="PowerShell5-Tokenize Expression-First Failing Test" title="First Failing Test"]]
-[[include page="PowerShell5-Tokenize Expression-Simple Binary Expressions" title="Simle Binary Expressions"]]
-[[include page="PowerShell5-Tokenize Expression-First Stab At Parentheses"  title="First Stab at Parentheses"]]
-[[include page="PowerShell5-Tokenize Expression-Function Calls"  title="Function Calls"]]
-[[include page="PowerShell5-Tokenize Expression-Convert Tokenizer To An Enumerator"  title="Converting Tokenizer to an Enumerator"]]
-[[include page="PowerShell5-Tokenize Expression-Finalish Version"  title="Finalish Version"]]
+[[include_page="PowerShell5-Tokenize_Expression-First_Failing_Test"_title="First_Failing_Test"]]
+[[include_page="PowerShell5-Tokenize_Expression-Simple_Binary_Expressions"_title="Simle_Binary_Expressions"]]
+[[include_page="PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses"__title="First_Stab_at_Parentheses"]]
+[[include_page="PowerShell5-Tokenize_Expression-Function_Calls"__title="Function_Calls"]]
+[[include_page="PowerShell5-Tokenize_Expression-Convert_Tokenizer_To_An_Enumerator"__title="Converting_Tokenizer_to_an_Enumerator"]]
+[[include_page="PowerShell5-Tokenize_Expression-Finalish_Version"__title="Finalish_Version"]]

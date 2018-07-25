@@ -10,11 +10,11 @@ A Stateful session bean can optionally use an extended context. An extended cont
 This short tutorial demonstrates some of the differences between these two types of container-managed contexts.
 
 ## Project Setup
-The instructions for setting up your project mirror those from the first tutorial: [[EJB3 Tutorial 1 - Create and Configure]].
+The instructions for setting up your project mirror those from the first tutorial: [[EJB3_Tutorial_1_-_Create_and_Configure]].
 
 For the remainder of this tutorial, when you see **<project>**, replace it with **Ejb3Tutorial4**.
-[[include page="Ejb3EclipseProjectSetupAndConfiguration"]]
-Here are a few things to note (source for all of these items appears at the end after the assignments [[EJB3 Tutorial 4 - Extended Context#OtherFiles]]:
+[[include_page="Ejb3EclipseProjectSetupAndConfiguration"]]
+Here are a few things to note (source for all of these items appears at the end after the assignments [[EJB3_Tutorial_4_-_Extended_Context#OtherFiles]]:
 # Make sure you copy the **utils** directory from a previous tutorial.
 # Make sure you copy a **persistence.xml** from a previous tutorial.
 # Make sure you update the **persistence.xml**'s persistence-unit name:
@@ -622,5 +622,5 @@ The interface seems to be a bit messed up with concepts that relate to both stat
 </persistence>
 ```
 
-[[include page="Ejb3JBossUtilJava"]]
+[[include_page="Ejb3JBossUtilJava"]]
 [<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)

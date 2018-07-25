@@ -1,8 +1,8 @@
 ---
 title: TimeTrackingForConsultingCompanyDesignProblem
 ---
-[[include page="TimeTrackingForAConsultingCompanyGeneral"]]
+[[include_page="TimeTrackingForAConsultingCompanyGeneral"]]
 
 ----
 
-[[include page="TimeTrackingForAConsultingCompanyProductOwner"]]
+[[include_page="TimeTrackingForAConsultingCompanyProductOwner"]]

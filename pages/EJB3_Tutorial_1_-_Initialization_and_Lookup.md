@@ -5,7 +5,7 @@ There's a bit of boilerplate code to get the JBoss EJB3 Embeddable Container ini
 
 By the way, I recommend you cut and past this code rather than type it.
 
-[[include page="Ejb3JBossUtilJava"]]
+[[include_page="Ejb3JBossUtilJava"]]
 
 To create this file,
 # Select your **src** directory

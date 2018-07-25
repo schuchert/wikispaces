@@ -15,21 +15,21 @@ This tutorial is a derivative (simplification really) of work done by JBoss. For
 Most of this tutorial is about configuration and utility methods. We will use those items for the remainder of the tutorials using the Embeddable EJB3 Container.
 ----
 ## Background
-[[include page="EJB3 Tutorial 1 - Background"]]
+[[include_page="EJB3_Tutorial_1_-_Background"]]
 ----
 ## Download and Install
-[[include page="EJB3 Tutorial 1 - Download and Install"]]
+[[include_page="EJB3_Tutorial_1_-_Download_and_Install"]]
 ----
 ## Create and Configure the Eclipse Project
-[[include page="EJB3 Tutorial 1 - Create and Configure"]]
+[[include_page="EJB3_Tutorial_1_-_Create_and_Configure"]]
 ----
 ## Create a Local Stateless Session Bean
-[[include page="EJB3 Tutorial 1 - Create Session Bean"]]
+[[include_page="EJB3_Tutorial_1_-_Create_Session_Bean"]]
 ----
 ## Container Initialization and Session Bean Lookup
-[[include page="EJB3 Tutorial 1 - Initialization and Lookup"]]
+[[include_page="EJB3_Tutorial_1_-_Initialization_and_Lookup"]]
 ----
 ## Exercises
-[[include page="EJB3 Tutorial 1 - Exercises"]]
+[[include_page="EJB3_Tutorial_1_-_Exercises"]]
 
 [<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)

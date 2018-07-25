@@ -2,9 +2,9 @@
 title: Articles
 ---
 # Brett's (otherwise unpublished) Articles
-> ==[[JUnit 4.x]]
-> == [[Designing to Spring Templates]] 
-> == [[Design Pattern Examples]] 
-> == [[Java 5 Variable Arguments]] 
+> ==[[JUnit_4.x]]
+> == [[Designing_to_Spring_Templates]] 
+> == [[Design_Pattern_Examples]] 
+> == [[Java_5_Variable_Arguments]] 
 
 

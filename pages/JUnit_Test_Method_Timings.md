@@ -19,10 +19,10 @@ This example uses Log4J. To configure Log4J, I first used a [simple configurator
 
 The aspect and its associated aop.xml file are listed below. Before you can use them, you'll want to set up your environment(warning, you'll have to use your browser's back button to get back to here from these links):
 # Download AspectJ [here](http://www.eclipse.org/aspectj/downloads.php).
-* [[Eclipse VM Configuration for AspectJ]]
-* [[Eclipse Classpath Variable for AspectJ]]
-* [[Eclipse Java Language Preferences for AspectJ]]
-* [[Eclipse Java Project Preferences for AspectJ]]
+* [[Eclipse_VM_Configuration_for_AspectJ]]
+* [[Eclipse_Classpath_Variable_for_AspectJ]]
+* [[Eclipse_Java_Language_Preferences_for_AspectJ]]
+* [[Eclipse_Java_Project_Preferences_for_AspectJ]]
 
 Once you've done all of that, you'll want to put the Test Method Timing Aspect class in the same project where your test classes reside. You'll also need to create a META-INF directory directly under the source directory of your test classes and add the aop.xml file there. Here's an example of what my project looks like:
 ![](images/ProjectLayout.gif)

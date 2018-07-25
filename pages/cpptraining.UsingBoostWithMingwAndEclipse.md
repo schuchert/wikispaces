@@ -11,8 +11,8 @@ Now that you've [successfully build boot]({{ site.pagesurl}}/cpptraining.Getting
 * Configure the project to use CppUTest
 * Configure the project to use Boost
 
-[[include page="cpptraining.SettingUpInitialProject"]]
-[[include page="cpptraining.ConfiguringTheProjectForCppUTest"]]
-[[include page="cpptraining.ConfiguringTheProjectToUseBoost"]]
+[[include_page="cpptraining.SettingUpInitialProject"]]
+[[include_page="cpptraining.ConfiguringTheProjectForCppUTest"]]
+[[include_page="cpptraining.ConfiguringTheProjectToUseBoost"]]
 
 [<--Back]({{ site.pagesurl}}/cpptraining#boost)

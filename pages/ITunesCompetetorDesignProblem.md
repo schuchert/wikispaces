@@ -1,8 +1,8 @@
 ---
 title: ITunesCompetetorDesignProblem
 ---
-[[include page="ITunesCompetetorDesignProblemGeneral"]]
+[[include_page="ITunesCompetetorDesignProblemGeneral"]]
 
 ----
 
-[[include page="ITunesCompetetorDesignProblemProductOwner"]]
+[[include_page="ITunesCompetetorDesignProblemProductOwner"]]

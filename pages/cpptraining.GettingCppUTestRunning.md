@@ -8,8 +8,8 @@ Now it is time to get a simple example running to verify everything works.
 
 # Before Continuing
 Make sure you have [already installed the CDT]({{ site.pagesurl}}/cpptraining.GettingStartedWithEclipseCdt) and [built CppUTest]({{ site.pagesurl}}/cpptraining.GettingCppUTestCompiledUsingCDTToolSet). For the remainder of this discussion, I'll assume that CppUTest was downloaded and built in the following directory: c:\workspaces\CppUTest2_1
-[[include page="cpptraining.SettingUpInitialProject"]]
-[[include page="cpptraining.ConfiguringTheProjectForCppUTest"]]
+[[include_page="cpptraining.SettingUpInitialProject"]]
+[[include_page="cpptraining.ConfiguringTheProjectForCppUTest"]]
 # Creating A Test
 * Now, add another source file called ActualSmokeTest.cpp:
 ```cpp

@@ -16,9 +16,9 @@ The EJB 3 specification uses annotations to describe Enterprise Beans. For examp
 Describe how you might use annotations taking into consideration the way EJB 3.0 works.
 ----
 ## Research
-Research the work required to implement one of the first five options described on [[AspectJ Annotation Possibilities]], or one of your own invention.
+Research the work required to implement one of the first five options described on [[AspectJ_Annotation_Possibilities]], or one of your own invention.
 
-Compare and contrast that solution with the one described on [[AspectJ Annotation One Solution]].
+Compare and contrast that solution with the one described on [[AspectJ_Annotation_One_Solution]].
 
 **Challenge:** Implement your solution
 ----

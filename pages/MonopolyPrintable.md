@@ -1,59 +1,59 @@
 ---
 title: MonopolyPrintable
 ---
-[[include page="Monopoly"]]
+[[include_page="Monopoly"]]
 ----
 ## Release 1
-[[include page ="Monopoly Release 1 User Stories"]]
+[[include_page_="Monopoly_Release_1_User_Stories"]]
 ### Player Movement
-[[include page ="Monopoly R1 Player Movement"]]
+[[include_page_="Monopoly_R1_Player_Movement"]]
 ### Game Players
-[[include page ="Monopoly R1 Game Players"]]
+[[include_page_="Monopoly_R1_Game_Players"]]
 ### Game Rounds
-[[include page ="Monopoly R1 Game Rounds"]]
+[[include_page_="Monopoly_R1_Game_Rounds"]]
 ----
 ## Release 2
-[[include page ="Monopoly Release 2 User Stories"]]
+[[include_page_="Monopoly_Release_2_User_Stories"]]
 ### Landing on Go
-[[include page ="Monopoly Release 2 Landing on Go"]]
+[[include_page_="Monopoly_Release_2_Landing_on_Go"]]
 ### Passing over Go
-[[include page ="Monopoly Release 2 Passing over Go"]]
+[[include_page_="Monopoly_Release_2_Passing_over_Go"]]
 ### Landing on Go To Jail
-[[include page ="Monopoly Release 2 Landing on Go To Jail"]]
+[[include_page_="Monopoly_Release_2_Landing_on_Go_To_Jail"]]
 ### Landing on Income Tax
-[[include page ="Monopoly Release 2 Landing on Income Tax"]]
+[[include_page_="Monopoly_Release_2_Landing_on_Income_Tax"]]
 ### Landing on Luxury Tax
-[[include page ="Monopoly Release 2 Landing on Luxury Tax"]]
+[[include_page_="Monopoly_Release_2_Landing_on_Luxury_Tax"]]
 ----
 ## Release 3
-[[include page ="Monopoly Release 3 User Stories"]]
+[[include_page_="Monopoly_Release_3_User_Stories"]]
 ### Buy Property
-[[include page ="Monopoly Release 3 Player Buys Property"]]
+[[include_page_="Monopoly_Release_3_Player_Buys_Property"]]
 ### Pay Rent
-[[include page ="Monopoly Release 3 Player Pays Rent"]]
+[[include_page_="Monopoly_Release_3_Player_Pays_Rent"]]
 ### Optional: Doubles
-[[include page ="Monopoly Release 3 Player Rolls Doubles"]]
+[[include_page_="Monopoly_Release_3_Player_Rolls_Doubles"]]
 ### Optional: Mortgage Property
-[[include page ="Monopoly Release 3 Player Mortgages Property"]]
+[[include_page_="Monopoly_Release_3_Player_Mortgages_Property"]]
 ### Optional: Payback Mortgage
-[[include page ="Monopoly Release 3 Player Pays Back Mortgage"]]
+[[include_page_="Monopoly_Release_3_Player_Pays_Back_Mortgage"]]
 ### Optional: Game Offers Mortgage Options
-[[include page ="Monopoly Release 3 Game Offers Mortgage Options"]]
+[[include_page_="Monopoly_Release_3_Game_Offers_Mortgage_Options"]]
 ----
 ## Release 4
-[[include page ="Monopoly Release 4 User Stories"]]
+[[include_page_="Monopoly_Release_4_User_Stories"]]
 ### Landing on Go To Jail
-[[include page ="Monopoly Release 4 Landing on Go To Jail"]]
+[[include_page_="Monopoly_Release_4_Landing_on_Go_To_Jail"]]
 ### Rolling Doubles 3x
-[[include page ="Monopoly Release 4 Rolling Doubles 3x"]]
+[[include_page_="Monopoly_Release_4_Rolling_Doubles_3x"]]
 ### Pay to Get Out of Jail
-[[include page ="Monopoly Release 4 Pay to Get Out of Jail"]]
+[[include_page_="Monopoly_Release_4_Pay_to_Get_Out_of_Jail"]]
 ### Roll Doubles to Get Out of Jail
-[[include page ="Monopoly Release 4 Roll Doubles to Get Out of Jail"]]
+[[include_page_="Monopoly_Release_4_Roll_Doubles_to_Get_Out_of_Jail"]]
 ### Optional: Games Offers Player Option to Pay to Get Out of Jail
-[[include page ="Monopoly Release 4 Games Offers Player Option to Pay to Get Out of Jail"]]
+[[include_page_="Monopoly_Release_4_Games_Offers_Player_Option_to_Pay_to_Get_Out_of_Jail"]]
 ----
 ## Release 5
-[[include page ="Monopoly Release 5 User Stories"]]
+[[include_page_="Monopoly_Release_5_User_Stories"]]
 ### Player Lands On Community Chest or Chance
-[[include page ="Monopoly Release 5 Player Lands On Community Chest or Chance"]]
+[[include_page_="Monopoly_Release_5_Player_Lands_On_Community_Chest_or_Chance"]]

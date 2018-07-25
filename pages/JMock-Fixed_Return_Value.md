@@ -3,7 +3,7 @@ title: JMock-Fixed_Return_Value
 ---
 [<--Back]({{site.pagesurl}}/TDD_Example_Catalog)
 
-This test method exists in a [[jMock JUnit 4 Die Skeleton]].
+This test method exists in a [[jMock_JUnit_4_Die_Skeleton]].
 
 **Common fixture for the tests**
 ```java

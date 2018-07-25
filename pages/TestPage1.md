@@ -1,6 +1,6 @@
 ---
 title: TestPage1
 ---
-[[include page="Tutorial 2 - The Queries"]]
+[[include_page="Tutorial_2_-_The_Queries"]]
 
-[[include page="Tutorial 2 - The First Example"]]
+[[include_page="Tutorial_2_-_The_First_Example"]]

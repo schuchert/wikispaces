@@ -1,7 +1,7 @@
 ---
 title: JPA_Tutorial_4_-_Setup
 ---
-These instructions assume you are starting with the solutions mentioned above. If you finished [[JPA Tutorial 3 - A Mini Application]], you have a few options:
+These instructions assume you are starting with the solutions mentioned above. If you finished [[JPA_Tutorial_3_-_A_Mini_Application]], you have a few options:
 * **Recommended** Copy that project and follow the tutorial against the copy
 * Directly modify that project
 
