@@ -296,7 +296,7 @@ public class Vehicle {
 }
 ```
 
-# # The Session Beans
+## The Session Beans
 
 **AccountInventory.java**
 ```java

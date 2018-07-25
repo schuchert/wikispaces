@@ -32,7 +32,7 @@ Instead, we created another utility class that simply wrapped ThreadContext and 
 
 ----
 [#ContextRecorder]({{site.pagesurl}}/#ContextRecorder)
-# # ContextRecorder.java
+## ContextRecorder.java
 ```java
 01: package com.foo.aspect.context;
 02: 

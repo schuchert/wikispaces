@@ -5,13 +5,13 @@ title: Designing_to_Spring_Templates
 
 # Designing to Spring Templates 
 
-# # Background 
+## Background 
 Late in 2005 I gave a presentation to the Oklahoma City Java Users' Group on the design forces that seemed to be behind the Spring Templates. I've re-created that presentation here and included all of the code. In addition, these notes include more details on the code that I didn't have time to present at the OkC JUG.
 
-# # The Full Source + Instructions 
+## The Full Source + Instructions 
 Get the full source for this example, along with installation instructions, [here]({{site.pagesurl}}/Designing_to_Spring_Templates_Source).
 
-# # Introduction 
+## Introduction 
 The Spring Templates tend to take care of certain responsibilities for you to make you use of some underlying resource easier and more reliable. Spring specifically:
 * Opens resources at the beginning of some action.
 * Processes a provided request represented as an object using those resources

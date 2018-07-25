@@ -20,7 +20,7 @@ Next, you'll need the workspace. Here is a complete Eclipse workspace:
 # Start eclipse
 # Select the directory "SdBestPractices2007" under your target extraction directory 
 # Verify your tests run
-# # Right-click on your project
-# # Select Run:JUnit Tests
-# # Verify all 106 tests pass
+## Right-click on your project
+## Select Run:JUnit Tests
+## Verify all 106 tests pass
 

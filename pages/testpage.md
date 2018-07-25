@@ -36,18 +36,18 @@ This is the outside text:
 * Level 1
 And then there's the text with numbered lists:
 # oneint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one p
-# # one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting?
-# # one point one one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting?
+## one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting?
+## one point one one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting? one point one now what happens when this does it's crazy ting?
 # twoint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one p
-# # one point one
-## # one point oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?
-# # one point one
-## # one point one
-# # one point one
+## one point one
+### one point oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?
+## one point one
+### one point one
+## one point one
 # three
-# # one point one
-# # one point one
-# # one point one
+## one point one
+## one point one
+## one point one
 # ;lakjsdfl;kjasdl;kjasdf
 # ;laksdjf l;kasdjf l;jk
 # ;aksjf;lasdjk f;l f

@@ -1,7 +1,7 @@
 ---
 title: Ejb3AndJpaProjectSetup
 ---
-# # Skeleton Project Setup 
+## Skeleton Project Setup 
 
 # Download this file: [[file:JpaAndEjb3.7z]]
 # Download this file: [[file:Ejb3AndJpaPrefs.epf]]

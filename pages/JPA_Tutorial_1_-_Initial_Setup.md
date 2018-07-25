@@ -18,11 +18,11 @@ Next, the libraries:
 # Download [SLF4J 1.5.8](http://www.slf4j.org/download.html)
 # Download [Open EJB 3.1.1](http://openejb.apache.org/download.html)
 
-## # Setup the JDK & Eclipse
+### Setup the JDK & Eclipse
 # Install the JSE 5.
 # Extract the eclipse download somewhere. For all examples I use C:/eclipse.
 
-## # Extract Jar Files
+### Extract Jar Files
 Extract each of the libraries to some location. In my case I extracted everything to C:/libs, so I have the following directories
 > C:/libs/hibernate-annotations-3.4.0.GA
 > C:/libs/hibernate-entitymanager-3.4.0.GA

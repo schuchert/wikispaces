@@ -18,7 +18,7 @@ title: JPA_Tutorial_1_-_FAQ
 * **How do you know what you set 'mappedBy' to? ** // Use the name of the field that defines the relationship //
 * **What happens if you manipulate your objects outside of a transaction? ** // In a JSE environment, objects are still managed by the EntityManager. So if you make a change to an object, then later start a transaction and commit it, the changes made outside of the transaction are also sent to the database. If, on the other hand, you close the EntityManager or flush it, the changes are lost.//
 
-## # Brett: What have you learned in this tutorial? 
+### Brett: What have you learned in this tutorial? 
 **Class responses:**
 //
 * Eclipse is good
@@ -27,7 +27,7 @@ title: JPA_Tutorial_1_-_FAQ
 * Using entity notations
 //
 
-## # Responses to questions in the exercises 
+### Responses to questions in the exercises 
 * **What does @Entity do? **
 //
 * defines a class as being an entity bean.

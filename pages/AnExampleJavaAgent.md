@@ -36,11 +36,11 @@ If you want to verify that you can also run a Java Application, do the following
 # Select **Main.java**
 # Right-click:Run As:Java Application
 # You will probably get an error in the console because you need to set execution properties for Main:
-# # Right-click on **Main.java**
-# # Select:Run As:Open Run Dialog...
-# # Click on the **(x) = Arguments tab**
-# # **Under VM arguments:** enter the following: -javaagent:Registrar.jar -Dschuchert.ClassFileTransformer=schuchert.agent.NullClassFileTransformer
-# # Click **Run**
+## Right-click on **Main.java**
+## Select:Run As:Open Run Dialog...
+## Click on the **(x) = Arguments tab**
+## **Under VM arguments:** enter the following: -javaagent:Registrar.jar -Dschuchert.ClassFileTransformer=schuchert.agent.NullClassFileTransformer
+## Click **Run**
 
 **Recreate Registrar.jar**
 # Open the **JavaAgentRegistrar** project

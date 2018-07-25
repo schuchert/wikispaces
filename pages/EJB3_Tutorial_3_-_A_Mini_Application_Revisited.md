@@ -11,22 +11,22 @@ This tutorial revisits [JPA Tutorial 3]({{site.pagesurl}}/JPA_Tutorial_3_-_A_Min
 ## Background
 [include_page="Ejb3_Tutorial_3_-_Background"]({{site.pagesurl}}/include_page="Ejb3_Tutorial_3_-_Background")
 ----
-# # Setting up the Project
+## Setting up the Project
 [include_page="Ejb3_Tutorial_3_-_Setting_up_the_Project"]({{site.pagesurl}}/include_page="Ejb3_Tutorial_3_-_Setting_up_the_Project")
 ----
-# # Database Configuration
+## Database Configuration
 [include_page="Ejb3_Tutorial_3_-_Database_Configuration"]({{site.pagesurl}}/include_page="Ejb3_Tutorial_3_-_Database_Configuration")
 ----
-# # First EJB
+## First EJB
 [include_page="Ejb3_Tutorial_3_-_First_EJB"]({{site.pagesurl}}/include_page="Ejb3_Tutorial_3_-_First_EJB")
 ----
-# # EJB 2: ResourceDao
+## EJB 2: ResourceDao
 [include_page="Ejb3_Tutorial_3_-_ResourceDao"]({{site.pagesurl}}/include_page="Ejb3_Tutorial_3_-_ResourceDao")
 ----
-# # Finish Conversion
+## Finish Conversion
 [include_page="Ejb3_Tutorial_3_-_Finish_Conversion"]({{site.pagesurl}}/include_page="Ejb3_Tutorial_3_-_Finish_Conversion")
 ----
-# # FAQ
+## FAQ
 [include_page="Ejb3_Tutorial_3_-_FAQ"]({{site.pagesurl}}/include_page="Ejb3_Tutorial_3_-_FAQ")
 
 [<--back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)

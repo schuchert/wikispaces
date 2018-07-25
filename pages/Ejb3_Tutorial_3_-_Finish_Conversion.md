@@ -121,9 +121,9 @@ While we're at it, we are no longer using the base classes so we can delete the 
 
 Run LibraryBean test and things look a bit bleak. Out of 20 tests we have 8 errors and 9 failures. On the other hand, three tests passed successfully so it's not all bad.
 ----
-# # Fixing The Tests 
+## Fixing The Tests 
 
-# # addBook 
+## addBook 
 The last line of the addBook method fails. After a little research it turns out that the book's authors does not appear to contain all of the authors. If we step through all of this, it turns out that it does not contain any.
 
 Here's a fact about the containAll() method on collections. It requires a proper definition of equals() and/or hashCode() depending on the type of collection. While Author has both hashCode and equals, both of these methods depend on Name.equals() and Name.hashCode(), neither of which are defined. So we need to add these missing methods to fix this problem.
@@ -146,7 +146,7 @@ We need to add the following methods to Name.java:
 
 Run the test and after making this change, you'll notice that addBook passes.
 
-## # lookupBookThatDoesNotExist 
+### lookupBookThatDoesNotExist 
 When a method on a session bean throws an exception it will either return wrapped in an EJBException or "raw" depending on if the exception has the annotation @ApplicationException. The method findResourceById currently uses EntityNotFoundException, but we don't own that exception so we will make our own exception class and throw it instead.
 
 Here's a new exception:
@@ -385,7 +385,7 @@ This is a detached object problem. You need to update both the patron and the dv
 ### checkoutDvdAndBook
 This is a detached object problem. You need to update both the dvd and the book before the asserts.
 ----
-# # Test Isolation 
+## Test Isolation 
 Finally, we need to make our test clean up after themselves. Along the way we're going to have to make a few big changes to make all of this work. We'll clean up each test one after the other.
 
 ### addBook
