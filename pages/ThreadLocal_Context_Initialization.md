@@ -10,14 +10,14 @@ As a result, we end up passing along session keys and security credentials every
 
 We wanted to minimize passing around these parameters everywhere. We considered the Wormhole pattern but ruled it out as a bit too much for most people to follow (although, in defense of the pattern, I think it's not too bad and it follows a form, so it's repeatable). Instead, we stole from the Wormhole pattern, which makes use of the fact that certain information is stored on ThreadLocal variables, and instead wrapped most of our EJB entry methods to make this information available.
 
-Below you'll find two classes. The first, [Context Recorder]({{_site.pagesurl}}/ThreadLocal_Context_Initialization#ContextRecorder), does 3 things.
+Below you'll find two classes. The first, [Context Recorder]({{site.pagesurl}}/ThreadLocal_Context_Initialization#ContextRecorder), does 3 things.
 * Upon the first entry into an EJB Session method, it records the security key and security credentials into a ThreadLocal variable.
 * It executes the underlying method.
 * It clears out the ThreadLocal variables.
 
-It does not directly interact with ThreadLocal variables. Instead, it uses a class called [Thread Context]({{_site.pagesurl}}/ThreadLocal_Context_Initialization#ThreadContext) to both record and clear the thread local variables.
+It does not directly interact with ThreadLocal variables. Instead, it uses a class called [Thread Context]({{site.pagesurl}}/ThreadLocal_Context_Initialization#ThreadContext) to both record and clear the thread local variables.
 
-[Thread Context]({{_site.pagesurl}}/ThreadLocal_Context_Initialization#ThreadContext) simply creates a thread local variable that is a map. Any code can add to the thread local map and remove from the thread local map.
+[Thread Context]({{site.pagesurl}}/ThreadLocal_Context_Initialization#ThreadContext) simply creates a thread local variable that is a map. Any code can add to the thread local map and remove from the thread local map.
 
 So if some piece of code needs access to the security credentials or session key, it can simply execute one of the following lines:
 ```java

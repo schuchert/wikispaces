@@ -21,7 +21,7 @@ Initially, we only want to break expressions into their logical parts. Notice, w
 # Getting Started
 Create a directory into which we will store all of the test code and the production. Given that this example leads into the [The Shunting Yard Algorithm Kata]({{ site.pagesurl}}/Katas.ShuntingYardAlgorithm), I'll create C:\Users\Brett\shunting_yard_algorithm.
 
-* [First FailingTest]({{_site.pagesurl}}/PowerShell5_Tokenize_Expression_First_Failing_Test)
+* [First FailingTest]({{site.pagesurl}}/PowerShell5_Tokenize_Expression_First_Failing_Test)
 * [Simple Binary Expressions]({{ site.pagesurl}}/PowerShell5.TokenizeExpression.SimpleBinaryExpressions)
 * [First Stab At Parentheses]({{ site.pagesurl}}/PowerShell5.TokenizeExpression.FirstStabAtParentheses)
 * [FunctionCalls]({{ site.pagesurl}}/PowerShell5.TokenizeExpression.FunctionCalls)

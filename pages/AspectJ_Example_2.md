@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Example_2
 ---
-[<--Back]({{_site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/AspectJEX2ExpectedVersusActualOutput)
+[<--Back]({{site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/AspectJEX2ExpectedVersusActualOutput)
 
 # Predict the Output
 Source files are here: [[file:AspectJExample2src.zip]]. If you need instructions on what do with these files, try [here]({{ site.pagesurl}}/ExtractingSourceFilesIntoProject).
@@ -85,4 +85,4 @@ public class Address implements Serializable {
 
 Given these 2 classes, predict the output. Please do so before continuing.
 
-[<--Back]({{_site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/AspectJEX2ExpectedVersusActualOutput)
+[<--Back]({{site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/AspectJEX2ExpectedVersusActualOutput)

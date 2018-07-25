@@ -1,7 +1,7 @@
 ---
 title: JBossAOPGeneralExerciseOutline
 ---
-[<--Back]({{_site.pagesurl}}/JBoss_AOP_Example_1)
+[<--Back]({{site.pagesurl}}/JBoss_AOP_Example_1)
 
 ## General Exercise Outline
 
@@ -22,4 +22,4 @@ These exercises are written in a particular order in an attempt to help you lear
 
 This is an attempt to provide a self-paced experiential learning experience sans an instructor.
 
-[<--Back]({{_site.pagesurl}}/JBoss_AOP_Example_1)
+[<--Back]({{site.pagesurl}}/JBoss_AOP_Example_1)

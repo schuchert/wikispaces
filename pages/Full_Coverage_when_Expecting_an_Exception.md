@@ -1,7 +1,7 @@
 ---
 title: Full_Coverage_when_Expecting_an_Exception
 ---
-[<--Back]({{_site.pagesurl}}/TDD_Example_Catalog)
+[<--Back]({{site.pagesurl}}/TDD_Example_Catalog)
 
 In JUnit 4 we might write the following:
 ```java
@@ -39,4 +39,4 @@ Here are some comments I'd like to hear from you:
 * Isn't it just silly to run coverage tools on your test code?
 * Is anybody having Pascal flashbacks? (If you don't get this question...you poor &*$^@~).
 
-[<--Back]({{_site.pagesurl}}/TDD_Example_Catalog)
+[<--Back]({{site.pagesurl}}/TDD_Example_Catalog)

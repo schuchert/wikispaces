@@ -5,7 +5,7 @@ title: FitNesse.Tutorials.ScenarioTables.OriginalArticle
 This tutorial exists because I did not really understand Scenario Tables even though I was using them. At a customer site, I noticed a developer had an Uber Scenario Table representing a scenario with complete flexibility in all of its parameters (and this was a good thing). However, when it was time to make tests use the scenario table, he wanted to fill in some of the parameters with fixed values for several tests and did so by copying the table (this was a bad thing).
 
 We discussed this with Bob Martin and he recognized this as a form of [currying from functional programming](http://en.wikipedia.org/wiki/Currying). Scenario tables are really just one or more function invocations on a fixture (know as the Actor in FitNesse, see Sidebar: 
-[Scenario Actors]({{_site.pagesurl}}/FitNesse.Tutorials.ScenarioTables#Scenario_Actors)) with parameters passed in. What the developer wanted was a form of this table(function) taking fewer parameters(currying), with some of the parameters hard coded. E.g.,
+[Scenario Actors]({{site.pagesurl}}/FitNesse.Tutorials.ScenarioTables#Scenario_Actors)) with parameters passed in. What the developer wanted was a form of this table(function) taking fewer parameters(currying), with some of the parameters hard coded. E.g.,
 >> [[include page="FitNesse.Tutorials.ScenarioTables.CurryingFunctions"]]
 
 Bob magically did this using FitNesse.SliM-based tables and then I spent quite a bit of time trying to understand the mechanics. As a result, I figured I better write something to remember this because while now it is obvious, it was not at the time.

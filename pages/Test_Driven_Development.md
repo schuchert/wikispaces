@@ -15,7 +15,7 @@ Here are a few stand-alone examples: [[TDD Example Catalog]]
 * [[Monopoly]]  ([print](http://schuchert.wikispaces.com/MonopolyPrintable?f=print))
 
 # Use in a C++ Class
-Here is the beginnings of an example TDD session using the [[Monopoly]] as the basis and [C++]({{_site.pagesurl}}/Cxx_TDD_Monopoly) as the language.
+Here is the beginnings of an example TDD session using the [[Monopoly]] as the basis and [C++]({{site.pagesurl}}/Cxx_TDD_Monopoly) as the language.
 
 ## [Notes on CppUTest]({{ site.pagesurl}}/tdd.cpp.NotesOnCppUTest)
 ## [Notes on CppULite]({{ site.pagesurl}}/NotesOnCppULite)

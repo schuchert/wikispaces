@@ -1,7 +1,7 @@
 ---
 title: JBoss_AOP_Example_1
 ---
-[<--Back]({{_site.pagesurl}}/JBoss_AOP_Example_1) [Next-->]({{ site.pagesurl}}/JBossEX1ExpectedVersusActualOutput)
+[<--Back]({{site.pagesurl}}/JBoss_AOP_Example_1) [Next-->]({{ site.pagesurl}}/JBossEX1ExpectedVersusActualOutput)
 
 Source files are here: [[file:JBossEX1Source.jar]]. If you need instructions on what do with these files, try [here]({{ site.pagesurl}}/ExtractingSourceFilesIntoProject).
 
@@ -61,4 +61,4 @@ public class MethodExecutionExample {
 ## Predict the output
 Before continuing on, please predict the output from these two files.
 
-[<--Back]({{_site.pagesurl}}/JBoss_AOP_Example_1) [Next-->]({{ site.pagesurl}}/JBossEX1ExpectedVersusActualOutput)
+[<--Back]({{site.pagesurl}}/JBoss_AOP_Example_1) [Next-->]({{ site.pagesurl}}/JBossEX1ExpectedVersusActualOutput)

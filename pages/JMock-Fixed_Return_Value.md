@@ -1,7 +1,7 @@
 ---
 title: JMock-Fixed_Return_Value
 ---
-[<--Back]({{_site.pagesurl}}/TDD_Example_Catalog)
+[<--Back]({{site.pagesurl}}/TDD_Example_Catalog)
 
 This test method exists in a [[jMock JUnit 4 Die Skeleton]].
 
@@ -57,4 +57,4 @@ public void faceValueAlways2() {
 }
 ```
 
-[<--Back]({{_site.pagesurl}}/TDD_Example_Catalog)
+[<--Back]({{site.pagesurl}}/TDD_Example_Catalog)

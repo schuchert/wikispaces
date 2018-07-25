@@ -5,7 +5,7 @@ title: Car_Rental_Code_Coverage_with_Emma
 
 # Code Coverage with Emma
 
-This example is based on the [[Car Rental Example]]. If you want work through this example, you need to follow [these instructions]({{_site.pagesurl}}/Car_Rental_Installation_and_Setup) first.
+This example is based on the [[Car Rental Example]]. If you want work through this example, you need to follow [these instructions]({{site.pagesurl}}/Car_Rental_Installation_and_Setup) first.
 
 In this example, we add code coverage to the Car Rental Application. We then examine the results, make some changes and finish with a few conclusions. 
 
@@ -19,10 +19,10 @@ Let's get started:
 * Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
 
 **suite() method**
-Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [suite()]({{_site.pagesurl}}/JUnit_4.xSuite) method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
+Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [suite()]({{site.pagesurl}}/JUnit_4.xSuite) method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
  
 **Ant Script**
-When you followed [these instructions]({{_site.pagesurl}}/Car_Rental_Installation_and_Setup), you should have created a workspace with three projects:
+When you followed [these instructions]({{site.pagesurl}}/Car_Rental_Installation_and_Setup), you should have created a workspace with three projects:
 * CarRental
 * LoggingUtils
 * ToolConfiguration

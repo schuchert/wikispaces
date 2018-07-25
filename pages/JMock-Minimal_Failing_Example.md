@@ -1,7 +1,7 @@
 ---
 title: JMock-Minimal_Failing_Example
 ---
-[<--Back]({{_site.pagesurl}}/TDD_Example_Catalog)
+[<--Back]({{site.pagesurl}}/TDD_Example_Catalog)
 
 ```java
 @Test
@@ -20,4 +20,4 @@ Why does this fail? Assuming two things:
 
 The any use of any method not explicitly stated in the Expectations will cause an unexpected invocation.
 
-[<--Back]({{_site.pagesurl}}/TDD_Example_Catalog) 
+[<--Back]({{site.pagesurl}}/TDD_Example_Catalog) 

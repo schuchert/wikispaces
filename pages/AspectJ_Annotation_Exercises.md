@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_Exercises
 ---
-[<--Back]({{_site.pagesurl}}/AspectJ_Annotation_Thinking) [Next-->]({{_site.pagesurl}}/AspectJ_Annotation_Start)
+[<--Back]({{site.pagesurl}}/AspectJ_Annotation_Thinking) [Next-->]({{site.pagesurl}}/AspectJ_Annotation_Start)
 
 # AspectJ Annotation: Exercises
 
@@ -23,8 +23,8 @@ Compare and contrast that solution with the one described on [[AspectJ Annotatio
 **Challenge:** Implement your solution
 ----
 ## Advanced: Mixing CFlow and Annotations
-If you have not already done so, work through [CFlow Example]({{_site.pagesurl}}/AspectJ_CFlow).
+If you have not already done so, work through [CFlow Example]({{site.pagesurl}}/AspectJ_CFlow).
 
 Create a new annotation, @IgnoreMethod, that works just like @IgnoreField. Only this time, all changes are ignored if they happen either directly in this method or the cflow of this method.
 
-[<--Back]({{_site.pagesurl}}/AspectJ_Annotation_Thinking) [Next-->]({{_site.pagesurl}}/AspectJ_Annotation_Start)
+[<--Back]({{site.pagesurl}}/AspectJ_Annotation_Thinking) [Next-->]({{site.pagesurl}}/AspectJ_Annotation_Start)

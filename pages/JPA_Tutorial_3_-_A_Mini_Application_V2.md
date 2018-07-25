@@ -1,7 +1,7 @@
 ---
 title: JPA_Tutorial_3_-_A_Mini_Application_V2
 ---
-[<-Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
+[<-Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)
 
 # JPA Tutorial 3 - A Mini Application
 
@@ -28,4 +28,4 @@ In this example we start with a simple domain model and incrementally migrate it
 ## V2 Requirements: Books on Loan
 [[JPA Tutorial 3 - Books on Loan]]
 
-[<-Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
+[<-Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)

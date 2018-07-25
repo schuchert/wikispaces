@@ -64,7 +64,7 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 |19 - 20|If I'm unable to locate the URL, get a logger and log a fatal message.|
 |20|Use the new method, String.format, to format a string using old C-Style format strings.|
 |22|I did find the URL, go ahead a process the contents of this property file.|
-|26 - 28|Just in case I want to get a logger, I have a simple method that will give me an [ILogger]({{_site.pagesurl}}/Commons_Logging_and_Log4j_Config#ILogger) for a given class. Notice that I'm not using Sun's or Lor4J's Logger. Why? I change the interface to support both a variable number of parameters and automatic log level checking. So no place in my code beyond this configuration utility is aware of Log4J. I know I'm going to use Log4J so is there any value in wrapping it? In this case I am not simply wrapping it by actually adapting its interface.|
+|26 - 28|Just in case I want to get a logger, I have a simple method that will give me an [ILogger]({{site.pagesurl}}/Commons_Logging_and_Log4j_Config#ILogger) for a given class. Notice that I'm not using Sun's or Lor4J's Logger. Why? I change the interface to support both a variable number of parameters and automatic log level checking. So no place in my code beyond this configuration utility is aware of Log4J. I know I'm going to use Log4J so is there any value in wrapping it? In this case I am not simply wrapping it by actually adapting its interface.|
 |30 - 34|The comment says it all. If you want to look like you are initializing the logging infrastructure, call initialize. It's an empty method, but by referencing it, the class will get loaded and the logger will get initialized because of the static initializer on lines 12 - 15.|
 
 [[#log4j]]

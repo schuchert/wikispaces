@@ -1,7 +1,7 @@
 ---
 title: JUnit_4.xAtBeforeClass
 ---
-[<--Back]({{_site.pagesurl}}/JUnit_4.x#AtBeforeClass)
+[<--Back]({{site.pagesurl}}/JUnit_4.x#AtBeforeClass)
 
 # @BeforeClass
 
@@ -19,4 +19,4 @@ Notice that the method is both public and static. That's required:
 45:     }
 ```
 
-[<--Back]({{_site.pagesurl}}/JUnit_4.x#AtBeforeClass)
+[<--Back]({{site.pagesurl}}/JUnit_4.x#AtBeforeClass)

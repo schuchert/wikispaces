@@ -7,4 +7,4 @@ As a user I want to be able to clear all values on the stack so that I can start
 * [] <clear> --> []
 * [5, 4, 3] <clear> --> []
 
-[<--Back]({{_site.pagesurl}}/RPN_Calculator)
+[<--Back]({{site.pagesurl}}/RPN_Calculator)

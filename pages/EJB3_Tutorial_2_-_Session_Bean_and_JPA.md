@@ -2,7 +2,7 @@
 title: EJB3_Tutorial_2_-_Session_Bean_and_JPA
 ---
 {:toc}
-[<--Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
+[<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)
 # Session Bean and JPA
 
 This tutorial revisits the entities from [[JPA Tutorial 1 - Getting Started]] and introduces a DAO, which gets its entity manager auto-wired.
@@ -31,4 +31,4 @@ This tutorial revisits the entities from [[JPA Tutorial 1 - Getting Started]] an
 ## Exercises
 [[include page="Ejb 3 Tutorial 2 - Exercises"]]
 
-[<--Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
+[<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)

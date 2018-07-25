@@ -5,7 +5,7 @@ title: FitNesse.Tutorials.CSharp.Slim.EachTable
 [<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)
 
 # Introduction
-This tutorial simply demonstrates each of the kinds of tables available in Slim using C#. Before getting started with this tutorial, make sure you understand [this tutorial first]({{_site.pagesurl}}/Acceptance_Testing.UsingSlimDotNetInFitNesse).
+This tutorial simply demonstrates each of the kinds of tables available in Slim using C#. Before getting started with this tutorial, make sure you understand [this tutorial first]({{site.pagesurl}}/Acceptance_Testing.UsingSlimDotNetInFitNesse).
 
 # Table Types
 In Slim there are 5 major table types and one minor type (the import table):

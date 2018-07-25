@@ -1,7 +1,7 @@
 ---
 title: JMock-Demystifying_the_Beast
 ---
-[<--Back]({{_site.pagesurl}}/TDD_Example_Catalog)
+[<--Back]({{site.pagesurl}}/TDD_Example_Catalog)
 
 jMock makes a use of two Java language features, one you may have never used:
 * Anonymous inner classes (you don't have to use them but it works out nicely)
@@ -33,4 +33,4 @@ If you're using an IDE, I'd recommend typing the following:
 ```
 Once you've done that, format your code and it will be a bit more clear where to express your expectations.
 
-[<--Back]({{_site.pagesurl}}/TDD_Example_Catalog)
+[<--Back]({{site.pagesurl}}/TDD_Example_Catalog)

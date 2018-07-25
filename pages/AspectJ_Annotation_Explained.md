@@ -209,11 +209,11 @@ We create a new kind of annotation. This annotation by itself only allows adding
 ```
 
 ### Interesting Lines
-The key change to this class is on line 17 where we ignore fields with the annotation IgnoreField. Otherwise this aspect is mostly unchanged from previous examples. (In fact, this verion of the aspect includes changes for the [CFlow]({{_site.pagesurl}}/AspectJ_CFlow) exmample on lines 21 - 23.
+The key change to this class is on line 17 where we ignore fields with the annotation IgnoreField. Otherwise this aspect is mostly unchanged from previous examples. (In fact, this verion of the aspect includes changes for the [CFlow]({{site.pagesurl}}/AspectJ_CFlow) exmample on lines 21 - 23.
 
 |---|---|
 |Line|Description|
-|13 - 15|Define a pointcut that covers the setting of all fields included in the class TrackedObjectMixin. We will use this later with ! to exclude these fields. This is to avoid a recursion problem. The details of why were covered by an exercise. To see that exercise, click [here]({{_site.pagesurl}}/AspectJEX4ApplyYourself#Unexpected_Recursion).|
+|13 - 15|Define a pointcut that covers the setting of all fields included in the class TrackedObjectMixin. We will use this later with ! to exclude these fields. This is to avoid a recursion problem. The details of why were covered by an exercise. To see that exercise, click [here]({{site.pagesurl}}/AspectJEX4ApplyYourself#Unexpected_Recursion).|
 |17 - 19|Define a pointcut that captures the setting of all fields in the AddressClass except for those that have the annotation IgnoreField. AspectJ uses @Annotation to describe an annotation. In this case, we negate it so we're saying "does not have the annotation". This is the only change required to any of the aspects to support skipping individual fields.|
 |21 - 23|This is described elsewhere. See [[AspectJ CFlow Explained]].|
 |25|This Around advice applies to pointcuts that setters in Address but do not have the annotation IgnoreField AND NOT any pointcuts in the TrackedObjectMixin class AND NOT any pointcuts that happen in in the call of a constructor or anything called by the constructor. It's a lot to deal with, but by breaking it up into smaller pointcuts, it tends to be easier to understand and more manageable.|

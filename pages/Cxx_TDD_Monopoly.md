@@ -34,7 +34,7 @@ In this example, I've used the following tools:
 * make built in to Cygwin
 * makedepend built into Cygwin
 * Subversion client built into Cygwin
-* [Subversion server]({{_site.pagesurl}}/Subversion_on_XP)
+* [Subversion server]({{site.pagesurl}}/Subversion_on_XP)
 * [CxxTest](http://cxxtest.sourceforge.net/) version 3.10.1
 
 ## Overview
@@ -75,8 +75,8 @@ So here's our algorithm for addressing each iteration:
 
 ## The Iterations
 If you are ready to move on, here are the four iterations:
-* [C++ TDD Iteration 1]({{_site.pagesurl}}/Cxx_Tdd_Iteration_1)
-* [C++ TDD Iteration 2]({{_site.pagesurl}}/Cxx_Tdd_Iteration_2)
-* [C++ TDD Iteration 2 - The Demo]({{_site.pagesurl}}/Cxx_Tdd_Iteration_2_-_The_Demo)
-* [C++ TDD Iteration 3]({{_site.pagesurl}}/Cxx_Tdd_Iteration_3)
-* [C++ TDD Iteration 4]({{_site.pagesurl}}/Cxx_Tdd_Iteration_4)
+* [C++ TDD Iteration 1]({{site.pagesurl}}/Cxx_Tdd_Iteration_1)
+* [C++ TDD Iteration 2]({{site.pagesurl}}/Cxx_Tdd_Iteration_2)
+* [C++ TDD Iteration 2 - The Demo]({{site.pagesurl}}/Cxx_Tdd_Iteration_2_-_The_Demo)
+* [C++ TDD Iteration 3]({{site.pagesurl}}/Cxx_Tdd_Iteration_3)
+* [C++ TDD Iteration 4]({{site.pagesurl}}/Cxx_Tdd_Iteration_4)

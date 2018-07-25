@@ -17,15 +17,15 @@ Before you begin, you'll need to setup and configure your environment. To do tha
 Note, these examples are written to mimic how I present them in a workshop environment. That is deliberate. I'm hoping you'll work through these examples on your own similar to how I'd have people work through them in a workshop environment.
 
 Examples meant to get you up to speed on self-defining what AOP means:
-* [[AspectJ_Example_1]] or you can get the [PrintLayout]({{_site.pagesurl}}/AspectJ_Example_1_PrintLayout)
+* [[AspectJ_Example_1]] or you can get the [PrintLayout]({{site.pagesurl}}/AspectJ_Example_1_PrintLayout)
 * [[AspectJ_Example_2]]
 * [[AspectJ_Example_3]]
 * [[AspectJ_Example_4]]
 
 The following examples and exercises may be performed in any order. The listing below seems to work alright:
-* [CFlow]({{_site.pagesurl}}/AspectJ_CFlow)
-* [Annotation Start]({{_site.pagesurl}}/AspectJ_Annotation_Start)
-* [Generics Start]({{_site.pagesurl}}/AspectJ_Generics_Start)
+* [CFlow]({{site.pagesurl}}/AspectJ_CFlow)
+* [Annotation Start]({{site.pagesurl}}/AspectJ_Annotation_Start)
+* [Generics Start]({{site.pagesurl}}/AspectJ_Generics_Start)
 * [[AspectJ Research Docs]]
 * [[AspectJ Object Versioning]]
 * [[AspectJ Observer Pattern]]

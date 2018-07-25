@@ -1,7 +1,7 @@
 ---
 title: JAR_Files_for_JBoss_AOP
 ---
-[<--Back]({{_site.pagesurl}}/Environment_Configuration_for_JBOSS_AOP)
+[<--Back]({{site.pagesurl}}/Environment_Configuration_for_JBOSS_AOP)
 
 Every project using JBoss AOP needs several JAR files. You defined a classpath variable in [[Eclipse Classpath Variable for JBoss AOP]]. We now need to use that classpath variable:
 
@@ -41,4 +41,4 @@ Caused by: java.lang.NoClassDefFoundError: javassist/ClassPool
 	... 5 more
 Exception in thread "main" 
 ```
-[<--Back]({{_site.pagesurl}}/Environment_Configuration_for_JBOSS_AOP)
+[<--Back]({{site.pagesurl}}/Environment_Configuration_for_JBOSS_AOP)

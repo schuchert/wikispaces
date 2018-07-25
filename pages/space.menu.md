@@ -7,10 +7,10 @@ title: space.menu
 [FitNessse Tutorials]({{ site.pagesurl}}/FitNesse.Tutorials)
 [Experiential Learning]({{ site.pagesurl}}/ExperientialLearningNotes)
 [[RubyNotes]]
-[EJB & JPA]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
+[EJB & JPA]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)
 [[Agile Courseware]]
 [Unpublished Articles]({{ site.pagesurl}}/Articles)
-[Tool Configuration]({{_site.pagesurl}}/Tool_Setup_and_Configuration_Notes)
+[Tool Configuration]({{site.pagesurl}}/Tool_Setup_and_Configuration_Notes)
 [[AOP]]
 [C# & OOP]({{ site.pagesurl}}/CSharpAndOop)
 [[home|Back to the Top]]

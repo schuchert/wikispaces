@@ -1,7 +1,7 @@
 ---
 title: Eclipse_VM_Configuration_for_JBoss_AOP
 ---
-[<--Back]({{_site.pagesurl}}/Environment_Configuration_for_JBOSS_AOP) [Next-->]({{_site.pagesurl}}/Eclipse_Classpath_Variable_for_JBoss_AOP)
+[<--Back]({{site.pagesurl}}/Environment_Configuration_for_JBOSS_AOP) [Next-->]({{site.pagesurl}}/Eclipse_Classpath_Variable_for_JBoss_AOP)
 
 Your goal is to configure the Java VM to include one additional parameter:
 > -javaagent:/AOP/jboss-aop_1.5.0.GA/lib-50/jboss-aop-jdk50.jar
@@ -17,4 +17,4 @@ In Eclipse:
 
 > ![](images/JBossAOPJREConfiguration.jpg)
 
-[<--Back]({{_site.pagesurl}}/Environment_Configuration_for_JBOSS_AOP) [Next-->]({{_site.pagesurl}}/Eclipse_Classpath_Variable_for_JBoss_AOP)
+[<--Back]({{site.pagesurl}}/Environment_Configuration_for_JBOSS_AOP) [Next-->]({{site.pagesurl}}/Eclipse_Classpath_Variable_for_JBoss_AOP)

@@ -5,7 +5,7 @@ Many people do not make a distinction between [[Test Driven Development]] and Te
 
 For example, we might begin with a simple [UML Communication diagram](http://www.agilemodeling.com/artifacts/communicationDiagram.htm). Once we've completed the diagram, we then will use unit tests to test our way into the design.
 
-Taking this approach, we'd typically work least dependent to most dependent (bottom of the diagram or leaf notes first). We follow a similar approach to [TDD]({{_site.pagesurl}}/Test_Driven_Development):
+Taking this approach, we'd typically work least dependent to most dependent (bottom of the diagram or leaf notes first). We follow a similar approach to [TDD]({{site.pagesurl}}/Test_Driven_Development):
 * Write a test
 * Get it to compile
 * Get it to pass

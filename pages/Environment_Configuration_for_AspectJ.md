@@ -19,7 +19,7 @@ These examples require AspectJ 1.5. They were originally written using 1.5.1. Fo
 Download AspectJ [here](http://www.eclipse.org/aspectj/downloads.php).
 
 ## Eclipse Configuration for AspectJ
-The following additional configuration sets will set your Eclipse configuration up the way I've set it up for all of these examples. You can click on individual links or just follow the [Next-->]({{_site.pagesurl}}/Eclipse_VM_Configuration_for_AspectJ) link below:
+The following additional configuration sets will set your Eclipse configuration up the way I've set it up for all of these examples. You can click on individual links or just follow the [Next-->]({{site.pagesurl}}/Eclipse_VM_Configuration_for_AspectJ) link below:
 * [[Eclipse VM Configuration for AspectJ]]
 * [[Eclipse Classpath Variable for AspectJ]]
 * [[Eclipse Java Language Preferences for AspectJ]]
@@ -38,4 +38,4 @@ The following additional configuration sets will set your Eclipse configuration 
 * [[AspectJ_Example_3]]
 * [[AspectJ_Example_4]]
 
-[<--Back]({{_site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{_site.pagesurl}}/Eclipse_VM_Configuration_for_AspectJ)
+[<--Back]({{site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{site.pagesurl}}/Eclipse_VM_Configuration_for_AspectJ)

@@ -1,7 +1,7 @@
 ---
 title: Ejb3_Tutorial_3_-_Setting_up_the_Project
 ---
-First we need to start with a project. Rather than having to copy all of [JPA Tutorial 3]({{_site.pagesurl}}/JPA_Tutorial_3_-_A_Mini_Application), instead use the following 7-zip file: [[file:Ejb3Tutorial3.7z]]. You are welcome to use your version of Jpa Tutorial 3, however if you do these instructions might not match your experience.
+First we need to start with a project. Rather than having to copy all of [JPA Tutorial 3]({{site.pagesurl}}/JPA_Tutorial_3_-_A_Mini_Application), instead use the following 7-zip file: [[file:Ejb3Tutorial3.7z]]. You are welcome to use your version of Jpa Tutorial 3, however if you do these instructions might not match your experience.
 
 Note that this file already has a **conf** directory as described in [[EJB3 Tutorial 1 - Create and Configure]] and the classpath is already already set.
 

@@ -2,7 +2,7 @@
 title: JPA_Tutorial_3_-_A_Mini_Application
 ---
 {:toc}
-[<-Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
+[<-Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)
 
 # JPA Tutorial 3 - A Mini Application
 
@@ -43,4 +43,4 @@ In this example we start with a simple domain model and incrementally migrate it
 ## FAQ
 [[include page="JPA Tutorial 3 - FAQ"]]
 
-[<-Back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
+[<-Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)

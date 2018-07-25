@@ -1,11 +1,11 @@
 ---
 title: Ejb3Tutorial3_-_A_Mini_Aplication_Revisited_Printable
 ---
-[<--back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
+[<--back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)
 
 # EJB3 Tutorial 3 - A Mini Application 
 
-This tutorial revisits [JPA Tutorial 3]({{_site.pagesurl}}/JPA_Tutorial_3_-_A_Mini_Application) and migrates it from a JSE Solution to a JEE solution. Along the way, we're going to notice several things that we "missed". These were either things that the JSE environment let slide or things we missed because of how we were testing our solutions.
+This tutorial revisits [JPA Tutorial 3]({{site.pagesurl}}/JPA_Tutorial_3_-_A_Mini_Application) and migrates it from a JSE Solution to a JEE solution. Along the way, we're going to notice several things that we "missed". These were either things that the JSE environment let slide or things we missed because of how we were testing our solutions.
 ----
 ## Background
 [[include page="Ejb3 Tutorial 3 - Background"]]
@@ -28,4 +28,4 @@ This tutorial revisits [JPA Tutorial 3]({{_site.pagesurl}}/JPA_Tutorial_3_-_A_Mi
 # # FAQ 
 [[include page="Ejb3 Tutorial 3 - FAQ"]]
 
-[<--back]({{_site.pagesurl}}/EJB_3_and_Java_Persistence_API)
+[<--back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)
