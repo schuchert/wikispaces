@@ -3,6 +3,7 @@ title: FitNesse.Tutorials.AlternativeScriptTableSyntax
 ---
 {:toc}
 [<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)
+
 # Introduction
 Sometime in the beginning of 2010, Bob Martin started working on an alternative way to write script tables to provide something that looks more like a style used in tools like [cucumber](http://cukes.info/). While still somewhat preliminary, this tutorial gives you a brief introduction to using this alternative style. Before getting into details, there are a few things I'll note:
 * Ultimately what gets executed in the fixture is the same thing that gets executed using "regular" scripts
@@ -248,4 +249,5 @@ The parameter @number is replaced with its assigned value 1. Next, FitNesse look
 The remaining lines are matched, substituted and executed in a similar manner and the test executes.
 
 This is not exactly correct. FitNesse does all of the matching and substituting. It then sends this processed test to Slim, which looks up the appropriate class, DvrRecording, and method. So all of the execution happens after all of the matching and substitution.
+
 [<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)

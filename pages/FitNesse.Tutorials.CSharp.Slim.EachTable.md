@@ -9,6 +9,7 @@ This tutorial simply demonstrates each of the kinds of tables available in Slim 
 
 # Table Types
 In Slim there are 5 major table types and one minor type (the import table):
+
 | Decision Table | A decision table allows individual rows to execute, one at a type. Typically used to insert data into the system for testing. This replaces the Column Fixture Table from Fit. |
 | Query Table | A query table allows you to specify a number of rows expected from querying the system. Surplus or missing rows are clearly labeled. This replaces the Row Fixture Table from Fit. |
 | Script Table | Individual rows represent individual method invocations. Can make tests more expressive, often used by developers looking for something more familiar. This replaces the doFixture from Fit Library. |
@@ -18,6 +19,7 @@ In Slim there are 5 major table types and one minor type (the import table):
 
 # The Examples
 Here is the configuration information I used for the following examples:
+
 | Location of FitNesse | C:\tools\fitnesse |
 | Command to start FitNesse | run -p 8080 |
 | Version of Slim | 1.2 |
@@ -27,6 +29,7 @@ Here is the configuration information I used for the following examples:
 | Full path to top-level of FitNesse Tests | http://localhost:8080/CsharpWithSlim |
 
 Given this information, the following definitions will make these examples work:
+
 ```
 !define TEST_SYSTEM {slim}
 {% raw %}
@@ -38,12 +41,14 @@ Given this information, the following definitions will make these examples work:
 ```
 
 Also, all of classes for these tables reside in the same namespace, so an import table will help with that. The import table must appear on the page that is executing. Simply putting it in the top level page will not work. Instead, make it a SetUp page. Here's the contents of <http://localhost:8080/CsharpWithSlimExamples.SetUp>:
+
 ```
 | import |
 | slim_example |
 ```
 
 The Page Hierarchy will ultimately be:
+
 ```
 CsharpWithSlimExamples
   SetUp
@@ -54,7 +59,9 @@ CsharpWithSlimExamples
   TableTableExample
 ```
 ## Decision Table
+
 Here's a example of a decision table (<http://localhost:8080/CsharpWithSlimExamples.DecisionTableExample>):
+
 ```
 |Create Shows|5/6/2009                                                               |
 |Name        |Episode                      |Channel|Start Time|Duration|Id?          |
@@ -63,6 +70,7 @@ Here's a example of a decision table (<http://localhost:8080/CsharpWithSlimExamp
 |Dr. Phil    |Episode #405:Teens in Trouble|3      |16:00     |60      |             |
 |Dr. Who     |Yet another doctor           |12     |20:00     |30      |$lastProgram=|
 ```
+
 The first row names the table, Create Shows, and requires that the underlying class have a constructor taking a single parameter.
 
 The second row names the columns and requires that the underlying class:
@@ -74,6 +82,7 @@ The remaining rows represent data going into the system, one row at a time.
 The last row uses the value returned from the Id() method and stores it in a variable. That variable is available for the rest of the page.
 
 Here is a C# fixture to handle this Decision Table (there are more ways to write this class):
+
 ```csharp
 using System;
 

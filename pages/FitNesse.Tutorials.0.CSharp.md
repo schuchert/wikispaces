@@ -15,10 +15,11 @@ In a nutshell, you are going to create a C# project, add some classes and then a
 
 # Determine Where Visual Studio Stores Your Generated DLL
 * The DLL should be under the bin\Debug directory. In my case, the full path to my DLL is:
-> C:\Projects\C_Sharp\DigitalVideoRecorder\DigitalVideoRecorder\bin\Debug
+* ```C:\Projects\C_Sharp\DigitalVideoRecorder\DigitalVideoRecorder\bin\Debug```
 
 # Update Page to have NSlim Configuration
 * Add the required configuration to the top of your DigitalVideoRecorder page:
+
 ```
 !define TEST_SYSTEM {slim}
 {% raw %}
@@ -28,6 +29,7 @@ In a nutshell, you are going to create a C# project, add some classes and then a
 ```
 
 * Add an import table so FitNesse will find the class in its namespace (above the Create Programs Table):
+
 ```
 !|import|
 |DigitalVideoRecorder|
@@ -35,11 +37,13 @@ In a nutshell, you are going to create a C# project, add some classes and then a
 
 # Add your code to Path
 * Edit your page and add the following lines (above the table that is already there):
+
 ```
 !path C:\Projects\C_Sharp\DigitalVideoRecorder\DigitalVideoRecorder\bin\Debug\DigitalVideoRecorder.dll
 ```
 
 * Your page should now be:
+
 ```
 !define TEST_SYSTEM {slim}
 {% raw %}
@@ -66,6 +70,7 @@ In a nutshell, you are going to create a C# project, add some classes and then a
 You have two tables in your page. The first table is an import table, it tells FitNesse to import that namespace (i.e. like using in .Net). That is, when looking for fixture classes (classes that process tables), look in this namespace. If you want to import multiple namespaces, use multiple rows (or duplicate the entire table).
 
 The second table is a decision table. (Those familiar with Fit, may recognize the similarity between Decision Tables and Column Fixtures.) The first row names a class, CreatePrograms in this case. You created this class above. The second row names the columns. Column headers that do not have a question mark in their name require a "set" method to back them. Column headers with a question mark require a method that returns a value. In our case we have 6 columns, so we need to add 6 methods, 5 setters and one method which returns a value. Here's the complete "stub" class to get this table fully passing:
+
 ```csharp
 using System;
 

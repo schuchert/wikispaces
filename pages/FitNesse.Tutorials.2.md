@@ -3,6 +3,7 @@ title: FitNesse.Tutorials.2
 ---
 {:toc}
 [<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) or [Next Tutorial--->]({{ site.pagesurl}}/FitNesse.Tutorials.ScriptTables)
+
 # Introduction
 A Query table is a means of performing a single query and verifying the results. A typical test might use [Slim Decision Tables](http://fitnesse.org/FitNesse.UserGuide.SliM.DecisionTable) to insert a large data set and then Query tables to verify that the correct sub-set of the data is returned from the query.
 
@@ -12,7 +13,7 @@ As a final note, this tutorial picks up where [this tutorial]({{ site.pagesurl}}
 
 # Beginning
 Consider the following user story:
->> As a dvr user, I want to create season passes so that I can record every episode of a particular program on a channel, no matter when it appears.
+* As a dvr user, I want to create season passes so that I can record every episode of a particular program on a channel, no matter when it appears.
 
 To test this functionality, it looks like we need to check several things, here are a few of those things:
 * A program schedule populated with programs.
@@ -20,6 +21,7 @@ To test this functionality, it looks like we need to check several things, here 
 * The schedule should have some duplicate episodes as well.
 
 We're going to grow our way into this. Before we can do that, we need to create a program schedule. You've already solved this problem in the [previous tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.2)(right?). So all we need to do is use a previous fixture and create original programming. Rather than try to create real programs and episodes, this example just creates a large amount of data and it also includes the configuration stuff:
+
 ```
 |Add Programs To Schedule                         |
 |name|episode|channel|date     |start time|minutes|
@@ -52,6 +54,7 @@ Also consider this, AddProgramsToSchedule was created early in this project. Fix
 * Create new created() method that returns a boolean
 
 For this table to actually do anything, you must make some decision on how to proceed. For the purpose of moving this tutorial forward, I'm going with the option just described. Here are the changes to the fixture:
+
 ```java
 public class AddProgramsToSchedule {
    // snip
@@ -87,9 +90,11 @@ Since you've just changed the fixture, you should go back to your DecisionTableE
 A test suite is simply a page above other pages that is set to be a suite. FitNesse will look at all of its children and execute the pages under it that are set to test pages. To do this, you'll need to create the suite and move existing pages under it:
 * Go to the [FrontPage](http://localhost:8080/FrontPage).
 * Edit the page and add the following near the bottom:
+
 ```
 >DigitalVideoRecorderExamples
 ```
+
 * Save your changes
 * Click on the [?] hyperlink
 * Create the page and simply accept the !contents ...
@@ -112,6 +117,7 @@ A test suite is simply a page above other pages that is set to be a suite. FitNe
 * Now, under the **Move** section, enter FrontPage.DigitalVideoRecorderExamples and click **Move**
 * Go back to the DigitalVideoRecorderExamples test suite and click suite to make sure both pages pass.
 * Finally, edit the Front page by removing the following lines:
+
 ```
 >DigitalVideoRecorder
 >DecisionTableExample
@@ -125,6 +131,7 @@ We can also create a SetUp page as a sibling of DecisionTableExample and its con
 
 Update your DigitalVideoRecorderExamples page to define the test system and path:
 * Set the page to equal:
+
 ```
 !contents -R2 -g -p -f -h
 
@@ -136,6 +143,7 @@ Update your DigitalVideoRecorderExamples page to define the test system and path
 !define COLLAPSE_SETUP {true}
 !define COLLAPSE_TEARDOWN {true}
 ```
+
 * Remove the !define and !path from your DecisionTableExample and FirstExmaple as it will inherit this information from its parent. Also remove the !define COLLAPSE_* lines from FirstExample.
 
 FitNesse import tables are not implicitly inherited. The import statements must actually execute on that page. You can do this in one of three ways:
@@ -155,6 +163,7 @@ We want to create a SetUp page that will be available for all pages under Digita
 * Go that page
 * At the bottom, there will be a __[?]__ next to the word SetUp. Click it. (If for some reason there is no such page, simply enter <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.SetUp>
 * Set the contents of the SetUp page to:
+
 ```
 |import|
 |com.om.example.dvr.fixtures|
@@ -175,6 +184,7 @@ Now as you create new test pages, put them under DigitalVideoRecorderExample and
 
 # Back to a New Test
 Near the top of this tutorial, there was a table with a lot of data. You have not yet created that page. Now we have a place to create that page. So you do not have to scroll back, here's that table again:
+
 ```
 |Add Programs To Schedule                         |
 |name|episode|channel|date     |start time|minutes|
@@ -202,6 +212,7 @@ Create this page:
 * You should now see the setup and the **Test** button. Click **Test** to make sure this page executes
 
 Now we need to create a season pass. That's a new table and fixture. Here's a table:
+
 ```
 |Create Season Pass For|P1|9|
 |id of program scheduled?   |
@@ -211,6 +222,7 @@ Now we need to create a season pass. That's a new table and fixture. Here's a ta
 This table's goal is to send a message to the production code to create a season pass for the program named p1 on channel 9. When this happens, I want to have available the ID of the program found to use later. The first row provides the name and constructor arguments. The next row indicates calling a method called idOfProgramScheduled(), whose return will provide that information, which [FitNesse](http://fitnesse.org) will then assign to the symbol ID.
 
 Now, when this happens, what do we expect for results? I could provide a description in text of my expectations, but better yet, I'll express it as an expected result:
+
 ```
 |query:Episodes In To Do List|$ID                |
 |episodeName                 |date     |startTime|
@@ -225,7 +237,9 @@ Add the previous two tables to your existing page. If you execute the test, you'
 Round 1 is simply getting a fixture that will make this test pass. To do this, the fixture will hard-code the results. Why do I do this? The structure that needs to be returned is complex enough that just looking at it first is enough to consider.
 
 Execute the test with these two new tables. You'll find you need to create two fixtures:
+
 **CreateSeasonPassFor.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -240,6 +254,7 @@ public class CreateSeasonPassFor {
 ```
 
 **EpisodesInToDoList.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -257,7 +272,9 @@ public class EpisodesInToDoList {
 ```
 
 Create these two fixtures and execute the test. While it is not passing, this is a good start. Next, we'll actually update one fixture to get the production test passing:
+
 **EpisodesInToDoList.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -312,7 +329,9 @@ Here's what we need to have happen:
 * Build a correct result object
 
 In the two types of DVR's I've owned, there's been something called the "Season Pass Manager." So this is where we can start:
+
 **SeasonPassManagerTest.java**
+
 ```java
 package com.om.example.dvr.domain;
 
@@ -362,6 +381,7 @@ public class SeasonPassManagerTest {
 ```
 
 **SeasonPassManager.java**
+
 ```java
 package com.om.example.dvr.domain;
 
@@ -387,6 +407,7 @@ public class SeasonPassManager {
 ```
 
 **Update: Schedule.java**
+
 ```java
    public List<Program> findProgramsNamedOn(String programName, int channel) {
       List<Program> result = new LinkedList<Program>();
@@ -402,7 +423,9 @@ public class SeasonPassManager {
 Make these updates and verify that your two unit tests pass.
 
 ### Wiring It Up
+
 That was just enough to get the unit test passing. It may not seem complete, but there are no more story-based assertions that require more work, so the solution will be adequate. However, we next need to hook up the results in the fixture. That is, we need to replace:
+
 ```java
    private List<Object> list(Object... objs) {
       LinkedList<Object> result = new LinkedList<Object>();
@@ -430,7 +453,9 @@ We need to replace that with code that will turn an object or list into a list i
 * [[file:ReflectionUtil.jar]]
 
 Rather than describe this in great detail (you can review the source and embedded unit tests), here is a first example:
+
 **Update: Add Unit Test to SeasonPassManagerTest.java**
+
 ```java
    @Test
    public void queryResultBuilderCanTranslateToDoListCorrectly() {
@@ -443,7 +468,9 @@ Rather than describe this in great detail (you can review the source and embedde
 ```
 
 Note, this example requires the addition of one more method to SeasonPassManager.java:
+
 **Update: SeasonPassManager.java**
+
 ```java
    public Iterable<?> toDoListIterator() {
       return toDoList;
@@ -467,7 +494,9 @@ Not to worry, we can promote those fields up to our results in one of two ways:
 * Add getters for the fields in Program and add a PropertyHandler for the time slot attribute.
 
 The first option might seem simple, but it will involve putting fixture-specific code in our domain object, which is a bad idea. Instead, we'll create a custom property handler to perform the promotion of the fields instead:
+
 **Create: TimeSlotPropertyHandler.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -499,7 +528,9 @@ public class TimeSlotPropertyHandler extends PropertyHandler {
 
 ### Slightly Updated Test
 This test, which you might have put in SeasonPassManagerTest should no longer be in that class. Why? The class you just created is in the fixtures package. The SeasonPassManagerTest is in the domain package. The domain package should not point to the fixtures package. So leave that test as it is and instead create a new test class:
+
 **Create: QueryResultBuilderExampleTest**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -556,6 +587,7 @@ public class QueryResultBuilderExampleTest {
 ```
 
 Try running your unit tests. They will fail with the following exception:
+
 ```
 com.om.reflection.PropertyDoesNotExistInBeanException: Propery: timeSlot,
              does not exist in: com.om.example.dvr.domain.Program
@@ -565,7 +597,9 @@ com.om.reflection.PropertyDoesNotExistInBeanException: Propery: timeSlot,
 ```
 
 This exception is telling you that when you tried register a property handler for timeSlot, there was no corresponding getter method. To get this to work, you will need to add some getter methods to Program:
+
 **Update: Program.java**
+
 ```java
    public String getProgramName() {
       return programName;
@@ -586,6 +620,7 @@ Once you get your tests passing, remove the old version of the queryResultBuilde
 To complete this wiring, you'll need to make some updates to the fixtures:
 
 **Update: CreateSeasonPassFor.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -614,7 +649,9 @@ public class CreateSeasonPassFor {
 ```
 
 This also requires a change to SeasonPassManager:
+
 **Update: SeasonPassManager.java**
+
 ```java
    public Program createNewSeasonPass(String programName, int channel) {
       List<Program> programsFound = schedule.findProgramsNamedOn(programName, channel);
@@ -628,6 +665,7 @@ This also requires a change to SeasonPassManager:
 ```
 [#QueryResultExample]({{site.pagesurl}}/#QueryResultExample)
 **Update: EpisodesInToDoList.java**:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -656,7 +694,9 @@ public class EpisodesInToDoList {
 ```
 
 And finally, this requires another change to SeasonPassManager (overly simplistic, maybe, but enough for our tests):
+
 **Update: SeasonPassManager.java**
+
 ```java
    public List<Program> toDoListContentsFor(String programId) {
       return toDoList;
@@ -667,6 +707,7 @@ And finally, this requires another change to SeasonPassManager (overly simplisti
 Your new code uses two jar files (downloaded from above). You need to add these to the class path:
 * Go to your suite page : <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples>
 * Edit your top-level page and add a third !path statement (update the path accordingly):
+
 ```
 !path /Users/schuchert/src/fitnesse-tutorials/DVR/lib/**.jar
 ```
@@ -677,6 +718,7 @@ After all of these changes, see if in fact your story test still passes. Now, go
 Now it's time to make sure the same program/episode on the same channel is not scheduled to record more than once.
 
 Update the page to add another few tables at the bottom:
+
 ```
 |Create Season Pass For|P1|7|
 |id of program scheduled?   |
@@ -704,6 +746,7 @@ The last option leads to more tests so there's a balance between it and adding c
 * Next, rename it so it is instead QueryTableExamples (Refactor button, find rename, enter new name, click on rename button)
 * Create a SetUp page for your newly renamed page (click on the __[?]__ next to SetUp near the bottom of the page (if for some reason it is not there, then go to <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.QueryTableExamples.SetUp>)
 * Set the contents of the setup page to:
+
 ```
 |Add Programs To Schedule                         |
 |name|episode|channel|date     |start time|minutes|
@@ -722,15 +765,19 @@ The last option leads to more tests so there's a balance between it and adding c
 |P2  |E6     |5      |5/17/2008|7:00      |60     |
 |P1  |E1     |9      |5/17/2008|7:00      |60     |
 ```
+
 * Next, add the following to the top of your QueryTableExamples:
+
 ```
 !contents -R2 -g -p -f -h
 >SingleProgramPlacedInToDoListTest
 >DuplicateEpisodeNotIncludedInToDoListTest
 ```
+
 * Save the page.
 * Click on the __[?]__ next to SingleProgramPlacedInToDoListTest
 * Set its contents to:
+
 ```
 |Create Season Pass For|P1|9|
 |id of program scheduled?   |
@@ -740,16 +787,20 @@ The last option leads to more tests so there's a balance between it and adding c
 |episodeName                 |date     |startTime|
 |E1                          |5/17/2008|7:00     |
 ```
+
 * Save this page. Notice that it is already a test page? That's because its name ends in Test.
 * Click on the **Test** button to make sure it works.
 
 The test fails! Why? It is not finding the import included in the original SetUp page. FitNesse does not inherit SetUp pages. It finds the nearest one and runs it. To make sure that the global setup (import statements) are included down here, update the QeuryTableExamples setup page. Add the following line to the top of the page:
+
 ```
 !include <DigitalVideoRecorderExamples.SetUp
 ```
+
 * Go back and run the SingleProgramPlacedInToDoListTest and verify that it now works.
 * Now, click on the __[?]__ next to DuplicateEpisodesNotIncludedInToDoListTest.
 * Set its contents to:
+
 ```
 |Create Season Pass For|P1|7|
 |id of program scheduled?   |
@@ -764,16 +815,21 @@ The test fails! Why? It is not finding the import included in the original SetUp
 |E5                          |5/16/2008|7:00     |
 |E6                          |5/17/2008|7:00     |
 ```
+
 * Save the test and run it. It should still fail with one surplus row.
 * Next, edit the contents of the QueryTableExaples to:
+
 ```
 !contents -R2 -g -p -f -h
 ```
+
 * Click the **Suite** button, make sure the tests run with one failed assertion.
 
 ## Fix the Production Code
 To fix this problem, we need to make a few changes.
+
 **Add Method to: Program.java**
+
 ```java
    public boolean sameEpisodeAs(Program program) {
       return timeSlot.channel == program.timeSlot.channel
@@ -783,6 +839,7 @@ To fix this problem, we need to make a few changes.
 ```
 
 **Update: SeasonPassManager.java**
+
 ```java
 package com.om.example.dvr.domain;
 
@@ -860,12 +917,15 @@ Either of the last two options are fine. Given we have not created a TearDown pa
 * Go to the DigitalVideoRecorderExamples page.
 * Click on the __[?]__ next to TearDown. (If that link is missing, then go to: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown>.)
 * Set the contents to:
+
 ```
 |Clear Program Schedule|
 ```
 
 To make this work, you'll need a matching fixture:
+
 **Create: ClearProgramSchedule.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -877,7 +937,9 @@ public class ClearProgramSchedule {
 ```
 
 And finally, this requires you to add a method to Schedule:
+
 **Add Method To: Schedule.java**
+
 ```java
    public void clear() {
       scheduledPrograms.clear();

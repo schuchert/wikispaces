@@ -3,10 +3,12 @@ title: FitNesse.Tutorials.0
 ---
 {:toc}
 [<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)
+
 # Install FitNesse
 * Install a JVM 1.6 or later.
 * [Download FitNesse](http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad)
 * Go to that directory and execute "java -jar fitnesse.jar -p 8080"
+
 ```terminal
 Macintosh-8% java -jar fitnesse.jar -p 8080
 Unpacking new version of FitNesse resources.  Please be patient.
@@ -19,11 +21,13 @@ FitNesse (v20100103) Started...
 	html page factory: fitnesse.html.HtmlPageFactory
 	page version expiration set to 14 days.
 ```
+
 * Verify you see a friendly FitNesse web page when you open [your browser here](http://localhost:8080/) (I built this from source and it might be different from what you see when you start FitNesse, but it should be close - you won't see the tree on the left until sometime in 4/2009)
 ![](images/FitNesseStartScreen.gif)
 
 # Configure FitNesse for Slim
 * Click the **Edit** button on the home page. You will see something close to the following:
+
 ```terminal
 !1 Welcome to [[FitNesse][FitNesse.FitNesse]]!
 !3 ''The fully integrated stand-alone acceptance testing framework and wiki.''
@@ -39,10 +43,13 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 
 !note Release v20090311
 ```
+
 * Above the last line (!note Release ...) add the following line:
+
 ```
 >DigitalVideoRecorder
 ```
+
 * Click **Save** and you should see something similar to this near the bottom of the page:
 ![](images/AddFirstSubpage.gif)
 
@@ -50,6 +57,7 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 ![](images/EditFirstPage.gif)
 
 * Replace the !contents line with the following:
+
 ```
 !define TEST_SYSTEM {slim}
  
@@ -72,6 +80,7 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 * Click on the **Test** button, your test will fail with yellow (meaning something was not found) warnings:
 ![](images/FirstFailure.gif)
  **//Note//**: If you get an error similar to "Testing was interrupted ...", add the following line to your page (this will probably only happen if you build from source):
+
 ```
 !path fitnesse.jar
 ```
@@ -97,4 +106,5 @@ Congratulations, you've finished the first tutorial. In this tutorial you:
 * Continue working on the [next tutorials]({{ site.pagesurl}}/FitNesse.Tutorials.1) (I recommend in the order listed). 
 * Learn how to make tests that actually execute production code.
 * Learn how to use a Table Table to implement a "fluent" or DSL-based table
+
 [<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) -or- [Next Tutorial-->]({{ site.pagesurl}}/FitNesse.Tutorials.1)

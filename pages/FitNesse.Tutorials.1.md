@@ -3,6 +3,7 @@ title: FitNesse.Tutorials.1
 ---
 {:toc}
 [<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) -or- [Next Tutorial-->]({{ site.pagesurl}}/FitNesse.Tutorials.2)
+
 # Introduction
 This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If you need help installing or running [FitNesse](http://fitnesse.org/), please [go here first]({{ site.pagesurl}}/FitNesse.Tutorials.0). In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:
 * Create Decision tables in FitNesse
@@ -18,14 +19,16 @@ This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If 
 This tutorial is primarily about getting you over the hurtle of the mechanics of getting tests to execute using [FitNesse](http://fitnesse.org/). Even so, you will see some basic design considerations play out as well.
 
 Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on localhost at port 8080 <http://localhost:8080>. If you are not sure how to do that, [try this tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.0).
+
 # Background
 [FitNesse.Slim Decision Tables](http://FitNesse.org/FitNesse.SliM.DecisionTable) are a common way to get test data into a System Under Test. A Decision table has three parts (only the first of which is actually required):
-# One Title Row - Names the fixture to execute, optionally includes constructor parameters
-# One Heading Row - Names of columns, which map to either setter methods or method calls (if they end in ?)
-# Zero or more Data Rows - rows of data used to either provide data into a system or data used to compare to values returned from the fixture
+* One Title Row - Names the fixture to execute, optionally includes constructor parameters
+* One Heading Row - Names of columns, which map to either setter methods or method calls (if they end in ?)
+* Zero or more Data Rows - rows of data used to either provide data into a system or data used to compare to values returned from the fixture
 
 [#firstDecisionTable]({{site.pagesurl}}/#firstDecisionTable)
 Here is an example [FitNesse](http://fitnesse.org/) decision table:
+
 ```
 |Add Programs To Schedule                                                     |
 |name      |episode                      |channel|date     |start time|minutes|
@@ -40,17 +43,21 @@ The first row names the fixture. In this case, [FitNesse](http://fitnesse.org/) 
 * setDate(...)
 * setStartTime(...)
 * setMinutes(...)
+
 These methods can all take Strings or some, where there's a conversion available, other types as well. For example, **"setChannel()"** could take an int. It is also possible to define your own translations, however this tutorial does not cover that feature.
 
 Finally, there are two data rows. Given the name of the fixture, this table's goal is to apparently add two programs to the schedule.
 
 ## Creating this table
+
 Here are some preliminary steps to get this table created (there will be more later, this table is the skeleton of a test):
 * Browse to <http://localhost:8080>.
 * Edit this page (click the **Edit** button - or, if not available, go to the following URL: <http://localhost:8080/FrontPage?edit>), add the following before the Release date line at the bottom (the location is arbitrary):
+
 ```
 >DecisionTableExample
 ```
+
 * Save your changes (click the **Save** button)
 * Click on the linked question mark, which will take you to: <http://localhost:8080/FrontPage.DecisionTableExample?edit&nonExistent=true>
 * Copy the table contents into the page replacing the !contents ... that is already there.
@@ -75,6 +82,7 @@ Creating a fixture involves:
 For full details on these steps, you can review the material [here if you're planning on working in Java]({{ site.pagesurl}}/FitNesse.Tutorials.0.Java) or [here if you're planning on working in C#]({{ site.pagesurl}}/FitNesse.Tutorials.0.CSharp).
 
 Here is one such fixture (in Java) that will get this test to "pass". Since there are no assertions, this really isn't a very good test yet, but it does make it easier to get it all green.
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -100,21 +108,28 @@ public class AddProgramsToSchedule {
 ```
 
 There are still a few things you need to do to make the page use this class:
+
 * Inform [FitNesse](http://fitnesse.org/) you want to use Slim versus fit:
+
 ```
 !define TEST_SYSTEM {slim}
 ```
+
 * Inform [FitNesse](http://fitnesse.org/) where to look for your class files (update this directory as appropriate):
+
 ```
 !path /Users/schuchert/src/fitnesse-tutorials/DVR/bin
 ```
+
 * Inform [FitNesse](http://fitnesse.org/) the package/namespace in which to look:
+
 ```
 |import|
 |com.om.example.dvr.fixtures|
 ```
 
 Here's the updated page put all together(again, update the directory in the !path statement accordingly):
+
 ```
 !define TEST_SYSTEM {slim}
 
@@ -129,7 +144,8 @@ Here's the updated page put all together(again, update the directory in the !pat
 |Doctor Who|The One where He Saves the UK|12     |5/17/2008|8:00      |60     |
 ```
 
-**//Note//**: You might need to add the following line as well (e.g., if you built from source):
+**Note**: You might need to add the following line as well (e.g., if you built from source):
+
 ```
 !path fitnesse.jar
 ```
@@ -139,7 +155,9 @@ Run the test and verify that the page passes successfully.
 While you are at it, you have your original test page from the first tutorial. You can verify it still passes as well.
 
 # Add Assertions
+
 Right now, this table does not assert any results, which means the underlying fixture can do the same, which is not much. Let's extend this just a bit to have the table actually perform validation:
+
 ```
 |Add Programs To Schedule                                                              |
 |name      |episode                      |channel|date     |start time|minutes|created?|
@@ -148,6 +166,7 @@ Right now, this table does not assert any results, which means the underlying fi
 ```
 
 Try running this page and FitNesse will complain that it cannot find the **created[0]** method. The name is followed by the number of expected parameters, which is 0 in our case. Here is just such a method you can add to your "AddProgramsToSchedule" fixture:
+
 ```java
    public boolean created() {
       return true;
@@ -161,6 +180,7 @@ Adding a column with a ? at the end of its name requires that the fixture have a
 
 # Make the Assertion have some Value
 There's nothing in the flow of this table that would cause a problem. However, what if we want to make sure adding a program on top of another is not possible? We can do that by adding one more row to the bottom of the table::
+
 ```
 |Conflicts |Should not be added          |7      |5/12/2008|7:00      |30     |false   |
 ```
@@ -170,7 +190,9 @@ This demonstrates a conflict because the third program is on the same channel, d
 This is a non-typical use of the Decision table, but it certainly is legitimate. Assuming the slot is already occupied (even partially), this item should not be added to the schedule.
 
 Run it, you should have one failed assertion. Your code will need some way to know that one slot is already used. Here's one way to accomplish that:
+
 ## Update AddProgramsToSchedule.java
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -242,6 +264,7 @@ public class AddProgramsToSchedule {
 ```
 
 ## Create new Class: TimeSlot.java
+
 Notice, this class is in a different package (com.om.example.dvr.domain).
 
 ```java
@@ -276,7 +299,9 @@ Another issue is that the "AddProgramsToSchedule" class is starting to get somew
 Along those lines, "buildStartDateTime" also exhibits feature envy. The "Schedule" is currently just a "List<TimeSlot>", but it might warrant its own class. While this tutorial's focus is [FitNesse](http://fitnesse.org/), this fixture contains business logic. You do not want any business logic in your fixture code, so that's the next thing to fix.
 
 To fix this, we can introduce a new class and perform some basic re-factoring:
+
 **Schedule.java**
+
 ```java
 package com.om.example.dvr.domain;
 
@@ -309,6 +334,7 @@ public class Schedule {
 ```
 
 **ConflictingProgramException.java**
+
 ```java
 package com.om.example.dvr.domain;
 
@@ -318,6 +344,7 @@ public class ConflictingProgramException extends RuntimeException {
 ```
 
 **Updated: AddProgramsToSchedule.java**
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -399,6 +426,7 @@ When dealing with a language-provided collection, you should wrap it by default 
 [include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 # Deleting Something By Key
 We should be able to add a program, remove it and then add another at the same time slot. Here's just such a test and it uses something you might have noticed in the first tutorial:
+
 ```
 |Add Programs To Schedule                                                                      |
 |name      |episode                      |channel|date     |start time|minutes|created?|lastId?|
@@ -412,6 +440,7 @@ This introduces another column, **lastId?**. The implementation, which is below,
 * (Doctor Who:12)
 
 Update your table with the new table above and try running this page and FitNesse will complain that it cannot find the **lastId[0]** method. The name is followed by the number of expected parameters, which is 0 in our case. Here is just such a method you can add to your "AddProgramsToSchedule" fixture:
+
 ```java
 public String lastId() {
    return lastId;
@@ -422,7 +451,9 @@ Add the missing method. Verify that the test still passes. You'll notice there a
 
 
 As for the third id, you'll see that in a minute. To get this to run, you'll need to make several changes:
+
 ## Add: Program.java
+
 ```java
 package com.om.example.dvr.domain;
 
@@ -445,6 +476,7 @@ public class Program {
 ```
 
 ## Update: Schedule.java
+
 ```java
 package com.om.example.dvr.domain;
 
@@ -479,6 +511,7 @@ public class Schedule {
 ```
 
 ## Update: AddProgramsToSchedule.java
+
 ```java
 package com.om.example.DVR.fixture;
 
@@ -524,7 +557,9 @@ In all cases:
 In the first case, there is a variable assignment, which [FitNesse](http://fitnesse.org/) dutifully assigned.
 
 This variable is available for the rest of the page. However, before we get to that we do have a problem. The lastId? is set upon a successful program add, but it is not reset if the program is not added. Here is a quick fix to improve that:
+
 **AddProgramsToScheule.created**
+
 ```java
    public boolean created() {
       try {
@@ -542,7 +577,9 @@ This variable is available for the rest of the page. However, before we get to t
 Make the update and then you'll notice the third data row of the lastId? column is now n/a (in gray).
 
 ## Finally, Delete by Key
+
 Time to add another table and fixture:
+
 ```
 |Remove Program By Id|$p|
 
@@ -552,6 +589,7 @@ Time to add another table and fixture:
 ```
 
 Just add this to the bottom of your page. You'll have to create a new fixture. Here is that code:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -575,7 +613,9 @@ What to do:
 * Run you tests.
 
 When you run your tests, do you notice a problem? The tests pass! Maybe you expected the second attempt to add would fail, but it appears to work. This illustrates something [FitNesse](http://fitnesse.org/) does; each table causes a new instance of the fixture to be created, even on the same page. How can you tell this? If you want to verify it, you could simply add a print statement to the constructor and view the output. I've already done that. Here's the print statement:
+
 **Example: Added to AddProgramsToSchedule fixture**
+
 ```java
    private static int numberCreated = 0;
 
@@ -585,6 +625,7 @@ When you run your tests, do you notice a problem? The tests pass! Maybe you expe
 ```
 
 Adding this and then executing the tests, [FitNesse](http://fitnesse.org/) will display a yellow triangle with the label "Output Captured". Clicking on that triangle, you'll see the output captured during test execution::
+
 ```
 Standard Output:
 
@@ -614,6 +655,7 @@ Leaving output in tests, unit or acceptance tests, is lazy. You can do better.
 [include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 Now that the test is failing, we need a way to get access to the schedule between fixtures. For now, adding a getSchedule() method on the AddProgramsToSchedule fixture is adequate:
+
 ```java
 public class AddProgramsToSchedule {
    private static Schedule schedule = new Schedule();
@@ -627,6 +669,7 @@ public class AddProgramsToSchedule {
 ```
 
 Now that we have a single Schedule and access to it, we can simply update the constructor in RemoveProgramById to call the code:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -638,6 +681,7 @@ public class RemoveProgramById {
 ```
 
 Of course, this requires we add a new method to Schedule:
+
 ```java
 import java.util.Iterator;
 
@@ -653,7 +697,9 @@ import java.util.Iterator;
 Run your tests and you should see all tests green.
 
 ## Not Doing the Work in the Constructor
+
 If for some reason, you do not like to do the actual work done in the constructor, you can optionally write the table as follows:
+
 ```
 |Remove Program By Id|
 |id                  |
@@ -661,6 +707,7 @@ If for some reason, you do not like to do the actual work done in the constructo
 ```
 
 Then you'll need to update your RemoveProgramByIdFixture as follows:
+
 ```java
 package com.om.example.dvr.fixtures;
 
@@ -684,6 +731,7 @@ public class RemoveProgramById {
    }
 }
 ```
+
 Note that this Fixture, as written, supports both styles. The real reason I wanted to include this last example was to demonstrate how you can cause a row of a decision table to be executed without include a column with a ? in its name. You add a method called **execute()**. [FitNesse](http://fitnesse.org/) will call that method, if it exists, after calling the last setter (the columns without ? in their name).
 
 # Conclusion and Summary
