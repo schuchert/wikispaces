@@ -25,7 +25,7 @@ public class Main {
 }
 ```
 ----
-[[#Dao]]
+[#Dao]({{site.pagesurl}}/#Dao)
 ## Dao.java
 ```java
 package ex4;

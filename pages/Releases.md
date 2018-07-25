@@ -12,4 +12,4 @@ For all of these reasons, we might select a subset of user-valued functionality 
 
 Where a product might take a year or more to finish, a release might be anywhere from 2 - 6 months. If I have an amount of work I think will require something between 1 and 2 years of work, the I might break this up into 3 to 6 releases (give or take a few).
 
-A release should not be confused with an [[Iteration]].
+A release should not be confused with an [Iteration]({{site.pagesurl}}/Iteration).

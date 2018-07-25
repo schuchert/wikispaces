@@ -2,7 +2,7 @@
 title: tdd.cpp.MovingTowardsStoryBasedExpressionOfTests
 ---
 # Introduction
-Bob Martin has an excellent Tdd Kata called [The Prime Factors Kata](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata). When I teach Tdd, I often use this as part of the [[RPN_Calculator]] problem. I have the students add two operators:
+Bob Martin has an excellent Tdd Kata called [The Prime Factors Kata](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata). When I teach Tdd, I often use this as part of the [RPN_Calculator]({{site.pagesurl}}/RPN_Calculator) problem. I have the students add two operators:
 * Sum of the stack
 * Prime Factors
 Then I have them create a composite operator and build an instance using a sum of prime factors and the prime factors of the sum. Really, this is just an excuse to use the [Composite Pattern](http://en.wikipedia.org/wiki/Composite_pattern) in conjunction with the strategy pattern.

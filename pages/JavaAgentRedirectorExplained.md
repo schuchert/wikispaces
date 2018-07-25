@@ -56,7 +56,7 @@ Below is the source for the registrar. Here are a couple of notes:
 * This class allows a : separated list of classes. E.g. rather than using multiple -javaagent: lines or passing parameters into the premain(...), I've choses to support a : separated list.
 * If you want to see the tests that verify this class' functionality, look further below. Note that the test class uses JUnit 4.4 and JMock 2.4.
 
-[[#ConfigurableClassFileTransformerRegistrar]]
+[#ConfigurableClassFileTransformerRegistrar]({{site.pagesurl}}/#ConfigurableClassFileTransformerRegistrar)
 ```java
 package schuchert.agent;
 
@@ -145,7 +145,7 @@ public class ConfigurableClassFileTransformerRegistrar {
 ```
 
 **ConfigurableClassFileTransformerRegistrarTest**
-[[#ConfigurableClassFileTransformerRegistrarTest]]
+[#ConfigurableClassFileTransformerRegistrarTest]({{site.pagesurl}}/#ConfigurableClassFileTransformerRegistrarTest)
 ```java
 package schuchert.agent;
 

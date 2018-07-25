@@ -219,8 +219,8 @@ How can this code compile? There is not a local variable named log. There does n
 There are a number of annotations and there are even extensions to Lomboc for even more. However, sticking with just this one, how about working with an IDE?
 
 ## Getting this to work in IntelliJ Idea
-[[include page="sidebar_start"]][[include_page="TheSwitchToIdea"]]
-[[include_page="sidebar_end"]]
+[[include page="sidebar_start"]][include_page="TheSwitchToIdea"]({{site.pagesurl}}/include_page="TheSwitchToIdea")
+[include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 * Open the pom.xml in Idea 13.
 * Run the tests
 

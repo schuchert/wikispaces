@@ -6,7 +6,7 @@ For this example we'll use a "top-down" approach. This means we'll create a Plai
 ### Create a Simple Class
 
 The following class contains everything you need to begin persisting it to a database:
-[[#Person]]
+[#Person]({{site.pagesurl}}/#Person)
 **Person.java**
 ```java
 package entity;

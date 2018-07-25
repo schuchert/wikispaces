@@ -19,7 +19,7 @@ The following links point to package files suitable for Dolphin Smalltalk 6.02:
 
 # The Three Questions
 Douglas Adams had only 1. Brett's got 3 questions that clarify Smalltalk.
-[[3Questions-Smalltalk]]
+[3Questions-Smalltalk]({{site.pagesurl}}/3Questions-Smalltalk)
 
 
 # Java

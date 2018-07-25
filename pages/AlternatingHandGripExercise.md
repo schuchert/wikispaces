@@ -6,7 +6,7 @@ title: AlternatingHandGripExercise
 # Alternating Hand Grips 
 This is an exercise developed by Jerry Weinberg http://www.geraldmweinberg.com. I've used this exercise extensively in situations where I'm going to have the same group of people for several days (3 or more).
 
-This is either an exercise or a [[LearningCycle]] depending on the follow-through. 
+This is either an exercise or a [LearningCycle]({{site.pagesurl}}/LearningCycle) depending on the follow-through. 
 
 ## Setup(Exploration) 
 Ask the students to clasp their hands together, interlocking their fingers. After a few moments, ask them to note which thumb is "on top." 
@@ -22,7 +22,7 @@ Ask the students to clasp their hands together again, this time making sure the 
 Ask the students for their experience. Ask them how they would describe it. Make a list of what they have to say. 
 
 ### Part 2 
-Discuss [[SatirChangeModel]]. Relate that to this class. 
+Discuss [SatirChangeModel]({{site.pagesurl}}/SatirChangeModel). Relate that to this class. 
 
 Mention that some percentage of people, 10%, are in to change for the sake of change. Another percentage, 10%, are not going to change at any cost. In the middle we have two other groups, early and late adopters. 
 

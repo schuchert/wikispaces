@@ -79,7 +79,7 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 # [Continue Tutorial in Java]({{ site.pagesurl}}/FitNesse.Tutorials.0.Java)
 # [Continue Tutorial in C#]({{ site.pagesurl}}/FitNesse.Tutorials.0.CSharp)
 
-[[#Congratulations]]
+[#Congratulations]({{site.pagesurl}}/#Congratulations)
 # Congratulations
 Congratulations, you've finished the first tutorial. In this tutorial you:
 * Installed FitNesse

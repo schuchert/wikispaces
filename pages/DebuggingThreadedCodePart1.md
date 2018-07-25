@@ -82,7 +82,7 @@ If we look at the second operation, ++, it gets even worse (assume that value ho
 
 There are several places where this sequence of steps could be interrupted. One bad case is where two threads both call the same method on the same object. The first thread completes the first three instructions, up to GETFIELD, and the is interrupted. A second thread takes over and performed the entire method, incrementing value by one. Then the first thread picks up where it left off. It has the// **old**// value on its operand stack. It adds one and stores the result. This results in adding one two times and only incrementing by one because two threads stepped on each other.
 ----
-[[#SkipOverBytecodeInformation]]
+[#SkipOverBytecodeInformation]({{site.pagesurl}}/#SkipOverBytecodeInformation)
 ## Demonstrating the failure with a test
 Here's a description of a test that will prove our code is broken:
 # Remember the current value of lastId
@@ -91,7 +91,7 @@ Here's a description of a test that will prove our code is broken:
 # Run this until we demonstrate that lastId was only incremented by one, instead of two. 
 
 Here is such a test:
-[[#ClassWithThreadingProblemTest]]
+[#ClassWithThreadingProblemTest]({{site.pagesurl}}/#ClassWithThreadingProblemTest)
 **//ClassWithThreadingProblemTest.java//**
 ```java
 01: package com.om.concurrent.example;
@@ -187,7 +187,7 @@ At a first glance, that is the primary purpose of [ConTest](http://www.haifa.ibm
 
 Describing how [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) actually accomplishes this, and what other features it offers, is better described by several [publications.](http://www.haifa.ibm.com/projects/verification/contest/publications.html)
 ----
-[[#StepByStepInstructions]]
+[#StepByStepInstructions]({{site.pagesurl}}/#StepByStepInstructions)
 ## Getting it Working
 First the steps in a nutshell:
 # Download [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html), note you may need to create an account to do so.

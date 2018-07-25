@@ -50,7 +50,7 @@ generateProgrmas CreateDailyProgramNamed: 'D1" OnChannel: 8 StartingOn: '3/4/200
 ```
 
 The spirit of the keyword message in Smalltalk was revived in the design of the do fixture and then carried over into Slim.
-[[#introduction]]
+[#introduction]({{site.pagesurl}}/#introduction)
 # Introduction
 In this tutorial, you'll continue working with the DVR problem, continuing right from where you left off in [Query Tables Tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.2). You can use your code as is from the previous tutorial, or you can use the tag FitNesse.Tutorials.ScriptTables, review [here]({{ site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub) to figure out what to do with this tag.
 

@@ -44,7 +44,7 @@ Here is a list of examples that should build the majority of the tokenizer:
 |"()"|"(", ")"|Make sure to handle ()s|
 |"(3.42 + 6) * a"|"(", "3.42", "+", "6", ")", "*", "a"|Verify floating point numbers work.|
 |"a_13(f(4+5,1+a*2,(8+b)*10))"|"a_13", "(", "f", "(", "4", "+", "5", ",", "1", "+", "a", "*", "2", ",", "(", "8", "+", "b", ")", "*", "10", ")", ")"|A final "scary" expression to make sure it will work for the final shunting yard algorithm.|
-[[#MoreExamples]]
+[#MoreExamples]({{site.pagesurl}}/#MoreExamples)
 ## More Examples
 After releasing some of this into the wild, I started getting some feedback from, among other people Mitch B (<http://cleverlytitled.blogspot.com/>). What follows are a few more tests for edge conditions and other no-so-happy-path-related things. Thanks to Mitch for pointing out these tests as well as providing an improved implementation:
 

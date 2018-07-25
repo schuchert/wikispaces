@@ -1,5 +1,5 @@
 ---
 title: wicket
 ---
-[[wicket.GettingStarted]]
+[wicket.GettingStarted]({{site.pagesurl}}/wicket.GettingStarted)
 

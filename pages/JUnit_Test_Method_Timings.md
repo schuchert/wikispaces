@@ -19,10 +19,10 @@ This example uses Log4J. To configure Log4J, I first used a [simple configurator
 
 The aspect and its associated aop.xml file are listed below. Before you can use them, you'll want to set up your environment(warning, you'll have to use your browser's back button to get back to here from these links):
 # Download AspectJ [here](http://www.eclipse.org/aspectj/downloads.php).
-* [[Eclipse_VM_Configuration_for_AspectJ]]
-* [[Eclipse_Classpath_Variable_for_AspectJ]]
-* [[Eclipse_Java_Language_Preferences_for_AspectJ]]
-* [[Eclipse_Java_Project_Preferences_for_AspectJ]]
+* [Eclipse_VM_Configuration_for_AspectJ]({{site.pagesurl}}/Eclipse_VM_Configuration_for_AspectJ)
+* [Eclipse_Classpath_Variable_for_AspectJ]({{site.pagesurl}}/Eclipse_Classpath_Variable_for_AspectJ)
+* [Eclipse_Java_Language_Preferences_for_AspectJ]({{site.pagesurl}}/Eclipse_Java_Language_Preferences_for_AspectJ)
+* [Eclipse_Java_Project_Preferences_for_AspectJ]({{site.pagesurl}}/Eclipse_Java_Project_Preferences_for_AspectJ)
 
 Once you've done all of that, you'll want to put the Test Method Timing Aspect class in the same project where your test classes reside. You'll also need to create a META-INF directory directly under the source directory of your test classes and add the aop.xml file there. Here's an example of what my project looks like:
 ![](images/ProjectLayout.gif)
@@ -31,7 +31,7 @@ Notice that I have separate src and test directories. It turns out that both of 
 
 If you do not use a src directory and just store your projects at the top level, then your META-INF directory will be directly under your project.
 ----
-[[#TestMethodTimingAspect]]
+[#TestMethodTimingAspect]({{site.pagesurl}}/#TestMethodTimingAspect)
 ## TestMethodTimingAspect.java
 ```java
 01: package test.timingaspect;
@@ -122,7 +122,7 @@ If you do not use a src directory and just store your projects at the top level,
 |63|Use the new String.format method to format my output.|
 
 ----
-[[#aop]]
+[#aop]({{site.pagesurl}}/#aop)
 ## aop.xml
 ```
 01: <aspectj>

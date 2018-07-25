@@ -29,7 +29,7 @@ int bar() {
   return f(1, 2, 3);
 }
 ```
-[[#thesteps]]
+[#thesteps]({{site.pagesurl}}/#thesteps)
 # The Steps
 These steps assume you have some project setup using CppUTest. If not, [see below]({{ site.pagesurl}}/cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt#seeblow).
 
@@ -40,7 +40,7 @@ These steps assume you have some project setup using CppUTest. If not, [see belo
 -c -fmessage-length=0 -std=c++0x
 ```
 
-[[#seebelow]]
+[#seebelow]({{site.pagesurl}}/#seebelow)
 ## The Preliminary Steps
 
 These steps assume you are using the latest version of the Eclipse CDT along with mingw and gcc 4.4 or later.  If you need to figure out how to do that, follow these steps:

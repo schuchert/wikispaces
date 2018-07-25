@@ -626,7 +626,7 @@ This also requires a change to SeasonPassManager:
       return null;
    }
 ```
-[[#QueryResultExample]]
+[#QueryResultExample]({{site.pagesurl}}/#QueryResultExample)
 **Update: EpisodesInToDoList.java**:
 ```java
 package com.om.example.dvr.fixtures;

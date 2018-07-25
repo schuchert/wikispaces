@@ -26,7 +26,7 @@ Since this is NOT a JDBC example but rather I use JDBC as a vehicle to better un
 
 ----
 
-[[#JdbcExample]]
+[#JdbcExample]({{site.pagesurl}}/#JdbcExample)
 ## JdbcExample.java
 ```java
 01: package aaa.valtech.jug.version1;

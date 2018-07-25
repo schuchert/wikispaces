@@ -27,7 +27,7 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ----
 ## Project Kick-off
 ### Setting the Context
-* [[Context_Free_Questions]]
+* [Context_Free_Questions]({{site.pagesurl}}/Context_Free_Questions)
 ### Elevator Pitch
 * Examples
 * Hand Out Projects to **groups**
@@ -202,7 +202,7 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** Any experience suggesting changing other stories?
 ** Exercise: **Group** burn-down chart 1
 ### Iteration Planning Simulation
-* [[IterationPlanningSimulationInstructions]]
+* [IterationPlanningSimulationInstructions]({{site.pagesurl}}/IterationPlanningSimulationInstructions)
 * Repeat the first process a few times
 * Add a few, re-estimate a few
 * Practice measuring velocity

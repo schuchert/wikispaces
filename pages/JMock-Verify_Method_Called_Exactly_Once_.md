@@ -4,7 +4,7 @@ title: JMock-Verify_Method_Called_Exactly_Once_
 [<--Back]({{site.pagesurl}}/TDD_Example_Catalog)
 
 ## Verify a sequence of methods
-This test method exists in a [[jMock_JUnit_4_Die_Skeleton]].
+This test method exists in a [jMock_JUnit_4_Die_Skeleton]({{site.pagesurl}}/jMock_JUnit_4_Die_Skeleton).
 
 Make sure that the testDoubleDie method will first have its roll() method called exactly once and then its getFaceValue() method called exactly once():
 

@@ -20,21 +20,21 @@ Download JBoss AOP from [here](http://www.jboss.com/products/list/downloads#aop)
 
 ## Eclipse Configuration for JBoss AOP
 The following additional configuration sets will set your Eclipse configuration up the way I've set it up for all of these examples. You can click on individual links or just follow the [Next-->]({{site.pagesurl}}/Eclipse_VM_Configuration_for_JBoss_AOP) link below:
-* [[Eclipse_VM_Configuration_for_JBoss_AOP]]
-* [[Eclipse_Classpath_Variable_for_JBoss_AOP]]
-* [[Eclipse_Java_Language_Preferences_for_JBoss_AOP]]
-* [[Eclipse_Java_Project_Preferences_for_JBoss_AOP]]
-* [[Save_Workspace_Configurations_for_JBoss_AOP]]
+* [Eclipse_VM_Configuration_for_JBoss_AOP]({{site.pagesurl}}/Eclipse_VM_Configuration_for_JBoss_AOP)
+* [Eclipse_Classpath_Variable_for_JBoss_AOP]({{site.pagesurl}}/Eclipse_Classpath_Variable_for_JBoss_AOP)
+* [Eclipse_Java_Language_Preferences_for_JBoss_AOP]({{site.pagesurl}}/Eclipse_Java_Language_Preferences_for_JBoss_AOP)
+* [Eclipse_Java_Project_Preferences_for_JBoss_AOP]({{site.pagesurl}}/Eclipse_Java_Project_Preferences_for_JBoss_AOP)
+* [Save_Workspace_Configurations_for_JBoss_AOP]({{site.pagesurl}}/Save_Workspace_Configurations_for_JBoss_AOP)
 
 ## Eclipse Project JAR Files
-* [[JAR_Files_for_JBoss_AOP]]
+* [JAR_Files_for_JBoss_AOP]({{site.pagesurl}}/JAR_Files_for_JBoss_AOP)
 
 ## Using Provided Source Code in ZIP Files
-* [[ExtractingSourceFilesIntoProject]]
+* [ExtractingSourceFilesIntoProject]({{site.pagesurl}}/ExtractingSourceFilesIntoProject)
 
 ## On to the examples
-* [[JBoss_AOP_Example_1]]
-* [[JBoss_AOP_Example_2]]
-* [[JBoss_AOP_Example_3]]
+* [JBoss_AOP_Example_1]({{site.pagesurl}}/JBoss_AOP_Example_1)
+* [JBoss_AOP_Example_2]({{site.pagesurl}}/JBoss_AOP_Example_2)
+* [JBoss_AOP_Example_3]({{site.pagesurl}}/JBoss_AOP_Example_3)
 
 [<--Back]({{site.pagesurl}}/JBoss_AOP_Self_Study) [Next-->]({{site.pagesurl}}/Eclipse_VM_Configuration_for_JBoss_AOP)

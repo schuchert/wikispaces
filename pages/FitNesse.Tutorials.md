@@ -23,9 +23,9 @@ They are written this way to make them appear about how they appear in FitNesse 
 If you prefer the first but want to enter the second button, look for the// **format**// button near the// **Save**// button in Fitnesse.
 
 # Working From [Schuchert's GitHub Repository](http://github.com/schuchert/fitnesse-tutorials/tree/master)
-For instructions on working from github: [[FitNesse.Tutorials.WorkingFromGitHub]]
+For instructions on working from github: [FitNesse.Tutorials.WorkingFromGitHub]({{site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub)
 
-[[#JavaTutorials]]
+[#JavaTutorials]({{site.pagesurl}}/#JavaTutorials)
 # Java Tutorials Ready to be Used
 | ===[Getting Started]({{ site.pagesurl}}/FitNesse.Tutorials.0)=== |
 | ===[Introduction To Decision Tables]({{ site.pagesurl}}/FitNesse.Tutorials.1)=== |

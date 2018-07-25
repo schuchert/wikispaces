@@ -19,7 +19,7 @@ Here is a typical example of using Log4J with a simple utility class that:
 * Configures Log4J
 * Returns the logger for a provided class
 ----
-[[#Mainv1]]
+[#Mainv1]({{site.pagesurl}}/#Mainv1)
 ## Main.java
 ```java
 01: package varargs.v1;
@@ -63,7 +63,7 @@ Note that String.format is an example of a method whose parameters are defined u
 
 Here's the code for version 2:
 ----
-[[#Mainv2]]
+[#Mainv2]({{site.pagesurl}}/#Mainv2)
 ## Main.java
 ```java
 01: package varargs.v2;
@@ -106,7 +106,7 @@ It is ugly but it makes a big difference.
 
 Here's the code modified to take this into consideration:
 ----
-[[#Mainv3]]
+[#Mainv3]({{site.pagesurl}}/#Mainv3)
 ## Main.java
 ```java
 01: package varargs.v3;
@@ -142,7 +142,7 @@ This version has the advantages of versions 1 and 2 in terms of what you write. 
 
 First let's look at the use of the code:
 ----
-[[#Mainv4]]
+[#Mainv4]({{site.pagesurl}}/#Mainv4)
 ## Main.java
 ```java
 01: package varargs.v4;
@@ -169,7 +169,7 @@ First let's look at the use of the code:
 
 To make this work, we first introduce an interface that uses Java 5 Variable Arguments:
 ----
-[[#ILogger]]
+[#ILogger]({{site.pagesurl}}/#ILogger)
 ## ILogger.java
 ```java
 01: package varargs.v4;
@@ -216,7 +216,7 @@ This version was not possible before variable arguments. We might have some over
 
 Here is the full implementation:
 ----
-[[#LoggerImpl]]
+[#LoggerImpl]({{site.pagesurl}}/#LoggerImpl)
 ## LoggerImpl.java
 ```java
 01: package varargs.v4;
@@ -335,7 +335,7 @@ Here is the full implementation:
 
 And finally, for completeness, here are the final two files in this final example:
 ----
-[[#LoggingConfiguration]]
+[#LoggingConfiguration]({{site.pagesurl}}/#LoggingConfiguration)
 ## LoggingConfiguration.java
 ```java
 01: package varargs.v4;
@@ -377,7 +377,7 @@ And finally, for completeness, here are the final two files in this final exampl
 37: }
 ```
 ----
-[[#log4j_properties]]
+[#log4j_properties]({{site.pagesurl}}/#log4j_properties)
 ## log4j.properties
 ```
 log4j.logger.org.springframework=WARN

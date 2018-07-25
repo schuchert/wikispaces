@@ -504,15 +504,15 @@ The first issue suggests spending some time on an Account class and then moving 
 If you do this, then you'll be able to simplify the LoginServiceTest class because some of the tests will no longer belong there and instead will exist on the AccountTest. Creating AccountTest and Account classes is left as an exercise to the reader.
 
 The second issue suggests the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern). And in fact, that's the next section. 
-[[#refactorproduction]]
+[#refactorproduction]({{site.pagesurl}}/#refactorproduction)
 # Refactoring LoginService
 In the real system, there were more requirements and the stream of requirements were fed to me over months. The underlying login service I created looked something like this simple version, just bigger. On the real project, the code became very hard to manage because I was not practicing refacoring aggressively enough at the time. I realized that the underlying solution would be made better by applying the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern). In the actual solution, the LoginService had several methods, with many of the methods' responses dependent on either the state of the login service or the account. 
 
 I made the change and sure enough supporting new requirements was// **much**// easier. The remainder of this tutorial involves refactoring the current solution to use the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern).
 
-[[#CoolDiagram]]
+[#CoolDiagram]({{site.pagesurl}}/#CoolDiagram)
 Here's where we're going:
-[[media_type="custom"_key="3879673"]]
+[media_type="custom"_key="3879673"]({{site.pagesurl}}/media_type="custom"_key="3879673")
 
 ## How Does the State Pattern Apply?
 In the typical state pattern, all or part of an object's behavior depends on what has happened to it in the past. In this case there are two different sets of state:
@@ -966,7 +966,7 @@ Landing is a standard set of steps except for rent calculation. In terms of the 
 
 ## How It Applies To LoginServiceState
 In the following drawing (which attempts to follow the UML 2.0 specification), the// italic// method// handleIncorrectPassword// in the// abstract// base class// LoginServiceState// is the extension point. The base class deals with the basic validation like matching passwords and revoked accounts. It only defers what happens if the password does not match to the derived classes:
-[[media_type="custom"_key="3923013"]]
+[media_type="custom"_key="3923013"]({{site.pagesurl}}/media_type="custom"_key="3923013")
 Rather than walk you through this refactoring, I'm just going to give you each of the classes.
 
 ### Update: LoginServiceState

@@ -15,21 +15,21 @@ This tutorial is a derivative (simplification really) of work done by JBoss. For
 Most of this tutorial is about configuration and utility methods. We will use those items for the remainder of the tutorials using the Embeddable EJB3 Container.
 ----
 ## Background
-[[include_page="EJB3_Tutorial_1_-_Background"]]
+[include_page="EJB3_Tutorial_1_-_Background"]({{site.pagesurl}}/include_page="EJB3_Tutorial_1_-_Background")
 ----
 ## Download and Install
-[[include_page="EJB3_Tutorial_1_-_Download_and_Install"]]
+[include_page="EJB3_Tutorial_1_-_Download_and_Install"]({{site.pagesurl}}/include_page="EJB3_Tutorial_1_-_Download_and_Install")
 ----
 ## Create and Configure the Eclipse Project
-[[include_page="EJB3_Tutorial_1_-_Create_and_Configure"]]
+[include_page="EJB3_Tutorial_1_-_Create_and_Configure"]({{site.pagesurl}}/include_page="EJB3_Tutorial_1_-_Create_and_Configure")
 ----
 ## Create a Local Stateless Session Bean
-[[include_page="EJB3_Tutorial_1_-_Create_Session_Bean"]]
+[include_page="EJB3_Tutorial_1_-_Create_Session_Bean"]({{site.pagesurl}}/include_page="EJB3_Tutorial_1_-_Create_Session_Bean")
 ----
 ## Container Initialization and Session Bean Lookup
-[[include_page="EJB3_Tutorial_1_-_Initialization_and_Lookup"]]
+[include_page="EJB3_Tutorial_1_-_Initialization_and_Lookup"]({{site.pagesurl}}/include_page="EJB3_Tutorial_1_-_Initialization_and_Lookup")
 ----
 ## Exercises
-[[include_page="EJB3_Tutorial_1_-_Exercises"]]
+[include_page="EJB3_Tutorial_1_-_Exercises"]({{site.pagesurl}}/include_page="EJB3_Tutorial_1_-_Exercises")
 
 [<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)

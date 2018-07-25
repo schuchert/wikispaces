@@ -10,7 +10,7 @@ title: RPN_Calculator
 * **//Our Product//** only provides the starting point from which you are expected to begin practicing
 
 # User Stories
-The following list of user stories form a [[Product Backlog]]. The are additionally sectioned by [[Releases]], each of which is given a [[Theme]].
+The following list of user stories form a [[Product Backlog]]. The are additionally sectioned by [Releases]({{site.pagesurl}}/Releases), each of which is given a [Theme]({{site.pagesurl}}/Theme).
 
 ## Release 1 - Theme: Basic Math
 * [Addition]({{site.pagesurl}}/RPN_Calculator_Addition)
@@ -55,4 +55,4 @@ Here are some steps to get you started:
 # Repeat until all UAT's are done for the current user story
 # Repeat until all user stories for the current release are finished
 
-# [[RpnCalculatorCppExampleImplementation]]
+# [RpnCalculatorCppExampleImplementation]({{site.pagesurl}}/RpnCalculatorCppExampleImplementation)

@@ -28,10 +28,10 @@ Now, when I want to run my tests with some custom instrumentation, all I need to
 
 ## The Details
 Here are the details on how to actually accomplish writing your own Java Agent:
-> [[WritingYourOwnJavaAgent]]
+> [WritingYourOwnJavaAgent]({{site.pagesurl}}/WritingYourOwnJavaAgent)
 
 Here is a simple jar file you can use that already does the basic work:
-> [[AnExampleJavaAgent]]
+> [AnExampleJavaAgent]({{site.pagesurl}}/AnExampleJavaAgent)
 
 Here are the guts of the specific agent register provided in [[file:Registrar.jar]].
-> [[JavaAgentRedirectorExplained]]
+> [JavaAgentRedirectorExplained]({{site.pagesurl}}/JavaAgentRedirectorExplained)

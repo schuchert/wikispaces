@@ -5,7 +5,7 @@ title: Car_Rental_Code_Coverage_with_Emma
 
 # Code Coverage with Emma
 
-This example is based on the [[Car_Rental_Example]]. If you want work through this example, you need to follow [these instructions]({{site.pagesurl}}/Car_Rental_Installation_and_Setup) first.
+This example is based on the [Car_Rental_Example]({{site.pagesurl}}/Car_Rental_Example). If you want work through this example, you need to follow [these instructions]({{site.pagesurl}}/Car_Rental_Installation_and_Setup) first.
 
 In this example, we add code coverage to the Car Rental Application. We then examine the results, make some changes and finish with a few conclusions. 
 
@@ -34,7 +34,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 (By the way, let me give credit where it's due, I got most of this from [Getting Started with Emma using Ant](http://emma.sourceforge.net/userguide/ar01s03.html).
 
 # Here's the file so we can discuss it and configure it for your situation:
-[[#emma]]
+[#emma]({{site.pagesurl}}/#emma)
 ## emma.xml
 ```
 01: <?xml version="1.0" encoding="UTF-8"?>

@@ -3,14 +3,14 @@ title: JUnit_4.x
 ---
 # JUnit 4.1
 {:toc}
-If you've used JUnit prior to version 4.0 (e.g. you've been using JUnit in Eclipse version 2.0 to 3.1.2) then here is the first place you want to go to get up to speed: [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52). If you are not somewhat familiar with JUnit 4, you can probably follow this material. However, after code examples that use JUnit 4 specific features, you'll notice a [[Click_Here]] link that will give you more detailed information.
+If you've used JUnit prior to version 4.0 (e.g. you've been using JUnit in Eclipse version 2.0 to 3.1.2) then here is the first place you want to go to get up to speed: [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52). If you are not somewhat familiar with JUnit 4, you can probably follow this material. However, after code examples that use JUnit 4 specific features, you'll notice a [Click_Here]({{site.pagesurl}}/Click_Here) link that will give you more detailed information.
 
 Now that I've used it a bit in Eclipse 3.1.2, I've got an initial recommendation and some examples:
 * Using the [assert*]({{site.pagesurl}}/JUnit_4.x#assertAsterisk) methods
 * Using a [TimeBomb]({{site.pagesurl}}/JUnit_4.x#TimeBomb) as a test place holder.
 * [TimeBomb Generic Code Explained]({{site.pagesurl}}/JUnit_4.xTimeBombGenericCodeExplained)
 
-[[#assertAsterisk]]
+[#assertAsterisk]({{site.pagesurl}}/#assertAsterisk)
 ## Using the assert* methods
 In JUnit 3.8.1, test classes inherited from TestCase. Among other things, doing so gave the code access to several assert methods like assertEquals. JUnit 4.x no longer makes this requirement. Of course every solution introduces problems. In this case, I no longer have easy access to assertEquals and other such methods.
 
@@ -27,7 +27,7 @@ The recommendation from [JUnit 4.0 in 10 Minutes](http://www.instrumentalservice
      31:     }
      41: }
 ```
-[[#AtTest]]
+[#AtTest]({{site.pagesurl}}/#AtTest)
 [Click Here for more information on @Test.]({{site.pagesurl}}/JUnit_4.xAtTest)
 
 This works fine until you try to organize imports in Eclipse or use name completion (ctrl-space). Eclipse will not allow you to use name completion on something like assertFalse. You have to manually type in the name, and then manually add the import and things work fine. I'm lazy and I don't want to do this. My first attempt to fix this was the following:
@@ -51,7 +51,7 @@ Since these methods are in the class org.junit.Assert, I've decided to switch to
 41:     }
 101: }
 ```
-[[#TimeBomb]]
+[#TimeBomb]({{site.pagesurl}}/#TimeBomb)
 ## TimeBomb
 What is a TimeBomb? Let's begin with an example. This is an excerpt from [Example 2]({{site.pagesurl}}/JUnit_4.x#example2):
 ```
@@ -65,7 +65,7 @@ What is a TimeBomb? Let's begin with an example. This is an excerpt from [Exampl
 95:     }
 96:
 ```
-[[#AtTestExpected]]
+[#AtTestExpected]({{site.pagesurl}}/#AtTestExpected)
 [Click here for more information on @Test(expected = ObjectInUse.class)]({{site.pagesurl}}/JUnit_4.xAtTestWithExpected)
 
 This example probably needs a little more background. As mentioned in [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52), we use the @Test annotation to denote a method as a test case. It can take an optional argument of //**expected**//. This test is meant to attempt to remove a VehicleType that is used by other ob jets. So, in this case, read @Test(expected = ObjectInUse.class) as "when this test executes, I expect the exception ObjectInUse to be thrown."
@@ -104,7 +104,7 @@ If you're interested in a complex and detailed explanation of the implementation
 ## Complete Examples
 This section contains the full code for the examples mentioned above.
 ----
-[[#example1]]
+[#example1]({{site.pagesurl}}/#example1)
 ### Example 1
 **TestVehicle.java**
 ```java
@@ -126,7 +126,7 @@ This section contains the full code for the examples mentioned above.
 16:     private VehicleLicense license;
 17:     private VehicleType type;
 ```
-[[#AtBefore]]
+[#AtBefore]({{site.pagesurl}}/#AtBefore)
 [For a description of @Before, click here.]({{site.pagesurl}}/JUnit_4.xBefore)
 ```java
 19:     @Before
@@ -158,7 +158,7 @@ This section contains the full code for the examples mentioned above.
 41: }
 ```
 ----
-[[#example2]]
+[#example2]({{site.pagesurl}}/#example2)
 ### Example 2
 **VehicleTypeComponentTest.java**
 ```java
@@ -265,7 +265,7 @@ This section contains the full code for the examples mentioned above.
 101: }
 ```
 ----
-[[#example3]]
+[#example3]({{site.pagesurl}}/#example3)
 ### Example 3
 **RatePlanComponentTest.java** (partial)
 ```java
@@ -294,7 +294,7 @@ This section contains the full code for the examples mentioned above.
 37:         return new JUnit4TestAdapter(RatePlanComponentTest.class);
 38:     }
 ```
-[[#AtBeforeClass]]
+[#AtBeforeClass]({{site.pagesurl}}/#AtBeforeClass)
 [For a description of @BeforeClass, click here.]({{site.pagesurl}}/JUnit_4.xAtBeforeClass)
 ```java
 40:     @BeforeClass
@@ -304,7 +304,7 @@ This section contains the full code for the examples mentioned above.
 44:         vtComponent.createVehicleType(TEST_VEHICLE_TYPE_NAME_2, ValidState.valid);
 45:     }
 ```
-[[#AtAfterClass]]
+[#AtAfterClass]({{site.pagesurl}}/#AtAfterClass)
 [For a description of @AfterClass, click here.]({{site.pagesurl}}/JUnit_4.xAtAfterClass)
 ```java
 47:     @AfterClass
@@ -319,7 +319,7 @@ This section contains the full code for the examples mentioned above.
 56:         disableDeleting();
 57:     }
 ```
-[[#AtAfter]]
+[#AtAfter]({{site.pagesurl}}/#AtAfter)
 [For a description of @After, click here.]({{site.pagesurl}}/JUnit_4.xAtAfter)
 ```java
 59:     @After
@@ -378,7 +378,7 @@ This section contains the full code for the examples mentioned above.
 112:         component.createRatePlan(rp);
 113:     }
 ```
-[[#RegularMethod]]
+[#RegularMethod]({{site.pagesurl}}/#RegularMethod)
 [What is this doing here? Click here.]({{site.pagesurl}}/JUnit_4.xRegularMethod)
 ```java
 233:     private RatePlan instantiateBasicRatePlan(String name, String vehicleTypeName) {
@@ -389,7 +389,7 @@ This section contains the full code for the examples mentioned above.
 238:     }
 ```
 ----
-[[#TimeBombCode]]
+[#TimeBombCode]({{site.pagesurl}}/#TimeBombCode)
 ### TimeBomb.java
 ```java
 01: package vehicle.util;

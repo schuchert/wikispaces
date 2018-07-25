@@ -63,7 +63,7 @@ How can we calculate it?
 * All threads complete
 * N = Number of instructions
 * T = Number of threads
-* [[include_page="TddAndConcurrency.slides.WhenItsQuietBeAfraidVeryAfraid.NumberOfCombinations"]]
+* [include_page="TddAndConcurrency.slides.WhenItsQuietBeAfraidVeryAfraid.NumberOfCombinations"]({{site.pagesurl}}/include_page="TddAndConcurrency.slides.WhenItsQuietBeAfraidVeryAfraid.NumberOfCombinations")
 
 How many possible outcomes?
 * 2
@@ -107,7 +107,7 @@ Let’s demonstrate that this code is broken
 * We’ll manually manipulate them
 * We’ll use a tool to help us
 
-[[media_type="file"_key="ConcurrencyDemo_increasingChangesOfFindingDefect.mov"]]
+[media_type="file"_key="ConcurrencyDemo_increasingChangesOfFindingDefect.mov"]({{site.pagesurl}}/media_type="file"_key="ConcurrencyDemo_increasingChangesOfFindingDefect.mov")
 
 [<--Back]({{ site.pagesurl}}/TddAndConcurrency.Slides.DoOneThingWellWell) | [^Top^]({{ site.pagesurl}}/TddAndConcurrency.Slides) | [Next-->]({{ site.pagesurl}}/TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo)
 

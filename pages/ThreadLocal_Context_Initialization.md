@@ -31,7 +31,7 @@ The ThreadContext class resides in a utility project that does not have direct a
 Instead, we created another utility class that simply wrapped ThreadContext and performed the cast for us and put this in the same project where ISessionKey and ISecurityCredentials reside.
 
 ----
-[[#ContextRecorder]]
+[#ContextRecorder]({{site.pagesurl}}/#ContextRecorder)
 # # ContextRecorder.java
 ```java
 01: package com.foo.aspect.context;
@@ -112,7 +112,7 @@ Interesting Lines
 |52|Regardless of how you are leaving this code, make sure to clean up the ThreadLocal variables. The container probably maintains a thread pool and we don't want to leave trash in our threads.|
 
 ----
-[[#ThreadContext]]
+[#ThreadContext]({{site.pagesurl}}/#ThreadContext)
 ## ThreadContext.java
 ```java
 01: package com.hertz.common.util.thread;

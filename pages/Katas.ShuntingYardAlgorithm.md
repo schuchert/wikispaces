@@ -175,7 +175,7 @@ I take the approach of splitting the expression into individual tokens and then 
 * Eventually you'll probably want a simple factory that can map a string into an operator.
 * If you want to validate a number, you can use a regular expression or, in my case, the DecimalFormat class.
 
-[[#ExampleSource]]
+[#ExampleSource]({{site.pagesurl}}/#ExampleSource)
 # What We Accomplished
 Here's a zip of the source files we created during the dojo:
 [[file:dojo.zip]]

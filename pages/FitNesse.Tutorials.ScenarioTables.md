@@ -167,7 +167,7 @@ Here is the code from SeasonPassManager responsible for populating the to do lis
 
 A quick review of this code and you'll notice it only checks to see if a duplicate program is already in the to do list. It does not check to see if there are any conflicts. One program conflicts with another if the time slots span each other. This logic is somewhat complex and well suited to a series of unit tests.
 
-Since this is not a tutorial on TDD (at least not directly), here are the unit tests for a new unit test on DateUtil that determines if two date/time ranges conflict with each other. This is an example of a JUnit 4 [[Parameterized_Test]]:
+Since this is not a tutorial on TDD (at least not directly), here are the unit tests for a new unit test on DateUtil that determines if two date/time ranges conflict with each other. This is an example of a JUnit 4 [Parameterized_Test]({{site.pagesurl}}/Parameterized_Test):
 **Create: DateUtilConflictsInTimeWithTest.java**
 ```java
 package com.om.example.util;
@@ -891,7 +891,7 @@ If you add these two tables and run the test, it will work. Notice that the page
 I don't recommend keeping the first table and the last table since they result in the exact same test.
 
 This example use of a scenario calling another scenario is overkill. Review the [original article]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables.OriginalArticle) for a better example and a much more detailed explanation. This technique is useful when you have a complex abstract test scenario and you'll end up performing many tests using the same sequence of steps. The abstract scenario might require many parameters. However, for a given test, you might only need to vary 1. In that case, this is a good way to both capture the basic steps and then execute them.
-[[#summary]]
+[#summary]({{site.pagesurl}}/#summary)
 # Summary
 Congratulations. At this point, if you've worked through each of the tutorials, you are only lacking experience with Table Tables. You now know how to work effectively with FitNesse and Slim. You picked up several test refactoring and organization techniques along the way. You even saw a data-driven test in JUunit.
 

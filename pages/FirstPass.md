@@ -8,7 +8,7 @@ Well it turns out to run Ruby you still need to install a [Ruby Interpreter](htt
 Here are some very early examples trying to use [TDD]({{site.pagesurl}}/Test_Drive_Development):
 
 ----
-[[#DieTest]]
+[#DieTest]({{site.pagesurl}}/#DieTest)
 ```ruby
 require 'test/unit'
 require 'die'
@@ -35,7 +35,7 @@ class DieTest < Test::Unit::TestCase
 end
 ```
 ----
-[[#Die]]
+[#Die]({{site.pagesurl}}/#Die)
 ```ruby
 class Die
   def initialize()
@@ -52,7 +52,7 @@ class Die
 end
 ```
 ----
-[[#PairOfDiceTest]]
+[#PairOfDiceTest]({{site.pagesurl}}/#PairOfDiceTest)
 ```ruby
 require 'test/unit/testcase'
 require 'test/unit/autorunner'
@@ -69,7 +69,7 @@ class PairOfDiceTest < Test::Unit::TestCase
 end
 ```
 ----
-[[#PairOfDice]]
+[#PairOfDice]({{site.pagesurl}}/#PairOfDice)
 ```ruby
 require 'die'
 
@@ -90,7 +90,7 @@ end
 ```
 ----
 This works, however I want to be able to run all of my tests in one fell swoop. In Eclipse using Java, I simply right-click on a project and select Run->Junit Tests and it's all good. This feature doesn't seem to be available in Test::Unit (the Ruby equivalent) so after several attempts, I think I've got what I'm looking for:
-[[#Suite]]
+[#Suite]({{site.pagesurl}}/#Suite)
 ```ruby
 require 'test/unit'
 require 'find'

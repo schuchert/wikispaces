@@ -24,7 +24,7 @@ Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on 
 # One Heading Row - Names of columns, which map to either setter methods or method calls (if they end in ?)
 # Zero or more Data Rows - rows of data used to either provide data into a system or data used to compare to values returned from the fixture
 
-[[#firstDecisionTable]]
+[#firstDecisionTable]({{site.pagesurl}}/#firstDecisionTable)
 Here is an example [FitNesse](http://fitnesse.org/) decision table:
 ```
 |Add Programs To Schedule                                                     |
@@ -391,12 +391,12 @@ This really was just an Extract class refactoring or wrapping a collection. Wrap
 
 Before moving on, make sure your test passes. Assuming it does, congratulations on a successful refactoring.
 
-[[include_page="sidebar_start"]] <span class="sidebar_title">Wrapping Collections</span>
+[include_page="sidebar_start"]({{site.pagesurl}}/include_page="sidebar_start") <span class="sidebar_title">Wrapping Collections</span>
 When dealing with a language-provided collection, you should wrap it by default and only not wrap it if it makes sense. This might seem controversial, but in my experience the extra overhead of wrapping the collection provides a place for functionality that is otherwise heavily duplicated. For example:
 * Only adding something if it does not conflict in some way with existing members in the collection.
 * Doing some kind of work over the entire collection.
 * Responding in a domain-specific way to empty/full collections.
-[[include_page="sidebar_end"]]
+[include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 # Deleting Something By Key
 We should be able to add a program, remove it and then add another at the same time slot. Here's just such a test and it uses something you might have noticed in the first tutorial:
 ```
@@ -600,7 +600,7 @@ So what is the problem? The fixture holds the schedule. Each fixture has its own
 
 Ultimately, how you should do it depends on your system. If your system will eventually need objects like this configured, wired and passed around, then it might make sense to introduce Spring or maybe even a hand-rolled IoC container (a factory of some kind). For our purposes, simply making the schedule static in AddProgramsToSchedule will work effectively. So do that and then see the test fail (note, I've removed the constructor and static variable **numberCreated** in my version to get rid of output making its way into my test execution).
 
-[[include_page="sidebar_start"]] <span class="sidebar_title">Tests Should Not Produce Output</span>
+[include_page="sidebar_start"]({{site.pagesurl}}/include_page="sidebar_start") <span class="sidebar_title">Tests Should Not Produce Output</span>
 Your acceptance tests (and unit tests) should not produce output. Why? Because you've written them to have assertions. Those assertions are the only thing that define success or failure. If you find the need to produce output, are you also going to verify that output? If so, then turn the verification of the output into an assertion. If not, then you're adding noise to the test execution.
 
 This might be OK while you are working on your machine but don't check this cruft in. What I've seen happen, repeatedly, is people add output to verify their work (that's fine in the short term, maybe, but it represents a lack of trust in either your own abilities or the test system), and then other people notice the output and then the output grows. Soon, it becomes the norm.
@@ -611,7 +611,7 @@ To quote Jerry Weinberg:
 > Nothing + Nothing + Nothing eventually equals something.
 
 Leaving output in tests, unit or acceptance tests, is lazy. You can do better.
-[[include_page="sidebar_end"]]
+[include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 Now that the test is failing, we need a way to get access to the schedule between fixtures. For now, adding a getSchedule() method on the AddProgramsToSchedule fixture is adequate:
 ```java

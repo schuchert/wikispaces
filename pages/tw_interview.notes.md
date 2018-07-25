@@ -20,7 +20,7 @@ I used gradle as my build tool. To build and run the tests:
 * For your project directory, use the full path to the tw_coding_interview directory created above
 * Import the rover project
 
-[[#skipahead]]
+[#skipahead]({{site.pagesurl}}/#skipahead)
 # The Code
 There is a main program that reads from an input file and writes output to System.out: com.tw.rover.main.Main. If you run that program you will see the expected output. You can also create other text files and provide their names (one per execution) as an optional command line parameter. This code is lightly tested by com.tw.rover.main.MainTest in the src/test/java source tree.
 

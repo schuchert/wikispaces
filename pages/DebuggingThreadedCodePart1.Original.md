@@ -78,7 +78,7 @@ If we look at the second operation, ++, it gets even worse (assume that value ho
 
 There are several places where this sequence of steps could be interrupted. One bad case is where two threads both call the same method on the same object. The first thread completes the first three instructions, up to GETFIELD, and the is interrupted. A second thread takes over and performed the entire method, incrementing value by one. Then the first thread picks up where it left off. It has the// **old**// value on its operand stack. It adds one and stores the result. This results in adding one two times and only incrementing by one because two threads stepped on each other.
 ----
-[[#SkipOverBytecodeInformation]]
+[#SkipOverBytecodeInformation]({{site.pagesurl}}/#SkipOverBytecodeInformation)
 ## Demonstrating the failure with a test
 Here's a description of a test that will prove our code is broken:
 # Remember the current value of lastId
@@ -87,7 +87,7 @@ Here's a description of a test that will prove our code is broken:
 # Run this until we demonstrate that lastId was only incremented by one, instead of two. 
 
 Here is such a test:
-[[#ClassWithThreadingProblemTest]]
+[#ClassWithThreadingProblemTest]({{site.pagesurl}}/#ClassWithThreadingProblemTest)
 **//ClassWithThreadingProblemTest.java//**
 ```java
 01: package example;
@@ -183,7 +183,7 @@ At a first glance, that is the primary purpose of [ConTest](http://www.haifa.ibm
 Describing how [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) actually accomplishes this, and what other features it offers, is better described by several [publications.](http://www.haifa.ibm.com/projects/verification/contest/publications.html)
 ----
 ## Manual Instrumentation is for the Birds
-A short time before writing this, I wrote something on using the -javaagent VM argument for dynamic instrumentation ([[JavaAgent]]) of classes while they are loaded into the Java VM. I wrote that in support of applying [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) instrumentation automatically using so-called dynamic instrumentation. I do not not like the manual step of instrumenting my classes with [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) every time I was ready to run my tests.
+A short time before writing this, I wrote something on using the -javaagent VM argument for dynamic instrumentation ([JavaAgent]({{site.pagesurl}}/JavaAgent)) of classes while they are loaded into the Java VM. I wrote that in support of applying [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) instrumentation automatically using so-called dynamic instrumentation. I do not not like the manual step of instrumenting my classes with [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) every time I was ready to run my tests.
 
 To instrument your classes using [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html), you issue a command like the following:
 ```terminal
@@ -192,7 +192,7 @@ java -classpath ConTest.jar com.ibm.contest.instrumentation.Instrument Class1.cl
 
 I wanted to avoid having to manually instrument, but while I was working on this, the team supporting ConTest added a class called ClassStreamInstrumentor(), which takes the raw bytes of classes loaded by the class loader and instruments them to work with ConTest.
 
-I was able to us this class to write a very quick dynamic instrumentor. First I wrote a [[JavaAgent]] class for generic registration of classes implementing ClassFileTransformer. Then I wrote an implementation of ClassFileTransformer that:
+I was able to us this class to write a very quick dynamic instrumentor. First I wrote a [JavaAgent]({{site.pagesurl}}/JavaAgent) class for generic registration of classes implementing ClassFileTransformer. Then I wrote an implementation of ClassFileTransformer that:
 # Uses a new instance of ClassStreamInstrumentor to instrument loaded classes (checking for classes to skip)
 # Return those instrumented bytes
 

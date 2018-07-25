@@ -12,7 +12,7 @@ QuantumDb is an Eclipse plugin that lets you view a database. This is a quick st
 # Open the QuantumDb zip file and extract just the **plugins** and **features** directories directly into your eclipse installation (c:\eclipse)
 # Restart Eclipse
 
-[[#StartYourDatabase]]
+[#StartYourDatabase]({{site.pagesurl}}/#StartYourDatabase)
 ## Start your Database
 This example assumes hypersonic is running with the following startup script:
 ```
@@ -29,7 +29,7 @@ Assuming java is in your classpath, the following command will start hypersonic:
 java -cp ../lib/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb
 ```
 
-[[#JPAinJSE]]
+[#JPAinJSE]({{site.pagesurl}}/#JPAinJSE)
 ## JPA in JSE Settings
 **persistence.xml**
 ```xml

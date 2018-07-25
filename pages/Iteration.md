@@ -7,7 +7,7 @@ An iteration is **short**, lasting between 2 - 4 weeks typically (1 week is a bi
 
 For a given project, the iteration length should be **consistent**. If you start with 2 week iterations, stick with 2 week iterations.
 
-At the end of an iteration, work should be **done** or [[complete]].
+At the end of an iteration, work should be **done** or [complete]({{site.pagesurl}}/complete).
 
 It is better to use more people doing fewer things in an iteration to return to [completeness]({{ site.pagesurl}}/complete) more frequently. Why? If you have a lot of work unfinished at the end of an iteration, then it is harder to make significant direction changes.
 

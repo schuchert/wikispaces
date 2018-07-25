@@ -5,7 +5,7 @@ Red:Green:Refactor comes from JUnit. A Red bar means one or more tests failed. G
 * Red: Write one test, the test probably won't compile
 * Red: Get the test to compile, the test probably won't pass
 * Green: Get the test to pass
-* Refactor: Clean up duplication and [[Hide_the_Ugly]]
+* Refactor: Clean up duplication and [Hide_the_Ugly]({{site.pagesurl}}/Hide_the_Ugly)
 
 It's useful when starting out to use time-boxing to help keep things simple:
 1. Red < x minutes

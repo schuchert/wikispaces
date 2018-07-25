@@ -3,12 +3,12 @@ title: Design_Problems
 ---
 This is a collection of design problems you can use for coursework.
 
-* [[ITunesCompetetorDesignProblem]]
-* [[GmOnStarCompetetorDesignProblem]]
-* [[TimeTrackingForConsultingCompanyDesignProblem]]
-* [[ClinicalTrialsTrackingDesignProblem]]
-* [[DvrDesignProblem]]
-* [[HeavyEquipmentRental]]
+* [ITunesCompetetorDesignProblem]({{site.pagesurl}}/ITunesCompetetorDesignProblem)
+* [GmOnStarCompetetorDesignProblem]({{site.pagesurl}}/GmOnStarCompetetorDesignProblem)
+* [TimeTrackingForConsultingCompanyDesignProblem]({{site.pagesurl}}/TimeTrackingForConsultingCompanyDesignProblem)
+* [ClinicalTrialsTrackingDesignProblem]({{site.pagesurl}}/ClinicalTrialsTrackingDesignProblem)
+* [DvrDesignProblem]({{site.pagesurl}}/DvrDesignProblem)
+* [HeavyEquipmentRental]({{site.pagesurl}}/HeavyEquipmentRental)
 
 ----
 

@@ -3,7 +3,7 @@ title: JAR_Files_for_AspectJ
 ---
 [<--Back]({{site.pagesurl}}/Environment_Configuration_for_AspectJ)
 
-Every project using AspectJ needs several JAR files. You defined a classpath variable in [[Eclipse_Classpath_Variable_for_AspectJ]]. We now need to use that classpath variable:
+Every project using AspectJ needs several JAR files. You defined a classpath variable in [Eclipse_Classpath_Variable_for_AspectJ]({{site.pagesurl}}/Eclipse_Classpath_Variable_for_AspectJ). We now need to use that classpath variable:
 
 # Select your project, right-click and select **Properties** (Alt-Enter on PC)
 # Select **Java Build Path**

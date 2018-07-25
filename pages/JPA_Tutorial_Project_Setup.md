@@ -38,5 +38,5 @@ We now need to add two libraries. Note that these steps assume you've already wo
 If you'd like some background information on JUnit, please go [here]({{site.pagesurl}}/JUnit_4.x).
 
 ### Configure Persistence Unit
-[[include_page="JpaPersistenceUnit"]]
+[include_page="JpaPersistenceUnit"]({{site.pagesurl}}/include_page="JpaPersistenceUnit")
 

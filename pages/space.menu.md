@@ -6,11 +6,11 @@ title: space.menu
 [New Stuff]({{ site.pagesurl}}/NewStuff)
 [FitNessse Tutorials]({{ site.pagesurl}}/FitNesse.Tutorials)
 [Experiential Learning]({{ site.pagesurl}}/ExperientialLearningNotes)
-[[RubyNotes]]
+[RubyNotes]({{site.pagesurl}}/RubyNotes)
 [EJB & JPA]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)
-[[Agile_Courseware]]
+[Agile_Courseware]({{site.pagesurl}}/Agile_Courseware)
 [Unpublished Articles]({{ site.pagesurl}}/Articles)
 [Tool Configuration]({{site.pagesurl}}/Tool_Setup_and_Configuration_Notes)
-[[AOP]]
+[AOP]({{site.pagesurl}}/AOP)
 [C# & OOP]({{ site.pagesurl}}/CSharpAndOop)
 [[home|Back to the Top]]

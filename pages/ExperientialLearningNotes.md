@@ -6,11 +6,11 @@ In 2001 I took a workshop form Jerry Weinberg on Experiential Learning. It was c
 
 This page is the place where I've replicated notes I created from that workshop years ago.
 
-> ==[[LearningCycle]]
-> ==[[PiagetModel]]
-> ==[[SatirChangeModel]]
-> ==[[AlternatingHandGripExercise]]
-> ==[[ShortExerciseOutline]]
+> ==[LearningCycle]({{site.pagesurl}}/LearningCycle)
+> ==[PiagetModel]({{site.pagesurl}}/PiagetModel)
+> ==[SatirChangeModel]({{site.pagesurl}}/SatirChangeModel)
+> ==[AlternatingHandGripExercise]({{site.pagesurl}}/AlternatingHandGripExercise)
+> ==[ShortExerciseOutline]({{site.pagesurl}}/ShortExerciseOutline)
 
 # External Links
 > ==[Experiential Learning Cycles](http://reviewing.co.uk/research/learning.cycles.htm)

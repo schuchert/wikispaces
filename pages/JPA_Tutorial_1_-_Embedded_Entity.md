@@ -4,7 +4,7 @@ title: JPA_Tutorial_1_-_Embedded_Entity
 When we created Person we directly included address information into them. This is alright, but what if we want to use Address in another class? Let's introduce a new entity, Address, and make it **embedded**. This means its fields will end up as columns in the table of the entity that contains it.
 
 First, we'll create Address:
-[[#Address]]
+[#Address]({{site.pagesurl}}/#Address)
 **Address.java**
 ```java
 package entity;
