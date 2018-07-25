@@ -139,9 +139,7 @@ With your directory refreshed, you're ready to have a look at the output:
 * Double click on index.xml (I've noticed that this sometimes fails when I'm using RAD. If this happens to you, just open this with your favorite browser).
 * Here's a summary of my numbers by package:
 
-^
-|-|-|-|-|-|-|-|
-|Package|#Classes|Line Coverage|covered/total|Branch Coverage|covered/total|Complexity|
+| Package| #Classes| Line Coverage| covered/total| Branch Coverage| covered/total| Complexity|
 |All_Packages|88|85%|1680/1984|88%|120/136|1.3125|
 |vehicle.component.rateplan|2|87%|256/295|100%|5/5|0|
 |vehicle.component.rentalagreement|2|96%|73/76|100%|5/5|0|

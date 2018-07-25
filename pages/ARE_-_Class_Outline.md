@@ -281,7 +281,6 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 |Cohn06|User Stories Applied - For Agile Software Development|
 |G&Weinberg89|Exploring Requirements - Quality Before Design|
 
-----
 ## Design Problems
 * [ITunes]({{site.pagesurl}}/ITunesCompetetorDesignProblem)
 * [GmOnStar]({{site.pagesurl}}/GmOnStarCompetetorDesignProblem)
@@ -289,13 +288,11 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 * [Clinical Trial]({{site.pagesurl}}/ClinicalTrialsTrackingDesignProblem)
 * [Dvr]({{site.pagesurl}}/DvrDesignProblem)
 
-----
 # Notes
 For the purpose, 
 * **Sprint** <--> **Iteration**
 * **Group** --> Small group, approximately 4 people
 * **Class** --> Entire class
-----
 
 # Work in Progress
 * [Introduction]({{site.pagesurl}}/Introduction)
