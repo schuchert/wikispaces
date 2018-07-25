@@ -48,13 +48,16 @@ There are a few things you need to do according to the instructions and then one
 ## The Annotations
 Each test class wanting to use PowerMock needs 2 annotations, with a third optional one for handling current shortcoming (as I see it) in PowerMock:
 //**Code from: MetricsRecorderTest**//
+
 ```java
 @RunWith(PowerMockRunner.class)
 @PowerMockIgnore( {"javax.management.*"})
 @PrepareForTest({MetricsRecorder.class, SystemLoggerFactory.class})
 public class MetricsRecorderTest {
 ```
-|~ Annotation |~ Description |
+
+|-|-|
+| Annotation | Description |
 | @RunWith| This is a JUnit 4.x annotation to control the runner used for this particular test. You name a JUnit runner class. Other kinds of JUnit runners you might have come across: Cucumber.class (cucumber-jvm), SpringJUnit4ClassRunner.class (Spring tester), MockitoJUnitRunner.class (Mockito without PowreMock). Note, that the PowerMockRunner gives you a super-set of Mockito runner's features.|
 | @PowerMockIgnore | This is an optional annotation. We are using something that, underneath the covers, uses something that conflicts with how PowerMock replaces classes. This is not a problem with JMockIt (also had a problem with Emma and PowerMock leading me to prever JMockIt). If you happen to grab the code and run it, I recommend you comment this out and run the tests to see the exception that results, so you'll be aware of what to expect when it comes up somewhere else.|
 | @PrepareForTest | This informs PowerMock that these classes need to be instrumented. This list includes the classes from two different examples (static methods and calls to new). For the purpose of changing the static method, only SystemLoggerFactory.class is required. You can confirm this by running this test with the other classes removed. One test will pass, the others will fail.|

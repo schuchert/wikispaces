@@ -2,7 +2,7 @@
 title: Katas.ShuntingYardAlgorithm.examples
 ---
 
-|-----|
+|-----|---|---|
 | Example Infix Expression | Expected Postfix Result| Notes |
 | <empty string> | <empty string> |A good place to start, you'll create the basic translator class and get a value back.|
 | <null> | <empty string> |Make sure you handle one error case, a null string, by returning a reasonable default value of an empty string.|
@@ -22,3 +22,4 @@ title: Katas.ShuntingYardAlgorithm.examples
 | f(3, 4, 19) | 3 4 19 f |Can your solution handle multiple parameters to a function call?|
 |3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3| 3 4 2 * 1 5 - 2 3 ^ ^ / +|This example is taken from the [Shunting Yard Algorithm writeup on wikipedia](http://en.wikipedia.org/wiki/Shunting_yard_algorithm).|
 |f(4+5,1+a^2,(8+b)*10)|4 5 + 1 a 2 ^ + 8 b + 10 * f|I added this some time later. It incorporates just about everything already done and it specifically pushes handling multiple parameters to a function correctly. I expected this to take some time, but it really did not take much (a few minutes).|
+

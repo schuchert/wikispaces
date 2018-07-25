@@ -21,7 +21,6 @@ Note: This kata is in flux, I've added the link to the C++ operators but the exa
 Here is a series of examples with expected results:
 {% include_relative Katas.ShuntingYardAlgorithm.examples.md %}
 
-
 # One Approach
 The examples above are taken from a recent (June 2009) personal walk-through of the algorithm. I was surprised by my results and the ease with which I was able to implement the algorithm. 
 

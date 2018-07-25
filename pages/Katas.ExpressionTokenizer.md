@@ -30,7 +30,8 @@ What follows is a series of examples to drive your work and some supplemental ma
 
 ## The Examples
 Here is a list of examples that should build the majority of the tokenizer:
-|~ Example|~ Resulting Tokens|~ Description|
+
+| Example | Resulting Tokens | Description|
 |<empty>|<empty>|Standard first test. Creates production code. Begins creation of API.|
 |"42"|"42"|Handle a single token.|
 |"123+"|"123", "+"|Handle more than one token|
@@ -47,7 +48,7 @@ Here is a list of examples that should build the majority of the tokenizer:
 ## More Examples
 After releasing some of this into the wild, I started getting some feedback from, among other people Mitch B (<http://cleverlytitled.blogspot.com/>). What follows are a few more tests for edge conditions and other no-so-happy-path-related things. Thanks to Mitch for pointing out these tests as well as providing an improved implementation:
 
-|~ Example |~ Results |~ Description |
+| Example | Results | Description |
 |"4 + 5 *  '"|"4", "+", "5", "*", <error>|The trailing single-tick is not a valid token so the tokenizer should generate an error upon reaching that token. It should be possible to get the tokens before it:  "4", "+", "5", "*".|
 |"value+++4"|"value", "++", "+", "4"|This is valid Java/C++. Notice that the largest token it taken from +++. This is how both Java and C++ would parse such an expression.|
 |"5~€"|<error>|This may be a duplicate of the first example. I added several different tests. However, there's no whitespace, so this might force your implementation a little bit.|
@@ -71,7 +72,8 @@ Here's one such test:
 
 ## Additional Information
 Here is a list of potential operators you might want to make sure you can handle:
-|~ Operators|~ Description|
+
+| Operators| Description|
 |++ ``  `` --|Increment/Decrement|
 |[]|Array subscripting|
 |.|Element selection through object or reference|
@@ -88,16 +90,17 @@ Here is a list of potential operators you might want to make sure you can handle
 | ``==``  ``!=`` |Equal, not equal|
 |&|Bitwise AND|
 |^|Bitwise XOR|
-| | |Bitwise OR|
+| \| |Bitwise OR|
 |&&|Logical AND|
-| | | | Logical OR|
+| \|\| | Logical OR|
 |? :|Ternary conditional|
 |=|Assignment|
 |+= -=|Add to, subtract from.|
 |*= /= %=|Multiply by, divide by, mod by|
 |<<= >>=|Left shift by, right shift by|
-|&= ^= |=|Bitwise add by, bitwise xor by, bitwise or by|
+|&= ^= \|=|Bitwise add by, bitwise xor by, bitwise or by|
 |,|Comma operator/function parameter separator.|
+
 # The Approach
 Use the examples provided as a basis for the first tests. For each of the tests:
 * Add the next one on the list (it will probably fail)
@@ -110,4 +113,5 @@ Use the examples provided as a basis for the first tests. For each of the tests:
 My first version was long (don't have a count). My next version was shorter (127 lines). My next version was shorter still (93) lines. I found an intermediate form that was roughly 50 lines. My final version was 26 lines and I lengthened it to 33 lines to make the regular expressions easier to follow. In all cases, the numbers are for// **text**// lines, which include the package statement, import statements, blank lines, etc. The shortest version I wrote (by couting source lines) was 7 lines of code (email me and I'll provide it).
 
 Oh, and the longest method in my final version has 4 lines (including one blank line), there are two conditionals in the entire solution. Of course, that's making heavy use of the regular expression support in Java.
+
 [<--Back]({{ site.pagesurl}}/Katas)

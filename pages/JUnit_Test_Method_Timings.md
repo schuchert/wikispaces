@@ -19,10 +19,10 @@ This example uses Log4J. To configure Log4J, I first used a [simple configurator
 
 The aspect and its associated aop.xml file are listed below. Before you can use them, you'll want to set up your environment(warning, you'll have to use your browser's back button to get back to here from these links):
 # Download AspectJ [here](http://www.eclipse.org/aspectj/downloads.php).
-# [[Eclipse VM Configuration for AspectJ]]
-# [[Eclipse Classpath Variable for AspectJ]]
-# [[Eclipse Java Language Preferences for AspectJ]]
-# [[Eclipse Java Project Preferences for AspectJ]]
+* [[Eclipse VM Configuration for AspectJ]]
+* [[Eclipse Classpath Variable for AspectJ]]
+* [[Eclipse Java Language Preferences for AspectJ]]
+* [[Eclipse Java Project Preferences for AspectJ]]
 
 Once you've done all of that, you'll want to put the Test Method Timing Aspect class in the same project where your test classes reside. You'll also need to create a META-INF directory directly under the source directory of your test classes and add the aop.xml file there. Here's an example of what my project looks like:
 ![](images/ProjectLayout.gif)
@@ -102,7 +102,9 @@ If you do not use a src directory and just store your projects at the top level,
 66: }
 ```
 ### Interesting Lines
-|Line|Description|
+^
+|--|--|
+| Line | Description |
 |24|Use a [simple configurator]({{site.pagesurl}}/Commons_Loggins_and_Log4j_Config) to get a logging configuration.|
 |25|Create an output file name that's based on the [Java user.home](http://java.sun.com/docs/books/tutorial/essential/system/properties.html) property. On my machine, this is the directory "C:\Documents and Settings\brett.schuchert". On a Unix machine, it will probably be equal to "~".|
 |26|Dos uses \ and Unix uses /. Using / in Java works on both PC's and Unix boxes, so replace all of the \ with /.|
@@ -118,6 +120,7 @@ If you do not use a src directory and just store your projects at the top level,
 |60|Execute the test method.|
 |61 - 64|Regardless of how the test method returns (normally, because of an exception), record the completion time and log the result.|
 |63|Use the new String.format method to format my output.|
+
 ----
 [[#aop]]
 ## aop.xml
@@ -132,7 +135,10 @@ If you do not use a src directory and just store your projects at the top level,
 08: </aspectj>
 ```
 ### Interesting Lines
-|Line|Description|
+
+|--|--|
+| Line | Description |
 |3|The fully-qualified name of an aspect. Add this aspect to the list of aspects to weave at runtime. If you change the name of the aspect or change its package, you must update this fully-qualified name.|
 |6|The list of packages to be woven. You'll need to change this to match your packages. The part before .. is the beginning of the package names I used (see the picture above). The ..* means everything from that name down. So in my case, I have packages like vehicle.component and vehicle.validation and vehicle.component.validation, all of which match vehicle..*.|
+
 [<--Back]({{site.pagesurl}}/Some_Example_Aspects)

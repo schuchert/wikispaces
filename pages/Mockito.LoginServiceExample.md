@@ -21,6 +21,7 @@ What follows is a series of tests to get enough production code written to sugge
 
 # Test 1: Basic Happy Path
 When a user logs in successfully with a valid account id and password, the account's state is set to logged in. Here's a way to test that:
+
 ```java
 package com.om.example.loginservice;
 
@@ -47,6 +48,8 @@ public class LoginServiceTest {
 ```
 
 ## Test Description
+
+|-|-|
 |**Part 1**| This test first creates a test-double for an IAccount. There's no actual account class, just the interface. This test-double is configured so that no matter what password is sent to it, it will always return true when asked if a provided password matches its password.|
 |**Part 2**|Create a test-double for an IAccountRepository. Associate the test-double IAccount with the test-double IAccountRepository. When asking for any account with an id equal to any string, return the account test-double created at the start of this method.|
 |**Part 3**|Create a LoginService, injecting the IAcccountRepsitory in the constructor. This is an example of Inversion of Control, rather than the LoginService knowing which IAccountRepository to talk to, it is told which one to talk to. So while the LoginService knows which messages to send to an IAccountRepository, it is not responsible for deciding to// **which**// instance it should send messages.|
@@ -56,6 +59,7 @@ public class LoginServiceTest {
 ## Things Created for Compilation
 To get this test to compile (but not yet pass), I had to create a few interfaces and add some methods to them. I also had to create a LoginService class:
 **IAccount**
+
 ```java
 package com.om.example.loginservice;
 
