@@ -1,7 +1,7 @@
 ---
 title: cpptraining.GettingCppUTestCompiledUsingCDTToolSet.Juno
 ---
-[<--back]({{ site.pagesurl}}/cpptraining)
+[<--back]({{ site.pagesurl}}/CppTraining)
 # Overview
 These instructions assume you have already followed [these instructions]({{ site.pagesurl}}/cpptraining.GettingStartedWithEclipseCdt.Juno).
 
@@ -88,4 +88,4 @@ OK (296 tests, 291 ran, 794 checks, 5 ignored, 0 filtered out, 47 ms)
 C:\learncpp\cpputest>
 ```
 
-[<--back]({{ site.pagesurl}}/cpptraining)
+[<--back]({{ site.pagesurl}}/CppTraining)

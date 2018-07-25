@@ -1,7 +1,7 @@
 ---
 title: cpptraining.GettingCppUTestRunningUsingCdt.Juno
 ---
-[<--back]({{ site.pagesurl}}/cpptraining)
+[<--back]({{ site.pagesurl}}/CppTraining)
 # Overview
 These instructions assume you have already worked through:[this]({{ site.pagesurl}}/cpptraining.GettingStartedWithEclipseCdt.Juno) and then [that]({{ site.pagesurl}}/cpptraining.GettingCppUTestCompiledUsingCDTToolSet.Juno). 
 
@@ -62,4 +62,4 @@ Hit ctrl-F11 to build and run your tests:
 ```
 OK (0 tests, 0 ran, 0 checks, 0 ignored, 0 filtered out, 0 ms)
 ```
-[<--back]({{ site.pagesurl}}/cpptraining)
+[<--back]({{ site.pagesurl}}/CppTraining)

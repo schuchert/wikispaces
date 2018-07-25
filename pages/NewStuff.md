@@ -4,7 +4,7 @@ title: NewStuff
 * ## [Principles of Product Development Flow]({{ site.pagesurl }}/PrinciplesOfProductDevelopmentFlow)
 * ## [Lombok]({{ site.pagesurl }}/lombok)
 * ## [Setting Up the VM]({{ site.pagesurl }}/vm)
-* ## [C++ Training Materials]({{ site.pagesurl }}/cpptraining)
+* ## [C++ Training Materials]({{ site.pagesurl }}/CppTraining)
 * ## [VideoDemonstrations]({{ site.pagesurl }}/VideoDemonstrations)
 * ## [FitNesse]({{ site.pagesurl }}/FitNesse)
 * ## [Ruby]({{ site.pagesurl }}/RubyNotes)

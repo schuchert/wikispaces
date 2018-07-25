@@ -4,7 +4,7 @@ title: space.menu
 [Back to the Top]({{site.pagesurl}}/home)
 
 [My CV]({{ site.pagesurl}}/MyCv)
-[C++ Training]({{ site.pagesurl}}/cpptraining)
+[C++ Training]({{ site.pagesurl}}/CppTraining)
 [New Stuff]({{ site.pagesurl}}/NewStuff)
 [FitNessse Tutorials]({{ site.pagesurl}}/FitNesse.Tutorials)
 [Experiential Learning]({{ site.pagesurl}}/ExperientialLearningNotes)
