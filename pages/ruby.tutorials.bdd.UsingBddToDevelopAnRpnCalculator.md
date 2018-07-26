@@ -42,29 +42,31 @@ Before you get started on any Examples, however, we'll delve into the problem ju
 
 # The Problem
 An RPN calculator works by performing calculations on operands that the user has already entered. Here is an example scenario:
-```
-    5 <enter>
-    3 
-    +
-    = 8
-```
+{% highlight terminal %}
+5 <enter>
+3 
++
+= 8
+{% endhighlight %}
 In this example, a user enters first 5 and then 3 and hits the + key to get the previous two operands 5 and 3, added together.
 
 In general, using an RPN calculator obviates the need to use parenthesis. Consider the following:
-
-    ((5 + 3) * 6 / 3) ^ 4
+{% highlight terminal %}
+((5 + 3) * 6 / 3) ^ 4
+{% endhighlight %}
 
 That same expression could be calculated on an RPN calculator as follows:
-```
+{% highlight terminal %}
     5 <enter> 3 + 6 * 3 / 4 ^
     = 65536
-```
+{% endhighlight %}
 
 An RPN calculator as a stack of previously entered values. The most recently entered numbers are the numbers that become available first (Last In First Out - LIFO). Consider this longer sequence:
-```
+{% highlight terminal %}
     3 <enter> 6 <enter> -8 <enter> 89 + sqrt - +
     = 0
-```
+{% endhighlight %}
+
 Here's the evaluation of the above expression:
 * 3, 6, -8 get places on the operand stack
 * 8 is placed in "working storage" or in HP terminology, the x register
@@ -103,17 +105,18 @@ As with all problems, you need to pick a starting place. As with the first tutor
 
 **Example**
 Here is a first Example for this problem:
-```ruby
+{% highlight ruby %}
     describe "Basic Creation" do
       it "should be non-null after creation" do
         calculator = RpnCalculator.new
       end
     end
-```
+{% endhighlight %}
+
 * Create this Example in your directory, call the file "rpn_calculator_spec.rb"
 
 * Execute the Example, it fails:
-```ruby
+{% highlight terminal %}
     Macintosh-7% spec -f s -c rpn_calculator_spec.rb
     
     Basic Creation
@@ -127,37 +130,37 @@ Here is a first Example for this problem:
     Finished in 0.013091 seconds
     
     1 example, 1 failure
-```
+{% endhighlight %}
 The -c option adds color to the output. You won't see the color in this tutorial. Also, if you are running this in a DOS terminal window, then you'll want to leave this option off.
 
 The message describes an unknown constant, RpnCalcualtor. You'll need to create that class.
 
 * Create the following Ruby class in a file called rpn_calculator.rb:
-```ruby
-    class RpnCalculator
-    end
-```
+{% highlight ruby %}
+class RpnCalculator
+end
+{% endhighlight %}
 
 * Update rpn_calculator_spec.rb to require the file you just created:
-```ruby
-    require 'rpn_calculator'
+{% highlight ruby %}
+require 'rpn_calculator'
     
-    describe "Basic Creation" do
-      ...
-    end
-```
+describe "Basic Creation" do
+  ...
+end
+{% endhighlight %}
 
 * Run your Example again, you should be all green:
-```ruby
-    Macintosh-7% spec -f s -c rpn_calculator_spec.rb
+{% highlight terminal %}
+Macintosh-7% spec -f s -c rpn_calculator_spec.rb
     
-    Basic Creation
-    - should be non-null after creation
+Basic Creation
+- should be non-null after creation
     
-    Finished in 0.0123 seconds
+Finished in 0.0123 seconds
     
-    1 example, 0 failures
-```
+1 example, 0 failures
+{% endhighlight %}
 
 OK, you have an Example but it does not contain any verification. So one more change and one more execution.
 
@@ -184,19 +187,19 @@ OK, you have an Example but it does not contain any verification. So one more ch
 
 **Check-In**
 You are all green, so it is time to check in your work. As with the previous tutorial, I'll be using git:
-```
-    Macintosh-7% ls
-    rpn_calculator.rb  rpn_calculator_spec.rb  wikiwriteup.txt
-    Macintosh-7% git init
-    Initialized empty Git repository in /Users/schuchert/src/ruby/bdd_tutorial_2/.git/
-    Macintosh-7% git add *   
-    Macintosh-7% git commit
-    Created initial commit 05273da: First spec passing.
-     3 files changed, 354 insertions(+), 0 deletions(-)
-     create mode 100644 rpn_calculator.rb
-     create mode 100644 rpn_calculator_spec.rb
-     create mode 100644 wikiwriteup.txt
-```
+{% highlight terminal %}
+Macintosh-7% ls
+rpn_calculator.rb  rpn_calculator_spec.rb  wikiwriteup.txt
+Macintosh-7% git init
+Initialized empty Git repository in /Users/schuchert/src/ruby/bdd_tutorial_2/.git/
+Macintosh-7% git add *   
+Macintosh-7% git commit
+Created initial commit 05273da: First spec passing.
+ 3 files changed, 354 insertions(+), 0 deletions(-)
+ create mode 100644 rpn_calculator.rb
+ create mode 100644 rpn_calculator_spec.rb
+ create mode 100644 wikiwriteup.txt
+{% endhighlight %}
 
 Note that in this example I have a file you will not have, wikiwriteup.txt. That's the raw material used for format the wikipage you are now reading.
 
@@ -209,21 +212,22 @@ Since there was no need to refactor, there's no need to check in again.
 **Summary**
 You created two files:
 **rpn_calculator_spec.rb**
-```ruby
-    require 'rpn_calculator'
-    
-    describe "Basic Creation" do
-      it "should be non-null after creation" do
-        calculator = RpnCalculator.new
-        calculator.should_not be nil
-      end
-    end
-```
+{% highlight ruby %}
+require 'rpn_calculator'
+
+describe "Basic Creation" do
+  it "should be non-null after creation" do
+    calculator = RpnCalculator.new
+    calculator.should_not be nil
+  end
+end
+{% endhighlight %}
+
 **rpn_calculator**
-```ruby
-    class RpnCalculator
-    end
-```
+{% highlight ruby %}
+class RpnCalculator
+end
+{% endhighlight %}
 
 This may seem like a trivial start, and that is by design. What have you verified so far:
 * You have a working environment
