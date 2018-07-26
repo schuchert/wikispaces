@@ -11,6 +11,6 @@ title: cpptraining.SettingUpInitialProject
 * Click// **Finish**//.
 * Right-click on your project (CppUTestHasItsSmoke), select// **Run As:Local C++ Application**//
 * Notice the output in the console:
-```
+{% highlight terminal %}
 !!!Hello World!!!
-```
+{% endhighlight %}

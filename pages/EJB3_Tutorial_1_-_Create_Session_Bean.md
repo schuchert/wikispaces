@@ -8,7 +8,7 @@ The basic requirement for a session bean is that it must implement an interface 
 
 **The Interface**
 First we create a session bean. Here is one such example:
-```java
+{% highlight java %}
 package service;
 
 /**
@@ -20,7 +20,7 @@ package service;
 public interface HelloWorldService {
     void sayHelloTo(final String name);
 }
-```
+{% endhighlight %}
 
 To create this file, 
 # select your **src** directory, right-click and select **New:Interface**.
@@ -31,7 +31,7 @@ To create this file,
 
 **The Session Bean**
 Next, we need to create a session bean. Here's the code for it:
-```java
+{% highlight java %}
 package service.impl;
 
 import javax.ejb.Stateless;
@@ -52,7 +52,7 @@ public class HelloWorldServiceImpl implements HelloWorldService {
     }
 
 }
-```
+{% endhighlight %}
 
 Notice that this class has the @Stateless annotation. The container will find this class and register it automatically under JNDI using the (non-package qualifited) class name plus "/local". In this example, that means we'll need to lookup **"HelloWorldServiceImpl/local"**. 
 

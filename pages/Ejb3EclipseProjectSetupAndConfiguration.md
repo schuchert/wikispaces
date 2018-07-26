@@ -56,10 +56,10 @@ Note, depending on the version of the embeddable container you download, you mig
 # Select the **conf** directory, right-click and select **new** then select **File**
 # Enter the name **jndi.properties** and click **finish**
 # Enter the following 2 lines then save and close the file:
-```xml
+{% highlight xml %}
 java.naming.factory.initial=org.jnp.interfaces.LocalOnlyContextFactory
 java.naming.factory.url.pkgs=org.jboss.naming:org.jnp.interfaces
-```
+{% endhighlight %}
 
 ### Create a persistence.xml
 This example presents a utility class we'll be using later. The container needs a **persistence.xml** file to operate. This file must be found under a META-INF directory somewhere in the classpath or the embeddable container will not start. The file's name is **persistence.xml** with a lower-case 'p'. On a Unix system, this will make a difference. On a PC, this won't make a difference and it is one of those things that might work on your machine but not on the linux build box.
@@ -75,7 +75,7 @@ This example presents a utility class we'll be using later. The container needs 
 # Copy the following example into your new file then save it by pressing ctrl-s
 
 **persistence.xml**
-```xml
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>
    <persistence-unit name="custdb">
@@ -104,4 +104,4 @@ This example presents a utility class we'll be using later. The container needs 
       </properties>
    </persistence-unit>
 </persistence>
-```
+{% endhighlight %}

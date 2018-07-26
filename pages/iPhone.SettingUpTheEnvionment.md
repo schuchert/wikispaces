@@ -129,7 +129,7 @@ Note that by default, the project you just created is selected. If you rush thou
 * Click //**Finish**//
 * Enter the following test code:
 
-```objc
+{% highlight objc %}
 //
 //  ItShouldHaveSmoke.m
 //  Tutorial
@@ -159,7 +159,7 @@ Note that by default, the project you just created is selected. If you rush thou
     GHAssertEquals(@"", someVariableToInitialize, nil);
 }
 @end
-```
+{% endhighlight %}
 
 * Build, command-b
 * Run, command-r
@@ -168,9 +168,9 @@ Note that by default, the project you just created is selected. If you rush thou
 * Oops, the test is failing.
 * go back and edit your code. Chang the single assertion to:
 
-```
+{% highlight terminal %}
     GHAssertEquals(@"Hello World", someVariableToInitialize, nil);
-```
+{% endhighlight %}
 * Build and re-run, hit command-r
 * Run the test suite again.
 

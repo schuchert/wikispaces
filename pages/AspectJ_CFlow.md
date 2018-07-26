@@ -13,17 +13,17 @@ In this exercise, you have all of the information you need to predict the output
 ----
 ### Address.java
 Note, just a partial listing.
-```java
+{% highlight java %}
 ...
 public class Address implements Serializable {
     public Address() {
         setAddressLine1("");
     }
 ...
-```
+{% endhighlight %}
 ----
 ### FieldSetAspect.java
-```java
+{% highlight java %}
 ...
 @Aspect
 public class FieldSetAspect {
@@ -43,9 +43,9 @@ public class FieldSetAspect {
     public Object trackFieldAssignment(ProceedingJoinPoint thisJoinPoint,
             Object rhs) throws Throwable {
 ...
-```
+{% endhighlight %}
 ### Main.java
-```java
+{% highlight java %}
 package cflow;
 
 public class Main {
@@ -59,7 +59,7 @@ public class Main {
         Dao.save(a);
     }
 }
-```
+{% endhighlight %}
 ## Predict the output
 In the previous version of Address.java, the constructor did nothing, now the constructor sets one of the fields. So is it changed or not? Review the third pointcut in FieldSetAspect.java. Question, what is the output?
 

@@ -8,7 +8,7 @@ This test method exists in a [jMock_JUnit_4_Die_Skeleton]({{site.pagesurl}}/jMoc
 
 Make sure that the testDoubleDie method will first have its roll() method called exactly once and then its getFaceValue() method called exactly once():
 
-```java
+{% highlight java %}
 @Test
 public void rollThenGetFaceValue() {
     context.checking(new Expectations() {
@@ -21,10 +21,10 @@ public void rollThenGetFaceValue() {
     testDoubleDie.roll();
     testDoubleDie.getFaceValue();
 }
-```
+{% endhighlight %}
 
 **Common fixture for the test**
-```java
+{% highlight java %}
     Withdrawal withdrawal;
     Mockery context = new Mockery();
 
@@ -37,7 +37,7 @@ public void rollThenGetFaceValue() {
         account = context.mock(BankAccount.class);
         withdrawal.setAccount(account);
     }
-```
+{% endhighlight %}
 
 [<--Back]({{site.pagesurl}}/TDD_Example_Catalog)
 

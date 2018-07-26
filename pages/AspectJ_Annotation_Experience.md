@@ -11,7 +11,7 @@ This example is written in a way that it is meant to follow: [AspectJ_Example_3]
 Now we'll introduce selecting pointcuts augmented by annotations. Begin by reviewing the following Java files and the expected output. Based on all of that information, your assignment is to describe what is happening and try to guess how it is happening. Note that the code provided here is somewhat stripped down to reduce what you have to look at. Later, we provide the full source in the [Explained]({{site.pagesurl}}/AspectJ_Annotation_Explained) section.
 ----
 ## Main.java
-```java
+{% highlight java %}
 public class Main {
     public static void main(String args[]) {
         Address a = new Address();
@@ -21,10 +21,10 @@ public class Main {
         Dao.save(a);
     }
 }
-```
+{% endhighlight %}
 ----
 ## Dao.java
-```java
+{% highlight java %}
 public class Dao {
     public static void save(Object o) {
         if (o != null) {
@@ -32,25 +32,25 @@ public class Dao {
         }
     }
 }
-```
+{% endhighlight %}
 ----
 ## The Output
-```
+{% highlight terminal %}
 Not saving: class annotation.Address, it is unchanged
 Saving: class annotation.Address
-```
+{% endhighlight %}
 ----
 ## IgnoreField.java - the annotation
-```java
+{% highlight java %}
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface IgnoreField {
     String value() default "";
 }
-```
+{% endhighlight %}
 ----
 ## FieldSetAspect.java
-```java
+{% highlight java %}
 @Aspect
 public class FieldSetAspect {
     @Pointcut("set(* annotation.TrackedObjectMixin.*)")
@@ -69,9 +69,9 @@ public class FieldSetAspect {
     public Object trackFieldAssignment(ProceedingJoinPoint thisJoinPoint, Object rhs) throws Throwable {
        // ...
     }
-```
+{% endhighlight %}
 ----
-```java
+{% highlight java %}
 public class Address implements Serializable {
     private String addressLine1;
     private String addressLine2;
@@ -85,6 +85,6 @@ public class Address implements Serializable {
     public String getIgnoredField() {
         return ignoredField;
     }
-```
+{% endhighlight %}
 
 [<--Back]({{site.pagesurl}}/AspectJ_Annotation_Start) [Next-->]({{site.pagesurl}}/AspectJ_Annotation_Observation)

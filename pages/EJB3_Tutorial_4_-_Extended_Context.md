@@ -21,9 +21,9 @@ Here are a few things to note (source for all of these items appears at the end 
 * Make sure you copy a **persistence.xml** from a previous tutorial.
 * Make sure you update the **persistence.xml**'s persistence-unit name:
 
-```xml
+{% highlight xml %}
 <persistence-unit name="tolltag">
-```
+{% endhighlight %}
 
 ## The Entity Model
 
@@ -31,7 +31,7 @@ For this example, we have a simple entity model. We have an Account that has a b
 
 **Account.java**
 
-```java
+{% highlight java %}
 package entity;
 
 import java.util.ArrayList;
@@ -119,11 +119,11 @@ public class Account {
         tt.setAccount(null);
     }
 }
-```
+{% endhighlight %}
 
 **TollTag.java**
 
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Column;
@@ -193,11 +193,11 @@ public class TollTag {
         return getTagNumber().hashCode();
     }
 }
-```
+{% endhighlight %}
 
 **Vehicle.java**
 
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Entity;
@@ -300,13 +300,13 @@ public class Vehicle {
                 * getModel().hashCode() * getYear().hashCode();
     }
 }
-```
+{% endhighlight %}
 
 ## The Session Beans
 
 **AccountInventory.java**
 
-```java
+{% highlight java %}
 package session;
 
 import javax.ejb.Local;
@@ -355,11 +355,11 @@ public interface AccountInventory {
 
     void createAccount(final Account account);
 }
-```
+{% endhighlight %}
 
 **AccountInventoryBean.java**
 
-```java
+{% highlight java %}
 package session;
 
 import javax.ejb.Stateless;
@@ -416,11 +416,11 @@ public class AccountInventoryBean implements AccountInventory {
         getEm().flush();
     }
 }
-```
+{% endhighlight %}
 
 **AccountInventoryExtendedBean.java**
 
-```java
+{% highlight java %}
 package session;
 
 import javax.ejb.Remove;
@@ -479,7 +479,7 @@ public class AccountInventoryExtendedBean implements AccountInventory {
         getEm().flush();
     }
 }
-```
+{% endhighlight %}
 
 ## The Tests
 
@@ -493,7 +493,7 @@ This class performs the same two test algorithms two times each for a total of 4
 
 **AccountInventoryBeanTest.java**
 
-```java
+{% highlight java %}
 package session;
  
 import static org.junit.Assert.assertEquals;
@@ -601,7 +601,7 @@ public class AccountInventoryBeanTest {
         createExampleTestTollTagsImpl(getExtendedInventory());
     }
 }
-```
+{% endhighlight %}
 
 ## Exercises
 
@@ -625,7 +625,7 @@ The interface seems to be a bit messed up with concepts that relate to both stat
 
 **persistence.xml**
 
-```xml
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>
    <persistence-unit name="tolltag">
@@ -635,7 +635,7 @@ The interface seems to be a bit messed up with concepts that relate to both stat
       </properties>
    </persistence-unit>
 </persistence>
-```
+{% endhighlight %}
 
 [include_page="Ejb3JBossUtilJava"]({{site.pagesurl}}/include_page="Ejb3JBossUtilJava")
 

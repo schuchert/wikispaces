@@ -9,7 +9,7 @@ One template parameter, LoadedDie that can return two values.
 In this version, the Dice Game takes two template parameters. Notice that because of this, we cannot put them into a vector.
 
 //**DiceGame_TwoTemplateParametersTest.h**//
-```cpp
+{% highlight cpp %}
 # include <CppUTest/TestHarness.h>
 
 # include "DiceGame_TwoTemplateParameters.h"
@@ -42,10 +42,10 @@ TEST(DiceGame_TwoTemplateParameters, PushShouldLeaveBalanceUnchanged) {
   diceGame.play();
   LONGS_EQUAL(0, diceGame.getBalance());
 }
-```
+{% endhighlight %}
 
 //**DiceGame_TwoTemplateParameters.h**//
-```cpp
+{% highlight cpp %}
 # pragma once
 
 # include "Die.h"
@@ -83,12 +83,12 @@ void DiceGame_TwoTemplateParameters<T1, T2>::play() {
   else if(total < 7)
     --balance;
 }
-```
+{% endhighlight %}
 
 # Version 3
 In this version, the LoadedDie are instead "LoadedDieWithTwoAlternatinvValues", where the two values are template parameters. The DiceGame takes one template parameter.
 //**DiceGame_UsingTemplatesTest.cpp**//
-```cpp
+{% highlight cpp %}
 # include <CppUTest/TestHarness.h>
 
 # include "DiceGame_UsingTemplates.h"
@@ -133,10 +133,10 @@ TEST(DiceGame_UsingTemplates, PushShouldLeaveBalanceUnchanged) {
   diceGame.play();
   LONGS_EQUAL(0, diceGame.getBalance());
 }
-```
+{% endhighlight %}
 
 //**DiceGame_UsingTemplates.h**//
-```cpp
+{% highlight cpp %}
 # pragma once
 
 # include "Die.h"
@@ -180,4 +180,4 @@ void DiceGame_UsingTemplates<T>::play() {
   else if(total < 7)
     --balance;
 }
-```
+{% endhighlight %}

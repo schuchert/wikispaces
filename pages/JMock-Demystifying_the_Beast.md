@@ -8,14 +8,14 @@ jMock makes a use of two Java language features, one you may have never used:
 * Instance initializers
 
 Here's a template:
-```java
+{% highlight java %}
 01: context.checking(
 02:     new Expectations() {
 03:         {
 04:         }
 05:     }
 06: );
-```
+{% endhighlight %}
 
 |**Line**|**Description**|
 |1|Standard object.message, nothing special here.|
@@ -26,11 +26,11 @@ That's a whole lot. However, this is an idiomatic use of jMock, so you'll be rep
 
 
 If you're using an IDE, I'd recommend typing the following:
-```java
+{% highlight java %}
 {% raw %}
     context.checking(new Expectations() {{}});
 {% endraw %}
-```
+{% endhighlight %}
 Once you've done that, format your code and it will be a bit more clear where to express your expectations.
 
 [<--Back]({{site.pagesurl}}/TDD_Example_Catalog)

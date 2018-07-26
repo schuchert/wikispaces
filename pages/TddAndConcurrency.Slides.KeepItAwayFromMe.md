@@ -13,7 +13,7 @@ A guideline to live by…
 ----
 ## Dependent State
 Consider the following (incomplete) iterator:
-```java
+{% highlight java %}
 public class IntegerIterator 
 	implements Iterator<Integer>, Iterable<Integer> {
     private Integer nextValue = 0;
@@ -28,22 +28,22 @@ public class IntegerIterator
         return nextValue;
     }
 }
-```
+{% endhighlight %}
 ----
 ----
 ## Dependent State+Multi-Threaded
 Use this code in a test:
-```java
+{% highlight java %}
 IntegerIterator iterator = new IntegerIterator();
 
 for (Integer value : iterator) {
 }
 
 assertEquals(10000, iterator.getNextValue()
-```
+{% endhighlight %}
 
 What about this use:
-```java
+{% highlight java %}
 public class UseIntegerIterator implements Runnable {
     IntegerIterator iterator;
 
@@ -58,9 +58,9 @@ public class UseIntegerIterator implements Runnable {
         }
     }
 }
-```
+{% endhighlight %}
 And then in some test somewhere:
-```java
+{% highlight java %}
 IntegerIterator iterator = new IntegerIterator();
 Thread t1 = new Thread(new UseIntegerIterator(iterator));
 Thread t2 = new Thread(new UseIntegerIterator(iterator));
@@ -71,7 +71,7 @@ t2.join();
 
 assertEqual(10000, iterator.getNextValue()); // ?? 
 
-```
+{% endhighlight %}
 
 There's a problem. How can we fix it?
 * Client-based locking
@@ -80,7 +80,7 @@ There's a problem. How can we fix it?
 ----
 ## Client Based Locking
 The client (user) of the common data locks:
-```java
+{% highlight java %}
 public class UseIntegerIteratorClientBasedLocking 
     implements Runnable {
     public void run() {
@@ -94,12 +94,12 @@ public class UseIntegerIteratorClientBasedLocking
         }
     }
 }
-```
+{% endhighlight %}
 ----
 ----
 ## Server-Based Locking
 The server guards the dependent calls:
-```java
+{% highlight java %}
 package dependent.serverbasedlocking;
 
 public class IntegerIteratorServerLocked {
@@ -115,10 +115,10 @@ public class IntegerIteratorServerLocked {
         return nextValue;
     }
 }
-```
+{% endhighlight %}
 
 Here’s an updated client that now works:
-```java
+{% highlight java %}
 public void run() {
     while (true) {
         Integer next = iterator.getNextOrNull();
@@ -126,7 +126,7 @@ public void run() {
             break;
     }
 }
-```
+{% endhighlight %}
 
 Evaluate, between client-based and server-based locking
 * Which do you prefer?

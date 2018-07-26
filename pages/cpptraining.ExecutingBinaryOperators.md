@@ -15,20 +15,20 @@ You can find the source for the RpnCalculator at two github locations:
 ## Building the Basic Structure
 * Create a top-level directory for all of your work. I'll be using ~/src/waat
 * Under that, create a workspace directory. I'll use ~/src/waat/workspace
-```
+{% highlight terminal %}
 [~/src]% mkdir waat 
 [~/src]% cd waat
 /Users/schuchert/src/waat
 [~/src/waat]% mkdir workspace
 [~/src/waat]% cd workspace 
 /Users/schuchert/src/waat/workspace
-```
+{% endhighlight %}
 * Retrieve the production code using the following command:
-```
+{% highlight terminal %}
 git clone git://github.com/schuchert/RpnCalculatorInCpp.git
-```
+{% endhighlight %}
 * The output should resemble:
-```
+{% highlight terminal %}
 [~/src/waat/workspace]% git clone git://github.com/schuchert/RpnCalculatorInCpp.git
 Initialized empty Git repository in /Users/schuchert/src/waat/workspace/RpnCalculatorInCpp/.git/
 remote: Counting objects: 67, done.
@@ -38,13 +38,13 @@ Receiving objects: 100% (67/67), 12.17 KiB, done.
 Resolving deltas: 100% (7/7), done.
 [~/src/waat/workspace]% ls
 RpnCalculatorInCpp/
-```
+{% endhighlight %}
 * Retrieve the test code using the command: 
-```
+{% highlight terminal %}
 git clone git://github.com/schuchert/RpnCalculatorInCppTests.git
-```
+{% endhighlight %}
 * The output should resemble:
-```
+{% highlight terminal %}
 [~/src/waat/workspace]% git clone git://github.com/schuchert/RpnCalculatorInCppTests.git
 Initialized empty Git repository in /Users/schuchert/src/waat/workspace/RpnCalculatorInCppTests/.git/
 remote: Counting objects: 37, done.
@@ -55,7 +55,7 @@ Resolving deltas: 100% (9/9), done.
 [~/src/waat/workspace]% ls
 RpnCalculatorInCpp/        RpnCalculatorInCppTests/
 [~/src/waat/workspace]% 
-```
+{% endhighlight %}
 
 ## Configuring the Eclipse Project
 In [previous tutorial]({{ site.pagesurl}}/cpptraining.GettingStartedWithFitNesseInCpp), you created a directory called ~/src/cslim and under that is CppUTest. To create this project, we'll use the equivalent of environment variables in Eclipse.
@@ -85,16 +85,16 @@ In [previous tutorial]({{ site.pagesurl}}/cpptraining.GettingStartedWithFitNesse
 * When this is done, right-click on the RpnCalculatorInCppTests projects, select **RunAs::Local C/C++ Application**
 
 You should see your tests pass. As of this writing, there are 70 tests:
-```
+{% highlight terminal %}
 ..................................................
 
 ....................
 
 OK (70 tests, 70 ran, 108 checks, 0 ignored, 0 filtered out, 8 ms)
-```
+{% endhighlight %}
 # Creating Your First Test Table
 Since you've already worked through [Getting Started With FitNesse in C++]({{ site.pagesurl}}/cpptraining.GettingStartedWithFitNesseInCpp), you have FitNesse installed somewhere. Start your FitNesse instance. Here's what it looks like on my computer:
-```
+{% highlight terminal %}
 [~]% cd src/cpp_fitnesse 
 /Users/schuchert/src/cpp_fitnesse
 [~/src/cpp_fitnesse]% java -jar fitnesse.jar -p 8080
@@ -105,13 +105,13 @@ FitNesse (v20100711) Started...
     authenticator:     fitnesse.authentication.PromiscuousAuthenticator
     html page factory: fitnesse.html.HtmlPageFactory
     page version expiration set to 14 days.
-```
+{% endhighlight %}
 ## Creating Top-Level Test Suite
 Now that you have FitNesse started, create a top-level page for all of your work.
 * Edit the following URL: <http://localhost:8080/RpnExamples>
 * Edit its content to be:
 
-```
+{% highlight terminal %}
 !contents -R2 -g -p -f -h
 
 !define TEST_SYSTEM {slim}
@@ -119,19 +119,19 @@ Now that you have FitNesse started, create a top-level page for all of your work
 {% raw %}
 !define COMMAND_PATTERN {%m}
 {% endraw %}
-```
+{% endhighlight %}
 * Confirm this page has a **Suite** button. If not, edit its properties so it is a suite and save those properties.
 
 The TEST_RUNNER makes reference to a project/executable we have not yet created. Don't worry, it'll be there soon.
 ## Creating First Test
 * Go to the following URL and click edit: <http://localhost:8080/RpnExamples.BinaryOperatorExecution>
 * Click on the **Edit** button and set its contents to:
-```
+{% highlight terminal %}
 !|ExecuteBinaryOperator    |
 |lhs|rhs|operator|expected?|
 |3  |4  |-       |-1       |
 |5  |6  |*       |30       |
-```
+{% endhighlight %}
 
 * This project is neither a test or suite page by default (it has to do with the page's name). So click on its **Properties** button, select the **Test** radio button and then click on **Save Properties**
 
@@ -147,7 +147,7 @@ Now you're going to add a third project to contain your fixtures. This involves 
 You'll need to copy in two boilerplate files, create the fixture class and then set up libraries and include paths.
 * Add a new file called **Main.c** and set its contents:
 
-```cpp
+{% highlight cpp %}
 # include "SocketServer.h"
 # include "SlimConnectionHandler.h"
 # include "TcpComLink.h"
@@ -206,7 +206,7 @@ char * handle_slim_message(char * message)
     SlimList_Destroy(instructions);
     return response;
 }
-```
+{% endhighlight %}
 
 You'll notice several warnings about unknown header files. Let's fix that before moving on:
 * Edit the project's properties.
@@ -218,20 +218,20 @@ You'll notice several warnings about unknown header files. Let's fix that before
 
 Next, create another new file called **Fixtures.c**: 
 
-```cpp
+{% highlight cpp %}
 # include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(ExecuteBinaryOperator)
 SLIM_END
-```
+{% endhighlight %}
 
 I'm having you preemptively add in the name of a fixture you have yet to write.
 
 Now it's time to create the fixture. Since this is a mechanics tutorial, I'll give you the fixture source code:
 **ExecuteBinaryOperator.cpp**
 
-```cpp
+{% highlight cpp %}
 # include <stdlib.h>
 # include <stdio.h>
 # include <string>
@@ -305,7 +305,7 @@ SLIM_CREATE_FIXTURE(ExecuteBinaryOperator)
 SLIM_END
  
 }
-```
+{% endhighlight %}
 
 You'll notice a few more warnings about unknown include files. You'll add a few more include directories, this time under the C++ tab instead of the C Tab
 * Edit the project's properties
@@ -319,12 +319,12 @@ Notice that there's still one missing header file. This is in another library th
 * Go back to your workspace directory
 * Clone the CSlimCppExtensions project from github with the following command: 
 
-```
+{% highlight terminal %}
 git clone git://github.com/schuchert/CSlimCppExtensions.git
-```
+{% endhighlight %}
 * Here's what that will look like:
 
-```
+{% highlight terminal %}
 [~/src/waat/workspace]% git clone git://github.com/schuchert/CSlimCppExtensions.git
 Initialized empty Git repository in /Users/schuchert/src/waat/workspace/CSlimCppExtensions/.git/
 remote: Counting objects: 16, done.
@@ -333,7 +333,7 @@ remote: Total 16 (delta 1), reused 0 (delta 0)
 Receiving objects: 100% (16/16), 5.95 KiB, done.
 Resolving deltas: 100% (1/1), done.
 [~/src/waat/workspace]% 
-```
+{% endhighlight %}
 
 * Back in Eclipse, **File:Import**
 * Select **General:Existing Projects into Workspace**
@@ -347,19 +347,19 @@ Resolving deltas: 100% (1/1), done.
 **<cslim_base>/include/CSlim/SlimListSerializer.h**
 Add the following function declaration to the header file:
 
-```cpp
+{% highlight cpp %}
 void SlimList_Release(char *serializedList);
-```
+{% endhighlight %}
 
 **<cslim_base>/src/CSlim/SlimListSerializer.h**
 Add a function declaration to the source file:
 
-```cpp
+{% highlight cpp %}
 void SlimList_Release(char *serializedList) {
   if(serializedList != 0)
     free(serializedList);
 }
-```
+{% endhighlight %}
 
 Now that you have the required missing project, you need to add it as a dependent project and include its header files in the RpnCalcualtorFixtures project:
 * Edit the properties of RpnCalculatorFixtures
@@ -384,9 +384,9 @@ Now if you try to build the project, it will compile but it will not link.
 
 You should now be able to run this executable. If you do, you'll see in red text:
 
-```
+{% highlight terminal %}
 getaddrinfo: nodename nor servname provided, or not known
-```
+{% endhighlight %}
 
 # Running the Test
 You should be able to run your FitNesse test and get to green.
@@ -401,7 +401,7 @@ Now it is time to program the calculator. First a test, then the fixture code.
 ## The Test
 Create the following test at: <http://localhost:8080/RpnExamples.SumOfPrimesExample>
 
-```
+{% highlight terminal %}
 !|script           |ProgramTheCalculator|
 |startProgramCalled|sumOfPrimeFactors   |
 |addOperation      |primeFactors        |
@@ -410,14 +410,14 @@ Create the following test at: <http://localhost:8080/RpnExamples.SumOfPrimesExam
 |enter             |12                  |
 |execute           |sumOfPrimeFactors   |
 |check             |getX       |7       |
-```
+{% endhighlight %}
 
 This creates a new operator called "sumOfPrimesFactors" and then executes it. To make this work, you'll need to create a new fixture and register it.
 
 ## Creating the Fixture
 Create a new source filed called **ProgramTheCalcualtor.cpp**. Here's the source:
 
-```cpp
+{% highlight cpp %}
 # include <stdlib.h>
 # include <stdio.h>
 # include <string>
@@ -496,25 +496,25 @@ SLIM_CREATE_FIXTURE(ProgramTheCalculator)
 SLIM_END
 
 }
-```
+{% endhighlight %}
 
 To get this working, you'll need to register the fixture by updated **Fixtures.c**:
 
-```cpp
+{% highlight cpp %}
 # include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(ExecuteBinaryOperator)
   SLIM_FIXTURE(ProgramTheCalculator)
 SLIM_END
-```
+{% endhighlight %}
 
 Once you make these changes and rebuild, you should have a passing test.
 
 # The Query Table
 Here is an example of a query table:
 
-```
+{% highlight terminal %}
 !|Query: AlphaNamedOperators|
 |op                         |
 |dup                        |
@@ -526,13 +526,13 @@ Here is an example of a query table:
 |sum                        |
 |swap                       |
 |drop                       |
-```
+{% endhighlight %}
 
 Create this page at: <http://localhost:8080/RpnExamples.AlphaNamedOperatorsExample>
 
 Now you'll need to create a fixture. Create a new source file called **AlphaNamedOperators.cpp**:
 
-```cpp
+{% highlight cpp %}
 # include <ctype.h>
 # include <stdlib.h>
 # include <string>
@@ -597,11 +597,11 @@ SLIM_CREATE_FIXTURE(AlphaNamedOperators)
     SLIM_FUNCTION(query)SLIM_END
 
 }
-```
+{% endhighlight %}
 
 To get this registered, you'll have to update **Fixtures.c**:
 
-```cpp
+{% highlight cpp %}
 # include "Fixtures.h"
 
 SLIM_FIXTURES
@@ -609,7 +609,7 @@ SLIM_FIXTURES
   SLIM_FIXTURE(ProgramTheCalculator)
   SLIM_FIXTURE(AlphaNamedOperators)
 SLIM_END
-```
+{% endhighlight %}
 
 Save and rebuild. You should now have a passing test. If you run the entire suite, all three tests should pass.
 

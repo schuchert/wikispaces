@@ -11,7 +11,7 @@ These instructions are for Version 2.3 of CppUTest and Visual Studio 2008.
 * Build the solution:// **ctrl-shift-b**//
 * Run all of the tests:// **ctrl-F5**//
 * Verify the output resembles:
-```terminal
+{% highlight terminal %}
 .......!!.........................................
 ..................................................
 ..............................................!...
@@ -20,7 +20,7 @@ These instructions are for Version 2.3 of CppUTest and Visual Studio 2008.
 OK (244 tests, 240 ran, 711 checks, 4 ignored, 0 filtered out, 0 ms)
 
 Press any key to continue . . .
-```
+{% endhighlight %}
 * Press any key to close the cmd window opened while running your tests
 * Close the Solution:// **File:Close Solution**//
 
@@ -46,14 +46,14 @@ To setup some of the C++ properties, your project must have one .cpp file in in.
 * For its// **Name**//, enter// **RunAllTests.cpp**//
 * Click// **Add**//
 * Edit the contents of the file, add the following code:
-```cpp
+{% highlight cpp %}
 # include <CppUTest/CommandLineTestRunner.h>
 
 int main() {
   const char* args[] = { "", "-v" };
   return CommandLineTestRunner::RunAllTests(2, args);
 }
-```
+{% endhighlight %}
 
 Now several project options are available to be set.
 
@@ -70,11 +70,11 @@ Now several project options are available to be set.
 * Click// **OK**// to apply all of your changes.
 * Verify that you can build your solution:// **Ctrl-shift-b**//
 * You can now run your solution:// **Ctrl-F5**// and you should see:
-```terminal
+{% highlight terminal %}
 OK (0 tests, 0 ran, 0 checks, 0 ignored, 0 filtered out, 0 ms)
 
 Press any key to continue . . .
-```
+{% endhighlight %}
 
 # Add a Test File
 Now we'll add a single test file to verify that your system is up and running, although at this point if you have a running solution everything should work fine.
@@ -83,7 +83,7 @@ Note: We will be using just source files for our test code.
 
 * Add a source file to your project (see above for details on how). Call the file// **FooTest.cpp**//
 * Edit its contents:
-```cpp
+{% highlight cpp %}
 # include <CppUTest/TestHarness.h>
  
 TEST_GROUP(FooTest) {
@@ -92,14 +92,14 @@ TEST_GROUP(FooTest) {
 TEST(FooTest, TestName) {
   LONGS_EQUAL(1, 1);
 }
-```
+{% endhighlight %}
 * Build and run your tests:// **Ctrl-F5**//. You should see:
-```terminal
+{% highlight terminal %}
 TEST(FooTest, TestName) - 0 ms
 
 OK (1 tests, 1 ran, 1 checks, 0 ignored, 0 filtered out, 0 ms)
 
 Press any key to continue . . .
-```
+{% endhighlight %}
 
 Congratulations, you're ready to get going.

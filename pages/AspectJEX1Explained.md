@@ -23,7 +23,7 @@ I did not show you three things:
 
 ----
 ## MethodExecutionAspect.java
-```java
+{% highlight java %}
 01: package ex1;
 02: 
 03: import org.aspectj.lang.ProceedingJoinPoint;
@@ -48,7 +48,7 @@ I did not show you three things:
 22:         }
 23:     }
 24: }
-```
+{% endhighlight %}
 ### Interesting Lines
 ^
 |-|-|
@@ -61,7 +61,7 @@ I did not show you three things:
 |19|Call proceed() on "thisJoinPoint" to actually perform the original method execution.|
 
 ## aop.xml
-```xml
+{% highlight xml %}
 01: <aspectj>
 02: 	<aspects>
 03: 		<aspect name="ex1.MethodExecutionAspect"/>
@@ -70,7 +70,7 @@ I did not show you three things:
 06: 		<include within="ex1.*"/>
 07: 	</weaver>
 08: </aspectj>
-```
+{% endhighlight %}
 
 ### Interesting Lines
 ^

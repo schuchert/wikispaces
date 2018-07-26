@@ -1,9 +1,9 @@
 ---
 title: Setting_the_Context
 ---
-```
+{% highlight terminal %}
   
-```
+{% endhighlight %}
 ## Setting the Context
 [Exploring Requirements, Quality Before Design, Gause & Weinberg](http://www.amazon.com/dp/0932633137?tag=geraldmweinbe-20&camp=14573&creative=327641&linkCode=as1&creativeASIN=0932633137&adid=0C4JD017X8D3BYW7J2FD&)
 ### Group Exercise – Project Kickoffs

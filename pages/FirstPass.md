@@ -9,7 +9,7 @@ Here are some very early examples trying to use [TDD]({{site.pagesurl}}/Test_Dri
 
 ----
 [#DieTest]({{site.pagesurl}}/#DieTest)
-```ruby
+{% highlight ruby %}
 require 'test/unit'
 require 'die'
 
@@ -33,10 +33,10 @@ class DieTest < Test::Unit::TestCase
   end
   
 end
-```
+{% endhighlight %}
 ----
 [#Die]({{site.pagesurl}}/#Die)
-```ruby
+{% highlight ruby %}
 class Die
   def initialize()
     roll
@@ -50,10 +50,10 @@ class Die
     @faceValue
   end
 end
-```
+{% endhighlight %}
 ----
 [#PairOfDiceTest]({{site.pagesurl}}/#PairOfDiceTest)
-```ruby
+{% highlight ruby %}
 require 'test/unit/testcase'
 require 'test/unit/autorunner'
 require 'pair_of_dice'
@@ -67,10 +67,10 @@ class PairOfDiceTest < Test::Unit::TestCase
   end 
   
 end
-```
+{% endhighlight %}
 ----
 [#PairOfDice]({{site.pagesurl}}/#PairOfDice)
-```ruby
+{% highlight ruby %}
 require 'die'
 
 class PairOfDice
@@ -87,11 +87,11 @@ class PairOfDice
     @d1.faceValue + @d2.faceValue
   end
 end
-```
+{% endhighlight %}
 ----
 This works, however I want to be able to run all of my tests in one fell swoop. In Eclipse using Java, I simply right-click on a project and select Run->Junit Tests and it's all good. This feature doesn't seem to be available in Test::Unit (the Ruby equivalent) so after several attempts, I think I've got what I'm looking for:
 [#Suite]({{site.pagesurl}}/#Suite)
-```ruby
+{% highlight ruby %}
 require 'test/unit'
 require 'find'
 
@@ -107,10 +107,10 @@ def allFiles
 end
 
 allFiles().each {|f| require f}
-```
+{% endhighlight %}
 
 This was adequate until I checked my code into subversion. When I did that, I had the original versions of the files in the .svn directory. I then updated this to prune the .svn directory:
-```ruby
+{% highlight ruby %}
 require 'test/unit'
 require 'find'
 
@@ -129,19 +129,19 @@ def allFiles
 end
 
 allFiles().each {|f| require f}
-```
+{% endhighlight %}
 
 Of course, on the Ruby Forum, Ryan Davis gave me a MUCH more concise (and frankly I think MUCH better) version of this:
-```ruby
+{% highlight ruby %}
 (%w(test/unit) + Dir['**/*_test.rb']).each { |f| require f }
-```
+{% endhighlight %}
 
 All "require"d files are read in using a single array. To create the array we first create an array using words (in this case it saves nothing to use %w(test/unit) versus ['test/unit']. The + operation on an array adds the contents of one array to another and the Dir class's [] method recursively finds files using a syntax I'm familiar with from ant.
 
 This generates an array that looks like the following:
-```ruby
+{% highlight ruby %}
    ['test/unit', 'die_test', 'pair_of_dice_test']
-```
+{% endhighlight %}
 
 Then we require each of theses. By requiring test/unit, all other files read in using require that inherit from Test::Unit::TestCase are automatically added to a suite.
 

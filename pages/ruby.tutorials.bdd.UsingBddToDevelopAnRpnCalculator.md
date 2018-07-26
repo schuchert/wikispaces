@@ -165,12 +165,12 @@ Finished in 0.0123 seconds
 OK, you have an Example but it does not contain any verification. So one more change and one more execution.
 
 * Update the Example to validate calculator:
-```ruby
+{% highlight ruby %}
     calculator.should_not be nil
-```
+{% endhighlight %}
 
 * Run your Example again, you should be all green:
-```bash
+{% highlight bash %}
     Macintosh-7% spec -f s -c rpn_calculator_spec.rb
     
     Basic Creation
@@ -179,7 +179,7 @@ OK, you have an Example but it does not contain any verification. So one more ch
     Finished in 0.0123 seconds
     
     1 example, 0 failures
-```
+{% endhighlight %}
 
 [[include page="sidebar_start"]][[include page="ruby.sidebar.ExamplesPassingWithoutValidation"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
@@ -262,21 +262,21 @@ Since the particulars of the UI are irrelevant, this tutorial will move forward 
 
 **Example**
 Here is the beginning of an example:
-```ruby
+{% highlight ruby %}
     describe "Handling User Input of Numbers" do
       it "should store a series of digits in the x register" do
         calculator = RpnCalculator.new
         calculator.digit_pressed '4'
       end
     end
-```
+{% endhighlight %}
 
 There's more to be written, but as soon as the message "digit_pressed" is sent to a calculator, the Example will fail.
 
 * Create this Example, adding it to rpn_calculator_spec.rb.
 
 * Execute the Example, you should see an error similar to the following:
-```bash
+{% highlight bash %}
     1)
     NoMethodError in 'Handling User Input of Numbers should store a series of digits in the x register'
     undefined method `digit_pressed' for #<RpnCalculator:0x58kkc80c>
@@ -285,22 +285,22 @@ There's more to be written, but as soon as the message "digit_pressed" is sent t
     Finished in 0.015707 seconds
     
     2 examples, 1 failure
-```
+{% endhighlight %}
 
 Assuming you worked through the first BDD tutorial, this is familiar ground. You need to add a method to get this to compiled (you've just finished applying law 2 of the 3 laws of BDD).
 
 * Update RpnCalculator:
-```ruby
+{% highlight ruby %}
     class RpnCalculator
       def digit_pressed(digit)
       end
     end
-```
+{% endhighlight %}
 
 * Verify that your Example now executes successfully.
 
 * Complete the Example:
-```ruby
+{% highlight ruby %}
     describe "Handling User Input of Numbers" do
       it "should store a series of digits in the x register" do
         calculator = RpnCalculator.new
@@ -309,10 +309,10 @@ Assuming you worked through the first BDD tutorial, this is familiar ground. You
         calculator.x_register.should == 42
       end
     end
-```
+{% endhighlight %}
 
 * Execute your examples, one will fail:
-```
+{% highlight terminal %}
     1)
     NoMethodError in 'Handling User Input of Numbers should store a series of digits in the x register'
     undefined method `x_register' for #<RpnCalculator:0x58c5dc>
@@ -321,18 +321,18 @@ Assuming you worked through the first BDD tutorial, this is familiar ground. You
     Finished in 0.015999 seconds
     
     2 examples, 1 failure
-```
+{% endhighlight %}
 
 As with the previous failure, this failure is a result of a missing method.
 
 * First, create the method in RpnCalculator to get your code to compiling:
-```ruby
+{% highlight ruby %}
     def x_register
     end
-```
+{% endhighlight %}
 
 * Run your Example, make sure it is failing:
-```bash
+{% highlight bash %}
     1)
     'Handling User Input of Numbers should store a series of digits in the x register' FAILED
     expected: 42,
@@ -342,17 +342,17 @@ As with the previous failure, this failure is a result of a missing method.
     Finished in 0.016444 seconds
     
     2 examples, 1 failure
-```
+{% endhighlight %}
 
 * Now, do the simplest thing that could work, AKA fast-green bar, AKA, Uncle Bob's TDD rules, #3:
-```ruby
+{% highlight ruby %}
     def x_register
       42
     end
-```
+{% endhighlight %}
 
 * Finally, run your Examples to make sure they are passing:
-```
+{% highlight terminal %}
     Macintosh-7% spec -f s -c rpn_calculator_spec.rb
     
     Basic Creation
@@ -364,7 +364,7 @@ As with the previous failure, this failure is a result of a missing method.
     Finished in 0.014956 seconds
     
     2 examples, 0 failures
-```
+{% endhighlight %}
 
 [[include page="sidebar_start"]][[include page="ruby.sidebar.WhyTwoStepsInsteadOfJustOne"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
@@ -372,11 +372,11 @@ As with the previous failure, this failure is a result of a missing method.
 
 **Check-In**
 * Check in your work:
-```
+{% highlight terminal %}
     Macintosh-7% git commit -a
     Created commit 727745f: Added basic support for handling digits.
      3 files changed, 215 insertions(+), 2 deletions(-)
-```
+{% endhighlight %}
 
 **Refactor**
 Review of the RpnCalculator class does not suggest any refactoring.
@@ -385,15 +385,15 @@ Review of the Examples, however, does. There is some minor duplication. Both Exa
 
 * Create a containing context:
 > **Above the first describe**
-```ruby
+{% highlight ruby %}
     describe "RPN Calculator" do
-```
+{% endhighlight %}
 > **After the last end**
-```ruby
+{% highlight ruby %}
     end
-```
+{% endhighlight %}
 > **Update the spacing - that's one command in VI, the best-ever editor**
-```ruby
+{% highlight ruby %}
     describe "RPN Calculator"
       describe "Basic Creation" do
         ...
@@ -403,10 +403,10 @@ Review of the Examples, however, does. There is some minor duplication. Both Exa
         ...
       end
     end
-```
+{% endhighlight %}
 
 * Verify that your Examples still execute:
-```bash
+{% highlight bash %}
     Macintosh-7% spec -f s -c rpn_calculator_spec.rb
     
     RPN Calculator
@@ -420,30 +420,30 @@ Review of the Examples, however, does. There is some minor duplication. Both Exa
     Finished in 0.016923 seconds
     
     2 examples, 0 failures
-```
+{% endhighlight %}
 
 * Add a common setup to your outer-context:
-```ruby
+{% highlight ruby %}
     before(:each) do
       @calculator = RpnCalculator.new
     end
-```
+{% endhighlight %}
 
 * Verify your Examples still run.
 
 * Update the first Example to use the initialized calculator:
-```ruby
+{% highlight ruby %}
     describe "Basic Creation" do
       it "should be non-null after creation" do
         @calculator.should_not be nil
       end
     end
-```
+{% endhighlight %}
 
 * Verify your Examples still run.
 
 * Update the second Example as well:
-```ruby
+{% highlight ruby %}
     describe "Handling User Input of Numbers" do
       it "should store a series of digits in the x register" do
         @calculator.digit_pressed '4'
@@ -451,7 +451,7 @@ Review of the Examples, however, does. There is some minor duplication. Both Exa
         @calculator.x_register.should == 42
       end
     end
-```
+{% endhighlight %}
 
 * Verify your Examples still run.
 
@@ -459,12 +459,12 @@ You might be tempted to do more at this point. For example, you know you'll be a
 
 **Check-In**
 * Check in your work:
-```
+{% highlight terminal %}
     Macintosh-7% git commit -a
     Created commit b203185: Removed duplication of calculator initialization.
      2 files changed, 128 insertions(+), 18 deletions(-)
      rewrite rpn_calculator_spec.rb (90%)
-```
+{% endhighlight %}
 
 **Summary**
 The first example added basic object creation. This Example defined some of the API for entering digits. The production code doesn't actually process this yet, however, you already have executable documentation of how the API is supposed to work.
@@ -475,7 +475,7 @@ You also performed some basic refactoring on your Examples. While mentioned in t
 
 # Example: Taking a decimal point as well
 The production code is hard-coded. Somehow you want to push your solution to remove that hard-coded value. One way to do that is to and another Example (don't do this):
-```ruby
+{% highlight ruby %}
       describe "Handling an even longer User Input of Numbers" do
         it "should store a series of digits in the x register" do
           @calculator.digit_pressed '1'
@@ -485,7 +485,7 @@ The production code is hard-coded. Somehow you want to push your solution to rem
           @calculator.digit_pressed '2' 
           @calculator.x_register.should == 12432
         end
-```
+{% endhighlight %}
 
 On the one hand, this will force some more work in the production code. On the other hand, this Example is a proper superset of the first Example. That is, this Example completely covers the first Example, so, pragmatically, you should remove the first Example. More Examples does not necessarily mean better Examples. Each Example should push the solution a little further and avoid duplicating the work of another Example. Why?
 * More examples --> longer to run --> run less often --> less effective
@@ -495,7 +495,7 @@ On the one hand, this will force some more work in the production code. On the o
 
 **Example**
 Here is another example that fits extends the functionality just a little but will also force the implementation of the production code:
-```ruby
+{% highlight ruby %}
     it "should handle a string of digits with an embedded ." do
       @calculator.digit_pressed '1' 
       @calculator.digit_pressed '3' 
@@ -504,12 +504,12 @@ Here is another example that fits extends the functionality just a little but wi
       @calculator.digit_pressed '1'
       @calculator.x_register.should == 13.31
     end
-```
+{% endhighlight %}
 
 * Create this Example.
 
 * Run your Examples, you should have one failure:
-```
+{% highlight terminal %}
     ... <snip> ...
     - should handle a string of digits with an embedded . (FAILED - 1)
     
@@ -522,33 +522,33 @@ Here is another example that fits extends the functionality just a little but wi
     Finished in 0.018738 seconds
     
     3 examples, 1 failure
-```
+{% endhighlight %}
 
 Now it is time to do something more than hard-code the response.
 
 * Add an initialization method to your RpnCalculator class:
-```ruby
+{% highlight ruby %}
       def initialize
         @input = ''
       end
-```
+{% endhighlight %}
 
 * Update the digit_pressed method to record the digit:
-```ruby
+{% highlight ruby %}
       def digit_pressed(digit)
         @input << digit.to_s
       end
-```
+{% endhighlight %}
 
 * Update the x_register method to use the recorded input:
-```ruby
+{% highlight ruby %}
       def x_register
         @input.to_f
       end
-```
+{% endhighlight %}
 
 * Run your Examples, you should be all green:
-```
+{% highlight terminal %}
     Macintosh-7% spec -f s -c rpn_calculator_spec.rb
     
     RPN Calculator
@@ -563,14 +563,14 @@ Now it is time to do something more than hard-code the response.
     Finished in 0.018312 seconds
     
     3 examples, 0 failures
-```
+{% endhighlight %}
 **Check-In**
 * It is once again time to check in your code. Everything is green:
-```
+{% highlight terminal %}
     Macintosh-7% git commit -a
     Created commit e10de87: Added support for numbers with decimals.
      3 files changed, 135 insertions(+), 2 deletions(-)
-```
+{% endhighlight %}
 
 And as a reminder, the reason there are so many insertions in this example is because my checkins include updates to the source file used to generate the page you are reading.
 
@@ -582,7 +582,7 @@ Before making any improvements, you need a reason to make the improvement. It is
 How about allowing your Example to provide a number, which is then "typed" for you?
 
 * Add a method to the containing context:
-```ruby
+{% highlight ruby %}
     describe "RPN Calculator" do
       ...
       def enter_number(number)
@@ -590,42 +590,42 @@ How about allowing your Example to provide a number, which is then "typed" for y
       end
       ...
     end
-```
+{% endhighlight %}
 
 * Run your Examples, they should still pass.
 
 * Update the "Handling User Input of Numbers" example:
-```ruby
+{% highlight ruby %}
     it "should store a series of digits in the x register" do
       enter_number 42
       @calculator.x_register.should == 42
     end
-```
+{% endhighlight %}
 
 * Run your Examples, they should still pass.
 
 * Update the "should handle a string of digits with an embedded ." Example:
-```ruby
+{% highlight ruby %}
     it "should handle a string of digits with an embedded ." do
       enter_number 13.31
       @calculator.x_register.should == 13.31
     end
-```
+{% endhighlight %}
 
 * Run your Examples, they should still pass.
 
 * Finally, the second Example does not start with should, which is a pretty well-followed practice. So fix it:
-```ruby
+{% highlight ruby %}
       describe "Handling integers" do
         it "should store a series of digits in the x register" do
           enter_number 42
           @calculator.x_register.should == 42
         end
-```
+{% endhighlight %}
 
 
 * Run your Examples, they should still pass.
-```bash
+{% highlight bash %}
     Macintosh-7% spec -f s -c rpn_calculator_spec.rb
     
     RPN Calculator
@@ -640,15 +640,15 @@ How about allowing your Example to provide a number, which is then "typed" for y
     Finished in 0.017654 seconds
     
     3 examples, 0 failures
-```
+{% endhighlight %}
 
 **Check-In**
 * Check in your changes:
-```
+{% highlight terminal %}
     Macintosh-7% git commit -a
     Created commit a465d16: Removed duplication in writing examples taking numbes.
      2 files changed, 56 insertions(+), 24 deletions(-)
-```
+{% endhighlight %}
 
 **Summary**
 Congratulations, you have basic support for processing numeric input. You managed to use an Example that pushed the design just a bit and ended up with code in each of the methods.
@@ -657,7 +657,7 @@ There is one strange thing, your code uses "digit_pressed" for the digits 0 thro
 
 Here is a snapshot of what your code should resemble at this point:
 **rpn_calculator_spec.rb**
-```ruby
+{% highlight ruby %}
     require 'rpn_calculator'
     
     describe "RPN Calculator" do
@@ -687,10 +687,10 @@ Here is a snapshot of what your code should resemble at this point:
         end
       end
     end
-```
+{% endhighlight %}
 
 **rpn_calculator.rb**
-```ruby
+{% highlight ruby %}
     class RpnCalculator
       def initialize
         @input = ''
@@ -704,7 +704,7 @@ Here is a snapshot of what your code should resemble at this point:
         @input.to_f
       end
     end 
-```
+{% endhighlight %}
 
 # Example: What Happens with Enter?
 What happens when a user presses the <enter> key on the calculator:
@@ -715,7 +715,7 @@ In fact, as you will see, pressing a non-numeric key generally "locks-down" the 
 
 **Example**
 Here is a Context with three as yet to be defined Examples:
-```ruby
+{% highlight ruby %}
       describe "Handling the <enter> key" do
         it "should copy x_register to top of stack" 
       
@@ -723,12 +723,12 @@ Here is a Context with three as yet to be defined Examples:
     
         it "should allow the x_register to be <entered> again" 
       end
-```
+{% endhighlight %}
 
 * Add this context as a sub-context of the RPN Calculator context.
 
 * Execute your Examples, you should notice that these three are listed as pending:
-```terminal
+{% highlight terminal %}
     RPN Calculator Handling the <enter> key
     - should copy x_register to top of stack (PENDING: Not Yet Implemented)
     - should cause next digit to reset the x_register (PENDING: Not Yet Implemented)
@@ -742,7 +742,7 @@ Here is a Context with three as yet to be defined Examples:
     Finished in 0.022477 seconds
     
     6 examples, 0 failures, 3 pending
-```
+{% endhighlight %}
 
 Before you can write any of these, you have to make a decision about how to indicate that the <enter> key was pressed. Here are a few options:
 * Add a method, enter_pressed.
@@ -758,17 +758,17 @@ Is there a clear winner? There are trade-offs:
 This tutorial will take the second approach.
 
 * Add to the first Example (make sure to add the 'do' after the first line):
-```ruby
+{% highlight ruby %}
     it "should copy x_register to top of stack" do
       enter_number 654
       @calculator.execute_function(:enter)
     end
-```
+{% endhighlight %}
 
 Why stop here? This Example is now failing because it invokes a method that does not yet exist.
 
 * Run your Examples to verify this:
-```
+{% highlight terminal %}
     1)
     NoMethodError in 'RPN Calculator Handling the <enter> key should copy x_register to top of stack'
     undefined method `execute_function' for #<RpnCalculator:0x587ac8 @input="654">
@@ -777,31 +777,31 @@ Why stop here? This Example is now failing because it invokes a method that does
     Finished in 0.023074 seconds
     
     6 examples, 1 failure, 2 pending
-```
+{% endhighlight %}
 
 * Get the example back to Green by adding a method in RpnCalculator:
-```ruby
+{% highlight ruby %}
       def execute_function(function_symbol)
       end
-```
+{% endhighlight %}
 
 * Continue with the Example:
-```ruby
+{% highlight ruby %}
     it "should copy x_register to top of stack" do
       enter_number 654
       @calculator.execute_function(:enter)
       @calculator.top.should == 654
     end
-```
+{% endhighlight %}
 
 This both completes the Example and causes it not to work because the top method does not exist. You can verify this by running your Examples.
 
 * Add a top method:
-```ruby
+{% highlight ruby %}
       def top
         654
       end
-```
+{% endhighlight %}
 
 Did you notice I just had you "cheat". You should have:
 * Created a method that would cause the Example to fail.
@@ -815,12 +815,12 @@ Did you notice that? If not, see how easy it is to slide backwards?
 **Check-In**
 You have all passing Examples, but two are not implemented. Should you check in your work?
 * Sure:
-```
+{% highlight terminal %}
     Macintosh-7% !g
     git commit -a
     Created commit f77e000: Added support for the "enter" function.
      3 files changed, 148 insertions(+), 7 deletions(-)
-```
+{% endhighlight %}
 
 **Refactor**
 A quick review of RpnCalculator doesn't suggest a need for refactoring. For now, the same can be said of the Examples.
@@ -838,17 +838,17 @@ The next Example involves what happens after the <enter> key. You could have inc
 
 **Example**
 Here's an example that seems to express the idea:
-```ruby
+{% highlight ruby %}
     it "should cause next digit to reset the x_register" do
       enter_number 654
       @calculator.execute_function(:enter)
       enter_number 1
       @calculator.x_register.should == 1
     end
-```
+{% endhighlight %}
 
 * Create this Example and then run you Examples:
-```
+{% highlight terminal %}
     1)
     'RPN Calculator Handling the <enter> key should cause next digit to reset the x_register' FAILED
     expected: 1,
@@ -858,12 +858,12 @@ Here's an example that seems to express the idea:
     Finished in 0.023285 seconds
     
     6 examples, 1 failure, 1 pending
-```
+{% endhighlight %}
 
 Notice that the 1 entered was appended to the x_register. So looks like this test pushes our current production code. You might also have observed that the support method named "enter_number" is really a bit off. Since <enter> has a meaning now, this method's name should be changed. That, however, is a refactoring so you should wait until you have all Examples passing (it OK to leave the pending Example pending).
 
 * Update the calculator to work with the new Example:
-```
+{% highlight terminal %}
       def digit_pressed(digit)
         @input = '' if @x_register_should_reset
         x_register_should_reset = false
@@ -873,10 +873,10 @@ Notice that the 1 entered was appended to the x_register. So looks like this tes
       def execute_function(function_symbol)
         @x_register_should_reset = true
       end
-```
+{% endhighlight %}
 
 * Run your Examples, they should pass:
-```
+{% highlight terminal %}
     RPN Calculator Handling the <enter> key
     - should copy x_register to top of stack
     - should cause next digit to reset the x_register
@@ -888,16 +888,16 @@ Notice that the 1 entered was appended to the x_register. So looks like this tes
     Finished in 0.022283 seconds
     
     6 examples, 0 failures, 1 pending
-```
+{% endhighlight %}
 
 **Check-In**
 * Now is a good time to check in, even though you have a pending Example:
-```
+{% highlight terminal %}
     Macintosh-7% !g
     git commit -a
     Created commit d8902e3: Added resetting of x_register after :enter
      3 files changed, 65 insertions(+), 3 deletions(-)
-```
+{% endhighlight %}
 
 **Refactor**
 Here's a list of things that you might consider for refactoring:
@@ -907,33 +907,33 @@ Here's a list of things that you might consider for refactoring:
 
 **enter_number**
 You can either change its name or make it do what it says. Flip a coin, you probably do not have enough information to make that decision just yet. However, in the spirit of keeping things clean, I did make a decision. I kept the method name and changed its implementation:
-```ruby
+{% highlight ruby %}
       def enter_number(number)
         number.to_s.each_char{ |d| @calculator.digit_pressed d }
         @calculator.execute_function(:enter)
       end
-```
+{% endhighlight %}
 
 * Run your Examples, nothing is broken.
 
 **Violation of DRY between digit_pressed and initialize**
 This is one of those cases where duplication might be OK because right now initialize is simple but it is likely to get more complex later. I was originally going to change the implementation to this (don't do this):
-```ruby
+{% highlight ruby %}
       def digit_pressed(digit)
         initialize if @x_register_should_reset
         x_register_should_reset = false
         @input << digit.to_s
       end
-```
+{% endhighlight %}
 
 However, before I made that change, it occurred to me that coupling to the initialize method will probably cause problems later. Even though I'd catch that when Executing my Examples, I instead decided to introduce a simple method that documents the intent.
 
 * Add a new method:
-```ruby
+{% highlight ruby %}
       def reset_input
         @input = ''
       end
-```
+{% endhighlight %}
 
 * Verify that nothing broke.
 
@@ -943,7 +943,7 @@ However, before I made that change, it occurred to me that coupling to the initi
 
 **Duplication in last two Examples**
 When you changed the implementation of enter_number to actually perform an <enter>, you could have updated the last two Examples as follows:
-```ruby
+{% highlight ruby %}
     it "should copy x_register to top of stack" do
       enter_number 654
       @calculator.top.should == 654
@@ -954,18 +954,18 @@ When you changed the implementation of enter_number to actually perform an <ente
       @calculator.digit_pressed 1
       @calculator.x_register.should == 1
     end
-```
+{% endhighlight %}
 
 When these Examples reflect the update to the enter_number method, the duplication does not see to be bad.
 
 **Check-In**
 * Check in your work.
-```
+{% highlight terminal %}
     Macintosh-7% !g
     git commit -a
     Created commit a8fec92: Refactored input resetting, enter_number now 
      3 files changed, 75 insertions(+), 8 deletions(-)
-```
+{% endhighlight %}
 
 **Summary**
 The behavior of the calculator has grown. The it also is beginning to handle the <enter> functionality. You removed duplication in the production code. It was small, and trivial and probably seemed like nothing. However, here's a principle from Jerry Weinberg:
@@ -990,17 +990,17 @@ Those two items are officially on the punch-list. For now, let's get back to all
 
 **Example**
 * Create the following example:
-```ruby
+{% highlight ruby %}
     it "should allow the x_register to be <entered> again" do
       enter_number 654
       @calculator.execute_function(:enter)
       @calculator.top.should == 654
       @calculator.x_register.should == 654
     end
-```
+{% endhighlight %}
 
 * Run your Examples:
-```
+{% highlight terminal %}
     Macintosh-7% spec -f s -c rpn_calculator_spec.rb
     
     RPN Calculator
@@ -1020,7 +1020,7 @@ Those two items are officially on the punch-list. For now, let's get back to all
     Finished in 0.022528 seconds
     
     6 examples, 0 failures
-```
+{% endhighlight %}
 
 Well everything is all green. So this Example might not be adding value. Rather than immediately delete it, keep a note to review it after completing the first two items on the punch-list.
 
@@ -1028,12 +1028,12 @@ Well everything is all green. So this Example might not be adding value. Rather 
 Should you check in? You might not be sure about the Example, but you've got that to review after just a few more Examples. Even so, go ahead and commit. If you remove the Example later, your RCS tool can handle the workload.
 
 * Commit:
-```
+{% highlight terminal %}
     Macintosh-7% !g
     git commit -a
     Created commit 437ee9f: Added candidate Example. Might remove it shortly,.
      2 files changed, 51 insertions(+), 8 deletions(-)
-```
+{% endhighlight %}
 
 **Refactor**
 There are some duplicated validation steps in the Examples. Before refactoring, however, keep things as is until you've done just a little more work.
@@ -1049,16 +1049,16 @@ Once an example sends the execute_function method, the RpnCalculator will contin
 
 **Example**
 * Create the following example.
-```ruby
+{% highlight ruby %}
     it "should only reset after the first digit and not subsequent digits" do
       enter_number 654
       enter_number 27
       @calculator.x_register.should == 27
     end
-```
+{% endhighlight %}
 
 * Run your Examples, notice the failure:
-```
+{% highlight terminal %}
     - should only reset after the first digit and not subsequent digits (FAILED - 1)
     
     1)
@@ -1070,13 +1070,13 @@ Once an example sends the execute_function method, the RpnCalculator will contin
     Finished in 0.023869 seconds
     
     7 examples, 1 failure
-```
+{% endhighlight %}
 
 The problem is, the "reset state" is set in execute_function but never reset.
 
 There are two ways to fix this:
 **Update the digit_pressed method**
-```ruby
+{% highlight ruby %}
       def digit_pressed(digit)
         if @x_register_should_reset
           reset_input 
@@ -1084,22 +1084,22 @@ There are two ways to fix this:
         end
         @input << digit.to_s
       end
-```
+{% endhighlight %}
 
 Or **Update the reset_input method**
-```ruby
+{% highlight ruby %}
       def reset_input
         @input = ''
         @x_register_should_reset = false
       end
-```
+{% endhighlight %}
 
 Either will work. In fact, doing both works. Question, to which method does the responsibility seem to bind? If you tought reset_input, you're right.
 
 * Fix this by updating the reset_input method.
 
 * Make sure your Examples pass:
-```
+{% highlight terminal %}
     Macintosh-7% spec -f s -c rpn_calculator_spec.rb
     
     RPN Calculator
@@ -1120,28 +1120,28 @@ Either will work. In fact, doing both works. Question, to which method does the 
     Finished in 0.025639 seconds
     
     7 examples, 0 failures
-```
+{% endhighlight %}
 
 [[include page="sidebar_start"]][[include page="ruby.sidebar.IDidTooMuch"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 **Check-In**
 * Check in your work, you've made some good progress:
-```
+{% highlight terminal %}
     Macintosh-7% !g
     git commit -a
     Created commit e1a018b: Added Example to verify that resetting was turned off.
      3 files changed, 139 insertions(+), 5 deletions(-)
-```
+{% endhighlight %}
 
 **Refactor**
 Reviewing the RpnCalculator there does not seem to be a need to do any refactoring. I do observe that the top method is still hard-coded, so an Example to drive that would be good.
 
 As for the Examples, there is one thing you can do to clean up a little duplication. Every Example enters the number 654, so add a before method:
-```ruby
+{% highlight ruby %}
     before(:each) do
       enter_number 654
     end
-```
+{% endhighlight %}
 
 * Add the before method and run your Examples. Make sure all Examples still pass.
 
@@ -1159,11 +1159,11 @@ You still have the question of whether there should or should not be a stack. An
 
 # Example: Enter actually puts values on the stack
 Up to this point, your examples have addressed the effect of the <enter> key on the x_register, but what about stored values? Consider the following:
-```
+{% highlight terminal %}
     7 <enter>
     14 <enter>
     99
-```
+{% endhighlight %}
 What can you say about the RpnCalculator?
 * The x_register has a value of 99. 
 * The x_register can still receive receive digits. 
@@ -1178,11 +1178,11 @@ So with that in mind, you can continue with one a few more Examples working with
 
 **Example**
 Here is an example that moves your production code just a little forward:
-```ruby
+{% highlight ruby %}
     it "should have two operands available after one <enter>" do
       @calculator.available_operands.should == 2
     end
-```
+{% endhighlight %}
 
 This Example suggests that after the first <enter> you should have two operands available, the one on the stack and the x_register.
 
@@ -1191,11 +1191,11 @@ This Example suggests that after the first <enter> you should have two operands 
 * Add the missing method with an empty implementation.
 
 * Get the example to pass:
-```ruby
+{% highlight ruby %}
       def available_operands
         2
       end
-```
+{% endhighlight %}
 
 * Verify that all of your Examples now pass.
 
@@ -1215,17 +1215,17 @@ This Example really just extended the API of the RpnCalcualtor. You might be fee
 The operator_count is hard-coded, this Example will make it harder to get away with that.
 
 **Example**
-```ruby
+{% highlight ruby %}
     it "should increase the operand count after each <enter>" do
       enter_number 13
       @calculator.available_operands.should == 3
     end
-```
+{% endhighlight %}
 
 * Create this Example. Notice that since you added no new API calls to the RpnCalculator's interface, you can write the complete Example while following the second law of TDD/BDD.
 
 * Verify that your Example fails:
-```
+{% highlight terminal %}
     - should increase the operand count after each <enter> (FAILED - 1)
     
     1)
@@ -1237,51 +1237,51 @@ The operator_count is hard-coded, this Example will make it harder to get away w
     Finished in 0.026028 seconds
     
     9 examples, 1 failure
-```
+{% endhighlight %}
 
 There are two ways to make this work. Here's one way to get this to pass (don't do this):
 **Update initialize**
-```ruby
+{% highlight ruby %}
       def initialize
         reset_input
         @op_count = 1
       end
-```
+{% endhighlight %}
 **Update execute_function**
-```ruby
+{% highlight ruby %}
       def execute_function(function_symbol)
         @x_register_should_reset = true
         @op_count += 1
       end 
-```
+{% endhighlight %}
 **Update operand_count**
-```ruby
+{% highlight ruby %}
       def available_operands
         @op_count
       end
-```
+{% endhighlight %}
 
 Alternatively, you can use an array and actually store the values entered (notice, you change the same methods, add the same amount of code):
 **Update initialize**
-```ruby
+{% highlight ruby %}
       def initialize
         reset_input
         @operands = []
       end
-```
+{% endhighlight %}
 **Update execute_function**
-```ruby
+{% highlight ruby %}
       def execute_function(function_symbol)
         @x_register_should_reset = true
         @operands << x_register
       end
-```
+{% endhighlight %}
 **Update operand_count**
-```ruby
+{% highlight ruby %}
       def available_operands
         @operands.length + 1
       end
-```
+{% endhighlight %}
 
 Which of these is the least amount of code that will get the Example to pass? Both involve 3 lines of code added to 3 methods. One uses an integer, one uses an array, and an array is more complex than an integer, though in Ruby they are both objects. 
 
@@ -1310,11 +1310,11 @@ The second solution is a good one and it is not over design given the domain con
 A quick review of the code shows a hard-coded top method. Now that you have a stack in place, can you simply return the "top" of the array?
 
 * Experiment, change the implementation of top:
-```
+{% highlight terminal %}
   def top
     @operands.last
   end 
-```
+{% endhighlight %}
 
 * Run your Examples, everything still passes.
 
@@ -1333,7 +1333,7 @@ Right now, there's no way to know if what is on the stack is the right thing on 
 
 **Example**
 Here is an example that verifies the stack behavior of the RpnCalculator:
-```ruby
+{% highlight ruby %}
       describe "Stack" do
         it "should contain the correct items in the correct order" do
           enter_number 4
@@ -1344,26 +1344,26 @@ Here is an example that verifies the stack behavior of the RpnCalculator:
           @calculator.pop!.should == 4
         end
       end 
-```
+{% endhighlight %}
 
 First observation: This code will not run because there is no pop! method on the RpnCalcualtor.
 
 * Create the Example, verify that the test fails as expected.
 
 * Add an empty pop! method to verify that the Example fails for the right reason:
-```ruby
+{% highlight ruby %}
       def pop!
       end
-```
+{% endhighlight %}
 
 * Run your Examples.
 
 * Implement pop!:
-```ruby
+{% highlight ruby %}
       def pop!
         @operands.pop
       end
-```
+{% endhighlight %}
 
 * Verify that your Examples pass.
 
@@ -1385,7 +1385,7 @@ The stack on an RpnCalculator is conceptually filled with 0's when it has no val
 **Example**
 These two are closely related, so here, for the first time, are two complete examples that you will fix at the same time.
 
-```ruby
+{% highlight ruby %}
     it "should return 0 when pop!'ing from an empty stack" do
       @calculator.pop!.should == 0
     end
@@ -1393,10 +1393,10 @@ These two are closely related, so here, for the first time, are two complete exa
     it "should return 0 for top when stack empty" do
       @calculator.top.should == 0
     end
-```
+{% endhighlight %}
 
 * Create these Examples, they will both fail the same way:
-```
+{% highlight terminal %}
     - should return 0 when pop!'ing from an empty stack (FAILED - 1)
     - should return 0 for top when stack empty (FAILED - 2)
     
@@ -1415,10 +1415,10 @@ These two are closely related, so here, for the first time, are two complete exa
     Finished in 0.031744 seconds
     
     12 examples, 2 failures
-```
+{% endhighlight %}
 
 * When code pop's values off of an empty array, the array returns nil. The same thing happens when code calls top. This will fix both of your failing Examples:
-```ruby
+{% highlight ruby %}
       def top
         @operands.length > 0 ? @operands.last : 0
       end
@@ -1426,7 +1426,7 @@ These two are closely related, so here, for the first time, are two complete exa
       def pop!
         @operands.length > 0 ? @operands.pop : 0
       end
-```
+{% endhighlight %}
 
 * Make these changes and verify all of your Examples are passing.
 
@@ -1445,7 +1445,7 @@ Normally, at this point I'd say "you cannot change a system-defined class, so yo
 However, in Ruby, classes are never closed. You can add methods to a class anytime. Adding methods to Array is a bad idea since the Array class is used all over the place. However, Ruby also allows you to add methods to an instance. 
 
 This is crazy. Here is an example of how you could do that (don't do this):
-```ruby
+{% highlight ruby %}
       def create_operand_stack
         stack = []
         def stack.pop!
@@ -1462,7 +1462,7 @@ This is crazy. Here is an example of how you could do that (don't do this):
     
       puts custom_stack.top == 0
       puts custom_stack.pop! == 0
-```
+{% endhighlight %}
 
 The result from running this will be "true" printed twice. But if you try to simply create an array, you will not see the same results. Neither method is defined on the Array class.
 
@@ -1477,7 +1477,7 @@ Before you start, did you notice that the Context for the last three Examples wa
 Next, you are going to do some "big" changes. It won't take long, but this will be the longest amount of time the tutorial will have you work before you can see your Examples running. Note your reaction to the change.
 
 * Change the structure of rpn_calculator_spec.rb:
-```ruby
+{% highlight ruby %}
     describe "RPN Calculator" do
       ...
     end
@@ -1485,12 +1485,12 @@ Next, you are going to do some "big" changes. It won't take long, but this will 
     describe "Stack" do
       ...
     end
-```
+{% endhighlight %}
 
 If you ran your examples now, the ones in the Stack context will fail. Why? Because they no longer pick up the automatically-created calculator object form the before in the "RPN Calculator" context.
 
 * Update the "Stack" context:
-```ruby
+{% highlight ruby %}
     describe "OperandStack" do
       before (:each) do
         @stack = OperandStack.new
@@ -1504,14 +1504,14 @@ If you ran your examples now, the ones in the Stack context will fail. Why? Beca
         @stack.top.should == 0
       end
     end
-```
+{% endhighlight %}
 
 This still won't pass. There's no OperandStack class.
 
 * Move the entire OperandStack context into a new file called "operand_stack_spec.rb".
 
 * Now your rpn_calculator_spec will pass:
-```bash
+{% highlight bash %}
     Macintosh-7% spec -f s -c rpn_calculator_spec.rb     
     
     RPN Calculator
@@ -1535,10 +1535,10 @@ This still won't pass. There's no OperandStack class.
     Finished in 0.027715 seconds
     
     10 examples, 0 failures
-```
+{% endhighlight %}
 
 * Next, create a new class called OperandStack in a file called opeand_stack.rb:
-```ruby
+{% highlight ruby %}
     class OperandStack
       def initialize
         @operands = []
@@ -1560,12 +1560,12 @@ This still won't pass. There's no OperandStack class.
         @operands << value
       end
     end
-```
+{% endhighlight %}
 
 Note that these are mostly just//** copies**// of methods from RpnCalculator. There is one new method, <<, which just delegates to a method of the same name.
 
 * Verify that your operand_stack_spec.rb now passes:
-```
+{% highlight terminal %}
     Macintosh-7% spec -f s -c operand_stack_spec.rb
     
     OperandStack
@@ -1575,12 +1575,12 @@ Note that these are mostly just//** copies**// of methods from RpnCalculator. Th
     Finished in 0.013598 seconds
     
     2 examples, 0 failures
-```
+{% endhighlight %}
 
 Did you fully test this class? No. What you instead did was extract a class and then copy the tests that were directly testing it. You are not writing new code, you are refactoring the solution.
 
 * Run all of your Examples, everything should be passing:
-```
+{% highlight terminal %}
     Macintosh-7% spec -f s -c *_spec.rb
     
     OperandStack
@@ -1608,7 +1608,7 @@ Did you fully test this class? No. What you instead did was extract a class and 
     Finished in 0.029495 seconds
     
     12 examples, 0 failures
-```
+{% endhighlight %}
 
 **Intra-refactoring Check-In**
 * All of your Examples are passing, right? Now is a great time to check in before moving to the next step.
@@ -1619,58 +1619,58 @@ Now you should refactor the RpnCalcualtor to use your newly-created class. As wi
 * Add "require 'operand_stack' to the beginning of your rpn_calculator.rb file.
 
 * Update the initialize method:
-```ruby
+{% highlight ruby %}
       def initialize
         reset_input 
         @operands = []
         @operand_stack = OperandStack.new
       end
-```
+{% endhighlight %}
 
 * Run your Examples, everything should still pass.
 
 * Update execute_function to duplicate the work of storing the x_register:
-```ruby
+{% highlight ruby %}
       def execute_function(function_symbol)
         @x_register_should_reset = true
         @operands << x_register
         @operand_stack << x_register
       end
-```
+{% endhighlight %}
 
 * Run your Examples, everything should still pass.
 
 * Update top:
-```ruby
+{% highlight ruby %}
       def top
         @operand_stack.top
       end
-```
+{% endhighlight %}
 
 * Run your Examples, everything should still pass.
 
 * Update pop!:
-```ruby
+{% highlight ruby %}
       def pop!
         @operand_stack.pop!
       end
-```
+{% endhighlight %}
 
 * Reviewing available_operands, you notice that there's no length method on Operand stack. So add it:
-```ruby
+{% highlight ruby %}
       def length
         @operands.length
       end
-```
+{% endhighlight %}
 
 * Run your Examples, everything should still pass.
 
 * Update available_operands:
-```ruby
+{% highlight ruby %}
       def available_operands
         @operand_stack.length + 1
       end
-```
+{% endhighlight %}
 
 * At this point, you can remove all code that refers to @operands (you'll change 2 places).
 
@@ -1696,7 +1696,7 @@ When you are just learning TDD or BDD, this kind of stuff is going to happen. Le
 **The Classes So Far**
 Here's one example of what all of your code should look like about now.
 **rpn_calculator_spec.rb**
-```ruby
+{% highlight ruby %}
     require 'rpn_calculator'
       
     describe "RPN Calculator" do
@@ -1771,10 +1771,10 @@ Here's one example of what all of your code should look like about now.
         end
       end
     end
-```
+{% endhighlight %}
 
 **rpn_calculator.rb**
-```ruby
+{% highlight ruby %}
     require 'operand_stack'
     
     class RpnCalculator
@@ -1814,10 +1814,10 @@ Here's one example of what all of your code should look like about now.
         @operand_stack.pop!
       end
     end
-```
+{% endhighlight %}
 
 **operand_stack_spec.rb**
-```ruby
+{% highlight ruby %}
     require "operand_stack"
       
     describe "OperandStack" do
@@ -1833,10 +1833,10 @@ Here's one example of what all of your code should look like about now.
         @stack.top.should == 0
       end 
     end 
-```
+{% endhighlight %}
 
 **operand_stack.rb**
-```ruby
+{% highlight ruby %}
     class OperandStack
       def initialize
         @operands = []
@@ -1862,22 +1862,22 @@ Here's one example of what all of your code should look like about now.
         @operands.length
       end
     end 
-```
+{% endhighlight %}
 
 # Example: A Binary Operator
 Some time ago you created your first Example to exercise the <enter> key. That resulted in the following method:
-```ruby
+{% highlight ruby %}
       def execute_function(function_symbol)
         @x_register_should_reset = true
         @operand_stack << x_register
       end
-```
+{% endhighlight %}
 
 Now it is time start executing more functions. The first function you'll support is +.
 
 **Example**
 Here is a basic example to get started:
-```
+{% highlight terminal %}
       describe "Basic Math Operators" do
         it "should add the x_regiser and the top of the stack" do
           enter_number 46
@@ -1885,11 +1885,11 @@ Here is a basic example to get started:
           @calculator.x_register.should == 92
         end
       end
-```
+{% endhighlight %}
 
 Why is the result 92? The support method enter_number
 * Create this Example and run it. The result is not quite right:
-```
+{% highlight terminal %}
     1)
     'RPN Calculator Basic Math Operators should add the x_regiser and the top of the stack' FAILED
     expected: 700,
@@ -1899,10 +1899,10 @@ Why is the result 92? The support method enter_number
     Finished in 0.03118 seconds
     
     13 examples, 1 failure
-```
+{% endhighlight %}
 
 * Getting this to pass is a "snap":
-```ruby
+{% highlight ruby %}
       def execute_function(function_symbol)
         if function_symbol == :enter
           @x_register_should_reset = true
@@ -1911,7 +1911,7 @@ Why is the result 92? The support method enter_number
           @input = 92.to_s
         end
       end
-```
+{% endhighlight %}
 
 * Get your Examples passing.
 
@@ -1926,7 +1926,7 @@ OK, the method you just updated, execute_function, is a bit of a mess. It does t
 So you'll separate this for now.
 
 * Extract two methods, enter, +:
-```ruby
+{% highlight ruby %}
       def enter
         @x_register_should_reset = true
         @operand_stack << x_register
@@ -1935,12 +1935,12 @@ So you'll separate this for now.
       def +
         @input = 92.to_s
       end
-```
+{% endhighlight %}
 
 * Make sure your Examples still pass.
 
 * Update the execute_function to use those two methods:
-```ruby
+{% highlight ruby %}
       def execute_function(function_symbol)
         if function_symbol == :enter
           enter
@@ -1948,7 +1948,7 @@ So you'll separate this for now.
           self.+
         end
       end
-```
+{% endhighlight %}
 
 * Update your RpnCalculator, verify that your Examples are all passing.
 
@@ -1962,22 +1962,22 @@ You've improved the execute_function but you have a stubbed-out + method. If you
 What should happen with + when there are no operands? Should it fail? Should it result in 0? If you're simulating an HP calculator, the result is 0. However, what it should do will be defined by the Examples you write.
 
 **Example**
-```ruby
+{% highlight ruby %}
     it "should result in 0 when the calculator is empty" do
       @calculator.execute_function(:+)
       @calculator.x_register.should == 0
     end
-```
+{% endhighlight %}
 
 * Create this Example. Verify that it fails.
 
 * Update the + method to actually do some work.
-```ruby
+{% highlight ruby %}
       def enter
         @x_register_should_reset = true
         @operand_stack << x_register
       end
-```
+{% endhighlight %}
 
 * Run your Example, make sure it works.
 
@@ -1986,9 +1986,9 @@ Check in your work.
 
 **Refactor**
 Something is starting to look strange. You may have noticed it the first time your code "supported" +. The following line:
-```ruby
+{% highlight ruby %}
     @input = result.to_s
-```
+{% endhighlight %}
 
 I'm not sure what to do with that yet because there's not enough code to make many decisions. It might be that the code will stay put. It just seems a bit strange.
 
@@ -2002,17 +2002,17 @@ The + method no does work. It has one strange line, and there's still the issue 
 Like <enter>, after perform +, the next character typed should clear the x_register and write into it. That seems like a good thing to check next.
 
 **Example**
-```ruby
+{% highlight ruby %}
     it "should reset the x_register after +" do
       enter_number 99
       @calculator.execute_function(:+)
       @calculator.digit_pressed 8
       @calculator.x_register.should == 8
     end
-```
+{% endhighlight %}
 
 * Create this Example. Run it and you'll notice that it fails:
-```
+{% highlight terminal %}
     1)
     'RPN Calculator Basic Math Operators should reset the x_register after +' FAILED
     expected: 8,
@@ -2022,10 +2022,10 @@ Like <enter>, after perform +, the next character typed should clear the x_regis
     Finished in 0.032479 seconds
     
     16 examples, 1 failure
-```
+{% endhighlight %}
 
 * Make a quick change to the + method to fix this:
-```ruby
+{% highlight ruby %}
       def +
         lhs = @operand_stack.pop!
         rhs = x_register
@@ -2033,7 +2033,7 @@ Like <enter>, after perform +, the next character typed should clear the x_regis
         @input = result.to_s
         @x_register_should_reset = true
       end
-```
+{% endhighlight %}
 
 * Run your Examples, they should all pass.
 
@@ -2042,18 +2042,18 @@ Check in your code. This time you will do a little bit of refactorig.
 
 **Refactor**
 There is a duplicated line in the enter and + methods:
-```ruby
+{% highlight ruby %}
     @x_register_should_reset = true
-```
+{% endhighlight %}
 
 At the very least, this line of code could be put into a well-named method.
 
 * Create a new method (if your IDE supports Extract method, use it):
-```ruby
+{% highlight ruby %}
       def set_override_mode
         @x_register_should_reset = true
       end
-```
+{% endhighlight %}
 
 * Make sure your Examples still pass.
 
@@ -2074,14 +2074,14 @@ It's time to come back to that, if for no other reason than to expression a "con
 
 **Example**
 Here's an example:
-```ruby
+{% highlight ruby %}
     it "should should reduce the stack by one" do
       enter_number 9
       enter_number 8
       @calculator.execute_function :+
       @calculator.available_operands.should == 2
     end
-```
+{% endhighlight %}
 
 * Create this example.
 
@@ -2094,39 +2094,39 @@ Check in your work.
 
 **Refactor**
 There's starting to be a bit of cruft in the Examples and maybe something in the RpnCalcualtor. You might already be noticing yourself. For example, in RpnCalculator, to set the "x_register" the code does the following:
-```ruby
+{% highlight ruby %}
     @input = result.to_s
     set_override_mode
-```
+{% endhighlight %}
 That is not self evident. In addition, getting two operands for a binary operator involves two very different expressions:
-```ruby
+{% highlight ruby %}
     lhs = @operand_stack.pop!
     rhs = x_register
-```
+{% endhighlight %}
 
 The last two Examples are OK, though do you believe that the differences between digit_pressed and enter_number is obvious?
 
 Start by making an improvement to the bottom part of the + method:
 * Add a new method that is private (since private sets subsequent methods, make this the last method in your RpnCalculatorClass):
-```ruby
+{% highlight ruby %}
       private
       def reset_x_register(value)
         @input = value.to_s
         set_override_mode
       end
-```
+{% endhighlight %}
 
 * Verify your Examples still pass.
 
 * Update +:
-```ruby
+{% highlight ruby %}
       def +
         lhs = @operand_stack.pop!
         rhs = x_register
         result = lhs + rhs
         reset_x_register result
       end
-```
+{% endhighlight %}
 
 * Verify your Examples still pass.
 
@@ -2144,14 +2144,14 @@ You now have the basics of the + operator worked out. You make resetting the x_r
 Adding support for - will allow you to see how your solution grows as new math functions are supported. You have already vetted + fairly well, so adding - should be a snap.
 
 **Example**
-```ruby
+{% highlight ruby %}
     it "should subtract the first number entered from the second" do
       enter_number 4
       @calculator.digit_pressed 9
       @calculator.execute_function :-
       @calculator.x_register.should == -5
     end
-```
+{% endhighlight %}
 
 At this point, hopefully you are getting bothered by the difference between lines that start with an @ and ones that do not. Add that to your punch-list.
 
@@ -2160,7 +2160,7 @@ At this point, hopefully you are getting bothered by the difference between line
 Were you surprised by the result? The results suggest that instead of -, your calculator performed +. Why is that?
 
 A quick review of execute_function should give you a clue:
-```ruby
+{% highlight ruby %}
       def execute_function(function_symbol)
         if function_symbol == :enter
           enter
@@ -2168,13 +2168,13 @@ A quick review of execute_function should give you a clue:
           self.+
         end
       end
-```
+{% endhighlight %}
 
 So if something is not :enter, then it is :+. Add that to your punch-list:
 * Your execute_function should fail if the operator is not found.
 
 * However, you are not working on that Example. So update this method to call -:
-```ruby
+{% highlight ruby %}
       def execute_function(function_symbol)
         if function_symbol == :enter
           enter
@@ -2184,13 +2184,13 @@ So if something is not :enter, then it is :+. Add that to your punch-list:
           self.-
         end
       end
-```
+{% endhighlight %}
 
 * Now your code is missing the function - (which you discovered by running your Examples, right?), so add it:
-```ruby
+{% highlight ruby %}
       def -
       end
-```
+{% endhighlight %}
 
 * Run your Example, now it should be failing for the right reason (value did not match).
 
@@ -2199,14 +2199,14 @@ You have two obvious choices here:
 * Create a duplicate of the + method and change it to be -
 
 * Rather than following the third rule, you can safely duplicate the + method and update it (you'll be refactoring this soon anyway):
-```ruby
+{% highlight ruby %}
       def -
         lhs = @operand_stack.pop!
         rhs = x_register
         result = lhs - rhs
         reset_x_register result
       end
-```
+{% endhighlight %}
 
 * Verify that all of your Examples are passing.
 
@@ -2226,11 +2226,11 @@ Looks like you have a lot of work.
 First, if you have been chomping at the bits to fix execute_function, now is the time to do so:
 
 * Update execute_function:
-```ruby
+{% highlight ruby %}
       def execute_function(function_symbol)
         self.send(function_symbol)
       end
-```
+{% endhighlight %}
 
 * Run your Examples to verify that they all pass.
 
@@ -2247,32 +2247,32 @@ Even so, this is an improvement and it follows a Ruby idiom.
 Next, you'll remove the violation of the DRY principle:
 
 * Add a new private method to your RpnCalculator method:
-```ruby
+{% highlight ruby %}
       def execute_binary_operator
         lhs = @operand_stack.pop!
         rhs = x_register
         result = yield lhs, rhs
         reset_x_register result
       end
-```
+{% endhighlight %}
 
 * Make sure your Examples still pass.
 
 * Update the + method:
-```ruby
+{% highlight ruby %}
       def +
         execute_binary_operator { |lhs, rhs| lhs + rhs }
       end
-```
+{% endhighlight %}
 
 * Run your Examples, make sure they still pass.
 
 * Update the - method:
-```ruby
+{% highlight ruby %}
       def +
         execute_binary_operator { |lhs, rhs| lhs + rhs }
       end
-```
+{% endhighlight %}
 
 * Run your Examples, make sure they still pass.
 
@@ -2281,7 +2281,7 @@ Looks like you've managed to fix the first three things on your punch-list with 
 Before calling this refactoring session done, clean up your Examples to make this a bit more self-explanatory.
 
 * Add some new support methods (put these at the same place as enter_number):
-```ruby
+{% highlight ruby %}
       def type(number)
         number.to_s.each_char{ |d| @calculator.digit_pressed d }
       end
@@ -2293,12 +2293,12 @@ Before calling this refactoring session done, clean up your Examples to make thi
       def validate_x_register(expected)
         @calculator.x_register.should == expected
       end
-```
+{% endhighlight %}
 
 * Make sure your examples still pass.
 
 * Update "should subtract the first ...":
-```ruby
+{% highlight ruby %}
     it "should subtract the first number entered from the second" do
       type 4
       press :enter
@@ -2306,14 +2306,14 @@ Before calling this refactoring session done, clean up your Examples to make thi
       press :-
       validate_x_register -5
     end 
-```
+{% endhighlight %}
 
 * Run your Examples, they should all pass.
 
 [[include page="sidebar_start"]][[include page="ruby.sidebar.ExampleStylesAndYourAudience"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 However, just to place a (somewhat arbitrary) stake in the ground, here's an updated version of rpn_calculator_spec.rb:
-```ruby
+{% highlight ruby %}
     require 'rpn_calculator'
     
     describe "RPN Calculator" do
@@ -2451,7 +2451,7 @@ However, just to place a (somewhat arbitrary) stake in the ground, here's an upd
         end
       end
     end
-```
+{% endhighlight %}
 
 * Get to where all of your Examples are passing.
 
@@ -2476,13 +2476,13 @@ This second issue is not addressed in this tutorial.
 So what happens when your calculator is asked to execute an unknown function?
 
 **Example**
-```ruby
+{% highlight ruby %}
       describe "Handling Functions" do
         it "should raise an exception if attempting to run missing function" do
           lambda { press :bogus_function_name }.should raise_error NoMethodError
         end
       end
-```
+{% endhighlight %}
 
 * Create this new Context and verify that it passes.
 
@@ -2506,7 +2506,7 @@ You won't always figure out to do that, so you've managed to recover gracefully.
 You have a working design for + and -, adding * and / should be a snap. First your calculator will support multiplication.
 
 **Example**
-```ruby
+{% highlight ruby %}
     it "should multiply the first number entered by the second" do
       type 3
       press :enter 
@@ -2514,21 +2514,21 @@ You have a working design for + and -, adding * and / should be a snap. First yo
       press :*
       validate_x_register 27
     end
-```
+{% endhighlight %}
 
 * Create this example. Run it and verify that your test fails with a missing method.
 
 * Create the method:
-```ruby
+{% highlight ruby %}
       def *
         execute_binary_operator { |lhs, rhs| lhs * rhs }
       end 
-```
+{% endhighlight %}
 
 * Verify that your Examples pass.
 
 That was so quick, before checking in add one more example:
-```ruby
+{% highlight ruby %}
     it "should divide the first number entered by the second" do
       type 9
       press :enter
@@ -2536,14 +2536,14 @@ That was so quick, before checking in add one more example:
       press :/
       validate_x_register 3
     end
-```
+{% endhighlight %}
 
 * Add the missing method:
-```ruby
+{% highlight ruby %}
       def /
         execute_binary_operator { |lhs, rhs| lhs / rhs }
       end
-```
+{% endhighlight %}
 
 * Verify that your Examples pass.
 

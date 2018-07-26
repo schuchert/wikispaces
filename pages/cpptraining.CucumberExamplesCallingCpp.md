@@ -12,7 +12,7 @@ title: cpptraining.CucumberExamplesCallingCpp
 ## Starting with Cucumber
 * Create a directory to store your work
 * In that directory, type cucumber:
-```
+{% highlight terminal %}
 C:\learncpp>mkdir ruby_cpp
 C:\learncpp>cd ruby_cpp
 C:\learncpp\ruby_cpp>cucumber
@@ -20,12 +20,12 @@ You don't have a 'features' directory.  Please create one to get started.
 See http://cukes.info/ for more information.
 
 C:\learncpp\ruby_cpp>
-```
+{% endhighlight %}
 
 * Create a directory called "features"
 * Create a feature description file in the "features" directory called rpncalc_basic_operations.feature:
 //**rpncalc_basic_operations.feature**//
-```
+{% highlight terminal %}
 Feature: Basic Operations
   Scenario Outline: Perform some of the basic operations
   Given the input "<input>"
@@ -42,10 +42,10 @@ Feature: Basic Operations
   |       | +             | 0       |
   | 8 0   | /             | <error> |
   |       | $%^unknown*&^ | <error> |
-```
+{% endhighlight %}
 
 * Run cucumber again, it will report missing steps. Copy those code examples;
-```
+{% highlight terminal %}
 You can implement step definitions for undefined steps with these snippets:
 
 Given /^the input "([^"]*)"$/ do |arg1|
@@ -62,11 +62,11 @@ end
 
 If you want snippets in a different programming language, just make sure a file
 with the appropriate file extension exists where cucumber looks for step definitions.
-```
+{% endhighlight %}
 * Under the features directory create a directory called step_definitions
 * In the step_definitions directory create a file called rpncalc_steps.rb
 //**rpncalc_steps.rb**//
-```
+{% highlight terminal %}
 Given /^the input "([^"]*)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
@@ -78,18 +78,18 @@ end
 Then /^the result should be "([^"]*)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
-```
+{% endhighlight %}
 ## Creating the basic glue code
 * Create a file in the top-level directory called extconf.rb:
 //**extconf.rb**//
-```
+{% highlight terminal %}
 require 'mkmf'
 dir_config("fixture_glue")
 create_makefile("fixture_glue")
-```
+{% endhighlight %}
 * Create a file called fixture_glue.cpp:
 //**fixture_glue.cpp**//
-```
+{% highlight terminal %}
 # include "ruby.h"
  
 using namespace std;
@@ -142,9 +142,9 @@ void Init_fixture_glue() {
     rb_define_method(cRpnCalcFixture, "enter", (V_F)RpnCalcFixture_Enter, 1);
 }
 }
-```
+{% endhighlight %}
 * Build and install
-```
+{% highlight terminal %}
 C:\learncpp\ruby>make
 g++ -I. -IC:/Ruby192/include/ruby-1.9.1/i386-mingw32 -I/C/Ruby192/include/ruby-1
 ...<snip>...
@@ -156,11 +156,11 @@ C:\learncpp\ruby>make install
 i386-msvcrt
 
 C:\learncpp\ruby>
-```
+{% endhighlight %}
 
 ## Connecting to the glue code
 * Update your rpncalc_steps.rb:
-```
+{% highlight terminal %}
 require 'fixture_glue'
 
 Given /^the input "([^"]*)"$/ do |arg1|
@@ -175,10 +175,10 @@ end
 Then /^the result should be "([^"]*)"$/ do |arg1|
   # this should call getX, but the real calc is not implemented
 end
-```
+{% endhighlight %}
 
 * Re-run cucumber:
-```
+{% highlight terminal %}
 C:\learncpp\ruby_cpp>cucumber
 Feature: Basic Operations
 
@@ -245,5 +245,5 @@ Deleting calc
 Deleting calc
 Deleting calc
 Deleting calc
-```
+{% endhighlight %}
 [<--Back]({{ site.pagesurl}}/CppTraining#ruby)

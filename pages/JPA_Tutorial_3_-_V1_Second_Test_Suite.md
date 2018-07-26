@@ -11,7 +11,7 @@ Note that we did not also include retrieving a book. We use this functionality i
 We've already written a test very much like the above list if you consider PatronTest. We can extract quite a bit of common code out of our PatronTest and reuse it in our BookTest class. Take a look at this base class (note the embedded comments contain background information):
 [#BaseDbDaoTest]({{site.pagesurl}}/#BaseDbDaoTest)
 **BaseDbDaoTest.java**
-```java
+{% highlight java %}
 package session;
 
 import javax.persistence.EntityManagerFactory;
@@ -86,13 +86,13 @@ public abstract class BaseDbDaoTest {
         emf.close();
     }
 }
-```
+{% endhighlight %}
 
 Now let’s see how this impacts the creation of our new BookTest class. We’ll start with everything but the tests and then look at each test.
 
 **Everything but the Tests**
 Here is the test class minus all of the tests. 
-```java
+{% highlight java %}
 package session;
 
 import static org.junit.Assert.assertEquals;
@@ -131,12 +131,12 @@ public class BookDaoTest extends BaseDbDaoTest {
         return dao;
     }
 }
-```
+{% endhighlight %}
 
 **Creating a Book**
 We wrote this pretty much the same as in the Patron test. It might seem like we could get further reuse between tests and we could but at the cost of probably a bit too much indirection.
 
-```java
+{% highlight java %}
     @Test
     public void createABook() {
         final Book b = createABookImpl();
@@ -151,11 +151,11 @@ We wrote this pretty much the same as in the Patron test. It might seem like we 
         return getDao().create("Enterprise JavaBeans 3.0", "978-0-596-00978-6",
                 Calendar.getInstance().getTime(), a1, a2);
     }
-```
+{% endhighlight %}
 
 **Removing a Book**
 This test method looks just like one in the PatronTest class. If you’re looking for an advanced exercise, consider moving all of the tests in the base class and making the derived class methods use them somehow. Warning, you might want to look up annotation inheritance.
-```java
+{% highlight java %}
     @Test
     public void removeABook() {
         final Book b = createABookImpl();
@@ -165,10 +165,10 @@ This test method looks just like one in the PatronTest class. If you’re lookin
         found = getDao().retrieve(b.getId());
         assertNull(found);
     }
-```
+{% endhighlight %}
 
 **Updating a Book**
-```java
+{% highlight java %}
     @Test
     public void updateABook() {
         final Book b = createABookImpl();
@@ -178,20 +178,20 @@ This test method looks just like one in the PatronTest class. If you’re lookin
         final Book found = getDao().retrieve(b.getId());
         assertEquals(initialAuthorCount + 1, found.getAuthors().size());
     }
-```
+{% endhighlight %}
 
 **Try to find a non- existant book**
-```java
+{% highlight java %}
     @Test
     public void tryToFindBookThatDoesNotExist() {
         final Book b = getDao().retrieve(-1123123123l);
         assertNull(b);
     }
-```
+{% endhighlight %}
 
 Note that with the introduction of the base class we’ll also need to make changes to PatronTest. Here’s the updated version of PatronTest taking the new base class into consideration.
 **PatronDaoTest.java Updated**
-```java
+{% highlight java %}
 package session;
 
 import static org.junit.Assert.assertEquals;
@@ -278,13 +278,13 @@ public class PatronDaoTest extends BaseDbDaoTest {
         assertNull(p);
     }
 } 
-```
+{% endhighlight %}
 
 ### The Dao Classes
 The BookDao looks a whole lot like the PatronDao:
 [#BookDao]({{site.pagesurl}}/#BookDao)
 **BookDao.java**
-```java
+{% highlight java %}
 package session;
 
 import java.util.Date;
@@ -320,12 +320,12 @@ public class BookDao extends BaseDao {
         getEm().merge(b);
     }
 }
-```
+{% endhighlight %}
 
 Note that this class depends on a simple base class, the BaseDao, which offers support for storing the Entity Manager attribute:
 [#BaseDao]({{site.pagesurl}}/#BaseDao)
 **BaseDao.java**
-```java
+{% highlight java %}
 package session;
 
 import javax.persistence.EntityManager;
@@ -346,12 +346,12 @@ public abstract class BaseDao {
         return em;
     }
 }
-```
+{% endhighlight %}
 
 And finally, here’s the updated PatronDao that has been rewritten to use the BaseDao.
 [#PatronDao]({{site.pagesurl}}/#PatronDao)
 **PatronDao.java**
-```java
+{% highlight java %}
 package session;
 
 import entity.Address;
@@ -385,7 +385,7 @@ public class PatronDao extends BaseDao {
         return getEm().merge(p);
     }
 }
-```
+{% endhighlight %}
 ### The Entity Model
 We’ve added support for a Book and along the way we had to add in a few more classes. After the second test suite, we’re up to the following entities:
 
@@ -399,7 +399,7 @@ We’ve added support for a Book and along the way we had to add in a few more c
 Now let’s review the code for each of these entities. As with previous examples, pay attention to the embedded comments.
 
 **Address**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Column;
@@ -503,10 +503,10 @@ public class Address {
         this.id = id;
     }
 }
-```
+{% endhighlight %}
 
 **Author**
-```java
+{% highlight java %}
 package entity;
 
 import java.util.Set;
@@ -610,10 +610,10 @@ public class Author {
         this.name = name;
     }
 }
-```
+{% endhighlight %}
 
 **Book**
-```java
+{% highlight java %}
 package entity;
 
 import java.util.Calendar;
@@ -768,10 +768,10 @@ public class Book {
         this.borrowedBy = borrowedBy;
     }
 }
-```
+{% endhighlight %}
 
 **Name**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Column;
@@ -824,10 +824,10 @@ public class Name {
         }
     }
 }
-```
+{% endhighlight %}
 
 **Patron**
-```java
+{% highlight java %}
 package entity;
 
 import java.util.HashSet;
@@ -934,4 +934,4 @@ public class Patron {
         this.name = name;
     }
 }
-```
+{% endhighlight %}

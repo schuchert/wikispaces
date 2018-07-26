@@ -16,7 +16,7 @@ Every project using JBoss AOP needs several JAR files. You defined a classpath v
 # Click **OK**
 
 You'll need to do this for each project you create. If you don't you'll see a long stack trace that resembles the following:
-```
+{% highlight terminal %}
 java.lang.reflect.InvocationTargetException
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
@@ -40,5 +40,5 @@ Caused by: java.lang.NoClassDefFoundError: javassist/ClassPool
 	at org.jboss.aop.standalone.Agent.premain(Agent.java:41)
 	... 5 more
 Exception in thread "main" 
-```
+{% endhighlight %}
 [<--Back]({{site.pagesurl}}/Environment_Configuration_for_JBOSS_AOP)

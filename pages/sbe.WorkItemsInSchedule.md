@@ -2,7 +2,7 @@
 title: sbe.WorkItemsInSchedule
 ---
 ## Before
-```smalltalk
+{% highlight smalltalk %}
 Feature: Handling Scheduling Conflicts
   As an operator I want to make sure feature conflicts are managed by an appropriate policy.
 
@@ -36,10 +36,10 @@ Feature: Handling Scheduling Conflicts
     And now is 10:15
     When now is 10:21
     Then I2 should be completed
-```
+{% endhighlight %}
 
 ## After Removing All Extra Time "Movement" Steps
-```smalltalk
+{% highlight smalltalk %}
 Feature: Handling Scheduling Conflicts
   As an operator I want to make sure feature conflicts are managed by an appropriate policy.
 
@@ -73,12 +73,12 @@ Feature: Handling Scheduling Conflicts
     Given now is 9:59
     When the time becomes 10:21
     Then Megatron_Head should be completed
-```
+{% endhighlight %}
 
 ## After Gojko's Twitter Comment
 It's amazing what 140 characters can accomplish. He did it in fewer than that.
 
-```smalltalk
+{% highlight smalltalk %}
 Feature: Handling Scheduling Conflicts
   As an operator I want to make sure feature conflicts are managed by an appropriate policy.
 
@@ -105,4 +105,4 @@ Feature: Handling Scheduling Conflicts
 
   Scenario: Delayed work item finishes late
     Then Megatron_Head should be completed at 10:21
-```
+{% endhighlight %}

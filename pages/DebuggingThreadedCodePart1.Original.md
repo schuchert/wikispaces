@@ -9,7 +9,7 @@ This page describes some of what it takes to successfully test thread-related co
 Here is some simple production code:
 
 **ClassWithThreadingProblem.java**
-```java
+{% highlight java %}
 01: package example;
 02: 
 03: public class ClassWithThreadingProblem {
@@ -19,7 +19,7 @@ Here is some simple production code:
 07:         return ++lastId;
 08:     }
 09: }
-```
+{% endhighlight %}
 
 The name should be a hint that it has problems, and it does. If a single instance of this class is used by more than one thread, it is possible that expression ++lastId on line 7 could fail. How? If one thread starts executing that method and another thread preempts it, than we could lose one of the updates.
 
@@ -31,7 +31,7 @@ You can safely [skip]({{ site.pagesurl}}/DebuggingThreadedCodePart1.Original#Ski
 
 What is an atomic operation? Any operation that cannot be interrupted from when it starts to when it completes. For example, in the following code, line 5, where 1 is assigned to i, is atomic. It cannot be interrupted:
 
-```java
+{% highlight java %}
 01: public class Example {
 02:    int value;
 03:
@@ -39,11 +39,11 @@ What is an atomic operation? Any operation that cannot be interrupted from when 
 05:        value = 1;
 06:    }
 07:}
-```
+{% endhighlight %}
 
 What happens if we change line 5 to use ++ instead? It is still atomic?
 
-```java
+{% highlight java %}
 01: public class Example {
 02:    int value;
 03:
@@ -51,7 +51,7 @@ What happens if we change line 5 to use ++ instead? It is still atomic?
 05:        ++value;
 06:    }
 07:}
-```
+{% endhighlight %}
 
 In this case, the answer is it can be interrupted, it is not atomic.
 
@@ -102,7 +102,7 @@ Here is such a test:
 
 **ClassWithThreadingProblemTest.java**
 
-```java
+{% highlight java %}
 01: package example;
 02: 
 03: import static org.junit.Assert.fail;
@@ -141,7 +141,7 @@ Here is such a test:
 35:         fail("This test should have exposed a threading issue but it did not.");
 36:     }
 37: }
-```
+{% endhighlight %}
 ### Interesting Lines
 
 |Line|Description|
@@ -202,9 +202,9 @@ A short time before writing this, I wrote something on using the -javaagent VM a
 
 To instrument your classes using [ConTest](http:www.haifa.ibm.com/projects/verification/contest/index.html), you issue a command like the following:
 
-```terminal
+{% highlight terminal %}
 java -classpath ConTest.jar com.ibm.contest.instrumentation.Instrument Class1.class
-```
+{% endhighlight %}
 
 I wanted to avoid having to manually instrument, but while I was working on this, the team supporting ConTest added a class called ClassStreamInstrumentor(), which takes the raw bytes of classes loaded by the class loader and instruments them to work with ConTest.
 
@@ -230,17 +230,17 @@ To use this jar:
 * Add the ConTest.jar to your classpath
 * Start the VM with the following command (I've added some whitespace to make this readable):
 
-```terminal
+{% highlight terminal %}
 java -javaagent:Registrar.jar 
      -Dschuchert.ClassFileTransformer=schuchert.contest.DynamicInstrumentor 
      schuchert.agent.Main
-```
+{% endhighlight %}
 
 You should see results similar to this:
 
-```java
+{% highlight java %}
 Congratulations, everything appears to be working
-```
+{% endhighlight %}
 
 ## Configuration Details
 

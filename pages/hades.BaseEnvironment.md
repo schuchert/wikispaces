@@ -16,22 +16,22 @@ These instructions summarize/make heavy use of <http://www.vogella.de/articles/J
 
 Follow the instructions in the tutorial as is with the following three changes.
 * Update the Todo class' id filed by adding the following annotation:
-```java
+{% highlight java %}
 @SuppressWarnings("unused")
-```
+{% endhighlight %}
 
 * Update the persistence XML to always drop and re-create the tables:
 ** Replace this line:
-```
+{% highlight terminal %}
 <property name="eclipselink.ddl-generation" value="create-tables" />
-```
+{% endhighlight %}
 ** With this line:
-```
+{% highlight terminal %}
 <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
-```
+{% endhighlight %}
 
 * Instead of creating a main, create as a test:
-```java
+{% highlight java %}
 package shoe;
 
 import static org.junit.Assert.*;
@@ -87,4 +87,4 @@ public class SmokeTest {
 		return resultList;
 	}
 }
-```
+{% endhighlight %}

@@ -6,7 +6,7 @@ When we created Person we directly included address information into them. This 
 First, we'll create Address:
 [#Address]({{site.pagesurl}}/#Address)
 **Address.java**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Embeddable;
@@ -71,11 +71,11 @@ public class Address {
         this.zip = zip;
     }
 }
-```
+{% endhighlight %}
 
 Next, we need to update Person (doing so will cause our unit test class to no longer compile):
 **Person.java**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Embedded;
@@ -146,34 +146,34 @@ public class Person {
         this.address = address;
     }
 }
-```
+{% endhighlight %}
 
 Sure enough, if you review PersonTest.java, it no longer compiles. Before we go any further, let's update it to get it to compile and then verify that the unit tests still pass.
 
 Replace the following two lines:
-```java
+{% highlight java %}
     private final Person p1 = new Person("Brett", 'L', "Schuchert", "Street1",
             "Street2", "City", "State", "Zip");
     private final Person p2 = new Person("FirstName", 'K', "LastName",
             "Street1", "Street2", "City", "State", "Zip");
-```
+{% endhighlight %}
 
 with the following four lines
 
-```java
+{% highlight java %}
     private final Address a1 = new Address("A Rd.", "", "Dallas", "TX", "75001");
     private final Person p1 = new Person("Brett", 'L', "Schuchert", a1);
 
     private final Address a2 = new Address("B Rd.", "S2", "OkC", "OK", "73116");
     private final Person p2 = new Person("FirstName", 'K', "LastName", a2);
-```
+{% endhighlight %}
 
 Rerun your tests (**Ctrl-F11**) and make sure everything is all green.
 
 Next, we want to verify that the address we persist is in the database. Update the unit test method as follows:
 
 **PersonTest#insertAndRetrieve**
-```java
+{% highlight java %}
     @SuppressWarnings("unchecked")
     @Test
     public void insertAndRetrieve() {
@@ -197,6 +197,6 @@ Next, we want to verify that the address we persist is in the database. Update t
                     || streetAddress1.equals("B Rd."));
         }
     }
-```
+{% endhighlight %}
 
 Run your program and make sure it's all green.

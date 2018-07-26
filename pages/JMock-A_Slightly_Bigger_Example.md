@@ -16,7 +16,7 @@ This is a complete, albeit simple, example using jMock. To get this running, you
 # Take each of the following files and add them into a project in your favorite IDE
 
 ## WithdrawalTest.java
-```java
+{% highlight java %}
 package com.objectmentor.jmock;
 
 import static org.junit.Assert.assertEquals;
@@ -98,20 +98,20 @@ public class WithdrawalTest {
         assertTrue(expectedThrown);
     }
 }
-```
+{% endhighlight %}
 
 ## BankAccount.java
-```java
+{% highlight java %}
 package com.objectmentor.jmock;
 
 public interface BankAccount {
     int getBalance();
     void deduct(int i);
 }
-```
+{% endhighlight %}
 
 ## Withdrawal.java
-```java
+{% highlight java %}
 package com.objectmentor.jmock;
 
 public class Withdrawal {
@@ -139,16 +139,16 @@ public class Withdrawal {
         return executed;
     }
 }
-```
+{% endhighlight %}
 
 ## InsufficientFunds.java
 
-```java
+{% highlight java %}
 package com.objectmentor.jmock;
 
 public class InsufficientFunds extends RuntimeException {
     private static final long serialVersionUID = 1L;
 }
-```
+{% endhighlight %}
 
 [<--Back]({{site.pagesurl}}/TDD_Example_Catalog)

@@ -7,14 +7,14 @@ For the rest of this section, when you see **<project>**, replace it with **JpaT
 ### Update persistence.xml
 **Update Persistence Unit Name**
 The name of the persistence unit in your just-copied persistence.xml is **examplePersistenceUnit** in this example we use **lis** for Library Information System. Make the following change:
-```xml
+{% highlight xml %}
     <persistence-unit name="examplePersistenceUnit" 
                       transaction-type="RESOURCE_LOCAL">
-```
+{% endhighlight %}
 
-```xml
+{% highlight xml %}
     <persistence-unit name="lis" 
                       transaction-type="RESOURCE_LOCAL">
-```
+{% endhighlight %}
 
 Your project is now set up.

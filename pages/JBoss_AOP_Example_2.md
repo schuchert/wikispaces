@@ -9,7 +9,7 @@ Source files are here: [[file:JBossAOPExample2src.zip]]. If you need instruction
 Have a look at the following Main.main() method and the associated Address class.
 ----
 ## Main class
-```java
+{% highlight java %}
 package ex2;
 
 public class Main {
@@ -23,10 +23,10 @@ public class Main {
 		a.setZip("75001");
 	}
 }
-```
+{% endhighlight %}
 ----
 ## Address class
-```java
+{% highlight java %}
 package ex2;
 
 import java.io.Serializable;
@@ -79,7 +79,7 @@ public class Address implements Serializable {
 		this.zip = zip;
 	}
 }
-```
+{% endhighlight %}
 ----
 ## Assignment: Predict the Output
 

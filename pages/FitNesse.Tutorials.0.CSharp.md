@@ -20,31 +20,31 @@ In a nutshell, you are going to create a C# project, add some classes and then a
 # Update Page to have NSlim Configuration
 * Add the required configuration to the top of your DigitalVideoRecorder page:
 
-```
+{% highlight terminal %}
 !define TEST_SYSTEM {slim}
 {% raw %}
 !define COMMAND_PATTERN {%m -r fitSharp.Slim.Service.Runner,c:\tools\nslim\fitsharp.dll %p}
 {% endraw %}
 !define TEST_RUNNER {c:\tools\nslim\Runner.exe}
-```
+{% endhighlight %}
 
 * Add an import table so FitNesse will find the class in its namespace (above the Create Programs Table):
 
-```
+{% highlight terminal %}
 !|import|
 |DigitalVideoRecorder|
-```
+{% endhighlight %}
 
 # Add your code to Path
 * Edit your page and add the following lines (above the table that is already there):
 
-```
+{% highlight terminal %}
 !path C:\Projects\C_Sharp\DigitalVideoRecorder\DigitalVideoRecorder\bin\Debug\DigitalVideoRecorder.dll
-```
+{% endhighlight %}
 
 * Your page should now be:
 
-```
+{% highlight terminal %}
 !define TEST_SYSTEM {slim}
 {% raw %}
 !define COMMAND_PATTERN {%m -r fitSharp.Slim.Service.Runner,c:\tools\nslim\fitsharp.dll %p}
@@ -62,7 +62,7 @@ In a nutshell, you are going to create a C# project, add some classes and then a
 !|Create Programs|
 |Name|Channel|DayOfWeek|TimeOfDay|DurationInMinutes|id?|
 |House|4|Monday|19:00|60|$ID=|
-```
+{% endhighlight %}
 
 * Click on the **Test** button, you should see some green and red now:
 [[image:CSharpMissingMethods.gif width="800" height="787"]]
@@ -71,7 +71,7 @@ You have two tables in your page. The first table is an import table, it tells F
 
 The second table is a decision table. (Those familiar with Fit, may recognize the similarity between Decision Tables and Column Fixtures.) The first row names a class, CreatePrograms in this case. You created this class above. The second row names the columns. Column headers that do not have a question mark in their name require a "set" method to back them. Column headers with a question mark require a method that returns a value. In our case we have 6 columns, so we need to add 6 methods, 5 setters and one method which returns a value. Here's the complete "stub" class to get this table fully passing:
 
-```csharp
+{% highlight csharp %}
 using System;
 
 namespace DigitalVideoRecorder
@@ -109,7 +109,7 @@ namespace DigitalVideoRecorder
     }
   }
 }
-```
+{% endhighlight %}
 
 * Edit your CreatePrograms class and add the missing methods.
 * Notice that the implementation of id() returns a String with the name and channel. As you'll see, this value will show up later.

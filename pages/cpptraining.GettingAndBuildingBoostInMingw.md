@@ -17,19 +17,19 @@ Next, you'll download and build the boost library.
 * Download the Boost library from [Boost download page](http://sourceforge.net/projects/boost/files/boost/1.43.0/). As of this writing, I used 1.43.0.
 * Extract this zip file somewhere. In my case I extracted to C:\workspaces, which created C:\workspaces\boost_1_43_0.  (Note that you'll need roughly 3 gb of storage to extract and build the boost library.)
 * Make sure that BJam, mingw\bin and msys\bin are in your PATH. Here is a batch file that can do that:
-```
+{% highlight terminal %}
 set PATH="\Program Files\eclipse\mingw";%PATH%
 set PATH="\Program Files\eclipse\msys";%PATH%
 set PATH=C:\workspaces\boost-jam-3.1.18-1-ntx86;%PATH%
-```
+{% endhighlight %}
 * Switch to the boost directory:
-```
+{% highlight terminal %}
 C:\>cd \workspaces\boost_1_43_0
 
 C:\workspaces\boost_1_43_0>
-```
+{% endhighlight %}
 * Build boost:
-```
+{% highlight terminal %}
 C:\workspaces\boost_1_43_0>bjam --tool=gcc
 
 ... after much output ...
@@ -44,9 +44,9 @@ The following directory should be added to compiler include paths:
 The following directory should be added to linker library paths:
 
     C:\workspaces\boost_1_43_0\stage\lib
-```
+{% endhighlight %}
 * Verify that there are several library files in lib stage\lib directory under the boost directory
-```
+{% highlight terminal %}
 C:\workspaces\boost_1_43_0\stage\lib>dir
  Volume in drive C has no label.
  Volume Serial Number is A8D5-BA48
@@ -74,7 +74,7 @@ ib
                2 Dir(s)   4,791,799,808 bytes free
 
 C:\workspaces\boost_1_43_0\stage\lib>
-```
+{% endhighlight %}
 
 
 [<--Back]({{ site.pagesurl}}/CppTraining#boost)

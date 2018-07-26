@@ -7,11 +7,11 @@ You need to get a list of all of the files in a directory system (or walk a n-ar
 ![](images/http://yuml.me/diagram/dir:td;scruffy/class/%5B(Dir)BaseDir%5D%5E%5B(Dir)SubDir1%5D,%20%5B(Dir)SubDir1%5D%5E%5Bfile11%5D,%20%5B(Dir)SubDir1%5D%5E%5Bfile12%5D,%20%5B(Dir)SubDir1%5D%5E%5Bfile13%5D,%20%5B(Dir)SubDir1%5D%5E%5B(Dir)SubSubDir%5D,%20%5B(Dir)SubSubDir%5D%5E%5Bfile111%5D,%20%5B(Dir)BaseDir%5D%5E%5B(Dir)SubDir2%5D,%20%5B(Dir)SubDir2%5D%5E%5Bfile21%5D,%20%5B(Dir)SubDir2%5D%5E%5Bfile22%5D,%20%5B(Dir)BaseDir%5D%5E%5B(Dir)SubDir3%5D)
 
 And given the following code:
-```java
+{% highlight java %}
 DirectoryIterator iter = new DirectoryIterator("/BaseDir");
 while(iter.hasNext())
    System.out.println(iter.next());
-```
+{% endhighlight %}
 
 The output should be similar to the following (the order is not important, just that your iterator finds all files or a filtered version of all files):
 * file22

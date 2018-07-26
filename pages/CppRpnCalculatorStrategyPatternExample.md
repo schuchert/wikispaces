@@ -5,7 +5,7 @@ title: CppRpnCalculatorStrategyPatternExample
 ## Strategy Pattern Example
 Review first the abstract base classes of all strategies (in this case, math operators):
 **MathOperator.h**
-```cpp
+{% highlight cpp %}
 # ifndef MATHOPERATOR_H
 # define MATHOPERATOR_H
 
@@ -20,7 +20,7 @@ public:
 };
 
 # endif
-```
+{% endhighlight %}
 
 This defines that any operator can perform its work by having its **execute** method called passing in an OperandStack. An operand stack is a regular stack that:
 * Returns 0 if it is empty
@@ -28,7 +28,7 @@ This defines that any operator can perform its work by having its **execute** me
 
 Here is an example of a concrete implementation, a factorial method:
 **Factorial.cpp**
-```cpp
+{% highlight cpp %}
 void Factorial::execute(OperandStack& stack) {
    int count = stack.pop();
 
@@ -42,11 +42,11 @@ void Factorial::execute(OperandStack& stack) {
 
    stack.enter(result);
 }
-```
+{% endhighlight %}
 
 Here are the tests that verify it works as expected(using CppUTest):
 **FactorialTest.cpp**
-```cpp
+{% highlight cpp %}
 # include "CppUTest/TestHarness.h"
 
 # include "OperandStack.h"
@@ -79,7 +79,7 @@ TEST(Factorial, factorialOfNegativeNumber) {
    }
    FAIL("Should have thrown InvalidOperandException");
 }
-```
+{% endhighlight %}
 
 In the next section, **Template Method Pattern Example**, each of the subclasses are all examples of the strategy as well.
 

@@ -31,7 +31,7 @@ I recommend the following approach when trying this problem:
 * Review both your test code and production code, refactoring as you see fit
 
 One note, when I worked on this, I used Java with JUnit 4's parameterized tests. Here's what the final test file looks like:
-```java
+{% highlight java %}
 package com.om.example;
 
 import static org.junit.Assert.assertEquals;
@@ -94,7 +94,7 @@ public class InfixToPostfixConverterTest {
       assertEquals(expectedPostfix, result);
    }
 }
-```
+{% endhighlight %}
 
 This worked OK, but occasionally I wanted to run just one test. This does not seem to be supported, so I had to comment out various lines in the// **data()**// method. The next time I work on this, I'll probably use individual test methods.
 
@@ -102,7 +102,7 @@ This worked OK, but occasionally I wanted to run just one test. This does not se
 Here is one possible start to this problem (with the first three tests added and passing):
 **The Test**
 Note: Occasionally I experiment with different ways of writing unit tests with JUnit. This is one such example where I attempt to simulate the [domain specific language](http://www.martinfowler.com/bliki/BusinessReadableDSL.html) used by [cucumber](http://cukes.info/).
-```java
+{% highlight java %}
 package com.om.shuntingyardalgorithm;
 
 import static junit.framework.Assert.assertEquals;
@@ -147,11 +147,11 @@ public class PostfixToInfixTranslatorTest {
       thenTheResultShouldBe("45");
    }
 }
-```
+{% endhighlight %}
 
 **The Production Code**
 And here's the results after the first three tests:
-```java
+{% highlight java %}
 package com.om.shuntingyardalgorithm;
 
 public class PostfixToInfixTranslator {
@@ -162,7 +162,7 @@ public class PostfixToInfixTranslator {
       return givenInfixExpression;
    }
 }
-```
+{% endhighlight %}
 
 # Hints
 I take the approach of splitting the expression into individual tokens and then processing them one by one. To do this, I use regular expressions and to format the output, I use String.format(...). Here are a few hints along those lines:

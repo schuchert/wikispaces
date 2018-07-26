@@ -3,18 +3,18 @@ title: PowerShell5-Tokenize_Expression-Finalish_Version
 ---
 [<—Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.ConvertTokenizerToAnEnumerator)  [^^ Up ^^]({{ site.pagesurl}}/PowerShell5.TokenizeExpression)
 After the adding support for functions, I figured that was enough. However, once I looked at the final version, I found one thing worth cleaning up. The regular expressions are a bit confusing, but I'm OK with them. However, giving them names would clean up the code a touch for the next person (probably me) that had to support it. Here's a quick refactoring of that:
-```powershell
+{% highlight powershell %}
     static $PARENTHESIS ='^([()])' 
     static $NUMBERS_WORDS_FUNCTIONS = '^([\d\w]+\({0,1})'
     static $OPERATORS = '^([^\d\w\s]+)'
     static [Array]$REGEX = @( [Tokenizer]::PARENTHESIS, [Tokenizer]::NUMBERS_WORDS_FUNCTIONS, [Tokenizer]::OPERATORS )
-```
+{% endhighlight %}
 
 After that, I decided to migrate the example to an Enumerator. This is that version.
 
 Here are the most-recent final versions of these two files.
 # Tokenizer.Tests.ps1
-```powershell
+{% highlight powershell %}
 using module '.\Tokenizer.psm1'
 
 Describe "Tokenizing an in-fix expression" {
@@ -50,10 +50,10 @@ Describe "Tokenizing an in-fix expression" {
         $tokenizer.Current | Should be "42"
     }
 }
-```
+{% endhighlight %}
 
 # Tokenizer.psm1
-```powershell
+{% highlight powershell %}
 using namespace System.Collections
 
 class Tokenizer : IEnumerable, IEnumerator {
@@ -97,5 +97,5 @@ class Tokenizer : IEnumerable, IEnumerator {
         $this.currentExpression = $this.originalExpression
     }
 }
-```
+{% endhighlight %}
 [<—Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.ConvertTokenizerToAnEnumerator)  [^^ Up ^^]({{ site.pagesurl}}/PowerShell5.TokenizeExpression)

@@ -10,18 +10,18 @@ This example uses windows XP, cygwin and SDE lite 6.06.
 ** Install cygin
 ** Unzip contents of downloaded zip file to /cygdrive/c/sde-6.06
 ** In a cygwin shell, run the setup script: 
-```
+{% highlight terminal %}
 sh /cygdrive/c/sde-6.06/bin/sdesetup.sh
-```
+{% endhighlight %}
 ** Every time you start a shell (or configure your login) to source environment variables
-```
+{% highlight terminal %}
 source /cygdrive/c/sde-6.06/bin/sdeenv.sh
-```
+{% endhighlight %}
 
 ## Get The Project
 The source files for the base projects are on github (or in class I can provide a thumb drive). The uri is// **git://github.com/schuchert/embedded_cpp_tdd.git**//.
 * In some base directory (preferably one without a space it its name) clone the git repository
-```
+{% highlight terminal %}
 $ git clone git://github.com/schuchert/embedded_cpp_tdd.git
 Cloning into embedded_cpp_tdd...
 remote: Counting objects: 97, done.
@@ -36,7 +36,7 @@ $ cd embedded_cpp_tdd/
 Administrator@brettlschuccf48 /cygdrive/c/src/embedded_cpp_tdd
 $ ls
 cpputest  dice_game  makefile.base  rpn_calc
-```
+{% endhighlight %}
 
 | Name | Kind| Description |
 |cpputest |Directory|Source for C++ U Test, V 2.3 |

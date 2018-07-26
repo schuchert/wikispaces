@@ -8,7 +8,7 @@ title: JMock-Verify_Method_Called_With_Value
 |6|The method getBalance() will return 2500 every time it is called. We've effectively stubbed this method.|
 |7|We will call the method deduct() exactly once on the account object. When it is called, the value 1500 will be the value of the parameter passed.|
 
-```java
+{% highlight java %}
 01: @Test
 02: public void executeWithdrawChangesBalanceAndSetsExecuted() {
 03:     context.checking(new Expectations() {
@@ -23,10 +23,10 @@ title: JMock-Verify_Method_Called_With_Value
 12: 
 13:     assertEquals(true, withdrawal.isExecuted());
 14: }
-```
+{% endhighlight %}
 
 **Common fixture for the tests**
-```java
+{% highlight java %}
     Withdrawal withdrawal;
     Mockery context = new Mockery();
 
@@ -39,7 +39,7 @@ title: JMock-Verify_Method_Called_With_Value
         account = context.mock(BankAccount.class);
         withdrawal.setAccount(account);
     }
-```
+{% endhighlight %}
 
 [<--Back]({{site.pagesurl}}/TDD_Example_Catalog)
 

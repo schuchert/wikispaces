@@ -3,7 +3,7 @@ title: testpage
 ---
 * ==Leve2 header
 * should not be block style
-```ruby
+{% highlight ruby %}
   def precedence_of(operator)
     case operator
 <span class="standout_code">      when '(': 99</span>
@@ -14,7 +14,7 @@ title: testpage
       else 1
     end
   end
-```
+{% endhighlight %}
 
 # Header1
 

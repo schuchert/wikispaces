@@ -35,17 +35,17 @@ Note, by using -r c:\Repository, my URL will be svn://localhost/, if you didn't 
 # CD to the directory where you created your repository, c:\Repository in my case
 # CD to conf
 # Use your favorite editor (vim, right?) to edit snvserv.conf, put the following info in it:
-```
+{% highlight terminal %}
 [general]
 auth-access = write
 password-db = passwd
-```
+{% endhighlight %}
 # Use your favorite editor to edit passwd and create an account, e.g.:
-```
+{% highlight terminal %}
 [users]
 # user name        password
 brett.schuchert = somepassword
-```
+{% endhighlight %}
 
 ## Install Subclipse
 # In Eclipse, go to help:software updates:find and install

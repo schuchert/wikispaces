@@ -21,14 +21,14 @@ Next, you'll need to know where Eclipse is placing your compiled Java classes.
 * Type in .classpath and press **Enter**
 * Bring up the **Source** tab, and see if you have something similar to the following entires (the src output are the only ones that matter):
 
-```xml
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
-```
+{% endhighlight %}
 
 * If your .classpath has the same output directory, then Eclipse will be putting all of the Java .class files in the bin directory under the Project directory under the workspace directory (or the value of the path). In my case that equals: /Users/schuchert/src/fitnesse-tutorials/DVR/bin
 * If your .classpath does not contain the kind="output", then chances are your class files are in the same directory as the source files. If so, you'd just use the same path but remove the bin directory(/Users/schuchert/workspaces/fitnesse-tutorials/DVR).
@@ -37,16 +37,16 @@ Next, you'll need to know where Eclipse is placing your compiled Java classes.
 # Add your code to Path
 * Switch back to FitNesse, edit your page and add the following lines (above the table that is already there), making sure to adjust the value after !path as appropriate:
 
-```
+{% highlight terminal %}
 !path /Users/schuchert/src/fitnesse-tutorials/DVR/bin
 
 |import|
 |com.om.example.dvr.fixtures|
-```
+{% endhighlight %}
 
 * Your page should now be (you might have an additional !path fitnesse.jar):
 
-```
+{% highlight terminal %}
 !define TEST_SYSTEM {slim}
 
 !path /Users/schuchert/src/fitnesse-tutorials/DVR/bin
@@ -60,7 +60,7 @@ Next, you'll need to know where Eclipse is placing your compiled Java classes.
 !|Create Programs                                        |
 |Name |Channel|DayOfWeek|TimeOfDay|DurationInMinutes|id? |
 |House|4      |Monday   |19:00    |60               |$ID=|
-```
+{% endhighlight %}
 
 * Click on the **Test** button, you should see some green and yellow now:
 ![](images/FixtureClassFound.gif)
@@ -69,7 +69,7 @@ You have two tables in your page. The first table is an import table, it tells F
 
 The second table is a decision table. (Those familiar with Fit may recognize the similarity between Decision Tables and Column Fixtures.) The first row names a class, CreatePrograms in this case. You created this class above. The second row names the columns. Column headers that do not have a question mark in their name require a "set" method to back them. Column headers with a question mark require a method that returns a value. In our case we have 6 columns, so we need to add 6 methods, 5 setters and one method which returns a value. Here's the complete "stub" class to get this table fully passing:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 public class CreatePrograms {
@@ -97,7 +97,7 @@ public class CreatePrograms {
         return String.format("[%s:%d]", name, channel);
     }
 }
-```
+{% endhighlight %}
 
 * Edit your CreatePrograms class and add the missing methods.
 * Notice that the implementation of id() returns a String with the name and channel. As you'll see, this value will show up later.

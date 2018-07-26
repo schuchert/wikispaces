@@ -27,7 +27,7 @@ Set up custom tasks to run pester. One will run all tests, while the other will 
 * Then **Configure Tasks**
 * If this is the first time you've configured tasks, select **Other** as the template to use. 
 * Finally, paste the following JSON into the custom tasks window
-```javascript
+{% highlight javascript %}
     {
         // See https://go.microsoft.com/fwlink/?LinkId=733558
         // for the documentation about the tasks.json format
@@ -74,12 +74,12 @@ Set up custom tasks to run pester. One will run all tests, while the other will 
             }
         ]
     }
-```
+{% endhighlight %}
 Custom key bindings to run the custom tasks:
 * Select **File::Preferences::Keyboard Shortcuts**
 * Next, click on the link at the top of the window for **keybindings.json**
 * The left window contains the default values. Edit the right window to override the default values. Copy the following key bindings:
-```javascript
+{% highlight javascript %}
     [{
         "key": "ctrl+shift+alt+t",
         "command": "workbench.action.tasks.runTask",
@@ -93,6 +93,6 @@ Custom key bindings to run the custom tasks:
         "when": "editorTextFocus"
     }
     ]
-```
+{% endhighlight %}
 
 [<--Back]({{ site.pagesurl}}/PowerShell5)

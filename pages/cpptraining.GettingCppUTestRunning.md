@@ -12,7 +12,7 @@ Make sure you have [already installed the CDT]({{ site.pagesurl}}/cpptraining.Ge
 [include_page="cpptraining.ConfiguringTheProjectForCppUTest"]({{site.pagesurl}}/include_page="cpptraining.ConfiguringTheProjectForCppUTest")
 # Creating A Test
 * Now, add another source file called ActualSmokeTest.cpp:
-```cpp
+{% highlight cpp %}
 # include <CppUTest/TestHarness.h>
 
 TEST_GROUP(Foo) {
@@ -21,9 +21,9 @@ TEST_GROUP(Foo) {
 TEST(Foo, 1Equals1) {
 	LONGS_EQUAL(1, 1);
 }
-```
+{% endhighlight %}
 * Run your project again and see that the one test is passing:
-```
+{% highlight terminal %}
 OK (1 tests, 1 ran, 1 checks, 0 ignored, 0 filtered out, 0 ms)
-```
+{% endhighlight %}
 [<--Back]({{ site.pagesurl}}/CppTraining#gettingfirsttestrunning)

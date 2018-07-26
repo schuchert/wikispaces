@@ -25,7 +25,7 @@ All of the tutorials assume you are running FitNesse on port 8080. These instruc
 * CD to your install directory and then go fitnesse directory created above
 * Start FitNesse(Windows):
 
-```terminal
+{% highlight terminal %}
     C:\slim\fitnesse>run.bat -p 8080
     
     C:\slim\fitnesse>java -jar fitnesse.jar -p 8080
@@ -36,11 +36,11 @@ All of the tutorials assume you are running FitNesse on port 8080. These instruc
             authenticator:     fitnesse.authentication.PromiscuousAuthenticator
             html page factory: fitnesse.html.HtmlPageFactory
             page version expiration set to 14 days.
-```
+{% endhighlight %}
 
 * Start FitNesse(Unix):
 
-```terminal
+{% highlight terminal %}
     Macintosh-8% sh run.sh -p 8080
     java -jar fitnesse.jar -p 8080
     FitNesse (v20090406) Started...
@@ -50,7 +50,7 @@ All of the tutorials assume you are running FitNesse on port 8080. These instruc
     	authenticator:     fitnesse.authentication.PromiscuousAuthenticator
     	html page factory: fitnesse.html.HtmlPageFactory
     	page version expiration set to 14 days.
-```
+{% endhighlight %}
 
 ### Update root page in FitNesse
 
@@ -59,10 +59,10 @@ Note, recent versions of FitNesse (after September 2009) do not require this ste
 * Go to the following URL: http://localhost:8080/root
 * Remove the following entries (if they are there)
 
-```
+{% highlight terminal %}
     !path classes
     !path fitnesse.jar
-```
+{% endhighlight %}
 
 In fact, it is safe to remove everything from the root page (and probably a good idea).
 
@@ -70,13 +70,13 @@ In fact, it is safe to remove everything from the root page (and probably a good
 
 Note, if you are just using FitNesse for .Net, then you could put this information on the root page (that's what I'd recommend in fact). For this example, I recommend using [[http://localhost:8080/FirstExample]].
 
-```
+{% highlight terminal %}
     !define TEST_SYSTEM {slim}
     {% raw %}
     !define COMMAND_PATTERN {%m -r fitSharp.Slim.Service.Runner,c:\tools\nslim\fitsharp.dll %p}
     {% endraw %}
     !define TEST_RUNNER {c:\tools\nslim\Runner.exe}
-```
+{% endhighlight %}
 * The first line overrides FitNesse's default of executing tests using fit. Note that it is also possible to run in different VM's with this command as well.
 * The second line points to the Runner.exe created when you build slim.net. Update the directory as necessary.
 * The third line defines how FitNesse calls the Runner.
@@ -87,21 +87,21 @@ Other than updating the directories, you can use this as is. It can be on a page
 
 * Use a !path statement to add each dll in your solution.
 
-```
+{% highlight terminal %}
     !path C:\projects\slim_example\slim_example\obj\Debug\slim_example.dll
-```
+{% endhighlight %}
 
 * You can optionally include the namespace using an import table (recommended):
 
-```
+{% highlight terminal %}
     |import|
     |slim_example|
-```
+{% endhighlight %}
 
 ### Add a Test Table
 Create a table. This is an example of a decision table taken from FitNesse itself. You can see the complete example at: http://localhost:8080/FitNesse.SliM.DecisionTable (of course update the URL as necessary).
 
-```
+{% highlight terminal %}
     |should I buy milk|
     |cash in wallet|credit card|pints of milk remaining|go to store?|
     |      0       |    no     |      0                |    no      |
@@ -109,13 +109,13 @@ Create a table. This is an example of a decision table taken from FitNesse itsel
     |      0       |    yes    |      0                |    yes     |
     |      10      |    yes    |      0                |    yes     |
     |      0       |    no     |      1                |    no      |
-```
+{% endhighlight %}
 
 ### Here's the complete page
 
 This is all of the above as a single page, which is what I actually did for this example:
 
-```
+{% highlight terminal %}
     !define TEST_SYSTEM {slim}
     {% raw %}
     !define COMMAND_PATTERN {%m -r fitSharp.Slim.Service.Runner,c:\tools\nslim\fitsharp.dll %p}
@@ -134,13 +134,13 @@ This is all of the above as a single page, which is what I actually did for this
     |      0       |    yes    |      0                |    yes     |
     |      10      |    yes    |      0                |    yes     |
     |      0       |    no     |      1                |    no      |
-```
+{% endhighlight %}
 
 ### Create the Fixture Code
 
 Here's the C# class that supports the "should I buy milk" decision table:
 
-```csharp
+{% highlight csharp %}
     using System;
     using System.Collections.Generic;
     
@@ -175,7 +175,7 @@ Here's the C# class that supports the "should I buy milk" decision table:
         }
       }
     }
-```
+{% endhighlight %}
 
 Note, the methods execute(), reset() and table(...) should be optional. Eventually they will be, but this is a early release of the Slim.Net implementation.
 
@@ -190,7 +190,7 @@ There are three "hook" methods you can also add:
 
 Here are example implementations for those methods:
 
-```csharp
+{% highlight csharp %}
     public void Execute()
     {
       Console.WriteLine("Execute");
@@ -206,6 +206,6 @@ Here are example implementations for those methods:
       Console.WriteLine("Table");
       return null;
     }
-```
+{% endhighlight %}
 
 [<-- Back]({{ site.pagesurl }}/FitNesse.Tutorials)

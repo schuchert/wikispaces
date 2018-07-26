@@ -12,9 +12,9 @@ title: AgileTestingDays2010
 >> RpnCalculator.jar
 >> FitNesseRoot
 * Go to directory and type (you can use another port value than 8080):
-```
+{% highlight terminal %}
 java -jar fitnesse.jar -p 8080
-```
+{% endhighlight %}
 * Open your favorite brower and to to the follow url: <http://localhost:8080/RpnCalculatorExamplesByIteration>
 
 This should get you started. Note that the FitNesseRoot directory contains all of the tests I demonstrated in my talk. Also, the attached RpnCalculator.jar file contains all of the source files. There are several unit tests as well as some acceptance tests written using JUnit.

@@ -21,7 +21,7 @@ It’s even more important here
 * Waits for a client connection, 
 * Gets a message
 * Processes it
-```java
+{% highlight java %}
     ServerSocket serverSocket = new ServerSocket(8009);
     
     while (true) {
@@ -34,7 +34,7 @@ It’s even more important here
              close(socket);
         }
     }
-```
+{% endhighlight %}
 ----
 ----
 ## And its client
@@ -43,12 +43,12 @@ It’s even more important here
 * Sends a message
 * Awaits a response
 * Disconnects from the server
-```java
+{% highlight java %}
     Socket socket = new Socket("localhost", PORT);
     sendMessage(socket);
     getMessage(socket);
     socket.close();
-```
+{% endhighlight %}
 ----
 ----
 ## You need to make this faster...
@@ -61,18 +61,18 @@ Threads to the rescue, right?
 ## How do we test?
  What makes this hard to test?
 * Direct dependency on Sockets
-```java
+{% highlight java %}
     ServerSocket serverSocket = new ServerSocket(8009);
     Socket socket = null;
     socket = serverSocket.accept();
     close(socket);
-```
+{% endhighlight %}
 
 * Embedded logic not exposed
-```java
+{% highlight java %}
     getMessage(socket);
     process(message);
-```
+{% endhighlight %}
 
 * Class violates Single Responsibility
 ** Connection Management

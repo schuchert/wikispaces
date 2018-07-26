@@ -18,7 +18,7 @@ title: cpptraining.ConfiguringTheProjectToUseBoost
 * Click OK
 * Verify these settings.
 ** Create a new file: BoostDateTimeSmokeTest.cpp:
-```cpp
+{% highlight cpp %}
 # include <boost/date_time/gregorian/gregorian.hpp>
 
 # include <CppUTest/TestHarness.h>
@@ -32,7 +32,7 @@ TEST(Dates, CanBeLinkedIn) {
   std::string s("2001-10-9");
   date d(from_simple_string(s));
 }
-```
+{% endhighlight %}
 * Important: The CppUTest header files need to be included// **last**//.
 * Build and run your tests. You're really just checking that you can compile and link.
 

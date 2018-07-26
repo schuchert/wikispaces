@@ -16,7 +16,7 @@ To make this example work, we need two additional things:
 
 ----
 ## SerializableIntroductionAspect.java
-```java
+{% highlight java %}
 01: package ex3;
 02: 
 03: import java.io.Serializable;
@@ -29,7 +29,7 @@ To make this example work, we need two additional things:
 10:     @DeclareParents(value="ex3.Die")
 11:     Serializable serializable;
 12: }
-```
+{% endhighlight %}
 ### Interesting Lines
 ^
 |-|-|
@@ -39,7 +39,7 @@ To make this example work, we need two additional things:
 |11|Define an instance variable for this class/aspect. Becuase this line is annotated with @DeclareParents, the type of this variable is added as an interface to the ex3.Die class.|
 
 ## aop.xml
-```xml
+{% highlight xml %}
 01: <aspectj>
 02: 	<aspects>
 03: 		<aspect name="ex3.SerializableIntroductionAspect"/>
@@ -48,7 +48,7 @@ To make this example work, we need two additional things:
 06: 		<include within="ex3.*"/>
 07: 	</weaver>
 08: </aspectj>
-```
+{% endhighlight %}
 
 ### Interesting Lines
 ^
@@ -58,7 +58,7 @@ To make this example work, we need two additional things:
 |6|Apply the aspect to all classes in the package ex3|
 
 ## Main.java
-```java
+{% highlight java %}
 01: package ex3;
 02: 
 03: import java.io.ByteArrayInputStream;
@@ -129,7 +129,7 @@ To make this example work, we need two additional things:
 68:         }
 69:     }
 70: }
-```
+{% endhighlight %}
 
 ### Interesting Lines
 ^

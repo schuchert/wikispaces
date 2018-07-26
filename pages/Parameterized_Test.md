@@ -7,7 +7,7 @@ Imagine we have a series of tests where for each test we perform some operation 
 
 **BlankLineTest.java**
 
-```java
+{% highlight java %}
 package com.objectmentor.parameterized;
 
 import static org.junit.Assert.assertEquals;
@@ -52,7 +52,7 @@ public class BlankLineTest {
         assertEquals(false, "    q".matches(regex));
     }
 }
-```
+{% endhighlight %}
 
 For each test we have a string we test and an expected result (true or false). Here are each of those values:
 ^
@@ -76,7 +76,7 @@ JUnit has an idiom for this kind of test. Use a parameterized test. To do so, we
 
 That's a lot of steps. Here's an example:
 **BlankLineParameterizedTest.java**
-```java
+{% highlight java %}
 01: package com.objectmentor.parameterized;
 02: 
 03: import static org.junit.Assert.assertEquals;
@@ -123,6 +123,6 @@ That's a lot of steps. Here's an example:
 34:         assertEquals(expectedResult, line.matches(regex));
 35:     }
 36: }
-```
+{% endhighlight %}
 
 [<--Back]({{ site.pagesurl}}/TDD_Example_Catalog)

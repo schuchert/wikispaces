@@ -5,7 +5,7 @@ title: AspectJEX1ExpectedVersusActualOutput
 
 ## Expected Output
 Did you guess the output would look something like this?
-```
+{% highlight terminal %}
    noArgMethod
 -------------
    methodWithStringParam: Brett
@@ -14,11 +14,11 @@ Did you guess the output would look something like this?
    noArgMethod
 -------------
    staticMethod
-```
+{% endhighlight %}
 
 ## Actual Output
 What if I told you the output was actually this (ignoring line wrapping)?
-```
+{% highlight terminal %}
 Entering: void ex1.MethodExecutionExample.noArgMethod()
 	noArgMethod
 Leaving void ex1.MethodExecutionExample.noArgMethod()
@@ -37,7 +37,7 @@ Leaving void ex1.MethodExecutionExample.methodCallingOtherMethod()
 Entering: void ex1.MethodExecutionExample.staticMethod()
 	staticMethod
 Leaving void ex1.MethodExecutionExample.staticMethod()
-```
+{% endhighlight %}
 
 [<--Back]({{ site.pagesurl}}/AspectJ_Example_1) [Next-->]({{ site.pagesurl}}/AspectJEX1FormTheory)
 

@@ -6,7 +6,7 @@ We will create a session bean that wraps access to the company behind a session 
 This dao looks pretty much the same as the session bean from our first EJB example. As with the first example, we've placed the interface in one package and the implementation (the session bean) in a second interface.
 
 **CompanyDao.java**
-```java
+{% highlight java %}
 package dao;
 
 import entity.Company;
@@ -23,7 +23,7 @@ public interface CompanyDao {
 
     Company find(Long id);
 }
-```
+{% endhighlight %}
 
 To create this interface:
 # Expand **Ejb3Tutorial2** and select the **src** directory
@@ -33,7 +33,7 @@ To create this interface:
 # Type the code into the file and save it
 
 **CompanyDaoImpl.java**
-```java
+{% highlight java %}
 package dao.impl;
 
 import javax.ejb.Stateless;
@@ -90,7 +90,7 @@ public class CompanyDaoImpl implements CompanyDao {
         return em.find(Company.class, id);
     }
 }
-```
+{% endhighlight %}
 
 To create this class:
 # Expand **Ejb3Tutorial2** and select the **src** directory

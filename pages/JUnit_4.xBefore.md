@@ -6,25 +6,25 @@ title: JUnit_4.xBefore
 # @Before
 The @Before annotation applies to methods. You put it on a method and JUnit will execute it before each unit test. This is equivalent to the setUp method from JUnit bfore 4.0 that was defined as protected in TestCase.
 
-```
+{% highlight terminal %}
 19:     @Before
 20:     public void setup() {
 21:         type = new VehicleType("Luxury");
 22:         state = new IssuingState("Iowa");
 23:         license = new VehicleLicense("LRX24J", state);
 24:     }
-```
+{% endhighlight %}
 In this case, the method setup will execute before each unit test. This before comes from a class with only one unit test, so it will only execute once.
 
 This is how we would have accomplished the same effect in JUnit 3.8.1 (and before):
-```
+{% highlight terminal %}
 20:     protected void setUp() {
             super.setUp();
 21:         type = new VehicleType("Luxury");
 22:         state = new IssuingState("Iowa");
 23:         license = new VehicleLicense("LRX24J", state);
 24:     }
-```
+{% endhighlight %}
 
 Not much different, but here are a few differences:
 * If there are any base classes with a method that has the @Before annotation, those methods will execute first. So in the second example we explicitly called super.setUp(), but in JUnit 4.x, this is automatic.

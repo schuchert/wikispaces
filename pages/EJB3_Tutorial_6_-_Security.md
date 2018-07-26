@@ -12,12 +12,12 @@ We recommend you create a copy of your project (or if you are using revision con
 We need to create a few basic files: users.properties and roles.properties.
 
 **users.properties**
-```
+{% highlight terminal %}
 bschuchert=password
 msmith=password
 dnunn=password
 student=password
-```
+{% endhighlight %}
 
 This file defines user accounts. Note that while the use of this information is defined in the specification, exactly how it is configured is vendor specific.
 
@@ -26,12 +26,12 @@ This file should reside anywhere in the root of a classpath entry. Place this in
 By the way, notice that it is users and not user. You can use another name, but this is the default name JBoss uses.
 
 **roles.properties**
-```
+{% highlight terminal %}
 bschuchert=admin
 msmith=admin
 dnunn=admin
 student=user
-```
+{% endhighlight %}
 
 The comments from users.properties apply here.
 
@@ -40,7 +40,7 @@ The comments from users.properties apply here.
 Next we need to configure the bean with security information. As usual, we can use either XML or annotations. Here is an updated version of AccountInventoryBean.java:
 
 **AccountInventoryBean.java**
-```java
+{% highlight java %}
 package session;
 
 import java.util.Calendar;
@@ -115,12 +115,12 @@ public class AccountInventoryBean implements AccountInventory {
 
     // ... the rest is unchanged
 }
-```
+{% endhighlight %}
 
 and the updated interface:
 
 **AccountInventory.java**
-```java
+{% highlight java %}
 package session;
 
 import javax.ejb.Local;
@@ -137,13 +137,13 @@ public interface AccountInventory {
 
     // . . . the rest is unchanged
 }
-```
+{% endhighlight %}
 
 
 ----
 ## Updated JBossUtil
 We now need to update JBossUtil once more to read our security properties. The only method that has changed is startDeployer:
-```java
+{% highlight java %}
     public static void startDeployer() {
         if (!initialized) {
             redirectStreams();
@@ -159,14 +159,14 @@ We now need to update JBossUtil once more to read our security properties. The o
             restoreStreams();
         }
     }
-```
+{% endhighlight %}
 
 This method now reads in MDB configuration information in the first two calls to deployXmlResources and configures the security settings in the third line.
 ----
 ## The Test
 This test attempts one successful and four failed attempts. The names of the methods describe whether we expect success or failure:
 **AccountInventoryBeanTest.java**
-```java
+{% highlight java %}
 package session;
 
 import java.util.Properties;
@@ -276,7 +276,7 @@ public class AccountInventoryBeanTest {
         }
     }
 }
-```
+{% endhighlight %}
 
 Notice that in all cases where the method is expected to generate an exception, we first catch EJBAccessException. EJBAccessException is a wrapper exception. We verify the contents by getting the wrapped exception and throwing it. We then let JUnit tell us if we got the exception we expected.
 ----

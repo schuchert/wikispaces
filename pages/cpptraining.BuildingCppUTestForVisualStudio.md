@@ -13,7 +13,7 @@ Now it is time to build the library you will be using for writing micro tests:
 * Build the solution (ctrl-shift-b)
 * Run the solution (ctrl-f5)
 * You should see output similar to the following:
-```
+{% highlight terminal %}
 .......!!.........................................
 ..................................................
 ..............................................!...
@@ -22,7 +22,7 @@ Now it is time to build the library you will be using for writing micro tests:
 OK (244 tests, 240 ran, 711 checks, 4 ignored, 0 filtered out, 0 ms)
 
 Press any key to continue . . .
-```
+{% endhighlight %}
 * Move on to the next step: [Getting CppUTestRunning in Visual Studio]({{ site.pagesurl}}/cpptraining.GettingCppUTestRunningInVisualStudio)
 
 [<--Back]({{ site.pagesurl}}/CppTraining#gettingfirsttestrunningvisualstudio)

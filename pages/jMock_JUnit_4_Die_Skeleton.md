@@ -1,7 +1,7 @@
 ---
 title: jMock_JUnit_4_Die_Skeleton
 ---
-```java
+{% highlight java %}
 01: package com.objectmentor.jmock;
 02: 
 03: import static org.junit.Assert.assertEquals;
@@ -34,7 +34,7 @@ title: jMock_JUnit_4_Die_Skeleton
 30:         // ...
 31:     }
 32: }
-```
+{% endhighlight %}
 
 ## Essential Lines
 
@@ -46,11 +46,11 @@ title: jMock_JUnit_4_Die_Skeleton
 |23 - 26|Use the jMock API to create a test double of our die object.|
 
 Die is an interface:
-```java
+{% highlight java %}
 package com.objectmentor.jmock;
 
 public interface Die {
 	int roll();
 	int getFaceValue();
 }
-```
+{% endhighlight %}

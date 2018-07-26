@@ -15,7 +15,7 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 
 [#LoggingConfiguration]({{site.pagesurl}}/#LoggingConfiguration)
 ## LoggingConfiguration.java
-```java
+{% highlight java %}
 01: package loggingutil;
 02: 
 03: import java.net.URL;
@@ -52,7 +52,7 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 34:     }
 35: 
 36: }
-```
+{% endhighlight %}
 ### Interesting Lines
 ^
 |-|-|
@@ -71,9 +71,9 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 ## log4j.properties
 This file resides in the same directory as the source file for [LogginConfiguration.java]({{ site.pagesurl}}/#LoggingConfiguration).
 
-```java
+{% highlight java %}
 01: log4j.logger.org.springframework=WARN
-```
+{% endhighlight %}
 ### Interesting Lines
 ^
 |-|-|
@@ -84,7 +84,7 @@ This file resides in the same directory as the source file for [LogginConfigurat
 ## ILogger.java
 Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it does not have an interface that uses the features offered by Java 5 so instead of using Lof4J directly, I have returned this interface that publishes what I think is a better interface.
 
-```java
+{% highlight java %}
 01: package loggingutil;
 02: 
 03: public interface ILogger {
@@ -108,14 +108,14 @@ Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it 
 21: 
 22:     ILogger fatal(final Throwable t, final String formatString, final Object... params);
 23: }
-```
+{% endhighlight %}
 ### Interesting Lines
 There are not really any specifically interesting lines. Notice that every method's last parameter is a variable number of parameters. Take a look below at the implementation of this class.
 
 ----
 [#Logger]({{site.pagesurl}}/#Logger)
 ## Logger.java
-```java
+{% highlight java %}
 01: package loggingutil;
 02: 
 03: import org.apache.log4j.Level;
@@ -197,7 +197,7 @@ There are not really any specifically interesting lines. Notice that every metho
 79:         return this;
 80:     }
 81: }
-```
+{% endhighlight %}
 ### Interesting Lines
 
 ^
@@ -213,38 +213,38 @@ There are not really any specifically interesting lines. Notice that every metho
 
 All of the methods follow the same pattern. Rather that writing the following code, which I've seen:
 
-```java
+{% highlight java %}
     Logger myLogger = ...; // get a Log4J Logger
     ...
     if(myLogger.isDebugEnabled()) {
        myLogger.debug("User Name: " + userName + " is not authorized for this operation.");
     }
-```
+{% endhighlight %}
 
 Of course, you might want to simplify this code to the following, and I've seen this even more often:
-```java
+{% highlight java %}
     Logger myLogger = ...; // get a Log4J Logger
     ...
     myLogger.debug("User Name: " + userName + " is not authorized for this operation.");
-```
+{% endhighlight %}
 
 The problem with this is that we perform the work of concatenating three strings even if the logger does not have debug level messages enabled. So the first form is ugly but better. The second form looks better, but performs potentially unnecessary work.
 
 This adapted interface gives us the following:
-```java
+{% highlight java %}
     Logger myLogger = ...; // get an ILogger
     ...
     myLogger.debug("User Name: %s is not authorized for this operation.", userName);
-```
+{% endhighlight %}
 
 This looks like the cleaner second version but it performs like the better first version.
 
 This example is not complete. It does not publish the logging levels, which really is still necessary. Consider the following example that is NOT fixed by this interface:
-```java
+{% highlight java %}
     Logger myLogger = ...; // get an ILogger
     ...
     myLogger.debug("User Name: %s is not authorized for this operation.", getUserNameFromJndi());
-```
+{% endhighlight %}
 Let’s say that the method getUserNameFromJndi() takes a long time. In this example, we called the method before calling the debug() method, so we did this extra work potentially unnecessarily.
 
 [<--Back]({{ site.pagesurl}}/Tool_Setup_and_Configuration_Notes)

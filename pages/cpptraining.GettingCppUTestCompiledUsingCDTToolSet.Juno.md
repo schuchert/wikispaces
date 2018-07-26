@@ -12,7 +12,7 @@ These instructions assume you have already followed [these instructions]({{ site
 * Go to where you extracted the files, which in my case is:// **c:\learncpp\cpputest**//
 * Make using make:
 
-```
+{% highlight terminal %}
 C:\learncpp\cpputest>make
 compiling AllTests.cpp
 compiling AllocLetTestFreeTest.cpp
@@ -87,6 +87,6 @@ OK (296 tests, 291 ran, 794 checks, 5 ignored, 0 filtered out, 47 ms)
 
 
 C:\learncpp\cpputest>
-```
+{% endhighlight %}
 
 [<--back]({{ site.pagesurl}}/CppTraining)

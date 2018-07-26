@@ -6,7 +6,7 @@ title: JMock-Fixed_Return_Value
 This test method exists in a [jMock_JUnit_4_Die_Skeleton]({{site.pagesurl}}/jMock_JUnit_4_Die_Skeleton).
 
 **Common fixture for the tests**
-```java
+{% highlight java %}
     Withdrawal withdrawal;
     Mockery context = new Mockery();
 
@@ -19,12 +19,12 @@ This test method exists in a [jMock_JUnit_4_Die_Skeleton]({{site.pagesurl}}/jMoc
         account = context.mock(BankAccount.class);
         withdrawal.setAccount(account);
     }
-```
+{% endhighlight %}
 
 ### Fix the return value of the roll() method
 The method "roll()" on the mock object "mockedDie" will always return the value 2. Otherwise, we state that we don't care for jMock to remember, track or in anyway care about the use of the roll() method on mockedDie.
 
-```java
+{% highlight java %}
 @Test
 public void alwaysRoll2() throws Exception {
     context.checking(new Expectations() {
@@ -38,10 +38,10 @@ public void alwaysRoll2() throws Exception {
         assertEquals(2, testDoubleDie.roll());
     }
 }
-```
+{% endhighlight %}
 
 ## Fix the return value of the faceValue() method
-```java
+{% highlight java %}
 @Test
 public void faceValueAlways2() {
     context.checking(new Expectations() {
@@ -55,6 +55,6 @@ public void faceValueAlways2() {
         assertEquals(2, mockedDie.getFaceValue());
     }
 }
-```
+{% endhighlight %}
 
 [<--Back]({{site.pagesurl}}/TDD_Example_Catalog)

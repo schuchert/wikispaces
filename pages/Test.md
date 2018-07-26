@@ -5,9 +5,9 @@ title: Test
 # Heading 1
 
 Regular Text
-```cpp
+{% highlight cpp %}
 int main(int argc, char** argv) {
    return 0;
 }
-```
+{% endhighlight %}
 </span>

@@ -17,7 +17,7 @@ We are going to test our way into this.
 ## Date Support
 We're going to be working with dates extensively. Here is a utility class for working with dates and its test:
 **DateTimeUtil.java**
-```java
+{% highlight java %}
 package util;
 
 import java.util.Calendar;
@@ -117,10 +117,10 @@ public class DateTimeUtil {
         return (int) (diff / MS_IN_Day);
     }
 }
-```
+{% endhighlight %}
 
 **DateTimeUtilTest.java**
-```java
+{% highlight java %}
 package util;
 
 import static org.junit.Assert.assertEquals;
@@ -222,7 +222,7 @@ public class DateTimeUtilTest {
         return c.getTime();
     }
 }
-```
+{% endhighlight %}
 
 ## Review Existing Tests
 We have the following Test classes in the session package:
@@ -234,7 +234,7 @@ BookDaoTest and PatronDao test deal with CRUD operations on Book and Patron. The
 
 ### Review Tests in LibraryDaoTest
 Here's our first test to review:
-```java
+{% highlight java %}
     @Test
     public void checkoutBook() {
         final Book b = createBook();
@@ -247,6 +247,6 @@ Here's our first test to review:
         assertTrue(foundBook.isOnLoanTo(foundPatron));
         assertTrue(foundPatron.isBorrowing(foundBook));
     }
-```
+{% endhighlight %}
 
 This test might work as is, however when we checkout a book, we do not provide a date. We could keep the interface the same and the library could assume the current date. Instead, we'll provide a date and then verify that the book was checked out on the date provided. Since we will be in a state of flux for some time, we'll add a new method and deprecate the old method. By the time we've finished this update, we'll remove all deprecated methods.

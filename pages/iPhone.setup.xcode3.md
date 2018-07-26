@@ -70,7 +70,7 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 * Click //**Finish**//
 * Enter the following test code:
 
-```obj-c
+{% highlight obj-c %}
 //
 //  ItShouldHaveSmoke.m
 //  Tutorial
@@ -100,7 +100,7 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
     GHAssertEquals(@"", someVariableToInitialize, nil);
 }
 @end
-```
+{% endhighlight %}
 
 * Build, command-b
 * Run, command-r
@@ -108,9 +108,9 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 * When the simulator starts, click //**Run**//
 * Oops, the test is failing.
 * go back and edit your code. Chang the single assertion to:
-```
+{% highlight terminal %}
     GHAssertEquals(@"Hello World", someVariableToInitialize, nil);
-```
+{% endhighlight %}
 * Build and re-run, hit command-r
 * Run the test suite again.
 

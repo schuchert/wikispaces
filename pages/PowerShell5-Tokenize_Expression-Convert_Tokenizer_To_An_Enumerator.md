@@ -8,12 +8,12 @@ We are going to convert this in place while maintaining the tests.
 
 # Add Required Interfaces
 * Add the interfaces to the class:
-```powershell
+{% highlight powershell %}
 class Tokenizer : IEnumerable, IEnumerator 
-```
+{% endhighlight %}
 * Run your tests. They fail due to missing required methods.
 * Add each of the following methods stubbed out to get our existing tests running again:
-```powershell
+{% highlight powershell %}
     [IEnumerator]GetEnumerator() {
         return $this
     }
@@ -28,11 +28,11 @@ class Tokenizer : IEnumerable, IEnumerator
     
     [void]Reset() {
     }
-```
+{% endhighlight %}
 * Run your tests, they now should be back to passing.
 Next, we'll add a new test that uses the Tokenizer as an iterator and get it passing.
 * Add only the first test to keep this as simple as possible:
-```powershell
+{% highlight powershell %}
     It "Should enummerate <expression> into <expected>" -TestCase @(
         @{expression = '42'; expected = @('42')}
     ) {
@@ -45,9 +45,9 @@ Next, we'll add a new test that uses the Tokenizer as an iterator and get it pas
         }
         $tokenizer.MoveNext() | Should be $false
     } 
-```
+{% endhighlight %}
 * Now write just enough of the interface method to get this test passing:
-```powershell
+{% highlight powershell %}
     [String]$currentExpression
     Tokenizer($expression) {
         $this.currentExpression = $expression
@@ -67,20 +67,20 @@ Next, we'll add a new test that uses the Tokenizer as an iterator and get it pas
 
     [void]Reset() {
     }
-```
+{% endhighlight %}
 There are a few things to note in this first version:
 * We used a constructor in the new test that takes in the expression and stores it. Adding a constructor taking a single argument will make PowerShell remove the default no-argument constructor. To keep the tests passing, we add in an empty no-argument constructor as well as a one-agument constructor. We're migrating this code so this is an intermediate form. When we've finished converting this from its original form to an enumerator, it will no longer need the no-argument constructor.
 * The property get_Current needs something to return. That's what $this.currentExpression is. It's assigned in the one-argument constructor. That's fine for now. As we add more tests, this will change.
 * Run your tests, they should pass.
 * Now, we copy the second test case and work on getting it to pass as well:
-```powershell
+{% highlight powershell %}
     It "Should enummerate <expression> into <expected>" -TestCase @(
         @{expression = '42'; expected = @('42')}
         @{expression = '123+'; expected = @('123', '+')}
     ) {
-```
+{% endhighlight %}
 * Run your tests, they fail:
-```terminal
+{% highlight terminal %}
     [-] Should enummerate 123+ into 123 + 92ms
       Expected string length 3 but was 4. Strings differ at index 3.
       Expected: {123}
@@ -89,9 +89,9 @@ There are a few things to note in this first version:
       37:             $tokenizer.Current | Should be $expected[$i]
       at Invoke-LegacyAssertion, C:\Program Files\WindowsPowerShell\Modules\Pester\4.0.8\Functions\Assertions\Should.ps1: line 190
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 37
-````
+{% endhighlight %}
 * Here are a few changes to make that work. Notice that some of this code is copied from the interpret method.
-```powershell
+{% highlight powershell %}
     [String]$currentExpression
     [String]$currentToken
 
@@ -111,15 +111,15 @@ There are a few things to note in this first version:
     [Object]get_Current() {
         return $this.currentToken
     }
-```
+{% endhighlight %}
 * Run your tests, they should all pass.
 * Add the next test:
-```powershell
+{% highlight powershell %}
         @{expression = '99*34'; expected = @('99', '*', '34')}
-```
+{% endhighlight %}
 * Run your tests, they all pass.
 * Add all of the remaining tests:
-```powershell
+{% highlight powershell %}
     It "Should enummerate <expression> into <expected>" -TestCase @(
         @{expression = '42'; expected = @('42')}
         @{expression = '123+'; expected = @('123', '+')}
@@ -142,9 +142,9 @@ There are a few things to note in this first version:
         }
         $tokenizer.MoveNext() | Should be $false
     } 
-```
+{% endhighlight %}
 * The only test failing deals with spaces in the expression:
-```powershell
+{% highlight powershell %}
     [+] Should enummerate ++foo into ++ foo 15ms
     [-] Should enummerate    foo  + -bar  = baz    into foo + - bar = baz 84ms
       Expected string length 3 but was 0. Strings differ at index 0.
@@ -155,14 +155,14 @@ There are a few things to note in this first version:
       at Invoke-LegacyAssertion, C:\Program Files\WindowsPowerShell\Modules\Pester\4.0.8\Functions\Assertions\Should.ps1: line 190
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 46
     [+] Should enummerate (a) into ( a ) 69ms
-```
+{% endhighlight %}
 * Add the missing line into MoveNext (right before the foreach):
-```powershell
+{% highlight powershell %}
         $this.currentExpression = $this.currentExpression -replace ('^\s+', '')
-```
+{% endhighlight %}
 * Run your tests, and all tests pass.
 * Now we can remove the first test and the original methods:
-```powershell
+{% highlight powershell %}
     using module '.\Tokenizer.psm1'
     
     Describe "Tokenizing an in-fix expression" {
@@ -189,9 +189,9 @@ There are a few things to note in this first version:
             $tokenizer.MoveNext() | Should be $false
         } 
     }
-```
+{% endhighlight %}
 * Also, remove the old code from the Tokenizer:
-```powershell
+{% highlight powershell %}
     using namespace System.Collections
     
     class Tokenizer : IEnumerable, IEnumerator {
@@ -232,10 +232,10 @@ There are a few things to note in this first version:
         [void]Reset() {
         }
     }
-```
+{% endhighlight %}
 Notice that we have no tests for Reset? It is required to get the code to run but we don't use it in a test. Time to add a missing test and write its implementation.
 * Add one final test:
-```powershell
+{% highlight powershell %}
     It "Should be possible to go through the results after a reset" {
         $tokenizer = [Tokenizer]::new("42")
         $tokenizer.MoveNext()
@@ -244,9 +244,9 @@ Notice that we have no tests for Reset? It is required to get the code to run bu
         $tokenizer.MoveNext()
         $tokenizer.Current | Should be "42"
     }
-```
+{% endhighlight %}
 * Run the test, it fails:
-```powershell
+{% highlight powershell %}
     [-] Should be possible to go through the results after a reset 81ms
       Expected string length 2 but was 0. Strings differ at index 0.
       Expected: {42}
@@ -255,9 +255,9 @@ Notice that we have no tests for Reset? It is required to get the code to run bu
       33:         $tokenizer.Current | Should be "42"
       at Invoke-LegacyAssertion, C:\Program Files\WindowsPowerShell\Modules\Pester\4.0.8\Functions\Assertions\Should.ps1: line 190
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 33
-```
+{% endhighlight %}
 * Update Tokenizer to store the original expression in the constructor and implement the reset method.
-```powershell
+{% highlight powershell %}
     [String]$currentExpression
     [String]$currentToken
     [String]$originalExpression
@@ -270,7 +270,7 @@ Notice that we have no tests for Reset? It is required to get the code to run bu
     [void]Reset() {
         $this.currentExpression = $this.originalExpression
     }
-``` 
+{% endhighlight %}
 * Run your tests, they all pass.
 
 [<—Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FunctionCalls)  [^^ Up ^^]({{ site.pagesurl}}/PowerShell5.TokenizeExpression)  [Next—>](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FinalishVersion)

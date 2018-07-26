@@ -22,7 +22,7 @@ What follows is a series of tests to get enough production code written to sugge
 # Test 1: Basic Happy Path
 When a user logs in successfully with a valid account id and password, the account's state is set to logged in. Here's a way to test that:
 
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 import org.junit.Test;
@@ -45,7 +45,7 @@ public class LoginServiceTest {
       verify(account, times(1)).setLoggedIn(true);
    }
 }
-```
+{% endhighlight %}
 
 ## Test Description
 
@@ -60,26 +60,26 @@ public class LoginServiceTest {
 To get this test to compile (but not yet pass), I had to create a few interfaces and add some methods to them. I also had to create a LoginService class:
 **IAccount**
 
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public interface IAccount {
    void setLoggedIn(boolean value);
    boolean passwordMatches(String candidate);
 }
-```
+{% endhighlight %}
 
 **IAccountRepository**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public interface IAccountRepository {
 	IAccount find(String accountId);
 }
-```
+{% endhighlight %}
 
 **LoginService**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class LoginService {
@@ -90,10 +90,10 @@ public class LoginService {
   }
 
 }
-```
+{% endhighlight %}
 
 Creating the test and adding all of theses classes gets my first test to Red with the following error:
-```
+{% highlight terminal %}
 org.mockito.exceptions.verification.WantedButNotInvoked: 
 Wanted but not invoked:
 iAccount.setLoggedIn(true);
@@ -101,14 +101,14 @@ iAccount.setLoggedIn(true);
 PasswordMatches(LoginServiceTest.java:16)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	<<snip>>
-```
+{% endhighlight %}
 
 While the stack trace looks a little daunting, the error seems clear enough. As you'll see, adding a little bit of code in the LoginService class will get the test passing.
 
 ## Code Updated to get Test to turn Green
 **Update: LoginService**
 The test as written requires that the production code (LoginService) sends a message to a particular IAccount object. The LoginService retrieves accounts via its IAccountRepository, which it received during construction. So all we need to do is remember that particular IAccountRepository object and use it:
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class LoginService {
@@ -124,11 +124,11 @@ public class LoginService {
    }
 
 }
-```
+{% endhighlight %}
 
 # Test 2: 3 Failed Logins Causes Account to be Revoked
 After three consecutive failed login attempts to the account, the account shall be revoked. Here's such a test expressing this business rule (we'll remove duplication in the tests after getting to green):
-```java
+{% highlight java %}
    @Test
    public void itShouldSetAccountToRevokedAfterThreeFailedLoginAttempts() {
       IAccount account = mock(IAccount.class);
@@ -144,7 +144,7 @@ After three consecutive failed login attempts to the account, the account shall 
 
       verify(account, times(1)).setRevoked(true);
    }
-```
+{% endhighlight %}
 ## Test Description
 As before, there are 5 parts to this test:
 |**Part 1**|Create an IAccount test-double. Unlike the first test, this test double never matches any password.|
@@ -162,7 +162,7 @@ When you've done that, the test fails with an exception similar to the previous 
 
 ## Code Updated to get Test to turn Green
 Here's one way to make this test pass (and keep the first test passing):
-```java
+{% highlight java %}
    private int failedAttempts = 0;
       // snip ...
 
@@ -174,10 +174,10 @@ Here's one way to make this test pass (and keep the first test passing):
       if (failedAttempts == 3)
          account.setRevoked(true);
    }
-```
+{% endhighlight %}
 
 Sure it is a bit ugly and we can certainly improve on the structure. Before doing that, however, we'll let the production code ripen a bit to get a better sense of its direction. Instead, let's spend some time removing duplication in the unit test code. Rather than make you work through several refactoring steps, here's the final version I came up with:
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 import static org.mockito.Matchers.anyString;
@@ -223,12 +223,12 @@ public class LoginServiceTest {
       verify(account, times(1)).setRevoked(true);
    }
 }
-```
+{% endhighlight %}
 This simply extracts common setup to an init() method. However, this cleanup really shortens the individual tests considerably. It also makes their intent clearer. 
 
 # Test 3: setLoggedIn not called if password does not match
 The first two tests have made good progress, however to keep the number of assertions per test small (so far one) and to make individual tests less dependent on the underlying implementation, this next test forces a fix to the code and probably would have been a better second test than one you just created.
-```java
+{% highlight java %}
 import static org.mockito.Mockito.never;
 ...
    @Test
@@ -237,7 +237,7 @@ import static org.mockito.Mockito.never;
       service.login("brett", "password");
       verify(account, never()).setLoggedIn(true);
    }
-```
+{% endhighlight %}
 
 ## Test Description
 This test takes advantage of the recent test refactoring. Before ever getting into the test method, the init() method:
@@ -257,7 +257,7 @@ It would have been reasonable to use a strict mock - one that does not allow any
 This test did not require any existing classes to have new methods added.
 
 Once the test executes, you'll notice a failure. It's a bit different from the previous example, but still it is fairly clear what happened. A method that should not have been called was called:
-```
+{% highlight terminal %}
 org.mockito.exceptions.verification.NeverWantedButInvoked: 
 iAccount.setLoggedIn(true);
 Never wanted but invoked!
@@ -269,11 +269,11 @@ Undesired invocation:
 	at com.om.example.loginservice.LoginServiceTest.ItShouldNotSetAccountLoggedInIf
 PasswordDoesNotMatch(LoginServiceTest.java:50)
 	<<snip>>
-```
+{% endhighlight %}
 
 ## Code Updated to get Test to turn Green
 The LoginService.login method needs a little updating:
-```java
+{% highlight java %}
    public void login(String accountId, String password) {
       IAccount account = accountRepository.find(accountId);
 
@@ -285,14 +285,14 @@ The LoginService.login method needs a little updating:
       if (failedAttempts == 3)
          account.setRevoked(true);
    }
-```
+{% endhighlight %}
 
 Verify that your code compiles and your tests pass.
 
 # Test 4: Two Fails on One Account Followed By Fail on Second Account
 This is one of those requirements you ask "Really?!" This requirement comes from an actual project, so while it might sound bogus, it is an actual requirement from the real world.
 
-```java
+{% highlight java %}
    @Test
    public void itShouldNotRevokeSecondAccountAfterTwoFailedAttemptsFirstAccount() {
       willPasswordMatch(false);
@@ -307,7 +307,7 @@ This is one of those requirements you ask "Really?!" This requirement comes from
 
       verify(secondAccount, never()).setRevoked(true);
    }
-```
+{% endhighlight %}
 
 ## Test Description
 This test is a little longer because it requires more setup. Rather than possibly messing up existing tests and adding more setup to the fixture, I decided to do it in this test. There are alternatives to writing this test's setup:
@@ -325,7 +325,7 @@ There are 4 parts to this test:
 
 ## Things Created for Compilation
 This test compiles without any new methods. It does fail with the following exception:
-```
+{% highlight terminal %}
 org.mockito.exceptions.verification.NeverWantedButInvoked: 
 iAccount.setRevoked(true);
 Never wanted but invoked!
@@ -335,13 +335,13 @@ Caused by: org.mockito.exceptions.cause.UndesiredInvocation:
 Undesired invocation:
 	at com.om.example.loginservice.LoginService.login(LoginService.java:21)
 	<snip>
-```
+{% endhighlight %}
 
 As with previous exceptions, the message tells you what you need to know. The account was incorrectly revoked.
 
 ## Code Updated to get Test to turn Green
 To get this new test to pass, I added a new attribute to the LoginService class: previousAccountId. Then I updated the login method to take advantage of it:
-```java
+{% highlight java %}
    private String previousAccountId = "";
       // snip ...
 
@@ -362,20 +362,20 @@ To get this new test to pass, I added a new attribute to the LoginService class:
       if (failedAttempts == 3)
          account.setRevoked(true);
    }
-```
+{% endhighlight %}
 
 This allows all tests to pass. Would it have been possible to do less? Maybe, but this was the first thing that came to mind. The code is starting to be a bit unruly. We're just about ready to clean up this code, but before we do there are a few more tests.
 
 # Test 5: Do not allow a second login
 In the actual problem, counting concurrent logins was somewhat complex. For this example, we'll keep it simple. If you are already logged in, you cannot log in a second time. That's simple enough:
-```java
+{% highlight java %}
    @Test(expected = AccountLoginLimitReachedException.class)
    public void itShouldNowAllowConcurrentLogins() {
       willPasswordMatch(true);
       when(account.isLoggedIn()).thenReturn(true);
       service.login("brett", "password");
    }
-```
+{% endhighlight %}
 
 ## Test Description
 This test first sets the password to matching. However, it also sets a new method, isLoggedIn, to always return true. It then attempts to login. The validation part of this test is in the (expected = AccountLoginLimitReachedException.class) part of the annotation.
@@ -383,13 +383,13 @@ This test first sets the password to matching. However, it also sets a new metho
 ## Things Created for Compilation
 First, create the new exception:
 **AccountLoginLimitReachedException**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AccountLoginLimitReachedException extends RuntimeException {
    private static final long serialVersionUID = 1L;
 }
-```
+{% endhighlight %}
 
 Next, add a new method to the IAccount class, isLoggedIn.
 
@@ -397,7 +397,7 @@ When you make these changes, the test will fail and the message indicates it exp
 
 ## Code Updated to get Test to turn Green
 To get that exception thrown, simply make one small addition to the login method:
-```java
+{% highlight java %}
    public void login(String accountId, String password) {
       IAccount account = accountRepository.find(accountId);
 
@@ -407,17 +407,17 @@ To get that exception thrown, simply make one small addition to the login method
          account.setLoggedIn(true);
       } else {
       // snip ...
-```
+{% endhighlight %}
 
 # Test 6: AccountNotFoundException thrown if account is not found
 This is a final test to make sure the code handles the case of an account not getting found. This is not too hard to write:
-```java
+{% highlight java %}
    @Test(expected = AccountNotFoundException.class)
    public void ItShouldThrowExceptionIfAccountNotFound() {
       when(accountRepository.find("schuchert")).thenReturn(null);
       service.login("schuchert", "password");
    }
-```
+{% endhighlight %}
 
 ## Test Description
 This test takes advantage of the fact that more specific// **when**// clauses take precedence over more general ones. This test configures the account repository test-double to return null for the account "schuchert". It then attempts the login, which should throw an exception.
@@ -425,37 +425,37 @@ This test takes advantage of the fact that more specific// **when**// clauses ta
 ## Things Created for Compilation
 To get this test to compile, you'll need to add a new exception class:
 **AccountNotFoundException**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AccountNotFoundException extends RuntimeException {
    private static final long serialVersionUID = 1L;
 }
-```
+{% endhighlight %}
 
 ## Code Updated to get Test to turn Green
 When you make this change, the test will fail with a null pointer exception. The fix is quick and at the top of the method:
-```java
+{% highlight java %}
    public void login(String accountId, String password) {
       IAccount account = accountRepository.find(accountId);
 
       if (account == null)
          throw new AccountNotFoundException();
       // snip ...
-```
+{% endhighlight %}
 
 This should make all tests pass.
 
 # Test 7: Cannot Login to Revoked Account
 The next test is similar to the previous test. A revoked account does not allow logins:
-```java
+{% highlight java %}
    @Test(expected = AccountRevokedException.class)
    public void ItShouldNotBePossibleToLogIntoRevokedAccount() {
       willPasswordMatch(true);
       when(account.isRevoked()).thenReturn(true);
       service.login("brett", "password");
    }
-```
+{% endhighlight %}
 
 ## Test Description
 This test is a repeat of the previous test, checking for a different result from a different starting condition.
@@ -465,7 +465,7 @@ You'll need to add another exception, AccountRevokedException (as an unchecked e
 
 ## Code Updated to get Test to turn Green
 The only update to get to green is adding a check - a guard clause - similar to the previous test:
-```java
+{% highlight java %}
    public void login(String accountId, String password) {
       IAccount account = accountRepository.find(accountId);
 
@@ -478,7 +478,7 @@ The only update to get to green is adding a check - a guard clause - similar to 
          if (account.isRevoked())
             throw new AccountRevokedException();
       // snip ...
-```
+{% endhighlight %}
 
 # Summary so far
 There are many more tests you could add to this system:
@@ -525,7 +525,7 @@ Given the requirements so far, the state pattern is overkill. However, in the re
 We have tests passing and green. Our goal is to slowly migrate the code. Along the way we'll also clean up some other problems.
 
 Here's our starting point:
-```java
+{% highlight java %}
    public void login(String accountId, String password) {
       IAccount account = accountRepository.find(accountId);
 
@@ -550,7 +550,7 @@ Here's our starting point:
       if (failedAttempts == 3)
          account.setRevoked(true);
    }
-```
+{% endhighlight %}
 
 This refactoring is a simplified version of [Replace Type Code with State/Strategy](http://www.refactoring.com/catalog/replaceTypeCodeWithStateStrategy.html). What we'll do is somewhat simpler because we do not have a type code. Rather, the underlying code is state-based and it is this observation, along with difficulty of managing the code, that suggests following the refactoring steps described in Martin Fowler's Refactoring book to get to the state pattern. And that is what follows.
 
@@ -581,7 +581,7 @@ That is, refactoring is more about copy, update, remove rather than directly mov
 In the case of moving to the state pattern, typically the method on the state object takes in a so-called context object. In this example, the context object is the LoginService object. Also, before we make the move, consider the parameters: a string for the account id and a string for the password. If you pass the account string into the LoginServiceState, then the state will have to use the account repository to look up the service. That's fine, but it requires injection of the account repository into each of the state instances. Rather than doing that, we will instead pass in an IAccount. We'll allow the lookup to happen in the LoginService and the resulting IAccount will be passed into the state.
 
 Here is a first cut at creating that new method in LoginServiceState:
-```java
+{% highlight java %}
    public void login(LoginService context, IAccount account, String password) {
       if (account.passwordMatches(password)) {
          if (account.isLoggedIn())
@@ -601,7 +601,7 @@ Here is a first cut at creating that new method in LoginServiceState:
       if (failedAttempts == 3)
          account.setRevoked(true);
    }
-```
+{% endhighlight %}
 
 If you create this method, you'll notice the following problems:
 * previousAccountId does not exist: we can add this missing attribute
@@ -622,7 +622,7 @@ Simply add this method to IAccount: String getId();
 
 ### Update LoginService.login to use getId()
 There are only two lines in the bottom of the login method that use accountId (other than the first time it is used to look up the account). Those need to change:
-```java
+{% highlight java %}
       } else {
          if (previousAccountId.equals(account.getId()))
             ++failedAttempts;
@@ -631,24 +631,24 @@ There are only two lines in the bottom of the login method that use accountId (o
             previousAccountId = account.getId();
          }
       }
-```
+{% endhighlight %}
 
 Run your tests and you'll see that two fail.
 
 ### Get tests to pass again
 A single line added to the init() method in the unit test will get this to pass:
-```java
+{% highlight java %}
    public void init() {
       account = mock(IAccount.class);
       when(account.getId()).thenReturn("brett");
       // snip ...
-```
+{% endhighlight %}
 
 Verify your tests all pass.
 
 ### Extract the body of the method
 Finally, extract the bottom part of the method:
-```java
+{% highlight java %}
    public void login(String accountId, String password) {
       IAccount account = accountRepository.find(accountId);
 
@@ -677,14 +677,14 @@ Finally, extract the bottom part of the method:
       if (failedAttempts == 3)
          account.setRevoked(true);
    }
-```
+{% endhighlight %}
 
 Verify your tests all pass.
 
 ## Copy (with rename) verifyLoginAttempt into LoginServiceState.login
 Notice that the code is well prepared to handle logging in after the IAccount is found. Start by copying verifyLoginAttempt into LoginServceState, rename it to login and add the missing previousAccountId and failedAttempts fields into the state object:
 
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public abstract class LoginServiceState {
@@ -711,7 +711,7 @@ public abstract class LoginServiceState {
          account.setRevoked(true);
    }
 }
-```
+{% endhighlight %}
 
 Verify your code compiles and your tests pass.
 
@@ -720,15 +720,15 @@ You'll take three steps to complete this:
 
 ### Add State Instance to LoginServce
 Next, modify the LoginService to have an instance of LoginServiceState and initialize it to AwaitingFirstLoginAttempt:
-```java
+{% highlight java %}
    private LoginServiceState state = new AwaitingFirstLoginAttempt();
-```
+{% endhighlight %}
 
 Your code should still compile and your tests should still pass.
 
 ### Delegate to State instace
 Update the login method to delegate to the state:
-```java
+{% highlight java %}
    public void login(String accountId, String password) {
       IAccount account = accountRepository.find(accountId);
 
@@ -737,13 +737,13 @@ Update the login method to delegate to the state:
 
       state.login(account, password);
    }
-```
+{% endhighlight %}
 
 Your code should still compile and your tests should still pass.
 
 ### Remove Stale Code
 Finally, remove the verifyLoginAttempt method and the failedAttempts and previousAccountId fields:
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class LoginService {
@@ -763,7 +763,7 @@ public class LoginService {
       state.login(account, password);
    }
 }
-```
+{% endhighlight %}
 
 ## Prepare for Polymorphsim
 Next, you'll push the LoginServiceState.login method to each of the subclasses and then begin to remove the code not specifically related to each of the states.
@@ -772,7 +772,7 @@ Next, you'll push the LoginServiceState.login method to each of the subclasses a
 First, push the login method as is into each of the subclasses and make the method abstract in the base class. (Note in most Java IDE's this is a single refactoring command.)
 
 Here's the resulting LoginServiceState:
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public abstract class LoginServiceState {
@@ -781,10 +781,10 @@ public abstract class LoginServiceState {
 
    public abstract void login(IAccount account, String password);
 }
-```
+{% endhighlight %}
 
 And here's one of the substates:
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AwaitingFirstLoginAttempt extends LoginServiceState {
@@ -809,7 +809,7 @@ public class AwaitingFirstLoginAttempt extends LoginServiceState {
          account.setRevoked(true);
    }
 }
-```
+{% endhighlight %}
 
 Verify your code compiles and your tests pass.
 
@@ -838,7 +838,7 @@ Verify that your tests still pass.
 
 ### Update AwaitingFirstLoginAttempt
 First, remove the parts of the login method that do not apply to the first time a password does not match:
-```java
+{% highlight java %}
    @Override
    public void login(LoginService context, IAccount account, String password) {
       if (account.passwordMatches(password)) {
@@ -851,33 +851,33 @@ First, remove the parts of the login method that do not apply to the first time 
          context.setState(new AfterFirstFailedLoginAttempt(account.getId()));
       }
    }
-```
+{% endhighlight %}
 
 To get this to pass, you'll need to make a few additions:
 **Add constructor to AfterFirstFailedLoginAttempt**
-```java
+{% highlight java %}
    private String previousAccountId;
 
    public AfterFirstFailedLoginAttempt(String previousAccountId) {
       this.previousAccountId = previousAccountId;
       failedAttempts = 1;
    }
-```
+{% endhighlight %}
 
 (Note: I'm cheating a bit here, I'm adding the previousAccountId as a field in this class. It will eventually be removed from the abstract base class as it does not apply to the AwaitingFirstLoginAttempt class. This is an example of avoiding violating the [Liskov Substitution Principle](http://www.objectmentor.com/resources/articles/lsp.pdf).)
 
 **Add setState to LoginService**
-```java
+{% highlight java %}
    public void setState(LoginServiceState state) {
       this.state = state;
    }
-```
+{% endhighlight %}
 
 Verify your code compiles and the tests all pass.
 
 ### Update AfterFirstFailedLoginAttempt
 Moving through the state model, we'll fix the second state:
-```java
+{% highlight java %}
    @Override
    public void login(LoginService context, IAccount account, String password) {
       if (account.passwordMatches(password)) {
@@ -894,23 +894,23 @@ Moving through the state model, we'll fix the second state:
             previousAccountId = account.getId();
       }
    }
-```
+{% endhighlight %}
 
 To get this to compile, you'll need to add a constructor to AfterSecondFailedLoginAttempt:
-```java
+{% highlight java %}
    private String previousAccountId;
 
    public AfterSecondFailedLoginAttempt(String previousAccountId) {
       this.previousAccountId = previousAccountId;
       failedAttempts = 2;
    }
-```
+{% endhighlight %}
 
 Verify your code compiles and your tests pass.
 
 ### Update AfterSecondFailedAttempt
 Now it's time to update the final state:
-```java
+{% highlight java %}
    @Override
    public void login(LoginService context, IAccount account, String password) {
       if (account.passwordMatches(password)) {
@@ -928,7 +928,7 @@ Now it's time to update the final state:
          }
       }
    }
-```
+{% endhighlight %}
 
 Make sure your code compiles and your tests pass.
 
@@ -970,7 +970,7 @@ In the following drawing (which attempts to follow the UML 2.0 specification), t
 Rather than walk you through this refactoring, I'm just going to give you each of the classes.
 
 ### Update: LoginServiceState
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public abstract class LoginServiceState {
@@ -989,10 +989,10 @@ public abstract class LoginServiceState {
    public abstract void handleIncorrectPassword(LoginService context,
          IAccount account, String password);
 }
-```
+{% endhighlight %}
 
 ### Update: AwaitingFirstLoginAttempt
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AwaitingFirstLoginAttempt extends LoginServiceState {
@@ -1002,10 +1002,10 @@ public class AwaitingFirstLoginAttempt extends LoginServiceState {
       context.setState(new AfterFirstFailedLoginAttempt(account.getId()));
    }
 }
-```
+{% endhighlight %}
 
 ### Update: AfterFirstFailedLoginAttempt
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AfterFirstFailedLoginAttempt extends LoginServiceState {
@@ -1024,10 +1024,10 @@ public class AfterFirstFailedLoginAttempt extends LoginServiceState {
          previousAccountId = account.getId();
    }
 }
-```
+{% endhighlight %}
 
 ### Update: AfterSecondFailedLoginAttempt
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AfterSecondFailedLoginAttempt extends LoginServiceState {
@@ -1048,7 +1048,7 @@ public class AfterSecondFailedLoginAttempt extends LoginServiceState {
       }
    }
 }
-```
+{% endhighlight %}
 
 ### Verify It All Works
 After these four changes, make sure your code compiles and the tests pass.
@@ -1058,7 +1058,7 @@ When I looked at the login method in the LoginServcieState I realized there was 
 
 ### Add a Missing Test
 There is a problem with the current implementation of LoginServiceState.login, but there are no tests to verify that the problem exists. Rather than tell you what the problem is, here is one final test:
-```java
+{% highlight java %}
    @Test
    public void itShouldResetBackToInitialStateAfterSuccessfulLogin() {
       willPasswordMatch(false);
@@ -1070,17 +1070,17 @@ There is a problem with the current implementation of LoginServiceState.login, b
       service.login("brett", "password");
       verify(account, never()).setRevoked(true);
    }
-```
+{% endhighlight %}
 
 And here's a fix to make this pass. In the LoginServiceState.login method, add the following line:
-```java
+{% highlight java %}
          context.setState(new AwaitingFirstLoginAttempt());
-```
+{% endhighlight %}
 
 After this line:
-```java
+{% highlight java %}
          account.setLoggedIn(true);
-```
+{% endhighlight %}
 
 What the first test does and why this fix works is left to the reader as an exercise.
 
@@ -1092,7 +1092,7 @@ Even so, let's take this to its logical (extreme) conclusion as a way to demonst
 #### Extract Class
 Extract a base class for LoginService:
 **LoginServiceContext**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public abstract class LoginServiceContext {
@@ -1111,10 +1111,10 @@ public abstract class LoginServiceContext {
       return state;
    }
 }
-```
+{% endhighlight %}
 
 **Update: LoginService**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class LoginService extends LoginServiceContext {
@@ -1134,7 +1134,7 @@ public class LoginService extends LoginServiceContext {
       getState().login(this, account, password);
    }
 }
-```
+{% endhighlight %}
 
 Replace all uses of LoginService with LoginServiceContext in the LoginServiceState hierarchy. Note that when I used the extract superclass refactoring in Eclipse, this was done automatically.
 
@@ -1154,7 +1154,7 @@ I hope you enjoyed your journey.
 
 ## The Final Source Code
 **LoginServiceTest.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 import static org.mockito.Matchers.anyString;
@@ -1256,10 +1256,10 @@ public class LoginServiceTest {
       verify(account, never()).setRevoked(true);
    }
 }
-```
+{% endhighlight %}
 ----
 **LoginService.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class LoginService extends LoginServiceContext {
@@ -1279,10 +1279,10 @@ public class LoginService extends LoginServiceContext {
       getState().login(this, account, password);
    }
 }
-```
+{% endhighlight %}
 ----
 **LoginServiceContext.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public abstract class LoginServiceContext {
@@ -1300,10 +1300,10 @@ public abstract class LoginServiceContext {
       return state;
    }
 }
-```
+{% endhighlight %}
 ----
 **LoginServiceState.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public abstract class LoginServiceState {
@@ -1323,10 +1323,10 @@ public abstract class LoginServiceState {
    public abstract void handleIncorrectPassword(LoginServiceContext context,
          IAccount account, String password);
 }
-```
+{% endhighlight %}
 ----
 **AwaitingFirstLoginAttempt.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AwaitingFirstLoginAttempt extends LoginServiceState {
@@ -1336,10 +1336,10 @@ public class AwaitingFirstLoginAttempt extends LoginServiceState {
       context.setState(new AfterFirstFailedLoginAttempt(account.getId()));
    }
 }
-```
+{% endhighlight %}
 ----
 **AfterFirstFailedLoginAttempt.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AfterFirstFailedLoginAttempt extends LoginServiceState {
@@ -1358,10 +1358,10 @@ public class AfterFirstFailedLoginAttempt extends LoginServiceState {
          previousAccountId = account.getId();
    }
 }
-```
+{% endhighlight %}
 ----
 **AfterSecondFailedLoginAttempt.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AfterSecondFailedLoginAttempt extends LoginServiceState {
@@ -1382,11 +1382,11 @@ public class AfterSecondFailedLoginAttempt extends LoginServiceState {
       }
    }
 }
-```
+{% endhighlight %}
 
 ----
 **IAccount.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public interface IAccount {
@@ -1397,40 +1397,40 @@ public interface IAccount {
    boolean isRevoked();
    String getId();
 }
-```
+{% endhighlight %}
 ----
 **IAccountRepository.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public interface IAccountRepository {
   IAccount find(String accountId);
 }
-```
+{% endhighlight %}
 ----
 **AccountLoginLimitReachedException.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AccountLoginLimitReachedException extends RuntimeException {
    private static final long serialVersionUID = 1L;
 }
-```
+{% endhighlight %}
 ----
 **AccountNotFoundException.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AccountNotFoundException extends RuntimeException {
    private static final long serialVersionUID = 1L;
 }
-```
+{% endhighlight %}
 ----
 **AccountRevokedException.java**
-```java
+{% highlight java %}
 package com.om.example.loginservice;
 
 public class AccountRevokedException extends RuntimeException {
    private static final long serialVersionUID = 1L;
 }
-```
+{% endhighlight %}

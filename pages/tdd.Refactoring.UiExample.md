@@ -33,7 +33,7 @@ The idea for this example is from Joseph Buschmann. The Java code I've written b
 Here is such a program (greatly simplified when transitioned from C# to Java):
 
 //**AdditionalDetailsPanel.java**//
-```java
+{% highlight java %}
 package com.om.ui.refactoring.example;
 
 import java.awt.GridLayout;
@@ -159,12 +159,12 @@ public class AdditionalDetailsPanel extends JPanel implements ActionListener {
     return true;
   }
 }
-```
+{% endhighlight %}
 
 For completeness, here is class with a main() function to bring this program to life (so now you can can manually test it!-):
 
 //**Main.java**//
-```java
+{% highlight java %}
 package com.om.ui.refactoring.example;
 
 import javax.swing.JFrame;
@@ -186,7 +186,7 @@ public class Main {
     frame.setVisible(true);
   }
 }
-```
+{% endhighlight %}
 
 If you run this example, you'll see a rather ugly UI (the original one from Joseph Buschmann looks much better and uses different input widgets for the different kinds of additional information fields - the ugliness is all mine):
 ![](images/UiRefactoringExampleUI.png)
@@ -218,7 +218,7 @@ As written, this test requires a graphic context. If you were to create tests fo
 Here are two simple tests to verify basic Url validation that keep the code structure essentially unchanged:
 
 //** UrlValidationExampleTest.java**//
-```java
+{% highlight java %}
 package com.om.ui.refactoring.example;
 
 import static org.junit.Assert.assertTrue;
@@ -248,7 +248,7 @@ public class UrlValidationExampleTest {
     assertTrue(panel.handleSubmit() == false);
   }
 }
-```
+{% endhighlight %}
 These two tests work. No graphic windows appear. They run fast enough. So do you see any problems with this approach?
 * Created method setText(...)
 * Created method getUrlRadioButton()
@@ -281,7 +281,7 @@ As I continue working thorough this, I'm keeping all the code you've seen so far
 
 ### Break Out Method Object
 To apply this refactoring, we are going to make the following method work as a standalone class:
-```java
+{% highlight java %}
   private boolean validateUrl() {
     String body = textArea.getText();
     try {
@@ -292,17 +292,17 @@ To apply this refactoring, we are going to make the following method work as a s
     }
     return true;
   }
-```
+{% endhighlight %}
 Before we do that, consider the following two lines:
-```java
+{% highlight java %}
     String body = textArea.getText();
     ...
       errorMessage = e.getMessage();
-```
+{% endhighlight %}
 The first line is problematic because it uses the textArea instance variable, which is a JTextArea. The second line is a problem because it sets a another instance variable. We could do this (don't do this - though I did create a working version so you can give this a try if you'd like):
 
 //**New Class: UrlValidatorVersion1 **//
-```java
+{% highlight java %}
 package com.om.ui.refactoring.example;
 
 import java.net.URL;
@@ -328,9 +328,9 @@ public class UrlValidatorVersion1 {
     return true;
   }
 }
-```
+{% endhighlight %}
 To make this work, we'd then update the validatUrl method to use this new class:
-```java
+{% highlight java %}
   private boolean validateUrl() {
     UrlValidatorVersion1 urlValidatorVersion1 = new UrlValidatorVersion1(textArea);
     boolean result = urlValidatorVersion1.validateUrl();
@@ -338,11 +338,11 @@ To make this work, we'd then update the validatUrl method to use this new class:
       errorMessage = urlValidatorVersion1.errorMessage;
     return result;
   }
-```
+{% endhighlight %}
 This "works" but it puts UI gunk in the UrlValidator class. Even so, this is an improvement. Here is a rewrite of the previous test class using this new extracted method object:
 
 //**UrlValidatorVersion1Test.java**//
-```java
+{% highlight java %}
 package com.om.ui.refactoring.example;
 
 import static org.junit.Assert.assertTrue;
@@ -366,12 +366,12 @@ public class UrlValidatorVersion1Test {
     assertTrue(validator.validateUrl() == false);
   }
 }
-```
+{% endhighlight %}
 There's less setup. The code is directly hitting its target. This exposes the error message, giving us more we can easily test. Even so, we can do much better.
 
 ### Keeping UI Code in One Place
 Go back to the original validateUrl method:
-```java
+{% highlight java %}
   private boolean validateUrl() {
     String body = textArea.getText();
     try {
@@ -382,10 +382,10 @@ Go back to the original validateUrl method:
     }
     return true;
   }
-```
+{% endhighlight %}
 
 First make a few internal improvements:
-```java
+{% highlight java %}
   private boolean validateUrl() {
     String body = getText();
     
@@ -397,7 +397,7 @@ First make a few internal improvements:
     }
     return true;
   }
-```
+{% endhighlight %}
 Changes:
 * The first line now uses getText() to retrieve text. This removes any knowledge of a JTextArea. (See, adding that method in the first test wasn't so bad after all.)
 * Use setErrorMessage(...) to set the error message.
@@ -405,7 +405,7 @@ Changes:
 Given this change, we can rewrite the method object. Rather that passing in what the method object needs in the constructor, this instead uses method injection:
 
 //**UrlValidatorVersion2**//
-```java
+{% highlight java %}
 package com.om.ui.refactoring.example;
 
 import java.net.URL;
@@ -422,14 +422,14 @@ public class UrlValidatorVersion2 {
     return true;
   }
 }
-```
+{% endhighlight %}
 This is moving in the right direction. Now the update to the original validateUrl method is:
-```java
+{% highlight java %}
   private boolean validateUrl() {
     UrlValidatorVersion2 urlValidatorVersion2 = new UrlValidatorVersion2();
     return urlValidatorVersion2.validateUrl(this);
   }
-```
+{% endhighlight %}
 There are still problems:
 * There's a circular dependency between the two classes.
 * This new version depends on something that uses UI gunk (which I think is a violation of the [Dependency Inversion Principle](http://www.objectmentor.com/resources/articles/dip.pdf)).
@@ -438,16 +438,16 @@ There are still problems:
 There's a simple fix, however. We can extract an interface to capture the methods we need to improve the situation:
 
 //**TextSource.java**//
-```java
+{% highlight java %}
 package com.om.ui.refactoring.example;
 
 public interface TextSource {
   String getText();
   void setErrorMessage(String message);
 }
-```
+{% endhighlight %}
 By adding this interface to the AdditionalDetailsPanel and using it in the UrlValidatorVersion2, it makes the code more easily tested:
-```java
+{% highlight java %}
 package com.om.ui.refactoring.example;
 
 import java.net.URL;
@@ -464,10 +464,10 @@ public class UrlValidatorVersion2 {
     return true;
   }
 }
-```
+{% endhighlight %}
 Here's the tests rewritten using a hand-rolled test double (a stub):
 //**UrlValidatorVersion2Test**//
-```java
+{% highlight java %}
 package com.om.ui.refactoring.example;
 
 import static org.junit.Assert.assertTrue;
@@ -511,7 +511,7 @@ public class UrlValidatorVersion2Test {
     assertTrue(validator.validateUrl(stub) == false);
   }
 }
-```
+{% endhighlight %}
 This code is more focused, tests what you want to test directly and uses a standard technique to test code.
 
 There's an added bonus. The first tests took 0.9 seconds to run. That's pretty fast, right? How long do these test take to run? 0.03 seconds. That's 30x faster! It may not seem like much but imagine a system with 1000 tests (a small number, really). The difference is 900 seconds versus 30. 
@@ -523,7 +523,7 @@ There's one more problem I want to fix before leaving this. The name of the new 
 If I apply this simple idea to all of the validation, I end up with:
 
 //**HtmlValidator**//
-```java
+{% highlight java %}
 package com.om.ui.refactoring.example;
 
 public class HtmlValidator {
@@ -538,10 +538,10 @@ public class HtmlValidator {
     return true;
   }
 }
-```
+{% endhighlight %}
 
 //**TextValidator**//
-```java
+{% highlight java %}
 package com.om.ui.refactoring.example;
 
 public class TextValidator {
@@ -555,10 +555,10 @@ public class TextValidator {
     return true;
   }
 }
-```
+{% endhighlight %}
 
 Here's the original handleSubmit method:
-```java
+{% highlight java %}
   private boolean handleSubmit() {
     if (text.isSelected())
       return validateText();
@@ -569,9 +569,9 @@ Here's the original handleSubmit method:
     errorMessage = "No type selected";
     return false;
   }
-```
+{% endhighlight %}
 And after the rewrite, here's an updated version (note I renamed UrlValidatorVersion2 to UrlValidator):
-```java
+{% highlight java %}
   boolean handleSubmit() {
     if (text.isSelected())
       return new TextValidator().validate(this);
@@ -582,7 +582,7 @@ And after the rewrite, here's an updated version (note I renamed UrlValidatorVer
     errorMessage = "No type selected";
     return false;
   }
-```
+{% endhighlight %}
 For those of you worried about all the new'ing up of objects, here are a few comments:
 * This is easily fixed by using fields.
 * If you are running Java 1.6, these will be placed on the stack anyway (yes really).
@@ -596,7 +596,7 @@ Sure there's more you could do. Not doing more might actually require more disci
 * Extract the determination of which validator to use into a factory method (or maybe even a factory class).
 
 Making such a change would result in a handleSubmit method that looked like this (using just an extracted factory method - yes I did it to show what it looks like):
-```java
+{% highlight java %}
   boolean handleSubmit() {
     Validator validator = determineValidator();
     return validator.validate(this);
@@ -611,7 +611,7 @@ Making such a change would result in a handleSubmit method that looked like this
       return new HtmlValidator();
     throw new RuntimeException("Cannot determine correct validator");
   }
-```
+{% endhighlight %}
 The rest of the code is also in need of some repair. However, the new requirements were about// **additional validation**//. Stopping with just extracting the three classes is enough to support independent development of the validation and easy verification (writing unit tests), so there's little need to go much further.
 
 One more change I would recommend is making the nested StubTextSource class a public class since it will come in handy writing tests for all of the validators.

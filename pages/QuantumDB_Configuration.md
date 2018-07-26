@@ -15,24 +15,24 @@ QuantumDb is an Eclipse plugin that lets you view a database. This is a quick st
 [#StartYourDatabase]({{site.pagesurl}}/#StartYourDatabase)
 ## Start your Database
 This example assumes hypersonic is running with the following startup script:
-```
+{% highlight terminal %}
 org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb
-```
+{% endhighlight %}
 
 In our examples, we created a folder called database under the installation directory of hypersonic, so the full folder name is:
-```
+{% highlight terminal %}
 C:\libs\hsqldb\database
-```
+{% endhighlight %}
 
 Assuming java is in your classpath, the following command will start hypersonic:
-```
+{% highlight terminal %}
 java -cp ../lib/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb
-```
+{% endhighlight %}
 
 [#JPAinJSE]({{site.pagesurl}}/#JPAinJSE)
 ## JPA in JSE Settings
 **persistence.xml**
-```xml
+{% highlight xml %}
 <persistence>
     <persistence-unit name="examplePersistenceUnit" 
                       transaction-type="RESOURCE_LOCAL">
@@ -52,12 +52,12 @@ java -cp ../lib/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb
         </properties>
     </persistence-unit>
 </persistence>
-```
+{% endhighlight %}
 
 ## JPA in JEE Settings
 This assumes you are using the JBoss Embedded container.
 
-```xml
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>
    <persistence-unit name="custdb">
@@ -67,10 +67,10 @@ This assumes you are using the JBoss Embedded container.
       </properties>
    </persistence-unit>
 </persistence>
-```
+{% endhighlight %}
 
 And the additions to embedded-jboss-bean.xml:
-```xml
+{% highlight xml %}
    <bean name="HypersonicLocalServerDSBootstrap" 
          class="org.jboss.resource.adapter.jdbc.local.LocalTxDataSource">
       <property name="driverClass">org.hsqldb.jdbcDriver</property>
@@ -97,7 +97,7 @@ And the additions to embedded-jboss-bean.xml:
          <factory bean="HypersonicLocalServerDSBootstrap"/>
       </constructor>
    </bean>
-```
+{% endhighlight %}
 
 ## Using the Perspective
 Now that everything is setup, you'll need to open the perspective and form a connection to the database.

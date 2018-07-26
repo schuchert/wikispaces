@@ -25,7 +25,7 @@ Typically, I introduce this problem similar to how Bob introduces it (it is his 
  
 Here is one way to write these tests using [CppUTest](http://www.cpputest.org/):
 **PrimeFactorsOperator.cpp**
-```cpp
+{% highlight cpp %}
 # include <CppUTest/TestHarness.h>
 
 # include "OperandStack.h"
@@ -107,11 +107,11 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
       stack->pop();
    }
 }
-```
+{% endhighlight %}
 
 # [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) Violation?
 There is a lot of duplication in this test code. Often, test code might have more duplication than production code to make it easier to understand without hunting around. Even so, this really seems to abuse duplication unnecessarily. Here is the same thing simply cleaned up a bit:
-```cpp
+{% highlight cpp %}
 # include <CppUTest/TestHarness.h>
 
 # include "OperandStack.h"
@@ -173,7 +173,7 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
    for(int i = 0; i < 10; ++i) 
       stackContains(2);
 }
-```
+{% endhighlight %}
 This example includes a few support methods to **evaluate()** and then check that the **stackContains()** a given value. The code is more expressive and even 6 lines shorter (just counting the ;'s, not the source lines).
 
 # Multiple Lines for Checking
@@ -186,7 +186,7 @@ The next thing worth improving is the multiple lines used to determine what is o
 * or ...
 
 Here is one example using a (crazy) long list of parameters:
-```cpp
+{% highlight cpp %}
 # include <CppUTest/TestHarness.h>
 
 # include "OperandStack.h"
@@ -263,13 +263,13 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
    evalute(1024);
    stackContains(2, 2, 2, 2, 2, 2, 2, 2, 2, 2);
 }
-```
+{% endhighlight %}
 This might seem like an improvement. The ugliness is hidden in one method, **stackContains()**, but the tests look better. However, when I was updating the final test, I had to count the number of 2s several times to make sure I had 10. In fact, the number of numbers on the stack is implicitly specified by the number of numbers passed in to th emethod, but never explicitly checked. This is only a problem if you pass in too few numbers. For example, the final test will pass with anywhere from 1 to 10 2s. Any other number or more than 10 2's (other than extra 0's) and the test will fail. 
 
 It would be nice to be able to specify the total number of elements that should be on the stack after executing the operator. It will actually increase the length of the tests, but it might also make them more expressive.
 
 Consider this version:
-```cpp
+{% highlight cpp %}
 # include <CppUTest/TestHarness.h>
 
 # include "OperandStack.h"
@@ -335,11 +335,11 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
    stackSizeShouldBe(10);
    stackShouldContain(2, 2, 2, 2, 2, 2, 2, 2, 2, 2);
 }
-```
+{% endhighlight %}
 
 # Now we can improve that Ugly Method
 The method taking 10 parameters was just a temporary solution. Now we can rewrite it using variable arguments. A problem with variable arguments is that you need some way to know when to stop reading. Putting in the **stackSizeShouldBe()** method gives us a natural way to express the number of variable arguments:
-```cpp
+{% highlight cpp %}
 //snip
 # include <stdarg.h>
 
@@ -365,14 +365,14 @@ TEST_GROUP(PrimeFactorsOperatorTest) {
       va_end(others);
    }
 };
-```
+{% endhighlight %}
 
 These tests are somewhat influenced by BDD and some experience I've had using [RSpec](http://rspec.info). One thing these tests exhibit from my RSpec experience is that some of the steps with the test have a side-effect of storing intermediate information used later in the test. This often happens within an RSpec example as well. You can see several detailed [Ruby examples here]({{ site.pagesurl}}/ruby.Tutorials) for some examples of this style of testing.
 # Story-Runner Influenced Tests
 Here is another, probably over the top, version of the tests using more of a story-runner influence. This comes from my recent experience working through a beta version of [The RSpec Book](http://www.pragprog.com/titles/achbd/the-rspec-book) and specifically using [Cucumber](http://wiki.github.com/aslakhellesoy/cucumber).
 
 For these unit tests, I believe this is overkill. However, it does show another way to express tests:
-```cpp
+{% highlight cpp %}
 # include <CppUTest/TestHarness.h>
 
 # include "OperandStack.h"
@@ -506,7 +506,7 @@ its
    And("the stack should contain", 2);
    And("the stack should contain", 2);
 }
-```
+{% endhighlight %}
 In some respects, this looks close to the original version. BDD makes several suggestions regarding developing systems:
 * Work from outside to inside (this is also the message of TDD if you review the original sources, but it's one that might have gotten lost)
 * Use a standard (ubiquitous) language to describe examples or stories
@@ -527,7 +527,7 @@ This second point is a bit ironic coming from me. There's a design pattern from 
 # One Final Version
 In Cucumber, often the "And" step includes one thing to check. There's no reason to disallow more than one thing to check. Given the a previous solution using variable arguments, it seems OK to bring that back to clean up the examples that have so many "And" lines:
 
-```cpp
+{% highlight cpp %}
 # include <CppUTest/TestHarness.h>
 
 # include "OperandStack.h"
@@ -657,7 +657,7 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
    Then("the stack size should be", 10);
    And("the stack should contain", 2, 2, 2, 2, 2, 2, 2, 2, 2, 2);
 }
-``` 
+{% endhighlight %}
 
 # Conclusion
 We started with a fairly standard set of tests. There was some duplication, but there is a wide array of opinions on just how much the [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle impacts the clarity of tests. Duplication is bad, but if [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) is the solution, then what problems might it introduce? (One of Jerry Weinberg's principles of problem solving is that "Every Solution introduces problems.") In the case of tests, applying the [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle can lead to hard to understand tests. 

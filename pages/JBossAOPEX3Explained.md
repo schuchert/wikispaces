@@ -10,7 +10,7 @@ First, we introduce an interface, ITrackedObject, to Address. The implementation
 
 ## Main.java
 This is the driver class that starts everything. Looking at this code, it does not seem to do too much...and it doesn't. 
-```java
+{% highlight java %}
 01: package ex3;
 02: 
 03: public class Main {
@@ -24,13 +24,13 @@ This is the driver class that starts everything. Looking at this code, it does n
 11: 		Dao.save(a);
 12: 	}
 13: }
-```
+{% endhighlight %}
 ### Interesting Lines
 There are no interesting lines here. Something to point out about this example is the significant change that happens without making changes to existing Java classes.
 
 ## Dao.java
 This Dao is simulated. The point of this example is that we can intercept calls to some thing, a DAO in this case, and change the path of execution based on any condition. This class is unaware of any introductions. 
-```java
+{% highlight java %}
 01: package ex3;
 02: 
 03: public class Dao {
@@ -40,14 +40,14 @@ This Dao is simulated. The point of this example is that we can intercept calls 
 07: 		}
 08: 	}
 09: }
-```
+{% endhighlight %}
 
 ### Interesting Lines
 Again, there are no interesting lines. The client, Main.main(), did not change. The Dao.save() method also did not change. However, we are tracking whether or not objects changed and not calling Dao.save() if the object is not changed.
 
 ## Address.java
 The thing to notice is that it is unaware of whether it is changed or not. This is a simple java bean style class with attributes, setters and getters and a no-argument constructor (in this case a default constructor). 
-```java
+{% highlight java %}
 01: package ex3;
 02: 
 03: import java.io.Serializable;
@@ -100,13 +100,13 @@ The thing to notice is that it is unaware of whether it is changed or not. This 
 50: 		this.zip = zip;
 51: 	}
 54: }
-```
+{% endhighlight %}
 ### Interesting Lines
 Again, doesn't really apply. However, it *is* interesting that we know whether or not this object has changed even though looking at the class it's hard to see how.
 
 ## The Introduction
 This is only part of the jboss-aop.xml file. It's the part that says to add an interface, ITrackedObject, to Address and provides an implementation of that interface in the form of TrackedObjectMixin: 
-```xml
+{% highlight xml %}
 01: <introduction class="ex3.Address">
 02: 	<mixin>
 03: 		<interfaces>
@@ -118,7 +118,7 @@ This is only part of the jboss-aop.xml file. It's the part that says to add an i
 09: 		</construction>
 10: 	</mixin>
 11: </introduction>
-```
+{% endhighlight %}
 ### Interesting Lines
 
 |Line|Description|
@@ -130,18 +130,18 @@ This is only part of the jboss-aop.xml file. It's the part that says to add an i
 
 ## ITrackedObject.java
 This is simply an interface that has the methods for a Java-bean style boolean interface.
-```java
+{% highlight java %}
 01 package ex3;
 02 
 03 public interface ITrackedObject {
 04    boolean isChanged();
 05    void setChanged(boolean changed);
 06 }
-```
+{% endhighlight %}
 
 ## TrackedObjectMixin.java
 This is an implementation of ITrackedObject. Our goal is to augment Address with this interface/implementation without Address' knowledge. Furthermore, we want to augment Dao.save(..) to not save unnecessarily; we do this without its knowledge as well.
-```java
+{% highlight java %}
 01 package ex3;
 02 
 03 public class TrackedObjectMixin implements ITrackedObject {
@@ -158,7 +158,7 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 14       this.changed = changed;
 15    }
 16 }
-```
+{% endhighlight %}
 
 [#SetInterceptor]({{site.pagesurl}}/#SetInterceptor)
 ## SetInterceptor.java
@@ -166,7 +166,7 @@ The SetInterceptor first intercepts each assignment to a field (as we have seen 
 * This interceptor assumes the underlying target object is in fact an ITrackedObject. We know it is because of the jboss-aop.xml, but we could check here if we wanted. 
 * The underlying object is an instance of Address, which does not implement ITrackedObject directly. That interface and its implementation, TrackedObjectMixin, were introduced with the snippet of jboss-aop.xml shown above. 
 * We could check the state first and if it is changed, we could avoid some reflection. This is a viable optimization but is left as an exercise.
-```java
+{% highlight java %}
 01 package ex3;
 02 
 03 import java.lang.reflect.Field;
@@ -211,7 +211,7 @@ The SetInterceptor first intercepts each assignment to a field (as we have seen 
 42       return lhs.equals(rhs);
 43    }
 44 }
-```
+{% endhighlight %}
 ### Interesting Lines
 
 |Line|Description|
@@ -223,7 +223,7 @@ The SetInterceptor first intercepts each assignment to a field (as we have seen 
 
 ## SaveMethodInterceptor.java
 The SaveMethodInterceptor surrounds all calls to Dao.save(..). When called, it checks to see if the object passed into Dao.save(..) is or is not changed. If it is not changed, the call to Dao.save(..) never happens. Before completing, the changed state is set to false since either it was already false or it was true but then saved. As with the SetInterceptor, SaveMethodInterceptor is using behavior that has been introduced. Specifically, it uses isChanged() and setChanged(). 
-```java
+{% highlight java %}
 01: package ex3;
 02: 
 03: import org.jboss.aop.advice.Interceptor;
@@ -253,7 +253,7 @@ The SaveMethodInterceptor surrounds all calls to Dao.save(..). When called, it c
 27: 		}
 28: 	}
 29: }
-```
+{% endhighlight %}
 ### Interesting Lines
 
 |Line|Description|
@@ -263,7 +263,7 @@ The SaveMethodInterceptor surrounds all calls to Dao.save(..). When called, it c
 
 ## jboss-aop.xml
 Here is the full aspect configuration:
-```xml
+{% highlight xml %}
 01: <?xml version="1.0" encoding="UTF-8"?>
 02: <aop>
 03: 	<introduction class="ex3.Address">
@@ -291,7 +291,7 @@ Here is the full aspect configuration:
 25: 		<interceptor class="ex3.SaveMethodInterceptor" />
 26: 	</bind>
 27: </aop>
-```
+{% endhighlight %}
 ### Interesting Lines
 
 |Line|Description|

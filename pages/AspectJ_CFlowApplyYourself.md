@@ -8,15 +8,15 @@ title: AspectJ_CFlowApplyYourself
 ----
 ## Research/Experiment
 Do our pointcuts treat the following two code examples the same way?
-```
+{% highlight terminal %}
     public Address() {
         setAddressLine1("");
     }
-```
+{% endhighlight %}
 versus.
-```
+{% highlight terminal %}
    private String addressLine1 = "";
-```
+{% endhighlight %}
 ----
 ## Custom Business Method
 Add a method to the Address class. Make sure the method changes the Address in some way. Extend the cflow pointcut definition to include this new method. Verify that calling this method does not cause change tracking to occur.

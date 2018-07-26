@@ -23,18 +23,18 @@ The steps in a Scenario table ultimately become method invocations on an Actor (
 A Scenario table puts requirements on some class, know as its actor. The Actor can be set in one of three ways:
 * Using a start line in a Scenario, as [demonstrated below]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables#ExampleOfStartInScenario)
 * Introducing a Script table and then giving it a Start line:
-```
+{% highlight terminal %}
 |script|
 |Attempt Login And Validate Results|
-```
+{% endhighlight %}
 * Introducing a Script table and putting the name after the Script:
-```
+{% highlight terminal %}
 |script|Attempt Login And Validate Results| 
-```
+{% endhighlight %}
 * If none of these exist, you'll get an error similar to:
-```
+{% highlight terminal %}
 The instance scriptTableActor. does not exist
-```
+{% endhighlight %}
 This is somewhat simplified, but it gets the point across. 
 
 //**[Warning you can probably skip past the rest of this sidebar]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables#skipPastScenarioActorsSidebar)**//
@@ -76,13 +76,13 @@ Notice that we could use a Script table. However, we'll instead use a scenario t
 [#ExampleOfStartInScenario]({{site.pagesurl}}/#ExampleOfStartInScenario)
 # The First Attempt
 Here's an example test page with this scenario:
-```
+{% highlight terminal %}
 !|Scenario     |attempt|times    |logins to   |accountName|with     |password|andIn|status|expecting|result|
 |start         |AttemptLoginAndValidateResults                                                             |
 |createAccount |@accountName     |withPassword|@password  |inStatus |@status                               |
 |attempt|@times|loginsTo         |@accountName|with       |@password                                       |
 |check         |lastLoginResultIs|@result                                                                  |
-```
+{% endhighlight %}
 [include_page="sidebar_start"]({{site.pagesurl}}/include_page="sidebar_start")<span class="sidebar_title">Using Slim versus Fit in FitNesse</span>
 By default, FitNesse uses fit to execute tests. To instead configure FitNesse to use Slim, you must redefine the TEST_SYSTEM variable for the page you want to use Slim. Variable definitions are searched up the page hierarchy. Assuming this page is under the FrontPage (that's how I created it, though it could easily be a sibling of the FrontPage instead), then there are three places where this variable could be defined:
 * The page itself
@@ -90,20 +90,20 @@ By default, FitNesse uses fit to execute tests. To instead configure FitNesse to
 * On root
 
 In these examples, I am sticking to Slim by default. Also, I started FitNesse on port 8080. Therefore, to edit the root page, I entered the following url: <http://localhost:8080/root?edit>. I then added the following line at the bottom of the page:
-```
+{% highlight terminal %}
 !define TEST_SYSTEM {slim}
-``` 
+{% endhighlight %}
 
 You might wonder, can you execute some tests using Slim and some using Fit. You can. The TEST_SYSTEM variable is inherited along the page hierarchy (which is normally like a directory structure). Of course, FitNesse allows for symbolic links, so the hierarchy is not necessarily a simple tree.
 [include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 If you attempt to execute this test (once you've set its page type to test), not much happens. You'll see a yellow bar indicating that nothing ran. A scenario by itself does not execute.
 
 So now we'll use this scenario in a decision table:
-```
+{% highlight terminal %}
 |Attempt Logins To With And In Expecting  |
 |times|accountName|password|status|result |
 |1    |brett      |secret  |valid |success|
-```
+{% endhighlight %}
 
 This does attempt to use the scenario. The first row names the scenario (see Sidebar: Scenario Names). The next row names the parameters. The final row matches the parameters to the invocation of the scenario (see Sidebar: Important! Scenario Parameter Matching). 
 
@@ -116,28 +116,28 @@ Consider the Scenario defined above. How does FitNesse determine its name?
 
 The example above starts with:
 
-```
+{% highlight terminal %}
 !|Scenario     |attempt|times    |loginsTo   |accountName|with     |password|andIn|status|expecting|result|
-```
+{% endhighlight %}
 
 Now drop Scenario:
 
-```
+{% highlight terminal %}
 |attempt|times    |loginsTo   |accountName|with     |password|andIn|status|expecting|result|
-```
+{% endhighlight %}
 
 Next, starting with attempt, only include the alternating cells:
 
-```
+{% highlight terminal %}
 |attempt|logins to|with|andIn|expecting|
-```
+{% endhighlight %}
 
 Finally, put them all together (separate the parts of the name with spaces and use upper or lower case lettering).
 
-```
+{% highlight terminal %}
 
 Attempt Logins To With And In Expecting 
-```
+{% endhighlight %}
 %{ include_relative [include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 [include_page="sidebar_start"]({{site.pagesurl}}/include_page="sidebar_start")<span class="sidebar_title"> Important! Scenario Parameter Matching</span>
@@ -152,7 +152,7 @@ FitNesse matches parameters //**by order**//, not name. The second row is a nice
 # From Red/Yellow to Green
 The Scenario is Red (if you create this page and executed it, that's what you'll see). However, when you open up the scenario, it shows several yellow rows, indicating a missing class. Here a Java class to make this test fully pass (for you C# users, this is basically the same):
 
-```java
+{% highlight java %}
 package com.om.example.scenario;
 
 public class AttemptLoginAndValidateResults {
@@ -167,7 +167,7 @@ public class AttemptLoginAndValidateResults {
       return "success";
    }
 }
-```
+{% endhighlight %}
 
 Note, the page needs to be updated for this to run. You need to add:
 * A path to point to the source code.
@@ -175,7 +175,7 @@ Note, the page needs to be updated for this to run. You need to add:
 
 Here is a complete version of that page:
 
-```
+{% highlight terminal %}
 !path /Users/schuchert/workspaces/FitNesseTutorialScenarioTables/ScnearioExample/bin
 
 |import|
@@ -190,23 +190,23 @@ Here is a complete version of that page:
 |Attempt Logins To With And In Expecting                      |
 |times|accountName|password|status          |result           |
 |1    |brett      |secret  |valid           |success          |
-```
+{% endhighlight %}
 
 # More Than 1 Test
 Now that you have one test, it's not a big leap to turn this into more tests:
 
-```
+{% highlight terminal %}
 |Attempt Logins To With And In Expecting                      |
 |times|accountName|password|status          |result           |
 |1    |brett      |secret  |valid           |success          |
 |1    |brett      |secret  |do not create   |account not found|
 |1    |brett      |secret  |revoked         |account revoked  |
 |1    |brett      |secret  |password expired|password expired |
-```
+{% endhighlight %}
 
 If you update the table and then the Java source, you should see 4 passing scenarios:
 
-```java
+{% highlight java %}
 package com.om.example.scenario;
 
 public class AttemptLoginAndValidateResults {
@@ -235,7 +235,7 @@ public class AttemptLoginAndValidateResults {
       return lastLoginResult;
    }
 }
-```
+{% endhighlight %}
 
 [include_page="sidebar_start"]({{site.pagesurl}}/include_page="sidebar_start")<span class="sidebar_title">This is Just FitNesse</span>
 FitNesse is a tool that allows you to write automated (acceptance) tests against production code. The Java code I'm providing does not execute against production code. Why? I'm trying to focus on just FitNesse. The backing code for a Login Service, while possibly interesting, is irrelevant to FitNesse. FitNesse calls Slim, Slim calls your Fixture code. Your fixture code calls the production code. Therefore, to demonstrate FitNesse, I only need to show as far as the Fixture code because neither FitNesse nor Slim call your production code, the Fixtures you write do that.
@@ -245,10 +245,10 @@ By the way, this same principle applies to writing unit tests.
 
 Did you notice the duplication in this table? We can improve on this table by creating a new Scenario that uses the old scenario. The new scenario will take in fewer parameters and hard-code some of original Scenario's parameters. Here is just such a table:
 
-```
+{% highlight terminal %}
 |Scenario|Attempt Single Login With Status|status  |Expecting|result                                       |
 |attempt |1                               |loginsTo|brett    |with  |secret|andIn|@status|expecting|@result|
-```
+{% endhighlight %}
 
 This is a new scenario called "Attempt Single Login With Status Expecting". It accepts two parameters:
 * status
@@ -264,18 +264,18 @@ This is in fact all just text substitution. FitNesse:
 
 How do you invoked this new scenario?
 
-```
+{% highlight terminal %}
 |Attempt Single Login With Status Expecting|
 |status          |result                   |
 |valid           |success                  |
 |do not create   |account not found        |
 |revoked         |account revoked          |
 |password expired|password expired         |
-```
+{% endhighlight %}
 
 Here is the entire page with all of these tables together on the same page:
 
-```
+{% highlight terminal %}
 !path /Users/schuchert/workspaces/FitNesseTutorialScenarioTables/ScnearioExample/bin
 
 |import|
@@ -303,7 +303,7 @@ Here is the entire page with all of these tables together on the same page:
 |do not create   |account not found        |
 |revoked         |account revoked          |
 |password expired|password expired         |
-```
+{% endhighlight %}
 
 If you finally put all of this together with the last version of the Java class, everything should pass.
 

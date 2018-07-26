@@ -18,15 +18,15 @@ You can now build cslim using the command line tools of visual studio. I made my
 Now for the detailed instructions.
 * Start a command shell using the Visual Studio Command Prompt (2010)
 * Create a top-level directory for your work, I'll be using C:\cslim_vs2010 for these instructions
-```
+{% highlight terminal %}
 C:\>cd src
 C:\src>mkdir cslim_vs2010
 C:\src>cd cslim_vs2010
 C:\src\cslim_vs2010>
-```
+{% endhighlight %}
 * Grab the source from github (<https://github.com/dougbradbury/cslim>)
 * The url for the the clone is: **git@github.com:schuchert/cslim.git**
-```
+{% highlight terminal %}
 C:\src\cslim_vs2010>git clone git@github.com:schuchert/cslim.git
 Initialized empty Git repository in C:/src/cslim_vs2010/cslim/.git/
 remote: Counting objects: 542, done.
@@ -36,10 +36,10 @@ Receiving objects: 100% (542/542), 130.10 KiB, done.
 Resolving deltas: 100% (276/276), done.
 
 C:\src\cslim_vs2010>
-```
+{% endhighlight %}
 * That will create a directory called// **cslim**//, go there.
 * Type **nmake -f NMakefile**
-```
+{% highlight terminal %}
 C:\src\cslim_vs2010\cslim>nmake -f NMakefile
 
 Microsoft (R) Program Maintenance Utility Version 10.00.30319.01
@@ -104,9 +104,9 @@ Copyright (C) Microsoft Corporation.  All rights reserved.
 
 
 C:\src\cslim_vs2010\cslim>
-```
+{% endhighlight %}
 * This should create a file under the fixtures directory called slim.exe
-```
+{% highlight terminal %}
 C:\src\cslim_vs2010\cslim>dir fixtures\slim.exe
  Volume in drive C has no label.
  Volume Serial Number is A8D5-BA48
@@ -118,14 +118,14 @@ C:\src\cslim_vs2010\cslim>dir fixtures\slim.exe
                0 Dir(s)  32,129,187,840 bytes free
 
 C:\src\cslim_vs2010\cslim>
-```
+{% endhighlight %}
 
 Now that you have a compiled collection of fixtures, you are ready to install FitNesse, copy some pages and get tests to pass.
 # Install FitNesse
 * Download the fitnesse.jar from <http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad>. I use the EDGE build all of the time as its release criterion are the same as for the "official" release.
 * Copy (or move) the jar file you just downloaded into your top-level working directory (**C:\src\cslim_vs2010**)
 * Your directory should resemble the following:
-```
+{% highlight terminal %}
 C:\src\cslim_vs2010>dir
  Volume in drive C has no label.
  Volume Serial Number is A8D5-BA48
@@ -138,9 +138,9 @@ C:\src\cslim_vs2010>dir
 08/08/2010  06:51 PM         3,934,696 fitnesse.jar
                1 File(s)      3,934,696 bytes
                3 Dir(s)  32,125,247,488 bytes free
-```
+{% endhighlight %}
 * Make sure you are in the top level directory and start FitNesse with the following command: **java -jar fitnesse.jar -p 8080**
-```
+{% highlight terminal %}
 C:\src\cslim_vs2010>java -jar fitnesse.jar -p 8080
 Unpacking new version of FitNesse resources.  Please be patient.
 ................................................................................
@@ -168,7 +168,7 @@ Unpacking new version of FitNesse resources.  Please be patient.
         authenticator:     fitnesse.authentication.PromiscuousAuthenticator
         html page factory: fitnesse.html.HtmlPageFactory
         page version expiration set to 14 days.
-```
+{% endhighlight %}
 **Note:** The first time you run FitNesse, it will expand the help wiki. This will not happen upon subsequent runs unless you replace fitnesse.jar with a newer version.
 ## Copy Example Pages
 * Create a new shell (because you're running FitNesse in your original shell)
@@ -176,7 +176,7 @@ Unpacking new version of FitNesse resources.  Please be patient.
 * The directory to copy// **from**// is: **cslim\fixtures\pages\**
 * The directory to copy// **to**// is a bit more involved. You'll want to copy the directory to a directory// **under**// the FitNesseRoot directory created when you started fitnesse in the previous shell.// **However**//, you'll need to name the directory as a valid wiki word (starts with a capital letter, has at least one more capital letter, does not have 2 or more consecutive capital letters). For this example, I'll recommend you copy it as// **CslimExamples**//. Notice that only// **C**// and// **E**// in examples are capital letters. That's important.
 * You can use the explorer or some tool. Here's what you're copying:
-```
+{% highlight terminal %}
 C:\src\cslim_vs2010>dir cslim\fixtures\pages
  Volume in drive C has no label.
  Volume Serial Number is A8D5-BA48
@@ -195,9 +195,9 @@ C:\src\cslim_vs2010>dir cslim\fixtures\pages
 08/08/2010  10:09 PM               284 properties.xml
                2 File(s)            310 bytes
                8 Dir(s)  32,117,592,064 bytes free
-```
+{% endhighlight %}
 * Here's what things should look like after the copy (I have some unix tools installed, so I used cp):
-```
+{% highlight terminal %}
 C:\src\cslim_vs2010>cp -r cslim/fixtures/pages FitNesseRoot/CslimExamples
 
 C:\src\cslim_vs2010>dir FitNesseRoot\CslimExamples
@@ -218,11 +218,11 @@ C:\src\cslim_vs2010>dir FitNesseRoot\CslimExamples
 08/08/2010  10:23 PM               284 properties.xml
                2 File(s)            310 bytes
                8 Dir(s)  32,117,567,488 bytes free
-```
+{% endhighlight %}
 # Configure The Slim Implementation
 * You can now browse to the following URL to open up those examples: <http://localhost:8080/CSlimExamples>
 * You'll need to edit the page you just created and set its contents to:
-```
+{% highlight terminal %}
 !contents -R2 -g -p -f -h
 
 !define TEST_SYSTEM {slim}
@@ -232,7 +232,7 @@ C:\src\cslim_vs2010>dir FitNesseRoot\CslimExamples
 {% endraw %}
 
 !define SLIM_VERSION {0.0}
-```
+{% endhighlight %}
 * Now you can hit the// **Suite**// button. You will see some passing tests, missing fixtures and Exceptions.
 ** If you get an exception related to a difference in the version of the slim protocol implemented by cslim versus the one expected by FitNesse, you'll need to change the "!define SLIM_VERSION {0.0}" to the version used by what cslim is implementing.
 ** There are problems with exception handling. I'll be looking into that but that causes the fixture called ExceptionsExample to fail. (These are alpha instructions after all!)

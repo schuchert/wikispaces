@@ -15,7 +15,7 @@ Notice that this suite of tests is for Creating, Reading, Updating and Deleting 
 
 Assuming you've done Tutorial 2, much of the boilerplate code is going to look the same. First let's write a unit test for each of these test cases:
 **Create a Patron**
-```java
+{% highlight java %}
     @Test
     public void createAPatron() {
         final Patron p = createAPatronImpl();
@@ -29,13 +29,13 @@ Assuming you've done Tutorial 2, much of the boilerplate code is going to look t
                 "Addison", "TX", "75001");
         return dao.createPatron("Brett", "Schuchert", "972-555-1212", a);
     }
-```
+{% endhighlight %}
 
 This test first creates a patron using a private utility method. This method exists because it is used later in other unit tests.
 
 Looking at the test, it uses an attribute called **dao**. This is a Data Access Object (which we'll later convert to a stateless Session Bean). This Data Access Object will be responsible for retrieving, creating and removing Patrons.
 **Remove a Patron**
-```java
+{% highlight java %}
     @Test
     public void removeAPatron() {
         final Patron p = createAPatronImpl();
@@ -45,12 +45,12 @@ Looking at the test, it uses an attribute called **dao**. This is a Data Access 
 
         assertNull(found);
     }
-```
+{% endhighlight %}
 
 This test uses the utility method to create a patron. It then removes it and makes sure that when we try to retrieve it that the Patron no longer exists.
 
 **Update a Patron**
-```java
+{% highlight java %}
     @Test
     public void updateAPatron() {
         final Patron p = createAPatronImpl();
@@ -64,18 +64,18 @@ This test uses the utility method to create a patron. It then removes it and mak
         assertFalse(NEW_PN.equals(originalPhoneNumber));
         assertEquals(NEW_PN, p.getPhoneNumber());
     }
-```
+{% endhighlight %}
 We create a patron then update it.
 
 **Attempt to find Patron that does not exist**
-```java
+{% highlight java %}
     @Test
     public void tryToFindPatronThatDoesNotExist() {
         final Long id = -18128129831298l;
         final Patron p = dao.retrieve(id);
         assertNull(p);
     }
-```
+{% endhighlight %}
 
 Verify that when we try to find a patron that's not found, we get back null.
 
@@ -85,7 +85,7 @@ We have several veterans returning from previous tutorials. And here they are:
 **PatronDaoTest**
 First the imports and the attributes. Note that this is a complete class that will compile. It just doesn't do anything yet.
 
-```java
+{% highlight java %}
 package session;
 
 import static org.junit.Assert.assertEquals;
@@ -113,12 +113,12 @@ public class PatronDaoTest {
     private EntityManagerFactory emf;
     private PatronDao dao;
 }
-```
+{% endhighlight %}
 
 **Initialization of the Logger**
 This is our 1-time initialization of the logging system.
 
-```java
+{% highlight java %}
     @BeforeClass
     public static void initLogger() {
         // Produce minimal output.
@@ -128,11 +128,11 @@ This is our 1-time initialization of the logging system.
         // status logging.
         Logger.getLogger("org").setLevel(Level.ERROR);
     }
-```
+{% endhighlight %}
 
 **Getting EMF and EM**
 Now before each unit test we'll look up the entity manager factory, create a dao, create an entity manager and pass it into a DAO and finally start a transaction.
-```java
+{% highlight java %}
     @Before
     public void initEmfAndEm() {
         emf = Persistence.createEntityManagerFactory("lis");
@@ -140,24 +140,24 @@ Now before each unit test we'll look up the entity manager factory, create a dao
         dao.setEm(emf.createEntityManager());
         dao.getEm().getTransaction().begin();
     }
-```
+{% endhighlight %}
 
 **Clean up after each test**
 After each test we'll rollback the transaction we created in the pre-test initialization. We'll then close both the entity manager and entity manager factory. This keeps our tests isolated.
-```java
+{% highlight java %}
     @After
     public void closeEmAndEmf() {
         dao.getEm().getTransaction().rollback();
         dao.getEm().close();
         emf.close();
     }
-```
+{% endhighlight %}
 
 ### The Entities
 We need to create entities. These entities are a bit more well-specified that what you've seen in the previous tutorials. In most cases I believe the extra information is intuitive. Where it is not, I'll try to point out what is going on.
 
 **Address.java**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Column;
@@ -241,9 +241,9 @@ public class Address {
         this.id = id;
     }
 }
-```
+{% endhighlight %}
 **Patron.java**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.CascadeType;
@@ -326,7 +326,7 @@ public class Patron {
         this.phoneNumber = phoneNumber;
     }
 }
-```
+{% endhighlight %}
 
 **Finally, the Data Access Object**
 The DAO has the following four methods:
@@ -338,44 +338,44 @@ The DAO has the following four methods:
 We'll look at each of these, although none of this will be new if you've looked at the first tutorial.
 **createPatron**
 Given the information to create a patron, instantiate one and then persiste it. Note that this is written in a style that will natually fit into a Session Bean.
-```java
+{% highlight java %}
     public Patron createPatron(final String fname, final String lname,
             final String phoneNumber, final Address a) {
         final Patron p = new Patron(fname, lname, phoneNumber, a);
         getEm().persist(p);
         return p;
     }
-```
+{% endhighlight %}
 
 **retrieve**
 This uses the **find** method built into the entity manager. It returns null if not found. It first sees if the object is in the first-level cache. If not, it retrieves it from the database.
-```java
+{% highlight java %}
     public Patron retrieve(final Long id) {
         return getEm().find(Patron.class, id);
     }
-```
+{% endhighlight %}
 
 **removePatron**
 To remove an object we have to find it first. You do not provide a class and a key. So we first retrieve it (it might already be in the cache so this may not involve a database hit. We then issue the remove of the object.
-```java
+{% highlight java %}
     public void removePatron(final Long id) {
         final Patron p = retrieve(id);
         if(p != null) {
             getEm().remove(p);
         }
     }
-```
+{% endhighlight %}
 **update**
 Update uses the **merge** method to get its work done. Note that it returns what is returned from **merge**. Why? The provided patron could be detached (retrieve during another transaction or from a different instance of an entity manager. If this is the case, then the object will **not** be put into the cache (and therefore become managed). Instead, a new instance is created and the contents of the paramter is copied into the new, managed instance. That new managed instance is returned. If the provided patron is managed, then there's actually not need to even call this method because any changes made to the patron will be reflected in the patron after the transaction is closed.
-```java
+{% highlight java %}
     public Patron update(final Patron p) {
         return getEm().merge(p);
     }
-```
+{% endhighlight %}
 
 **The rest of the class**
 Here are the imports, attributes and getters/setters.
-```java
+{% highlight java %}
 package session;
 
 import javax.persistence.EntityManager;
@@ -394,4 +394,4 @@ public class PatronDao {
         return em;
     }
 }
-```
+{% endhighlight %}

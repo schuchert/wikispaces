@@ -6,13 +6,13 @@ title: AnExampleJavaAgent
 * Download this jar file [[file:Registrar.jar]]
 * Start a command prompt and change to the directory where you downloaded Registrar.jar
 * At a command prompt, type the following command (making sure you are using a Java 5 VM or later)
-```terminal
+{% highlight terminal %}
 java -javaagent:Registrar.jar -Dschuchert.ClassFileTransformer=schuchert.agent.NullClassFileTransformer schuchert.agent.Main
-```
+{% endhighlight %}
 * Verify that you see only the following output:
-```terminal
+{% highlight terminal %}
 Congratulations, everything seems to be working
-```
+{% endhighlight %}
 
 If you see anything else, [check here]({{ site.pagesurl}}/ProblemsRunningJavaAgentSmokeTest)
 ----

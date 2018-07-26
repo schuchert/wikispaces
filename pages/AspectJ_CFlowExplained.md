@@ -7,7 +7,7 @@ title: AspectJ_CFlowExplained
 CFlow, or control flow, allows the selection of pointcuts based on the program flow at runtime. Most of the pointcuts you've reviewed so far have probably been selectable at weave time. For example, call matches pointcuts that call a particular method; execution matches the execution of code whose signature matches. AspectJ determines both of these examples without having to execute the program.
 
 What about wanting to capture a pointcut so long as it is not called while in another method? In our example, we want to disable change tracking if changes occur either directly in a constructor or are called as a result of a (below in the stack trace) of a constructor. For example:
-```java
+{% highlight java %}
 01 public Address() {
 02    this.name = "Brett";
 03    setName("Schuchert");
@@ -28,16 +28,16 @@ What about wanting to capture a pointcut so long as it is not called while in an
 18    a.setName("Brett");
 19    a.someMethod();
 20 }
-```
+{% endhighlight %}
 
 The pointcut "set(* Address.name)" matches lines 2 and 8. In this code example, we have the following sequences that cause the pointcut to be encountered at runtime:
-```terminal
+{% highlight terminal %}
     a. 17 --> 2               // no change tracking
     b.        3 --> 8         // no change tracking
     c.        4 --> 13 --> 8  // no change tracking
     d. 18 --> 8               // no change tracking
     e. 19 --> 13 --> 8        // no change tracking
-```
+{% endhighlight %}
 So in the dynamic execution of this program, we encounter a pointcut matching set(* Address.name) a total of 5 times (these are labeled a through e in the example). Of these 5 paths to the pointcut, which ones cause change tracking to occur? In our example, we ignore "cflow(execution(cf.ITrackedObject+.new (..)))" - or all constructors under the ITrackedObject interface.
 
 So any of the above lines that pass through the constructor in Address will be ruled out. That includes: a, b and c. The other two, d and e, get to the same pointcuts. However, they do not pass through the constructor, so they are not excluded by the cflow expression.
@@ -47,7 +47,7 @@ What follows is a breakdown of all the code for this example.
 ----
 [#Address]({{site.pagesurl}}/#Address)
 ## Address.java
-```java
+{% highlight java %}
 01: package cf;
 02: 
 03: import java.io.Serializable;
@@ -104,7 +104,7 @@ What follows is a breakdown of all the code for this example.
 54:         this.zip = zip;
 55:     }
 56: }
-```
+{% endhighlight %}
 ### Interesting Lines
 ^
 |---|---|
@@ -113,7 +113,7 @@ What follows is a breakdown of all the code for this example.
 
 [#Dao]({{site.pagesurl}}/#Dao)
 ## Dao.java
-```java
+{% highlight java %}
 01: package cf;
 02: 
 03: public class Dao {
@@ -123,14 +123,14 @@ What follows is a breakdown of all the code for this example.
 07:         }
 08:     }
 09: }
-```
+{% endhighlight %}
 ### Interesting Lines
 This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#Dao).
 
 ----
 [#FieldSetAspect]({{site.pagesurl}}/#FieldSetAspect)
 ## FieldSetAspect.java
-```java
+{% highlight java %}
 01: package cf;
 02: 
 03: import java.lang.reflect.Field;
@@ -186,7 +186,7 @@ This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 53:         return lhs.equals(rhs);
 54:     }
 55: }
-```
+{% endhighlight %}
 
 ### Interesting Lines
 ^
@@ -197,7 +197,7 @@ This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 
 [#InnerTypeAspect]({{site.pagesurl}}/#InnerTypeAspect)
 ## InnerTypeAspect.java
-```java
+{% highlight java %}
 01: package cf;
 02: 
 03: import org.aspectj.lang.annotation.Aspect;
@@ -208,14 +208,14 @@ This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 08:     @DeclareParents(value = "cf.Address", defaultImpl = cf.TrackedObjectMixin.class)
 09:     ITrackedObject trackedObject;
 10: }
-```
+{% endhighlight %}
 ### Interesting Lines
 None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#InnerTypeAspect).
 
 ----
 [#ITrackedObject]({{site.pagesurl}}/#ITrackedObject)
 ## ITrackedObject.java
-```java
+{% highlight java %}
 01: package cf;
 02: 
 03: public interface ITrackedObject {
@@ -223,14 +223,14 @@ None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 05: 
 06:     void setChanged(boolean changed);
 07: }
-```
+{% endhighlight %}
 ### Interesting Lines
 None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#ItrackedObject).
 
 ----
 [#Main]({{site.pagesurl}}/#Main)
 ## Main.java
-```java
+{% highlight java %}
 01: package cf;
 02: 
 03: public class Main {
@@ -244,7 +244,7 @@ None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 11:         Dao.save(a);
 12:     }
 13: }
-```
+{% endhighlight %}
 
 ### Interesting Lines
 ^
@@ -254,7 +254,7 @@ None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 
 [#SaveMethodAspect]({{site.pagesurl}}/#SaveMethodAspect)
 ## SaveMethodAspect.java
-```java
+{% highlight java %}
 01: package cf;
 02: 
 03: import org.aspectj.lang.ProceedingJoinPoint;
@@ -287,7 +287,7 @@ None. This is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 30:         }
 31:     }
 32: }
-```
+{% endhighlight %}
 
 ### Interesting Lines
 None. This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#SaveMethodAspect).
@@ -295,7 +295,7 @@ None. This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Expl
 ----
 [#TrackedObjectMixin]({{site.pagesurl}}/#TrackedObjectMixin)
 ## TrackedObjectMixin.java
-```java
+{% highlight java %}
 01: package cf;
 02: 
 03: public class TrackedObjectMixin implements ITrackedObject {
@@ -312,7 +312,7 @@ None. This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Expl
 14:         this.changed = changed;
 15:     }
 16: }
-```
+{% endhighlight %}
 
 ### Interesting Lines
 None. This class is unchanged from [[AspectJEX4Explained#TrackedObjectMixin|Example 4].
@@ -320,7 +320,7 @@ None. This class is unchanged from [[AspectJEX4Explained#TrackedObjectMixin|Exam
 ----
 [#aop]({{site.pagesurl}}/#aop)
 ## aop.xml
-```
+{% highlight terminal %}
 01: <aspectj>
 02: 	<aspects>
 03: 		<aspect name="cf.FieldSetAspect"/>
@@ -331,7 +331,7 @@ None. This class is unchanged from [[AspectJEX4Explained#TrackedObjectMixin|Exam
 08: 		<include within="cf.*"/>
 09: 	</weaver>
 10: </aspectj>
-```
+{% endhighlight %}
 
 ### Interesting Lines
 None. This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#aop).

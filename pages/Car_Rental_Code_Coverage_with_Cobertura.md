@@ -39,86 +39,86 @@ Here's the file so we can discuss it and configure it for your situation:
 ----
 [#cobertura]({{site.pagesurl}}/#cobertura)
 ## cobertura.xml
-```
-01: <?xml version="1.0" encoding="UTF-8"?>
-02: <project name="cobertura" default="coverage-report">
-03: 
-04:    <property name="cobertura.dir" value="C:/libs/cobertura-1.8" />
-05: 
-06:    <path id="cobertura.classpath">
-07:       <fileset dir="${cobertura.dir}">
-08:          <include name="cobertura.jar" />
-09:          <include name="lib/**/*.jar" />
-10:       </fileset>
-11:    </path>
-12: 
-13:    <taskdef classpathref="cobertura.classpath" resource="tasks.properties" />
-14: 
-15:    <target name="init">
-16:       <property name="base.dir" value=".." />
-17:       <property name="cobertura.out.dir" value="${base.dir}/cobertura_results" />
-18:       <property name="cobertura.datafile" value="${cobertura.out.dir}/cobertura.ser" />
-19: 
-20:       <delete dir="${cobertura.out.dir}" quiet="true" />
-21:       <mkdir dir="${cobertura.out.dir}" />
-22: 
-23:       <property name="classes.dir" value="${cobertura.out.dir}/instrumented-classes" />
-24:       <property name="testreport.dir" value="${cobertura.out.dir}/reports" />
-25:       <property name="spring.jar" value="C:/libs/spring-framework-2.0-rc2/dist/spring.jar" />
-26:       <property name="spring.lib" value="C:/libs/spring-framework-2.0-rc2/lib" />
-27:       <property name="aspectj.lib" value="C:/libs/aspectj/lib" />
-28:       <property name="loggingutil.dir" value="C:/workspaces/CarRentalExample/LoggingUtils" />
-29: 
-30:    </target>
-31: 
-32:    <target name="instrument" depends="init">
-33:       <cobertura-instrument todir="${classes.dir}" datafile="${cobertura.datafile}">
-34:          <classpath refid="cobertura.classpath" />
-35:          <classpath location="${spring.lib}/log4j/log4j-1.2.13.jar" />
-36:          <instrumentationClasspath>
-37:             <pathelement location="${base.dir}/bin" />
-38:          </instrumentationClasspath>
-39: 
-40:          <includeClasses regex="vehicle.*" />
-41:          <excludeClasses regex="org.*" />
-42:       </cobertura-instrument>
-43:    </target>
-44: 
-45:    <target name="cover-test" depends="instrument">
-46:       <mkdir dir="${testreport.dir}/junit" />
-47:       <junit dir="${cobertura.out.dir}" maxmemory="512m" failureproperty="test.failure" printSummary="withOutAndErr" fork="true" showoutput="yes" forkmode="once" haltonerror="true">
-48:          <formatter type="plain" />
-49:          <classpath refid="cobertura.classpath" />
-50:          <classpath location="${loggingutil.dir}/bin" />
-51:          <classpath location="${classes.dir}" />
-52:          <classpath location="${coberutra.lib}" />
-53:          <classpath location="${aspectj.lib}/aspectjlib.jar" />
-54:          <classpath location="${aspectj.lib}/aspectjrt.jar" />
-55:          <classpath location="${aspectj.lib}/aspectjweaver.jar" />
-56:          <classpath location="${spring.jar}" />
-57:          <classpath location="${spring.lib}/jakarta-commons/commons-logging.jar" />
-58:          <classpath location="${spring.lib}/log4j/log4j-1.2.13.jar" />
-59:          <classpath location="${base.dir}/bin/" />
-60:          <batchtest todir="${testreport.dir}/junit">
-61:             <fileset dir="${base.dir}/bin/">
-62:                <include name="**/*Test.class" />
-63:             </fileset>
-64:          </batchtest>
-65:       </junit>
-66:    </target>
-67: 
-68:    <target name="coverage-report" depends="cover-test">
-69:       <cobertura-report destdir="${testreport.dir}" datafile="${cobertura.datafile}">
-70:          <fileset dir="${base.dir}/src">
-71:             <include name="**/*.java" />
-72:          </fileset>
-73:          <fileset dir="${base.dir}/test">
-74:             <include name="**/*.java" />
-75:          </fileset>
-76:       </cobertura-report>
-77:    </target>
-78: </project>
-```
+{% highlight xml %}
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project name="cobertura" default="coverage-report">
+ 
+    <property name="cobertura.dir" value="C:/libs/cobertura-1.8" />
+ 
+    <path id="cobertura.classpath">
+       <fileset dir="${cobertura.dir}">
+          <include name="cobertura.jar" />
+          <include name="lib/**/*.jar" />
+       </fileset>
+    </path>
+ 
+    <taskdef classpathref="cobertura.classpath" resource="tasks.properties" />
+ 
+    <target name="init">
+       <property name="base.dir" value=".." />
+       <property name="cobertura.out.dir" value="${base.dir}/cobertura_results" />
+       <property name="cobertura.datafile" value="${cobertura.out.dir}/cobertura.ser" />
+ 
+       <delete dir="${cobertura.out.dir}" quiet="true" />
+       <mkdir dir="${cobertura.out.dir}" />
+ 
+       <property name="classes.dir" value="${cobertura.out.dir}/instrumented-classes" />
+       <property name="testreport.dir" value="${cobertura.out.dir}/reports" />
+       <property name="spring.jar" value="C:/libs/spring-framework-2.0-rc2/dist/spring.jar" />
+       <property name="spring.lib" value="C:/libs/spring-framework-2.0-rc2/lib" />
+       <property name="aspectj.lib" value="C:/libs/aspectj/lib" />
+       <property name="loggingutil.dir" value="C:/workspaces/CarRentalExample/LoggingUtils" />
+ 
+    </target>
+ 
+    <target name="instrument" depends="init">
+       <cobertura-instrument todir="${classes.dir}" datafile="${cobertura.datafile}">
+          <classpath refid="cobertura.classpath" />
+          <classpath location="${spring.lib}/log4j/log4j-1.2.13.jar" />
+          <instrumentationClasspath>
+             <pathelement location="${base.dir}/bin" />
+          </instrumentationClasspath>
+ 
+          <includeClasses regex="vehicle.*" />
+          <excludeClasses regex="org.*" />
+       </cobertura-instrument>
+    </target>
+ 
+    <target name="cover-test" depends="instrument">
+       <mkdir dir="${testreport.dir}/junit" />
+       <junit dir="${cobertura.out.dir}" maxmemory="512m" failureproperty="test.failure" printSummary="withOutAndErr" fork="true" showoutput="yes" forkmode="once" haltonerror="true">
+          <formatter type="plain" />
+          <classpath refid="cobertura.classpath" />
+          <classpath location="${loggingutil.dir}/bin" />
+          <classpath location="${classes.dir}" />
+          <classpath location="${coberutra.lib}" />
+          <classpath location="${aspectj.lib}/aspectjlib.jar" />
+          <classpath location="${aspectj.lib}/aspectjrt.jar" />
+          <classpath location="${aspectj.lib}/aspectjweaver.jar" />
+          <classpath location="${spring.jar}" />
+          <classpath location="${spring.lib}/jakarta-commons/commons-logging.jar" />
+          <classpath location="${spring.lib}/log4j/log4j-1.2.13.jar" />
+          <classpath location="${base.dir}/bin/" />
+          <batchtest todir="${testreport.dir}/junit">
+             <fileset dir="${base.dir}/bin/">
+                <include name="**/*Test.class" />
+             </fileset>
+          </batchtest>
+       </junit>
+    </target>
+ 
+    <target name="coverage-report" depends="cover-test">
+       <cobertura-report destdir="${testreport.dir}" datafile="${cobertura.datafile}">
+          <fileset dir="${base.dir}/src">
+             <include name="**/*.java" />
+          </fileset>
+          <fileset dir="${base.dir}/test">
+             <include name="**/*.java" />
+          </fileset>
+       </cobertura-report>
+    </target>
+ </project>
+{% endhighlight %}
 
 ## Execution
 Assuming you've updated the cobertura.xml file and set all of the relevant properties for your environment, then do the following:
@@ -128,7 +128,9 @@ Assuming you've updated the cobertura.xml file and set all of the relevant prope
 * Note that this ant file adds a directory called **cobertrua_results** under the CarRental directory with the execution results. To see this (if you don't automatically see it after executing this ant task), select CarRental, right-click and select refresh (or hit F5).
 
 I considered adding the following line to cobertura.xml:
-```<eclipse.refreshLocal resourcePath="CarRental" depth="infinite"/>```
+{% highlight xml %}
+<eclipse.refreshLocal resourcePath="CarRental" depth="infinite"/>
+{% endhighlight %}
 This would force a refresh but it also requires that you run the ant script in the same VM as Eclipse.
 
 ## Preliminary Analysis

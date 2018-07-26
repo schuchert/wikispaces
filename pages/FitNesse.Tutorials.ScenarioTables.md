@@ -40,7 +40,7 @@ With this in mind, it's time to start working on a test.
 # The Test
 First you need to create a schedule. Given your recent experience with script tables, it might be a good idea to create several programs and then simply reuse that program guide across all tests:
 
-```
+{% highlight terminal %}
 !|Script|Generate Programs|
 |Create Daily Program Named|D5_1|On Channel|5|Starting On|3/4/2008|at|20:00|Length|30|Episodes|7|
 |Create Daily Program Named|D5_2|On Channel|5|Starting On|3/4/2008|at|20:30|Length|30|Episodes|7|
@@ -63,19 +63,19 @@ First you need to create a schedule. Given your recent experience with script ta
 |Create Daily Program Named|D9_3|On Channel|9|Starting On|3/4/2008|at|21:00|Length|30|Episodes|7|
 |Create Daily Program Named|D9_4|On Channel|9|Starting On|3/4/2008|at|21:30|Length|30|Episodes|7|
 |check|TotalEpisodesCreated|140|
-```
+{% endhighlight %}
 
 Wow! That's a lot of episodes, 140 to be exact. The schedule has 4 daily programs on 5 different channels, each with 7 episodes. That should be a good start. Next, you need to add a number of season passes:
 
-```
+{% highlight terminal %}
 |Create Season Pass For|D5_1|5|
 
 |Create Season Pass For|D6_1|6|
-```
+{% endhighlight %}
 
 Finally, verify that there are 7 episodes of D5_1 and 0 of D6_1 (since your current DVR can only record 1 thing at a time).
 
-```
+{% highlight terminal %}
 |query:Episodes In To Do List|
 |programName|episodeName|date|startTime|
 |D5_1|E1|3/4/2008 |20:00|
@@ -85,7 +85,7 @@ Finally, verify that there are 7 episodes of D5_1 and 0 of D6_1 (since your curr
 |D5_1|E5|3/8/2008 |20:00|
 |D5_1|E6|3/9/2008 |20:00|
 |D5_1|E7|3/10/2008|20:00|
-```
+{% endhighlight %}
 
 Create this page with the 4 tables (one script, two decision tables and one query table). Call it ScenarioTableExamples and place it under DigitalVideoRecorder. Here's a URL (assuming you are running FitNesse on port 8080): <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples>
 
@@ -95,17 +95,17 @@ The last table requires a change to the EpisodesInToDoList class and elsewhere:
 
 **Update: EpisodesInToDoList, add no-argument constructor**
 
-```java
+{% highlight java %}
    public EpisodesInToDoList() {
       programId = "";
    }
-```
+{% endhighlight %}
 
 This also requires a change to SeasonPassManager since we are passing in a blank programId:
 
 **Update: SeasonPassManager.toDoListContentsFor**
 
-```java
+{% highlight java %}
    public List<Program> toDoListContentsFor(String programId) {
       List<Program> result = new LinkedList<Program>();
 
@@ -115,7 +115,7 @@ This also requires a change to SeasonPassManager since we are passing in a blank
 
       return result;
    }
-```
+{% endhighlight %}
 
 Run this and there are a few problems:
 * The time is coming back as 8:00 instead of 20:00
@@ -125,9 +125,9 @@ To fix the first problem, you'll need to update DateUtil:
 
 **Update: DateUtil.java, Change h to H**
 
-```java
+{% highlight java %}
    static SimpleDateFormat timeFormat = new SimpleDateFormat("H:mm");
-```
+{% endhighlight %}
 
 Make sure this seeming innocuous change did not break any unit tests (it should not). Also make sure all other acceptance tests are still passing (oops, it does). Before you fix the problem with the current acceptance test, you should fix the problem introduced// **by**// the new acceptance test - or rather the one exploited by the current unit test. The [TearDown](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown) page resets the program guide, but it does not reset the to do list.
 
@@ -138,15 +138,15 @@ In your domain, these two concepts might actually be intertwined by design. If y
 
 * Update TearDown Page:
 
-```
+{% highlight terminal %}
 |Clear Program Schedule|
 
 |Clear To Do List|
-```
+{% endhighlight %}
 
 * Create new fixture:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 public class ClearToDoList {
@@ -154,14 +154,14 @@ public class ClearToDoList {
       CreateSeasonPassFor.getSeasonPassManager().clearToDoList();
    }
 }
-```
+{% endhighlight %}
 
 * Add a method to SeasonPassManager:
-```java
+{% highlight java %}
    public void clearToDoList() {
       toDoList.clear();
    }
-```
+{% endhighlight %}
 
 Now everything should still pass other than your new acceptance test.
 
@@ -169,7 +169,7 @@ Now everything should still pass other than your new acceptance test.
 
 Here is the code from SeasonPassManager responsible for populating the to do list:
 
-```java
+{% highlight java %}
    public Program createNewSeasonPass(String programName, int channel) {
       List<Program> programsFound = schedule.findProgramsNamedOn(programName, channel);
 
@@ -181,7 +181,7 @@ Here is the code from SeasonPassManager responsible for populating the to do lis
          return programsFound.get(0);
       return null;
    }
-```
+{% endhighlight %}
 
 A quick review of this code and you'll notice it only checks to see if a duplicate program is already in the to do list. It does not check to see if there are any conflicts. One program conflicts with another if the time slots span each other. This logic is somewhat complex and well suited to a series of unit tests.
 
@@ -189,7 +189,7 @@ Since this is not a tutorial on TDD (at least not directly), here are the unit t
 
 **Create: DateUtilConflictsInTimeWithTest.java**
 
-```java
+{% highlight java %}
 package com.om.example.util;
 
 import static org.junit.Assert.assertEquals;
@@ -255,13 +255,13 @@ public class DateUtilConflictsInTimeWithTest {
             rhsDuration, lhsDate, lhsDuration));
    }
 }
-```
+{% endhighlight %}
 
 This introduces a new public method on the DateUtil class:
 
 **Update: DateUtil.java, add four methods**
 
-```java
+{% highlight java %}
    public Date createEndDate(Date startDateTime, int durationInMinutes) {
       Calendar calendar = Calendar.getInstance();
       calendar.setTime(startDateTime);
@@ -286,18 +286,18 @@ This introduces a new public method on the DateUtil class:
    private boolean isStrictlyWithin(Date date, Date rangeBegin, Date rangeEnd) {
       return date.after(rangeBegin) && date.before(rangeEnd);
    }
-```
+{% endhighlight %}
 
 Finally, this code is used in TimeSlot:
 
 **Update: TimeSlot.java, add new method**
 
-```java
+{% highlight java %}
    public boolean conflictsInTimeWith(TimeSlot other) {
       return DateUtil.instance().segmentsConflict(startDateTime, durationInMinutes,
             other.startDateTime, other.durationInMinutes);
    }
-```
+{% endhighlight %}
 
 In my original implementation, I did all of this work in TimeSlot and the original unit test targeted time slot. When I was done, I extracted the bulk of the implementation into DateUtil because it was dealing with dates. So I changed the test to target DateUtil and simply left the call to the DateUtil in TimeSlot. So while this particular method is not tested by unit tests, it will be tested by acceptance tests. Is this a possible hole in the testing regiment? Depends on if you have a proper build system that executes both acceptance and unit tests. I don't see it as a large risk, if you do not agree, then create a unit test for TimeSlot as well.
 
@@ -306,7 +306,7 @@ Now that the fundamental support is in place, you can go back and update SeasonP
 
 **Update: SeasonPassManager.java, add method, update other**
 
-```java
+{% highlight java %}
    public Program createNewSeasonPass(String programName, int channel) {
       List<Program> programsFound = schedule.findProgramsNamedOn(programName, channel);
 
@@ -326,52 +326,52 @@ Now that the fundamental support is in place, you can go back and update SeasonP
 
       return false;
    }
-```
+{% endhighlight %}
 
 This requires a method added to Program (thus avoiding a violation of the Law of Demeter):
 
 **Update: Program.java, add a pass-through method**
 
-```java
+{% highlight java %}
    public boolean hasTimeConflictWith(Program other) {
       return timeSlot.conflictsInTimeWith(other.timeSlot);
    }
-```
+{% endhighlight %}
 
 Run all of your unit tests, verify they all pass. One fails. If you created the GenerateProgramsTest.java, you'll have one failure. (If not, do not worry, you'll have the exact same problem in an acceptance test - I had a duplicated test so I get to fix two problems). Since the problem is duplicated, and just in case you do not have this unit test, run the entire suite of tests. You should have one failing acceptance test as well:// **ScriptTableExamples.CreatingManyProgramsExample**//
 
 Upon review, the test data for this test is:
 
-```
+{% highlight terminal %}
 !|Script|Generate Programs                                                                      |
 |Create Weekly Program Named|W1|On Channel|7|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8 |
 |Create Weekly Program Named|W2|On Channel|8|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8 |
 |Create Daily Program Named |D1|On Channel|7|Starting On|3/4/2008|at|20:30|Length|30|Episodes|56|
 |Create Daily Program Named |D2|On Channel|8|Starting On|3/4/2008|at|22:00|Length|30|Episodes|56|
-```
+{% endhighlight %}
 
 The problem is that the programs W1 and W2, while on different channels, conflict with each other. Right now the DVR can only record one program at a time. So the test is wrong! You need to update this test. You can either update the third row of the table to change the time of the programs or update the query table. I recommend updating the query table since is the assertion that is incorrect:
 
 **Update: Query table, remove an expected result**
 
-```
+{% highlight terminal %}
 |Query:Episodes in to do list on|3/4/2008   |
 |programName                    |episodeName|
 |W1                             |E1         |
 |D1                             |E1         |
 |D2                             |E1         |
-```
+{% endhighlight %}
 
 Run your acceptance test suite, everything should pass. Now, if you have a failing unit test, it requires a similar fix. You need to change the expected size of the list from 4 to 3:
 
 **Update: GenerateProgramsTest.**
 
-```java
+{% highlight java %}
   public void ReviewToDoListByDay() throws Exception {
      //snip
       assertEquals(3, results.size());
    }
-```
+{% endhighlight %}
 
 # Now On To a Scenario
 
@@ -387,12 +387,12 @@ Notice, this describes an abstract test. Now it is time to express that abstract
 
 The first bullet above is currently handled at the top of the page with a large Decision table. However, the remainder can be expressed as follows:
 
-```
+{% highlight terminal %}
 !|Scenario|dvrCanSimultaneouslyRecord|number|andWithThese|seasonPasses|shouldHaveTheFollowing|toDoList|
 |givenDvrCanRecord|@number|
 |whenICreateSeasonPasses|@seasonPasses|
 |thenTheToDoListShouldContain|@toDoList|
-```
+{% endhighlight %}
 
 The first list of the ScenarioTable describes the input parameters to the table. This table has three parameters:
 ^
@@ -415,7 +415,7 @@ Luckily, we already have a working test, so this is a good time to change its fo
 * First, create the following page <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordOneProgramAtaTimeExample> (//**Note**//: The AtaTime part of the name is important, FitNesse will not recognize a wikiword with two capital letters back to back, so rather than calling the page ...AtATime..., I named it ...AtaTime...)
 * Replace the !contents with the following: 
 
-```
+{% highlight terminal %}
 !|Scenario|dvrCanSimultaneouslyRecord|number|andWithThese|seasonPasses|shouldHaveTheFollowing|toDoList|
 |givenDvrCanRecord|@number|
 |whenICreateSeasonPasses|@seasonPasses|
@@ -434,13 +434,13 @@ Luckily, we already have a working test, so this is a good time to change its fo
 |D5_1|E5|3/8/2008 |20:00|
 |D5_1|E6|3/9/2008 |20:00|
 |D5_1|E7|3/10/2008|20:00|
-```
+{% endhighlight %}
 
 * Set the page to a test page.
 
 * The original large Decision Table should be put in a SetUp page. Go to the following URL and paste the following table: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.SetUp>
 
-```
+{% highlight terminal %}
 !include <DigitalVideoRecorderExamples.SetUp
 
 !|Script|Generate Programs|
@@ -465,13 +465,13 @@ Luckily, we already have a working test, so this is a good time to change its fo
 |Create Daily Program Named|D9_3|On Channel|9|Starting On|3/4/2008|at|21:00|Length|30|Episodes|7|
 |Create Daily Program Named|D9_4|On Channel|9|Starting On|3/4/2008|at|21:30|Length|30|Episodes|7|
 |check|TotalEpisodesCreated|140|
-```
+{% endhighlight %}
 
 * Next, remove that same table from: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples>
 * Run your ScenarioTableExamples test, it should still work.
 * Create a new page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.OriginalExample> and paste the remainder of the original table:
 
-```
+{% highlight terminal %}
 |Create Season Pass For|D5_1|5|
 
 |Create Season Pass For|D6_1|6|
@@ -485,15 +485,15 @@ Luckily, we already have a working test, so this is a good time to change its fo
 |D5_1|E5|3/8/2008 |20:00|
 |D5_1|E6|3/9/2008 |20:00|
 |D5_1|E7|3/10/2008|20:00|
-```
+{% endhighlight %}
 
 * Set the page type to test, execute it and make sure it still works.
 * Update the <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples> page, convert it to a Suite test.
 * Change its contents to:
 
-```
+{% highlight terminal %}
 !contents
-```
+{% endhighlight %}
 
 * Hit the suite button, the original example should still pass.
 * Go back to the <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordOneProgramAtaTimeExample> and change its page type to test.
@@ -502,23 +502,23 @@ Luckily, we already have a working test, so this is a good time to change its fo
 ## Migrate new page to Scenario Test
 The way this scenario works is it takes in 3 parameters, the first is the number of programs the DVR can record at any given time. The next two parameters represent a list of season passes and a list of to do contents. So to finish this page, you must name the fixture (the first table coming up) and use the scenario (second table):
 
-```
+{% highlight terminal %}
 |Script|Dvr Recording|
 
 |Dvr Can Simultaneously Record And With These Should Have The Following|
 |number                       |seasonPasses   |toDoList                |
 |1                            |D5_1:5,D6_1:6  |D5_1:E:1-7              |
-```
+{% endhighlight %}
 
 The first table simply names a fixture, so you'll need to create a class called Dvr Recording. That's easy enough:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 public class DvrRecording {
 
 }
-```
+{% endhighlight %}
 
 The next table names the scenario. Notice that each of the parts of the name are separated with spaces and start with a capital letter. There are other options, but this is a simple approach to get the name right. Notice that the name does not include: number, seasonPasses, toDoList. Those are the names of parameters.
 
@@ -546,7 +546,7 @@ After doing that, run the acceptance test. You'll notice it fails, and if you lo
 
 So update your fixture class:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 public class DvrRecording {
@@ -560,7 +560,7 @@ public class DvrRecording {
       return false;
    }
 }
-```
+{% endhighlight %}
 
 Now run your acceptance test, notice that it only fails on the last line. If you change the return value to true, the test will "pass", even though it is doing nothing.
 
@@ -568,7 +568,7 @@ Now run your acceptance test, notice that it only fails on the last line. If you
 
 **Update: DvrRecording.java**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.util.Iterator;
@@ -658,7 +658,7 @@ public class DvrRecording {
             && episodeName.equals(current.episodeName);
    }
 }
-```
+{% endhighlight %}
 
 Update your fixture and verify that your test passes.
 
@@ -669,7 +669,7 @@ Next, you'll try a degenerate case. What happens if there no programs can be rec
 * Create a new page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordZeroProgramsAtaTimeExample>
 * Update its contents to:
 
-```
+{% highlight terminal %}
 !|Scenario|dvrCanSimultaneouslyRecord|number|andWithThese|seasonPasses|shouldHaveTheFollowing|toDoList|
 |givenDvrCanRecord|@number|
 |whenICreateSeasonPasses|@seasonPasses|
@@ -680,23 +680,23 @@ Next, you'll try a degenerate case. What happens if there no programs can be rec
 |Dvr Can Simultaneously Record And With These Should Have The Following|
 |number|seasonPasses |toDoList   |
 |0     |D5_1:5       |           |
-```
+{% endhighlight %}
 
 * Notice the duplication? Move the Scenario table and the Script table to the SetUp page and the remove it from both this page and the DvrThatCanRecordOneProgramAtaTimeExample pages. (These are the tables you are moving:)
 
-```
+{% highlight terminal %}
 !|Scenario|dvrCanSimultaneouslyRecord|number|andWithThese|seasonPasses|shouldHaveTheFollowing|toDoList|
 |givenDvrCanRecord|@number|
 |whenICreateSeasonPasses|@seasonPasses|
 |thenTheToDoListShouldContain|@toDoList|
 
 |Script|Dvr Recording|
-```
+{% endhighlight %}
 
 * Set the page type to test.
 * Attempt to run the DvrThatCanRecordZeroProgramsAtaTimeExample page, you'll get exceptions, index out of bounds. OOPS! That first version of the fixture assumed there was something to test. Update the fixture to handle that:
 
-```java
+{% highlight java %}
    private String extractBaseNameFrom(String episodeSet) {
       String[] values = episodeSet.split(":");
 
@@ -725,7 +725,7 @@ Next, you'll try a degenerate case. What happens if there no programs can be rec
       return -1;
    }
 
-```
+{% endhighlight %}
 
 After making this update, run the test. Now the error is that there's no check for the number of allowed recordings. So that's next.
 
@@ -733,15 +733,15 @@ After making this update, run the test. Now the error is that there's no check f
 
 * First, update the fixture one final time:
 
-```java
+{% highlight java %}
    public void givenDvrCanRecord(int number) {
       CreateSeasonPassFor.getSeasonPassManager().setNumberOfRecorders(number);
    }
-```
+{% endhighlight %}
 
 * This requires an update to SeasonPassManager:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.domain;
 
 import java.util.Date;
@@ -757,10 +757,10 @@ public class SeasonPassManager {
       this.numberOfRecorders = number;
    }
 }
-```
+{% endhighlight %}
 
 * Now that the class has that information, it can use it to update SeasonPassManager again:
-```java
+{% highlight java %}
    private boolean conflictsWithExistingSchedule(Program program) {
       int remainingConflicts = numberOfRecorders - 1;
 
@@ -773,7 +773,7 @@ public class SeasonPassManager {
 
       return remainingConflicts < 0;
    }
-```
+{% endhighlight %}
 
 Run your acceptance test. When that passes, run your suite and unit tests. Everything should pass.
 
@@ -783,14 +783,14 @@ Notice that the Scenario Table is duplicated?
 
 * Update the Suite's setup page to include the scenario. Add the following:
 
-```
+{% highlight terminal %}
 !|Scenario|dvrCanSimultaneouslyRecord|number|andWithThese|seasonPasses|shouldHaveTheFollowing|toDoList|
 |givenDvrCanRecord|@number|
 |whenICreateSeasonPasses|@seasonPasses|
 |thenTheToDoListShouldContain|@toDoList|
 
 |Script|Dvr Recording|
-```
+{% endhighlight %}
 
 * Update each of the pages under the ScenarioTableExamples that includes these tables and remove them.
 * Verify your tests still pass.
@@ -799,11 +799,11 @@ Notice that the Scenario Table is duplicated?
 * Create another page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordTwoProgramsAtaTimeExample>
 * Create the basic test:
 
-```
+{% highlight terminal %}
 |Dvr Can Simultaneously Record And With These Should Have The Following|
 |number|seasonPasses |toDoList   |
 |2     |D5_1:5,D6_1:6|D5_1:E:1-7,D6_1:E:1-7 |
-```
+{% endhighlight %}
 
 * Set the page type to Test and execute it.
 
@@ -811,9 +811,9 @@ It worked! That seemed too simple.
 
 * Add another test by adding another row to the table:
 
-```
+{% highlight terminal %}
 |2     |D5_1:5,D6_1:6,D7_1:7|D5_1:E:1-7,D6_1:E:1-7 |
-```
+{% endhighlight %}
 
 * Execute the test. Does it work?
 
@@ -833,10 +833,10 @@ Before leaving this section, execute the suite one final time. Did everything pa
 After a little research, it turns out that the following test is causing an unwanted side-effect: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordZeroProgramsAtaTimeExample>. How? It sets the number of recorders in the DVR to 0. This is set on an instance. As written, the system is not removing stale instances but rather clearing lists. There are several ways to fix this:
 * On the page that is failing, manually set the number of recordings:
 
-```
+{% highlight terminal %}
 |Script|Dvr Recording|
 |givenDvrCanRecord|1|
-```
+{% endhighlight %}
 
 * Change the fixtures that clear collections to actually dump instances and recreate new instances
 * Set the number of recordings back to 1 before every test
@@ -848,7 +848,7 @@ So the best of the options listed is to change the fixtures that clean thins up:
 
 **Update: ClearProgramSchedule.java**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 public class ClearProgramSchedule {
@@ -856,19 +856,19 @@ public class ClearProgramSchedule {
       AddProgramsToSchedule.resetSchedule();
    }
 }
-```
+{% endhighlight %}
 
 **Update: AddProgramsToSchedule.java**
 
-```java
+{% highlight java %}
    public static void resetSchedule() {
       schedule = new Schedule();
    }
-```
+{% endhighlight %}
 
 **Update: ClearToDoList.java**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 public class ClearToDoList {
@@ -876,15 +876,15 @@ public class ClearToDoList {
       CreateSeasonPassFor.resetSeasonPassManager();
    }
 }
-```
+{% endhighlight %}
 
 **Update: CreateSeasonPassFor.java**
 
-```java
+{% highlight java %}
    public static void resetSeasonPassManager() {
       seasonPassManager = new SeasonPassManager(AddProgramsToSchedule.getSchedule());
    }
-```
+{% endhighlight %}
 
 Make these changes, run:
 * Your unit tests, they should all pass
@@ -904,12 +904,12 @@ This section is the motivation for the [original article]({{ site.pagesurl}}/Fit
 
 Have a look at the last table you created:
 
-```
+{% highlight terminal %}
 |Dvr Can Simultaneously Record And With These Should Have The Following|
 |number|seasonPasses |toDoList   |
 |2     |D5_1:5,D6_1:6|D5_1:E:1-7,D6_1:E:1-7 |
 |2     |D5_1:5,D6_1:6,D7_1:7|D5_1:E:1-7,D6_1:E:1-7 |
-```
+{% endhighlight %}
 
 Notice that the first column is 2? In fact, the way these pages have been split, the first column will always be 2. Can you remove that duplication? 
 
@@ -923,10 +923,10 @@ This requires two steps:
 
 Here is a new scenario defined in terms of the old scenario:
 
-```
+{% highlight terminal %}
 |Scenario|A Two Recorder Dvr With These Season Passes|seasonPasses|Should Have These Episodes In To Do List|toDoList|
 |Dvr Can Simultaneously Record | 2 | And With These | @seasonPasses|Should Have The Following|@toDoList|
-```
+{% endhighlight %}
 
 This new scenario is called: A Two Recorder Dvr With These Season Passes Should Have These Episodes In To Do List. How can you derive that?
 * Consider only the first line
@@ -946,18 +946,18 @@ What you end up with is: Dvr Can Simultaneously Record And With These Should Hav
 ## Use It
 Now you need to actually use the table:
 
-```
+{% highlight terminal %}
 |A Two Recorder Dvr With These Season Passes Should Have These Episodes In To Do List|
 |seasonPasses                                |toDoList                               |
 |D5_1:5,D6_1:6                               |D5_1:E:1-7,D6_1:E:1-7                  |
 |D5_1:5,D6_1:6,D7_1:7                        |D5_1:E:1-7,D6_1:E:1-7                  |
-```
+{% endhighlight %}
 
 This explicitly mentions the new scenario. FitNesse see this, performs a text-based substitution to get to the first scenario table. FitNesse then does the test-substitution again to turn the first scenario table into a series of method calls on the most recently mentioned script table, which is the Dvr Recording script table mentioned in the setup.
 
 If you add these two tables and run the test, it will work. Notice that the page works either way. This page passes:
 
-```
+{% highlight terminal %}
 |Dvr Can Simultaneously Record And With These Should Have The Following|
 |number|seasonPasses |toDoList   |
 |2     |D5_1:5,D6_1:6|D5_1:E:1-7,D6_1:E:1-7 |
@@ -970,7 +970,7 @@ If you add these two tables and run the test, it will work. Notice that the page
 |seasonPasses                                |toDoList                               |
 |D5_1:5,D6_1:6                               |D5_1:E:1-7,D6_1:E:1-7                  |
 |D5_1:5,D6_1:6,D7_1:7                        |D5_1:E:1-7,D6_1:E:1-7                  |
-```
+{% endhighlight %}
 
 I don't recommend keeping the first table and the last table since they result in the exact same test.
 

@@ -9,7 +9,7 @@ Source files are here: [[file:AspectJExample3src.zip]]. If you need instructions
 Have a look at the following Die class and the associated Main.main() method that serializes the Die.
 ----
 ## Die class
-```java
+{% highlight java %}
 package ex3;
 
 public class Die {
@@ -33,10 +33,10 @@ public class Die {
         this.faceValue = faceValue;
     }
 }
-```
+{% endhighlight %}
 ----
 ## Main class
-```java
+{% highlight java %}
 package ex3;
 
 import java.io.ByteArrayInputStream;
@@ -107,7 +107,7 @@ public class Main {
         }
     }
 }
-```
+{% endhighlight %}
 ----
 ## Assignment: Predict the Output
 Given these 2 classes, predict the output. Please do so before continuing.

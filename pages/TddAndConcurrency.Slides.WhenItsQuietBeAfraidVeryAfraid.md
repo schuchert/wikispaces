@@ -6,13 +6,13 @@ title: TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid
 # When It's Quiet Be Afraid, Very Afraid
 
 ## Quick Quiz. Is this code MT Safe?
-```java
+{% highlight java %}
 public class ObjectWithValue {
     private int value;
     public void incrementValue() { ++value; }
     public int getValue() { return value; }
 }
-```
+{% endhighlight %}
 ----
 ----
 ## What's Happening?
@@ -75,7 +75,7 @@ How?
 ----
 
 ## Sharing Without Guarding
-```java
+{% highlight java %}
 @Test
 public void singleThreaded() throws InterruptedException {
     Thread t = new Thread(incrementValue);
@@ -97,7 +97,7 @@ public void multipleThreadsFail() throws InterruptedException {
     assertTrue("Expected 10000, actual: " + object.getValue(),
         50000 == object.getValue());
 }
-```
+{% endhighlight %}
 
 ----
 

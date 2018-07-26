@@ -1,7 +1,7 @@
 ---
 title: TddAndConcurrency.ObjectWithValue
 ---
-```java
+{% highlight java %}
 package com.om.sharingwithoutguarding;
 
 public class ObjectWithValue {
@@ -15,4 +15,4 @@ public class ObjectWithValue {
         return value;
     }
 }
-```
+{% endhighlight %}

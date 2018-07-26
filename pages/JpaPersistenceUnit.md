@@ -4,7 +4,7 @@ title: JpaPersistenceUnit
 We now need to create the Persistent Unit definition. We are going to create a file called persistence.xml in the src/META-INF directory with the following contents:
 [#Persistence_xml]({{site.pagesurl}}/#Persistence_xml)
 ### persistence.xml
-```xml
+{% highlight xml %}
 <persistence>
     <persistence-unit name="examplePersistenceUnit" 
                       transaction-type="RESOURCE_LOCAL">
@@ -24,7 +24,7 @@ We now need to create the Persistent Unit definition. We are going to create a f
         </properties>
     </persistence-unit>
 </persistence>
-```
+{% endhighlight %}
 
 ### The Steps
 # Expand your **<project>**

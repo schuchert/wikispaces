@@ -56,7 +56,7 @@ Questions//
 And the new feature that doesn't allow to checkout with overdue books.
 
 These tests are in LibraryTest.java
-```java
+{% highlight java %}
     @Test
     public void patronHasNumberOfOverdueBooks() {
         final Patron p = createPatron();
@@ -104,13 +104,13 @@ These tests are in LibraryTest.java
         }
     }
 
-```
+{% endhighlight %}
 
 **And here are the changes in project:**
 
 There is a new exception class called: **PatronHasOverdueBooks**
 Here it is:
-```java
+{% highlight java %}
 package exception;
 
 /**
@@ -128,10 +128,10 @@ public class PatronHasOverdueBooks extends RuntimeException {
 
 }
 
-```
+{% endhighlight %}
 
 In Library class, I added to the checkout method a validation for overdue books:
-```asp
+{% highlight asp %}
     public void checkout(final Long patronId, final Date checkoutDate, final Long... bookIds) {
         ...
         // Checking number of overdue books of the Patron
@@ -143,18 +143,18 @@ In Library class, I added to the checkout method a validation for overdue books:
         ...
     }
 
-```
+{% endhighlight %}
 
 Also, in Library class, the new method: getNumberOfOverdueBooksOfPatron
-```java
+{% highlight java %}
     public int getNumberOfOverdueBooksOfPatron(final Patron patron, final Date compareDate) {
         return getLoanDao().numberOfOverdueBookOfPatron(patron, compareDate);
     }
 
-```
+{% endhighlight %}
 
 **LoanDao can return the number of overdue books of specific Patron:**
-```java
+{% highlight java %}
     /**
      * Return number of overdue books of this patron
      *
@@ -171,10 +171,10 @@ Also, in Library class, the new method: getNumberOfOverdueBooksOfPatron
 
     }
 
-```
+{% endhighlight %}
 
 
 It uses a new named-query. One of the parameter is the Patron (not the patron's id). I wanted to see how the join works ...
-```java
+{% highlight java %}
 @NamedQuery(name = "Loan.overdueBooksOfPatron", query = "SELECT l.book FROM Loan l WHERE l.dueDate < :date AND l.patron = :patron")
-```
+{% endhighlight %}

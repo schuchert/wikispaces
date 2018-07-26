@@ -18,7 +18,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 ----
 [#AbstractTemplateMethod]({{site.pagesurl}}/#AbstractTemplateMethod)
 ## AbstractTemplateMethod.java
-```java
+{% highlight java %}
 01: package aab.valtech.jug.templatemethod;
 02: 
 03: import java.sql.Connection;
@@ -96,13 +96,13 @@ In this case, we've factored out much of the code in the a base class called Abs
 75: 
 76:     protected abstract String getSearchStatement();
 77: }
-```
+{% endhighlight %}
 ### Interesting Lines
 |Line|Description|
 ----
 [#Example2]({{site.pagesurl}}/#Example2)
 ## Example2.java
-```java
+{% highlight java %}
 01: package aab.valtech.jug.templatemethod;
 02: 
 03: import java.sql.PreparedStatement;
@@ -166,13 +166,13 @@ In this case, we've factored out much of the code in the a base class called Abs
 61:         return SELECT_BY_FIRST;
 62:     }
 63: }
-```
+{% endhighlight %}
 ### Interesting Lines
 |Line|Description|
 ----
 [#JdbcExample]({{site.pagesurl}}/#JdbcExample)
 ## JdbcExample.java
-```java
+{% highlight java %}
 01: package aab.valtech.jug.templatemethod;
 02: 
 03: import java.sql.SQLException;
@@ -196,7 +196,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 21:         e.performSearch();
 22:     }
 23: }
-```
+{% endhighlight %}
 ### Interesting Lines
 |Line|Description|
 

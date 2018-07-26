@@ -73,14 +73,14 @@ To follow all of the steps in this tutorial you will need three things:
 For this exercise, you're going to keep things fairly simple:
 * Create a directory somewhere that can hold your Ruby source code
 * In that directory, create a file called shunting_yard_algorithm_test.rb with the following contents:
-```ruby
+{% highlight ruby %}
 require 'test/unit'
 class ShuntingYardAlgorithmTest < Test::Unit::TestCase
 end
-```
+{% endhighlight %}
 
 * Save that file and type "ruby shunting_yard_algorithm_test.rb":
-```
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -91,7 +91,7 @@ default_test(ShuntingYardAlgorithmTest) [shunting_yard_algorithm_test.rb:3]:
 No tests were specified.
 1 tests, 1 assertions, 1 failures, 0 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 Congratulations, you have successfully written a unit test class in Ruby. It's missing any actual test methods, and that's what this error indicates. Next, it's time to write your first test method.
 
@@ -99,10 +99,10 @@ Congratulations, you have successfully written a unit test class in Ruby. It's m
 You will create a test whose primary purpose is to get the production class created with its usage documented in an executable form. This first test creates a skeleton, but it's an excellent way to start because you get something created and working almost immediately. From there, it's all about adding features while keeping your code clean. It is much easier to modify something that exists than something that does not exist.
 
 * Add a test method to get your unit test passing:
-```ruby
+{% highlight ruby %}
   def test_empty_string_results_in_same
   end
-```
+{% endhighlight %}
 
 [[include page="sidebar_start"]][include_page="ruby.sidebar.RubyFilesUseSpaces"]({{site.pagesurl}}/include_page="ruby.sidebar.RubyFilesUseSpaces")
 [include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
@@ -110,7 +110,7 @@ You will create a test whose primary purpose is to get the production class crea
 Note: In Test::Unit, a test class must inherit from Test::Unit::TestCase and all all methods you want to be executed as test must start with the name "test".
 
 * Run your test again:
-```
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -118,7 +118,7 @@ Started
 Finished in 0.000928 seconds.
 1 tests, 0 assertions, 0 failures, 0 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 At this point, you have a complete test class with all of its methods passing. You want to get back to this condition frequently. You need to create a test that somehow drives the development of new production code. Every unit test you'll write will have at least three parts:
 * **//Setup//**
@@ -137,14 +137,14 @@ You're going to take small steps to keep things running and passing often. Somet
 
 ## Setup
 * Update your test to resemble the following:
-```ruby
+{% highlight ruby %}
 def test_empty_string_results_in_same
   algorithm = ShuntingYardAlgorithm.new
 end
-```
+{% endhighlight %}
 
 * Run your test (it will fail)
-```
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -156,14 +156,14 @@ NameError: uninitialized constant ShuntingYardAlgorithmTest::ShuntingYardAlgorit
     shunting_yard_algorithm_test.rb:5:in `test_empty_string_results_in_same'
 1 tests, 0 assertions, 0 failures, 1 errors
 Macintosh-7% 
-```
+{% endhighlight %}
 
 Your test is back to failing. In this case, the line you just added makes reference to a class that does not exist. This is a normal occurrence in TDD - write test code to exercise production code that does not yet exist, then write just enough production code to get the test to pass.
 
 For this first example, you can work in a single text file.
 
 * At the top of the file add the class (here's the whole file):
-```ruby
+{% highlight ruby %}
 require 'test/unit'
 class ShuntingYardAlgorithm
 end
@@ -172,10 +172,10 @@ class ShuntingYardAlgorithmTest < Test::Unit::TestCase
     algorithm = ShuntingYardAlgorithm.new
   end
 end
-```
+{% endhighlight %}
 
 * Run your test:
-```
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -183,20 +183,20 @@ Started
 Finished in 0.000778 seconds.
 1 tests, 0 assertions, 0 failures, 0 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 This is all that is required for setup for this test. Next, you need to execute some code.
 ## Execute
 * Update your test as follows:
-```ruby
+{% highlight ruby %}
   def test_empty_string_results_in_same
     algorithm = ShuntingYardAlgorithm.new
     result = algorithm.convert('')
   end
-```
+{% endhighlight %}
 
 * Run you test:
-```
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -208,20 +208,20 @@ NoMethodError: undefined method `convert' for #<ShuntingYardAlgorithm:0x53688>
     shunting_yard_algorithm_test.rb:9:in `test_empty_string_results_in_same'
 1 tests, 0 assertions, 0 failures, 1 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 Once again, your test is failing. Instead of a missing class it's due to a missing method.
 
 * Add that method to the ShuntingYardAlgorithm:
-```ruby
+{% highlight ruby %}
 class ShuntingYardAlgorithm
   def convert(expression)
   end
 end
-```
+{% endhighlight %}
 
 * Run your tests:
-```terminal
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -229,23 +229,23 @@ Started
 Finished in 0.000929 seconds.
 1 tests, 0 assertions, 0 failures, 0 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 Great, your test is back to working. You just finished the execution part. Now it is time to have your test verify the results it expected, and that's the next step.
 ## Verify
 * Update your test to perform validation:
 
-```ruby
+{% highlight ruby %}
   def test_empty_string_results_in_same
     algorithm = ShuntingYardAlgorithm.new
     result = algorithm.convert('')
     assert_equal('', result)
   end
-```
+{% endhighlight %}
 
 * Run your test:
 
-```terminal
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -257,21 +257,21 @@ test_empty_string_results_in_same(ShuntingYardAlgorithmTest) [shunting_yard_algo
 <nil>.
 1 tests, 1 assertions, 1 failures, 0 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 The test is back to failing. To get your test to pass, you'll simply change the ShuntingYardAlgorithm.convert method return a value that will cause the test to pass.
 
 * Update your production code:
-```ruby
+{% highlight ruby %}
 class ShuntingYardAlgorithm
   def convert(expression)
     ''
   end
 end
-```
+{% endhighlight %}
 
 * Run your test:
-```terminal
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -279,7 +279,7 @@ Started
 Finished in 0.001019 seconds.
 1 tests, 1 assertions, 0 failures, 0 errors
 Macintosh-7% 
-```
+{% endhighlight %}
 
 Congratulations, you've made it through a complete TDD cycle. Now is a great time to commit this work in to a repository before moving on.
 ## Check In
@@ -291,7 +291,7 @@ A great time to check in is anytime your tests are passing. So after you've writ
 This tutorial briefly demonstrated [git](http://git.or.cz/). I //**strongly**// encourage you to use some revision control tool throughout. This goes back to learning by doing. Thinking about doing this will not activate your brain in the same way doing it will. If you want more details on using git, read [the git tutorial](http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html).
 
 * Add this directory into a revision control system and make sure it is checked in:
-```terminal
+{% highlight terminal %}
 Macintosh-7% git init
 Initialized empty Git repository in /Users/schuchert/src/ruby/tutorial1/.git/
 Macintosh-7% git add shunting_yard_algorithm_test.rb 
@@ -300,11 +300,11 @@ Created initial commit 043d347: initial checkin
  1 files changed, 15 insertions(+), 0 deletions(-)
  create mode 100644 shunting_yard_algorithm_test.rb
 Macintosh-7% 
-```
+{% endhighlight %}
 
 ## Summary
 Here's what you have created so far:
-```ruby
+{% highlight ruby %}
 require 'test/unit'
 
 class ShuntingYardAlgorithm
@@ -320,7 +320,7 @@ class ShuntingYardAlgorithmTest < Test::Unit::TestCase
     assert_equal('', result)
   end
 end
-```
+{% endhighlight %}
 
 This probably seems small, however you have described the API of the class used to translate between an infix and RPN notation.
 
@@ -343,18 +343,18 @@ Now is a great time to take a break.
 Now you'll work with both constants and basic operators like + and -. As you work though these next few examples, you'll end up writing code, changing it and cleaning it up. You will be adding refactoring to your tool set. This particular kind of refactoring might vary from your refactoring experiences. You will be performing simple refactoring that takes seconds and minutes not hours, days or weeks.
 
 * Add a new test to your test class (the location is irrelevant, however for your purposes consider adding new test methods after the last test added):
-```ruby
+{% highlight ruby %}
   def test_constant_value_results_in_same
     algorithm = ShuntingYardAlgorithm.new
     result = algorithm.convert('42')
     assert_equal('42', result)
   end
-```
+{% endhighlight %}
 
 Notice that it was OK to write this entire test before stopping to check. The test does not add any new methods to the existing class. Indeed, going forward with this example you can write complete test methods. This is because the thing you are writing has a simple API. Even so, eventually your test writing will get to this point on any unit under test.
 
 * Run your tests:
-```terminal
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb   
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -366,7 +366,7 @@ test_constant_value_results_in_same(ShuntingYardAlgorithmTest) [shunting_yard_al
 <"">.
 2 tests, 2 assertions, 1 failures, 0 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 The new test fails but the original test is intact. Now you need find a way to change the production code such that you do not break existing tests and make the new test pass.
 
@@ -375,16 +375,16 @@ There are a few more things to consider:
 * Try to avoid backtracking. Break no existing tests. Why? A test describes a contract or a promise of a certain behavior. Breaking a test, while sometimes necessary, should be carefully considered.
 
 * In this case, it is a simple change to support the old test, and get the new test passing. Make the following change:
-```ruby
+{% highlight ruby %}
 class ShuntingYardAlgorithm
   def convert(expression)
     expression
   end
 end
-```
+{% endhighlight %}
 
 * Run your tests to make sure things pass:
-```terminal
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -392,32 +392,32 @@ Started
 Finished in 0.001374 seconds.
 2 tests, 2 assertions, 0 failures, 0 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 Congratulations, you've just made it through another application of the three laws of TDD. Since all tests are passing, now is a great time to check in your work.
 
 * So, check in your work already::
-```terminal
+{% highlight terminal %}
 Macintosh-7% git add shunting_yard_algorithm_test.rb
 Macintosh-7% git commit
 Created commit a284610: Added support for constants
  1 files changed, 7 insertions(+), 1 deletions(-)
 Macintosh-7%
-```
+{% endhighlight %}
 ## Refactor The Unit Tests
 [[include page="sidebar_start"]][[include page="ruby.sidebar.HowManyStepsAreNormal"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 [[include page="sidebar_start"]][[include page="ruby.sidebar.WhyShouldYouCareAboutTheTests"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 * Update your unit test by adding a setup method:
-```ruby
+{% highlight ruby %}
   def setup
     @algorithm = ShuntingYardAlgorithm.new
   end
-```
+{% endhighlight %}
 
 * Run your tests to verify you have not broken anything:
-```terminal
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -425,19 +425,19 @@ Started
 Finished in 0.001487 seconds.
 2 tests, 2 assertions, 0 failures, 0 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 * Now update the first test to use the @algorithm instance variable:
-```ruby
+{% highlight ruby %}
   def test_empty_string_results_in_same
     @algorithm = ShuntingYardAlgorithm.new
     result = @algorithm.convert('')
     assert_equal('', result)
   end
-```
+{% endhighlight %}
 
 * Run your tests to verify you have not broken anything:
-```ruby
+{% highlight ruby %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -445,18 +445,18 @@ Started
 Finished in 0.001463 seconds.
 2 tests, 2 assertions, 0 failures, 0 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 * Notice that both tests do the same thing. Write a support method that does the same thing:
-```ruby
+{% highlight ruby %}
   def assert_expression_becomes(expression, expected)
     result = @algorithm.convert(expression)
     assert_equal(expected, result)
   end
-```
+{% endhighlight %}
 
 * Run your tests to verify you have not broken anything:
-```ruby
+{% highlight ruby %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -464,17 +464,17 @@ Started
 Finished in 0.00145 seconds.
 2 tests, 2 assertions, 0 failures, 0 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 * Use this new support method in the first test:
-```ruby
+{% highlight ruby %}
   def test_empty_string_results_in_same
     assert_expression_becomes('', '')
   end
-```
+{% endhighlight %}
 
 * Run your tests to verify you have not broken anything:
-```terminal
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -482,17 +482,17 @@ Started
 Finished in 0.001443 seconds.
 2 tests, 2 assertions, 0 failures, 0 errors
 Macintosh-7% 
-```
+{% endhighlight %}
 
 * Finally update your second test to use this support method:
-```ruby
+{% highlight ruby %}
   def test_constant_value_results_in_same
     assert_expression_becomes('42', '42')
   end
-```
+{% endhighlight %}
 
 * Run your tests to verify you have not broken anything:
-```terminal
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -500,12 +500,12 @@ Started
 Finished in 0.001236 seconds.
 2 tests, 2 assertions, 0 failures, 0 errors
 Macintosh-7% 
-```
+{% endhighlight %}
 
 Congratulations, you're done refactoring (for now) and the tests are passing. (Are you thinking "time to check in?")
 
 Here is the whole thing after these steps:
-```ruby
+{% highlight ruby %}
 require 'test/unit'
 class ShuntingYardAlgorithm
   def convert(expression)
@@ -527,16 +527,16 @@ class ShuntingYardAlgorithmTest < Test::Unit::TestCase
     assert_expression_becomes('42', '42')
   end
 end
-```
+{% endhighlight %}
 
 * Finally, now is a great time to check in your work with a comment like "Removed duplication in the test code."
-```terminal
+{% highlight terminal %}
 Macintosh-7% git add .
 Macintosh-7% git commit
 Created commit bec791e: Removed duplication in the test code.
  1 files changed, 11 insertions(+), 6 deletions(-)
 Macintosh-7% 
-```
+{% endhighlight %}
 
 [[include page="sidebar_start"]][[include page="ruby.sidebar.Refactoring"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
@@ -546,16 +546,16 @@ Now is a great time to kick back, listen to some tunes, get a glass of ice tea a
 Now seems like a good time to test a complete expression. This test represents a "happy path", or a path through the system that generates a good result. At some point you'll need to consider negative tests so you can define how an invalid use of the system behaves (gracefully somehow, hopefully).
 
 Now you'll add a test of addition:
-```ruby
+{% highlight ruby %}
   def test_adding_two_values()
     assert_expression_becomes('1 + 3', '1 3 +')
   end
-```
+{% endhighlight %}
 
 [[include page="sidebar_start"]][[include page="ruby.sidebar.RubyAndParens"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 * Run your tests to see how it fails:
-```terminal
+{% highlight terminal %}
 Macintosh-7% ruby shunting_yard_algorithm_test.rb
 Loaded suite shunting_yard_algorithm_test
 Started
@@ -569,10 +569,10 @@ test_adding_two_values(ShuntingYardAlgorithmTest)
 <"1 + 3">.
 3 tests, 3 assertions, 1 failures, 0 errors
 Macintosh-7%
-```
+{% endhighlight %}
 
 This result makes sense, your method returns the value passed, so now you'll actually have to write some code to do some work. However, you need to keep existing tests working at the same time. For a simple first version, how about splitting the expression into its parts and then you'll simply write the operator last:
-```ruby
+{% highlight ruby %}
 class ShuntingYardAlgorithm
   def convert(expression)
     @result = ''
@@ -589,14 +589,14 @@ class ShuntingYardAlgorithm
     @result
   end
 end
-```
+{% endhighlight %}
 
 This is a big jump from nothing. This indicates that maybe the test that does too much more more than what was already there, or maybe you missed a simpler opportunity. However, this is actually what I did the second time I tried this so you get to follow the same course.
 
 Of course, this doesn't work.
 
 * Running your tests, you'll notice the following errors:
-```terminal
+{% highlight terminal %}
 <"1 3 +"> expected but was
 <" 1 3 +">.
   2) Failure:
@@ -605,15 +605,15 @@ test_constant_value_results_in_same(ShuntingYardAlgorithmTest)
      shunting_yard_algorithm_test.rb:38:in `test_constant_value_results_in_same']:
 <"42"> expected but was
 <" 42">.
-```
+{% endhighlight %}
 
 Not only did this not fix the problem, it broke an existing test. You have two choices, try again, or fix it quickly. In this case, you can change one thing to actually fix both tests:
-```ruby
+{% highlight ruby %}
       if t =~ /^\d+$/
         @result << ' ' if @result.length > 0
         @result << t
       else
-```
+{% endhighlight %}
 * Run your tests and you'll notice all tests are passing.
 
 Now is a good time to check in your work because you need to do some serious cleanup on this code. It is very ugly, unruly and generally messy. However, all the tests pass. It'd be a shame if you forgot to check in and then made a mistake.
@@ -622,17 +622,17 @@ Now is a good time to check in your work because you need to do some serious cle
 
 ### Refactoring Your Mess
 You have three lines that write to the @result instance variable. You can quickly fix this by adding a method to add to the result:
-```ruby
+{% highlight ruby %}
   def add_to_result(token)
     @result << ' ' if @result.length > 0
     @result << token
   end
-```
+{% endhighlight %}
 
 * Add this method and make sure your tests still pass before you actually use this method. (When refactoring, generally, add first.)
 
 * Once your tests are passing, update the method to the following:
-```ruby
+{% highlight ruby %}
   def convert(expression)
     @result = ''
     expression.split(' ').each { |t|
@@ -647,28 +647,28 @@ You have three lines that write to the @result instance variable. You can quickl
     end
     @result
   end
-```
+{% endhighlight %}
 
 * Verify your tests still pass
 
 The first "if" is obtuse. You can write this so someone can understand its meaning without having to read regular expressions (personally, I like regular expressions, but I also use a vi plugin in Eclipse, so you can imagine that I'm not quite wired right).
 
 * Add the following method (again, adding before changing existing code):
-```ruby
+{% highlight ruby %}
   def is_number(token)
       token =~ /^\d+$/
   end
-```
+{% endhighlight %}
 
 * Run your tests to make sure nothing has broke.
 
 * Now, update the original "if" statement to use this method:
-```ruby
+{% highlight ruby %}
       if is_number(t)
         add_to_result(t)
       else
    ...
-```
+{% endhighlight %}
 
 The previous two refactorings are examples of "Extract Method" as described in Refatoring by Fowler. This is a bread-n-butter refactoring. You should use this refactoring freely. Do not concern yourself with method invocation overhead. It is not going to be a problem in practice.
 
@@ -676,18 +676,18 @@ In addition, taking even simple, but certainly complex conditions and putting th
 
 * Use a ruby idiom to improve adding the operator at the end:
 **From:**
-```ruby
+{% highlight ruby %}
     if @operator != nil
       add_to_result(@operator)
     end
-```
+{% endhighlight %}
 **To:**
-```ruby
+{% highlight ruby %}
     add_to_result(@operator) if @operator != nil
-```
+{% endhighlight %}
 
 * Extract the token processing into its own method (extract method again) by first adding a new method:
-```ruby
+{% highlight ruby %}
   def process(token)
     if is_number(token)
       add_to_result(token)
@@ -695,19 +695,19 @@ In addition, taking even simple, but certainly complex conditions and putting th
       @operator = token
     end
   end
-```
+{% endhighlight %}
 
 * Run your tests to make sure you did not break anything
 
 * Update the original code to use this new method:
-```ruby
+{% highlight ruby %}
   def convert(expression)
     @result = ''
     expression.split(' ').each { |t| process(t) }
     add_to_result(@operator) if @operator != nil
     @result
   end
-```
+{% endhighlight %}
 * Run your tests and make sure things still work.
 
 * Since you are back to everything working, check your work in. Go ahead and do it, the tutorial will be here when you get back.
@@ -729,14 +729,14 @@ Now is a great time to take a break. You've made good progress. You've practiced
 You handled one operator pretty easily. What happens when you put in two operators of the same precedence? You want to nudge your production code gradually. Going from 1 to more than 1 is often a good nudge (though it can be a big nudge at times). However, does this mean using the same operator two times? If you do that, it might make the results ambiguous. So this tests will use two different operators to make the results unambiguous.
 
 * Create the following test:
-```ruby
+{% highlight ruby %}
   def test_two_operators_same_precedence()
     assert_expression_becomes('1 + 3 - 4', '1 3 + 4 -')
   end
-```
+{% endhighlight %}
 
 * Run your tests and notice that the results are close but not quite correct. The current implementation drops the +. To fix this, the code needs to write the current operator, if there is one, when it encounters the second operator:
-```ruby
+{% highlight ruby %}
   def process(token)
     if is_number(token)
       add_to_result(token)
@@ -745,7 +745,7 @@ You handled one operator pretty easily. What happens when you put in two operato
       @operator = token
     end
   end
-```
+{% endhighlight %}
 
 By simply adding the current operator if it is non-null, your code should now be able to handle an expression of any length so long as the operators are of the same precedence. Of course, you have some code duplication. Run your tests to make sure they pass.
 
@@ -754,11 +754,11 @@ By simply adding the current operator if it is non-null, your code should now be
 [[include page="sidebar_start"]][[include page="ruby.sidebar.CheckingInIsSlow"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
 
 * Create a new method that writes the current operator if it is not null:
-```ruby
+{% highlight ruby %}
   def add_operator_if_necessary
     add_to_result(@operator) if @operator != nil
   end
-```
+{% endhighlight %}
 
 * Verify that your test still pass (they should, you've only added a method you have not changed existing code).
 
@@ -791,21 +791,21 @@ Here's something a very different test from the first: $$ 1\ +\ 3\ *\ 2\ \ \righ
 Notice that if you follow traditional precedence rules, multiplication happens before addition. So by writing a test with addition before multiplication, it will force your production code to hold on to the + operator longer. Did you notice that whereas the previous results contained an operator embedded within the numbers, now both operators are at the end, with the first one ending up last (very different indeed).
 
 * Write this as a test:
-```ruby
+{% highlight ruby %}
   def test_two_operators_lower_precedence_first
     assert_expression_becomes('1 + 3 * 2', '1 3 2 * +')
   end
-```
+{% endhighlight %}
 
 * Run this test and you'll notice the following failure:
-```terminal
+{% highlight terminal %}
   1) Failure:
 test_two_operators_lower_precedence_first(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:45:in `assert_expression_becomes'
      shunting_yard_algorithm_test.rb:65:in `test_two_operators_lower_precedence_first']:
 <"1 3 2 * +"> expected but was
 <"1 3 + 2 *">.
-```
+{% endhighlight %}
 
 ## Detour: Refactoring Before Moving Forward
 Rather than always writing a non-nil operator, your code needs to check something. However, there are cases where your code can just write and some where it must hold onto two operators before writing any. To support both cases, you'll want to change from storing a single operator to storing more than one. This requires a refactoring and you should do this while tests are passing.
@@ -816,17 +816,17 @@ Often, you'll look at a solution, realize that its design is at the end of its l
 * Next, you need to create an array to hold the operators. This is a refactoring so you are going to //**add**// code first and then update it. My colleague Bob K calls this "Parallel Development".
 
 * Update the convert method to initialize an array @operators:
-```ruby
+{% highlight ruby %}
   def convert(expression)
     @result = ''
     @operators = []
     ...
-```
+{% endhighlight %}
 
 * Run your tests, they should all still pass.
 
 * Update the process method to duplicate the work of storing the operator:
-```ruby
+{% highlight ruby %}
   def process(token)
     if is_number(token)
       add_to_result(token)
@@ -836,21 +836,21 @@ Often, you'll look at a solution, realize that its design is at the end of its l
       @operators << token
     end
   end
-```
+{% endhighlight %}
 
 * Run your test, they should all still pass.
 
 * Next, update the add_operator_if_necessary method to use the new instance variable:
-```ruby
+{% highlight ruby %}
   def add_operator_if_necessary
     add_to_result(@operators.pop) if @operators.length > 0
   end
-```
+{% endhighlight %}
 
 * Run your tests and notice that nothing is broken. You've moved from adding mode to updating mode.
 
 * Finally, remove all references to @operator (there should be just one in @process):
-```ruby
+{% highlight ruby %}
   def process(token)
     if is_number(token)
       add_to_result(token)
@@ -859,7 +859,7 @@ Often, you'll look at a solution, realize that its design is at the end of its l
       @operators << token
     end
   end
-```
+{% endhighlight %}
 
 * Run your tests and verify that nothing is broken
 
@@ -878,7 +878,7 @@ Your code has a slight problem; it needs to know the current operator in add_ope
 
 To fix this, you'll write out higher-precedence operators in the array:
 * Here's a first attempt:
-```ruby
+{% highlight ruby %}
   def process(token)
     if is_number(token)
       add_to_result(token)
@@ -890,12 +890,12 @@ To fix this, you'll write out higher-precedence operators in the array:
       end
     end
   end
-```
+{% endhighlight %}
 
 However, this does not fix anything and in fact breaks another test. If you have been checking in, now would be a great time to revert back to the previous version. If not, why didn't you? This is a great example of allowing a tool to extend your functionality. You can probably undo your work and you have unit tests to verify that you did so. However, how many undos are necessary? Versus one command using a reasonable revision control tool.
 
 * Let's try that again. This time, you'll try updating the process method a little bit differently:
-```ruby
+{% highlight ruby %}
   def process(token)
     if is_number(token)
       add_to_result(token)
@@ -916,7 +916,7 @@ However, this does not fix anything and in fact breaks another test. If you have
   def add_operator_if_necessary
     add_to_result(@operators.pop) while @operators.length > 0
   end
-```
+{% endhighlight %}
 
 * Run your tests and you notice that everything passes.
 
@@ -925,17 +925,17 @@ You have passing tests, but ugly code. Now is a good time to check in because yo
 * Checkin your code. Remember, if you don't like working this way, you can always stop doing it after this tutorial. This is just practice anyway, so it won't count and the other developers won't chastise you for moving their cheese.
 
 * Begin by extracting a method to clean up process a bit. Add this method and make sure nothing breaks:
-```ruby
+{% highlight ruby %}
   def add_higher_precedence_operators_to_result(token)
     if @operators.length > 0 && 
       precedence_of(token) <= precedence_of(@operators.last)
       add_operator_if_necessary
     end
   end
-```
+{% endhighlight %}
 
 * Next, replace the original code with a call to this method. Run your tests to make sure things are still working:
-```ruby
+{% highlight ruby %}
   def process(token)
     if is_number(token)
       add_to_result(token)
@@ -944,10 +944,10 @@ You have passing tests, but ugly code. Now is a good time to check in because yo
       @operators << token
     end
   end
-```
+{% endhighlight %}
 
 * While you are at it, extract two more methods: handle_number, handle_operator to clean this code up:
-```ruby
+{% highlight ruby %}
   def process(token)
     if is_number(token)
       handle_number(token)
@@ -962,7 +962,7 @@ You have passing tests, but ugly code. Now is a good time to check in because yo
       add_higher_precedence_operators_to_result(operator)
       @operators << operator
   end
-```
+{% endhighlight %}
 
 * Run your tests, they should be passing.
 
@@ -973,43 +973,43 @@ Check: Did you first add the methods, run your test then change the original cod
 * Run your tests, they should be passing.
 
 * While you are at it, the first two lines of the convert method are really performing initialization. Factor those out into an init method:
-```ruby
+{% highlight ruby %}
   def init
     @result = ''
     @operators = []
   end
-```
+{% endhighlight %}
 
 * Run your tests, make sure nothing broke.
 
 * Now update the convert method to use your new init method:
-```ruby
+{% highlight ruby %}
   def convert(expression)
     init
     ...
   end
-```
+{% endhighlight %}
 
 * Run your tests to make sure nothing is broken.
 
 * Finally, there is another opportunity to extract a method. Add yet another method:
-```ruby
+{% highlight ruby %}
   def convert_expression(expression)
     expression.split(' ').each { |t| process(t) }
     add_remaining_operators
   end
-```
+{% endhighlight %}
 
 * Make sure your tests are still passing.
 
 * Update the convert method:
-```ruby
+{% highlight ruby %}
   def convert(expression)
     init
     convert_expression(expression)
     @result
   end
-```
+{% endhighlight %}
 
 * After your tests are all passing, check your work in before moving on.
 
@@ -1017,7 +1017,7 @@ Check: Did you first add the methods, run your test then change the original cod
 You've just done quite a bit of refactoring and basic cleanup. The description of what you did probably too longer to read than the actual work. Constant cleaning up on the new code you write should just be a normal thing you do. Get into the habit. And seriously, add refactoring to your resume.
 
 Here's an example of what your file might look like:
-```ruby
+{% highlight ruby %}
 require 'test/unit'
 
 class ShuntingYardAlgorithm
@@ -1111,7 +1111,7 @@ class ShuntingYardAlgorithmTest < Test::Unit::TestCase
     assert_expression_becomes('1 + 3 * 2', '1 3 2 * +')
   end
 end
-```
+{% endhighlight %}
 
 # Test: More than two operators
 So far you've handled a single operator and up to two operators and some basic precedence rules. Now you need to make sure you can handle an arbitrary length expression and a few new operators. While not always the case, here's a hierarchy of difficulty:
@@ -1122,17 +1122,17 @@ So far you've handled a single operator and up to two operators and some basic p
 * Create a test for the following: $$ 3\ +\ 1\ *\ 4\ -\ 2\ /\ 3\ \ \rightarrow \ \ 3\ 1\ 4\ *\ +\ 2\ 3\ /\ - $$ 
 
 * Execute the test to see how your algorithm responds. You should see a failure similar to this:
-```terminal
+{% highlight terminal %}
   1) Failure:
 test_several_operators_mixed_precedence(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:73:in `assert_expression_becomes'
      shunting_yard_algorithm_test.rb:97:in `test_several_operators_mixed_precedence']:
 <"3 1 4 * + 2 3 / -"> expected but was
 <"3 1 4 * + 2 - 3 /">.
-```
+{% endhighlight %}
 
 * A quick review of how the code determines operator precedence suggests adding '/' into the mix:
-```ruby
+{% highlight ruby %}
   def precedence_of(operator)
     case operator
       when '*': 10
@@ -1140,7 +1140,7 @@ test_several_operators_mixed_precedence(ShuntingYardAlgorithmTest)
       else 1
     end
   end
-```
+{% endhighlight %}
 
 * Run your tests, and now they pass.
 
@@ -1158,14 +1158,14 @@ It is time to revisit an earlier test, only this time you'll use variables: $$ a
 * Create this as a test and see how the test fails.
 
 * You should see something similar to:
-```terminal
+{% highlight terminal %}
   1) Failure:
 test_adding_variables(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:74:in `assert_expression_becomes'
      shunting_yard_algorithm_test.rb:102:in `test_adding_variables']:
 <"a b +"> expected but was
 <"a + b">.
-```
+{% endhighlight %}
 
 A quick review of the process_expression method shows that the code looks for numbers first. If a token is not a number then it is an operator. By default, unlisted operators have the same precedence, so nothing happens. The code needs to change. You can make a quick change by changing the is_number method.
 
@@ -1174,11 +1174,11 @@ A quick review of the process_expression method shows that the code looks for nu
 * Verify that your tests still fail as expected
 
 * Change the is_operand method to include a pattern for variables:
-```ruby
+{% highlight ruby %}
   def is_operand(token)
       token =~ /^(\d+|[a-zA-Z0-9$_]+)$/
   end
-```
+{% endhighlight %}
 So something is an operand if it is a sequence of digits of length 1 or more or a sequence of one or more letters, numbers, $ and _.
 
 * Run your tests, things should be passing.
@@ -1197,7 +1197,7 @@ Begin by writing a test that verifies the removal of ()'s from an otherwise empt
 
 * You can fix this and follow the current approach used in the class by making a change to process and adding a few methods:
 **process**
-```ruby
+{% highlight ruby %}
   def process(token)
     if is_paren(token)
       handle_paren(token) 
@@ -1207,15 +1207,15 @@ Begin by writing a test that verifies the removal of ()'s from an otherwise empt
       handle_operator(token)
     end
   end
-```
+{% endhighlight %}
 **new methods**
-```ruby
+{% highlight ruby %}
   def is_paren(token)
     token =~ /[\(\)]/
   end
   def handle_paren(token)
   end
-```
+{% endhighlight %}
 
 * Run your tests and notice that everything is now passing.
 
@@ -1238,7 +1238,7 @@ This demonstrates the whole purpose of (), change the natural precedence rules.
 
 * Here is one way to make it "work":
 **handle_paren**
-```ruby
+{% highlight ruby %}
   def handle_paren(token)
     if token == '('
       @operators << token
@@ -1249,10 +1249,10 @@ This demonstrates the whole purpose of (), change the natural precedence rules.
       @operators.pop
     end
   end
-```
+{% endhighlight %}
 
 **precedence_of**
-```ruby
+{% highlight ruby %}
   def precedence_of(operator)
     case operator
       when '(': -1
@@ -1262,13 +1262,13 @@ This demonstrates the whole purpose of (), change the natural precedence rules.
       else 1
     end
   end
-```
+{% endhighlight %}
 
 While this does work, it seems strange to define the precedence of ()', which make things happen sooner, as -1 - or the lowest thing so far.
 
 * Make another change to improve this somewhat:
 **Update precedence_of to have larger numbers for ( and )**:
-```ruby
+{% highlight ruby %}
   def precedence_of(operator)
     case operator
       when '(': 99
@@ -1278,14 +1278,14 @@ While this does work, it seems strange to define the precedence of ()', which ma
       else 1
     end
   end
-```
+{% endhighlight %}
 **Update add_remaining_operators to stop at '('**:
-```ruby
+{% highlight ruby %}
   def add_remaining_operators
     add_to_result(@operators.pop) while 
         @operators.length > 0 && @operators.last != '('
   end
-```
+{% endhighlight %}
 
 * Make these changes, verify your tests pass.
 
@@ -1294,27 +1294,27 @@ While this does work, it seems strange to define the precedence of ()', which ma
 With all tests passing, you can perform some minor plastic surgery. The @operators.length > 0 and @operators.last represent a "logical top" of the operator stack. So change the code to make it more self-describing.
 
 * First, extract a method:
-```ruby
+{% highlight ruby %}
   def under_logical_top
     @operators.length > 0 && @operators.last != '('
   end
-```
+{% endhighlight %}
 
 * Verify that your tests still pass.
 
 * Now, make one more update:
-```ruby
+{% highlight ruby %}
   def add_remaining_operators
     add_to_result(@operators.pop) while under_logical_top
   end
-```
+{% endhighlight %}
 
 * Run your tests and verify everything still passes.
 
 * Check in your code.
 
 * Next, the method handle_paren does not follow a standard ruby idiom:
-```ruby
+{% highlight ruby %}
   def handle_paren(token)
     ...
     else
@@ -1324,12 +1324,12 @@ With all tests passing, you can perform some minor plastic surgery. The @operato
       @operators.pop
     end
   end
-```
+{% endhighlight %}
 **Replace the code in the else with the following**:
-```ruby
+{% highlight ruby %}
       add_to_result(@operators.pop) while @operators.last != '('
       @operators.pop
-```
+{% endhighlight %}
 
 * Run your tests, make sure everything is passing.
 
@@ -1377,32 +1377,32 @@ As expected, this test fails. To support this test you are going to separate the
 You are going to refactor your solution in support of this new test case. Remember, refactoring means changing the structure without changing the behavior. In your case, you have a pretty clear definition of behavior...your tests. So keep your tests passing. Also, as mentioned earlier in the tutorial, the approach will be to add and then remove rather than replace.
 
 * Add a new line to the init method:
-```ruby
+{% highlight ruby %}
   def init
     @result = ''
     @newResult = []
     @operators = []
   end
-```
+{% endhighlight %}
 
 * Next, you need to find all the places where the code adds to @result and **duplicate** the work (minus the formatting). Luckily, the code does not violate the DRY principle, so there's only one place. It's in the add_to_result method:
-```ruby
+{% highlight ruby %}
   def add_to_result(token)
     @result << ' ' if @result.length > 0
     @result << token
   end
-```
+{% endhighlight %}
 The first line is about formatting, the second line is about content. So you simply need to add one more line anywhere in the method (for now, add it to the end):
-```ruby
+{% highlight ruby %}
     @newResult << token
-```
+{% endhighlight %}
 
 * Run your test to make sure nothing is broken.
 
 Now you are going to do something that happens a bit. You're going to move to an intermediate result that produces somewhat ugly code. Not to worry, the code won't stay this way long.
 
 * Add the following method:
-```ruby
+{% highlight ruby %}
   def produce_result
     @result = ''
     @newResult.each{ |t| 
@@ -1411,40 +1411,40 @@ Now you are going to do something that happens a bit. You're going to move to an
     }
     @result
   end
-```
+{% endhighlight %}
 
 * Run your tests, everything should still pass.
 
 * Next, update the convert method to return that instead:
-```ruby
+{% highlight ruby %}
   def convert(expression)
     init
     convert_expression(expression)
     produce_result
   end
-```
+{% endhighlight %}
 
 * Run your tests, things should still work.
 
 Notice that the code no longer needs to produce the intermediate result, so now it is safe to make a few changes together:
 **Remove initialization of @result in the init method**:
-```ruby
+{% highlight ruby %}
   def init
     @newResult = []
     @operators = []
   end
-```
+{% endhighlight %}
 **Remove writing to @result in the add_to_result method**:
-```ruby
+{% highlight ruby %}
   def add_to_result(token)
     @newResult << token
   end
-```
+{% endhighlight %}
 
 * Run your tests, things should be passing.
 
 * Now, make a quick update to produce_result:
-```ruby
+{% highlight ruby %}
   def produce_result
     result = ''
     @newResult.each{ |t|
@@ -1453,7 +1453,7 @@ Notice that the code no longer needs to produce the intermediate result, so now 
     }
     result
   end
-```
+{% endhighlight %}
 
 * Run your tests, things should still be working.
 
@@ -1465,11 +1465,11 @@ Notice that the code no longer needs to produce the intermediate result, so now 
 My colleague, Dean Whampler, reviewed an early version of this tutorial and pointed out that I had created something much more complex than necessary. In retrospect, given that in a previous life I used Smalltalk, I don't have much of an excuse for missing this. However, it's so much better, that I felt the need to fess up.
 
 * Replace the implementation of produce_result:
-```ruby
+{% highlight ruby %}
   def produce_result
     @outputTokens.join(' ')
   end
-```
+{% endhighlight %}
 
 * Run your tests, verify everything is passing.
 
@@ -1488,7 +1488,7 @@ Throughout this exercise, you've been referring to the published algorithm on wi
 The algorithm also mentions what to do if the token is a function name. Your code won't know if a token is a constant or a function until the code hits a left parenthesis //**and look at the last element added to outputTokens**//. So that's where to start.
 
 * Update handle_paren (which is getting pretty long and unruly about now):
-```ruby
+{% highlight ruby %}
   def handle_paren(token)
     if token == '('
       if last_result_pushed_is_function_name
@@ -1500,14 +1500,14 @@ The algorithm also mentions what to do if the token is a function name. Your cod
       @operators.pop
     end
   end
-```
+{% endhighlight %}
 
 The definition for last_result_pushed_is_function_name is straightforward, but it does introduce duplication:
-```ruby
+{% highlight ruby %}
   def last_result_pushed_is_function_name
     @outputTokens.last =~ /^[a-zA-Z0-9$_]+$/
   end
-```
+{% endhighlight %}
 
 * Make these changes and verify that all of your tests pass.
 
@@ -1521,19 +1521,19 @@ There's more, but this is what you'll tackle for now.
 
 * "Extract method" handling left parenthesis from handle_paren:
 Add an extracted method for the if part of the block:
-```ruby
+{% highlight ruby %}
   def process_left_paren
     if last_result_pushed_is_function_name
       @operators << @outputTokens.pop
     end
     @operators << '('
   end
-```
+{% endhighlight %}
 
 * Verify your tests still pass before moving on.
 
 * Change the top part of the if in handle_paren to use the new method:
-```ruby
+{% highlight ruby %}
   def handle_paren(token)
     if token == '('
       process_left_paren
@@ -1542,23 +1542,23 @@ Add an extracted method for the if part of the block:
       @operators.pop
     end
   end
-```
+{% endhighlight %}
 
 * Verify your tests still pass. When they do, consider checking in your work.
 
 * Same thing, bottom part of the if:
 **Create an extracted method for handling the right parenthesis**:
-```ruby
+{% highlight ruby %}
   def process_right_paren
     add_to_result(@operators.pop) while @operators.last != '('
     @operators.pop
   end
-```
+{% endhighlight %}
 
 * Add this method, make sure your tests still pass.
 
 * Use this method in the handle_paren method:
-```ruby
+{% highlight ruby %}
   def handle_paren(token)
     if token == '('
       process_left_paren
@@ -1566,7 +1566,7 @@ Add an extracted method for the if part of the block:
       process_right_paren
     end
   end
-```
+{% endhighlight %}
 
 * Make sure your tests pass
 
@@ -1575,43 +1575,43 @@ Add an extracted method for the if part of the block:
 Now remove the duplication of regular expressions used for handling names. There are at least two options: put the part of the expression in a constant or write a function. I don't have a good reason to select one over the other so I'm going to use a function.
 
 * Create a new method:
-```ruby
+{% highlight ruby %}
   def is_name(str)
     str =~ /^[a-zA-Z0-9$_]+$/
   end
-```
+{% endhighlight %}
 
 * Add this method, make sure all of your tests still pass.
 
 * Update last_result_pushed_is_function_name
-```ruby
+{% highlight ruby %}
   def last_result_pushed_is_function_name
     is_name @outputTokens.last
   end 
-```
+{% endhighlight %}
 
 * Add this method, make sure all of your tests still pass.
-```ruby
+{% highlight ruby %}
   def is_operand(token)
       token =~ /^\d+$/ || is_name(token)
   end
-```
+{% endhighlight %}
 
 * There's an asymmetry in handling numbers versus names, so add the following method:
-```ruby
+{% highlight ruby %}
   def is_number(token)
       token =~ /^\d+$/ 
   end
-```
+{% endhighlight %}
 
 * Add this method, make sure all of your tests still pass.
 
 * Finally, update the is_operand method one final time:
-```ruby
+{% highlight ruby %}
   def is_operand(token)
     is_number(token) || is_name(token)
   end
-```
+{% endhighlight %}
 
 * Run your tests, makes sure they all pass.
 
@@ -1625,18 +1625,18 @@ Now it's time to add multiple parameters to a function. Here is one example: $$ 
 * Create a test for this and see what happens.
 
 * Since the , is interpreted as an operator, the results are not quite what you hoped:
-```terminal
+{% highlight terminal %}
   1) Failure:
 test_function_with_multiple_parameters(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:126:in `assert_expression_becomes'
      shunting_yard_algorithm_test.rb:175:in `test_function_with_multiple_parameters']:
 <"4 1 a d f"> expected but was
 <"4 1 , a , d , f">.
-```
+{% endhighlight %}
 
 The [Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm) has a top-level clause for function parameter separator, so this suggests a change back in the process method:
 **Update process**:
-```ruby
+{% highlight ruby %}
   def process(token)
     if is_paren(token)
       handle_paren(token)
@@ -1648,9 +1648,9 @@ The [Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorit
       handle_operator(token)
     end
   end
-```
+{% endhighlight %}
 **Add method definitions for the new new methods**:
-```ruby
+{% highlight ruby %}
   def is_function_argument_separator(token)
     token == ','
   end
@@ -1658,21 +1658,21 @@ The [Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorit
   def handle_argument_separator
     add_to_result(@operators.pop) while @operators.last != '('
   end
-```
+{% endhighlight %}
 
 * Verify that your tests pass.
 
 * Check in your code.
 
 An astute observer will notice that the body of handle_argument_separator does the same thing as the first line of process_right_paren. This both violates DRY and, possibly worse, makes it necessary to read the code to understand what it does! You can fix this by factoring this out into a method like:
-```ruby
+{% highlight ruby %}
   def record_operators_to_matching_paren
     add_to_result(@operators.pop) while @operators.last != '('
   end
-```
+{% endhighlight %}
 
 * Update handle_argument_separator and process_right_paren to use this method:
-```ruby
+{% highlight ruby %}
   def handle_argument_separator
     record_operators_to_matching_paren
   end
@@ -1680,7 +1680,7 @@ An astute observer will notice that the body of handle_argument_separator does t
     record_operators_to_matching_paren
     @operators.pop
   end
-```
+{% endhighlight %}
 
 * Make sure your tests are passing.
 
@@ -1688,33 +1688,33 @@ An astute observer will notice that the body of handle_argument_separator does t
 
 # Test: What About Something Complex?
 Here's a test to see if something a bit more complex works with what you've written so far:
-```ruby
+{% highlight ruby %}
   def test_nested_function_call_with_embedded_operators
     assert_expression_becomes 'f ( g ( ( 1 + 3 ) * 4 ) / x ( y ( z ) ) )',
       '1 3 + 4 * g z y x / f'
   end
-```
+{% endhighlight %}
 
 * Add this to your test, then see what happens.
 
 Your failure should resemble:
-```terminal
+{% highlight terminal %}
   1) Failure:
 test_nested_function_call_with_embedded_operators(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:140:in `assert_expression_becomes'
      shunting_yard_algorithm_test.rb:193:in `test_nested_function_call_with_embedded_operators']:
 <"1 3 + 4 * g z y x / f"> expected but was
 <"1 3 + 4 * z y x / g f">.
-```
+{% endhighlight %}
 
 The problem is that when balancing ) with (, there's the chance that it's being done because of an expression or a function call. You can fix this:
-```ruby
+{% highlight ruby %}
   def process_right_paren
     record_operators_to_matching_paren
     @operators.pop
     add_to_result @operators.pop  if is_name @operators.last
   end
-```
+{% endhighlight %}
 
 * Make this change and verify your tests all pass.
 
@@ -1722,34 +1722,34 @@ The problem is that when balancing ) with (, there's the chance that it's being 
 
 ## A Quick Refactoring
 Some time ago, you added a method called under_logical_top. You can use that method in places where the code checks for a '('. A quick search of the code reveals just one,:
-```ruby
+{% highlight ruby %}
   def record_operators_to_matching_paren
     add_to_result(@operators.pop) while @operators.last != '('
   end
-```
+{% endhighlight %}
 
 * Change this to use under_logical_top:
-```ruby
+{% highlight ruby %}
  def record_operators_to_matching_paren
     add_to_result(@operators.pop) while under_logical_top
   end
-```
+{% endhighlight %}
 
 * Make this change, run your tests and check in when your tests pass
 
 This refactoring is something that comes as a result of noticing code duplication. Duplication is going to happen, when you notice it, remove it. This is one of the ways in which pair programming can make a big difference. The co-pilot will generally be in a better position to notice structural things because of their point of observation.
 
 Along those lines, there's three places where your code calls @operators <<. Two times in process_left_paren and handle_operator. Logically these places are pushing something to be handled later. Your code can better document intent by handling that in a function:
-```ruby
+{% highlight ruby %}
   def record_operator(operator)
     @operators << operator
   end
-```
+{% endhighlight %}
 
 * Add this method, and make sure your tests pass.
 
 * Make the following updates:
-```ruby
+{% highlight ruby %}
   def process_left_paren
     if last_result_pushed_is_function_name
       record_operator @outputTokens.pop
@@ -1760,7 +1760,7 @@ Along those lines, there's three places where your code calls @operators <<. Two
     add_higher_precedence_operators_to_result operator
     record_operator operator
   end
-```
+{% endhighlight %}
 
 You might notice the removal of () when calling record_operator as well as add_higher_precedence_operators_to_result. This is a style issue and you're welcome to leave them in. Have you noticed it earlier, it's been happening for a little while.
 
@@ -1771,11 +1771,11 @@ You might notice the removal of () when calling record_operator as well as add_h
 Another random check of the code reveals that there are four places that call @operator.pop. While this may not seem like duplication it is. It forces knowledge of the implementation of the operator stack into four places in the code. You'll change this and see another ruby idiom:
 
 * Add the following method:
-```ruby
+{% highlight ruby %}
   def last_operator!
     @operators.pop
   end
-```
+{% endhighlight %}
 
 * Add this method and make sure your tests still run.
 
@@ -1803,14 +1803,14 @@ That gives a great test: $$ a\ =\ b\ += 5\ \ \rightarrow\ \ a\ b\ 5\ +=\ $$
 * Create this test and see how it fails.
 
 It appears that the calculation is processed incorrectly because these operators are treated as the same precedence and left to right associative:
-```terminal
+{% highlight terminal %}
   1) Failure:
 test_right_associative_operators(ShuntingYardAlgorithmTest)
     [shunting_yard_algorithm_test.rb:149:in `assert_expression_becomes'
      shunting_yard_algorithm_test.rb:207:in `test_right_associative_operators']:
 <"a b 5 += +"> expected but was
 <"a b = 5 +=">.
-```
+{% endhighlight %}
 
 This is in fact what is happening because the process method has three checks, is_paren, is_function_argument_separator, is_operand, none of which match, so by default, += and = are treated as operators. A review of the shunting algorithm says this about such operators (paraphrased):
 > While the token is right-associative and its precedence is less than the last operator pushed, add the last operator pushed to the output. - Notice, it's stuff like this in the algorithm that makes writing tests just about necessary to make sure you wrote it correctly!
@@ -1818,7 +1818,7 @@ This is in fact what is happening because the process method has three checks, i
 Since your code handles this logic in add_higher_precedence_operators_to_result, that's the place to change. However, its name will be a bit off.
 
 * Try the following change to see if it fixes the broken test and does not break other tests:
-```ruby
+{% highlight ruby %}
   def add_higher_precedence_operators_to_result(token)
     if @operators.length > 0
       p1 = precedence_of(token)
@@ -1838,14 +1838,14 @@ Since your code handles this logic in add_higher_precedence_operators_to_result,
       else :left_to_right
     end
   end
-```
+{% endhighlight %}
 
 This "works", all tests pass. But can the code be any better? (Nearly rhetorical question, assume the answer is yes.) And what about the name of the method?
 
 * The tests are passing, check in your work before you refactor this unruly method.
 
 * Here is a better version of the same thing, breaking out some of the logic into a supporting method. Try this version and see that it works:
-```ruby
+{% highlight ruby %}
   def add_higher_precedence_operators_to_result(token)
     if @operators.length > 0 && should_happen_first(@operators.last, token)
       add_remaining_operators
@@ -1858,30 +1858,30 @@ This "works", all tests pass. But can the code be any better? (Nearly rhetorical
       precedence_of(token) < precedence_of(topOp)
     end
   end
-```
+{% endhighlight %}
 
 * While you are in refactoring mode, you have two places where the expression @operators.length > 0 exits; create a method for that:
-```ruby
+{% highlight ruby %}
   def there_are_pending_operators
     @operators.length > 0
   end
-```
+{% endhighlight %}
 
 * Update add_higher_precedence_operators_to_result
-```ruby
+{% highlight ruby %}
   def add_higher_precedence_operators_to_result(token)
     if there_are_pending_operators && should_happen_first(@operators.last, token)
       add_remaining_operators
     end
   end
-```
+{% endhighlight %}
 
 * Update under_logical_top
-```ruby
+{% highlight ruby %}
   def under_logical_top
     there_are_pending_operators && @operators.last != '('
   end
-```
+{% endhighlight %}
 
 * Get your tests passing
 
@@ -1890,11 +1890,11 @@ This "works", all tests pass. But can the code be any better? (Nearly rhetorical
 There's one more thing to change before it's time to call this refactoring side-bar done. The name add_higher_precedence_operators_to_result isn't quite right. This adds operators that are higher or equal precedence or just higher, depending on the associativity. Rather than try to put the rules in the name, you can change the name to something suggesting its intent.
 
 * Rename this method to add_operators_that_should_happen_before(token):
-```ruby
+{% highlight ruby %}
   def add_operators_that_should_happen_before(token)
     ...
   end
-```
+{% endhighlight %}
 > Make sure to update handle_operator, which is the one place that calls the method.
 
 * Verify that all of your tests are passing.
@@ -1939,7 +1939,7 @@ See [Martin's Clean Code](http://www.amazon.com/Clean-Code-Handbook-Software-Cra
 
 # A Final Version
 Here is the last version I ended up with after the tutorial. You result may vary based on where you added methods. Which one is right? Yours or mine? Both, as long as the tests pass:
-```ruby
+{% highlight ruby %}
 require 'test/unit'
 
 class ShuntingYardAlgorithm
@@ -2164,7 +2164,7 @@ class ShuntingYardAlgorithmTest < Test::Unit::TestCase
     assert_expression_becomes 'a = b += 5', 'a b 5 += ='
   end
 end
-```
+{% endhighlight %}
 
 [<--Back]({{ site.pagesurl}}/ruby.Tutorials)
 

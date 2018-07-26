@@ -14,9 +14,9 @@ There's another way to make this "work" by manually reading the contents of the 
 
 Hint: You can compare the SQL from each approach by adding the following line to the persistence.xml:
 
-```
+{% highlight terminal %}
          <property name="hibernate.show_sql" value="true" />
-```
+{% endhighlight %}
 
 ## Fetch and Lazy Initialization Revisited
 Add a unit test where you:

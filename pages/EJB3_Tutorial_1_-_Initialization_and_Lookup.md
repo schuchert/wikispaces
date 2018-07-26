@@ -26,7 +26,7 @@ To create this test:
 # Click **Finish**
 # Copy the text below into the file (replacing the entire contents)
 # Save the file
-```java
+{% highlight java %}
 package service.impl;
 
 import org.junit.Before;
@@ -57,15 +57,15 @@ public class HelloWorldServiceImplTest {
         service.sayHelloTo("Brett");
     }
 }
-```
+{% endhighlight %}
 
 ### Execute your "Unit Test"
 Run this JUnit "test" and make sure it runs successfully. (Right-click on the class, select **Run As:JUnit Test**.
 
 You will see the following output:
-```
+{% highlight terminal %}
 Hello to Brett
-```
+{% endhighlight %}
 
 Note that this example produces output to the console. This example service is not really very testable. How might you "fix" this?
 

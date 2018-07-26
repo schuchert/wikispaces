@@ -40,7 +40,7 @@ I have two broken tests: addVehicleWithNameConflict, addVehicleWithNameConflictA
 With all of these broken tests, I'm starting to think that maybe the @Test(expected=...) in JUnit 4 is at first convenient but has short comings. As of writing this I'm considering not using it since it does not offer a way to inspect the contents of the exception.
 
 If I had written these tests like the following:
-```
+{% highlight terminal %}
     @Test 
     public void addVehicleWithNameConflictAndVehicleInvalid() { 
         dao.addVehicleType(makeVehicleTypeNamed(TEST, ValidState.invalid)); 
@@ -50,7 +50,7 @@ If I had written these tests like the following:
             // verify that e has the right type in it with an assert)
         }
     } 
-```
+{% endhighlight %}
 Then the test would have not generated a false positive.
 
 ## The Results

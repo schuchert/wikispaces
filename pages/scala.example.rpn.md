@@ -6,7 +6,7 @@ I'm back to learning Scala. I'm starting with [Rpn+Calculator.WithRefactoringAnd
 SpecTest looks nice as do Scala specs. I wanted a basic unit testing framework and it turns out the number of moving parts for Java is small, so I'm using it and I"ll be using scala specs for more rejection-check orientation.
 
 //**RpnCalculatorShould.scala**//
-```scala
+{% highlight scala %}
 package ex
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.CoreMatchers.is
@@ -69,19 +69,19 @@ class RpnCalculatorShould {
     assertThat(calculator.xRegister, is(equalTo("120")))
   }
 }
-```
+{% endhighlight %}
 
 //**MathOperator.scala**//
-```scala
+{% highlight scala %}
 package ex
 
 abstract class MathOperator {
   def apply(values: RpnStack)
 }
-```
+{% endhighlight %}
 
 //**BinaryMathOperator.scala**//
-```scala
+{% highlight scala %}
 package ex
 
 import java.math.BigDecimal
@@ -93,10 +93,10 @@ class BinaryOperator(private val expression: (BigDecimal, BigDecimal) => BigDeci
     values push expression(lhs, rhs)
   }
 }
-```
+{% endhighlight %}
 
 //**RealOperatorFactory.scala**//
-```scala
+{% highlight scala %}
 package ex
 
 object RealMathOperatorFactory extends MathOperatorFactory {
@@ -110,10 +110,10 @@ object RealMathOperatorFactory extends MathOperatorFactory {
 
   def apply(operatorName: String) = operatorsByName(operatorName)
 }
-```
+{% endhighlight %}
 
 //**RpnCalculator.scala**//
-```scala
+{% highlight scala %}
 package ex
 
 import java.math.BigDecimal
@@ -133,10 +133,10 @@ class RpnCalculator(private val factory: MathOperatorFactory) {
 
   def xRegister() =  values.top.toPlainString
 }
-```
+{% endhighlight %}
 
 //**RpnStack.scala**//
-```scala
+{% highlight scala %}
 package ex
 
 import java.math.BigDecimal
@@ -151,4 +151,4 @@ class RpnStack {
   
   val values = Stack[BigDecimal]();
 }
-```
+{% endhighlight %}

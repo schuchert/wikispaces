@@ -73,9 +73,9 @@ This set of steps describes how to simulate this on a single machine to practice
 * Create a directory in some convenient location, I'll use ~/src/fitnesse_example/server.
 * Under that directory copy fitnesse.jar and FitNesseRoot. The easiest way to accomplish this is to copy fitnesse.jar to ~/src/fitnesse_examples/server then type:
 
-```terminal
+{% highlight terminal %}
 java -jar fitnesse.jar -p 9080
-```
+{% endhighlight %}
 
 Note that this both creates the FitNesseRoot directory and starts FitNesse listening on port 9080.
 
@@ -84,9 +84,9 @@ Note that this both creates the FitNesseRoot directory and starts FitNesse liste
 * Create a directry in some convenient location, I'll use ~/src/fitnesse_example/developer.
 * Under that directory copy fitnesse.jar and FitNesseRoot. The easiest way to accomplish this is to copy fitnesse.jar to ~/src/fitnesse_examples/developer then type:
 
-```terminal
+{% highlight terminal %}
 java -jar fitnesse.jar -p 8080
-```
+{% endhighlight %}
 
 Note that this both creates the FitNesseRoot directory and starts FitNesse listening on port 8080.
 
@@ -107,12 +107,12 @@ The rest of this example uses a simulated project called "Dvr" for DigitalVideoR
 * Go to <http:localhost:9080/DvrServerEnvironment.CommonEnviornment>
 * On this page, set the contents to:
 
-```terminal
+{% highlight terminal %}
 !define TEST_SYSTEM {slim}
 !path fitnesse.jar
 
 !contents -R2 -g -p -f -h
-```
+{% endhighlight %}
 
 * Save the page.
 * Edit the page properties, set the type to **suite**.
@@ -129,21 +129,21 @@ This SetUp page will apply to all children test pages that do not have SetUp pag
 * Go to <http:localhost:9080/DvrServerEnvironment.CommonEnviornment.AllTests.SetUp>
 * Set the page contents to:
 
-```terminal
+{% highlight terminal %}
 |import|
 |com.om.fitnesseexample|
-```
+{% endhighlight %}
 
 #### Create an Example Test
 This is a simple test we'll use to verify that things are working.
 * Create a test page under the top level suite by going to this link: <http:localhost:9080/DvrServerEnvironment.CommonEnviornment.AllTests.SimpleExample>. This page is a sibling of the SetUp page, so it will automatically pickup the SetUp page. Also note that since the page name ends in "Example" it will automatically be created as a test page.
 * Set this page's contents to:
 
-```terminal
+{% highlight terminal %}
 !|IsThisTheServer|
 |server?|
 |true|
-```
+{% endhighlight %}
 
 ### Get Server Test Passing
 
@@ -152,7 +152,7 @@ Now you'll create a single Eclipse workspace with two projects. One project will
 * Create a new Java project called "server" in this workspace.
 * Create the following class (making sure to mirror the package):
 
-```java
+{% highlight java %}
 package com.om.fitnesseexample;
 
 public class IsThisTheServer {
@@ -160,17 +160,17 @@ public class IsThisTheServer {
     return true;
   }
 }
-```
+{% endhighlight %}
 
 The server needs to know where to look for java classes. We will configure this on the server configuration page. By default, Eclipse will compile this and put the classes in /Users/schuchert/src/FitNesseLinkPageExample/server/bin. You might need to search for the top-level class directory.
 * Edit the server configuration page by going to this link: <http:localhost:9080/DvrServerEnvironment>
 * Set the page contents to (**note** update the directory to where you created your Eclipse workspace):
 
-```terminal
+{% highlight terminal %}
 !path /Users/schuchert/src/FitNesseLinkPageExample/server/bin
 
 !contents -R2 -g -p -f -h
-```
+{% endhighlight %}
 
 * If you've followed all of these instructions, then the server-based test should pass. Confirm this by pressing the **Suite** button.
 
@@ -180,11 +180,11 @@ The procedure is much the same for the developer machine, with a little less set
 * Create the Developer Environment Page by clicking on this link: <http:localhost:8080/DvrDeveloperEnvironment>
 * Rather than going back and editing this, set the contents of this page to the following:
 
-```terminal
+{% highlight terminal %}
 !path /Users/schuchert/src/FitNesseLinkPageExample/developer/bin
 
 !contents
-```
+{% endhighlight %}
 
 Notice that this class path is different, it points to a directory that does not currently exist. You'll be creating that shortly.
 * Update this page so that it is a **Suite** page. Edit the properties, select **Suite** and save the page properties.
@@ -202,7 +202,7 @@ If you attempt to run the test, it will fail with yellow errors indicating that 
 * Go back to Eclipse and create a new project called **developer**.
 * Create the following class (making sure that the package matches):
 
-```java
+{% highlight java %}
 package com.om.fitnesseexample;
 
 public class IsThisTheServer {
@@ -210,7 +210,7 @@ public class IsThisTheServer {
     return false;
   }
 }
-```
+{% endhighlight %}
 
 Notice that this is the same class and package, but a different implementation. What makes FitNesse select one fixture class versus the other is the !path statement on the local environment pages. (This is similar to what Michael Feathers calls a Link Seam.)
 

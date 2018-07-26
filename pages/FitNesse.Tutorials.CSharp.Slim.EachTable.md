@@ -30,7 +30,7 @@ Here is the configuration information I used for the following examples:
 
 Given this information, the following definitions will make these examples work:
 
-```
+{% highlight terminal %}
 !define TEST_SYSTEM {slim}
 {% raw %}
 !define COMMAND_PATTERN {%m -r fitSharp.Slim.Service.Runner,c:\tools\nslim\fitsharp.dll %p}
@@ -38,18 +38,18 @@ Given this information, the following definitions will make these examples work:
 !define TEST_RUNNER {c:\tools\nslim\Runner.exe}
  
 !path C:\projects\slim_example\slim_example\obj\Debug\slim_example.dll
-```
+{% endhighlight %}
 
 Also, all of classes for these tables reside in the same namespace, so an import table will help with that. The import table must appear on the page that is executing. Simply putting it in the top level page will not work. Instead, make it a SetUp page. Here's the contents of <http://localhost:8080/CsharpWithSlimExamples.SetUp>:
 
-```
+{% highlight terminal %}
 | import |
 | slim_example |
-```
+{% endhighlight %}
 
 The Page Hierarchy will ultimately be:
 
-```
+{% highlight terminal %}
 CsharpWithSlimExamples
   SetUp
   DecisionTableExample
@@ -57,19 +57,19 @@ CsharpWithSlimExamples
   ScripTableExample
   ScenarioTableExample
   TableTableExample
-```
+{% endhighlight %}
 ## Decision Table
 
 Here's a example of a decision table (<http://localhost:8080/CsharpWithSlimExamples.DecisionTableExample>):
 
-```
+{% highlight terminal %}
 |Create Shows|5/6/2009                                                               |
 |Name        |Episode                      |Channel|Start Time|Duration|Id?          |
 |House       |Wilson Gets Mad              |8      |19:00     |60      |             |
 |Chuck       |He Gets Kung Fu Power        |9      |19:00     |60      |             |
 |Dr. Phil    |Episode #405:Teens in Trouble|3      |16:00     |60      |             |
 |Dr. Who     |Yet another doctor           |12     |20:00     |30      |$lastProgram=|
-```
+{% endhighlight %}
 
 The first row names the table, Create Shows, and requires that the underlying class have a constructor taking a single parameter.
 
@@ -83,7 +83,7 @@ The last row uses the value returned from the Id() method and stores it in a var
 
 Here is a C# fixture to handle this Decision Table (there are more ways to write this class):
 
-```csharp
+{% highlight csharp %}
 using System;
 
 namespace slim_example
@@ -114,7 +114,7 @@ namespace slim_example
     }
   }
 }
-```
+{% endhighlight %}
 
 Note that I've chosen to use auto properties, but you could use private fields (with or without a leading _, starting with or without a capital letter), setX() methods or regular properties.
 
@@ -128,13 +128,13 @@ The one thing not yet discussed is the Execute() method. This method is called a
 As mentioned above, the last row will take the result of the Id() method, Dr. Who:12, and assign that value to $lastProgram.
 ## Query Table
 Now for a query table (<http://localhost:8080/CsharpWithSlimExamples.QueryTableExample>):
-```
+{% highlight terminal %}
 !|Query:Get Programs On A Given Day And Channel|3/4/2009|3                 |
 |Name                                          |Episode |StartTime|Duration|
 |N1                                            |E1      |18:00    |60      |
 |N1                                            |E2      |19:00    |60      |
 |N1                                            |E3      |20:00    |60      |
-```
+{% endhighlight %}
 The first row describes a table expecting a class called "GetProgramsOnAGivenDayAndChannel" with a constructor taking two parameters.
 
 The second row names the fields that should be in the returned object. Note you ultimately create the results, to the actual names can be anything you want. You do not have to list all of the fields, just what you want to check. You can return more fields than you check.
@@ -144,7 +144,7 @@ The final 3 rows show the expected results from this query into the system.
 The ! as the first character tells FitNesse to ignore embedded Wiki Words. If you did not put this, the "StartTime" column would be interpreted as a WikiPage name and would not process correctly. Your two options to fix this are to either introduce a space or put ! at the beginning of the table. You can do both, it won't hurt anything, but it's not necessary.
 
 Here's a class that will get this table to pass:
-```csharp
+{% highlight csharp %}
 using System;
 using System.Collections.Generic;
 
@@ -211,10 +211,10 @@ namespace slim_example
     }
   }
 }
-```
+{% endhighlight %}
 ## Script Table
 A script table allows you more control over information going into methods. You can call different methods with a variable number of parameters. Here is one example (<http://localhost:8080/CsharpWithSlimExamples.ScriptTableExample>):
-```
+{% highlight terminal %}
 !|Script                    |Generate Programs                                                                              |
 |$P1=                       |Create Weekly Program Named|W1|On Channel|7|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8 |
 |Create Weekly Program Named|W2|On Channel|8|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8                             |
@@ -222,7 +222,7 @@ A script table allows you more control over information going into methods. You 
 |Create Daily Program Named |D1|On Channel|7|Starting On|3/4/2008|at|20:30|Length|30|Episodes|56                            |
 |Create Daily Program Named |D2|On Channel|8|Starting On|3/4/2008|at|22:00|Length|30|Episodes|56                            |
 |check                      |TotalEpisodesCreated|128                                                                       |
-```
+{% endhighlight %}
 
 The first line, as with the previous examples, names the class. In this case it is GeneratePrograms. While there are no parameters sent to a constructor, you can add additional cells to this line to pass parameters into a constructor.
 
@@ -235,7 +235,7 @@ The next two lines call another method with a long name: CreateDailyProgramNamed
 The final line uses a keyword,// **check**//, to call a method called "TotalEpisodesCreated" and compares the return of that method to the next value, 128.
 
 Here's the code to get this table to pass:
-```csharp
+{% highlight csharp %}
 namespace slim_example
 {
   public class GeneratePrograms
@@ -264,15 +264,15 @@ namespace slim_example
     }
   }
 }
-```
+{% endhighlight %}
 ## Scenario Table
 A scenario table describes a logical sequence of steps. By itself it does not require a backing class. Here is an example scenario table (<http://localhost:8080/CsharpWithSlimExamples.ScenarioTableExample>):
-```
+{% highlight terminal %}
 !|Scenario                   |dvrCanSimultaneouslyRecord|number|andWithThese|seasonPasses|shouldHaveTheFollowing|toDoList|
 |givenDvrCanRecord           |@number                                                                                    |
 |whenICreateSeasonPasses     |@seasonPasses                                                                              |
 |thenTheToDoListShouldContain|@toDoList                                                                                  |
-```
+{% endhighlight %}
 
 The first line serves two purposes:
 * Names the scenario
@@ -304,7 +304,7 @@ Here is a complete page that(<http://localhost:8080/CsharpWithSlimExamples.Scena
 * Mentioned a random script
 * Uses the scenario
 
-```
+{% highlight terminal %}
 !|Scenario                   |dvrCanSimultaneouslyRecord|number|andWithThese|seasonPasses|shouldHaveTheFollowing|toDoList|
 |givenDvrCanRecord           |@number                                                                                    |
 |whenICreateSeasonPasses     |@seasonPasses                                                                              |
@@ -315,7 +315,7 @@ Here is a complete page that(<http://localhost:8080/CsharpWithSlimExamples.Scena
 |Dvr Can Simultaneously Record And With These Should Have The Following|
 |number                       |seasonPasses   |toDoList                |
 |1                            |D5_1:5,D6_1:6  |D5_1:E:1-7              |
-```
+{% endhighlight %}
 
 The middle table mentions a script literally called "Some Random Script".
 
@@ -327,7 +327,7 @@ The final table names the scenario and therefore requires some class handle the 
 Note that the name of the method can start with a lower case letter, but Slim will also look for a capital first letter.
 
 Here is a class that will get this page to pass:
-```csharp
+{% highlight csharp %}
 namespace slim_example
 {
   public class SomeRandomScript
@@ -345,10 +345,10 @@ namespace slim_example
     }
   }
 }
-```
+{% endhighlight %}
 ## Table Table
 With a table table, you are given the table, minus the first row, and can do anything you wish. Here is one such example (<http://localhost:8080/CsharpWithSlimExamples.TableTableExample>):
-```
+{% highlight terminal %}
 !|Table:CreateOneDayProgramGuide|1:00|3/4/2008|
 |   |1   |2   |3   |4   |5   |6   |7   |8   |9   |10  |11  |12  |13  |14  |
 |200|aaaa|BBcc|cccc|ccDD|DDee|efff|ffff|fffg|gggg|gggh|hhii|jklm|nopq|rstt|
@@ -356,12 +356,12 @@ With a table table, you are given the table, minus the first row, and can do any
 |302|aaBB|ccDD|eeFF|ggHH|iiJJ|kkLL|mmNN|ooPP|qqRR|ssTT|uuVV|wwww|wwXX|XXXy|
 |501|    |    |    |    |    |aaBB|ccDD|eeFF|ggHH|iiJJ|kkLL|mmNN|ooPP|qqRR|
 |556|    |__aa|BBcc|DDee|FFgg|HHii|JJkk|LLmm|NNoo|PPqq|RRss|TTuu|VVxx|xxxx|
-```
+{% endhighlight %}
 
 The class is called CreateOneDayProgramGuide. Note you can use spaces if you wish. This class, apparently, has a 2-argument constructor. When the fixture is executed, it receives all but the first row as a List<List<String>. You can choose to do what you wish with this code.
 
 Here is a fixture to handle this example:
-```csharp
+{% highlight csharp %}
 using System;
 using System.Collections.Generic;
 
@@ -379,7 +379,7 @@ namespace slim_example
     }
   }
 }
-```
+{% endhighlight %}
 # Summary
 This is simply a quick summary of the types of tables available and minimal code to get those fixtures to pass. There's much more to consider in terms of test design and connecting test fixtures to production code. You can get an idea of how to proceed looking at the [Java tutorials]({{ site.pagesurl}}/FitNesse.Tutorials#JavaTutorials).
 

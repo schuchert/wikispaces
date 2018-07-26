@@ -12,10 +12,10 @@ This is a somewhat nostalgic background, you won't miss much if you [skip to the
 
 Here are a few examples:
 
-```
+{% highlight terminal %}
 aCollection inject: 0 into: [a, b | a + b]
 balance > withdrawalAmount ifTrue: [allowTransation] ifFalse: [disallow transaction]
-```
+{% endhighlight %}
 
 In the first line, one message inject:into: is sent to the object referred to by the variable aCollection. The parameters are 0 and ```[a, b | a + b]```, both objects. In the second example there are two messages: >, ifTrue:ifFalse:. The binary method > is sent to balance with the parameter withdrawalAmount. That method returns either true or false. The result of that evaluation (true or false) is then sent the message ifTrue:ifFalse: with the two blocks (blocks are created using []). If the result is true, then the implementation of instance method ifTrue:ifFalse:, on the True class, will execute/evaluate the first block passed in and ignore the second block. If the result is false, then the message ifTrue:ifFalse: will be sent to the single instance of False, which executes the second block and ignores the first block. 
 
@@ -25,7 +25,7 @@ Keyword messages, messages with one or more parameters, have parameters intermin
 
 Here is an example of a script table from the end of this tutorial:
 
-```
+{% highlight terminal %}
 1: !|Script                    |Generate Programs                                                                              |
 2: |$P1=                       |Create Weekly Program Named|W1|On Channel|7|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8 |
 3: |Create Weekly Program Named|W2|On Channel|8|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8                             |
@@ -33,7 +33,7 @@ Here is an example of a script table from the end of this tutorial:
 5: |Create Daily Program Named |D1|On Channel|7|Starting On|3/4/2008|at|20:30|Length|30|Episodes|56                            |
 6: |Create Daily Program Named |D2|On Channel|8|Starting On|3/4/2008|at|22:00|Length|30|Episodes|56                            |
 7: |check                      |TotalEpisodesCreated|128                                                                       |
-```
+{% endhighlight %}
 
 The name of this Fixture is GeneratePrograms. The Fixture class needs two methods:
 * createWeeklyProgramNamedOnChannelStartingOnAtLengthEpisodes(...)
@@ -43,14 +43,14 @@ You'll create this at the end of this tutorial.
 
 This table style does lend itself to nicely naming Java/C#/C++ methods. The Smalltalk version, however does not look so bad (with the caveat that while it looks nice, it makes passing in many parameters a bit too easy):
 
-```
+{% highlight terminal %}
 | generateProgrmas, B |
 generateProgrmas := GenerateProgrmas new.
 B := generateProgrmas CreateWeeklyProgramNamed: 'W1' OnChannel: 7 StartingOn '3/4/2008' At: '21:00' Length: 60 Episodes: 8.
 generatePrograms TotalEpisodesCreated.
 generateProgrmas CreateDailyProgramNamed: 'D1" OnChannel: 8 StartingOn: '3/4/2008' At: '20:30" Length: 30 Episodes 56.
 ...
-```
+{% endhighlight %}
 The spirit of the keyword message in Smalltalk was revived in the design of the do fixture and then carried over into Slim.
 
 [#introduction]({{site.pagesurl}}/#introduction)
@@ -72,13 +72,13 @@ Even though you have already created tables and fixtures to add programs to the 
 
 Rather than using our original AddProgramToSchedule fixture, this is a new way to generate large amounts of programs:
 
-```
+{% highlight terminal %}
 !|Script|Generate Programs                                                                      |
 |Create Weekly Program Named|W1|On Channel|7|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8 |
 |Create Weekly Program Named|W2|On Channel|8|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8 |
 |Create Daily Program Named |D1|On Channel|7|Starting On|3/4/2008|at|20:30|Length|30|Episodes|56|
 |Create Daily Program Named |D2|On Channel|8|Starting On|3/4/2008|at|22:00|Length|30|Episodes|56|
-```
+{% endhighlight %}
 
 There are three parts to this table:
 * Row 1: Name the fixture, Generate Programs. Note, you can add additional cells to this line to pass in constructor arguments
@@ -89,9 +89,9 @@ There are three parts to this table:
 * Create a new Test Suite: Edit the following URL: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples>
 * Enter the following for its contents:
 
-```
+{% highlight terminal %}
 !contents -R2 -g -p -f -h
-```
+{% endhighlight %}
 
 * Save this and set the page type to Suite.
 * Edit the following URL (to add a child page): <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples.CreatingManyProgramsExample>
@@ -102,7 +102,7 @@ There are three parts to this table:
 ## Create Initial Fixture
 As with other tables, this table needs a backing fixture:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 public class GeneratePrograms {
@@ -118,7 +118,7 @@ public class GeneratePrograms {
       return "";
    }
 }
-```
+{% endhighlight %}
 
 This is simply a skeleton of the fixture. Update your fixture and verify that your table executes and passes. (Note, depending on the version of FitNesse you are using, returning a "" might cause problems. If the above does not give a successful test execution, replace "" with "n/a".)
 
@@ -133,7 +133,7 @@ Here is the new class, DateUtil, to capture all of the date formatting carried o
 
 **Create: DateUtil.java**
 
-```java
+{% highlight java %}
 package com.om.example.util;
 
 import java.text.ParseException;
@@ -180,11 +180,11 @@ public class DateUtil {
       return dateFormat.parse(dateTime);
    }
 }
-```
+{% endhighlight %}
 
 **Update: AddProgramsToSchedule**
 
-```java
+{% highlight java %}
    public void execute() throws ParseException {
       try {
          Program p = schedule.addProgram(programName, episodeName, channel, DateUtil
@@ -195,12 +195,12 @@ public class DateUtil {
          lastCreationSuccessful = false;
       }
    }
-```
+{% endhighlight %}
 **Note**: When you make this change, you'll have an unused method, **buildStartDateTime**. Remove it.
 
 **Update: TimeSlotPropertyHandler**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.util.Date;
@@ -225,11 +225,11 @@ public class TimeSlotPropertyHandler extends PropertyHandler {
             .formatTime(startDateTime));
    }
 }
-```
+{% endhighlight %}
 
 **Update: GeneratePrograms**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.text.ParseException;
@@ -273,14 +273,14 @@ public class GeneratePrograms {
       addProgramsToSchedule.execute();
    }
 }
-```
+{% endhighlight %}
 
 Make sure with all of these changes, your page passes.
 
 ## Schedule Items in To Do List
 Now that you've generated a schedule with several programs, it is time to create season passes. This fixture already exists:
 
-```
+{% highlight terminal %}
 |Create Season Pass For|W1|7|
 
 |Create Season Pass For|W2|8|
@@ -288,7 +288,7 @@ Now that you've generated a schedule with several programs, it is time to create
 |Create Season Pass For|D1|7|
 
 |Create Season Pass For|D2|8|
-```
+{% endhighlight %}
 
 Note, as the fixture is written, it takes parameters on the constructor. To use this fixture as is, you'll need to make sure there are blank lines as shown. Why? The blank line separates one table from the next. FitNesse will create four instances of the Fixture, calling the constructor four times, which is what you want. You could realize this is a deficiency in the way the fixture is written and update it to allow for multiple season passes. That exercise is left to the reader.
 
@@ -297,7 +297,7 @@ If you run your test, you should still see all green. As with previous tutorials
 ## Assert Contents
 Now it is time to review the to do list by date rather than by program id. Here's just a fixture:
 
-```
+{% highlight terminal %}
 |Query:Episodes in to do list on|3/4/2008   |
 |programName                    |episodeName|
 |W1                             |E1         |
@@ -309,13 +309,13 @@ Now it is time to review the to do list by date rather than by program id. Here'
 |programName                    |episodeName|
 |D1                             |E2         |
 |D2                             |E2         |
-```
+{% endhighlight %}
 
 Here's the code to make this work:
 
 **Create: EpisodesInToDoListOn.java**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.text.ParseException;
@@ -342,11 +342,11 @@ public class EpisodesInToDoListOn {
       return result.render();
    }
 }
-```
+{% endhighlight %}
 
 **Update: DateUtil.java**
 
-```java
+{% highlight java %}
    public boolean isSameDate(Date startDateTime, Date date) {
       return formatDate(startDateTime).equals(formatDate(date));
    }
@@ -354,18 +354,18 @@ public class EpisodesInToDoListOn {
    public Date formatDate(String date) throws ParseException {
       return dateFormat.parse(date);
    }
-```
+{% endhighlight %}
 
 **Update: Program.java**
 
-```java
+{% highlight java %}
    public boolean isOn(Date date) {
       return DateUtil.instance().isSameDate(timeSlot.startDateTime, date);
    }
-```
+{% endhighlight %}
 
 **Update: SeasonPassManager.java**
-```java
+{% highlight java %}
    public List<Program> toDoListContentsOn(Date date) {
       List<Program> result = new LinkedList<Program>();
 
@@ -375,7 +375,7 @@ public class EpisodesInToDoListOn {
 
       return result;
    }
-```
+{% endhighlight %}
 
 Make all of these changes and execute your test. Notice anything? The first table shows that D1:E1 and D2:E1 are both missing. Apparently something is wrong with the code. There's not enough context to really know what is happening. Maybe we took too large of a leap. How can you fix this?
 
@@ -384,7 +384,7 @@ Here is a JUnit analog of the test page:
 
 **Create: GenerateProgramsTest.java**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import static org.junit.Assert.assertEquals;
@@ -426,7 +426,7 @@ public class GenerateProgramsTest {
       assertEquals(4, results.size());
    }
 }
-```
+{% endhighlight %}
 
 Running this test indicates a similar problem (expected 4 by only found 2 in in results). Looks like the code is not failing fast. How could I tell? To figure out what happening I had to use the debugger. This is a code-smell and the problem is in all of this code, where is the failure happening?
 
@@ -434,7 +434,7 @@ Stepping through, I noticed that attempting to add the first Episode of D1 and D
 
 **Update: GeneratePrograms.java**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.text.ParseException;
@@ -482,13 +482,13 @@ public class GeneratePrograms {
       addProgramsToSchedule.execute();
    }
 }
-```
+{% endhighlight %}
 
 After a little time with the debugger, it because clear where the exception was getting lost:
 
 **Update: AddProgramsToSchculed.execute()**
 
-```java
+{% highlight java %}
    public void execute() throws ParseException {
       try {
          Program p = schedule.addProgram(programName, episodeName, channel, DateUtil
@@ -500,13 +500,13 @@ After a little time with the debugger, it because clear where the exception was 
          throw e;
       }
    }
-```
+{% endhighlight %}
  
 A quick test of the DateUtil.buildDate method shows a problem:
 
 **Create: DateUtilTest.java**
 
-```java
+{% highlight java %}
 package com.om.example.util;
 
 import static org.junit.Assert.assertEquals;
@@ -532,18 +532,18 @@ public class DateUtilTest {
       assertEquals(0, calendar.get(Calendar.SECOND));
    }
 }
-```
+{% endhighlight %}
 
 Which leads to a fix of an improperly extracted method:
 
 **Update: DateUtil.java**
 
-```java
+{% highlight java %}
    public Date buildDate(String date, String startTime) throws ParseException {
       String dateTime = String.format("%s|%s", date, startTime);
       return dateTimeMergedFormat.parse(dateTime);
    }
-```
+{% endhighlight %}
 
 Run your unit tests, they should all now pass. At this point if you are not convinced that the tutorial took too big of a step trying to use primarily acceptance tests to drive the work, then you have a high threshold of pain. That was too much much broken stuff for too long along with too much time spent in the debugger.
 
@@ -557,7 +557,7 @@ This can be fixed:
 
 **Update: GeneratePrograms.java**
 
-```java
+{% highlight java %}
    private void createOneProgram(String programName, int channel, String startTime,
          int minutes, String nextStartDate, int i) throws ParseException {
       addProgramsToSchedule.setChannel(channel);
@@ -570,11 +570,11 @@ This can be fixed:
       if (!addProgramsToSchedule.created())
          throw new ConflictingProgramException();
    }
-``` 
+{% endhighlight %}
 
 **Restore: AddProgramsToSchedule.java**
 
-```java
+{% highlight java %}
    public void execute() throws ParseException {
       try {
          Program p = schedule.addProgram(programName, episodeName, channel, DateUtil
@@ -585,7 +585,7 @@ This can be fixed:
          lastCreationSuccessful = false;
       }
    }
-```
+{% endhighlight %}
 
 Run your unit tests, they should pass. Run your top-level suite, everything should be back to passing. 
 
@@ -593,7 +593,7 @@ Finally, let's verify that in fact this change to the createOneProgram method ac
 
 **Add Test To: GenerateProgramsTest**
 
-```java
+{% highlight java %}
    @Test(expected = ConflictingProgramException.class)
    public void GeneratingConflictingProgramsThrowsException() throws Exception {
       generatePrograms.CreateWeeklyProgramNamedOnChannelStartingOnAtLengthEpisodes("N1",
@@ -601,14 +601,14 @@ Finally, let's verify that in fact this change to the createOneProgram method ac
       generatePrograms.CreateWeeklyProgramNamedOnChannelStartingOnAtLengthEpisodes("N2",
             7, "3/4/2008", "21:00", 60, 1);
    }
-```
+{% endhighlight %}
 
 Make sure this test passes before moving to the next section.
 
 # A Second Example
 Here are a few addons to the table to show a few additional features of Script tables:
 
-```
+{% highlight terminal %}
 !|Script                    |Generate Programs                                                                              |
 |$P1=                       |Create Weekly Program Named|W1|On Channel|7|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8 |
 |Create Weekly Program Named|W2|On Channel|8|Starting On|3/4/2008|at|21:00|Length|60|Episodes|8                             |
@@ -616,7 +616,7 @@ Here are a few addons to the table to show a few additional features of Script t
 |Create Daily Program Named |D1|On Channel|7|Starting On|3/4/2008|at|20:30|Length|30|Episodes|56                            |
 |Create Daily Program Named |D2|On Channel|8|Starting On|3/4/2008|at|22:00|Length|30|Episodes|56                            |
 |check                      |TotalEpisodesCreated|128                                                                       |
-```
+{% endhighlight %}
 This table demonstrates some things you have not yet used:
 * Using a ! at the beginning of a table tells FitNesse to not treat potential wiki words as wikiwords. E.g., TotalEpisodesCreated is a wikiword. If you do not include !, then this will not be treated as a method call.
 * Variable assignment (line 2). The variable $P1 will be set to whatever is returned by the method called CreateWeeklyProgramNamedOnChannelStartingOnAtLengthEpisodes.
@@ -634,7 +634,7 @@ This requires a few changes to the existing fixture:
 
 **Update: GeneratePrograms.java**
 
-```java
+{% highlight java %}
 public class GeneratePrograms {
    AddProgramsToSchedule addProgramsToSchedule = new AddProgramsToSchedule();
    int totalEpisodesCreated;
@@ -659,7 +659,7 @@ public class GeneratePrograms {
       ++totalEpisodesCreated;
    }
 }
-```
+{% endhighlight %}
 
 Run your test and verify it passes. Rerun the suite and verify it passes.
 

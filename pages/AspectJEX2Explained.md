@@ -5,10 +5,10 @@ title: AspectJEX2Explained
 
 # Example 2 Explained
 Accessing a field in Java is a joinpoint exposed by the AspectJ joinpoint model. This is different from method execution in that captures things like the following: 
-```
+{% highlight terminal %}
    this.aString = "value";              // Writing to a field called aString
    int tempValue = 3 * this.myIntValue; // Reading from a field called myIntValue
-```
+{% endhighlight %}
 Notice in both of these examples, we are somehow accessing an instance field of a class.
 
 This example examines all changes to fields on the Address object. When an attempt is made to set a field of a class, the aspect gets the current field value and then displays the current value and the value on the right hand side of assignment.
@@ -23,7 +23,7 @@ To make this example work, we need two additional things:
 
 ----
 ## FieldSetAspect.java
-```java
+{% highlight java %}
 01: package ex2;
 02: 
 03: import java.lang.reflect.Field;
@@ -56,7 +56,7 @@ To make this example work, we need two additional things:
 30:         return thisJoinPoint.proceed();
 31:     }
 32: }
-```
+{% endhighlight %}
 
 ### Interesting Lines
 ^
@@ -72,7 +72,7 @@ To make this example work, we need two additional things:
 |30|Actually perform the set|
 
 ## aop.xml
-```xml
+{% highlight xml %}
 01: <aspectj>
 02: 	<aspects>
 03: 		<aspect name="ex2.FieldSetAspect"/>
@@ -81,7 +81,7 @@ To make this example work, we need two additional things:
 06: 		<include within="ex2.*"/>
 07: 	</weaver>
 08: </aspectj>
-```
+{% endhighlight %}
 
 ### Interesting Lines
 ^

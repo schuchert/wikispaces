@@ -13,7 +13,7 @@ Here is some simple production code:
 
 **ClassWithThreadingProblem.java**
 
-```java
+{% highlight java %}
 01: package com.om.concurrent.example;
 02: 
 03: public class ClassWithThreadingProblem {
@@ -23,7 +23,7 @@ Here is some simple production code:
 07:         return ++lastId;
 08:     }
 09: }
-```
+{% endhighlight %}
 
 The name should be a hint that it has problems, and it does. If a single instance of this class is used by more than one thread, it is possible that expression ++lastId on line 7 could fail. How? If one thread starts executing that method and another thread preempts it, then one of the updates could get lost.
 
@@ -34,7 +34,7 @@ You can safely [skip]({{ site.pagesurl}}/DebuggingThreadedCodePart1#SkipOverByte
 
 What is an atomic operation? Any operation that cannot be interrupted from when it starts to when it completes. For example, in the following code, line 5, where 1 is assigned to value, is atomic. It cannot be interrupted:
 
-```java
+{% highlight java %}
 01: public class Example {
 02:    int value;
 03:
@@ -42,11 +42,11 @@ What is an atomic operation? Any operation that cannot be interrupted from when 
 05:        value = 1;
 06:    }
 07:}
-```
+{% endhighlight %}
 
 What happens if we change line 5 to use ++ instead? It is still atomic?
 
-```java
+{% highlight java %}
 01: public class Example {
 02:    int value;
 03:
@@ -54,7 +54,7 @@ What happens if we change line 5 to use ++ instead? It is still atomic?
 05:        ++value;
 06:    }
 07:}
-```
+{% endhighlight %}
 
 In this case, the answer is it can be interrupted, it is not atomic.
 
@@ -105,7 +105,7 @@ Here is such a test:
 [#ClassWithThreadingProblemTest]({{site.pagesurl}}/#ClassWithThreadingProblemTest)
 **ClassWithThreadingProblemTest.java**
 
-```java
+{% highlight java %}
 01: package com.om.concurrent.example;
 02: 
 03: import static org.junit.Assert.fail;
@@ -145,7 +145,7 @@ Here is such a test:
 36:         fail("This test should have exposed a threading issue but it did not.");
 37:     }
 38: }
-```
+{% endhighlight %}
 ### Interesting Lines
 
 |Line|Description|
@@ -218,7 +218,7 @@ As of this writing, what you ultimately download is a zip file. That zip file co
 * Create the problem class and test above in some package. (Here are the files without the line numbers for easy copying)
 **ClassWithThreadingProblem**
 
-```java
+{% highlight java %}
 package com.om.concurrent.example;
 
 public class ClassWithThreadingProblem {
@@ -228,11 +228,11 @@ public class ClassWithThreadingProblem {
         return ++lastId;
     }
 }
-```
+{% endhighlight %}
 
 **ClassWithThreadingProblem**
 
-```java
+{% highlight java %}
 package com.om.concurrent.example;
 
 import static org.junit.Assert.fail;
@@ -273,7 +273,7 @@ public class ClassWithThreadingProblemTest {
         fail("This test should have exposed a threading issue but it did not.");
     }
 }
-```
+{% endhighlight %}
 
 For the purpose of the following instructions, the package is: com.om.concurrent.example
 
@@ -287,13 +287,13 @@ These instructions are for eclipse. Your IDE will have a similar feature. The im
 * Click the arguments tab
 * Enter the following in the VM arguments:
 
-```terminal
+{% highlight terminal %}
 -javaagent:JavaConTest/Lib/ConTest.jar
-```
+{% endhighlight %}
 
 Note, this is a relative directory under the current project. If you placed ConTest in another directory, you'll have to make sure to use the correct directory. Run your test again, it will fail and you'll notice output (somewhat shortened):
 
-```terminal
+{% highlight terminal %}
 >>> ConTest: ConTest for Java, version 3.5.2.3
 >>> ConTest:    build: 02 September 2009 10:40:13
 >>> ConTest: (c) Copyright IBM Corporation (1999, 2009), ALL RIGHTS RESERVED.
@@ -308,7 +308,7 @@ com.ibm.contest.instrumentation.TargetSpecificationException: target classes not
 	at com.ibm.contest.instrumentation.TargetHandler.<init>(TargetHandler.java:103)
 	at com.ibm.contest.instrumentation.InstrumentationAction.<init>(InstrumentationAction.java:311)
 <<snip>>
-```
+{% endhighlight %}
 
 The exception is the subject of the next section.
 
@@ -316,14 +316,14 @@ The exception is the subject of the next section.
 * Find the directory containing ConTest.jar (in my case it is ~/src/ConTestFeb2010/ConTestFeb2010/JavaConTest/Lib)
 * Edit the file KingProperties, find the following line:
 
-```terminal
+{% highlight terminal %}
 targetClasses = *
-```
+{% endhighlight %}
 * Replace the * with the package of your test, using / instead of ., e.g.:
 
-```terminal
+{% highlight terminal %}
 targetClasses = com/om/concurrent/example
-```
+{% endhighlight %}
 
 ## See the test pass
 Run the test, you should see it pass (meaning it was able to detect a threading problem).

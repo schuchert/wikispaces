@@ -19,7 +19,7 @@ Type or enter the source provided below for each of the three classes.
 The entity model is changed slightly from the first JPA tutorial. There is one change in Company.java. Review that class' comments to understand that change. The quick summary is that we've added eager fetching to a relationship.
 
 **Address.java**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Embeddable;
@@ -88,10 +88,10 @@ public class Address {
         this.zip = zip;
     }
 }
-```
+{% endhighlight %}
 
 **Company.java**
-```java
+{% highlight java %}
 package entity;
 
 import java.util.ArrayList;
@@ -221,10 +221,10 @@ public class Company {
         return 101 * getId().hashCode();
     }
 }
-```
+{% endhighlight %}
 
 **Person.java**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Embedded;
@@ -324,4 +324,4 @@ public class Person {
         return 101 * getId();
     }
 }
-```
+{% endhighlight %}

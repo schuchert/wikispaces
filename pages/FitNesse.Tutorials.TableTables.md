@@ -15,7 +15,7 @@ Up to this point, you have created programs using several different styles. Howe
 
 # Creating Many Programs
 You used the following table to populate the program schedule (this is a snippet):
-```
+{% highlight terminal %}
 |Create Daily Program Named|D5_1|On Channel|5|Starting On|3/4/2008|at|20:00|Length|30|Episodes|7|
 |Create Daily Program Named|D5_2|On Channel|5|Starting On|3/4/2008|at|20:30|Length|30|Episodes|7|
 |Create Daily Program Named|D5_3|On Channel|5|Starting On|3/4/2008|at|21:00|Length|30|Episodes|7|
@@ -25,17 +25,17 @@ You used the following table to populate the program schedule (this is a snippet
 |Create Daily Program Named|D6_3|On Channel|6|Starting On|3/4/2008|at|21:00|Length|30|Episodes|7|
 |Create Daily Program Named|D6_4|On Channel|6|Starting On|3/4/2008|at|21:30|Length|30|Episodes|7|
 ...
-```
+{% endhighlight %}
 
 What does this table represent? What follows is a different visualization of this same data to make it easier to understand. In fact, it is just two days, but you can probably imagine extending this to support multiple days:
-```
+{% highlight terminal %}
 |3/4/2008|20:00  |20:30  |21:00  |21:30  |
 |5       |D5_1.E1|D5_2.E1|D5_3.E1|D5_4.E1|
 |6       |D6_1.E1|D6_2.E1|D6_3.E1|D6_4.E1|
 |3/5/2008|20:00  |20:30  |21:00  |21:30  |
 |5       |D5_1.E1|D5_2.E1|D5_3.E1|D5_4.E1|
 |6       |D6_1.E1|D6_2.E1|D6_3.E1|D6_4.E1|
-```
+{% endhighlight %}
 
 Notice that this appears more like a program guide you might see with cable receiver or a DVR. This isn't perfect because there are artifacts from the original table in the forms of the names used to create the programs. Even so, this appears to be a bit closer to a program guide.
 
@@ -47,7 +47,7 @@ Next, consider the following simplifications:
 
 With these changes, read this program guide:
 
-```
+{% highlight terminal %}
 |Table:Create One Day Program Guide|1:00|3/4/2008| 
 |   |1   |2   |3   |4   |5   |6   |7   |8   |9   |10  |11  |12  |13  |14  |
 |200|aaaa|BBcc|cccc|ccDD|DDee|efff|ffff|fffg|gggg|gggh|hhii|jklm|nopq|rstt|
@@ -55,7 +55,7 @@ With these changes, read this program guide:
 |302|aaBB|ccDD|eeFF|ggHH|iiJJ|kkLL|mmNN|ooPP|qqRR|ssTT|uuVV|wwww|wwXX|XXXy|
 |501|    |    |    |    |    |aaBB|ccDD|eeFF|ggHH|iiJJ|kkLL|mmNN|ooPP|qqRR|
 |556|    |__aa|BBcc|DDee|FFgg|HHii|JJkk|LLmm|NNoo|PPqq|RRss|TTuu|VVxx|xxxx|
-```
+{% endhighlight %}
 
 Why do this? When I was testing the logic of selecting the correct programs with multiple season passes and a variable number of recorders, I had trouble program the schedules using the script table. What I was doing in my head was visualizing the program guide used by the DVRs I've personally used. It then hit me that the visualization of the program guide was essential to my use of the DVR. My tests did not reflect that so it occurred to me to make my tests reflect that as close as I could.
 
@@ -71,7 +71,7 @@ As with the previous tutorials, you'll create these tests under their own sub-hi
 * Add a SetUp page. If the link exists on the [suite page](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples), you can click it (this feature was there, then removed and I added it back in again). If not, then go to this URL to create the setup page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp>
 * Set its contents to:
 
-```
+{% highlight terminal %}
 !include <DigitalVideoRecorderExamples.SetUp
 
 |Table:Create One Day Program Guide|1:00|3/4/2008|
@@ -88,7 +88,7 @@ As with the previous tutorials, you'll create these tests under their own sub-hi
 |thenTheToDoListShouldContain|@toDoList|
 
 |Script|Dvr Recording|
-```
+{% endhighlight %}
 
 Notice that this borrows the Scenario table and script table from the [SetUp](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.SetUp) page in the [previous tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables). In this tutorial, the only new table is a new Table Table to populate the program schedule. 
 
@@ -96,21 +96,21 @@ Next, we need a test that uses this <http://localhost:8080/FrontPage.DigitalVide
 * Create a new test page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.DvrThatCanRecordTwoProgramsAtaTimeExample>
 * Set its contents to: 
 
-```
+{% highlight terminal %}
 |Scenario|A Two Recorder Dvr With These Season Passes|seasonPasses|Should Have These Episodes In To Do List|toDoList|
 |Dvr Can Simultaneously Record | 2 | And With These |@seasonPasses|Should Have The Following|@toDoList|
 
 |A Two Recorder Dvr With These Season Passes Should Have These Episodes In To Do List|
 |seasonPasses                                |toDoList                               |
 |cccccccc:200,FF:302                         |cccccccc:E:1-1,FF:E:1-1                |
-```
+{% endhighlight %}
 
 * You might need to set this page to a test page. As of 4/15/09, the FitNesse source will automatically set the test page type for pages that begin with or end with the word "Example" (in addition to the word "Test"). However, you might not have the latest release.
 * Finally, you have a complete test with SetUp and TearDown code. Run it and notice that the test fails. It cannot find the class "Create One Day Program Guide", which is required by the Table Table.
 ## Create the Fixture
 * Create version 1 of the fixture:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.util.Collections;
@@ -124,14 +124,14 @@ public class CreateOneDayProgramGuide {
       return Collections.emptyList();
    }
 }
-```
+{% endhighlight %}
 
 While this Fixture does not do anything yet, it is a minimal example that will get the test to run, finding all of the Fixtures. The test is still failing.
 
 The minimal requirement for the fixture is a doTable method as shown above. Since the table takes in parameters to its constructor, this fixture also needs a matching constructor. Now that you have the basic infrastructure in place, it's time to experiment just a little bit to see just what FitNesse really passes in to the doTable method.
 
 * Update the doTable method:
-```java
+{% highlight java %}
    public List<?> doTable(List<List<String>> table) {
       for (List<String> row : table) {
          System.out.print("|");
@@ -141,18 +141,18 @@ The minimal requirement for the fixture is a doTable method as shown above. Sinc
       }
       return Collections.emptyList();
    }
-```
+{% endhighlight %}
 
 * Execute this test and review the output (click on the yellow triangle with an ! in it):
 
-```
+{% highlight terminal %}
 |1|2|3|4|5|6|7|8|9|10|11|12|13|14|
 |200|aaaa|BBcc|cccc|ccDD|DDee|efff|ffff|fffg|gggg|gggh|hhii|jklm|nopq|rstt|
 |247|aaaa|BBBB|cccc|DDDD|eeee|FFFF|gggg|HHHH|iiii|JJJJ|kkkk|LLLL|mmmm|NNNN|
 |302|aaBB|ccDD|eeFF|ggHH|iiJJ|kkLL|mmNN|ooPP|qqRR|ssTT|uuVV|wwww|wwXX|XXXy|
 |501|||aaBB|ccDD|eeFF|ggHH|iiJJ|kkLL|mmNN|ooPP|qqRR|
 |556|__aa|BBcc|DDee|FFgg|HHii|JJkk|LLmm|NNoo|PPqq|RRss|TTuu|VVxx|xxxx|
-```
+{% endhighlight %}
 
 Does this look familiar? This gives a hint at just what a table-table does. FitNesse simply passes in the entire table (minus the first row) in the form of a list of a list of strings:
 * The outside list represents the collection of rows. The first entry is actually the second row of the actual table, FitNesse does not pass in the row naming the fixture. (We're going to ignore that row altogether in this tutorial, it's there for documentation).
@@ -164,7 +164,7 @@ Our fixture needs to be able process a series of rows, each of which represent a
 ## Create the First Test
 * This first test simply puts most of the basic API in place:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import static org.junit.Assert.assertEquals;
@@ -183,12 +183,12 @@ public class ProgramGuideRowParserTest {
       assertEquals(0, result.size());
    }
 }
-```
+{% endhighlight %}
 
 **Purpose**: The purpose of this test is to being defining the API by which row parsing will happen.
 * Here's the minimal code to make this test pass:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.util.LinkedList;
@@ -202,13 +202,13 @@ public class ProgramGuideRowParser {
       return new LinkedList<Program>();
    }
 }
-```
+{% endhighlight %}
 
 * Run the test, make sure it passes.
 * Next, add another test with one program and notice that this requires several changes:
 **Update: ProgramGuideRowParserTest, Add new test**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import static org.junit.Assert.assertEquals;
@@ -257,24 +257,24 @@ public class ProgramGuideRowParserTest {
             duration));
    }
 }
-```
+{% endhighlight %}
 
 **Update ProgramGuidRowPaser: Add constructor and method**
 
-```java
+{% highlight java %}
    public ProgramGuideRowParser(Date buildDate) {
    }
 
    public void setChannel(int channel) {
    }
-```
+{% endhighlight %}
 
 * Run your tests, they fail.
 * Add missing equals() methods:
 
 **Update: TimeSlot**:
 
-```java
+{% highlight java %}
    @Override
    public boolean equals(Object other) {
       if (!(other instanceof TimeSlot))
@@ -284,11 +284,11 @@ public class ProgramGuideRowParserTest {
       return channel == rhs.channel && durationInMinutes == rhs.durationInMinutes
             && startDateTime.equals(rhs.startDateTime);
    }
-```
+{% endhighlight %}
 
 **Update: Program**
 
-```java
+{% highlight java %}
    @Override
    public boolean equals(Object other) {
       if (!(other instanceof Program))
@@ -298,10 +298,10 @@ public class ProgramGuideRowParserTest {
       return programName.equals(rhs.programName) && episodeName.equals(rhs.episodeName)
             && timeSlot.equals(rhs.timeSlot);
    }
-```
+{% endhighlight %}
 * Finally, update the production code to get this test passing:
 
-```java
+{% highlight java %}
 public class ProgramGuideRowParser {
    private int channel;
    private final Date buildDate;
@@ -325,7 +325,7 @@ public class ProgramGuideRowParser {
       return result;
    }
 }
-```
+{% endhighlight %}
 * Run your tests, they should pass.
 **Note**: Did you notice that you just added equals() methods to Program and TimeSlot without adding unit tests to those same classes? Is this a problem? These methods are complex enough that there is certainly some risk in adding them. Also, in Java it is standard practice to write hashCode() when writing equals() just in case the object is used as a key in a Map. However, the code does not sore these objects as keys in Maps, so writing a hashCode() method, while conventional, is not really necessary.
 
@@ -334,7 +334,7 @@ These methods were written in response to a test, something more than a unit tes
 ## Next Test: Getting Program Length Correct
 * Add this test:
 
-```java
+{% highlight java %}
    @Test
    public void oneThirtyMinuteProgram() throws ParseException {
       parser.setChannel(204);
@@ -345,12 +345,12 @@ These methods were written in response to a test, something more than a unit tes
       Program expected = buildProgram("4/8/2008", "1:00", "aa", 204, 30);
       assertEquals(expected, result.get(0));
    }
-```
+{% endhighlight %}
 
 * Run it and verify that it does not pass. 
 * Next, update the production code in ProgramGuideRowParser:
 
-```java
+{% highlight java %}
    public List<Program> parse(String programsInCells) {
       List<Program> result = new LinkedList<Program>();
 
@@ -364,7 +364,7 @@ These methods were written in response to a test, something more than a unit tes
 
       return result;
    }
-```
+{% endhighlight %}
 
 * Run your tests, make sure they pass.
 **Note**: This is a somewhat refactored method. It will get longer and shorter as you work through this parsing exercise.
@@ -372,7 +372,7 @@ These methods were written in response to a test, something more than a unit tes
 ## Next Test: Handle two 30 minute programs
 * Add a new test (and update the @Before method):
 
-```java
+{% highlight java %}
    @Before
    public void init() throws ParseException {
       parser = new ProgramGuideRowParser(DateUtil.instance()
@@ -394,7 +394,7 @@ These methods were written in response to a test, something more than a unit tes
       Program expected1 = buildProgram("4/8/2008", "1:30", "bb", 204, 30);
       assertEquals(expected1, result.get(1));
    }
-```
+{% endhighlight %}
 
 **Note**: You can remove the parser.setChannel(204) from the other two @Test methods since that duplicated method has be pushed up into the @Before method.
 * Run your tests, the new one will.
@@ -402,7 +402,7 @@ These methods were written in response to a test, something more than a unit tes
 
 **Update: ProgramGuideRowParser.java**
 
-```java
+{% highlight java %}
    public List<Program> parse(String programsInCells) {
       List<Program> result = new LinkedList<Program>();
 
@@ -449,24 +449,24 @@ These methods were written in response to a test, something more than a unit tes
    private Date calculateNextDate(Date fromDate, int lengthInMinutes) {
       return DateUtil.instance().addMinutesTo(fromDate, lengthInMinutes);
    }
-```
+{% endhighlight %}
 
 **Update: DateUtil.java**
 
-```java
+{% highlight java %}
    public Date addMinutesTo(Date fromDate, int minutes) {
       Calendar calendar = Calendar.getInstance();
       calendar.setTime(fromDate);
       calendar.add(Calendar.MINUTE, minutes);
       return calendar.getTime();
    }
-```
+{% endhighlight %}
 * Run your tests, make sure they pass.
 
 ## Next Test: Ignore _ in name
 * FitNesse removes extra spaces on either side of the cell. To represent "no program", the example uses _. Here's a test that verifies the production code handles _'s correctly:
 
-```java
+{% highlight java %}
    @Test
    public void underscoredIgnored() throws ParseException {
       List<Program> result = parser.parse("|__aa|");
@@ -476,12 +476,12 @@ These methods were written in response to a test, something more than a unit tes
       Program expected = buildProgram("4/8/2008", "1:30", "aa", 204, 30);
       assertEquals(expected, result.get(0));
    }
-```
+{% endhighlight %}
 
 * After adding this test, verify that it fails.
 * Now, update the parser to handle this condition (note, this is after several rounds of refactoring, with much refactoring still left):
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.util.Date;
@@ -550,7 +550,7 @@ public class ProgramGuideRowParser {
       return DateUtil.instance().addMinutesTo(fromDate, lengthInMinutes);
    }
 }
-```
+{% endhighlight %}
 
 * Run your tests, make sure the pass.
 
@@ -558,7 +558,7 @@ public class ProgramGuideRowParser {
 
 * FitNesse will take an empty cell and pass in "", so here's a test to make sure the production code works: 
 
-```java
+{% highlight java %}
    @Test
    public void emptyCellsHandeledCorrectly() throws ParseException {
       List<Program> result = parser.parse("||__aa|");
@@ -568,12 +568,12 @@ public class ProgramGuideRowParser {
       Program expected = buildProgram("4/8/2008", "2:30", "aa", 204, 30);
       assertEquals(expected, result.get(0));
    }
-```
+{% endhighlight %}
 
 * Run your tests, verify this new one fails.
 * Update your parser to get this test to pass:
 
-```java
+{% highlight java %}
    public List<Program> parse(String programsInCells) {
       List<Program> result = new LinkedList<Program>();
 
@@ -587,7 +587,7 @@ public class ProgramGuideRowParser {
       programs = programs.replaceAll("\\|", "");
       return programs;
    }
-```
+{% endhighlight %}
 
 * Run your tests, make sure they pass.
 
@@ -595,7 +595,7 @@ public class ProgramGuideRowParser {
 
 This algorithm is either close to complete or complete. Here's a final test that will bring everything together:
 
-```java
+{% highlight java %}
    @Test
    public void verifyComplexParse() throws ParseException {
       List<Program> result = parser.parse("||__aa|BBcc||FFgg|__  |");
@@ -604,12 +604,12 @@ This algorithm is either close to complete or complete. Here's a final test that
       Program expectedLastProgram = buildProgram("4/8/2008", "5:30", "gg", 204, 30);
       assertEquals(expectedLastProgram, result.get(4));
    }
-```
+{% endhighlight %}
 
 * Run your tests, make sure this new test fails (the underlying code is close but not quite there).
 * Here's the update to the parse method (post-refactoring):
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.util.Date;
@@ -692,7 +692,7 @@ public class ProgramGuideRowParser {
       return DateUtil.instance().addMinutesTo(fromDate, lengthInMinutes);
    }
 }
-```
+{% endhighlight %}
 
 * Make this change, verify that your tests pass.
 * Make sure all of your unit tests still pass.
@@ -715,7 +715,7 @@ The name of the parser class is wrong, it only parses the programs not the whole
 ## Create the Real ProgramGuideRowParser
 * Create a new test class, ProgramGuideRowParserTest:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import static org.junit.Assert.assertEquals;
@@ -739,13 +739,13 @@ public class ProgramGuideRowParserTest {
       assertEquals(expected, programs.get(0));
    }
 }
-```
+{% endhighlight %}
 
 * This requires two new classes:
 
 **Create: ProgramBuilderUtil.java**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.text.ParseException;
@@ -763,11 +763,11 @@ public class ProgramBuilderUtil {
             duration));
    }
 }
-```
+{% endhighlight %}
 
 **Create: ProgramGuideRowParser**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.text.ParseException;
@@ -800,18 +800,18 @@ public class ProgramGuideRowParser {
       return Integer.parseInt(justTime);
    }
 }
-```
+{% endhighlight %}
 
 * Also, the new class ProgramBuilderUtil was extracted from the previous class:
 
 **Update: ProgramGuideProgramCellsParserTest.java**
 
-```java
+{% highlight java %}
    private Program buildProgram(String date, String time, String name, int channel,
          int duration) throws ParseException {
       return ProgramBuilderUtil.buildProgram(date, time, name, channel, duration);
    }
-```
+{% endhighlight %}
 
 * Run all of your unit tests, make sure everything passes.
 
@@ -819,7 +819,7 @@ public class ProgramGuideRowParser {
 All the pieces are in place, now it's just a matter of creating the programs:
 * Update the CreateOneDayProgramGuide.java**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.text.ParseException;
@@ -863,18 +863,18 @@ public class CreateOneDayProgramGuide {
       return buffer.toString();
    }
 }
-```
+{% endhighlight %}
 
 * You'll need to add one method to Schedule:
 
-```java
+{% highlight java %}
    public void addProgram(Program program) {
       if (conflictsWithOtherTimeSlots(program.timeSlot))
          throw new ConflictingProgramException();
 
       scheduledPrograms.add(program);
    }
-```
+{% endhighlight %}
 * Make sure all of your unit tests pass.
 * Make sure all of your acceptance tests pass.
 
@@ -885,7 +885,7 @@ I made some false starts. For example, rather than having the ProgramGuideRowPar
 After a little experimentation with the DvrRecording fixture, I discovered a simple change that allows a single value rather than a range. I tried a few values and ran the tests after each time.
 * Make the following update to DvrRecording (note, only the return statement in each of these methods changed):
 
-```java
+{% highlight java %}
    private int extractLowerRangeFrom(String episodeSet) {
       // snip
 
@@ -897,22 +897,22 @@ After a little experimentation with the DvrRecording fixture, I discovered a sim
 
       return 1;
 	}
-```
+{% endhighlight %}
 
 * Run all of your unit tests, make sure they still pass.
 * Run all of your acceptance tests, make sure the still pass.
 * Update your acceptance test:
 
-```
+{% highlight terminal %}
 |A Two Recorder Dvr With These Season Passes Should Have These Episodes In To Do List|
 |seasonPasses                                |toDoList                               |
 |cccccccc:200,FF:302                         |cccccccc:E:1,FF:E:1                    |
-```
+{% endhighlight %}
 
 * Run your acceptance test, make sure they all pass. Close, but not quite.
 * Make one more change to the DvrRecording fixture:
 
-```java
+{% highlight java %}
    private int extractUpperRangeFrom(String episodeSet) {
       String[] values = episodeSet.split(":");
       if (values.length > 2 && values[2].indexOf('-') > 0) {
@@ -921,14 +921,14 @@ After a little experimentation with the DvrRecording fixture, I discovered a sim
       }
       return 1;
    }
-```
+{% endhighlight %}
 
 * Run all of your unit tests and acceptance tests, they should all pass.
 
 ## Change ProgramGuideRowParser to take a List<String> instead of a String
 * Update ProgramGuideRowParserTest:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import static org.junit.Assert.assertEquals;
@@ -962,11 +962,11 @@ public class ProgramGuideRowParserTest {
       return result;
    }
 }
-```
+{% endhighlight %}
 
 * Update ProgramGuidRowParser:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.text.ParseException;
@@ -1001,11 +1001,11 @@ public class ProgramGuideRowParser {
       return buffer.toString();
    }
 }
-```
+{% endhighlight %}
 
 * Update CreateOneDayProgramGuide:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.text.ParseException;
@@ -1037,7 +1037,7 @@ public class CreateOneDayProgramGuide {
          AddProgramsToSchedule.getSchedule().addProgram(program);
    }
 }
-```
+{% endhighlight %}
 
 * Run your unit tests, verify they still pass.
 * Run your acceptance tests, make sure they still pass.

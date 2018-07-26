@@ -9,7 +9,7 @@ The general outline follows the one here: <http://schuchert.wikispaces.com/JMock
 
 # Overview
 Imagine you have a bit of legacy code you need to use to get your work done. For example, say you've been slated with finding currency conversion "deals". That is, given a number of currencies, there is a path that makes money due to asymmetries in conversions. Here's some C# code to get currency conversions:
-```csharp
+{% highlight csharp %}
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -77,4 +77,4 @@ namespace LegacyRefactoringHtmlScreenScraping
         }
     }
 }
-```
+{% endhighlight %}

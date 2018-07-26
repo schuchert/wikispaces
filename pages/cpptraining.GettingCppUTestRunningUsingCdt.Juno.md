@@ -26,13 +26,13 @@ What you select next depends on your environment
 * Select the project **SimpleExample**, right-click and select **New::File**
 * Enter **RunAllTests.cpp** for the name
 * Enter the following code:
-```cpp
+{% highlight cpp %}
 # include <CppUTest/CommandLineTestRunner.h>
 
 int main(int argc, char *argv[]) {
 	return CommandLineTestRunner::RunAllTests(argc, argv);
 }
-```
+{% endhighlight %}
 * This does not compile, time for projet settings
 ### Project Settings
 This includes both project settings and recommended workspace settings
@@ -59,7 +59,7 @@ If having the editor complete things like "" and {} bother you:
 
 ### Build and Run
 Hit ctrl-F11 to build and run your tests:
-```
+{% highlight terminal %}
 OK (0 tests, 0 ran, 0 checks, 0 ignored, 0 filtered out, 0 ms)
-```
+{% endhighlight %}
 [<--back]({{ site.pagesurl}}/CppTraining)

@@ -184,9 +184,9 @@ Developed, refined and taught several courses including:
 * Technical Introduction to Java
 * Introduction to Java and Technical Architecture
 * The Unified Process Distilled
-```
+{% highlight terminal %}
     
-```
+{% endhighlight %}
 ## Project Experience - ObjectSpace, Inc.
 May 1993 - January 2001
 
@@ -298,9 +298,9 @@ Developed and taught internal mentoring programs for OOA&D and C++ development. 
 * Unit test some test planning
 * J2EE (EJB, Servlets/JSP, etc)
 * General soft skills
-```
+{% highlight terminal %}
     
-```
+{% endhighlight %}
 ## Teaching
 **Instructor - University of Texas at Arlington (UTA)**
 February 92 - May 93
@@ -329,9 +329,9 @@ Developed domain models of abstract data types and interfaces to relational tabl
 April 1985 - December 1991
 
 Developed and taught several computer literacy courses including using tools such as WordStar, WordPerfect, SuperCalc, Dbase III+. Authored the textbook for one course.
-```
+{% highlight terminal %}
     
-```
+{% endhighlight %}
 ## Presentations
 **2013: Scandinavian Developer Conference**
 * Seeing the world through you-colored glasses: The Dependency Inversion Principle in Action
@@ -393,9 +393,9 @@ Reviewed approximately 30 books on various subjects, including:
 * Java
 * Requirements Management
 * Architecture
-```
+{% highlight terminal %}
     
-```
+{% endhighlight %}
 ## Publications
 **Several Self-Published Technical Articles**
 * Automated Acceptance Testing with FitNesse

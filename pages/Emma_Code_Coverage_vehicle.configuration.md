@@ -48,9 +48,9 @@ I could create a class in the test directory in the default package to verify th
 
 There is one line considered not covered by emma:
 
-```
+{% highlight terminal %}
      CarRentalBeanFactory.getBean(CarRentalBeanFactoryTest.class);
-```
+{% endhighlight %}
 
 This line is meant to generate an exception. It does, the class passes but Emma does not consider this line covered. This is a shortcoming of Emma and I won't do anything about it.
 

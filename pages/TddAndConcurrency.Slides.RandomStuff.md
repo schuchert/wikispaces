@@ -8,14 +8,14 @@ title: TddAndConcurrency.Slides.RandomStuff
 Modern Processors have a single instruction
 * Compare And Swap (CAS)
 * Logical example of optimistic locking
-```
+{% highlight terminal %}
 IncrementValue() {
    int v;
    do {
       v = get current value
    } while(v != compareAndSwap(v, v+1))
 }
-```
+{% endhighlight %}
 * Keep attempting to increment value until it actually happens
 * If processor does not support CAS operation, Java compiler simulates it.
 ** If this is the case, high-contention systems will burn CPU time

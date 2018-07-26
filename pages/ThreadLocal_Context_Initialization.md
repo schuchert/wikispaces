@@ -20,11 +20,11 @@ It does not directly interact with ThreadLocal variables. Instead, it uses a cla
 [Thread Context]({{site.pagesurl}}/ThreadLocal_Context_Initialization#ThreadContext) simply creates a thread local variable that is a map. Any code can add to the thread local map and remove from the thread local map.
 
 So if some piece of code needs access to the security credentials or session key, it can simply execute one of the following lines:
-```java
+{% highlight java %}
    ISessionKey key = (ISessionKey)ThreadContext.get(ThreadContext.SESSION_KEY);
    ISecurityCredentials creds = (ISecurityCredentials)
                          ThreadContext.get(ThreadContext.SECURITY_CREDENTIALS);
-```
+{% endhighlight %}
 
 The ThreadContext class resides in a utility project that does not have direct access to the types ISessionKey or ISecurityCredentials. That's why there's no convenience methods to access those specific types on the interface to ThreadContext.
 ^
@@ -33,7 +33,7 @@ Instead, we created another utility class that simply wrapped ThreadContext and 
 ----
 [#ContextRecorder]({{site.pagesurl}}/#ContextRecorder)
 ## ContextRecorder.java
-```java
+{% highlight java %}
 01: package com.foo.aspect.context;
 02: 
 03: import javax.ejb.SessionBean;
@@ -93,7 +93,7 @@ Instead, we created another utility class that simply wrapped ThreadContext and 
 53: 		}
 54: 	}	
 55: }
-```
+{% endhighlight %}
 
 Interesting Lines
 ^
@@ -114,7 +114,7 @@ Interesting Lines
 ----
 [#ThreadContext]({{site.pagesurl}}/#ThreadContext)
 ## ThreadContext.java
-```java
+{% highlight java %}
 01: package com.hertz.common.util.thread;
 02: 
 03: import java.util.HashMap;
@@ -158,4 +158,4 @@ Interesting Lines
 41: 		ThreadContext.getMap().putAll(map);
 42: 	}
 43: }
-```
+{% endhighlight %}

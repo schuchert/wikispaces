@@ -4,7 +4,7 @@ title: Ejb_3_Tutorial_2_-_Optional_Data_Source_Configuration
 The persistence.xml file mentions the possibility of using your own data source rather than the default data source to hit a different database.
 
 When you use the embedded container, it looks for a file called embedded-jboss-beans.xml for its datasources (and several other things). In the one that ships with the ALPHA 9 release, you'll see the following two entries near the bottom:
-```xml
+{% highlight xml %}
    <bean name="DefaultDSBootstrap"
          class="org.jboss.resource.adapter.jdbc.local.LocalTxDataSource">
       <property name="driverClass">org.hsqldb.jdbcDriver</property>
@@ -31,10 +31,10 @@ When you use the embedded container, it looks for a file called embedded-jboss-b
          <factory bean="DefaultDSBootstrap"/>
       </constructor>
    </bean>
-```
+{% endhighlight %}
 
 To create your own data source, you basically copy both of these and update the values accordingly. Here is one example that uses HSQL with a local server:
-```xml
+{% highlight xml %}
    <bean name="HypersonicLocalServerDSBootstrap" 
          class="org.jboss.resource.adapter.jdbc.local.LocalTxDataSource">
       <property name="driverClass">org.hsqldb.jdbcDriver</property>
@@ -61,25 +61,25 @@ To create your own data source, you basically copy both of these and update the 
          <factory bean="HypersonicLocalServerDSBootstrap"/>
       </constructor>
    </bean>
-```
+{% endhighlight %}
 
 To use this, you need to do two things. Update persistence.xml and start a HSQL server.
 
 **Update persistence.xml**
 Replace the following line:
-```xml
+{% highlight xml %}
 <jta-data-source>java:/DefaultDS</jta-data-source>
-```
+{% endhighlight %}
 
 With this one:
-```xml
+{% highlight xml %}
 <jta-data-source>java:/HypersonicLocalServerDS</jta-data-source>
-```
+{% endhighlight %}
 
 To start an HSQL server, you can use the following steps:
 # Under the place where you extracted HSQL (C:\libs\hsqldb if you used the same directories as the tutorial), create a new directory called "databases".
 # Change to that directory
 # Use the following command to start the HSQL server:
-```
+{% highlight terminal %}
 java -cp ../lib/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb
-```
+{% endhighlight %}

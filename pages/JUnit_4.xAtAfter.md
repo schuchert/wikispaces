@@ -11,7 +11,7 @@ title: JUnit_4.xAtAfter
 * This method must be public in JUnit 4.0 whereas tearDown in JUnit before 4.0 was protected (or public).
 
 Here is the example:
-```java
+{% highlight java %}
 59:     @After
 60:     public void removeCreatedRateplan() {
 61:         if (createdRatePlanName != null && createdRatePlanVehicleType != null) {
@@ -19,15 +19,15 @@ Here is the example:
 63:         }
 64: 
 65:     }
-```
+{% endhighlight %}
 And here's the equivalent in JUnit before 4.0.
-```java
+{% highlight java %}
 60:     protected void tearDown() {
 61:         if (createdRatePlanName != null && createdRatePlanVehicleType != null) {
 62:             component.removeRatePlan(createdRatePlanName, createdRatePlanVehicleType);
 63:         }
 64: 
 65:     }
-```
+{% endhighlight %}
 
 [<--Back]({{site.pagesurl}}/JUnit_4.x#AtAfter)

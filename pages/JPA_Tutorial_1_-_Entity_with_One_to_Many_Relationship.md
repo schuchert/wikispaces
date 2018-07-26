@@ -5,7 +5,7 @@ Now we'll make a company. In this first tutorial we're keeping things simple so 
 
 [#Company]({{site.pagesurl}}/#Company)
 **Company.java**
-```java
+{% highlight java %}
 package entity;
 
 import java.util.ArrayList;
@@ -81,12 +81,12 @@ public class Company {
         getEmployees().remove(p);
     }
 }
-```
+{% endhighlight %}
 
 ### Factor out Common Test Code
 We have some common initialization we can move up into a base since we are going to have two tests classes, PersonTest and CompanyTest:
 **TestBase.java**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.EntityManager;
@@ -121,11 +121,11 @@ public class TestBase {
         em.close();
     }
 }
-```
+{% endhighlight %}
 
 Update PersonTest.java to remove the two fields, emf and em and the initEmfAndEm() and cleanup() methods.
 **PersonTest.java**
-```java
+{% highlight java %}
 package entity;
 
 import static org.junit.Assert.assertEquals;
@@ -166,12 +166,12 @@ public class PersonTest extends TestBase {
         }
     }
 }
-```
+{% endhighlight %}
 
 Make sure everything is green before going on (rerun using **Ctrl-F11**).
 
 Now we need to create a new CompanyTest class. Here's the first version:
-```java
+{% highlight java %}
 package entity;
 
 import static org.junit.Assert.assertEquals;
@@ -199,14 +199,14 @@ public class CompanyTest extends TestBase {
         // object found. We'll research that in the second JPA tutorial.
     }
 }
-```
+{% endhighlight %}
 Run this unit test and make sure it is all green before going on (right-click in the source pane, select **Run As:JUnit Test**).
 
 If you'd like to run all of your tests, right-click on the **test** folder, select **Run As:JUnit Test** and eclipse will execute all of your tests classes' test methods.
 
 ### Hire some people
 We need to create some people and add them to the company. The PersonTest class already has some people. Rather than re-creating new people, let's update PersonTest to make those fields available. Update the a1, p1, a2, and p2 fields as follows:
-```java
+{% highlight java %}
     public static List<Person> generatePersonObjects() {
         final List<Person> people = new ArrayList<Person>();
         final Address a1 = new Address("A Rd.", "", "Dallas", "TX", "75001");
@@ -220,20 +220,20 @@ We need to create some people and add them to the company. The PersonTest class 
 
         return people;
     }
-```
+{% endhighlight %}
 
 You will also need to update the beginning of the method insertAndRetrieve from:
-```java
+{% highlight java %}
         em.getTransaction().begin();
         em.persist(p1);
         em.persist(p2);
         em.getTransaction().commit();
  
-```
+{% endhighlight %}
 
 to: 
 
-```java
+{% highlight java %}
         final List<Person> people = generatePersonObjects();
 
         em.getTransaction().begin();
@@ -241,10 +241,10 @@ to:
             em.persist(p);
         }
         em.getTransaction().commit();
-```
+{% endhighlight %}
 
 Now we'll add a new test into CompanyTest to verify that we can hire people:
-```java
+{% highlight java %}
     @SuppressWarnings("unchecked")
     @Test
     public void createCompanyAndHirePeople() {
@@ -273,13 +273,13 @@ Now we'll add a new test into CompanyTest to verify that we can hire people:
                 "The Company").getSingleResult();
         assertEquals(2, foundCompany.getEmployees().size());
     }
-```
+{% endhighlight %}
 
 ### Update persistence.xml
 Again, given our environment, this step is optional.
 
 **persistence.xml**
-```xml
+{% highlight xml %}
 <persistence>
     <persistence-unit name="examplePersistenceUnit" 
                       transaction-type="RESOURCE_LOCAL">
@@ -303,6 +303,6 @@ Again, given our environment, this step is optional.
         </properties>
     </persistence-unit>
 </persistence>
-```
+{% endhighlight %}
 
 Make sure everything compiles and runs green.

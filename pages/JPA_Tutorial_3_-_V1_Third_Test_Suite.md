@@ -18,7 +18,7 @@ Of course, along the way we'll end up doing yet more refactoring to accommodate 
 First we'll start with a new suite of tests for this Library facade. For this first pass, we'll write several basic tests and a few tests that move us closer to use-case like functionality.
 
 **Adding a Book**
-```java
+{% highlight java %}
     @Test
     public void addBook() {
         final Book b = createBook();
@@ -35,19 +35,19 @@ First we'll start with a new suite of tests for this Library facade. For this fi
         return library.createBook("Hibernate In Action", ISBN, Calendar
                 .getInstance().getTime(), a1, a2);
     }
-```
+{% endhighlight %}
 
 **Lookup a Book that Does Not Exist**
 Notice that this test has different results than the same test in the BookDaoTest. In this case we expect an exception to be thrown while in the case of the BookDaoTest we just get back null. Why? The dao has no way of knowing what the policy should be regarding not finding objects, whereas the Library facade can set the policy.
-```java
+{% highlight java %}
     @Test(expected = EntityNotFoundException.class)
     public void lookupBookThatDoesNotExist() {
         library.findBookById(ID_DNE);
     }
-```
+{% endhighlight %}
 
 **Adding a Patron**
-```java
+{% highlight java %}
     @Test
     public void addPatron() {
         final Patron p = createPatron();
@@ -61,19 +61,19 @@ Notice that this test has different results than the same test in the BookDaoTes
         return library.createPatron(PATRON_ID, "Brett", "Schuchert",
                 "555-1212", a);
     }
-```
+{% endhighlight %}
 
 **Lookup a Patron that Does Not Exist**
 As with the BookDao, the PatronDao simply returns null if an object is not found by ID. The Library changes that null result into an exception.
-```java
+{% highlight java %}
     @Test(expected = EntityNotFoundException.class)
     public void lookupPatronThatdoesNotExist() {
         library.findPatronById(ID_DNE);
     }
-```
+{% endhighlight %}
 
 **Checking out a book to a patron**
-```java
+{% highlight java %}
     @Test
     public void checkoutBook() {
         final Book b = createBook();
@@ -86,10 +86,10 @@ As with the BookDao, the PatronDao simply returns null if an object is not found
         assertTrue(foundBook.isOnLoanTo(foundPatron));
         assertTrue(foundPatron.isBorrowing(foundBook));
     }
-```
+{% endhighlight %}
 
 **Returning a book**
-```java
+{% highlight java %}
     @Test
     public void returnBook() {
         final Book b = createBook();
@@ -102,10 +102,10 @@ As with the BookDao, the PatronDao simply returns null if an object is not found
         assertEquals(booksBefore - 1, p.getBorrowedBooks().size());
         assertFalse(b.isOnLoan());
     }
-```
+{% endhighlight %}
 
 **Returning a book that is not checked out**
-```java
+{% highlight java %}
     @Test
     public void returnBookThatsNotCheckedOut() {
         final Book b = createBook();
@@ -113,10 +113,10 @@ As with the BookDao, the PatronDao simply returns null if an object is not found
         library.returnBook(b.getId());
         assertFalse(b.isOnLoan());
     }
-```
+{% endhighlight %}
 
 **Checking out a Book that is Already Checked Out**
-```java
+{% highlight java %}
     @Test(expected = BookAlreadyCheckedOut.class)
     public void checkoutBookThatIsAlreadyCheckedOut() {
         final Book b = createBook();
@@ -126,30 +126,30 @@ As with the BookDao, the PatronDao simply returns null if an object is not found
         library.checkout(p1.getId(), b.getId());
         library.checkout(p2.getId(), b.getId());
     }
-```
+{% endhighlight %}
 
 **Checkout a Book that Does Not Exist**
-```java
+{% highlight java %}
     @Test(expected = EntityNotFoundException.class)
     public void checkoutBookThatDoesNotExist() {
         final Patron p = createPatron();
         library.checkout(p.getId(), ID_DNE);
     }
-```
+{% endhighlight %}
 
 **Checkout a Book to a Patron that Does Not Exist**
-```java
+{% highlight java %}
     @Test(expected = EntityNotFoundException.class)
     public void checkoutBookToPatronThatDoesNotExist() {
         final Book b = createBook();
         library.checkout(ID_DNE, b.getId());
     }
-```
+{% endhighlight %}
 
 **LibraryTest.java**
 Here's the shell of the test.
 
-```java
+{% highlight java %}
 package session;
 
 import static org.junit.Assert.assertEquals;
@@ -190,12 +190,12 @@ public class LibraryTest extends EntityManagerBasedTest {
     }
 }
 
-```
+{% endhighlight %}
 
 **EntityManagerBasedTest**
 This new class inherits from a new base class called EnttyManagerBasedTest. This class factors out just the part of initialization related to the entity manager and the transactions from the BaseDbDaoTest.
 
-```java
+{% highlight java %}
 package session;
 
 import javax.persistence.EntityManager;
@@ -266,11 +266,11 @@ public abstract class EntityManagerBasedTest {
         this.em = em;
     }
 }
-```
+{% endhighlight %}
 
 **BaseDbDaoTest**
 Here is yet another updated BaseDbDaoTest that reflects the new base class.
-```java
+{% highlight java %}
 package session;
 
 import org.junit.Before;
@@ -305,11 +305,11 @@ public abstract class BaseDbDaoTest extends EntityManagerBasedTest {
         getDao().setEm(getEm());
     }
 }
-```
+{% endhighlight %}
 
 ### The Exception
 We've added one new unchecked exception to our system, BookAlreadyCheckedOut. Here it is:
-```java
+{% highlight java %}
 package exception;
 
 /**
@@ -337,11 +337,11 @@ public class BookAlreadyCheckedOut extends RuntimeException {
         return bookId;
     }
 }
-```
+{% endhighlight %}
 
 **Library**
 This class is all new.
-```java
+{% highlight java %}
 package session;
 
 import java.util.Date;
@@ -431,13 +431,13 @@ public class Library {
         }
     }
 }
-```
+{% endhighlight %}
 
 **BookDao**
 The tests use the findByIsbn() method, which returns a collection of Books. Why does findByIsbn() return a collection of books? The isbn is not unique; the book id is the only unique column. If we enforced a unique isbn, then there could only be one book of a given isbn in the library.
 
 We've also added a method, findById, which should return a unique value (or null).
-```java
+{% highlight java %}
     @SuppressWarnings("unchecked")
     public List<Book> findByIsbn(String isbn) {
         return getEm().createNamedQuery("Book.findByIsbn").setParameter("isbn",
@@ -447,13 +447,13 @@ We've also added a method, findById, which should return a unique value (or null
     public Book findById(Long id) {
         return getEm().find(Book.class, id);
     }
-```
+{% endhighlight %}
 
 ### Util
 We need a basic utility to assist with equality. This utility will handle when we have null references.
 
 **EqualsUtil**
-```java
+{% highlight java %}
 package util;
 
 /**
@@ -472,10 +472,10 @@ public class EqualsUtil {
 
     }
 }
-```
+{% endhighlight %}
 
 **EqualsUtilTest**
-```java
+{% highlight java %}
 package util;
 
 import static org.junit.Assert.assertFalse;
@@ -511,14 +511,14 @@ public class EqualsUtilTest {
         assertFalse(EqualsUtil.equals(BRETT, null));
     }
 }
-```
+{% endhighlight %}
 
 ### Entity Changes
 
 **Book**
 The book is somewhat changed. First it needs to **import util.EqualsUtil** (as shown below). It also contains some named queries and three new methods: isOnLoanTo, isOnLoan and checkin. The code below shows these changes.
 
-```java
+{% highlight java %}
 
 import util.EqualsUtil;
 
@@ -557,12 +557,12 @@ public class Book {
         return p;
     }
 }
-```
+{% endhighlight %}
 
 **Patron**
 There was only one change to Patron. We want to be able to ask the Patron if it is in fact borrowing a particular book.
-```java
+{% highlight java %}
     public boolean isBorrowing(final Book foundBook) {
         return getBorrowedBooks().contains(foundBook);
     }
-```
+{% endhighlight %}

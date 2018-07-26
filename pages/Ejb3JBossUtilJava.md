@@ -3,7 +3,7 @@ title: Ejb3JBossUtilJava
 ---
 ### JBossUtil.java
 
-```java
+{% highlight java %}
 package util;
 
 import java.io.ByteArrayOutputStream;
@@ -166,10 +166,10 @@ public class JBossUtil {
 		}
 	}
 }
-```
+{% endhighlight %}
 
 **EqualsUtil.java**
-```java
+{% highlight java %}
 package util;
 
 /**
@@ -188,4 +188,4 @@ public class EqualsUtil {
 
     }
 }
-```
+{% endhighlight %}

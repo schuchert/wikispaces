@@ -39,7 +39,7 @@ Here's our test (in a new test file):
 
 **BoardBuilderTest.hpp**
 
-```cpp
+{% highlight cpp %}
 01: #include <cxxtest/TestSuite.h>
 02: 
 03: #include "BoardBuilder.hpp"
@@ -62,7 +62,7 @@ Here's our test (in a new test file):
 20:       TS_ASSERT_EQUALS(start.get(), start->next());
 21:    }
 22: };
-```
+{% endhighlight %}
 
 Here's a breakdown:
 
@@ -81,7 +81,7 @@ We have to extend our location class and we have to create a BoardBilder class. 
 
 Note: We've already seen this pattern repeated. Add a method get an attribute that returns a constant value. Then get the test to compile then go back and update to use a real reference. We're going to skip this step and go right to supporting a name attribute. Add the following method and attribute:
 
-```cpp
+{% highlight cpp %}
 // add the following include
 # include <string>
 
@@ -92,13 +92,13 @@ public:
 // add the following instance variable
 private:
    std::string myName;
-```
+{% endhighlight %}
 
 Now we need to create the BoardBuilderClass. Here's the header file:
 
 **BoardBuilder.hpp**
 
-```cpp
+{% highlight cpp %}
 # ifndef _BOARDBUILDER_HPP
 # define _BOARDBUILDER_HPP
 
@@ -113,20 +113,20 @@ public:
 };
 
 # endif
-```
+{% endhighlight %}
 
 Next, we need to get our code to compile, so we'll need to add a definition for the buildBoard method:
 
 **BuildBoard.cpp**
 
-```cpp
+{% highlight cpp %}
 # include "BoardBuilder.hpp"
 
 boost::shared_ptr<Location> BoardBuilder::buildBoard(std::istream &stream) {
 
    return boost::shared_ptr<Location>(new Location());
 }
-```
+{% endhighlight %}
 
 Build your system and verify that it compiles. You test should fail.
 
@@ -135,7 +135,7 @@ We've already updated location with a new attribute, name. We need to fill out o
 
 **BuildBoard.cpp**
 
-```cpp
+{% highlight cpp %}
 01: #include "BoardBuilder.hpp"
 02: 
 03: #include "Location.hpp"
@@ -159,7 +159,7 @@ We've already updated location with a new attribute, name. We need to fill out o
 21: 
 22:    return start;
 23: }
-```
+{% endhighlight %}
 
 Here's the breakdown:
 
@@ -176,9 +176,9 @@ Here's the breakdown:
 Notice that there's quite a bit of hard-coding going on here. That's OK, we're going to use a series of tests to incrementally improved and refactor this code.
 
 We have to add a constructor to location that takes in a name. Since Locations are currently constructed with a no-argument constructor in our tests, can simply update the constructor:
-```cpp
+{% highlight cpp %}
    Location(std::string name = "") : myName(name) {}
-```
+{% endhighlight %}
 
 Build and run, are you green?
 
@@ -193,7 +193,7 @@ Now is a great time to check in your work.
 |location|Location2|
 
 We want to create two locations in a circle. Here's a test:
-```cpp
+{% highlight cpp %}
 01:    void testTwoLocationBoard() {
 02:       string singleLocation(
 03:          "location\tLocationName1\nlocation\tLocationName2");
@@ -205,7 +205,7 @@ We want to create two locations in a circle. Here's a test:
 09:       TS_ASSERT_DIFFERS(start.get(), start->next());
 10:       TS_ASSERT_EQUALS(start.get(), start->next()->next());
 12:    }
-```
+{% endhighlight %}
 
 This test is similar to the first test. 
 * We make sure there are two locations with two names (lines 7 and 8), 
@@ -219,7 +219,7 @@ This test already compiles but it does not pass. The fact that is does not pass 
 
 We need to update the buildBoard method:
 
-```cpp
+{% highlight cpp %}
 # include "BoardBuilder.hpp"
 
 # include "Location.hpp"
@@ -258,7 +258,7 @@ boost::shared_ptr<Location> BoardBuilder::buildBoard(std::istream &stream) {
 
    return boost::shared_ptr<Location>(start);
 }
-```
+{% endhighlight %}
 
 This is quite a jump. That's often the case going from dealing with 1 thing to dealing with many things, as we did in this case.
 
@@ -281,7 +281,7 @@ This describes a board with three locations and three different kinds of locatio
 
 Here's a test:
 
-```cpp
+{% highlight cpp %}
    void testBuildBoardWithDifferentTypes() {
       string severalLocations(
          "go\tgo\nlocation\tl1\nit\tIncome Tax");
@@ -292,7 +292,7 @@ Here's a test:
       TS_ASSERT(dynamic_cast<Location*>(start->next()) != 0)
       TS_ASSERT(dynamic_cast<IncomeTax*>(start->next()->next()) != 0)
    }
-```
+{% endhighlight %}
 
 **Note**: You'll need to make sure to #include "Go.hpp" and "IncomeTax.hpp"
 
@@ -302,7 +302,7 @@ This code compiles, it just does not pass so we can go right to Green.
 ## Green: Get it to pass
 We need to update the BoardBuilder:
 
-```cpp
+{% highlight cpp %}
 Location *createLocation(std::string &line) {
    boost::char_separator<char> tabNl("\t");
    tokenizer tok(line, tabNl);
@@ -322,21 +322,21 @@ Location *createLocation(std::string &line) {
    }
    return new Location(name);
 }
-```
+{% endhighlight %}
 
 **Note**: To get this to compile you'll need to include "Go.hpp" and "IncomeTax.hpp". You'll also additionally need to add a constructor to Go and IncomeTax that take a parameter:
 
 **Go.hpp**
 
-```cpp
+{% highlight cpp %}
    Go(std::string name = "") : Location(name) {}
-```
+{% endhighlight %}
 
 **IncomeTax.hpp**
 
-```cpp
+{% highlight cpp %}
    IncomeTax(std::string name = "") : Location(name) {}
-```
+{% endhighlight %}
 
 Verify that your tests pass.
 
@@ -348,7 +348,7 @@ Here are a couple of things to notice:
 
 **LocationFactory.hpp**
 
-```cpp
+{% highlight cpp %}
 # ifndef _LOCATIONFACTORY_HPP_
 # define _LOCATIONFACTORY_HPP_
 
@@ -362,11 +362,11 @@ public:
 };
 
 # endif
-```
+{% endhighlight %}
 
 **LocationFactory.cpp**
 
-```cpp
+{% highlight cpp %}
 # include <boost/tokenizer.hpp>
 
 # include "LocationFactory.hpp"
@@ -395,13 +395,13 @@ Location *LocationFactory::createLocation(std::string &line) {
    }
    return new Location(name);
 }
-```
+{% endhighlight %}
 
 And we need to update BoardBuilder.cpp:
 
 **BoardBuilder.hpp**
 
-```cpp
+{% highlight cpp %}
 # include "BoardBuilder.hpp"
 
 # include "LocationFactory.hpp"
@@ -426,7 +426,7 @@ boost::shared_ptr<Location> BoardBuilder::buildBoard(std::istream &stream) {
 
    return boost::shared_ptr<Location>(start);
 }
-```
+{% endhighlight %}
 
 Verify you're still green.
 
@@ -438,7 +438,7 @@ Is it strange that we have a test in BoardBuilder that tests we're creating the 
 **LocationFactoryTest.hpp**
 Here is a series of tests to make sure we can create each kind of Location there is:
 
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 
 # include "LocationFactory.hpp"
@@ -498,13 +498,13 @@ public:
       }
    }
 };
-```
+{% endhighlight %}
 
 To make this work, we need to update our LocationFactory:
 
 **LocationFactory.cpp**
 
-```cpp
+{% highlight cpp %}
 # include <boost/tokenizer.hpp>
 
 # include "LocationFactory.hpp"
@@ -542,7 +542,7 @@ Location *LocationFactory::createLocation(std::string &line) {
    }
    return new Location();
 }
-```
+{% endhighlight %}
 
 The tests all pass, so now is a good time to checkin.
 
@@ -553,7 +553,7 @@ Let's add a test to verify that when we get back an instance of GoToJail, it's d
 
 ## Red: Write a test
 
-```cpp
+{% highlight cpp %}
    void testBoardBuiltWithGoToJailWiredUp() {
       string severalLocations(
          "go\tgo\n" 
@@ -585,7 +585,7 @@ Let's add a test to verify that when we get back an instance of GoToJail, it's d
          TS_ASSERT( gtj->getDestination() != 0 )
       }
    }
-```
+{% endhighlight %}
 
 A bit of a brute force test, but it gets the job done. Construct a board with 14 locations, one is known as Just Visiting while the other, Go To Jail, uses Just Visiting as its destination.
 
@@ -599,7 +599,7 @@ Since we've already simplified BoardBuilder and taken out its responsibility for
 
 **LocationFactory.cpp**
 
-```cpp
+{% highlight cpp %}
 # include <boost/tokenizer.hpp>
 
 # include "LocationFactory.hpp"
@@ -655,7 +655,7 @@ Location *LocationFactory::createLocation(std::string &line) {
    
    return result;
 }
-```
+{% endhighlight %}
 
 The big change is that before the factory was stateless, it now keeps track of everything it constructors. This allows later locations build to make reference to previous locations by their names. If you review the section of code that checks the whether the type is "gotojail", you'll notice that it expects an additional token no the line, the name of its destination location. We look it up and set the value just after creating it.
 

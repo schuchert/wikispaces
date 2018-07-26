@@ -7,7 +7,7 @@ This page describes the steps I follow to setup an Eclipse-based project for dev
 ## Create a Space
 * Begin by creating a source directory. For this example, I'll create a directory called CheesrWorkspace (example project from the [Wicket in Action](http://www.amazon.com/Wicket-Action-Martijn-Dashorst/dp/1932394982/ref=sr_1_1?ie=UTF8&s=books&qid=1253681267&sr=8-1) book.
 
-```
+{% highlight terminal %}
 macintosh-4% cd ~/src
 /Users/schuchert/src
 macintosh-4% mkdir CheesrWorkspace
@@ -16,7 +16,7 @@ macintosh-4% cd CheesrWorkspace
 macintosh-4% git init
 Initialized empty Git repository in /Users/schuchert/src/CheesrWorkspace/.git/
 macintosh-4% 
-```
+{% endhighlight %}
 
 Note: I'll be using git for revision control, so I also added in that last step to init this newly-created subdirectory as a git repository.
 
@@ -25,15 +25,15 @@ There's a simple form you can fill out on [the Wicket quickstart page](http://wi
 
 * Fill out the form (I used com.om for the groupid and Cheesr for the artifactid), which produces the following command:
 
-```
+{% highlight terminal %}
 mvn archetype:create -DarchetypeGroupId=org.apache.wicket \
    -DarchetypeArtifactId=wicket-archetype-quickstart \
    -DarchetypeVersion=1.4.1 -DgroupId=com.om -DartifactId=Cheesr
-```
+{% endhighlight %}
 
 * Execute that command:
 
-```
+{% highlight terminal %}
 macintosh-4% pwd
 /Users/schuchert/src/CheesrWorkspace
 macintosh-4% mvn archetype:create -DarchetypeGroupId=org.apache.wicket \
@@ -71,30 +71,30 @@ macintosh-4% mvn archetype:create -DarchetypeGroupId=org.apache.wicket \
 [INFO] Final Memory: 11M/79M
 [INFO] ------------------------------------------------------------------------
 macintosh-4% 
-```
+{% endhighlight %}
 
 ## Update POM
 By default, the project depends on JUnit 3.x, so I update the POM.xml to instead depend on a newer version of JUnit.
 
 * Edit pom.xml under the Cheesr directory
 
-```
+{% highlight terminal %}
 macintosh-4% cd Cheesr 
 /Users/schuchert/src/CheesrWorkspace/Cheesr
 macintosh-4% ls
 pom.xml		src/
 macintosh-4% vi pom.xml
-```
+{% endhighlight %}
 
 * Search for "junit"
 * Update the following line:
-```
+{% highlight terminal %}
 <version>3.8.2</version>
-```
+{% endhighlight %}
 * Use a newer version:
-```
+{% highlight terminal %}
 <version>4.7</version>
-```
+{% endhighlight %}
 
 ## Create Eclipse Project Information
 Now that you have an updated POM, you can create the eclipse project. The [the Wicket quickstart page](http://wicket.apache.org/quickstart.html) has instructions at the bottom. 
@@ -102,7 +102,7 @@ Now that you have an updated POM, you can create the eclipse project. The [the W
 * Make sure you are in the project directory created by the initial mvn command.
 * Execute: mvn eclipse:eclipse -DdownloadSources=true
 
-```
+{% highlight terminal %}
 macintosh-4% pwd
 /Users/schuchert/src/CheesrWorkspace/Cheesr
 macintosh-4% mvn eclipse:eclipse -DdownloadSources=true
@@ -145,7 +145,7 @@ macintosh-4% mvn eclipse:eclipse -DdownloadSources=true
 [INFO] Final Memory: 14M/79M
 [INFO] ------------------------------------------------------------------------
 macintosh-4% 
-```
+{% endhighlight %}
 
 ## Start Eclipse and Create Java Project
 Now we need to start Eclipse and make a few minor corrections:
@@ -179,11 +179,11 @@ You can start you server to verify that it is working:
 * Start a browser (or browse to the following URL in Eclipse): http://localhost:8080/
 * You should see something like the following:
 
-```
+{% highlight terminal %}
 Wicket Quickstart Archetype Homepage
 
 If you see this message wicket is properly configured and running
-```
+{% endhighlight %}
 
 Congratulations, you are done.
 

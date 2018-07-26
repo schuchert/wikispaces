@@ -27,7 +27,7 @@ Note the source code for all of these changes is at the bottom of this page.
 
 ### The Updated Entities
 **Resource.java**
-```java
+{% highlight java %}
 package entity;
 
 import java.util.Date;
@@ -170,12 +170,12 @@ public abstract class Resource {
         return null;
     }
 }
-```
+{% endhighlight %}
 
 It turns out that this change touched all of the entities. So here are the rest of the entities changed to reflect this new base class.
 **Book.java**
 This class lost a lot of its methods as they were moved up to to Resource.
-```java
+{% highlight java %}
 package entity;
 
 import java.util.Calendar;
@@ -304,11 +304,11 @@ public class Book extends Resource {
         return .25 * daysLate;
     }
 }
-```
+{% endhighlight %}
 
 **Fine.java**
 We need to change all of Book references to instead be Resource.
-```java
+{% highlight java %}
 package entity;
 
 import java.util.Date;
@@ -381,11 +381,11 @@ public class Fine {
         this.id = id;
     }
 }
-```
+{% endhighlight %}
 
 **LoanId.java**
 Change the bookId to resourceId, update the names queries that refer to book to instead refer to Resource.
-```java
+{% highlight java %}
 package entity;
 
 import java.io.Serializable;
@@ -436,11 +436,11 @@ public class LoanId implements Serializable {
         return patronId.hashCode() * resourceId.hashCode();
     }
 }
-```
+{% endhighlight %}
 
 **Loan.java**
 Loan refers to resource instead of book. This includes its join columns and named queries.
-```java
+{% highlight java %}
 package entity;
 
 import java.util.Date;
@@ -590,17 +590,17 @@ public class Loan {
         getPatron().checkin(this);
     }
 }
-```
+{% endhighlight %}
 
 **Patron.java**
 The changes to Patron are a little less extreme. Other than some comments referring to books (you can find them), one method changed:
-```java
+{% highlight java %}
     public void checkout(final Resource r, final Date checkoutDate) {
         final Loan l = new Loan(r, this, checkoutDate);
         getCheckedOutResources().add(l);
         r.setLoan(l);
     }
-```
+{% endhighlight %}
 
 ### The exceptions
 # Rename all of the exceptions with "Book" in their name. Replace "Book" with "Resource"
@@ -613,7 +613,7 @@ How can you easliy go about doing this? Use the refactor factor in Eclipse. Sele
 Most of the functionality that was in BookDao is now in ResourceDao.java. Why is this? Or better yet, why is the a BookDao at all? Look at the one method and answer the question for yourself (or ask).
 
 Here's an updated version of BookDao:
-```java
+{% highlight java %}
 package session;
 
 import java.util.List;
@@ -629,11 +629,11 @@ public class BookDao extends BaseDao {
     }
 
 }
-```
+{% endhighlight %}
 
 **Library.java**
 The Library has several changes. First, most references to Book have been replaced with Resource. Second, it now has 4 dao's instead of 3 (BookDao became ResourceDao and there's a new BookDao).
-```java
+{% highlight java %}
 package session;
 
 import java.util.Date;
@@ -787,11 +787,11 @@ public class Library {
         return p.pay(amountTendered);
     }
 }
-```
+{% endhighlight %}
 
 **LoanDao.java**
 This class no longer knows about books, it only knows about resources.
-```java
+{% highlight java %}
 package session;
 
 import java.util.Date;
@@ -880,11 +880,11 @@ public class LoanDao extends BaseDao {
                 "patronId", patronId).getResultList();
     }
 }
-```
+{% endhighlight %}
 
 **ResourceDao.java**
 Many of the BookDao functions are now here and they work with Resources intead of with Books (or rather they work with both but the interface deals with Resources).
-```java
+{% highlight java %}
 package session;
 
 import entity.Resource;
@@ -918,7 +918,7 @@ public class ResourceDao extends BaseDao {
         return getEm().find(Resource.class, id);
     }
 }
-```
+{% endhighlight %}
 
 ### The Tests
 
@@ -927,7 +927,7 @@ Removed (or moved to ResourceDaoTest, take your pick).
 
 **LibraryTest.java**
 Updated to work primarily with Resources instead of Books. Also, added additional initialization code since the library now has four dao's instead of 3.
-```java
+{% highlight java %}
 package session;
 
 import static org.junit.Assert.assertEquals;
@@ -1200,14 +1200,14 @@ public class LibraryTest extends EntityManagerBasedTest {
                 "555-1212", a);
     }
 }
-```
+{% endhighlight %}
 
 **PatronDao.test**
 Only a comment changes in this one. If you use Eclipse's refactoring feature, it automatically gets updated.
 
 **ResourceDaoTest.java**
 The renamed and updated BookDaoTest.java. This class still builds books (they are currently the only kind of concrete subclass of entity).
-```java
+{% highlight java %}
 package session;
 
 import static org.junit.Assert.assertEquals;
@@ -1293,6 +1293,6 @@ public class ResourceDaoTest extends BaseDbDaoTest {
         assertNull(r);
     }
 }
-```
+{% endhighlight %}
 ### The Source
 > [[file:ResourceBasicSupport.jar]]

@@ -20,7 +20,7 @@ Our first test seems seems simple enough. A player takes a turn and moves around
 
 Here's the very first thing we'll write:
 ### Test 1: Red: test rolling a die
-```cpp
+{% highlight cpp %}
 00: #include <cxxtest/TestSuite.h>
 00: #include <vector>
 01: #include "Die.hpp"
@@ -41,7 +41,7 @@ Here's the very first thing we'll write:
 16: 		}
 17: 	}
 18: };
-```
+{% endhighlight %}
 
 **Description**
 
@@ -71,12 +71,12 @@ This is our first test, so let's state the goals of a unit test:
 Our first test probably meets all of these criterion, so we'll move on to the second part of the Red phase.
 **Notes**
 * A traditional header file begins looks like this:
-```
+{% highlight terminal %}
    #ifndef XXX_h
    #define XXX_h
    ...
    #endif
-```
+{% endhighlight %}
 > This header file is not meant to be included bur rather used by a code generator tool. The use of this idiom to avoid processing of a file a second time if it is included twice is unnecessary. It would do no harm, so if not having this in makes you feel uncomfortable, consider adding it.
 
 This code won't compile yet:
@@ -87,7 +87,7 @@ This code won't compile yet:
 Now we need to create the Die.hpp and Die.cpp to get this to compile.
 
 **Die.hpp**
-```cpp
+{% highlight cpp %}
 # ifndef Die_hpp
 # define Die_hpp
 
@@ -98,10 +98,10 @@ public:
 };
 
 # endif
-```
+{% endhighlight %}
 
 **Die.cpp**
-```cpp
+{% highlight cpp %}
 # include "Die.hpp"
 
 Die::Die() {
@@ -110,12 +110,12 @@ Die::Die() {
 int Die::roll() {
 	return 0;
 }
-```
+{% endhighlight %}
 
 We need one more piece of boilerplate code to bring this altogether: 
 **main.cpp**
 
-```cpp
+{% highlight cpp %}
 # include <cxxtest/ErrorPrinter.h>
 
 int main( int argc, char* argv[]) {
@@ -123,7 +123,7 @@ int main( int argc, char* argv[]) {
 	errorPrinter.run();
 	return 0;
 }
-```  
+{% endhighlight %}
 
 ### Red: Getting it to run
 We're going to start by first generating and executing our tests using the command line. Once we've managed to do that, we'll introduce a makefile to handle all of our steps for us.
@@ -134,7 +134,7 @@ We're going to start by first generating and executing our tests using the comma
 * Run your tests
 * Review results
 
-```
+{% highlight terminal %}
 $ <path to cxx dir>/cxxtestgen.pl DieTest.hpp -o tests.cpp
 $ g++ *.cpp -I <path to cxx dir> -o main
 $ ./main
@@ -149,13 +149,13 @@ DieTest.hpp:17: Error: Assertion failed: values[i] > 100
 DieTest.hpp:17: Error: Assertion failed: values[i] > 100
 Failed 1 of 1 test
 Success rate: 0%
-```
+{% endhighlight %}
 
 Congratulations, you've got your test and code compiling, linking and executing. We've finished the "Red" part, now on to "Green". We need to make the test pass.
 
 ### Green: Get the test to pass
 Here's an updated version of Die.cpp that should generate proper random values:
-```cpp
+{% highlight cpp %}
 # include <climits>
 # include <stdlib.h>
 # include "Die.hpp"
@@ -166,15 +166,15 @@ Die::Die() {
 int Die::roll() {
 	return (INT_MAX - rand()) % 6 + 1;
 }
-```
+{% endhighlight %}
 
 OK, did this work? We need to build and execute again (we could skip this first step since we didn't change the test):
-```
+{% highlight terminal %}
 $ <path to cxx dir>/cxxtestgen.pl DieTest.hpp -o tests.cpp
 $ g++ *.cpp -I <path to cxx dir> -o main
 $ ./main
 Running 1 test.OK!
-```
+{% endhighlight %}
 
 Success! 
 
@@ -212,7 +212,7 @@ I mention all of this because you might think the makefile is overkill for this 
 
 ## Test 2: Red: Reasonable Initial Value
 Next, we want to make sure that when we create a die object, it has a reasonable initial value. Here's one way to test that:
-```cpp
+{% highlight cpp %}
 	void testRandomInitialValue() {
 		std::vector<int> values(7);
 
@@ -225,25 +225,25 @@ Next, we want to make sure that when we create a die object, it has a reasonable
 			TS_ASSERT(values[i] > 10);
 		}
 	}
-```
+{% endhighlight %}
 
 This test uses a new method, faceValue(), to get the current value. If we add this test, we'll be back to "Red" because our system won't compile. To get this to compile, we'll need to add the method to the header file and then give it an implementation.
 
 ### Red: Get your test to compile
 Add the following public method to your Die.hpp:
-```cpp
+{% highlight cpp %}
 int faceValue();
-```
+{% endhighlight %}
 
 And to get this to compile, we'll need to additionally add the method to Die.cpp:
-```cpp
+{% highlight cpp %}
 int Die::faceValue() {
 	return 0;
 }
-```
+{% endhighlight %}
 
 Verify that we're Building but still red:
-```
+{% highlight terminal %}
 $ <path to cxx dir>/cxxtestgen.pl DieTest.hpp -o tests.cpp
 $ g++ *.cpp -I <path to cxx dir> -o main
 $ ./main
@@ -257,11 +257,11 @@ DieTest.hpp:30: Error: Assertion failed: values[i] > 10
 DieTest.hpp:30: Error: Assertion failed: values[i] > 10
 Failed 1 of 2 tests
 Success rate: 50%
-```
+{% endhighlight %}
 
 ### Green: Get your tests to pass
 Sure enough, we're failing. So now we need to update our class. Since a Die object needs to know its last value, we'll need to add an attribute. Here's the updated Die.hpp:
-```cpp
+{% highlight cpp %}
 # ifndef Die_hpp
 # define Die_hpp
 
@@ -276,10 +276,10 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
 Next, we need to use this attribute Die.cpp:
-```cpp
+{% highlight cpp %}
 # include <climits>
 # include <stdlib.h>
 # include "Die.hpp"
@@ -298,18 +298,18 @@ int Die::roll() {
 int Die::faceValue() {
 	return value;
 }
-```
+{% endhighlight %}
 
 Note, we wanted to make sure we have a valid initial value. We could have simply called the roll() method from the ctor. I didn't because I suspect I'll be making roll() virtual (to support loading dice for testing purposes). I want to avoid calling virtual methods from a ctor. I also used the constructor initialization list simply because it's how I prefer to write my initialization.
 
 This test should now pass:
 Verify that we're Building and green:
-```
+{% highlight terminal %}
 $ <path to cxx dir>/cxxtestgen.pl DieTest.hpp -o tests.cpp
 $ g++ *.cpp -I <path to cxx dir> -o main
 $ ./main
 Running 2 tests..OK!
-```
+{% endhighlight %}
 
 Success! Congratulations you've written your second test before writing your code. This is another fine time to check your work into the repository. If you were working in a team environment, you'd first update your local version with changes in the repository, build, run all tests and if they all still pass, then you are integrated and ready to checkin.
 
@@ -329,7 +329,7 @@ The behavior of our system is defined by the tests, so when we say "without chan
 
 ## Test 3: Building Dice class
 Now that we have a single die working, it's time to move on to a second class, Dice. As before, we'll start with a test:
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include "Dice.hpp"
 
@@ -341,10 +341,10 @@ public:
 		TS_ASSERT(d.faceValue() >= 2 && d.faceValue() <= 12)
 	}
 };
-```
+{% endhighlight %}
 
 This won't compile so let's go ahead and get this to compile:
-```cpp
+{% highlight cpp %}
 # ifndef Dice_hpp
 # define Dice_hpp
 
@@ -364,9 +364,9 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
-```cpp
+{% highlight cpp %}
 # include "Dice.hpp"
 # include "Die.hpp"
 
@@ -383,10 +383,10 @@ int Dice::roll() {
 int Dice::faceValue() {
 	return 0;
 }
-```
+{% endhighlight %}
 
 We need to build and run this:
-```
+{% highlight terminal %}
 $ <path to cxxtest>/cxxtestgen.pl DiceTest.hpp DieTest.hpp -o tests.cpp
 $ g++ *.cpp -I ~/cpp/cxxtest/cxxtest/ -o main.exe
 $ ./main
@@ -397,10 +397,10 @@ DiceTest.hpp:9: Error: Assertion failed: d.faceValue() >= 2 && d.faceValue() <
 ..
 Failed 1 of 3 tests
 Success rate: 66%
-```
+{% endhighlight %}
 
 Well are now compiling and at the end of the Red phase, it's time to go green. Here are some updates to Dice.cpp:
-```cpp
+{% highlight cpp %}
 # include "Die.hpp"
 
 Dice::Dice() {
@@ -431,18 +431,18 @@ int Dice::faceValue() {
 
 	return sum;
 }
-```
+{% endhighlight %}
 
 Rebuild and run your tests and you should now have passing tests:
-```
+{% highlight terminal %}
 $ <path to cxxtest>/cxxtestgen.pl DiceTest.hpp DieTest.hpp -o tests.cpp
 $ g++ *.cpp -I ~/cpp/cxxtest/cxxtest/ -o main.exe
 $ ./main
 Running 3 tests...OK!
-```
+{% endhighlight %}
 
 Let's add one more test to DiceTest.hpp to verify that the initial value is a good one. Here's a complete DiceTest.hpp:
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include "Dice.hpp"
 
@@ -463,21 +463,21 @@ public:
 		assertValue(d);
 	}
 };
-```
+{% endhighlight %}
 
 Build and execute this to see if this test passes (it will):
-```
+{% highlight terminal %}
 $ <path to cxxtest>/cxxtestgen.pl DiceTest.hpp DieTest.hpp -o tests.cpp
 $ g++ *.cpp -I ~/cpp/cxxtest/cxxtest/ -o main.exe
 $ ./main
 Running 4 tests...OK!
-```
+{% endhighlight %}
 
 In retrospect, this test was probably not necessary. Why? We already knew that Die objects initialize themselves properly and we are using those, correct? Since we've already tested the functionality in the contained class, we don't need to essentially validate the functionality in the containing class. This is an example of writing a test that is not isolated. We'll leave it for now.
 
 ## Building is a Pain
 It's time to address the building issues. Since this tutorial is about TDD and not about writing makefiles, I won't spend much time discussing this makefile. First the makefile:
-```
+{% highlight terminal %}
 # ---------------------------------------------------------------------------
 # Every time you add a source file, update this list. Everything else should
 # get picked up so long as you name your CxxTest files *Test.cpp
@@ -541,7 +541,7 @@ clean:
 cleanall: clean
 
 -include $(MD_FILE)
-```
+{% endhighlight %}
 
 ## Using the makefile
 Crete a makefile in the current directory and copy the contents above. There are two macros you need to concern yourself with:
@@ -551,14 +551,14 @@ Crete a makefile in the current directory and copy the contents above. There are
 Also, this make file assumes you name your test files *Test.hpp.
 
 Initially, this makefile is ready to go except for the CXXDIR macro. Once you've set this, here's your new build, link, execute test cycle:
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
 linking...
 Running unit tests...
 Running 4 tests....OK!
-```
+{% endhighlight %}
 
 By default, this make file:
 * updates dependencies using makedepend
@@ -577,7 +577,7 @@ So let's write this test. It's related to player, so we'll end up creating Playe
 
 Here's our first test:
 **PlayerTest.hpp**
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include "Dice.hpp"
 # include "Player.hpp"
@@ -591,13 +591,13 @@ public:
 		TS_ASSERT_EQUALS(d.faceValue(), p.location());
 	}
 };
-```
+{% endhighlight %}
 
 This test simply verifies that after rolling the dice, the player's location is equal to what the player rolls (makes two assumptions: "first" location is numbered 0, player begins there).
 
 This won't compile because we have not yet created the Player class. Here's the minimal amount necessary to get the test to compile:
 **Player.hpp**
-```cpp
+{% highlight cpp %}
 # ifndef Player_hpp
 # define Player_hpp
 
@@ -612,10 +612,10 @@ public:
 };
 
 # endif
-```
+{% endhighlight %}
 
 **Player.cpp**
-```cpp
+{% highlight cpp %}
 # include "Player.hpp"
 
 Player::Player() {
@@ -630,7 +630,7 @@ void Player::takeATurn(Dice& dice) {
 int Player::location() {
 	return 0;
 }
-```
+{% endhighlight %}
 
 We have two steps that remain:
 * Update the makefile
@@ -638,17 +638,17 @@ We have two steps that remain:
 
 **Update the Makefile**
 We need to add PlayerTest.hpp to the TESTS macro:
-```
+{% highlight terminal %}
 TESTS = DieTest.hpp DiceTest.hpp PlayerTest.hpp
-```
+{% endhighlight %}
 
 We also need to add Player.cpp to the SRCS macro:
-```
+{% highlight terminal %}
 SRCS = $(GENERATED_TEST_SRC) Die.cpp Dice.cpp Player.cpp Main.cpp
-```
+{% endhighlight %}
 
 After making creating the header and source files and updating the makefile, we can now see what happens when we try to build:
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
@@ -661,13 +661,13 @@ In PlayerTest::testPlayerTakesTurn:
 # 0)
 Failed 1 of 5 tests
 Success rate: 80%
-```
+{% endhighlight %}
 
 We've finished the Red stage, now we're ready to make these tests pass.
 
 ### Update Player.hpp
 We need to add a location attribute to the Player:
-```cpp
+{% highlight cpp %}
 # ifndef Player_hpp
 # define Player_hpp
 
@@ -685,10 +685,10 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
 ### Update Player.cpp
-```cpp
+{% highlight cpp %}
 # include "Player.hpp"
 # include "Dice.hpp"
 
@@ -705,10 +705,10 @@ void Player::takeATurn(Dice& dice) {
 int Player::location() {
 	return myLocation;
 }
-```
+{% endhighlight %}
 
 ## Run your tests
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
@@ -716,13 +716,13 @@ g++  -c -g -I ~/cpp/cxxtest/cxxtest -o ./bin/Player.o Player.cpp
 linking...
 Running unit tests...
 Running 5 tests.....OK!
-```
+{% endhighlight %}
 
 We have one more acceptance test for the current user story:
 > Player on location numbered 39, rolls 6, ends up on location 5
 
 The board has 40 locations, when the player is at the end, they need to end up going around back to the beginning. Here's just such a test we can add to PlayerTest.hpp:
-```cpp
+{% highlight cpp %}
 	void testPlayerMovesAroundBoard() {
 		Dice d;
 		Player p;
@@ -731,15 +731,15 @@ The board has 40 locations, when the player is at the end, they need to end up g
 		int expected = d.faceValue() - 1;
 		TS_ASSERT_EQUALS(expected, p.location());
 	}
-```
+{% endhighlight %}
 
 We need to add a setLocation to Player:
-```cpp
+{% highlight cpp %}
 	void setLocation(int loc) { myLocation = loc; }
-```
+{% endhighlight %}
 
 Run your tests and see if we get the expected results:
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
@@ -751,19 +751,19 @@ In PlayerTest::testPlayerMovesAroundBoard:
 
 Failed 1 of 6 tests
 Success rate: 83%
-```
+{% endhighlight %}
 
 Turns out we don't. We need to make one final change to Player.takeATurn(Dice&):
-```
+{% highlight terminal %}
 
 void Player::takeATurn(Dice& dice) {
 	myLocation += dice.roll();
 	myLocation%= 40;
 }
-```
+{% endhighlight %}
 
 Finally, run the tests again and see the results:
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
@@ -771,7 +771,7 @@ g++  -c -g -I ~/cpp/cxxtest/cxxtest -o ./bin/Player.o Player.cpp
 linking...
 Running unit tests...
 Running 6 tests......OK!
-```
+{% endhighlight %}
 
 Success! We have just finished our first user story and we're now ready to move on to making a game with Players.
 
@@ -783,7 +783,7 @@ Our first user acceptance test is:
 > Create a game with two players named Horse and Car.
 
 This seems simple enough, here's the beginning of a new suite of tests:
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include <vector>
 # include "Game.hpp"
@@ -800,11 +800,11 @@ public:
 		TS_ASSERT_EQUALS(2, g.playerCount());
 	}
 };
-```
+{% endhighlight %}
 
 As usual, this test won't yet compile. To get this to compile, we'll need to add Game.hpp and Game.cpp:
 **Game.hpp**
-```cpp
+{% highlight cpp %}
 # ifndef Game_hpp
 # define Game_hpp
 
@@ -819,10 +819,10 @@ public:
 };
 
 # endif
-```
+{% endhighlight %}
 
 **Game.cpp**
-```cpp
+{% highlight cpp %}
 # include "Game.hpp"
 # include "Player.hpp"
 
@@ -834,10 +834,10 @@ Game::~Game() {
 
 void Game::addPlayer(Player *p) {
 }
-```
+{% endhighlight %}
 
 Now let's make sure we are done with the "Red" stage by building, linking and running our tests. Before we do so, we must update our make file. include GameTest.hpp to the TESTS macro and Game.cpp to the SRCS macro. Once you've done this, run the tests:
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
@@ -849,12 +849,12 @@ In GameTest::testCreateGameWithTwoPlayers:
 ./GameTest.hpp:14: Error: Expected (2 == g.playerCount()), found (2 != 0)
 Failed 1 of 7 tests
 Success rate: 85%
-```
+{% endhighlight %}
 
 No surprise here, we now need to add the code to get the test to pass. So we'll add players to the game and update all of the code to account for that.
 
 **Updated Game.hpp**
-```cpp
+{% highlight cpp %}
 # ifndef Game_hpp
 # define Game_hpp
 
@@ -874,10 +874,10 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
 **Updated Game.cpp**
-```cpp
+{% highlight cpp %}
 # include "Game.hpp"
 # include "Player.hpp"
 
@@ -893,10 +893,10 @@ Game::~Game() {
 void Game::addPlayer(Player *p) {
 	players.push_back(p);
 }
-```
+{% endhighlight %}
 
 Are we green yet? Run your tests and see:
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
@@ -904,13 +904,13 @@ g++  -c -g -I ~/cpp/cxxtest/cxxtest -o ./bin/Game.o Game.cpp
 linking...
 Running unit tests...
 Running 7 tests.......OK!
-```
+{% endhighlight %}
 
 Success! On to the second acceptance test:
 > Try to create a game with < 2 or > 8 players. When attempting to play the game, it will fail.
 
 Again, this test seems straightforward. We simply need to create a game with too few people or too many people and verify that it "fails." How about we simply throw an exception if the number of players is invalid when we start the game?
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include <vector>
 # include "Game.hpp"
@@ -932,12 +932,12 @@ public:
 		TS_ASSERT_THROWS( g.play(), InvalidPlayerCount )
 	}
 };
-```
+{% endhighlight %}
 
 Based on this, we need to add a play() method to the game and then create a new exception class, InvalidPlayerCount. (Note: throughout these examples we will not be declaring throws clauses.)
 
 **Game.hpp**
-```cpp
+{% highlight cpp %}
 # ifndef Game_hpp
 # define Game_hpp
 
@@ -958,10 +958,10 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
 **Game.cpp**
-```cpp
+{% highlight cpp %}
 # include "Game.hpp"
 # include "Player.hpp"
 
@@ -980,10 +980,10 @@ void Game::addPlayer(Player *p) {
 
 void Game::play() {
 }
-```
+{% endhighlight %}
 
 **InvalidPlayerCount.hpp**
-```cpp
+{% highlight cpp %}
 # ifndef InvalidPlayerCount_hpp
 # define InvalidPlayerCount_hpp
 
@@ -999,10 +999,10 @@ public:
 };
 
 # endif
-```
+{% endhighlight %}
 
 Verify that you're at the end of the "Red" stage:
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
@@ -1015,17 +1015,17 @@ In GameTest::testCreateGameWithTooFewPlayerFails:
 it didn't throw
 Failed 1 of 8 tests
 Success rate: 87%
-```
+{% endhighlight %}
 
 All we need to do now is to make our test pass. Here's an update to the play() method:
-```cpp
+{% highlight cpp %}
 void Game::play() {
 	throw InvalidPlayerCount(1);
 }
-```
+{% endhighlight %}
 
 Are we green?
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
@@ -1033,12 +1033,12 @@ g++  -c -g -I ~/cpp/cxxtest/cxxtest -o ./bin/Game.o Game.cp
 linking...
 Running unit tests...
 Running 8 tests........OK!
-```
+{% endhighlight %}
 
 **//IMPORTANT//** Does this implementation seem too simple? Our system is "correct" because it conforms to our tests. If we think our system's implementation is too simple, change the definition of your system by writing a test.
 
 Let's make sure when I play with 9 players we get the same result. Then when we move on to our future use acceptance tests, we'll verify that the play() method works as it is supposed to. Add the following test:
-```cpp
+{% highlight cpp %}
 	void testCreateGameWithTooManyPlayerFails() {
 		Game g;
 		for(int i = 0; i < 9; ++i ) {
@@ -1046,17 +1046,17 @@ Let's make sure when I play with 9 players we get the same result. Then when we 
 		}
 		TS_ASSERT_THROWS( g.play(), InvalidPlayerCount )
 	}
-```
+{% endhighlight %}
 
 Run your tests:
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
 linking...
 Running unit tests...
 Running 9 tests.........OK!
-```
+{% endhighlight %}
 
 OK, this test just worked without any changes. If we do not have to write any mainline code to get the test to pass, we should worry about whether the test added any value. I think in this case I say that it does because it pro grammatically expresses a constraint of the system.
 
@@ -1066,7 +1066,7 @@ We could add one more test to make sure nothing bad happens when we have a valid
 > Create a game with two players named Horse and Car. Within creating 100 games, both orders [Horse, Car] and [car, horse] occur.
 
 So this acceptance tests speaks to the players starting in a random order. Notice that I'm dealing with a random ordering but that's OK because the user acceptance test is worded such that we can verify it in a bounded time. Here's one method we could add to GameTest.hpp to test this:
-```cpp
+{% highlight cpp %}
 	void testCreateGameWithTwoPlayersAndBothRandomOrdersAppear() {
 		bool hC = false;
 		bool cH = false;
@@ -1091,27 +1091,27 @@ So this acceptance tests speaks to the players starting in a random order. Notic
 		}
 		TS_ASSERT(hC && cH);
 	}
-```
+{% endhighlight %}
 
 This test requires the addition of two methods to Game: randomizePlayerOrder() and getPlayer(int). To get our test to compile, we need to add the following to Game.hpp and Game.cpp:
 **Game.hpp**
-```cpp
+{% highlight cpp %}
 	void randomizePlayerOrder();
 	Player *getPlayer(int playerNumber);
-```
+{% endhighlight %}
 
 **Game.cpp**
-```cpp
+{% highlight cpp %}
 void Game::randomizePlayerOrder() {
 }
 
 Player *Game::getPlayer(int playerNumber) {
 	return 0;
 }
-```
+{% endhighlight %}
 
 We are at the end of the "Red" stage:
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
@@ -1122,10 +1122,10 @@ In GameTest::testCreateGameWithTwoPlayersAndBothRandomOrdersAppear:
 ./GameTest.hpp:52: Error: Assertion failed: hC && cH
 Failed 1 of 10 tests
 Success rate: 90%
-```
+{% endhighlight %}
 
 Now we'll actually add the implementation to move from Red to Green:
-```cpp
+{% highlight cpp %}
 // at the top...
 # include <algorithm>
 
@@ -1136,10 +1136,10 @@ void Game::randomizePlayerOrder() {
 Player *Game::getPlayer(int playerNumber) {
 	return players[playerNumber];
 }
-```
+{% endhighlight %}
 
 OK, we're Green:
-```cpp
+{% highlight cpp %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
@@ -1147,7 +1147,7 @@ g++  -c -g -I ~/cpp/cxxtest/cxxtest -o ./bin/Game.o Game.cpp
 linking...
 Running unit tests...
 Running 10 tests..........OK!
-```
+{% endhighlight %}
 
 It seems like the play() method in Game isn't doing very much, right? OK, on to the final User Story for this iteration.
 
@@ -1173,14 +1173,14 @@ For the purpose of this test, I don't actually need instances of Player to take 
 << insert test isolation diagram here >>
 
 So we're going to create a so-called Test Double. A test double is a term for a class we create that plays the role of another class. In this case we'll create a test double for Player. This test double will not actually take a real turn. Instead it will only keep track of the number of times it was told to takeATurn(). When the game is done "playing" we'll ask the test double how many times it was told to take a turn. Since we're recording behavior, this kind of test double is traditionally called a Mock. Here is such a mock:
-```cpp
+{% highlight cpp %}
 class TurnCountingPlayerMock : public Player {
 public:
 	int roundCount;
 	TurnCountingPlayerMock() : roundCount(0) {}
 	void takeATurn(Dice&) { ++roundCount; }
 };
-```
+{% endhighlight %}
 
 Note: Given that this mock is only for use in the GameTest class, I'd recommend putting it at the top of GameTest.hpp.
 
@@ -1194,7 +1194,7 @@ In this case we're using traditional "strong" polmorphism. We are replacing the 
 * Call the method via a pointer to an object or a reference to an object (we'll have to do so in the play() method in game)
 
 Here is a test in GameTest.hpp that will use this mock player:
-```cpp
+{% highlight cpp %}
 	void testGamePlays20RoundsEachPlayerPlays20Rounds() {
 		Game g;
 		TurnCountingPlayerMock *p1 = new TurnCountingPlayerMock;
@@ -1205,10 +1205,10 @@ Here is a test in GameTest.hpp that will use this mock player:
 		TS_ASSERT_EQUALS(20, p1->roundCount);
 		TS_ASSERT_EQUALS(20, p2->roundCount);
 	}
-```
+{% endhighlight %}
 
 Run your tests and they of course fail:
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
@@ -1219,7 +1219,7 @@ In GameTest::testGamePlays20RoundsEachPlayerPlays20Rounds:
 GameTest.hpp:62: Error: Test failed: InvalidPlayerCount
 Failed 1 of 11 tests
 Success rate: 90%
-```
+{% endhighlight %}
 
 We have a few problems:
 * We never actually call takeATurn() from the play() method
@@ -1227,13 +1227,13 @@ We have a few problems:
 * As soon as we add a virtual method to Player, we better make the dtor virtual as well
 
 Update Player.hpp as follows:
-```cpp
+{% highlight cpp %}
 	virtual ~Player();
 	virtual void takeATurn(Dice& dice);
-```
+{% endhighlight %}
 
 We also need to call the takeATurnMethod() from the play() method in Game:
-```cpp
+{% highlight cpp %}
 void Game::play() {
 	if(playerCount() < 2 || playerCount() > 8) {
 		throw InvalidPlayerCount(1);
@@ -1246,17 +1246,17 @@ void Game::play() {
 		}
 	}
 }
-```
+{% endhighlight %}
 
 Now run your tests and verify that everything works:
-```
+{% highlight terminal %}
 $ make all
 Updating dependencies in makefile...
 Generating Unit Tests...
 linking...
 Running unit tests...
 Running 11 tests...........OK!
-```
+{% endhighlight %}
 
 We're just one acceptance test away from completing this first iteration.
 
@@ -1265,7 +1265,7 @@ In the previous test we verified that we called takeATurn the correct number of 
 > Create a game and play, verify that in every round the order of the players remained the same.
 
 Just like with the previous test, we don't actually need to use a "real" player. We want to just make sure that the players alternate their order. Let's begin by creating a new Mock Player:
-```cpp
+{% highlight cpp %}
 class OrderTrackingPlayerMock : public Player {
 public:
 	static std::vector<Player*> ORDER;
@@ -1273,12 +1273,12 @@ public:
 };
 
 std::vector<Player*> OrderTrackingPlayerMock::ORDER;
-```
+{% endhighlight %}
 
 We have a new sub-class of Player. Each time a player is asked to take a turn, the instance of player taking a turn puts itself in a vector. After the game plays, we can verify that if player instance goes first, it also goes third, fifth, etc. We can also verify that if another player instance goes second, it also goes forth, sixth, etc.
 
 Here's a test to do just that:
-```cpp
+{% highlight cpp %}
 	void testPlayersPlayInSameOrder() {
 		Game g;
 		OrderTrackingPlayerMock *p1 = new OrderTrackingPlayerMock;
@@ -1292,17 +1292,17 @@ Here's a test to do just that:
 			TS_ASSERT_EQUALS(p2, OrderTrackingPlayerMock::ORDER[i+1]);
 		}
 	}
-```
+{% endhighlight %}
 
 Run the test and verify that in fact we maintain the order of the players throughout:
-```
+{% highlight terminal %}
 $ make
 Updating dependencies in makefile...
 Generating Unit Tests...
 linking...
 Running unit tests...
 Running 12 tests............OK!
-```
+{% endhighlight %}
 
 Success! Congratulations, you have finished the first iteration of the game. In the next iteration we look at using polymorphism in our mainline code.
 
@@ -1323,7 +1323,7 @@ This section contains all of the complete Iteration 1 source files with no expla
 
 ## makefile
 
-```
+{% highlight terminal %}
 # ----------------------------------------------------------------------------
 # Add all files contain cxxtest unit tests to the following macro
 TESTS = DieTest.hpp DiceTest.hpp PlayerTest.hpp GameTest.hpp
@@ -1401,11 +1401,11 @@ tests.o: gentests
 	$(CPP) -c $(CFLAGS) -o $(BIN_DIR)/$@ $<
 
 -include $(MD_FILE)
-```
+{% endhighlight %}
 
 ## DieTest.hpp
 
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include <vector>
 # include <algorithm>
@@ -1440,11 +1440,11 @@ public:
 		}
 	}
 };
-```
+{% endhighlight %}
 
 ## Die.hpp
 
-```cpp
+{% highlight cpp %}
 # ifndef Die_hpp
 # define Die_hpp
 
@@ -1460,11 +1460,11 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
 ## Die.cpp
 
-```cpp
+{% highlight cpp %}
 # include <climits>
 # include <stdlib.h>
 # include "Die.hpp"
@@ -1486,11 +1486,11 @@ int Die::roll() {
 int Die::faceValue() {
 	return value;
 }
-```
+{% endhighlight %}
 
 ## DiceTest.hpp
 
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include <vector>
 # include "Dice.hpp"
@@ -1512,11 +1512,11 @@ public:
 		assertValue(d);
 	}
 };
-```
+{% endhighlight %}
 
 ## Dice.hpp
 
-```cpp
+{% highlight cpp %}
 # ifndef Dice_hpp
 # define Dice_hpp
 
@@ -1536,11 +1536,11 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
 ## Dice.cpp
 
-```cpp
+{% highlight cpp %}
 # include "Dice.hpp"
 # include "Die.hpp"
 
@@ -1572,11 +1572,11 @@ int Dice::roll() {
 
 	return faceValue();
 }
-```
+{% endhighlight %}
 
 ## PlayerTest.hpp
 
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include "Dice.hpp"
 # include "Player.hpp"
@@ -1599,11 +1599,11 @@ public:
 		TS_ASSERT_EQUALS(expected, p.location());
 	}
 };
-```
+{% endhighlight %}
 
 ## Player.hpp
 
-```cpp
+{% highlight cpp %}
 # ifndef Player_hpp
 # define Player_hpp
 # include <string>
@@ -1626,11 +1626,11 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
 ## Player.cpp
 
-```cpp
+{% highlight cpp %}
 # include "Player.hpp"
 # include "Dice.hpp"
 
@@ -1656,11 +1656,11 @@ int Player::location() {
 void Player::setLocation(int location) {
 	myLocation = location;
 }
-```
+{% endhighlight %}
 
 ## GameTest.hpp
 
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include <vector>
 # include "Game.hpp"
@@ -1749,11 +1749,11 @@ public:
 		}
 	}
 };
-```
+{% endhighlight %}
 
 ## InvalidPlayerCount.hpp
 
-```cpp
+{% highlight cpp %}
 # ifndef InvalidPlayerCount_hpp
 # define InvalidPlayerCount_hpp
 
@@ -1769,11 +1769,11 @@ public:
 };
 
 # endif
-```
+{% endhighlight %}
 
 ## Game.hpp
 
-```cpp
+{% highlight cpp %}
 # ifndef Game_hpp
 # define Game_hpp
 
@@ -1798,11 +1798,11 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
 ## Game.cpp
 
-```cpp
+{% highlight cpp %}
 # include <algorithm>
 # include "Game.hpp"
 # include "Player.hpp"
@@ -1841,11 +1841,11 @@ void Game::randomizePlayerOrder() {
 Player *Game::getPlayer(int playerNumber) {
 	return players[playerNumber];
 }
-```
+{% endhighlight %}
 
 ## Main.cpp
 
-```cpp
+{% highlight cpp %}
 # include <cxxtest/ErrorPrinter.h>
 
 int main( int argc, char* argv[]) {
@@ -1853,4 +1853,4 @@ int main( int argc, char* argv[]) {
 	errorPrinter.run();
 	return 0;
 }
-```
+{% endhighlight %}

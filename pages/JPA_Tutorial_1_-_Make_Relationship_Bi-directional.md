@@ -5,7 +5,7 @@ Now we're going to make sure the Person knows the Company for which it works. Th
 
 First we need to update Person:
 **Person.java**
-```java
+{% highlight java %}
 public class Person {
     // ...
 
@@ -27,10 +27,10 @@ public class Person {
 
     // ...
 }
-```
+{% endhighlight %}
 
 Next, we'll change Company to maintain both sides of the relationship:
-```java
+{% highlight java %}
 public class Company {
     /**
      * Adding mappedBy lets the entity manager know you mean for this
@@ -66,12 +66,12 @@ public class Company {
         p.setJob(null);
     }
 }
-```
+{% endhighlight %}
 
 Before going any further, make sure all of your tests still run green.
 
 We are now adding and removing Person objects from collections. To make this work, we need to add an equals() method and a hashCode() method to the Person class:
-```java
+{% highlight java %}
     public boolean equals(final Object rhs) {
         if (rhs instanceof Person) {
             final Person other = (Person) rhs;
@@ -87,21 +87,21 @@ We are now adding and removing Person objects from collections. To make this wor
         return getLastName().hashCode() * getFirstName().hashCode()
                 * getMiddleInitial();
     }
-```
+{% endhighlight %}
 
 Finally, we'll update CompanyTest in several stages:
 
 First, add a utility method to retrieve companies by name:
-```java
+{% highlight java %}
     private Company findCompanyNamed(final EntityManager em, String name) {
         return (Company) em.createQuery(
                 "select c from Company c where c.name=?1")
                 .setParameter(1, name).getSingleResult();
     }
-```
+{% endhighlight %}
 
 Add another support method to create a company and hire a few people:
-```java
+{% highlight java %}
     private Company createCompanyWithTwoEmployees() {
         final Company c1 = new Company();
         c1.setName("The Company");
@@ -121,22 +121,22 @@ Add another support method to create a company and hire a few people:
 
         return c1;
     }
-```
+{% endhighlight %}
 
 The method createCompany used to directly lookup a company by name. Update the test method to use this private method by changing this line:
-```java
+{% highlight java %}
         final Company foundCompany = (Company) em.createQuery(
                 "select c from Company c where c.name=?1").setParameter(1,
                 "The Company").getSingleResult();
-```
+{% endhighlight %}
 
 to: 
-```java
+{% highlight java %}
         final Company foundCompany = findCompanyNamed(em, "The Company");
-```
+{% endhighlight %}
 
 Update the method createCompanyAndHirePeopl by using the support method createCompanyWithTwoEmployees():
-```java
+{% highlight java %}
     @SuppressWarnings("unchecked")
     @Test
     public void createCompanyAndHirePeople() {
@@ -151,10 +151,10 @@ Update the method createCompanyAndHirePeopl by using the support method createCo
                 "The Company").getSingleResult();
         assertEquals(2, foundCompany.getEmployees().size());
     }
-```
+{% endhighlight %}
 
 Finally, add an additional unit test to hire and fire people:
-```java
+{% highlight java %}
     @Test
     public void hireAndFire() {
         final Company c1 = createCompanyWithTwoEmployees();
@@ -170,6 +170,6 @@ Finally, add an additional unit test to hire and fire people:
         final Company foundCompany = findCompanyNamed(em, "The Company");
         assertEquals(0, foundCompany.getEmployees().size());
     }
-```
+{% endhighlight %}
 
 Make sure everything compiles and is green.

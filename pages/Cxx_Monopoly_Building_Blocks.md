@@ -5,14 +5,14 @@ All of these examples run under cygwin. In addition to cygwin, these examples us
 
 # Building
 For these examples I'm using make. The Boost C++ libraries recommend using bjam, however, in the spirit of using the simplest thing that can possibly work, here is a trivial makefile that rebuilds the world each time;
-```
+{% highlight terminal %}
 CxxTest_DIR = ~/cpp/cxxtest/cxxtest
 
 all:
 	$(CxxTest_DIR)/cxxtestgen.pl *Test.hpp -o tests.cpp
 	g++ *.cpp -o tests -I /usr/include/boost-1_33_1 -I $(CxxTest_DIR) /usr/lib/libboost_regex-gcc-mt-1_33_1.a
 	./tests
-```
+{% endhighlight %}
 
 ## **Warning**
 This is not meant to serve as a makefile for a "real" system. It has all of the necessary characteristics:
@@ -33,7 +33,7 @@ These examples use CxxTest as a way to write tests to understand how to use part
 ----
 ## Main.cpp
 You'll need this as a driver. It's your main function:
-```cpp
+{% highlight cpp %}
 # include <cxxtest/ErrorPrinter.h>
 
 int main(int argc, char* argv[]) {
@@ -42,11 +42,11 @@ int main(int argc, char* argv[]) {
 	
 	return 0;
 }
-```
+{% endhighlight %}
 
 ----
 ## IStringStreamTest.hpp
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 
 # include <iostream>
@@ -74,11 +74,11 @@ public:
 		TS_ASSERT(stream.eof());
 	}
 };
-```
+{% endhighlight %}
 
 ----
 ## BoostRegexTest.hpp
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 
 # include <boost/regex.hpp>
@@ -109,11 +109,11 @@ public:
 		TS_ASSERT(!regex_match("   \ta", re));	
 	}
 };
-```
+{% endhighlight %}
 
 ----
 ## BoostTokenizerTest
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 
 # include <boost/tokenizer.hpp>
@@ -142,4 +142,4 @@ public:
 		TS_ASSERT_EQUALS(it, tok.end());
 	}
 };
-```
+{% endhighlight %}

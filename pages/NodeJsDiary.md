@@ -60,7 +60,7 @@ title: NodeJsDiary
 * VM back and running (I changed the node version and it caused a world of hurt). Still not seeing .vimrc created!
 ** Maybe a chown on the damn .vim_runtime that is checked out as vagrant:root, but I want vagrant:vagrant
 ** Got the group correct, here's the example:
-```ruby
+{% highlight ruby %}
 git "/home/vagrant/.vim_runtime" do
   repository "git://github.com/amix/vimrc.git"
   reference "master"
@@ -68,7 +68,7 @@ git "/home/vagrant/.vim_runtime" do
   group "vagrant"
   action :sync
 end
-```
+{% endhighlight %}
 ----
 * Went back to book, tired of failing on getting a script to work properly
 * To part of book where I need to use npm to install a nodejs addon, chefing it

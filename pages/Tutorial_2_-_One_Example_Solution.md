@@ -1,7 +1,7 @@
 ---
 title: Tutorial_2_-_One_Example_Solution
 ---
-```java
+{% highlight java %}
 package entity;
 
 import java.util.List;
@@ -264,4 +264,4 @@ public class QueriesTest extends Assert {
         em.createQuery("delete from Person").executeUpdate();
     }
 }
-```
+{% endhighlight %}

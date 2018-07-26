@@ -1,9 +1,9 @@
 ---
 title: Introduction
 ---
-```
+{% highlight terminal %}
    
-```
+{% endhighlight %}
 ## Introductions
 ### First Exercise
 **Individually**

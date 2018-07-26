@@ -29,7 +29,7 @@ This test mentions a new concept, Go. This is the “starting location” for al
 
 Here is a simple test to verify this rule:
 
-```cpp
+{% highlight cpp %}
 01: #include <cxxtest/TestSuite.h>
 02: #include "Go.hpp"
 03: #include "Player.hpp"
@@ -43,7 +43,7 @@ Here is a simple test to verify this rule:
 11:        TS_ASSERT_EQUALS(200, p.balance());
 12:    }
 13: }; 
-```
+{% endhighlight %}
 
 There are two lines worthy of note:
 
@@ -57,15 +57,15 @@ Right now this test won’t compile. Here are the changes to get this to compile
 
 First we need to update the player class by adding a getBalance() method:
 
-```cpp
+{% highlight cpp %}
 ...
 public:
     int balance() { return 0; }
-```
+{% endhighlight %}
 
 Next, we need to create the class Go. First there’s Go.hpp:
 
-```cpp
+{% highlight cpp %}
 # ifndef Go_hpp
 # define Go_hpp
 
@@ -77,24 +77,24 @@ public:
 };
 
 # endif 
-```
+{% endhighlight %}
 
 Next, we need an implementation for this method, here’s Go.cpp:
 
-```cpp
+{% highlight cpp %}
 # include "Go.hpp"
 # include "Player.hpp"
 
 void Go::landOn(Player *player) {
 }
-```
+{% endhighlight %}
 
 We need to update the SRCS macro in the makefile to get this test added in:
 SRCS    =    Dice.cpp Die.cpp Game.cpp Main.cpp Player.cpp Go.cpp
 
 Next, build to verify that the test and Go class compile:
 
-```
+{% highlight terminal %}
 $ make
 g++ -c -g -o "bin/Go.o" -I../cxxtest/cxxtest "Go.cpp"
 g++ -g -o "bin/monopoly_test.exe" bin/tests.o bin/Dice.o bin/Die.o bin/Game.o bi
@@ -106,20 +106,20 @@ In GoTest::testPlayerReceives200WhenLandingOnGo:
 ..
 Failed 1 of 13 tests
 Success rate: 92% 
-```
+{% endhighlight %}
 
 ### Green: Get the test to pass
 We need to make sure that when we call the landOn method in the Go class that it actually gives the Player $200. Here’s one way to do that:
 
-```cpp
+{% highlight cpp %}
 void Go::landOn(Player *player) {
     player->deposit(200);
 }
-```
+{% endhighlight %}
 
 This won’t compile until we update Player to have a deposit() method. The test won’t pass until the deposit() method actually updates the Player’s balance and the balance() method returns the updated value, so here’s those changes to Player.hpp:
 
-```cpp
+{% highlight cpp %}
 public:
     ...
     int balance() { return myBalance; }
@@ -128,20 +128,20 @@ public:
 private:
     int myLocation;
     int myBalance;
-```
+{% endhighlight %}
 
 If this is all we do, the myBalance instance variable won’t be initialized, so we’ll also update the constructor initialization list. Here’s a change to Player.cpp:
-```cpp
+{% highlight cpp %}
 Player::Player() : myLocation(0), myBalance(0) {
 }
-```
+{% endhighlight %}
 
 Now verify that the tests actually pass:
-```
+{% highlight terminal %}
 $ make
 ./bin/monopoly_test.exe
 Running 13 tests.............OK!
-```
+{% endhighlight %}
 
 Success! We have more to do, but this is a good start. 
 
@@ -156,12 +156,12 @@ This is a great time to take a break. This next section is somewhat large and in
 If the player sends the message landOn() to a location (Go in this case), the Player will receive $200. We need to verify that the Player is actually sending the message during a turn.
 
 Before we move on to the test, we have a problem of visibility. The current method in Player to takeATurn() looks like this:
-```cpp
+{% highlight cpp %}
 void Player::takeATurn(Dice& dice) {
     myLocation += dice.roll();
     myLocation %= 40;
 } 
-```
+{% endhighlight %}
 
 Notice that the Player never sends a message to a Location. Notice also that our concept of “Location” is actually just an int. This will not suffice. If we review the user stories for this entire iteration, they are all about something happening when a Player interacts with a Location. The kinds of interaction involve:
 * Players receiving money
@@ -198,7 +198,7 @@ So our first goal is to get back to compiling but failing tests.
 
 ### Red: Get Tests to Compile
 First a simple Location class, here’s Location.hpp:
-```cpp
+{% highlight cpp %}
 # ifndef Location_hpp
 # define Location_hpp
 
@@ -206,10 +206,10 @@ class Location {
 };
 
 # endif
-```
+{% endhighlight %}
 
 Next we need to update Player.hpp:
-```cpp
+{% highlight cpp %}
 01: #ifndef Player_hpp
 02: #define Player_hpp
 03:
@@ -232,7 +232,7 @@ Next we need to update Player.hpp:
 20: };
 21:
 22: if
-```
+{% endhighlight %}
 
 |**Line**|**Description**|
 |5|Forward declare the class Location. We do not actually do anything with the definition of Location since we only use pointers to Locations, so a forward declaration is all we need to get the header file to be correct and complete.|
@@ -255,7 +255,7 @@ Finally, we need to update PlayerTest.hpp. Again, we’re just trying to get thi
 
 ### Verify We’re back to Red
 Now we need to run our tests to verify that we’re back to everything compiling (with a few tests failing):
-```
+{% highlight terminal %}
 $ make
 ./bin/monopoly_test.exe
 Running 13 tests...........
@@ -265,7 +265,7 @@ In PlayerTest::testPlayerMovesAroundBoard:
 ./PlayerTest.hpp:19: Error: Test failed: Test needs rewriting
 Failed 2 of 13 tests
 Success rate: 84% 
-```
+{% endhighlight %}
 
 OK, so now we’ll fix one test at a time. The first test, testPlayerTakesTurn, simply verifies that when a Player takes a turn and rolls a particular value, they end up on the correct location. To get this to work, the player rolls Dice and then advances the correct number of Locations. We need a way to do this. So our test needs to be able to put the Player on a known location, have them take a turn and then verify that they end up on the expected location.
 
@@ -279,7 +279,7 @@ We have one more problem, when a Player rolls dice, they might end up with a num
 
 How about this (rather big) change:
 
-```cpp
+{% highlight cpp %}
 01: #include <cxxtest/TestSuite.h>
 02: #include "Dice.hpp"
 03: #include "Player.hpp"
@@ -312,7 +312,7 @@ How about this (rather big) change:
 30:        TS_ASSERT_EQUALS(&loc2, p.location());
 31:    }
 32: ...
-```
+{% endhighlight %}
 
 |**Line**|**Description**|
 |4|We’ll now be using Location in our test so we need to include it.|
@@ -324,17 +324,17 @@ How about this (rather big) change:
 
 Here’s the update to Dice.hpp:
 
-```cpp
+{% highlight cpp %}
     virtual ~Dice();
     virtual int roll();
     virtual int faceValue();
-```
+{% endhighlight %}
 
 None of these methods were virtual but now all of them are. Note that the mock inheriting from the Dice class violates the Liskov Substitution Principle. What is that? More on that in the refactoring section to follow.
 
 Now we need to update the Player to actually use its Location object for movement. We need to make sure Player.cpp includes Location.hpp. Once we’ve added that, we update takeATurn:
 
-```cpp
+{% highlight cpp %}
 void Player::takeATurn(Dice& dice) {
     int rv = dice.roll();
     for(int i = 0; i < rv; ++i) {
@@ -342,11 +342,11 @@ void Player::takeATurn(Dice& dice) {
         setLocation(next);
     }
 }
-```
+{% endhighlight %}
 
 There’s one more thing we need to do to avoid a segmentation fault. We need to update the other test in PlayerTest.hpp:
 
-```cpp
+{% highlight cpp %}
     void testPlayerMovesAroundBoard() {
         Dice d;
         Player p;
@@ -354,13 +354,13 @@ There’s one more thing we need to do to avoid a segmentation fault. We need to
 //        p.takeATurn(d);
         TS_FAIL("Test needs rewriting");
     }
-```
+{% endhighlight %}
 
 Don’t worry, we’ll get to it soon.
 
 This should get us to one failing test:
 
-```
+{% highlight terminal %}
 $ make
 ./bin/monopoly_test.exe
 Running 13 tests............
@@ -368,11 +368,11 @@ In PlayerTest::testPlayerMovesAroundBoard:
 ./PlayerTest.hpp:38: Error: Test failed: Test needs rewriting
 Failed 1 of 13 tests
 Success rate: 92% 
-```
+{% endhighlight %}
 
 Now let’s fix that other test:
 
-```cpp
+{% highlight cpp %}
     void testPlayerMovesAroundBoard() {
         Location start;
         Location loc1;
@@ -388,22 +388,22 @@ Now let’s fix that other test:
 
         TS_ASSERT_EQUALS(&loc1, p.location());
     }
-```
+{% endhighlight %}
 
 Run your tests and you’ll see that we’re back to “Green”:
 
-```
+{% highlight terminal %}
 $ make
 ./bin/monopoly_test.exe
 Running 13 tests.............OK! 
-```
+{% endhighlight %}
 
 ### Refactor
 OK, we finally have some room for refactoring. If you review our two tests, you’ll notice that in both cases we three locations and set up their next attribute. The only difference is that in the first test we don’t connect the last location back to the start. We can refactor this common code using a test fixture.
 
 Here’s an updated version of our test class that removes this duplicated code:
 
-```cpp
+{% highlight cpp %}
 01: #include <cxxtest/TestSuite.h>
 02: #include "Dice.hpp"
 03: #include "Player.hpp"
@@ -461,7 +461,7 @@ Here’s an updated version of our test class that removes this duplicated code:
 55:         TS_ASSERT_EQUALS(loc1, p->location());
 56:     }
 57: };
-```
+{% endhighlight %}
 
 There are quite a few changes. The quick summary is that test harnesses have methods you can write for setup and teardown before and after **each** test. Before each test we create player, dice and locations. We execute each test and then after each test we clean up all the memory we just allocated.
 
@@ -500,7 +500,7 @@ We’re still working up to the ultimate goal of showing that when a player take
 
 Here’s such a test:
 
-```cpp
+{% highlight cpp %}
 # ifndef LOCATIONTEST_HPP_
 # define LOCATIONTEST_HPP_
 
@@ -520,13 +520,13 @@ public:
 };
 
 # endif /*LOCATIONTEST_HPP_*/
-```
+{% endhighlight %}
 
 ## Red: Get test to compile
 
 This test won’t initially compile because Location does not have a landOn method like we added to Go. So update Location to have a landOn method:
 
-```cpp
+{% highlight cpp %}
 # ifndef Location_hpp
 # define Location_hpp
 
@@ -543,16 +543,16 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
 ## Green: We’re already there
 So now if we compile and run our tests, just adding the missing method to location should make the test pass. This is OK, because we’ve tested our way into adding a method to a base class. Verify that your tests pass:
 
-```
+{% highlight terminal %}
 % make
 ./debug/monopoly_test.exe
 Running 14 tests..............OK!
-```
+{% endhighlight %}
 
 ## Refactor
 We have a few holes in our current implementation, missing virtual methods and such. We’ll address this as we finally tie everything together and complete the “polymorphism loop.”
@@ -566,7 +566,7 @@ Player movement is a separate concern from landing specifically on Go, so I prop
 
 How about this for the test:
 
-```cpp
+{% highlight cpp %}
     void testPlayerSendsLandonDuringTurn() {
         p->setLocation(start);
         p->takeATurn(*d);
@@ -575,7 +575,7 @@ How about this for the test:
         TS_ASSERT_EQUALS(0, loc1->landonCount)
         TS_ASSERT_EQUALS(1, loc2->landonCount)
     }
-```
+{% endhighlight %}
 
 This test simply has a player take a turn using a fixed dice (review previous tests) and confirms that the player send the message landOn to their final destination but none of the other destinations.
 
@@ -587,13 +587,13 @@ This test does not compile for several reasons:
 
 Here’s the start of a fix to the second problem:
 
-```cpp
+{% highlight cpp %}
 class LandonTrackingLocationMock : public Location {
 public:
     LandonTrackingLocationMock() : landonCount(0) {}
     int landonCount;
 };
-```
+{% endhighlight %}
 
 We can add this mock to the PlayerTest.hpp. We next need to make sure that we’re using this class instead of a plain vanilla location object. We have two options here:
 * Change the setUp method to create only these mock objects and impact every existing test
@@ -601,7 +601,7 @@ We can add this mock to the PlayerTest.hpp. We next need to make sure that we’
 
 Let’s take the second route, it’s quick and if we need to improve this, it’ll come up later:
 
-```cpp
+{% highlight cpp %}
 class PlayerTest : public CxxTest::TestSuite {
 private:
     Player *p;
@@ -622,11 +622,11 @@ public:
         loc2->setNext(start);
     }
 ...
-```
+{% endhighlight %}
 
 Verify that your tests run but do not pass:
 
-```
+{% highlight terminal %}
 %make
 ./debug/monopoly_test.exe
 Running 15 tests.............
@@ -634,7 +634,7 @@ In PlayerTest::testPlayerSendsLandonDuringTurn:
 ./PlayerTest.hpp:70: Error: Expected (1 == loc2->landonCount), found (1 != 0)
 Failed 1 of 15 tests
 Success rate: 93%
-```
+{% endhighlight %}
 
 ## Green: Get this test to pass
  
@@ -647,7 +647,7 @@ OK, we have a few problems:
 
 Here we go, first we’ll fix Location.hpp:
 
-```cpp
+{% highlight cpp %}
 # ifndef Location_hpp
 # define Location_hpp
 
@@ -665,22 +665,22 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
 Next, we need to make sure that our LandonTrackingLocationMock class overrides landOn:
 
-```cpp
+{% highlight cpp %}
 class LandonTrackingLocationMock : public Location {
 public:
     LandonTrackingLocationMock() : landonCount(0) {}
     void landOn(Player* p) { ++landonCount; }
     int landonCount;
 };
-```
+{% endhighlight %}
  
 We want to make sure that the Go class inherits from Location:
 
-```cpp
+{% highlight cpp %}
 
 # ifndef Go_hpp
 # define Go_hpp
@@ -695,11 +695,11 @@ public:
 };
 
 # endif
-```
+{% endhighlight %}
 
 And finally, we need to make sure that a Player sends the message landOn during takeATurn:
 
-```cpp
+{% highlight cpp %}
 void Player::takeATurn(Dice& dice) {
     int rv = dice.roll();
     for(int i = 0; i < rv; ++i) {
@@ -708,15 +708,15 @@ void Player::takeATurn(Dice& dice) {
     }
     myLocation->landOn(this);
 } 
-```
+{% endhighlight %}
 
 Whew! That’s a lot of work. Do our tests pass:
 
-```
+{% highlight terminal %}
 % make
 ./debug/monopoly_test.exe
 Running 15 tests..............OK!
-```
+{% endhighlight %}
 
 Why all of this work? Introducing Polymorphism requires many steps (we’ve already mentioned these before, but they bear repeating because they are so important):
 * Introduce a base class (Location in this case)
@@ -749,14 +749,14 @@ Notice that all of these tests describe what happens during a Player’s turn, p
 ## Test: Passing Go: Red: Writing the test
 First we need to create our test. We’ll add a second test to GoTest.hpp:
 
-```cpp
+{% highlight cpp %}
     void testPlayerReceives200WhenPassingGo() {
         Go g;
         Player p;
         g.passingOver(&p);
         TS_ASSERT_EQUALS(200, p.balance());
     }
-```
+{% endhighlight %}
 
 This test looks a whole lot like the previous test. We’ll address that in the refactor stage after we’re green.
 
@@ -764,49 +764,49 @@ This test looks a whole lot like the previous test. We’ll address that in the 
 
 We need to add a method to Go.hpp:
 
-```cpp
+{% highlight cpp %}
     void passingOver(Player *player);
-```
+{% endhighlight %}
 
 And add an implementation to Go.cpp:
 
-```cpp
+{% highlight cpp %}
 void Go::passingOver(Player *player) {
 }
-```
+{% endhighlight %}
 
 Your test should now compile but fail:
 
-```
+{% highlight terminal %}
 Running 16 tests...........
 In GoTest::testPlayerReceives200WhenPassingGo:
 ./GoTest.hpp:18: Error: Expected (200 == p.balance()), found (200 != 0)
 ....
 Failed 1 of 16 tests
 Success rate: 93%
-```
+{% endhighlight %}
 
 ### Green: Get test to pass
 This is pretty simple; to get our test to pass we need to add some code to passingOver:
 
-```cpp
+{% highlight cpp %}
 void Go::passingOver(Player *player) {
 }
-```
+{% endhighlight %}
 
 Run your tests, you should be green:
-```
+{% highlight terminal %}
 make
 ./debug/monopoly_test.exe
 Running 16 tests................OK!
-```
+{% endhighlight %}
 
 Success!
 
 ### Refactor
 Now we need to review to see if we have any opportunities for refactoring. Reviewing GoTest.hpp, we can remove some duplication:
 
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include "Go.hpp"
 # include "Player.hpp"
@@ -836,15 +836,15 @@ public:
         TS_ASSERT_EQUALS(200, p->balance());
     }
 };
-```
+{% endhighlight %}
 
 Verify you’re still green:
 
-```
+{% highlight terminal %}
 make
 ./debug/monopoly_test.exe
 Running 16 tests................OK!
-```
+{% endhighlight %}
 
 Check in and get ready for the next step.
 
@@ -855,7 +855,7 @@ Now we need to verify that Location doesn’t do what Go does, right? Really, we
 ### Red: Write the test, it won’t compile
 Here’s a test that will verify nothing happens to the player if the pass over a generic location:
 
-```cpp
+{% highlight cpp %}
     void testPlayerPassesOverLocationBalanceUnchanged() {
         Location l;
         Player p;
@@ -864,7 +864,7 @@ Here’s a test that will verify nothing happens to the player if the pass over 
         l.passingOver(&p);
         TS_ASSERT_EQUALS(startingBalance, p.balance());
     }
-```
+{% endhighlight %}
 
 This code does not compile because the Location class does not have a passingOver method.
 
@@ -872,22 +872,22 @@ This code does not compile because the Location class does not have a passingOve
 
 We need to update Location.hpp to include this method. Since we know that Location is a base class and we know, given the previous test, that this method is meant to be overridden, we need to make this method virtual. Here’s an implementation:
 
-```cpp
+{% highlight cpp %}
     virtual void passingOver(Player *player) {}
-```
+{% endhighlight %}
 
 When you run your tests, you’ll notice that they pass. We went immediately to Green. Is this a problem? No. In this case we’re using a test to drive the introduction of a flex point into our software.
 
-```
+{% highlight terminal %}
 make
 ./debug/monopoly_test.exe
 Running 17 tests.................OK!
-```
+{% endhighlight %}
 
 ### Refactor
 If you review LocationTest.hpp, you’ll notice a lot of duplication. As with GoTest.hpp, we can get rid of some duplication:
 
-```cpp
+{% highlight cpp %}
 01: #ifndef LOCATIONTEST_HPP_
 02: #define LOCATIONTEST_HPP_
 03: 
@@ -923,27 +923,27 @@ If you review LocationTest.hpp, you’ll notice a lot of duplication. As with Go
 33: };
 34: 
 35: #endif /*LOCATIONTEST_HPP_*/
-```
+{% endhighlight %}
 
 Verify that your tests run:
 
-```
+{% highlight terminal %}
 make 
 ./debug/monopoly_test.exe
 Running 17 tests.................OK!
-```
+{% endhighlight %}
 
 ### Code Explained and Justified
 We done something in this example that we’ve done elsewhere. Specifically lines 14 – 16 along with lines 20 – 21. Remember that before **every** test, CxxUnit executes the setUp method and after **every** test, CxxUnit executes the tearDown method. So here’s what’s happening for this particular test suite:
 
-```
+{% highlight terminal %}
     setUp
         testPlayerLandsOnLocationBalanceUnchanged
     tearDown
     setUp
         testPlayerPassesOverLocationBalanceUnchanged
     tearDown
-```
+{% endhighlight %}
 
 Why do we create new objects before each test and then after each test we delete them? Why not simply re-use the existing objects? We do this to make each test **isolated** from the previous and future tests. Each test has no lasting side-effects. This means when one test fails, it is less likely to cause a cascade down-stream.
 
@@ -974,7 +974,7 @@ Imagine a Player is on some location, “location 0”, and rolls 4. First they 
 
 With that in mind, here’s our original test:
 
-```cpp
+{% highlight cpp %}
     void testPlayerSendsLandonDuringTurn() {
         p->setLocation(start);
         p->takeATurn(*d);
@@ -983,11 +983,11 @@ With that in mind, here’s our original test:
         TS_ASSERT_EQUALS(0, loc1->landonCount)
         TS_ASSERT_EQUALS(1, loc2->landonCount)
     }
-```
+{% endhighlight %}
 
 Here’s a similar test to verify the passingCount:
 
-```cpp
+{% highlight cpp %}
     void testPlayerSendsPassingOverDuringTurn() {
         p->setLocation(start);
         p->takeATurn(*d);
@@ -996,12 +996,12 @@ Here’s a similar test to verify the passingCount:
         TS_ASSERT_EQUALS(1, loc1->passingCount)
         TS_ASSERT_EQUALS(0, loc2->passingCount)
     }
-```
+{% endhighlight %}
 
 ### Red: Get the test to compile
 To get our test to compile, we simply can add a passingCount attribute to our existing mock location:
 
-```cpp
+{% highlight cpp %}
 class LandonTrackingLocationMock : public Location {
 public:
     LandonTrackingLocationMock() : landonCount(0) {}
@@ -1009,11 +1009,11 @@ public:
     int landonCount;
     int passingCount;
 };
-```
+{% endhighlight %}
 
 Verify that this test compiles but does not pass:
 
-```
+{% highlight terminal %}
 make all 
 ./debug/monopoly_test.exe
 Running 18 tests.................
@@ -1023,7 +1023,7 @@ In PlayerTest::testPlayerSendsPassingOverDuringTurn:
 ./PlayerTest.hpp:81: Error: Expected (0 == loc2->passingCount), found (0 != 7407192)
 Failed 1 of 18 tests
 Success rate: 94%
-```
+{% endhighlight %}
 
 We need to make sure to initialize and then update the count during a turn and we also need to make sure the player sends the message in the first place.
 
@@ -1031,7 +1031,7 @@ We need to make sure to initialize and then update the count during a turn and w
 
 So we need to make sure we send the passingOver message correctly. Here’s one version that will work:
 
-```cpp
+{% highlight cpp %}
 void Player::takeATurn(Dice& dice) {
     int rv = dice.roll();
 
@@ -1045,15 +1045,15 @@ void Player::takeATurn(Dice& dice) {
     }
     myLocation->landOn(this);
 }
-```
+{% endhighlight %}
 
 Run your tests, we should be green.
 
-```
+{% highlight terminal %}
 make
 ./debug/monopoly_test.exe
 Running 18 tests..................OK!
-```
+{% endhighlight %}
 
 ### Refactor: Coupling
 Does it feel strange that when a player takes a turn, it has to make sure to leave the first location, then only send passingOver to then enxt rollValue – 1 locations and landOn to the last location?
@@ -1064,7 +1064,7 @@ What if we moved this responsibility into location? At the very least we could �
 
 Here’s a possible refactoring to address this (create a new class file Location.cpp:
 
-```cpp
+{% highlight cpp %}
 # include "Location.hpp"
 # include "Player.hpp"
 
@@ -1082,26 +1082,26 @@ void Location::move(Player *p, int spaces) {
     
     current->landOn(p);
 }
-```
+{% endhighlight %}
 
 We need to update the SRCS macro in the makefile and add Location.cpp.
 
 We have to update Player.cpp as well:
 
-```cpp
+{% highlight cpp %}
 void Player::takeATurn(Dice& dice) {
     int rv = dice.roll();
     location()->move(this, rv);
 }
-```
+{% endhighlight %}
 
 Rebuild and verify that your tests still pass:
 
-```
+{% highlight terminal %}
 make
 ./debug/monopoly_test.exe
 Running 18 tests..................OK!
-```
+{% endhighlight %}
 
 ### Review
 Is this an improvement? We’re essentially doing the same work as before, just in the Location instead of in the player. The disadvantage of this is that it might seem a bit strange at first glance. On the other hand, the nuances of movement end up not in the Player but in the Location. This seems to be a better assignment of responsibility.
@@ -1113,7 +1113,7 @@ Here are all of the updated files:
 
 **PlayerTest.hpp**
 
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include "Player.hpp"
 # include "Location.hpp"
@@ -1161,11 +1161,11 @@ public:
         TS_ASSERT_EQUALS(loc1, p->location());
     }
 };
-```
+{% endhighlight %}
 
 **LocationTest.hpp**
 
-```cpp
+{% highlight cpp %}
 # ifndef LOCATIONTEST_HPP_
 # define LOCATIONTEST_HPP_
 
@@ -1240,13 +1240,13 @@ public:
 };
 
 # endif /*LOCATIONTEST_HPP_*/
-```
+{% endhighlight %}
 
 Here's a new file. We now use this mock in multiple places so it's now in its own location:
 
 **FixedValueMockDice.hpp**
 
-```cpp
+{% highlight cpp %}
 # ifndef _FIXEDVALUEMOCKDICE_HPP
 # define _FIXEDVALUEMOCKDICE_HPP
 
@@ -1263,7 +1263,7 @@ private:
 };
 
 # endif
-```
+{% endhighlight %}
 
 Run your tests and verify you are still green.
 
@@ -1296,7 +1296,7 @@ We don’t do this as a unit test, but just a smoke test to make sure everything
 ## Red: Landing on Go To Jail
 Here’s a test for landing on GoToJail:
 
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 
 # include "GoToJail.hpp"
@@ -1315,14 +1315,14 @@ public:
         TS_ASSERT_EQUALS(&destination, p.location());
     }
 };
-```
+{% endhighlight %}
 
 This test sets up an instance of GoToJail and verifies that when a player lands on it, the player is sent to the correct destination (a value we set).
 
 ## Red: Get it to compile
 Here’s the minimal amount necessary to get our test to compile:
 
-```cpp
+{% highlight cpp %}
 # ifndef GOTOJAIL_HPP_
 # define GOTOJAIL_HPP_
 
@@ -1334,11 +1334,11 @@ public:
 };
 
 # endif /*GOTOJAIL_HPP_*/
-```
+{% endhighlight %}
 
 Verify that your tests now passes but does not compile:
 
-```
+{% highlight terminal %}
 %make
 Running 19 tests............
 In GoToJailTest::testLandingOnChangesLocation:
@@ -1346,12 +1346,12 @@ In GoToJailTest::testLandingOnChangesLocation:
 ......
 Failed 1 of 19 tests
 Success rate: 94%
-```
+{% endhighlight %}
 
 ## Green: Get our tests to pass
 We need to override the landOn method in GoToJail to do what it is supposed to do:
 
-```cpp
+{% highlight cpp %}
 # ifndef GOTOJAIL_HPP_
 # define GOTOJAIL_HPP_
 
@@ -1368,14 +1368,14 @@ private:
 };
 
 # endif /*GOTOJAIL_HPP_*/
-```
+{% endhighlight %}
 
 Now verify you’re green:
-```
+{% highlight terminal %}
 % make
 ./debug/monopoly_test.exe
 Running 19 tests...................OK!
-```
+{% endhighlight %}
 
 Success! However, we might want to consider a little refactoring before we finish.
 
@@ -1384,7 +1384,7 @@ First, we’ve written the entire implementation inline. Virtual functions and i
 
 On the other hand, because we’ve provided the implementation in an implicit inline, we must include Player.hpp rather than forward-declare Player. We must do so since we send a message to Player. We can remedy both of these situations by simply putting the code for landOn in GoToJail.cpp:
 
-```cpp
+{% highlight cpp %}
 # ifndef GOTOJAIL_HPP_
 # define GOTOJAIL_HPP_
 
@@ -1402,32 +1402,32 @@ private:
 };
 
 # endif /*GOTOJAIL_HPP_*/
-```
+{% endhighlight %}
 
-```cpp
+{% highlight cpp %}
 # include "GoToJail.hpp"
 
 # include "Player.hpp"
 void GoToJail::landOn(Player *p) { 
     p->setLocation(destination); 
 } 
-```
+{% endhighlight %}
 
 Remember, we’ve added a source file so we need to add it to the SRCS macro in our makefile.
 
 Rerun to verify nothing is broken:
 
-```
+{% highlight terminal %}
 % make all 
 ./debug/monopoly_test.exe
 Running 19 tests...................OK!
-```
+{% endhighlight %}
 Success! And we’re finished refactoring so it’s time to check in all of our changes.
 
 ## Red: Landing on Income Tax
 This next one involves a calculation. Income tax costs 10% of the Player’s total worth up to a maximum of $200. First the test:
 
-```cpp
+{% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 
 # include "IncomeTax.hpp"
@@ -1443,7 +1443,7 @@ public:
         TS_ASSERT_EQUALS(1350, p.balance());
     }
 };
-```
+{% endhighlight %}
 
 We verify that when a player with a balance of $1500 lands on Income Tax, their total charge is $150.
 
@@ -1451,7 +1451,7 @@ We verify that when a player with a balance of $1500 lands on Income Tax, their 
 
 To get this test to pass, we need to add IncomeTax.hpp:
 
-```cpp
+{% highlight cpp %}
 # ifndef INCOMETAX_HPP_
 # define INCOMETAX_HPP_
 
@@ -1462,11 +1462,11 @@ class IncomeTax : public Location {
 };
 
 # endif /*INCOMETAX_HPP_*/
-```
+{% endhighlight %}
 
 Verify that you are now compiling but the test is failing:
 
-```
+{% highlight terminal %}
 % make
 Running 20 tests.............
 In IncomeTaxText::testPlayerPaysUnderMaxAmount:
@@ -1474,13 +1474,13 @@ In IncomeTaxText::testPlayerPaysUnderMaxAmount:
 ......
 Failed 1 of 20 tests
 Success rate: 95%
-```
+{% endhighlight %}
 
 ## Green: Get the test to pass
 
 We need to add the landOn method to make this all work. First update IncomeTax.hpp:
 
-```cpp
+{% highlight cpp %}
 # ifndef INCOMETAX_HPP_
 # define INCOMETAX_HPP_
 
@@ -1492,10 +1492,10 @@ public:
 };
 
 # endif /*INCOMETAX_HPP_*/
-```
+{% endhighlight %}
 
 And then we add the method to IncomeTax.cpp (we’re avoiding adding the implementation to the header file since we know it’s a virtual method we’re overriding):
-```cpp
+{% highlight cpp %}
 # include "IncomeTax.hpp"
 
 # include "Player.hpp"
@@ -1507,15 +1507,15 @@ void IncomeTax::landOn(Player *p) {
     
     p->deposit(-tax);
 }
-```
+{% endhighlight %}
 
 Make sure to add IncomeTax.cpp to the SRCS macro, build and verify that your tests all pass:
 
-```
+{% highlight terminal %}
 % make
 ./debug/monopoly_test.exe
 Running 20 tests....................OK!
-```
+{% endhighlight %}
 
 Success!
 
@@ -1528,7 +1528,7 @@ Now is a great time to check in your work.
 
 Now we need to verify our formula works for balances > 2000:
 
-```cpp
+{% highlight cpp %}
     
     void testPlayerPaysMaxAmountBalanceAbove2000() {
         IncomeTax it;
@@ -1537,11 +1537,11 @@ Now we need to verify our formula works for balances > 2000:
         it.landOn(&p);
         TS_ASSERT_EQUALS(2013, p.balance());
     }
-```
+{% endhighlight %}
 
 This test will compile and run, but it should fail. Verify that it does:
 
-```
+{% highlight terminal %}
 % make
 Running 21 tests..............
 In IncomeTaxText::testPlayerPaysMaxAmountBalanceAbove2000:
@@ -1549,12 +1549,12 @@ In IncomeTaxText::testPlayerPaysMaxAmountBalanceAbove2000:
 ......
 Failed 1 of 21 tests
 Success rate: 95%
-```
+{% endhighlight %}
 
 ## Green: Get test to pass
 Update the implementation of landOn:
 
-```cpp
+{% highlight cpp %}
 void IncomeTax::landOn(Player *p) {
     int balance = p->balance();
     
@@ -1562,15 +1562,15 @@ void IncomeTax::landOn(Player *p) {
     
     p->deposit(-tax);
 }
-```
+{% endhighlight %}
 
 Verify that your tests now pass:
 
-```
+{% highlight terminal %}
 % make all 
 ./debug/monopoly_test.exe
 Running 21 tests.....................OK!
-```
+{% endhighlight %}
 
 # Final User Story
 We have to repeat what we just did for Luxury Tax. The rule is simple, it costs $75 to land on Luxury tax.
@@ -1578,7 +1578,7 @@ We have to repeat what we just did for Luxury Tax. The rule is simple, it costs 
 ## Red: Write the test, it won’t compile
 Here’s our test:
 
-```cpp
+{% highlight cpp %}
 # include <cxxunit/TestSuite.h>
 
 # include "LuxuryTax.hpp"
@@ -1592,11 +1592,11 @@ public:
         TS_ASSERT_EQUALS(-75, p.balance());
     }
 };
-```
+{% endhighlight %}
 
 ## Red: Get the test to compile
 
-```cpp
+{% highlight cpp %}
 # ifndef LUXURYTAX_HPP_
 # define LUXURYTAX_HPP_
 
@@ -1607,21 +1607,21 @@ class LuxuryTax : public Location {
 };
 
 # endif /*LUXURYTAX_HPP_*/
-```
+{% endhighlight %}
 
 Build and make sure your tests compile but do not run:
 
-```
+{% highlight terminal %}
 % make
 ./debug/monopoly_test.exe
 Running 21 tests.....................OK!
-```
+{% endhighlight %}
 
 ## Green: Get the test to pass
 
 Now we need to override the landOn method, so we’ll update the header file and add a source file:
 
-```cpp
+{% highlight cpp %}
 # ifndef LUXURYTAX_HPP_
 # define LUXURYTAX_HPP_
 
@@ -1634,22 +1634,24 @@ public:
 
 # endif /*LUXURYTAX_HPP_*/
 
-```cpp
+{% endhighlight %}
+
+{% highlight cpp %}
 # include "LuxuryTax.hpp"
 # include "Player.hpp"
 
 void LuxuryTax::landOn(Player *p) {
     p->deposit(-75);
 }
-```
+{% endhighlight %}
 
 Make sure to add LuxuryTax.cpp to the SRCS macro in your makefile, build and see if your tests pass:
 
-```
+{% highlight terminal %}
 % make
 ./debug/monopoly_test.exe
 Running 21 tests.....................OK!
-```
+{% endhighlight %}
 
 Succcess!
 

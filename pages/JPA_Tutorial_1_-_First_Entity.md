@@ -8,7 +8,7 @@ For this example we'll use a "top-down" approach. This means we'll create a Plai
 The following class contains everything you need to begin persisting it to a database:
 [#Person]({{site.pagesurl}}/#Person)
 **Person.java**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Entity;
@@ -117,17 +117,17 @@ public class Person {
         this.zip = zip;
     }
 }
-```
+{% endhighlight %}
 ### Update persistence.xml
 Note, for our configuration this step is optional.
 
 If you use libraries provided exclusively by JBoss and Company, then you do not need to update your persistence.xml. If you are using another vendor or you want to make sure that your solution will work regardless of your persistence provider, add the following line to your persistence.xml:
-```xml
+{% highlight xml %}
         <class>entity.Person</class>
-```
+{% endhighlight %}
 
 Your updated persistence.xml is now:
-```xml
+{% highlight xml %}
 <persistence>
     <persistence-unit name="examplePersistenceUnit" 
                       transaction-type="RESOURCE_LOCAL">
@@ -148,12 +148,12 @@ Your updated persistence.xml is now:
         </properties>
     </persistence-unit>
 </persistence>
-```
+{% endhighlight %}
 
 ### Inserting and Querying
 Now we need to update our unit test class, Person.java. We will have it insert two people, query and verify that the people we created are in the database:
 **PersonTest.java**
-```java
+{% highlight java %}
 package entity;
 
 import static org.junit.Assert.assertEquals;
@@ -214,5 +214,5 @@ public class PersonTest {
         }
     }
 }
-```
+{% endhighlight %}
 Re-run this test (the short-cut for this is **Ctrl-Fll**). Verify that everything is green.

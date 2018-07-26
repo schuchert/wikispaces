@@ -4,19 +4,19 @@ title: Full_Coverage_when_Expecting_an_Exception
 [<--Back]({{site.pagesurl}}/TDD_Example_Catalog)
 
 In JUnit 4 we might write the following:
-```java
+{% highlight java %}
 @Test(expected=RuntimeException.class)
 public void methodThatWeExpectAnException() {
     throw new RuntimeException();
 }
-```
+{% endhighlight %}
 
 This test will pass. Yes it's trivial, of course it would pass. (In reality the single line of code would instead send a message to some object that ultimately would need to generate a RuntimeException for a "real" test to pass.) Fine. That's not the point.
 
 So what's the problem with this? Nothing, except that some coverage tools will report the last "line" (the close curly-brace) as not being covered since we did not exit the method cleanly.
 
 Here's a way to rewrite the above test so that you can assure coverage:
-```java
+{% highlight java %}
 @Test
 public void methodThatWeExpectWillThrowAnException() {
     boolean expectedThrown = false;
@@ -29,7 +29,7 @@ public void methodThatWeExpectWillThrowAnException() {
 
     assertTrue(expectedThrown);
 }
-```
+{% endhighlight %}
 
 This version is a bit longer, isn't it? 
 

@@ -9,7 +9,7 @@ Source files are here: [[file:AspectJExample4src.zip]]. If you need instructions
 Have a look at the following Java files and, as before, predict the output.
 ----
 ## Main.java
-```java
+{% highlight java %}
 package ex4;
 
 public class Main {
@@ -23,11 +23,11 @@ public class Main {
 		Dao.save(a);
 	}
 }
-```
+{% endhighlight %}
 ----
 [#Dao]({{site.pagesurl}}/#Dao)
 ## Dao.java
-```java
+{% highlight java %}
 package ex4;
 
 public class Dao {
@@ -37,7 +37,7 @@ public class Dao {
 		}
 	}
 }
-```
+{% endhighlight %}
 ----
 ## Address.java
 Address is unchanged from the previous example. It is a simple Java Bean style class with setters and getters.

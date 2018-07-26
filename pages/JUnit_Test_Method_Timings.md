@@ -4,14 +4,14 @@ title: JUnit_Test_Method_Timings
 [<--Back]({{site.pagesurl}}/Some_Example_Aspects)
 
 Some time ago I wanted to get a rough idea of which unit tests were taking the longest time to run so I could run those tests under a profiler and profile my code. We had tests that ran both in container and out of container so I decided to write all of the output to a log. The output looked like the following (I've rewritten the aspect for public consumption and applied it to an example I'm building for another class):
-```
+{% highlight terminal %}
         47, vehicle.validation.MultiplicityValidatorTest.oneToMany1
          0, vehicle.validation.MultiplicityValidatorTest.oneToMany3
          0, vehicle.domain.PhoneTest.failureInvalidStation
         15, vehicle.domain.PhoneTest.failureInvalidExtension
       1172, vehicle.integration.IVehicleDaoTest.createVehicle
          0, vehicle.integration.IVehicleDaoTest.createDuplicateVehicle
-```
+{% endhighlight %}
 
 The first column is 10 digits wide and is the number of milliseconds to run the **test** method. It does NOT include the time to run setUp() and tearDown() (or their equivalent [@Before]({{site.pagesurl}}/JUnit_4.xBefore) and [@After]({{site.pagesurl}}/JUnit_4.xAtAfter) methods.)
 
@@ -35,7 +35,7 @@ If you do not use a src directory and just store your projects at the top level,
 ----
 [#TestMethodTimingAspect]({{site.pagesurl}}/#TestMethodTimingAspect)
 ## TestMethodTimingAspect.java
-```java
+{% highlight java %}
 01: package test.timingaspect;
 02: 
 03: import java.io.FileOutputStream;
@@ -102,7 +102,7 @@ If you do not use a src directory and just store your projects at the top level,
 64:         }
 65:     }
 66: }
-```
+{% endhighlight %}
 ### Interesting Lines
 ^
 |--|--|
@@ -126,7 +126,7 @@ If you do not use a src directory and just store your projects at the top level,
 ----
 [#aop]({{site.pagesurl}}/#aop)
 ## aop.xml
-```
+{% highlight terminal %}
 01: <aspectj>
 02: 	<aspects>
 03: 		<aspect name="test.timingaspect.TestMethodTimingAspect"/>
@@ -135,7 +135,7 @@ If you do not use a src directory and just store your projects at the top level,
 06: 		<include within="vehicle..*"/>
 07: 	</weaver>
 08: </aspectj>
-```
+{% endhighlight %}
 ### Interesting Lines
 
 |--|--|

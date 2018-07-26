@@ -5,7 +5,7 @@ We now need to create the Persistent Unit definition. Create a file called persi
 
 [#persistence_xml]({{site.pagesurl}}/#persistence_xml)
 ### persistence.xml
-```xml
+{% highlight xml %}
 <persistence>
     <persistence-unit name="examplePersistenceUnit" 
                       transaction-type="RESOURCE_LOCAL">
@@ -25,7 +25,7 @@ We now need to create the Persistent Unit definition. Create a file called persi
         </properties>
     </persistence-unit>
 </persistence>
-```
+{% endhighlight %}
 ### The Steps
 # Expand your project (**JpaTutorial1**)
 # Select the **src/META-INF** directory
@@ -38,7 +38,7 @@ We now need to create the Persistent Unit definition. Create a file called persi
 # Right-click on **entity** and select **new:Class**
 # Enter **PersonTest** and click **Finish**
 # Enter the example code below:
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.EntityManager;
@@ -75,11 +75,11 @@ public class PersonTest {
     public void emptyTest() {
     }
 }
-```
+{% endhighlight %}
 
 # When you're finished and it all compiles, right-click within the source pane, select **Run As:JUnit Test**
 # You should see all green
 # If you do not, comment out the following line and review the console output
-```java
+{% highlight java %}
         Logger.getLogger("org").setLevel(Level.ERROR);
-```
+{% endhighlight %}

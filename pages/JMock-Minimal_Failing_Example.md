@@ -3,7 +3,7 @@ title: JMock-Minimal_Failing_Example
 ---
 [<--Back]({{site.pagesurl}}/TDD_Example_Catalog)
 
-```java
+{% highlight java %}
 @Test
 public void aTestThatAlwaysFails() {
     context.checking(new Expectations() {
@@ -12,7 +12,7 @@ public void aTestThatAlwaysFails() {
     });
     testDoubleDie.roll();
 }
-```
+{% endhighlight %}
 
 Why does this fail? Assuming two things:
 * This test class is annotated with @RunWith(JMock.class)

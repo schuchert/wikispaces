@@ -11,7 +11,7 @@ First, we introduce an interface, ITrackedObject, to Address. The implementation
 ----
 ## Main.java
 This is the driver class that starts everything. Looking at this code, it does not seem to do too much...and it doesn't. 
-```java
+{% highlight java %}
 01: package ex3;
 02: 
 03: public class Main {
@@ -25,7 +25,7 @@ This is the driver class that starts everything. Looking at this code, it does n
 11: 		Dao.save(a);
 12: 	}
 13: }
-```
+{% endhighlight %}
 
 ### Interesting Lines
 There are no interesting lines here. Something to point out about this example is the significant change that happens without making changes to existing Java classes.
@@ -35,7 +35,7 @@ There are no interesting lines here. Something to point out about this example i
 [#Dao]({{site.pagesurl}}/#Dao)
 ## Dao.java
 This Dao is simulated. The point of this example is that we can intercept calls to some thing, a DAO in this case, and change the path of execution based on any condition. This class is unaware of any introductions. 
-```java
+{% highlight java %}
 01: package ex3;
 02: 
 03: public class Dao {
@@ -45,14 +45,14 @@ This Dao is simulated. The point of this example is that we can intercept calls 
 07: 		}
 08: 	}
 09: }
-```
+{% endhighlight %}
 ### Interesting Lines
 Again, there are no interesting lines. The client, Main.main(), did not change. The Dao.save() method also did not change. However, we are tracking whether or not objects changed and not calling Dao.save() if the object is not changed.
 
 ----
 ## Address.java
 The thing to notice is that it is unaware of whether it is changed or not. This is a simple java bean style class with attributes, setters and getters and a no-argument constructor (in this case a default constructor). 
-```java
+{% highlight java %}
 01: package ex4;
 02: 
 03: import java.io.Serializable;
@@ -105,14 +105,14 @@ The thing to notice is that it is unaware of whether it is changed or not. This 
 50: 		this.zip = zip;
 51: 	}
 54: }
-```
+{% endhighlight %}
 ### Interesting Lines
 Again, doesn't really apply. However, it *is* interesting that we know whether or not this object has changed even though looking at the class it's hard to see how.
 
 ----
 [#InnerTypeAspect]({{site.pagesurl}}/#InnerTypeAspect)
 ## InnerTypeAspect.java
-```java
+{% highlight java %}
 01: package ex4;
 02: 
 03: import org.aspectj.lang.annotation.Aspect;
@@ -123,7 +123,7 @@ Again, doesn't really apply. However, it *is* interesting that we know whether o
 08:     @DeclareParents(value = "ex4.Address", defaultImpl = ex4.TrackedObjectMixin.class)
 09:     ITrackedObject trackedObject;
 10: }
-```
+{% endhighlight %}
 ### Interesting Lines
 ^
 |-|-|
@@ -135,14 +135,14 @@ Again, doesn't really apply. However, it *is* interesting that we know whether o
 [#ItrackedObject]({{site.pagesurl}}/#ItrackedObject)
 ## ITrackedObject.java
 This is simply an interface that has the methods for a Java-bean style boolean interface.
-```java
+{% highlight java %}
 01: package ex4;
 02: 
 03: public interface ITrackedObject {
 04:    boolean isChanged();
 05:    void setChanged(boolean changed);
 06: }
-```
+{% endhighlight %}
 
 ### InterestingLines
 There are really no interesting lines, just the definition of an interface.
@@ -151,7 +151,7 @@ There are really no interesting lines, just the definition of an interface.
 [#TrackedObjectMixin]({{site.pagesurl}}/#TrackedObjectMixin)
 ## TrackedObjectMixin.java
 This is an implementation of ITrackedObject. Our goal is to augment Address with this interface/implementation without Address' knowledge. Furthermore, we want to augment Dao.save(..) to not save unnecessarily; we do this without its knowledge as well.
-```java
+{% highlight java %}
 01: package ex4;
 02: 
 03: public class TrackedObjectMixin implements ITrackedObject {
@@ -168,11 +168,11 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 14:       this.changed = changed;
 15:    }
 16: }
-```
+{% endhighlight %}
 ----
 [#FieldSetAspect]({{site.pagesurl}}/#FieldSetAspect)
 ## FieldSetAspect.java
-```java
+{% highlight java %}
 01: package ex4;
 02: 
 03: import java.lang.reflect.Field;
@@ -224,7 +224,7 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 49:         return lhs.equals(rhs);
 50:     }
 51: }
-```
+{% endhighlight %}
 
 ### Interesting Lines
 ^
@@ -243,7 +243,7 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 [#SaveMethodAspect]({{site.pagesurl}}/#SaveMethodAspect)
 ## SaveMethodAspect.java
 The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks to see if the object passed into Dao.save(..) is or is not changed. If it is not changed, the call to Dao.save(..) never happens. Before completing, the changed state is set to false since either it was already false or it was true but then saved. As with the FieldSetAspect, SaveMethodAspect is using behavior that has been introduced. Specifically, it uses isChanged() and setChanged(). 
-```java
+{% highlight java %}
 01: package ex4;
 02: 
 03: import org.aspectj.lang.ProceedingJoinPoint;
@@ -276,7 +276,7 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 30:         }
 31:     }
 32: }
-```
+{% endhighlight %}
 ### Interesting Lines
 ^
 |-|-|
@@ -291,7 +291,7 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 
 [#aop]({{site.pagesurl}}/#aop)
 ## aop.xml
-```
+{% highlight terminal %}
 01: <aspectj>
 02: 	<aspects>
 03: 		<aspect name="ex4.FieldSetAspect"/>
@@ -302,7 +302,7 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 08: 		<include within="ex4.*"/>
 09: 	</weaver>
 10: </aspectj>
-```
+{% endhighlight %}
 ### Interesting Lines
 ^
 |-|-|

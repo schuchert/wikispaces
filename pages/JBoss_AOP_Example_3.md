@@ -9,7 +9,7 @@ Source files are here: [[file:JBossAOPExample3src.zip]]. If you need instruction
 Have a look at the following Java files and, as before, predict the output.
 ----
 ## Main.java
-```java
+{% highlight java %}
 package ex3;
 
 public class Main {
@@ -23,10 +23,10 @@ public class Main {
 		Dao.save(a);
 	}
 }
-```
+{% endhighlight %}
 ----
 ## Dao.java
-```java
+{% highlight java %}
 package ex3;
 
 public class Dao {
@@ -36,7 +36,7 @@ public class Dao {
 		}
 	}
 }
-```
+{% endhighlight %}
 ----
 ## Address.java
 Address is unchanged from the previous example. It is a simple Java Bean style class with setters and getters.

@@ -23,7 +23,7 @@ I did not show you three things:
 
 ----
 ### MethodInterceptor.java
-```java
+{% highlight java %}
 01: package com.valtech.methodexecution; 
 02: 
 03: import org.jboss.aop.joinpoint.Invocation; 
@@ -47,7 +47,7 @@ I did not show you three things:
 21:       } 
 22:    } 
 23: } 
-```
+{% endhighlight %}
 Calls to the MethodInterceptor.invoke() method are placed into target classes based on the jboss-aop.xml file. In this case, all we do is get the name of the method, print it, call the target method, and then print again.
 
 |Lines|Description|
@@ -55,7 +55,7 @@ Calls to the MethodInterceptor.invoke() method are placed into target classes ba
 |12|Note the signature returns Object. If the underlying method has a void return or if it returns a primitive, you still use Object. The details are taken care of for you.|
 
 ### jboss-aop.xml
-```xml
+{% highlight xml %}
 01: <aop> 
 02:    <pointcut name="MethodExecution" 
 03:      expr="execution(public * *.MethodExecutionExample->*(..))"/> 
@@ -65,7 +65,7 @@ Calls to the MethodInterceptor.invoke() method are placed into target classes ba
 07:         class="com.valtech.methodexecution.MethodInterceptor"/> 
 08:    </bind> 
 09: </aop> 
-```
+{% endhighlight %}
 
 |Lines|Description|
 |2 – 3|Define a pointcut, a selection of joinpoints. This creates a name, MethodExecution, which matches the execution of all public methods on MethodExecutionExample named anything (->*) taking any parameters (..). Defining a pointcut itself does not make anything happen. Next we associate the pointcut with an interceptor.|

@@ -21,7 +21,7 @@ This is my plan for my talk at the Austin Java User's Group on February 28 2012.
 * Discuss the implications with respect to the amount of discipline required to not make a mess as it relates to different kinds of mocking tools
 ## Part 1
 * Review some code ([original available on github]({{ site.pagesurl}}/@https://github.com/schuchert/welc_examples_java_jmockit) )
-```java
+{% highlight java %}
 package com.schuchert.welc;
 
 import java.io.BufferedReader;
@@ -154,7 +154,7 @@ public class CurrencyConversion {
       }
    }
 }
-```
+{% endhighlight %}
 * Review this code, what is worth changing?
 ** Static methods
 ** Embedded news

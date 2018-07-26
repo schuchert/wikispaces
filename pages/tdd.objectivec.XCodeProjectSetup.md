@@ -56,17 +56,17 @@ Now you'll add a simple fixture with a failing test, then get the test to pass.
 
 ## Create a Failing Test
 * Update ANewlyCreatedRpnCalculator.h to resemble:
-```c
+{% highlight c %}
 # import <SenTestingKit/SenTestingKit.h>
 
 @interface ANewlyCreatedRpnCalculatorShould : SenTestCase {
 }
 
 @end
-```
+{% endhighlight %}
 
 * Update ANewlyCreatedRpnCalculator.m to resemble:
-```c
+{% highlight c %}
 # import "ANewlyCreatedRpnCalculatorShould.h"
 
 @implementation ANewlyCreatedRpnCalculatorShould
@@ -76,7 +76,7 @@ Now you'll add a simple fixture with a failing test, then get the test to pass.
 }
 
 @end
-```
+{% endhighlight %}
 
 ## Build to run the test
 Let's assume the for building you'll want to run the tests every time.
@@ -88,13 +88,13 @@ Let's assume the for building you'll want to run the tests every time.
 
 ## Get the test to pass
 * Update the assertion line in ANewlyCreatedCalculatorShould from:
-```c
+{% highlight c %}
 	STAssertTrue(0, @"");
-```
+{% endhighlight %}
 To:
-```c
+{% highlight c %}
 	STAssertTrue(1, @"");
-```
+{% endhighlight %}
 * Save and re-build.
 * All tests should be passing:
 ![](images/BuildResultsPassing.jpg)
@@ -102,7 +102,7 @@ To:
 ## Really Getting it all Tied Together
 Now it's time to get the RpnCalculator framework linked into the test target. 
 * Update the unit test (in ANewlyCreatedCalculatorShould.m):
-```c
+{% highlight c %}
 # import "ANewlyCreatedRpnCalculatorShould.h"
 # import "RpnCalculator.h"
 
@@ -115,7 +115,7 @@ Now it's time to get the RpnCalculator framework linked into the test target.
 }
 
 @end
-```
+{% endhighlight %}
 
 This example imports a type that does not yet exist. So add it:
 * Create a new file:// **File:New**// or// **Command-N**//
@@ -125,7 +125,7 @@ This example imports a type that does not yet exist. So add it:
 * Under the// **Targets**// section, select// **RpnCalculator**// and de-select// **UnitTests**//
 * Click// **Finish**//
 * Edit// **RpnCalculator.h**//:
-```c
+{% highlight c %}
 # import <Cocoa/Cocoa.h>
 
 @interface RpnCalculator : NSObject {
@@ -135,9 +135,9 @@ This example imports a type that does not yet exist. So add it:
 @property (readonly) int accumulator;
 
 @end
-```
+{% endhighlight %}
 * Edit// **RpnCalculator.m**//:
-```c
+{% highlight c %}
 # import "RpnCalculator.h"
 
 @implementation RpnCalculator
@@ -145,7 +145,7 @@ This example imports a type that does not yet exist. So add it:
 @synthesize accumulator;
 
 @end
-```
+{% endhighlight %}
 
 If you build now, you will get a linking error. Try it:
 ![](images/BuildFailedWithLinkingError.jpg)

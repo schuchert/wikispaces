@@ -9,7 +9,7 @@ Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If
 ----
 
 ## Main.java
-```java
+{% highlight java %}
 01: package annotation;
 02: 
 03: public class Main {
@@ -21,7 +21,7 @@ Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If
 09:         Dao.save(a);
 10:     }
 11: }
-```
+{% endhighlight %}
 ### Interesting Lines
 There are arguably no interesting lines in this class. All of the work is done via aspects and annotations.
 ^
@@ -32,7 +32,7 @@ There are arguably no interesting lines in this class. All of the work is done v
 ----
 
 ## Dao.java
-```java
+{% highlight java %}
 01: package annotation;
 02: 
 03: public class Dao {
@@ -42,14 +42,14 @@ There are arguably no interesting lines in this class. All of the work is done v
 07:         }
 08:     }
 09: }
-```
+{% endhighlight %}
 ### Interesting Lines
 This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#Dao).
 
 ----
 
 ## Address.java
-```java
+{% highlight java %}
 01: package annotation;
 02: 
 03: import java.io.Serializable;
@@ -117,7 +117,7 @@ This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#
 65:         this.zip = zip;
 66:     }
 67: }
-```
+{% endhighlight %}
 ### Interesting Lines
 There are 4 changes to this class.
 * We've added a new attribute, ignoredField.
@@ -132,7 +132,7 @@ There are 4 changes to this class.
 ----
 
 ## IgnoreField.java
-```java
+{% highlight java %}
 01: package annotation;
 02: 
 03: import java.lang.annotation.ElementType;
@@ -149,7 +149,7 @@ There are 4 changes to this class.
 14: public @interface IgnoreField {
 15:     String value() default "";
 16: }
-```
+{% endhighlight %}
 ### Interesting Lines
 We create a new kind of annotation. This annotation by itself only allows adding information to some element type. In this case, it is a field. This does not actively do anything. However, this annotation and a chagne to the SetFieldAspect combine to cause fields with this annotation to be ignored.
 
@@ -163,7 +163,7 @@ We create a new kind of annotation. This annotation by itself only allows adding
 ----
 
 ## FieldSetAspect.java
-```java
+{% highlight java %}
 01: package annotation;
 02: 
 03: import java.lang.reflect.Field;
@@ -218,7 +218,7 @@ We create a new kind of annotation. This annotation by itself only allows adding
 52:         return lhs.equals(rhs);
 53:     }
 54: }
-```
+{% endhighlight %}
 ### Interesting Lines
 The key change to this class is on line 17 where we ignore fields with the annotation IgnoreField. Otherwise this aspect is mostly unchanged from previous examples. (In fact, this verion of the aspect includes changes for the [CFlow]({{site.pagesurl}}/AspectJ_CFlow) exmample on lines 21 - 23.
 
@@ -233,7 +233,7 @@ The key change to this class is on line 17 where we ignore fields with the annot
 ----
 
 ## SaveMethodAspect.java
-```java
+{% highlight java %}
 01: package annotation;
 02: 
 03: import org.aspectj.lang.ProceedingJoinPoint;
@@ -264,13 +264,13 @@ The key change to this class is on line 17 where we ignore fields with the annot
 28:         }
 29:     }
 30: }
-```
+{% endhighlight %}
 This Aspect is unchanged from [Example 4]({{ site.pagesurl}}/AspectJ_Example_4). For details, see [Example 4 SaveMethodAspect]({{ site.pagesurl}}/AspectJEX4Explained#SaveMethodAspect).
 
 ----
 
 ## InnerTypeAspect.java
-```java
+{% highlight java %}
 01: package annotation;
 02: 
 03: import org.aspectj.lang.annotation.Aspect;
@@ -281,13 +281,13 @@ This Aspect is unchanged from [Example 4]({{ site.pagesurl}}/AspectJ_Example_4).
 08:     @DeclareParents(value = "annotation.Address", defaultImpl = annotation.TrackedObjectMixin.class)
 09:     ITrackedObject trackedObject;
 10: }
-```
+{% endhighlight %}
 This Aspect is unchanged from [Example 4 InnerTypeAspect]({{ site.pagesurl}}/AspectJEX4Explained#InnerTypeAspect).
 
 ----
 
 ## ITrackedObject.java
-```java
+{% highlight java %}
 01: package annotation;
 02: 
 03: public interface ITrackedObject {
@@ -295,13 +295,13 @@ This Aspect is unchanged from [Example 4 InnerTypeAspect]({{ site.pagesurl}}/Asp
 05: 
 06:     void setChanged(boolean changed);
 07: }
-```
+{% endhighlight %}
 
 This interface is unchanged from [Example 4 ITrackedObject]({{ site.pagesurl}}/AspectJEX4Explained#ITrackedObject).
 
 ----
 ## TrackedObjectMixin.java
-```java
+{% highlight java %}
 01: package annotation;
 02: 
 03: public class TrackedObjectMixin implements ITrackedObject {
@@ -318,11 +318,11 @@ This interface is unchanged from [Example 4 ITrackedObject]({{ site.pagesurl}}/A
 14:         this.changed = changed;
 15:     }
 16: }
-```
+{% endhighlight %}
 This interface is unchanged from [Example 4 TrackedObjectMixin]({{ site.pagesurl}}/AspectJEX4Explained#TrackedObjectMixin).
 ----
 ## aop.xml
-```
+{% highlight terminal %}
 01: <aspectj>
 02: 	<aspects>
 03: 		<aspect name="annotation.FieldSetAspect"/>
@@ -333,7 +333,7 @@ This interface is unchanged from [Example 4 TrackedObjectMixin]({{ site.pagesurl
 08: 		<include within="annotation.*"/>
 09: 	</weaver>
 10: </aspectj>
-```
+{% endhighlight %}
 This file is unchanged from [Example 4 aop.xml]({{ site.pagesurl}}/AspectJEX4Explained#aop).
 
 [<--Back]({{ site.pagesurl}}/AspectJ_Annotation_One_Solution) [Next-->]({{ site.pagesurl}}/AspectJ_Annotation_Apply)

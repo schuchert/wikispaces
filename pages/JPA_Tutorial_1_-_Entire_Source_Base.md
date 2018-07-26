@@ -2,7 +2,7 @@
 title: JPA_Tutorial_1_-_Entire_Source_Base
 ---
 **Address.java**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Embeddable;
@@ -67,10 +67,10 @@ public class Address {
         this.zip = zip;
     }
 }
-```
+{% endhighlight %}
 
 **Person.java**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.Embedded;
@@ -168,10 +168,10 @@ public class Person {
                 * getMiddleInitial();
     }
 }
-```
+{% endhighlight %}
 
 **Company.java**
-```java
+{% highlight java %}
 package entity;
 
 import java.util.ArrayList;
@@ -258,10 +258,10 @@ public class Company {
         p.setJob(null);
     }
 }
-```
+{% endhighlight %}
 
 **TestBase.java**
-```java
+{% highlight java %}
 package entity;
 
 import javax.persistence.EntityManager;
@@ -296,10 +296,10 @@ public class TestBase {
         em.close();
     }
 }
-```
+{% endhighlight %}
 
 **CompanyTest.java**
-```java
+{% highlight java %}
 package entity;
 
 import static org.junit.Assert.assertEquals;
@@ -386,10 +386,10 @@ public class CompanyTest extends TestBase {
         assertEquals(0, foundCompany.getEmployees().size());
     }
 }
-```
+{% endhighlight %}
 
 **PersonTest.java**
-```java
+{% highlight java %}
 package entity;
 
 import static org.junit.Assert.assertEquals;
@@ -442,4 +442,4 @@ public class PersonTest extends TestBase {
         }
     }
 }
-```
+{% endhighlight %}

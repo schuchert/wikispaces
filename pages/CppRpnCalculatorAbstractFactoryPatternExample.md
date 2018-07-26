@@ -8,7 +8,7 @@ This section has an example of an abstract factory and two concrete implementati
 
 Here's the abstract factory class:
 **MathOperatorFactory.h**
-```cpp
+{% highlight cpp %}
 # ifndef MATHOPERATORFACTORY_H
 # define MATHOPERATORFACTORY_H
 
@@ -25,10 +25,10 @@ public:
 };
 
 # endif
-```
+{% endhighlight %}
 
 **MathoOperatorFactory.cpp**
-```cpp
+{% highlight cpp %}
 
 # include "MathOperatorFactory.h"
 
@@ -39,11 +39,11 @@ MathOperatorFactory::MathOperatorFactory(void)
 MathOperatorFactory::~MathOperatorFactory(void)
 {
 }
-```
+{% endhighlight %}
 
 Here's a basic factory that provides MathOperators using conditional and static variables within a method:
 **IfBasedMathOperatorFactory.cpp**
-```cpp
+{% highlight cpp %}
 # include "IfBasedMathOperatorFactory.h"
 # include "Plus.h"
 # include "Minus.h"
@@ -77,11 +77,11 @@ MathOperator &IfBasedMathOperatorFactory::getOperatorNamed(const std::string &op
    if("/" == operatorName)
       return divide;
 }
-```
+{% endhighlight %}
 
 And here's one that uses words like "plus" and "factorial" instead of "+" and "!":
 **FullyNamedMathOperatorFactory**
-```cpp
+{% highlight cpp %}
 # include "FullyNamedMathOperatorFactory.h"
 
 # include "Plus.h"
@@ -108,5 +108,5 @@ MathOperator &FullyNamedMathOperatorFactory::getOperatorNamed(const std::string 
    return  *mathOperator;
 }
 
-```
+{% endhighlight %}
 [<--Back]({{ site.pagesurl}}/RpnCalculatorCppExampleImplementation)

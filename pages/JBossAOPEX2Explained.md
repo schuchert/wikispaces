@@ -5,10 +5,10 @@ title: JBossAOPEX2Explained
 
 # Example 2 Explained
 Accessing a field in Java is a joinpoint exposed by the JBoss AOP joinpoint model. This is different from method execution in that captures things like the following: 
-```
+{% highlight terminal %}
    this.aString = "value";              // Writing to a field called aString
    int tempValue = 3 * this.myIntValue; // Reading from a field called myIntValue
-```
+{% endhighlight %}
 Notice in both of these examples, we are somehow accessing an instance field of a class.
 
 This example examines all changes to fields on the Address object. When an attempt is made to set a field of a class, the interceptor gets the current field value and then displays the current value and the value on the right hand side of assignment.
@@ -22,7 +22,7 @@ To make this example work, we need two additional things:
 * jboss-aop.xml
 
 ## SetInterceptor.java
-```java
+{% highlight java %}
 01: package ex2;
 02: 
 03: import java.lang.reflect.Field;
@@ -51,7 +51,7 @@ To make this example work, we need two additional things:
 26: 		return invocation.invokeNext();
 27: 	}
 28: }
-```
+{% endhighlight %}
 ### Interesting Lines
 
 |Line|Description|
@@ -61,7 +61,7 @@ To make this example work, we need two additional things:
 |20 - 22|Get the current value of the field.|
 
 ## jboss-aop.xml
-```xml
+{% highlight xml %}
 01: <aop>
 02:    <pointcut name="PrivateAttributes" expr="set(private java.lang.String *.Address->*)"/>
 03:    
@@ -70,7 +70,7 @@ To make this example work, we need two additional things:
 06:    </bind>
 07:    
 08: </aop>
-```
+{% endhighlight %}
 
 ### Interesting Lines
 

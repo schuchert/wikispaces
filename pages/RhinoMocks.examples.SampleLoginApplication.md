@@ -2,7 +2,7 @@
 title: RhinoMocks.examples.SampleLoginApplication
 ---
 **LoginServiceTest**
-```csharp
+{% highlight csharp %}
 using NUnit.Framework;
 using Rhino.Mocks;
 using Rhino.Mocks.Interfaces;
@@ -61,10 +61,10 @@ namespace s_04_using_mock_library
     }
   }
 }
-```
+{% endhighlight %}
 
 **IAccount**
-```csharp
+{% highlight csharp %}
 namespace s_04_using_mock_library
 {
   public interface IAccount
@@ -72,10 +72,10 @@ namespace s_04_using_mock_library
     bool LoggedIn { get; set; }
   }
 }
-```
+{% endhighlight %}
 
 **IAccountProvider**
-```csharp
+{% highlight csharp %}
 namespace s_04_using_mock_library
 {
   public interface IAccountProvider
@@ -83,10 +83,10 @@ namespace s_04_using_mock_library
     IAccount GetAccount(string accountName);
   }
 }
-```
+{% endhighlight %}
 
 **LoginService**
-```csharp
+{% highlight csharp %}
 namespace s_04_using_mock_library
 {
   public class LoginService
@@ -105,5 +105,5 @@ namespace s_04_using_mock_library
     }
   }
 }
-```
+{% endhighlight %}
  

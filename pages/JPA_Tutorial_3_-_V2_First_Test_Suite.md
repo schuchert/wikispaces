@@ -44,7 +44,7 @@ Along the way, we make a lot of additions and changes. Based on the updated Libr
 To calculate fines, we needed to determine the number of days late a Patron returned a Book. Here are the tests for that class:
 
 **DateTimeUtilTest.java**
-```java
+{% highlight java %}
 package util;
 
 import static org.junit.Assert.assertEquals;
@@ -126,10 +126,10 @@ public class DateTimeUtilTest {
         return c.getTime();
     }
 }
-```
+{% endhighlight %}
 
 **DateTimeUtil**
-```java
+{% highlight java %}
 package util;
 
 import java.util.Calendar;
@@ -205,12 +205,12 @@ public class DateTimeUtil {
         return (int) (diff / MS_IN_Day);
     }
 }
-```
+{% endhighlight %}
 
 ### The Exceptions
 Here are the three new exception classes:
 **BookNotCheckedOut**
-```java
+{% highlight java %}
 package exception;
 
 /**
@@ -238,10 +238,10 @@ public class BookNotCheckedOut extends RuntimeException {
         return bookId;
     }
 }
-```
+{% endhighlight %}
 
 **InsufficientFunds.java**
-```java
+{% highlight java %}
 package exception;
 
 /**
@@ -250,10 +250,10 @@ package exception;
 public class InsufficientFunds extends RuntimeException {
     private static final long serialVersionUID = -735261730912439200L;
 }
-```
+{% endhighlight %}
 
 **PatronHasFines.java**
-```java
+{% highlight java %}
 package exception;
 
 /**
@@ -272,7 +272,7 @@ public class PatronHasFines extends RuntimeException {
         return totalFines;
     }
 }
-```
+{% endhighlight %}
 
 ### The Library Test
 Many of the original tests are different from the previous version. Additionally, there are many new tests. Here is the test. Once you get this in to your system, you might want to simply get all of the tests methods to compile and then get the tests to pass. 
@@ -282,7 +282,7 @@ Doing so is approaching formal TDD. It is different in a few important respects:
 * You are working on many tests at once rather than just one (or a **very** few) at a time
 
 Even so, this suite of test fully express the new set of requirements for version 2.
-```java
+{% highlight java %}
 package session;
 
 import static org.junit.Assert.assertEquals;
@@ -549,4 +549,4 @@ public class LibraryTest extends EntityManagerBasedTest {
                 "555-1212", a);
     }
 }
-```
+{% endhighlight %}

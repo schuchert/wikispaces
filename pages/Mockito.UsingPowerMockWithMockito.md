@@ -13,7 +13,7 @@ You can get a working copy of this code from my [spring_aop github repo](https:/
 This example works with PowerMock 1.5:
 
 //**Code from: pom.xml**//
-```xml
+{% highlight xml %}
 <dependency>
     <groupId>org.powermock</groupId>
     <artifactId>powermock-module-junit4</artifactId>
@@ -27,17 +27,17 @@ This example works with PowerMock 1.5:
     <version>1.5</version>
     <scope>test</scope>
 </dependency>
-```
+{% endhighlight %}
             
 And Mockito 1.9:
-```xml
+{% highlight xml %}
 <dependency>
     <groupId>org.mockito</groupId>
     <artifactId>mockito-all</artifactId>
     <version>1.9.0</version>
     <scope>test</scope>
 </dependency>
-```
+{% endhighlight %}
 
 # The Basics
 When you want to take control of something not controllable by Mockito, you need to identify the class where you want to take that control. For example, if you are taking control of a static method, you name the class that has the static method. //**However**//, if you want to change what new X returns,// **you name the class that has the call to new**//.
@@ -49,12 +49,12 @@ There are a few things you need to do according to the instructions and then one
 Each test class wanting to use PowerMock needs 2 annotations, with a third optional one for handling current shortcoming (as I see it) in PowerMock:
 //**Code from: MetricsRecorderTest**//
 
-```java
+{% highlight java %}
 @RunWith(PowerMockRunner.class)
 @PowerMockIgnore( {"javax.management.*"})
 @PrepareForTest({MetricsRecorder.class, SystemLoggerFactory.class})
 public class MetricsRecorderTest {
-```
+{% endhighlight %}
 
 |-|-|
 | Annotation | Description |
@@ -66,19 +66,19 @@ public class MetricsRecorderTest {
 Next, you need to actually replace the static method. I want to replace the return value of a static method to return a Mockito-created object. Here's the problem code that I want to control:
 
 //**Code taken from MetricsRecorder**//
-```java
+{% highlight java %}
 SystemLogger logger = SystemLoggerFactory.get(className);
 logger.info("start : %s-%s", methodName, correlationId.get());
-```
+{% endhighlight %}
 The first line calls a static method. I want to control what that returns. Since I am targeting a static method, the code being changed is in the class of the static method. This is important, because the only class that needs special instrumentation is the SystemLoggerFactory class. To actually control the return value:
 
 //**Code from: MetricsRecorderTest**//
-```java
+{% highlight java %}
 public void replaceLogger() {
   PowerMockito.mockStatic(SystemLoggerFactory.class);
   when(SystemLoggerFactory.get(anyString())).thenReturn(logger);
 }
-```
+{% endhighlight %}
 
 The first line informs PowerMock of your intention to actually change the class. The next line sets up the staticMethod get(...) to return logger, which is initialized using an @Mock annotation.
 
@@ -91,22 +91,22 @@ What happens when you want to change a use of new? In Java, new is a keyword tha
 Note, you do not directly call the constructor, Java matches the constructor based on the parameters and does the invocation for you. Every place that uses new X does this. That is important, because if you want to take control of new X, you have to tell PowerMock to instrument the// **class with the call to new**//, not the class you're swapping out:
 
 //**Code from: MetricsRecorderTest**//
-```java
+{% highlight java %}
 public void replaceCorrelationId() throws Exception {
   PowerMockito.whenNew(CorrelationId.class).withAnyArguments().thenReturn(id);
   when(id.get()).thenReturn("1.1");
 }
-```
+{% endhighlight %}
 This causes calls to new of the class CorrelationId, taking any arguments, to return a controlled value (id, which is Mockito-created object).
 
 ### Annotation to Enable Control
 //**Code from: MetricsRecorderTest**//
-```java
+{% highlight java %}
 @RunWith(PowerMockRunner.class)
 @PowerMockIgnore( {"javax.management.*"})
 @PrepareForTest({MetricsRecorder.class, SystemLoggerFactory.class})
 public class MetricsRecorderTest {
-```
+{% endhighlight %}
 
 In this case, the test calls the class MetricsRecorder, which calls new CorrelationId(), so MetricsRecorder is the class added to the @PrepareForTest annotation.
 
@@ -127,7 +127,7 @@ However, PowerMock seems to be a fine solution and if you prefer more integrated
 
 # The Complete Source
 ## The Test File
-```java
+{% highlight java %}
 package shoe.example.metrics;
 
 import org.junit.Before;
@@ -189,10 +189,10 @@ public class MetricsRecorderTest {
     verify(logger, times(1)).info(anyString(), anyObject(), anyObject(), anyObject(), anyObject());
   }
 }
-```
+{% endhighlight %}
 
 ## The Production Code
-```java
+{% highlight java %}
 package shoe.example.metrics;
 
 import com.yammer.metrics.Metrics;
@@ -273,5 +273,5 @@ public class MetricsRecorder {
     return String.format("%s.%s.%s", app, hostName(), port);
   }
 }
-```
+{% endhighlight %}
 

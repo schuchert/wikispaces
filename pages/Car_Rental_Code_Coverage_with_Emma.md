@@ -36,7 +36,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 * Here's the file so we can discuss it and configure it for your situation:
 [#emma]({{site.pagesurl}}/#emma)
 ## emma.xml
-```
+{% highlight terminal %}
 01: <?xml version="1.0" encoding="UTF-8"?>
 02: <project name="emma_run" default="run">
 03: 
@@ -130,7 +130,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 91: 	</target>
 92: 
 93: </project>
-```
+{% endhighlight %}
 ### Interesting Lines
 N/A.
 

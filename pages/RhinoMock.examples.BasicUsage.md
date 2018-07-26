@@ -1,7 +1,7 @@
 ---
 title: RhinoMock.examples.BasicUsage
 ---
-```csharp
+{% highlight csharp %}
 using System;
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -89,5 +89,5 @@ namespace s_04_using_mock_library
     ExampleObjectWithValues Baz(String key);
   }
 }
-```
+{% endhighlight %}
  

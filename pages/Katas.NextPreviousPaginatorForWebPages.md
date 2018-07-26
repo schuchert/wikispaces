@@ -4,9 +4,9 @@ title: Katas.NextPreviousPaginatorForWebPages
 On July 24th I attended the [Barcamp at the OkC Coco](http://openbeta.extendedbeta.com/barcamp.html). I met several people from [ninecollective](http://ninecollective.com/) (great logo). We merged their idea of a C# dojo and mine of a TDD clinic and decided to do a Dojo. [Ryan Rauk (twitter: @rahur)](http://twitter.com/rauhr) recommended we create a simple paginator for scrolling through a large list of items.
 
 Here's an example: Imagine you have 1000 items to list, 10 items per page. If you are on the 20th page, you should see links like the following for next and previous:
-```
+{% highlight terminal %}
 < 18 19 20 21 22 >
-```
+{% endhighlight %}
 
 So the inputs are the total number of items, number of items per page and the current page number. That's what we started with. It turns out there's a lot to this problem, but this should be enough to get you started. I'll be working on this a bit, because several interesting ideas arrise:
 * What are the inputs/outputs

@@ -11,7 +11,7 @@ In Eclipse, I can right-click on a Java class and use Run As:JUnit Test in one o
 * If I happen to be selecting a package I can do the same
 
 Since few IDE's are JUnit 4 aware, JUnit 4 offers a class for backwards compatibility. It is JUnit4TestAdapter. Simply adding the method shown below, lines 38 - 40, will provide backwards-compatibility with Eclipse 2.x and 3.x:
-```
+{% highlight terminal %}
 04: import junit.framework.JUnit4TestAdapter;
 13: 
 14: public class TestVehicle {
@@ -24,7 +24,7 @@ Since few IDE's are JUnit 4 aware, JUnit 4 offers a class for backwards compatib
 38:     public static junit.framework.Test suite() {
 39:         return new JUnit4TestAdapter(TestVehicle.class);
 40:     }
-```
+{% endhighlight %}
 ## Interesting Lines
 ^
 |-|-|

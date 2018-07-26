@@ -29,12 +29,12 @@ Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on 
 [#firstDecisionTable]({{site.pagesurl}}/#firstDecisionTable)
 Here is an example [FitNesse](http://fitnesse.org/) decision table:
 
-```
+{% highlight terminal %}
 |Add Programs To Schedule                                                     |
 |name      |episode                      |channel|date     |start time|minutes|
 |House M.D.|House Makes Wilson Mad       |7      |5/12/2008|7:00      |60     |
 |Doctor Who|The One where He Saves the UK|12     |5/17/2008|8:00      |60     |
-```
+{% endhighlight %}
 
 The first row names the fixture. In this case, [FitNesse](http://fitnesse.org/) will look for a class called AddProgramsToSchedule. The second row lists the column names. [FitNesse](http://fitnesse.org/) will look for the following methods in AddProgramsToSchedule:
 * setName(...)
@@ -54,9 +54,9 @@ Here are some preliminary steps to get this table created (there will be more la
 * Browse to <http://localhost:8080>.
 * Edit this page (click the **Edit** button - or, if not available, go to the following URL: <http://localhost:8080/FrontPage?edit>), add the following before the Release date line at the bottom (the location is arbitrary):
 
-```
+{% highlight terminal %}
 >DecisionTableExample
-```
+{% endhighlight %}
 
 * Save your changes (click the **Save** button)
 * Click on the linked question mark, which will take you to: <http://localhost:8080/FrontPage.DecisionTableExample?edit&nonExistent=true>
@@ -83,7 +83,7 @@ For full details on these steps, you can review the material [here if you're pla
 
 Here is one such fixture (in Java) that will get this test to "pass". Since there are no assertions, this really isn't a very good test yet, but it does make it easier to get it all green.
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 public class AddProgramsToSchedule {
@@ -105,32 +105,32 @@ public class AddProgramsToSchedule {
    public void setMinutes(int minutes) {
    }
 }
-```
+{% endhighlight %}
 
 There are still a few things you need to do to make the page use this class:
 
 * Inform [FitNesse](http://fitnesse.org/) you want to use Slim versus fit:
 
-```
+{% highlight terminal %}
 !define TEST_SYSTEM {slim}
-```
+{% endhighlight %}
 
 * Inform [FitNesse](http://fitnesse.org/) where to look for your class files (update this directory as appropriate):
 
-```
+{% highlight terminal %}
 !path /Users/schuchert/src/fitnesse-tutorials/DVR/bin
-```
+{% endhighlight %}
 
 * Inform [FitNesse](http://fitnesse.org/) the package/namespace in which to look:
 
-```
+{% highlight terminal %}
 |import|
 |com.om.example.dvr.fixtures|
-```
+{% endhighlight %}
 
 Here's the updated page put all together(again, update the directory in the !path statement accordingly):
 
-```
+{% highlight terminal %}
 !define TEST_SYSTEM {slim}
 
 !path /Users/schuchert/src/fitnesse-tutorials/DVR/bin
@@ -142,13 +142,13 @@ Here's the updated page put all together(again, update the directory in the !pat
 |name      |episode                      |channel|date     |start time|minutes|
 |House M.D.|House Makes Wilson Mad       |7      |5/12/2008|7:00      |60     |
 |Doctor Who|The One where He Saves the UK|12     |5/17/2008|8:00      |60     |
-```
+{% endhighlight %}
 
 **Note**: You might need to add the following line as well (e.g., if you built from source):
 
-```
+{% highlight terminal %}
 !path fitnesse.jar
-```
+{% endhighlight %}
 
 Run the test and verify that the page passes successfully.
 
@@ -158,20 +158,20 @@ While you are at it, you have your original test page from the first tutorial. Y
 
 Right now, this table does not assert any results, which means the underlying fixture can do the same, which is not much. Let's extend this just a bit to have the table actually perform validation:
 
-```
+{% highlight terminal %}
 |Add Programs To Schedule                                                              |
 |name      |episode                      |channel|date     |start time|minutes|created?|
 |House M.D.|House Makes Wilson Mad       |7      |5/12/2008|7:00      |60     |true    |
 |Doctor Who|The One where He Saves the UK|12     |5/17/2008|8:00      |60     |true    |
-```
+{% endhighlight %}
 
 Try running this page and FitNesse will complain that it cannot find the **created[0]** method. The name is followed by the number of expected parameters, which is 0 in our case. Here is just such a method you can add to your "AddProgramsToSchedule" fixture:
 
-```java
+{% highlight java %}
    public boolean created() {
       return true;
    }
-```
+{% endhighlight %}
 
 Update your table and add the missing method. Verify that the test still passes. You'll notice there are three successful assertions.
 
@@ -181,9 +181,9 @@ Adding a column with a ? at the end of its name requires that the fixture have a
 # Make the Assertion have some Value
 There's nothing in the flow of this table that would cause a problem. However, what if we want to make sure adding a program on top of another is not possible? We can do that by adding one more row to the bottom of the table::
 
-```
+{% highlight terminal %}
 |Conflicts |Should not be added          |7      |5/12/2008|7:00      |30     |false   |
-```
+{% endhighlight %}
 
 This demonstrates a conflict because the third program is on the same channel, date, time as the first.
 
@@ -193,7 +193,7 @@ Run it, you should have one failed assertion. Your code will need some way to kn
 
 ## Update AddProgramsToSchedule.java
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.text.ParseException;
@@ -261,13 +261,13 @@ public class AddProgramsToSchedule {
       }
    }
 }
-```
+{% endhighlight %}
 
 ## Create new Class: TimeSlot.java
 
 Notice, this class is in a different package (com.om.example.dvr.domain).
 
-```java
+{% highlight java %}
 package com.om.example.dvr.domain;
 
 import java.util.Date;
@@ -290,7 +290,7 @@ public class TimeSlot {
       return false;
    }
 }
-```
+{% endhighlight %}
 
 Make these changes to your code and see that your tests now pass. Now your fixture is recording the time slots in use. The implementation of "TimeSlot.conflictsWith" may seem inadequate, but it is complete for what we are testing, so in fact is it fine.
 
@@ -302,7 +302,7 @@ To fix this, we can introduce a new class and perform some basic re-factoring:
 
 **Schedule.java**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.domain;
 
 import java.util.Date;
@@ -331,21 +331,21 @@ public class Schedule {
       return false;
    }
 }
-```
+{% endhighlight %}
 
 **ConflictingProgramException.java**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.domain;
 
 public class ConflictingProgramException extends RuntimeException {
    private static final long serialVersionUID = 1L;
 }
-```
+{% endhighlight %}
 
 **Updated: AddProgramsToSchedule.java**
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 import java.text.ParseException;
@@ -408,7 +408,7 @@ public class AddProgramsToSchedule {
       }
    }
 }
-```
+{% endhighlight %}
 
 This split makes more sense:
 * The determination of whether there is or is not a conflict is now in a class that is part of the production code.
@@ -427,13 +427,13 @@ When dealing with a language-provided collection, you should wrap it by default 
 # Deleting Something By Key
 We should be able to add a program, remove it and then add another at the same time slot. Here's just such a test and it uses something you might have noticed in the first tutorial:
 
-```
+{% highlight terminal %}
 |Add Programs To Schedule                                                                      |
 |name      |episode                      |channel|date     |start time|minutes|created?|lastId?|
 |House M.D.|House Makes Wilson Mad       |7      |5/12/2008|7:00      |60     |true    |$p=    |
 |Doctor Who|The One where He Saves the UK|12     |5/17/2008|8:00      |60     |true    |       |
 |Conflicts |Should not be added          |7      |5/12/2008|7:00      |30     |false   |       |
-```
+{% endhighlight %}
 
 This introduces another column, **lastId?**. The implementation, which is below, simply returns the last id stored in the method **created()**. The definition is simply: (<program name>:<channel>), e.g., the id's above are:
 * (House M.D.:7)
@@ -441,12 +441,12 @@ This introduces another column, **lastId?**. The implementation, which is below,
 
 Update your table with the new table above and try running this page and FitNesse will complain that it cannot find the **lastId[0]** method. The name is followed by the number of expected parameters, which is 0 in our case. Here is just such a method you can add to your "AddProgramsToSchedule" fixture:
 
-```java
+{% highlight java %}
 public String lastId() {
    return lastId;
 }
 
-```
+{% endhighlight %}
 Add the missing method. Verify that the test still passes. You'll notice there are three unsuccessful assertions for "lastId".
 
 
@@ -454,7 +454,7 @@ As for the third id, you'll see that in a minute. To get this to run, you'll nee
 
 ## Add: Program.java
 
-```java
+{% highlight java %}
 package com.om.example.dvr.domain;
 
 public class Program {
@@ -473,11 +473,11 @@ public class Program {
       return String.format("(%s:%d)", programName, timeSlot.channel);
    }
 }
-```
+{% endhighlight %}
 
 ## Update: Schedule.java
 
-```java
+{% highlight java %}
 package com.om.example.dvr.domain;
 
 import java.util.Date;
@@ -508,11 +508,11 @@ public class Schedule {
       return false;
    }
 }
-```
+{% endhighlight %}
 
 ## Update: AddProgramsToSchedule.java
 
-```java
+{% highlight java %}
 package com.om.example.DVR.fixture;
 
 import java.util.Calendar;
@@ -544,7 +544,7 @@ public class AddProgramsToSchedule {
    }
    // snip
 }
-```
+{% endhighlight %}
 
 Once you've made these updates, execute the table. You should notice three values in the "lastId?" column:
 * $p<-[(House M.D.:7)] - the variable p was assigned the value (House M.D.:7)
@@ -560,7 +560,7 @@ This variable is available for the rest of the page. However, before we get to t
 
 **AddProgramsToScheule.created**
 
-```java
+{% highlight java %}
    public boolean created() {
       try {
          Program p = schedule.addProgram(programName, episodeName, channel,
@@ -572,7 +572,7 @@ This variable is available for the rest of the page. However, before we get to t
       }
       return true;
    }
-```
+{% endhighlight %}
 
 Make the update and then you'll notice the third data row of the lastId? column is now n/a (in gray).
 
@@ -580,24 +580,24 @@ Make the update and then you'll notice the third data row of the lastId? column 
 
 Time to add another table and fixture:
 
-```
+{% highlight terminal %}
 |Remove Program By Id|$p|
 
 |Add Programs To Schedule                                                 |
 |name   |episode            |channel|date     |start time|minutes|created?|
 |Ok now |No longer conflicts|7      |5/12/2008|7:00      |30     |true    |
-```
+{% endhighlight %}
 
 Just add this to the bottom of your page. You'll have to create a new fixture. Here is that code:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 public class RemoveProgramById {
    public RemoveProgramById(String id) {
    }
 }
-```
+{% endhighlight %}
 
 This fixture does not do anything yet, but even so there are several things worthy of note:
 * You can provide parameters after the name of a fixture.
@@ -616,22 +616,22 @@ When you run your tests, do you notice a problem? The tests pass! Maybe you expe
 
 **Example: Added to AddProgramsToSchedule fixture**
 
-```java
+{% highlight java %}
    private static int numberCreated = 0;
 
    public AddProgramsToSchedule() {
       System.out.printf("Creating ProgramsToSchedule #%d\n", ++numberCreated);
    }
-```
+{% endhighlight %}
 
 Adding this and then executing the tests, [FitNesse](http://fitnesse.org/) will display a yellow triangle with the label "Output Captured". Clicking on that triangle, you'll see the output captured during test execution::
 
-```
+{% highlight terminal %}
 Standard Output:
 
 Creating ProgramsToSchedule #1
 Creating ProgramsToSchedule #2
-```
+{% endhighlight %}
 
 So what is the problem? The fixture holds the schedule. Each fixture has its own schedule. We need the schedule to be a single instance. You have several options:
 * Simply make Schedule static.
@@ -656,7 +656,7 @@ Leaving output in tests, unit or acceptance tests, is lazy. You can do better.
 
 Now that the test is failing, we need a way to get access to the schedule between fixtures. For now, adding a getSchedule() method on the AddProgramsToSchedule fixture is adequate:
 
-```java
+{% highlight java %}
 public class AddProgramsToSchedule {
    private static Schedule schedule = new Schedule();
 
@@ -666,11 +666,11 @@ public class AddProgramsToSchedule {
 
    // snip
 }
-```
+{% endhighlight %}
 
 Now that we have a single Schedule and access to it, we can simply update the constructor in RemoveProgramById to call the code:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 public class RemoveProgramById {
@@ -678,11 +678,11 @@ public class RemoveProgramById {
       AddProgramsToSchedule.getSchedule().removeProgramById(id);
    }
 }
-```
+{% endhighlight %}
 
 Of course, this requires we add a new method to Schedule:
 
-```java
+{% highlight java %}
 import java.util.Iterator;
 
    public void removeProgramById(String programIdToRemove) {
@@ -692,7 +692,7 @@ import java.util.Iterator;
             break;
          }
    }
-```
+{% endhighlight %}
 
 Run your tests and you should see all tests green.
 
@@ -700,15 +700,15 @@ Run your tests and you should see all tests green.
 
 If for some reason, you do not like to do the actual work done in the constructor, you can optionally write the table as follows:
 
-```
+{% highlight terminal %}
 |Remove Program By Id|
 |id                  |
 |$p                  |
-```
+{% endhighlight %}
 
 Then you'll need to update your RemoveProgramByIdFixture as follows:
 
-```java
+{% highlight java %}
 package com.om.example.dvr.fixtures;
 
 public class RemoveProgramById {
@@ -730,7 +730,7 @@ public class RemoveProgramById {
       AddProgramsToSchedule.getSchedule().removeProgramById(id);
    }
 }
-```
+{% endhighlight %}
 
 Note that this Fixture, as written, supports both styles. The real reason I wanted to include this last example was to demonstrate how you can cause a row of a decision table to be executed without include a column with a ? in its name. You add a method called **execute()**. [FitNesse](http://fitnesse.org/) will call that method, if it exists, after calling the last setter (the columns without ? in their name).
 

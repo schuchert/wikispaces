@@ -20,27 +20,27 @@ title: cpptraining.ConfiguringTheProjectForCppUTest
 ## Update main
 You won't notice any changes unless you use CppUTest.
 * CppUTest uses the main() to execute its tests. So update the file with main() (CppUTestHasItsSmoke.cpp):
-```cpp
+{% highlight cpp %}
 # include <CppUTest/CommandLineTestRunner.h>
 
 int main(int argc, char **argv) {
 	return CommandLineTestRunner::RunAllTests(argc, argv);
 }
-```
+{% endhighlight %}
 * You can run your program as a Local C++ Application again:
-```
+{% highlight terminal %}
 OK (0 tests, 0 ran, 0 checks, 0 ignored, 0 filtered out, 0 ms)
-```
+{% endhighlight %}
 
 ## Alternative main()
 If you'd like to see a list of tests and the time each takes to run, you can either:
 * Provide command-line arguments when you run the program in Eclipse
 * Use an updated main to make it happen every time:
-```cpp
+{% highlight cpp %}
 # include <CppUTest/CommandLineTestRunner.h>
 
 int main() {
 	const char* args[] = { "", "-v" };
 	return CommandLineTestRunner::RunAllTests(2, args);
 }
-```
+{% endhighlight %}

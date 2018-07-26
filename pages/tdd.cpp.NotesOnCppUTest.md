@@ -16,20 +16,20 @@ These do not include working in the express version. See the old section below f
 ### Each Time You Want a New Solution
 * Create a new solution with an Empty C++ Project (new, Empty C++ project)
 * Add a source file (select project, right-click, add, new item..., c++ file) to your Empty C++ project called RunAllTests.cpp:
-```cpp
+{% highlight cpp %}
 # include <CppUTest/CommandLineTestRunner.h>
 
 int main(int argc, char** argv) {
     return CommandLineTestRunner::RunAllTests(argc, argv);
 }
-```
+{% endhighlight %}
 * Select the project (not the solution), right-click, select properites
 * On the  C/C++ tab, add the include directory under where you extracted the CppUTest.zip file (e.g., C:\projects\CppTdd\CppUTest\include)
 * On the Linker:Input tab, enter two new additional dependencies: winmm.lib CppUTest.lib
 * On the Linker:General tab, add the lib directory under where you extracted the CppUTest.zip file (e.g., C:\projects\CppTdd\CppUTest\lib)
 * Verify your project builds (ctrl-b)
 * Add a test file. Create a new source file. E.g. FooTest.cpp:
-```cpp
+{% highlight cpp %}
 // the below include should be the last include if you are using <vector>, <string>, etc.
 # include <CppUTest/TestHarness.h>
 
@@ -39,14 +39,14 @@ TEST_GROUP(FooTest) {
 TEST(FooTest, TestName) {
   LONGS_EQUAL(1, 1);
 }
-```
+{% endhighlight %}
 * Make sure your test runs, hit ctrl-F5. You should see something like:
-```
+{% highlight terminal %}
 .
 OK (1 tests, 1 ran, 1 checks, 0 ignored, 0 filtered out, 0 ms)
 
 Press any key to continue . . .
-```
+{% endhighlight %}
 
 ## Working With Boost
 * Build or Install the boost library
@@ -82,14 +82,14 @@ old
 * Select the solution created when converting CppUTest
 * (Optional) Remove the AllTests project included when you included the solution
 * Add a source file to your Empty C++ project called AllTests.cpp:
-```cpp
+{% highlight cpp %}
 # include <CppUTest/CommandLineTestRunner.h>
 
 int main(int ac, char** av)
 {
     return CommandLineTestRunner::RunAllTests(ac, av);
 }
-```
+{% endhighlight %}
 * Make your project dependent on CppUTest(Solution, Project Dependencies... )
 * Add the CppUTest include directory to your C++ project
 > <path of CppUTest project>\include
@@ -98,7 +98,7 @@ int main(int ac, char** av)
 > winmm.lib
 ** (project Properties... Linker, Input, Additional Dependencies)
 * You should be able to start writing and executing tests. E.g., Add a file to hold some tests, FooTest.cpp
-```cpp
+{% highlight cpp %}
 # include <CppUTest/TestHarness.h>
 
 TEST_GROUP(FooTest)
@@ -108,7 +108,7 @@ TEST_GROUP(FooTest)
 TEST(FooTest, TestName) {
   LONGS_EQUAL(1, 1);
 }
-```
+{% endhighlight %}
 ## Working With Boost
 * Build or Install the boost library
 * Include the distrubtion directory, e.g. C:\boost\boost_1_38

@@ -2,10 +2,10 @@
 title: Languages.GettingStarted
 ---
 Luckily I already have macports installed, so to add both I simply used it:
-```
+{% highlight terminal %}
 > sudo port install scala 2.7.1
 > sudo port install erlang
-```
+{% endhighlight %}
 
 Of course I'm at a hotel, so it takes some time to do both of these.
 

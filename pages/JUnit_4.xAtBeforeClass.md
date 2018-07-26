@@ -10,13 +10,13 @@ There is no analog to @BeforeClass before JUnit 4.0. This is initialization code
 @BeforeClass annotated methods in superclasses will execute first.
 
 Notice that the method is both public and static. That's required:
-```java
+{% highlight java %}
 40:     @BeforeClass
 41:     public static void createTestVehicleType() {
 42:         vtComponent = new VehicleTypeComponent();
 43:         vtComponent.createVehicleType(TEST_VEHICLE_TYPE_NAME, ValidState.valid);
 44:         vtComponent.createVehicleType(TEST_VEHICLE_TYPE_NAME_2, ValidState.valid);
 45:     }
-```
+{% endhighlight %}
 
 [<--Back]({{site.pagesurl}}/JUnit_4.x#AtBeforeClass)

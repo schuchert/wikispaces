@@ -28,7 +28,7 @@ Since this is NOT a JDBC example but rather I use JDBC as a vehicle to better un
 
 [#JdbcExample]({{site.pagesurl}}/#JdbcExample)
 ## JdbcExample.java
-```java
+{% highlight java %}
 01: package aaa.valtech.jug.version1;
 02: 
 03: import java.sql.Connection;
@@ -129,7 +129,7 @@ Since this is NOT a JDBC example but rather I use JDBC as a vehicle to better un
 98:         e.performSearch();
 99:     }
 100: }
-```
+{% endhighlight %}
 ### Interesting Lines
 ^
 |Line|Description|

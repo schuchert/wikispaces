@@ -12,7 +12,7 @@ This is the first of several exercise. If you'd like to get a feel for the gener
 Examine the following 2 Java files. Your assignment is to predict the output based on these two files.
 ----
 ### Main.java
-```java
+{% highlight java %}
 package ex1;
 
 public class Main {
@@ -31,10 +31,10 @@ public class Main {
 		MethodExecutionExample.staticMethod();
 	}
 }
-```
+{% endhighlight %}
 ----
 ### MethodExecutionExample.java
-```java
+{% highlight java %}
 package ex1;
 
 
@@ -56,7 +56,7 @@ public class MethodExecutionExample {
 		noArgMethod();
 	}
 }
-```
+{% endhighlight %}
 
 ## Predict the output
 Before continuing on, please predict the output from these two files.

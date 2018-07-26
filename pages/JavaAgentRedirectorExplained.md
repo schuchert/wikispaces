@@ -4,7 +4,7 @@ title: JavaAgentRedirectorExplained
 [[image:Back.gif link="JavaAgent"]]
 ## Background
 The only requirement for a class used to register a Java Agent is a premain method:
-```java
+{% highlight java %}
 package schuchert.agent;
 
 import java.lang.instrument.ClassFileTransformer;
@@ -14,14 +14,14 @@ public class ConfigurableClassFileTransformerRedirector {
     public static void premain(String agentArguments, Instrumentation instrumentation) {
     }
 }
-```
+{% endhighlight %}
 
 This is a complete, minimal example. If this class is packaged in a jar file with a correct manifest, when the VM starts up, the premain method gets called and has a chance to register an instance of a ClassFileTransformer with the instrumentation instance.
 
 registrar 
 
 Here's a simple class that will report the unqualified class name and its package:
-```java
+{% highlight java %}
 package schuchert.agent;
 
 import java.lang.instrument.ClassFileTransformer;
@@ -39,14 +39,14 @@ public class ClassAndPackageNamePrintingClassFileTransformer implements ClassFil
     }
 
 }
-```
+{% endhighlight %}
 
 To get this ClassFileTransformer registered, we'd change pre-main to the following:
-```java
+{% highlight java %}
 public static void premain(String agentArguments, Instrumentation instrumentation) {
     instrumentation.addTransformer(new ClassAndPackageNamePrintingClassFileTransformer());
 }
-```
+{% endhighlight %}
 
 ## ConfigurableClassFileTransformerRegistrar
 Below is the source for the registrar. Here are a couple of notes:
@@ -57,7 +57,7 @@ Below is the source for the registrar. Here are a couple of notes:
 * If you want to see the tests that verify this class' functionality, look further below. Note that the test class uses JUnit 4.4 and JMock 2.4.
 
 [#ConfigurableClassFileTransformerRegistrar]({{site.pagesurl}}/#ConfigurableClassFileTransformerRegistrar)
-```java
+{% highlight java %}
 package schuchert.agent;
 
 import java.io.PrintStream;
@@ -142,11 +142,11 @@ public class ConfigurableClassFileTransformerRegistrar {
         ERROR_OUT.printf(EXAMPLE_MESSAGE, DEST_CLASS_PROPERTY_NAME, NullClassFileTransformer.class.getName());
     }
 }
-```
+{% endhighlight %}
 
 **ConfigurableClassFileTransformerRegistrarTest**
 [#ConfigurableClassFileTransformerRegistrarTest]({{site.pagesurl}}/#ConfigurableClassFileTransformerRegistrarTest)
-```java
+{% highlight java %}
 package schuchert.agent;
 
 import java.io.PrintStream;
@@ -362,4 +362,4 @@ public class ConfigurableClassFileTransformerRegistrarTest {
     }
 
 }
-```
+{% endhighlight %}

@@ -16,11 +16,13 @@ title: Ejb3_Tutorial_3_-_ResourceDao
 ### Run Your Tests (ResourceDaoBeanTest): First Failures 
 After making these changes, we have 3 tests that pass and one that fails. The error in the JUnit stack trace looks like this: 
 
-```org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: entity.Book.authors, no session or session was closed```
+{% highlight java %}
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: entity.Book.authors, no session or session was closed
+{% endhighlight %}
 
 Here's the actual test:
 
-```java
+{% highlight java %}
 01:    @Test
 02:    public void updateABook() {
 03:        final Book b = createABookImpl();
@@ -31,7 +33,7 @@ Here's the actual test:
 08:        assertTrue(found instanceof Book);
 09:        assertEquals(initialAuthorCount + 1, ((Book) found).getAuthors().size());
 10:    }
-```
+{% endhighlight %}
 
 If you double-click on the last line listed in the stack trace, it will show the last line, line 9, as the problem line. When we retrieve the authors() from found, there's no problem -- yet. When we ask the object returned from getAuthors() for its size(), we're accessing not a collection but a proxy to a collection. Remember that the object found is detached. Why? We are no longer in a method in the container, we have returned from the method. When we returned, the transaction committed and all objects in the persistence context were detached. The author’s relationship is lazily loaded by default (because it is a @ManyToMany and that's the default behavior).
 
@@ -42,23 +44,23 @@ We have three ways to fix this problem:
 
 We'll take the easiest way out to fix this and make this relationship eagerly fetched rather than lazily fetched. Here's the change to Book.java:
 
-```java
+{% highlight java %}
     @ManyToMany(mappedBy = "booksWritten", cascade = { CascadeType.PERSIST,
             CascadeType.MERGE }, fetch = FetchType.EAGER)
     private Set<Author> authors;
-```
+{% endhighlight %}
 
 The change there is adding **fetch = FetchType.EAGER**
 
 ### Try #2 
 When you run this, things still do not work. This is a bi-directional relationship. However, while we are adding an author to the book, we are not adding the book to the author. Remember that we must maintain both sides of a bi-directional relationship. Update the addAuthor() method in book to add the book to the author:
 
-```java
+{% highlight java %}
     public void addAuthor(final Author author) {
         getAuthors().add(author);
         author.addBook(this);
     }
-```
+{% endhighlight %}
 
 Run the tests in ResourceDaoBeanTest. Now more tests are failing. This is getting worse before it gets better.
 
@@ -66,18 +68,18 @@ Run the tests in ResourceDaoBeanTest. Now more tests are failing. This is gettin
 
 There's a method in Author.java that looks like this:
 
-```java
+{% highlight java %}
     public void addBook(final Book b) {
         booksWritten.add(b);
         b.addAuthor(this);
     }
-```
+{% endhighlight %}
 
 The problem is, the booksWritten attribute is never assigned. Here's a way to fix this:
 * Change booksWritten to getBookWritten()
 * Lazily initialize booksWritten
 
-```java
+{% highlight java %}
     public void addBook(final Book b) {
         getBooksWritten().add(b);
     }
@@ -89,7 +91,7 @@ The problem is, the booksWritten attribute is never assigned. Here's a way to fi
         
         return booksWritten;
     }
-```
+{% endhighlight %}
 
 ### Finally All of ResourceDaoBaseTest Running 
 
@@ -108,21 +110,21 @@ Type checking is not always bad, just mostly always. We won't even consider that
 
 **Add abstract method to Resource**
 
-```java
+{% highlight java %}
     public abstract void remove();
-```
+{% endhighlight %}
 
 **Add empty implementation to Dvd**
 
-```java
+{% highlight java %}
     @Override
     public void remove() {
     }
-```
+{% endhighlight %}
 
 **Add implementation to Book**
 
-```java
+{% highlight java %}
     @Override
     public void remove() {
         for (Author a : getAuthors()) {
@@ -130,21 +132,21 @@ Type checking is not always bad, just mostly always. We won't even consider that
         }
         getAuthors().clear();
     }
-```
+{% endhighlight %}
 
 **Add removeBook to Author**
 
-```java
+{% highlight java %}
     public void removeBook(final Book book) {
         getBooksWritten().remove(book);
     }
-```
+{% endhighlight %}
 
 **Call the remove() method in ResourceDao**
 
 Just after looking up the resource and just before actually removing it, we need to call the remove() method on the Resource object:
 
-```java
+{% highlight java %}
     public void remove(Long id) {
         final Resource r = retrieve(id);
         if (r != null) {
@@ -153,7 +155,7 @@ Just after looking up the resource and just before actually removing it, we need
         }
         getEm().flush();
     }
-```
+{% endhighlight %}
 
 Run the tests and they now all pass.
 
@@ -175,7 +177,7 @@ To delete authors, we'll create a new Dao for Authors:
 
 **AuthorDao**
 
-```java
+{% highlight java %}
 package session;
 
 import java.util.Set;
@@ -185,11 +187,11 @@ import entity.Author;
 public interface AuthorDao {
     void remove(final Set<Author> authors);
 }
-```
+{% endhighlight %}
 
 **AuthorDaoBean**
 
-```java
+{% highlight java %}
 package session;
 
 import java.util.Set;
@@ -213,7 +215,7 @@ public class AuthorDaoBean extends BaseDao implements AuthorDao {
         }
     }
 }
-```
+{% endhighlight %}
 
 ### Update Test 
 
@@ -221,7 +223,7 @@ public class AuthorDaoBean extends BaseDao implements AuthorDao {
 
 First we need a few methods we can use to delete authors and books (we're working in ResourceDaoBeanTest, so this is a fine place to add these methods):
 
-```java
+{% highlight java %}
     public void removeAuthors(final Set<Author> authors) {
         JBossUtil.lookup(AuthorDao.class, "AuthorDaoBean/local")
                 .remove(authors);
@@ -232,7 +234,7 @@ First we need a few methods we can use to delete authors and books (we're workin
         getDao().remove(b.getId());
         removeAuthors(book.getAuthors());
     }
-```
+{% endhighlight %}
 
 These methods are static because we might want to use them from other tests. However, to make them static, we must change getDao() to be a static method as well.
 
@@ -240,7 +242,7 @@ These methods are static because we might want to use them from other tests. How
 
 Here are the updated tests that now use the support methods.
 
-```java
+{% highlight java %}
     @Test
     public void createABook() {
         final Book b = createABookImpl();
@@ -280,7 +282,7 @@ Here are the updated tests that now use the support methods.
             removeBookAndAuthors(b);
         }
     }
-```
+{% endhighlight %}
 
 Notice that we re-assign the variable b just before the assert equals and it is that updated version of b that is sent to removeBookAndAuthors(). Why do you suppose we need to do that?
 

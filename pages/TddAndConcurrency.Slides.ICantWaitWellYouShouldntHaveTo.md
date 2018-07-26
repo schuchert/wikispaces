@@ -18,7 +18,7 @@ Final Results: 15 threads, 28 minutes…
 ----
 ----
 ## Here's the code as written (not test first)
-```java
+{% highlight java %}
 public void execute() {
    service = Executors.newFixedThreadPool(THREADS);
    
@@ -32,12 +32,12 @@ public void execute() {
    }
    service.shutdown();
 }
-```
+{% endhighlight %}
 ----
 ----
 ## Create a Fake Vendor Synchronization Service
 First the test:
-```java
+{% highlight java %}
 public class FakeVendorSynchronizationServiceTest {
    @Test
    public void convertsApproximately2PerSecond() throws Exception {
@@ -57,12 +57,12 @@ public class FakeVendorSynchronizationServiceTest {
           runningTime <= 1100);
     }
 }
-```
+{% endhighlight %}
 ----
 ----
 ## Create a Fake Vendor Synchronization Service
 Next, the fake:
-```java
+{% highlight java %}
 public class FakeVendorSynchronizationService 
                                 extends VendorSynchronizationService {
 
@@ -83,11 +83,11 @@ public class FakeVendorSynchronizationService
       return value;
    }
 }
-```
+{% endhighlight %}
 ----
 ----
 ## Next, express how fast is fast enough
-```java
+{% highlight java %}
 public class VendorSynchronizerTest {
    private static final int DELAY = 60;
 
@@ -105,7 +105,7 @@ public class VendorSynchronizerTest {
       assertTrue(synchronizer.service.isTerminated());
     }
 }
-```
+{% endhighlight %}
 
 As a bonus, this validates MT logic as well…
 ----

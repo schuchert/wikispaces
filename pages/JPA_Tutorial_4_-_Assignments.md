@@ -25,7 +25,7 @@ Update your UI to allow a user to add a new DVD and a Patron to check out dvd's.
 During the first offering of the class, one student asked about the Name object, which is used in an ```equals()``` and ```hashCode()``` method. It turns out that the unit tests written did not expose the fact that the Name class lacks these methosd.
 
 Here's a unit test, add it and get it to work:
-```java
+{% highlight java %}
 package entity;
 
 import static org.junit.Assert.assertEquals;
@@ -42,4 +42,4 @@ public class NameTest {
         assertEquals(n1.hashCode(), n2.hashCode());
     }
 }
-```
+{% endhighlight %}

@@ -10,7 +10,7 @@ Imagine the game of Monopoly. There are several kinds of (read this as classes o
 * Property
 
 Here's an algorithm for what happens when the current player lands on a square: 
-```
+{% highlight terminal %}
 public void landOn(Player p) {
    if(isOwnedBy(p) || isMortgaged()) {
       // player does not pay itself
@@ -25,7 +25,7 @@ public void landOn(Player p) {
       // offer myself for sale to p
    }
 }
-```
+{% endhighlight %}
 
 How do you calculate rent? Here are the three ways you calculate rent:
 ^
@@ -42,13 +42,13 @@ Notice that the rules for landing are the same:
 * If the {railroad, utility, property} is not owned, then the current player has the option of buying it
 
 The only step that varies is the calculation of the rent. So we create an abstract base class, called Real Estate, that implements the landOn method AND has one abstract method:
-```
+{% highlight terminal %}
 protected int calculateRent();
-```
+{% endhighlight %}
 
 We then write three derived classes, Railroad, Utility, Property, that each implement calculate rent:
 **Railroad**
-```
+{% highlight terminal %}
 class Railroad extends RealEstate {
    protected int calculateRent() {
       Player owner = getOwner();
@@ -57,9 +57,9 @@ class Railroad extends RealEstate {
       return 25 * numberOwnedBySamePlayer;
    }
 }
-```
+{% endhighlight %}
 **Utility**
-```
+{% highlight terminal %}
 class Utility extends RealEstate {
    protected int calculateRent() {
       Dice dice = getDice();
@@ -74,9 +74,9 @@ class Utility extends RealEstate {
       return rentMultiplier * currentRollValue;
    }
 }
-```
+{% endhighlight %}
 **Property**
-```
+{% highlight terminal %}
 class Property extends RealEstate {
    protected int calculateRent() {
       int baseRent = getBaseRent();
@@ -85,6 +85,6 @@ class Property extends RealEstate {
       return calculateActualRent(baseRent, houses);
    }
 }
-```
+{% endhighlight %}
 
 So when a player lands on any kind of RealEstate square, the landOn method in RealEstate performs some basic checks that are true for all kinds of RealEstate types. It then polymorphically the {railroad, utility, property} to calculate the rent, if appropriate, and charges the rent to the current player.

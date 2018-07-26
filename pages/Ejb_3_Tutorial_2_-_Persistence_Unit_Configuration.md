@@ -13,7 +13,7 @@ To create this file:
 # Copy and past the following example into the new **persistence.xml** file and save it
 
 **persistence.xml**
-```xml
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>
    <persistence-unit name="custdb">
@@ -42,4 +42,4 @@ To create this file:
       </properties>
    </persistence-unit>
 </persistence>
-```
+{% endhighlight %}

@@ -10,7 +10,7 @@ Which do you prefer? You have seen three different forms:
 The first form gives a concrete example of how the RpnCalculator should be used. The last form makes the Example easy to read and moves the writing of the examples into the way a user might speak about using the calculator.
 
 Here is just he Basic Math Operators context updated:
-```ruby
+{% highlight ruby %}
   describe "Basic Math Operators" do
     it "should add the x_regiser and the top of the stack" do
       type 46
@@ -48,7 +48,7 @@ Here is just he Basic Math Operators context updated:
       validate_x_register -5
     end
   end
-```
+{% endhighlight %}
 Here's a side-by-side comparison between the two styles:
 
 <span class="left_column">it "programmer" do
@@ -71,13 +71,13 @@ end
 Before thinking that one style is the "right" style, consider the audience and even the author. If the audience is the user, then the style on the right is more appropriate. If the audience is another developer, then the left side might be more appropriate.</span>
 
 You might think that using the methods names on the right for your calculator is an option. However, that won't look correct:
-```ruby
+{% highlight ruby %}
   @calculator.type 4
   @calculator.press :enter
   @calculator.type 52
   @calculator.press :+
   @calculator.x_register.should == 56
-```
+{% endhighlight %}
 The method names do not make sense being sent to a calculator. So the method names make sense on the left when sent to a calculator. The method names on the right make sense when reading an example. 
 
 While this tutorial will not cover it, RSpec has the notion of "story tests", or tests that are meant to be written by the same people who write user stories, your customer, product owner, QA person or even developers. That's coming up in a later tutorial, so this subject will come up again.

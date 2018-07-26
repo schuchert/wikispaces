@@ -12,7 +12,7 @@ Here is a quick test suite to verify that things basically work. To create this 
 # Once the class is saved and compiles, execute it (Right-click in the file, select **Run As::JUnit Test**
 
 **CompanyDaoImplTest.java**
-```java
+{% highlight java %}
 package dao.impl;
 
 import static org.junit.Assert.assertEquals;
@@ -68,4 +68,4 @@ public class CompanyDaoImplTest {
         assertEquals(1, found.getEmployees().size());
     }
 }
-```
+{% endhighlight %}
