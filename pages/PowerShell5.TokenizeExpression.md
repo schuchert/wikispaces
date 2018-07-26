@@ -21,11 +21,13 @@ Initially, we only want to break expressions into their logical parts. Notice, w
 # Getting Started
 Create a directory into which we will store all of the test code and the production. Given that this example leads into the [The Shunting Yard Algorithm Kata]({{ site.pagesurl}}/Katas.ShuntingYardAlgorithm), I'll create C:\Users\Brett\shunting_yard_algorithm.
 
-* [First FailingTest]({{site.pagesurl}}/PowerShell5_Tokenize_Expression_First_Failing_Test)
-* [Simple Binary Expressions]({{ site.pagesurl}}/PowerShell5.TokenizeExpression.SimpleBinaryExpressions)
-* [First Stab At Parentheses]({{ site.pagesurl}}/PowerShell5.TokenizeExpression.FirstStabAtParentheses)
-* [FunctionCalls]({{ site.pagesurl}}/PowerShell5.TokenizeExpression.FunctionCalls)
-* [Convert Tokenizer to an Enumerator]({{ site.pagesurl}}/PowerShell5.TokenizeExpression.ConvertTokenizerToAnEnumerator)
-* [My Final-ishVersion]({{ site.pagesurl}}/PowerShell5.TokenizeExpression.FinalishVersion)
-* [Tutorial As One Page]({{ site.pagesurl}}/PowerShell5.TokenizeExpression.AtOnePage)
+* [First Failing Test]({{site.pagesurl}}/PowerShell5-Tokenize_Expression-First_Failing_Test)
+* [Simple Binary Expressions]({{site.pagesurl}}/PowerShell5-Tokenize_Expression-Simple_Binary_Expressions)
+* [First Stab At Parentheses]({{site.pagesurl}}/PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses)
+* [FunctionCalls]({{ site.pagesurl}}/PowerShell5-Tokenize_Expression-Function_Calls)
+* [Convert Tokenizer to an Enumerator]({{ site.pagesurl}}/PowerShell5-Tokenize_Expression-Convert_Tokenizer_To_An_Enumeratr)
+* [My Final-ishVersion]({{ site.pagesurl}}/PowerShell5-Tokenize_Expression-Finalish_Version)
+* [Tutorial As One Page]({{ site.pagesurl}}/PowerShell5-Tokenize_Expression-As_One_Page)
+
 [<--Back]({{ site.pagesurl}}/PowerShell5)
+
