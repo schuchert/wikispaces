@@ -29,7 +29,7 @@ title: tdd_intro.CreatingAnEmptyProject
     Define value for property 'version':  1.0-SNAPSHOT: : <<enter>>
 ```
 * Enter default package (e.g., com.shoe.paginator <enter>)
-    ```
+```
 Define value for property 'package':  com.shoe: : com.shoe.paginator <<enter>>
 ```
 * Confirm the configuration

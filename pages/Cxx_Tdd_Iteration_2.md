@@ -1402,7 +1402,7 @@ private:
 };
 
 # endif /*GOTOJAIL_HPP_*/
- ```
+```
 
 ```cpp
 # include "GoToJail.hpp"
