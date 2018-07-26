@@ -11,6 +11,7 @@ These instructions assume you have already followed [these instructions]({{ site
 * Start a command shell.
 * Go to where you extracted the files, which in my case is:// **c:\learncpp\cpputest**//
 * Make using make:
+
 ```
 C:\learncpp\cpputest>make
 compiling AllTests.cpp
