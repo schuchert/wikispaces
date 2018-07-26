@@ -5,14 +5,16 @@ title: SatirChangeModel
 
 # Satir Change Model
 
-There are **4 stages** and //2 events// in the Satir Change Model:
+There are **4 stages** and 2 events in the Satir Change Model:
 * **Old Status Quo**
-* //Foreign Element//
+* Foreign Element
 * **Chaos**
-* //Transforming Idea//
+* Transforming Idea
 * **Practice and Integration**
 * **New Status Quo**
-[[image:SatirChangeModel.jpg width="478"]]
+
+![satir change model](images/SatirChangeModel.jpg)
+
 ## Old Status Quo
 This is where we are right now.
 
