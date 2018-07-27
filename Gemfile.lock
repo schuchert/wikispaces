@@ -249,6 +249,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-sitemap
   wdm (~> 0.1.1)
 
 BUNDLED WITH

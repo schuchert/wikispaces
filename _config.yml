@@ -5,6 +5,7 @@ github_username: schuchert
 makrdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 url: "http://schuchert.github.io/wikispaces"
 repository: schuchert/wikispaces
 
