@@ -1,3 +1,8 @@
+---
+layout: page
+title: index
+permalink: /wikispaces/index
+---
 # Description
 A top level list of all the pages on this site.
 
