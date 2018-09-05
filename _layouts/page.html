@@ -34,18 +34,22 @@ layout: default
     </div>
   </div>
   
+  {% if page.date %}
   <div class="span4">
     <h4>Published</h4>
     <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
+  {% endif %}  
 
-  {% unless page.tags == empty %}
+  {% if page.tags %}
     <h4>Tags</h4>
     <ul class="tag_box">
     {% assign tags_list = page.tags %}
     </ul>
-  {% endunless %}  
+  {% endif %}  
   </div>
 </div>
+
+<hr>
 
 <div class="comments">
 <h1>Comments</h1>

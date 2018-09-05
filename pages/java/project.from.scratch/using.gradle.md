@@ -1,6 +1,7 @@
 ---
 title: Creating a Java project from scratch using Gradle
 layout: page
+date: 2018-09-05
 ---
 What follows is first a summary of the steps required, then the prerequisites 
 that make all of this magic possible, more details steps with example output,
