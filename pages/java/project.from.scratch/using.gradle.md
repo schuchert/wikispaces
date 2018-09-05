@@ -17,7 +17,22 @@ and try again. If you know how to fix that, please let me know.
 		{% include_relative using.gradle.steps.md %}
 	{% endcapture %}
 	{{ summary | markdownify }}
+
 </div>
+
+{::options parse_block_html="true" /}
+<aside>
+If you copy this and then attempt to paste into some environments, the
+last command to run seems to be the `gradle init` line. 
+If so, you can either copy the commands into a file and use ```sh``` 
+on that file, or try:
+^
+~~~ bash
+xclip -sel clip | sh - # linux
+pbpaste | sh -         # Mac OS
+sh /dev/clipboard      # git bash
+~~~
+</aside>
 
 ## Prerequisites
 * A working terminal
