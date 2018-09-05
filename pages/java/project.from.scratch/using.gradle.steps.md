@@ -6,7 +6,7 @@ mkdir smoke
 ~~~
 
 ~~~ terminal
-vagrant@vagran-ubuntu16:~/src$ mkdir smoke
+vagrant@vagrant-ubuntu16:~/src$ mkdir smoke
 ~~~
 
 * Switch to that directory
@@ -16,7 +16,7 @@ cd smoke
 ~~~
 
 ~~~ terminal
-vagrant@vagran-ubuntu16:~/src$ cd smoke
+vagrant@vagrant-ubuntu16:~/src$ cd smoke
 ~~~
 
 * Initialize the project using gradle:
@@ -26,7 +26,7 @@ gradle init --type java-application
 ~~~
 
 ~~~ terminal
-vagrant@vagran-ubuntu16:~/src/smoke$ gradle init --type java-application
+vagrant@vagrant-ubuntu16:~/src/smoke$ gradle init --type java-application
 
 BUILD SUCCESSFUL in 0s
 2 actionable tasks: 1 executed, 1 up-to-date
@@ -39,7 +39,7 @@ ls
 ~~~
 
 ~~~ terminal
-vagrant@vagran-ubuntu16:~/src/smoke$ ls
+vagrant@vagrant-ubuntu16:~/src/smoke$ ls
 build.gradle  gradle  gradlew  gradlew.bat  settings.gradle  src
 ~~~
 
@@ -50,7 +50,7 @@ gradle test
 ~~~
 
 ~~~ terminal
-vagrant@vagran-ubuntu16:~/src/smoke$ gradle test
+vagrant@vagrant-ubuntu16:~/src/smoke$ gradle test
 
 BUILD SUCCESSFUL in 4s
 3 actionable tasks: 3 executed
@@ -63,7 +63,7 @@ gradle test
 ~~~
 
 ~~~ terminal 
-vagrant@vagran-ubuntu16:~/src/smoke$ gradle test
+vagrant@vagrant-ubuntu16:~/src/smoke$ gradle test
 
 BUILD SUCCESSFUL in 1s
 3 actionable tasks: 3 up-to-date
@@ -76,7 +76,7 @@ gradle test --rerun-tasks
 ~~~
 
 ~~~ terminal
-vagrant@vagran-ubuntu16:~/src/smoke$ gradle test --rerun-tasks
+vagrant@vagrant-ubuntu16:~/src/smoke$ gradle test --rerun-tasks
 
 BUILD SUCCESSFUL in 3s
 3 actionable tasks: 3 executed
@@ -89,7 +89,7 @@ gradle build --rerun-tasks
 ~~~
 
 ~~~ terminal
-vagrant@vagran-ubuntu16:~/src/smoke$ gradle build --rerun-tasks
+vagrant@vagrant-ubuntu16:~/src/smoke$ gradle build --rerun-tasks
 
 BUILD SUCCESSFUL in 4s
 7 actionable tasks: 7 executed
@@ -102,7 +102,7 @@ java -cp build/libs/smoke.jar App
 ~~~
 
 ~~~ terminal
-vagrant@vagran-ubuntu16:~/src/smoke$ java -cp build/libs/smoke.jar App
+vagrant@vagrant-ubuntu16:~/src/smoke$ java -cp build/libs/smoke.jar App
 Hello world.
 ~~~
 
