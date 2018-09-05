@@ -149,3 +149,32 @@ a.prev, a.next, a.blog {
 ul + figure {
 	margin-left: 40px;
 }
+
+
+div.show_terminal {
+	div.language-bash {
+		display: none;
+	}
+}
+
+div.show_bash {
+	padding-bottom: 2em;
+	ul  {
+		display: none;
+	}
+	div.language-terminal {
+		display: none;
+	}
+	pre.highlight {
+		margin-bottom: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		white-space: pre-wrap;
+	}
+}
+
+p {
+	code.highlighter-rouge {
+		background: 191919;
+	}
+}
