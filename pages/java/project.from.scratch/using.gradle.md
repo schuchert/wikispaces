@@ -28,9 +28,9 @@ If so, you can either copy the commands into a file and use`sh`
 on that file, or try:
 ^
 ~~~ bash
-xclip -sel clip | sh - # linux
-pbpaste | sh -         # Mac OS
-sh /dev/clipboard      # git bash
+xclip -sel clip -out | sh - # linux
+pbpaste | sh -              # Mac OS
+sh /dev/clipboard           # git bash
 ~~~
 </aside>
 </section>
