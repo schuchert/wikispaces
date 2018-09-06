@@ -11,21 +11,20 @@ It seems that copying all of the commands in one fell swoop and pasting them
 into a terminal stops after the ```gradle init ...``` step. If so, copy the rest
 and try again. If you know how to fix that, please let me know.
 
+{::options parse_block_html="true" /}
+<section class="show_bash">
 ## Summary of Steps
-
-<div class="show_bash">
-	{% capture summary %}
-		{% include_relative using.gradle.steps.md %}
-	{% endcapture %}
-	{{ summary | markdownify }}
-
-</div>
+{% capture summary %}
+	{% include_relative using.gradle.steps.md %}
+{% endcapture %}
+{{ summary | markdownify }}
 
 {::options parse_block_html="true" /}
 <aside>
+### Note on copying the above commands
 If you copy this and then attempt to paste into some environments, the
-last command to run seems to be the `gradle init` line. 
-If so, you can either copy the commands into a file and use ```sh``` 
+last command to run seems to be the`gradle init`line. 
+If so, you can either copy the commands into a file and use`sh` 
 on that file, or try:
 ^
 ~~~ bash
@@ -34,19 +33,26 @@ pbpaste | sh -         # Mac OS
 sh /dev/clipboard      # git bash
 ~~~
 </aside>
+</section>
 
+{::options parse_block_html="true" /}
+<section>
 ## Prerequisites
-* A working terminal
-  * Windows: git bash
-  * Mac OS: Terminal
-  * Unix: Terminal
-* Java Development Kit installed and working at the command line:
+### A working terminal
+These steps assume a bash-like terminal from which you can run commands. Possibilities include:
+* Windows: git bash
+* Mac OS: Terminal
+* Unix: Terminal
+
+### Java Development Kit installed and working at the command line:
+The JDK is installed and in the path of the terminal. E.g.,
 ^
 ~~~ terminal
 vagrant@vagran-ubuntu16:~/src$ javac -version
 javac 1.8.0_181
 ~~~
-* Gradle installed and runs at the command line:
+
+### Gradle installed and runs at the command line:
 ^
 ~~~ terminal
 vagrant@vagran-ubuntu16:~/src$ gradle -version
@@ -65,9 +71,9 @@ Ant:          Apache Ant(TM) version 1.9.11 compiled on March 23 2018
 JVM:          1.8.0_181 (Oracle Corporation 25.181-b13)
 OS:           Linux 4.15.0-33-generic amd64
 ~~~
-----
 
-* The terminal needs access to the internet. If these commands fail due to needing to configure the proxy, update settings.gradle:
+### Internet access
+The terminal needs access to the internet. If these commands fail due to needing to configure the proxy, update settings.gradle:
 ^
 File: settings.gradle
 ~~~ gradle
@@ -77,20 +83,15 @@ systemProp.https.proxyHost=<proxy url or ip>
 systemProp.https.proxyPort=<port number>
 systemProp.https.nonProxyHosts=localhost|120.0.01|<proxy url or ip>
 ~~~
+</section>
 
-## Step by Step Instructions
+{::options parse_block_html="true" /}
+<section class="show_terminal">
+## Step by Step Instructions with Example Output
 
-<div class="show_terminal">
-	{% capture summary %}
-		{% include_relative using.gradle.steps.md %}
-	{% endcapture %}
-	{{ summary | markdownify }}
-</div>
+{% capture summary %}
+	{% include_relative using.gradle.steps.md %}
+{% endcapture %}
+{{ summary | markdownify }}
 
-## Notes
-* This example assumes working with a bash-like terminal. As such ```~```
-refers to your home directory. E.g., ```C:\\users\<accout>``` on windows,
-or ```/home/<account>/``` on Linux.
-
-* This examples starts in a directory under your home account called src. I.e., ```~/src```.
-
+</section>
