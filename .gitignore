@@ -2,3 +2,4 @@ _site/
 vendor
 *.swp
 .jekyll-metadata
+.idea
