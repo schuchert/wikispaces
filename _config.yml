@@ -3,6 +3,8 @@ description: Port of schuchert.wikispaces.com
 twitter_username: schuchert
 github_username: schuchert
 makrdown: kramdown
+kramdown: 
+  parse_block_html: true
 plugins:
   - jekyll-feed
   - jekyll-sitemap
