@@ -1,0 +1,4 @@
+{% capture summary %}
+	{% include_relative {{ include.filename }} %}
+{% endcapture %}
+{{ summary | markdownify }}
