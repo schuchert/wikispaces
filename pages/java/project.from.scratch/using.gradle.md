@@ -11,15 +11,10 @@ It seems that copying all of the commands in one fell swoop and pasting them
 into a terminal stops after the ```gradle init ...``` step. If so, copy the rest
 and try again. If you know how to fix that, please let me know.
 
-{::options parse_block_html="true" /}
 <section class="show_bash">
 ## Summary of Steps
-{% capture summary %}
-	{% include_relative using.gradle.steps.md %}
-{% endcapture %}
-{{ summary | markdownify }}
+{% include include_md_file filename="using.gradle.steps.md" %}
 
-{::options parse_block_html="true" /}
 <aside>
 ### Note on copying the above commands
 If you copy this and then attempt to paste into some environments, the
@@ -35,7 +30,6 @@ sh /dev/clipboard           # git bash
 </aside>
 </section>
 
-{::options parse_block_html="true" /}
 <section>
 ## Prerequisites
 ### A working terminal
@@ -85,13 +79,9 @@ systemProp.https.nonProxyHosts=localhost|120.0.01|<proxy url or ip>
 ~~~
 </section>
 
-{::options parse_block_html="true" /}
 <section class="show_terminal">
 ## Step by Step Instructions with Example Output
 
-{% capture summary %}
-	{% include_relative using.gradle.steps.md %}
-{% endcapture %}
-{{ summary | markdownify }}
+{% include include_md_file filename="using.gradle.steps.md" %}
 
 </section>
