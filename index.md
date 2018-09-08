@@ -5,6 +5,10 @@ permalink: /index
 ---
 ## Recent Changes
 
+{% capture site_url %}
+	{% include site_url %}
+{% endcapture %}
+
 {% capture thirty_days_ago %}
   {{'now' | date: '%s' | minus: 2592000 | date: "%Y-$m-$d" }}
 {% endcapture %}
@@ -15,7 +19,7 @@ permalink: /index
     {% if posted_on > thirty_days_ago %}
     {% capture post_basename %}{{ p.name | remove: ".md" }}{% endcapture %}
       <li>
-        <a href="{{ site.url }}{{ site.baseurl }}{{p.url}}">{{ post_basename }}</a>
+        <a href="{{ site_url }}{{p.url}}">{{ post_basename }}</a>
       </li>
     {% endif %}
   {% endif %}
@@ -28,6 +32,6 @@ Converted or otherwise.
 <ul>
 {% for p in site.pages %}
   {% capture post_basename %}{{ p.name | remove: ".md" }}{% endcapture %}
-  <li><a href="{{ site.url }}{{ site.baseurl }}{{p.url}}">{{ post_basename }}</a></li>
+  <li><a href="{{ site_url }}{{p.url}}">{{ post_basename }}</a></li>
 {% endfor %}
 </ul>
