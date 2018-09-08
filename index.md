@@ -13,7 +13,10 @@ permalink: /index
   {% if p.date %}
     {% capture posted_on %}{{ p.date | date: "%Y-$m-$d" }}{% endcapture %}
     {% if posted_on > thirty_days_ago %}
-      <li><a href="{{ site.url }}/{{ site.baseurl }}{{p.url}}">{{p.name}}</a></li>
+    {% capture post_basename %}{{ p.name | remove: ".md" }}{% endcapture %}
+      <li>
+        <a href="{{ site.url }}{{ site.baseurl }}{{p.url}}">{{ post_basename }}</a>
+      </li>
     {% endif %}
   {% endif %}
 {% endfor %}
@@ -24,6 +27,7 @@ Converted or otherwise.
 
 <ul>
 {% for p in site.pages %}
-  <li><a href="{{ site.url }}/{{ site.baseurl }}{{p.url}}">{{p.name}}</a></li>
+  {% capture post_basename %}{{ p.name | remove: ".md" }}{% endcapture %}
+  <li><a href="{{ site.url }}{{ site.baseurl }}{{p.url}}">{{ post_basename }}</a></li>
 {% endfor %}
 </ul>
