@@ -3,11 +3,11 @@ layout: page
 title: All the things
 permalink: /index
 ---
-## Recent Changes
-
 {% capture site_url %}
-	{% include site_url %}
+  {% include site_url %}
 {% endcapture %}
+
+## Recent Changes
 
 {% capture thirty_days_ago %}
   {{'now' | date: '%s' | minus: 2592000 | date: "%Y-$m-$d" }}
