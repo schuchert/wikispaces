@@ -39,7 +39,6 @@ These steps assume a bash-like terminal from which you can run commands. Possibi
 * Unix: Terminal
 
 ### Java Development Kit installed and working at the command line:
-The JDK is installed and in the path of the terminal. E.g.,
 ^
 ~~~ terminal
 vagrant@vagran-ubuntu16:~/src$ javac -version
@@ -67,9 +66,9 @@ OS:           Linux 4.15.0-33-generic amd64
 ~~~
 
 ### Internet access
-The terminal needs access to the internet. If these commands fail due to needing to configure the proxy, update settings.gradle:
+The terminal needs access to the internet. If these commands fail 
+due to needing to configure the proxy, update `settings.gradle`:
 ^
-File: settings.gradle
 ~~~ gradle
 // ... snip
 rootProject.name = 'smoke'
