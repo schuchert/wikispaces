@@ -1,12 +1,12 @@
 ---
 title: JBoss_AOP_Example_1
 ---
-[<--Back]({{site.pagesurl}}/JBoss_AOP_Example_1) [Next-->]({{ site.pagesurl}}/JBossEX1ExpectedVersusActualOutput)
+[<--Back](JBoss_AOP_Example_1) [Next-->](JBossEX1ExpectedVersusActualOutput)
 
-Source files are here: [[file:JBossEX1Source.jar]]. If you need instructions on what do with these files, try [here]({{ site.pagesurl}}/ExtractingSourceFilesIntoProject).
+Source files are here: [[file:JBossEX1Source.jar]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 # Predict the Output
-This is the first of several exercise. If you'd like to get a feel for the general outline for each exercise, take a look [here]({{ site.pagesurl}}/JBossAOPGeneralExerciseOutline).
+This is the first of several exercise. If you'd like to get a feel for the general outline for each exercise, take a look [here](JBossAOPGeneralExerciseOutline).
 
 ## Code to Review
 Examine the following 2 Java files. Your assignment is to predict the output based on these two files.
@@ -61,4 +61,4 @@ public class MethodExecutionExample {
 ## Predict the output
 Before continuing on, please predict the output from these two files.
 
-[<--Back]({{site.pagesurl}}/JBoss_AOP_Example_1) [Next-->]({{ site.pagesurl}}/JBossEX1ExpectedVersusActualOutput)
+[<--Back](JBoss_AOP_Example_1) [Next-->](JBossEX1ExpectedVersusActualOutput)

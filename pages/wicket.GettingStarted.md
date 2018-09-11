@@ -1,6 +1,7 @@
 ---
 title: wicket.GettingStarted
 ---
+
 ## Overview
 This page describes the steps I follow to setup an Eclipse-based project for developing a new Wicket project. These steps are really just a detailed version of what you can find at: [the Wicket quickstart page](http://wicket.apache.org/quickstart.html).
 
