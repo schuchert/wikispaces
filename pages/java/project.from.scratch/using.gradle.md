@@ -11,15 +11,15 @@ It seems that copying all of the commands in one fell swoop and pasting them
 into a terminal stops after the ```gradle init ...``` step. If so, copy the rest
 and try again. If you know how to fix that, please let me know.
 
-<section class="show_bash">
+<section class="summary">
 ## Summary of Steps
 {% include include_md_file filename="using.gradle.steps.md" %}
 
 <aside>
 ### Note on copying the above commands
 If you copy this and then attempt to paste into some environments, the
-last command to run seems to be the`gradle init`line. 
-If so, you can either copy the commands into a file and use`sh` 
+last command to run seems to be the `gradle init` line. 
+If so, you can either copy the commands into a file and use `sh` 
 on that file, or try:
 ^
 ~~~ bash
@@ -79,7 +79,7 @@ systemProp.https.nonProxyHosts=localhost|120.0.01|<proxy url or ip>
 ~~~
 </section>
 
-<section class="show_terminal">
+<section class="details">
 ## Step by Step Instructions with Example Output
 
 {% include include_md_file filename="using.gradle.steps.md" %}
