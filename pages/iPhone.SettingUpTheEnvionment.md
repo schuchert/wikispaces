@@ -1,17 +1,17 @@
 ---
 title: iPhone.SettingUpTheEnvionment
 ---
-{:toc}[<-- Back]({{ site.pagesurl}}/iPhone)
+{:toc}[<-- Back](iPhone)
 
 # UNDER CONSTRUCTION
-[Old Setup for XCode 3]({{ site.pagesurl}}/iPhone.setup.xcode3)
+[Old Setup for XCode 3](iPhone.setup.xcode3)
 
 # The Video
 
 # Basic Application Setup
 Note: This "works" and as I get better with XCode 4 I hope to improve this setup. If you know how to do this better, please let me know so I can learn about it and document it!
 
-If you want to get get to it, [then skip this section]({{ site.pagesurl}}/iPhone.SettingUpTheEnvionment#backgroundSkipped).
+If you want to get get to it, [then skip this section](iPhone.SettingUpTheEnvionment#backgroundSkipped).
 These notes are for XCode 4 and GHUnit 0.4.28. Each project I set up will have a minimum of 3 projects:
 * The project containing the view-specific code
 * The project containing the Unit Tests
@@ -30,7 +30,7 @@ Finally, if I have two projects, both of which have a main, it is much easier to
 
 These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in this version, you can assume these steps are fragile. If they fail for you, please send me an email (schuchert -at- yahoo -dot- com) and let me know the version of XCode you are using. I'll see if I can figure it out. If you've solved the problem, let me know and I'll update these notes. Or, if you are feeling ambitious, I'll give you permission to update the notes.
 
-[#backgroundSkipped]({{site.pagesurl}}/#backgroundSkipped)
+[#backgroundSkipped](#backgroundSkipped)
 # Setting up the three projects
 
 ## Creating the Workspace
@@ -212,4 +212,4 @@ Now the hard part starts.
 | F3 | mapped to Edit:Find:Jump to Definition |
 | Command-alt up-arrow | Switch between .h and .m |
 
-[<-- Back]({{ site.pagesurl}}/iPhone)
+[<-- Back](iPhone)

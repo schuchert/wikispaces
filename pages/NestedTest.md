@@ -2,4 +2,4 @@
 title: NestedTest
 ---
  This is just a simple test to see if I can have faux nesting.
-[NestedTest.Level1]({{site.pagesurl}}/NestedTest.Level1) 
+[NestedTest.Level1](NestedTest.Level1) 

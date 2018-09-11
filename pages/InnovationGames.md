@@ -1,4 +1,4 @@
 ---
 title: InnovationGames
 ---
-[InnovationGames.SpeedBoat]({{site.pagesurl}}/InnovationGames.SpeedBoat)
+[InnovationGames.SpeedBoat](InnovationGames.SpeedBoat)

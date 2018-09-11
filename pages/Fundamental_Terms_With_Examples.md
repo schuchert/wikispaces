@@ -57,7 +57,7 @@ I can define a class and then create other classes that take on all of the chara
 
 A few guidelines: Inheritance is often overused. Take the following into consideration:
 * Make sure the child **//is a//** parent. That is, anywhere you can use the parent you can also use the child.
-* A given hierarchy should address one concern (the reason for the hierarchy should be cohesive). Do not, for example, use the same hierarchy for both Graphical User Interface(GUI) Components as well as Platform Variations. Imagine a base class, Window Element, with several sub classes: Box, Dialog, Menu, etc. Then you introduce a platform layer so you get a Unix Box, Unix Dialog, Unix Menu. Windows Box, windows Dialog, Windows Menu. Mac Box, Mac Dialog, Mac Menu. Instead have one hierarchy for GUI Components and one for Platforms. Then you can "plug in" the platform to the GUI component. Notice that in the first example we had a total of 13 classes while in the second we had 8. The second form grows much slower than the first and is much less brittle. Separating concerns in a hierarchy is an example of the more general [Fundamental_Terms_With_Examples#SquareLawOfComputation]({{site.pagesurl}}/Fundamental_Terms_With_Examples#SquareLawOfComputation).
+* A given hierarchy should address one concern (the reason for the hierarchy should be cohesive). Do not, for example, use the same hierarchy for both Graphical User Interface(GUI) Components as well as Platform Variations. Imagine a base class, Window Element, with several sub classes: Box, Dialog, Menu, etc. Then you introduce a platform layer so you get a Unix Box, Unix Dialog, Unix Menu. Windows Box, windows Dialog, Windows Menu. Mac Box, Mac Dialog, Mac Menu. Instead have one hierarchy for GUI Components and one for Platforms. Then you can "plug in" the platform to the GUI component. Notice that in the first example we had a total of 13 classes while in the second we had 8. The second form grows much slower than the first and is much less brittle. Separating concerns in a hierarchy is an example of the more general [Fundamental_Terms_With_Examples#SquareLawOfComputation](Fundamental_Terms_With_Examples#SquareLawOfComputation).
 * Prefer delegation to inheritance.
 * Avoid violating the [Liskov Substitution Principle](http://www.objectmentor.com/resources/articles/lsp.pdf). That is, when considering using a class as a parent for another, make sure that everything that applies to the parent class applies to the child class now and into the future (this should make inheritance harder to justify).
 ----
@@ -145,7 +145,7 @@ If you cannot list at least three problems with your understanding of a problem,
 Variations:
 * **Every** solution introduces problems. If you cannot list three problems your solution will introduce, you don't understand your solution (or the problem).
 ----
-[#SquareLawOfComputation]({{site.pagesurl}}/#SquareLawOfComputation)
+[#SquareLawOfComputation](#SquareLawOfComputation)
 ## Square Law of Computation
 The complexity to solve a problem grows at least as fast as the square of the number of things you are trying to solve - Weinberg, Introduction to General Systems Thinking
 

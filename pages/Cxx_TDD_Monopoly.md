@@ -3,7 +3,7 @@ title: Cxx_TDD_Monopoly
 ---
 # Introduction
 
-This tutorial takes you from the ground up working with a unit testing tool called [CxxTest](http://cxxtest.sourceforge.net/). It uses the user stories and acceptance tests from [Monopoly]({{site.pagesurl}}/Monopoly) as the basis of requirements and works through four iterations. We'll use the traditional Red:Green:Refactor approach to TDD.
+This tutorial takes you from the ground up working with a unit testing tool called [CxxTest](http://cxxtest.sourceforge.net/). It uses the user stories and acceptance tests from [Monopoly](Monopoly) as the basis of requirements and works through four iterations. We'll use the traditional Red:Green:Refactor approach to TDD.
 
 ## Assumptions
 * Writing reliable code is more important than writing "efficient" code
@@ -34,7 +34,7 @@ In this example, I've used the following tools:
 * make built in to Cygwin
 * makedepend built into Cygwin
 * Subversion client built into Cygwin
-* [Subversion server]({{site.pagesurl}}/Subversion_on_XP)
+* [Subversion server](Subversion_on_XP)
 * [CxxTest](http://cxxtest.sourceforge.net/) version 3.10.1
 
 ## Overview
@@ -76,8 +76,8 @@ So here's our algorithm for addressing each iteration:
 
 ## The Iterations
 If you are ready to move on, here are the four iterations:
-* [C++ TDD Iteration 1]({{site.pagesurl}}/Cxx_Tdd_Iteration_1)
-* [C++ TDD Iteration 2]({{site.pagesurl}}/Cxx_Tdd_Iteration_2)
-* [C++ TDD Iteration 2 - The Demo]({{site.pagesurl}}/Cxx_Tdd_Iteration_2_-_The_Demo)
-* [C++ TDD Iteration 3]({{site.pagesurl}}/Cxx_Tdd_Iteration_3)
-* [C++ TDD Iteration 4]({{site.pagesurl}}/Cxx_Tdd_Iteration_4)
+* [C++ TDD Iteration 1](Cxx_Tdd_Iteration_1)
+* [C++ TDD Iteration 2](Cxx_Tdd_Iteration_2)
+* [C++ TDD Iteration 2 - The Demo](Cxx_Tdd_Iteration_2_-_The_Demo)
+* [C++ TDD Iteration 3](Cxx_Tdd_Iteration_3)
+* [C++ TDD Iteration 4](Cxx_Tdd_Iteration_4)

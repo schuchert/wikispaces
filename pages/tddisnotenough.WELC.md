@@ -1,7 +1,7 @@
 ---
 title: tddisnotenough.WELC
 ---
-[<==Back]({{ site.pagesurl}}/TddIsNotEnough#WELC)
+[<==Back](TddIsNotEnough#WELC)
 
 |Name|Page|Summary|
 |Adapt Parameter|326|Change parameter to an adapter when you cannot use extract interface|
@@ -16,4 +16,4 @@ title: tddisnotenough.WELC
 |Subclass and override method|401|Test creates subclass & passes it in/requires some IoC|
 |Sprout Method, Sprout Class|59, 63|Create a method or class out of existing code.|
 
-[<==Back]({{ site.pagesurl}}/TddIsNotEnough#WELC)
+[<==Back](TddIsNotEnough#WELC)

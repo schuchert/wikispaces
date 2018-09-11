@@ -1,7 +1,7 @@
 ---
 title: PrinciplesOfProductDevelopmentFlow.ControllingFlowUnderUncertainty
 ---
-[Back]({{ site.pagesurl}}/PrinciplesOfProductDevelopmentFlow)
+[Back](PrinciplesOfProductDevelopmentFlow)
 
 **F1:    The Principle of Congestion Collapse **
 > When loadinb becomes too high, we will see a sudden and catastrophic drop in output
@@ -93,4 +93,4 @@ title: PrinciplesOfProductDevelopmentFlow.ControllingFlowUnderUncertainty
 **F30:    The Principle of Flow Conditioning**
 > Reduce variability before a bottleneck
 
-[Back]({{ site.pagesurl}}/PrinciplesOfProductDevelopmentFlow)
+[Back](PrinciplesOfProductDevelopmentFlow)

@@ -13,7 +13,7 @@ Most tables shown in these tutorials look something like this:
 |Populate Schedule                                                                                    
 {% endhighlight %}
 
-They are written this way to make them appear about how they appear in FitNesse when rendered in HTML. I could have used a graphic representation and in fact I did in the [Getting Started]({{ site.pagesurl}}/FitNesse.Tutorials.0) tutorial. However, to avoid using bitmaps, I chose text. You can create these tables with or without the extra spaces. E.e., the above table without the spaces is valid:
+They are written this way to make them appear about how they appear in FitNesse when rendered in HTML. I could have used a graphic representation and in fact I did in the [Getting Started](FitNesse.Tutorials.0) tutorial. However, to avoid using bitmaps, I chose text. You can create these tables with or without the extra spaces. E.e., the above table without the spaces is valid:
 
 {% highlight terminal %}
 |Create Repeating Program|Reaper|34|9:00|60|3/4/2008
@@ -26,29 +26,29 @@ They are written this way to make them appear about how they appear in FitNesse 
 If you prefer the first but want to enter the second button, look for the// **format**// button near the// **Save**// button in Fitnesse.
 
 # Working From [Schuchert's GitHub Repository](http://github.com/schuchert/fitnesse-tutorials/tree/master)
-For instructions on working from github: [FitNesse.Tutorials.WorkingFromGitHub]({{site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub)
+For instructions on working from github: [FitNesse.Tutorials.WorkingFromGitHub](FitNesse.Tutorials.WorkingFromGitHub)
 
-[#JavaTutorials]({{site.pagesurl}}/#JavaTutorials)
+[#JavaTutorials](#JavaTutorials)
 
 # Java Tutorials Ready to be Used
 
-* [Getting Started]({{ site.pagesurl}}/FitNesse.Tutorials.0) 
-* [Introduction To Decision Tables]({{ site.pagesurl}}/FitNesse.Tutorials.1) 
-* [Introduction To Query Tables]({{ site.pagesurl}}/FitNesse.Tutorials.2) 
-* [Script Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScriptTables) 
-* [Scenario Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables) 
-* [Table Tables]({{ site.pagesurl}}/FitNesse.Tutorials.TableTables) 
-* [Alternative Script Table Syntax]({{ site.pagesurl}}/FitNesse.Tutorials.AlternativeScriptTableSyntax) 
+* [Getting Started](FitNesse.Tutorials.0) 
+* [Introduction To Decision Tables](FitNesse.Tutorials.1) 
+* [Introduction To Query Tables](FitNesse.Tutorials.2) 
+* [Script Tables](FitNesse.Tutorials.ScriptTables) 
+* [Scenario Tables](FitNesse.Tutorials.ScenarioTables) 
+* [Table Tables](FitNesse.Tutorials.TableTables) 
+* [Alternative Script Table Syntax](FitNesse.Tutorials.AlternativeScriptTableSyntax) 
 
 # C# Tutorials
-* [C# W/Slim, Each Table Type]({{ site.pagesurl}}/FitNesse.Tutorials.CSharp.Slim.EachTable) 
+* [C# W/Slim, Each Table Type](FitNesse.Tutorials.CSharp.Slim.EachTable) 
 
 # Under Construction
-* [Converting Tests to use more of a Story Style]({{ site.pagesurl}}/FitNesse.Tutorials.ConvertingToStoryStyle) 
+* [Converting Tests to use more of a Story Style](FitNesse.Tutorials.ConvertingToStoryStyle) 
 
 # Writeups more than Tutorials: To Be Migrated
-* [Using Table Table for DSL-esque Test Setup]({{site.pagesurl}}/Acceptance_Testing.FitNesse.TableTableExample) 
+* [Using Table Table for DSL-esque Test Setup](Acceptance_Testing.FitNesse.TableTableExample) 
 
 # Originals Already Incorporated Into Tutorial Series
-* [Scenario Tables]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables) 
-* [Rapid Intro to Using Slim.Net]({{site.pagesurl}}/Acceptance_Testing.UsingSlimDotNetInFitNesse) 
+* [Scenario Tables](FitNesse.Tutorials.ScenarioTables) 
+* [Rapid Intro to Using Slim.Net](Acceptance_Testing.UsingSlimDotNetInFitNesse) 

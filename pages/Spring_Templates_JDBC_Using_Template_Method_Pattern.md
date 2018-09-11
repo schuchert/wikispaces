@@ -1,10 +1,10 @@
 ---
 title: Spring_Templates_JDBC_Using_Template_Method_Pattern
 ---
-[<--Back]({{site.pagesurl}}/Spring_Templates_Typical_JDBC) [Next-->]({{site.pagesurl}}/Spring_Templates_JDBC_Strategy_Is_A_Template)
+[<--Back](Spring_Templates_Typical_JDBC) [Next-->](Spring_Templates_JDBC_Strategy_Is_A_Template)
 
 # JDBC Using the Template Method Pattern
-This version uses the [GoF design pattern](http://en.wikipedia.org/wiki/Design_Patterns) [Template Method](http://en.wikipedia.org/wiki/Template_method_pattern). For more details, take a look at this [Template Method Pattern Example]({{site.pagesurl}}/Template_Method_Pattern).
+This version uses the [GoF design pattern](http://en.wikipedia.org/wiki/Design_Patterns) [Template Method](http://en.wikipedia.org/wiki/Template_method_pattern). For more details, take a look at this [Template Method Pattern Example](Template_Method_Pattern).
 
 In this case, we've factored out much of the code in the a base class called AbstractTemplateMethod. We have one concrete implementation of this class called Example2. The driver class, JdbcExample, now uses Exmaple2 to:
 * Install the schema
@@ -16,7 +16,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 
 ## The Source
 ----
-[#AbstractTemplateMethod]({{site.pagesurl}}/#AbstractTemplateMethod)
+[#AbstractTemplateMethod](#AbstractTemplateMethod)
 ## AbstractTemplateMethod.java
 {% highlight java %}
 01: package aab.valtech.jug.templatemethod;
@@ -100,7 +100,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 ### Interesting Lines
 |Line|Description|
 ----
-[#Example2]({{site.pagesurl}}/#Example2)
+[#Example2](#Example2)
 ## Example2.java
 {% highlight java %}
 01: package aab.valtech.jug.templatemethod;
@@ -170,7 +170,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 ### Interesting Lines
 |Line|Description|
 ----
-[#JdbcExample]({{site.pagesurl}}/#JdbcExample)
+[#JdbcExample](#JdbcExample)
 ## JdbcExample.java
 {% highlight java %}
 01: package aab.valtech.jug.templatemethod;
@@ -200,4 +200,4 @@ In this case, we've factored out much of the code in the a base class called Abs
 ### Interesting Lines
 |Line|Description|
 
-[<--Back]({{site.pagesurl}}/Spring_Templates_Typical_JDBC) [Next-->]({{site.pagesurl}}/Spring_Templates_JDBC_Strategy_Is_A_Template)
+[<--Back](Spring_Templates_Typical_JDBC) [Next-->](Spring_Templates_JDBC_Strategy_Is_A_Template)

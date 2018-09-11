@@ -2,7 +2,7 @@
 title: tdd.cpp.MovingTowardsStoryBasedExpressionOfTests
 ---
 # Introduction
-Bob Martin has an excellent Tdd Kata called [The Prime Factors Kata](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata). When I teach Tdd, I often use this as part of the [RPN_Calculator]({{site.pagesurl}}/RPN_Calculator) problem. I have the students add two operators:
+Bob Martin has an excellent Tdd Kata called [The Prime Factors Kata](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata). When I teach Tdd, I often use this as part of the [RPN_Calculator](RPN_Calculator) problem. I have the students add two operators:
 * Sum of the stack
 * Prime Factors
 Then I have them create a composite operator and build an instance using a sum of prime factors and the prime factors of the sum. Really, this is just an excuse to use the [Composite Pattern](http://en.wikipedia.org/wiki/Composite_pattern) in conjunction with the strategy pattern.
@@ -367,7 +367,7 @@ TEST_GROUP(PrimeFactorsOperatorTest) {
 };
 {% endhighlight %}
 
-These tests are somewhat influenced by BDD and some experience I've had using [RSpec](http://rspec.info). One thing these tests exhibit from my RSpec experience is that some of the steps with the test have a side-effect of storing intermediate information used later in the test. This often happens within an RSpec example as well. You can see several detailed [Ruby examples here]({{ site.pagesurl}}/ruby.Tutorials) for some examples of this style of testing.
+These tests are somewhat influenced by BDD and some experience I've had using [RSpec](http://rspec.info). One thing these tests exhibit from my RSpec experience is that some of the steps with the test have a side-effect of storing intermediate information used later in the test. This often happens within an RSpec example as well. You can see several detailed [Ruby examples here](ruby.Tutorials) for some examples of this style of testing.
 # Story-Runner Influenced Tests
 Here is another, probably over the top, version of the tests using more of a story-runner influence. This comes from my recent experience working through a beta version of [The RSpec Book](http://www.pragprog.com/titles/achbd/the-rspec-book) and specifically using [Cucumber](http://wiki.github.com/aslakhellesoy/cucumber).
 

@@ -1,19 +1,19 @@
 ---
 title: DesignProblemsPrintable
 ---
-[include_page="ITunesCompetetorDesignProblem"]({{site.pagesurl}}/include_page="ITunesCompetetorDesignProblem")
+[include_page="ITunesCompetetorDesignProblem"](include_page="ITunesCompetetorDesignProblem")
 ----
 ----
-[include_page="GmOnStarCompetetorDesignProblem"]({{site.pagesurl}}/include_page="GmOnStarCompetetorDesignProblem")
+[include_page="GmOnStarCompetetorDesignProblem"](include_page="GmOnStarCompetetorDesignProblem")
 ----
 ----
-[include_page="TimeTrackingForConsultingCompanyDesignProblem"]({{site.pagesurl}}/include_page="TimeTrackingForConsultingCompanyDesignProblem")
+[include_page="TimeTrackingForConsultingCompanyDesignProblem"](include_page="TimeTrackingForConsultingCompanyDesignProblem")
 ----
 ----
-[include_page="ClinicalTrialsTrackingDesignProblem"]({{site.pagesurl}}/include_page="ClinicalTrialsTrackingDesignProblem")
+[include_page="ClinicalTrialsTrackingDesignProblem"](include_page="ClinicalTrialsTrackingDesignProblem")
 ----
 ----
-[include_page="DvrDesignProblem"]({{site.pagesurl}}/include_page="DvrDesignProblem")
+[include_page="DvrDesignProblem"](include_page="DvrDesignProblem")
 ----
 ----
-[include_page="HeavyEquipmentRental"]({{site.pagesurl}}/include_page="HeavyEquipmentRental")
+[include_page="HeavyEquipmentRental"](include_page="HeavyEquipmentRental")

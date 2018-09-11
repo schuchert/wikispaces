@@ -1,11 +1,11 @@
 ---
 title: Car_Rental_Code_Coverage_with_Emma
 ---
-[<--Back]({{ site.pagesurl}}/Car_Rental_Example) [Next-->]({{ site.pagesurl}}/Emma_Code_Coverage_vehicle.type)
+[<--Back](Car_Rental_Example) [Next-->](Emma_Code_Coverage_vehicle.type)
 
 # Code Coverage with Emma
 
-This example is based on the [Car_Rental_Example]({{site.pagesurl}}/Car_Rental_Example). If you want work through this example, you need to follow [these instructions]({{site.pagesurl}}/Car_Rental_Installation_and_Setup) first.
+This example is based on the [Car_Rental_Example](Car_Rental_Example). If you want work through this example, you need to follow [these instructions](Car_Rental_Installation_and_Setup) first.
 
 In this example, we add code coverage to the Car Rental Application. We then examine the results, make some changes and finish with a few conclusions. 
 
@@ -19,10 +19,10 @@ Let's get started:
 * Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
 
 **suite() method**
-Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [suite()]({{site.pagesurl}}/JUnit_4.xSuite) method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
+Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [suite()](JUnit_4.xSuite) method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
  
 **Ant Script**
-When you followed [these instructions]({{site.pagesurl}}/Car_Rental_Installation_and_Setup), you should have created a workspace with three projects:
+When you followed [these instructions](Car_Rental_Installation_and_Setup), you should have created a workspace with three projects:
 * CarRental
 * LoggingUtils
 * ToolConfiguration
@@ -34,7 +34,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 (By the way, let me give credit where it's due, I got most of this from [Getting Started with Emma using Ant](http://emma.sourceforge.net/userguide/ar01s03.html).
 
 * Here's the file so we can discuss it and configure it for your situation:
-[#emma]({{site.pagesurl}}/#emma)
+[#emma](#emma)
 ## emma.xml
 {% highlight terminal %}
 01: <?xml version="1.0" encoding="UTF-8"?>
@@ -181,4 +181,4 @@ So I have roughly 81% code coverage with 106 unit tests and I have a few problem
 
 Over the next several sections, we will look at each package with less than 80% code coverage, assess each class and plan out our changes. For you to follow along, you'll need to execute the Emma ant script and then look at the classes to understand the assessments.
 
-[<--Back]({{ site.pagesurl}}/Car_Rental_Example) [Next-->]({{ site.pagesurl}}/Emma_Code_Coverage_vehicle.type)
+[<--Back](Car_Rental_Example) [Next-->](Emma_Code_Coverage_vehicle.type)

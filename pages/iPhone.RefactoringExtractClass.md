@@ -1,8 +1,8 @@
 ---
 title: iPhone.RefactoringExtractClass
 ---
-[<-- Back]({{ site.pagesurl}}/iPhone)
+[<-- Back](iPhone)
 
-[media_type="custom"_key="7608379"]({{site.pagesurl}}/media_type="custom"_key="7608379")
+[media_type="custom"_key="7608379"](media_type="custom"_key="7608379")
 
-[<-- Back]({{ site.pagesurl}}/iPhone)
+[<-- Back](iPhone)

@@ -1,7 +1,7 @@
 ---
 title: PrinciplesOfProductDevelopmentFlow.ApplyingWipConstraints
 ---
-[Back]({{ site.pagesurl}}/PrinciplesOfProductDevelopmentFlow)
+[Back](PrinciplesOfProductDevelopmentFlow)
 
 **W1:    The Principle of WIP Constraints** 
 > Constrain WIP to control cycle time and flow
@@ -72,4 +72,4 @@ title: PrinciplesOfProductDevelopmentFlow.ApplyingWipConstraints
 **W23:    The Principle of Visual WIP**
 > Make WIP continuously visible
 
-[Back]({{ site.pagesurl}}/PrinciplesOfProductDevelopmentFlow)
+[Back](PrinciplesOfProductDevelopmentFlow)

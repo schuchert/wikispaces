@@ -2,7 +2,7 @@
 title: javascript.UnitTestingWithJsTestDriver
 ---
 # Overview
-I'm learning JavaScript (again, and for real this time, I hope). After reading [JavaScript: The Good Parts]({{ site.pagesurl}}/@http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) and several online pages, I set out to try some basic TDD in JavaScript. For these instructions (and the soon to be created instructional video), I'm using the following tool set:
+I'm learning JavaScript (again, and for real this time, I hope). After reading [JavaScript: The Good Parts](@http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) and several online pages, I set out to try some basic TDD in JavaScript. For these instructions (and the soon to be created instructional video), I'm using the following tool set:
 * Chrome (configured for auto updating)
 * Terminal (OS X Lion)
 * Java (to execute use the test runner)
@@ -11,8 +11,8 @@ I'm learning JavaScript (again, and for real this time, I hope). After reading [
 
 This is my first stab at this and I hope to both get a better workflow and better at JavaScript.
 # Getting Setup
-[Setup JsTestDriver]({{ site.pagesurl}}/@http://code.google.com/p/js-test-driver/wiki/GettingStarted). Instructions summarized here for convenience.
-* [Download the jar]({{ site.pagesurl}}/@http://code.google.com/p/js-test-driver/downloads/list)
+[Setup JsTestDriver](@http://code.google.com/p/js-test-driver/wiki/GettingStarted). Instructions summarized here for convenience.
+* [Download the jar](@http://code.google.com/p/js-test-driver/downloads/list)
 * Create basic project structure:
 {% highlight terminal %}
 % mkdir -p RpnCalcDemo/src
@@ -430,7 +430,7 @@ var rpn_calculator = function() {
 };
 {% endhighlight %}
 * Run the tests, everything should be passing. Here's the full version of rpn_stack.js:
-[#helpremovedryviolation]({{site.pagesurl}}/#helpremovedryviolation)
+[#helpremovedryviolation](#helpremovedryviolation)
 #### src/rpn_stack.js
 {% highlight javascript %}
 var rpn_stack = function() {

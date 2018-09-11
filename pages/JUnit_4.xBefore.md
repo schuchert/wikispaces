@@ -1,7 +1,7 @@
 ---
 title: JUnit_4.xBefore
 ---
-[<--Back]({{site.pagesurl}}/JUnit_4.x#Before)
+[<--Back](JUnit_4.x#Before)
 
 # @Before
 The @Before annotation applies to methods. You put it on a method and JUnit will execute it before each unit test. This is equivalent to the setUp method from JUnit bfore 4.0 that was defined as protected in TestCase.
@@ -32,4 +32,4 @@ Not much different, but here are a few differences:
 * The method has to have the name setUp, whereas in JUnit 4.x, it does not.
 * You can have more than one in JUnit 4.1 by using @Before more than once.
 
-[<--Back]({{site.pagesurl}}/JUnit_4.x#Before)
+[<--Back](JUnit_4.x#Before)

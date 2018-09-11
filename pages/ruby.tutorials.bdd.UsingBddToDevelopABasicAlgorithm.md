@@ -1,7 +1,7 @@
 ---
 title: ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm
 ---
-[<--Back]({{ site.pagesurl}}/ruby.Tutorials)
+[<--Back](ruby.Tutorials)
 
 # Overview
 {:toc}
@@ -108,7 +108,7 @@ You will create an example whose primary purpose is to get the production class 
     end
 {% endhighlight %}
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.RubyFilesUseSpaces"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
+[[include page="sidebar_start"]][[include page="ruby.sidebar.RubyFilesUseSpaces"]][include_page="sidebar_end"](include_page="sidebar_end")
 
 * Run your example again:
 
@@ -477,9 +477,9 @@ Created commit c6e3ce2: Added support for basic constants.
 Macintosh-7% 
 {% endhighlight %}
 ## Refactor the Examples
-[[include page="sidebar_start"]][[include page="ruby.sidebar.HowManyStepsAreNormal"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
+[[include page="sidebar_start"]][[include page="ruby.sidebar.HowManyStepsAreNormal"]][include_page="sidebar_end"](include_page="sidebar_end")
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.WhyShouldYouCareAboutTheseExamples"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
+[[include page="sidebar_start"]][[include page="ruby.sidebar.WhyShouldYouCareAboutTheseExamples"]][include_page="sidebar_end"](include_page="sidebar_end")
 
 * Update your both your contexts by putting them in a containing context:
 
@@ -701,7 +701,7 @@ Created commit 9f68a9b: Refactored both tests to remove duplication.
  rewrite shunting_yard_algorithm_spec.rb (80%)
 {% endhighlight %}
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.Refactoring"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
+[[include page="sidebar_start"]][[include page="ruby.sidebar.Refactoring"]][include_page="sidebar_end"](include_page="sidebar_end")
 
 Now is a great time to kick back, listen to some tunes, get a glass of ice tea and add BDD to your resume.
 
@@ -721,7 +721,7 @@ Since this is an example of processing basic operators, which is different from 
   end
 {% endhighlight %}
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.RubyAndParens"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
+[[include page="sidebar_start"]][[include page="ruby.sidebar.RubyAndParens"]][include_page="sidebar_end"](include_page="sidebar_end")
 
 * Run your tests to see how it fails (not showing full output):
 
@@ -995,7 +995,7 @@ Created commit 2524ac9: Added support for multiple operators of same precedence.
  1 files changed, 6 insertions(+), 0 deletions(-)
 {% endhighlight %}
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.CheckingInIsSlow"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
+[[include page="sidebar_start"]][[include page="ruby.sidebar.CheckingInIsSlow"]][include_page="sidebar_end"](include_page="sidebar_end")
 
 * Create a new method that writes the current operator if it is not null:
 
@@ -1582,7 +1582,7 @@ Finished in 0.02318 seconds
 # Example: Handling ( )
 In this section you'll start by properly parsing parenthesis. Then you'll make sure that ( )'s work with simple expressions and finally you'll make sure that ( )'s cause lower precedence operators to happen before higher-precedence operators. Notice that this sets of examples fall nicely under a new context called something like "Handling ( )'s".
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.WhatIsAnalysis"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
+[[include page="sidebar_start"]][[include page="ruby.sidebar.WhatIsAnalysis"]][include_page="sidebar_end"](include_page="sidebar_end")
 
 ## Example: Removing ( )
 Begin by writing a new context called "Handling ( )'s" and adding an example that verifies the removal of ( )'s from an otherwise empty expression: $$ (\ )\ \ \rightarrow $$
@@ -1672,7 +1672,7 @@ Finished in 0.027261 seconds
 
 * Check your work in.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.DIdYouJustWriteTooMuchProductionCode"]][include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
+[[include page="sidebar_start"]][[include page="ruby.sidebar.DIdYouJustWriteTooMuchProductionCode"]][include_page="sidebar_end"](include_page="sidebar_end")
 
 ## Example: ( ) around expression works
 Next, verify that ( )'s around an expression still works.  $$ (\ 4\ *\ a\ )\ \ \rightarrow \ \ 4\ a\ * $$
@@ -2797,5 +2797,5 @@ Here is the last version I ended up with after the tutorial. You result may vary
     end
 {% endhighlight %}
 
-[<--Back]({{ site.pagesurl}}/ruby.Tutorials)
+[<--Back](ruby.Tutorials)
 

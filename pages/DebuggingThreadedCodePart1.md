@@ -2,12 +2,12 @@
 title: DebuggingThreadedCodePart1
 ---
 # Background
-Writing unit tests for threaded code is hard. What follows is a simple example, along with instructions on how to improve your chances of finding threading errors in your code. I've updated this as of February 2010. [If you are looking for the original material, click here]({{ site.pagesurl}}/DebuggingThreadedCodePart1.Original).
+Writing unit tests for threaded code is hard. What follows is a simple example, along with instructions on how to improve your chances of finding threading errors in your code. I've updated this as of February 2010. [If you are looking for the original material, click here](DebuggingThreadedCodePart1.Original).
 
 ## Introduction
 This page describes some of what it takes to successfully test thread-related code. The primary emphasis here is on supporting technology rather than techniques.
 
-[If you just want to get to the step-by-step instructions, click here.]({{ site.pagesurl}}/DebuggingThreadedCodePart1#StepByStepInstructions)
+[If you just want to get to the step-by-step instructions, click here.](DebuggingThreadedCodePart1#StepByStepInstructions)
 ## Broken Code
 Here is some simple production code:
 
@@ -30,7 +30,7 @@ The name should be a hint that it has problems, and it does. If a single instanc
 Think it is not possible? It is. 
 
 ## What is an atomic operation in the JVM?
-You can safely [skip]({{ site.pagesurl}}/DebuggingThreadedCodePart1#SkipOverBytecodeInformation) this section if you are not interested in the bit-head information.
+You can safely [skip](DebuggingThreadedCodePart1#SkipOverBytecodeInformation) this section if you are not interested in the bit-head information.
 
 What is an atomic operation? Any operation that cannot be interrupted from when it starts to when it completes. For example, in the following code, line 5, where 1 is assigned to value, is atomic. It cannot be interrupted:
 
@@ -92,7 +92,7 @@ If we look at the second operation, ++, it gets even worse (assume that value ho
 
 There are several places where this sequence of steps could be interrupted. One bad case is where two threads both call the same method on the same object. The first thread completes the first three instructions, up to GETFIELD, and the is interrupted. A second thread takes over and performed the entire method, incrementing value by one. Then the first thread picks up where it left off. It has the// **old**// value on its operand stack. It adds one and stores the result. This results in adding one two times and only incrementing by one because two threads stepped on each other.
 
-[#SkipOverBytecodeInformation]({{site.pagesurl}}/#SkipOverBytecodeInformation)
+[#SkipOverBytecodeInformation](#SkipOverBytecodeInformation)
 ## Demonstrating the failure with a test
 
 Here's a description of a test that will prove our code is broken:
@@ -102,7 +102,7 @@ Here's a description of a test that will prove our code is broken:
 * Run this until we demonstrate that lastId was only incremented by one, instead of two. 
 
 Here is such a test:
-[#ClassWithThreadingProblemTest]({{site.pagesurl}}/#ClassWithThreadingProblemTest)
+[#ClassWithThreadingProblemTest](#ClassWithThreadingProblemTest)
 **ClassWithThreadingProblemTest.java**
 
 {% highlight java %}
@@ -200,7 +200,7 @@ At a first glance, that is the primary purpose of [ConTest](http://www.haifa.ibm
 
 Describing how [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) actually accomplishes this, and what other features it offers, is better described by several [publications.](http://www.haifa.ibm.com/projects/verification/contest/publications.html)
 ----
-[#StepByStepInstructions]({{site.pagesurl}}/#StepByStepInstructions)
+[#StepByStepInstructions](#StepByStepInstructions)
 ## Getting it Working
 
 First the steps in a nutshell:

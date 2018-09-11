@@ -5,9 +5,9 @@ Next we need to start eclipse and create a workspace.
 
 ### Create Initial Project
 # Start eclipse.
-# When prompted, enter a directory for your workspace. I used C:\workspaces\JpaAndEjb3. To understand why I recommend not using a space in the name, read [this sidebar]({{site.pagesurl}}/JPA_Tutorial_1_-_Getting_Started#SideBarJpaClassPath).
+# When prompted, enter a directory for your workspace. I used C:\workspaces\JpaAndEjb3. To understand why I recommend not using a space in the name, read [this sidebar](JPA_Tutorial_1_-_Getting_Started#SideBarJpaClassPath).
 # Close the Welcome window
-[#AddRequiredLibraries]({{site.pagesurl}}/#AddRequiredLibraries)
+[#AddRequiredLibraries](#AddRequiredLibraries)
 ### User Library
 We are going to define a user library, which is just a collection of jar files with a name. Once we create this, we can add it to our classpath with one command. This also makes setting up new projects in the same workspace a snap. We can also export workspace settings and import them into a new workspace.
 # Pull down **Window:Preferences**
@@ -42,7 +42,7 @@ Here is a list of all the jar files you'll need to add (note the path's listed a
 Next we need to create a Java project. We'll keep the source separate from the bin directory:
 # Pull down the **File** menu and select **New:Project**
 # Select **Java Project** and click **Next**
-# Enter a project name: **JpaTutorial1**, again read [this sidebar]({{site.pagesurl}}/JPA_Tutorial_1_-_Getting_Started#SideBarJpaClassPath) to know why I did not use a space in the project name.
+# Enter a project name: **JpaTutorial1**, again read [this sidebar](JPA_Tutorial_1_-_Getting_Started#SideBarJpaClassPath) to know why I did not use a space in the project name.
 # Make sure "Create new project in workspace" is selected.
 # Make sure the JRE selected is 1.5.x.   If a 1.5 JRE does not show in the list, you can add it through Window->Preferences->JAVA->Installed JRE's.
 # Select "Create separate source and output folders"
@@ -83,7 +83,7 @@ We now need to add two libraries. One will be the user-defined library we create
 # Click **Finish**
 # Click **OK**
 
-[#SideBarJpaClassPath]({{site.pagesurl}}/#SideBarJpaClassPath)
+[#SideBarJpaClassPath](#SideBarJpaClassPath)
 # Sidebar
 The JPA specification says that in a managed environment (read as running in the container), you do not need to list your entity classes in the persistence.xml (this is coming up). When you're using JPA in a JSE environment, this is not guaranteed. In all of these examples, we're using the hibernate implementation of the JEE Entity Manager. It provides the functionality of automatically registering all of your entities without your having to explicitly list them. However, if you happen to have a space in your class path, it appears to fail.
 

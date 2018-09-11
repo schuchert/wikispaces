@@ -1,6 +1,6 @@
 ---
 title: RubyNotes
 ---
-* ==[First Pass]({{ site.pagesurl}}/FirstPass)
-* ==[Second Pass]({{ site.pagesurl}}/Ruby.SecondPass)
-* ==[Ruby Tutorials]({{ site.pagesurl}}/ruby.Tutorials)
+* ==[First Pass](FirstPass)
+* ==[Second Pass](Ruby.SecondPass)
+* ==[Ruby Tutorials](ruby.Tutorials)

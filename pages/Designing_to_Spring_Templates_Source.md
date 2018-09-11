@@ -1,7 +1,7 @@
 ---
 title: Designing_to_Spring_Templates_Source
 ---
-[<--Back]({{site.pagesurl}}/Designing_to_Spring_Templates)
+[<--Back](Designing_to_Spring_Templates)
 
 # Designing to Spring Templates Source
 This page has the full source in an Eclipse Archive file along with instructions for creating a workspace and setting up the workspace using the archive file.
@@ -39,4 +39,4 @@ It also includes all of the necessary jar files to run these examples.
 # Wait for the projects to build
 # Execute one of the Java classes called "JdbcExample" in any of the packages contained in the JdbcToSpringTemplates project
 
-[<--Back]({{site.pagesurl}}/Designing_to_Spring_Templates)
+[<--Back](Designing_to_Spring_Templates)

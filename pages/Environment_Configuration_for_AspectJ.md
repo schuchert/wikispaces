@@ -19,23 +19,23 @@ These examples require AspectJ 1.5. They were originally written using 1.5.1. Fo
 Download AspectJ [here](http://www.eclipse.org/aspectj/downloads.php).
 
 ## Eclipse Configuration for AspectJ
-The following additional configuration sets will set your Eclipse configuration up the way I've set it up for all of these examples. You can click on individual links or just follow the [Next-->]({{site.pagesurl}}/Eclipse_VM_Configuration_for_AspectJ) link below:
-* [Eclipse_VM_Configuration_for_AspectJ]({{site.pagesurl}}/Eclipse_VM_Configuration_for_AspectJ)
-* [Eclipse_Classpath_Variable_for_AspectJ]({{site.pagesurl}}/Eclipse_Classpath_Variable_for_AspectJ)
-* [Eclipse_Java_Language_Preferences_for_AspectJ]({{site.pagesurl}}/Eclipse_Java_Language_Preferences_for_AspectJ)
-* [Eclipse_Java_Project_Preferences_for_AspectJ]({{site.pagesurl}}/Eclipse_Java_Project_Preferences_for_AspectJ)
-* [Save_Workspace_Configurations_for_AspectJ]({{site.pagesurl}}/Save_Workspace_Configurations_for_AspectJ)
+The following additional configuration sets will set your Eclipse configuration up the way I've set it up for all of these examples. You can click on individual links or just follow the [Next-->](Eclipse_VM_Configuration_for_AspectJ) link below:
+* [Eclipse_VM_Configuration_for_AspectJ](Eclipse_VM_Configuration_for_AspectJ)
+* [Eclipse_Classpath_Variable_for_AspectJ](Eclipse_Classpath_Variable_for_AspectJ)
+* [Eclipse_Java_Language_Preferences_for_AspectJ](Eclipse_Java_Language_Preferences_for_AspectJ)
+* [Eclipse_Java_Project_Preferences_for_AspectJ](Eclipse_Java_Project_Preferences_for_AspectJ)
+* [Save_Workspace_Configurations_for_AspectJ](Save_Workspace_Configurations_for_AspectJ)
 
 ## Eclipse Project JAR Files
-* [JAR_Files_for_AspectJ]({{site.pagesurl}}/JAR_Files_for_AspectJ)
+* [JAR_Files_for_AspectJ](JAR_Files_for_AspectJ)
 
 ## Using Provided Source Code in ZIP Files
-* [ExtractingSourceFilesIntoProject]({{site.pagesurl}}/ExtractingSourceFilesIntoProject)
+* [ExtractingSourceFilesIntoProject](ExtractingSourceFilesIntoProject)
 
 ## On to the examples
-* [AspectJ_Example_1]({{site.pagesurl}}/AspectJ_Example_1)
-* [AspectJ_Example_2]({{site.pagesurl}}/AspectJ_Example_2)
-* [AspectJ_Example_3]({{site.pagesurl}}/AspectJ_Example_3)
-* [AspectJ_Example_4]({{site.pagesurl}}/AspectJ_Example_4)
+* [AspectJ_Example_1](AspectJ_Example_1)
+* [AspectJ_Example_2](AspectJ_Example_2)
+* [AspectJ_Example_3](AspectJ_Example_3)
+* [AspectJ_Example_4](AspectJ_Example_4)
 
-[<--Back]({{site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{site.pagesurl}}/Eclipse_VM_Configuration_for_AspectJ)
+[<--Back](AspectJ_Self_Study) [Next-->](Eclipse_VM_Configuration_for_AspectJ)

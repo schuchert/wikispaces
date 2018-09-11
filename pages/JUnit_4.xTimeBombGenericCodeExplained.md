@@ -1,10 +1,10 @@
 ---
 title: JUnit_4.xTimeBombGenericCodeExplained
 ---
-[<--Back]({{site.pagesurl}}/JUnit_4.x)
+[<--Back](JUnit_4.x)
 
 # Time Bomb Generic Code Explained
-Here's a use of TimeBomb (for context) taken from [Example 2]({{site.pagesurl}}/JUnit_4.x#example2):
+Here's a use of TimeBomb (for context) taken from [Example 2](JUnit_4.x#example2):
 {% highlight terminal %}
 92:     @Test(expected = ObjectInUse.class)
 93:     public void removeUsedValidType() {
@@ -39,7 +39,7 @@ My first vision wasn't up to my expectations. Sure, I could have just added "thr
 I made throwUntil a generic method. Doing so allowed Java to determine at compile time that while in general the method "throwUntil" can throw any exception, in this //**particular use**// it was throwing an ObjectInUse exception, which happens to be a RuntimeException and therefore does not require a try/catch or a throws clause on the method signature.
 
 This is what I ended up using:
-[#TimeBombCode]({{site.pagesurl}}/#TimeBombCode)
+[#TimeBombCode](#TimeBombCode)
 ## TimeBomb.java
 {% highlight java %}
 01: package vehicle.util;
@@ -88,4 +88,4 @@ Back to the original use:
 {% endhighlight %}
 Java matches the first three int parameters as before. Next, Java notices that the 4th parameter's compile-time type is "ObjectInUse". As already mentioned, ObjectInUse is a RuntimeException, so this line compiles and we do not need either a try/catch or a throws clause.
 
-[<--Back]({{site.pagesurl}}/JUnit_4.x)
+[<--Back](JUnit_4.x)

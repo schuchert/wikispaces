@@ -1,12 +1,12 @@
 ---
 title: LearningCycle
 ---
-[<--Back]({{ site.pagesurl}}/ExperientialLearningNotes)
+[<--Back](ExperientialLearningNotes)
 # Learning Cycles
 Learning Cycles describe a path for a learning experience. For more background on experiential learning cycles, look [here](http://reviewing.co.uk/research/learning.cycles.htm).
 # Example Learning Cycles 
 
-A learning cycle is a kind of experiential learning situation. The learning cycle is an example of the application of the [PiagetModel]({{site.pagesurl}}/PiagetModel) of the learning Process. 
+A learning cycle is a kind of experiential learning situation. The learning cycle is an example of the application of the [PiagetModel](PiagetModel) of the learning Process. 
 
 A learning cycle consists of three steps: 
 
@@ -38,4 +38,4 @@ Note that we did not give the student any answers, the underling ideas are their
 ## Application
 Next, we give the students a similar problem they can apply their new information to as a means to validating their information.
 
-[<--Back]({{ site.pagesurl}}/ExperientialLearningNotes)
+[<--Back](ExperientialLearningNotes)

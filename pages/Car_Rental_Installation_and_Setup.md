@@ -1,14 +1,14 @@
 ---
 title: Car_Rental_Installation_and_Setup
 ---
-[<--Back]({{site.pagesurl}}/Car_Rental_Example)
+[<--Back](Car_Rental_Example)
 
 # Car Rental Installation and Setup
 
 This project uses Eclipse 3.2 and JDK 1.5.0_06. I have a few additional plugins installed into Eclipse. These are all optional:
-* [Checkstyle](http://eclipse-cs.sourceforge.net/), for details see: [Checkstyle_in_Eclipse]({{site.pagesurl}}/Checkstyle_in_Eclipse).
-* [PMD](http://pmd.sourceforge.net/integrations.html#eclipse), for details see: [PMD_In_Eclipse]({{site.pagesurl}}/PMD_In_Eclipse).
-* Subversion on my PC and Subclipse. See: [Subversion_on_XP]({{site.pagesurl}}/Subversion_on_XP).
+* [Checkstyle](http://eclipse-cs.sourceforge.net/), for details see: [Checkstyle_in_Eclipse](Checkstyle_in_Eclipse).
+* [PMD](http://pmd.sourceforge.net/integrations.html#eclipse), for details see: [PMD_In_Eclipse](PMD_In_Eclipse).
+* Subversion on my PC and Subclipse. See: [Subversion_on_XP](Subversion_on_XP).
 
 ## Libraries
 **Required**
@@ -100,12 +100,12 @@ These steps are optional if you've installed Eclipse and the various libs in the
 # All 100 tests should pass
 
 **Optional: Code Coverage**
-* [Car_Rental_Code_Coverage_with_Emma]({{site.pagesurl}}/Car_Rental_Code_Coverage_with_Emma)
-* [Car_Rental_Code_Coverage_with_Cobertura]({{site.pagesurl}}/Car_Rental_Code_Coverage_with_Cobertura)
+* [Car_Rental_Code_Coverage_with_Emma](Car_Rental_Code_Coverage_with_Emma)
+* [Car_Rental_Code_Coverage_with_Cobertura](Car_Rental_Code_Coverage_with_Cobertura)
 
 **Optional: Run PMD**
 # Right-click on the project
 # Select PMD:Check Code with PMD
 # Do this every so often after you've made changes to the code to see what PMD has to say about your changes.
 
-[<--Back]({{site.pagesurl}}/Car_Rental_Example)
+[<--Back](Car_Rental_Example)

@@ -1,7 +1,7 @@
 ---
 title: cpptraining.GettingStartedWithEclipseCdt.Juno
 ---
-[<--back]({{ site.pagesurl}}/CppTraining)
+[<--back](CppTraining)
 # Overview
 Picking up work on my C++ book again so I figured it was time to start using Juno (Eclipse circa '12). Here are the preliminary steps.
 ## The Steps
@@ -22,4 +22,4 @@ What I'm about to recommend is controversial because most people prefer [homebre
 
 ### *nix users
 Use your favorite package tool to install g++ and make. I'm sure there are more steps but I don't have a raw unix distro with which to experiment.
-[<--back]({{ site.pagesurl}}/CppTraining)
+[<--back](CppTraining)

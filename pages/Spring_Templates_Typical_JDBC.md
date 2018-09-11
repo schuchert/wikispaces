@@ -1,7 +1,7 @@
 ---
 title: Spring_Templates_Typical_JDBC
 ---
-[<--Back]({{site.pagesurl}}/Designing_to_Spring_Templates)  [Next-->]({{site.pagesurl}}/Spring_Templates_JDBC_Using_Template_Method_Pattern)
+[<--Back](Designing_to_Spring_Templates)  [Next-->](Spring_Templates_JDBC_Using_Template_Method_Pattern)
 
 # Using JDBC Directly
 This is the base example. In it we:
@@ -26,7 +26,7 @@ Since this is NOT a JDBC example but rather I use JDBC as a vehicle to better un
 
 ----
 
-[#JdbcExample]({{site.pagesurl}}/#JdbcExample)
+[#JdbcExample](#JdbcExample)
 ## JdbcExample.java
 {% highlight java %}
 01: package aaa.valtech.jug.version1;
@@ -136,4 +136,4 @@ Since this is NOT a JDBC example but rather I use JDBC as a vehicle to better un
 
 TBD
 
-[<--Back]({{site.pagesurl}}/Designing_to_Spring_Templates)  [Next-->]({{site.pagesurl}}/Spring_Templates_JDBC_Using_Template_Method_Pattern)
+[<--Back](Designing_to_Spring_Templates)  [Next-->](Spring_Templates_JDBC_Using_Template_Method_Pattern)

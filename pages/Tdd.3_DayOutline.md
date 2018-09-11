@@ -35,7 +35,7 @@ This is approximately the outline I use for a 3-day TDD course. I've used this o
 ** Demonstrate refactoring to polymorphism/strategy pattern
 
 # Day 3
-* New problem (sometimes I intersperse this one with the sum of the stack and prime factors above): [logging in]({{ site.pagesurl}}/Tdd.Problems.LoggingIn)
+* New problem (sometimes I intersperse this one with the sum of the stack and prime factors above): [logging in](Tdd.Problems.LoggingIn)
 ** Introduce a mocking library (Rhino Mock for .Net and JMock 2 for Java - hand-rolled for C++).
 ** Implement enough of this to discuss complexity of logic
 ** Discuss state pattern

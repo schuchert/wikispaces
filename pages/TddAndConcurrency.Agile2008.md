@@ -7,5 +7,5 @@ I have 3 hours for Agile 2008 so I'm going back to the interactive format.
 
 This and the related pages represent that changed approach. I got a significant amount of help on this outline from my friend and colleague David Nunn, who also happens to be a member of this space.
 
-## [Outline]({{ site.pagesurl}}/TddAndConcurrency.Agile2008.Outline)
-## [Eclipse Workspace]({{ site.pagesurl}}/file:ConcurrencyPresentations_ad2008.zip)
+## [Outline](TddAndConcurrency.Agile2008.Outline)
+## [Eclipse Workspace](file:ConcurrencyPresentations_ad2008.zip)

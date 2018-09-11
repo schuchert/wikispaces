@@ -2,7 +2,7 @@
 title: tw_interview.notes
 ---
 # Getting Started
-I sent you a zip of the Eclipse project directory. While you can follow these steps, you can also ignore all of this and [skip ahead]({{ site.pagesurl}}/tw_interview.notes#skipahead).
+I sent you a zip of the Eclipse project directory. While you can follow these steps, you can also ignore all of this and [skip ahead](tw_interview.notes#skipahead).
 ## Get the source
 The project resides on [github](https://github.com/schuchert/tw_coding_interview). To acquire the source, you can do the following:
 * git clone git://github.com/schuchert/tw_coding_interview.git
@@ -20,7 +20,7 @@ I used gradle as my build tool. To build and run the tests:
 * For your project directory, use the full path to the tw_coding_interview directory created above
 * Import the rover project
 
-[#skipahead]({{site.pagesurl}}/#skipahead)
+[#skipahead](#skipahead)
 # The Code
 There is a main program that reads from an input file and writes output to System.out: com.tw.rover.main.Main. If you run that program you will see the expected output. You can also create other text files and provide their names (one per execution) as an optional command line parameter. This code is lightly tested by com.tw.rover.main.MainTest in the src/test/java source tree.
 

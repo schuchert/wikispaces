@@ -27,7 +27,7 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ----
 ## Project Kick-off
 ### Setting the Context
-* [Context_Free_Questions]({{site.pagesurl}}/Context_Free_Questions)
+* [Context_Free_Questions](Context_Free_Questions)
 ### Elevator Pitch
 * Examples
 * Hand Out Projects to **groups**
@@ -202,7 +202,7 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** Any experience suggesting changing other stories?
 ** Exercise: **Group** burn-down chart 1
 ### Iteration Planning Simulation
-* [IterationPlanningSimulationInstructions]({{site.pagesurl}}/IterationPlanningSimulationInstructions)
+* [IterationPlanningSimulationInstructions](IterationPlanningSimulationInstructions)
 * Repeat the first process a few times
 * Add a few, re-estimate a few
 * Practice measuring velocity
@@ -282,11 +282,11 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 |G&Weinberg89|Exploring Requirements - Quality Before Design|
 
 ## Design Problems
-* [ITunes]({{site.pagesurl}}/ITunesCompetetorDesignProblem)
-* [GmOnStar]({{site.pagesurl}}/GmOnStarCompetetorDesignProblem)
-* [Time Tracking]({{site.pagesurl}}/TimeTrackingForConsultingCompanyDesignProblem)
-* [Clinical Trial]({{site.pagesurl}}/ClinicalTrialsTrackingDesignProblem)
-* [Dvr]({{site.pagesurl}}/DvrDesignProblem)
+* [ITunes](ITunesCompetetorDesignProblem)
+* [GmOnStar](GmOnStarCompetetorDesignProblem)
+* [Time Tracking](TimeTrackingForConsultingCompanyDesignProblem)
+* [Clinical Trial](ClinicalTrialsTrackingDesignProblem)
+* [Dvr](DvrDesignProblem)
 
 # Notes
 For the purpose, 
@@ -295,20 +295,20 @@ For the purpose,
 * **Class** --> Entire class
 
 # Work in Progress
-* [Introduction]({{site.pagesurl}}/Introduction)
-* [Setting the Context]({{site.pagesurl}}/Setting_the_Context)
-* [The Elevator Pitch]({{site.pagesurl}}/The_Elevator_Pitch)
-* [Brainstorming]({{site.pagesurl}}/Brainstorming)
-* [User Stories]({{site.pagesurl}}/User_Stories)
-* [Stakeholder Analysis]({{site.pagesurl}}/Stakeholder_Analysis)
-* [User Roles]({{site.pagesurl}}/User_Roles)
-* [User Stories Revisited]({{site.pagesurl}}/User_Stories_Revisited)
-* [Acceptance Testing User Stories]({{site.pagesurl}}/Acceptance_Testing_User_Stories)
-* [Story Guidelines]({{site.pagesurl}}/Story_Guidelines)
-* [Lightweight Domain Analysis]({{site.pagesurl}}/Lightweight_Domain_Analysis)
-* [Must, Should, Could, Won't]({{site.pagesurl}}/Must,_Should,_Could,_Won't)
-* [Making Meetings Work]({{site.pagesurl}}/Making_Meetings_Work)
-* [Estimation and Story Points]({{site.pagesurl}}/Estimation_and_Story_Points)
-* [Release Planning]({{site.pagesurl}}/Release_Planning)
-* [Iteration Alpha and Omega]({{site.pagesurl}}/Iteration_Alpha_and_Omega)
-* [ATM Exercise]({{site.pagesurl}}/ATM_Exercise)
+* [Introduction](Introduction)
+* [Setting the Context](Setting_the_Context)
+* [The Elevator Pitch](The_Elevator_Pitch)
+* [Brainstorming](Brainstorming)
+* [User Stories](User_Stories)
+* [Stakeholder Analysis](Stakeholder_Analysis)
+* [User Roles](User_Roles)
+* [User Stories Revisited](User_Stories_Revisited)
+* [Acceptance Testing User Stories](Acceptance_Testing_User_Stories)
+* [Story Guidelines](Story_Guidelines)
+* [Lightweight Domain Analysis](Lightweight_Domain_Analysis)
+* [Must, Should, Could, Won't](Must,_Should,_Could,_Won't)
+* [Making Meetings Work](Making_Meetings_Work)
+* [Estimation and Story Points](Estimation_and_Story_Points)
+* [Release Planning](Release_Planning)
+* [Iteration Alpha and Omega](Iteration_Alpha_and_Omega)
+* [ATM Exercise](ATM_Exercise)

@@ -2,7 +2,7 @@
 title: IterationPlanningSimulationInstructions
 ---
 ## Introduction
-This is a simple game using dice to simulate a project([what_if_you_do_not_have_dice]({{site.pagesurl}}/what_if_you_do_not_have_dice)). The primary goal is to give the players:
+This is a simple game using dice to simulate a project([what_if_you_do_not_have_dice](what_if_you_do_not_have_dice)). The primary goal is to give the players:
 * a basic understanding of what goes into and comes out of an iteration
 * what happens when/if you get less done that you had planned
 * what happens when/if you get more done that you had planned

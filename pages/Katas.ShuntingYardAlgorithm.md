@@ -1,7 +1,7 @@
 ---
 title: Katas.ShuntingYardAlgorithm
 ---
-[<--Back]({{ site.pagesurl}}/Katas)
+[<--Back](Katas)
 # Background
 The [Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm), written by [Dijkstra](http://en.wikipedia.org/wiki/Edsger_Dijkstra), converts an infix expression into a post-fix expression. For example, the expression:
 ^
@@ -175,11 +175,11 @@ I take the approach of splitting the expression into individual tokens and then 
 * Eventually you'll probably want a simple factory that can map a string into an operator.
 * If you want to validate a number, you can use a regular expression or, in my case, the DecimalFormat class.
 
-[#ExampleSource]({{site.pagesurl}}/#ExampleSource)
+[#ExampleSource](#ExampleSource)
 # What We Accomplished
 Here's a zip of the source files we created during the dojo:
 [[file:dojo.zip]]
 
 Here's a version I've worked on a bit more:
 [[file:ShuntingYardAlgorithm.zip]]
-[<--Back]({{ site.pagesurl}}/Katas)
+[<--Back](Katas)

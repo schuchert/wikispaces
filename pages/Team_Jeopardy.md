@@ -1,7 +1,7 @@
 ---
 title: Team_Jeopardy
 ---
-[Team_Jeopardy_User_Stories]({{site.pagesurl}}/Team_Jeopardy_User_Stories)
+[Team_Jeopardy_User_Stories](Team_Jeopardy_User_Stories)
 
 Team Jeopardy is loosely based on the game Jeopardy. Here are the similarities:
 * We have a number of players (any number can play, most recently I tried with 4 groups of 4 and then 6 groups of 2, I preferred the 6 groups of 2)
@@ -27,7 +27,7 @@ In practice, this style of review really seems to engage people, is fun and the 
 
 Here's a set of class and source files that will allow you to play:
 > [[file:temp.7z]]
-* Extract this [7-ZIP]({{ site.pagesurl}}/www.7-zip.org) file somewhere, say C:\jeopardy
+* Extract this [7-ZIP](www.7-zip.org) file somewhere, say C:\jeopardy
 * Make sure a 1.5 JVE is available to run the client and server
 * Start a dos shell
 * Execute the server, it requires three parameters: <name of boardfile> <port to listen on> <time_in_seconds_allowed_to_answer>
@@ -48,8 +48,8 @@ Here's a set of class and source files that will allow you to play:
 * Repeat until you run out of questions.
 
 Here are some example sets of AnswerQuestions:
-* Week 1: Java Programming Weeks [TeamJeopardy.Round_1]({{site.pagesurl}}/TeamJeopardy.Round_1)
-* Week 2: Project Week [TeamJeopardy.Round_2]({{site.pagesurl}}/TeamJeopardy.Round_2)
+* Week 1: Java Programming Weeks [TeamJeopardy.Round_1](TeamJeopardy.Round_1)
+* Week 2: Project Week [TeamJeopardy.Round_2](TeamJeopardy.Round_2)
 * Week 3: OOAD Course Week:
 * Week 4: Project Week 2
 * Week 5: JWEB Class

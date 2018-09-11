@@ -1,7 +1,7 @@
 ---
 title: PowerShell5-Tokenize_Expression-Simple_Binary_Expressions
 ---
-[<— Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstFailingTest)  [^^ Up ^^]({{ site.pagesurl}}/PowerShell5.TokenizeExpression) [Next—>](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstStabAtParentheses)
+[<— Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstFailingTest)  [^^ Up ^^](PowerShell5.TokenizeExpression) [Next—>](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstStabAtParentheses)
 # Overview
 Now that we have a trivial first test, we'll begin growing the implementation one test at a time. We'll be following [Uncle Bob's Three Rules of TDD](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd), summarized here as:
 * Write no production code without a failing test
@@ -354,4 +354,4 @@ Tests Passed: 8, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0
 {% endhighlight %}
 
 This seems like enough progress on binary expressions. Next up, handling parenthesis.
-[<— Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstFailingTest)  [^^ Up ^^]({{ site.pagesurl}}/PowerShell5.TokenizeExpression) [Next—>](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstStabAtParentheses)
+[<— Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstFailingTest)  [^^ Up ^^](PowerShell5.TokenizeExpression) [Next—>](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstStabAtParentheses)

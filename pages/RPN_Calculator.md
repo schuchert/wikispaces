@@ -2,40 +2,40 @@
 title: RPN_Calculator
 ---
 # Elevator Pitch
-* **//For//** developers wishing to get practice creating systems using [TDD]({{site.pagesurl}}/Test_Driven_Development)
-* **//Who//** are interested in starting with user stories that follow the [INVEST]({{site.pagesurl}}/User_Stories_I.N.V.E.S.T) principle
+* **//For//** developers wishing to get practice creating systems using [TDD](Test_Driven_Development)
+* **//Who//** are interested in starting with user stories that follow the [INVEST](User_Stories_I.N.V.E.S.T) principle
 * **//Our//** RPN Calculator problem is a complete problem 
-* **//That//** gives users a rich enough to practice simple [TDD]({{site.pagesurl}}/Test_Driven_Development)
+* **//That//** gives users a rich enough to practice simple [TDD](Test_Driven_Development)
 * **//Unlike//** other problems that take you through the process step by step
 * **//Our Product//** only provides the starting point from which you are expected to begin practicing
 
 # User Stories
-The following list of user stories form a [[Product Backlog]]. The are additionally sectioned by [Releases]({{site.pagesurl}}/Releases), each of which is given a [Theme]({{site.pagesurl}}/Theme).
+The following list of user stories form a [[Product Backlog]]. The are additionally sectioned by [Releases](Releases), each of which is given a [Theme](Theme).
 
 ## Release 1 - Theme: Basic Math
-* [Addition]({{site.pagesurl}}/RPN_Calculator_Addition)
-* [Subtraction]({{site.pagesurl}}/RPN_Calculator_Subtraction)
-* [Multiplication]({{site.pagesurl}}/RPN_Calculator_Multiplication)
-* [Division]({{site.pagesurl}}/RPN_Calculator_Division)
+* [Addition](RPN_Calculator_Addition)
+* [Subtraction](RPN_Calculator_Subtraction)
+* [Multiplication](RPN_Calculator_Multiplication)
+* [Division](RPN_Calculator_Division)
 
 ## Release 2 - Theme: Stack Management
-* [Review Stack]({{site.pagesurl}}/RPN_Calculator_Review_Stack)
-* [Clear Stack]({{site.pagesurl}}/RPN_Calculator_Clear_Stack)
-* [Insert into Stack]({{site.pagesurl}}/RPN_Calculator_Insert_into_Stack)
-* [Replace Item on Stack]({{site.pagesurl}}/RPN_Calculator_Replace_Item_on_Stack)
+* [Review Stack](RPN_Calculator_Review_Stack)
+* [Clear Stack](RPN_Calculator_Clear_Stack)
+* [Insert into Stack](RPN_Calculator_Insert_into_Stack)
+* [Replace Item on Stack](RPN_Calculator_Replace_Item_on_Stack)
 
 ## Release 3 - Theme: Advanced Math
-* [Square Root]({{site.pagesurl}}/RPN_Calculator_Square_Root)
-* [Y to X]({{site.pagesurl}}/RPN_Calculator_Y_to_X)
-* [1 over X]({{site.pagesurl}}/RPN_Calculator_1_over_X)
-* [Sin]({{site.pagesurl}}/RPN_Calculator_Sin)
-* [Cos]({{site.pagesurl}}/RPN_Calculator_Cos)
-* [Tan]({{site.pagesurl}}/RPN_Calculator_Tan)
-* [Exponentials]({{site.pagesurl}}/RPN_Calculator_Exponentials)
-* [Factorials]({{site.pagesurl}}/RPN_Calculator_Factorials)
+* [Square Root](RPN_Calculator_Square_Root)
+* [Y to X](RPN_Calculator_Y_to_X)
+* [1 over X](RPN_Calculator_1_over_X)
+* [Sin](RPN_Calculator_Sin)
+* [Cos](RPN_Calculator_Cos)
+* [Tan](RPN_Calculator_Tan)
+* [Exponentials](RPN_Calculator_Exponentials)
+* [Factorials](RPN_Calculator_Factorials)
 
 ## Alternative Approach
-[As I've Actually Taught It]({{site.pagesurl}}/Rpn_Calculator.WithRefactoringAndPatterns)
+[As I've Actually Taught It](Rpn_Calculator.WithRefactoringAndPatterns)
 
 # Getting Started
 
@@ -55,4 +55,4 @@ Here are some steps to get you started:
 # Repeat until all UAT's are done for the current user story
 # Repeat until all user stories for the current release are finished
 
-# [RpnCalculatorCppExampleImplementation]({{site.pagesurl}}/RpnCalculatorCppExampleImplementation)
+# [RpnCalculatorCppExampleImplementation](RpnCalculatorCppExampleImplementation)

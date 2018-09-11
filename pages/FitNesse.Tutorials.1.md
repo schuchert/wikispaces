@@ -2,10 +2,10 @@
 title: FitNesse.Tutorials.1
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) -or- [Next Tutorial-->]({{ site.pagesurl}}/FitNesse.Tutorials.2)
+[<--Back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.2)
 
 # Introduction
-This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If you need help installing or running [FitNesse](http://fitnesse.org/), please [go here first]({{ site.pagesurl}}/FitNesse.Tutorials.0). In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:
+This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If you need help installing or running [FitNesse](http://fitnesse.org/), please [go here first](FitNesse.Tutorials.0). In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:
 * Create Decision tables in FitNesse
 * Make the tables execute by writing Fixtures
 * Get the tests to pass by updating both the Fixture code and by creating production code
@@ -18,7 +18,7 @@ This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If 
 
 This tutorial is primarily about getting you over the hurtle of the mechanics of getting tests to execute using [FitNesse](http://fitnesse.org/). Even so, you will see some basic design considerations play out as well.
 
-Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on localhost at port 8080 <http://localhost:8080>. If you are not sure how to do that, [try this tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.0).
+Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on localhost at port 8080 <http://localhost:8080>. If you are not sure how to do that, [try this tutorial](FitNesse.Tutorials.0).
 
 # Background
 [FitNesse.Slim Decision Tables](http://FitNesse.org/FitNesse.SliM.DecisionTable) are a common way to get test data into a System Under Test. A Decision table has three parts (only the first of which is actually required):
@@ -26,7 +26,7 @@ Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on 
 * One Heading Row - Names of columns, which map to either setter methods or method calls (if they end in ?)
 * Zero or more Data Rows - rows of data used to either provide data into a system or data used to compare to values returned from the fixture
 
-[#firstDecisionTable]({{site.pagesurl}}/#firstDecisionTable)
+[#firstDecisionTable](#firstDecisionTable)
 Here is an example [FitNesse](http://fitnesse.org/) decision table:
 
 {% highlight terminal %}
@@ -69,7 +69,7 @@ Here are some preliminary steps to get this table created (there will be more la
 Now you can execute the page. Click on the **Test** button. The tests will fail dues to a missing fixutre. [FitNesse](http://fitnesse.org/) will color the first row yellow and add the message "//Could not find fixture: AddProgramsToSchedule.//". Now you must create a Fixture class and add it to the test page.
 
 ## Creating the Fixture
-If you are planning on using Eclipse and working in Java, then you can get a repository from github: [fitnesse-tutorials](http://github.com/schuchert/fitnesse-tutorials/tree/master). Review the instructions [here]({{ site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub).
+If you are planning on using Eclipse and working in Java, then you can get a repository from github: [fitnesse-tutorials](http://github.com/schuchert/fitnesse-tutorials/tree/master). Review the instructions [here](FitNesse.Tutorials.WorkingFromGitHub).
 
 Creating a fixture involves:
 * Creating class.
@@ -79,7 +79,7 @@ Creating a fixture involves:
 * Updating the classpath on your page (or hierarchically above it) to point to your executable code
 * Using an import table to name the package/namespace of the class (or fully qualifying the fixture name in the table)
 
-For full details on these steps, you can review the material [here if you're planning on working in Java]({{ site.pagesurl}}/FitNesse.Tutorials.0.Java) or [here if you're planning on working in C#]({{ site.pagesurl}}/FitNesse.Tutorials.0.CSharp).
+For full details on these steps, you can review the material [here if you're planning on working in Java](FitNesse.Tutorials.0.Java) or [here if you're planning on working in C#](FitNesse.Tutorials.0.CSharp).
 
 Here is one such fixture (in Java) that will get this test to "pass". Since there are no assertions, this really isn't a very good test yet, but it does make it easier to get it all green.
 
@@ -418,12 +418,12 @@ This really was just an Extract class refactoring or wrapping a collection. Wrap
 
 Before moving on, make sure your test passes. Assuming it does, congratulations on a successful refactoring.
 
-[include_page="sidebar_start"]({{site.pagesurl}}/include_page="sidebar_start") <span class="sidebar_title">Wrapping Collections</span>
+[include_page="sidebar_start"](include_page="sidebar_start") <span class="sidebar_title">Wrapping Collections</span>
 When dealing with a language-provided collection, you should wrap it by default and only not wrap it if it makes sense. This might seem controversial, but in my experience the extra overhead of wrapping the collection provides a place for functionality that is otherwise heavily duplicated. For example:
 * Only adding something if it does not conflict in some way with existing members in the collection.
 * Doing some kind of work over the entire collection.
 * Responding in a domain-specific way to empty/full collections.
-[include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
+[include_page="sidebar_end"](include_page="sidebar_end")
 # Deleting Something By Key
 We should be able to add a program, remove it and then add another at the same time slot. Here's just such a test and it uses something you might have noticed in the first tutorial:
 
@@ -641,7 +641,7 @@ So what is the problem? The fixture holds the schedule. Each fixture has its own
 
 Ultimately, how you should do it depends on your system. If your system will eventually need objects like this configured, wired and passed around, then it might make sense to introduce Spring or maybe even a hand-rolled IoC container (a factory of some kind). For our purposes, simply making the schedule static in AddProgramsToSchedule will work effectively. So do that and then see the test fail (note, I've removed the constructor and static variable **numberCreated** in my version to get rid of output making its way into my test execution).
 
-[include_page="sidebar_start"]({{site.pagesurl}}/include_page="sidebar_start") <span class="sidebar_title">Tests Should Not Produce Output</span>
+[include_page="sidebar_start"](include_page="sidebar_start") <span class="sidebar_title">Tests Should Not Produce Output</span>
 Your acceptance tests (and unit tests) should not produce output. Why? Because you've written them to have assertions. Those assertions are the only thing that define success or failure. If you find the need to produce output, are you also going to verify that output? If so, then turn the verification of the output into an assertion. If not, then you're adding noise to the test execution.
 
 This might be OK while you are working on your machine but don't check this cruft in. What I've seen happen, repeatedly, is people add output to verify their work (that's fine in the short term, maybe, but it represents a lack of trust in either your own abilities or the test system), and then other people notice the output and then the output grows. Soon, it becomes the norm.
@@ -652,7 +652,7 @@ To quote Jerry Weinberg:
 > Nothing + Nothing + Nothing eventually equals something.
 
 Leaving output in tests, unit or acceptance tests, is lazy. You can do better.
-[include_page="sidebar_end"]({{site.pagesurl}}/include_page="sidebar_end")
+[include_page="sidebar_end"](include_page="sidebar_end")
 
 Now that the test is failing, we need a way to get access to the schedule between fixtures. For now, adding a getSchedule() method on the AddProgramsToSchedule fixture is adequate:
 
@@ -765,5 +765,5 @@ However, you've learned several things in this tutorial:
 ** Note, while you can debug this, your fixtures should be so simple that this is seldom necessary. If you find yourself doing this often, consider simplifying your fixtures. If that's not possible, write unit tests for your complex fixture code.
 * Learned that each of the data rows in your fixture is executed in order, top-to-bottom.
 
-After working with decision tables, the next tutorial which makes sense is [this one on query tables]({{ site.pagesurl}}/FitNesse.Tutorials.2).
-[<--back]({{ site.pagesurl}}/FitNesse.Tutorials) -or- [Next Tutorial-->]({{ site.pagesurl}}/FitNesse.Tutorials.2)
+After working with decision tables, the next tutorial which makes sense is [this one on query tables](FitNesse.Tutorials.2).
+[<--back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.2)

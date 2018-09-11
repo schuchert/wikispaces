@@ -1,7 +1,7 @@
 ---
 title: TddAndConcurrency.Slides.FinaNotes
 ---
-[<--Back]({{ site.pagesurl}}/TddAndConcurrency.Slides.KeepItAwayFromMe) | [^Top^]({{ site.pagesurl}}/TddAndConcurrency.Slides) | [Next-->]({{ site.pagesurl}}/TddAndConcurrency.Slides.RandomStuff)
+[<--Back](TddAndConcurrency.Slides.KeepItAwayFromMe) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.RandomStuff)
 
 # Final Notes
 
@@ -20,4 +20,4 @@ title: TddAndConcurrency.Slides.FinaNotes
 * Consider using locks if in Java 5 or stick with intrinsic locks if moving to 6.
 * There’s a lot of gold in java.lang.concurrent!
 
-[<--Back]({{ site.pagesurl}}/TddAndConcurrency.Slides.KeepItAwayFromMe) | [^Top^]({{ site.pagesurl}}/TddAndConcurrency.Slides) | [Next-->]({{ site.pagesurl}}/TddAndConcurrency.Slides.RandomStuff)
+[<--Back](TddAndConcurrency.Slides.KeepItAwayFromMe) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.RandomStuff)

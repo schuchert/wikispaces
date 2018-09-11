@@ -2,18 +2,18 @@
 title: Cxx_Tdd_Iteration_1
 ---
 # Getting Started
-This tutorial uses a game similar to Monopoly as a basis for our work. The rules we implement are not exactly the same as Monopoly because the point is not Monopoly, it's TDD. If you just want to see what the end results for this iteration look like, then [look here]({{site.pagesurl}}/Cxx_Tdd_Iteration_1#EndGame).
+This tutorial uses a game similar to Monopoly as a basis for our work. The rules we implement are not exactly the same as Monopoly because the point is not Monopoly, it's TDD. If you just want to see what the end results for this iteration look like, then [look here](Cxx_Tdd_Iteration_1#EndGame).
 
 This iteration's theme is: **Player Movement**
-[include_page="Monopoly_Release_1_Theme_Description"]({{site.pagesurl}}/include_page="Monopoly_Release_1_Theme_Description")
+[include_page="Monopoly_Release_1_Theme_Description"](include_page="Monopoly_Release_1_Theme_Description")
 
-[include_page="Monopoly_Release_1_User_Stories_WO_Link"]({{site.pagesurl}}/include_page="Monopoly_Release_1_User_Stories_WO_Link")
+[include_page="Monopoly_Release_1_User_Stories_WO_Link"](include_page="Monopoly_Release_1_User_Stories_WO_Link")
 
 ## Our First User Story
 Here is our current user story:
-[include_page="Monopoly_R1_Player_Movement"]({{site.pagesurl}}/include_page="Monopoly_R1_Player_Movement")
+[include_page="Monopoly_R1_Player_Movement"](include_page="Monopoly_R1_Player_Movement")
 
-Our first test seems seems simple enough. A player takes a turn and moves around the board. However, let's break this down into a few parts so we can take some simple steps (note for this first test we're moving between [TDD]({{site.pagesurl}}/Test_Driven_Development) and [TFD]({{site.pagesurl}}/Test_First_Development)):
+Our first test seems seems simple enough. A player takes a turn and moves around the board. However, let's break this down into a few parts so we can take some simple steps (note for this first test we're moving between [TDD](Test_Driven_Development) and [TFD](Test_First_Development)):
 * Players move in the game using dice, so let's start by creating a single die object.
 * When we have a single die object, we'll create a Dice object to manage rolling the pair.
 * Then we'll have a player use the Dice to take a turn
@@ -567,7 +567,7 @@ By default, this make file:
 * links everything into an application
 * executes the application (thereby running your tests)
 
-If you review the [End Game]({{site.pagesurl}}/Cxx_Tdd_Iteration_1#EndGame) section, you'll see the makefile I've been using that additionally includes targets for checking working with subversion.
+If you review the [End Game](Cxx_Tdd_Iteration_1#EndGame) section, you'll see the makefile I've been using that additionally includes targets for checking working with subversion.
 
 ## Finally: Test the Player
 We are finally ready to work up to our acceptance test. As a reminder, we started with the following user acceptance test:
@@ -1316,7 +1316,7 @@ To paraphrase Douglas Adams, if the system ever has all of its tests running, it
 * Create a main and link it instead of the main that runs the tests. "Play" a game.
 * Add output to your system:
 ** Try to do it without changing any of the existing classes or header files in your system.
-[#EndGame]({{site.pagesurl}}/#EndGame)
+[#EndGame](#EndGame)
 
 # End Game
 This section contains all of the complete Iteration 1 source files with no explanations.

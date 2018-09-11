@@ -31,7 +31,7 @@ Each group goes back for a final round of user story work and tries to take into
 
 At the end of the exercise, we ask for any final guidelines. We then discuss INVEST and also list other recommendations on writing user stories.
 
-[User_Story_Notes]({{site.pagesurl}}/User_Story_Notes)
+[User_Story_Notes](User_Story_Notes)
 ----
 # User Acceptance Tests
 If the workshop is long enough to allow, we mix up the groups after the first three exercises.
@@ -60,7 +60,7 @@ The workshop attendees are:
 
 The workshop organizers will serve as the product owner, each group needs to build a house of cards in the given time-frame. (Can't say more than this since it would give away the point of the exercise.
 
-[Example_Hidden_Requirements]({{site.pagesurl}}/Example_Hidden_Requirements)
+[Example_Hidden_Requirements](Example_Hidden_Requirements)
 ----
 # Wrap-up
 We work through each of the topics and bring up the following discussion points:

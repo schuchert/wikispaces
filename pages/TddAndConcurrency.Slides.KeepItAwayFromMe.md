@@ -1,7 +1,7 @@
 ---
 title: TddAndConcurrency.Slides.KeepItAwayFromMe
 ---
-[<--Back]({{ site.pagesurl}}/TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo) | [^Top^]({{ site.pagesurl}}/TddAndConcurrency.Slides) | [Next-->]({{ site.pagesurl}}/TddAndConcurrency.Slides.FinaNotes)
+[<--Back](TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.FinaNotes)
 
 # Keep It Away From Me
 
@@ -149,4 +149,4 @@ What if you don't have control?
 ** OR better yet, use the thread-safe collections with extended interfaces
 * Pick client-based locking only if it is impossible to use an adapter – which should be nearly never
 
-[<--Back]({{ site.pagesurl}}/TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo) | [^Top^]({{ site.pagesurl}}/TddAndConcurrency.Slides) | [Next-->]({{ site.pagesurl}}/TddAndConcurrency.Slides.FinaNotes)
+[<--Back](TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.FinaNotes)

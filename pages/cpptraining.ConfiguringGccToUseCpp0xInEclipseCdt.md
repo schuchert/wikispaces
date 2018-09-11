@@ -1,10 +1,10 @@
 ---
 title: cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt
 ---
-[<-- Back]({{ site.pagesurl}}/CppTraining#cpp0x)
+[<-- Back](CppTraining#cpp0x)
 
 # Overview
-This is a description of why I chose to use C++0x for some examples and how to configure gcc to allow for C++0x. If you are interested in the how, [just skip to the steps]({{ site.pagesurl}}/cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt#thesteps).
+This is a description of why I chose to use C++0x for some examples and how to configure gcc to allow for C++0x. If you are interested in the how, [just skip to the steps](cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt#thesteps).
 
 # Background
 While working on these materials, I came across a need to write examples using the boost::bind method. The boost::bind method creates a function object that is typically passed in as a parameter to an algorithm. The problem was that to write examples, I wanted to distinguish between the creation of the binding and its execution. 
@@ -29,9 +29,9 @@ int bar() {
   return f(1, 2, 3);
 }
 {% endhighlight %}
-[#thesteps]({{site.pagesurl}}/#thesteps)
+[#thesteps](#thesteps)
 # The Steps
-These steps assume you have some project setup using CppUTest. If not, [see below]({{ site.pagesurl}}/cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt#seeblow).
+These steps assume you have some project setup using CppUTest. If not, [see below](cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt#seeblow).
 
 * Select your project and edit its properties: right-click::edit properties (or alt-enter)
 * Go to C/C++ Build::Settings::GCC C++ Settings
@@ -40,16 +40,16 @@ These steps assume you have some project setup using CppUTest. If not, [see belo
 -c -fmessage-length=0 -std=c++0x
 {% endhighlight %}
 
-[#seebelow]({{site.pagesurl}}/#seebelow)
+[#seebelow](#seebelow)
 ## The Preliminary Steps
 
 These steps assume you are using the latest version of the Eclipse CDT along with mingw and gcc 4.4 or later.  If you need to figure out how to do that, follow these steps:
-* [Getting The CDT Running]({{ site.pagesurl}}/cpptraining.GettingStartedWithEclipseCdt)
-* [Getting CppUTest Compiled Using CDT Tool Set]({{ site.pagesurl}}/cpptraining.GettingCppUTestCompiledUsingCDTToolSet)
-* [Getting CppUTest Running]({{ site.pagesurl}}/cpptraining.GettingCppUTestRunning)
-* [Getting and Building Boost in minggw]({{ site.pagesurl}}/cpptraining.GettingAndBuildingBoostInMingw)
-* [Using Boost With mingw And Eclipse]({{ site.pagesurl}}/cpptraining.UsingBoostWithMingwAndEclipse)
+* [Getting The CDT Running](cpptraining.GettingStartedWithEclipseCdt)
+* [Getting CppUTest Compiled Using CDT Tool Set](cpptraining.GettingCppUTestCompiledUsingCDTToolSet)
+* [Getting CppUTest Running](cpptraining.GettingCppUTestRunning)
+* [Getting and Building Boost in minggw](cpptraining.GettingAndBuildingBoostInMingw)
+* [Using Boost With mingw And Eclipse](cpptraining.UsingBoostWithMingwAndEclipse)
 
 Note, the initial examples do you actually require you to compile boost as they use header-only features of the boost library.
 
-[<-- Back]({{ site.pagesurl}}/CppTraining#cpp0x)
+[<-- Back](CppTraining#cpp0x)

@@ -2,24 +2,24 @@
 title: Java_5_Variable_Arguments
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/Articles)
+[<--Back](Articles)
 
 # Java 5 Variable Arguments
 
 This article uses Log4J as a vehicle to describe Java 5 Variable Augments through a concrete example.
 
 There are 4 versions of the same program:
-* [Version 1]({{site.pagesurl}}/Java_5_Variable_Arguments#Mainv1): A typical use that does not wrap as is typical
-* [Version 2]({{site.pagesurl}}/Java_5_Variable_Arguments#Mainv2): Same as version 1 but uses a convenience method in the String class
-* [Version 3]({{site.pagesurl}}/Java_5_Variable_Arguments#Mainv3): Shows what we should do using the existing interface
-* [Version 4]({{site.pagesurl}}/Java_5_Variable_Arguments#Mainv4): Shows a new interface using Java 5 variable arguments
+* [Version 1](Java_5_Variable_Arguments#Mainv1): A typical use that does not wrap as is typical
+* [Version 2](Java_5_Variable_Arguments#Mainv2): Same as version 1 but uses a convenience method in the String class
+* [Version 3](Java_5_Variable_Arguments#Mainv3): Shows what we should do using the existing interface
+* [Version 4](Java_5_Variable_Arguments#Mainv4): Shows a new interface using Java 5 variable arguments
 
 ## Version 1
 Here is a typical example of using Log4J with a simple utility class that:
 * Configures Log4J
 * Returns the logger for a provided class
 
-[#Mainv1]({{site.pagesurl}}/#Mainv1)
+[#Mainv1](#Mainv1)
 ## Main.java
 {% highlight java %}
 01: package varargs.v1;
@@ -64,7 +64,7 @@ Note that String.format is an example of a method whose parameters are defined u
 
 Here's the code for version 2:
 
-[#Mainv2]({{site.pagesurl}}/#Mainv2)
+[#Mainv2](#Mainv2)
 ## Main.java
 {% highlight java %}
 01: package varargs.v2;
@@ -109,7 +109,7 @@ It is ugly but it makes a big difference.
 
 Here's the code modified to take this into consideration:
 
-[#Mainv3]({{site.pagesurl}}/#Mainv3)
+[#Mainv3](#Mainv3)
 ## Main.java
 {% highlight java %}
 01: package varargs.v3;
@@ -146,7 +146,7 @@ This version has the advantages of versions 1 and 2 in terms of what you write. 
 
 First let's look at the use of the code:
 
-[#Mainv4]({{site.pagesurl}}/#Mainv4)
+[#Mainv4](#Mainv4)
 ## Main.java
 {% highlight java %}
 01: package varargs.v4;
@@ -174,7 +174,7 @@ First let's look at the use of the code:
 
 To make this work, we first introduce an interface that uses Java 5 Variable Arguments:
 
-[#ILogger]({{site.pagesurl}}/#ILogger)
+[#ILogger](#ILogger)
 ## ILogger.java
 {% highlight java %}
 01: package varargs.v4;
@@ -223,7 +223,7 @@ This version was not possible before variable arguments. We might have some over
 
 Here is the full implementation:
 ----
-[#LoggerImpl]({{site.pagesurl}}/#LoggerImpl)
+[#LoggerImpl](#LoggerImpl)
 ## LoggerImpl.java
 {% highlight java %}
 01: package varargs.v4;
@@ -342,7 +342,7 @@ Here is the full implementation:
 
 And finally, for completeness, here are the final two files in this final example:
 
-[#LoggingConfiguration]({{site.pagesurl}}/#LoggingConfiguration)
+[#LoggingConfiguration](#LoggingConfiguration)
 ## LoggingConfiguration.java
 {% highlight java %}
 01: package varargs.v4;
@@ -384,7 +384,7 @@ And finally, for completeness, here are the final two files in this final exampl
 37: }
 {% endhighlight %}
 
-[#log4j_properties]({{site.pagesurl}}/#log4j_properties)
+[#log4j_properties](#log4j_properties)
 ## log4j.properties
 {% highlight terminal %}
 log4j.logger.org.springframework=WARN
@@ -428,4 +428,4 @@ Here is the source code for all 4 versions in an Eclipse 3.2 archive file.
 # Other Resources
 * [Speeding up Log4J in Java 1.5](http://surguy.net/articles/removing-log-messages.xml)
 
-[<--Back]({{ site.pagesurl}}/Articles)
+[<--Back](Articles)

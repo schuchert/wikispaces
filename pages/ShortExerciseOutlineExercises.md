@@ -1,7 +1,7 @@
 ---
 title: ShortExerciseOutlineExercises
 ---
-[<--Back]({{ site.pagesurl}}/ShortExerciseOutlineThinking) [Next-->]({{ site.pagesurl}}/ShortExerciseOutline)
+[<--Back](ShortExerciseOutlineThinking) [Next-->](ShortExerciseOutline)
 
 # Short Exercise Outline Exercises
 Finally, I'll provide a list of exercises to:
@@ -9,4 +9,4 @@ Finally, I'll provide a list of exercises to:
 # Expand what the original exercise was doing
 # Attempt to find some limits to the technique
 
-[<--Back]({{ site.pagesurl}}/ShortExerciseOutlineThinking) [Next-->]({{ site.pagesurl}}/ShortExerciseOutline)
+[<--Back](ShortExerciseOutlineThinking) [Next-->](ShortExerciseOutline)

@@ -2,14 +2,14 @@
 title: Katas
 ---
 ## Katas I've Created
-* [Recursive Decent Iterator]({{ site.pagesurl}}/Katas.RecursiveDecentIterator)
-* [Expression Tokenizer]({{ site.pagesurl}}/Katas.ExpressionTokenizer)
-* [Shunting Yard Algorithm]({{ site.pagesurl}}/Katas.ShuntingYardAlgorithm)
-* [Monopoly The Game]({{ site.pagesurl}}/Katas.MonopolyTheGame)
-* [Really Basic Robo Rally]({{ site.pagesurl}}/Katas.ReallyBasicRoboRally)
+* [Recursive Decent Iterator](Katas.RecursiveDecentIterator)
+* [Expression Tokenizer](Katas.ExpressionTokenizer)
+* [Shunting Yard Algorithm](Katas.ShuntingYardAlgorithm)
+* [Monopoly The Game](Katas.MonopolyTheGame)
+* [Really Basic Robo Rally](Katas.ReallyBasicRoboRally)
 
 ## Katas I've Come Across in Dojo's
-* [Next, Previous, Paginator for Web Pages]({{ site.pagesurl}}/Katas.NextPreviousPaginatorForWebPages)
+* [Next, Previous, Paginator for Web Pages](Katas.NextPreviousPaginatorForWebPages)
 
 ## Katas by Uncle Bob(Martin)
 * [Uncle Bob's Bowling Game Kata](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)

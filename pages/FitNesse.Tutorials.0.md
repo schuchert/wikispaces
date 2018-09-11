@@ -2,7 +2,7 @@
 title: FitNesse.Tutorials.0
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)
+[<--Back](FitNesse.Tutorials)
 
 # Install FitNesse
 * Install a JVM 1.6 or later.
@@ -85,10 +85,10 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 !path fitnesse.jar
 {% endhighlight %}
 
-# [Continue Tutorial in Java]({{ site.pagesurl}}/FitNesse.Tutorials.0.Java)
-# [Continue Tutorial in C#]({{ site.pagesurl}}/FitNesse.Tutorials.0.CSharp)
+# [Continue Tutorial in Java](FitNesse.Tutorials.0.Java)
+# [Continue Tutorial in C#](FitNesse.Tutorials.0.CSharp)
 
-[#Congratulations]({{site.pagesurl}}/#Congratulations)
+[#Congratulations](#Congratulations)
 # Congratulations
 Congratulations, you've finished the first tutorial. In this tutorial you:
 * Installed FitNesse
@@ -103,8 +103,8 @@ Congratulations, you've finished the first tutorial. In this tutorial you:
 * You've assigned the result of a method (the id() method) to a variable, ID.
 
 # What's Next
-* Continue working on the [next tutorials]({{ site.pagesurl}}/FitNesse.Tutorials.1) (I recommend in the order listed). 
+* Continue working on the [next tutorials](FitNesse.Tutorials.1) (I recommend in the order listed). 
 * Learn how to make tests that actually execute production code.
 * Learn how to use a Table Table to implement a "fluent" or DSL-based table
 
-[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) -or- [Next Tutorial-->]({{ site.pagesurl}}/FitNesse.Tutorials.1)
+[<--Back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.1)

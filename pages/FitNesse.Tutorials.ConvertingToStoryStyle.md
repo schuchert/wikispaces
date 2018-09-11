@@ -1,7 +1,7 @@
 ---
 title: FitNesse.Tutorials.ConvertingToStoryStyle
 ---
-[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)
+[<--Back](FitNesse.Tutorials)
 
 # Placeholder
 
@@ -14,5 +14,5 @@ Take previous test and rewrite it using:
 
 Named-fixtures.
 
-[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials)
+[<--Back](FitNesse.Tutorials)
  

@@ -48,7 +48,7 @@ In this course we are trying to give you enough experience with a subset of all 
 * Daily schedule
 * Bathrooms
 * About Me
-* [About_You]({{site.pagesurl}}/About_You)
+* [About_You](About_You)
 
 ### Java Persistence API (JPA)
 **Tutorial 1: Introducing JPA**

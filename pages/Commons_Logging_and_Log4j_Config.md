@@ -2,7 +2,7 @@
 title: Commons_Logging_and_Log4j_Config
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/Tool_Setup_and_Configuration_Notes)
+[<--Back](Tool_Setup_and_Configuration_Notes)
 
 When I started using [Spring](http://www.springframework.org/), I need to include some logging and basic configuration. This page gives the details for the entire setup I'm using.
 
@@ -10,10 +10,10 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 * Download log4j from [here](http://logging.apache.org/site/binindex.cgi) (in my case, I downloaded the [Spring](http://www.springframework.org/) jar with dependencies from [here](http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644), which includes Log4j).
 * Extract the jar somewhere
 * Add the jar to your Eclipse project
-* Create a simple configurator, see LogginConfiguration.java, and a simple configuration file, see [log4j.properties]({{ site.pagesurl}}/#log4j).
+* Create a simple configurator, see LogginConfiguration.java, and a simple configuration file, see [log4j.properties](#log4j).
 
 
-[#LoggingConfiguration]({{site.pagesurl}}/#LoggingConfiguration)
+[#LoggingConfiguration](#LoggingConfiguration)
 ## LoggingConfiguration.java
 {% highlight java %}
 01: package loggingutil;
@@ -58,18 +58,18 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 |-|-|
 |Line|Description|
 |11 - 13|I'm using [Checkstyle](http://eclipse-cs.sourceforge.net/) and [PMD](http://pmd.sourceforge.net/integrations.html#eclipse). One of them has a rule that suggests classes with all static methods should have a private constructor to disallow instantiation.|
-|15 - 24|When loading this class, perform basic Log4j configuration, line 17. In addition, Spring, by default, produces quite a bit of output. The output is useful but I generally don't want it unless I'm debugging a problem. So I load a simple properties file that sets the default logging for [Spring](http://www.springframework.org/) to WARN. If I need to switch to DEBUG, I simply edit [log4j.properties]({{ site.pagesurl}}/#log4j).|
+|15 - 24|When loading this class, perform basic Log4j configuration, line 17. In addition, Spring, by default, produces quite a bit of output. The output is useful but I generally don't want it unless I'm debugging a problem. So I load a simple properties file that sets the default logging for [Spring](http://www.springframework.org/) to WARN. If I need to switch to DEBUG, I simply edit [log4j.properties](#log4j).|
 |17|Generate a URL for the resource named LOG4J_PROPS. I use the same classloader used for this class, and ask it to find the named resource. This returns either a URL to the location of the file or null.|
 |18 - 21|If the resource is not found (null returned), log a fatal error to the console and do nothing else. Hopefully someone will notice it. I don't want this class' static initializer to fail because if it does it will cause classes that use it to fail since the class will not be loaded. This is an important point to make, generally you should not allow a static initializer to fail because what you'll see is an error about the class not being found but the actual error was lost when the static initialzier failed.|
 |19 - 20|If I'm unable to locate the URL, get a logger and log a fatal message.|
 |20|Use the new method, String.format, to format a string using old C-Style format strings.|
 |22|I did find the URL, go ahead a process the contents of this property file.|
-|26 - 28|Just in case I want to get a logger, I have a simple method that will give me an [ILogger]({{site.pagesurl}}/Commons_Logging_and_Log4j_Config#ILogger) for a given class. Notice that I'm not using Sun's or Lor4J's Logger. Why? I change the interface to support both a variable number of parameters and automatic log level checking. So no place in my code beyond this configuration utility is aware of Log4J. I know I'm going to use Log4J so is there any value in wrapping it? In this case I am not simply wrapping it by actually adapting its interface.|
+|26 - 28|Just in case I want to get a logger, I have a simple method that will give me an [ILogger](Commons_Logging_and_Log4j_Config#ILogger) for a given class. Notice that I'm not using Sun's or Lor4J's Logger. Why? I change the interface to support both a variable number of parameters and automatic log level checking. So no place in my code beyond this configuration utility is aware of Log4J. I know I'm going to use Log4J so is there any value in wrapping it? In this case I am not simply wrapping it by actually adapting its interface.|
 |30 - 34|The comment says it all. If you want to look like you are initializing the logging infrastructure, call initialize. It's an empty method, but by referencing it, the class will get loaded and the logger will get initialized because of the static initializer on lines 12 - 15.|
 
-[#log4j]({{site.pagesurl}}/#log4j)
+[#log4j](#log4j)
 ## log4j.properties
-This file resides in the same directory as the source file for [LogginConfiguration.java]({{ site.pagesurl}}/#LoggingConfiguration).
+This file resides in the same directory as the source file for [LogginConfiguration.java](#LoggingConfiguration).
 
 {% highlight java %}
 01: log4j.logger.org.springframework=WARN
@@ -80,7 +80,7 @@ This file resides in the same directory as the source file for [LogginConfigurat
 |Line|Description|
 |01|This sets the logging level from its default, DEBUG, to WARN. I did this to reduce the output produced by Spring. I've occasionally turned it back on to DEBUG to trace through things. However, I generally prefer my console to have little if any output so that what's there is something I know I need to pay attention to.|
 
-[#ILogger]({{site.pagesurl}}/#ILogger)
+[#ILogger](#ILogger)
 ## ILogger.java
 Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it does not have an interface that uses the features offered by Java 5 so instead of using Lof4J directly, I have returned this interface that publishes what I think is a better interface.
 
@@ -113,7 +113,7 @@ Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it 
 There are not really any specifically interesting lines. Notice that every method's last parameter is a variable number of parameters. Take a look below at the implementation of this class.
 
 ----
-[#Logger]({{site.pagesurl}}/#Logger)
+[#Logger](#Logger)
 ## Logger.java
 {% highlight java %}
 01: package loggingutil;
@@ -247,4 +247,4 @@ This example is not complete. It does not publish the logging levels, which real
 {% endhighlight %}
 Let’s say that the method getUserNameFromJndi() takes a long time. In this example, we called the method before calling the debug() method, so we did this extra work potentially unnecessarily.
 
-[<--Back]({{ site.pagesurl}}/Tool_Setup_and_Configuration_Notes)
+[<--Back](Tool_Setup_and_Configuration_Notes)

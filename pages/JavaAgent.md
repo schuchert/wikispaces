@@ -2,7 +2,7 @@
 title: JavaAgent
 ---
 # Java Agents Transform Classes at Load Times
-By now this is old news, but since Java 5, there's been an option to add so-called Java Agents to the class loader. A Java Agent is given the raw bytes of a class file and it is able to transform (instrument) it. You might do this when using [Aspect Oriented Programming]({{ site.pagesurl}}/AOP), some EJB containers or other light-weight containers. 
+By now this is old news, but since Java 5, there's been an option to add so-called Java Agents to the class loader. A Java Agent is given the raw bytes of a class file and it is able to transform (instrument) it. You might do this when using [Aspect Oriented Programming](AOP), some EJB containers or other light-weight containers. 
 
 There are two parts to a Java Agent:
 # The Class File Transformer - a call that implements [ClassFileTransformer](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/instrument/ClassFileTransformer.html).
@@ -28,10 +28,10 @@ Now, when I want to run my tests with some custom instrumentation, all I need to
 
 ## The Details
 Here are the details on how to actually accomplish writing your own Java Agent:
-> [WritingYourOwnJavaAgent]({{site.pagesurl}}/WritingYourOwnJavaAgent)
+> [WritingYourOwnJavaAgent](WritingYourOwnJavaAgent)
 
 Here is a simple jar file you can use that already does the basic work:
-> [AnExampleJavaAgent]({{site.pagesurl}}/AnExampleJavaAgent)
+> [AnExampleJavaAgent](AnExampleJavaAgent)
 
 Here are the guts of the specific agent register provided in [[file:Registrar.jar]].
-> [JavaAgentRedirectorExplained]({{site.pagesurl}}/JavaAgentRedirectorExplained)
+> [JavaAgentRedirectorExplained](JavaAgentRedirectorExplained)

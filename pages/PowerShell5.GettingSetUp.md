@@ -1,7 +1,7 @@
 ---
 title: PowerShell5.GettingSetUp
 ---
-[<--Back]({{ site.pagesurl}}/PowerShell5)
+[<--Back](PowerShell5)
 
 # Overview
 For this point forward, we assume you have a working environment. To verify this, here is a a quick [smoke test](https://en.wikipedia.org/wiki/Smoke_testing_(software)) of your environment to make sure things work well enough to proceed. After this, we'll look at implementing an algorithm to practice the [TDD](https://en.wikipedia.org/wiki/Test-driven_development) cycle. Finally, we'll dig into a larger problem to look into [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming) and [Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern).
@@ -89,4 +89,4 @@ A good practice is to make sure tests fail before they pass. This makes it easy 
 {% endhighlight %}
 
 Congratulations, you've got a working system. Rather than spend more time on this trivial example, we'll move on to a more complex problem.
-[<--Back]({{ site.pagesurl}}/PowerShell5)
+[<--Back](PowerShell5)

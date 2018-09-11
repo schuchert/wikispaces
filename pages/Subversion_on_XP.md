@@ -2,7 +2,7 @@
 title: Subversion_on_XP
 ---
 {:toc}
-[<--Back]({{site.pagesurl}}/Tool_Setup_and_Configuration_Notes)
+[<--Back](Tool_Setup_and_Configuration_Notes)
 
 I'm still looking for the right place to host my work in subversion. Until then, I'm running a subversion server on my home system. I'm using subversion for experience, I've been using some version of CVS since 1989 and I figure it's about time to give a new tool a try.
 
@@ -64,4 +64,4 @@ brett.schuchert = somepassword
 
 That's it.
 
-[<--Back]({{site.pagesurl}}/Tool_Setup_and_Configuration_Notes)
+[<--Back](Tool_Setup_and_Configuration_Notes)

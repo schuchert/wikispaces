@@ -2,7 +2,7 @@
 title: JPA_Tutorial_3_-_Project_Setup
 ---
 For the rest of this section, when you see **<project>**, replace it with **JpaTutorial3**
-[include_page="JPA_Tutorial_Project_Setup"]({{site.pagesurl}}/include_page="JPA_Tutorial_Project_Setup")
+[include_page="JPA_Tutorial_Project_Setup"](include_page="JPA_Tutorial_Project_Setup")
 
 ### Update persistence.xml
 **Update Persistence Unit Name**

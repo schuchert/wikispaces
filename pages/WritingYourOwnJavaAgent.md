@@ -1,7 +1,7 @@
 ---
 title: WritingYourOwnJavaAgent
 ---
-[<--Back]({{ site.pagesurl }}/JavaAgent)
+[<--Back](JavaAgent)
 
 A Java Agent, once registered with the class loader, has a single method:
 {% highlight java %}
@@ -96,10 +96,10 @@ Manifest-Version: 1.0
 Premain-Class: com.javaagent.RegisterMyClassFileTransformer
 {% endhighlight %}
 
-NOTE: If you happen to download the Eclipse project mentioned [here]({{ site.pagesurl }}/AnExampleJavaAgent), you can simply find the **RecreateJar.jardesc** file in the Eclipse project, right-click and select **Create JAR**.
+NOTE: If you happen to download the Eclipse project mentioned [here](AnExampleJavaAgent), you can simply find the **RecreateJar.jardesc** file in the Eclipse project, right-click and select **Create JAR**.
 ## Start the VM
 Finally, we need to star the VM:
 {% highlight terminal %}
     java -javaagent:MyJarFile.jar <A Regular Class With A Main>
 {% endhighlight %}
-[<--Back]({{ site.pagesurl }}/JavaAgent)
+[<--Back](JavaAgent)

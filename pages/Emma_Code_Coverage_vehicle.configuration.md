@@ -1,7 +1,7 @@
 ---
 title: Emma_Code_Coverage_vehicle.configuration
 ---
-[<--Back]({{site.pagesurl}}/Emma_Code_Coverage_vehicle.type) [Next-->]({{site.pagesurl}}/Emma_Code_Coverage_vehicle.integration)
+[<--Back](Emma_Code_Coverage_vehicle.type) [Next-->](Emma_Code_Coverage_vehicle.integration)
 
 # Emma Code Coverage vehicle.type Package
 
@@ -25,7 +25,7 @@ There are a few things not covered in my bean factory:
 
 Here's the series of events that lead to this private constructor:
 
-* I started using [PMD]({{site.pagesurl}}/PMD_In_Eclipse) to evaluate the quality of my code using its rule set.
+* I started using [PMD](PMD_In_Eclipse) to evaluate the quality of my code using its rule set.
 * PMD has a rule that says every class should have a constructor. 
 * I added a constructor.
 * PMD has a rule that says empty constructors should have a comment. 
@@ -64,4 +64,4 @@ Well after writing a few more tests, here are the results:
 
 Are these results disappointing? Again, have we improved our system? What is your purpose for using code coverage tools? Is it to get high percentages? If so, then are you going for the right thing? What if your goal is to improve the quality of the code or at least your confidence in the code? This round of tests did that a little bit for me, but not very much.
 
-[<--Back]({{site.pagesurl}}/Emma_Code_Coverage_vehicle.type) [Next-->]({{site.pagesurl}}/Emma_Code_Coverage_vehicle.integration)
+[<--Back](Emma_Code_Coverage_vehicle.type) [Next-->](Emma_Code_Coverage_vehicle.integration)

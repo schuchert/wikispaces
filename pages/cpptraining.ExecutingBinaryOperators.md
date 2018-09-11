@@ -2,10 +2,10 @@
 title: cpptraining.ExecutingBinaryOperators
 ---
 {:toc}
-[<--Back]({{ site.pagesurl}}/CppTraining#FitNesse)
+[<--Back](CppTraining#FitNesse)
 
 # Background
-These steps assuem you have already worked through the tutorial: [Getting Started With FitNesse in C++]({{ site.pagesurl}}/cpptraining.GettingStartedWithFitNesseInCpp).
+These steps assuem you have already worked through the tutorial: [Getting Started With FitNesse in C++](cpptraining.GettingStartedWithFitNesseInCpp).
 
 # Building the RpnCalcualtor
 You can find the source for the RpnCalculator at two github locations:
@@ -58,7 +58,7 @@ RpnCalculatorInCpp/        RpnCalculatorInCppTests/
 {% endhighlight %}
 
 ## Configuring the Eclipse Project
-In [previous tutorial]({{ site.pagesurl}}/cpptraining.GettingStartedWithFitNesseInCpp), you created a directory called ~/src/cslim and under that is CppUTest. To create this project, we'll use the equivalent of environment variables in Eclipse.
+In [previous tutorial](cpptraining.GettingStartedWithFitNesseInCpp), you created a directory called ~/src/cslim and under that is CppUTest. To create this project, we'll use the equivalent of environment variables in Eclipse.
 * Create a new workspace. Select the directory containing two github projects you just checked out. In my case that's **Users/schuchert/src/waat/workspace**
 * Close the Welcome to Eclipse tab.
 * Edit the Eclipse properties:
@@ -93,7 +93,7 @@ You should see your tests pass. As of this writing, there are 70 tests:
 OK (70 tests, 70 ran, 108 checks, 0 ignored, 0 filtered out, 8 ms)
 {% endhighlight %}
 # Creating Your First Test Table
-Since you've already worked through [Getting Started With FitNesse in C++]({{ site.pagesurl}}/cpptraining.GettingStartedWithFitNesseInCpp), you have FitNesse installed somewhere. Start your FitNesse instance. Here's what it looks like on my computer:
+Since you've already worked through [Getting Started With FitNesse in C++](cpptraining.GettingStartedWithFitNesseInCpp), you have FitNesse installed somewhere. Start your FitNesse instance. Here's what it looks like on my computer:
 {% highlight terminal %}
 [~]% cd src/cpp_fitnesse 
 /Users/schuchert/src/cpp_fitnesse
@@ -613,4 +613,4 @@ SLIM_END
 
 Save and rebuild. You should now have a passing test. If you run the entire suite, all three tests should pass.
 
-[<--Back]({{ site.pagesurl}}/CppTraining#FitNesse)
+[<--Back](CppTraining#FitNesse)

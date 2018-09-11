@@ -2,7 +2,7 @@
 title: EJB3_Tutorial_4_-_Extended_Context
 ---
 {:toc}
-[<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)
+[<--Back](EJB_3_and_Java_Persistence_API)
 
 # Ejb3 Tutorial 4 - Extended Context
 
@@ -12,11 +12,11 @@ This short tutorial demonstrates some of the differences between these two types
 
 ## Project Setup
 
-The instructions for setting up your project mirror those from the first tutorial: [EJB3_Tutorial_1_-_Create_and_Configure]({{site.pagesurl}}/EJB3_Tutorial_1_-_Create_and_Configure).
+The instructions for setting up your project mirror those from the first tutorial: [EJB3_Tutorial_1_-_Create_and_Configure](EJB3_Tutorial_1_-_Create_and_Configure).
 
 For the remainder of this tutorial, when you see **<project>**, replace it with **Ejb3Tutorial4**.
-[include_page="Ejb3EclipseProjectSetupAndConfiguration"]({{site.pagesurl}}/include_page="Ejb3EclipseProjectSetupAndConfiguration")
-Here are a few things to note (source for all of these items appears at the end after the assignments [EJB3_Tutorial_4_-_Extended_Context#OtherFiles]({{site.pagesurl}}/EJB3_Tutorial_4_-_Extended_Context#OtherFiles):
+[include_page="Ejb3EclipseProjectSetupAndConfiguration"](include_page="Ejb3EclipseProjectSetupAndConfiguration")
+Here are a few things to note (source for all of these items appears at the end after the assignments [EJB3_Tutorial_4_-_Extended_Context#OtherFiles](EJB3_Tutorial_4_-_Extended_Context#OtherFiles):
 * Make sure you copy the **utils** directory from a previous tutorial.
 * Make sure you copy a **persistence.xml** from a previous tutorial.
 * Make sure you update the **persistence.xml**'s persistence-unit name:
@@ -620,7 +620,7 @@ There is a lot of shared code between the two AccountInventory bean implementati
 ### Interfaces
 The interface seems to be a bit messed up with concepts that relate to both stateless and stateful beans. Describe how you might change the interface to make this better. Consider using two interfaces instead of one.
 
-[#OtherFiles]({{site.pagesurl}}/#OtherFiles)
+[#OtherFiles](#OtherFiles)
 ## Other Files
 
 **persistence.xml**
@@ -637,6 +637,6 @@ The interface seems to be a bit messed up with concepts that relate to both stat
 </persistence>
 {% endhighlight %}
 
-[include_page="Ejb3JBossUtilJava"]({{site.pagesurl}}/include_page="Ejb3JBossUtilJava")
+[include_page="Ejb3JBossUtilJava"](include_page="Ejb3JBossUtilJava")
 
-[<--Back]({{site.pagesurl}}/EJB_3_and_Java_Persistence_API)
+[<--Back](EJB_3_and_Java_Persistence_API)

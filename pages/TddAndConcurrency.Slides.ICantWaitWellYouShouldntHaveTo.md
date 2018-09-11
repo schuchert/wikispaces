@@ -1,7 +1,7 @@
 ---
 title: TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo
 ---
-[<--Back]({{ site.pagesurl}}/TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid) | [^Top^]({{ site.pagesurl}}/TddAndConcurrency.Slides) | [Next-->]({{ site.pagesurl}}/TddAndConcurrency.Slides.KeepItAwayFromMe)
+[<--Back](TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.KeepItAwayFromMe)
 
 # I Can't Wait Well You Shouldn't Have To
 ## You’re waiting for another team to load the database
@@ -111,4 +111,4 @@ As a bonus, this validates MT logic as well…
 ----
 ----
 
-[<--Back]({{ site.pagesurl}}/TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid) | [^Top^]({{ site.pagesurl}}/TddAndConcurrency.Slides) | [Next-->]({{ site.pagesurl}}/TddAndConcurrency.Slides.KeepItAwayFromMe)
+[<--Back](TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.KeepItAwayFromMe)

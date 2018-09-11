@@ -2,7 +2,7 @@
 title: JMockIt.LoginServiceExample
 ---
 # Getting Started
-JMockIt is an interesting mocking library that actively does quite a bit of work for you if you simply configure your classpath correctly and use annotations. For this example I'll use the [Login Service from the Mockito tutorial I wrote]({{ site.pagesurl}}/Mockito.LoginServiceExample).
+JMockIt is an interesting mocking library that actively does quite a bit of work for you if you simply configure your classpath correctly and use annotations. For this example I'll use the [Login Service from the Mockito tutorial I wrote](Mockito.LoginServiceExample).
 
 * First you'll need to [[http://code.google.com/p/jmockit/downloads/list|download JMockIt]. As of this writing I used 0.999.8, which was "featured" at the time.
 * Next, extract the downloaded zip somewhere.

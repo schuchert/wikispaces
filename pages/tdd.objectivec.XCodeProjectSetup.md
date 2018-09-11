@@ -19,7 +19,7 @@ Technology:
 These steps describe what you'll need to do to set up a framework, not an application. If you want to set up an application, review either of the bottom two links in the Why section.
 
 ## Video Version
-[media_type="custom"_key="5352763"]({{site.pagesurl}}/media_type="custom"_key="5352763")
+[media_type="custom"_key="5352763"](media_type="custom"_key="5352763")
 
 ## Setting up Project
 * In XCode create a new project:// **File:New Project**// or// **Command-Shift-N**//

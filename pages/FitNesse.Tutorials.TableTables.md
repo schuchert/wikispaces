@@ -1,17 +1,17 @@
 ---
 title: FitNesse.Tutorials.TableTables
 ---
-{:toc}[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) -or- [Next Tutorial-->]({{ site.pagesurl}}/FitNesse.Tutorials.AlternativeScriptTableSyntax)
+{:toc}[<--Back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.AlternativeScriptTableSyntax)
 
 # Background
-This is a tutorial loosely based on [this writeup]({{site.pagesurl}}/Acceptance_Testing.FitNesse.TableTableExample). [That writeup]({{site.pagesurl}}/Acceptance_Testing.FitNesse.TableTableExample) describes using table table to implement test data setup to make determining expected results easier. You can read that for a slightly different take. That example was written after the fact and somewhat cleaned up. It also is not a tutorial; it is really a summary of what you'll be doing in this tutorial.
+This is a tutorial loosely based on [this writeup](Acceptance_Testing.FitNesse.TableTableExample). [That writeup](Acceptance_Testing.FitNesse.TableTableExample) describes using table table to implement test data setup to make determining expected results easier. You can read that for a slightly different take. That example was written after the fact and somewhat cleaned up. It also is not a tutorial; it is really a summary of what you'll be doing in this tutorial.
 
-In this tutorial, you'll review the setup for a previous test and then build the test setup in a way that will much better relate to the domain. Unlike the [original table table example]({{site.pagesurl}}/Acceptance_Testing.FitNesse.TableTableExample), this one will seem a lot more like a plausible development effort.
+In this tutorial, you'll review the setup for a previous test and then build the test setup in a way that will much better relate to the domain. Unlike the [original table table example](Acceptance_Testing.FitNesse.TableTableExample), this one will seem a lot more like a plausible development effort.
 
 # Getting Started
-As with the other tutorials, you can continue from the work you've done on the [previous tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables), or you can [use the source]({{ site.pagesurl}}/FitNesse.Tutorials.WorkingFromGitHub) and start at the tag: FitNesse.Tutorials.TableTables.Start.
+As with the other tutorials, you can continue from the work you've done on the [previous tutorial](FitNesse.Tutorials.ScenarioTables), or you can [use the source](FitNesse.Tutorials.WorkingFromGitHub) and start at the tag: FitNesse.Tutorials.TableTables.Start.
 
-Up to this point, you have created programs using several different styles. However, all of these styles are very different from the underlying domain. This tutorial picks up from the [Scenario Tables Tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables) and looks at one final way to create a program guide, or a series of programs.
+Up to this point, you have created programs using several different styles. However, all of these styles are very different from the underlying domain. This tutorial picks up from the [Scenario Tables Tutorial](FitNesse.Tutorials.ScenarioTables) and looks at one final way to create a program guide, or a series of programs.
 
 # Creating Many Programs
 You used the following table to populate the program schedule (this is a snippet):
@@ -90,7 +90,7 @@ As with the previous tutorials, you'll create these tests under their own sub-hi
 |Script|Dvr Recording|
 {% endhighlight %}
 
-Notice that this borrows the Scenario table and script table from the [SetUp](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.SetUp) page in the [previous tutorial]({{ site.pagesurl}}/FitNesse.Tutorials.ScenarioTables). In this tutorial, the only new table is a new Table Table to populate the program schedule. 
+Notice that this borrows the Scenario table and script table from the [SetUp](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.SetUp) page in the [previous tutorial](FitNesse.Tutorials.ScenarioTables). In this tutorial, the only new table is a new Table Table to populate the program schedule. 
 
 Next, we need a test that uses this <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp>
 * Create a new test page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.DvrThatCanRecordTwoProgramsAtaTimeExample>
@@ -1055,5 +1055,5 @@ Notice that this tutorial was different from the previous tutorials in that you 
 
 Assuming you've worked through the previous tutorials, you have now used all of the basic table types in Slim. Congratulations!
 
-[<--Back]({{ site.pagesurl}}/FitNesse.Tutorials) -or- [Next Tutorial-->]({{ site.pagesurl}}/FitNesse.Tutorials.AlternativeScriptTableSyntax)
+[<--Back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.AlternativeScriptTableSyntax)
  

@@ -2,7 +2,7 @@
 title: Acceptance_Testing.UsingSlimDotNetInFitNesse
 ---
 {:toc}
-[<-- Back]({{ site.pagesurl }}/FitNesse.Tutorials)
+[<-- Back](FitNesse.Tutorials)
 
 # Rapid Intro to using Slim with .Net
 Thanks to Mike Stockdale for both writing the slim .Net implementation as well as helping me to get this working.
@@ -208,4 +208,4 @@ Here are example implementations for those methods:
     }
 {% endhighlight %}
 
-[<-- Back]({{ site.pagesurl }}/FitNesse.Tutorials)
+[<-- Back](FitNesse.Tutorials)

@@ -8,4 +8,4 @@ As a user I can calculate factorials (x!) for whole numbers.
 * [2] <fac> -> [2]
 * [8] <fac> -> [40320]
 
-[<--Back]({{site.pagesurl}}/RPN_Calculator)
+[<--Back](RPN_Calculator)

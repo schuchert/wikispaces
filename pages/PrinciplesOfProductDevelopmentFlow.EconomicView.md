@@ -1,7 +1,7 @@
 ---
 title: PrinciplesOfProductDevelopmentFlow.EconomicView
 ---
-[Back]({{ site.pagesurl}}/PrinciplesOfProductDevelopmentFlow)
+[Back](PrinciplesOfProductDevelopmentFlow)
 
 **E1: The Principle of Quantified Overall Economics**
 > Select actions based on quantified overall economic impact
@@ -66,4 +66,4 @@ title: PrinciplesOfProductDevelopmentFlow.EconomicView
 **E21: The Show Me the Money Principle**
 > To influence financial decisions, speak the language of money
 
-[Back]({{ site.pagesurl}}/PrinciplesOfProductDevelopmentFlow)
+[Back](PrinciplesOfProductDevelopmentFlow)

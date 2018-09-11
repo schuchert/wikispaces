@@ -10,4 +10,4 @@ As a user, I want to be able to add two numbers so that I don't have to do the w
 * [] -3 <enter> 7 <plus> -> [4]
 * [4, 5, 3] <plus> -> [4, 8] <plus> -> [12] <plus> -> [12]
 
-[<--Back]({{site.pagesurl}}/RPN_Calculator)
+[<--Back](RPN_Calculator)

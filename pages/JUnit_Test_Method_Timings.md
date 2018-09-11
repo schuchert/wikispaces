@@ -1,7 +1,7 @@
 ---
 title: JUnit_Test_Method_Timings
 ---
-[<--Back]({{site.pagesurl}}/Some_Example_Aspects)
+[<--Back](Some_Example_Aspects)
 
 Some time ago I wanted to get a rough idea of which unit tests were taking the longest time to run so I could run those tests under a profiler and profile my code. We had tests that ran both in container and out of container so I decided to write all of the output to a log. The output looked like the following (I've rewritten the aspect for public consumption and applied it to an example I'm building for another class):
 {% highlight terminal %}
@@ -13,16 +13,16 @@ Some time ago I wanted to get a rough idea of which unit tests were taking the l
          0, vehicle.integration.IVehicleDaoTest.createDuplicateVehicle
 {% endhighlight %}
 
-The first column is 10 digits wide and is the number of milliseconds to run the **test** method. It does NOT include the time to run setUp() and tearDown() (or their equivalent [@Before]({{site.pagesurl}}/JUnit_4.xBefore) and [@After]({{site.pagesurl}}/JUnit_4.xAtAfter) methods.)
+The first column is 10 digits wide and is the number of milliseconds to run the **test** method. It does NOT include the time to run setUp() and tearDown() (or their equivalent [@Before](JUnit_4.xBefore) and [@After](JUnit_4.xAtAfter) methods.)
 
-This example uses Log4J. To configure Log4J, I first used a [simple configurator]({{site.pagesurl}}/Commons_Logging_and_Log4j_Config). Then I programmatic ally set up an appender in the Aspect so that my logging configuration would not have aspect-based logging information in it (thereby keeping the crosscutting concern more localized).
+This example uses Log4J. To configure Log4J, I first used a [simple configurator](Commons_Logging_and_Log4j_Config). Then I programmatic ally set up an appender in the Aspect so that my logging configuration would not have aspect-based logging information in it (thereby keeping the crosscutting concern more localized).
 
 The aspect and its associated aop.xml file are listed below. Before you can use them, you'll want to set up your environment(warning, you'll have to use your browser's back button to get back to here from these links):
 * Download AspectJ [here](http://www.eclipse.org/aspectj/downloads.php).
-* [Eclipse_VM_Configuration_for_AspectJ]({{site.pagesurl}}/Eclipse_VM_Configuration_for_AspectJ)
-* [Eclipse_Classpath_Variable_for_AspectJ]({{site.pagesurl}}/Eclipse_Classpath_Variable_for_AspectJ)
-* [Eclipse_Java_Language_Preferences_for_AspectJ]({{site.pagesurl}}/Eclipse_Java_Language_Preferences_for_AspectJ)
-* [Eclipse_Java_Project_Preferences_for_AspectJ]({{site.pagesurl}}/Eclipse_Java_Project_Preferences_for_AspectJ)
+* [Eclipse_VM_Configuration_for_AspectJ](Eclipse_VM_Configuration_for_AspectJ)
+* [Eclipse_Classpath_Variable_for_AspectJ](Eclipse_Classpath_Variable_for_AspectJ)
+* [Eclipse_Java_Language_Preferences_for_AspectJ](Eclipse_Java_Language_Preferences_for_AspectJ)
+* [Eclipse_Java_Project_Preferences_for_AspectJ](Eclipse_Java_Project_Preferences_for_AspectJ)
 
 Once you've done all of that, you'll want to put the Test Method Timing Aspect class in the same project where your test classes reside. You'll also need to create a META-INF directory directly under the source directory of your test classes and add the aop.xml file there. Here's an example of what my project looks like:
 ^
@@ -33,7 +33,7 @@ Notice that I have separate src and test directories. It turns out that both of 
 If you do not use a src directory and just store your projects at the top level, then your META-INF directory will be directly under your project.
 
 ----
-[#TestMethodTimingAspect]({{site.pagesurl}}/#TestMethodTimingAspect)
+[#TestMethodTimingAspect](#TestMethodTimingAspect)
 ## TestMethodTimingAspect.java
 {% highlight java %}
 01: package test.timingaspect;
@@ -107,7 +107,7 @@ If you do not use a src directory and just store your projects at the top level,
 ^
 |--|--|
 | Line | Description |
-|24|Use a [simple configurator]({{site.pagesurl}}/Commons_Loggins_and_Log4j_Config) to get a logging configuration.|
+|24|Use a [simple configurator](Commons_Loggins_and_Log4j_Config) to get a logging configuration.|
 |25|Create an output file name that's based on the [Java user.home](http://java.sun.com/docs/books/tutorial/essential/system/properties.html) property. On my machine, this is the directory "C:\Documents and Settings\brett.schuchert". On a Unix machine, it will probably be equal to "~".|
 |26|Dos uses \ and Unix uses /. Using / in Java works on both PC's and Unix boxes, so replace all of the \ with /.|
 |27 - 28|Output where the log file is placing information to System.err. It will show up as red in Eclipse and I flush the output so it should appear somewhere near the top. You can safely remove this line once you know where the output goes.|
@@ -124,7 +124,7 @@ If you do not use a src directory and just store your projects at the top level,
 |63|Use the new String.format method to format my output.|
 
 ----
-[#aop]({{site.pagesurl}}/#aop)
+[#aop](#aop)
 ## aop.xml
 {% highlight terminal %}
 01: <aspectj>
@@ -143,4 +143,4 @@ If you do not use a src directory and just store your projects at the top level,
 |3|The fully-qualified name of an aspect. Add this aspect to the list of aspects to weave at runtime. If you change the name of the aspect or change its package, you must update this fully-qualified name.|
 |6|The list of packages to be woven. You'll need to change this to match your packages. The part before .. is the beginning of the package names I used (see the picture above). The ..* means everything from that name down. So in my case, I have packages like vehicle.component and vehicle.validation and vehicle.component.validation, all of which match vehicle..*.|
 
-[<--Back]({{site.pagesurl}}/Some_Example_Aspects)
+[<--Back](Some_Example_Aspects)
