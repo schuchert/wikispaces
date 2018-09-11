@@ -193,6 +193,9 @@ div.content {
 					display: block;
 				}
 			}
+			div {
+				margin-bottom: 0;
+			}
 			code {
 				span {
 					&.gp, &.go {

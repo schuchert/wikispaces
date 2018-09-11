@@ -33,10 +33,13 @@ sh /dev/clipboard           # git bash
 <section>
 ## Prerequisites
 ### A working terminal
-These steps assume a bash-like terminal from which you can run commands. Possibilities include:
-* Windows: git bash
-* Mac OS: Terminal
-* Unix: Terminal
+These steps assume a bash-like terminal from which you can run 
+commands. Possibilities include:
+^
+| System | Terminal Option |
+| Windows| [git bash](https://git-scm.com/downloads) |
+| Mac OS| Terminal - built in |
+| Unix: |Terminal - built in |
 
 ### Java Development Kit installed and working at the command line:
 ^
@@ -80,7 +83,6 @@ systemProp.https.nonProxyHosts=localhost|120.0.01|<proxy url or ip>
 
 <section class="details">
 ## Step by Step Instructions with Example Output
-
 {% include include_md_file filename="using.gradle.steps.md" %}
 
 </section>
