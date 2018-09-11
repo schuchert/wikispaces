@@ -13,6 +13,5 @@ repository: schuchert/wikispaces
 
 theme: jekyll-theme-midnight
 baseurl: /wikispaces
-pagesurl: pages
 github: [metadata]
 highlight: rogue

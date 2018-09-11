@@ -2,35 +2,33 @@
 title: home
 ---
 For more background on where I'm coming from, have a look at
-[Experiential Learning Notes]({{ site.pagesurl}}/ExperientialLearningNotes)
+[Experiential Learning Notes](ExperientialLearningNotes)
 
-
-
-# [New Stuff]({{ site.pagesurl}}/NewStuff)
+# [New Stuff](NewStuff)
 {% include_relative NewStuff.md %}
 
 # Exercises
-* ## [Aspect Oriented Programming]({site.pagesurl}}/AspectOrientedProgramming)
+* ## [Aspect Oriented Programming](AspectOrientedProgramming)
 
 # Notes
-* ## [Experiential Learning Notes]({{ site.pagesurl}}/ExperientialLearningNotes)
-* ## [Tool Setup and Configuration Notes]({{site.pagesurl}}/Tool_Setup_and_Configuration_Notes)
-* ## [The Mac]({{site.pagesurl}}/The_Mac)
+* ## [Experiential Learning Notes](ExperientialLearningNotes)
+* ## [Tool Setup and Configuration Notes](Tool_Setup_and_Configuration_Notes)
+* ## [The Mac](The_Mac)
 
 # Language Stuff
-* ## [RubyNotes]({{site.pagesurl}}/RubyNotes)
-* ## [Smalltalk]({{site.pagesurl}}/Smalltalk)
-* ## [C++]({{site.pagesurl}}/Cxx)
+* ## [RubyNotes](RubyNotes)
+* ## [Smalltalk](Smalltalk)
+* ## [C++](Cxx)
 
 # Presentation Materials
-* ## [SDBestPractices2007]({{site.pagesurl}}/SDBestPractices2007)
+* ## [SDBestPractices2007](SDBestPractices2007)
 
 # My (otherwise unpublished) Articles
-* ## [Designing to Spring Templates]({{site.pagesurl}}/Designing_to_Spring_Templates)
-* ## [Design Pattern Examples]({{site.pagesurl}}/Design_Pattern_Examples)
-* ## [Fundamental Terms With Examples]({{site.pagesurl}}/Fundamental_Terms_With_Examples)
+* ## [Designing to Spring Templates](Designing_to_Spring_Templates)
+* ## [Design Pattern Examples](Design_Pattern_Examples)
+* ## [Fundamental Terms With Examples](Fundamental_Terms_With_Examples)
 
 # Old Book Work
-* ## [CSharpAndOop]({{site.pagesurl}}/CSharpAndOop)
-* ## [IntorductionToMicrocomputersAndDataProcessing]({{site.pagesurl}}/IntorductionToMicrocomputersAndDataProcessing)
+* ## [CSharpAndOop](CSharpAndOop)
+* ## [IntorductionToMicrocomputersAndDataProcessing](IntorductionToMicrocomputersAndDataProcessing)
 
