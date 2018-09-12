@@ -32,6 +32,9 @@ Converted or otherwise.
 <ul>
 {% for p in site.pages %}
   {% capture post_basename %}{{ p.name | remove: ".md" }}{% endcapture %}
-  <li><a href="{{ site_url }}{{p.url}}">{{ post_basename }}</a></li>
+  {% capture post_url %}{{ site_url }}{{ p.url }}{% endcapture %}
+  <li>
+    <a href="{{post_url}}">{{ post_basename }}</a>
+  </li>
 {% endfor %}
 </ul>
