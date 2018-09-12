@@ -1,7 +1,5 @@
----
-title: ruby.sidebar.Refactoring
----
-<span class="sidebar_title"> Refactoring</span>
+
+### Refactoring
 A couple things about refactoring:
 * You did not change the behavior of the code. You only changed the structure of the solution.
 * You are defining "behavior" in terms of the examples. So as you did these changes, you broke none of the examples.

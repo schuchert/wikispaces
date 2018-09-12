@@ -1,6 +1,4 @@
----
-title: ruby.sidebar.RubyAndParens
----
-<span class="sidebar_title"> Ruby And ()'s</span>
+
+### Ruby And ()'s
 Ruby is pretty generous in allowing you to leave off ()'s. This code could have been written without using () so far. The Ruby community generally leaves off parenthesis on methods taking no parameters. As for calling a method with or without parenthesis, that depends.
  

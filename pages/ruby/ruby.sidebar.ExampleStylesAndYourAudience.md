@@ -1,11 +1,9 @@
----
-title: ruby.sidebar.ExampleStylesAndYourAudience
----
-<span class="sidebar_title"> Example styles and Your audience</span>
+
+### Example styles and Your audience
 Which do you prefer? You have seen three different forms:
-# First, you saw Examples simply using the calculator.
-# Second, you saw Examples using a combination of support methods and using the calculator.
-# Now, you see an Example only using support methods.
+* First, you saw Examples simply using the calculator.
+* Second, you saw Examples using a combination of support methods and using the calculator.
+* Now, you see an Example only using support methods.
 
 The first form gives a concrete example of how the RpnCalculator should be used. The last form makes the Example easy to read and moves the writing of the examples into the way a user might speak about using the calculator.
 
@@ -51,23 +49,34 @@ Here is just he Basic Math Operators context updated:
 {% endhighlight %}
 Here's a side-by-side comparison between the two styles:
 
-<span class="left_column">it "programmer" do
-> @calculator.digit_pressed 4
-> @calculator.execute_function :enter
-> @calculator.digit_pressed 5
-> @calculator.digit_pressed 2    
-> @calculator.execute_function :+
-> @calculator.x_register.should == 56
-end</span><span class="right_column">it "user" do
-> type 4
->  press :enter
->  type 52
-
-> press :+
-> validate_x_register 56
+<table>
+    <tr>
+    <td>
+{% highlight  ruby %}
+it "programmer" do
+  @calculator.digit_pressed 4
+  @calculator.execute_function :enter
+  @calculator.digit_pressed 5
+  @calculator.digit_pressed 2    
+  @calculator.execute_function :+
+  @calculator.x_register.should == 56
 end
-</span>
-<span class="column_end">
+{% endhighlight %}
+    </td>
+    <td>    
+{% highlight  ruby %}
+it "user" do
+  type 4
+  press :enter
+  type 52
+  press :+
+  validate_x_register 56
+end
+{% endhighlight %}
+    </td>
+    </tr>
+</table>
+
 Before thinking that one style is the "right" style, consider the audience and even the author. If the audience is the user, then the style on the right is more appropriate. If the audience is another developer, then the left side might be more appropriate.</span>
 
 You might think that using the methods names on the right for your calculator is an option. However, that won't look correct:

@@ -1,11 +1,9 @@
----
-title: ruby.sidebar.ThreeLawsOfTddRevisited
----
-<span class="sidebar_title">The Three Laws of TDD Revisited</span>
+
+### The Three Laws of TDD Revisited
 Here are Robert Martin's three laws of TDD written from a BDD perspective:
-# Write no production code without a failing Example
-# Write only enough of an Example sufficient for it to fail (not compiling is failing)
-# Write only enough production code to get the single failing Example to pass
+* Write no production code without a failing Example
+* Write only enough of an Example sufficient for it to fail (not compiling is failing)
+* Write only enough production code to get the single failing Example to pass
 
 These rules are not enough to effectively write code using either BDD or TDD. Here are a few more things to take into consideration:
 * Keep your code clean: as you notice unruly code, tame it. However, do this only when your Examples are all passing

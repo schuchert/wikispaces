@@ -1,7 +1,5 @@
----
-title: ruby.sidebar.JustHowMuchCanYouFollowTheThreeLaws
----
-<span class="sidebar_title"> Just how much can you follow the three laws</span>
+
+### Just how much can you follow the three laws
 If I have a proper IDE and decent refactoring tools, then I really do prefer following the three laws strictly. Unfortunately, I have not as of 2008/10 found an IDE that has two particular refactorings/corrections for Ruby:
 * Create class missing at the cursor location (preferably in its own file)
 * Create method missing at the cursor location

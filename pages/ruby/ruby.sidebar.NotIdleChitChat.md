@@ -1,7 +1,5 @@
----
-title: ruby.sidebar.NotIdleChitChat
----
-<span class="sidebar_title"> Failing Tests: Not Idle Chit-Chat</span>
+
+### Failing Tests: Not Idle Chit-Chat
 This is not idle speculation, I've been on projects where this dynamic occurred. One example involved a situation where "certain tests" (this is TDD, not BDD) just failed and people tended to not worry about them. A developer added a new key-value pair to a hash table. This caused a test to fail. He figured that the test was failing for some other reason, so he ignored it.
 
 In fact here's what was happening:

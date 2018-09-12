@@ -1,7 +1,5 @@
----
-title: ruby.sidebar.OpenClosedPrinciple
----
-<span class="sidebar_title"> Open/Closed Principle</span>
+
+### Open/Closed Principle
 The [Open/Closed Principle](http://en.wikipedia.org/wiki/Open/closed_principle) suggests that a class, once released into the wild, should not change again except for fixing errors. In Eiffel, this meant leaving a class alone and extending from it to add new behavior. In general, this can also mean depending on an abstraction (interface or abstract base class) and then adding subclasses to complete the behavior.
 
 Why is this relevant? Gerald M. Weinberg describes a relationship between the size of a bug fix and the likelihood that the bug fix introduces new bugs. In his experience, the smaller the fix, the more likely a new bug will be introduced. In his research, 66% of all one-line bug fixes introduce new bugs.

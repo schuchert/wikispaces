@@ -1,7 +1,5 @@
----
-title: ruby.sidebar.WrappingCollections
----
-<span class="sidebar_title"> Wrapping Collections</span>
+
+### Wrapping Collections
 Do it!
 
 I was tempted to just leave it at that, but I'll say a bit more. In my experience, most (anything beyond a trivial problem and most trivial problems) of the time I use a collection, at some point I'll want more behavior that the collection offers. The collection implements a "raw" zero-to-many relationship. Most of the time, my requirements want more than just a "raw" relationship. In the case of the RpnCalculator, it's stack is of infinite size and it always has zero after anything else that is pushed onto it. We simulated this by returning 0 if the stack is in fact empty.
