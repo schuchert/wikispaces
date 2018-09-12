@@ -1,8 +1,9 @@
 ---
 title: ruby.BookOutline
 ---
-# RDD : Resume Driven Design
-> ==or how I learned Ruby and got a better job
+
+## RDD : Resume Driven Design
+or how I learned Ruby and got a better job
 
 * This is a rapid introduction to the following resume-boosting subjects
 ** Ruby

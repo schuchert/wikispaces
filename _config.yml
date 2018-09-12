@@ -10,7 +10,6 @@ plugins:
   - jekyll-sitemap
 url: "http://schuchert.github.io/wikispaces"
 repository: schuchert/wikispaces
-
 theme: jekyll-theme-midnight
 baseurl: /wikispaces
 github: [metadata]
