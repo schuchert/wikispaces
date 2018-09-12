@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_Exercises
 ---
-[<--Back]({{site.pagesurl}}/AspectJ_Annotation_Thinking) [Next-->]({{site.pagesurl}}/AspectJ_Annotation_Start)
+[<--Back](AspectJ_Annotation_Thinking) [Next-->](AspectJ_Annotation_Start)
 
 # AspectJ Annotation: Exercises
 
@@ -16,15 +16,15 @@ The EJB 3 specification uses annotations to describe Enterprise Beans. For examp
 Describe how you might use annotations taking into consideration the way EJB 3.0 works.
 ----
 ## Research
-Research the work required to implement one of the first five options described on [AspectJ_Annotation_Possibilities]({{site.pagesurl}}/AspectJ_Annotation_Possibilities), or one of your own invention.
+Research the work required to implement one of the first five options described on [AspectJ_Annotation_Possibilities](AspectJ_Annotation_Possibilities), or one of your own invention.
 
-Compare and contrast that solution with the one described on [AspectJ_Annotation_One_Solution]({{site.pagesurl}}/AspectJ_Annotation_One_Solution).
+Compare and contrast that solution with the one described on [AspectJ_Annotation_One_Solution](AspectJ_Annotation_One_Solution).
 
 **Challenge:** Implement your solution
 ----
 ## Advanced: Mixing CFlow and Annotations
-If you have not already done so, work through [CFlow Example]({{site.pagesurl}}/AspectJ_CFlow).
+If you have not already done so, work through [CFlow Example](AspectJ_CFlow).
 
 Create a new annotation, @IgnoreMethod, that works just like @IgnoreField. Only this time, all changes are ignored if they happen either directly in this method or the cflow of this method.
 
-[<--Back]({{site.pagesurl}}/AspectJ_Annotation_Thinking) [Next-->]({{site.pagesurl}}/AspectJ_Annotation_Start)
+[<--Back](AspectJ_Annotation_Thinking) [Next-->](AspectJ_Annotation_Start)

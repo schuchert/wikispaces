@@ -1,7 +1,7 @@
 ---
 title: AspectJEX4Possibilities
 ---
-[<--Back]({{ site.pagesurl}}/ApsectJEX4ExpectedVersusActualOutput) [Next-->]({{ site.pagesurl}}/AspectJEX4WhatIsHappening)
+[<--Back](ApsectJEX4ExpectedVersusActualOutput) [Next-->](AspectJEX4WhatIsHappening)
 
 # Possibilities
 Did you have any ideas? Here are some ideas I've heard:
@@ -9,4 +9,4 @@ Did you have any ideas? Here are some ideas I've heard:
 * We somehow change the Address object to know if has changed. Then when we call Dao.save(), we somehow let it know whether the Address has changed or not.
 * ...
 
-[<--Back]({{ site.pagesurl}}/ApsectJEX4ExpectedVersusActualOutput) [Next-->]({{ site.pagesurl}}/AspectJEX4WhatIsHappening)
+[<--Back](ApsectJEX4ExpectedVersusActualOutput) [Next-->](AspectJEX4WhatIsHappening)

@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1ExpectedVersusActualOutput
 ---
-[<--Back]({{ site.pagesurl}}/AspectJ_Example_1) [Next-->]({{ site.pagesurl}}/AspectJEX1FormTheory)
+[<--Back](AspectJ_Example_1) [Next-->](AspectJEX1FormTheory)
 
 ## Expected Output
 Did you guess the output would look something like this?
@@ -39,7 +39,7 @@ Entering: void ex1.MethodExecutionExample.staticMethod()
 Leaving void ex1.MethodExecutionExample.staticMethod()
 {% endhighlight %}
 
-[<--Back]({{ site.pagesurl}}/AspectJ_Example_1) [Next-->]({{ site.pagesurl}}/AspectJEX1FormTheory)
+[<--Back](AspectJ_Example_1) [Next-->](AspectJEX1FormTheory)
 
 
 

@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1Possibilities
 ---
-[<--Back]({{ site.pagesurl}}/AspectJEX1FormTheory) [Next-->]({{ site.pagesurl}}/AspectJEX1WhatIsHappening)
+[<--Back](AspectJEX1FormTheory) [Next-->](AspectJEX1WhatIsHappening)
 
 ## Possibilities
 Did you have any ideas? Here are some ideas I’ve heard some people mention:
@@ -10,4 +10,4 @@ Did you have any ideas? Here are some ideas I’ve heard some people mention:
 * Something to do with reflection
 * …
 
-[<--Back]({{ site.pagesurl}}/AspectJEX1FormTheory) [Next-->]({{ site.pagesurl}}/AspectJEX1WhatIsHappening)
+[<--Back](AspectJEX1FormTheory) [Next-->](AspectJEX1WhatIsHappening)

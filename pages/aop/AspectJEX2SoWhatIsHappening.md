@@ -1,7 +1,7 @@
 ---
 title: AspectJEX2SoWhatIsHappening
 ---
-[<--Back]({{ site.pagesurl}}/AspectJEX2WhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJEX2Explained)
+[<--Back](AspectJEX2WhatIsHappening) [Next-->](AspectJEX2Explained)
 
 # So what is happening?
 Here are some descriptions I’ve heard:
@@ -9,4 +9,4 @@ Here are some descriptions I’ve heard:
 * We are adding to variable assignment.
 * ...
 
-[<--Back]({{ site.pagesurl}}/AspectJEX2WhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJEX2Explained)
+[<--Back](AspectJEX2WhatIsHappening) [Next-->](AspectJEX2Explained)

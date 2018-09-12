@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3ApplicationsOfIntroduction
 ---
-[<--Back]({{ site.pagesurl}}/AspectJEX3AssignmentApplications) [Next-->]({{ site.pagesurl}}/AspectJEX3AssignmentIssues)
+[<--Back](AspectJEX3AssignmentApplications) [Next-->](AspectJEX3AssignmentIssues)
 
 # Applications of Introductions
 
@@ -11,4 +11,4 @@ Here are some ideas I've heard people mention:
 * Implementing multiple inheritance
 * ...
 
-[<--Back]({{ site.pagesurl}}/AspectJEX3AssignmentApplications) [Next-->]({{ site.pagesurl}}/AspectJEX3AssignmentIssues)
+[<--Back](AspectJEX3AssignmentApplications) [Next-->](AspectJEX3AssignmentIssues)

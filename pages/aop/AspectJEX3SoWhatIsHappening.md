@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3SoWhatIsHappening
 ---
-[<--Back]({{ site.pagesurl}}/AspectJEX3WhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJEX3Explained)
+[<--Back](AspectJEX3WhatIsHappening) [Next-->](AspectJEX3Explained)
 
 # So what is happening?
 Here are some descriptions I’ve heard:
@@ -9,4 +9,4 @@ Here are some descriptions I’ve heard:
 * We are allowing a class's hierarchy to change at load time
 * ...
 
-[<--Back]({{ site.pagesurl}}/AspectJEX3WhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJEX3Explained)
+[<--Back](AspectJEX3WhatIsHappening) [Next-->](AspectJEX3Explained)

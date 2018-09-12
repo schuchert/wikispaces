@@ -1,12 +1,12 @@
 ---
 title: AspectJ_Example_1
 ---
-[<--Back]({{site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/AspectJEX1ExpectedVersusActualOutput)
+[<--Back](AspectJ_Self_Study) [Next-->](AspectJEX1ExpectedVersusActualOutput)
 
-Source files are here: [[file:AspectJEx1src.zip]]. If you need instructions on what do with these files, try [here]({{ site.pagesurl}}/ExtractingSourceFilesIntoProject).
+Source files are here: [[file:AspectJEx1src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 # Predict the Output
-This is the first of several exercise. If you'd like to get a feel for the general outline for each exercise, take a look [here]({{ site.pagesurl}}/AspectJGeneralExerciseOutline).
+This is the first of several exercise. If you'd like to get a feel for the general outline for each exercise, take a look [here](AspectJGeneralExerciseOutline).
 
 ## Code to Review
 Examine the following 2 Java files. Your assignment is to predict the output based on these two files.
@@ -61,4 +61,4 @@ public class MethodExecutionExample {
 ## Predict the output
 Before continuing on, please predict the output from these two files.
 
-[<--Back]({{site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/AspectJEX1ExpectedVersusActualOutput)
+[<--Back](AspectJ_Self_Study) [Next-->](AspectJEX1ExpectedVersusActualOutput)

@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX3SoWhatIsHappening
 ---
-[<--Back]({{ site.pagesurl}}/JBossAOPEX3WhatIsHappening) [Next-->]({{ site.pagesurl}}/JBossAOPEX3Explained)
+[<--Back](JBossAOPEX3WhatIsHappening) [Next-->](JBossAOPEX3Explained)
 
 # So What Is Happening?
 Here are some descriptions I've heard:
@@ -10,4 +10,4 @@ Here are some descriptions I've heard:
 * Track the dirty state of objects.
 * ...
 
-[<--Back]({{ site.pagesurl}}/JBossAOPEX3WhatIsHappening) [Next-->]({{ site.pagesurl}}/JBossAOPEX3Explained)
+[<--Back](JBossAOPEX3WhatIsHappening) [Next-->](JBossAOPEX3Explained)

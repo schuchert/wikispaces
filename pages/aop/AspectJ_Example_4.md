@@ -1,10 +1,10 @@
 ---
 title: AspectJ_Example_4
 ---
-[<--Back]({{site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/ApsectJEX4ExpectedVersusActualOutput)
+[<--Back](AspectJ_Self_Study) [Next-->](ApsectJEX4ExpectedVersusActualOutput)
 
 # Predict the Output
-Source files are here: [[file:AspectJExample4src.zip]]. If you need instructions on what do with these files, try [here]({{ site.pagesurl}}/ExtractingSourceFilesIntoProject).
+Source files are here: [[file:AspectJExample4src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 Have a look at the following Java files and, as before, predict the output.
 ----
@@ -25,7 +25,7 @@ public class Main {
 }
 {% endhighlight %}
 ----
-[#Dao]({{site.pagesurl}}/#Dao)
+[#Dao](#Dao)
 ## Dao.java
 {% highlight java %}
 package ex4;
@@ -45,4 +45,4 @@ Address is unchanged from the previous example. It is a simple Java Bean style c
 ## Assignment: Predict the Output
 Please take a few moments to predict the output before moving on.
 
-[<--Back]({{site.pagesurl}}/AspectJ_Self_Study) [Next-->]({{ site.pagesurl}}/ApsectJEX4ExpectedVersusActualOutput)
+[<--Back](AspectJ_Self_Study) [Next-->](ApsectJEX4ExpectedVersusActualOutput)

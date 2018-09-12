@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX3Explained
 ---
-[<--Back]({{ site.pagesurl}}/JBossAOPEX3SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/JBossAOPEX3ApplyYourself)
+[<--Back](JBossAOPEX3SoWhatIsHappening) [Next-->](JBossAOPEX3ApplyYourself)
 
 # Example 3 Explained
 In this example, we add Introductions (adding an interface + implementation of that interface to an existing class) and field setting as well as method execution. In the Field Setting example we simply reported existing and new values. Now we use that information and track whether an object has changed.
@@ -160,7 +160,7 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 16 }
 {% endhighlight %}
 
-[#SetInterceptor]({{site.pagesurl}}/#SetInterceptor)
+[#SetInterceptor](#SetInterceptor)
 ## SetInterceptor.java
 The SetInterceptor first intercepts each assignment to a field (as we have seen in other examples) but now it gets the current value and checks to see if the new value is different. If the new value is different, the SetInterceptor sets the underlying target object's changed state to true. There are three things worth noting:
 * This interceptor assumes the underlying target object is in fact an ITrackedObject. We know it is because of the jboss-aop.xml, but we could check here if we wanted. 
@@ -300,4 +300,4 @@ Here is the full aspect configuration:
 |18 – 20|When any field in any class that implements ITrackedObject is set (other than TrackedObjectMixin), e,g. this.name = "Brett", intercept that set with the class SetInterceptor.|
 |22 – 26|Intercept Dao->save(...) and allow the SaveMethodInterceptor to have a look first.|
 
-[<--Back]({{ site.pagesurl}}/JBossAOPEX3SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/JBossAOPEX3ApplyYourself)
+[<--Back](JBossAOPEX3SoWhatIsHappening) [Next-->](JBossAOPEX3ApplyYourself)

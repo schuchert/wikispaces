@@ -1,10 +1,10 @@
 ---
 title: AspectJ_Annotation_AllCode
 ---
-[<--Back]({{site.pagesurl}}/AspectJ_Annotation_One_Solution) [Next-->]({{site.pagesurl}}/AspectJ_Annotation_Apply)
+[<--Back](AspectJ_Annotation_One_Solution) [Next-->](AspectJ_Annotation_Apply)
 
 # Annotation All Code
-Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If you'd like to know how to set up a project using it, [click here]({{ site.pagesurl}}/ExtractingSourceFilesIntoProject).
+Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If you'd like to know how to set up a project using it, [click here](ExtractingSourceFilesIntoProject).
 
 ----
 
@@ -44,7 +44,7 @@ There are arguably no interesting lines in this class. All of the work is done v
 09: }
 {% endhighlight %}
 ### Interesting Lines
-This class is unchanged from [Example 4]({{ site.pagesurl}}/AspectJEX4Explained#Dao).
+This class is unchanged from [Example 4](AspectJEX4Explained#Dao).
 
 ----
 
@@ -220,14 +220,14 @@ We create a new kind of annotation. This annotation by itself only allows adding
 54: }
 {% endhighlight %}
 ### Interesting Lines
-The key change to this class is on line 17 where we ignore fields with the annotation IgnoreField. Otherwise this aspect is mostly unchanged from previous examples. (In fact, this verion of the aspect includes changes for the [CFlow]({{site.pagesurl}}/AspectJ_CFlow) exmample on lines 21 - 23.
+The key change to this class is on line 17 where we ignore fields with the annotation IgnoreField. Otherwise this aspect is mostly unchanged from previous examples. (In fact, this verion of the aspect includes changes for the [CFlow](AspectJ_CFlow) exmample on lines 21 - 23.
 
 ^
 |---|---|
 |Line|Description|
-|13 - 15|Define a pointcut that covers the setting of all fields included in the class TrackedObjectMixin. We will use this later with ! to exclude these fields. This is to avoid a recursion problem. The details of why were covered by an exercise. To see that exercise, click [here]({{site.pagesurl}}/AspectJEX4ApplyYourself#Unexpected_Recursion).|
+|13 - 15|Define a pointcut that covers the setting of all fields included in the class TrackedObjectMixin. We will use this later with ! to exclude these fields. This is to avoid a recursion problem. The details of why were covered by an exercise. To see that exercise, click [here](AspectJEX4ApplyYourself#Unexpected_Recursion).|
 |17 - 19|Define a pointcut that captures the setting of all fields in the AddressClass except for those that have the annotation IgnoreField. AspectJ uses @Annotation to describe an annotation. In this case, we negate it so we're saying "does not have the annotation". This is the only change required to any of the aspects to support skipping individual fields.|
-|21 - 23|This is described elsewhere. See [AspectJ_CFlow_Explained]({{site.pagesurl}}/AspectJ_CFlow_Explained).|
+|21 - 23|This is described elsewhere. See [AspectJ_CFlow_Explained](AspectJ_CFlow_Explained).|
 |25|This Around advice applies to pointcuts that setters in Address but do not have the annotation IgnoreField AND NOT any pointcuts in the TrackedObjectMixin class AND NOT any pointcuts that happen in in the call of a constructor or anything called by the constructor. It's a lot to deal with, but by breaking it up into smaller pointcuts, it tends to be easier to understand and more manageable.|
 
 ----
@@ -265,7 +265,7 @@ The key change to this class is on line 17 where we ignore fields with the annot
 29:     }
 30: }
 {% endhighlight %}
-This Aspect is unchanged from [Example 4]({{ site.pagesurl}}/AspectJ_Example_4). For details, see [Example 4 SaveMethodAspect]({{ site.pagesurl}}/AspectJEX4Explained#SaveMethodAspect).
+This Aspect is unchanged from [Example 4](AspectJ_Example_4). For details, see [Example 4 SaveMethodAspect](AspectJEX4Explained#SaveMethodAspect).
 
 ----
 
@@ -282,7 +282,7 @@ This Aspect is unchanged from [Example 4]({{ site.pagesurl}}/AspectJ_Example_4).
 09:     ITrackedObject trackedObject;
 10: }
 {% endhighlight %}
-This Aspect is unchanged from [Example 4 InnerTypeAspect]({{ site.pagesurl}}/AspectJEX4Explained#InnerTypeAspect).
+This Aspect is unchanged from [Example 4 InnerTypeAspect](AspectJEX4Explained#InnerTypeAspect).
 
 ----
 
@@ -297,7 +297,7 @@ This Aspect is unchanged from [Example 4 InnerTypeAspect]({{ site.pagesurl}}/Asp
 07: }
 {% endhighlight %}
 
-This interface is unchanged from [Example 4 ITrackedObject]({{ site.pagesurl}}/AspectJEX4Explained#ITrackedObject).
+This interface is unchanged from [Example 4 ITrackedObject](AspectJEX4Explained#ITrackedObject).
 
 ----
 ## TrackedObjectMixin.java
@@ -319,7 +319,7 @@ This interface is unchanged from [Example 4 ITrackedObject]({{ site.pagesurl}}/A
 15:     }
 16: }
 {% endhighlight %}
-This interface is unchanged from [Example 4 TrackedObjectMixin]({{ site.pagesurl}}/AspectJEX4Explained#TrackedObjectMixin).
+This interface is unchanged from [Example 4 TrackedObjectMixin](AspectJEX4Explained#TrackedObjectMixin).
 ----
 ## aop.xml
 {% highlight terminal %}
@@ -334,6 +334,6 @@ This interface is unchanged from [Example 4 TrackedObjectMixin]({{ site.pagesurl
 09: 	</weaver>
 10: </aspectj>
 {% endhighlight %}
-This file is unchanged from [Example 4 aop.xml]({{ site.pagesurl}}/AspectJEX4Explained#aop).
+This file is unchanged from [Example 4 aop.xml](AspectJEX4Explained#aop).
 
-[<--Back]({{ site.pagesurl}}/AspectJ_Annotation_One_Solution) [Next-->]({{ site.pagesurl}}/AspectJ_Annotation_Apply)
+[<--Back](AspectJ_Annotation_One_Solution) [Next-->](AspectJ_Annotation_Apply)

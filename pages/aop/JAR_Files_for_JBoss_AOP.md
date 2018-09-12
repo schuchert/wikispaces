@@ -1,9 +1,9 @@
 ---
 title: JAR_Files_for_JBoss_AOP
 ---
-[<--Back]({{site.pagesurl}}/Environment_Configuration_for_JBOSS_AOP)
+[<--Back](Environment_Configuration_for_JBOSS_AOP)
 
-Every project using JBoss AOP needs several JAR files. You defined a classpath variable in [Eclipse_Classpath_Variable_for_JBoss_AOP]({{site.pagesurl}}/Eclipse_Classpath_Variable_for_JBoss_AOP). We now need to use that classpath variable:
+Every project using JBoss AOP needs several JAR files. You defined a classpath variable in [Eclipse_Classpath_Variable_for_JBoss_AOP](Eclipse_Classpath_Variable_for_JBoss_AOP). We now need to use that classpath variable:
 
 # Select your project, right-click and select **Properties** (Alt-Enter on PC)
 # Select **Java Build Path**
@@ -41,4 +41,4 @@ Caused by: java.lang.NoClassDefFoundError: javassist/ClassPool
 	... 5 more
 Exception in thread "main" 
 {% endhighlight %}
-[<--Back]({{site.pagesurl}}/Environment_Configuration_for_JBOSS_AOP)
+[<--Back](Environment_Configuration_for_JBOSS_AOP)

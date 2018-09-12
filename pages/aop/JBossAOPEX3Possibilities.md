@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX3Possibilities
 ---
-[<--Back]({{ site.pagesurl}}/JBossAOPEX3ExpectedVersusActualOutput) [Next-->]({{ site.pagesurl}}/JBossAOPEX3WhatIsHappening)
+[<--Back](JBossAOPEX3ExpectedVersusActualOutput) [Next-->](JBossAOPEX3WhatIsHappening)
 
 # Possibilities
 Did you have any ideas? Here are some ideas I've heard:
@@ -9,4 +9,4 @@ Did you have any ideas? Here are some ideas I've heard:
 * We somehow change the Address object to know if has changed. Then when we call Dao.save(), we somehow let it know whether the Address has changed or not.
 * ...
 
-[<--Back]({{ site.pagesurl}}/JBossAOPEX3ExpectedVersusActualOutput) [Next-->]({{ site.pagesurl}}/JBossAOPEX3WhatIsHappening)
+[<--Back](JBossAOPEX3ExpectedVersusActualOutput) [Next-->](JBossAOPEX3WhatIsHappening)

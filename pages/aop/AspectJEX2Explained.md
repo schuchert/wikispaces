@@ -1,7 +1,7 @@
 ---
 title: AspectJEX2Explained
 ---
-[<--Back]({{ site.pagesurl}}/AspectJEX2SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJEX2ApplyYourself)
+[<--Back](AspectJEX2SoWhatIsHappening) [Next-->](AspectJEX2ApplyYourself)
 
 # Example 2 Explained
 Accessing a field in Java is a joinpoint exposed by the AspectJ joinpoint model. This is different from method execution in that captures things like the following: 
@@ -65,7 +65,7 @@ To make this example work, we need two additional things:
 |10|This class is an aspect. This annotation denotes the following class as an aspect.|
 |14|This is a pointcut. There is one argument, rhs, of type Object (see line 15). We are capturing "set()", or fields being written. We are watching all fields of the type java.lang.String in the class ex2.Address.|
 |15|This pointcut is named allFields.|
-|18|The next method, reportFieldAssignment(), will be called in lieu of the set, or around the set. This is the same thing we used in [AspectJ_Example_1]({{site.pagesurl}}/AspectJ_Example_1). We have other options including before, after, and a few others as well.|
+|18|The next method, reportFieldAssignment(), will be called in lieu of the set, or around the set. This is the same thing we used in [AspectJ_Example_1](AspectJ_Example_1). We have other options including before, after, and a few others as well.|
 |19|This method is called around all attempts to set fields in the ex2.Address class. It takes ProceedingJoinPoint (optional but typically used) and an Object, rhs (Right Hand Side). The second parameter is what appears on the right side of the assignment operator, e.g. this.myField ``=`` "aString", rhs == "aString".|
 |21|We know we bound this method to a set() joinpoint, so we can down-cast to FieldSignature and get more specific, relevant information.|
 |23 - 26|Get the current value of the underlying field being set.|
@@ -90,4 +90,4 @@ To make this example work, we need two additional things:
 |3|Tell the weaver to use the aspect of type ex2.FieldSetAspect|
 |6|Apply this aspect only to classes whose package start with ex2.|
 
-[<--Back]({{ site.pagesurl}}/AspectJEX2SoWhatIsHappening) [Next-->]({{ site.pagesurl}}/AspectJEX2ApplyYourself)
+[<--Back](AspectJEX2SoWhatIsHappening) [Next-->](AspectJEX2ApplyYourself)

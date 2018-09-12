@@ -1,7 +1,7 @@
 ---
 title: JBossVMConfigurationBlackMagic
 ---
-[<--Back]({{ site.pagesurl}}/JBossEX1Explained) [Next-->]({{ site.pagesurl}}/JBossEX1ApplyYourself)
+[<--Back](JBossEX1Explained) [Next-->](JBossEX1ApplyYourself)
 
 ## VM Configuration: Black Magic
 This section describes the black magic that actually binds the MethodInterceptor class to the MethodExecutionExample class. You can safely skip it but it is here just in case you are interested in what’s happening.
@@ -16,4 +16,4 @@ These examples work on a Java 5 VM. The Java 5 VM has a new command line option,
 
 The Java Agent provided by JBoss AOP will modify classes based on the jboss-aop.xml file. Our jboss-aop.xml file mentions MethodExecutionExample. When the Classloader finds that class on disk, it retrieves it, passes it to the JBoss AOP Java Agent, which changes all of the methods to have calls into MethodInterceptor and then returns the modified class back to the class loader.
 
-[<--Back]({{ site.pagesurl}}/JBossEX1Explained) [Next-->]({{ site.pagesurl}}/JBossEX1ApplyYourself)
+[<--Back](JBossEX1Explained) [Next-->](JBossEX1ApplyYourself)

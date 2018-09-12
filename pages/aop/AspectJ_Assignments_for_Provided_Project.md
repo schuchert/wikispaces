@@ -3,7 +3,7 @@ title: AspectJ_Assignments_for_Provided_Project
 ---
 # AspectJ Assignments for Provided Project
 
-These assignments are to be used on [Car_Rental_Example]({{site.pagesurl}}/Car_Rental_Example). Please set up that project before working on any of these projects.
+These assignments are to be used on [Car_Rental_Example](Car_Rental_Example). Please set up that project before working on any of these projects.
 
 ## Constructor Policy
 Currently when we construct a Field<T> object or any of its subclasses, we might or might not have a newly created instance denoted as changed. We want a system-wide policy:

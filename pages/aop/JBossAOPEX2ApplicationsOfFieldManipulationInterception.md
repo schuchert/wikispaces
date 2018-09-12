@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX2ApplicationsOfFieldManipulationInterception
 ---
-[<--Back]({{ site.pagesurl}}/JBossAOPEX2AssignmentApplications) [Next-->]({{ site.pagesurl}}/JBossEX2AssignmentIssues)
+[<--Back](JBossAOPEX2AssignmentApplications) [Next-->](JBossEX2AssignmentIssues)
 
 # Applications of Field Manipulation Interception
 
@@ -11,4 +11,4 @@ Here are some ideas I've heard people mention:
 * Tracking field access for logging or security reasons
 * ...
 
-[<--Back]({{ site.pagesurl}}/JBossAOPEX2AssignmentApplications) [Next-->]({{ site.pagesurl}}/JBossEX2AssignmentIssues)
+[<--Back](JBossAOPEX2AssignmentApplications) [Next-->](JBossEX2AssignmentIssues)
