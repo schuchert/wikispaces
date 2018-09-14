@@ -4,18 +4,23 @@ title: JPA_Tutorial_2_-_Working_with_Queries_1
 {:toc}
 [<--Back](EJB_3_and_Java_Persistence_API)
 
-# JPA Tutorial 2 - Working with Queries 1
-[include_page="Tutorial_2_-_Background"](include_page="Tutorial_2_-_Background")
+## JPA Tutorial 2 - Working with Queries 1
+{% include include_md_file filename="Tutorial_2_-_Background" %}
+
 ----
-## The Queries
-[include_page="Tutorial_2_-_The_Queries"](include_page="Tutorial_2_-_The_Queries")
+
+### The Queries
+
+{% include include_md_file filename="Tutorial_2_-_The_Queries" %}
+
 ----
-## JPA Tutorial 2 Project Setup
+
+### JPA Tutorial 2 Project Setup
 For this next section, where you see **<project>**, replace it with **JpaTutorial2**.
 
-[include_page="JPA_Tutorial_Project_Setup"](include_page="JPA_Tutorial_Project_Setup")
-### Copy Entities From JpaTutorial1
-# Open up your **Tutorial1** project
+{% include include_md_file filename="JPA_Tutorial_Project_Setup" %}
+#### Copy Entities From JpaTutorial1
+## Open up your **Tutorial1** project
 # Expand the **src** folder
 # Select **entity**
 # Right-click, select Copy

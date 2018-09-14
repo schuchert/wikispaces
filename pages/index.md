@@ -6,17 +6,14 @@ I'm attempting to create materials people will find useful for learning some too
 
 For more background on where I'm coming from, have a look at [ExperientialLearningNotes](ExperientialLearningNotes).
 
-# Exercises 
-> == [Aspect Oriented Programming](AspectOrientedProgramming) 
+## Exercises 
+*  [Aspect Oriented Programming](AspectOrientedProgramming) 
 
-# Notes 
-> == [ExperientialLearningNotes](ExperientialLearningNotes) 
+## Notes 
+* [ExperientialLearningNotes](ExperientialLearningNotes) 
 
-# Old Book Work 
-> == [CSharpAndOop](CSharpAndOop)
+## Old Book Work 
+* [CSharpAndOop](CSharpAndOop)
 
 # My blog 
-> ==<http://brettschuchert.blogspot.com/>
-
-# Pictures 
-> == [My pictures at PBase](http://www.pbase.com/brett_schuchert)
+* <http://brettschuchert.blogspot.com/>
