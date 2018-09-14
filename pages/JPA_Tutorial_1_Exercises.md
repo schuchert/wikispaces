@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_1_-_Exercises
+title: JPA_Tutorial_1_Exercises
 ---
 ## Questions
 * Describe what the @Entity annotation means to a class.

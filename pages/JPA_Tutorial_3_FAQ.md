@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_3_-_FAQ
+title: JPA_Tutorial_3_FAQ
 ---
 JPA Tutorial 3 - FAQ
 * **Phone number length is set to 11 in the annotation in the exercise, but phone numbers are 12. What's happening?** //It will get truncated (in hypersonic)//

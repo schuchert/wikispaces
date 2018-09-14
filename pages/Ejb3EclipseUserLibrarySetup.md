@@ -2,7 +2,7 @@
 title: Ejb3EclipseUserLibrarySetup
 ---
 ### Define User Library
-We need to add several jar files to the class path. We created a user library in [these steps](JPA_Tutorial_1_-_Eclipse_Project_Setup#ClasspathVariables) and we're going to do the same thing with a different set of jar files.
+We need to add several jar files to the class path. We created a user library in [these steps](JPA_Tutorial_1_Eclipse_Project_Setup#ClasspathVariables) and we're going to do the same thing with a different set of jar files.
 
 **Create User Library**
 # Pull down **Window:Preferences**

@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_3_-_V1_First_Test_Suite
+title: JPA_Tutorial_3_V1_First_Test_Suite
 ---
 ### The Unit Tests
 **A Little Context**

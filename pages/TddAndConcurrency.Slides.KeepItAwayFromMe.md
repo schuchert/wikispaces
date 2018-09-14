@@ -3,15 +3,15 @@ title: TddAndConcurrency.Slides.KeepItAwayFromMe
 ---
 [<--Back](TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.FinaNotes)
 
-# Keep It Away From Me
+## Keep It Away From Me
 
-## Scope it way down...
+### Scope it way down...
 A guideline to live by…
 > ==Manage concurrent-based stuff managed in one place
 >> ===Close to where that stuff lives
 ----
 ----
-## Dependent State
+### Dependent State
 Consider the following (incomplete) iterator:
 {% highlight java %}
 public class IntegerIterator 
@@ -31,7 +31,7 @@ public class IntegerIterator
 {% endhighlight %}
 ----
 ----
-## Dependent State+Multi-Threaded
+### Dependent State+Multi-Threaded
 Use this code in a test:
 {% highlight java %}
 IntegerIterator iterator = new IntegerIterator();
@@ -78,7 +78,7 @@ There's a problem. How can we fix it?
 * Server-based locking
 ----
 ----
-## Client Based Locking
+### Client Based Locking
 The client (user) of the common data locks:
 {% highlight java %}
 public class UseIntegerIteratorClientBasedLocking 
@@ -97,7 +97,7 @@ public class UseIntegerIteratorClientBasedLocking
 {% endhighlight %}
 ----
 ----
-## Server-Based Locking
+### Server-Based Locking
 The server guards the dependent calls:
 {% highlight java %}
 package dependent.serverbasedlocking;
@@ -133,7 +133,7 @@ Evaluate, between client-based and server-based locking
 * Which solution most reduces the scope of the shared data?
 ----
 ----
-## Client or Server-based?
+### Client or Server-based?
 When you have control of the code: Prefer server-based locking
 * It reduces the possibility of error
 * It reduces repeated code

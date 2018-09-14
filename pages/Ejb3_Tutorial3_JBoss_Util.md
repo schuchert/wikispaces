@@ -1,7 +1,7 @@
 ---
-title: Ejb3_Tutorial3_-_JBoss_Util
+title: Ejb3_Tutorial3_JBoss_Util
 ---
-This project requires the JBoss Util class from [Ejb_3_Tutorial_2_-_Starting_the_Container](Ejb_3_Tutorial_2_-_Starting_the_Container):
+This project requires the JBoss Util class from [Ejb_3_Tutorial_2_Starting_the_Container](Ejb_3_Tutorial_2_Starting_the_Container):
 # Open your previous tutorial's project
 # Expand the **src** folder
 # Select the **util** package (right-click and select **Copy**)

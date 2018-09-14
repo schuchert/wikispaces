@@ -1,5 +1,5 @@
 ---
-title: Tutorial_2_-_The_Queries
+title: Tutorial_2_The_Queries
 ---
 ### Queries
 In these example, the variable "em" is an entity manger initialized just like it was in the first tutorial.

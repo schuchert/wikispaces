@@ -1,5 +1,5 @@
 ---
-title: Tutorial_2_-_Second_Example
+title: Tutorial_2_Second_Example
 ---
 There are several things for which we need some support code:
 * Per test method setup

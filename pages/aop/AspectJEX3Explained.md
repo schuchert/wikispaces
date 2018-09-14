@@ -3,7 +3,7 @@ title: AspectJEX3Explained
 ---
 [<--Back](AspectJEX3SoWhatIsHappening) [Next-->](AspectJEX3ApplyYourself)
 
-# Example 3 Explained
+## Example 3 Explained
 In addition to modifying such things as method exeuction and method calling and attribute reading and writing, we can also use introductions. The introduction in this example simply adds the Serializable interface to a class that did not already implement it. Imagin wanting to use some legay code that does not support some interface or feature. This is one way to can get that legacy code to support new functionality without changing its souce code.
 
 Remember that when we’re working with AOP, we have to consider “what” and “where”.  For this example:
@@ -15,7 +15,7 @@ To make this example work, we need two additional things:
 * aop.xml
 
 ----
-## SerializableIntroductionAspect.java
+### SerializableIntroductionAspect.java
 {% highlight java %}
 01: package ex3;
 02: 
@@ -30,7 +30,7 @@ To make this example work, we need two additional things:
 11:     Serializable serializable;
 12: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 ^
 |-|-|
 |Line|Description|
@@ -38,7 +38,7 @@ To make this example work, we need two additional things:
 |10|We use the @DeclareParents annotation to modify the next line. What is in the ("") is the class being targeted. The next line defined a field (instance variable). The net effect is that we add the type on the next line as an interface that the class on line 10 will now implement.|
 |11|Define an instance variable for this class/aspect. Becuase this line is annotated with @DeclareParents, the type of this variable is added as an interface to the ex3.Die class.|
 
-## aop.xml
+### aop.xml
 {% highlight xml %}
 01: <aspectj>
 02: 	<aspects>
@@ -50,14 +50,14 @@ To make this example work, we need two additional things:
 08: </aspectj>
 {% endhighlight %}
 
-### Interesting Lines
+#### Interesting Lines
 ^
 |-|-|
 |Line|Description|
 |3|List the aspect we want to weave into our code|
 |6|Apply the aspect to all classes in the package ex3|
 
-## Main.java
+### Main.java
 {% highlight java %}
 01: package ex3;
 02: 
@@ -131,7 +131,7 @@ To make this example work, we need two additional things:
 70: }
 {% endhighlight %}
 
-### Interesting Lines
+#### Interesting Lines
 ^
 |-|-|
 |Line|Description|

@@ -1,8 +1,9 @@
 ---
 title: PowerShell5-Tokenize_Expression-Simple_Binary_Expressions
 ---
-[<— Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstFailingTest)  [^^ Up ^^](PowerShell5.TokenizeExpression) [Next—>](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstStabAtParentheses)
-# Overview
+[<— Back](PowerShell5.TokenizeExpression.FirstFailingTest)  [^^ Up ^^](PowerShell5.TokenizeExpression) [Next—>](PowerShell5.TokenizeExpression.FirstStabAtParentheses)
+
+## Overview
 Now that we have a trivial first test, we'll begin growing the implementation one test at a time. We'll be following [Uncle Bob's Three Rules of TDD](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd), summarized here as:
 * Write no production code without a failing test
 * Write just enough of a test to get the test to fail
@@ -20,7 +21,7 @@ In general, there are for things we might do at any point:
 * Refactor production code
 
 We'll strive to do only one of these at a time and only switch to another one of these actions when all tests are passing.
-# Moving Towards Binary Expression
+## Moving Towards Binary Expression
 Rather than immediately going to a full binary expression, we'll add a test with a number and an operator.
 * Create a new test:
 {% highlight powershell %}
@@ -49,6 +50,7 @@ Rather than immediately going to a full binary expression, we'll add a test with
 Tests completed in 681ms
 Tests Passed: 1, Failed: 1, Skipped: 0, Pending: 0, Inconclusive: 0
 {% endhighlight %}
+
 * A little bit of regex magic allows us to get the tests passing:
 {% highlight powershell %}
  [ArrayList]interpret([String]$expression) {
@@ -62,8 +64,10 @@ Tests Passed: 1, Failed: 1, Skipped: 0, Pending: 0, Inconclusive: 0
    return $result
  }
 {% endhighlight %}
+
 * Run your tests, they are passing.
 When I wrote that code, I was tempted to add a check to verify something I suspected. Rather than do that, with all of the tests passing, I suggest going back to the first test and making a change. There's near duplication between the two tests. Make them more similar.
+
 * Update the first test:
 {% highlight powershell %}
        $tokens[0] | Should be '42'
@@ -88,8 +92,10 @@ When I wrote that code, I was tempted to add a check to verify something I suspe
 
         return $result
 {% endhighlight %}
+
 * Run your tests, and it's back to passing.
 Now we might be ready for a complete binary expression. Let's give that a try, then we'll do some refactoring of the tests.
+
 * Add a new test:
 {% highlight powershell %}
      It "Should convert a binary expression into three tokens" {
@@ -103,6 +109,7 @@ Now we might be ready for a complete binary expression. Let's give that a try, t
        $tokens.Count | Should be 3
      }
 {% endhighlight %}
+
 * Sure enough, running the tests shows that we're not quite done with a binary expression:
 {% highlight powershell %}
     [-] Should convert a binary expression into three tokens 155ms
@@ -114,6 +121,7 @@ Now we might be ready for a complete binary expression. Let's give that a try, t
       at Invoke-LegacyAssertion, C:\Program Files\WindowsPowerShell\Modules\Pester\4.0.8\Functions\Assertions\Should.ps1: line 190
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 30
 {% endhighlight %}
+
 * We need to do this more than once, and check for digits and not digits. This will do it:
 {% highlight powershell %}
     [ArrayList]interpret([String]$expression) {
@@ -136,7 +144,9 @@ Now we might be ready for a complete binary expression. Let's give that a try, t
         return $result
     }
 {% endhighlight %}
+
 * Run your tests, they should pass.
+
 * A quick check after your tests are passing will verify that the final if is not necessary:
 {% highlight powershell %}
     [ArrayList]interpret([String]$expression) {
@@ -156,8 +166,11 @@ Now we might be ready for a complete binary expression. Let's give that a try, t
         return $result
     }
 {% endhighlight %}
+
 * Run your tests, they should be passing.
+
 * Now is a great time to commit your changes because we are going to refactor and if things go badly, this is a good place to be able to easily get back to.
+
 * Noticing some duplication and after a two successful tries, I ended up with the following:
 {% highlight powershell %}
     using namespace System.Collections
@@ -185,9 +198,11 @@ Now we might be ready for a complete binary expression. Let's give that a try, t
         }
     }
 {% endhighlight %}
+
 I'm not a PowerShell expert and I do not know how common/popular/idiomatic the use of [ref] is, but it nicely collapses the code. I even notice something that will come up later (I see a pattern I've not noticed before). So I'll chose some tests to exploit that. But before doing that, thre's a few more things to do with our tests in terms of refactoring and test cases.
 
 The test file has a bit of duplication. It's time to collapse that. To do so, we'll use the -TestCases feature of Pester.
+
 * Update your test by adding a new test, which duplicates the first test:
 {% highlight powershell %}
     It "Should convert <expression> to <expected>" -TestCases @(
@@ -204,6 +219,7 @@ The test file has a bit of duplication. It's time to collapse that. To do so, we
         $result.Count | Should be $result.Count
     }
 {% endhighlight %}
+
 * Run your tests, and they all pass:
 {% highlight powershell %}
       Describing Tokenizing an in-fix expression
@@ -214,6 +230,7 @@ The test file has a bit of duplication. It's time to collapse that. To do so, we
     Tests completed in 691ms
     Tests Passed: 4, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0
 {% endhighlight %}
+
 * This new tests duplicates the first test, so it is safe to remove it. While you are at it, convert the other two tests into this last one:
 {% highlight powershell %}
     using module '.\Tokenizer.psm1'
@@ -236,12 +253,16 @@ The test file has a bit of duplication. It's time to collapse that. To do so, we
         }
     }
 {% endhighlight %}
+
 Now back to checking/extending the behavior. Let's make sure our code handles white space, and more than one operator, multi-character operators, and even variables.
+
 * Add a new test case:
 {% highlight powershell %}
         @{expression = '1+2+3+4'; expected = @('1', '+', '2', '+', '3', '+', '4')}
 {% endhighlight %}
+
 * Run the tests, this seems to work fine. The while loop covers an expression as long as we need.
+
 * Now let's make our code handle variables. Add another test case:
 {% highlight powershell %}
         @{expression = 'a'; expected = @('a')}
@@ -250,6 +271,7 @@ I was initially surprised this worked, but that's the issue with regular express
 {% highlight powershell %}
         @{expression = 'foo+bar'; expected = @('foo', '+', 'bar')}
 {% endhighlight %}
+
 * This fails as I expected:
 {% highlight powershell %}
     [-] Should convert foo+bar to foo = bar 88ms
@@ -261,15 +283,19 @@ I was initially surprised this worked, but that's the issue with regular express
       at Invoke-LegacyAssertion, C:\Program Files\WindowsPowerShell\Modules\Pester\4.0.8\Functions\Assertions\Should.ps1: line 190
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 18
 {% endhighlight %}
+
 * Here's a quick fix to make this work:
 {% highlight powershell %}
             if (-not $this.recordIfMatches([ref]$expression, '^([\d\w]+)', $result)) {
 {% endhighlight %}
+
 Note that the regular expression was simply \d+ and now it is [\d\w]+. This might seem too clever, too simple or maybe it seems like I'm cheating. In fact, if that's the case, then to "prove" I'm cheating, you want to find a test that will cause my code to break. However, I'm fine with that solution for now. If this were a real problem, I think I'd have a known list of operators and check for them explicitly. However, this is a simple example and so I'm OK with simple tests and simple solutions.
+
 * What about a multi-character operator? Add a new test:
 {% highlight powershell %}
         @{expression = '++foo'; expected = @('++', 'foo')}
 {% endhighlight %}
+
 * Run your tests, and this fails.
 {% highlight powershell %}
     [-] Should convert ++foo to ++ foo 80ms
@@ -281,10 +307,12 @@ Note that the regular expression was simply \d+ and now it is [\d\w]+. This migh
       at Invoke-LegacyAssertion, C:\Program Files\WindowsPowerShell\Modules\Pester\4.0.8\Functions\Assertions\Should.ps1: line 190
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 19
 {% endhighlight %}
+
 * Update the regular expression to fix this:
 {% highlight powershell %}
                 $this.recordIfMatches([ref]$expression, '^([^\d]+)', $result)
 {% endhighlight %}
+
 * When I run the tests, I find my confidence was too high:
 {% highlight powershell %}
     [-] Should convert foo+bar to foo + bar 78ms
@@ -304,16 +332,21 @@ Note that the regular expression was simply \d+ and now it is [\d\w]+. This migh
       at Invoke-LegacyAssertion, C:\Program Files\WindowsPowerShell\Modules\Pester\4.0.8\Functions\Assertions\Should.ps1: line 190
       at <ScriptBlock>, C:\Users\Brett\src\shunting_yard_powershell_3\Tokenizer.Tests.ps1: line 19
 {% endhighlight %}
+
 * The second regular expression was originally the opposite of the first, but we added \w to the first, so we need to do the same for the second one:
 {% highlight powershell %}
                 $this.recordIfMatches([ref]$expression, '^([^\d\w]+)', $result)
 {% endhighlight %}
+
 That's a good lesson. I though it was simple, and it was, just not in the way I though. My tests allowed me to experiment, learn, adjust and make progress.
+
 * Now is probably a good time to commit your changes.
+
 Now let's handle white space. We can match white space much like we do everything else, or we could simply remove it. Regardless, a test will keep us obvious. I think this is going to be simple, so I'll start with a "big" test:
 {% highlight powershell %}
         @{expression = '   foo  + -bar  = baz   '; expected = @('foo', '+', '-', 'bar', '=', 'baz')}
 {% endhighlight %}
+
 * Once again, my confidence has bitten me. I figured I could simply replace all of the white space:
 {% highlight powershell %}
         $expression = $expression -replace('\s+','')
@@ -338,7 +371,8 @@ Now let's handle white space. We can match white space much like we do everythin
             }
         }
 {% endhighlight %}
-* There are three changes. First, the regeular expression is in the while loop. Second, it only matches at the beginning of the string, third, the bottom regular expression is also excluding \s (white space characters). However, those changes results in passing tests:
+
+* There are three changes. First, the regular expression is in the while loop. Second, it only matches at the beginning of the string, third, the bottom regular expression is also excluding \s (white space characters). However, those changes results in passing tests:
 {% highlight powershell %}
   Describing Tokenizing an in-fix expression
     [+] Should convert 42 to 42 577ms
@@ -354,4 +388,4 @@ Tests Passed: 8, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0
 {% endhighlight %}
 
 This seems like enough progress on binary expressions. Next up, handling parenthesis.
-[<— Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstFailingTest)  [^^ Up ^^](PowerShell5.TokenizeExpression) [Next—>](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FirstStabAtParentheses)
+[<— Back](PowerShell5.TokenizeExpression.FirstFailingTest)  [^^ Up ^^](PowerShell5.TokenizeExpression) [Next—>](PowerShell5.TokenizeExpression.FirstStabAtParentheses)

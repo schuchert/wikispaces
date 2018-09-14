@@ -1,5 +1,5 @@
 ---
-title: Ejb3_Tutorial_3_-_FAQ
+title: Ejb3_Tutorial_3_FAQ
 ---
 ### Q/A
 * **@EJB**  //Automatically filling in a dao. If the type of the Bean is unambigious, then JNDI will automatically insert your session bean reference.//

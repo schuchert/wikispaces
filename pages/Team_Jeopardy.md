@@ -26,7 +26,7 @@ We play this as a form of review. It works the brain in several significant diff
 In practice, this style of review really seems to engage people, is fun and the students actually learn things, so I'm using it on a weekly basis in an 8-week boot camp.
 
 Here's a set of class and source files that will allow you to play:
-> [[file:temp.7z]]
+ [temp.8z](file_missing)
 * Extract this [7-ZIP](www.7-zip.org) file somewhere, say C:\jeopardy
 * Make sure a 1.5 JVE is available to run the client and server
 * Start a dos shell

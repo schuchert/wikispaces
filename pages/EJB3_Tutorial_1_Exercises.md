@@ -1,5 +1,5 @@
 ---
-title: EJB3_Tutorial_1_-_Exercises
+title: EJB3_Tutorial_1_Exercises
 ---
 **Track Usage**
 Add support in your service implementation class to track the number of times the service has been used. Add two support methods to get the count of the number of times the service has been used and a second method to reset the count back to zero.

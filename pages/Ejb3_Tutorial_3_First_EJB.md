@@ -1,5 +1,5 @@
 ---
-title: Ejb3_Tutorial_3_-_First_EJB
+title: Ejb3_Tutorial_3_First_EJB
 ---
 Here is a list of the classes we'll convert to Session Beans:
 * BookDao

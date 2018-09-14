@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_3_-_V2_Requirements
+title: JPA_Tutorial_3_V2_Requirements
 ---
 In the first version of our simple system, we had a 1 to many relationship from Patron to Book and a many to 1 relationship from Book to Patron. On a UML diagram, this looks like the following (only showing this one relationship):
 

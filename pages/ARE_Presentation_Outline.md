@@ -1,5 +1,5 @@
 ---
-title: ARE_-_Presentation_Outline
+title: ARE_Presentation_Outline
 ---
 # Background and Intent
 This presentation serves as a 1 - 2 hour practice session on basic user story experience.

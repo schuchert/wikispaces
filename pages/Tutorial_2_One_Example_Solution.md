@@ -1,5 +1,5 @@
 ---
-title: Tutorial_2_-_One_Example_Solution
+title: Tutorial_2_One_Example_Solution
 ---
 {% highlight java %}
 package entity;

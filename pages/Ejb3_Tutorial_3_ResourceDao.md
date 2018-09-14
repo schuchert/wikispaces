@@ -1,5 +1,5 @@
 ---
-title: Ejb3_Tutorial_3_-_ResourceDao
+title: Ejb3_Tutorial_3_ResourceDao
 ---
 ### Update Dao 
 * Rename ResourceDao --> ResourceDaoBean

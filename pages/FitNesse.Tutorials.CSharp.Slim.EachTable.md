@@ -4,10 +4,10 @@ title: FitNesse.Tutorials.CSharp.Slim.EachTable
 {:toc}
 [<--Back](FitNesse.Tutorials)
 
-# Introduction
+## Introduction
 This tutorial simply demonstrates each of the kinds of tables available in Slim using C#. Before getting started with this tutorial, make sure you understand [this tutorial first](Acceptance_Testing.UsingSlimDotNetInFitNesse).
 
-# Table Types
+## Table Types
 In Slim there are 5 major table types and one minor type (the import table):
 
 | Decision Table | A decision table allows individual rows to execute, one at a type. Typically used to insert data into the system for testing. This replaces the Column Fixture Table from Fit. |
@@ -17,7 +17,7 @@ In Slim there are 5 major table types and one minor type (the import table):
 | Table Table | The body of the table is given to the fixture to do as it seems fit. This is equivalent to the Table Table from Fit. |
 | Import Table | Lists namespaces to be searched for classes when executing tests. This is equivalent to the import table from Fit. |
 
-# The Examples
+## The Examples
 Here is the configuration information I used for the following examples:
 
 | Location of FitNesse | C:\tools\fitnesse |
@@ -58,7 +58,7 @@ CsharpWithSlimExamples
   ScenarioTableExample
   TableTableExample
 {% endhighlight %}
-## Decision Table
+### Decision Table
 
 Here's a example of a decision table (<http://localhost:8080/CsharpWithSlimExamples.DecisionTableExample>):
 
@@ -126,7 +126,7 @@ The one thing not yet discussed is the Execute() method. This method is called a
 * Calls the Id() method
 
 As mentioned above, the last row will take the result of the Id() method, Dr. Who:12, and assign that value to $lastProgram.
-## Query Table
+### Query Table
 Now for a query table (<http://localhost:8080/CsharpWithSlimExamples.QueryTableExample>):
 {% highlight terminal %}
 !|Query:Get Programs On A Given Day And Channel|3/4/2009|3                 |
@@ -212,7 +212,7 @@ namespace slim_example
   }
 }
 {% endhighlight %}
-## Script Table
+### Script Table
 A script table allows you more control over information going into methods. You can call different methods with a variable number of parameters. Here is one example (<http://localhost:8080/CsharpWithSlimExamples.ScriptTableExample>):
 {% highlight terminal %}
 !|Script                    |Generate Programs                                                                              |
@@ -265,7 +265,7 @@ namespace slim_example
   }
 }
 {% endhighlight %}
-## Scenario Table
+### Scenario Table
 A scenario table describes a logical sequence of steps. By itself it does not require a backing class. Here is an example scenario table (<http://localhost:8080/CsharpWithSlimExamples.ScenarioTableExample>):
 {% highlight terminal %}
 !|Scenario                   |dvrCanSimultaneouslyRecord|number|andWithThese|seasonPasses|shouldHaveTheFollowing|toDoList|
@@ -346,7 +346,7 @@ namespace slim_example
   }
 }
 {% endhighlight %}
-## Table Table
+### Table Table
 With a table table, you are given the table, minus the first row, and can do anything you wish. Here is one such example (<http://localhost:8080/CsharpWithSlimExamples.TableTableExample>):
 {% highlight terminal %}
 !|Table:CreateOneDayProgramGuide|1:00|3/4/2008|
@@ -380,7 +380,7 @@ namespace slim_example
   }
 }
 {% endhighlight %}
-# Summary
+## Summary
 This is simply a quick summary of the types of tables available and minimal code to get those fixtures to pass. There's much more to consider in terms of test design and connecting test fixtures to production code. You can get an idea of how to proceed looking at the [Java tutorials](FitNesse.Tutorials#JavaTutorials).
 
 [<--Back](FitNesse.Tutorials)

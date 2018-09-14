@@ -1,5 +1,5 @@
 ---
-title: Tutorial_2_-_The_First_Example
+title: Tutorial_2_The_First_Example
 ---
 ### Test Setup
 We have a bit of setup/initialization code we need to do before we can get started. We have seen all of this code before in Tutorial 1. The difference here is that we are going to work though some refactorings to get to where we were in tutorial 1. Here are the various parts:

@@ -3,7 +3,7 @@ title: JUnit_4.xSuite
 ---
 [<--Back to JUnit 4.x](JUnit_4.x)
 
-# Suite Method for Backwards Compatibility
+## Suite Method for Backwards Compatibility
 
 In Eclipse, I can right-click on a Java class and use Run As:JUnit Test in one of a few situations:
 * The class inherits from TestClass
@@ -25,7 +25,8 @@ Since few IDE's are JUnit 4 aware, JUnit 4 offers a class for backwards compatib
 39:         return new JUnit4TestAdapter(TestVehicle.class);
 40:     }
 {% endhighlight %}
-## Interesting Lines
+
+### Interesting Lines
 ^
 |-|-|
 |Line|Description|

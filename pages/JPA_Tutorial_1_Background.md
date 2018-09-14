@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_1_-_Background
+title: JPA_Tutorial_1_Background
 ---
 In this first tutorial we are going to perform some basic inserts, removes and queries against a database. 
 

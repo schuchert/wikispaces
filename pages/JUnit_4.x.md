@@ -1,7 +1,7 @@
 ---
 title: JUnit_4.x
 ---
-# JUnit 4.1
+## JUnit 4.1
 {:toc}
 If you've used JUnit prior to version 4.0 (e.g. you've been using JUnit in Eclipse version 2.0 to 3.1.2) then here is the first place you want to go to get up to speed: [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52). If you are not somewhat familiar with JUnit 4, you can probably follow this material. However, after code examples that use JUnit 4 specific features, you'll notice a [Click_Here](Click_Here) link that will give you more detailed information.
 
@@ -11,10 +11,10 @@ Now that I've used it a bit in Eclipse 3.1.2, I've got an initial recommendation
 * [TimeBomb Generic Code Explained](JUnit_4.xTimeBombGenericCodeExplained)
 
 [#assertAsterisk](#assertAsterisk)
-## Using the assert* methods
+### Using the assert* methods
 In JUnit 3.8.1, test classes inherited from TestCase. Among other things, doing so gave the code access to several assert methods like assertEquals. JUnit 4.x no longer makes this requirement. Of course every solution introduces problems. In this case, I no longer have easy access to assertEquals and other such methods.
 
-### Java 5 to the rescue
+#### Java 5 to the rescue
 The recommendation from [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52) is to use [static imports](http://java.sun.com/j2se/1.5.0/docs/guide/language/static-import.html)from the org.junit.Assert class to get methods like assertEquals. The following excerpt is taken from [Example 1](JUnit_4.x#example1) below. Note the line numbers are from the original example. Line 3 is the static import, which is used on lines 29 and 30:
 {% highlight terminal %}
      03: import static org.junit.Assert.assertEquals;
@@ -52,7 +52,7 @@ Since these methods are in the class org.junit.Assert, I've decided to switch to
 101: }
 {% endhighlight %}
 [#TimeBomb](#TimeBomb)
-## TimeBomb
+### TimeBomb
 What is a TimeBomb? Let's begin with an example. This is an excerpt from [Example 2](JUnit_4.x#example2):
 {% highlight terminal %}
 05: import org.junit.Assert;
@@ -75,11 +75,11 @@ If I had a Dao (data access object) that used an underlying database, the reques
 I do not have a try block and I did not add a throws clause to the method signature, so how does this example compile? ObjectInUse is a RuntimeException. The ``@Test(expected = ...)`` does not obviate the need to handle exceptions properly. If I was expecting a checked exception, then along with @Test(expected=SomeCheckedException.class), I'd have to add "throws SomeCheckedException" to the method signature. I could catch the exception in the test case, but I don't recommend that. Let JUnit report exceptions properly. That's one of the things it does for you.
 
 What happens when you do not have the infrastructure in place for a unit test, what are your options?
-# Write the test, run the tests with that test failing until the infrastructure is in place
-# Wait to add the test to the suite
-# Use a TODO comment or some such IDE feature
-# Add the test and get the infrastructure in place right now
-# Use a TimeBomb
+* Write the test, run the tests with that test failing until the infrastructure is in place
+* Wait to add the test to the suite
+* Use a TODO comment or some such IDE feature
+* Add the test and get the infrastructure in place right now
+* Use a TimeBomb
 
 **Option 1**
 The first option is fine if I'm the only person working on the system. However if I'm working in a team then it really isn't. If you happen to be using continuous integration, this option is even less appealing since the build will remain broken until I can fix this test.
@@ -101,6 +101,7 @@ I've used this on what has grown to a team of around 60 people (from 6) all work
 If you're interested in a complex and detailed explanation of the implementation of TimeBomb, [click here for a detailed description.](JUnit_4.xTimeBombGenericCodeExplained)
 
 ----
+
 ## Complete Examples
 This section contains the full code for the examples mentioned above.
 ----

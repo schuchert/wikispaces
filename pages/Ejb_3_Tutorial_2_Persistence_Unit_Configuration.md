@@ -1,5 +1,5 @@
 ---
-title: Ejb_3_Tutorial_2_-_Persistence_Unit_Configuration
+title: Ejb_3_Tutorial_2_Persistence_Unit_Configuration
 ---
 We need to create a persistence unit to provide access to the database. In fact, the file persistence.xml must be found under a META-INF directory somewhere in the classpath or the embeddable container will not start. Also remember that the file's name is persistence.xml with a lower-case 'p'. On a Unix system, this will make a difference. On a PC, this won't make a difference and it is one of those things that might work on your machine but not on the linux build box.
 

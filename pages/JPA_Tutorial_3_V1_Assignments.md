@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_3_-_V1_Assignments
+title: JPA_Tutorial_3_V1_Assignments
 ---
 ### Questions
 * Given our current solution, how would you add support for:

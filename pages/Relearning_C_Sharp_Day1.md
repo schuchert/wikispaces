@@ -1,5 +1,5 @@
 ---
-title: Relearning_C_Sharp_-_Day1
+title: Relearning_C_Sharp_Day1
 ---
 So I'll start by creating a new C# project and adding a reference to nunit.framework.
 # new project, C#, class library

@@ -8,11 +8,12 @@ Gradle requires a JVM; I work mostly on OS X, so I use JSE 1.6.0_24, but any ver
 
 ## Install Gradle
 Instructions for installing Gradle are [here](http://www.gradle.org/installation.html). I'm summarizing them here, if you have any questions refer to the installation instructions.
-# [Download Gradle](http://www.gradle.org/downloads.html). For these examples I happen to be using the 1.0-milestone-3 version of Gradle.
-# Unzip the file somewhere, say /users/Schuchert/bin
-# This will create a directory under the installation directory called something like //**gradle-1.0-milestone-3/**//
-# Add the bin directory under the extracted directory to your path. In my particular case, the path is: /Users/schuchert/bin/gradle-1.0-milestone-3/bin/
-# Verify your installation works by simply typing gradle:
+* [Download Gradle](http://www.gradle.org/downloads.html). For these examples I happen to be using the 1.0-milestone-3 version of Gradle.
+* Unzip the file somewhere, say /users/Schuchert/bin
+* This will create a directory under the installation directory called something like //**gradle-1.0-milestone-3/**//
+* Add the bin directory under the extracted directory to your path. In my particular case, the path is: /Users/schuchert/bin/gradle-1.0-milestone-3/bin/
+* Verify your installation works by simply typing gradle:
+
 {% highlight terminal %}
 [~]% gradle
 :help
@@ -33,8 +34,9 @@ Total time: 4.304 secs
 
 ## Create Initial Project Structure
 Gradle prefers convention over configuration and its default assumptions about project structure mirror those of Maven. For this example, let's assume that you'll create a single project directory (this is to keep things simple). Also, this example demonstrates working with Java, though Gradle supports several other languages.
-# Create a project directory, e.g. ~/src/gradle_example
-# Under that directory create src, src/main/, src/main/java, src/test, src/test/java
+* Create a project directory, e.g. ~/src/gradle_example
+* Under that directory create src, src/main/, src/main/java, src/test, src/test/java
+
 {% highlight terminal %}
 [~]% mkdir -p ~/src/gradle_example
 [~]% cd ~/src/gradle_example
@@ -55,8 +57,8 @@ dependencies {
   testCompile group: 'junit', name: 'junit', version: '4.8+'
 }
 {% endhighlight %}
-# Create a file called //**biuld.gradle**// under your project directory (//**~/src/gradle_example**// in my case)
-# Verify that a build works (even without any production or test code)
+* Create a file called //**biuld.gradle**// under your project directory (//**~/src/gradle_example**// in my case)
+* Verify that a build works (even without any production or test code)
 {% highlight terminal %}
 [~/src/gradle_example]% gradle test
 :compileJava UP-TO-DATE
@@ -155,8 +157,8 @@ open build/reports/tests/index.html
 My report shows one test running and passing.
 ## On To Eclipse
 If you want to create project information for Eclipse, you need to do a few things:
-# Add //**apply plugin: 'eclipse'**//
-# Create the project structure using //**gradle eclipse**//
+* Add //**apply plugin: 'eclipse'**//
+* Create the project structure using //**gradle eclipse**//
 {% highlight terminal %}
 [~/src/gradle_example]% gradle eclipse
 :eclipseClasspath
@@ -171,9 +173,9 @@ Total time: 8.383 secs
 {% endhighlight %}
 
 Note, this creates a //**project**// directory, not a workspace. You'll need to:
-# Start eclipse
-# Select a workspace
-# Import the project into eclipse
+* Start eclipse
+* Select a workspace
+* Import the project into eclipse
 
 In my example, I only created a top-level project directory, not a workspace directory. However, you can create an Eclipse workspace and include a symbolic link to the project. This is a bit out of scope for what I want to get covered. I only mention this here because it confused me a bit.
 ## Preparing for git
@@ -189,10 +191,10 @@ build
 You might choose to not include the .settings directory used by Eclipse.
 
 Now you can turn this directory into a git repository:
-# Initialize git using //**git init**//
-# Add the files you care to monitor using //**git add .gitignore src build.gradle**//
-# Verify everything is cool using //**git status**//
-# Finally, commit the changes (adding just staged the work), using //**git commit -m "Initial Commit"**//
+* Initialize git using //**git init**//
+* Add the files you care to monitor using //**git add .gitignore src build.gradle**//
+* Verify everything is cool using //**git status**//
+* Finally, commit the changes (adding just staged the work), using //**git commit -m "Initial Commit"**//
 
 {% highlight terminal %}
 [~/src/gradle_example]% git init
@@ -223,12 +225,12 @@ Initialized empty Git repository in /Users/schuchert/src/gradle_example/.git/
 
 ## Congratulations
 The purpose of this was to give one specific example of using Gradle to build a new project from scratch. Here's a summary of the steps:
-# Create a project directory
-# Create an initial build.gradle file
-# Add some test files and some production code files using maven project layout
-# Build and run your tests
-# Optionally create the Eclipse project structure
-# Put your work into git
+* Create a project directory
+* Create an initial build.gradle file
+* Add some test files and some production code files using maven project layout
+* Build and run your tests
+* Optionally create the Eclipse project structure
+* Put your work into git
 
 Hope this helps get you started a touch quicker. For more information on Gradle, have a look at its [extensive documentation](http://www.gradle.org/documentation.html).
 

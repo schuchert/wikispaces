@@ -78,6 +78,6 @@ So here's our algorithm for addressing each iteration:
 If you are ready to move on, here are the four iterations:
 * [C++ TDD Iteration 1](Cxx_Tdd_Iteration_1)
 * [C++ TDD Iteration 2](Cxx_Tdd_Iteration_2)
-* [C++ TDD Iteration 2 - The Demo](Cxx_Tdd_Iteration_2_-_The_Demo)
+* [C++ TDD Iteration 2 - The Demo](Cxx_Tdd_Iteration_2_The_Demo)
 * [C++ TDD Iteration 3](Cxx_Tdd_Iteration_3)
 * [C++ TDD Iteration 4](Cxx_Tdd_Iteration_4)

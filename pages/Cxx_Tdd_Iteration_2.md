@@ -1,6 +1,7 @@
 ---
 title: Cxx_Tdd_Iteration_2
 ---
+
 The theme for this iteration is: Landing Effects
 
 By the end of this iteration, players will be able to move around the board and as they do so, various things happen when the pass over or land on locations.
@@ -90,7 +91,9 @@ void Go::landOn(Player *player) {
 {% endhighlight %}
 
 We need to update the SRCS macro in the makefile to get this test added in:
+{% highlight terminal %}
 SRCS    =    Dice.cpp Die.cpp Game.cpp Main.cpp Player.cpp Go.cpp
+{% endhighlight %}
 
 Next, build to verify that the test and Go class compile:
 
@@ -170,7 +173,7 @@ Notice that the Player never sends a message to a Location. Notice also that our
 
 The particulars here are relative to the Location. There are a series of basic assignment of responsibility rules from Craig Larman called the GRASP patterns. As we come across relevant patterns, we’ll discuss them. There are two of the nine GRASP patterns that apply here:
 
-|**Name**|**Desscription**|
+|Name|Desscription|
 |Polymorphism|Assign responsibility to the place where the behavior varies.|
 |Expert|Put responsibility with the object that as the information to perform it.|
 
@@ -181,7 +184,7 @@ These two general assignment of responsibility patterns guide us to want to plac
 So we are missing a class: Location.
 
 Remember that there are 7 steps to accomplish polymorphism in C++:
-- include the 7 steps...
+* include the 7 steps...
 
 Before we write a test to verify this happens, we still have not addressed the issue of visibility. How does a Player:
 * Know its current location?
@@ -190,9 +193,9 @@ Before we write a test to verify this happens, we still have not addressed the i
 Currently the “current location” starts at 0 (an int). We already have a setLocation method in Player that takes an int. Now it needs to take a Location. We’ll need to make that change before we can go any further. So while we thought we didn’t have a need to refactor, in fact we do.
 
 We’ll do this in several steps:
-# Create a Location class (initially empty)
-# Change Player to use Location instead of int
-# Update all the places that won’t compile
+* Create a Location class (initially empty)
+* Change Player to use Location instead of int
+* Update all the places that won’t compile
 
 So our first goal is to get back to compiling but failing tests.
 
@@ -234,7 +237,7 @@ Next we need to update Player.hpp:
 22: if
 {% endhighlight %}
 
-|**Line**|**Description**|
+|Line|Description|
 |5|Forward declare the class Location. We do not actually do anything with the definition of Location since we only use pointers to Locations, so a forward declaration is all we need to get the header file to be correct and complete.|
 |12|We’ve changed this line to return an attribute, myLocation, which is simply a pointer to a Player. Since we’re just working with Pointers, C++ knows all it needs to know with a forward declaration of Player. We’ve also changed this line to include an implicit inline implementation of the method so we’ll need to remove the method in the source file.|
 |13| We’ve updated this line to take a Location pointer. Notice that even though we are “using” the loc formal parameter, since it is a pointer, C++ knows all it needs to know to compile the line and thus we don’t need to see the class definition, just its declaration.|
@@ -474,7 +477,8 @@ Here’s a more detailed description of our changes:
 |44 – 49|Note how this test is now much shorter.|
 |51 – 56|Same comment, short test.|
 
-## Refacotring: Defined
+<aside>
+### Refacotring: Defined
 
 We refactor systems to (hopefully) improve the implementation of a system without changing its behavior. There are two words of note in that last sentence: improve, behavior.
 
@@ -493,8 +497,9 @@ Behavior: What do we mean by behavior or how do we measure it? Here’s a pithy 
 So when we refactor, we attempt to make improvements like the ones mentioned above without breaking any tests.
 
 Our most recent refactoring reduced duplicated code and used some pre-defined “hook” methods provided by CxxUnit. The setup might seem a bit ugly but the tests look much better. It is easier to understand the **intent** of the tests so if a test does fail, it will be easier to understand what is wrong with our system.
+</aside>
 
-## Red: Player’s balance does not change
+### Red: Player’s balance does not change
 
 We’re still working up to the ultimate goal of showing that when a player takes a turn and lands on Go, they should receive $200. Next, we need to make sure that when a player Lands on a regular location, their balance does not change.
 
@@ -522,7 +527,7 @@ public:
 # endif /*LOCATIONTEST_HPP_*/
 {% endhighlight %}
 
-## Red: Get test to compile
+### Red: Get test to compile
 
 This test won’t initially compile because Location does not have a landOn method like we added to Go. So update Location to have a landOn method:
 
@@ -545,7 +550,7 @@ private:
 # endif
 {% endhighlight %}
 
-## Green: We’re already there
+### Green: We’re already there
 So now if we compile and run our tests, just adding the missing method to location should make the test pass. This is OK, because we’ve tested our way into adding a method to a base class. Verify that your tests pass:
 
 {% highlight terminal %}
@@ -554,12 +559,12 @@ So now if we compile and run our tests, just adding the missing method to locati
 Running 14 tests..............OK!
 {% endhighlight %}
 
-## Refactor
+### Refactor
 We have a few holes in our current implementation, missing virtual methods and such. We’ll address this as we finally tie everything together and complete the “polymorphism loop.”
 
 Now’s a great time to checkin.
 
-## Red: Player sends a message to location
+### Red: Player sends a message to location
 Now that we’re refactored and have a landOn method in our base class, we’re ready to tackle a bigger problem. We need to know if movement works as expected. We want to make sure that when a Player lands on Go they receive 200. We’ve already demonstrated that with a test in the GoTest test suite, so we don’t need to re-test that here (it would be an example of not isolating tests).
 
 Player movement is a separate concern from landing specifically on Go, so I propose an easier solution. Let’s make sure that when a Player takes a turn, they send the message landOn to the location upon which they landed. We will mock out the behavior of a Location to track that fact:
@@ -579,7 +584,7 @@ How about this for the test:
 
 This test simply has a player take a turn using a fixed dice (review previous tests) and confirms that the player send the message landOn to their final destination but none of the other destinations.
 
-## Red: Get this test to compile
+### Red: Get this test to compile
 
 This test does not compile for several reasons:
 * We have to create a mock location and have not yet done so
@@ -636,7 +641,7 @@ Failed 1 of 15 tests
 Success rate: 93%
 {% endhighlight %}
 
-## Green: Get this test to pass
+### Green: Get this test to pass
  
 OK, we have a few problems:
 * First, Location serves as a base class and its destructor is not virtual (this is a C++ issue, not a TDD issue, but we need to fix it anyway)
@@ -730,7 +735,7 @@ Why all of this work? Introducing Polymorphism requires many steps (we’ve alre
 ### Key Point
 Here’s an additional recommendation for C++. If a class is meant to serve as a base class, then add a destructor and make sure it is declared virtual.
 
-## Summary
+### Summary
 That was a bit of work. However, we now have had the plumbing in place to add new kinds of Locations and get different responses when a player takes a turn.
 
 This is yet another great time to check in your work.
@@ -963,7 +968,7 @@ Let me emphasize the last point. On the projects I’ve worked where people did 
 
 So spend the time now to make a good test, it most definitely pays for itself. Even if you eventually refactor and remove the need for the test, while that test is alive, it only fails when something broke and its value is in this fact.
 
-## Red: Player Passes Over and Lands On Correctly
+### Red: Player Passes Over and Lands On Correctly
 We’re ready to make sure that we’ve placed the hooks into Player properly. First we’ll discuss the background and then we’ll look at an existing test and model a new test around it to accommodate these new requirements.
 
 When a planer passes Go, they should receive $200. We need to make sure that Go has a chance to do something when this occurs, so we need to make sure we send a message to Go at the correct time. 
@@ -1106,7 +1111,7 @@ Running 18 tests..................OK!
 ### Review
 Is this an improvement? We’re essentially doing the same work as before, just in the Location instead of in the player. The disadvantage of this is that it might seem a bit strange at first glance. On the other hand, the nuances of movement end up not in the Player but in the Location. This seems to be a better assignment of responsibility.
 
-## Refactor: Where's the tests?
+### Refactor: Where's the tests?
 Notice that we've placed movement into the responsibility of Locations, not Players yet we are actually verifying that when Player's take a turn, they send the right number of messages. We should move those tests where they belong.
 
 Here are all of the updated files:
@@ -1269,7 +1274,7 @@ Run your tests and verify you are still green.
 
 After you've made this update, you're ready to check in again.
 
-# Review where we’re at
+## Review where we’re at
 We’ve finished the first two user stories and we have the following three left for this iteration:
 * Landing on Go To Jail
 * Landing on Income Tax
@@ -1293,7 +1298,7 @@ To make our results seem more tangible (to people not comfortable with TDD), we�
 
 We don’t do this as a unit test, but just a smoke test to make sure everything ties together.
 
-## Red: Landing on Go To Jail
+### Red: Landing on Go To Jail
 Here’s a test for landing on GoToJail:
 
 {% highlight cpp %}
@@ -1319,7 +1324,7 @@ public:
 
 This test sets up an instance of GoToJail and verifies that when a player lands on it, the player is sent to the correct destination (a value we set).
 
-## Red: Get it to compile
+### Red: Get it to compile
 Here’s the minimal amount necessary to get our test to compile:
 
 {% highlight cpp %}
@@ -1348,7 +1353,7 @@ Failed 1 of 19 tests
 Success rate: 94%
 {% endhighlight %}
 
-## Green: Get our tests to pass
+### Green: Get our tests to pass
 We need to override the landOn method in GoToJail to do what it is supposed to do:
 
 {% highlight cpp %}
@@ -1379,7 +1384,7 @@ Running 19 tests...................OK!
 
 Success! However, we might want to consider a little refactoring before we finish.
 
-## Refactor
+### Refactor
 First, we’ve written the entire implementation inline. Virtual functions and inline don’t really play well together. The C++ compiler will generate a non-inline method to take care of this so maybe it’s not a big issue.
 
 On the other hand, because we’ve provided the implementation in an implicit inline, we must include Player.hpp rather than forward-declare Player. We must do so since we send a message to Player. We can remedy both of these situations by simply putting the code for landOn in GoToJail.cpp:
@@ -1424,7 +1429,7 @@ Running 19 tests...................OK!
 {% endhighlight %}
 Success! And we’re finished refactoring so it’s time to check in all of our changes.
 
-## Red: Landing on Income Tax
+### Red: Landing on Income Tax
 This next one involves a calculation. Income tax costs 10% of the Player’s total worth up to a maximum of $200. First the test:
 
 {% highlight cpp %}
@@ -1447,7 +1452,7 @@ public:
 
 We verify that when a player with a balance of $1500 lands on Income Tax, their total charge is $150.
 
-## Red: Get test to pass
+### Red: Get test to pass
 
 To get this test to pass, we need to add IncomeTax.hpp:
 
@@ -1476,7 +1481,7 @@ Failed 1 of 20 tests
 Success rate: 95%
 {% endhighlight %}
 
-## Green: Get the test to pass
+### Green: Get the test to pass
 
 We need to add the landOn method to make this all work. First update IncomeTax.hpp:
 
@@ -1519,12 +1524,12 @@ Running 20 tests....................OK!
 
 Success!
 
-## Refactor
+### Refactor
 We’ll keep asking this every time. Do you notice anything that might be refactored? If so, make those changes, and verify you’re still Green.
 
 Now is a great time to check in your work.
 
-## Red: Verify Amounts > 2000
+### Red: Verify Amounts > 2000
 
 Now we need to verify our formula works for balances > 2000:
 
@@ -1551,7 +1556,7 @@ Failed 1 of 21 tests
 Success rate: 95%
 {% endhighlight %}
 
-## Green: Get test to pass
+### Green: Get test to pass
 Update the implementation of landOn:
 
 {% highlight cpp %}
@@ -1572,10 +1577,10 @@ Verify that your tests now pass:
 Running 21 tests.....................OK!
 {% endhighlight %}
 
-# Final User Story
+## Final User Story
 We have to repeat what we just did for Luxury Tax. The rule is simple, it costs $75 to land on Luxury tax.
 
-## Red: Write the test, it won’t compile
+### Red: Write the test, it won’t compile
 Here’s our test:
 
 {% highlight cpp %}
@@ -1594,7 +1599,7 @@ public:
 };
 {% endhighlight %}
 
-## Red: Get the test to compile
+### Red: Get the test to compile
 
 {% highlight cpp %}
 # ifndef LUXURYTAX_HPP_
@@ -1617,7 +1622,7 @@ Build and make sure your tests compile but do not run:
 Running 21 tests.....................OK!
 {% endhighlight %}
 
-## Green: Get the test to pass
+### Green: Get the test to pass
 
 Now we need to override the landOn method, so we’ll update the header file and add a source file:
 
@@ -1655,12 +1660,12 @@ Running 21 tests.....................OK!
 
 Succcess!
 
-## Refactor
+### Refactor
 There’s not much need to refactor. The one strange thing is that we have a single method, deposit, and are sending in positive and negative values. The name seems a bit off.
 
 Review the code and apply any refactorings you deem necessary.
 
 Make sure you are green and check in your code.
 
-# Summary
+## Summary
 This concludes iteration 2. We really need to bring everything together. The next iteration will do so by creating a number of locations, using each of our new sub-classes of Location and then demonstrate a game playing 20 rounds.

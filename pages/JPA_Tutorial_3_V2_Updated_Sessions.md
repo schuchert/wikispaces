@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_3_-_V2_Updated_Sessions
+title: JPA_Tutorial_3_V2_Updated_Sessions
 ---
 We've added a new session, LoanDao. It essentially provides a few queries dealing with loans such as finding all overdue books or finding all patrons with overdue books.
 **LoanDao.java**

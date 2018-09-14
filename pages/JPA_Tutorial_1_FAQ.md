@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_1_-_FAQ
+title: JPA_Tutorial_1_FAQ
 ---
 ## JPA Tutorial 1 - FAQ
  * **What's the entity Manager?**  //Object cache which persists entities.  Manages any objects with the @Entity annotation.  Allows starting/stopping transactions, crud'ing database.  "Your facade to working with the database"//

@@ -1,5 +1,5 @@
 ---
-title: EJB3_Tutorial_1_-_Background
+title: EJB3_Tutorial_1_Background
 ---
 A Session Bean provides an interface to a service, wraps business logic or might simply act to hide the details of using JPA. The design pattern that comes to mind is [facade](http://en.wikipedia.org/wiki/Fa%C3%A7ade_pattern).
 

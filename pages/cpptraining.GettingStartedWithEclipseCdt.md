@@ -3,15 +3,15 @@ title: cpptraining.GettingStartedWithEclipseCdt
 ---
 [<--Back](CppTraining#gettingfirsttestrunning)
 
-# Overview
+## Overview
 This instructions help you get started using Eclipse and the CDT to develop C++ systems under Windows.
 
-# Many Thanks To
+## Many Thanks To
 After many tries and false paths, I finally got a fully working environment fairly easily. Thank you to [Doug Schaefer](http://cdtdoug.blogspot.com/) ([Twitter](http://twitter.com/dougschaefer)), Eclipse CDT Project Lead.
 
 These instructions are essentially a duplication of: [Wascana Eclipse C/C++ IDE for Windows Developers](http://code.google.com/a/eclipselabs.org/p/wascana/).
 
-# Steps
+## Steps
 Note: If you install the 64-bit JDK, install the 64-bit Eclipse. Same with 32-bit.
 
 * Install a JDK (this is to run Eclipse): [Jdk 1.6 Install](@http://java.sun.com/javase/downloads/widget/jdk6.jsp)
@@ -32,7 +32,7 @@ Note: If you install the 64-bit JDK, install the 64-bit Eclipse. Same with 32-bi
 
 That's it, works quite well. This gives support for compiling and debugging C++ applications in Eclipse.
 
-# Verifying It Works
+## Verifying It Works
 * Create a new C++ project
 * Select the Hello World Template
 * Build and run it, notice the output in the console window

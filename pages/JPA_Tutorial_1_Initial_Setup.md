@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_1_-_Initial_Setup
+title: JPA_Tutorial_1_Initial_Setup
 ---
 This example requires Java 5 (JDK 1.5) or later and Eclipse 3.2 or later. This page gives you a link to all of the downloads you'll need to get to get started. While I might mention specific version numbers, it's a good bet that newer versions should work as well... of course that's not always the case.
 

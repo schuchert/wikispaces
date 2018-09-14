@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_3_-_V2_Updated_Entities
+title: JPA_Tutorial_3_V2_Updated_Entities
 ---
 The biggest change this version was the addition of a Loan entity. A loan represents information about the **relationship** between Book and Patron. It specifically stores the checkout date and the due date. The Loan entity represents a so-called join table in the database. There are ways to specify a join table without creating an Entity, however we created the entity because we wanted to store additional information about the relationship. It also, arguably, makes some of our queries easier having Loan as an entity rather that just described as a join table.
 

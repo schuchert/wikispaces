@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_3_-_V1_Second_Test_Suite
+title: JPA_Tutorial_3_V1_Second_Test_Suite
 ---
 We started with Patron. In round 2, we add the basic support for the Book. The book dao needs the same basic tests:
 * Creating a Book

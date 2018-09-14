@@ -1,11 +1,11 @@
 ---
-title: JPA_Tutorial_1_-_Eclipse_Project_Setup
+title: JPA_Tutorial_1_Eclipse_Project_Setup
 ---
 Next we need to start eclipse and create a workspace.
 
 ### Create Initial Project
 # Start eclipse.
-# When prompted, enter a directory for your workspace. I used C:\workspaces\JpaAndEjb3. To understand why I recommend not using a space in the name, read [this sidebar](JPA_Tutorial_1_-_Getting_Started#SideBarJpaClassPath).
+# When prompted, enter a directory for your workspace. I used C:\workspaces\JpaAndEjb3. To understand why I recommend not using a space in the name, read [this sidebar](JPA_Tutorial_1_Getting_Started#SideBarJpaClassPath).
 # Close the Welcome window
 [#AddRequiredLibraries](#AddRequiredLibraries)
 ### User Library
@@ -42,7 +42,7 @@ Here is a list of all the jar files you'll need to add (note the path's listed a
 Next we need to create a Java project. We'll keep the source separate from the bin directory:
 # Pull down the **File** menu and select **New:Project**
 # Select **Java Project** and click **Next**
-# Enter a project name: **JpaTutorial1**, again read [this sidebar](JPA_Tutorial_1_-_Getting_Started#SideBarJpaClassPath) to know why I did not use a space in the project name.
+# Enter a project name: **JpaTutorial1**, again read [this sidebar](JPA_Tutorial_1_Getting_Started#SideBarJpaClassPath) to know why I did not use a space in the project name.
 # Make sure "Create new project in workspace" is selected.
 # Make sure the JRE selected is 1.5.x.   If a 1.5 JRE does not show in the list, you can add it through Window->Preferences->JAVA->Installed JRE's.
 # Select "Create separate source and output folders"

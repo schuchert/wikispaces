@@ -3,7 +3,7 @@ title: Spring_Templates_Typical_JDBC
 ---
 [<--Back](Designing_to_Spring_Templates)  [Next-->](Spring_Templates_JDBC_Using_Template_Method_Pattern)
 
-# Using JDBC Directly
+## Using JDBC Directly
 This is the base example. In it we:
 * Set up the schema
 * Insert several items into the database
@@ -13,11 +13,11 @@ This is a recurring theme through all of the examples. The only real difference 
 
 Please see the notes on this example below the code.
 
-## Class Relationships 
+### Class Relationships 
 ![Class Relationships](images/DesigningToSpringTemplates.v1.gif)
 [[image:DesigningToSpringTemplates.v1.gif width="775"]]
 
-## Important Note
+### Important Note
 All of these examples are configured to use [hsqldb](http://www.hsqldb.org/) which is a free database that supports both in-memory operation as well as using the disk (and other configurations). I've set it up to work strictly in memory. This means:
 * Every time an application starts, we need to re-create the schema
 * We lose all of the data at exit
@@ -27,7 +27,7 @@ Since this is NOT a JDBC example but rather I use JDBC as a vehicle to better un
 ----
 
 [#JdbcExample](#JdbcExample)
-## JdbcExample.java
+### JdbcExample.java
 {% highlight java %}
 01: package aaa.valtech.jug.version1;
 02: 

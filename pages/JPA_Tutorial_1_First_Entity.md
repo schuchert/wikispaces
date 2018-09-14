@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_1_-_First_Entity
+title: JPA_Tutorial_1_First_Entity
 ---
 For this example we'll use a "top-down" approach. This means we'll create a Plain Old Java Object (POJO) with some annotations to indicate how we want JPA to persist it. We're letting the EntityManager take care of creating the tables in the database for us.
 

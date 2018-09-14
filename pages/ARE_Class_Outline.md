@@ -1,5 +1,5 @@
 ---
-title: ARE_-_Class_Outline
+title: ARE_Class_Outline
 ---
 # Outline
 ## Introductions

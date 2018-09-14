@@ -3,13 +3,13 @@ title: AspectJEX4Explained
 ---
 [<--Back](AspectJEX4SoWhatIsHappening) [Next-->](AspectJEX4ApplyYourself)
 
-# Example 4 Explained
+## Example 4 Explained
 This example combines all of the previous examples together. In this example, we add Introductions (adding an interface + implementation of that interface to an existing class) and field setting as well as method execution. In the Field Setting example we simply reported existing and new values. Now we use that information and track whether an object has changed.
 
 First, we introduce an interface, ITrackedObject, to Address. The implementation of this interface provides a single boolean field, changed, and the methods to maintain that field. Then, as fields are set, we check the existing value and and the new value. If there is a change, we set the changed state. Finally, we have a simulated Dao (Data Access Object) that can save the Address object. We intercept calls to the save() method and do not actually save the Dao if it is changed. We also change the state back to changed=false after a call to Dao.save().
 
 ----
-## Main.java
+### Main.java
 This is the driver class that starts everything. Looking at this code, it does not seem to do too much...and it doesn't. 
 {% highlight java %}
 01: package ex3;
@@ -27,13 +27,13 @@ This is the driver class that starts everything. Looking at this code, it does n
 13: }
 {% endhighlight %}
 
-### Interesting Lines
+#### Interesting Lines
 There are no interesting lines here. Something to point out about this example is the significant change that happens without making changes to existing Java classes.
 
 ----
 
 [#Dao](#Dao)
-## Dao.java
+### Dao.java
 This Dao is simulated. The point of this example is that we can intercept calls to some thing, a DAO in this case, and change the path of execution based on any condition. This class is unaware of any introductions. 
 {% highlight java %}
 01: package ex3;
@@ -46,11 +46,11 @@ This Dao is simulated. The point of this example is that we can intercept calls 
 08: 	}
 09: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 Again, there are no interesting lines. The client, Main.main(), did not change. The Dao.save() method also did not change. However, we are tracking whether or not objects changed and not calling Dao.save() if the object is not changed.
 
 ----
-## Address.java
+### Address.java
 The thing to notice is that it is unaware of whether it is changed or not. This is a simple java bean style class with attributes, setters and getters and a no-argument constructor (in this case a default constructor). 
 {% highlight java %}
 01: package ex4;
@@ -106,12 +106,12 @@ The thing to notice is that it is unaware of whether it is changed or not. This 
 51: 	}
 54: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 Again, doesn't really apply. However, it *is* interesting that we know whether or not this object has changed even though looking at the class it's hard to see how.
 
 ----
 [#InnerTypeAspect](#InnerTypeAspect)
-## InnerTypeAspect.java
+### InnerTypeAspect.java
 {% highlight java %}
 01: package ex4;
 02: 
@@ -124,7 +124,7 @@ Again, doesn't really apply. However, it *is* interesting that we know whether o
 09:     ITrackedObject trackedObject;
 10: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 ^
 |-|-|
 |Line|Description|
@@ -133,7 +133,7 @@ Again, doesn't really apply. However, it *is* interesting that we know whether o
 |9|The class ex4.Address will implement the interface ex4.ITrackedObject. As alreay mentioned, ex4.ITrackedObject has methods that must be implemented; and they will be by ex4.TrackedObjectMixin.|
 
 [#ItrackedObject](#ItrackedObject)
-## ITrackedObject.java
+### ITrackedObject.java
 This is simply an interface that has the methods for a Java-bean style boolean interface.
 {% highlight java %}
 01: package ex4;
@@ -144,12 +144,12 @@ This is simply an interface that has the methods for a Java-bean style boolean i
 06: }
 {% endhighlight %}
 
-### InterestingLines
+#### InterestingLines
 There are really no interesting lines, just the definition of an interface.
 
 ----
 [#TrackedObjectMixin](#TrackedObjectMixin)
-## TrackedObjectMixin.java
+### TrackedObjectMixin.java
 This is an implementation of ITrackedObject. Our goal is to augment Address with this interface/implementation without Address' knowledge. Furthermore, we want to augment Dao.save(..) to not save unnecessarily; we do this without its knowledge as well.
 {% highlight java %}
 01: package ex4;
@@ -171,7 +171,7 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 {% endhighlight %}
 ----
 [#FieldSetAspect](#FieldSetAspect)
-## FieldSetAspect.java
+### FieldSetAspect.java
 {% highlight java %}
 01: package ex4;
 02: 
@@ -226,7 +226,7 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 51: }
 {% endhighlight %}
 
-### Interesting Lines
+#### Interesting Lines
 ^
 |-|-|
 |Line|Description|
@@ -241,7 +241,7 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 |39 - 50|A simple utility method to handle comparison of 2 objects where either object might be null.|
 
 [#SaveMethodAspect](#SaveMethodAspect)
-## SaveMethodAspect.java
+### SaveMethodAspect.java
 The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks to see if the object passed into Dao.save(..) is or is not changed. If it is not changed, the call to Dao.save(..) never happens. Before completing, the changed state is set to false since either it was already false or it was true but then saved. As with the FieldSetAspect, SaveMethodAspect is using behavior that has been introduced. Specifically, it uses isChanged() and setChanged(). 
 {% highlight java %}
 01: package ex4;
@@ -277,7 +277,7 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 31:     }
 32: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 ^
 |-|-|
 |Line|Description|
@@ -290,7 +290,7 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 |29|Regardless of what happened, set the object back to unchanged. Is this always safe?|
 
 [#aop](#aop)
-## aop.xml
+### aop.xml
 {% highlight terminal %}
 01: <aspectj>
 02: 	<aspects>
@@ -303,7 +303,7 @@ The SaveMethodAspect surrounds all calls to Dao.save(..). When called, it checks
 09: 	</weaver>
 10: </aspectj>
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 ^
 |-|-|
 |Line|Description|

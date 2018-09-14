@@ -1,5 +1,5 @@
 ---
-title: Ejb3_Tutorial_3_-_Background
+title: Ejb3_Tutorial_3_Background
 ---
  A key difference between what we did and what we're going to do is transactional demarcation. In our JSE environment, we had a @Before method that started a transaction and an @After method that rolled the transaction back. This meant that multiple messages to, for example, the library, all happened in the same transaction. We can get similar behavior to this using EJB3 Session Beans with Extended Persistence Contexts. However, we're going to stick with Stateless Session Beans using transaction-scoped persistence contexts.
 

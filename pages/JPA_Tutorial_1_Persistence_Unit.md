@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_1_-_Persistence_Unit
+title: JPA_Tutorial_1_Persistence_Unit
 ---
 We now need to create the Persistent Unit definition. Create a file called persistence.xml in the src/META-INF directory with the following contents:
 

@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_4_-_Assignments
+title: JPA_Tutorial_4_Assignments
 ---
 ### Director <--> DVD
 Right now the relationship between Director and DVD is one-way. Make it bidirectional.

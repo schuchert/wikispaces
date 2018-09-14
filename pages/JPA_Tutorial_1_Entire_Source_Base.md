@@ -1,5 +1,5 @@
 ---
-title: JPA_Tutorial_1_-_Entire_Source_Base
+title: JPA_Tutorial_1_Entire_Source_Base
 ---
 **Address.java**
 {% highlight java %}

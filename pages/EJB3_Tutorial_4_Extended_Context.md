@@ -1,5 +1,5 @@
 ---
-title: EJB3_Tutorial_4_-_Extended_Context
+title: EJB3_Tutorial_4_Extended_Context
 ---
 {:toc}
 [<--Back](EJB_3_and_Java_Persistence_API)
@@ -12,11 +12,11 @@ This short tutorial demonstrates some of the differences between these two types
 
 ## Project Setup
 
-The instructions for setting up your project mirror those from the first tutorial: [EJB3_Tutorial_1_-_Create_and_Configure](EJB3_Tutorial_1_-_Create_and_Configure).
+The instructions for setting up your project mirror those from the first tutorial: [EJB3_Tutorial_1_Create_and_Configure](EJB3_Tutorial_1_Create_and_Configure).
 
 For the remainder of this tutorial, when you see **<project>**, replace it with **Ejb3Tutorial4**.
 [include_page="Ejb3EclipseProjectSetupAndConfiguration"](include_page="Ejb3EclipseProjectSetupAndConfiguration")
-Here are a few things to note (source for all of these items appears at the end after the assignments [EJB3_Tutorial_4_-_Extended_Context#OtherFiles](EJB3_Tutorial_4_-_Extended_Context#OtherFiles):
+Here are a few things to note (source for all of these items appears at the end after the assignments [EJB3_Tutorial_4_Extended_Context#OtherFiles](EJB3_Tutorial_4_Extended_Context#OtherFiles):
 * Make sure you copy the **utils** directory from a previous tutorial.
 * Make sure you copy a **persistence.xml** from a previous tutorial.
 * Make sure you update the **persistence.xml**'s persistence-unit name:

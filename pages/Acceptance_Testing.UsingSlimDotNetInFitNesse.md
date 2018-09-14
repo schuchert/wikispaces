@@ -4,7 +4,7 @@ title: Acceptance_Testing.UsingSlimDotNetInFitNesse
 {:toc}
 [<-- Back](FitNesse.Tutorials)
 
-# Rapid Intro to using Slim with .Net
+## Rapid Intro to using Slim with .Net
 Thanks to Mike Stockdale for both writing the slim .Net implementation as well as helping me to get this working.
 
 ### Get SliM.net
@@ -180,7 +180,6 @@ Here's the C# class that supports the "should I buy milk" decision table:
 Note, the methods execute(), reset() and table(...) should be optional. Eventually they will be, but this is a early release of the Slim.Net implementation.
 
 There are three "hook" methods you can also add:
-
 ^
 |---|---|
 | Name | Description |

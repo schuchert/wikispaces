@@ -3,8 +3,8 @@ title: ApsectJEX4ExpectedVersusActualOutput
 ---
 [<--Back](AspectJ_Example_4) [Next-->](AspectJEX4Possibilities)
 
-# Expected Versus Actual Output
-## Expected Output
+## Expected Versus Actual Output
+### Expected Output
 Given the code I've shown you, you might have predicted the following output:
 {% highlight terminal %}
 Saving: class ex3.Address
@@ -12,7 +12,7 @@ Saving: class ex3.Address
 Saving: class ex3.Address
 Saving: class ex3.Address
 {% endhighlight %}
-## Actual Output
+### Actual Output
 However, given your experience with other examples, you might not be too surprised if the output is different. It is:
 {% highlight terminal %}
 Not saving: class ex3.Address, it is unchanged

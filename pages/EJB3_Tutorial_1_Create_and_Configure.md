@@ -1,5 +1,5 @@
 ---
-title: EJB3_Tutorial_1_-_Create_and_Configure
+title: EJB3_Tutorial_1_Create_and_Configure
 ---
 [include_page="Ejb3EclipseUserLibrarySetup"](include_page="Ejb3EclipseUserLibrarySetup")
 ### Create and Setup Project

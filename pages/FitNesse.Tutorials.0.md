@@ -4,7 +4,7 @@ title: FitNesse.Tutorials.0
 {:toc}
 [<--Back](FitNesse.Tutorials)
 
-# Install FitNesse
+## Install FitNesse
 * Install a JVM 1.6 or later.
 * [Download FitNesse](http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad)
 * Go to that directory and execute "java -jar fitnesse.jar -p 8080"
@@ -25,14 +25,14 @@ FitNesse (v20100103) Started...
 * Verify you see a friendly FitNesse web page when you open [your browser here](http://localhost:8080/) (I built this from source and it might be different from what you see when you start FitNesse, but it should be close - you won't see the tree on the left until sometime in 4/2009)
 ![](images/FitNesseStartScreen.gif)
 
-# Configure FitNesse for Slim
+## Configure FitNesse for Slim
 * Click the **Edit** button on the home page. You will see something close to the following:
 
 {% highlight terminal %}
 !1 Welcome to [[FitNesse][FitNesse.FitNesse]]!
 !3 ''The fully integrated stand-alone acceptance testing framework and wiki.''
 
-# Here is a good place to add your first page (WikiWord). For example, MyTopLevelApplicationPage
+## Here is a good place to add your first page (WikiWord). For example, MyTopLevelApplicationPage
 To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[!-WikiWord-!][FitNesse.WikiWord]] to the page.
 
 | '''To Learn More...'''|
@@ -85,11 +85,11 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 !path fitnesse.jar
 {% endhighlight %}
 
-# [Continue Tutorial in Java](FitNesse.Tutorials.0.Java)
-# [Continue Tutorial in C#](FitNesse.Tutorials.0.CSharp)
+## [Continue Tutorial in Java](FitNesse.Tutorials.0.Java)
+## [Continue Tutorial in C#](FitNesse.Tutorials.0.CSharp)
 
 [#Congratulations](#Congratulations)
-# Congratulations
+## Congratulations
 Congratulations, you've finished the first tutorial. In this tutorial you:
 * Installed FitNesse
 * Created a Page
@@ -102,7 +102,7 @@ Congratulations, you've finished the first tutorial. In this tutorial you:
 * Updated your Java fixture class to include all of the methods needed to handle each of the columns in your FitNesse Decision tables
 * You've assigned the result of a method (the id() method) to a variable, ID.
 
-# What's Next
+## What's Next
 * Continue working on the [next tutorials](FitNesse.Tutorials.1) (I recommend in the order listed). 
 * Learn how to make tests that actually execute production code.
 * Learn how to use a Table Table to implement a "fluent" or DSL-based table

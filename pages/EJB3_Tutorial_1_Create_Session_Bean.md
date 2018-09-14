@@ -1,5 +1,5 @@
 ---
-title: EJB3_Tutorial_1_-_Create_Session_Bean
+title: EJB3_Tutorial_1_Create_Session_Bean
 ---
 Now that we have all the preliminary setup of the environment we next need to create a session bean.
 
