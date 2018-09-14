@@ -3,9 +3,9 @@ title: AspectJEX3ExpectedVersusActualOutput
 ---
 [<--Back](AspectJ_Example_2) [Next-->](AspectJEX3Possibilities)
 
-# Expected Versus Actual Output
+## Expected Versus Actual Output
 
-## Expected Output
+### Expected Output
 Is the what you guessed the output would be?
 {% highlight terminal %}
 Exception in thread "main" java.io.NotSerializableException: ex3.Die
@@ -16,7 +16,7 @@ Exception in thread "main" java.io.NotSerializableException: ex3.Die
 {% endhighlight %}
 Notice that the Die class does not implement Serializable or Externalizable, so the Main.main() method should not have been able to Serialize the object.
 
-## Actual Output
+### Actual Output
 Here’s the actual output:
 {% highlight terminal %}
 Serialization successful

@@ -3,7 +3,7 @@ title: AspectJEX2Explained
 ---
 [<--Back](AspectJEX2SoWhatIsHappening) [Next-->](AspectJEX2ApplyYourself)
 
-# Example 2 Explained
+## Example 2 Explained
 Accessing a field in Java is a joinpoint exposed by the AspectJ joinpoint model. This is different from method execution in that captures things like the following: 
 {% highlight terminal %}
    this.aString = "value";              // Writing to a field called aString
@@ -22,7 +22,7 @@ To make this example work, we need two additional things:
 * aop.xml
 
 ----
-## FieldSetAspect.java
+### FieldSetAspect.java
 {% highlight java %}
 01: package ex2;
 02: 
@@ -58,7 +58,7 @@ To make this example work, we need two additional things:
 32: }
 {% endhighlight %}
 
-### Interesting Lines
+#### Interesting Lines
 ^
 |-|-|
 |Line|Description|
@@ -71,7 +71,7 @@ To make this example work, we need two additional things:
 |23 - 26|Get the current value of the underlying field being set.|
 |30|Actually perform the set|
 
-## aop.xml
+### aop.xml
 {% highlight xml %}
 01: <aspectj>
 02: 	<aspects>
@@ -83,7 +83,7 @@ To make this example work, we need two additional things:
 08: </aspectj>
 {% endhighlight %}
 
-### Interesting Lines
+#### Interesting Lines
 ^
 |-|-|
 |Line|Description|

@@ -3,7 +3,7 @@ title: AspectJEX2ApplicationsOfFieldManipulationInterception
 ---
 [<--Back](AspectJEX2AssignmentApplications) [Next-->](AspectJEX2AssignmentIssues)
 
-# Applications of Field Manipulation Interception
+## Applications of Field Manipulation Interception
 
 Here are some ideas I've heard people mention:
 * Lazily bring in fields from a database or a remote source at first access
