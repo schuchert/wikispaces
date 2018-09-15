@@ -1,20 +1,20 @@
 ---
 title: ARE_Class_Outline
 ---
-# Outline
-## Introductions
-### Course Overview
+## Outline
+### Introductions
+#### Course Overview
 * Half-Day, Whole Thing
 * Several short discussions
 * Mostly exercised based
 * Working in **groups**
 * Working on different applications (randomly assigned)
-### Logistics
+#### Logistics
 * Hours
 * Breaks
 * Facilities
 ----
-## Half-Day, Whole Thing
+### Half-Day, Whole Thing
 This is a very rapid, hit all the big areas kick-off. After this, we go through all of the subjects again but in more depth.
 * Exercise: **Group** Project vision
 * Exercise: **Group** Preliminary stories
@@ -25,10 +25,10 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 * Exercise: **Group** Iteration Burn-down
 * Exercise: **Group** Velocity
 ----
-## Project Kick-off
-### Setting the Context
+### Project Kick-off
+#### Setting the Context
 * [Context_Free_Questions](Context_Free_Questions)
-### Elevator Pitch
+#### Elevator Pitch
 * Examples
 * Hand Out Projects to **groups**
 * Create Elevator Pitch (5 minutes)
@@ -37,8 +37,8 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 * All **groups** report back
 * **Class** exercise, what makes a good elevator pitch?
 ----
-## User Stories
-### Examples
+### User Stories
+#### Examples
 * Three kinds
 ** Users ask for it: e.g. I want to withdraw money from ATM
 ** Users assume: I can check my balance
@@ -46,12 +46,12 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 * Exercise: **Groups brainstorm** user stories (15 minutes)
 ** **Class** all groups report back
 ** **Class** exercise: What should stories have?
-### I.N.V.E.S.T
+#### I.N.V.E.S.T
 * The I.N.V.E.S.T Guideline
 * **Group** exercise, INVEST two stories
 ----
-## Stakeholders & Roles
-### Stakeholder Analysis (G&W89, ch.7)
+### Stakeholders & Roles
+#### Stakeholder Analysis (G&W89, ch.7)
 * Customer versus User
 * Railroad Paradox
 * Listing Stakeholders
@@ -67,7 +67,7 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** When: Participation continuous or at discrete intervals
 ** How: Information based on experience or experiment
 * Exercise: **Group** define stakeholder participation
-### User Roles
+#### User Roles
 * What and Why
 * Exercise: **Group** create roles for your project
 ** Be prepared to report back
@@ -83,8 +83,8 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** Proficiency with software
 ** General goal
 ----
-## User Stories Revisited
-### Recommendations
+### User Stories Revisited
+#### Recommendations
 * For each role, develop stories
 * For each story, use one role
 * Exercise: **Group** find additional stories
@@ -95,8 +95,8 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** Observation
 ** Story-Writing workshops
 ----
-## Conditions of Satisfaction
-### General Discussion
+### Conditions of Satisfaction
+#### General Discussion
 * Examples
 * Exercise: **Group** add/update tests for 3 stories
 * Exercise: **Groups** report back
@@ -109,22 +109,22 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** Customer specifies
 ** Testing is part of process
 ----
-## Executable Tests: FitNesse
-### Example
+### Executable Tests: FitNesse
+#### Example
 * FitNesse-based acceptance tests demonstration
 * Walk-through
 ** Tables
 ** Fixtures
 ** General organization
-### Project Wiki
+#### Project Wiki
 * Preliminary Project Organization
 * Expressing Stories With Tables
 ** Different kinds of stories
 ** Common setup and configuraiotn
 ** Who does what?
 ----
-## Story Guidelines
-### Exercise: **Class** what makes a good story? (chon06, ch07)
+### Story Guidelines
+#### Exercise: **Class** what makes a good story? (chon06, ch07)
 * Start with user role goal epics* Slice the cake
 * Write closed stories
 * Put constraints on "constraint cards" (first version of quality attributes)
@@ -137,16 +137,16 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 * Customer writes them
 * Do not number your cards
 * It's a reminder/placeholder, not the requirements
-## Preliminary Story Sequenceing
-### Initial Story Stack
+### Preliminary Story Sequenceing
+#### Initial Story Stack
 * MoSCoW Story Stack
 ** Must have for release 1, 2, 3, etc.
 ** Should have for release 1
 ** Could have
 ** Won't have this time
 ----
-## Estimation and Story Points
-### Exercise: **Group** story points must haves for release 1
+### Estimation and Story Points
+#### Exercise: **Group** story points must haves for release 1
 * Exercise: **Class** problems with estimation
 * Estimation Process 2: Wide-band Delphi
 ** Note: Conversation starts, ends, cards updated
@@ -157,11 +157,11 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** After you have "a few" triangulate
 ** Continue with stack after triangulation
 ----
-## Release Planning
-### Iteration, Part 1
+### Release Planning
+#### Iteration, Part 1
 * 1 - 4 weeks
 * Stories developed, tested, usable
-### Sequencing, part two
+#### Sequencing, part two
 * Why don't we use the work priority?
 * Exercise: **Group** sequencing stories
 * Exercise: **Class** discussion on sequencing
@@ -171,10 +171,10 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** Cohesion to other stories
 ** Address risk
 ** Addresses constraints/infrastructural needs
-### Sequencing part three
+#### Sequencing part three
 * Sum of pairs of comparisons
 * Exercise: **Group** review & review sequen
-### Iteration, Part 2
+#### Iteration, Part 2
 * Story points per iteration
 * Plan iterations
 * Velocity
@@ -184,16 +184,16 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 * Exercise: **Group** develop release plan
 * Exercise: **Class** discussion recommendations and guidelines
 ----
-## Iteration Planning
-### Planing Poker
+### Iteration Planning
+#### Planing Poker
 * Discuss stories, highest priority first
 * Break into tasks
 * Estimate tasks
 * Take assignments
 * Validate sensibility
 ----
-## Post Iteration
-### Assessing Progress
+### Post Iteration
+#### Assessing Progress
 * Measure actual velocity
 * **Group** exercise, measure velocity
 ** Assign developer role to member of group
@@ -201,18 +201,18 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** Any new stories to add?
 ** Any experience suggesting changing other stories?
 ** Exercise: **Group** burn-down chart 1
-### Iteration Planning Simulation
+#### Iteration Planning Simulation
 * [IterationPlanningSimulationInstructions](IterationPlanningSimulationInstructions)
 * Repeat the first process a few times
 * Add a few, re-estimate a few
 * Practice measuring velocity
 * Practice developing burn-down charts
 ----
-## Additional Project Work
+### Additional Project Work
 * Equipment Repair Facility
 ----
-## Appendix
-### Brainstorming
+### Appendix
+#### Brainstorming
 * First Part
 ** Do not allow criticism or debate
 ** Let your imagination soar
@@ -226,7 +226,7 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** Apply criteria
 ** Scoring or ranking systems
 * **Group** pair down list
-### Making Meetings Work
+#### Making Meetings Work
 * Participation and Safety
 ** Establish an interruption policy
 ** Set time limits (and meet them)
@@ -240,7 +240,7 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 ** Stay out of emergency mode
 ** Handling people who don't belong
 ** Include the right people
-### Lightweight Domain Modeling
+#### Lightweight Domain Modeling
 * Example
 * Discussion: **Class** where can this be useful?
 ** Visual vocabulary
@@ -250,14 +250,14 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 * Exercise: **Group** develop DM for some stories
 ** All **groups** report back
 ** **Group** DM pass 2
-### UML
+#### UML
 * (System-level) Sequence Diagrams 
 * State Models
 * Analysis Patterns
 ** Part-part specification
 ** Role
 ----
-## Props
+### Props
 * Role Cards
 ** Developer (x4)
 ** Subject Matter Expert (x4)
@@ -281,20 +281,20 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 |Cohn06|User Stories Applied - For Agile Software Development|
 |G&Weinberg89|Exploring Requirements - Quality Before Design|
 
-## Design Problems
+### Design Problems
 * [ITunes](ITunesCompetetorDesignProblem)
 * [GmOnStar](GmOnStarCompetetorDesignProblem)
 * [Time Tracking](TimeTrackingForConsultingCompanyDesignProblem)
 * [Clinical Trial](ClinicalTrialsTrackingDesignProblem)
 * [Dvr](DvrDesignProblem)
 
-# Notes
+## Notes
 For the purpose, 
 * **Sprint** <--> **Iteration**
 * **Group** --> Small group, approximately 4 people
 * **Class** --> Entire class
 
-# Work in Progress
+## Work in Progress
 * [Introduction](Introduction)
 * [Setting the Context](Setting_the_Context)
 * [The Elevator Pitch](The_Elevator_Pitch)
