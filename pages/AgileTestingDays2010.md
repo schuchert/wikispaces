@@ -8,9 +8,9 @@ title: AgileTestingDays2010
 * Create a directory to hold its contents
 * Extract the file into that directory
 * You'll see three entires (maybe a few more):
->> fitnesse.jar
->> RpnCalculator.jar
->> FitNesseRoot
+* fitnesse.jar
+* RpnCalculator.jar
+* FitNesseRoot
 * Go to directory and type (you can use another port value than 8080):
 {% highlight terminal %}
 java -jar fitnesse.jar -p 8080
