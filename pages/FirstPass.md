@@ -1,14 +1,17 @@
 ---
 title: FirstPass
 ---
- So I want to learn Ruby using a [TDD](Test_Drive_Development) approach. So I started by installing [The Ruby Development Tools](http://rubyeclipse.sourceforge.net/download.rdt.html|) Eclipse plugin.
 
-Well it turns out to run Ruby you still need to install a [Ruby Interpreter](http://rubyforge.org/frs/?group_id=167), which I did.
+So I want to learn Ruby using a [TDD](Test_Drive_Development) approach. So I
+started by installing [The Ruby Development Tools](http://rubyeclipse.sourceforge.net/download.rdt.html) Eclipse plugin.
+
+Well it turns out to run Ruby you still need to install a 
+[Ruby Interpreter](http://rubyforge.org/frs/?group_id=167), which I did.
 
 Here are some very early examples trying to use [TDD](Test_Drive_Development):
 
-----
-[#DieTest](#DieTest)
+{: #DieTest }
+### DieTest
 {% highlight ruby %}
 require 'test/unit'
 require 'die'
@@ -34,8 +37,9 @@ class DieTest < Test::Unit::TestCase
   
 end
 {% endhighlight %}
-----
-[#Die](#Die)
+
+{: #Die }
+### Die
 {% highlight ruby %}
 class Die
   def initialize()
@@ -51,8 +55,9 @@ class Die
   end
 end
 {% endhighlight %}
-----
-[#PairOfDiceTest](#PairOfDiceTest)
+
+{: #PairOfDiceTest }
+### PairOfDiceTest
 {% highlight ruby %}
 require 'test/unit/testcase'
 require 'test/unit/autorunner'
@@ -68,8 +73,9 @@ class PairOfDiceTest < Test::Unit::TestCase
   
 end
 {% endhighlight %}
-----
-[#PairOfDice](#PairOfDice)
+
+{: #PairOfDice }
+### PairOfDice
 {% highlight ruby %}
 require 'die'
 
@@ -88,9 +94,11 @@ class PairOfDice
   end
 end
 {% endhighlight %}
-----
+
 This works, however I want to be able to run all of my tests in one fell swoop. In Eclipse using Java, I simply right-click on a project and select Run->Junit Tests and it's all good. This feature doesn't seem to be available in Test::Unit (the Ruby equivalent) so after several attempts, I think I've got what I'm looking for:
-[#Suite](#Suite)
+^
+### Suite
+{: #Suite }
 {% highlight ruby %}
 require 'test/unit'
 require 'find'
