@@ -7,13 +7,13 @@ I'm attempting to create materials people will find useful for learning some too
 For more background on where I'm coming from, have a look at [ExperientialLearningNotes](ExperientialLearningNotes).
 
 ## Exercises 
-*  [Aspect Oriented Programming](AspectOrientedProgramming) 
+*  {% include links_for filename='AspectOrientedProgramming.md' linktext='Aspect oriented Programming' %}
 
 ## Notes 
-* [ExperientialLearningNotes](ExperientialLearningNotes) 
+*  {% include links_for filename='ExperientialLearningNotes.md' linktext='Experiential Learning Notes' %}
 
 ## Old Book Work 
-* [CSharpAndOop](CSharpAndOop)
+*  {% include links_for filename='CSharpAndOop.md' linktext='C# And OOP' %}
 
-# My blog 
+# Old blog
 * <http://brettschuchert.blogspot.com/>

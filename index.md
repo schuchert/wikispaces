@@ -13,28 +13,23 @@ permalink: /index
   {{'now' | date: '%s' | minus: 2592000 | date: "%Y-$m-$d" }}
 {% endcapture %}
 <ul>
-{% for p in site.pages %}
-  {% if p.date %}
+{%- for p in site.pages -%}
+  {%- if p.date -%}
     {% capture posted_on %}{{ p.date | date: "%Y-$m-$d" }}{% endcapture %}
-    {% if posted_on > thirty_days_ago %}
-    {% capture post_basename %}{{ p.name | remove: ".md" }}{% endcapture %}
-      <li>
-        <a href="{{ site_url }}{{p.url}}">{{ post_basename }}</a>
-      </li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
+    {%- if posted_on > thirty_days_ago -%}
+        {% capture post_basename %}{{ p.name | remove: ".md" }}{% endcapture %}
+        <li>{% include links_for filename=p.name linktext=post_basename %}</li>
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
 </ul>
 
 ## All pages
 Converted or otherwise.
 
 <ul>
-{% for p in site.pages %}
+{%- for p in site.pages -%}
   {% capture post_basename %}{{ p.name | remove: ".md" }}{% endcapture %}
-  {% capture post_url %}{{ site_url }}{{ p.url }}{% endcapture %}
-  <li>
-    <a href="{{post_url}}">{{ post_basename }}</a>
-  </li>
-{% endfor %}
+  <li>{%- include links_for filename=p.name linktext=post_basename -%}</li>
+{%- endfor -%}
 </ul>

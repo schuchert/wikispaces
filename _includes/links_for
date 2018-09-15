@@ -1,0 +1,10 @@
+{%- capture site_url -%}
+  {%- include site_url -%}
+{%- endcapture -%}
+
+{%- assign pages = site.pages | where: 'name', include.filename -%}
+
+{%- for p in pages -%}
+    {%- assign page_url = site_url | append: p.url | strip_newlines -%}
+    <a href="{{ page_url }}">{{ include.linktext }}</a>
+{% endfor %}
