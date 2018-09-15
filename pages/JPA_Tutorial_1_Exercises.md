@@ -16,12 +16,14 @@ In order to refactor to the [above] "after" picture consider some of the followi
 
 ### Create Job
 Create a class, Job, with the following attributes:
-> int id
-> String title
-> String Salary
-> String employeeNumber
-> Company company
-> Person person  (added - ** fix diagram **)
+{% highlight java %}
+int id
+String title
+String Salary
+String employeeNumber
+Company company
+Person person  // (added - ** fix diagram **)
+{% highlight terminal %}
 
 ### Update Employee
 The Person class should no longer have a Company attribute. Instead it has a Job attribute.

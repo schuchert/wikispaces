@@ -23,15 +23,17 @@ Now, when I want to run my tests with some custom instrumentation, all I need to
 # Run my unit tests with two command line parameters:
 ** -javaagent:Registrar.jar
 ** -Dschuchert.ClassFileTransformer=MyCustomClassFileTransformer, 
->> e.g. -Dschuchert.ClassFileTransformer=schuchert.contest.DynamicInstrumentor
+{% highlight terminal %}
+ -Dschuchert.ClassFileTransformer=schuchert.contest.DynamicInstrumentor
+{% endhighlight %}
 
 
 ## The Details
 Here are the details on how to actually accomplish writing your own Java Agent:
-> [WritingYourOwnJavaAgent](WritingYourOwnJavaAgent)
+* [WritingYourOwnJavaAgent](WritingYourOwnJavaAgent)
 
 Here is a simple jar file you can use that already does the basic work:
-> [AnExampleJavaAgent](AnExampleJavaAgent)
+* [AnExampleJavaAgent](AnExampleJavaAgent)
 
 Here are the guts of the specific agent register provided in [[file:Registrar.jar]].
-> [JavaAgentRedirectorExplained](JavaAgentRedirectorExplained)
+* [JavaAgentRedirectorExplained](JavaAgentRedirectorExplained)

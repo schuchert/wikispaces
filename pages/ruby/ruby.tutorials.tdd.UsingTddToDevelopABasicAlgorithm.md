@@ -1895,7 +1895,7 @@ There's one more thing to change before it's time to call this refactoring side-
     ...
   end
 {% endhighlight %}
-> Make sure to update handle_operator, which is the one place that calls the method.
+* Make sure to update handle_operator, which is the one place that calls the method.
 
 * Verify that all of your tests are passing.
 

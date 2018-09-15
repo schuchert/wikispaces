@@ -77,7 +77,7 @@ Our first test probably meets all of these criterion, so we'll move on to the se
    ...
    #endif
 {% endhighlight %}
-> This header file is not meant to be included bur rather used by a code generator tool. The use of this idiom to avoid processing of a file a second time if it is included twice is unnecessary. It would do no harm, so if not having this in makes you feel uncomfortable, consider adding it.
+* This header file is not meant to be included bur rather used by a code generator tool. The use of this idiom to avoid processing of a file a second time if it is included twice is unnecessary. It would do no harm, so if not having this in makes you feel uncomfortable, consider adding it.
 
 This code won't compile yet:
 * We include Die.hpp, but it doesn't exist.
@@ -323,7 +323,7 @@ Review all of your code. Do you notice anything worth refactoing?
 Right now we don't have a lot of code (test or mainline) so there's not much to refactor. Even if we "know" this, we should check each time.
 
 By the way, what is the definition of refactor?
-> Change the implementation of the system without changing the behavior.
+* Change the implementation of the system without changing the behavior.
 
 The behavior of our system is defined by the tests, so when we say "without changing the behavior" this really means "don't break any tests.
 
@@ -571,7 +571,7 @@ If you review the [End Game](Cxx_Tdd_Iteration_1#EndGame) section, you'll see th
 
 ## Finally: Test the Player
 We are finally ready to work up to our acceptance test. As a reminder, we started with the following user acceptance test:
-> Player on beginning location (numbered 0), rolls 7, ends up on location 7
+* Player on beginning location (numbered 0), rolls 7, ends up on location 7
 
 So let's write this test. It's related to player, so we'll end up creating PlayerTest.hpp (and Player.hpp and Player.cpp later).
 
@@ -719,7 +719,7 @@ Running 5 tests.....OK!
 {% endhighlight %}
 
 We have one more acceptance test for the current user story:
-> Player on location numbered 39, rolls 6, ends up on location 5
+* Player on location numbered 39, rolls 6, ends up on location 5
 
 The board has 40 locations, when the player is at the end, they need to end up going around back to the beginning. Here's just such a test we can add to PlayerTest.hpp:
 {% highlight cpp %}
@@ -777,10 +777,10 @@ Success! We have just finished our first user story and we're now ready to move 
 
 ## A Game has Players
 Here is our second user story:
-> As a game, I can have between 2 and 8 players with an initial random ordering.
+* As a game, I can have between 2 and 8 players with an initial random ordering.
 
 Our first user acceptance test is:
-> Create a game with two players named Horse and Car.
+* Create a game with two players named Horse and Car.
 
 This seems simple enough, here's the beginning of a new suite of tests:
 {% highlight cpp %}
@@ -907,7 +907,7 @@ Running 7 tests.......OK!
 {% endhighlight %}
 
 Success! On to the second acceptance test:
-> Try to create a game with < 2 or > 8 players. When attempting to play the game, it will fail.
+* Try to create a game with < 2 or > 8 players. When attempting to play the game, it will fail.
 
 Again, this test seems straightforward. We simply need to create a game with too few people or too many people and verify that it "fails." How about we simply throw an exception if the number of players is invalid when we start the game?
 {% highlight cpp %}
@@ -1063,7 +1063,7 @@ OK, this test just worked without any changes. If we do not have to write any ma
 We could add one more test to make sure nothing bad happens when we have a valid number of players. For now we'll hold off because it's not a part of this acceptance test. If I think it should be, I'd negotiate with my product owner. Until I do, I'll just keep working through my acceptance tests.
 
 ## Next Test
-> Create a game with two players named Horse and Car. Within creating 100 games, both orders [Horse, Car] and [car, horse] occur.
+* Create a game with two players named Horse and Car. Within creating 100 games, both orders [Horse, Car] and [car, horse] occur.
 
 So this acceptance tests speaks to the players starting in a random order. Notice that I'm dealing with a random ordering but that's OK because the user acceptance test is worded such that we can verify it in a bounded time. Here's one method we could add to GameTest.hpp to test this:
 {% highlight cpp %}
@@ -1153,10 +1153,10 @@ It seems like the play() method in Game isn't doing very much, right? OK, on to 
 
 ## The Final User Story
 Here's our last user story for this iteration:
-> As a game, I execute 20 rounds so that I can complete a game.
+* As a game, I execute 20 rounds so that I can complete a game.
 
 Here is the first acceptance test:
-> Create a game and play, verify that the total rounds was 20 and that each player played 20 rounds.
+* Create a game and play, verify that the total rounds was 20 and that each player played 20 rounds.
 
 Now we'll actually make sure that when we play, the Player is actually given a chance to play the game. As a result, we'll verify that when we call the play() method on Game, that we send the takeATurn method to each of our players.
 
@@ -1262,7 +1262,7 @@ We're just one acceptance test away from completing this first iteration.
 
 ## The Final User Acceptance Test
 In the previous test we verified that we called takeATurn the correct number of times. We "know" we called it in the correct order, but let's prove it. Here's the acceptance test:
-> Create a game and play, verify that in every round the order of the players remained the same.
+* Create a game and play, verify that in every round the order of the players remained the same.
 
 Just like with the previous test, we don't actually need to use a "real" player. We want to just make sure that the players alternate their order. Let's begin by creating a new Mock Player:
 {% highlight cpp %}

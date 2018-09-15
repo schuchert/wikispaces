@@ -30,6 +30,9 @@ The steps are repeated here because the order is different from the base instruc
     git clean -fdx
     ./build.sh --qt-config "-I /usr/local/include/ -L /usr/local/lib/" --confirm
 {% endhighlight %}
-> <span class="sidebar_content">I had a lot of failures and it is probably related to running out of memory. If you are doing nothing else, 4 gb is probably enough. I was using IntelliJ and running a command line build and once I hit 53 free megabytes out of 7 gb and realized that was probably why it was failing.</span>
+<aside>
+### For the want of RAM
+I had a lot of failures and it is probably related to running out of memory. If you are doing nothing else, 4 gb is probably enough. I was using IntelliJ and running a command line build and once I hit 53 free megabytes out of 7 gb and realized that was probably why it was failing.</span>
 * This creates bin/phantomjs. You can move the executable anywhere, it does depend on shared libraries on your system.
 * Full-disclosure, building this on my VM has caused it to hang. I kill it and restart the build. But if you are using VirtualBox, it might be unstable.
+</aside>

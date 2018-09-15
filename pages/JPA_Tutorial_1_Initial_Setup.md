@@ -24,9 +24,11 @@ Next, the libraries:
 
 ### Extract Jar Files
 Extract each of the libraries to some location. In my case I extracted everything to C:/libs, so I have the following directories
+{% highlight terminal %}
 > C:/libs/hibernate-annotations-3.4.0.GA
 > C:/libs/hibernate-entitymanager-3.4.0.GA
 > C:/libs/hibernate-distribution-3.3.1.GA
 > C:/libs/hsqldb-1.9.0-beta3
 > C:/libs/openejb-3.1.1
 > C:/libs/slf4j-1.5.8
+{% endhighlight %}

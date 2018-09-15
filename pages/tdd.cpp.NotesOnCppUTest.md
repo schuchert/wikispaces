@@ -92,10 +92,16 @@ int main(int ac, char** av)
 {% endhighlight %}
 * Make your project dependent on CppUTest(Solution, Project Dependencies... )
 * Add the CppUTest include directory to your C++ project
-> <path of CppUTest project>\include
+{% highlight cpp %}
+<path of CppUTest project>\include
+{% endhighlight %}
+
 ** (Use your project's Properties, C/C++, General, Additional Include Directories...)
 * Add one library to be linked in (CppUTest uses a time function found here):
-> winmm.lib
+{% highlight terminal %}
+winmm.lib
+{% highlight terminal %}
+
 ** (project Properties... Linker, Input, Additional Dependencies)
 * You should be able to start writing and executing tests. E.g., Add a file to hold some tests, FooTest.cpp
 {% highlight cpp %}

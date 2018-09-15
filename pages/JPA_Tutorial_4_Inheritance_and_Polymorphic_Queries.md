@@ -5,7 +5,7 @@ title: JPA_Tutorial_4_Inheritance_and_Polymorphic_Queries
 [<-Back](EJB_3_and_Java_Persistence_API)
 # Inheritance and Polymorphic Queries
 This tutorial picks up at the end of [JPA_Tutorial_3_A_Mini_Application](JPA_Tutorial_3_A_Mini_Application). If you have not completed that tutorial, you can start with this source base: 
-> [[file:JpaTutoria3Solution.jar]]
+[[file:JpaTutoria3Solution.jar]]
 
 ## Background
 Ignoring joints, a typical query essentially hits one table and returns back subset of the records in that single table. With JPA, we are not hitting tables but we are rather dealing with entities. What is the difference? An entity might map to a single table, multiple tables, or it could be involved in some kind of inheritance relationship.

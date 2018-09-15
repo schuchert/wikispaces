@@ -15,7 +15,7 @@ We have the following component cohesion principles:
 * **Common Reuse Principle (CRP)** - When reusing a component, all or most of the component is used by the releaser.
 
 We have a new opportunity to reduce manual entry of book information:
-> An outside provider has offered a service to electronically register the books it ships (this is how they get new customers). All they ask is a minimal component to allow this to happen. Part of the agreement involves providing a minimal interface to reduce their liability (e.g. if they cannot affect Patrons through the interface they receive, they won't be liable for unexpected changes to patrons). We have a need to develop a component for this new book provider. This book provider electronically provides book information on all the books they shipped to us once they receive delivery confirmation of a shipment (outside of our concern).
+: An outside provider has offered a service to electronically register the books it ships (this is how they get new customers). All they ask is a minimal component to allow this to happen. Part of the agreement involves providing a minimal interface to reduce their liability (e.g. if they cannot affect Patrons through the interface they receive, they won't be liable for unexpected changes to patrons). We have a need to develop a component for this new book provider. This book provider electronically provides book information on all the books they shipped to us once they receive delivery confirmation of a shipment (outside of our concern).
 
 We already have the ability to add books into our system, so we'd prefer to create a component by reusing our existing classes. Our solution should be used by both this new book provider as well as our existing system.
 

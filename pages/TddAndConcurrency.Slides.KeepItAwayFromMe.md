@@ -7,10 +7,9 @@ title: TddAndConcurrency.Slides.KeepItAwayFromMe
 
 ### Scope it way down...
 A guideline to live by…
-> ==Manage concurrent-based stuff managed in one place
->> ===Close to where that stuff lives
-----
-----
+* Manage concurrent-based stuff managed in one place
+  * Close to where that stuff lives
+
 ### Dependent State
 Consider the following (incomplete) iterator:
 {% highlight java %}

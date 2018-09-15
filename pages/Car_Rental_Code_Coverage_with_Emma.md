@@ -144,7 +144,10 @@ Assuming you've updated the emma.xml file and set all of the relevant properties
 * Note that this ant file adds a directory called **emma_results** under the CarRental directory with the execution results. To see this (if you don't automatically see it after executing this ant task), select CarRental, right-click and select refresh (or hit F5).
 
 I considered adding the following line to emma.xml:
->  <eclipse.refreshLocal resourcePath="CarRental" depth="infinite"/>
+{% highlight xml %}
+<eclipse.refreshLocal resourcePath="CarRental" depth="infinite"/>
+{% endhighlight %}
+
 This would force a refresh but it also requires that you run the ant script in the same VM as Eclipse.
 
 ## Preliminary Analysis

@@ -649,7 +649,7 @@ This might be OK while you are working on your machine but don't check this cruf
 On one project, I removed the unnecessary output (random print statements that people were too lazy to remove) and it decreased test execution time by 30%. Imagine that, 30%, or 4.5 minutes (the tests were too slow). On average, people were running tests at least 2 times a day (I'd run them 6 - 10 times a day). Even so, at one point we had 20 developers. 20 * 2 * 4.5 = 3 hours lost per day for the team. 30 hours per week lost. 
 
 To quote Jerry Weinberg:
-> Nothing + Nothing + Nothing eventually equals something.
+: Nothing + Nothing + Nothing eventually equals something.
 
 Leaving output in tests, unit or acceptance tests, is lazy. You can do better.
 [include_page="sidebar_end"](include_page="sidebar_end")

@@ -14,7 +14,7 @@ title: TddAndConcurrency.Slides.DoOneThingWellWell
 
 It’s even more important here
 ^
-> Why?
+Why?
 
 ## A Simple Server
  Imagine a server that forever…

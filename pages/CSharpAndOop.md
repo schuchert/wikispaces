@@ -6,7 +6,7 @@ Back in 2002 I spent 6 months in England working on a large government project. 
 I needed some kind of outlet, so I started working on a book about C # and OOP. I never finished it. I got rejected by one publisher then I started consulting and sort of lost interest. I'm thinking I might take some of the design materials and apply it to another language.
 
 In any case, here's a PDF of the work I had completed:
-> [[file:C# and .NET By Example.pdf]]
+* [[file:C# and .NET By Example.pdf]]
 
 
 

@@ -2,7 +2,7 @@
 title: Hide_the_Ugly
 ---
 Hide the Ugly is a way to think about design. First a definition for design:
-> Design is the art of selecting the solution that sucks the least
+: Design is the art of selecting the solution that sucks the least
 
 Most of the time various designs, when compared to each other, have strengths and weaknesses. You goal, then, is to compare multiple designs and decide which design will have the fewest problems. One way to address this is to do as little work as possible and only in response to what you know. Another is to use your past experience and your understanding of the forces driving a system to introduce flexibility where you hope it will help.
 

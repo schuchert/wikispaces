@@ -356,10 +356,14 @@ If you'd like to add a temporary method to your test class to clean up after eac
 //**Notes**//
 ### Additional Jar
 To get this to work, you'll need to add an optional library to your classpath:
-> ehcache-1.2.jar
+```
+ehcache-1.2.jar
+```
 
 If you've used the same directories as these instructions, you'll find the file here:
-> C:\libs\jboss-EJB-3.0_Embeddable_ALPHA_9\optional-lib
+```
+C:\libs\jboss-EJB-3.0_Embeddable_ALPHA_9\optional-lib
+```
 
 ### Possible Reordering
 Also, if you managed to fix the OneToOne, the order from above changes. Move dvd, directory book and resource before loan.

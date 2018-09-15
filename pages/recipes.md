@@ -17,7 +17,7 @@ Not mixed in but added after:
 * Optional: sugar brushed on after, baker's or crystallized work - for the people in your family not used to 85% + dark chocolate
 
 Instructions:
-> quick: Melt everything in crockpot, butter a large rectangular glass dish, sprinkle sugar on bottom, spread. Sprinkle sugar on top. Refrigerate until solid.
+* quick: Melt everything in crockpot, butter a large rectangular glass dish, sprinkle sugar on bottom, spread. Sprinkle sugar on top. Refrigerate until solid.
 
 Base
 * Melt butter and chocolate in crockpot on low heat.

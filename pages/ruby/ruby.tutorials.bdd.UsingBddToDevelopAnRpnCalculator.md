@@ -384,15 +384,15 @@ Review of the RpnCalculator class does not suggest any refactoring.
 Review of the Examples, however, does. There is some minor duplication. Both Examples create a calculator. This is a quick fix since you can create a containing Context with common setup. As with any refactoring, however, you'll take small steps and verify as you go along.
 
 * Create a containing context:
-> **Above the first describe**
+**Above the first describe**
 {% highlight ruby %}
     describe "RPN Calculator" do
 {% endhighlight %}
-> **After the last end**
+**After the last end**
 {% highlight ruby %}
     end
 {% endhighlight %}
-> **Update the spacing - that's one command in VI, the best-ever editor**
+**Update the spacing - that's one command in VI, the best-ever editor**
 {% highlight ruby %}
     describe "RPN Calculator"
       describe "Basic Creation" do
@@ -968,16 +968,17 @@ When these Examples reflect the update to the enter_number method, the duplicati
 {% endhighlight %}
 
 ### Summary
-The behavior of the calculator has grown. The it also is beginning to handle the <enter> functionality. You removed duplication in the production code. It was small, and trivial and probably seemed like nothing. However, here's a principle from Jerry Weinberg:
+The behavior of the calculator has grown. The it also is beginning to handle the <enter> functionality. You removed duplication in the production code. It was small, and trivial and probably seemed like nothing. 
 
-> Nothing + Nothing + Nothing == Something
+However, here's a principle from Jerry Weinberg:
+: Nothing + Nothing + Nothing == Something
 
 If you are not maintaining your code and constantly cleaning it up, then it is decaying. Even if your code is not changing, it is decaying because the market is changing, the users' understanding of your system is changing, something is changing.
 
 Keeping your code clean is not an event, it's not a processes, it is an attitude. You have it or you do not have it. 
 
 Are you going to be perfect?
-> **//Perfection is not a destination, it is a journey.//**
+: Perfection is not a destination, it is a journey.
 
 No, you are going to miss stuff. That's why when you do find something, now is the time to handle it. If you cannot deal with it now, write it down on a piece of paper. Throw that piece of paper away in 2 days. If you haven't found the time to fix it by then, then by keeping the paper, you're just giving yourself undue stress.
 
@@ -1683,7 +1684,7 @@ Whew! That was a big refactoring. Check your code in!
 This was a big change. You had a violation of feature envy. The RpnCalculator was doing a lot of work with information stored in an Array. So you created a class to represent that work, OperandStack, and moved Examples around to get everything situated.
 
 If you have a decent IDE, these kinds of refactorings are quick, easy and fairly reliable. If not, then like Robert Martin tweeted:
-> //**It's like riding a horse on the interstate.**//
+> It's like riding a horse on the interstate.
 
 This cleaned up your RpnCalculator class but there's still more to be done. The implementation of execute_function is wanting to do more (or less). 
 
@@ -2463,9 +2464,9 @@ That was a lot of refactoring. Maybe the tutorial let you collect too much desig
 
 You made several important changes:
 * The execute_function method now uses the send method to execute a symbol, so you will not have to update it so long as new functions are added to the RpnCalculator clss.
-> As a result of this change, your execute_function will indicate errors better than when you added an Example for - (which caused + to get called)
+* As a result of this change, your execute_function will indicate errors better than when you added an Example for - (which caused + to get called)
 * You created an execute_binary_operator method that makes adding binary operators a one-line lambda expression.
-> As a result, you removed some DRY violations.
+* As a result, you removed some DRY violations.
 * You made a significant change to how you write your examples.
 
 What's left? There's still the issue of documenting what happens when you attempt to execute a missing function and the rpn_calculator_spec.rb file is getting large.
