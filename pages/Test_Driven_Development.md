@@ -11,32 +11,33 @@ This page contains examples to use when practicing or teaching [Test_Driven_Deve
 Here are a few stand-alone examples: [TDD_Example_Catalog](TDD_Example_Catalog)
 
 # Projects
-* [RPN_Calculator](RPN_Calculator) ([print](http://schuchert.wikispaces.com/RpnCalculatorPrintable?f=print))
-* [Monopoly](Monopoly)  ([print](http://schuchert.wikispaces.com/MonopolyPrintable?f=print))
+* [RPN_Calculator](RPN_Calculator)
+* [Monopoly](Monopoly)
 
 # Use in a C++ Class
 Here is the beginnings of an example TDD session using the [Monopoly](Monopoly) as the basis and [C++](Cxx_TDD_Monopoly) as the language.
 
-## [Notes on CppUTest](tdd.cpp.NotesOnCppUTest)
-## [Notes on CppULite](NotesOnCppULite)
-## [TwoDayTddJavaEclipseWorkspace](TwoDayTddJavaEclipseWorkspace)
-## [C++ Project Outline](tdd.cpp.ProjectOutline)
-## [Moving towards a story-based expression of tests](tdd.cpp.MovingTowardsStoryBasedExpressionOfTests)
+* [Notes on CppUTest](tdd.cpp.NotesOnCppUTest)
+* [Notes on CppULite](NotesOnCppULite)
+* [TwoDayTddJavaEclipseWorkspace](TwoDayTddJavaEclipseWorkspace)
+* [C++ Project Outline](tdd.cpp.ProjectOutline)
+* [Moving towards a story-based expression of tests](tdd.cpp.MovingTowardsStoryBasedExpressionOfTests)
 
 # Use in a Java Class
 
 Use a TDD approach for the [RPN_Calculator](RPN_Calculator). 
 
-Next, use the [Monopoly](Monopoly) problem. 
+Next, use the [Monopoly](Monopoly) problem.
+^
 * For each "release"
-** User story workshop 
-** Sequence user stories 
-** For each user story in the release: 
-*** Develop UAT 
-*** Create communication diagram(s) in support of the UAT's for a given story 
-*** Use TDD to implement it 
-** Check in the story
-** Finish the release and move on
+  * User story workshop
+  * Sequence user stories
+  * For each user story in the release:
+    * Develop UAT
+    * Create communication diagram(s) in support of the UAT's for a given story
+    * Use TDD to implement it
+  * Check in the story
+  * Finish the release and move on
 
 [Mockito](Mockito)
 
