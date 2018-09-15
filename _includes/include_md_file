@@ -1,4 +1,4 @@
 {% capture content %}
 	{% include_relative {{ include.filename }} %}
 {% endcapture %}
-{{ content | markdownify }}
+<div class="include">{{ content | markdownify }}</div>
