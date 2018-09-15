@@ -18,7 +18,7 @@ Type or enter the source provided below for each of the three classes.
 ### Changes
 The entity model is changed slightly from the first JPA tutorial. There is one change in Company.java. Review that class' comments to understand that change. The quick summary is that we've added eager fetching to a relationship.
 
-**Address.java**
+### Address.java
 {% highlight java %}
 package entity;
 
@@ -90,7 +90,7 @@ public class Address {
 }
 {% endhighlight %}
 
-**Company.java**
+### Company.java
 {% highlight java %}
 package entity;
 
@@ -223,7 +223,7 @@ public class Company {
 }
 {% endhighlight %}
 
-**Person.java**
+### Person.java
 {% highlight java %}
 package entity;
 

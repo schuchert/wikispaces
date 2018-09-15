@@ -5,7 +5,7 @@ title: JMock-Fixed_Return_Value
 
 This test method exists in a [jMock_JUnit_4_Die_Skeleton](jMock_JUnit_4_Die_Skeleton).
 
-**Common fixture for the tests**
+### Common fixture for the tests
 {% highlight java %}
     Withdrawal withdrawal;
     Mockery context = new Mockery();

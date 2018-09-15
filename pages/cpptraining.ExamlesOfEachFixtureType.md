@@ -6,7 +6,7 @@ title: cpptraining.ExamlesOfEachFixtureType
 
 # Decision Table
 Here is a basic table in FitNesse:
-**Example Decision Table**
+### Example Decision Table
 {% highlight terminal %}
 !|ExecuteBinaryOperator    |
 |lhs|rhs|operator|expected?|
@@ -23,7 +23,7 @@ Since no table type is provided, this is a decision table. The basic mechanics f
 ** Call expected, which returns a string and compare the value returned to the value provided
 
 Here's cslim code that can handle this table:
-**ExecuteBinaryOperator.cpp**
+### ExecuteBinaryOperator.cpp
 {% highlight cpp %}
 # include <stdlib.h>
 # include <stdio.h>
@@ -101,7 +101,7 @@ SLIM_END
 {% endhighlight %}
 
 Note that as with all fixtures, this code will need to be "registered" with cslim. The default installation of cslim provides a file called "Fixtures.c". To register this class, you'd add:
-**Fixtures.c**
+### Fixtures.c
 {% highlight cpp %}
 # include "Fixtures.h"
 
@@ -116,7 +116,7 @@ This particular Fixtures.c file registeres all thee fixtures mentioned on this p
 
 # Script Table
 Here is an example of a script table:
-**Example Script Table**
+### Example Script Table
 {% highlight terminal %}
 !|script           |ProgramTheCalculator                   |
 |startProgramCalled|primeFactorsOfSum                      |
@@ -132,7 +132,7 @@ Here is an example of a script table:
 How can you tell it's a script table? The word script on the first row.
 
 And here's an example fixture that can handle this table. Note, I used g++ 4.4 (or 4.5) and provided the command-line parameter "-std=c++0x". This allows me to use the auto keyword in its new form:
-**ProgrammingTheCalculator.cpp**
+### ProgrammingTheCalculator.cpp
 {% highlight cpp %}
 # include <stdlib.h>
 # include <stdio.h>
@@ -221,7 +221,7 @@ SLIM_END
 
 # Query Table
 Finally, the dreaded query table. The query table requires a bit more work to produce a result. So this section contains a table, a fixture and a utility class to help create the query results.
-**Example Query Table**
+### Example Query Table
 {% highlight terminal %}
 !|Query: SingleCharacterNameOperators|
 |op                                  |
@@ -234,7 +234,7 @@ Finally, the dreaded query table. The query table requires a bit more work to pr
 How can you tell this is a query table? The word "Query" in the first row.
 
 Now the fixture to handle it:
-**SingleCharacterNameOperators.cpp**
+### SingleCharacterNameOperators.cpp
 {% highlight cpp %}
 # include <stdlib.h>
 # include <stdio.h>
@@ -306,7 +306,7 @@ SLIM_END
 {% endhighlight %}
 
 This code makes use of a utility class QueryResultAccumulator. This is [available in source from github](http://github.com/schuchert/CSlimCppExtensions) (warning, as of this writing it's in a raw form):
-**QueryResultAccumulator.h**
+### QueryResultAccumulator.h
 {% highlight cpp %}
 # pragma once
 # ifndef QUERYRESULTACCUMULATOR_H_
@@ -348,7 +348,7 @@ private:
 # endif
 {% endhighlight %}
 
-**QueryResultAccumulator.cpp**
+### QueryResultAccumulator.cpp
 {% highlight cpp %}
 # include "QueryResultAccumulator.h"
 # include "DifferentFieldCountsInObjects.h"

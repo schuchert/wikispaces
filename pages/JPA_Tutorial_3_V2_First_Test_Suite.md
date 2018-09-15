@@ -9,7 +9,7 @@ In this second version, we add the following features:
 * We disallow patrons from checking out books when they have fines
 
 Along the way, we make a lot of additions and changes. Based on the updated LibraryTest, here is a list of all the changes I made to get things to work (note if you choose to start from the test and make things work yourself, you results may vary):
-**src/entity**
+### src/entity
 
 |Book|Now has an optional Loan object instead of a direct reference to a Patron.|
 |Fine|New class, represents an individual fine generated from returning one book late. A Patron has zero to many of these.|
@@ -17,33 +17,33 @@ Along the way, we make a lot of additions and changes. Based on the updated Libr
 |LoanId|A key-class for the Loan class. The key is two columns, a foreign key to Patron and a foreign key to Book.|
 |Patron|Now has a One to Many relationship with both Loan and Fines. It also has several new methods in support of those new/changed attributes.|
 
-**src/exception**
+### src/exception
 
 |BookNotCheckedOut|New exception class. Thrown when trying to return a book that is not checked out.|
 |InsufficientFunds|New exception class. Thrown when Patron tries to pay fines but does not tender enough cash.|
 |PatronHasFines|New exception class. Thrown when Patron tries to check out a book but already has fines.|
 
-**src/session**
+### src/session
 
 |Library|Substantially changed in support of the new requirements.|
 |LoanDao|New class. Provides some simple query support directly related to loan class.|
 
-**src/util**
+### src/util
 
 |DateTimeUtil|A new class. Provides some basic date/time utilities.|
 
-**test/session**
+### test/session
 
 |LibraryTest|Several new tests in support of new functionality.|
 
-**test/util**
+### test/util
 
 |DateTimeUtilTest|Several test in support of new utility class.|
 
 ### New Utility
 To calculate fines, we needed to determine the number of days late a Patron returned a Book. Here are the tests for that class:
 
-**DateTimeUtilTest.java**
+### DateTimeUtilTest.java
 {% highlight java %}
 package util;
 
@@ -128,7 +128,7 @@ public class DateTimeUtilTest {
 }
 {% endhighlight %}
 
-**DateTimeUtil**
+### DateTimeUtil
 {% highlight java %}
 package util;
 
@@ -209,7 +209,7 @@ public class DateTimeUtil {
 
 ### The Exceptions
 Here are the three new exception classes:
-**BookNotCheckedOut**
+### BookNotCheckedOut
 {% highlight java %}
 package exception;
 
@@ -240,7 +240,7 @@ public class BookNotCheckedOut extends RuntimeException {
 }
 {% endhighlight %}
 
-**InsufficientFunds.java**
+### InsufficientFunds.java
 {% highlight java %}
 package exception;
 
@@ -252,7 +252,7 @@ public class InsufficientFunds extends RuntimeException {
 }
 {% endhighlight %}
 
-**PatronHasFines.java**
+### PatronHasFines.java
 {% highlight java %}
 package exception;
 

@@ -249,10 +249,10 @@ Now we need to update Player.cpp. There are two changes:
 
 Finally, we need to update PlayerTest.hpp. Again, we’re just trying to get things to compile. We have two test methods: testPlayerTakesTurn, testPlayerMovesAroundBoard. Here are the changes to get things to compile:
 
-**testPlayerTakesTurn**
+### testPlayerTakesTurn
 * Replace the existing TS_ASSERT_EQUALS line with this: TS_FAIL(“Test needs rewriting”);
 
-**testPlayerMovesAroundBoard**
+### testPlayerMovesAroundBoard
 * Setting the location was using an index and we used 39. That no longer makes sense, so just delete that line.
 * Replace the TS_ASSERT_EQUALS with TS_FAIL(“Test needs rewriting”);
 
@@ -1116,7 +1116,7 @@ Notice that we've placed movement into the responsibility of Locations, not Play
 
 Here are all of the updated files:
 
-**PlayerTest.hpp**
+### PlayerTest.hpp
 
 {% highlight cpp %}
 # include <cxxtest/TestSuite.h>
@@ -1168,7 +1168,7 @@ public:
 };
 {% endhighlight %}
 
-**LocationTest.hpp**
+### LocationTest.hpp
 
 {% highlight cpp %}
 # ifndef LOCATIONTEST_HPP_
@@ -1249,7 +1249,7 @@ public:
 
 Here's a new file. We now use this mock in multiple places so it's now in its own location:
 
-**FixedValueMockDice.hpp**
+### FixedValueMockDice.hpp
 
 {% highlight cpp %}
 # ifndef _FIXEDVALUEMOCKDICE_HPP

@@ -8,17 +8,17 @@ We have the following classes to convert:
 
 There's only one test left to convert, LibraryTest. We'll perform all of these conversions at once and see what we end up with (it won't be pretty).
 
-**BookDao**
+### BookDao
 * Rename BookDao --> BookDaoBean
 * Add @Stateless annotation to BookDaoBean
 * Extract interface BookDao from BookDaoBean
 
-**LoanDao**
+### LoanDao
 * Rename LoanDao --> LoanDaoBean
 * Add @Stateless annotation to LoanDaoBean
 * Extract interface LoanDao from LoanDaoBean
 
-**Library**
+### Library
 * Rename Library --> LibraryBean
 * Add @Stateless annotation to LibraryBean
 * Extract interface Library from LibraryBean
@@ -40,7 +40,7 @@ public class LibraryBean implements Library {
 }
 {% endhighlight %}
 
-**LibraryTest**
+### LibraryTest
 * Rename LibraryTest --> LibraryBeanTest
 * Remove Base Class from LibraryBeanTest
 * Update setupLibrary to simply lookup the library and set the library attribute.
@@ -150,7 +150,7 @@ Run the test and after making this change, you'll notice that addBook passes.
 When a method on a session bean throws an exception it will either return wrapped in an EJBException or "raw" depending on if the exception has the annotation @ApplicationException. The method findResourceById currently uses EntityNotFoundException, but we don't own that exception so we will make our own exception class and throw it instead.
 
 Here's a new exception:
-**EntityDoesNotExist Exception**
+### EntityDoesNotExist Exception
 {% highlight java %}
 package exception;
 
@@ -265,7 +265,7 @@ OK, what does this mean? After some researching and guessing, you'll discover th
 
 We need to make two more updates to get rid of this foreign key constraint.
 
-**Update LoanDaoBean**
+### Update LoanDaoBean
 {% highlight java %}
     public void remove(final Loan l) {
         l.remove();
@@ -274,7 +274,7 @@ We need to make two more updates to get rid of this foreign key constraint.
     }
 {% endhighlight %}
 
-**Update Loan**
+### Update Loan
 {% highlight java %}
     public void remove() {
         getPatron().removeLoan(this);
@@ -282,7 +282,7 @@ We need to make two more updates to get rid of this foreign key constraint.
     }
 {% endhighlight %}
 
-**One Final Change**
+### One Final Change
 Here's one more thing that has to do with how JPA reads JoinTables. In the case of our Loan join table, it will read two records for each one record. (Insert reference as to why.) There is an easy fix. In the Patron we store a List<Loan>, change this to Set<Loan> and update all of the related code in Loan get it to compile. There are two kinds of replacements you'll have to make:
 * Replace all occurrences of **List<Loan>** with **Set<Loan>**
 * Replace all occurrences of **ArrayList<Loan>()** with **HashSet<Loan>()**
@@ -354,17 +354,17 @@ If you'd like to add a temporary method to your test class to clean up after eac
     }
 {% endhighlight %}
 //**Notes**//
-**Additional Jar**
+### Additional Jar
 To get this to work, you'll need to add an optional library to your classpath:
 > ehcache-1.2.jar
 
 If you've used the same directories as these instructions, you'll find the file here:
 > C:\libs\jboss-EJB-3.0_Embeddable_ALPHA_9\optional-lib
 
-**Possible Reordering**
+### Possible Reordering
 Also, if you managed to fix the OneToOne, the order from above changes. Move dvd, directory book and resource before loan.
 
-**This Is a Temporary Fix**
+### This Is a Temporary Fix
 Note, once we work on making each of our tests isolated, we'll need to remove this method. And this method makes it impossible to look at the contents of the database after running the tests. It also slows things down and would not work with a pre-populated database. So this really is temporary scaffolding until we can get to the next phase of cleaning up properly after each test.
 
 ### patronsWithOverdueBooks
@@ -551,7 +551,7 @@ To fix this, we need to add just a bit of infrastructure. First the background. 
 
 The first option potentially creates a circular dependency and also has and entity dealing with the database, which we have not had to do so far. We'll take option 2. Here are all the necessary changes.
 
-**FinesPaidAndBalance**
+### FinesPaidAndBalance
 {% highlight java %}
 package complexreturns;
 
@@ -578,7 +578,7 @@ public class FinesPaidAndBalance {
 }
 {% endhighlight %}
 
-**Patron.pay**
+### Patron.pay
 {% highlight java %}
     public FinesPaidAndBalance pay(final double amountTendered) {
         double totalFines = calculateTotalFines();
@@ -594,7 +594,7 @@ public class FinesPaidAndBalance {
     }
 {% endhighlight %}
 
-**LibraryBean.tenderFine**
+### LibraryBean.tenderFine
 {% highlight java %}
     public double tenderFine(final Long patronId, double amountTendered) {
         final Patron p = getPatronDao().retrieve(patronId);

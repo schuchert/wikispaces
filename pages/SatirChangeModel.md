@@ -18,7 +18,7 @@ There are **4 stages** and 2 events in the Satir Change Model:
 ## Old Status Quo
 This is where we are right now.
 
-**Example**
+### Example
 A company has an ailing software system that is deployed on old hardware. The cost of support for both the system and hardware has been rising recetnly due to age of the system and the dwindling number of people available to support either the software or the hardware.
 
 ## Foreign Element
@@ -26,7 +26,7 @@ This is some event or new information that simply cannot fit into how things are
 
 If we are able to integrate, ignore or handle the event, then we might just slip back into old status quo.
 
-**Example**
+### Example
 The company with the ailing software system is told by the vendor of the aging hardware platform that the vendor will discontinue support in for that hardware platform in three years. The company can no longer justify the rising costs of supporting the ailing system since its hardware platform will no longer be supported.
 
 ## Chaos
@@ -34,7 +34,7 @@ This is what happens when a foreign element hits.
 
 It is characterised by unpredictability.
 
-**Example**
+### Example
 The company tries to convince the vendor to maintain support.
 The company considers porting this old and fragile system to a new hardware platform.
 The company considers rewriting from the ground up with all new employees.
@@ -44,19 +44,19 @@ The company considers buying old machines so it can salvage parts to keep the ha
 ## Transforming Idea
 This is something that will allow us to move out of chaos.
 
-**Example**
+### Example
 The company decides on a rewrite of the system using newer programming languages to address the difficulty of hiring people who know the old technology. They decide to use a consulting firm to assist in this transformation.
 
 ## Practice and Integration
 Even though we are moving out of chaos, it still takes time to change our behavior.
 
-**Example**
+### Example
 Starting with a small pilot project and a small team, the company builds one application on the new hardware with the new programming language. There are growing pains because the company needs to change how it develops applications. After a little success, it works on two more projects. One with the first team and one with a new team. Over time, the company learns how to develop applications using this new technology on a new hardware platform.
 
 ## New Status Quo
 We are back to a comfortable working situation.
 
-**Example**
+### Example
 The "new" way of doing this is now the status quo. The company has trained over 60 developers and has written millions of lines of code. With this success comes new problems. The company's pay scale is not competitive so they start losing some of their people. While they have learned to work in the small to medium, they still are having some pains working in the large, across division boundaries. Now that they've had some success, it is harder to schedule all the work that needs to be done since more work is being requested that in the past.
 
 The company may not realize it but it is waiting for the next foreign element.

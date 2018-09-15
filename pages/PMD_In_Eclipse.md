@@ -5,12 +5,12 @@ title: PMD_In_Eclipse
 
 # Using PMD in Eclipse
 
-**Install PMD**
+### Install PMD
 # Start Eclipse
 # Follow [these instructions](http://pmd.sourceforge.net/integrations.html#eclipse) (if you are not set to the Eclipse section, click on Eclipse in the list)
 # Restart Eclipse
 
-**Set up Preferences**
+### Set up Preferences
 # Download this file: [[file:PMDConfig.xml]]. I recommend downloading this to your workspace directory
 # Windows:Preferences:PMD:Rules Configuration
 # Clear All

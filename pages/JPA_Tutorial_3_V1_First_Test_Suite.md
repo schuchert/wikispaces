@@ -2,7 +2,7 @@
 title: JPA_Tutorial_3_V1_First_Test_Suite
 ---
 ### The Unit Tests
-**A Little Context**
+### A Little Context
 Before we get started, this tutorial is deliberately organized in an inconvenient fashion. Why? My target reader is someone in a class I'm teaching (the material is open-source but still targeted). I do not want the student to be able to quickly just copy the whole thing and get it to work without having to put forth some effort. In a classroom situation, I have all of the source code available if I need to help a student get up to speed.
 
 We'll start with a stripped down version of the requirements. This first test suite handles the following test cases:
@@ -14,7 +14,7 @@ We'll start with a stripped down version of the requirements. This first test su
 Notice that this suite of tests is for Creating, Reading, Updating and Deleting (CRUD) Patrons.
 
 Assuming you've done Tutorial 2, much of the boilerplate code is going to look the same. First let's write a unit test for each of these test cases:
-**Create a Patron**
+### Create a Patron
 {% highlight java %}
     @Test
     public void createAPatron() {
@@ -34,7 +34,7 @@ Assuming you've done Tutorial 2, much of the boilerplate code is going to look t
 This test first creates a patron using a private utility method. This method exists because it is used later in other unit tests.
 
 Looking at the test, it uses an attribute called **dao**. This is a Data Access Object (which we'll later convert to a stateless Session Bean). This Data Access Object will be responsible for retrieving, creating and removing Patrons.
-**Remove a Patron**
+### Remove a Patron
 {% highlight java %}
     @Test
     public void removeAPatron() {
@@ -49,7 +49,7 @@ Looking at the test, it uses an attribute called **dao**. This is a Data Access 
 
 This test uses the utility method to create a patron. It then removes it and makes sure that when we try to retrieve it that the Patron no longer exists.
 
-**Update a Patron**
+### Update a Patron
 {% highlight java %}
     @Test
     public void updateAPatron() {
@@ -67,7 +67,7 @@ This test uses the utility method to create a patron. It then removes it and mak
 {% endhighlight %}
 We create a patron then update it.
 
-**Attempt to find Patron that does not exist**
+### Attempt to find Patron that does not exist
 {% highlight java %}
     @Test
     public void tryToFindPatronThatDoesNotExist() {
@@ -82,7 +82,7 @@ Verify that when we try to find a patron that's not found, we get back null.
 ### Supporting Code
 We have several veterans returning from previous tutorials. And here they are:
 
-**PatronDaoTest**
+### PatronDaoTest
 First the imports and the attributes. Note that this is a complete class that will compile. It just doesn't do anything yet.
 
 {% highlight java %}
@@ -115,7 +115,7 @@ public class PatronDaoTest {
 }
 {% endhighlight %}
 
-**Initialization of the Logger**
+### Initialization of the Logger
 This is our 1-time initialization of the logging system.
 
 {% highlight java %}
@@ -130,7 +130,7 @@ This is our 1-time initialization of the logging system.
     }
 {% endhighlight %}
 
-**Getting EMF and EM**
+### Getting EMF and EM
 Now before each unit test we'll look up the entity manager factory, create a dao, create an entity manager and pass it into a DAO and finally start a transaction.
 {% highlight java %}
     @Before
@@ -142,7 +142,7 @@ Now before each unit test we'll look up the entity manager factory, create a dao
     }
 {% endhighlight %}
 
-**Clean up after each test**
+### Clean up after each test
 After each test we'll rollback the transaction we created in the pre-test initialization. We'll then close both the entity manager and entity manager factory. This keeps our tests isolated.
 {% highlight java %}
     @After
@@ -156,7 +156,7 @@ After each test we'll rollback the transaction we created in the pre-test initia
 ### The Entities
 We need to create entities. These entities are a bit more well-specified that what you've seen in the previous tutorials. In most cases I believe the extra information is intuitive. Where it is not, I'll try to point out what is going on.
 
-**Address.java**
+### Address.java
 {% highlight java %}
 package entity;
 
@@ -242,7 +242,7 @@ public class Address {
     }
 }
 {% endhighlight %}
-**Patron.java**
+### Patron.java
 {% highlight java %}
 package entity;
 
@@ -328,7 +328,7 @@ public class Patron {
 }
 {% endhighlight %}
 
-**Finally, the Data Access Object**
+### Finally, the Data Access Object
 The DAO has the following four methods:
 * createPatron
 * retrieve
@@ -336,7 +336,7 @@ The DAO has the following four methods:
 * update
 
 We'll look at each of these, although none of this will be new if you've looked at the first tutorial.
-**createPatron**
+### createPatron
 Given the information to create a patron, instantiate one and then persiste it. Note that this is written in a style that will natually fit into a Session Bean.
 {% highlight java %}
     public Patron createPatron(final String fname, final String lname,
@@ -347,7 +347,7 @@ Given the information to create a patron, instantiate one and then persiste it. 
     }
 {% endhighlight %}
 
-**retrieve**
+### retrieve
 This uses the **find** method built into the entity manager. It returns null if not found. It first sees if the object is in the first-level cache. If not, it retrieves it from the database.
 {% highlight java %}
     public Patron retrieve(final Long id) {
@@ -355,7 +355,7 @@ This uses the **find** method built into the entity manager. It returns null if 
     }
 {% endhighlight %}
 
-**removePatron**
+### removePatron
 To remove an object we have to find it first. You do not provide a class and a key. So we first retrieve it (it might already be in the cache so this may not involve a database hit. We then issue the remove of the object.
 {% highlight java %}
     public void removePatron(final Long id) {
@@ -365,7 +365,7 @@ To remove an object we have to find it first. You do not provide a class and a k
         }
     }
 {% endhighlight %}
-**update**
+### update
 Update uses the **merge** method to get its work done. Note that it returns what is returned from **merge**. Why? The provided patron could be detached (retrieve during another transaction or from a different instance of an entity manager. If this is the case, then the object will **not** be put into the cache (and therefore become managed). Instead, a new instance is created and the contents of the paramter is copied into the new, managed instance. That new managed instance is returned. If the provided patron is managed, then there's actually not need to even call this method because any changes made to the patron will be reflected in the patron after the transaction is closed.
 {% highlight java %}
     public Patron update(final Patron p) {
@@ -373,7 +373,7 @@ Update uses the **merge** method to get its work done. Note that it returns what
     }
 {% endhighlight %}
 
-**The rest of the class**
+### The rest of the class
 Here are the imports, attributes and getters/setters.
 {% highlight java %}
 package session;

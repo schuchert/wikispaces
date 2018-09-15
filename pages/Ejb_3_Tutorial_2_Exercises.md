@@ -25,7 +25,7 @@ Add a unit test where you:
 # Hire the person
 # Retrieve the person (you can add a new DAO or simply add a method to the Company Dao)
 # Verify that they have one job and that it is for the expected company.
-**Review**
+### Review
 * Did this test work? If not, why? If so, what can you say about @OneToMany versus @ManyToOne?
 * If it did not work, fix it.
 
@@ -33,14 +33,14 @@ Add a unit test where you:
 Review the driver from the first JPA tutorial. Use that as example source from which you can derive tests.
 
 In addition, add the following tests:
-**Attempt to Hire Person Already Hired**
+### Attempt to Hire Person Already Hired
 Write a test that creates a Person and 2 companies. Hire the person at the first company. Attempt to hire the person for the second company.
 
 The results should be one of two things (you choose):
 * The test expects some kind of exception like "Person Has a Job" to be thrown.
 * You change the relationship between Person and Company to be bi-direction and many to many so that a Person can work for multiple companies.
 
-**Hire Person with Same Name/Address**
+### Hire Person with Same Name/Address
 Create two people and hire them both. Make sure this works.
 
 Question, do you think it should work? If not, then update the equals and hashCode method and make this test be one that only works if the attempt fails.

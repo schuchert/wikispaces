@@ -11,7 +11,7 @@ Here is a quick test suite to verify that things basically work. To create this 
 # Enter the following class
 # Once the class is saved and compiles, execute it (Right-click in the file, select **Run As::JUnit Test**
 
-**CompanyDaoImplTest.java**
+### CompanyDaoImplTest.java
 {% highlight java %}
 package dao.impl;
 

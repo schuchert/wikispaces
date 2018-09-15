@@ -108,13 +108,13 @@ Type checking is not always bad, just mostly always. We won't even consider that
 * Add any required supporting methods in other classes
 * Make sure to actually call the remove method in the ResourceDao
 
-**Add abstract method to Resource**
+### Add abstract method to Resource
 
 {% highlight java %}
     public abstract void remove();
 {% endhighlight %}
 
-**Add empty implementation to Dvd**
+### Add empty implementation to Dvd
 
 {% highlight java %}
     @Override
@@ -122,7 +122,7 @@ Type checking is not always bad, just mostly always. We won't even consider that
     }
 {% endhighlight %}
 
-**Add implementation to Book**
+### Add implementation to Book
 
 {% highlight java %}
     @Override
@@ -134,7 +134,7 @@ Type checking is not always bad, just mostly always. We won't even consider that
     }
 {% endhighlight %}
 
-**Add removeBook to Author**
+### Add removeBook to Author
 
 {% highlight java %}
     public void removeBook(final Book book) {
@@ -142,7 +142,7 @@ Type checking is not always bad, just mostly always. We won't even consider that
     }
 {% endhighlight %}
 
-**Call the remove() method in ResourceDao**
+### Call the remove() method in ResourceDao
 
 Just after looking up the resource and just before actually removing it, we need to call the remove() method on the Resource object:
 
@@ -175,7 +175,7 @@ We need to update each of the tests that create books and explicitly remove the 
 
 To delete authors, we'll create a new Dao for Authors:
 
-**AuthorDao**
+### AuthorDao
 
 {% highlight java %}
 package session;
@@ -189,7 +189,7 @@ public interface AuthorDao {
 }
 {% endhighlight %}
 
-**AuthorDaoBean**
+### AuthorDaoBean
 
 {% highlight java %}
 package session;
@@ -219,7 +219,7 @@ public class AuthorDaoBean extends BaseDao implements AuthorDao {
 
 ### Update Test 
 
-**Support Methods**
+### Support Methods
 
 First we need a few methods we can use to delete authors and books (we're working in ResourceDaoBeanTest, so this is a fine place to add these methods):
 
@@ -238,7 +238,7 @@ First we need a few methods we can use to delete authors and books (we're workin
 
 These methods are static because we might want to use them from other tests. However, to make them static, we must change getDao() to be a static method as well.
 
-**Updated Tests**
+### Updated Tests
 
 Here are the updated tests that now use the support methods.
 

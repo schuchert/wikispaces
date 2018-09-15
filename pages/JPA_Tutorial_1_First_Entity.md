@@ -7,7 +7,7 @@ For this example we'll use a "top-down" approach. This means we'll create a Plai
 
 The following class contains everything you need to begin persisting it to a database:
 [#Person](#Person)
-**Person.java**
+### Person.java
 {% highlight java %}
 package entity;
 
@@ -152,7 +152,7 @@ Your updated persistence.xml is now:
 
 ### Inserting and Querying
 Now we need to update our unit test class, Person.java. We will have it insert two people, query and verify that the people we created are in the database:
-**PersonTest.java**
+### PersonTest.java
 {% highlight java %}
 package entity;
 

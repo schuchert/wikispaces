@@ -4,7 +4,7 @@ title: JPA_Tutorial_1_Entity_with_One_to_Many_Relationship
 Now we'll make a company. In this first tutorial we're keeping things simple so we'll just create a Company that has a 1 to many relationship with People, who are its employees:
 
 [#Company](#Company)
-**Company.java**
+### Company.java
 {% highlight java %}
 package entity;
 
@@ -85,7 +85,7 @@ public class Company {
 
 ### Factor out Common Test Code
 We have some common initialization we can move up into a base since we are going to have two tests classes, PersonTest and CompanyTest:
-**TestBase.java**
+### TestBase.java
 {% highlight java %}
 package entity;
 
@@ -124,7 +124,7 @@ public class TestBase {
 {% endhighlight %}
 
 Update PersonTest.java to remove the two fields, emf and em and the initEmfAndEm() and cleanup() methods.
-**PersonTest.java**
+### PersonTest.java
 {% highlight java %}
 package entity;
 
@@ -278,7 +278,7 @@ Now we'll add a new test into CompanyTest to verify that we can hire people:
 ### Update persistence.xml
 Again, given our environment, this step is optional.
 
-**persistence.xml**
+### persistence.xml
 {% highlight xml %}
 <persistence>
     <persistence-unit name="examplePersistenceUnit" 

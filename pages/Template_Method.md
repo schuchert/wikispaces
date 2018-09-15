@@ -47,7 +47,7 @@ protected int calculateRent();
 {% endhighlight %}
 
 We then write three derived classes, Railroad, Utility, Property, that each implement calculate rent:
-**Railroad**
+### Railroad
 {% highlight terminal %}
 class Railroad extends RealEstate {
    protected int calculateRent() {
@@ -58,7 +58,7 @@ class Railroad extends RealEstate {
    }
 }
 {% endhighlight %}
-**Utility**
+### Utility
 {% highlight terminal %}
 class Utility extends RealEstate {
    protected int calculateRent() {
@@ -75,7 +75,7 @@ class Utility extends RealEstate {
    }
 }
 {% endhighlight %}
-**Property**
+### Property
 {% highlight terminal %}
 class Property extends RealEstate {
    protected int calculateRent() {

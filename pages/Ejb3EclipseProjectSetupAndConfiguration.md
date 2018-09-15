@@ -74,7 +74,7 @@ This example presents a utility class we'll be using later. The container needs 
 # Click **Finish**
 # Copy the following example into your new file then save it by pressing ctrl-s
 
-**persistence.xml**
+### persistence.xml
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>

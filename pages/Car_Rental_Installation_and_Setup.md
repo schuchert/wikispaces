@@ -11,14 +11,14 @@ This project uses Eclipse 3.2 and JDK 1.5.0_06. I have a few additional plugins 
 * Subversion on my PC and Subclipse. See: [Subversion_on_XP](Subversion_on_XP).
 
 ## Libraries
-**Required**
+### Required
 This project also requires several libraries:
 * [JUnit 4.x](http://www.junit.org) (included with Eclipse 3.2)
 * [Spring](http://www.springframework.org/download), I used Spring 2.0-RC2
 * Commons Logging, which you can get if you download **//spring-framework-2.0-rc2-with-dependencies.zip//** instead of spring-framework-2.0-rc2.zip from [Spring Downloads](http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644)
 * [AspectJ 1.5.x](http://www.eclipse.org/aspectj/downloads.php)
 
-**Optional**
+### Optional
 * Code coverage with Emma, download [here](http://emma.sourceforge.net/downloads.html).
 * Code coverage with Cobertura, download [here](http://cobertura.sourceforge.net/download.html).
 
@@ -44,14 +44,14 @@ Here are the full instructions. Note that if you've already downloaded/installed
 # Start Eclipse (if you have not already done so) and select your workspace (in my case it is C:\AOP\Workspaces\aspectj)
 # Close the "Welcome" tab
 
-**Import the included Eclipse Preferences**
+### Import the included Eclipse Preferences
 # File:Import:General:Preferences
 # Click on next
 # Enter <yourworkspace>\ToolConfiguration\EclipsePrefs.epf, e.g. for me it would be: C:\workspaces\CarRentalExample\TooConfiguration\EclipsePrefs.epf
 # Verify that import all is selected
 # Click Finish
 
-**Optional: Checkstyle Configuration**
+### Optional: Checkstyle Configuration
 # Windows:Preferences
 # Select Checkstyle
 # Click on **New**
@@ -61,7 +61,7 @@ Here are the full instructions. Note that if you've already downloaded/installed
 # Click on OK (to close the new dialog)
 # Click on OK (to close preferences)
 
-**Optional: PMD Configuration**
+### Optional: PMD Configuration
 # Windows:Preferences
 # Select PMD
 # Select Rules Configuration
@@ -74,7 +74,7 @@ Here are the full instructions. Note that if you've already downloaded/installed
 # Click on OK (to finish preferences)
 # Click on Yes (to rebuild all)
 
-**Set Classpath Variables**
+### Set Classpath Variables
 These steps are optional if you've installed Eclipse and the various libs in the same directories as I've used.
 
 # Window:Preferences:Java:Build Path:Classpath Variables
@@ -84,7 +84,7 @@ These steps are optional if you've installed Eclipse and the various libs in the
 # Change the JUNIT4_LIB to point to where JUnit 4's jar file resides under eclipse. The preferences file sets it to: C:/eclipse/plugins/org.junit4_4.1.0/junit-4.1.jar
 # Click on OK when you're done to close Windows:Preferences
 
-**Import the three extracted projects into the Eclipse workspace**
+### Import the three extracted projects into the Eclipse workspace
 # File:Import:General:Existing Projects into Workspace
 # Click on next
 # Enter the directory of your workspace, e.g. mine would be C:\workspaces\CarRentalExample
@@ -93,17 +93,17 @@ These steps are optional if you've installed Eclipse and the various libs in the
 # Click select all
 # Click finish
 
-**Verify Tests**
+### Verify Tests
 # Wait for the projects to build
 # Right-click on CarRental
 # Select Run As:JUnit Test
 # All 100 tests should pass
 
-**Optional: Code Coverage**
+### Optional: Code Coverage
 * [Car_Rental_Code_Coverage_with_Emma](Car_Rental_Code_Coverage_with_Emma)
 * [Car_Rental_Code_Coverage_with_Cobertura](Car_Rental_Code_Coverage_with_Cobertura)
 
-**Optional: Run PMD**
+### Optional: Run PMD
 # Right-click on the project
 # Select PMD:Check Code with PMD
 # Do this every so often after you've made changes to the code to see what PMD has to say about your changes.

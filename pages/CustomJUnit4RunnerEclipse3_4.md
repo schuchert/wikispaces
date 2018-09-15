@@ -41,7 +41,7 @@ To get integration tests to execute, simply add -DExecuteIntegrationTests to the
 After many trials and opening up the JUnit 4.4. source, this is what we came up with:
 ----
 ----
-**IntegrationTestIgnorer**
+### IntegrationTestIgnorer
 This class is both a Runner and holds on to a runner. The particular runner is determined by a factory class (**RunnerFactory** below). This class simply adds a level of indirection between the execution of a test and the selection of the particular JUnit runner used to execute tests in a given test class.
 {% highlight java %}
 package com.om.runner;
@@ -76,7 +76,7 @@ public class IntegrationTestIgnorer extends Runner {
 {% endhighlight %}
 ----
 ----
-**RunnerFactory.java**
+### RunnerFactory.java
 This class determines whether or not Integration tests should be skipped and the style of test class and then constructs an appropriate runner to run the tests (or ignore them).
 
 There are 4 possibilities based on the following two items:
@@ -122,7 +122,7 @@ public class RunnerFactory {
 {% endhighlight %}
 ----
 ----
-**JUnit38TestMethodIgnorer.java**
+### JUnit38TestMethodIgnorer.java
 This class simply fires a "test ignored" message so that listeners know that each test was skipped. In IntelliJ and JUnit, their respective runners register listeners that select an icon in a tree viewer based on this message being fired. Also, by firing a message per test method, the progress bars will be updated correctly (as will test execution counts).
 {% highlight java %}
 package com.om.runner;
@@ -158,7 +158,7 @@ public final class JUnit38TestMethodIgnorer extends OldTestClassRunner implement
 {% endhighlight %}
 ----
 ----
-**JUnit4TestMethodIgnorer.java**
+### JUnit4TestMethodIgnorer.java
 This test accomplishes the same thing in a somewhat easier manner than the JUnit 3 ignorer. There is a method to execute an individual test method, which this class simply overrides to fire an ignored test message. However, if all methods are ignored, the class will fail validation as defined in the base class JUnit4ClassRunner. So, this class also overrides the validate() method to make that error go away.
 {% highlight java %}
 package com.om.runner;
@@ -187,7 +187,7 @@ public class JUnit4TestMethodIgnorer extends TestClassRunner implements TestIgno
 {% endhighlight %}
 ----
 ----
-**TestIgnorer**
+### TestIgnorer
 To remove duplication, we introduced a simple interface called test ignorer:
 {% highlight java %}
 package com.om.runner;
@@ -202,7 +202,7 @@ public interface TestIgnorer {
 {% endhighlight %}
 ----
 ----
-**TestMethodIgnorerUtil**
+### TestMethodIgnorerUtil
 Since most of the code was the same between the two classes, this utility class simply holds the run() method and calls back. We could not use a single hierarchy since the two classes require inheritance from different base classes.
 {% highlight java %}
 package com.orbitz.bop;

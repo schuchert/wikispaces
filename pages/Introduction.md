@@ -6,17 +6,17 @@ title: Introduction
 {% endhighlight %}
 ## Introductions
 ### First Exercise
-**Individually**
+### Individually
 * Take one note card
 * The instructor will give you a subject
 * Write a few “bullets” about that subject (3 - 5 max)
 * Indicate when you are done
 
-**In small groups**
+### In small groups
 * Discuss your bullets within your groups
 * Be prepared to report back to the group
 
-**The final instruction is verbal**
+### The final instruction is verbal
 * Please follow the instructions Keep track of your experience
 * Be prepared to report back to the group
 
@@ -26,12 +26,12 @@ What did you experience when given the verbal instructions?
 
 ----
 ## Welcome!
-**Let me introduce:**
+### Let me introduce:
 * Myself
 * The company
 * Related courses
 
-**What about each of you?**
+### What about each of you?
 * Related experience
 * Objectives
 

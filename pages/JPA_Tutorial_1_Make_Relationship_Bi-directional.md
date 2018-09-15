@@ -4,7 +4,7 @@ title: JPA_Tutorial_1_Make_Relationship_Bi-directional
 Now we're going to make sure the Person knows the Company for which it works. This is the "one" side of a one to many relationship. We need to explicitly set this value and map it. We also need to update the Company @OneToMany relationship so that the Entity Manager knows it is a bi-directional relationship rather than just two unidirectional relationships.
 
 First we need to update Person:
-**Person.java**
+### Person.java
 {% highlight java %}
 public class Person {
     // ...

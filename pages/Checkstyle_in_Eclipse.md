@@ -3,11 +3,11 @@ title: Checkstyle_in_Eclipse
 ---
 [<--Back](Tool_Setup_and_Configuration_Notes)
 
-**Install Checkstyle**
+### Install Checkstyle
 # Start Eclipse
 # Follow [here](http://eclipse-cs.sourceforge.net/) and follow the Download & Installation section.
 
-**Configuring Checkstyle**
+### Configuring Checkstyle
 # Download this file: [[file:CheckstyleConfig.xml]]. I recommend putting this file in your workspace directory
 # In Eclipse: Windows:Preferences:Checkstyle
 # Click on new

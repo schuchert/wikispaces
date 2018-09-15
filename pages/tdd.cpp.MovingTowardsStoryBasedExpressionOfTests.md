@@ -24,7 +24,7 @@ Typically, I introduce this problem similar to how Bob introduces it (it is his 
 |1024|2, 2, 2, 2, 2, 2, 2, 2, 2, 2|
  
 Here is one way to write these tests using [CppUTest](http://www.cpputest.org/):
-**PrimeFactorsOperator.cpp**
+### PrimeFactorsOperator.cpp
 {% highlight cpp %}
 # include <CppUTest/TestHarness.h>
 

@@ -300,7 +300,7 @@ Along those lines, "buildStartDateTime" also exhibits feature envy. The "Schedul
 
 To fix this, we can introduce a new class and perform some basic re-factoring:
 
-**Schedule.java**
+### Schedule.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -333,7 +333,7 @@ public class Schedule {
 }
 {% endhighlight %}
 
-**ConflictingProgramException.java**
+### ConflictingProgramException.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -343,7 +343,7 @@ public class ConflictingProgramException extends RuntimeException {
 }
 {% endhighlight %}
 
-**Updated: AddProgramsToSchedule.java**
+### Updated: AddProgramsToSchedule.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -558,7 +558,7 @@ In the first case, there is a variable assignment, which [FitNesse](http://fitne
 
 This variable is available for the rest of the page. However, before we get to that we do have a problem. The lastId? is set upon a successful program add, but it is not reset if the program is not added. Here is a quick fix to improve that:
 
-**AddProgramsToScheule.created**
+### AddProgramsToScheule.created
 
 {% highlight java %}
    public boolean created() {
@@ -614,7 +614,7 @@ What to do:
 
 When you run your tests, do you notice a problem? The tests pass! Maybe you expected the second attempt to add would fail, but it appears to work. This illustrates something [FitNesse](http://fitnesse.org/) does; each table causes a new instance of the fixture to be created, even on the same page. How can you tell this? If you want to verify it, you could simply add a print statement to the constructor and view the output. I've already done that. Here's the print statement:
 
-**Example: Added to AddProgramsToSchedule fixture**
+### Example: Added to AddProgramsToSchedule fixture
 
 {% highlight java %}
    private static int numberCreated = 0;

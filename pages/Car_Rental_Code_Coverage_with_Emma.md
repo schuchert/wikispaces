@@ -13,15 +13,15 @@ In this example, we add code coverage to the Car Rental Application. We then exa
 Emma does not currently come with a plugin, so in this example we'll use [Ant](http://ant.apache.org/) from within Eclipse. I'll warn you that I'm not much of an Ant user, so if you'd like to make recommendations, please feel free: schuchert@yahoo.com.
 
 Let's get started:
-**Download**
+### Download
 * Download Emma from [here](http://emma.sourceforge.net/downloads.html). Note I downloaded emma-2.0.5312.zip for this example.
 * Extract the jar somewhere. I used c:\libs\, which created the directory C:\libs\emma-2.0.5312.
 * Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
 
-**suite() method**
+### suite() method
 Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [suite()](JUnit_4.xSuite) method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
  
-**Ant Script**
+### Ant Script
 When you followed [these instructions](Car_Rental_Installation_and_Setup), you should have created a workspace with three projects:
 * CarRental
 * LoggingUtils
@@ -134,7 +134,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 ### Interesting Lines
 N/A.
 
-**Update Tests**
+### Update Tests
 
 ## Execution
 Assuming you've updated the emma.xml file and set all of the relevant properties for your environment, then do the following:

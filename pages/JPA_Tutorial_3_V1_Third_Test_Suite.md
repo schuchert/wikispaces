@@ -17,7 +17,7 @@ Of course, along the way we'll end up doing yet more refactoring to accommodate 
 ### Library
 First we'll start with a new suite of tests for this Library facade. For this first pass, we'll write several basic tests and a few tests that move us closer to use-case like functionality.
 
-**Adding a Book**
+### Adding a Book
 {% highlight java %}
     @Test
     public void addBook() {
@@ -37,7 +37,7 @@ First we'll start with a new suite of tests for this Library facade. For this fi
     }
 {% endhighlight %}
 
-**Lookup a Book that Does Not Exist**
+### Lookup a Book that Does Not Exist
 Notice that this test has different results than the same test in the BookDaoTest. In this case we expect an exception to be thrown while in the case of the BookDaoTest we just get back null. Why? The dao has no way of knowing what the policy should be regarding not finding objects, whereas the Library facade can set the policy.
 {% highlight java %}
     @Test(expected = EntityNotFoundException.class)
@@ -46,7 +46,7 @@ Notice that this test has different results than the same test in the BookDaoTes
     }
 {% endhighlight %}
 
-**Adding a Patron**
+### Adding a Patron
 {% highlight java %}
     @Test
     public void addPatron() {
@@ -63,7 +63,7 @@ Notice that this test has different results than the same test in the BookDaoTes
     }
 {% endhighlight %}
 
-**Lookup a Patron that Does Not Exist**
+### Lookup a Patron that Does Not Exist
 As with the BookDao, the PatronDao simply returns null if an object is not found by ID. The Library changes that null result into an exception.
 {% highlight java %}
     @Test(expected = EntityNotFoundException.class)
@@ -72,7 +72,7 @@ As with the BookDao, the PatronDao simply returns null if an object is not found
     }
 {% endhighlight %}
 
-**Checking out a book to a patron**
+### Checking out a book to a patron
 {% highlight java %}
     @Test
     public void checkoutBook() {
@@ -88,7 +88,7 @@ As with the BookDao, the PatronDao simply returns null if an object is not found
     }
 {% endhighlight %}
 
-**Returning a book**
+### Returning a book
 {% highlight java %}
     @Test
     public void returnBook() {
@@ -104,7 +104,7 @@ As with the BookDao, the PatronDao simply returns null if an object is not found
     }
 {% endhighlight %}
 
-**Returning a book that is not checked out**
+### Returning a book that is not checked out
 {% highlight java %}
     @Test
     public void returnBookThatsNotCheckedOut() {
@@ -115,7 +115,7 @@ As with the BookDao, the PatronDao simply returns null if an object is not found
     }
 {% endhighlight %}
 
-**Checking out a Book that is Already Checked Out**
+### Checking out a Book that is Already Checked Out
 {% highlight java %}
     @Test(expected = BookAlreadyCheckedOut.class)
     public void checkoutBookThatIsAlreadyCheckedOut() {
@@ -128,7 +128,7 @@ As with the BookDao, the PatronDao simply returns null if an object is not found
     }
 {% endhighlight %}
 
-**Checkout a Book that Does Not Exist**
+### Checkout a Book that Does Not Exist
 {% highlight java %}
     @Test(expected = EntityNotFoundException.class)
     public void checkoutBookThatDoesNotExist() {
@@ -137,7 +137,7 @@ As with the BookDao, the PatronDao simply returns null if an object is not found
     }
 {% endhighlight %}
 
-**Checkout a Book to a Patron that Does Not Exist**
+### Checkout a Book to a Patron that Does Not Exist
 {% highlight java %}
     @Test(expected = EntityNotFoundException.class)
     public void checkoutBookToPatronThatDoesNotExist() {
@@ -146,7 +146,7 @@ As with the BookDao, the PatronDao simply returns null if an object is not found
     }
 {% endhighlight %}
 
-**LibraryTest.java**
+### LibraryTest.java
 Here's the shell of the test.
 
 {% highlight java %}
@@ -192,7 +192,7 @@ public class LibraryTest extends EntityManagerBasedTest {
 
 {% endhighlight %}
 
-**EntityManagerBasedTest**
+### EntityManagerBasedTest
 This new class inherits from a new base class called EnttyManagerBasedTest. This class factors out just the part of initialization related to the entity manager and the transactions from the BaseDbDaoTest.
 
 {% highlight java %}
@@ -268,7 +268,7 @@ public abstract class EntityManagerBasedTest {
 }
 {% endhighlight %}
 
-**BaseDbDaoTest**
+### BaseDbDaoTest
 Here is yet another updated BaseDbDaoTest that reflects the new base class.
 {% highlight java %}
 package session;
@@ -339,7 +339,7 @@ public class BookAlreadyCheckedOut extends RuntimeException {
 }
 {% endhighlight %}
 
-**Library**
+### Library
 This class is all new.
 {% highlight java %}
 package session;
@@ -433,7 +433,7 @@ public class Library {
 }
 {% endhighlight %}
 
-**BookDao**
+### BookDao
 The tests use the findByIsbn() method, which returns a collection of Books. Why does findByIsbn() return a collection of books? The isbn is not unique; the book id is the only unique column. If we enforced a unique isbn, then there could only be one book of a given isbn in the library.
 
 We've also added a method, findById, which should return a unique value (or null).
@@ -452,7 +452,7 @@ We've also added a method, findById, which should return a unique value (or null
 ### Util
 We need a basic utility to assist with equality. This utility will handle when we have null references.
 
-**EqualsUtil**
+### EqualsUtil
 {% highlight java %}
 package util;
 
@@ -474,7 +474,7 @@ public class EqualsUtil {
 }
 {% endhighlight %}
 
-**EqualsUtilTest**
+### EqualsUtilTest
 {% highlight java %}
 package util;
 
@@ -515,7 +515,7 @@ public class EqualsUtilTest {
 
 ### Entity Changes
 
-**Book**
+### Book
 The book is somewhat changed. First it needs to **import util.EqualsUtil** (as shown below). It also contains some named queries and three new methods: isOnLoanTo, isOnLoan and checkin. The code below shows these changes.
 
 {% highlight java %}
@@ -559,7 +559,7 @@ public class Book {
 }
 {% endhighlight %}
 
-**Patron**
+### Patron
 There was only one change to Patron. We want to be able to ask the Patron if it is in fact borrowing a particular book.
 {% highlight java %}
     public boolean isBorrowing(final Book foundBook) {

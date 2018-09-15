@@ -23,7 +23,7 @@ public void rollThenGetFaceValue() {
 }
 {% endhighlight %}
 
-**Common fixture for the test**
+### Common fixture for the test
 {% highlight java %}
     Withdrawal withdrawal;
     Mockery context = new Mockery();

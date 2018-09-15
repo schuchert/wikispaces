@@ -40,14 +40,14 @@ This is one mechanism you can use to allow for execution of tests with machine-r
 The picture gives a high level view. In a nutshell:
 ![](images/TargetFitNessePageConfiguration.jpg)
 
-**On The Server**
+### On The Server
 * FitNesse is installed in some convenient location, with its FitNesseRoot directory and fitnesse.jar as siblings in some physical directory.
 * The top level page captures environment settings specific to the current server. E.g., the build system puts jars in one location, whereas developers tend to execute FitNesse tests against compiled class files.
 * The next level stores common imports and environment configuration, e.g., fitnesse.jar and !define TEST_SYSTEM {slim}.
 * The next level is the top level test suite. In fact, you can configure all of the pages as suites to allow test execution from anywhere in the hierarchy.
 * All tests fall under the top-level suite.
 
-**On A Developer Machine**
+### On A Developer Machine
 * FitNesse is installed in some convenient location, with its FitNesseRoot directory and fitnesse.jar as siblings in some physical directory. (Same idea as server machine, but not necessarily the same directory.)
 * The developer creates a top-level page specifying developer-machine-specific settings, such as the location of .class files and local copies of jar files.
 * That same page uses the wiki import feature to point to the server environment page, which causes all of the pages under the server environment page to be copied to the developer machine.
@@ -68,7 +68,7 @@ This set of steps describes how to simulate this on a single machine to practice
 
 ### Setup Two FitNesse Servers
 
-**Create a location for the "server machine".**
+### Create a location for the "server machine".
 
 * Create a directory in some convenient location, I'll use ~/src/fitnesse_example/server.
 * Under that directory copy fitnesse.jar and FitNesseRoot. The easiest way to accomplish this is to copy fitnesse.jar to ~/src/fitnesse_examples/server then type:
@@ -79,7 +79,7 @@ java -jar fitnesse.jar -p 9080
 
 Note that this both creates the FitNesseRoot directory and starts FitNesse listening on port 9080.
 
-**Create a location for the "developer machine"**
+### Create a location for the "developer machine"
 
 * Create a directry in some convenient location, I'll use ~/src/fitnesse_example/developer.
 * Under that directory copy fitnesse.jar and FitNesseRoot. The easiest way to accomplish this is to copy fitnesse.jar to ~/src/fitnesse_examples/developer then type:

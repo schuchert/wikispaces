@@ -4,13 +4,13 @@ title: Ejb3EclipseUserLibrarySetup
 ### Define User Library
 We need to add several jar files to the class path. We created a user library in [these steps](JPA_Tutorial_1_Eclipse_Project_Setup#ClasspathVariables) and we're going to do the same thing with a different set of jar files.
 
-**Create User Library**
+### Create User Library
 # Pull down **Window:Preferences**
 # Navigate to **Java:Build Path:User Libraries**
 # Click on **New**
 # Enter **EJB3_EMBEDDABLE** for the name and click on **OK**
 
-**Add Jars to User Library**
+### Add Jars to User Library
 Now we need to add all of the jar files from the lib directory under the JBoss Embeddable container directory we unzipped earlier:
 # Select **EJB3_EMBEDDABLE**
 # Click on **Add JARs...**

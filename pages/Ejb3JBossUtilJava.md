@@ -168,7 +168,7 @@ public class JBossUtil {
 }
 {% endhighlight %}
 
-**EqualsUtil.java**
+### EqualsUtil.java
 {% highlight java %}
 package util;
 

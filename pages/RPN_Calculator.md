@@ -40,12 +40,12 @@ The following list of user stories form a [[Product Backlog]]. The are additiona
 # Getting Started
 
 Here are some steps to get you started:
-**Project Setup**
+### Project Setup
 # Create a workspace in eclipse
 # Make sure to have separate source folders, one called src, one called test
 # Add JUnit lib to your project's classpath
 
-**TDD**
+### TDD
 # Pick the highest listed user uncompleted user story
 ** Create a test for the first uncompleted UAT
 ** Get the test to compile

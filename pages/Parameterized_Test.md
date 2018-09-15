@@ -5,7 +5,7 @@ title: Parameterized_Test
 
 Imagine we have a series of tests where for each test we perform some operation and then verify the results. The only thing that varies is the data we send into the operation and the expected result. Here's how we might brute force this:
 
-**BlankLineTest.java**
+### BlankLineTest.java
 
 {% highlight java %}
 package com.objectmentor.parameterized;
@@ -75,7 +75,7 @@ JUnit has an idiom for this kind of test. Use a parameterized test. To do so, we
 |5|32 - 35|Add a single test method that uses those values passed in to the constructor|
 
 That's a lot of steps. Here's an example:
-**BlankLineParameterizedTest.java**
+### BlankLineParameterizedTest.java
 {% highlight java %}
 01: package com.objectmentor.parameterized;
 02: 

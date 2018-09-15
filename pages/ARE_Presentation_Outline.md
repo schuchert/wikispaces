@@ -24,23 +24,23 @@ We'll conclude with a "where do we go next" wrap-up.
 
 ----
 ## Exercise 1
-**Group Exercise**
+### Group Exercise
 Discuss the following questions within your work group. Prepare to report back to the 
 * What is a requirement
 * How are requirements handed off
 * How are requirements tracked
 * What is the interaction between the people who have/define the requirements and the people that implement the requirements?
 
-**Report Back**
+### Report Back
 * Report on each of the four questions back to the group. (Develop a flip-chart for each.)
 * Where is there waste in your current process?
 
-**Wrap-Up**
+### Wrap-Up
 * What is one thing you could change tomorrow to address waste in your current process?
 
 ----
 ## Exercise 2
-**Group Exercise**
+### Group Exercise
 Review provided project and develop a few ideas for things your system should do:
 
 ### IPod® Killer
@@ -68,23 +68,23 @@ During initial discussions with the product owner, a few things may become clear
 * They are working on a contract with CDDB to get track information
 * They want their client to be able to rip music as well. They have licenses a product to do that for both the PC and the MAC.
 
-**Report Back**
+### Report Back
 * What one idea really stood out?
 * What worked in terms of generating ideas?
 * What challenges did you have?
 
-**Wrap-UP**
+### Wrap-UP
 * How does this "start" compare to your project starts?
 
 ----
 ## Exercise 3
-**Group Exercise**
+### Group Exercise
 Who are your users? Who are the purchasers? In your groups, develop a list of candidate user roles for the provided project and give a brief description for each.
 
-**Report Back**
+### Report Back
 * User roll-call
 
-**Wrap-Up**
+### Wrap-Up
 * Any stand-outs?
 * Do you notice any relationship between who you think will be using your system and what the system might be doing?
 
@@ -105,39 +105,39 @@ Who are your users? Who are the purchasers? In your groups, develop a list of ca
 
 ----
 ## Exercise 4
-**Group Exercise**
+### Group Exercise
 Pick one of your user roles. For this one user role, identify candidate user stories.
 
-**Report Back**
+### Report Back
 * Provide one of your stories (we'll do this round-robin)
 * How was working with user roles different from just picking out ideas from a few exercises back?
 * If you're working with actual people, how many "different roles" should you interview at the same time?
 
-**Conclusions**
+### Conclusions
 * What stood out for you?
 * Did you get any good ideas from the other teams?
 
 ----
 ## Exercise 5
-**Group Exercise**
+### Group Exercise
 Pick a second user role and repeat the previous exercise.
 
-**Report Back**
+### Report Back
 * Round-robin again.
 * How did this time feel different from the previous times?
 
-**Wrap-Up**
+### Wrap-Up
 * Do you think emphasizing roles is a good idea?
 * How do you use roles (or a similar concept) now?
 * Can you take this back to your work and start using it?
 
 ----
 ## Exercise 6
-**Group Exercise**
+### Group Exercise
 The facilitators will provide materials and basic instructions for the final project. You'll be expected to elicit requirements.
 ----
 ## Summary/Where Next
-**Discussion**
+### Discussion
 Here are some questions to consider:
 * What do you take away from this?
 * Anything you can use tomorrow? In a week? In a month?

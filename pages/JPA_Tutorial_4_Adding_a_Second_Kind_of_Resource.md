@@ -8,7 +8,7 @@ In this final step for the tutorial, we'll create a second kind of resource, a D
 ### Supporting DVD's
 The first basic test is creating a dvd and checking it out to a Patron. This is a test we add to LibraryTest.java.
 
-**First test: Checkout a Dvd**
+### First test: Checkout a Dvd
 {% highlight java %}
     @Test
     public void checkoutDvd() {
@@ -47,7 +47,7 @@ public class LibraryTest extends EntityManagerBasedTest {
 {% endhighlight %}
 To get this to compile, we need to add support in the library class for creating a DVD. Here's that basic support:
 
-**Updating Library**
+### Updating Library
 {% highlight java %}
     public Dvd createDvd(final String title, final Name directorsName) {
         final Director director = new Director();
@@ -61,7 +61,7 @@ To get this to compile, we need to add support in the library class for creating
 {% endhighlight %}
 
 Notice that we have a director and a dvd in this example. Here are those classes:
-**Director.java**
+### Director.java
 {% highlight java %}
 package entity;
 
@@ -100,7 +100,7 @@ public class Director {
 }
 {% endhighlight %}
 
-**Dvd.java**
+### Dvd.java
 {% highlight java %}
 package entity;
 
@@ -157,7 +157,7 @@ public class Dvd extends Resource {
 }
 {% endhighlight %}
 
-**Resource.java**
+### Resource.java
 To get this to actually work, we need to use the @Inheritance annotation on resource. Here's the change:
 {% highlight java %}
 //...
@@ -172,7 +172,7 @@ public abstract class Resource {
 
 As mentioned before, there are three kinds of representations for hierarchy. We are using the so-called JOINED approach, which means there is a table per class. It turns out that we need to use this approach based on how we've defined Book. Why that is will be answered in a following assignment.
 
-**A Few More Tests**
+### A Few More Tests
 Here are a few more tests to verify basic functionality. These also belong in LibraryTest.java.
 {% highlight java %}
     @Test

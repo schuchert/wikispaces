@@ -206,7 +206,7 @@ public class ProgramGuideRowParser {
 
 * Run the test, make sure it passes.
 * Next, add another test with one program and notice that this requires several changes:
-**Update: ProgramGuideRowParserTest, Add new test**
+### Update: ProgramGuideRowParserTest, Add new test
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -259,7 +259,7 @@ public class ProgramGuideRowParserTest {
 }
 {% endhighlight %}
 
-**Update ProgramGuidRowPaser: Add constructor and method**
+### Update ProgramGuidRowPaser: Add constructor and method
 
 {% highlight java %}
    public ProgramGuideRowParser(Date buildDate) {
@@ -286,7 +286,7 @@ public class ProgramGuideRowParserTest {
    }
 {% endhighlight %}
 
-**Update: Program**
+### Update: Program
 
 {% highlight java %}
    @Override
@@ -400,7 +400,7 @@ These methods were written in response to a test, something more than a unit tes
 * Run your tests, the new one will.
 * Now make several updates to make this next test pass (and notice that the code is getting unruly):
 
-**Update: ProgramGuideRowParser.java**
+### Update: ProgramGuideRowParser.java
 
 {% highlight java %}
    public List<Program> parse(String programsInCells) {
@@ -451,7 +451,7 @@ These methods were written in response to a test, something more than a unit tes
    }
 {% endhighlight %}
 
-**Update: DateUtil.java**
+### Update: DateUtil.java
 
 {% highlight java %}
    public Date addMinutesTo(Date fromDate, int minutes) {
@@ -743,7 +743,7 @@ public class ProgramGuideRowParserTest {
 
 * This requires two new classes:
 
-**Create: ProgramBuilderUtil.java**
+### Create: ProgramBuilderUtil.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -765,7 +765,7 @@ public class ProgramBuilderUtil {
 }
 {% endhighlight %}
 
-**Create: ProgramGuideRowParser**
+### Create: ProgramGuideRowParser
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -804,7 +804,7 @@ public class ProgramGuideRowParser {
 
 * Also, the new class ProgramBuilderUtil was extracted from the previous class:
 
-**Update: ProgramGuideProgramCellsParserTest.java**
+### Update: ProgramGuideProgramCellsParserTest.java
 
 {% highlight java %}
    private Program buildProgram(String date, String time, String name, int channel,

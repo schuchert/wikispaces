@@ -6,7 +6,7 @@ Now that we have all the preliminary setup of the environment we next need to cr
 ### The Session Bean
 The basic requirement for a session bean is that it must implement an interface and be either annotated with **@Stateless** or be registered in an XML file. We are sticking strictly to using annotations. The annotation goes on the class and not the interface, so here's the interface.
 
-**The Interface**
+### The Interface
 First we create a session bean. Here is one such example:
 {% highlight java %}
 package service;
@@ -29,7 +29,7 @@ To create this file,
 # Click on **Finish** then enter the above code into the file
 # Save your file (ctrl-s)
 
-**The Session Bean**
+### The Session Bean
 Next, we need to create a session bean. Here's the code for it:
 {% highlight java %}
 package service.impl;

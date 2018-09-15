@@ -58,7 +58,7 @@ public class LoginServiceTest {
 
 ## Things Created for Compilation
 To get this test to compile (but not yet pass), I had to create a few interfaces and add some methods to them. I also had to create a LoginService class:
-**IAccount**
+### IAccount
 
 {% highlight java %}
 package com.om.example.loginservice;
@@ -69,7 +69,7 @@ public interface IAccount {
 }
 {% endhighlight %}
 
-**IAccountRepository**
+### IAccountRepository
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -78,7 +78,7 @@ public interface IAccountRepository {
 }
 {% endhighlight %}
 
-**LoginService**
+### LoginService
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -106,7 +106,7 @@ PasswordMatches(LoginServiceTest.java:16)
 While the stack trace looks a little daunting, the error seems clear enough. As you'll see, adding a little bit of code in the LoginService class will get the test passing.
 
 ## Code Updated to get Test to turn Green
-**Update: LoginService**
+### Update: LoginService
 The test as written requires that the production code (LoginService) sends a message to a particular IAccount object. The LoginService retrieves accounts via its IAccountRepository, which it received during construction. So all we need to do is remember that particular IAccountRepository object and use it:
 {% highlight java %}
 package com.om.example.loginservice;
@@ -382,7 +382,7 @@ This test first sets the password to matching. However, it also sets a new metho
 
 ## Things Created for Compilation
 First, create the new exception:
-**AccountLoginLimitReachedException**
+### AccountLoginLimitReachedException
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -424,7 +424,7 @@ This test takes advantage of the fact that more specific// **when**// clauses ta
 
 ## Things Created for Compilation
 To get this test to compile, you'll need to add a new exception class:
-**AccountNotFoundException**
+### AccountNotFoundException
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -854,7 +854,7 @@ First, remove the parts of the login method that do not apply to the first time 
 {% endhighlight %}
 
 To get this to pass, you'll need to make a few additions:
-**Add constructor to AfterFirstFailedLoginAttempt**
+### Add constructor to AfterFirstFailedLoginAttempt
 {% highlight java %}
    private String previousAccountId;
 
@@ -866,7 +866,7 @@ To get this to pass, you'll need to make a few additions:
 
 (Note: I'm cheating a bit here, I'm adding the previousAccountId as a field in this class. It will eventually be removed from the abstract base class as it does not apply to the AwaitingFirstLoginAttempt class. This is an example of avoiding violating the [Liskov Substitution Principle](http://www.objectmentor.com/resources/articles/lsp.pdf).)
 
-**Add setState to LoginService**
+### Add setState to LoginService
 {% highlight java %}
    public void setState(LoginServiceState state) {
       this.state = state;
@@ -1091,7 +1091,7 @@ Even so, let's take this to its logical (extreme) conclusion as a way to demonst
 
 #### Extract Class
 Extract a base class for LoginService:
-**LoginServiceContext**
+### LoginServiceContext
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1113,7 +1113,7 @@ public abstract class LoginServiceContext {
 }
 {% endhighlight %}
 
-**Update: LoginService**
+### Update: LoginService
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1153,7 +1153,7 @@ If you want to update your resume, it's time to add:
 I hope you enjoyed your journey.
 
 ## The Final Source Code
-**LoginServiceTest.java**
+### LoginServiceTest.java
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1258,7 +1258,7 @@ public class LoginServiceTest {
 }
 {% endhighlight %}
 ----
-**LoginService.java**
+### LoginService.java
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1281,7 +1281,7 @@ public class LoginService extends LoginServiceContext {
 }
 {% endhighlight %}
 ----
-**LoginServiceContext.java**
+### LoginServiceContext.java
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1302,7 +1302,7 @@ public abstract class LoginServiceContext {
 }
 {% endhighlight %}
 ----
-**LoginServiceState.java**
+### LoginServiceState.java
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1325,7 +1325,7 @@ public abstract class LoginServiceState {
 }
 {% endhighlight %}
 ----
-**AwaitingFirstLoginAttempt.java**
+### AwaitingFirstLoginAttempt.java
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1338,7 +1338,7 @@ public class AwaitingFirstLoginAttempt extends LoginServiceState {
 }
 {% endhighlight %}
 ----
-**AfterFirstFailedLoginAttempt.java**
+### AfterFirstFailedLoginAttempt.java
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1360,7 +1360,7 @@ public class AfterFirstFailedLoginAttempt extends LoginServiceState {
 }
 {% endhighlight %}
 ----
-**AfterSecondFailedLoginAttempt.java**
+### AfterSecondFailedLoginAttempt.java
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1385,7 +1385,7 @@ public class AfterSecondFailedLoginAttempt extends LoginServiceState {
 {% endhighlight %}
 
 ----
-**IAccount.java**
+### IAccount.java
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1399,7 +1399,7 @@ public interface IAccount {
 }
 {% endhighlight %}
 ----
-**IAccountRepository.java**
+### IAccountRepository.java
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1408,7 +1408,7 @@ public interface IAccountRepository {
 }
 {% endhighlight %}
 ----
-**AccountLoginLimitReachedException.java**
+### AccountLoginLimitReachedException.java
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1417,7 +1417,7 @@ public class AccountLoginLimitReachedException extends RuntimeException {
 }
 {% endhighlight %}
 ----
-**AccountNotFoundException.java**
+### AccountNotFoundException.java
 {% highlight java %}
 package com.om.example.loginservice;
 
@@ -1426,7 +1426,7 @@ public class AccountNotFoundException extends RuntimeException {
 }
 {% endhighlight %}
 ----
-**AccountRevokedException.java**
+### AccountRevokedException.java
 {% highlight java %}
 package com.om.example.loginservice;
 

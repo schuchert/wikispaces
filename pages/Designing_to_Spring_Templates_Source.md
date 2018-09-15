@@ -13,20 +13,20 @@ This is an Eclipse 3.2 Archive file with two projects:
 * LoggingUtils
 It also includes all of the necessary jar files to run these examples.
 
-**Get the file and create your workspace**
+### Get the file and create your workspace
 # Download the file
 # Create a directory that will server as your workspace directory, e.g. C:\workspaces\SpringTemplatesExample
 # Unzip the contents of this directory into your workspace directory
 # Start Eclipse 3.2 and select your workspace directory
 
-**Import the included Eclipse Preferences**
+### Import the included Eclipse Preferences
 # File:Import:General:Preferences
 # Click on next
 # Enter <yourworkspace>\EclipsePrefs.epf, e.g. for me it would be: C:\workspaces\SpringTemplatesExample\EclipsePrefs.epf
 # Verify that import all is selected
 # Click Finish
 
-**Import the two extracted projects into the Eclipse workspace**
+### Import the two extracted projects into the Eclipse workspace
 # File:Import:General:Existing Projects into Workspace
 # Click on next
 # Enter the directory of your workspace, e.g. mine would be C:\workspaces\SpringTemplatesExample
@@ -35,7 +35,7 @@ It also includes all of the necessary jar files to run these examples.
 # Click select all
 # Click finish
 
-**Run Examples**
+### Run Examples
 # Wait for the projects to build
 # Execute one of the Java classes called "JdbcExample" in any of the packages contained in the JdbcToSpringTemplates project
 

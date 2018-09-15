@@ -12,14 +12,14 @@ For this course, we have chosen to use no power point slides. Instead, we work w
 * You are comfortable with basic Java programming
 
 ## Guiding Principles
-**Teaching versus Learning**
+### Teaching versus Learning
 * Learning --> Participant doing, experimenting, practicing, talking, interacting, ...
 * Teaching --> Instructor talking, students listening
 * Teaching != learning
 
 In this course we are trying to maximize the time you spending working with projects, from heavily guided tutorials to open-ended projects and problems. The person traditionally called the instructor is acting as a mentor, guide and facilitator.
 
-**Breadth versus Depth**
+### Breadth versus Depth
 * The complete depth of the subject material is too large for a week-long course
 * You are capable of learning on your own after the course
 * Staring with a working example, you are capable of taking it further on your own
@@ -51,14 +51,14 @@ In this course we are trying to give you enough experience with a subset of all 
 * [About_You](About_You)
 
 ### Java Persistence API (JPA)
-**Tutorial 1: Introducing JPA**
+### Tutorial 1: Introducing JPA
 
-**Tutorial 2: Query and Test**
+### Tutorial 2: Query and Test
 
 **Tutorial 3: Mini Application*
 
 ### EJB3 and JPA
-**Tutorial 1: Embeddable Container, First EJB**
+### Tutorial 1: Embeddable Container, First EJB
 
 
 

@@ -25,7 +25,7 @@ title: JMock-Verify_Method_Called_With_Value
 14: }
 {% endhighlight %}
 
-**Common fixture for the tests**
+### Common fixture for the tests
 {% highlight java %}
     Withdrawal withdrawal;
     Mockery context = new Mockery();

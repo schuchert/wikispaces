@@ -19,7 +19,7 @@ title: JPA_Tutorial_1_FAQ
 * **What happens if you manipulate your objects outside of a transaction? ** // In a JSE environment, objects are still managed by the EntityManager. So if you make a change to an object, then later start a transaction and commit it, the changes made outside of the transaction are also sent to the database. If, on the other hand, you close the EntityManager or flush it, the changes are lost.//
 
 ### Brett: What have you learned in this tutorial? 
-**Class responses:**
+### Class responses:
 //
 * Eclipse is good
 * JPA hides a lot of JDBC complexity. 

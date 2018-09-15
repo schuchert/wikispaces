@@ -144,7 +144,7 @@ public class ConfigurableClassFileTransformerRegistrar {
 }
 {% endhighlight %}
 
-**ConfigurableClassFileTransformerRegistrarTest**
+### ConfigurableClassFileTransformerRegistrarTest
 [#ConfigurableClassFileTransformerRegistrarTest](#ConfigurableClassFileTransformerRegistrarTest)
 {% highlight java %}
 package schuchert.agent;

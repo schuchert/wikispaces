@@ -60,7 +60,7 @@ Note that by default, the project you just created is selected. If you rush thou
 * Follow the same instructions as above for creating the View project
 ** Add a project:// **File::New Project**// (⇧⌘N)
 ** Select// **iOS::Application**// on the left side
-** On the right side, select// **Windows-based Application//**
+###  On the right side, select// **Windows-based Application//
 ** Click// **Next**//
 ** Enter a product name. I'll use// **UnitTests**//. You might call this project LogicTests or similar.
 ** Select a device family. I'll be using// **iPhone**//

@@ -4,7 +4,7 @@ title: CppRpnCalculatorStrategyPatternExample
 [<--Back](RpnCalculatorCppExampleImplementation)
 ## Strategy Pattern Example
 Review first the abstract base classes of all strategies (in this case, math operators):
-**MathOperator.h**
+### MathOperator.h
 {% highlight cpp %}
 # ifndef MATHOPERATOR_H
 # define MATHOPERATOR_H
@@ -27,7 +27,7 @@ This defines that any operator can perform its work by having its **execute** me
 * Is as big as memory allows.
 
 Here is an example of a concrete implementation, a factorial method:
-**Factorial.cpp**
+### Factorial.cpp
 {% highlight cpp %}
 void Factorial::execute(OperandStack& stack) {
    int count = stack.pop();
@@ -45,7 +45,7 @@ void Factorial::execute(OperandStack& stack) {
 {% endhighlight %}
 
 Here are the tests that verify it works as expected(using CppUTest):
-**FactorialTest.cpp**
+### FactorialTest.cpp
 {% highlight cpp %}
 # include "CppUTest/TestHarness.h"
 

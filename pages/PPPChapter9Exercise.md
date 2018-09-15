@@ -13,19 +13,19 @@ We just discussed several component coupling principles:
 * **Stable Abstractions Principle**
 
 We also just learned about several metrics we can use to evaluate our components:
-**Instability**
+### Instability
 >> [include_page="InstabilityFormula"](include_page="InstabilityFormula")
 
 **Abstractness** 
 >> [include_page="Abstractness"](include_page="Abstractness")
 
 
-**Distance from Main Sequence**
+### Distance from Main Sequence
 >> [include_page="DistanceFromMainSequence"](include_page="DistanceFromMainSequence")
 
 ----
 What are the values for the original diagram?
-**Middle Tier**
+### Middle Tier
 $$
 C_E = 0
 $$
@@ -46,7 +46,7 @@ $$
 D = |0.143 + 0 - 1| = 0.857
 $$ 
 
-**UI Tier**
+### UI Tier
 ^
 $$
 C_E = 7

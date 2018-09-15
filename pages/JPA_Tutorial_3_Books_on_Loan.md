@@ -16,7 +16,7 @@ We are going to test our way into this.
 ----
 ## Date Support
 We're going to be working with dates extensively. Here is a utility class for working with dates and its test:
-**DateTimeUtil.java**
+### DateTimeUtil.java
 {% highlight java %}
 package util;
 
@@ -119,7 +119,7 @@ public class DateTimeUtil {
 }
 {% endhighlight %}
 
-**DateTimeUtilTest.java**
+### DateTimeUtilTest.java
 {% highlight java %}
 package util;
 

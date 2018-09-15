@@ -100,7 +100,7 @@ This worked OK, but occasionally I wanted to run just one test. This does not se
 
 # Getting Started
 Here is one possible start to this problem (with the first three tests added and passing):
-**The Test**
+### The Test
 Note: Occasionally I experiment with different ways of writing unit tests with JUnit. This is one such example where I attempt to simulate the [domain specific language](http://www.martinfowler.com/bliki/BusinessReadableDSL.html) used by [cucumber](http://cukes.info/).
 {% highlight java %}
 package com.om.shuntingyardalgorithm;
@@ -149,7 +149,7 @@ public class PostfixToInfixTranslatorTest {
 }
 {% endhighlight %}
 
-**The Production Code**
+### The Production Code
 And here's the results after the first three tests:
 {% highlight java %}
 package com.om.shuntingyardalgorithm;

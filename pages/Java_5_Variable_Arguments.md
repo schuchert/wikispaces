@@ -401,23 +401,23 @@ But it does not come without some costs. If you wrap as demonstrated in the 3rd 
 
 # Summary
 
-**Define Variable Arguments**
+### Define Variable Arguments
 {% highlight terminal %}
     public void someMethod(Object... objects) {}
 {% endhighlight %}
 
-**Calling a method that takes them**
+### Calling a method that takes them
 {% highlight terminal %}
     someObject.someMethod("Brett", 11234, object2, 'a');
 {% endhighlight %}
 
-**Calling a method when you already have an array of objects**
+### Calling a method when you already have an array of objects
 {% highlight terminal %}
     Object[] objects = new Object[]{"Brett", 11234, object2, 'a'};
     someObject.someMethod(objects);
 {% endhighlight %}
 
-**Notes**
+### Notes
 * The variable argument parameter must be last
 * You will need to look at the contents of the array of objects
 * This is not something you'll use heavily. Most likely it will support non-functional requirements better than functional requirements.

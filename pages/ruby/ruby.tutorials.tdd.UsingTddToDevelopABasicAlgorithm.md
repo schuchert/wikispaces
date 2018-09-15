@@ -33,26 +33,26 @@ Here are a few examples:
 | a = b += 5 | a b 5 += = |
 
 To better understand the algorithm, consider spending some time reading it [here](http://en.wikipedia.org/wiki/Shunting_yard_algorithm). However, after reviewing the algorithm, you might come up with several issues that your code will need to handle. Here's a list of those issues:
-**Basics**
+### Basics
 * Read tokens from a string (assume space-separated for now)
 * Return space-separated tokens in a string
 
-**Tokens**
+### Tokens
 * Numbers/variables [e.g., 5, x]
 * function calls [e.g. f(), f(3, 1), f(a, b, 3)]
 * Operators
 
-**Operators**
+### Operators
 * unary [e.g., 3 !], binary [e.g. 4 + 5], ternary [ 5 > 3 ? a : b ]
 * Might just be one, [e.g., 4 + 5], or many, [e.g. 4 * 6 / 5 + 2 ^ 6]
 * Precedence, [e.g., * / before + -, before = +=]
 * Operators are associative, left -> right [e.g., +], or right -> left [e.g., ^ =]
 
-**Parenthesis**
+### Parenthesis
 * Used for precedence [e.g., ( 1 + 4 ) * 6]
 * Used in function calls [e.g., f ( 4 , 5 ) ]
 
-**Expressions**
+### Expressions
 * Simple expressions, [e.g., (x + y)]
 * Arbitrarily nestable, [e.g., ( 8 * ( 4 + 1 ) / ( 9 - 12 ) )]
 * With function calls, [e.g., f ( ( a + b ) ^ q / g ( 5, a, 1 ) )]
@@ -675,13 +675,13 @@ The previous two refactorings are examples of "Extract Method" as described in R
 In addition, taking even simple, but certainly complex conditions and putting them into a method can make your code much easier to read and maintain. This is one of those refactorings you should consider nearly all the time.
 
 * Use a ruby idiom to improve adding the operator at the end:
-**From:**
+### From:
 {% highlight ruby %}
     if @operator != nil
       add_to_result(@operator)
     end
 {% endhighlight %}
-**To:**
+### To:
 {% highlight ruby %}
     add_to_result(@operator) if @operator != nil
 {% endhighlight %}
@@ -1196,7 +1196,7 @@ Begin by writing a test that verifies the removal of ()'s from an otherwise empt
 * Create this test, run your unit tests and verify that they fail.
 
 * You can fix this and follow the current approach used in the class by making a change to process and adding a few methods:
-**process**
+### process
 {% highlight ruby %}
   def process(token)
     if is_paren(token)
@@ -1208,7 +1208,7 @@ Begin by writing a test that verifies the removal of ()'s from an otherwise empt
     end
   end
 {% endhighlight %}
-**new methods**
+### new methods
 {% highlight ruby %}
   def is_paren(token)
     token =~ /[\(\)]/
@@ -1237,7 +1237,7 @@ This demonstrates the whole purpose of (), change the natural precedence rules.
 * Add this test, verify that the test fails.
 
 * Here is one way to make it "work":
-**handle_paren**
+### handle_paren
 {% highlight ruby %}
   def handle_paren(token)
     if token == '('
@@ -1251,7 +1251,7 @@ This demonstrates the whole purpose of (), change the natural precedence rules.
   end
 {% endhighlight %}
 
-**precedence_of**
+### precedence_of
 {% highlight ruby %}
   def precedence_of(operator)
     case operator
@@ -1461,7 +1461,7 @@ Notice that the code no longer needs to produce the intermediate result, so now 
 
 * Run your tests, things should still be working.
 
-**Back to Ruby-isms**
+### Back to Ruby-isms
 My colleague, Dean Whampler, reviewed an early version of this tutorial and pointed out that I had created something much more complex than necessary. In retrospect, given that in a previous life I used Smalltalk, I don't have much of an excuse for missing this. However, it's so much better, that I felt the need to fess up.
 
 * Replace the implementation of produce_result:
@@ -1475,7 +1475,7 @@ My colleague, Dean Whampler, reviewed an early version of this tutorial and poin
 
 * Check in your work.
 
-**Refactoring Summary**
+### Refactoring Summary
 You just changed the implementation without breaking any tests, congratulations. Having done this, you have a collection of tokens to work with rather than looking at a string to figure out if a left parenthesis represents a function call or groups an expression.
 
 ## Back to supporting Functions
@@ -1917,12 +1917,12 @@ However, you've made amazing progress on this work. You've:
 * Practiced an important aspect of continuous integration, frequent checkins - which requires that you work in small, tangible steps. That is a **hard** practice to learn and integrate.
 
 # Review
-**The Three Laws**
+### The Three Laws
 * Write no production code without a failing test.
 * Write only enough of a test such that it fails (and not compiling is failing)
 * Write just enough production code to get the tests to pass
 
-**Refactoring**
+### Refactoring
 The three laws are not enough. You refactored code: Remember, refactoring means to change the structure without changing the behavior. In your case, the tests define "the behavior". So long as those tests remain passing, you're refactoring.
 
 There are some basics to consider when refactoring:
@@ -1930,7 +1930,7 @@ There are some basics to consider when refactoring:
 * Only start when all tests are passing. This might mean you disable a test you just added because you need to change the structure of your solution to support the new test (like what you did to support function calls)
 * Refactoring is not a separate activity from coding, it should be integrated as a natural part. Continuous refactoring keeps code clean versus building up large piles of design debt.
 
-**Methods**
+### Methods
 * Should be short and have a single purpose
 * Be written at one level of abstraction
 * Getting the meaning from a method should not require a lot of reading.

@@ -8,7 +8,7 @@ This page describes some of what it takes to successfully test thread-related co
 
 Here is some simple production code:
 
-**ClassWithThreadingProblem.java**
+### ClassWithThreadingProblem.java
 {% highlight java %}
 01: package example;
 02: 
@@ -100,7 +100,7 @@ Here's a description of a test that will prove our code is broken:
 Here is such a test:
 [#ClassWithThreadingProblemTest](#ClassWithThreadingProblemTest)
 
-**ClassWithThreadingProblemTest.java**
+### ClassWithThreadingProblemTest.java
 
 {% highlight java %}
 01: package example;

@@ -21,25 +21,25 @@ This project introduces the mechanics of TDD in C++. Along the way, you will:
 ** Use test doubles to test pure-virtual class
 
 ### Behaviors
-**Round 1**
+### Round 1
 * XRegister should be 0 after creation
 
-**Round 2**
+### Round 2
 * Digits pressed should be in X Register
 * XRegister should not change after pressing enter
 * XRegister should be copied on stack
 * XRegister should be reset on first digit after enter
 * XRegsiter should not be reset on second digit after enter
 
-**Round 3**
+### Round 3
 * Adding 2 numbers correctly
 * Adding 0 numbers OK
 
-**Refactor Stack**
-**Minus, Factorial**
-**Change calculator API**
-**Move to Strategy Pattern**
-**Create Template Method using Test Doubles**
+### Refactor Stack
+### Minus, Factorial
+### Change calculator API
+### Move to Strategy Pattern
+### Create Template Method using Test Doubles
 
 ## Legacy Refactoring/Characterization Testing
 Given a wad of code, write characterization tests for it. Once you've characterized it, use the tests to safely refactor the code.

@@ -9,7 +9,7 @@ As with our first tutorial, we need to be able to start the container. Here's th
 # Select the **src** directory
 # Paste it (**ctrl-v** or right-click and select **paste**)
 
-**JBossUtil.java**
+### JBossUtil.java
 {% highlight java %}
 package util;
 

@@ -158,10 +158,10 @@ Now we need to start Eclipse and make a few minor corrections:
 ** Select Import::Import...
 ** Open General
 ** Select Existing Projects into Workspace
-** Click **Next**
-** Click **Browse**
-** Click **Open**
-** Click **Finish**
+###  Click **Next
+###  Click **Browse
+###  Click **Open
+###  Click **Finish
 
 The generated classpath uses a classpath variable: M2_REPO. Fix that next:
 * Go to the Eclipse Preferences Window (windows->Window:Preferences, Mac->Command,)

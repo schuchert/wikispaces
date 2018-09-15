@@ -81,19 +81,19 @@ What happens when you do not have the infrastructure in place for a unit test, w
 * Add the test and get the infrastructure in place right now
 * Use a TimeBomb
 
-**Option 1**
+### Option 1
 The first option is fine if I'm the only person working on the system. However if I'm working in a team then it really isn't. If you happen to be using continuous integration, this option is even less appealing since the build will remain broken until I can fix this test.
 
-**Option 2**
+### Option 2
 The second option is good but I'm worried I might forget to add the test in. The way my brain works, once I've generally finished a suite of tests in an area I only go back when I start having failures of some kind or if I think of a test I missed. I like having a place holder. Sure, I can look over all of the user stories and the acceptance tests to make sure I didn't miss anything, but I'd rather just stub out all of the tests I'm going to need to write, write a few, get them to compile and run, then write a few more. Your experience may be different.
 
-**Option3**
+### Option3
 The third option is a good one. The IDE can remind me to do something. It's somewhat passive since it doesn't force me to do anything. In my experience as a consultant, large projects end up with numerous warnings and todo's. They end up being noise rather than useful information. I don't like this trend but it's what I've experienced. So I'm not keen on this option alone. I think, however, it might be used in conjunction with other options.
 
-**Option 4**
+### Option 4
 If you can use the forth option, that's the way to go. For this example, which I have taken from some work I'm doing right now, I don't have this option yet. I'm not ready to get to that building block. It will happen in a few days to a week depending on my free time. So for me, this option is not applicable for this situation. If it were, I'd use it.
 
-**Option 5**
+### Option 5
 This leaves the TimeBomb example. This test expects an exception to be thrown. I'm using the TimeBomb class to throw the necessary exception until some time in the future. If I have not remembered to go back and write this test by that future date, TimeBomb will stop throwing the exception and the test will start to fail. It allows me to put a place holder in with an //**active**// reminder to fix it at some point in the future.
 
 I've used this on what has grown to a team of around 60 people (from 6) all working on different applications based on a common architecture. We've been using this kind of thing now for over 3 years and it seems to remain a valuable technique. You can review the code for [TimeBomb](JUnit_4.x#TimeBombCode) below. Since I've written it from scratch on this example, it's pretty small. As I need more methods, I'll add them. It's the idea that is valuable, not the implementation.
@@ -107,7 +107,7 @@ This section contains the full code for the examples mentioned above.
 ----
 [#example1](#example1)
 ### Example 1
-**TestVehicle.java**
+### TestVehicle.java
 {% highlight java %}
 01: package ztest.vehicle.domain;
 02: 
@@ -161,7 +161,7 @@ This section contains the full code for the examples mentioned above.
 ----
 [#example2](#example2)
 ### Example 2
-**VehicleTypeComponentTest.java**
+### VehicleTypeComponentTest.java
 {% highlight java %}
 01: package ztest.vehicle.component.vehicletype;
 02: 

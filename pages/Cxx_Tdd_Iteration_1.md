@@ -43,7 +43,7 @@ Here's the very first thing we'll write:
 18: };
 {% endhighlight %}
 
-**Description**
+### Description
 
 |**Line**|**Description**|
 |1|The key include file for CxxText. CxxTest consists of header files and some source files that get included. You need to make sure your build system can find CxxTest's header files but other than that one requirement, there's nothing else you'll need to do to make CxxTest work.|
@@ -69,7 +69,7 @@ This is our first test, so let's state the goals of a unit test:
 * **Isolated**: A test should have no external dependencies, e.g. setting up a database, or relying on services or resources to be in a particular state. If this is a requirement, it will get broken at some point. This will  may start to happen frequently. When this does, pass/fail lose their meaning. When tests do not reliably indicate pass/fail, people will start to ignore them.
 
 Our first test probably meets all of these criterion, so we'll move on to the second part of the Red phase.
-**Notes**
+### Notes
 * A traditional header file begins looks like this:
 {% highlight terminal %}
    #ifndef XXX_h
@@ -86,7 +86,7 @@ This code won't compile yet:
 ### Red: Get it to compile
 Now we need to create the Die.hpp and Die.cpp to get this to compile.
 
-**Die.hpp**
+### Die.hpp
 {% highlight cpp %}
 # ifndef Die_hpp
 # define Die_hpp
@@ -100,7 +100,7 @@ public:
 # endif
 {% endhighlight %}
 
-**Die.cpp**
+### Die.cpp
 {% highlight cpp %}
 # include "Die.hpp"
 
@@ -113,7 +113,7 @@ int Die::roll() {
 {% endhighlight %}
 
 We need one more piece of boilerplate code to bring this altogether: 
-**main.cpp**
+### main.cpp
 
 {% highlight cpp %}
 # include <cxxtest/ErrorPrinter.h>
@@ -128,7 +128,7 @@ int main( int argc, char* argv[]) {
 ### Red: Getting it to run
 We're going to start by first generating and executing our tests using the command line. Once we've managed to do that, we'll introduce a makefile to handle all of our steps for us.
 
-**The Steps**
+### The Steps
 * Use cxxtestgen, which comes with CxxTest, to generate the source file for your tests
 * Compile and link everything
 * Run your tests
@@ -576,7 +576,7 @@ We are finally ready to work up to our acceptance test. As a reminder, we starte
 So let's write this test. It's related to player, so we'll end up creating PlayerTest.hpp (and Player.hpp and Player.cpp later).
 
 Here's our first test:
-**PlayerTest.hpp**
+### PlayerTest.hpp
 {% highlight cpp %}
 # include <cxxtest/TestSuite.h>
 # include "Dice.hpp"
@@ -596,7 +596,7 @@ public:
 This test simply verifies that after rolling the dice, the player's location is equal to what the player rolls (makes two assumptions: "first" location is numbered 0, player begins there).
 
 This won't compile because we have not yet created the Player class. Here's the minimal amount necessary to get the test to compile:
-**Player.hpp**
+### Player.hpp
 {% highlight cpp %}
 # ifndef Player_hpp
 # define Player_hpp
@@ -614,7 +614,7 @@ public:
 # endif
 {% endhighlight %}
 
-**Player.cpp**
+### Player.cpp
 {% highlight cpp %}
 # include "Player.hpp"
 
@@ -636,7 +636,7 @@ We have two steps that remain:
 * Update the makefile
 * run the tests
 
-**Update the Makefile**
+### Update the Makefile
 We need to add PlayerTest.hpp to the TESTS macro:
 {% highlight terminal %}
 TESTS = DieTest.hpp DiceTest.hpp PlayerTest.hpp
@@ -803,7 +803,7 @@ public:
 {% endhighlight %}
 
 As usual, this test won't yet compile. To get this to compile, we'll need to add Game.hpp and Game.cpp:
-**Game.hpp**
+### Game.hpp
 {% highlight cpp %}
 # ifndef Game_hpp
 # define Game_hpp
@@ -821,7 +821,7 @@ public:
 # endif
 {% endhighlight %}
 
-**Game.cpp**
+### Game.cpp
 {% highlight cpp %}
 # include "Game.hpp"
 # include "Player.hpp"
@@ -853,7 +853,7 @@ Success rate: 85%
 
 No surprise here, we now need to add the code to get the test to pass. So we'll add players to the game and update all of the code to account for that.
 
-**Updated Game.hpp**
+### Updated Game.hpp
 {% highlight cpp %}
 # ifndef Game_hpp
 # define Game_hpp
@@ -876,7 +876,7 @@ private:
 # endif
 {% endhighlight %}
 
-**Updated Game.cpp**
+### Updated Game.cpp
 {% highlight cpp %}
 # include "Game.hpp"
 # include "Player.hpp"
@@ -936,7 +936,7 @@ public:
 
 Based on this, we need to add a play() method to the game and then create a new exception class, InvalidPlayerCount. (Note: throughout these examples we will not be declaring throws clauses.)
 
-**Game.hpp**
+### Game.hpp
 {% highlight cpp %}
 # ifndef Game_hpp
 # define Game_hpp
@@ -960,7 +960,7 @@ private:
 # endif
 {% endhighlight %}
 
-**Game.cpp**
+### Game.cpp
 {% highlight cpp %}
 # include "Game.hpp"
 # include "Player.hpp"
@@ -982,7 +982,7 @@ void Game::play() {
 }
 {% endhighlight %}
 
-**InvalidPlayerCount.hpp**
+### InvalidPlayerCount.hpp
 {% highlight cpp %}
 # ifndef InvalidPlayerCount_hpp
 # define InvalidPlayerCount_hpp
@@ -1094,13 +1094,13 @@ So this acceptance tests speaks to the players starting in a random order. Notic
 {% endhighlight %}
 
 This test requires the addition of two methods to Game: randomizePlayerOrder() and getPlayer(int). To get our test to compile, we need to add the following to Game.hpp and Game.cpp:
-**Game.hpp**
+### Game.hpp
 {% highlight cpp %}
 	void randomizePlayerOrder();
 	Player *getPlayer(int playerNumber);
 {% endhighlight %}
 
-**Game.cpp**
+### Game.cpp
 {% highlight cpp %}
 void Game::randomizePlayerOrder() {
 }

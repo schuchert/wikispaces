@@ -216,7 +216,7 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
 * First Part
 ** Do not allow criticism or debate
 ** Let your imagination soar
-** Shoot for **quantity**
+###  Shoot for **quantity
 ** Mutate and combine ideas
 * **Group** brainstorm project 1
 * Second Part

@@ -15,7 +15,7 @@ This package starts with 72% coverage. Here are the details for each class:
 
 ## The Plan
 
-**IVehicleDaoTest.java**
+### IVehicleDaoTest.java
 
 This first class is a bit of a mess. First, if you read the Emma documentation you'll understand why all of the finally blocks are yellow (partially covered) instaead of fully covered. In a nutshell, the VM does not have direct support for finally blocks. Instead, the compiler is required to make sure every path out of a method executes the finally code. Since we only go through these tests once and only thorugh one path, we cannot execute all the ways in which the finally block could get executed.
 
@@ -25,15 +25,15 @@ There are two tests that are meant to genreate exceptions. So Emma says those li
 
 Finally, there's some very useful information for the createDuplicateVehicle test method. The first line generates an exception (apparently the one I was expecting) and the rest of the test does not execute. This test is simply wrong but generates a false positive. I'll make changes to this test (missed some required setup).
 
-**IRatePlanDaoTest.java**
+### IRatePlanDaoTest.java
 
 The same comments apply for this test as for IVehicleDaoTest. There is one broken test: createRatePlanThatAlreadyExists. I'll fix that (false positive) test and ignore everything else.
 
-**IRentalAgreementDaoTest.java**
+### IRentalAgreementDaoTest.java
 
 Third verse, same as the first. In this case I have the following broken test: createRentalAgreementWithDuplicateId.
 
-**IVehicleTypeDaoTest.java**
+### IVehicleTypeDaoTest.java
 
 I have two broken tests: addVehicleWithNameConflict, addVehicleWithNameConflictAndVehicleInvalid.
 

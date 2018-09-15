@@ -103,7 +103,7 @@ Discuss your differences between the individual exercise and the group exercise
 
 ----
 ## Group Exercise – Estimates
-**In your groups…**
+### In your groups…
 * Remember to make your meeting work
 * Use planning poker on a few cards
 * Notes

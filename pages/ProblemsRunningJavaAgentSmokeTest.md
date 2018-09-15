@@ -5,7 +5,7 @@ title: ProblemsRunningJavaAgentSmokeTest
 If you see anything else, use the output to fix the problem.
 
 Here are some examples:
-**Forget -javaagent**
+### Forget -javaagent
 {% highlight terminal %}
 Exception in thread "main" java.lang.NoClassDefFoundError: schuchert/agent/Main
 {% endhighlight %}
@@ -20,7 +20,7 @@ When starting VM, please specify the following two VM arguments:
 		(e.g. schuchert.ClassFileTransformer=schuchert.agent.NullClassFileTransformer)
 {% endhighlight %}
 
-**Mistype Jarname after -javaagent:**
+### Mistype Jarname after -javaagent:
 {% highlight terminal %}
 Error opening zip file: Registrr.jar
 Error occurred during initialization of VM
@@ -28,11 +28,11 @@ agent library failed to init: instrument
 Abort trap
 {% endhighlight %}
 
-**Forget to define system property**
+### Forget to define system property
 {% highlight terminal %}
 {% endhighlight %}
 
-**System Property Points to Wrong/Mistyped/Missing class**
+### System Property Points to Wrong/Mistyped/Missing class
 {% highlight terminal %}
 java.lang.ClassNotFoundException: BadClassName
 	at java.net.URLClassLoader$1.run(URLClassLoader.java:200)
@@ -64,7 +64,7 @@ When starting VM, please specify the following two VM arguments:
 		(e.g. schuchert.ClassFileTransformer=schuchert.agent.NullClassFileTransformer)
 {% endhighlight %}
 
-**Not Running Main**
+### Not Running Main
 Cannot give an example, other than if you simply mistype the name of the class:
 {% highlight terminal %}
 Exception in thread "main" java.lang.NoClassDefFoundError: schuchert/agent/MainNameWrong

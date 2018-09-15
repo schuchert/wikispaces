@@ -12,7 +12,7 @@ To create this file:
 # Enter **persistence.xml** for the name and click **Finish**
 # Copy and past the following example into the new **persistence.xml** file and save it
 
-**persistence.xml**
+### persistence.xml
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>

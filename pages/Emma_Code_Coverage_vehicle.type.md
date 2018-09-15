@@ -26,10 +26,10 @@ The first thing to notice is that EnumField.java and ObjectField.java have no co
 ### The Plan
 Now for a class-by-class breakdown.
 
-**ListField.java**
+### ListField.java
 There are four unused methods in this class: clone, addAll, iterator, remove. I should have tested these methods, so I'll write unit tests that exercise these methods.
 
-**FieldChangedStatus.java**
+### FieldChangedStatus.java
 This is a Java 5 enumeration and it has 2 unused methods: valueOf and values. I did not write these methods, Java did. Here are some options:
 * Write a unit test to exercise these methods.
 * I could just ignore the results.
@@ -38,7 +38,7 @@ This is a Java 5 enumeration and it has 2 unused methods: valueOf and values. I 
 
 I have few enumerations so I'll just write a unit test to exercise these methods and get my line coverage up.
 
-**AbstractObject.java**
+### AbstractObject.java
 Most of the lines not covered are in an exception block. I could do the following:
 * Create a test subclass that generates CloneNotSupported to exercise that code.
 * Same thing, but use an anonymous inner class.
@@ -48,21 +48,21 @@ In this case, this exception block handles a situation I really do not ever expe
 
 The other method not covered is a isX method so I'll simply exercise that with a unit test.
 
-**ClassAndMessage.java**
+### ClassAndMessage.java
 This class has a get method and toString no covered. As in other situations, I'll exercise these methods with a test.
 
-**FloatField.java**
+### FloatField.java
 There are two unused constructors. I could test them but I'm going to delete them instead (assuming there's no compilation errors). I have not needed them yet and if I need them in the future, I'll add them back in. By the way, I'll actually remove the code, not simply comment it out, which is a common thing I've observed across numerouse years and projects. I'm using subversion so I won't lose any code if I delete it.
 
 The clone method is also not tested so I'll fix that with a unit test.
 
-**ValidationStatus.java**
+### ValidationStatus.java
 This is another enumeration class. I'll use the same apporach as for FieldChangedStatus above.
 
-**StringField.java**
+### StringField.java
 There is one unused default constructor. I'll remove it (again, assuming everything compiles).
 
-**AbstractField.java**
+### AbstractField.java
 This class already has 85% coverage. Even so, it has the following uncovered lines:
 * A catch block.
 * An else clause when validating a field with no validator.
@@ -72,10 +72,10 @@ This class already has 85% coverage. Even so, it has the following uncovered lin
 
 Given that the coverage is already at 85%, I won't do anything with this class.
 
-**Result.java**
+### Result.java
 This class has 94% coverage and the only thing uncovered is a get method, so I'll leave this one alone.
 
-**IntegerField.java**
+### IntegerField.java
 It has 100% coverage.
 
 ### The Results

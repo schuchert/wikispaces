@@ -67,86 +67,86 @@ If during any iteration your total remaining story points is < half of your pred
 | |6|+1d6| |6|+1d6|or negative|
 
 ## Example
-**Iteration 1**
+### Iteration 1
 * Remaining Story Points = 65 (what we started with)
 * Velocity = 10 (guess - or based on planning poker)
 
-**Actual Velocity**
+### Actual Velocity
 Roll 1d6 --> 6. The table says add 3d6 (rolled 14)
 Actual Velocity = 10 + 14 --> 24 (we completed 24 story points)
 
-**Story Points Added/Removed**
+### Story Points Added/Removed
 Roll 1d6 --> 5. The table says add 2d6 (rolled 9), so we added 9 more story points of work
 
-**Changes to Estimates**
+### Changes to Estimates
 Roll 1 = 8, Roll 2 = 7, Change = 8 - 7 --> +1
 
-**Story Points Remaining**
+### Story Points Remaining
 Initial = 65 - completed (24) + points added/removed (9) + Changes (1) --> 51 points
 
-**Iteration 2**
+### Iteration 2
 * Story Points Remaining = 51
 * Velocity = 24 (from iteration 2)
 
-**Actual Velocity**
+### Actual Velocity
 Previous = 24, Roll = 2, -2d6 (9), actual velocity = 15
 
-**Story Points Added/Removed**
+### Story Points Added/Removed
 Roll = 6, +3d6 (8)
 
-**Changes to Estimates**
+### Changes to Estimates
 Roll 1 = 9, Roll 2 = 7 --> +2
 
-**Story Points Remaining**
+### Story Points Remaining
 Initial = 51 - completed (15) + points added/removed (8) + changes(2) --> 46
 
-**Iteration 3**
+### Iteration 3
 (Note we use new tables)
 * Story Points Remaining = 46
 * Velocity = 15
 
-**Actual Velocity**
+### Actual Velocity
 Roll 1d6 (5) --> +1d6 (1) --> 15 + 1 --> 16
 
-**Story Points Added/Removed**
+### Story Points Added/Removed
 Roll 1d6 (3) --> -1d6 --> -4
 
-**Changes to Estimates**
+### Changes to Estimates
 Roll 1 (2d6) = 10, Roll 2 (2d6) = 12, Roll 1 - Roll 2 = -2
 
-**Story Points Remaining**
+### Story Points Remaining
 Initial = 46 - completed (16) + points added/removed (-4) + changes(-2) --> 24
 
-**Iteration 4**
+### Iteration 4
 * Story Points Remaining = 24
 * Velocity = 15
 
-**Actual Velocity**
+### Actual Velocity
 Roll 1d6 = 1 --> -2d6 (4) --> 15 - 4 --> 11
 
-**Story Points Added/Removed**
+### Story Points Added/Removed
 Roll 1d6 (1) --> -2d6 (-9)
 
-**Changes to Estimates**
+### Changes to Estimates
 Roll 1 = 17, Roll 2 = 8, 17 - 8 = 9
 
-**Story Points Remaining**
+### Story Points Remaining
 Initial = 24 - completed (11) + points added/removed(-9) + changed(9) --> 15
 
-**Iteration 5**
+### Iteration 5
 * Story Points Remaining = 15
 * Velocity = 11
 
-**Actual Velocity**
+### Actual Velocity
 Roll 1d6 (4) --> +1d6 (6) --> 17
 
-**Story Points Added/Removed**
+### Story Points Added/Removed
 Roll 1d6 (3) --> -1d6 (-5)
 
-**Changes to Estimates**
+### Changes to Estimates
 Roll 1 = 15, Roll 2 = 12 --> +3
 
-**Story Points Remaining**
+### Story Points Remaining
 Initial = 15 - completed (17) + points added/removed (-5) + changes(3) ==> -4 (we finished!)
 
 ### Example Summary

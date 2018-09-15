@@ -14,7 +14,7 @@ Here are the details for this package:
 This is a small package that manages the bean factory configuration. We'll look at each class, but before we do I think it's interesting that there are lines in the test class that do not execute.
 
 ## The Plan
-**CarRentalBeanFactory.java**
+### CarRentalBeanFactory.java
 There are a few things not covered in my bean factory:
 * A private constructor
 * An exception catch block
@@ -44,7 +44,7 @@ I'll write a test for this situation. It should be tested. Of course, as you'll 
 ### Default Package
 I could create a class in the test directory in the default package to verify this code. Since the class is in the same package as the class, I'll change the access to package and test the method with a bogus class I add to the default pacakge.
 
-**CarRentalBeanFactoryTest.java**
+### CarRentalBeanFactoryTest.java
 
 There is one line considered not covered by emma:
 

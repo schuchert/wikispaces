@@ -65,7 +65,7 @@ To create your own data source, you basically copy both of these and update the 
 
 To use this, you need to do two things. Update persistence.xml and start a HSQL server.
 
-**Update persistence.xml**
+### Update persistence.xml
 Replace the following line:
 {% highlight xml %}
 <jta-data-source>java:/DefaultDS</jta-data-source>

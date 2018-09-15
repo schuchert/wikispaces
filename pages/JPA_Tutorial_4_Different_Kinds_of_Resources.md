@@ -26,7 +26,7 @@ You get the idea, it's a lot of work to make this change. That's why we'll do th
 Note the source code for all of these changes is at the bottom of this page.
 
 ### The Updated Entities
-**Resource.java**
+### Resource.java
 {% highlight java %}
 package entity;
 
@@ -173,7 +173,7 @@ public abstract class Resource {
 {% endhighlight %}
 
 It turns out that this change touched all of the entities. So here are the rest of the entities changed to reflect this new base class.
-**Book.java**
+### Book.java
 This class lost a lot of its methods as they were moved up to to Resource.
 {% highlight java %}
 package entity;
@@ -306,7 +306,7 @@ public class Book extends Resource {
 }
 {% endhighlight %}
 
-**Fine.java**
+### Fine.java
 We need to change all of Book references to instead be Resource.
 {% highlight java %}
 package entity;
@@ -383,7 +383,7 @@ public class Fine {
 }
 {% endhighlight %}
 
-**LoanId.java**
+### LoanId.java
 Change the bookId to resourceId, update the names queries that refer to book to instead refer to Resource.
 {% highlight java %}
 package entity;
@@ -438,7 +438,7 @@ public class LoanId implements Serializable {
 }
 {% endhighlight %}
 
-**Loan.java**
+### Loan.java
 Loan refers to resource instead of book. This includes its join columns and named queries.
 {% highlight java %}
 package entity;
@@ -592,7 +592,7 @@ public class Loan {
 }
 {% endhighlight %}
 
-**Patron.java**
+### Patron.java
 The changes to Patron are a little less extreme. Other than some comments referring to books (you can find them), one method changed:
 {% highlight java %}
     public void checkout(final Resource r, final Date checkoutDate) {
@@ -609,7 +609,7 @@ The changes to Patron are a little less extreme. Other than some comments referr
 How can you easliy go about doing this? Use the refactor factor in Eclipse. Select an exception class, right-click and select Refactor:Rename and enter a new name. You can also do the same thing by selecting the attribute name, right-click, refactor:rename and enter the new name. Make sure to select the bottom two selections regarding renaming the getter and setter.
 
 ### The Dao's
-**BookDao.java**
+### BookDao.java
 Most of the functionality that was in BookDao is now in ResourceDao.java. Why is this? Or better yet, why is the a BookDao at all? Look at the one method and answer the question for yourself (or ask).
 
 Here's an updated version of BookDao:
@@ -631,7 +631,7 @@ public class BookDao extends BaseDao {
 }
 {% endhighlight %}
 
-**Library.java**
+### Library.java
 The Library has several changes. First, most references to Book have been replaced with Resource. Second, it now has 4 dao's instead of 3 (BookDao became ResourceDao and there's a new BookDao).
 {% highlight java %}
 package session;
@@ -789,7 +789,7 @@ public class Library {
 }
 {% endhighlight %}
 
-**LoanDao.java**
+### LoanDao.java
 This class no longer knows about books, it only knows about resources.
 {% highlight java %}
 package session;
@@ -882,7 +882,7 @@ public class LoanDao extends BaseDao {
 }
 {% endhighlight %}
 
-**ResourceDao.java**
+### ResourceDao.java
 Many of the BookDao functions are now here and they work with Resources intead of with Books (or rather they work with both but the interface deals with Resources).
 {% highlight java %}
 package session;
@@ -922,10 +922,10 @@ public class ResourceDao extends BaseDao {
 
 ### The Tests
 
-**BookDaoTest.java**
+### BookDaoTest.java
 Removed (or moved to ResourceDaoTest, take your pick).
 
-**LibraryTest.java**
+### LibraryTest.java
 Updated to work primarily with Resources instead of Books. Also, added additional initialization code since the library now has four dao's instead of 3.
 {% highlight java %}
 package session;
@@ -1202,10 +1202,10 @@ public class LibraryTest extends EntityManagerBasedTest {
 }
 {% endhighlight %}
 
-**PatronDao.test**
+### PatronDao.test
 Only a comment changes in this one. If you use Eclipse's refactoring feature, it automatically gets updated.
 
-**ResourceDaoTest.java**
+### ResourceDaoTest.java
 The renamed and updated BookDaoTest.java. This class still builds books (they are currently the only kind of concrete subclass of entity).
 {% highlight java %}
 package session;

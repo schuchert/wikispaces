@@ -8,7 +8,7 @@ This is another example where the last test actually validates that certain mess
 * The test also allows **SummaryReportPrinter.Transaction.getBalance()** to be called any number of times
 
 ----
-**PointOfSaleTerminalTest**
+### PointOfSaleTerminalTest
 {% highlight java %}
 package com.objectmentor.post;
 
@@ -117,7 +117,7 @@ public class PointOfSaleTerminalTest {
 {% endhighlight %}
 
 ----
-**PointOfSaleTerminal**
+### PointOfSaleTerminal
 {% highlight java %}
 package com.objectmentor.post;
 
@@ -166,7 +166,7 @@ public class PointOfSaleTerminal {
 {% endhighlight %}
 
 ----
-**SummaryReportPrinter**
+### SummaryReportPrinter
 {% highlight java %}
 package com.objectmentor.post;
 
@@ -178,7 +178,7 @@ public interface SummaryReportPrinter {
 {% endhighlight %}
 
 ----
-**Transaction**
+### Transaction
 {% highlight java %}
 package com.objectmentor.post;
 

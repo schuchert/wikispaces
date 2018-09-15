@@ -1,7 +1,7 @@
 ---
 title: RhinoMocks.examples.SampleLoginApplication
 ---
-**LoginServiceTest**
+### LoginServiceTest
 {% highlight csharp %}
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -63,7 +63,7 @@ namespace s_04_using_mock_library
 }
 {% endhighlight %}
 
-**IAccount**
+### IAccount
 {% highlight csharp %}
 namespace s_04_using_mock_library
 {
@@ -74,7 +74,7 @@ namespace s_04_using_mock_library
 }
 {% endhighlight %}
 
-**IAccountProvider**
+### IAccountProvider
 {% highlight csharp %}
 namespace s_04_using_mock_library
 {
@@ -85,7 +85,7 @@ namespace s_04_using_mock_library
 }
 {% endhighlight %}
 
-**LoginService**
+### LoginService
 {% highlight csharp %}
 namespace s_04_using_mock_library
 {

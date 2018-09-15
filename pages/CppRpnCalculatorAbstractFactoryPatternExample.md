@@ -7,7 +7,7 @@ title: CppRpnCalculatorAbstractFactoryPatternExample
 This section has an example of an abstract factory and two concrete implementations. The abstract factory returns math operators used by a calculator. The operators are examples of the Strategy pattern, aka function object, functor. 
 
 Here's the abstract factory class:
-**MathOperatorFactory.h**
+### MathOperatorFactory.h
 {% highlight cpp %}
 # ifndef MATHOPERATORFACTORY_H
 # define MATHOPERATORFACTORY_H
@@ -27,7 +27,7 @@ public:
 # endif
 {% endhighlight %}
 
-**MathoOperatorFactory.cpp**
+### MathoOperatorFactory.cpp
 {% highlight cpp %}
 
 # include "MathOperatorFactory.h"
@@ -42,7 +42,7 @@ MathOperatorFactory::~MathOperatorFactory(void)
 {% endhighlight %}
 
 Here's a basic factory that provides MathOperators using conditional and static variables within a method:
-**IfBasedMathOperatorFactory.cpp**
+### IfBasedMathOperatorFactory.cpp
 {% highlight cpp %}
 # include "IfBasedMathOperatorFactory.h"
 # include "Plus.h"
@@ -80,7 +80,7 @@ MathOperator &IfBasedMathOperatorFactory::getOperatorNamed(const std::string &op
 {% endhighlight %}
 
 And here's one that uses words like "plus" and "factorial" instead of "+" and "!":
-**FullyNamedMathOperatorFactory**
+### FullyNamedMathOperatorFactory
 {% highlight cpp %}
 # include "FullyNamedMathOperatorFactory.h"
 

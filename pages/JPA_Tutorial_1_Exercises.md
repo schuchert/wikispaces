@@ -14,7 +14,7 @@ Right now the relationship between Person and Company is direct. Let's make that
 
 In order to refactor to the [above] "after" picture consider some of the following advice:
 
-**Create Job**
+### Create Job
 Create a class, Job, with the following attributes:
 > int id
 > String title
@@ -23,10 +23,10 @@ Create a class, Job, with the following attributes:
 > Company company
 > Person person  (added - ** fix diagram **)
 
-**Update Employee**
+### Update Employee
 The Person class should no longer have a Company attribute. Instead it has a Job attribute.
 
-**Update Company**
+### Update Company
 Update Company.hire(). Change the signature to take a person, title, salary. It will then create the job, generate an employeeId, and set up all the relationships and return the job.
 
 Update the Company.fire() as necessary.

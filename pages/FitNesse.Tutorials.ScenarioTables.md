@@ -93,7 +93,7 @@ You'll also need to set the page type to test.
 
 The last table requires a change to the EpisodesInToDoList class and elsewhere:
 
-**Update: EpisodesInToDoList, add no-argument constructor**
+### Update: EpisodesInToDoList, add no-argument constructor
 
 {% highlight java %}
    public EpisodesInToDoList() {
@@ -103,7 +103,7 @@ The last table requires a change to the EpisodesInToDoList class and elsewhere:
 
 This also requires a change to SeasonPassManager since we are passing in a blank programId:
 
-**Update: SeasonPassManager.toDoListContentsFor**
+### Update: SeasonPassManager.toDoListContentsFor
 
 {% highlight java %}
    public List<Program> toDoListContentsFor(String programId) {
@@ -123,7 +123,7 @@ Run this and there are a few problems:
 
 To fix the first problem, you'll need to update DateUtil:
 
-**Update: DateUtil.java, Change h to H**
+### Update: DateUtil.java, Change h to H
 
 {% highlight java %}
    static SimpleDateFormat timeFormat = new SimpleDateFormat("H:mm");
@@ -187,7 +187,7 @@ A quick review of this code and you'll notice it only checks to see if a duplica
 
 Since this is not a tutorial on TDD (at least not directly), here are the unit tests for a new unit test on DateUtil that determines if two date/time ranges conflict with each other. This is an example of a JUnit 4 [Parameterized_Test](Parameterized_Test):
 
-**Create: DateUtilConflictsInTimeWithTest.java**
+### Create: DateUtilConflictsInTimeWithTest.java
 
 {% highlight java %}
 package com.om.example.util;
@@ -259,7 +259,7 @@ public class DateUtilConflictsInTimeWithTest {
 
 This introduces a new public method on the DateUtil class:
 
-**Update: DateUtil.java, add four methods**
+### Update: DateUtil.java, add four methods
 
 {% highlight java %}
    public Date createEndDate(Date startDateTime, int durationInMinutes) {
@@ -290,7 +290,7 @@ This introduces a new public method on the DateUtil class:
 
 Finally, this code is used in TimeSlot:
 
-**Update: TimeSlot.java, add new method**
+### Update: TimeSlot.java, add new method
 
 {% highlight java %}
    public boolean conflictsInTimeWith(TimeSlot other) {
@@ -304,7 +304,7 @@ In my original implementation, I did all of this work in TimeSlot and the origin
 ## Working Back to Story
 Now that the fundamental support is in place, you can go back and update SeasonPassManager:
 
-**Update: SeasonPassManager.java, add method, update other**
+### Update: SeasonPassManager.java, add method, update other
 
 {% highlight java %}
    public Program createNewSeasonPass(String programName, int channel) {
@@ -330,7 +330,7 @@ Now that the fundamental support is in place, you can go back and update SeasonP
 
 This requires a method added to Program (thus avoiding a violation of the Law of Demeter):
 
-**Update: Program.java, add a pass-through method**
+### Update: Program.java, add a pass-through method
 
 {% highlight java %}
    public boolean hasTimeConflictWith(Program other) {
@@ -352,7 +352,7 @@ Upon review, the test data for this test is:
 
 The problem is that the programs W1 and W2, while on different channels, conflict with each other. Right now the DVR can only record one program at a time. So the test is wrong! You need to update this test. You can either update the third row of the table to change the time of the programs or update the query table. I recommend updating the query table since is the assertion that is incorrect:
 
-**Update: Query table, remove an expected result**
+### Update: Query table, remove an expected result
 
 {% highlight terminal %}
 |Query:Episodes in to do list on|3/4/2008   |
@@ -364,7 +364,7 @@ The problem is that the programs W1 and W2, while on different channels, conflic
 
 Run your acceptance test suite, everything should pass. Now, if you have a failing unit test, it requires a similar fix. You need to change the expected size of the list from 4 to 3:
 
-**Update: GenerateProgramsTest.**
+### Update: GenerateProgramsTest.
 
 {% highlight java %}
   public void ReviewToDoListByDay() throws Exception {
@@ -566,7 +566,7 @@ Now run your acceptance test, notice that it only fails on the last line. If you
 
 ## Complete the Fixture
 
-**Update: DvrRecording.java**
+### Update: DvrRecording.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -846,7 +846,7 @@ The first option is causing a test to fix something messed up by other tests. Th
 
 So the best of the options listed is to change the fixtures that clean thins up:
 
-**Update: ClearProgramSchedule.java**
+### Update: ClearProgramSchedule.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -858,7 +858,7 @@ public class ClearProgramSchedule {
 }
 {% endhighlight %}
 
-**Update: AddProgramsToSchedule.java**
+### Update: AddProgramsToSchedule.java
 
 {% highlight java %}
    public static void resetSchedule() {
@@ -866,7 +866,7 @@ public class ClearProgramSchedule {
    }
 {% endhighlight %}
 
-**Update: ClearToDoList.java**
+### Update: ClearToDoList.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -878,7 +878,7 @@ public class ClearToDoList {
 }
 {% endhighlight %}
 
-**Update: CreateSeasonPassFor.java**
+### Update: CreateSeasonPassFor.java
 
 {% highlight java %}
    public static void resetSeasonPassManager() {

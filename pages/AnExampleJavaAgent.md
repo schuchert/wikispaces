@@ -42,7 +42,7 @@ If you want to verify that you can also run a Java Application, do the following
 ## **Under VM arguments:** enter the following: -javaagent:Registrar.jar -Dschuchert.ClassFileTransformer=schuchert.agent.NullClassFileTransformer
 ## Click **Run**
 
-**Recreate Registrar.jar**
+### Recreate Registrar.jar
 # Open the **JavaAgentRegistrar** project
 # Select **RecreateJar.jardesc**
 # Right-click and select **Create JAR*

@@ -10,7 +10,7 @@ Note that we did not also include retrieving a book. We use this functionality i
 
 We've already written a test very much like the above list if you consider PatronTest. We can extract quite a bit of common code out of our PatronTest and reuse it in our BookTest class. Take a look at this base class (note the embedded comments contain background information):
 [#BaseDbDaoTest](#BaseDbDaoTest)
-**BaseDbDaoTest.java**
+### BaseDbDaoTest.java
 {% highlight java %}
 package session;
 
@@ -90,7 +90,7 @@ public abstract class BaseDbDaoTest {
 
 Now let’s see how this impacts the creation of our new BookTest class. We’ll start with everything but the tests and then look at each test.
 
-**Everything but the Tests**
+### Everything but the Tests
 Here is the test class minus all of the tests. 
 {% highlight java %}
 package session;
@@ -133,7 +133,7 @@ public class BookDaoTest extends BaseDbDaoTest {
 }
 {% endhighlight %}
 
-**Creating a Book**
+### Creating a Book
 We wrote this pretty much the same as in the Patron test. It might seem like we could get further reuse between tests and we could but at the cost of probably a bit too much indirection.
 
 {% highlight java %}
@@ -153,7 +153,7 @@ We wrote this pretty much the same as in the Patron test. It might seem like we 
     }
 {% endhighlight %}
 
-**Removing a Book**
+### Removing a Book
 This test method looks just like one in the PatronTest class. If you’re looking for an advanced exercise, consider moving all of the tests in the base class and making the derived class methods use them somehow. Warning, you might want to look up annotation inheritance.
 {% highlight java %}
     @Test
@@ -167,7 +167,7 @@ This test method looks just like one in the PatronTest class. If you’re lookin
     }
 {% endhighlight %}
 
-**Updating a Book**
+### Updating a Book
 {% highlight java %}
     @Test
     public void updateABook() {
@@ -180,7 +180,7 @@ This test method looks just like one in the PatronTest class. If you’re lookin
     }
 {% endhighlight %}
 
-**Try to find a non- existant book**
+### Try to find a non- existant book
 {% highlight java %}
     @Test
     public void tryToFindBookThatDoesNotExist() {
@@ -190,7 +190,7 @@ This test method looks just like one in the PatronTest class. If you’re lookin
 {% endhighlight %}
 
 Note that with the introduction of the base class we’ll also need to make changes to PatronTest. Here’s the updated version of PatronTest taking the new base class into consideration.
-**PatronDaoTest.java Updated**
+### PatronDaoTest.java Updated
 {% highlight java %}
 package session;
 
@@ -283,7 +283,7 @@ public class PatronDaoTest extends BaseDbDaoTest {
 ### The Dao Classes
 The BookDao looks a whole lot like the PatronDao:
 [#BookDao](#BookDao)
-**BookDao.java**
+### BookDao.java
 {% highlight java %}
 package session;
 
@@ -324,7 +324,7 @@ public class BookDao extends BaseDao {
 
 Note that this class depends on a simple base class, the BaseDao, which offers support for storing the Entity Manager attribute:
 [#BaseDao](#BaseDao)
-**BaseDao.java**
+### BaseDao.java
 {% highlight java %}
 package session;
 
@@ -350,7 +350,7 @@ public abstract class BaseDao {
 
 And finally, here’s the updated PatronDao that has been rewritten to use the BaseDao.
 [#PatronDao](#PatronDao)
-**PatronDao.java**
+### PatronDao.java
 {% highlight java %}
 package session;
 
@@ -398,7 +398,7 @@ We’ve added support for a Book and along the way we had to add in a few more c
 
 Now let’s review the code for each of these entities. As with previous examples, pay attention to the embedded comments.
 
-**Address**
+### Address
 {% highlight java %}
 package entity;
 
@@ -505,7 +505,7 @@ public class Address {
 }
 {% endhighlight %}
 
-**Author**
+### Author
 {% highlight java %}
 package entity;
 
@@ -612,7 +612,7 @@ public class Author {
 }
 {% endhighlight %}
 
-**Book**
+### Book
 {% highlight java %}
 package entity;
 
@@ -770,7 +770,7 @@ public class Book {
 }
 {% endhighlight %}
 
-**Name**
+### Name
 {% highlight java %}
 package entity;
 
@@ -826,7 +826,7 @@ public class Name {
 }
 {% endhighlight %}
 
-**Patron**
+### Patron
 {% highlight java %}
 package entity;
 

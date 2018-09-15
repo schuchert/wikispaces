@@ -5,7 +5,7 @@ We will create a session bean that wraps access to the company behind a session 
 
 This dao looks pretty much the same as the session bean from our first EJB example. As with the first example, we've placed the interface in one package and the implementation (the session bean) in a second interface.
 
-**CompanyDao.java**
+### CompanyDao.java
 {% highlight java %}
 package dao;
 
@@ -32,7 +32,7 @@ To create this interface:
 # Click **Finish**
 # Type the code into the file and save it
 
-**CompanyDaoImpl.java**
+### CompanyDaoImpl.java
 {% highlight java %}
 package dao.impl;
 

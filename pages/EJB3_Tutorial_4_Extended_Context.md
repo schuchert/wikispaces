@@ -29,7 +29,7 @@ Here are a few things to note (source for all of these items appears at the end 
 
 For this example, we have a simple entity model. We have an Account that has a bidirectional one-to-many relationship with TollTag objects and a bidirectional one-to-many relationship with Vehicle objects. Normally, one-to-many relationships are lazily fetched. For this example, the relationship with TollTag objects is left as lazily fetched while the relationship with Vehicle objects is eagerly fetched. 
 
-**Account.java**
+### Account.java
 
 {% highlight java %}
 package entity;
@@ -121,7 +121,7 @@ public class Account {
 }
 {% endhighlight %}
 
-**TollTag.java**
+### TollTag.java
 
 {% highlight java %}
 package entity;
@@ -195,7 +195,7 @@ public class TollTag {
 }
 {% endhighlight %}
 
-**Vehicle.java**
+### Vehicle.java
 
 {% highlight java %}
 package entity;
@@ -304,7 +304,7 @@ public class Vehicle {
 
 ## The Session Beans
 
-**AccountInventory.java**
+### AccountInventory.java
 
 {% highlight java %}
 package session;
@@ -357,7 +357,7 @@ public interface AccountInventory {
 }
 {% endhighlight %}
 
-**AccountInventoryBean.java**
+### AccountInventoryBean.java
 
 {% highlight java %}
 package session;
@@ -418,7 +418,7 @@ public class AccountInventoryBean implements AccountInventory {
 }
 {% endhighlight %}
 
-**AccountInventoryExtendedBean.java**
+### AccountInventoryExtendedBean.java
 
 {% highlight java %}
 package session;
@@ -491,7 +491,7 @@ This class performs the same two test algorithms two times each for a total of 4
 |createExampleUsingTollTagsTransactionScoped|Transaction|TollTags|Fails|
 |createExampleUsingTollTagsExtendedScoped|Extended|TollTags|Success|
 
-**AccountInventoryBeanTest.java**
+### AccountInventoryBeanTest.java
 
 {% highlight java %}
 package session;
@@ -623,7 +623,7 @@ The interface seems to be a bit messed up with concepts that relate to both stat
 [#OtherFiles](#OtherFiles)
 ## Other Files
 
-**persistence.xml**
+### persistence.xml
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>

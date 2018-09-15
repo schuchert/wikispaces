@@ -37,7 +37,7 @@ Here's our first goal, create a "board" of one location. We'll use for our data 
 
 Here's our test (in a new test file):
 
-**BoardBuilderTest.hpp**
+### BoardBuilderTest.hpp
 
 {% highlight cpp %}
 01: #include <cxxtest/TestSuite.h>
@@ -77,7 +77,7 @@ Here's a breakdown:
 
 We have to extend our location class and we have to create a BoardBilder class. Here they are:
 
-**Location.hpp**
+### Location.hpp
 
 Note: We've already seen this pattern repeated. Add a method get an attribute that returns a constant value. Then get the test to compile then go back and update to use a real reference. We're going to skip this step and go right to supporting a name attribute. Add the following method and attribute:
 
@@ -96,7 +96,7 @@ private:
 
 Now we need to create the BoardBuilderClass. Here's the header file:
 
-**BoardBuilder.hpp**
+### BoardBuilder.hpp
 
 {% highlight cpp %}
 # ifndef _BOARDBUILDER_HPP
@@ -117,7 +117,7 @@ public:
 
 Next, we need to get our code to compile, so we'll need to add a definition for the buildBoard method:
 
-**BuildBoard.cpp**
+### BuildBoard.cpp
 
 {% highlight cpp %}
 # include "BoardBuilder.hpp"
@@ -133,7 +133,7 @@ Build your system and verify that it compiles. You test should fail.
 ## Green: Get your test to pass
 We've already updated location with a new attribute, name. We need to fill out our definition of the buildBoard method and add any additional missing pieces as well:
 
-**BuildBoard.cpp**
+### BuildBoard.cpp
 
 {% highlight cpp %}
 01: #include "BoardBuilder.hpp"
@@ -326,13 +326,13 @@ Location *createLocation(std::string &line) {
 
 **Note**: To get this to compile you'll need to include "Go.hpp" and "IncomeTax.hpp". You'll also additionally need to add a constructor to Go and IncomeTax that take a parameter:
 
-**Go.hpp**
+### Go.hpp
 
 {% highlight cpp %}
    Go(std::string name = "") : Location(name) {}
 {% endhighlight %}
 
-**IncomeTax.hpp**
+### IncomeTax.hpp
 
 {% highlight cpp %}
    IncomeTax(std::string name = "") : Location(name) {}
@@ -346,7 +346,7 @@ Here are a couple of things to notice:
 * Every time we add a new kind of location we have to update board builder. While this isn't awful, it's going to get ugly.
 * BoardBuilder is good at reading the file and connecting up locations, how about we factor our the construction of different kinds of location into a simple Location factory:
 
-**LocationFactory.hpp**
+### LocationFactory.hpp
 
 {% highlight cpp %}
 # ifndef _LOCATIONFACTORY_HPP_
@@ -364,7 +364,7 @@ public:
 # endif
 {% endhighlight %}
 
-**LocationFactory.cpp**
+### LocationFactory.cpp
 
 {% highlight cpp %}
 # include <boost/tokenizer.hpp>
@@ -399,7 +399,7 @@ Location *LocationFactory::createLocation(std::string &line) {
 
 And we need to update BoardBuilder.cpp:
 
-**BoardBuilder.hpp**
+### BoardBuilder.hpp
 
 {% highlight cpp %}
 # include "BoardBuilder.hpp"
@@ -435,7 +435,7 @@ Now is a great time to checkin.
 # Refactor: Test Smells
 Is it strange that we have a test in BoardBuilder that tests we're creating the correct kinds of locations? Since that is not a responsibility of BoardBuilder but LocationFactory, we should move the test and add missing tests to make sure that LocationBuilder creates every kind of location;
 
-**LocationFactoryTest.hpp**
+### LocationFactoryTest.hpp
 Here is a series of tests to make sure we can create each kind of Location there is:
 
 {% highlight cpp %}
@@ -502,7 +502,7 @@ public:
 
 To make this work, we need to update our LocationFactory:
 
-**LocationFactory.cpp**
+### LocationFactory.cpp
 
 {% highlight cpp %}
 # include <boost/tokenizer.hpp>
@@ -597,7 +597,7 @@ This test compiles as necessary but it does not pass. This might indicate we're 
 
 Since we've already simplified BoardBuilder and taken out its responsibility for building the actual correct kinds of locations, the next change will end up going into LocationFactory:
 
-**LocationFactory.cpp**
+### LocationFactory.cpp
 
 {% highlight cpp %}
 # include <boost/tokenizer.hpp>

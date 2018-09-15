@@ -11,7 +11,7 @@ This page describes some of what it takes to successfully test thread-related co
 ## Broken Code
 Here is some simple production code:
 
-**ClassWithThreadingProblem.java**
+### ClassWithThreadingProblem.java
 
 {% highlight java %}
 01: package com.om.concurrent.example;
@@ -103,7 +103,7 @@ Here's a description of a test that will prove our code is broken:
 
 Here is such a test:
 [#ClassWithThreadingProblemTest](#ClassWithThreadingProblemTest)
-**ClassWithThreadingProblemTest.java**
+### ClassWithThreadingProblemTest.java
 
 {% highlight java %}
 01: package com.om.concurrent.example;
@@ -216,7 +216,7 @@ As of this writing, what you ultimately download is a zip file. That zip file co
 ### Create Project
 * Create a standard Java project in your IDE
 * Create the problem class and test above in some package. (Here are the files without the line numbers for easy copying)
-**ClassWithThreadingProblem**
+### ClassWithThreadingProblem
 
 {% highlight java %}
 package com.om.concurrent.example;
@@ -230,7 +230,7 @@ public class ClassWithThreadingProblem {
 }
 {% endhighlight %}
 
-**ClassWithThreadingProblem**
+### ClassWithThreadingProblem
 
 {% highlight java %}
 package com.om.concurrent.example;

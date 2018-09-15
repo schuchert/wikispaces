@@ -28,7 +28,7 @@ For the remainder of this tutorial, when you see **<project>**, replace it with 
 ## The Entity Model
 We've taken the domain model from the previous EJB tutorial and added a "charge" object. An account has one to many charges associated with it. Otherwise, this domain model is unchanged from the previous tutorial.
 
-**Charge.java**
+### Charge.java
 {% highlight java %}
 package entity;
 
@@ -331,7 +331,7 @@ The test uses Thread.sleep(1000). Why does it do so? Experiment with that value,
 ## Full Sources
 Here is the source for all of the classes not already provided in full above.
 
-**Account.java**
+### Account.java
 {% highlight java %}
 package entity;
 
@@ -433,7 +433,7 @@ public class Account {
 }
 {% endhighlight %}
 
-**Charge.java**
+### Charge.java
 {% highlight java %}
 package entity;
 
@@ -506,7 +506,7 @@ public class Charge {
 }
 {% endhighlight %}
 
-**TollTag.java**
+### TollTag.java
 {% highlight java %}
 package entity;
 
@@ -579,7 +579,7 @@ public class TollTag {
 }
 {% endhighlight %}
 
-**Vehicle.java**
+### Vehicle.java
 {% highlight java %}
 package entity;
 
@@ -685,7 +685,7 @@ public class Vehicle {
 }
 {% endhighlight %}
 
-**AccountInventory.java**
+### AccountInventory.java
 {% highlight java %}
 package session;
 
@@ -713,7 +713,7 @@ public interface AccountInventory {
 }
 {% endhighlight %}
 
-**AccountInventoryBean.java**
+### AccountInventoryBean.java
 {% highlight java %}
 package session;
 
@@ -794,7 +794,7 @@ public class AccountInventoryBean implements AccountInventory {
 }
 {% endhighlight %}
 
-**EqualsUtil.java**
+### EqualsUtil.java
 {% highlight java %}
 package util;
 
@@ -816,7 +816,7 @@ public class EqualsUtil {
 }
 {% endhighlight %}
 
-**JBossUtil.java**
+### JBossUtil.java
 {% highlight java %}
 package util;
 
@@ -980,7 +980,7 @@ public class JBossUtil {
 }
 {% endhighlight %}
 
-**persistence.xml**
+### persistence.xml
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>
@@ -993,7 +993,7 @@ public class JBossUtil {
 </persistence>
 {% endhighlight %}
 
-**AccountInventoryBeanTest.java**
+### AccountInventoryBeanTest.java
 {% highlight java %}
 package session;
 
@@ -1046,7 +1046,7 @@ public class AccountInventoryBeanTest {
 }
 {% endhighlight %}
 
-**tolltag-jms.xml**
+### tolltag-jms.xml
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -1076,7 +1076,7 @@ public class AccountInventoryBeanTest {
 </deployment>
 {% endhighlight %}
 
-**.classpath**
+### .classpath
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>

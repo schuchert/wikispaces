@@ -5,7 +5,7 @@ When we created Person we directly included address information into them. This 
 
 First, we'll create Address:
 [#Address](#Address)
-**Address.java**
+### Address.java
 {% highlight java %}
 package entity;
 
@@ -74,7 +74,7 @@ public class Address {
 {% endhighlight %}
 
 Next, we need to update Person (doing so will cause our unit test class to no longer compile):
-**Person.java**
+### Person.java
 {% highlight java %}
 package entity;
 
@@ -172,7 +172,7 @@ Rerun your tests (**Ctrl-F11**) and make sure everything is all green.
 
 Next, we want to verify that the address we persist is in the database. Update the unit test method as follows:
 
-**PersonTest#insertAndRetrieve**
+### PersonTest#insertAndRetrieve
 {% highlight java %}
     @SuppressWarnings("unchecked")
     @Test

@@ -11,7 +11,7 @@ We recommend you create a copy of your project (or if you are using revision con
 
 We need to create a few basic files: users.properties and roles.properties.
 
-**users.properties**
+### users.properties
 {% highlight terminal %}
 bschuchert=password
 msmith=password
@@ -25,7 +25,7 @@ This file should reside anywhere in the root of a classpath entry. Place this in
 
 By the way, notice that it is users and not user. You can use another name, but this is the default name JBoss uses.
 
-**roles.properties**
+### roles.properties
 {% highlight terminal %}
 bschuchert=admin
 msmith=admin
@@ -39,7 +39,7 @@ The comments from users.properties apply here.
 ## Update Session Bean
 Next we need to configure the bean with security information. As usual, we can use either XML or annotations. Here is an updated version of AccountInventoryBean.java:
 
-**AccountInventoryBean.java**
+### AccountInventoryBean.java
 {% highlight java %}
 package session;
 
@@ -119,7 +119,7 @@ public class AccountInventoryBean implements AccountInventory {
 
 and the updated interface:
 
-**AccountInventory.java**
+### AccountInventory.java
 {% highlight java %}
 package session;
 
@@ -165,7 +165,7 @@ This method now reads in MDB configuration information in the first two calls to
 ----
 ## The Test
 This test attempts one successful and four failed attempts. The names of the methods describe whether we expect success or failure:
-**AccountInventoryBeanTest.java**
+### AccountInventoryBeanTest.java
 {% highlight java %}
 package session;
 

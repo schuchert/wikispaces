@@ -62,12 +62,12 @@ In [previous tutorial](cpptraining.GettingStartedWithFitNesseInCpp), you created
 * Create a new workspace. Select the directory containing two github projects you just checked out. In my case that's **Users/schuchert/src/waat/workspace**
 * Close the Welcome to Eclipse tab.
 * Edit the Eclipse properties:
-** Under General:Workspce, enable **Refresh automatically**
+###  Under General:Workspce, enable **Refresh automatically
 ** Under Eclipse properties:C/C++:Build:Environment, define some environment variables:
-*** **CSLIM_BASE** = **/Users/schuchert/src/cslim/cslim**
-*** **CPPUTEST_BASE** = **/Users/schuchert/src/cslim/cpputest**
+### * **CSLIM_BASE** = **/Users/schuchert/src/cslim/cslim
+### * **CPPUTEST_BASE** = **/Users/schuchert/src/cslim/cpputest
 ** On my Mac, I additionally set:
-*** **GPP** = **/usr/local/bin/g++**
+### * **GPP** = **/usr/local/bin/g++
 ** This allows me to use g++ 4.4 or 4.5 instead of 4.2
 * Apply those changes.
 * Next, select **File:Import**
@@ -212,8 +212,8 @@ You'll notice several warnings about unknown header files. Let's fix that before
 * Edit the project's properties.
 * Under **C/C++ Build:Settings**, select the C Compiler settings (That's C not C++!)
 * Select the **Includes** and make the following additions:
-** **"${CSLIM_BASE}/include/CSlim"**
-** **"${CSLIM_BASE}/include/Com"**
+###  **"${CSLIM_BASE}/include/CSlim"
+###  **"${CSLIM_BASE}/include/Com"
 * Save your changes (click **Apply** then **OK**, or just **OK** if you're feeling lucky)
 
 Next, create another new file called **Fixtures.c**: 
@@ -229,7 +229,7 @@ SLIM_END
 I'm having you preemptively add in the name of a fixture you have yet to write.
 
 Now it's time to create the fixture. Since this is a mechanics tutorial, I'll give you the fixture source code:
-**ExecuteBinaryOperator.cpp**
+### ExecuteBinaryOperator.cpp
 
 {% highlight cpp %}
 # include <stdlib.h>
@@ -311,8 +311,8 @@ You'll notice a few more warnings about unknown include files. You'll add a few 
 * Edit the project's properties
 * Select **C/C++ Build:Settings**
 * Now select **GCC C++ Compiler** (or similar) and under **Includes** add:
-** **${workspace_loc:/RpnCalculatorInCpp}**
-** **"${CSLIM_BASE}/include/CSlim"**
+###  **${workspace_loc:/RpnCalculatorInCpp}
+###  **"${CSLIM_BASE}/include/CSlim"
 * Apply those changes.
 
 Notice that there's still one missing header file. This is in another library that I've written to make writing C++ cslim fixtures a bit easer:
@@ -344,14 +344,14 @@ Resolving deltas: 100% (1/1), done.
 * //**Warning**//: As of this writing, there is a "missing" method in the cslim library. You'll need to make two changes to the cslim library that you've downloaded to resolve this.
 
 ### Updating CSlim Library
-**<cslim_base>/include/CSlim/SlimListSerializer.h**
+### <cslim_base>/include/CSlim/SlimListSerializer.h
 Add the following function declaration to the header file:
 
 {% highlight cpp %}
 void SlimList_Release(char *serializedList);
 {% endhighlight %}
 
-**<cslim_base>/src/CSlim/SlimListSerializer.h**
+### <cslim_base>/src/CSlim/SlimListSerializer.h
 Add a function declaration to the source file:
 
 {% highlight cpp %}
@@ -371,15 +371,15 @@ Now if you try to build the project, it will compile but it will not link.
 * Edit the project's settings
 * Find the linker settings under **C/C++ Build:Linker**
 * Edit the **Libraries** and add the following list:
-** **CSlim**
-** **RpnCalculatorInCpp**
-** **CppUTest**
-** **CSlimCppExtensions**
+###  **CSlim
+###  **RpnCalculatorInCpp
+###  **CppUTest
+###  **CSlimCppExtensions
 * Edit he **Library search path** and add the following list:
-** **${workspace_loc:/RpnCalculatorInCpp/Debug}**
-** **${CSLIM_BASE}/lib**
-** **${CPPUTEST_BASE}/lib**
-** **${workspace_loc:/CSlimCppExtensions/Debug}**
+###  **${workspace_loc:/RpnCalculatorInCpp/Debug}
+###  **${CSLIM_BASE}/lib
+###  **${CPPUTEST_BASE}/lib
+###  **${workspace_loc:/CSlimCppExtensions/Debug}
 * Save your changes and build again
 
 You should now be able to run this executable. If you do, you'll see in red text:

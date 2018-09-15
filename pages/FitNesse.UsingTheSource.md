@@ -37,11 +37,11 @@ You can actually skip to the next step if you're feeling lucky.
 ## Run It
 * cd to the directory where you extracted the zip file
 * Type:
-**Unix**
+### Unix
 {% highlight terminal %}
 > sh run.sh -p 8080
 {% endhighlight %}
-**DOS**
+### DOS
 {% highlight terminal %}
 > run.bat -p 8080
 {% endhighlight %}

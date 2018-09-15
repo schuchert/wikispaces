@@ -66,7 +66,7 @@ A few guidelines: Inheritance is often overused. Take the following into conside
 
 Something that does one thing or a few highly-related things well is cohesive. Something that does many less-related things is not-cohesive. 
 
-**Example 1**
+### Example 1
 In the inheritance example, we described two example hierarchies:
 [[image:GuiPlatformHierarchy.gif width="901"]]
 
@@ -76,7 +76,7 @@ In the first diagram we couple the notion and Gui Component and Platform into on
 
 What happens if we add a new platform? In the first example we have to add one new class for each kind of Gui Component (currently 3, but you can imagine there would be more like 20+). In the second example, we add one class.
 
-**Example 2**
+### Example 2
 Imagine I have a database that stores Vehicles. I need to create, read, update and delete vehicles. Before I do so I need to validate that the vehicles are well-defined. So I have two basic kinds of requirements:
 * Manage rows in a database
 * Perform data validation
@@ -88,7 +88,7 @@ If I choose to write this using code in a general programming language (versus d
 
 The first option is less cohesive than the second. One class does what might be considered two sets of things (I say might be considered because different people looking at those requirements might not agree that they are really different, it's a matter of perspective). I think the third option is probably a bit too split up. Why? Because there's a lot of commonality behind what you need to do when Creating, Reading, Updating and Deleting so putting those together offers some advantages. However, it's definitely bad (neither is the first option).
 
-**Why do you care?**
+### Why do you care?
 Sometimes we don't care. For example, in a home stereo system with multiple components (e.g. DVD Player, Amplifier, Pre-Amp, Speakers, Cassette Player), the individual components are cohesive. A boom box does not share the same level of cohesion. Which is better?
 
 Neither, they server different purposes. Sometimes doing lots of things in one package is exactly what you want. However, there are some costs (in both situations):
@@ -149,10 +149,10 @@ Variations:
 ## Square Law of Computation
 The complexity to solve a problem grows at least as fast as the square of the number of things you are trying to solve - Weinberg, Introduction to General Systems Thinking
 
-**Example 1**
+### Example 1
 If I try to solve 4 things at once, versus solving each of those 4 things individually, the relative complexity is 4x4 16 versus 4.
 
-**Example**
+### Example
 When we had one hierarchy to represent both Gui Components and Platforms versus two hierarchies. The complexity of adding a new Platform in the first example was equal to N (where N is the number of kinds of Gui components, probably 20+). In the second case it was 1.
 
 Often we strive to try to separate our problems so we can solve them individually. We call this divide and conquer. The Square Law of Computation

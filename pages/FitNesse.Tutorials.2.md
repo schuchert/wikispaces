@@ -238,7 +238,7 @@ Round 1 is simply getting a fixture that will make this test pass. To do this, t
 
 Execute the test with these two new tables. You'll find you need to create two fixtures:
 
-**CreateSeasonPassFor.java**
+### CreateSeasonPassFor.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -253,7 +253,7 @@ public class CreateSeasonPassFor {
 }
 {% endhighlight %}
 
-**EpisodesInToDoList.java**
+### EpisodesInToDoList.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -273,7 +273,7 @@ public class EpisodesInToDoList {
 
 Create these two fixtures and execute the test. While it is not passing, this is a good start. Next, we'll actually update one fixture to get the production test passing:
 
-**EpisodesInToDoList.java**
+### EpisodesInToDoList.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -330,7 +330,7 @@ Here's what we need to have happen:
 
 In the two types of DVR's I've owned, there's been something called the "Season Pass Manager." So this is where we can start:
 
-**SeasonPassManagerTest.java**
+### SeasonPassManagerTest.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -380,7 +380,7 @@ public class SeasonPassManagerTest {
 }
 {% endhighlight %}
 
-**SeasonPassManager.java**
+### SeasonPassManager.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -406,7 +406,7 @@ public class SeasonPassManager {
 }
 {% endhighlight %}
 
-**Update: Schedule.java**
+### Update: Schedule.java
 
 {% highlight java %}
    public List<Program> findProgramsNamedOn(String programName, int channel) {
@@ -454,7 +454,7 @@ We need to replace that with code that will turn an object or list into a list i
 
 Rather than describe this in great detail (you can review the source and embedded unit tests), here is a first example:
 
-**Update: Add Unit Test to SeasonPassManagerTest.java**
+### Update: Add Unit Test to SeasonPassManagerTest.java
 
 {% highlight java %}
    @Test
@@ -469,7 +469,7 @@ Rather than describe this in great detail (you can review the source and embedde
 
 Note, this example requires the addition of one more method to SeasonPassManager.java:
 
-**Update: SeasonPassManager.java**
+### Update: SeasonPassManager.java
 
 {% highlight java %}
    public Iterable<?> toDoListIterator() {
@@ -495,7 +495,7 @@ Not to worry, we can promote those fields up to our results in one of two ways:
 
 The first option might seem simple, but it will involve putting fixture-specific code in our domain object, which is a bad idea. Instead, we'll create a custom property handler to perform the promotion of the fields instead:
 
-**Create: TimeSlotPropertyHandler.java**
+### Create: TimeSlotPropertyHandler.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -529,7 +529,7 @@ public class TimeSlotPropertyHandler extends PropertyHandler {
 ### Slightly Updated Test
 This test, which you might have put in SeasonPassManagerTest should no longer be in that class. Why? The class you just created is in the fixtures package. The SeasonPassManagerTest is in the domain package. The domain package should not point to the fixtures package. So leave that test as it is and instead create a new test class:
 
-**Create: QueryResultBuilderExampleTest**
+### Create: QueryResultBuilderExampleTest
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -598,7 +598,7 @@ com.om.reflection.PropertyDoesNotExistInBeanException: Propery: timeSlot,
 
 This exception is telling you that when you tried register a property handler for timeSlot, there was no corresponding getter method. To get this to work, you will need to add some getter methods to Program:
 
-**Update: Program.java**
+### Update: Program.java
 
 {% highlight java %}
    public String getProgramName() {
@@ -619,7 +619,7 @@ Once you get your tests passing, remove the old version of the queryResultBuilde
 ### Updating the Fixtures
 To complete this wiring, you'll need to make some updates to the fixtures:
 
-**Update: CreateSeasonPassFor.java**
+### Update: CreateSeasonPassFor.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -650,7 +650,7 @@ public class CreateSeasonPassFor {
 
 This also requires a change to SeasonPassManager:
 
-**Update: SeasonPassManager.java**
+### Update: SeasonPassManager.java
 
 {% highlight java %}
    public Program createNewSeasonPass(String programName, int channel) {
@@ -695,7 +695,7 @@ public class EpisodesInToDoList {
 
 And finally, this requires another change to SeasonPassManager (overly simplistic, maybe, but enough for our tests):
 
-**Update: SeasonPassManager.java**
+### Update: SeasonPassManager.java
 
 {% highlight java %}
    public List<Program> toDoListContentsFor(String programId) {
@@ -828,7 +828,7 @@ The test fails! Why? It is not finding the import included in the original SetUp
 ## Fix the Production Code
 To fix this problem, we need to make a few changes.
 
-**Add Method to: Program.java**
+### Add Method to: Program.java
 
 {% highlight java %}
    public boolean sameEpisodeAs(Program program) {
@@ -838,7 +838,7 @@ To fix this problem, we need to make a few changes.
    }
 {% endhighlight %}
 
-**Update: SeasonPassManager.java**
+### Update: SeasonPassManager.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -924,7 +924,7 @@ Either of the last two options are fine. Given we have not created a TearDown pa
 
 To make this work, you'll need a matching fixture:
 
-**Create: ClearProgramSchedule.java**
+### Create: ClearProgramSchedule.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -938,7 +938,7 @@ public class ClearProgramSchedule {
 
 And finally, this requires you to add a method to Schedule:
 
-**Add Method To: Schedule.java**
+### Add Method To: Schedule.java
 
 {% highlight java %}
    public void clear() {

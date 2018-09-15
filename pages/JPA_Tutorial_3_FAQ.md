@@ -52,7 +52,7 @@ Questions//
 
 ### //Responses to questions in the exercises//
 * A Patron can return a book while having an overdue book
-**Below are the tests to check everything:**
+### Below are the tests to check everything:
 And the new feature that doesn't allow to checkout with overdue books.
 
 These tests are in LibraryTest.java
@@ -106,7 +106,7 @@ These tests are in LibraryTest.java
 
 {% endhighlight %}
 
-**And here are the changes in project:**
+### And here are the changes in project:
 
 There is a new exception class called: **PatronHasOverdueBooks**
 Here it is:
@@ -153,7 +153,7 @@ Also, in Library class, the new method: getNumberOfOverdueBooksOfPatron
 
 {% endhighlight %}
 
-**LoanDao can return the number of overdue books of specific Patron:**
+### LoanDao can return the number of overdue books of specific Patron:
 {% highlight java %}
     /**
      * Return number of overdue books of this patron

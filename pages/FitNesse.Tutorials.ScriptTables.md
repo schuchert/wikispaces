@@ -131,7 +131,7 @@ Why? This gives you the ability to set the system date and run the system with a
 
 Here is the new class, DateUtil, to capture all of the date formatting carried out by various parts of the solution. I added this to account for violations of the DRY principle. Rather than walk you through all of that, I'm simply providing my changes.
 
-**Create: DateUtil.java**
+### Create: DateUtil.java
 
 {% highlight java %}
 package com.om.example.util;
@@ -182,7 +182,7 @@ public class DateUtil {
 }
 {% endhighlight %}
 
-**Update: AddProgramsToSchedule**
+### Update: AddProgramsToSchedule
 
 {% highlight java %}
    public void execute() throws ParseException {
@@ -198,7 +198,7 @@ public class DateUtil {
 {% endhighlight %}
 **Note**: When you make this change, you'll have an unused method, **buildStartDateTime**. Remove it.
 
-**Update: TimeSlotPropertyHandler**
+### Update: TimeSlotPropertyHandler
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -227,7 +227,7 @@ public class TimeSlotPropertyHandler extends PropertyHandler {
 }
 {% endhighlight %}
 
-**Update: GeneratePrograms**
+### Update: GeneratePrograms
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -313,7 +313,7 @@ Now it is time to review the to do list by date rather than by program id. Here'
 
 Here's the code to make this work:
 
-**Create: EpisodesInToDoListOn.java**
+### Create: EpisodesInToDoListOn.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -344,7 +344,7 @@ public class EpisodesInToDoListOn {
 }
 {% endhighlight %}
 
-**Update: DateUtil.java**
+### Update: DateUtil.java
 
 {% highlight java %}
    public boolean isSameDate(Date startDateTime, Date date) {
@@ -356,7 +356,7 @@ public class EpisodesInToDoListOn {
    }
 {% endhighlight %}
 
-**Update: Program.java**
+### Update: Program.java
 
 {% highlight java %}
    public boolean isOn(Date date) {
@@ -364,7 +364,7 @@ public class EpisodesInToDoListOn {
    }
 {% endhighlight %}
 
-**Update: SeasonPassManager.java**
+### Update: SeasonPassManager.java
 {% highlight java %}
    public List<Program> toDoListContentsOn(Date date) {
       List<Program> result = new LinkedList<Program>();
@@ -382,7 +382,7 @@ Make all of these changes and execute your test. Notice anything? The first tabl
 ### Switching to Unit Tests
 Here is a JUnit analog of the test page:
 
-**Create: GenerateProgramsTest.java**
+### Create: GenerateProgramsTest.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -432,7 +432,7 @@ Running this test indicates a similar problem (expected 4 by only found 2 in in 
 
 Stepping through, I noticed that attempting to add the first Episode of D1 and D2 caused a problem with a conflicting program. This should not be happening, so that's where to check next. As I was running this, I also notice that I forgot to set the length of the episode.
 
-**Update: GeneratePrograms.java**
+### Update: GeneratePrograms.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -486,7 +486,7 @@ public class GeneratePrograms {
 
 After a little time with the debugger, it because clear where the exception was getting lost:
 
-**Update: AddProgramsToSchculed.execute()**
+### Update: AddProgramsToSchculed.execute()
 
 {% highlight java %}
    public void execute() throws ParseException {
@@ -504,7 +504,7 @@ After a little time with the debugger, it because clear where the exception was 
  
 A quick test of the DateUtil.buildDate method shows a problem:
 
-**Create: DateUtilTest.java**
+### Create: DateUtilTest.java
 
 {% highlight java %}
 package com.om.example.util;
@@ -536,7 +536,7 @@ public class DateUtilTest {
 
 Which leads to a fix of an improperly extracted method:
 
-**Update: DateUtil.java**
+### Update: DateUtil.java
 
 {% highlight java %}
    public Date buildDate(String date, String startTime) throws ParseException {
@@ -555,7 +555,7 @@ Now things seem to be working fine and the test passes. What about the entire su
 
 This can be fixed:
 
-**Update: GeneratePrograms.java**
+### Update: GeneratePrograms.java
 
 {% highlight java %}
    private void createOneProgram(String programName, int channel, String startTime,
@@ -572,7 +572,7 @@ This can be fixed:
    }
 {% endhighlight %}
 
-**Restore: AddProgramsToSchedule.java**
+### Restore: AddProgramsToSchedule.java
 
 {% highlight java %}
    public void execute() throws ParseException {
@@ -591,7 +591,7 @@ Run your unit tests, they should pass. Run your top-level suite, everything shou
 
 Finally, let's verify that in fact this change to the createOneProgram method actually does as expected. Attempt to force the exception to be thrown from createOneProgram:
 
-**Add Test To: GenerateProgramsTest**
+### Add Test To: GenerateProgramsTest
 
 {% highlight java %}
    @Test(expected = ConflictingProgramException.class)
@@ -632,7 +632,7 @@ Create this table:
 
 This requires a few changes to the existing fixture:
 
-**Update: GeneratePrograms.java**
+### Update: GeneratePrograms.java
 
 {% highlight java %}
 public class GeneratePrograms {

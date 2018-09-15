@@ -14,15 +14,15 @@ In this example, we add code coverage to the Car Rental Application. We then exa
 Cobertura does not currently come with a plugin, so in this example we'll use [Ant](http://ant.apache.org/) from within Eclipse. I'll warn you that I'm not much of an Ant user, so if you'd like to make recommendations, please feel free: schuchert@yahoo.com.
 
 Let's get started:
-**Download**
+### Download
 * Download Cobertura from [here](http://cobertura.sourceforge.net/download.html). Note I downloaded version 1.8 for this example.
 * Extract the jar somewhere. I used c:\libs\, which created the directory C:\libs\cobertura-1.8.
 * Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
 
-**suite() method**
+### suite() method
 Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [suite()](JUnit_4.xSuite) method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
  
-**Ant Script**
+### Ant Script
 When you followed [these instructions](Car_Rental_Installation_and_Setup), you should have created a workspace with three projects:
 * CarRental
 * LoggingUtils
