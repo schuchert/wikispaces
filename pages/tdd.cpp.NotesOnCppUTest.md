@@ -41,6 +41,7 @@ TEST(FooTest, TestName) {
 }
 {% endhighlight %}
 * Make sure your test runs, hit ctrl-F5. You should see something like:
+^
 {% highlight terminal %}
 .
 OK (1 tests, 1 ran, 1 checks, 0 ignored, 0 filtered out, 0 ms)
@@ -100,7 +101,7 @@ int main(int ac, char** av)
 * Add one library to be linked in (CppUTest uses a time function found here):
 {% highlight terminal %}
 winmm.lib
-{% highlight terminal %}
+{% endhighlight %}
 
 ** (project Properties... Linker, Input, Additional Dependencies)
 * You should be able to start writing and executing tests. E.g., Add a file to hold some tests, FooTest.cpp

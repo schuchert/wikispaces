@@ -219,8 +219,15 @@ div.content {
 	}
 }
 
-div.content section:nth-child(odd) {
+div#title, div.wrapper > section {
+	margin-bottom: 0;
+	padding-bottom: 0;	
+}
+
+div.content {
+	section:nth-child(even) {
 		background-color: #2e2e2e;
+	}
 }
 
 div.content {

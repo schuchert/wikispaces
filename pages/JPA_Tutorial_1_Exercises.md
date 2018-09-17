@@ -23,7 +23,7 @@ String Salary
 String employeeNumber
 Company company
 Person person  // (added - ** fix diagram **)
-{% highlight terminal %}
+{% endhighlight %}
 
 ### Update Employee
 The Person class should no longer have a Company attribute. Instead it has a Job attribute.

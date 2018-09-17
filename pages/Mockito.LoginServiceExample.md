@@ -1,7 +1,10 @@
 ---
 title: Mockito.LoginServiceExample
+layout: default
 ---
-{:toc}
+{% include toc %}
+
+<section>
 ## Getting Started
 I'm assuming you can [download Mockito](http://mockito.org/) and get it in your classpath. So I'll start with tests that implement some of the requirements from [here](Tdd.Problems.LoggingIn).
 
@@ -10,7 +13,9 @@ However, in a nutshell:
 * Create a new Java project in your favorite IDE
 * Add that jar to your project's classpath
 * Add JUnit 4 to your project's classpath
+</section>
 
+<section>
 ## Writing The Tests
 What follows is a series of tests to get enough production code written to suggest a better implementation. The first purpose of this tutorial is to demonstrate using Mockito for all types other than the underling LoginService. This is close to a [classic mockist approach](http://martinfowler.com/articles/mocksArentStubs.html#SoShouldIBeAClassicistOrAMockist), though it varies in that I'm emphasizing testing interaction rather than state and deliberately trying to write stable tests that do not depend too much on the underling implementation. In support of this: 
 * All types used or needed by the underling LoginService will be represented as Interfaces (Interfaces will start with an I).
@@ -18,7 +23,9 @@ What follows is a series of tests to get enough production code written to sugge
 * I'm going to use Loose mocks - that is, you can call anything you want and the underling object will not complain
 * I'm going to minimally verify the expected resulting interactions (one assertion per test)
 * I'll start with only refactoring the unit tests, refactoring the production code is in [the next part](Mockito.LoginServiceExample#refactorproduction).
+</section>
 
+<section>
 ## Test 1: Basic Happy Path
 When a user logs in successfully with a valid account id and password, the account's state is set to logged in. Here's a way to test that:
 
@@ -124,7 +131,9 @@ public class LoginService {
 
 }
 {% endhighlight %}
+</section>
 
+<section>
 ## Test 2: 3 Failed Logins Causes Account to be Revoked
 After three consecutive failed login attempts to the account, the account shall be revoked. Here's such a test expressing this business rule (we'll remove duplication in the tests after getting to green):
 {% highlight java %}
@@ -225,7 +234,9 @@ public class LoginServiceTest {
 }
 {% endhighlight %}
 This simply extracts common setup to an init() method. However, this cleanup really shortens the individual tests considerably. It also makes their intent clearer. 
+</section>
 
+<section>
 ## Test 3: setLoggedIn not called if password does not match
 The first two tests have made good progress, however to keep the number of assertions per test small (so far one) and to make individual tests less dependent on the underlying implementation, this next test forces a fix to the code and probably would have been a better second test than one you just created.
 {% highlight java %}
@@ -288,7 +299,9 @@ The LoginService.login method needs a little updating:
 {% endhighlight %}
 
 Verify that your code compiles and your tests pass.
+</section>
 
+<section>
 ## Test 4: Two Fails on One Account Followed By Fail on Second Account
 This is one of those requirements you ask "Really?!" This requirement comes from an actual project, so while it might sound bogus, it is an actual requirement from the real world.
 
@@ -366,7 +379,9 @@ To get this new test to pass, I added a new attribute to the LoginService class:
 {% endhighlight %}
 
 This allows all tests to pass. Would it have been possible to do less? Maybe, but this was the first thing that came to mind. The code is starting to be a bit unruly. We're just about ready to clean up this code, but before we do there are a few more tests.
+</section>
 
+<section>
 ## Test 5: Do not allow a second login
 In the actual problem, counting concurrent logins was somewhat complex. For this example, we'll keep it simple. If you are already logged in, you cannot log in a second time. That's simple enough:
 {% highlight java %}
@@ -410,6 +425,9 @@ To get that exception thrown, simply make one small addition to the login method
       // snip ...
 {% endhighlight %}
 
+</section>
+
+<section>
 ## Test 6: AccountNotFoundException thrown if account is not found
 This is a final test to make sure the code handles the case of an account not getting found. This is not too hard to write:
 {% highlight java %}
@@ -446,7 +464,9 @@ When you make this change, the test will fail with a null pointer exception. The
 {% endhighlight %}
 
 This should make all tests pass.
+</section>
 
+<section>
 ## Test 7: Cannot Login to Revoked Account
 The next test is similar to the previous test. A revoked account does not allow logins:
 {% highlight java %}
@@ -480,7 +500,9 @@ The only update to get to green is adding a check - a guard clause - similar to 
             throw new AccountRevokedException();
       // snip ...
 {% endhighlight %}
+</section>
 
+<section>
 ## Summary so far
 There are many more tests you could add to this system:
 * Data validation is non-existent (e.g., blank/invalid account id's/passwords).
@@ -506,6 +528,9 @@ If you do this, then you'll be able to simplify the LoginServiceTest class becau
 
 The second issue suggests the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern). And in fact, that's the next section. 
 [#refactorproduction](#refactorproduction)
+</section>
+
+<section>
 ## Refactoring LoginService
 In the real system, there were more requirements and the stream of requirements were fed to me over months. The underlying login service I created looked something like this simple version, just bigger. On the real project, the code became very hard to manage because I was not practicing refacoring aggressively enough at the time. I realized that the underlying solution would be made better by applying the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern). In the actual solution, the LoginService had several methods, with many of the methods' responses dependent on either the state of the login service or the account. 
 
@@ -1140,7 +1165,9 @@ public class LoginService extends LoginServiceContext {
 Replace all uses of LoginService with LoginServiceContext in the LoginServiceState hierarchy. Note that when I used the extract superclass refactoring in Eclipse, this was done automatically.
 
 Make sure your code compiles and your tests pass.
+</section>
 
+<section>
 ## Summary
 Congratulations. You started by writing tests using Mockito. Once you had a number of tests in place, you refactored your production code from a bunch of nested if statements (an embedded state machine) to use the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern). Once you got that working and cleaned up, you removed further duplication by introducing the [Gof Template Method Pattern](http://en.wikipedia.org/wiki/Template_method_pattern).
 
@@ -1435,3 +1462,4 @@ public class AccountRevokedException extends RuntimeException {
    private static final long serialVersionUID = 1L;
 }
 {% endhighlight %}
+</section>
