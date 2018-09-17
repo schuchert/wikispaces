@@ -1,7 +1,7 @@
 ---
 title: EJB3_Tutorial_1_Getting_Started_with_JBoss_Embedded_Container
 ---
-{:toc}
+{% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
 
 # Getting Started with the JBoss Embedded Container

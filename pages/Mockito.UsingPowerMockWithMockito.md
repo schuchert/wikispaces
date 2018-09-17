@@ -1,7 +1,7 @@
 ---
 title: Mockito.UsingPowerMockWithMockito
 ---
-{:toc}
+{% include toc %}
 # Overview
 Sometimes there's some low-level code, or badly written code, that makes verifying its behavior difficult. In this example, I'll show a few examples of mixing [PowerMock](https://code.google.com/p/powermock/) in with [Mockito](https://code.google.com/p/mockito/) to take control of:
 * static methods

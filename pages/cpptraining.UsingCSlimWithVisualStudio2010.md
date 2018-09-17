@@ -1,7 +1,7 @@
 ---
 title: cpptraining.UsingCSlimWithVisualStudio2010
 ---
-{:toc}
+{% include toc %}
 [<--Back](CppTraining#FitNesse)
 
 //**September 2011**//

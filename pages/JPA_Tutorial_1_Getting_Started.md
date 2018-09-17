@@ -1,7 +1,7 @@
 ---
 title: JPA_Tutorial_1_Getting_Started
 ---
-{:toc}
+{% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
 
 # Introduction

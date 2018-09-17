@@ -1,7 +1,7 @@
 ---
 title: Acceptance_Testing.UsingSlimDotNetInFitNesse
 ---
-{:toc}
+{% include toc %}
 [<-- Back](FitNesse.Tutorials)
 
 ## Rapid Intro to using Slim with .Net

@@ -1,7 +1,7 @@
 ---
 title: EJB3_Tutorial_4_Extended_Context
 ---
-{:toc}
+{% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
 
 # Ejb3 Tutorial 4 - Extended Context

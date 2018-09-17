@@ -1,7 +1,7 @@
 ---
 title: FitNesse.Tutorials.AlternativeScriptTableSyntax
 ---
-{:toc}
+{% include toc %}
 [<--Back](FitNesse.Tutorials)
 
 # Introduction

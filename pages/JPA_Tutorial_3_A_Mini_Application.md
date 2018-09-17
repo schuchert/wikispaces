@@ -1,7 +1,7 @@
 ---
 title: JPA_Tutorial_3_A_Mini_Application
 ---
-{:toc}
+{% include toc %}
 [<-Back](EJB_3_and_Java_Persistence_API)
 
 # JPA Tutorial 3 - A Mini Application

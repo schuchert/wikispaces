@@ -1,7 +1,7 @@
 ---
 title: iPhone.SettingUpTheEnvionment
 ---
-{:toc}[<-- Back](iPhone)
+{% include toc %}[<-- Back](iPhone)
 
 # UNDER CONSTRUCTION
 [Old Setup for XCode 3](iPhone.setup.xcode3)

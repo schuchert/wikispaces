@@ -1,7 +1,7 @@
 ---
 title: EJB3_Tutorial_5_Message_Driven_Beans
 ---
-{:toc}
+{% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
 
 # Ejb3 Tutorial 5 - Message Drive Beans

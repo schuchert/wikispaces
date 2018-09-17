@@ -1,7 +1,7 @@
 ---
 title: EJB3_Tutorial_3_A_Mini_Application_Revisited
 ---
-{:toc}
+{% include toc %}
 [<--back](EJB_3_and_Java_Persistence_API)
 
 # EJB3 Tutorial 3 - A Mini Application

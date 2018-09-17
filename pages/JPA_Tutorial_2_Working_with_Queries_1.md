@@ -1,7 +1,7 @@
 ---
 title: JPA_Tutorial_2_Working_with_Queries_1
 ---
-{:toc}
+{% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
 
 ## JPA Tutorial 2 - Working with Queries 1

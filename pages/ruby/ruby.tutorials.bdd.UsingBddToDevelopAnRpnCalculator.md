@@ -4,7 +4,7 @@ title: ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator
 <span class="back_button">[Back](ruby.Tutorials)</span>
 
 # Introduction
-{:toc}
+{% include toc %}
 In this tutorial, you will develop a [Reverse Polish Notation](http://en.wikipedia.org/wiki/Reverse_Polish_notation) (RPN) calculator. According to [Wikipedia](http://en.wikipedia.org/wiki/Reverse_Polish_notation), PRN was developed by 1920 by Polish mathematician Jan Lukasiewicz, so the notation has some history. The purpose of this tutorial is to give you practice with BDD on an object with methods, rather than an object with one method, as in the first tutorial.
 
 As with the first tutorial, this tutorial covers:

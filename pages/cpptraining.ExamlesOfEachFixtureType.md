@@ -1,7 +1,7 @@
 ---
 title: cpptraining.ExamlesOfEachFixtureType
 ---
-{:toc}
+{% include toc %}
 [<<--Back](CppTraining#FitNesse)
 
 # Decision Table

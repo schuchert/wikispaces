@@ -1,7 +1,7 @@
 ---
 title: JPA_Tutorial_4_Inheritance_and_Polymorphic_Queries
 ---
-{:toc}
+{% include toc %}
 [<-Back](EJB_3_and_Java_Persistence_API)
 # Inheritance and Polymorphic Queries
 This tutorial picks up at the end of [JPA_Tutorial_3_A_Mini_Application](JPA_Tutorial_3_A_Mini_Application). If you have not completed that tutorial, you can start with this source base: 

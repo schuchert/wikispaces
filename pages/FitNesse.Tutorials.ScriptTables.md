@@ -1,7 +1,7 @@
 ---
 title: FitNesse.Tutorials.ScriptTables
 ---
-{:toc}[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.ScenarioTables)
+{% include toc %}[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.ScenarioTables)
 # Background: The Return of Smalltalk
 This is a somewhat nostalgic background, you won't miss much if you [skip to the introduction](FitNesse.Tutorials.ScriptTables#introduction). 
 

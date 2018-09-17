@@ -1,7 +1,7 @@
 ---
 title: cpptraining.ExecutingBinaryOperators
 ---
-{:toc}
+{% include toc %}
 [<--Back](CppTraining#FitNesse)
 
 # Background

@@ -1,7 +1,7 @@
 ---
 title: FitNesse.Tutorials.ScenarioTables
 ---
-{:toc}[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.TableTables)
+{% include toc %}[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.TableTables)
 
 # Note
 The [original article](FitNesse.Tutorials.ScenarioTables.OriginalArticle) is here. This page is a rewritten version that ties in with the previous tutorials.

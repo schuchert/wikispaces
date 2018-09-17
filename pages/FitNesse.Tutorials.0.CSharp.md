@@ -1,7 +1,7 @@
 ---
 title: FitNesse.Tutorials.0.CSharp
 ---
-{:toc}
+{% include toc %}
 # Create C# Project
 In a nutshell, you are going to create a C# project, add some classes and then add the DLL to the FitNesse path so that FitNesse can find and execute your C# Fixtures.
 

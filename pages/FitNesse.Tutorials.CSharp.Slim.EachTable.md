@@ -1,7 +1,7 @@
 ---
 title: FitNesse.Tutorials.CSharp.Slim.EachTable
 ---
-{:toc}
+{% include toc %}
 [<--Back](FitNesse.Tutorials)
 
 ## Introduction

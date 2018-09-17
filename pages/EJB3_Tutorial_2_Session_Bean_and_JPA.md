@@ -1,7 +1,7 @@
 ---
 title: EJB3_Tutorial_2_Session_Bean_and_JPA
 ---
-{:toc}
+{% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
 # Session Bean and JPA
 

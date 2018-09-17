@@ -1,7 +1,7 @@
 ---
 title: Java_5_Variable_Arguments
 ---
-{:toc}
+{% include toc %}
 [<--Back](Articles)
 
 # Java 5 Variable Arguments

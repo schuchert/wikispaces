@@ -1,7 +1,7 @@
 ---
 title: FitNesse.Tutorials.0
 ---
-{:toc}
+{% include toc %}
 [<--Back](FitNesse.Tutorials)
 
 ## Install FitNesse

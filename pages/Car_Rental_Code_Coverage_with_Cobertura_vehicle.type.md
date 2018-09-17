@@ -1,7 +1,7 @@
 ---
 title: Car_Rental_Code_Coverage_with_Cobertura_vehicle.type
 ---
-{:toc}
+{% include toc %}
 [<--Back](Car_Rental_Code_Coverage_with_Cobertura)  [Next-->](Car_Rental_Code_Coverage_with_Cobertura_vehicle.exception)
 
 # Package: vehicle.type

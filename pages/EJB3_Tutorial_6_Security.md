@@ -1,7 +1,7 @@
 ---
 title: EJB3_Tutorial_6_Security
 ---
-{:toc}
+{% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
 # Ejb3 Tutorial 6 - Security
 This simple tutorial takes the solution from [EJB3_Tutorial_5_Message_Driven_Beans](EJB3_Tutorial_5_Message_Driven_Beans) and augments the beans with the configuration information necessary to limit access declaratively.

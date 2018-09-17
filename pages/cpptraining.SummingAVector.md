@@ -1,7 +1,7 @@
 ---
 title: cpptraining.SummingAVector
 ---
-{:toc}
+{% include toc %}
 [<-- Back](CppTraining#vector)
 
 # Overview

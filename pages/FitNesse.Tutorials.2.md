@@ -1,7 +1,7 @@
 ---
 title: FitNesse.Tutorials.2
 ---
-{:toc}
+{% include toc %}
 [<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.ScriptTables)
 
 # Introduction
