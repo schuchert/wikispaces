@@ -1,8 +1,9 @@
 ---
 title: Tdd.HelloWorld.Cpp
 ---
-{:toc}
-# Overview
+{% include toc %}
+
+## Overview
 Here's a traditional Hello World program in C++:
 {% highlight cpp %}
 # include <iostream>
@@ -15,7 +16,7 @@ int main(int argc, char **argv) {
 
 A beginning C++ class typically teaches this, but what if we wanted to accomplish the same thing using TDD? In this case, there's really no design per-se, so I'll Interpret TDD as Test-Driven// **Development**// rather than Test Driven// **Design**//.
 
-# Observations
+## Observations
 A well-written main should do something and then return an error code. So I need two tests, one verifying that main returns 0 and another that as a result of calling the main function, the text "Hello World" is sent to cout.
 
 Both of these tests are easy, but we have a serious problem. C++ programs require a main to get started. A test harness such as CppUTest requires a main. So how can we actually verify that main does what it is supposed to do when in fact our test harness, living by the same rules as all other C++ programs, needs its own main?
@@ -24,7 +25,7 @@ See the problem?
 
 I'm already going to accept partial defeat. I'm not going to test that main does all of this. Instead, I'm going to say that there is some function that main could call that does all of the work. I'll verify its behavior, then I'll spot check that main does in fact call that function. Hum, maybe this is a little bit of design.
 
-# First Test
+## First Test
 Choosing to test the easy thing first, I'll verify that the method I'll eventually have main call in fact returns 0 (meaning no error in the shell):
 ### HelloWorldTest.cpp
 {% highlight cpp %}
