@@ -231,7 +231,7 @@ div.content {
 }
 
 div.content {
-    > div.include {
+    div.include {
         > div:first-child.highlighter-rouge {
             display: none;
         }

@@ -1,8 +1,13 @@
 ---
 title: DvrDesignProblem
 ---
-[include_page="DvrDesignProblemGeneral"](include_page="DvrDesignProblemGeneral")
 
-----
+## Dvr Design Problem
 
-[include_page="DvrDesignProblemProductOwner"](include_page="DvrDesignProblemProductOwner")
+<section>
+{% include include_md_file filename="DvrDesignProblemGeneral.md"  %}
+</section>
+
+<section>
+{% include include_md_file filename="DvrDesignProblemProductOwner.md" %}
+</section>

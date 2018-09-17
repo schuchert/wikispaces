@@ -1,15 +1,16 @@
 ---
 title: DvrDesignProblemProductOwner
 ---
-## Digital Video Recorder Product Owner
+
+### Product Owner
 During initial discussions with the product owner, a few things might become clear (if asked):
 * The system downloads program information over Ethernet. It offers a dial-up service for a small monthly fee, but the Ethernet service is free.
 * A season pass needs to allow some amount of configuration:
-** Maximum number of episodes to record
-** Finding the same show on other channels
-** Time to keep the episodes before automatically deleting them
-** Record only new or new and repeat episodes
-** Who watches this show – so if two or more people in a household watch a show but don’t watch it at the same time, the show won’t be deleted until everybody has watched it.
+  * number of episodes to record
+  * the same show on other channels
+  * to keep the episodes before automatically deleting them
+  * only new or new and repeat episodes
+  * watches this show – so if two or more people in a household watch a show but don’t watch it at the same time, the show won’t be deleted until everybody has watched it.
 * Shows can be rated when watched. This information is anonymously fed to an online service that tracks ratings.
 * The system can make recommendations based on what you like compared to what other people like (all anonymously).
 * The system should integrate well with FaceBook, YouTube and SecondLife (or other popular social networking/web 2.0 sites)
