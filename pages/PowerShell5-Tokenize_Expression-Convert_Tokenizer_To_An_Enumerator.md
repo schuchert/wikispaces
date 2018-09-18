@@ -6,7 +6,7 @@ The Tokenizer converts a whole expression into an array of tokens. Now we'll con
 
 We are going to convert this in place while maintaining the tests.
 
-# Add Required Interfaces
+## Add Required Interfaces
 * Add the interfaces to the class:
 {% highlight powershell %}
 class Tokenizer : IEnumerable, IEnumerator 

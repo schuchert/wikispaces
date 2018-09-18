@@ -1,17 +1,17 @@
 ---
 title: DebuggingThreadedCodePart1
 ---
-# Background
+## Background
 Writing unit tests for threaded code is hard. What follows is a simple example, along with instructions on how to improve your chances of finding threading errors in your code. I've updated this as of February 2010. [If you are looking for the original material, click here](DebuggingThreadedCodePart1.Original).
 
-## Introduction
+### Introduction
 This page describes some of what it takes to successfully test thread-related code. The primary emphasis here is on supporting technology rather than techniques.
 
 [If you just want to get to the step-by-step instructions, click here.](DebuggingThreadedCodePart1#StepByStepInstructions)
-## Broken Code
+### Broken Code
 Here is some simple production code:
 
-### ClassWithThreadingProblem.java
+#### ClassWithThreadingProblem.java
 
 {% highlight java %}
 01: package com.om.concurrent.example;
@@ -29,7 +29,7 @@ The name should be a hint that it has problems, and it does. If a single instanc
 
 Think it is not possible? It is. 
 
-## What is an atomic operation in the JVM?
+### What is an atomic operation in the JVM?
 You can safely [skip](DebuggingThreadedCodePart1#SkipOverBytecodeInformation) this section if you are not interested in the bit-head information.
 
 What is an atomic operation? Any operation that cannot be interrupted from when it starts to when it completes. For example, in the following code, line 5, where 1 is assigned to value, is atomic. It cannot be interrupted:
@@ -93,7 +93,7 @@ If we look at the second operation, ++, it gets even worse (assume that value ho
 There are several places where this sequence of steps could be interrupted. One bad case is where two threads both call the same method on the same object. The first thread completes the first three instructions, up to GETFIELD, and the is interrupted. A second thread takes over and performed the entire method, incrementing value by one. Then the first thread picks up where it left off. It has the// **old**// value on its operand stack. It adds one and stores the result. This results in adding one two times and only incrementing by one because two threads stepped on each other.
 
 [#SkipOverBytecodeInformation](#SkipOverBytecodeInformation)
-## Demonstrating the failure with a test
+### Demonstrating the failure with a test
 
 Here's a description of a test that will prove our code is broken:
 * Remember the current value of lastId
@@ -103,7 +103,7 @@ Here's a description of a test that will prove our code is broken:
 
 Here is such a test:
 [#ClassWithThreadingProblemTest](#ClassWithThreadingProblemTest)
-### ClassWithThreadingProblemTest.java
+#### ClassWithThreadingProblemTest.java
 
 {% highlight java %}
 01: package com.om.concurrent.example;
@@ -146,7 +146,7 @@ Here is such a test:
 37:     }
 38: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 
 |Line|Description|
 |10|Create a single instance of ClassWithThreadingProblem. Note, we must use the final keyword since we use it below in an anonymous inner class|
@@ -184,7 +184,7 @@ Yet, even with all of these things, you might still not find threading problems 
 
 Yes.
 
-## Tool Support for Thread-Based Code
+### Tool Support for Thread-Based Code
 There is a tool from IBM called [ConTest](http://www.alphaworks.ibm.com/tech/contest?open&S_TACT=105AGX59&S_CMP=GR&ca=dgr-lnxw03awcontest) that will instrument classes to make it more likely that such non-thread-safe code more reliably fails.
 
 //Note, I do not have any direct relationship with IBM or the team that developed [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html). A colleague of mine pointed me to it and I've worked with it a little bit. I noticed vast improvement in my ability to find threading issues after a few minutes of using it.//
@@ -201,7 +201,7 @@ At a first glance, that is the primary purpose of [ConTest](http://www.haifa.ibm
 Describing how [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) actually accomplishes this, and what other features it offers, is better described by several [publications.](http://www.haifa.ibm.com/projects/verification/contest/publications.html)
 ----
 [#StepByStepInstructions](#StepByStepInstructions)
-## Getting it Working
+### Getting it Working
 
 First the steps in a nutshell:
 
@@ -210,13 +210,13 @@ First the steps in a nutshell:
 * Configure your test execution to include a command line parameter.
 * Configure the "KingProperties" file to include your classes to be instrumented.
 
-### Download [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html)
+#### Download [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html)
 As of this writing, what you ultimately download is a zip file. That zip file contains a single directory, JavaConTest. Extract that file to a convenient location. In my case, I put that directory under the project in my Eclipse workspace directory. Specifically, my workspace directory is ~/src/ConTestFeb2010. I created a project called ConTestDemo, which created ~/src/ConTestFeb2010/ConTestDemo. I extracted the zip file to that directory, which created ~/src/ConTestFeb2010/ConTestFeb2010/JavaConTest.
 
-### Create Project
+#### Create Project
 * Create a standard Java project in your IDE
 * Create the problem class and test above in some package. (Here are the files without the line numbers for easy copying)
-### ClassWithThreadingProblem
+#### ClassWithThreadingProblem
 
 {% highlight java %}
 package com.om.concurrent.example;
@@ -230,7 +230,7 @@ public class ClassWithThreadingProblem {
 }
 {% endhighlight %}
 
-### ClassWithThreadingProblem
+#### ClassWithThreadingProblem
 
 {% highlight java %}
 package com.om.concurrent.example;
@@ -277,7 +277,7 @@ public class ClassWithThreadingProblemTest {
 
 For the purpose of the following instructions, the package is: com.om.concurrent.example
 
-### Configure Test Execution
+#### Configure Test Execution
 
 These instructions are for eclipse. Your IDE will have a similar feature. The import thing is the VM argument below.
 
@@ -312,7 +312,7 @@ com.ibm.contest.instrumentation.TargetSpecificationException: target classes not
 
 The exception is the subject of the next section.
 
-### Configure KingProperties
+#### Configure KingProperties
 * Find the directory containing ConTest.jar (in my case it is ~/src/ConTestFeb2010/ConTestFeb2010/JavaConTest/Lib)
 * Edit the file KingProperties, find the following line:
 
@@ -325,8 +325,8 @@ targetClasses = *
 targetClasses = com/om/concurrent/example
 {% endhighlight %}
 
-## See the test pass
+### See the test pass
 Run the test, you should see it pass (meaning it was able to detect a threading problem).
 
-## Questions?
+### Questions?
 Send me an email at schuchert at yahoo dot com or schuchert at objectmentor dot com.

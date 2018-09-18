@@ -3,10 +3,10 @@ title: cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt
 ---
 [<-- Back](CppTraining#cpp0x)
 
-# Overview
+## Overview
 This is a description of why I chose to use C++0x for some examples and how to configure gcc to allow for C++0x. If you are interested in the how, [just skip to the steps](cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt#thesteps).
 
-# Background
+## Background
 While working on these materials, I came across a need to write examples using the boost::bind method. The boost::bind method creates a function object that is typically passed in as a parameter to an algorithm. The problem was that to write examples, I wanted to distinguish between the creation of the binding and its execution. 
 
 What I ended up doing and then trashing was using template methods. This made things worse rather than better because it added a level of indirection and moved away from what I wanted to demonstrate. I asked Michael Feathers for his advice and he recommend I use the type inference feature of C++0x. This allowed me to write something like this:
@@ -30,7 +30,7 @@ int bar() {
 }
 {% endhighlight %}
 [#thesteps](#thesteps)
-# The Steps
+## The Steps
 These steps assume you have some project setup using CppUTest. If not, [see below](cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt#seeblow).
 
 * Select your project and edit its properties: right-click::edit properties (or alt-enter)

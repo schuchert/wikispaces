@@ -3,8 +3,9 @@ title: ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm
 ---
 [<--Back](ruby.Tutorials)
 
-# Overview
 {% include toc %}
+
+## Overview
 This tutorial presents the mechanics of BDD, refactoring and touches on continuous integration by implementing the **[Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm)**. The point of this tutorial is** //not**// to write a solution to this algorithm. The algorithm is a vehicle for practicing the mechanics of BDD. Having said that, you will end up solving much of the algorithm.
 
 This tutorial has been written for you to actually read and type. The [Kinesthetic Learning](http://en.wikipedia.org/wiki/Kinesthetic_learning) experience of actually typing the code, running the tests and checking in the work significantly reinforces learning habits that will serve you well. Much of what you practice in this tutorial can eventually become habit/muscle memory with enough practice. Consider this an opportunity to start. You'll get frequent feedback throughout. And while this may represent a very different way of working from what you are used to, here are a few comments:
@@ -13,7 +14,7 @@ This tutorial has been written for you to actually read and type. The [Kinesthet
 
 Good Luck!
 
-# Introduction
+## Introduction
 
 Synopsis: The Shunting Yard Algorithm takes an expression in infix notation and converts it to reverse polish notation.
 
@@ -65,7 +66,7 @@ Even with the published algorithm, this is a lot of work. You do have the option
 * Check in code often so if you completely mess up, you can use the repository how it was meant to be used
 * You can take breaks often, so interruptions do not impact your work as much
 
-# Getting Started
+## Getting Started
 To follow all of the steps in this tutorial you will need four things:
 * A Ruby interpreter (you can type ruby at the command line and it is found or you know how to use Ruby in your favorite IDE)
 * The RSpec ruby gem
@@ -97,7 +98,7 @@ This describes a "context" under which examples can execute.
 
 Congratulations, you have successfully written a context in RSpec. It's missing any actual examples, and that is what you will add next.
 
-# The 0th Example
+## The 0th Example
 You will create an example whose primary purpose is to get the production class created with its usage documented in an executable form. This first example creates a skeleton, but it's an excellent way to start because you get something created and working almost immediately. From there, it's all about adding features while keeping your code clean. It is much easier to modify something that exists than something that does not exist.
 
 * Add an example to get your context (an "it" introduces a so-called example):
@@ -161,7 +162,7 @@ At this point, you have a complete context with all of its examples passing. You
 
 You're going to take small steps to keep things running and passing often. Sometimes these small steps will seem too small. When you think that, ask yourself "compared to what?". If something is too small, that's because you're expecting to work in larger chunks. Fine, try this and see if it fits. At the end of the tutorial if you haven't warmed up to the idea, you still learned something useful.
 
-## Setup
+### Setup
 * Update your example to resemble the following:
 
 {% highlight ruby %}
@@ -192,7 +193,7 @@ Your example is back to failing. In this case, the line you just added makes ref
 
 For this first example, you can work in a single text file.
 
-## Setup
+### Setup
 * At the top of the file add the class (here's the whole file):
 
 {% highlight ruby %}
@@ -220,7 +221,7 @@ Finished in 0.012638 seconds
 {% endhighlight %}
 
 This is all that is required for setup for this test. Next, you need to execute some code.
-## Execute
+### Execute
 * Update your test as follows:
 
 {% highlight ruby %}
@@ -273,7 +274,7 @@ Finished in 0.01262 seconds
 {% endhighlight %}
 
 Great, your example is back to working. You just finished the execution part. Now it is time to have your example verify the results it expected.
-## Verify
+### Verify
 * Update your example to perform validation:
 
 {% highlight ruby %}
@@ -329,7 +330,7 @@ Finished in 0.012664 seconds
 {% endhighlight %}
 
 Congratulations, you've made it through a complete TDD cycle. Now is a great time to commit this work in to a repository before moving on.
-## Check In
+### Check In
 A great time to check in is anytime your tests are passing. So after you've written a new unit test and got it to pass, check in your work. Why?
 * If you mess up, you can use the revision tool to compare what you have with what was already checked in to better pinpoint the problem.
 * If you subsequently mess up, you can revert back using the tool
@@ -350,7 +351,7 @@ Created initial commit ba33a1c: Initial checking. First example demonstrating ba
 Macintosh-7% 
 {% endhighlight %}
 
-## Summary
+### Summary
 Here's what you have created so far:
 
 {% highlight ruby %}
@@ -386,7 +387,7 @@ This is what you did.
 
 Now is a great time to take a break.
 
-# Working up to a basic operation
+## Working up to a basic operation
 Now you'll work with both constants and basic operators like + and -. As you work though these next few examples, you'll end up writing code, changing it and cleaning it up. You will be adding refactoring to your tool set. This particular kind of refactoring might vary from your refactoring experiences. You will be performing simple refactoring that takes seconds and minutes not hours, days or weeks.
 
 * Create a new context and example (the location is irrelevant, however for your purposes consider adding new contexts and examples after the last ones added):
@@ -476,7 +477,7 @@ Created commit c6e3ce2: Added support for basic constants.
  1 files changed, 10 insertions(+), 2 deletions(-)
 Macintosh-7% 
 {% endhighlight %}
-## Refactor the Examples
+### Refactor the Examples
 {% include aside/collapsed id="whycareexamples" title="Why You Should Care" filename="ruby.sidebar.WhyShouldYouCareAboutTheseExamples" %}
 
 * Update your both your contexts by putting them in a containing context:
@@ -703,7 +704,7 @@ Created commit 9f68a9b: Refactored both tests to remove duplication.
 
 Now is a great time to kick back, listen to some tunes, get a glass of ice tea and add BDD to your resume.
 
-# Example: An Actual Operator
+## Example: An Actual Operator
 Now seems like a good time to create a complete expression. This example represents a "happy path", or a path through the system that generates a good result. At some point you'll need to consider negative examples so you can define how an invalid use of the system behaves (gracefully somehow, hopefully).
 
 Since this is an example of processing basic operators, which is different from the other contexts, you should create a new context 
@@ -958,7 +959,7 @@ In general, when refactoring use create by "copying, verify, update, verify" ins
 
 Now is a great time to take a break. You've made good progress. You've practiced another round of BDD, added some solid refactoring skills and refined your continuous practice.
 
-# Example: Two Operators, Same Precedence
+## Example: Two Operators, Same Precedence
 You handled one operator pretty easily. What happen when you put in two operators of the same precedence? You want to nudge your production code gradually. Going from 1 to more than 1 is often a good nudge (though it can be a big nudge at times). However, does this mean using the same operator two times? If you do that, it might make the results ambiguous. So this example will use two different operators to make the results unambiguous.
 
 * Add the following example to the "Binary Operators" context:
@@ -1041,7 +1042,7 @@ Congratulations, you've successfully removed duplication and kept your tests pas
      1 files changed, 7 insertions(+), 3 deletions(-)
 {% endhighlight %}
 
-# Example: Two Operators of Different Precedence
+## Example: Two Operators of Different Precedence
 The next nudge to your production code is adding the idea of precedence. You won't implement all of the rules yet, just a start. The first example will simply add a new operator, *, which, because of its higher precedence, results in something close to your previous test.// **Then**// the next example will change the order of the operators, with * after +, forcing a more serious change to your implementation.
 
 Rather than giving you the source for the tests, I'll use a neat feature that allows me to draw some LaTex style formulas.
@@ -1087,7 +1088,7 @@ Finished in 0.022302 seconds
 5 examples, 1 failure
 {% endhighlight %}
 
-## Detour: Refactoring Before Moving Forward
+### Detour: Refactoring Before Moving Forward
 Rather than always writing a non-nil operator, your code needs to check something. However, there are cases where your code can just write and some where it must hold onto two operators before writing any. To support both cases, you'll want to change from storing a single operator to storing more than one. This requires a refactoring and you should do this while examples are passing. 
 
 Often, you'll look at a solution, realize that its design is at the end of its life-cycle and it needs significant retooling. How do you know you have changed the design without breaking any assumptions? You keep the example passing! So you'll get the current failing test out of the way for right now:
@@ -1159,7 +1160,7 @@ Often, you'll look at a solution, realize that its design is at the end of its l
 
 With that refactoring, you can now store multiple operators if necessary. So this diversion is over; time get back to the new example.
 
-## End Construction: Back to new development
+### End Construction: Back to new development
 
 Now that your code has a mechanism in place that allows storage of more than one operator, you need to undo some work that I asked you to do.
 
@@ -1249,7 +1250,7 @@ You have passing tests, but ugly code. Now is a good time to check in because yo
 
 * Checkin your code. Remember, if you don't like working this way, you can always stop doing it after this tutorial. This is just practice anyway, so it won't count and the other developers won't chastise you for moving their cheese.
 
-## Refactoring
+### Refactoring
 * Begin by extracting a method to clean up process a bit. Add this method and make sure nothing breaks:
 
 {% highlight ruby %}
@@ -1349,7 +1350,7 @@ Check: Did you first add the methods, run your examples then change the original
 
 * After your examples are all passing, check your work in before moving on.
 
-## Summary
+### Summary
 You've just done quite a bit of refactoring and basic cleanup. The description of what you did probably too longer to read than the actual work. Constant cleaning up on the new code you write should just be a normal thing you do. Get into the habit. And seriously, add refactoring to your resume.
 
 Here's an example of what your file might look like:
@@ -1464,7 +1465,7 @@ describe "Shunting Yard Algorithm" do
 end
 {% endhighlight %}
 
-# Example: More than two operators
+## Example: More than two operators
 So far you've handled a single operator and up to two operators and some basic precedence rules. Now you need to make sure you can handle an arbitrary length expression and a few new operators. While not always the case, here's a hierarchy of difficulty:
 * Not handling something to handling one such something.
 * Handling, more than one something (maybe just two) - often adds an "if" somewhere
@@ -1513,7 +1514,7 @@ However, it looks like you've got a decent general solution. You'll need to regi
 * Handling ( )'s
 * Function calls and nested function calls, e.g., f(g(5))
 
-# Example: Handling Variables
+## Example: Handling Variables
 It is time to revisit an earlier test, only this time you'll use variables: $$ a\ +\ b\ \ \rightarrow \ \ a\ b\ + $$
 
 * Rename the "Constants" context to "Operands"
@@ -1577,12 +1578,12 @@ Finished in 0.02318 seconds
 
 * Check in your code since you are back to passing examples.
 
-# Example: Handling ( )
+## Example: Handling ( )
 In this section you'll start by properly parsing parenthesis. Then you'll make sure that ( )'s work with simple expressions and finally you'll make sure that ( )'s cause lower precedence operators to happen before higher-precedence operators. Notice that this sets of examples fall nicely under a new context called something like "Handling ( )'s".
 
 {% include aside/collapsed id="whatisanalysis" title="What is Analysis" filename="ruby.sidebar.WhatIsAnalysis" %}
 
-## Example: Removing ( )
+### Example: Removing ( )
 Begin by writing a new context called "Handling ( )'s" and adding an example that verifies the removal of ( )'s from an otherwise empty expression: $$ (\ )\ \ \rightarrow $$
 
 * Create this context and example:
@@ -1629,6 +1630,7 @@ Finished in 0.027261 seconds
     end
   end
 {% endhighlight %}
+
 ### new methods
 
 {% highlight ruby %}
@@ -1802,7 +1804,7 @@ Moving along, you'll now have a look at supporting nested ( ). Here's a test to 
 
 Surprisingly, this example passes. This test does not exercise any new code. However, unlike the last example, this does demonstrate some new functionality that your code happens to handle correctly, nested ( )'s. So I recommend keeping this test around. This may seem like an arbitrary decision. It may be an incorrect decision. Here's an arbitrary statistic: 80% of all users never remove features from menus or tool bars. Here's another, 90% of all people don't think that the previous statistic applies to them. You're a pack-rat, admit it. You might find yourself wanting to write tests "just in case" and never get rid of them. That's OK; when it starts to cause a problem - and it will - you'll suffer and learn for yourself why you want to have as many tests as necessary, but no more.
 
-## Summary
+### Summary
 You've successfully added support for ( )'s.
 * You started with a simple case, removing ( ). That gave your code basic support for ( ) so you could focus on the next small thing. 
 * You then worked your way up to making sure ( )'s caused changed to precedence, as they are meant to do. 
@@ -1810,7 +1812,7 @@ You've successfully added support for ( )'s.
 
 Has it been some time since you took a break? Blinked your eyes? Go outside, play some laser tag. The tutorial will be here when you get back.
 
-# Example: Functions
+## Example: Functions
 Now you're going to add support for handling function calls. Functions are difficult because an operand might be a variable or a function, it depends on the next thing (or at least it does without some kind of context).
 
 So your code either needs to look ahead when processing a token that is an operand or look behind. Looking ahead is hard because of how your code processes expressions; iterating over tokens using the each message, which doesn't have look-ahead support. Looking back is possible, but your code directly builds a string, so it'd have to parse the string it just created.
@@ -1823,7 +1825,7 @@ How do you get started? In a situation like this, you'll probably experience som
 
 Just to be sure, you'll start with an example.
 
-## Example: Basic Function Call
+### Example: Basic Function Call
 Here's a simple test that describes what you want to have happen: $$ f\ (\ 3\ )\ \ \rightarrow\ \ 3\ f $$
 
 * Create a new context and example, see that it in fact fails:
@@ -2124,7 +2126,7 @@ Now remove the duplication of regular expressions used for handling names. There
 
 Did this last change seem silly or over the top? Consider this, the first part of the logical expression uses a regular expression, the second part did not, it called a function. You wanted to use a function on the second part to have a single definition of what is a name. Doing that forced a change in is_operand that made its implementation exist at different levels of abstraction. This simple change is a classic refactoring and leads to clean code. That is, code that someone else might have a chance to read and understand.
 
-# Example: Multiple parameters to a function
+## Example: Multiple parameters to a function
 Now it's time to add multiple parameters to a function. Here is one example: $$ f\ (\ 4\ ,\ 1\ ,\ a\ ,\ d\ )\ \ \rightarrow \ \ 4\ 1\ a\ d\ f $$
 
 * Add an example under the "Handling function invocations" context and see what happens.
@@ -2202,7 +2204,7 @@ An astute observer will notice that the body of handle_argument_separator does t
 
 * Check in your work.
 
-# Example: What About Something Complex?
+## Example: What About Something Complex?
 Here's an example to see if something a bit more complex works with what you've written so far:
 
 {% highlight ruby %}
@@ -2243,7 +2245,7 @@ The problem is that when balancing ) with (, there's the chance that it's being 
 
 * Check in your work.
 
-## A Quick Refactoring
+### A Quick Refactoring
 Some time ago, you added a method called under_logical_top. You can use that method in places where the code checks for a '('. A quick search of the code reveals just one,:
 
 {% highlight ruby %}
@@ -2324,7 +2326,7 @@ There are several other methods than change your underlying object. In that spir
 * add_to_result
 This may seem like a bit of work, but consider this: The class is not thread safe. If the convert method were instead called convert!, it might better document that fact. Given that this is an exercise, this recommendation is left to your discretion.
 
-# Example: Operator Associativity
+## Example: Operator Associativity
 Next, your code needs to address operator associativity. For example, 
 $$ 4 + 5 - 6 $$ produces $$ 4 5 + 6 - $$ because + and - are left associative but 
 otherwise at the same precedence. However, a = b += 5 produces a b 5 += =. First, b is incremented by 5 and then a equals that result. If these operators were left associative, the result would instead be: a b = 5 += (it's even worse, because the result of = would the an lvalue of the rvalue - whew!), so a would equal b// **before**// it was incremented by 5. And, as mentioned, the return value of = would be the thing on the right instead of the left to make the thing work in the first place.
@@ -2474,7 +2476,7 @@ However, you've made amazing progress on this work. You've:
 * Refactored code
 * Practiced an important aspect of continuous integration, frequent checkins - which requires that you work in small, tangible steps. That is a **hard** practice to learn and integrate.
 
-# Review
+## Review
 ### The Three Laws
 * Write no production code without a failing test.
 * Write only enough of a test such that it fails (and not compiling is failing)
@@ -2495,7 +2497,7 @@ There are some basics to consider when refactoring:
 
 See [Martin's Clean Code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=pd_bbs_sr_1?ie=UTF8&s=books&qid=1222313221&sr=8-1) book for more on, well, writing clean code.
 
-# A Final Version
+## A Final Version
 Here is the final report of all of the examples you created:
 
 {% highlight terminal %}

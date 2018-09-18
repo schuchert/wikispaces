@@ -2,7 +2,7 @@
 title: Test
 ---
 <span class="slide-begin">
-# Heading 1
+## Heading 1
 
 Regular Text
 {% highlight cpp %}

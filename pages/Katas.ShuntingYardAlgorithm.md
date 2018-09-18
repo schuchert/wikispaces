@@ -2,13 +2,13 @@
 title: Katas.ShuntingYardAlgorithm
 ---
 [<--Back](Katas)
-# Background
+## Background
 The [Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm), written by [Dijkstra](http://en.wikipedia.org/wiki/Edsger_Dijkstra), converts an infix expression into a post-fix expression. For example, the expression:
 ^
 |---|---|---|
 |$$ 3 + 4 $$|becomes|$$ 3\;4\;+ $$|
 
-# Precedence and Associativity
+## Precedence and Associativity
 What makes this difficult is that operators, generally, have some notion of precedence in most languages. For example, multiplication typically has a higher precedence than addition. So the expression 3 + 5 * 6 is 33 (multiplication happens first) rather than 40.
 
 There's also the issue of associativity. For example, 3 + 4 + 5 happens left-to-right, or it is left-associative. On the other hand, assignment is right-associative. For example, a = b = c = 4, all values receive the value 4 because c = 4 is performed first, while b is assigned to the// **result**// of the assignment of c, which is 4.
@@ -17,11 +17,11 @@ For the purposes of this exercise, consider these [precedence rules from C++](ht
 
 Note: This kata is in flux, I've added the link to the C++ operators but the examples use ^ as "to the power of" rather than bitwise negate. Follow the examples until I update the list of tests.
 
-# Examples
+## Examples
 Here is a series of examples with expected results:
 {% include_relative Katas.ShuntingYardAlgorithm.examples.md %}
 
-# One Approach
+## One Approach
 The examples above are taken from a recent (June 2009) personal walk-through of the algorithm. I was surprised by my results and the ease with which I was able to implement the algorithm. 
 
 I recommend the following approach when trying this problem:
@@ -98,7 +98,7 @@ public class InfixToPostfixConverterTest {
 
 This worked OK, but occasionally I wanted to run just one test. This does not seem to be supported, so I had to comment out various lines in the// **data()**// method. The next time I work on this, I'll probably use individual test methods.
 
-# Getting Started
+## Getting Started
 Here is one possible start to this problem (with the first three tests added and passing):
 ### The Test
 Note: Occasionally I experiment with different ways of writing unit tests with JUnit. This is one such example where I attempt to simulate the [domain specific language](http://www.martinfowler.com/bliki/BusinessReadableDSL.html) used by [cucumber](http://cukes.info/).
@@ -164,7 +164,7 @@ public class PostfixToInfixTranslator {
 }
 {% endhighlight %}
 
-# Hints
+## Hints
 I take the approach of splitting the expression into individual tokens and then processing them one by one. To do this, I use regular expressions and to format the output, I use String.format(...). Here are a few hints along those lines:
 * "3 + 4".split("\\s") - slits the string into an array: {"3", "+", "4"}.
 * "3  +  4".split("\\s+") - same as above, but allows for 1 or more spaces.
@@ -176,7 +176,7 @@ I take the approach of splitting the expression into individual tokens and then 
 * If you want to validate a number, you can use a regular expression or, in my case, the DecimalFormat class.
 
 [#ExampleSource](#ExampleSource)
-# What We Accomplished
+## What We Accomplished
 Here's a zip of the source files we created during the dojo:
 [[file:dojo.zip]]
 
