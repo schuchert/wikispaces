@@ -1,5 +1,6 @@
 ---
 title: JPA_Tutorial_3_V1_First_Test_Suite
+layout: default
 ---
 ### The Unit Tests
 ### A Little Context

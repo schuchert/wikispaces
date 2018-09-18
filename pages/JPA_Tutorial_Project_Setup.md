@@ -38,5 +38,6 @@ We now need to add two libraries. Note that these steps assume you've already wo
 If you'd like some background information on JUnit, please go [here](JUnit_4.x).
 
 ### Configure Persistence Unit
+^
 {% include include_md_file filename="JpaPersistenceUnit.md" %}
 

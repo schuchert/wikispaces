@@ -28,8 +28,9 @@ In fact, the wikipedia article has a link to the idea, but a quick summary would
 
 That is, as we will see, simply depending on an interface can (typically it seems to me) still violate the dependency inversion principle. Whether that is a bad thing or not, is a good follow-on discussion to have.
 
-What follows are four examples of applying the dependency inversion principle in the "wild", or things I've done on projects, in the moment. 
-{% include include_md_file filename="sidebar_start.md" %}<span class="sidebar_title">Pragmatics on Principles</span>
+What follows are four examples of applying the dependency inversion principle in the "wild", or things I've done on projects, in the moment.
+<aside>
+### Pragmatics on Principles
 Before going into examples, I want to give you my current (circa early 2013) perspective on design principles:
 * I am not a personal fan of "best practices", but I do like good ideas for a given context.
 * I think all design principles
@@ -40,26 +41,28 @@ Before going into examples, I want to give you my current (circa early 2013) per
 
 In fact, like the term "best practices" I wonder if "design principles" even makes sense as a moniker. In the case of the [SOLID](http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) principles, I think of them more as up front ideas that I often come back to due to familiarity.
 
-In any case, an ability to make an informed decision to disregard a design principle, a so-called Journeyman according to [The Seven Stages of Expertise in Software](http://www.wayland-informatics.com/The%20Seven%20Stages%20of%20Expertise%20in%20Software.htm), is a good place to always be moving towards.{% include include_md_file filename="sidebar_end.md" %}
-## Logging
-[[image:LoggerComplexity.png width="600"]]
+In any case, an ability to make an informed decision to disregard a design principle, a so-called Journeyman according to [The Seven Stages of Expertise in Software](http://www.wayland-informatics.com/The%20Seven%20Stages%20of%20Expertise%20in%20Software.htm), is a good place to always be moving towards.
+</aside>
 
-[[image:Logger_an_approach.png width="600"]]
+## Logging
+![](images/LoggerComplexity.png)
+
+![](images/Logger_an_approach.png)
 
 ## Depending on Interfaces
-[[image:Database.png width="100"]]
+![](images/Database.png =100x)
 
-[[image:Database_jdbc.png width="100"]]
+![](images/Database_jdbc.png =100x)
 
-[[image:Database_jpa.png width="300"]]
+![](images/Database_jpa.png =300x)
 
-[[image:Database_dao.png width="500"]]
+![](images/Database_dao.png =500x)
 
 ## Message Oriented Middleware
-[[image:Async_original_description.png width="600"]]
-[[image:Async_dependencies.png width="600"]]
-[[image:Async_re_envisioned.png width="600"]]
-[[image:Async_resulting_interaction.png width="600"]]
+![](images/Async_original_description.png =600x)
+![](images/Async_dependencies.png =600x)
+![](images/Async_re_envisioned.png =600x)
+![](images/Async_resulting_interaction.png =600x)
 
 ## Assist in Multi-Thread Development (add this???)
 

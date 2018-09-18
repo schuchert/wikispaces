@@ -1,6 +1,7 @@
 ---
 title: JPA_Tutorial_3_Project_Setup
 ---
+
 For the rest of this section, when you see **<project>**, replace it with **JpaTutorial3**
 {% include include_md_file filename="JPA_Tutorial_Project_Setup.md" %}
 
