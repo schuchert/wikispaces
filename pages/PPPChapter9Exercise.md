@@ -1,7 +1,7 @@
 ---
 title: PPPChapter9Exercise
 ---
-[[image:Back.gif link="PPPChapter8Exercise"]]  [[image:up.gif link="Vancouver_PPP_Exercise_Ch8and9"]]
+[<-- Back](PPPChapter8Exercise) [up](Vancouver_PPP_Exercise_Ch8and9)
 
 ## Part 2: Unit 9
 
@@ -14,17 +14,17 @@ We just discussed several component coupling principles:
 
 We also just learned about several metrics we can use to evaluate our components:
 ### Instability
->> {% include include_md_file filename="InstabilityFormula.md" %}
+{% include include_md_file filename="InstabilityFormula.md" %}
 
 **Abstractness** 
->> {% include include_md_file filename="Abstractness.md" %}
-
+{% include include_md_file filename="Abstractness.md" %}
 
 ### Distance from Main Sequence
->> {% include include_md_file filename="DistanceFromMainSequence.md" %}
+{% include include_md_file filename="DistanceFromMainSequence.md" %}
 
-----
+## Original diagram
 What are the values for the original diagram?
+
 ### Middle Tier
 $$
 C_E = 0
@@ -82,4 +82,4 @@ Final Observations
 
 {% include include_md_file filename="PPPChapter9Exercise_Image.md" %}
 
-[[image:Back.gif link="PPPChapter8Exercise"]]  [[image:up.gif link="Vancouver_PPP_Exercise_Ch8and9"]]
+[<-- Back](PPPChapter8Exercise) [up](Vancouver_PPP_Exercise_Ch8and9)

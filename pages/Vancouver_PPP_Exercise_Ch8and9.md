@@ -1,18 +1,15 @@
 ---
 title: Vancouver_PPP_Exercise_Ch8and9
 ---
-[[image:Back.gif link="Hidden"]]
 
-# Exercises for Chapters 8 and 9
+## Exercises for Chapters 8 and 9
 This exercise is meant to give you a feel for how to organize your classes into releasable components. The end result of this exercise is a listing of classes and interfaces that should all be grouped together to be released.
 
 You'll work on two exercises:
 * Part 1: After reviewing the Principles of Component Cohesion, we'll try to extract out a component from the below diagram for a new client of our system.
 * Part 2: After reviewing the Principles of Component Coupling, we'll evaluate your results, compare them with the starting point and take another swag at componentization.
 
-* [[image:forward.gif link="PPPChapter8Exercise"]] [Part 1: Unit 8 Exercise](PPPChapter8Exercise) 
-* [[image:forward.gif link="PPPChapter9Exercise"]] [Part 2: Unit 9 Exercise](PPPChapter9Exercise)
-* [[image:forward.gif link="PPPChapter9RepackagingExercise"]] [Part 3: Repackaging Exercise](PPPChapter9RepackagingExercise)
+* [Part 1: Unit 8 Exercise](PPPChapter8Exercise)
+* [Part 2: Unit 9 Exercise](PPPChapter9Exercise)
+* [Part 3: Repackaging Exercise](PPPChapter9RepackagingExercise)
 
-
-[[image:Back.gif link="Hidden"]]

@@ -1,6 +1,7 @@
 ---
 title: InstabilityFormula
 ---
+
 $$
 I = \frac{C_E}{(C_E + C_A)}
 $$

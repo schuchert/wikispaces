@@ -1,7 +1,7 @@
 ---
 title: PPPChapter8Exercise
 ---
-[[image:up.gif link="Vancouver_PPP_Exercise_Ch8and9"]] [[image:forward.gif link="PPPChapter9Exercise"]]
+[up](Vancouver_PPP_Exercise_Ch8and9) [next -->](PPPChapter9Exercise")
 
 ## Part 1: Unit 8
 
@@ -25,4 +25,4 @@ After you've had some time to work on this, we'll discuss it as a group and then
 
 {% include include_md_file filename="PPPChapter9Exercise_Image.md" %}
 
-[[image:up.gif link="Vancouver_PPP_Exercise_Ch8and9"]] [[image:forward.gif link="PPPChapter9Exercise"]]
+[up](Vancouver_PPP_Exercise_Ch8and9) [next -->](PPPChapter9Exercise")
