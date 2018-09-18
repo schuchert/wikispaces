@@ -190,7 +190,8 @@ Is this a good start? I believe so. Here are a few things to consider about unit
 * In general, testing is a sampling technique, even if you test every line of code, you're still sampling
 * Tests should help manage risk, the higher the risk, the more we need to test
 * We're often not so good at understanding risk, so test anyway.
-----
+
+<aside>
 ### Sidebar: the make file
 TDD requires that it is **quick** to write, **easy** to build and execute and **fast** to run your tests. Here's what might happen if we don't have one of these:
 * If it is not **quick** to develop unit tests, then you won't develop unit tests
@@ -208,6 +209,7 @@ As I was developing this first iteration, I was constantly trying to improve my 
 As a consultant, I notice people thinking I'm crazy about the idea of checking in multiple times per day (and integrating with everybody else who's also checking in multiple times per day). It's possible, I've done it on teams up to 60 people. It doesn't happen for free, you have to start with the goal in mind.
 
 I mention all of this because you might think the makefile is overkill for this project. You might not, it all depends on how you prefer to work.
+</aside>
 
 ## Test 2: Red: Reasonable Initial Value
 Next, we want to make sure that when we create a die object, it has a reasonable initial value. Here's one way to test that:

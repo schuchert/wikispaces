@@ -77,9 +77,9 @@ With this one:
 {% endhighlight %}
 
 To start an HSQL server, you can use the following steps:
-# Under the place where you extracted HSQL (C:\libs\hsqldb if you used the same directories as the tutorial), create a new directory called "databases".
-# Change to that directory
-# Use the following command to start the HSQL server:
+* Under the place where you extracted HSQL (C:\libs\hsqldb if you used the same directories as the tutorial), create a new directory called "databases".
+* Change to that directory
+* Use the following command to start the HSQL server:
 {% highlight terminal %}
 java -cp ../lib/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb
 {% endhighlight %}

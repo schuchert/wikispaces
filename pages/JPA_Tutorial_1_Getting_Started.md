@@ -4,7 +4,7 @@ title: JPA_Tutorial_1_Getting_Started
 {% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
 
-# Introduction
+## Introduction
 This first tutorial gives you an opportunity to work with:
 * setting up a persistent unit, 
 * creating in-memory entities and 
@@ -13,28 +13,28 @@ This first tutorial gives you an opportunity to work with:
 You'll write the code such that the environment creates the database schema based on meta-information (annotations) in your entity classes.
 
 Good luck!
-# JPA Tutorial 1: Background
+## JPA Tutorial 1: Background
 {% include include_md_file filename="JPA_Tutorial_1_Background.md" %}
-# JPA Initial Setup
+## JPA Initial Setup
 {% include include_md_file filename="JPA_Tutorial_1_Initial_Setup.md" %}
 [#EclipseProjectSetup](#EclipseProjectSetup)
-# Eclipse Project Setup
+## Eclipse Project Setup
 {% include include_md_file filename="JPA_Tutorial_1_Eclipse_Project_Setup.md" %}
-# Persistence Unit Configuration
+## Persistence Unit Configuration
 {% include include_md_file filename="JPA_Tutorial_1_Persistence_Unit.md" %}
-# Create Your First Entity
+## Create Your First Entity
 {% include include_md_file filename="JPA_Tutorial_1_First_Entity.md" %}
-# Add an Embedded Entity
+## Add an Embedded Entity
 {% include include_md_file filename="JPA_Tutorial_1_Embedded_Entity.md" %}
-# Add an Entity with a One to Many Relationship
+## Add an Entity with a One to Many Relationship
 {% include include_md_file filename="JPA_Tutorial_1_Entity_with_One_to_Many_Relationship.md" %}
-# Make a Relationship Bi-Directional
+## Make a Relationship Bi-Directional
 {% include include_md_file filename="JPA_Tutorial_1_Make_Relationship_Bi-directional.md" %}
-# Exercises
+## Exercises
 {% include include_md_file filename="JPA_Tutorial_1_Exercises.md" %}
-# Entire Source Base
+## Entire Source Base
 {% include include_md_file filename="JPA_Tutorial_1_Entire_Source_Base.md" %}
-# FAQ
+## FAQ
 {% include include_md_file filename="JPA_Tutorial_1_FAQ.md" %}
 Links to the individual pages:
 [JPA_Tutorial_1_Background](JPA_Tutorial_1_Background)
