@@ -80,6 +80,6 @@ Final Observations
 * What tool support have you used or do you see available to assist in this work?
 * Why go to all this trouble?
 
-{% include include_md_file filename="PPPChapter9Exercise_Image.md" %}
+![](images/PPP_Exercise8And9.jpg)
 
 [<-- Back](PPPChapter8Exercise) [up](Vancouver_PPP_Exercise_Ch8and9)
