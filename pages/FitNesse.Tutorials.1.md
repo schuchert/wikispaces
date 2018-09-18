@@ -418,12 +418,13 @@ This really was just an Extract class refactoring or wrapping a collection. Wrap
 
 Before moving on, make sure your test passes. Assuming it does, congratulations on a successful refactoring.
 
-[include_page="sidebar_start"](include_page="sidebar_start") <span class="sidebar_title">Wrapping Collections</span>
+<aside>
+### Wrapping Collections
 When dealing with a language-provided collection, you should wrap it by default and only not wrap it if it makes sense. This might seem controversial, but in my experience the extra overhead of wrapping the collection provides a place for functionality that is otherwise heavily duplicated. For example:
 * Only adding something if it does not conflict in some way with existing members in the collection.
 * Doing some kind of work over the entire collection.
 * Responding in a domain-specific way to empty/full collections.
-[include_page="sidebar_end"](include_page="sidebar_end")
+</aside>
 # Deleting Something By Key
 We should be able to add a program, remove it and then add another at the same time slot. Here's just such a test and it uses something you might have noticed in the first tutorial:
 
@@ -641,7 +642,8 @@ So what is the problem? The fixture holds the schedule. Each fixture has its own
 
 Ultimately, how you should do it depends on your system. If your system will eventually need objects like this configured, wired and passed around, then it might make sense to introduce Spring or maybe even a hand-rolled IoC container (a factory of some kind). For our purposes, simply making the schedule static in AddProgramsToSchedule will work effectively. So do that and then see the test fail (note, I've removed the constructor and static variable **numberCreated** in my version to get rid of output making its way into my test execution).
 
-[include_page="sidebar_start"](include_page="sidebar_start") <span class="sidebar_title">Tests Should Not Produce Output</span>
+<aside>
+### Tests Should Not Produce Output
 Your acceptance tests (and unit tests) should not produce output. Why? Because you've written them to have assertions. Those assertions are the only thing that define success or failure. If you find the need to produce output, are you also going to verify that output? If so, then turn the verification of the output into an assertion. If not, then you're adding noise to the test execution.
 
 This might be OK while you are working on your machine but don't check this cruft in. What I've seen happen, repeatedly, is people add output to verify their work (that's fine in the short term, maybe, but it represents a lack of trust in either your own abilities or the test system), and then other people notice the output and then the output grows. Soon, it becomes the norm.
@@ -652,7 +654,7 @@ To quote Jerry Weinberg:
 : Nothing + Nothing + Nothing eventually equals something.
 
 Leaving output in tests, unit or acceptance tests, is lazy. You can do better.
-[include_page="sidebar_end"](include_page="sidebar_end")
+</aside>
 
 Now that the test is failing, we need a way to get access to the schedule between fixtures. For now, adding a getSchedule() method on the AddProgramsToSchedule fixture is adequate:
 
@@ -744,15 +746,15 @@ However, you've learned several things in this tutorial:
 * How to import packages (works for namespaces as well)
 * How to create a decision table
 * You've learned that a decision table has three parts:
-** First row names the fixture.
-** Second row names columns.
-** Third and subsequent rows provide data.
+  * row names the fixture.
+  * row names columns.
+  * and subsequent rows provide data.
 * How to make the tables execute by writing Fixtures
 * How to get the tests to pass by updating both the Fixture code and by creating production code
 * How to use variables in Decision tables (both writing and reading)
 * Learned the difference between setter columns and method call columns
-** A column with just text in its name will map to a public method called setX, where X is the name of the column.
-** A column with a ? at the end of its name is a method call, which causes [FitNesse](http://fitnesse.org/) to invoke a method and use the returned value for possible verification.
+  * column with just text in its name will map to a public method called setX, where X is the name of the column.
+  * column with a ? at the end of its name is a method call, which causes [FitNesse](http://fitnesse.org/) to invoke a method and use the returned value for possible verification.
 * Learned how to call a constructor in a decision table
 * Discovered the relationship between tables, fixtures and instances of fixture classes
 * Learn how to coordinate between different fixtures
@@ -762,7 +764,7 @@ However, you've learned several things in this tutorial:
 * Learned that the methods to be called must be public.
 * Learned that fixtures should not have any production logic in them.
 * Learned that if you put output in your code, [FitNesse](http://fitnesse.org/) will capture it and you'll be able to see it
-** Note, while you can debug this, your fixtures should be so simple that this is seldom necessary. If you find yourself doing this often, consider simplifying your fixtures. If that's not possible, write unit tests for your complex fixture code.
+  *, while you can debug this, your fixtures should be so simple that this is seldom necessary. If you find yourself doing this often, consider simplifying your fixtures. If that's not possible, write unit tests for your complex fixture code.
 * Learned that each of the data rows in your fixture is executed in order, top-to-bottom.
 
 After working with decision tables, the next tutorial which makes sense is [this one on query tables](FitNesse.Tutorials.2).

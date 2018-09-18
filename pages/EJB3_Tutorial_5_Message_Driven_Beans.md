@@ -23,7 +23,7 @@ To demonstrate/simulate a client, we'll have a unit test that sends a message vi
 The instructions for setting up your project mirror those from the first tutorial: [EJB3_Tutorial_1_Create_and_Configure](EJB3_Tutorial_1_Create_and_Configure).
 
 For the remainder of this tutorial, when you see **<project>**, replace it with **Ejb3Tutorial5**.
-[include_page="Ejb3EclipseProjectSetupAndConfiguration"](include_page="Ejb3EclipseProjectSetupAndConfiguration")
+{% include include_md_file filename="Ejb3EclipseProjectSetupAndConfiguration.md" %}
 ----
 ## The Entity Model
 We've taken the domain model from the previous EJB tutorial and added a "charge" object. An account has one to many charges associated with it. Otherwise, this domain model is unchanged from the previous tutorial.

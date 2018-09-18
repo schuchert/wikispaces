@@ -1,8 +1,8 @@
 ---
 title: ITunesCompetetorDesignProblem
 ---
-[include_page="ITunesCompetetorDesignProblemGeneral"](include_page="ITunesCompetetorDesignProblemGeneral")
+{% include include_md_file filename="ITunesCompetetorDesignProblemGeneral.md" %}
 
 ----
 
-[include_page="ITunesCompetetorDesignProblemProductOwner"](include_page="ITunesCompetetorDesignProblemProductOwner")
+{% include include_md_file filename="ITunesCompetetorDesignProblemProductOwner.md" %}

@@ -7,19 +7,19 @@ title: TestPage4
 In this example we start with a simple domain model and incrementally migrate it to become more realistic. Along the way we end up using several features of JPA not yet covered by the previous tutorials.
 ----
 ## The Problem
-[include_page="JA_Tutorial_3_The_Problem"](include_page="JA_Tutorial_3_The_Problem")
+{% include include_md_file filename="JA_Tutorial_3_The_Problem.md" %}
 ----
 ## V1 Project Setup
-[include_page="JPA_Tutorial_3_Project_Setup"](include_page="JPA_Tutorial_3_Project_Setup")
+{% include include_md_file filename="JPA_Tutorial_3_Project_Setup.md" %}
 ----
 ## V1 First Test Suite
-[include_page="JPA_Tutorial_3_V1_First_Test_Suite"](include_page="JPA_Tutorial_3_V1_First_Test_Suite")
+{% include include_md_file filename="JPA_Tutorial_3_V1_First_Test_Suite.md" %}
 ----
 ## V1 Second Test Suite
-[include_page="JPA_Tutorial_3_V1_Second_Test_Suite"](include_page="JPA_Tutorial_3_V1_Second_Test_Suite") 
+{% include include_md_file filename="JPA_Tutorial_3_V1_Second_Test_Suite.md" %} 
 ----
 ## V1 Third Test Suite
-[include_page="JPA_Tutorial_3_V1_Third_Test_Suite"](include_page="JPA_Tutorial_3_V1_Third_Test_Suite") 
+{% include include_md_file filename="JPA_Tutorial_3_V1_Third_Test_Suite.md" %} 
 ----
 ## V1 Assignments
 [JPA_Tutorial_3_V1_Assignments](JPA_Tutorial_3_V1_Assignments)

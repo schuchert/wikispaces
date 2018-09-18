@@ -36,7 +36,7 @@ Unlike the first tutorial, this tutorial will be a bit more explicit in its step
 
 There will also be occasional side-bars on an as-needed basis.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.ThreeLawsOfTddRevisited"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="threelaws" title="The Three Laws of Tdd Revisited" filename="ruby.sidebar.ThreeLawsOfTddRevisited" %}
 
 Before you get started on any Examples, however, we'll delve into the problem just a bit.
 
@@ -181,9 +181,9 @@ OK, you have an Example but it does not contain any verification. So one more ch
     1 example, 0 failures
 {% endhighlight %}
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.ExamplesPassingWithoutValidation"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="examplespassingwithoutvalidation" title="Examples Passing Without Validation" filename="ruby.sidebar.ExamplesPassingWithoutValidation" %}
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.AllGreen"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="allgreen" title="All Green" filename="ruby.sidebar.AllGreen" %}
 
 ### Check-In
 You are all green, so it is time to check in your work. As with the previous tutorial, I'll be using git:
@@ -243,8 +243,7 @@ Not every Example will be so small and quick to create, but you should attempt t
 * You can feel a sense of accomplishment throughout the day.
 * You can watch as your system organically grows from something trivial, to something complex, typically quickly.
 
-[[include page="sidebar_start"]][include_page="ruby.sidebar.ConcreteExampleHardwareSimulator"](include_page="ruby.sidebar.ConcreteExampleHardwareSimulator")
-[include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="examplehwsim" title="Example: Hardware Simulator" filename="ruby.sidebar.ConcreteExampleHardwareSimulator" %}
 
 # Example: Accepting User Input
 With the first Example running it is time to move on to basic user input. We have to make a decision already, where is the system boundary. Here are a few possibilities:
@@ -366,9 +365,9 @@ As with the previous failure, this failure is a result of a missing method.
     2 examples, 0 failures
 {% endhighlight %}
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.WhyTwoStepsInsteadOfJustOne"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="whytwosteps" title="Why Two Steps?" filename="ruby.sidebar.WhyTwoStepsInsteadOfJustOne" %}
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.WhatASillyImplementation"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="sillyimpl" title="What a Silly Implementation" filename="ruby.sidebar.WhatASillyImplementation" %}
 
 ### Check-In
 * Check in your work:
@@ -491,7 +490,7 @@ On the one hand, this will force some more work in the production code. On the o
 * More examples --> longer to run --> run less often --> less effective
 * When something breaks, you are likely to break more than one Example --> more maintenance --> Examples become a hassle to maintain --> Examples are commented out or left not passing --> nearly defeats the purpose of BDD.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.NotIdleChitChat"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="notidlechitchat" title="Not Idle Chit Chat" filename="ruby.sidebar.NotIdleChitChat" %}
 
 ### Example
 Here is another example that fits extends the functionality just a little but will also force the implementation of the production code:
@@ -753,7 +752,7 @@ Is there a clear winner? There are trade-offs:
 * The second option requires a symbol for each function.
 * The second option requires the RPN calculator to map from a symbol, :enter, to a behavior.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.OpenClosedPrinciple"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="openclosed" title="The Open/Closed Principle" filename="ruby.sidebar.OpenClosedPrinciple" %}
 
 This tutorial will take the second approach.
 
@@ -810,7 +809,7 @@ Did you notice I just had you "cheat". You should have:
 * Run your Examples.
 Did you notice that? If not, see how easy it is to slide backwards?
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.JustHowMuchCanYouFollowTheThreeLaws"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="howmuchtofollowthreelaws" title="How Much is Too Much?" filename="ruby.sidebar.JustHowMuchCanYouFollowTheThreeLaws" %}
 
 ### Check-In
 You have all passing Examples, but two are not implemented. Should you check in your work?
@@ -1123,7 +1122,7 @@ Either will work. In fact, doing both works. Question, to which method does the 
     7 examples, 0 failures
 {% endhighlight %}
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.IDidTooMuch"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="didtoomuch" title="I Did Too Much" filename="ruby.sidebar.IDidTooMuch" %}
 
 ### Check-In
 * Check in your work, you've made some good progress:
@@ -1692,7 +1691,7 @@ Is there a problem with how you are testing OpernadStack? There are only 2 Examp
 
 When you are just learning TDD or BDD, this kind of stuff is going to happen. Let's leave it alone for now and see what happens.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.WrappingCollections"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="wrappingcollections" title="Wrapping Collections" filename="ruby.sidebar.WrappingCollections" %}
 
 ### The Classes So Far
 Here's one example of what all of your code should look like about now.
@@ -2311,7 +2310,7 @@ Before calling this refactoring session done, clean up your Examples to make thi
 
 * Run your Examples, they should all pass.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.ExampleStylesAndYourAudience"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="examplesandaudience" title="Who is the Audience" filename="ruby.sidebar.ExampleStylesAndYourAudience" %}
 
 However, just to place a (somewhat arbitrary) stake in the ground, here's an updated version of rpn_calculator_spec.rb:
 {% highlight ruby %}

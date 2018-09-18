@@ -23,6 +23,6 @@ Your task is to review the existing system (represented by the diagram below) an
 
 After you've had some time to work on this, we'll discuss it as a group and then learn how to assess the design of your solution.
 
-[include_page="PPPChapter9Exercise_Image"](include_page="PPPChapter9Exercise_Image")
+{% include include_md_file filename="PPPChapter9Exercise_Image.md" %}
 
 [[image:up.gif link="Vancouver_PPP_Exercise_Ch8and9"]] [[image:forward.gif link="PPPChapter9Exercise"]]

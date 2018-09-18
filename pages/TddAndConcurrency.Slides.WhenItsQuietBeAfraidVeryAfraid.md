@@ -63,7 +63,7 @@ How can we calculate it?
 * All threads complete
 * N = Number of instructions
 * T = Number of threads
-* [include_page="TddAndConcurrency.slides.WhenItsQuietBeAfraidVeryAfraid.NumberOfCombinations"](include_page="TddAndConcurrency.slides.WhenItsQuietBeAfraidVeryAfraid.NumberOfCombinations")
+* {% include include_md_file filename="TddAndConcurrency.slides.WhenItsQuietBeAfraidVeryAfraid.NumberOfCombinations.md" %}
 
 How many possible outcomes?
 * 2

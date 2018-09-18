@@ -1,42 +1,42 @@
 ---
 title: RpnCalculatorPrintable
 ---
-[include_page="RPN_Calculator"](include_page="RPN_Calculator")
+{% include include_md_file filename="RPN_Calculator.md" %}
 ----
 ## Release 1
 ### Addition
-[include_page="RPN_Calculator_Addition"](include_page="RPN_Calculator_Addition")
+{% include include_md_file filename="RPN_Calculator_Addition.md" %}
 ### Subtraction
-[include_page="RPN_Calculator_Subtraction"](include_page="RPN_Calculator_Subtraction")
+{% include include_md_file filename="RPN_Calculator_Subtraction.md" %}
 ### Multiplication
-[include_page="RPN_Calculator_Multiplication"](include_page="RPN_Calculator_Multiplication")
+{% include include_md_file filename="RPN_Calculator_Multiplication.md" %}
 ### Division
-[include_page="RPN_Calculator_Division"](include_page="RPN_Calculator_Division")
+{% include include_md_file filename="RPN_Calculator_Division.md" %}
 ----
 ## Release 2
 ### Review Stack
-[include_page="RPN_Calculator_Review_Stack"](include_page="RPN_Calculator_Review_Stack")
+{% include include_md_file filename="RPN_Calculator_Review_Stack.md" %}
 ### Clear Stack
-[include_page="RPN_Calculator_Clear_Stack"](include_page="RPN_Calculator_Clear_Stack")
+{% include include_md_file filename="RPN_Calculator_Clear_Stack.md" %}
 ### Insert into Stack
-[include_page="RPN_Calculator_Insert_into_Stack"](include_page="RPN_Calculator_Insert_into_Stack")
+{% include include_md_file filename="RPN_Calculator_Insert_into_Stack.md" %}
 ### Replace Item on Stack
-[include_page="RPN_Calculator_Replace_Item_on_Stack"](include_page="RPN_Calculator_Replace_Item_on_Stack")
+{% include include_md_file filename="RPN_Calculator_Replace_Item_on_Stack.md" %}
 ----
 ## Release 3
 ### Square Root
-[include_page="RPN_Calculator_Square_Root"](include_page="RPN_Calculator_Square_Root")
+{% include include_md_file filename="RPN_Calculator_Square_Root.md" %}
 ### Y to X
-[include_page="RPN_Calculator_Y_to_X"](include_page="RPN_Calculator_Y_to_X")
+{% include include_md_file filename="RPN_Calculator_Y_to_X.md" %}
 ### 1 over X
-[include_page="RPN_Calculator_1_over_X"](include_page="RPN_Calculator_1_over_X")
+{% include include_md_file filename="RPN_Calculator_1_over_X.md" %}
 ### Sin
-[include_page="RPN_Calculator_Sin"](include_page="RPN_Calculator_Sin")
+{% include include_md_file filename="RPN_Calculator_Sin.md" %}
 ### Cos
-[include_page="RPN_Calculator_Cos"](include_page="RPN_Calculator_Cos")
+{% include include_md_file filename="RPN_Calculator_Cos.md" %}
 ### Tan
-[include_page="RPN_Calculator_Tan"](include_page="RPN_Calculator_Tan")
+{% include include_md_file filename="RPN_Calculator_Tan.md" %}
 ### Exponentials
-[include_page="RPN_Calculator_Exponentials"](include_page="RPN_Calculator_Exponentials")
+{% include include_md_file filename="RPN_Calculator_Exponentials.md" %}
 ### Factorials
-[include_page="RPN_Calculator_Factorials"](include_page="RPN_Calculator_Factorials")
+{% include include_md_file filename="RPN_Calculator_Factorials.md" %}

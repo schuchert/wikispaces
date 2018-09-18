@@ -1,5 +1,4 @@
 
-### A Concrete Example of a Hardware Simulator
 In mid 2008, I worked with a great group of people on the East Coast. My task was to use their current problem as source material and to take them through TDD (not BDD) on their problem.
 
 They already had a start on the problem and had pretty good source material on what the system needed to do. The system essentially simulated expensive hardware. This system would make testing the software to drive the expensive hardware. The problem involved capturing an over-the-wire protocol, which they were already doing in C++. The problem, then, was to take that protocol and respond appropriately and even initiate messages.

@@ -1,7 +1,7 @@
 ---
 title: MonopolyPrintable
 ---
-[include_page="Monopoly"](include_page="Monopoly")
+{% include include_md_file filename="Monopoly.md" %}
 ----
 ## Release 1
 [include_page_="Monopoly_Release_1_User_Stories"](include_page_="Monopoly_Release_1_User_Stories")

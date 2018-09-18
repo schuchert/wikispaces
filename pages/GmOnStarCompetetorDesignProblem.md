@@ -1,8 +1,8 @@
 ---
 title: GmOnStarCompetetorDesignProblem
 ---
-[include_page="GmOnStartCompetetorDesignProblemGeneral"](include_page="GmOnStartCompetetorDesignProblemGeneral")
+{% include include_md_file filename="GmOnStartCompetetorDesignProblemGeneral.md" %}
 
 ----
 
-[include_page="GmOnStartCompetetorDesignProblemProductOwner"](include_page="GmOnStartCompetetorDesignProblemProductOwner")
+{% include include_md_file filename="GmOnStartCompetetorDesignProblemProductOwner.md" %}

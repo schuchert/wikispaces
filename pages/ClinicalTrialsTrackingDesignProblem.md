@@ -1,8 +1,8 @@
 ---
 title: ClinicalTrialsTrackingDesignProblem
 ---
-[include_page="ClinicalTrialsTrackingDesignProblemGeneral"](include_page="ClinicalTrialsTrackingDesignProblemGeneral")
+{% include include_md_file filename="ClinicalTrialsTrackingDesignProblemGeneral.md" %}
 
 ----
 
-[include_page="ClinicalTrialsTrackingDesignProblemProductOwner"](include_page="ClinicalTrialsTrackingDesignProblemProductOwner")
+{% include include_md_file filename="ClinicalTrialsTrackingDesignProblemProductOwner.md" %}

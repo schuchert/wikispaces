@@ -20,13 +20,13 @@ title: testpage
 
 This is regular stuff.
 
-[include_page="sidebar_start"](include_page="sidebar_start")Sidebar
+{% include include_md_file filename="sidebar_start.md" %}Sidebar
 Contents of the sidebar. Note that this line should be long enough to take up at least one full line to be representative of what I'd expect stuff to look like.
 * This is something
 ** Second bullet
 *** Third bullet
 * This is something else
-[include_page="sidebar_end"](include_page="sidebar_end")
+{% include include_md_file filename="sidebar_end.md" %}
 # Does Level 1 Header Right After Work?
 This is the outside text:
 * Now what happens? int oneone point int oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pint oneone point one now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one pone now what happens when this does it's crazy ting?one point one now what happens when this does it's crazy ting?one p

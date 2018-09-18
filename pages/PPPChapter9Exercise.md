@@ -14,14 +14,14 @@ We just discussed several component coupling principles:
 
 We also just learned about several metrics we can use to evaluate our components:
 ### Instability
->> [include_page="InstabilityFormula"](include_page="InstabilityFormula")
+>> {% include include_md_file filename="InstabilityFormula.md" %}
 
 **Abstractness** 
->> [include_page="Abstractness"](include_page="Abstractness")
+>> {% include include_md_file filename="Abstractness.md" %}
 
 
 ### Distance from Main Sequence
->> [include_page="DistanceFromMainSequence"](include_page="DistanceFromMainSequence")
+>> {% include include_md_file filename="DistanceFromMainSequence.md" %}
 
 ----
 What are the values for the original diagram?
@@ -80,6 +80,6 @@ Final Observations
 * What tool support have you used or do you see available to assist in this work?
 * Why go to all this trouble?
 
-[include_page="PPPChapter9Exercise_Image"](include_page="PPPChapter9Exercise_Image")
+{% include include_md_file filename="PPPChapter9Exercise_Image.md" %}
 
 [[image:Back.gif link="PPPChapter8Exercise"]]  [[image:up.gif link="Vancouver_PPP_Exercise_Ch8and9"]]

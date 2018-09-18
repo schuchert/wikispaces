@@ -1,9 +1,9 @@
 ---
 title: TestPage3
 ---
-[include_page="Tutorial_2_The_Queries"](include_page="Tutorial_2_The_Queries")
+{% include include_md_file filename="Tutorial_2_The_Queries.md" %}
 
-[include_page="Tutorial_2_The_First_Example"](include_page="Tutorial_2_The_First_Example")
+{% include include_md_file filename="Tutorial_2_The_First_Example.md" %}
 
-[include_page="Tutorial_2_Second_Example"](include_page="Tutorial_2_Second_Example")
+{% include include_md_file filename="Tutorial_2_Second_Example.md" %}
 

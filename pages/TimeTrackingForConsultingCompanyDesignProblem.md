@@ -1,8 +1,8 @@
 ---
 title: TimeTrackingForConsultingCompanyDesignProblem
 ---
-[include_page="TimeTrackingForAConsultingCompanyGeneral"](include_page="TimeTrackingForAConsultingCompanyGeneral")
+{% include include_md_file filename="TimeTrackingForAConsultingCompanyGeneral.md" %}
 
 ----
 
-[include_page="TimeTrackingForAConsultingCompanyProductOwner"](include_page="TimeTrackingForAConsultingCompanyProductOwner")
+{% include include_md_file filename="TimeTrackingForAConsultingCompanyProductOwner.md" %}

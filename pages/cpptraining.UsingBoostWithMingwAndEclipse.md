@@ -11,8 +11,8 @@ Now that you've [successfully build boot](cpptraining.GettingAndBuildingBoostInM
 * Configure the project to use CppUTest
 * Configure the project to use Boost
 
-[include_page="cpptraining.SettingUpInitialProject"](include_page="cpptraining.SettingUpInitialProject")
-[include_page="cpptraining.ConfiguringTheProjectForCppUTest"](include_page="cpptraining.ConfiguringTheProjectForCppUTest")
-[include_page="cpptraining.ConfiguringTheProjectToUseBoost"](include_page="cpptraining.ConfiguringTheProjectToUseBoost")
+{% include include_md_file filename="cpptraining.SettingUpInitialProject.md" %}
+{% include include_md_file filename="cpptraining.ConfiguringTheProjectForCppUTest.md" %}
+{% include include_md_file filename="cpptraining.ConfiguringTheProjectToUseBoost.md" %}
 
 [<--Back](CppTraining#boost)

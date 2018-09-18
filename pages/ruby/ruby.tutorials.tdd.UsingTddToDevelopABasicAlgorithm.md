@@ -104,8 +104,7 @@ You will create a test whose primary purpose is to get the production class crea
   end
 {% endhighlight %}
 
-[[include page="sidebar_start"]][include_page="ruby.sidebar.RubyFilesUseSpaces"](include_page="ruby.sidebar.RubyFilesUseSpaces")
-[include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="rubyfileusingspaces" title="Ruby Files Use Spaces" filename="ruby.sidebar.RubyFilesUseSpaces" %}
 
 Note: In Test::Unit, a test class must inherit from Test::Unit::TestCase and all all methods you want to be executed as test must start with the name "test".
 
@@ -405,9 +404,7 @@ Created commit a284610: Added support for constants
 Macintosh-7%
 {% endhighlight %}
 ## Refactor The Unit Tests
-[[include page="sidebar_start"]][[include page="ruby.sidebar.HowManyStepsAreNormal"]][include_page="sidebar_end"](include_page="sidebar_end")
-
-[[include page="sidebar_start"]][[include page="ruby.sidebar.WhyShouldYouCareAboutTheTests"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="howmanysteps" title="How Many Steps Are Normal" filename="ruby.sidebar.HowManyStepsAreNormal" %}
 
 * Update your unit test by adding a setup method:
 {% highlight ruby %}
@@ -538,7 +535,7 @@ Created commit bec791e: Removed duplication in the test code.
 Macintosh-7% 
 {% endhighlight %}
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.Refactoring"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="refactoring" title="Refactoring" filename="ruby.sidebar.Refactoring" %}
 
 Now is a great time to kick back, listen to some tunes, get a glass of ice tea and add TDD to your resume.
 
@@ -552,7 +549,7 @@ Now you'll add a test of addition:
   end
 {% endhighlight %}
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.RubyAndParens"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="parens" title="Ruby and Parens" filename="ruby.sidebar.RubyAndParens" %}
 
 * Run your tests to see how it fails:
 {% highlight terminal %}
@@ -751,7 +748,7 @@ By simply adding the current operator if it is non-null, your code should now be
 
 * Now is a great time to check your work it because you are about to refactor. Go ahead, it should only take a second.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.CheckingInIsSlow"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="checkinisslow" title="Check-in is Slow" filename="ruby.sidebar.CheckingInIsSlow" %}
 
 * Create a new method that writes the current operator if it is not null:
 {% highlight ruby %}
@@ -1188,7 +1185,7 @@ So something is an operand if it is a sequence of digits of length 1 or more or 
 # Test: Handling ()
 In this section you'll start by properly parsing parenthesis. Then you'll make sure that ()'s work with simple expressions and finally you'll make sure that ()'s cause lower precedence operators to happen before higher-precedence operators.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.WhatIsAnalysis"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="whatisanalysis" title="What is Analysis" filename="ruby.sidebar.WhatIsAnalysis" %}
 
 ## Test: Removing ()
 Begin by writing a test that verifies the removal of ()'s from an otherwise empty expression: $$ (\ )\ \ \rightarrow $$
@@ -1221,7 +1218,7 @@ Begin by writing a test that verifies the removal of ()'s from an otherwise empt
 
 * Check your work in.
 
-[[include page="sidebar_start"]][[include page="ruby.sidebar.DIdYouJustWriteTooMuchProductionCode"]][include_page="sidebar_end"](include_page="sidebar_end")
+{% include aside/collapsed id="toomuchprodcode" title="Too Much Production Code?" filename="ruby.sidebar.DIdYouJustWriteTooMuchProductionCode" %}
 
 ## Test: () around expression works
 Next, verify that ()'s around an expression still works.  $$ (\ 4\ *\ a\ )\ \ \rightarrow \ \ 4\ a\ * $$ 

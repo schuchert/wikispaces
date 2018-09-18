@@ -37,7 +37,7 @@ There is nothing particular to Eclipse that will make it work better than, say N
 Download Mockito from here: <http://code.google.com/p/mockito/downloads/list>. As of the last time I updated the version number, I was using 1.8.2.
 
 ### Install FitNesse
-[include_page="FitNesse.Installing"](include_page="FitNesse.Installing")
+{% include include_md_file filename="FitNesse.Installing.md" %}
 * When you are trying to learn something new, do you tend to look for examples that work and then spring-board from there into more complex work? That's the approach book takes. You'll begin with a simple tutorial to get your started working with FitNesse. 
 
 # Appendix 1: Mechanics

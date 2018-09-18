@@ -1,19 +1,19 @@
 ---
 title: DesignProblemsPrintable
 ---
-[include_page="ITunesCompetetorDesignProblem"](include_page="ITunesCompetetorDesignProblem")
+{% include include_md_file filename="ITunesCompetetorDesignProblem.md" %}
 ----
 ----
-[include_page="GmOnStarCompetetorDesignProblem"](include_page="GmOnStarCompetetorDesignProblem")
+{% include include_md_file filename="GmOnStarCompetetorDesignProblem.md" %}
 ----
 ----
-[include_page="TimeTrackingForConsultingCompanyDesignProblem"](include_page="TimeTrackingForConsultingCompanyDesignProblem")
+{% include include_md_file filename="TimeTrackingForConsultingCompanyDesignProblem.md" %}
 ----
 ----
-[include_page="ClinicalTrialsTrackingDesignProblem"](include_page="ClinicalTrialsTrackingDesignProblem")
+{% include include_md_file filename="ClinicalTrialsTrackingDesignProblem.md" %}
 ----
 ----
-[include_page="DvrDesignProblem"](include_page="DvrDesignProblem")
+{% include include_md_file filename="DvrDesignProblem.md" %}
 ----
 ----
-[include_page="HeavyEquipmentRental"](include_page="HeavyEquipmentRental")
+{% include include_md_file filename="HeavyEquipmentRental.md" %}

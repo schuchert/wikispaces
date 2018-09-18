@@ -15,7 +15,7 @@ This short tutorial demonstrates some of the differences between these two types
 The instructions for setting up your project mirror those from the first tutorial: [EJB3_Tutorial_1_Create_and_Configure](EJB3_Tutorial_1_Create_and_Configure).
 
 For the remainder of this tutorial, when you see **<project>**, replace it with **Ejb3Tutorial4**.
-[include_page="Ejb3EclipseProjectSetupAndConfiguration"](include_page="Ejb3EclipseProjectSetupAndConfiguration")
+{% include include_md_file filename="Ejb3EclipseProjectSetupAndConfiguration.md" %}
 Here are a few things to note (source for all of these items appears at the end after the assignments [EJB3_Tutorial_4_Extended_Context#OtherFiles](EJB3_Tutorial_4_Extended_Context#OtherFiles):
 * Make sure you copy the **utils** directory from a previous tutorial.
 * Make sure you copy a **persistence.xml** from a previous tutorial.
@@ -637,6 +637,6 @@ The interface seems to be a bit messed up with concepts that relate to both stat
 </persistence>
 {% endhighlight %}
 
-[include_page="Ejb3JBossUtilJava"](include_page="Ejb3JBossUtilJava")
+{% include include_md_file filename="Ejb3JBossUtilJava.md" %}
 
 [<--Back](EJB_3_and_Java_Persistence_API)

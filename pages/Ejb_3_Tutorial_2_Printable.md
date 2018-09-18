@@ -6,25 +6,25 @@ title: Ejb_3_Tutorial_2_Printable
 This tutorial revisits the entities from [JPA_Tutorial_1_Getting_Started](JPA_Tutorial_1_Getting_Started) and introduces a DAO, which gets its entity manager auto-wired.
 ----
 ## Setting Up Your Project
-[include_page="Ejb_3_Tutorial_2_Setting_Up_Your_Project"](include_page="Ejb_3_Tutorial_2_Setting_Up_Your_Project")
+{% include include_md_file filename="Ejb_3_Tutorial_2_Setting_Up_Your_Project.md" %}
 ----
 ## The Entity Model
-[include_page="Ejb_3_Tutorial_2_The_Entity_Model"](include_page="Ejb_3_Tutorial_2_The_Entity_Model")
+{% include include_md_file filename="Ejb_3_Tutorial_2_The_Entity_Model.md" %}
 ----
 ## The Dao and its Interface
-[include_page="Ejb_3_Tutorial_2_The_Dao_and_its_Interface"](include_page="Ejb_3_Tutorial_2_The_Dao_and_its_Interface")
+{% include include_md_file filename="Ejb_3_Tutorial_2_The_Dao_and_its_Interface.md" %}
 ----
 ## Starting JBoss EJB 3 Embeddable Container
-[include_page="Ejb_3_Tutorial_2_Starting_the_Container"](include_page="Ejb_3_Tutorial_2_Starting_the_Container")
+{% include include_md_file filename="Ejb_3_Tutorial_2_Starting_the_Container.md" %}
 ----
 ## Smoke Test Suite
-[include_page="Ejb_3_Tutorial_2_Smoke_Test_Suite"](include_page="Ejb_3_Tutorial_2_Smoke_Test_Suite")
+{% include include_md_file filename="Ejb_3_Tutorial_2_Smoke_Test_Suite.md" %}
 ----
 ## Optional: Data Source Configuration
-[include_page="Ejb_3_Tutorial_2_Optional_Data_Source_Configuration"](include_page="Ejb_3_Tutorial_2_Optional_Data_Source_Configuration")
+{% include include_md_file filename="Ejb_3_Tutorial_2_Optional_Data_Source_Configuration.md" %}
 ----
 ## Optional: QuantumDb Setup and Configuration
-[include_page="QuantumDB_Configuration"](include_page="QuantumDB_Configuration")
+{% include include_md_file filename="QuantumDB_Configuration.md" %}
 ----
 ## Exercises
-[include_page="Ejb_3_Tutorial_2_Exercises"](include_page="Ejb_3_Tutorial_2_Exercises")
+{% include include_md_file filename="Ejb_3_Tutorial_2_Exercises.md" %}

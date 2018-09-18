@@ -1,5 +1,4 @@
 
-### All Green
 All green refers to the state of the executing Example; it means all Examples are executing and passing. This terminology derives from unit testing in Smalltalk and then popularized by JUnit. In Smalltalk, their process was:
 * Red: Create a failing test
 * Green: Get the failing test to pass

@@ -1,5 +1,4 @@
 
-### What a silly implementation!
 What about the hard-coded return value? Why not just write the code now, it's clear what needs to be done. This is an issue of balancing what you know and the risk that what you know is incorrect.
 
 In this case, you could probably guess where this is going. However, as I write the tutorial, this is literally the first time I've worked on this part of this problem, so while I think I know what's going to happen, I'm really not sure. And even if I know the next step, I am not too sure about 2, 3 or more steps ahead.

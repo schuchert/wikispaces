@@ -14,28 +14,28 @@ You'll write the code such that the environment creates the database schema base
 
 Good luck!
 # JPA Tutorial 1: Background
-[include_page="JPA_Tutorial_1_Background"](include_page="JPA_Tutorial_1_Background")
+{% include include_md_file filename="JPA_Tutorial_1_Background.md" %}
 # JPA Initial Setup
-[include_page="JPA_Tutorial_1_Initial_Setup"](include_page="JPA_Tutorial_1_Initial_Setup")
+{% include include_md_file filename="JPA_Tutorial_1_Initial_Setup.md" %}
 [#EclipseProjectSetup](#EclipseProjectSetup)
 # Eclipse Project Setup
-[include_page="JPA_Tutorial_1_Eclipse_Project_Setup"](include_page="JPA_Tutorial_1_Eclipse_Project_Setup")
+{% include include_md_file filename="JPA_Tutorial_1_Eclipse_Project_Setup.md" %}
 # Persistence Unit Configuration
-[include_page="JPA_Tutorial_1_Persistence_Unit"](include_page="JPA_Tutorial_1_Persistence_Unit")
+{% include include_md_file filename="JPA_Tutorial_1_Persistence_Unit.md" %}
 # Create Your First Entity
-[include_page="JPA_Tutorial_1_First_Entity"](include_page="JPA_Tutorial_1_First_Entity")
+{% include include_md_file filename="JPA_Tutorial_1_First_Entity.md" %}
 # Add an Embedded Entity
-[include_page="JPA_Tutorial_1_Embedded_Entity"](include_page="JPA_Tutorial_1_Embedded_Entity")
+{% include include_md_file filename="JPA_Tutorial_1_Embedded_Entity.md" %}
 # Add an Entity with a One to Many Relationship
-[include_page="JPA_Tutorial_1_Entity_with_One_to_Many_Relationship"](include_page="JPA_Tutorial_1_Entity_with_One_to_Many_Relationship")
+{% include include_md_file filename="JPA_Tutorial_1_Entity_with_One_to_Many_Relationship.md" %}
 # Make a Relationship Bi-Directional
-[include_page="JPA_Tutorial_1_Make_Relationship_Bi-directional"](include_page="JPA_Tutorial_1_Make_Relationship_Bi-directional")
+{% include include_md_file filename="JPA_Tutorial_1_Make_Relationship_Bi-directional.md" %}
 # Exercises
-[include_page="JPA_Tutorial_1_Exercises"](include_page="JPA_Tutorial_1_Exercises")
+{% include include_md_file filename="JPA_Tutorial_1_Exercises.md" %}
 # Entire Source Base
-[include_page="JPA_Tutorial_1_Entire_Source_Base"](include_page="JPA_Tutorial_1_Entire_Source_Base")
+{% include include_md_file filename="JPA_Tutorial_1_Entire_Source_Base.md" %}
 # FAQ
-[include_page="JPA_Tutorial_1_FAQ"](include_page="JPA_Tutorial_1_FAQ")
+{% include include_md_file filename="JPA_Tutorial_1_FAQ.md" %}
 Links to the individual pages:
 [JPA_Tutorial_1_Background](JPA_Tutorial_1_Background)
 [JPA_Tutorial_1_Initial_Setup](JPA_Tutorial_1_Initial_Setup)
