@@ -1,10 +1,7 @@
----
-title: Monopoly_Release_1_User_Stories_WO_Link
----
 The following stories along with their user acceptance tests cover release 1:
-* [Player Movement]({{ site.pagesurl}}/Monopoly R1 Player Movement)
-* [Game Players]({{ site.pagesurl}}/Monopoly R1 Game Players)
-* [Game Rounds]({{ site.pagesurl}}/Monopoly R1 Game Rounds)
+* [Player Movement](Monopoly_R1_Player_Movement)
+* [Game Players](Monopoly_R1_Game_Players)
+* [Game Rounds](Monopoly_R1_Game_Rounds)
 
 ### Optional
 * Display the names of the locations rather than the number of the locations.

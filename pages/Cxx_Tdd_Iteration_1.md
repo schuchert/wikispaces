@@ -6,12 +6,11 @@ This tutorial uses a game similar to Monopoly as a basis for our work. The rules
 
 This iteration's theme is: **Player Movement**
 {% include include_md_file filename="Monopoly_Release_1_Theme_Description.md" %}
-
 {% include include_md_file filename="Monopoly_Release_1_User_Stories_WO_Link.md" %}
 
 ## Our First User Story
 Here is our current user story:
-{% include include_md_file filename="Monopoly_R1_Player_Movement.md" %}
+{% include include_md_file filename="Monopoly_R1_Player_Movement" %}
 
 Our first test seems seems simple enough. A player takes a turn and moves around the board. However, let's break this down into a few parts so we can take some simple steps (note for this first test we're moving between [TDD](Test_Driven_Development) and [TFD](Test_First_Development)):
 * Players move in the game using dice, so let's start by creating a single die object.

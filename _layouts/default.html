@@ -10,6 +10,7 @@
         gtag('js', new Date());
         gtag('config', 'UA-122965859-1');
 
+
     </script>
 
     <meta charset="utf-8">
@@ -35,12 +36,14 @@
         <li><a href="{{ site.base_url }}/wikispaces/pages/home">Wikispaces</a></li>
         <li>
             <div id="searchBar">
-                <div id="search">
-                    <form role="search" method="get" action="{{ site.baseurl }}/search/">
-                        <input id="searchString" name="searchString" placeholder="What you you looking for..."
-                               type="text">
-                        <input id="searchButton" name="googleSearchName" type="submit" value="Search">
-                    </form>
+                <div>
+                    <div id="search">
+                        <form role="search" method="get" action="{{ site.baseurl }}/search/">
+                            <input id="searchString" name="searchString" placeholder="What you you looking for..."
+                                   type="text">
+                            <input id="searchButton" name="googleSearchName" type="submit" value="Search">
+                        </form>
+                    </div>
                 </div>
             </div>
         </li>
@@ -55,9 +58,9 @@
         </div>
     </section>
 
-	<div class="content">
-    {{ content }}
-	</div>
+    <div class="content">
+        {{ content }}
+    </div>
 
 </div>
 
@@ -69,6 +72,7 @@
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
         ga('create', '{{ site.google_analytics }}', 'auto');
         ga('send', 'pageview');
+
 
 
 </script>
