@@ -25,7 +25,7 @@ public class Main {
 }
 {% endhighlight %}
 ----
-[#Dao](#Dao)
+{: #Dao}
 ## Dao.java
 {% highlight java %}
 package ex4;

@@ -620,7 +620,7 @@ There is a lot of shared code between the two AccountInventory bean implementati
 ### Interfaces
 The interface seems to be a bit messed up with concepts that relate to both stateless and stateful beans. Describe how you might change the interface to make this better. Consider using two interfaces instead of one.
 
-[#OtherFiles](#OtherFiles)
+{: #OtherFiles}
 ## Other Files
 
 ### persistence.xml

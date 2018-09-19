@@ -26,7 +26,7 @@ Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on 
 * One Heading Row - Names of columns, which map to either setter methods or method calls (if they end in ?)
 * Zero or more Data Rows - rows of data used to either provide data into a system or data used to compare to values returned from the fixture
 
-[#firstDecisionTable](#firstDecisionTable)
+{: #firstDecisionTable}
 Here is an example [FitNesse](http://fitnesse.org/) decision table:
 
 {% highlight terminal %}

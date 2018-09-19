@@ -663,7 +663,7 @@ This also requires a change to SeasonPassManager:
       return null;
    }
 {% endhighlight %}
-[#QueryResultExample](#QueryResultExample)
+{: #QueryResultExample}
 **Update: EpisodesInToDoList.java**:
 
 {% highlight java %}

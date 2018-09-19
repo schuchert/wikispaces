@@ -976,7 +976,7 @@ I don't recommend keeping the first table and the last table since they result i
 
 This example use of a scenario calling another scenario is overkill. Review the [original article](FitNesse.Tutorials.ScenarioTables.OriginalArticle) for a better example and a much more detailed explanation. This technique is useful when you have a complex abstract test scenario and you'll end up performing many tests using the same sequence of steps. The abstract scenario might require many parameters. However, for a given test, you might only need to vary 1. In that case, this is a good way to both capture the basic steps and then execute them.
 
-[#summary](#summary)
+{: #summary}
 # Summary
 Congratulations. At this point, if you've worked through each of the tutorials, you are only lacking experience with Table Tables. You now know how to work effectively with FitNesse and Slim. You picked up several test refactoring and organization techniques along the way. You even saw a data-driven test in JUunit.
 

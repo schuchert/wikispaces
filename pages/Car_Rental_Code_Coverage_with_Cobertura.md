@@ -37,7 +37,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 Here's the file so we can discuss it and configure it for your situation:
 
 ----
-[#cobertura](#cobertura)
+{: #cobertura}
 ## cobertura.xml
 {% highlight xml %}
  <?xml version="1.0" encoding="UTF-8"?>

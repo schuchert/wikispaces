@@ -28,7 +28,7 @@ If you prefer the first but want to enter the second button, look for the// **fo
 # Working From [Schuchert's GitHub Repository](http://github.com/schuchert/fitnesse-tutorials/tree/master)
 For instructions on working from github: [FitNesse.Tutorials.WorkingFromGitHub](FitNesse.Tutorials.WorkingFromGitHub)
 
-[#JavaTutorials](#JavaTutorials)
+{: #JavaTutorials}
 
 # Java Tutorials Ready to be Used
 

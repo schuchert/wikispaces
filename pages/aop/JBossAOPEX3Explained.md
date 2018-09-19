@@ -160,7 +160,7 @@ This is an implementation of ITrackedObject. Our goal is to augment Address with
 16 }
 {% endhighlight %}
 
-[#SetInterceptor](#SetInterceptor)
+{: #SetInterceptor}
 ### SetInterceptor.java
 The SetInterceptor first intercepts each assignment to a field (as we have seen in other examples) but now it gets the current value and checks to see if the new value is different. If the new value is different, the SetInterceptor sets the underlying target object's changed state to true. There are three things worth noting:
 * This interceptor assumes the underlying target object is in fact an ITrackedObject. We know it is because of the jboss-aop.xml, but we could check here if we wanted. 

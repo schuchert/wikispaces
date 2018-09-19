@@ -30,7 +30,7 @@ Finally, if I have two projects, both of which have a main, it is much easier to
 
 These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in this version, you can assume these steps are fragile. If they fail for you, please send me an email (schuchert -at- yahoo -dot- com) and let me know the version of XCode you are using. I'll see if I can figure it out. If you've solved the problem, let me know and I'll update these notes. Or, if you are feeling ambitious, I'll give you permission to update the notes.
 
-[#backgroundSkipped](#backgroundSkipped)
+{: #backgroundSkipped}
 # Setting up the three projects
 
 ## Creating the Workspace

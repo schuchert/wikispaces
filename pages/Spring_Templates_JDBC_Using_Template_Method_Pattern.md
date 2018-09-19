@@ -16,7 +16,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 
 ## The Source
 ----
-[#AbstractTemplateMethod](#AbstractTemplateMethod)
+{: #AbstractTemplateMethod}
 ## AbstractTemplateMethod.java
 {% highlight java %}
 01: package aab.valtech.jug.templatemethod;
@@ -100,7 +100,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 ### Interesting Lines
 |Line|Description|
 ----
-[#Example2](#Example2)
+{: #Example2}
 ## Example2.java
 {% highlight java %}
 01: package aab.valtech.jug.templatemethod;
@@ -170,7 +170,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 ### Interesting Lines
 |Line|Description|
 ----
-[#JdbcExample](#JdbcExample)
+{: #JdbcExample}
 ## JdbcExample.java
 {% highlight java %}
 01: package aab.valtech.jug.templatemethod;

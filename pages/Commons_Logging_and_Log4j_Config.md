@@ -13,7 +13,7 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 * Create a simple configurator, see LogginConfiguration.java, and a simple configuration file, see [log4j.properties](#log4j).
 
 
-[#LoggingConfiguration](#LoggingConfiguration)
+{: #LoggingConfiguration}
 ## LoggingConfiguration.java
 {% highlight java %}
 01: package loggingutil;
@@ -67,7 +67,7 @@ When I started using [Spring](http://www.springframework.org/), I need to includ
 |26 - 28|Just in case I want to get a logger, I have a simple method that will give me an [ILogger](Commons_Logging_and_Log4j_Config#ILogger) for a given class. Notice that I'm not using Sun's or Lor4J's Logger. Why? I change the interface to support both a variable number of parameters and automatic log level checking. So no place in my code beyond this configuration utility is aware of Log4J. I know I'm going to use Log4J so is there any value in wrapping it? In this case I am not simply wrapping it by actually adapting its interface.|
 |30 - 34|The comment says it all. If you want to look like you are initializing the logging infrastructure, call initialize. It's an empty method, but by referencing it, the class will get loaded and the logger will get initialized because of the static initializer on lines 12 - 15.|
 
-[#log4j](#log4j)
+{: #log4j}
 ## log4j.properties
 This file resides in the same directory as the source file for [LogginConfiguration.java](#LoggingConfiguration).
 
@@ -80,7 +80,7 @@ This file resides in the same directory as the source file for [LogginConfigurat
 |Line|Description|
 |01|This sets the logging level from its default, DEBUG, to WARN. I did this to reduce the output produced by Spring. I've occasionally turned it back on to DEBUG to trace through things. However, I generally prefer my console to have little if any output so that what's there is something I know I need to pay attention to.|
 
-[#ILogger](#ILogger)
+{: #ILogger}
 ## ILogger.java
 Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it does not have an interface that uses the features offered by Java 5 so instead of using Lof4J directly, I have returned this interface that publishes what I think is a better interface.
 
@@ -113,7 +113,7 @@ Yes this is yet another logger wrapper, or is it? I use Log4J. Unfortunately it 
 There are not really any specifically interesting lines. Notice that every method's last parameter is a variable number of parameters. Take a look below at the implementation of this class.
 
 ----
-[#Logger](#Logger)
+{: #Logger}
 ## Logger.java
 {% highlight java %}
 01: package loggingutil;

@@ -88,7 +88,7 @@ If we look at the second operation, ++, it gets even worse (assume that value ho
 
 There are several places where this sequence of steps could be interrupted. One bad case is where two threads both call the same method on the same object. The first thread completes the first three instructions, up to GETFIELD, and the is interrupted. A second thread takes over and performed the entire method, incrementing value by one. Then the first thread picks up where it left off. It has the **old** value on its operand stack. It adds one and stores the result. This results in adding one two times and only incrementing by one because two threads stepped on each other.
 
-[#SkipOverBytecodeInformation](#SkipOverBytecodeInformation)
+{: #SkipOverBytecodeInformation}
 ## Demonstrating the failure with a test
 
 Here's a description of a test that will prove our code is broken:
@@ -98,7 +98,7 @@ Here's a description of a test that will prove our code is broken:
 * Run this until we demonstrate that lastId was only incremented by one, instead of two. 
 
 Here is such a test:
-[#ClassWithThreadingProblemTest](#ClassWithThreadingProblemTest)
+{: #ClassWithThreadingProblemTest}
 
 ### ClassWithThreadingProblemTest.java
 

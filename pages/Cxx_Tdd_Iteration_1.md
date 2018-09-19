@@ -1317,7 +1317,7 @@ To paraphrase Douglas Adams, if the system ever has all of its tests running, it
 * Create a main and link it instead of the main that runs the tests. "Play" a game.
 * Add output to your system:
 ** Try to do it without changing any of the existing classes or header files in your system.
-[#EndGame](#EndGame)
+{: #EndGame}
 
 # End Game
 This section contains all of the complete Iteration 1 source files with no explanations.

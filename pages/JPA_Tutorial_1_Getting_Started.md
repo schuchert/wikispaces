@@ -17,7 +17,7 @@ Good luck!
 {% include include_md_file filename="JPA_Tutorial_1_Background.md" %}
 ## JPA Initial Setup
 {% include include_md_file filename="JPA_Tutorial_1_Initial_Setup.md" %}
-[#EclipseProjectSetup](#EclipseProjectSetup)
+{: #EclipseProjectSetup}
 ## Eclipse Project Setup
 {% include include_md_file filename="JPA_Tutorial_1_Eclipse_Project_Setup.md" %}
 ## Persistence Unit Configuration

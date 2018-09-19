@@ -34,7 +34,7 @@ Under CarRental there is an xml directory that contains two ant build files:
 (By the way, let me give credit where it's due, I got most of this from [Getting Started with Emma using Ant](http://emma.sourceforge.net/userguide/ar01s03.html).
 
 * Here's the file so we can discuss it and configure it for your situation:
-[#emma](#emma)
+{: #emma}
 ### emma.xml
 {% highlight terminal %}
 01: <?xml version="1.0" encoding="UTF-8"?>

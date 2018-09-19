@@ -10,7 +10,7 @@ Now that I've used it a bit in Eclipse 3.1.2, I've got an initial recommendation
 * Using a [TimeBomb](JUnit_4.x#TimeBomb) as a test place holder.
 * [TimeBomb Generic Code Explained](JUnit_4.xTimeBombGenericCodeExplained)
 
-[#assertAsterisk](#assertAsterisk)
+{: #assertAsterisk}
 ### Using the assert* methods
 In JUnit 3.8.1, test classes inherited from TestCase. Among other things, doing so gave the code access to several assert methods like assertEquals. JUnit 4.x no longer makes this requirement. Of course every solution introduces problems. In this case, I no longer have easy access to assertEquals and other such methods.
 
@@ -27,7 +27,7 @@ The recommendation from [JUnit 4.0 in 10 Minutes](http://www.instrumentalservice
      31:     }
      41: }
 {% endhighlight %}
-[#AtTest](#AtTest)
+{: #AtTest}
 [Click Here for more information on @Test.](JUnit_4.xAtTest)
 
 This works fine until you try to organize imports in Eclipse or use name completion (ctrl-space). Eclipse will not allow you to use name completion on something like assertFalse. You have to manually type in the name, and then manually add the import and things work fine. I'm lazy and I don't want to do this. My first attempt to fix this was the following:
@@ -51,7 +51,7 @@ Since these methods are in the class org.junit.Assert, I've decided to switch to
 41:     }
 101: }
 {% endhighlight %}
-[#TimeBomb](#TimeBomb)
+{: #TimeBomb}
 ### TimeBomb
 What is a TimeBomb? Let's begin with an example. This is an excerpt from [Example 2](JUnit_4.x#example2):
 {% highlight terminal %}
@@ -65,7 +65,7 @@ What is a TimeBomb? Let's begin with an example. This is an excerpt from [Exampl
 95:     }
 96:
 {% endhighlight %}
-[#AtTestExpected](#AtTestExpected)
+{: #AtTestExpected}
 [Click here for more information on @Test(expected = ObjectInUse.class)](JUnit_4.xAtTestWithExpected)
 
 This example probably needs a little more background. As mentioned in [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52), we use the @Test annotation to denote a method as a test case. It can take an optional argument of //**expected**//. This test is meant to attempt to remove a VehicleType that is used by other ob jets. So, in this case, read @Test(expected = ObjectInUse.class) as "when this test executes, I expect the exception ObjectInUse to be thrown."
@@ -105,7 +105,7 @@ If you're interested in a complex and detailed explanation of the implementation
 ## Complete Examples
 This section contains the full code for the examples mentioned above.
 ----
-[#example1](#example1)
+{: #example1}
 ### Example 1
 ### TestVehicle.java
 {% highlight java %}
@@ -127,7 +127,7 @@ This section contains the full code for the examples mentioned above.
 16:     private VehicleLicense license;
 17:     private VehicleType type;
 {% endhighlight %}
-[#AtBefore](#AtBefore)
+{: #AtBefore}
 [For a description of @Before, click here.](JUnit_4.xBefore)
 {% highlight java %}
 19:     @Before
@@ -159,7 +159,7 @@ This section contains the full code for the examples mentioned above.
 41: }
 {% endhighlight %}
 ----
-[#example2](#example2)
+{: #example2}
 ### Example 2
 ### VehicleTypeComponentTest.java
 {% highlight java %}
@@ -266,7 +266,7 @@ This section contains the full code for the examples mentioned above.
 101: }
 {% endhighlight %}
 ----
-[#example3](#example3)
+{: #example3}
 ### Example 3
 **RatePlanComponentTest.java** (partial)
 {% highlight java %}
@@ -295,7 +295,7 @@ This section contains the full code for the examples mentioned above.
 37:         return new JUnit4TestAdapter(RatePlanComponentTest.class);
 38:     }
 {% endhighlight %}
-[#AtBeforeClass](#AtBeforeClass)
+{: #AtBeforeClass}
 [For a description of @BeforeClass, click here.](JUnit_4.xAtBeforeClass)
 {% highlight java %}
 40:     @BeforeClass
@@ -305,7 +305,7 @@ This section contains the full code for the examples mentioned above.
 44:         vtComponent.createVehicleType(TEST_VEHICLE_TYPE_NAME_2, ValidState.valid);
 45:     }
 {% endhighlight %}
-[#AtAfterClass](#AtAfterClass)
+{: #AtAfterClass}
 [For a description of @AfterClass, click here.](JUnit_4.xAtAfterClass)
 {% highlight java %}
 47:     @AfterClass
@@ -320,7 +320,7 @@ This section contains the full code for the examples mentioned above.
 56:         disableDeleting();
 57:     }
 {% endhighlight %}
-[#AtAfter](#AtAfter)
+{: #AtAfter}
 [For a description of @After, click here.](JUnit_4.xAtAfter)
 {% highlight java %}
 59:     @After
@@ -379,7 +379,7 @@ This section contains the full code for the examples mentioned above.
 112:         component.createRatePlan(rp);
 113:     }
 {% endhighlight %}
-[#RegularMethod](#RegularMethod)
+{: #RegularMethod}
 [What is this doing here? Click here.](JUnit_4.xRegularMethod)
 {% highlight java %}
 233:     private RatePlan instantiateBasicRatePlan(String name, String vehicleTypeName) {
@@ -390,7 +390,7 @@ This section contains the full code for the examples mentioned above.
 238:     }
 {% endhighlight %}
 ----
-[#TimeBombCode](#TimeBombCode)
+{: #TimeBombCode}
 ### TimeBomb.java
 {% highlight java %}
 01: package vehicle.util;

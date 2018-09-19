@@ -527,7 +527,7 @@ The first issue suggests spending some time on an Account class and then moving 
 If you do this, then you'll be able to simplify the LoginServiceTest class because some of the tests will no longer belong there and instead will exist on the AccountTest. Creating AccountTest and Account classes is left as an exercise to the reader.
 
 The second issue suggests the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern). And in fact, that's the next section. 
-[#refactorproduction](#refactorproduction)
+{: #refactorproduction}
 </section>
 
 <section>
@@ -536,7 +536,7 @@ In the real system, there were more requirements and the stream of requirements 
 
 I made the change and sure enough supporting new requirements was// **much**// easier. The remainder of this tutorial involves refactoring the current solution to use the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern).
 
-[#CoolDiagram](#CoolDiagram)
+{: #CoolDiagram}
 Here's where we're going:
 [media_type="custom"_key="3879673"](media_type="custom"_key="3879673")
 

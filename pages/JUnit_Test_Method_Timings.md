@@ -33,7 +33,7 @@ Notice that I have separate src and test directories. It turns out that both of 
 If you do not use a src directory and just store your projects at the top level, then your META-INF directory will be directly under your project.
 
 ----
-[#TestMethodTimingAspect](#TestMethodTimingAspect)
+{: #TestMethodTimingAspect}
 ## TestMethodTimingAspect.java
 {% highlight java %}
 01: package test.timingaspect;
@@ -124,7 +124,7 @@ If you do not use a src directory and just store your projects at the top level,
 |63|Use the new String.format method to format my output.|
 
 ----
-[#aop](#aop)
+{: #aop}
 ## aop.xml
 {% highlight terminal %}
 01: <aspectj>

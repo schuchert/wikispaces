@@ -463,7 +463,7 @@ var rpn_calculator = function() {
 {% endhighlight %}
 
 * Run the tests, everything should be passing. Here's the full version of rpn_stack.js:
-[#helpremovedryviolation](#helpremovedryviolation)
+{: #helpremovedryviolation}
 ### src/rpn_stack.js
 {% highlight javascript %}
 var rpn_stack = function() {

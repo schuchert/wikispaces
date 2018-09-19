@@ -43,7 +43,7 @@ Scenarios with Actors and scripts set the "global actor". So it might seem that 
 
 Bob is considering switching to a stack-based scheme to avoid pollution of the actor across siblings. In this scheme, if a sibling introduces an actor, when the test concludes, the actor will be reset to what it was just before the test executed. This removes a possible dependence upon the execution order of tests. For example, imagine a test that uses a scenario but does not itself set the actor. If the tests is run by itself it would fail. However, if another test runs before it and sets the global actor, then the test might pass. A stack-based scheme would address this kind of problem. The test would consistently fail in both situations.
 </aside>
-[#skipPastScenarioActorsSidebar](#skipPastScenarioActorsSidebar)
+{: #skipPastScenarioActorsSidebar}
 # Using Scenario Tables
 Imagine you have a need to perform some test that requires several steps. You want to perform those same steps across several test cases where all parts of the test can be parameterized, even the expected results. For example, image you want to validate a Login Service with the following requirements (these are actual requirements from a project I worked on, these are not made up - well at least not by me):
 * Logging in requires a user name and password (both alphanumeric)
@@ -74,7 +74,7 @@ So trying to generalize this is may be overkill, but using a simple example will
 
 Notice that we could use a Script table. However, we'll instead use a scenario table. Why? I want to specify these steps abstractly. Then I want to express multiple scenarios with some of the parameters hard-coded. To do that I'll create new scenario tables that use the original one with some of the parameters already filled in.
 
-[#ExampleOfStartInScenario](#ExampleOfStartInScenario)
+{: #ExampleOfStartInScenario}
 # The First Attempt
 Here's an example test page with this scenario:
 {% highlight terminal %}

@@ -39,7 +39,7 @@ My first vision wasn't up to my expectations. Sure, I could have just added "thr
 I made throwUntil a generic method. Doing so allowed Java to determine at compile time that while in general the method "throwUntil" can throw any exception, in this //**particular use**// it was throwing an ObjectInUse exception, which happens to be a RuntimeException and therefore does not require a try/catch or a throws clause on the method signature.
 
 This is what I ended up using:
-[#TimeBombCode](#TimeBombCode)
+{: #TimeBombCode}
 ## TimeBomb.java
 {% highlight java %}
 01: package vehicle.util;

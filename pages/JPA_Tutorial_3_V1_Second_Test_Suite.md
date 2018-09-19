@@ -9,7 +9,7 @@ We started with Patron. In round 2, we add the basic support for the Book. The b
 Note that we did not also include retrieving a book. We use this functionality in all of the tests anyway so I do not include a specific test for that functionality. This might seem like we’re not isolating tests perfectly but then I’ve never seen or come up with a “perfect” solution to this issue and this seems adequate to me.
 
 We've already written a test very much like the above list if you consider PatronTest. We can extract quite a bit of common code out of our PatronTest and reuse it in our BookTest class. Take a look at this base class (note the embedded comments contain background information):
-[#BaseDbDaoTest](#BaseDbDaoTest)
+{: #BaseDbDaoTest}
 ### BaseDbDaoTest.java
 {% highlight java %}
 package session;
@@ -282,7 +282,7 @@ public class PatronDaoTest extends BaseDbDaoTest {
 
 ### The Dao Classes
 The BookDao looks a whole lot like the PatronDao:
-[#BookDao](#BookDao)
+{: #BookDao}
 ### BookDao.java
 {% highlight java %}
 package session;
@@ -323,7 +323,7 @@ public class BookDao extends BaseDao {
 {% endhighlight %}
 
 Note that this class depends on a simple base class, the BaseDao, which offers support for storing the Entity Manager attribute:
-[#BaseDao](#BaseDao)
+{: #BaseDao}
 ### BaseDao.java
 {% highlight java %}
 package session;
@@ -349,7 +349,7 @@ public abstract class BaseDao {
 {% endhighlight %}
 
 And finally, here’s the updated PatronDao that has been rewritten to use the BaseDao.
-[#PatronDao](#PatronDao)
+{: #PatronDao}
 ### PatronDao.java
 {% highlight java %}
 package session;

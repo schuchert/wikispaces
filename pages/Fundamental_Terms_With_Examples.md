@@ -145,7 +145,7 @@ If you cannot list at least three problems with your understanding of a problem,
 Variations:
 * **Every** solution introduces problems. If you cannot list three problems your solution will introduce, you don't understand your solution (or the problem).
 ----
-[#SquareLawOfComputation](#SquareLawOfComputation)
+{: #SquareLawOfComputation}
 ## Square Law of Computation
 The complexity to solve a problem grows at least as fast as the square of the number of things you are trying to solve - Weinberg, Introduction to General Systems Thinking
 
