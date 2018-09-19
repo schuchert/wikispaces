@@ -1,7 +1,7 @@
 ---
 title: Designing_to_Spring_Templates
 ---
-[Home](home) [Next-->](Spring_Templates_Typical_JDBC)
+[Home]({{site.baseurl}}/pages/home) [Next-->](Spring_Templates_Typical_JDBC)
 
 ## Designing to Spring Templates
 
@@ -36,4 +36,4 @@ Note, once you select on any of the above links, the next and previous links wil
 
 I'd appreciate any feedback you have to offer. Please write me: schuchert@yahoo.com.
 
-[Home](home) [Next-->](Spring_Templates_Typical_JDBC)
+[Home]({{site.baseurl}}/pages/home) [Next-->](Spring_Templates_Typical_JDBC)

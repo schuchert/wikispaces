@@ -1,7 +1,7 @@
 ---
 title: Tool_Setup_and_Configuration_Notes
 ---
-[Home](home)
+[Home]({{site.baseurl}}/pages/home)
 
 ## Eclipse Plugins and Configuration 
 I'm using a few plugins in Eclipse for much of this work. This is the list of plugins and configuration notes. Note the first one really could be its own category, but I'm only using Subversion via Eclipse, so I've included it here.
@@ -18,4 +18,4 @@ I'm using a few plugins in Eclipse for much of this work. This is the list of pl
 * [Commons_Logging_and_Log4j_Config](Commons_Logging_and_Log4j_Config)
 * [Wikispaces_Style_Sheet](Wikispaces_Style_Sheet)
 
-[Home](home)
+[Home]({{site.baseurl}}/pages/home)

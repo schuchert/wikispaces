@@ -1,7 +1,7 @@
 ---
 title: space.menu
 ---
-[Back to the Top](home)
+[Home]({{site.baseurl}}/pages/home)
 
 [My CV](MyCv)
 [C++ Training](CppTraining)
@@ -16,4 +16,4 @@ title: space.menu
 [AOP](AOP)
 [C# & OOP](CSharpAndOop)
 
-[Back to the Top](home)
+[Home]({{site.baseurl}}/pages/home)
