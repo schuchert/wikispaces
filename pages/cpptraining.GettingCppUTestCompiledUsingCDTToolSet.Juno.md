@@ -2,14 +2,14 @@
 title: cpptraining.GettingCppUTestCompiledUsingCDTToolSet.Juno
 ---
 [<--back](CppTraining)
-# Overview
+## Overview
 These instructions assume you have already followed [these instructions](cpptraining.GettingStartedWithEclipseCdt.Juno).
 
-## Instructions
+### Instructions
 * Download [CppUTest](http://sourceforge.net/projects/cpputest/files/cpputest/v3.1/CppUTest-v3.1.zip/download) (as of this writing, I'm using version 3.1.
 * Extract the zip somewhere. I'm using// **c:\learncpp\cpputest**// for these instructions.
 * Start a command shell.
-* Go to where you extracted the files, which in my case is:// **c:\learncpp\cpputest**//
+* Go to where you extracted the files, which in my case is: ```C:\learncpp\cpputest**```
 * Make using make:
 
 {% highlight terminal %}

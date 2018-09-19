@@ -3,28 +3,37 @@ title: cpptraining.GettingCppUTestCompiledUsingCDTToolSet
 ---
 [<--Back](CppTraining#gettingfirsttestrunning)
 
-# Background
+## Background
 These steps assume you are using the CDT's tool set. Before following these instructions, please make sure you have [followed these instructions first.](cpptraining.GettingStartedWithEclipseCdt)
 
-# Steps
+## Steps
 * Update your path to include the// **bin**// directories under mingw and msys. These directories were installed under the Eclipse directory when installing the [wascana plugin](http://code.google.com/a/eclipselabs.org/p/wascana/). In my particular case, I installed Eclipse under C:\learncpp\eclipse, so I added to my path for all DOS shells: 
->> //**C:\learncpp\eclipse\mingw\bin;C:\learncpp\eclipse\msys\bin **//
+```C:\learncpp\eclipse\mingw\bin;C:\learncpp\eclipse\msys\bin```
 
 * Download CppUTest (version 2.3 as of this writing): [CppUTest at Sourceforge](http://sourceforge.net/projects/cpputest/)
+
 * Extract the zip somewhere (I'll be using c:\learncpp\CppUTest23 for this example)
+
 * Switch to the install directory
+^
 {% highlight terminal %}
 c:>cd C:\learncpp\cpputest23
 {% endhighlight %}
+
 * We don't have a unix shell but we are using unix tools, so neither of the install scripts do exactly what we need. Manually set the variable CPP_U_TEST:
+^
 {% highlight terminal %}
 cd C:\learncpp\cpputest23>set CPP_U_TEST=c:\learncpp\cpputest23
 {% endhighlight %}
+
 * Note: you probably need to add the following line to the makefile (depends on a few variables, it is safe to always add it):
+^
 {% highlight terminal %}
 CC=gcc
 {% endhighlight %}
+
 * Now it's a matter of using make:
+^
 {% highlight terminal %}
 C:\learncpp\cpputest23>make clean
 C:\learncpp\cpputest23>make all
@@ -33,6 +42,7 @@ C:\learncpp\cpputest23>make all
 Note, you should be able to simply type "make clean all", that did not work so I just used 2 commands.
 
 * Here's a trace from my machine:
+^
 {% highlight terminal %}
 C:\workspaces\CppUTest>make clean
 Making clean
@@ -110,6 +120,5 @@ OK (179 tests, 174 ran, 610 checks, 5 ignored, 0 filtered out, 15 ms)
 
 C:\workspaces\CppUTest>
 {% endhighlight %}
-
 
 [<--Back](CppTraining#gettingfirsttestrunning)
