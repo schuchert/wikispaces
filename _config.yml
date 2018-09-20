@@ -9,6 +9,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+blog: "http://schuchert.github.io"
 url: "http://schuchert.github.io/wikispaces"
 repository: schuchert/wikispaces
 theme: jekyll-theme-midnight
