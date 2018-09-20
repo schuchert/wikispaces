@@ -1,0 +1,7 @@
+#!/bin/sh
+
+NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+bundle exec jekyll build
+
+bundle exec htmlproofer ./_site --assume-extension --disable-external > site_errors 2>&1

@@ -3,3 +3,5 @@ vendor
 *.swp
 .jekyll-metadata
 .idea
+site_errors
+
