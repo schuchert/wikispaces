@@ -1036,7 +1036,7 @@ Running unit tests...
 Running 8 tests........OK!
 {% endhighlight %}
 
-**//IMPORTANT//** Does this implementation seem too simple? Our system is "correct" because it conforms to our tests. If we think our system's implementation is too simple, change the definition of your system by writing a test.
+**IMPORTANT** Does this implementation seem too simple? Our system is "correct" because it conforms to our tests. If we think our system's implementation is too simple, change the definition of your system by writing a test.
 
 Let's make sure when I play with 9 players we get the same result. Then when we move on to our future use acceptance tests, we'll verify that the play() method works as it is supposed to. Add the following test:
 {% highlight cpp %}

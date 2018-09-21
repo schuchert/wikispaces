@@ -3,19 +3,19 @@ title: cpptraining.ConfiguringTheProjectForCppUTest
 ---
 ## Configuring the Project for CppUTest
 * Edit your project's properties (right-click, properties)
-* Select// **C/C++ Build:Settings**//
+* Select**C/C++ Build:Settings**
 #include Directories
-* Under// **GCC C++ Compiler:Includes**// enter the include directory of CppUTest. 
+* Under**GCC C++ Compiler:Includes** enter the include directory of CppUTest.
   * Click the page with the green plus.
-  * Select// **File system...**//
+  * Select**File system...**
   * Enter or search to the directory. For my install location, the directory is: C:\workspaces\CppUTest2_1\includes.
 ### CppUTest Library
-* Under// **MinGW C++ Linker:Libraries**//, enter both a library path as well as a library
-* Under// **Libraries (-l)**//, click on the page with a green plus
-* Enter the name of the library (minus "lib" and ".lib"):// **CppUTest**//
+* Under**MinGW C++ Linker:Libraries**, enter both a library path as well as a library
+* Under**Libraries (-l)**, click on the page with a green plus
+* Enter the name of the library (minus "lib" and ".lib"):**CppUTest**
 ### Library Path
-* Under// **Library search path (-L)**//, click on the page with a green plus
-* Enter the directory where the library is located. On my machine it is// **C:\workspaces\CppUTest2_1\lib**// 
+* Under**Library search path (-L)**, click on the page with a green plus
+* Enter the directory where the library is located. On my machine it is**C:\workspaces\CppUTest2_1\lib**
 * Click OK
 ### Update main
 You won't notice any changes unless you use CppUTest.

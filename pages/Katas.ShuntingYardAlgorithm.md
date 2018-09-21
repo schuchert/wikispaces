@@ -11,7 +11,7 @@ The [Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorit
 ## Precedence and Associativity
 What makes this difficult is that operators, generally, have some notion of precedence in most languages. For example, multiplication typically has a higher precedence than addition. So the expression 3 + 5 * 6 is 33 (multiplication happens first) rather than 40.
 
-There's also the issue of associativity. For example, 3 + 4 + 5 happens left-to-right, or it is left-associative. On the other hand, assignment is right-associative. For example, a = b = c = 4, all values receive the value 4 because c = 4 is performed first, while b is assigned to the// **result**// of the assignment of c, which is 4.
+There's also the issue of associativity. For example, 3 + 4 + 5 happens left-to-right, or it is left-associative. On the other hand, assignment is right-associative. For example, a = b = c = 4, all values receive the value 4 because c = 4 is performed first, while b is assigned to the**result** of the assignment of c, which is 4.
 
 For the purposes of this exercise, consider these [precedence rules from C++](http://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B#Operator_precedence).
 
@@ -27,7 +27,7 @@ The examples above are taken from a recent (June 2009) personal walk-through of 
 I recommend the following approach when trying this problem:
 * Use the examples with the expected results shown above
 * Work top to bottom in the order shown
-* Add// **one**// example at a time and get all tests to pass
+* Add**one** example at a time and get all tests to pass
 * Review both your test code and production code, refactoring as you see fit
 
 One note, when I worked on this, I used Java with JUnit 4's parameterized tests. Here's what the final test file looks like:
@@ -96,7 +96,7 @@ public class InfixToPostfixConverterTest {
 }
 {% endhighlight %}
 
-This worked OK, but occasionally I wanted to run just one test. This does not seem to be supported, so I had to comment out various lines in the// **data()**// method. The next time I work on this, I'll probably use individual test methods.
+This worked OK, but occasionally I wanted to run just one test. This does not seem to be supported, so I had to comment out various lines in the**data()** method. The next time I work on this, I'll probably use individual test methods.
 
 ## Getting Started
 Here is one possible start to this problem (with the first three tests added and passing):

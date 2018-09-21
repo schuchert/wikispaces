@@ -35,7 +35,7 @@ These steps assume you have some project setup using CppUTest. If not, [see belo
 
 * Select your project and edit its properties: right-click::edit properties (or alt-enter)
 * Go to C/C++ Build::Settings::GCC C++ Settings
-* Under miscellaneous add// **-std=c++0x**//. My version already had a setting, so it looks like the following:
+* Under miscellaneous add**-std=c++0x**. My version already had a setting, so it looks like the following:
 {% highlight terminal %}
 -c -fmessage-length=0 -std=c++0x
 {% endhighlight %}

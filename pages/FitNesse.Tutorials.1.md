@@ -66,7 +66,7 @@ Here are some preliminary steps to get this table created (there will be more la
 * Set the page type to a test page (depending on the version of fitness, this is either a check-box or a radio button). Note, if a page name starts with or ends with the word test, the page type will be set to test by default.
 * Save the property change (click the **Save Properties** button).
 
-Now you can execute the page. Click on the **Test** button. The tests will fail dues to a missing fixutre. [FitNesse](http://fitnesse.org/) will color the first row yellow and add the message "//Could not find fixture: AddProgramsToSchedule.//". Now you must create a Fixture class and add it to the test page.
+Now you can execute the page. Click on the **Test** button. The tests will fail dues to a missing fixutre. [FitNesse](http://fitnesse.org/) will color the first row yellow and add the message ".". Now you must create a Fixture class and add it to the test page.
 
 ### Creating the Fixture
 If you are planning on using Eclipse and working in Java, then you can get a repository from github: [fitnesse-tutorials](http://github.com/schuchert/fitnesse-tutorials/tree/master). Review the instructions [here](FitNesse.Tutorials.WorkingFromGitHub).

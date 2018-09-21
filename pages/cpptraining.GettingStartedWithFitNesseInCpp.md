@@ -119,7 +119,7 @@ FitNesse (v20100711) Started...
 ## Create Top-Level Page
 This assumes you're running FitNesse on port 8080. Update the url with your port as necessary.
 * Create a new top-level page at: <http://localhost:8080/CslimFirstExamples>
-* Edit the contents. Set it to (note, update// **/User/schuchert**// with your top-level directory):
+* Edit the contents. Set it to (note, update**/User/schuchert** with your top-level directory):
 
 {% highlight terminal %}
 !contents -R2 -g -p -f -h
@@ -134,7 +134,7 @@ This assumes you're running FitNesse on port 8080. Update the url with your port
 
 * Save the page.
 * Create a sub-page at the following URL: <http://localhost:8080/CslimFirstExamples.DecisionTableExample>
-* Edit the contents. Set it to (note, to make the columns line up, use the// **Format**// button):
+* Edit the contents. Set it to (note, to make the columns line up, use the**Format** button):
 
 {% highlight terminal %}
 |Modulus                 |
@@ -143,7 +143,7 @@ This assumes you're running FitNesse on port 8080. Update the url with your port
 |13   |27     |13        |
 |5    |2      |1         |
 {% endhighlight %}
-If you click the// **Test**// Button, you'll see a bit of yellow. It's time to write a fixture.
+If you click the**Test** Button, you'll see a bit of yellow. It's time to write a fixture.
 
 ## Writing the Fixture
 
@@ -254,7 +254,7 @@ compiling Fixtures.c
 Linking CSlim_cslim
 {% endhighlight %}
 
-* Go back to your page and hit the// **Test**// button.
+* Go back to your page and hit the**Test** button.
 
 If you see mostly green, congratulations. As of this writing, there's an exception on the slim protocol version. Once this gets fixed, I'll update these instructions
 

@@ -10,7 +10,7 @@ Gradle requires a JVM; I work mostly on OS X, so I use JSE 1.6.0_24, but any ver
 Instructions for installing Gradle are [here](http://www.gradle.org/installation.html). I'm summarizing them here, if you have any questions refer to the installation instructions.
 * [Download Gradle](http://www.gradle.org/downloads.html). For these examples I happen to be using the 1.0-milestone-3 version of Gradle.
 * Unzip the file somewhere, say /users/Schuchert/bin
-* This will create a directory under the installation directory called something like //**gradle-1.0-milestone-3/**//
+* This will create a directory under the installation directory called something like **gradle-1.0-milestone-3/**
 * Add the bin directory under the extracted directory to your path. In my particular case, the path is: /Users/schuchert/bin/gradle-1.0-milestone-3/bin/
 * Verify your installation works by simply typing gradle:
 
@@ -57,7 +57,7 @@ dependencies {
   testCompile group: 'junit', name: 'junit', version: '4.8+'
 }
 {% endhighlight %}
-* Create a file called //**biuld.gradle**// under your project directory (//**~/src/gradle_example**// in my case)
+* Create a file called **biuld.gradle** under your project directory (**~/src/gradle_example** in my case)
 * Verify that a build works (even without any production or test code)
 {% highlight terminal %}
 [~/src/gradle_example]% gradle test
@@ -76,12 +76,12 @@ Total time: 9.219 secs
 {% endhighlight %}
 
 ## Smoke Test With A Little Code
-We're working at the command line. Java packages relate to directories. Now you'll create a couple of source files, one test, one production. I'll use the package //**demo.rpn**//:
+We're working at the command line. Java packages relate to directories. Now you'll create a couple of source files, one test, one production. I'll use the package **demo.rpn**:
 {% highlight terminal %}
 [~/src/gradle_example]% mkdir -p src/test/java/demo/rpn src/main/java/demo/rpn
 {% endhighlight %}
 
-* Under the project directory, in //**src/test/java/demo/rpn**// create the file //**RpnCalculatorShould.java**//:
+* Under the project directory, in **src/test/java/demo/rpn** create the file **RpnCalculatorShould.java**:
 {% highlight terminal %}
 [~/src/gradle_example]% vi src/test/java/demo/rpn/RpnCalculatorShould.java
 {% endhighlight %}
@@ -107,7 +107,7 @@ public class RpnCalculatorShould {
 }
 {% endhighlight %}
 
-* Under the project directory, in //**src.main/java/demo/rpn**// create the file //**RpnCalculator.java**//:
+* Under the project directory, in **src.main/java/demo/rpn** create the file **RpnCalculator.java**:
 {% highlight terminal %}
 [~/src/gradle_example]% vi src/main/java/demo/rpn/RpnCalculator.java
 {% endhighlight %}
@@ -132,7 +132,7 @@ public class RpnCalculator {
 }
 {% endhighlight %}
 
-* Run your tests by typing //**gradle test**//
+* Run your tests by typing **gradle test**
 {% highlight terminal %}
 [~/src/gradle_example]% gradle test
 :compileJava
@@ -157,8 +157,8 @@ open build/reports/tests/index.html
 My report shows one test running and passing.
 ## On To Eclipse
 If you want to create project information for Eclipse, you need to do a few things:
-* Add //**apply plugin: 'eclipse'**//
-* Create the project structure using //**gradle eclipse**//
+* Add **apply plugin: 'eclipse'**
+* Create the project structure using **gradle eclipse**
 {% highlight terminal %}
 [~/src/gradle_example]% gradle eclipse
 :eclipseClasspath
@@ -172,14 +172,14 @@ Total time: 8.383 secs
 [~/src/gradle_example]%
 {% endhighlight %}
 
-Note, this creates a //**project**// directory, not a workspace. You'll need to:
+Note, this creates a **project** directory, not a workspace. You'll need to:
 * Start eclipse
 * Select a workspace
 * Import the project into eclipse
 
 In my example, I only created a top-level project directory, not a workspace directory. However, you can create an Eclipse workspace and include a symbolic link to the project. This is a bit out of scope for what I want to get covered. I only mention this here because it confused me a bit.
 ## Preparing for git
-No coding is complete without a mention of using a repository. We'll do a touch of preparation for git and check in our initial structure. In the top-level project directory create a file called //**.gitignore**//. For this example, and assuming you have executed the Eclipse step above:
+No coding is complete without a mention of using a repository. We'll do a touch of preparation for git and check in our initial structure. In the top-level project directory create a file called **.gitignore**. For this example, and assuming you have executed the Eclipse step above:
 {% highlight terminal %}
 build
 .classpath
@@ -191,10 +191,10 @@ build
 You might choose to not include the .settings directory used by Eclipse.
 
 Now you can turn this directory into a git repository:
-* Initialize git using //**git init**//
-* Add the files you care to monitor using //**git add .gitignore src build.gradle**//
-* Verify everything is cool using //**git status**//
-* Finally, commit the changes (adding just staged the work), using //**git commit -m "Initial Commit"**//
+* Initialize git using **git init**
+* Add the files you care to monitor using **git add .gitignore src build.gradle**
+* Verify everything is cool using **git status**
+* Finally, commit the changes (adding just staged the work), using **git commit -m "Initial Commit"**
 
 {% highlight terminal %}
 [~/src/gradle_example]% git init

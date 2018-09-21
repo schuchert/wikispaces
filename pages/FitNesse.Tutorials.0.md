@@ -79,7 +79,7 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 
 * Click on the **Test** button, your test will fail with yellow (meaning something was not found) warnings:
 ![](images/FirstFailure.gif)
- **//Note//**: If you get an error similar to "Testing was interrupted ...", add the following line to your page (this will probably only happen if you build from source):
+ **Note**: If you get an error similar to "Testing was interrupted ...", add the following line to your page (this will probably only happen if you build from source):
 
 {% highlight terminal %}
 !path fitnesse.jar

@@ -36,7 +36,7 @@ In these somewhat abstract examples, we have a couple of key elements:
 
 With this in mind, it's time to start working on a test.
 
-//**Note**//: For this and future tutorials in this series, the examples will stop making the tables look nice. FitNesse does that job well enough. If you prefer to make your table look nice, you can click on the **Format** button when editing the table.
+**Note**: For this and future tutorials in this series, the examples will stop making the tables look nice. FitNesse does that job well enough. If you prefer to make your table look nice, you can click on the **Format** button when editing the table.
 
 ## The Test
 First you need to create a schedule. Given your recent experience with script tables, it might be a good idea to create several programs and then simply reuse that program guide across all tests:
@@ -130,7 +130,7 @@ To fix the first problem, you'll need to update DateUtil:
    static SimpleDateFormat timeFormat = new SimpleDateFormat("H:mm");
 {% endhighlight %}
 
-Make sure this seeming innocuous change did not break any unit tests (it should not). Also make sure all other acceptance tests are still passing (oops, it does). Before you fix the problem with the current acceptance test, you should fix the problem introduced// **by**// the new acceptance test - or rather the one exploited by the current unit test. The [TearDown](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown) page resets the program guide, but it does not reset the to do list.
+Make sure this seeming innocuous change did not break any unit tests (it should not). Also make sure all other acceptance tests are still passing (oops, it does). Before you fix the problem with the current acceptance test, you should fix the problem introduced**by** the new acceptance test - or rather the one exploited by the current unit test. The [TearDown](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown) page resets the program guide, but it does not reset the to do list.
 
 ### Cleaning Up Between Tests, Part Dux
 The TearDown page <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown> uses the ClearProgramSchedule fixture to, well, clear the program schedule. Should you update the ClearProgramSchedule to also clear the todo list, or should you create a second fixture, say ClearToDoList? There's no clear answer as either will work. Using a single fixture will couple these two separate concerns (a possible violation of the [Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf)). Using two fixtures will make things more explicit, but also leave the possibility of forgetting to do both together. (Ultimately there's a better solution, put all of these key objects in a single place and reset that, however, this tutorial does not take that approach.)
@@ -339,7 +339,7 @@ This requires a method added to Program (thus avoiding a violation of the Law of
    }
 {% endhighlight %}
 
-Run all of your unit tests, verify they all pass. One fails. If you created the GenerateProgramsTest.java, you'll have one failure. (If not, do not worry, you'll have the exact same problem in an acceptance test - I had a duplicated test so I get to fix two problems). Since the problem is duplicated, and just in case you do not have this unit test, run the entire suite of tests. You should have one failing acceptance test as well:// **ScriptTableExamples.CreatingManyProgramsExample**//
+Run all of your unit tests, verify they all pass. One fails. If you created the GenerateProgramsTest.java, you'll have one failure. (If not, do not worry, you'll have the exact same problem in an acceptance test - I had a duplicated test so I get to fix two problems). Since the problem is duplicated, and just in case you do not have this unit test, run the entire suite of tests. You should have one failing acceptance test as well:**ScriptTableExamples.CreatingManyProgramsExample**
 
 Upon review, the test data for this test is:
 
@@ -401,7 +401,7 @@ The first list of the ScenarioTable describes the input parameters to the table.
 | seasonPasses | A list of season passes, which will be parsed by the underlying method and then created |
 | toDoList | A list of programs that should be in the to do list |
 
-Notice that this table expresses what needs to be done.// **Question**//, what is the name of the fixture?// **Answer**// None, yet. In fact, add this table after the large decision table that creates the program schedule. Execute the test and it should still pass. Why? This is a declaration of a sequence of steps, but it is not used anywhere.
+Notice that this table expresses what needs to be done.**Question**, what is the name of the fixture?**Answer** None, yet. In fact, add this table after the large decision table that creates the program schedule. Execute the test and it should still pass. Why? This is a declaration of a sequence of steps, but it is not used anywhere.
 
 Now it is type to attempt to use it. To use it you'll need to do several things:
 * Name the fixture.
@@ -413,7 +413,7 @@ Luckily, we already have a working test, so this is a good time to change its fo
 
 ### Create New Page
 
-* First, create the following page <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordOneProgramAtaTimeExample> (//**Note**//: The AtaTime part of the name is important, FitNesse will not recognize a wikiword with two capital letters back to back, so rather than calling the page ...AtATime..., I named it ...AtaTime...)
+* First, create the following page <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordOneProgramAtaTimeExample> (**Note**: The AtaTime part of the name is important, FitNesse will not recognize a wikiword with two capital letters back to back, so rather than calling the page ...AtATime..., I named it ...AtaTime...)
 * Replace the !contents with the following: 
 
 {% highlight terminal %}

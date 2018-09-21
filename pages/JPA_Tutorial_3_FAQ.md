@@ -2,10 +2,10 @@
 title: JPA_Tutorial_3_FAQ
 ---
 JPA Tutorial 3 - FAQ
-* **Phone number length is set to 11 in the annotation in the exercise, but phone numbers are 12. What's happening?** //It will get truncated (in hypersonic)//
-* **TDD: Is there a tool (eclipse plugin) to generate a concrete class based on a test case?** //Use Quick-fix (Ctrl-1 or click the icon on the sidebar) to create the class, and stub methods.//
-* **When do Named Queries get compiled?** //When you create the EntityManager factory.//
-* **Is there something that can use to see the db structure based on the mappings?** //After the entitymanager creates the db, use something like DB Visualizer//
+* **Phone number length is set to 11 in the annotation in the exercise, but phone numbers are 12. What's happening?**It will get truncated (in hypersonic)//
+* **TDD: Is there a tool (eclipse plugin) to generate a concrete class based on a test case?**Use Quick-fix (Ctrl-1 or click the icon on the sidebar) to create the class, and stub methods.//
+* **When do Named Queries get compiled?**When you create the EntityManager factory.//
+* **Is there something that can use to see the db structure based on the mappings?**After the entitymanager creates the db, use something like DB Visualizer//
 
 ### What did we learn/observe so far (mid-day)?
 * varargs for methods
@@ -16,41 +16,41 @@ JPA Tutorial 3 - FAQ
 * eclipse can gen hashcode/equals
 
 ### What did we learn/observe so far (end of day)?
-* Brett: Why we use a DAO //Encapsulates data access, hides entity manager calls. Brett: Seperation of Concerns.//
-* Brett: Contrast the Library to the DAO's //Library is not an entity. Library is the 'go-between' (brett: facade design pattern).//
-* //Brett: Set em with a setter....why?// When you get your objects, they're fully configured (nice). Brett: makes it more testable
-* //Brett: What's @column for?// Defines attributes for a particular field in DB. Brett: affects physical characteristics as opposed to logical.
-* //Brett: What do you think about variables args?// saves lines of code
-* //Brett: what is suppresswarnings for?// brett: hide a warning based on actual query parameter type (not available at compile-time)
-* //Brett: named query and named queries?, why not put multiple named queries on the same object?// You can have only one version of the annotation on a given object
-* //Brett: opinions on base dao?// confusing, brett: heavy-handed/overkill
-* //Brett: EntityManagerBaseTest vs. BaseDAODBTest?// helps if you decide you want to change how you're accessing your database.
-* //Brett: opinions on refactoring as you go?// have to look at code to understand what's changing (head nods)
-* //Brett: overriding methods? (annotation)// gives compiler ability to flag problem. some class discussion of when needed, when not...
-* //Brett: @temporal// Brett:time/datastamp
+* Brett: Why we use a DAO .
+* Brett: Contrast the Library to the DAO's .
+* ? When you get your objects, they're fully configured (nice). Brett: makes it more testable
+* ? Defines attributes for a particular field in DB. Brett: affects physical characteristics as opposed to logical.
+* ? saves lines of code
+* ? brett: hide a warning based on actual query parameter type (not available at compile-time)
+* ? You can have only one version of the annotation on a given object
+* ? confusing, brett: heavy-handed/overkill
+* ? helps if you decide you want to change how you're accessing your database.
+* ? have to look at code to understand what's changing (head nods)
+* ) gives compiler ability to flag problem. some class discussion of when needed, when not...
+* l Brett:time/datastamp
 
 //What else have you learned today?//
-* //Specifying the field for the join table//
-* //Comments in the code today were more helpful (than yesterday)//
-* //Cascading with a many-to-many relationship -- you can only put mappedBy on one side, but you can put cascade attributes on both sides. Cascading is for convenience -- less calls to entity manager.//
-* //In the book where define many-to-one (loan), there's an orderBy?// defines the sort order
+* e
+* )
+* .
+* ? defines the sort order
 
 //Day 3 - Tutorial #3
 Questions//
-* //**Patron has a one-to-many for fines, but no many-to-one on the fines side. Why?**// Just an example of a uni-directional relationship.
-* //**Why is insertable false? (in exercise)**// We think: So that loan has to point at things which already exist. (as opposed to creating new loan/patron at same time)
-* //Seems like more stuff should be done in the library ?// Hold off on that because the next few exercises build up additional requirements which may change your mind
+* **Patron has a one-to-many for fines, but no many-to-one on the fines side. Why?** Just an example of a uni-directional relationship.
+* **Why is insertable false? (in exercise)** We think: So that loan has to point at things which already exist. (as opposed to creating new loan/patron at same time)
+* ? Hold off on that because the next few exercises build up additional requirements which may change your mind
 
 //What else have you learned today?//
 * //How we can create/persist a given entity//
-* //Named queries//
+* s
 * //Query syntax is better/easier//
 
 //Notes for Brett://
-* //Need to break up tutorial a bit more.//
+* .
 
 
-### //Responses to questions in the exercises//
+### s
 * A Patron can return a book while having an overdue book
 ### Below are the tests to check everything:
 And the new feature that doesn't allow to checkout with overdue books.

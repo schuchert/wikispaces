@@ -6,15 +6,15 @@ JMockIt is an interesting mocking library that actively does quite a bit of work
 
 * First you'll need to [[http://code.google.com/p/jmockit/downloads/list|download JMockIt]. As of this writing I used 0.999.8, which was "featured" at the time.
 * Next, extract the downloaded zip somewhere.
-* You'll need to include jmockit.jar in your classpath// **as the first entry**//
+* You'll need to include jmockit.jar in your classpath**as the first entry**
 
-//**For Eclipse**//
+**For Eclipse**
 Here's what I did in Eclipse
 * Create a standard Java project
 * Create a new folder in the project called libs
 * Copied the contents of the jmockit folder into the libs directory
 * Add <your project>/libs/jmockit/jmockit.lib to the class path (Project:Properties:Java Build Path:Libraries:Add Jar
-* While you are there you can add JUnit 4 to your project as well by using// **Add Library...**//
+* While you are there you can add JUnit 4 to your project as well by using**Add Library...**
 * Make jmockit.lib the first entry in the class path (Project:Properties:Java Build Path:Order and Export - select jmockit.jar and move it up to the top of th elist)
 
 The Login Service initially uses 4 java source files:
@@ -24,7 +24,7 @@ The Login Service initially uses 4 java source files:
 * AccountRepository - an interface
 
 Here's a first cut at the code for a test that demonstrates JMockIt has simply created test doubles successfully:
-//**LoginServiceShould**//
+**LoginServiceShould**
 {% highlight java %}
 package schuchert.jmockit.ex;
 
@@ -56,7 +56,7 @@ public class LoginServiceShould {
 }
 {% endhighlight %}
 To get this to compile and run, you'll need the following additional source files:
-//**Account**//
+**Account**
 {% highlight java %}
 package schuchert.jmockit.ex;
 
@@ -64,7 +64,7 @@ public class Account {
 }
 {% endhighlight %}
 
-//**AccountRepository**//
+**AccountRepository**
 {% highlight java %}
 package schuchert.jmockit.ex;
 
@@ -72,7 +72,7 @@ public interface AccountRepository {
 }
 {% endhighlight %}
 
-//**LoginService**//
+**LoginService**
 {% highlight java %}
 package schuchert.jmockit.ex;
 
@@ -98,8 +98,8 @@ Agent-Class: mockit.internal.startup.Startup
 This line registers the class as a Java Agent. This means it will have access to classes as their bytecode is loaded. JMockIt looks at the class structure to see if there are annotations it cares about. If there are, then it processes that class and gives an updated version of the class back to the class loader. 
 
 ## First Domain Test
-Now that you have the project setup and running, it's time to replace the// **fooShouldNotBeNull**// test with one that is relevant to our problem:
-//**LoginServiceShould**//
+Now that you have the project setup and running, it's time to replace the**fooShouldNotBeNull** test with one that is relevant to our problem:
+**LoginServiceShould**
 {% highlight java %}
 01: package schuchert.jmockit.ex;
 02: 
@@ -163,7 +163,7 @@ Now that you have the project setup and running, it's time to replace the// **fo
 ### Observations
 The use of anonymous inner classes with instance initializers is not a new idea. It does lead to somewhat longer code for setup. I worry that as a result, the tendency will be for peopel to mix conceptually unrelated setup in the same block to avoid longer code. Looking at this and consdiering the equivalent in Mockito, I prefer the more terse form of Mockit, but this is perfectly fine. JMockIt has several features that Mockito does not, so this additial verbosity is probably going to be a worthwhile cost for additional power, but I'm not sure about this just yet.
 
-Finally, I've recently come to the conslution that// **no**// mock-library code should appear in the mainline code of a test. To understand/read/consume the test, I want it to be intention-revealing. JMockIT can certainly be read, but I don't want to have to read it to understand the point of the test. The same can be said of all the other mocking libraries. So here's a better example of how I want the tests to look:
+Finally, I've recently come to the conslution that**no** mock-library code should appear in the mainline code of a test. To understand/read/consume the test, I want it to be intention-revealing. JMockIT can certainly be read, but I don't want to have to read it to understand the point of the test. The same can be said of all the other mocking libraries. So here's a better example of how I want the tests to look:
 {% highlight java %}
     @Test
     public void increaseLoginCountForSuccessfulLogin() {

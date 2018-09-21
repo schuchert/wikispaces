@@ -15,7 +15,7 @@ This project uses Eclipse 3.2 and JDK 1.5.0_06. I have a few additional plugins 
 This project also requires several libraries:
 * [JUnit 4.x](http://www.junit.org) (included with Eclipse 3.2)
 * [Spring](http://www.springframework.org/download), I used Spring 2.0-RC2
-* Commons Logging, which you can get if you download **//spring-framework-2.0-rc2-with-dependencies.zip//** instead of spring-framework-2.0-rc2.zip from [Spring Downloads](http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644)
+* Commons Logging, which you can get if you download **spring-framework-2.0-rc2-with-dependencies.zip** instead of spring-framework-2.0-rc2.zip from [Spring Downloads](http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644)
 * [AspectJ 1.5.x](http://www.eclipse.org/aspectj/downloads.php)
 
 #### Optional

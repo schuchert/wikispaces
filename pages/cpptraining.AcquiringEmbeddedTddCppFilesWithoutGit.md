@@ -4,7 +4,7 @@ title: cpptraining.AcquiringEmbeddedTddCppFilesWithoutGit
 If you do not have access to git, you can download a zip file:
 * Download this zip file: 
 [[file:embedded_cpp_tdd.zip]]
-* Extract it to some location, e.g.// **C:\Projects**//
+* Extract it to some location, e.g.**C:\Projects**
 
 This will create a directory called: C:\Projects\embedded_cpp_tdd
 

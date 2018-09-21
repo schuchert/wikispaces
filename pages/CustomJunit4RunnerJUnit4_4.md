@@ -19,7 +19,7 @@ Here are a few assumptions:
 * We want to be able to not run the integration tests using the automated build scrips
 * A test class' test methods are either all integration tests or none of its methods are integration tests; we did not want to individually decide which tests were integration tests
 
-We settled on a simple approach. If there is a system property defined called// **ExecuteIntegrationTests**//, we run the integration tests, if not, we ignore them.
+We settled on a simple approach. If there is a system property defined called**ExecuteIntegrationTests**, we run the integration tests, if not, we ignore them.
 
 #### Original Idea
 The original idea was to use the @RunWith(...) annotation to use a custom JUnit4 Runner and then add to that an annotation @Integration to indicate something was an integration test. However, having both was redundant so we settled on simply specifying a custom runner, e.g.:
@@ -34,8 +34,8 @@ public class SomeClassThatHasIntegrationTests {
 {% endhighlight %}
 
 When this test is executed either:
-* All tests are ignored if the environment variable// **ExecuteIntegrationTests**// is defined
-* All tests are executed if the environment variable// **ExecuteIntegrationTests**// is not defined
+* All tests are ignored if the environment variable**ExecuteIntegrationTests** is defined
+* All tests are executed if the environment variable**ExecuteIntegrationTests** is not defined
 
 To get integration tests to execute, simply add -DExecuteIntegrationTests to the command-line when running the JVM.
 ### The Code

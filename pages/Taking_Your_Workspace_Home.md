@@ -7,12 +7,12 @@ title: Taking_Your_Workspace_Home
 * Make sure to copy/email this file to yourself
 
 ## Backup Projects
-* Make sure **Project:Build Automatically** is turned// **off**//
+* Make sure **Project:Build Automatically** is turned**off**
 * **Project:Clean**
   * Make sure to select all projects
-  * Make sure **Start a Build Immediately** is// **disabled**//
+  * Make sure **Start a Build Immediately** is**disabled**
 * Go to your workspace directory
-* Select everything (should be just folders)// **except**// the .metadata directory
+* Select everything (should be just folders)**except** the .metadata directory
 * Zip/7-zip all of the files into a single archive
 * Make sure to copy/email this file to yourself
 

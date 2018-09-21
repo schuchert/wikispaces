@@ -15,7 +15,7 @@ remote: Compressing objects: 100% (9/9), done.
 remote: Total 10 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (10/10), 44.15 KiB, done.
 {% endhighlight %}
-**//Note//**: I'm writing this as I just created the git repository, you will see different output than the above
+**Note**: I'm writing this as I just created the git repository, you will see different output than the above
 
 * Change to the directory:
 {% highlight terminal %}
@@ -32,7 +32,7 @@ If you want to create a new branch from this checkout, you may do so
   git checkout -b <new_branch_name>
 HEAD is now at a05260c... Start of Tutorial 0.
 {% endhighlight %}
-**//Note//**: This warning is telling you that you are not working on a branch. Since you are not working on the branch, you won't easily be able to commit the work that you do. If you plan to either work with your code from tutorial to tutorial, that is OK. However, if you'd like the option of checking in your work (maybe a branch per tutorial), then you'll want to create a branch as well.
+**Note**: This warning is telling you that you are not working on a branch. Since you are not working on the branch, you won't easily be able to commit the work that you do. If you plan to either work with your code from tutorial to tutorial, that is OK. However, if you'd like the option of checking in your work (maybe a branch per tutorial), then you'll want to create a branch as well.
 
 * To save your work in a branch:
 {% highlight terminal %}

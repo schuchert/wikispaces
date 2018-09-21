@@ -22,38 +22,38 @@ These steps describe what you'll need to do to set up a framework, not an applic
 [Tdd Objective C](https://vimeo.com/9394596);
 
 ## Setting up Project
-* In XCode create a new project:// **File:New Project**// or// **Command-Shift-N**//
-* Under the// **Mac OS X Templates**//, select// **Framework & Library**//
-* Select// **Cocoa Framework**// on the right-side, top pane and either click// **Choose**// or double-click
-* In the// **Save As**// box, enter a project name. I'll be using// **RpnCalculator**//
-* Select the directory under which to create your project. I'll be using// **/Users/schuchert/src/ObjectiveC/Practice**//
-* Click// **Save**//
+* In XCode create a new project:**File:New Project** or**Command-Shift-N**
+* Under the**Mac OS X Templates**, select**Framework & Library**
+* Select**Cocoa Framework** on the right-side, top pane and either click**Choose** or double-click
+* In the**Save As** box, enter a project name. I'll be using**RpnCalculator**
+* Select the directory under which to create your project. I'll be using**/Users/schuchert/src/ObjectiveC/Practice**
+* Click**Save**
 
 At this point, you should have a window that resembles the following:
 ![](images/ObjectiveCRpnCalculatorProjectCreated.jpg)
 
 ## Configuring for Unit Tests
-* Under// **Groups & Files**//, select// **RpnCalculator**// and// **right-click**// (ctrl-click), select// **Add:New Target**//
-* Under// **Max OS X**//, select// **Cocoa**//
-* In the top-most right pane, select// **Unit Test Bundle**// and either// **double-click**// or click// **next**//
-* Under// **Target Name**// enter some descriptive name. I'll use// **UnitTests**//.
-* Click// **Finish**//
+* Under**Groups & Files**, select**RpnCalculator** and**right-click** (ctrl-click), select**Add:New Target**
+* Under**Max OS X**, select**Cocoa**
+* In the top-most right pane, select**Unit Test Bundle** and either**double-click** or click**next**
+* Under**Target Name** enter some descriptive name. I'll use**UnitTests**.
+* Click**Finish**
 * This should bring up the info window on the target:
 
 ![](images/UnitTestsInfoWindow.jpg)
-* Under the Direct Dependencies pane, click the// **+**// and add a dependency to// **RpnCalculator**// (double-click on// **RpnCalculator**//)
+* Under the Direct Dependencies pane, click the**+** and add a dependency to**RpnCalculator** (double-click on**RpnCalculator**)
 * Close the info window
 
 ## Adding a Test Fixture
 Now you'll add a simple fixture with a failing test, then get the test to pass.
 
-* Create a new File,// **File::New**// or// **Command-N**//
-* Select// **Cocoa class**// under// **Mac OS X**//
-* In the upper-most right pane, select// **Objective-C test case class**//
-* Click// **Next**// (or double-click)
-* Under the** //File Name**// enter some sensible test name (making sure to leave the ".m" at the end of the name alone). I'll be using// **ANewlyCreatedRpnCalculatorShould**//
-* Under the// **Targets**// make sure to select// **UnitTests**// and to unselect// **RpnCalculator**//
-* Click// **Finish**//
+* Create a new File,**File::New** or**Command-N**
+* Select**Cocoa class** under**Mac OS X**
+* In the upper-most right pane, select**Objective-C test case class**
+* Click**Next** (or double-click)
+* Under the**File Name** enter some sensible test name (making sure to leave the ".m" at the end of the name alone). I'll be using**ANewlyCreatedRpnCalculatorShould**
+* Under the**Targets** make sure to select**UnitTests** and to unselect**RpnCalculator**
+* Click**Finish**
 
 ## Create a Failing Test
 * Update ANewlyCreatedRpnCalculator.h to resemble:
@@ -81,9 +81,9 @@ Now you'll add a simple fixture with a failing test, then get the test to pass.
 
 ## Build to run the test
 Let's assume the for building you'll want to run the tests every time.
-* Pull down the// **Project**// Menu, select// **Set Active Target**// and pick// **UnitTests**//
-* Bring up the// **Build**// window:// **command-shift-B**// or// **Build:Build Results**//
-* Click// **Build**//
+* Pull down the**Project** Menu, select**Set Active Target** and pick**UnitTests**
+* Bring up the**Build** window:**command-shift-B** or**Build:Build Results**
+* Click**Build**
 * The test should fail:
 ![](images/BuildResultsFailed.jpg)
 
@@ -119,13 +119,13 @@ Now it's time to get the RpnCalculator framework linked into the test target.
 {% endhighlight %}
 
 This example imports a type that does not yet exist. So add it:
-* Create a new file:// **File:New**// or// **Command-N**//
-* Select// **Cocoa Class:Objective-C class**//
-* Click// **Next**//
-* Under// **File Name:**// enter:// **RpnCalculator**// making sure to leave the ".m" in place.
-* Under the// **Targets**// section, select// **RpnCalculator**// and de-select// **UnitTests**//
-* Click// **Finish**//
-* Edit// **RpnCalculator.h**//:
+* Create a new file:**File:New** or**Command-N**
+* Select**Cocoa Class:Objective-C class**
+* Click**Next**
+* Under**File Name:** enter:**RpnCalculator** making sure to leave the ".m" in place.
+* Under the**Targets** section, select**RpnCalculator** and de-select**UnitTests**
+* Click**Finish**
+* Edit**RpnCalculator.h**:
 {% highlight c %}
 #import <Cocoa/Cocoa.h>
 
@@ -137,7 +137,7 @@ This example imports a type that does not yet exist. So add it:
 
 @end
 {% endhighlight %}
-* Edit// **RpnCalculator.m**//:
+* Edit**RpnCalculator.m**:
 {% highlight c %}
 #import "RpnCalculator.h"
 
@@ -152,10 +152,10 @@ If you build now, you will get a linking error. Try it:
 ![](images/BuildFailedWithLinkingError.jpg)
 
 To Fix this:
-* In the main window, under// **Groups & Files**//, select// **RpnCalculator**//
-* In the top-most right pane, you'll see a list view; the first column has the name// **File Name**//.
-* Scroll down until you see// **RpnCalculator.framework**//
-* On the far-right side of that pane is a column with check boxes. Find the check box for the row containing// **RpnCalculator.framework**// and enable it:
+* In the main window, under**Groups & Files**, select**RpnCalculator**
+* In the top-most right pane, you'll see a list view; the first column has the name**File Name**.
+* Scroll down until you see**RpnCalculator.framework**
+* On the far-right side of that pane is a column with check boxes. Find the check box for the row containing**RpnCalculator.framework** and enable it:
 ![](images/AddingToLink.jpg)
 * Build again (Command-Shift B, click the build button)
 * You should have a successful build:

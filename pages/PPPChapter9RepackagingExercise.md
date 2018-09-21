@@ -20,7 +20,7 @@ Here are some steps you can follow:
   * Copy the **ControllerServlet** into this new package
 * You'll notice several compilation errors. We need to fix each one of those. Here's what you should do:
   * Review each error. Most of the errors relate to missing classes.
-  * For now,// **ignore**// the errors in ControllerServlet related to the following classes:  **Application**, **ServiceProvider**, **OnLineServiceProvider**, **OffLineServiceProvider** (we'll fix those last). These errors all in the methods: **ensureApplicationIsInSession** and **getServiceProvider**.
+  * For now,**ignore** the errors in ControllerServlet related to the following classes:  **Application**, **ServiceProvider**, **OnLineServiceProvider**, **OffLineServiceProvider** (we'll fix those last). These errors all in the methods: **ensureApplicationIsInSession** and **getServiceProvider**.
   * Copy each of the missing classes from the original project into your new project. As you do so, you'll occasionally need to create new packages.
   * Make sure to review the unit tests and move those as appropriate.
 * You should have only a few errors left in the **ControllerServlet** class in the methods: **ensureApplicationIsInSession** and **getServiceProvider**, all related to the missing classes listed above. We deferred these changes because, unlike copying classes, we want to change our design.

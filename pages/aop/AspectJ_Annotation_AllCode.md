@@ -157,8 +157,8 @@ We create a new kind of annotation. This annotation by itself only allows adding
 |---|---|
 |Line|Description|
 
-|12| This annotation's lifetime is **//RUNTIME//**. This means it is available even after the class has been loaded and used in a VM. Contrast that with **//SOURCE//** - thrown out after compilation and **//CLASS//** - recorded in the class file but not retained by the VM. See [RetentionPolicy](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/annotation/RetentionPolicy.html) for details.|
-|13| This annotation targets **//FIELD//**s. There are several other options. For details, see [ElementType](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/annotation/ElementType.html).|
+|12| This annotation's lifetime is **RUNTIME**. This means it is available even after the class has been loaded and used in a VM. Contrast that with **SOURCE** - thrown out after compilation and **CLASS** - recorded in the class file but not retained by the VM. See [RetentionPolicy](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/annotation/RetentionPolicy.html) for details.|
+|13| This annotation targets **FIELD**s. There are several other options. For details, see [ElementType](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/annotation/ElementType.html).|
 
 ----
 

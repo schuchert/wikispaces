@@ -9,7 +9,7 @@ With a working Eclipse Juno + CDT and MinGW and CppUTest built, you are ready to
 
 ### Steps
 #### Basic Project Creation
-* Start eclipse and select a project directory. For this example, I'll use// **c:\learncpp\workspaces\first_example**//
+* Start eclipse and select a project directory. For this example, I'll use**c:\learncpp\workspaces\first_example**
 * Close the Welcome window
 * In the **Project Explorer** (left-most column), right-click and select **New::C++ Project**
 * For the project name, enter **SimpleExample**
@@ -39,7 +39,7 @@ This includes both project settings and recommended workspace settings
 * Right-click on the project **SimpleExample** and select **Properties**
 * Open up **C/C++ Build** then **Settings**
 * Under **GCC C++ Compiler** first select **Includes**
-* Under **Include Paths (-I) add a new entry:// **c:\learncpp\cpputest\include**\\
+* Under **Include Paths (-I) add a new entry:**c:\learncpp\cpputest\include**\\
 * Again in **C/C++ Build** then ** Miscellaneous** add **-std=c++0x** to **Other flags** - note you need to add a space first.
 * Next, go to **MinGW C++ Linker** and select **Libraries**
 * Under **Libraries (-l)** add **cpputest**

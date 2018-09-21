@@ -58,7 +58,7 @@ public class LoginServiceTest {
 ^
 |**Part 1**| This test first creates a test-double for an IAccount. There's no actual account class, just the interface. This test-double is configured so that no matter what password is sent to it, it will always return true when asked if a provided password matches its password.|
 |**Part 2**|Create a test-double for an IAccountRepository. Associate the test-double IAccount with the test-double IAccountRepository. When asking for any account with an id equal to any string, return the account test-double created at the start of this method.|
-|**Part 3**|Create a LoginService, injecting the IAcccountRepsitory in the constructor. This is an example of Inversion of Control, rather than the LoginService knowing which IAccountRepository to talk to, it is told which one to talk to. So while the LoginService knows which messages to send to an IAccountRepository, it is not responsible for deciding to// **which**// instance it should send messages.|
+|**Part 3**|Create a LoginService, injecting the IAcccountRepsitory in the constructor. This is an example of Inversion of Control, rather than the LoginService knowing which IAccountRepository to talk to, it is told which one to talk to. So while the LoginService knows which messages to send to an IAccountRepository, it is not responsible for deciding to**which** instance it should send messages.|
 |**Part 4**|Actually send a login message, looking for account with id "brett" and a password of "password". Notice that if things are configured correctly, any account id will match as will any password.|
 |**Part 5**|Use the Mockito method verify (confirm) that the method setLoggedIn(true) was called exactly once.|
 
@@ -333,7 +333,7 @@ Since my primary purpose of this tutorial is practice using Mockito, I'll leave 
 There are 4 parts to this test:
 ^
 |**Part 1**|Set the password matching to false on the account.|
-|**Part 2**|Create a second account, with a never-matching password and register it with the account repository. Notice that this uses a particular account name, "schuchert". Mockito, notices more specific// **when**// clauses over more general ones, so adding this after saying "for any string" is OK. This is a convenient default behavior (or is that behaviour as they would spell it?-).|
+|**Part 2**|Create a second account, with a never-matching password and register it with the account repository. Notice that this uses a particular account name, "schuchert". Mockito, notices more specific**when** clauses over more general ones, so adding this after saying "for any string" is OK. This is a convenient default behavior (or is that behaviour as they would spell it?-).|
 |**Part 3**|Login two times to the first account (both failing), then log in to a second account, also failing. That's three failures in a row, but to two different accounts, so no account should be revoked.|
 |**Part 4**|Verify that the secondAccount is not revoked.|
 
@@ -439,7 +439,7 @@ This is a final test to make sure the code handles the case of an account not ge
 {% endhighlight %}
 
 ### Test Description
-This test takes advantage of the fact that more specific// **when**// clauses take precedence over more general ones. This test configures the account repository test-double to return null for the account "schuchert". It then attempts the login, which should throw an exception.
+This test takes advantage of the fact that more specific**when** clauses take precedence over more general ones. This test configures the account repository test-double to return null for the account "schuchert". It then attempts the login, which should throw an exception.
 
 ### Things Created for Compilation
 To get this test to compile, you'll need to add a new exception class:
@@ -534,7 +534,7 @@ The second issue suggests the [GoF State pattern](http://en.wikipedia.org/wiki/S
 ## Refactoring LoginService
 In the real system, there were more requirements and the stream of requirements were fed to me over months. The underlying login service I created looked something like this simple version, just bigger. On the real project, the code became very hard to manage because I was not practicing refacoring aggressively enough at the time. I realized that the underlying solution would be made better by applying the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern). In the actual solution, the LoginService had several methods, with many of the methods' responses dependent on either the state of the login service or the account. 
 
-I made the change and sure enough supporting new requirements was// **much**// easier. The remainder of this tutorial involves refactoring the current solution to use the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern).
+I made the change and sure enough supporting new requirements was**much** easier. The remainder of this tutorial involves refactoring the current solution to use the [GoF State pattern](http://en.wikipedia.org/wiki/State_pattern).
 
 {: #CoolDiagram}
 Here's where we're going:
@@ -545,7 +545,7 @@ In the typical state pattern, all or part of an object's behavior depends on wha
 * The previous login attempts affect the LoginService.
 * The state of the IAccount impacts the results (e.g., revoked accounts cannot be logged in to, an account that is already logged in to cannot be logged in to a second time).
 
-Given the requirements so far, the state pattern is overkill. However, in the real system, refactoring to the state pattern made the implementation// **much**// easier, and more reliable as it turns out. So we'll migrate the current solution of the LoginState.login method to delegate some of the responsibility to a state object.
+Given the requirements so far, the state pattern is overkill. However, in the real system, refactoring to the state pattern made the implementation**much** easier, and more reliable as it turns out. So we'll migrate the current solution of the LoginState.login method to delegate some of the responsibility to a state object.
 
 ### Refactoring to the State Pattern
 We have tests passing and green. Our goal is to slowly migrate the code. Along the way we'll also clean up some other problems.
@@ -595,7 +595,7 @@ Notice that you are not first creating unit tests. We already have unit tests in
 
 Also notice that for this first step, you've done nothing that will cause code to not compile or tests to fail. Go ahead and make sure your tests still pass, but that should be done by reflex anyway.
 
-### //**Copy**// Behavior from Source To Abstract Base Class
+### **Copy** Behavior from Source To Abstract Base Class
 To keep things compiling and tests running, you'll often do the following general steps:
 * Create a placeholder for new functionality.
 * Copy (not move) functionality from one place to another.
@@ -991,7 +991,7 @@ Landing is a standard set of steps except for rent calculation. In terms of the 
   * Some amount shown on the individual property deed if the owner has made improvements (e.g., added houses).
 
 ### How It Applies To LoginServiceState
-In the following drawing (which attempts to follow the UML 2.0 specification), the// italic// method// handleIncorrectPassword// in the// abstract// base class// LoginServiceState// is the extension point. The base class deals with the basic validation like matching passwords and revoked accounts. It only defers what happens if the password does not match to the derived classes:
+In the following drawing (which attempts to follow the UML 2.0 specification), thec methodd in thet base classe is the extension point. The base class deals with the basic validation like matching passwords and revoked accounts. It only defers what happens if the password does not match to the derived classes:
 [media_type="custom"_key="3923013"](media_type="custom"_key="3923013")
 Rather than walk you through this refactoring, I'm just going to give you each of the classes.
 

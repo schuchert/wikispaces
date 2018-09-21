@@ -29,7 +29,7 @@ Set up custom tasks to run pester. One will run all tests, while the other will 
 * Finally, paste the following JSON into the custom tasks window
 {% highlight javascript %}
     {
-        // See https://go.microsoft.com/fwlink/?LinkId=733558
+        :go.microsoft.com/fwlink/?LinkId=733558
         // for the documentation about the tasks.json format
         "version": "2.0.0",
         "_runner": "terminal",

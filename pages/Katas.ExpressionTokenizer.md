@@ -52,7 +52,7 @@ After releasing some of this into the wild, I started getting some feedback from
 |"4 + 5 *  '"|"4", "+", "5", "*", <error>|The trailing single-tick is not a valid token so the tokenizer should generate an error upon reaching that token. It should be possible to get the tokens before it:  "4", "+", "5", "*".|
 |"value+++4"|"value", "++", "+", "4"|This is valid Java/C++. Notice that the largest token it taken from +++. This is how both Java and C++ would parse such an expression.|
 |"5~€"|<error>|This may be a duplicate of the first example. I added several different tests. However, there's no whitespace, so this might force your implementation a little bit.|
-|"(3+2)*7"|"(", "3", "+", "2", ")", "*", "7"|This seems like other tests and your solution might work out of the box. Mine originally did, but when I make more heavy use of the regular expression implementation in Java// **and**// used the new for syntax to read the tokens, this failed because my implementation of hasNext() was not [Idempotent](http://en.wikipedia.org/wiki/Idempotent).|
+|"(3+2)*7"|"(", "3", "+", "2", ")", "*", "7"|This seems like other tests and your solution might work out of the box. Mine originally did, but when I make more heavy use of the regular expression implementation in Java**and** used the new for syntax to read the tokens, this failed because my implementation of hasNext() was not [Idempotent](http://en.wikipedia.org/wiki/Idempotent).|
 |"3@+2"|"3", <error>|This is similar to the previous error conditions but it involves an embedded error rather than something at the end of an expression. As I made heavier use of the regular expression library, I broke what was passing.|
 
 ### Peek
@@ -110,7 +110,7 @@ Use the examples provided as a basis for the first tests. For each of the tests:
 * Work on the tests in the order listed
 * When you have all the tests passing, refactor the hell out of your code (when you're done, you probably still have not refactored it enough)
 
-My first version was long (don't have a count). My next version was shorter (127 lines). My next version was shorter still (93) lines. I found an intermediate form that was roughly 50 lines. My final version was 26 lines and I lengthened it to 33 lines to make the regular expressions easier to follow. In all cases, the numbers are for// **text**// lines, which include the package statement, import statements, blank lines, etc. The shortest version I wrote (by couting source lines) was 7 lines of code (email me and I'll provide it).
+My first version was long (don't have a count). My next version was shorter (127 lines). My next version was shorter still (93) lines. I found an intermediate form that was roughly 50 lines. My final version was 26 lines and I lengthened it to 33 lines to make the regular expressions easier to follow. In all cases, the numbers are for**text** lines, which include the package statement, import statements, blank lines, etc. The shortest version I wrote (by couting source lines) was 7 lines of code (email me and I'll provide it).
 
 Oh, and the longest method in my final version has 4 lines (including one blank line), there are two conditionals in the entire solution. Of course, that's making heavy use of the regular expression support in Java.
 

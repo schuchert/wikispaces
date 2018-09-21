@@ -20,7 +20,7 @@ You can actually skip to the next step if you're feeling lucky.
 {% endhighlight %}
 #### Notes
 * You'll need at least JDK 1.5 and ant 1.7 (or have junit task already available)
-* Occasionally some of the unit tests might fail (they don't always, there are still a few synchronization problems// **in the tests**//)
+* Occasionally some of the unit tests might fail (they don't always, there are still a few synchronization problems**in the tests**)
 * The default ant task also runs the FitNesse tests used to test FitNesse, so you'll need to either leave port 8080 open or define an environment variable, FITNESSE_TEST_PORT, with the port you want have the acceptance test execution use.
 
 ### Build the Distribution

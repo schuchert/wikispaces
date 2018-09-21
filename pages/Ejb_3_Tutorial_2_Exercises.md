@@ -4,7 +4,7 @@ title: Ejb_3_Tutorial_2_Exercises
 ## Fetching and Lazy Initialization
 The Company entity has one attribute where we've specified the fetch type. Review the employees attribute in Company.java. Remove the **```fetch = FetchType.EAGER```** and execute the tests.  
 
-There's another way to make this "work" by manually reading the contents of the collection. Experiment with that and see if you can get it to work using this technique.  What is the impact of //@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)// on a lazy fetch? (Hint: you might have some issues with this combination.)
+There's another way to make this "work" by manually reading the contents of the collection. Experiment with that and see if you can get it to work using this technique.  What is the impact of ) on a lazy fetch? (Hint: you might have some issues with this combination.)
 
 **Review** 
 * Which approach do you prefer?

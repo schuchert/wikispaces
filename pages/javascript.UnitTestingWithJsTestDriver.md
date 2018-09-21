@@ -19,7 +19,7 @@ This is my first stab at this and I hope to both get a better workflow and bette
 % mkdir -p RpnCalcDemo/src-test
 % cd RpnCalcDemo 
 {% endhighlight %}
-* For convenience, I copied the downloaded JsTestDriver jar to this directory. The name of the version I downloaded is: //**JsTestDriver-1.3.3d.jar**//
+* For convenience, I copied the downloaded JsTestDriver jar to this directory. The name of the version I downloaded is: **JsTestDriver-1.3.3d.jar**
 * Create basic configuration file:
 ## jsTestDriver.conf
 {% highlight terminal %}
@@ -34,7 +34,7 @@ load:
 % java -jar JsTestDriver-1.3.3d.jar --port 9876
 {% endhighlight %}
 * Open up browser/create a tab and then browse to localhost:9876.
-* Click on the //**[Capture This Browser](http://localhost:9876/capture)**// link. You'll see a window with the following information:
+* Click on the **[Capture This Browser](http://localhost:9876/capture)** link. You'll see a window with the following information:
 {% highlight terminal %}
                  JsTestDriver
 Last:1326495229968 | Next:1997 | Server:Waiting...

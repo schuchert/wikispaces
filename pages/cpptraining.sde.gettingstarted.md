@@ -19,7 +19,7 @@ source /cygdrive/c/sde-6.06/bin/sdeenv.sh
 {% endhighlight %}
 
 ## Get The Project
-The source files for the base projects are on github (or in class I can provide a thumb drive). The uri is// **git://github.com/schuchert/embedded_cpp_tdd.git**//.
+The source files for the base projects are on github (or in class I can provide a thumb drive). The uri is**git://github.com/schuchert/embedded_cpp_tdd.git**.
 * In some base directory (preferably one without a space it its name) clone the git repository
 {% highlight terminal %}
 $ git clone git://github.com/schuchert/embedded_cpp_tdd.git

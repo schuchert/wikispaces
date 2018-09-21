@@ -670,7 +670,7 @@ Finally, I wanted to try to express the tests using a story-based style using a 
 
 Here are a few things I hope you'll take away from reading this:
 * There are many ways to express tests
-* Even though we want to make tests self-evident, possibly not strictly following the [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle, there's duplication and then there's// **duplication*//.
+* Even though we want to make tests self-evident, possibly not strictly following the [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle, there's duplication and then there's**duplication*//.
 * Using intermediate test steps that record information in the test fixture can make for interesting possibilities. It made me personally reevaluate my dislike of the self-shunt pattern.
 * You can take it too far. The story-based tests are interesting and appropriate for story/feature level functionality (acceptance tests anyone?) but probably are overkill for unit-level testing.
 

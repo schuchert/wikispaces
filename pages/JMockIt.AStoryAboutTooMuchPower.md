@@ -138,7 +138,7 @@ This code performs vertical mocking (or nested mocking). Here is a quick descrip
 This is a pretty ugly test but it is maintainable? In fact, it's not too bad. While I took this further in the talk that evening, the next day in class I used it to perform a more traditional legacy refactoring.
 
 During the talk, I made the class an override-able singleton and then introduced an instance delegator to support override-ability by hand:
-//** Override-able Singleton**//
+** Override-able Singleton**
 {% highlight java %}
 public class CurrencyConversion {
 	static CurrencyConversion instance;
@@ -158,7 +158,7 @@ public class CurrencyConversion {
 	// ...
 {% endhighlight %}
 
-//**Introduce an Instance Delegator**//
+**Introduce an Instance Delegator**
 {% highlight java %}
 	public List<String> getCurrencySymbols() {
 		// the same code that was originally in the 
@@ -379,11 +379,11 @@ To be fair, after this refactoring we can make the JMockIt test look much better
 		assertEquals(new BigDecimal(42), result);
 	}
 {% endhighlight %}
-This is// **much**// better. In fact, I prefer this over the prior test that hand-rolled a testing subclass.// **However**//, JMockIt did not force us to do the work necessary to clean up the production code. As a result, the code remained ugly when we first used JMockIt to "test" the code.
+This is**much** better. In fact, I prefer this over the prior test that hand-rolled a testing subclass.**However**, JMockIt did not force us to do the work necessary to clean up the production code. As a result, the code remained ugly when we first used JMockIt to "test" the code.
 
 Here's the thing: In teams, most people, most of the time, use existing code examples as a the basis of new work. That means if the code is left ugly, more ugly code will be written. Sure, we can "test" it using JMockIt, and JMockIt seems to age fairly well across certain kinds of refactorigns. However, in this example, so would any mocking framework supporting either nice or non-strict solutions. (That's a key lesson-learned, most of the time use non strict mocks. Ask if you would like a more precise set of recommendations.)
 
-So while I think JMockIt is powerful and I want to make sure to keep it in my back pocket, I think it requires more discipline// **because**// of its flexibility. There's little it cannot do, and as a result there's little it will force you to do to recognize poor coding practices, which I fear will actually restrict growth and learning. You cannot learn without failure. With a tool like JMockIt, it's harder to notice a failure unless you can observe that something like this screams "crappy design":
+So while I think JMockIt is powerful and I want to make sure to keep it in my back pocket, I think it requires more discipline**because** of its flexibility. There's little it cannot do, and as a result there's little it will force you to do to recognize poor coding practices, which I fear will actually restrict growth and learning. You cannot learn without failure. With a tool like JMockIt, it's harder to notice a failure unless you can observe that something like this screams "crappy design":
 {% highlight java %}
 		new NonStrictExpectations() {
 			DefaultHttpClient httpclient;

@@ -19,7 +19,7 @@ title: NodeJsDiary
   * I used the following install location: /Users/schuchert/bin/gentoo (no spaces allowed)
 * Blocked... The installation of gentoo has failed. I *suspect* it's due to the version of gcc I'm using (4.8). The installation requires gcc 4.2. By the time we get to gcc 4.8 it supports C99. The failure relates to something that is not allowed in C99. Rather than fight the build script, I'm going to use ports to install an older version (starting with gcc 4.5) and then trying again.
   * And of course this failed... Think it's time to [wipe port off my system](https://guide.macports.org/chunked/installing.macports.uninstalling.html) and then see with what I'm left...
-  * This is// **exactly**// why I should use a VM!
+  * This is**exactly** why I should use a VM!
   * That will be two yaks removed from my goal
   * before I do that, after uninstalling all of my ports, I'm trying again. I am not starting clean, that could be an issue. We'll see.
   * Nope, freshly deleting and starting from scratch. By the way, this is using clang... Maybe I need to update that.
@@ -76,7 +76,7 @@ end
   * Created used of it
 ----
 * I clearly do not understand chef at a basic level. While I've been able to add some simple packages, trying to get something working using cookbooks from github is going nowhere. It's like a lot of tools, there's a basic assumption about level of understanding that I do not have. Going to continue banging my head against a wall for some time, because I don't feel like taking a shortcut here and just using npm directly or using a bash script.
-  * Do scripts// **have**// to run as root? Or just npm?
+  * Do scripts**have** to run as root? Or just npm?
   * OK, well there was no error and no effect from running the script. BROKEN! Frustrated as fuck.
 ----
 * Finished book. Good book. I'd like it to continue, but i'll find other sources.

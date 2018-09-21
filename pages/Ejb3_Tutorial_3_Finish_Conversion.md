@@ -353,7 +353,7 @@ If you'd like to add a temporary method to your test class to clean up after eac
         em.getTransaction().commit();
     }
 {% endhighlight %}
-//**Notes**//
+**Notes**
 ### Additional Jar
 To get this to work, you'll need to add an optional library to your classpath:
 ```

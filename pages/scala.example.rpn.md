@@ -5,7 +5,7 @@ I'm back to learning Scala. I'm starting with [Rpn Calculator With Refactoring A
 
 SpecTest looks nice as do Scala specs. I wanted a basic unit testing framework and it turns out the number of moving parts for Java is small, so I'm using it and I"ll be using scala specs for more rejection-check orientation.
 
-//**RpnCalculatorShould.scala**//
+**RpnCalculatorShould.scala**
 {% highlight scala %}
 package ex
 import org.hamcrest.CoreMatchers.equalTo
@@ -71,7 +71,7 @@ class RpnCalculatorShould {
 }
 {% endhighlight %}
 
-//**MathOperator.scala**//
+**MathOperator.scala**
 {% highlight scala %}
 package ex
 
@@ -80,7 +80,7 @@ abstract class MathOperator {
 }
 {% endhighlight %}
 
-//**BinaryMathOperator.scala**//
+**BinaryMathOperator.scala**
 {% highlight scala %}
 package ex
 
@@ -95,7 +95,7 @@ class BinaryOperator(private val expression: (BigDecimal, BigDecimal) => BigDeci
 }
 {% endhighlight %}
 
-//**RealOperatorFactory.scala**//
+**RealOperatorFactory.scala**
 {% highlight scala %}
 package ex
 
@@ -112,7 +112,7 @@ object RealMathOperatorFactory extends MathOperatorFactory {
 }
 {% endhighlight %}
 
-//**RpnCalculator.scala**//
+**RpnCalculator.scala**
 {% highlight scala %}
 package ex
 
@@ -135,7 +135,7 @@ class RpnCalculator(private val factory: MathOperatorFactory) {
 }
 {% endhighlight %}
 
-//**RpnStack.scala**//
+**RpnStack.scala**
 {% highlight scala %}
 package ex
 

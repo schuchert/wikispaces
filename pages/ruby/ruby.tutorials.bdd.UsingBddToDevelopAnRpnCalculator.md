@@ -1170,7 +1170,7 @@ What can you say about the RpnCalculator?
 * The first previous value is 14.
 * The second previous value is 7.
 
-You already have validated the first two bullets with previous Examples, so there is no value in re-checking those features. You// **could**// add validation to existing examples to check for the second two values. I would advise against doing so because smaller tests tend to pinpoint problems better. Also, depending on the technology you are using, once a validation fails, subsequent validations are not checked in in RSpec, nor are the in most testing tools (FitNesse being one counter example).
+You already have validated the first two bullets with previous Examples, so there is no value in re-checking those features. You**could** add validation to existing examples to check for the second two values. I would advise against doing so because smaller tests tend to pinpoint problems better. Also, depending on the technology you are using, once a validation fails, subsequent validations are not checked in in RSpec, nor are the in most testing tools (FitNesse being one counter example).
 
 Why is this last part important? When you've broken something, how big is the break? If your Examples fail, but each has one or a very small number of validations, you'll have a good idea of the span of the break. However, if you have Examples with dozens of validations (or many more), it is possible that an early validation will fail and you simply do not know if other validations would have failed. So while you think you only broke one thing, you broke 30 things. With many small tests, you'll have much higher fidelity information from which to move forward.
 
@@ -1562,7 +1562,7 @@ This still won't pass. There's no OperandStack class.
     end
 {% endhighlight %}
 
-Note that these are mostly just//** copies**// of methods from RpnCalculator. There is one new method, <<, which just delegates to a method of the same name.
+Note that these are mostly just** copies** of methods from RpnCalculator. There is one new method, <<, which just delegates to a method of the same name.
 
 * Verify that your operand_stack_spec.rb now passes:
 {% highlight terminal %}

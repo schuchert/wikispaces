@@ -228,11 +228,11 @@ The first line, as with the previous examples, names the class. In this case it 
 
 The second line executes a method with a rather long name: CreateWeeklyProgramNamedOnChannelStartingOnAtLengthEpisodes. The name is formed by taking the first cell that involves part of a method name (in this case the cell with "Create Weekly Program Named") and then taking each of the alternating cells. The parameters passed into this method are: W1, 7, 3/4/2008, 21:00, 60, 8. The result of that method invocation is stored in the variable $P1.
 
-The third line uses a keyword,// **show**//, that simply calls the method named "TotalEpisodesCreated" and then displays the result during test execution.
+The third line uses a keyword,**show**, that simply calls the method named "TotalEpisodesCreated" and then displays the result during test execution.
 
-The next two lines call another method with a long name: CreateDailyProgramNamedOnChannelStartingOnAtLengthEpisodes. The naming rules are the same. Since the first cell does not involve a variable assignment or a keyword like// **show**// or// **check**//, the name of the method starts in the first cell. The parameters passed in are the alternating cells starting with D1, and they are: D1, 7, 3/4/2008, 20:30, 30, 56.
+The next two lines call another method with a long name: CreateDailyProgramNamedOnChannelStartingOnAtLengthEpisodes. The naming rules are the same. Since the first cell does not involve a variable assignment or a keyword like**show** or**check**, the name of the method starts in the first cell. The parameters passed in are the alternating cells starting with D1, and they are: D1, 7, 3/4/2008, 20:30, 30, 56.
 
-The final line uses a keyword,// **check**//, to call a method called "TotalEpisodesCreated" and compares the return of that method to the next value, 128.
+The final line uses a keyword,**check**, to call a method called "TotalEpisodesCreated" and compares the return of that method to the next value, 128.
 
 Here's the code to get this table to pass:
 {% highlight csharp %}
@@ -297,7 +297,7 @@ After the first row, subsequent rows describe individual steps and optionally re
 
 This particular naming style derives from a [story running tool called Cucumber](http://cukes.info/). The first line starting with the word "given" is something related to test setup. The second line, starting with "when" is an execution step. The final step, starting with "then" is a validation step. This has nothing to do with FitNesse, this is just a style of writing tests.
 
-As mentioned, scenario tables do not require any class to exist. However, when a page// **uses**// a scenario, then the most recent script is will require some methods based on most recently mentioned script.
+As mentioned, scenario tables do not require any class to exist. However, when a page**uses** a scenario, then the most recent script is will require some methods based on most recently mentioned script.
 
 Here is a complete page that(<http://localhost:8080/CsharpWithSlimExamples.ScenarioTableExample>):
 * Defines a scenario

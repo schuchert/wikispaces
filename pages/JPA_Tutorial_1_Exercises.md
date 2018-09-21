@@ -6,7 +6,7 @@ title: JPA_Tutorial_1_Exercises
 * Describe what the @Id annotation means to a class.
 * Describe what the @GeneratedValue means to a class
 * Describe the difference between @Embeddable and @Embedded
-* In the previous section we mentioned using//** mappedBy**// to let the container know this was a bi-directional relationship instead of a unidirectional relationship. What does this even mean? Draw an instance diagram that would explain this difference.
+* In the previous section we mentioned using** mappedBy** to let the container know this was a bi-directional relationship instead of a unidirectional relationship. What does this even mean? Draw an instance diagram that would explain this difference.
 
 ## New Class
 Right now the relationship between Person and Company is direct. Let's make that a little less direct. The Person should now have a Job with a title, salary and employeeId. The company still has employees as before. This picture describes the before and after relationships.

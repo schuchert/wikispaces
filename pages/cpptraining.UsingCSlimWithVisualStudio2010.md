@@ -4,7 +4,7 @@ title: cpptraining.UsingCSlimWithVisualStudio2010
 {% include toc %}
 [<--Back](CppTraining#FitNesse)
 
-//**September 2011**//
+**September 2011**
 
 I've had a few requests to get CSlim working with Visual Studio. I've done so but with Visual Studio 2010. I did not try using Visual Studio 2008 because it appears to lack support for regular expressions. If you're looking to working with Visual Studio 2008, you are on your own for that.
 
@@ -37,7 +37,7 @@ Resolving deltas: 100% (276/276), done.
 
 C:\src\cslim_vs2010>
 {% endhighlight %}
-* That will create a directory called// **cslim**//, go there.
+* That will create a directory called**cslim**, go there.
 * Type **nmake -f NMakefile**
 {% highlight terminal %}
 C:\src\cslim_vs2010\cslim>nmake -f NMakefile
@@ -173,8 +173,8 @@ Unpacking new version of FitNesse resources.  Please be patient.
 ### Copy Example Pages
 * Create a new shell (because you're running FitNesse in your original shell)
 * The cslim distribution comes with some example pages. You'll want to copy a directory from one place to another to see those tests
-* The directory to copy// **from**// is: **cslim\fixtures\pages\**
-* The directory to copy// **to**// is a bit more involved. You'll want to copy the directory to a directory// **under**// the FitNesseRoot directory created when you started fitnesse in the previous shell.// **However**//, you'll need to name the directory as a valid wiki word (starts with a capital letter, has at least one more capital letter, does not have 2 or more consecutive capital letters). For this example, I'll recommend you copy it as// **CslimExamples**//. Notice that only// **C**// and// **E**// in examples are capital letters. That's important.
+* The directory to copy**from** is: **cslim\fixtures\pages\**
+* The directory to copy**to** is a bit more involved. You'll want to copy the directory to a directory**under** the FitNesseRoot directory created when you started fitnesse in the previous shell.**However**, you'll need to name the directory as a valid wiki word (starts with a capital letter, has at least one more capital letter, does not have 2 or more consecutive capital letters). For this example, I'll recommend you copy it as**CslimExamples**. Notice that only**C** and**E** in examples are capital letters. That's important.
 * You can use the explorer or some tool. Here's what you're copying:
 {% highlight terminal %}
 C:\src\cslim_vs2010>dir cslim\fixtures\pages
@@ -233,7 +233,7 @@ C:\src\cslim_vs2010>dir FitNesseRoot\CslimExamples
 
 !define SLIM_VERSION {0.0}
 {% endhighlight %}
-* Now you can hit the// **Suite**// button. You will see some passing tests, missing fixtures and Exceptions.
+* Now you can hit the**Suite** button. You will see some passing tests, missing fixtures and Exceptions.
   * If you get an exception related to a difference in the version of the slim protocol implemented by cslim versus the one expected by FitNesse, you'll need to change the "!define SLIM_VERSION {0.0}" to the version used by what cslim is implementing.
   * There are problems with exception handling. I'll be looking into that but that causes the fixture called ExceptionsExample to fail. (These are alpha instructions after all!)
   * The class TestSlim is part of the examples and it seems to be missing.

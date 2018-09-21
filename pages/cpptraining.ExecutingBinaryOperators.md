@@ -143,7 +143,7 @@ Now you're going to add a third project to contain your fixtures. This involves 
 * Create an **Empty Project**
 * Under **Toolchains** either select **Mingw** or some other "working" toolchain. As of this writing, the cygwin will work but you cannot use a debugger.
 * For the project name, enter ** RpnCalculatorFixtures**, which you can infer from the TEST_SYSTEM variable set on the top-level page.
-* The provided code uses features of G++ 4.4 and above, specifically the compiler flag// **-std=c++0x**//. The primary thing is the use of the standard class shared_ptr. As of the TR1 standard, this class' namespace is std::tr1::. In the upcoming standard, the class is additionally in std::. To fix this, edit the project's properties. Under C/C++ Build:Settings/C++  Compiler: Miscellaneous, add -std=c++0x (that's zero, not o) to the Other flags.
+* The provided code uses features of G++ 4.4 and above, specifically the compiler flag**-std=c++0x**. The primary thing is the use of the standard class shared_ptr. As of the TR1 standard, this class' namespace is std::tr1::. In the upcoming standard, the class is additionally in std::. To fix this, edit the project's properties. Under C/C++ Build:Settings/C++  Compiler: Miscellaneous, add -std=c++0x (that's zero, not o) to the Other flags.
 You'll need to copy in two boilerplate files, create the fixture class and then set up libraries and include paths.
 * Add a new file called **Main.c** and set its contents:
 
@@ -341,7 +341,7 @@ Resolving deltas: 100% (1/1), done.
 * There should be one project listed, **CSlimCppExtensions**
 * Click on **Finish**
 * Select the project, right-click and select build.
-* //**Warning**//: As of this writing, there is a "missing" method in the cslim library. You'll need to make two changes to the cslim library that you've downloaded to resolve this.
+* **Warning**: As of this writing, there is a "missing" method in the cslim library. You'll need to make two changes to the cslim library that you've downloaded to resolve this.
 
 #### Updating CSlim Library
 #### <cslim_base>/include/CSlim/SlimListSerializer.h

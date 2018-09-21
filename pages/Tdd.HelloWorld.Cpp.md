@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
 }
 {% endhighlight %}
 
-A beginning C++ class typically teaches this, but what if we wanted to accomplish the same thing using TDD? In this case, there's really no design per-se, so I'll Interpret TDD as Test-Driven// **Development**// rather than Test Driven// **Design**//.
+A beginning C++ class typically teaches this, but what if we wanted to accomplish the same thing using TDD? In this case, there's really no design per-se, so I'll Interpret TDD as Test-Driven**Development** rather than Test Driven**Design**.
 
 ## Observations
 A well-written main should do something and then return an error code. So I need two tests, one verifying that main returns 0 and another that as a result of calling the main function, the text "Hello World" is sent to cout.

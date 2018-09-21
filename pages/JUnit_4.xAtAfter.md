@@ -7,7 +7,7 @@ title: JUnit_4.xAtAfter
 @After is the opposite of [@Before](JUnit_4.xAtBefore). It is executed after each unit test. JUnit prior to version 4.0 had an equivalent method, tearDown, you could optionally define in a test class to get similar behavior. There are differences:
 * You can call your method anything you want.
 * You can have more than one.
-* Any methods annotated with @After in superclasses are executed **//after//** methods in the derived class. That is, they execute bottom to top, just the opposite of top to bottom.
+* Any methods annotated with @After in superclasses are executed **after** methods in the derived class. That is, they execute bottom to top, just the opposite of top to bottom.
 * This method must be public in JUnit 4.0 whereas tearDown in JUnit before 4.0 was protected (or public).
 
 Here is the example:

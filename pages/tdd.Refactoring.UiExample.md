@@ -32,7 +32,7 @@ The idea for this example is from Joseph Buschmann. The Java code I've written b
 #### The Code
 Here is such a program (greatly simplified when transitioned from C# to Java):
 
-//**AdditionalDetailsPanel.java**//
+**AdditionalDetailsPanel.java**
 {% highlight java %}
 package com.om.ui.refactoring.example;
 
@@ -163,7 +163,7 @@ public class AdditionalDetailsPanel extends JPanel implements ActionListener {
 
 For completeness, here is class with a main() function to bring this program to life (so now you can can manually test it!-):
 
-//**Main.java**//
+**Main.java**
 {% highlight java %}
 package com.om.ui.refactoring.example;
 
@@ -217,7 +217,7 @@ As written, this test requires a graphic context. If you were to create tests fo
 
 Here are two simple tests to verify basic Url validation that keep the code structure essentially unchanged:
 
-//** UrlValidationExampleTest.java**//
+** UrlValidationExampleTest.java**
 {% highlight java %}
 package com.om.ui.refactoring.example;
 
@@ -301,7 +301,7 @@ Before we do that, consider the following two lines:
 {% endhighlight %}
 The first line is problematic because it uses the textArea instance variable, which is a JTextArea. The second line is a problem because it sets a another instance variable. We could do this (don't do this - though I did create a working version so you can give this a try if you'd like):
 
-//**New Class: UrlValidatorVersion1 **//
+**New Class: UrlValidatorVersion1 **
 {% highlight java %}
 package com.om.ui.refactoring.example;
 
@@ -341,7 +341,7 @@ To make this work, we'd then update the validatUrl method to use this new class:
 {% endhighlight %}
 This "works" but it puts UI gunk in the UrlValidator class. Even so, this is an improvement. Here is a rewrite of the previous test class using this new extracted method object:
 
-//**UrlValidatorVersion1Test.java**//
+**UrlValidatorVersion1Test.java**
 {% highlight java %}
 package com.om.ui.refactoring.example;
 
@@ -404,7 +404,7 @@ Changes:
 
 Given this change, we can rewrite the method object. Rather that passing in what the method object needs in the constructor, this instead uses method injection:
 
-//**UrlValidatorVersion2**//
+**UrlValidatorVersion2**
 {% highlight java %}
 package com.om.ui.refactoring.example;
 
@@ -437,7 +437,7 @@ There are still problems:
 
 There's a simple fix, however. We can extract an interface to capture the methods we need to improve the situation:
 
-//**TextSource.java**//
+**TextSource.java**
 {% highlight java %}
 package com.om.ui.refactoring.example;
 
@@ -466,7 +466,7 @@ public class UrlValidatorVersion2 {
 }
 {% endhighlight %}
 Here's the tests rewritten using a hand-rolled test double (a stub):
-//**UrlValidatorVersion2Test**//
+**UrlValidatorVersion2Test**
 {% highlight java %}
 package com.om.ui.refactoring.example;
 
@@ -522,7 +522,7 @@ There's one more problem I want to fix before leaving this. The name of the new 
 
 If I apply this simple idea to all of the validation, I end up with:
 
-//**HtmlValidator**//
+**HtmlValidator**
 {% highlight java %}
 package com.om.ui.refactoring.example;
 
@@ -540,7 +540,7 @@ public class HtmlValidator {
 }
 {% endhighlight %}
 
-//**TextValidator**//
+**TextValidator**
 {% highlight java %}
 package com.om.ui.refactoring.example;
 
@@ -588,7 +588,7 @@ For those of you worried about all the new'ing up of objects, here are a few com
 * If you are running Java 1.6, these will be placed on the stack anyway (yes really).
 
 ### Are We Done?
-//**Yes!**// What?
+**Yes!** What?
 
 Sure there's more you could do. Not doing more might actually require more discipline. For example, we could:
 * Extract an interface on each of the validators.
@@ -612,11 +612,11 @@ Making such a change would result in a handleSubmit method that looked like this
     throw new RuntimeException("Cannot determine correct validator");
   }
 {% endhighlight %}
-The rest of the code is also in need of some repair. However, the new requirements were about// **additional validation**//. Stopping with just extracting the three classes is enough to support independent development of the validation and easy verification (writing unit tests), so there's little need to go much further.
+The rest of the code is also in need of some repair. However, the new requirements were about**additional validation**. Stopping with just extracting the three classes is enough to support independent development of the validation and easy verification (writing unit tests), so there's little need to go much further.
 
 One more change I would recommend is making the nested StubTextSource class a public class since it will come in handy writing tests for all of the validators.
 ### Conclusion
-This code was initially testable but the tests ran slowly, had a great deal of internal knowledge (white-box) and where actually indirect (calling an actionPerformed method to test validation). Extracting individual validation classes was a great idea, but there's more than one way to do that. The various ways don't really involve a lot more time or effort but there are significant differences. Changing the code such that you can extract the class and have it//** avoid**// depending on enabling technology (swing widgets) is a better approach:
+This code was initially testable but the tests ran slowly, had a great deal of internal knowledge (white-box) and where actually indirect (calling an actionPerformed method to test validation). Extracting individual validation classes was a great idea, but there's more than one way to do that. The various ways don't really involve a lot more time or effort but there are significant differences. Changing the code such that you can extract the class and have it** avoid** depending on enabling technology (swing widgets) is a better approach:
 * It makes the extracted class smaller and more light weight.
 * It allows that class to be used in more places.
 * It makes the class easier to test.
@@ -630,5 +630,5 @@ Imagine if you had the business logic tested. What's left? Flow, enabling/disabl
 Why? So that the UI tests you run verify flow, are reliable, run quickly, etc.
 
 #### Do you never fully test the system
-You// **do**// want to also write some tests that verify the fully connected system works. These tests are closer to smoke tests than full integration tests. They will have fewer checks because they are verifying that the system can be brought up in a fully-configured manner.
+You**do** want to also write some tests that verify the fully connected system works. These tests are closer to smoke tests than full integration tests. They will have fewer checks because they are verifying that the system can be brought up in a fully-configured manner.
 

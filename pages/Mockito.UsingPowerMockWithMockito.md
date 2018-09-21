@@ -40,14 +40,14 @@ And Mockito 1.9:
 {% endhighlight %}
 
 ## The Basics
-When you want to take control of something not controllable by Mockito, you need to identify the class where you want to take that control. For example, if you are taking control of a static method, you name the class that has the static method. //**However**//, if you want to change what new X returns,// **you name the class that has the call to new**//.
+When you want to take control of something not controllable by Mockito, you need to identify the class where you want to take that control. For example, if you are taking control of a static method, you name the class that has the static method. **However**, if you want to change what new X returns,**you name the class that has the call to new**.
 
 ### Taking control of a static method
 There are a few things you need to do according to the instructions and then one more thing currently (using PowerMock 1.5 and Mockito 1.9) if you happen to be using certain open-source libraries.
 
 ### The Annotations
 Each test class wanting to use PowerMock needs 2 annotations, with a third optional one for handling current shortcoming (as I see it) in PowerMock:
-//**Code from: MetricsRecorderTest**//
+**Code from: MetricsRecorderTest**
 
 {% highlight java %}
 @RunWith(PowerMockRunner.class)
@@ -65,14 +65,14 @@ public class MetricsRecorderTest {
 #### Replacing one static method
 Next, you need to actually replace the static method. I want to replace the return value of a static method to return a Mockito-created object. Here's the problem code that I want to control:
 
-//**Code taken from MetricsRecorder**//
+**Code taken from MetricsRecorder**
 {% highlight java %}
 SystemLogger logger = SystemLoggerFactory.get(className);
 logger.info("start : %s-%s", methodName, correlationId.get());
 {% endhighlight %}
 The first line calls a static method. I want to control what that returns. Since I am targeting a static method, the code being changed is in the class of the static method. This is important, because the only class that needs special instrumentation is the SystemLoggerFactory class. To actually control the return value:
 
-//**Code from: MetricsRecorderTest**//
+**Code from: MetricsRecorderTest**
 {% highlight java %}
 public void replaceLogger() {
   PowerMockito.mockStatic(SystemLoggerFactory.class);
@@ -88,9 +88,9 @@ What happens when you want to change a use of new? In Java, new is a keyword tha
 * Calls the constructor of the class being created
 
 #### Taking Control
-Note, you do not directly call the constructor, Java matches the constructor based on the parameters and does the invocation for you. Every place that uses new X does this. That is important, because if you want to take control of new X, you have to tell PowerMock to instrument the// **class with the call to new**//, not the class you're swapping out:
+Note, you do not directly call the constructor, Java matches the constructor based on the parameters and does the invocation for you. Every place that uses new X does this. That is important, because if you want to take control of new X, you have to tell PowerMock to instrument the**class with the call to new**, not the class you're swapping out:
 
-//**Code from: MetricsRecorderTest**//
+**Code from: MetricsRecorderTest**
 {% highlight java %}
 public void replaceCorrelationId() throws Exception {
   PowerMockito.whenNew(CorrelationId.class).withAnyArguments().thenReturn(id);
@@ -100,7 +100,7 @@ public void replaceCorrelationId() throws Exception {
 This causes calls to new of the class CorrelationId, taking any arguments, to return a controlled value (id, which is Mockito-created object).
 
 #### Annotation to Enable Control
-//**Code from: MetricsRecorderTest**//
+**Code from: MetricsRecorderTest**
 {% highlight java %}
 @RunWith(PowerMockRunner.class)
 @PowerMockIgnore( {"javax.management.*"})

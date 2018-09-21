@@ -68,7 +68,7 @@ What you will do in the remainder of this tutorial is create a fixture to handle
 As with the previous tutorials, you'll create these tests under their own sub-hierarchy:
 * Create a suite-page for these tests here: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples>
 * Just save the page as is (with the !contents ...)
-* Change its type to a suite page (//**Note**//, as of 4/15/09, FitNesse has been updated to automatically set the page type to a suite if it ends in "Examples". If you build from source or you happen to have a recent release with this feature built, you might not need to set the type to suite.)
+* Change its type to a suite page (**Note**, as of 4/15/09, FitNesse has been updated to automatically set the page type to a suite if it ends in "Examples". If you build from source or you happen to have a recent release with this feature built, you might not need to set the type to suite.)
 * Add a SetUp page. If the link exists on the [suite page](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples), you can click it (this feature was there, then removed and I added it back in again). If not, then go to this URL to create the setup page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples.SetUp>
 * Set its contents to:
 

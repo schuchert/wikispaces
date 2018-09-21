@@ -236,7 +236,7 @@ This is a very rapid, hit all the big areas kick-off. After this, we go through 
   * Allow time to finish & finish on time
   * Handling related issues
   * Amend the Rules
-* Make it safe to** //not//** attend
+* Make it safe to**not** attend
   * Publish an agenda and stick to it
   * Stay out of emergency mode
   * Handling people who don't belong

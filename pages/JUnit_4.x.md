@@ -69,7 +69,7 @@ What is a TimeBomb? Let's begin with an example. This is an excerpt from [Exampl
 {: #AtTestExpected}
 [Click here for more information on @Test(expected = ObjectInUse.class)](JUnit_4.xAtTestWithExpected)
 
-This example probably needs a little more background. As mentioned in [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52), we use the @Test annotation to denote a method as a test case. It can take an optional argument of //**expected**//. This test is meant to attempt to remove a VehicleType that is used by other ob jets. So, in this case, read @Test(expected = ObjectInUse.class) as "when this test executes, I expect the exception ObjectInUse to be thrown."
+This example probably needs a little more background. As mentioned in [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52), we use the @Test annotation to denote a method as a test case. It can take an optional argument of **expected**. This test is meant to attempt to remove a VehicleType that is used by other ob jets. So, in this case, read @Test(expected = ObjectInUse.class) as "when this test executes, I expect the exception ObjectInUse to be thrown."
 
 If I had a Dao (data access object) that used an underlying database, the request would generate a low-level SQL exception related to a constraint violation. Right now I'm just mocking everything out so I don't have that underlying support. I'll add it to the mock but until I do, I want a place holder for this test.
 
@@ -95,7 +95,7 @@ The third option is a good one. The IDE can remind me to do something. It's some
 If you can use the forth option, that's the way to go. For this example, which I have taken from some work I'm doing right now, I don't have this option yet. I'm not ready to get to that building block. It will happen in a few days to a week depending on my free time. So for me, this option is not applicable for this situation. If it were, I'd use it.
 
 ### Option 5
-This leaves the TimeBomb example. This test expects an exception to be thrown. I'm using the TimeBomb class to throw the necessary exception until some time in the future. If I have not remembered to go back and write this test by that future date, TimeBomb will stop throwing the exception and the test will start to fail. It allows me to put a place holder in with an //**active**// reminder to fix it at some point in the future.
+This leaves the TimeBomb example. This test expects an exception to be thrown. I'm using the TimeBomb class to throw the necessary exception until some time in the future. If I have not remembered to go back and write this test by that future date, TimeBomb will stop throwing the exception and the test will start to fail. It allows me to put a place holder in with an **active** reminder to fix it at some point in the future.
 
 I've used this on what has grown to a team of around 60 people (from 6) all working on different applications based on a common architecture. We've been using this kind of thing now for over 3 years and it seems to remain a valuable technique. You can review the code for [TimeBomb](JUnit_4.x#TimeBombCode) below. Since I've written it from scratch on this example, it's pretty small. As I need more methods, I'll add them. It's the idea that is valuable, not the implementation.
 

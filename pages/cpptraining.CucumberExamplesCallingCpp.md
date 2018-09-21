@@ -24,7 +24,7 @@ C:\learncpp\ruby_cpp>
 
 * Create a directory called "features"
 * Create a feature description file in the "features" directory called rpncalc_basic_operations.feature:
-//**rpncalc_basic_operations.feature**//
+**rpncalc_basic_operations.feature**
 {% highlight terminal %}
 Feature: Basic Operations
   Scenario Outline: Perform some of the basic operations
@@ -65,7 +65,7 @@ with the appropriate file extension exists where cucumber looks for step definit
 {% endhighlight %}
 * Under the features directory create a directory called step_definitions
 * In the step_definitions directory create a file called rpncalc_steps.rb
-//**rpncalc_steps.rb**//
+**rpncalc_steps.rb**
 {% highlight terminal %}
 Given /^the input "([^"]*)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
@@ -81,14 +81,14 @@ end
 {% endhighlight %}
 ## Creating the basic glue code
 * Create a file in the top-level directory called extconf.rb:
-//**extconf.rb**//
+**extconf.rb**
 {% highlight terminal %}
 require 'mkmf'
 dir_config("fixture_glue")
 create_makefile("fixture_glue")
 {% endhighlight %}
 * Create a file called fixture_glue.cpp:
-//**fixture_glue.cpp**//
+**fixture_glue.cpp**
 {% highlight terminal %}
 #include "ruby.h"
  

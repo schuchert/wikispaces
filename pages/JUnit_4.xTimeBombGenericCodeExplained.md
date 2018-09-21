@@ -36,7 +36,7 @@ Java will complain on line 93 that you must either catch "Exception" or surround
 
 My first vision wasn't up to my expectations. Sure, I could have just added "throws exception" to line 93, but I didn't want to do that. I'm not actually throwing a checked exception so I should not have to declare the test method that way. The problem was the signature of my "throwUntil" method. It claims it throws Exception but in fact it throws whatever is given to it. In the case of line 94, I'm passing in a RuntimeException. Prior to Java 5 I was out of luck. With Java 5 I have another option.
 
-I made throwUntil a generic method. Doing so allowed Java to determine at compile time that while in general the method "throwUntil" can throw any exception, in this //**particular use**// it was throwing an ObjectInUse exception, which happens to be a RuntimeException and therefore does not require a try/catch or a throws clause on the method signature.
+I made throwUntil a generic method. Doing so allowed Java to determine at compile time that while in general the method "throwUntil" can throw any exception, in this **particular use** it was throwing an ObjectInUse exception, which happens to be a RuntimeException and therefore does not require a try/catch or a throws clause on the method signature.
 
 This is what I ended up using:
 {: #TimeBombCode}

@@ -6,7 +6,7 @@ title: ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm
 {% include toc %}
 
 ## Overview
-This tutorial presents the mechanics of BDD, refactoring and touches on continuous integration by implementing the **[Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm)**. The point of this tutorial is** //not**// to write a solution to this algorithm. The algorithm is a vehicle for practicing the mechanics of BDD. Having said that, you will end up solving much of the algorithm.
+This tutorial presents the mechanics of BDD, refactoring and touches on continuous integration by implementing the **[Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm)**. The point of this tutorial is**not** to write a solution to this algorithm. The algorithm is a vehicle for practicing the mechanics of BDD. Having said that, you will end up solving much of the algorithm.
 
 This tutorial has been written for you to actually read and type. The [Kinesthetic Learning](http://en.wikipedia.org/wiki/Kinesthetic_learning) experience of actually typing the code, running the tests and checking in the work significantly reinforces learning habits that will serve you well. Much of what you practice in this tutorial can eventually become habit/muscle memory with enough practice. Consider this an opportunity to start. You'll get frequent feedback throughout. And while this may represent a very different way of working from what you are used to, here are a few comments:
 * What you are practicing now is just something you've learned, so this really is no different.
@@ -127,7 +127,7 @@ You will create an example whose primary purpose is to get the production class 
     1 example, 0 failures, 1 pending
 {% endhighlight %}
 
-The// **it**// indicates something that the production code should do. Right now this example is a placeholder and, as indicated, is not yet implemented. This is a great way to capture ideas that won't actually cause things to fail. Just jot down your ideas and them go back and work on one at a time. **Warning**: don't get too far ahead. You will probably find out for yourself that the very examples you want to create change as you make progress on the production code. It's OK to write one or a few, but// **do not**// try to get all the examples added but unimplemented before you start completing examples.
+The**it** indicates something that the production code should do. Right now this example is a placeholder and, as indicated, is not yet implemented. This is a great way to capture ideas that won't actually cause things to fail. Just jot down your ideas and them go back and work on one at a time. **Warning**: don't get too far ahead. You will probably find out for yourself that the very examples you want to create change as you make progress on the production code. It's OK to write one or a few, but**do not** try to get all the examples added but unimplemented before you start completing examples.
 
 Next, make the example "complete" in the sense that RSpec will no longer indicate it is "(Not Yet Implemented)".
 
@@ -155,10 +155,10 @@ At this point, you have a complete context with all of its examples passing. You
 ^
 |---|---|
 |Phase|Description|
-|**//Setup//**|Create everything necessary for an example to execute. Create instances, connect objects, put things into a well-defined, known starting point. For this exercise, you'll always start with a fresh "converter" before each test.|
-|**//Execution//**|Given a known-starting point, exercise the production code in some way with the intent of generating an expected result.|
-|**//Validation//**|You knew the starting point (you control that), you know how you exercised the production code, verify that the production code did what you expected it to do.|
-|**//Teardown//**|Not always necessary, you should write your examples such that they leave no footprint that could cause other examples to fail. For this tutorial, you will not have any teardown requirements because every example will begin with an in-memory object create before// **each**// example executes.|
+|**Setup**|Create everything necessary for an example to execute. Create instances, connect objects, put things into a well-defined, known starting point. For this exercise, you'll always start with a fresh "converter" before each test.|
+|**Execution**|Given a known-starting point, exercise the production code in some way with the intent of generating an expected result.|
+|**Validation**|You knew the starting point (you control that), you know how you exercised the production code, verify that the production code did what you expected it to do.|
+|**Teardown**|Not always necessary, you should write your examples such that they leave no footprint that could cause other examples to fail. For this tutorial, you will not have any teardown requirements because every example will begin with an in-memory object create before**each** example executes.|
 
 You're going to take small steps to keep things running and passing often. Sometimes these small steps will seem too small. When you think that, ask yourself "compared to what?". If something is too small, that's because you're expecting to work in larger chunks. Fine, try this and see if it fits. At the end of the tutorial if you haven't warmed up to the idea, you still learned something useful.
 
@@ -336,7 +336,7 @@ A great time to check in is anytime your tests are passing. So after you've writ
 * If you subsequently mess up, you can revert back using the tool
 * Other people can see your work sooner (that can be scary, but since you're writing unit tests now, you're already a leg up on the average bear)
 
-This tutorial briefly demonstrated [git](http://git.or.cz/). I// **strongly** // encourage you to use some revision control tool throughout. This goes back to learning by doing. Thinking about doing this will not activate your brain in the same way doing it will. If you want more details on using git, read [the git tutorial](http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html).
+This tutorial briefly demonstrated [git](http://git.or.cz/). I**strongly** encourage you to use some revision control tool throughout. This goes back to learning by doing. Thinking about doing this will not activate your brain in the same way doing it will. If you want more details on using git, read [the git tutorial](http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html).
 
 * Add this directory into a revision control system and make sure it is checked in:
 
@@ -709,7 +709,7 @@ Now seems like a good time to create a complete expression. This example represe
 
 Since this is an example of processing basic operators, which is different from the other contexts, you should create a new context 
 
-* Create an example for addition in its own context (add this just before the// **last**// end in the file):
+* Create an example for addition in its own context (add this just before the**last** end in the file):
 
 {% highlight ruby %}
   describe "Binary Operators" do
@@ -948,7 +948,7 @@ Created commit bfd7d90: Cleaned up the code.
 
 ### Summary
 Here's another important observation about refactoring. Consider extract method. In general, you should use the following steps:
-* Create a new method by// **copying**// the original code
+* Create a new method by**copying** the original code
 * Make sure the code compiles and the examples pass
 * Use the new method in the original code
 * Make sure the code compiles and the examples pass
@@ -1043,7 +1043,7 @@ Congratulations, you've successfully removed duplication and kept your tests pas
 {% endhighlight %}
 
 ## Example: Two Operators of Different Precedence
-The next nudge to your production code is adding the idea of precedence. You won't implement all of the rules yet, just a start. The first example will simply add a new operator, *, which, because of its higher precedence, results in something close to your previous test.// **Then**// the next example will change the order of the operators, with * after +, forcing a more serious change to your implementation.
+The next nudge to your production code is adding the idea of precedence. You won't implement all of the rules yet, just a start. The first example will simply add a new operator, *, which, because of its higher precedence, results in something close to your previous test.**Then** the next example will change the order of the operators, with * after +, forcing a more serious change to your implementation.
 
 Rather than giving you the source for the tests, I'll use a neat feature that allows me to draw some LaTex style formulas.
 
@@ -1102,7 +1102,7 @@ Often, you'll look at a solution, realize that its design is at the end of its l
     end
 {% endhighlight %}
 
-* Next, you need to create an array to hold the operators. This is a refactoring so you are going to// **add**// code first and then update it. My colleague Bob K calls this "Parallel Development".
+* Next, you need to create an array to hold the operators. This is a refactoring so you are going to**add** code first and then update it. My colleague Bob K calls this "Parallel Development".
 
 * Update the convert method to initialize an array @operators:
 
@@ -1981,7 +1981,7 @@ You disabled the method for testing a function call to allow refactoring while k
 
 Throughout this exercise, you've been referring to the published algorithm on wikipedia. The algorithm mentions what to do when processing a right-parenthesis. Look at the operand stack and if it's a function, then put in the output. There's more than this, but you are not processing multiple parameters just yet.
 
-The algorithm also mentions what to do if the token is a function name. Your code won't know if a token is a constant or a function until the code hits a left parenthesis// **and look at the last element added to outputTokens**//. So that's where to start.
+The algorithm also mentions what to do if the token is a function name. Your code won't know if a token is a constant or a function until the code hits a left parenthesis**and look at the last element added to outputTokens**. So that's where to start.
 
 * Update handle_paren (which is getting pretty long and unruly about now):
 
@@ -2329,7 +2329,7 @@ This may seem like a bit of work, but consider this: The class is not thread saf
 ## Example: Operator Associativity
 Next, your code needs to address operator associativity. For example, 
 $$ 4 + 5 - 6 $$ produces $$ 4 5 + 6 - $$ because + and - are left associative but 
-otherwise at the same precedence. However, a = b += 5 produces a b 5 += =. First, b is incremented by 5 and then a equals that result. If these operators were left associative, the result would instead be: a b = 5 += (it's even worse, because the result of = would the an lvalue of the rvalue - whew!), so a would equal b// **before**// it was incremented by 5. And, as mentioned, the return value of = would be the thing on the right instead of the left to make the thing work in the first place.
+otherwise at the same precedence. However, a = b += 5 produces a b 5 += =. First, b is incremented by 5 and then a equals that result. If these operators were left associative, the result would instead be: a b = 5 += (it's even worse, because the result of = would the an lvalue of the rvalue - whew!), so a would equal b**before** it was incremented by 5. And, as mentioned, the return value of = would be the thing on the right instead of the left to make the thing work in the first place.
 
 That gives a great test: $$ a\ =\ b\ += 5\ \ \rightarrow\ \ a\ b\ 5\ +=\ $$
 

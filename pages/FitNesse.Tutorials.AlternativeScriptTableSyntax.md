@@ -13,7 +13,7 @@ Sometime in the beginning of 2010, Bob Martin started working on an alternative 
   * a new way to represent script tables
 
 ## Not Starting from Scratch
-I'm bolting this tutorial on more than a year after writing the other tutorials. So I'm starting with the last checkin into github and creating all new tables for this example. I might eventually integrate this into the tutorial suite at some point in the future, but for now if you want to get started, [follow the instructions here](FitNesse.Tutorials.WorkingFromGitHub). When switching to tags, use the following tag: //**FitNesse.FitNesse.Tutorials.TableTables.Finished**//.
+I'm bolting this tutorial on more than a year after writing the other tutorials. So I'm starting with the last checkin into github and creating all new tables for this example. I might eventually integrate this into the tutorial suite at some point in the future, but for now if you want to get started, [follow the instructions here](FitNesse.Tutorials.WorkingFromGitHub). When switching to tags, use the following tag: **FitNesse.FitNesse.Tutorials.TableTables.Finished**.
 
 ## An Example Revisited
 As mentioned, this tutorial stands alone and is bolted on. As such, I'm going to provide a stand-alone page to get you started assuming you have no existing FitNesse pages already. What I realized picking this up a year later is I neglected to include the FitNesseRoot in git. I'll fix that on a rewrite.
@@ -234,7 +234,7 @@ There are two parts to this new feature:
 
 The second is superficial.
 
-FitNesse sees: //**Given a dvr with 1 recorder**//, it notices that this matches the pattern: //**Given a dvr with _ recorder**//. It matches 1 to _, which is then assigned to one parameter named //**number**//. FitNesse replaces that pattern with the remaining lines of the script table (the one remaining), which gives:
+FitNesse sees: **Given a dvr with 1 recorder**, it notices that this matches the pattern: **Given a dvr with _ recorder**. It matches 1 to _, which is then assigned to one parameter named **number**. FitNesse replaces that pattern with the remaining lines of the script table (the one remaining), which gives:
 {% highlight terminal %}
 givenDvrCanRecord|@number                           |
 {% endhighlight %}

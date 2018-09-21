@@ -15,7 +15,7 @@ title: Katas.ShuntingYardAlgorithm.examples
 | 2 ^ 3 ^ 4 | 2 3 4 ^ ^ |This was a bit of a dud test I added. It immeidately passed. Might consider leaving this one out.|
 | a ^ 3 | a 3 ^ |I want my expression evaluator to handle symbols as well as literal numbers. This example forces that behavior.|
 | (3 + 4) | 3 4 + |Handle ()'s. First, simply remove them.|
-| (3 + 4) * 5 | 3 4 + 5 * |Now make sure that ()s change the order of evaluation since + typically happens// **after**// *.|
+| (3 + 4) * 5 | 3 4 + 5 * |Now make sure that ()s change the order of evaluation since + typically happens**after** *.|
 | (3+(4-5))*6 | 3 4 5 - + 6 * |A more complex example to verify that the solution is general. Also notice that the spaces between separate tokens has been removed. You'll need to handle both with and without spaces.|
 | f(3) | 3 f |This is an example of a function call. Notice, this forces "look ahead" in your algorithm because you do not know if something is a function or a variable unless you look ahead to the next token. |
 | f(g(4)) | 4 g f |Is your solution general enough to handle nested functions?|

@@ -7,10 +7,10 @@ You can start from this point usingthe following source files: [[file:JapTutoria
 The relationship between Patron and Book is:
 ![](images/PatronToBook.gif)
 
-We need some more information. Right now, when we check out a book, we don't know when it is due, that seems to be a minimal amount of information. Adding this information to the Patron does not seem to make sense since there's one of these dates per//** Book**//, not per Patron. On the other hand, adding it to book directly means we have a field that will often be blank. There's a more natural way to model this relationship:
+We need some more information. Right now, when we check out a book, we don't know when it is due, that seems to be a minimal amount of information. Adding this information to the Patron does not seem to make sense since there's one of these dates per** Book**, not per Patron. On the other hand, adding it to book directly means we have a field that will often be blank. There's a more natural way to model this relationship:
 ![](images/PatronBookLoan.gif)
 
-A loan is associated with the//** association**// between Patron and Book. When the association exists, the loan exists, otherwise it does not.
+A loan is associated with the** association** between Patron and Book. When the association exists, the loan exists, otherwise it does not.
 
 We are going to test our way into this.
 ----

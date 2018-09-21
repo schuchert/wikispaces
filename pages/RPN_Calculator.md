@@ -2,12 +2,12 @@
 title: RPN_Calculator
 ---
 ## Elevator Pitch
-* **//For//** developers wishing to get practice creating systems using [TDD](Test_Driven_Development)
-* **//Who//** are interested in starting with user stories that follow the [INVEST](User_Stories_I.N.V.E.S.T) principle
-* **//Our//** RPN Calculator problem is a complete problem 
-* **//That//** gives users a rich enough to practice simple [TDD](Test_Driven_Development)
-* **//Unlike//** other problems that take you through the process step by step
-* **//Our Product//** only provides the starting point from which you are expected to begin practicing
+* **For** developers wishing to get practice creating systems using [TDD](Test_Driven_Development)
+* **Who** are interested in starting with user stories that follow the [INVEST](User_Stories_I.N.V.E.S.T) principle
+* **Our** RPN Calculator problem is a complete problem
+* **That** gives users a rich enough to practice simple [TDD](Test_Driven_Development)
+* **Unlike** other problems that take you through the process step by step
+* **Our Product** only provides the starting point from which you are expected to begin practicing
 
 ## User Stories
 The following list of user stories form a [[Product Backlog]]. The are additionally sectioned by [Releases](Releases), each of which is given a [Theme](Theme).

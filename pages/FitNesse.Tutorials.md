@@ -23,7 +23,7 @@ They are written this way to make them appear about how they appear in FitNesse 
 |Populate Schedule
 {% endhighlight %}
 
-If you prefer the first but want to enter the second button, look for the// **format**// button near the// **Save**// button in Fitnesse.
+If you prefer the first but want to enter the second button, look for the**format** button near the**Save** button in Fitnesse.
 
 ## Working From [Schuchert's GitHub Repository](http://github.com/schuchert/fitnesse-tutorials/tree/master)
 For instructions on working from github: [FitNesse.Tutorials.WorkingFromGitHub](FitNesse.Tutorials.WorkingFromGitHub)
