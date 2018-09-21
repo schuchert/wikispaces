@@ -2,14 +2,14 @@
 title: Ejb_3_Tutorial_2_Smoke_Test_Suite
 ---
 Here is a quick test suite to verify that things basically work. To create this test:
-# Expand your project (**Ejb3Tutorial2**)
-# Select the **test** source folder
-# Right-click and select **New:Class**
-# Enter **dao.impl** for the **Package**
-# Enter **CompanyDaoImplTest** for the **Class name**
-# Click **Finish**
-# Enter the following class
-# Once the class is saved and compiles, execute it (Right-click in the file, select **Run As::JUnit Test**
+* Expand your project (**Ejb3Tutorial2**)
+* Select the **test** source folder
+* Right-click and select **New:Class**
+* Enter **dao.impl** for the **Package**
+* Enter **CompanyDaoImplTest** for the **Class name**
+* Click **Finish**
+* Enter the following class
+* Once the class is saved and compiles, execute it (Right-click in the file, select **Run As::JUnit Test**
 
 ### CompanyDaoImplTest.java
 {% highlight java %}

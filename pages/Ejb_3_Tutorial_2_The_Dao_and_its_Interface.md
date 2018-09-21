@@ -26,11 +26,11 @@ public interface CompanyDao {
 {% endhighlight %}
 
 To create this interface:
-# Expand **Ejb3Tutorial2** and select the **src** directory
-# Right-click, select **New::Interface**
-# Enter **dao** for the package and **CompanyDao** for the name
-# Click **Finish**
-# Type the code into the file and save it
+* Expand **Ejb3Tutorial2** and select the **src** directory
+* Right-click, select **New::Interface**
+* Enter **dao** for the package and **CompanyDao** for the name
+* Click **Finish**
+* Type the code into the file and save it
 
 ### CompanyDaoImpl.java
 {% highlight java %}
@@ -93,8 +93,8 @@ public class CompanyDaoImpl implements CompanyDao {
 {% endhighlight %}
 
 To create this class:
-# Expand **Ejb3Tutorial2** and select the **src** directory
-# Right-click, select **New::Class**
-# Enter **dao.impl** for the package and **CompanyDaoImpl** for the name
-# Click **Finish**
-# Type the code into the file and save it
+* Expand **Ejb3Tutorial2** and select the **src** directory
+* Right-click, select **New::Class**
+* Enter **dao.impl** for the package and **CompanyDaoImpl** for the name
+* Click **Finish**
+* Type the code into the file and save it

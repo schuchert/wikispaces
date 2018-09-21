@@ -3,12 +3,12 @@ title: iPhone.SettingUpTheEnvionment
 ---
 {% include toc %}[<-- Back](iPhone)
 
-# UNDER CONSTRUCTION
+## UNDER CONSTRUCTION
 [Old Setup for XCode 3](iPhone.setup.xcode3)
 
-# The Video
+## The Video
 
-# Basic Application Setup
+## Basic Application Setup
 Note: This "works" and as I get better with XCode 4 I hope to improve this setup. If you know how to do this better, please let me know so I can learn about it and document it!
 
 If you want to get get to it, [then skip this section](iPhone.SettingUpTheEnvionment#backgroundSkipped).
@@ -17,7 +17,7 @@ These notes are for XCode 4 and GHUnit 0.4.28. Each project I set up will have a
 * The project containing the Unit Tests
 * The project containing the model code
 
-## Why?
+### Why?
 GHUnit runs as an application, which means it has a main() function. Objective-C is based on C. In a C project, an executable can only have one main() when linking. The main() used for brining up the iPhone(iPad) UI is different that the main() used to execute tests. This is a deficiency in Objective-C's execution model. So there are some obvious obvious options:
 * Have two files with main()
   * Conditionally select the correct one based on a build flag
@@ -31,16 +31,16 @@ Finally, if I have two projects, both of which have a main, it is much easier to
 These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in this version, you can assume these steps are fragile. If they fail for you, please send me an email (schuchert -at- yahoo -dot- com) and let me know the version of XCode you are using. I'll see if I can figure it out. If you've solved the problem, let me know and I'll update these notes. Or, if you are feeling ambitious, I'll give you permission to update the notes.
 
 {: #backgroundSkipped}
-# Setting up the three projects
+## Setting up the three projects
 
-## Creating the Workspace
+### Creating the Workspace
 * Start XCode
 * Create a new Workspace
   * File::New Workspace (^⌘N)
   * Select a folder for the workspace. For this example I'll use:// **/Users/Schuchert/src/iPhoneDemo**//. I'll also be putting all of the project directories in this same folder. You'll need to create a directory somewhere.
   * Enter a name for the project. I used iPhoneDemo
 
-## Creating the View Project
+### Creating the View Project
 * Add a project:// **File::New Project**// (⇧⌘N)
 * Select// **iOS::Application**// on the left side
 * On the right side, select// **Windows-based Application//**
@@ -54,13 +54,13 @@ These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in 
 * Make sure the right Scheme is selected. It should be the Project Name iPhone 4.3 Simulator. If you happen to have your registered iPhone connected, it may select to install and run on your iPhone by default. 
 * Confirm your project works by running it and seeing that the iPhone simulator starts up (⌘R)
 
-## Creating the GHUnit Project
+### Creating the GHUnit Project
 Note that by default, the project you just created is selected. If you rush though this, you'll create the new project as a dependent of the view project.
 * Confirm your project is not selected. If it is, unselect it by command clicking it.
 * Follow the same instructions as above for creating the View project
   * Add a project:// **File::New Project**// (⇧⌘N)
   * Select// **iOS::Application**// on the left side
-###  On the right side, select// **Windows-based Application//
+####  On the right side, select// **Windows-based Application//
   * Click// **Next**//
   * Enter a product name. I'll use// **UnitTests**//. You might call this project LogicTests or similar.
   * Select a device family. I'll be using// **iPhone**//
@@ -73,7 +73,7 @@ Note that by default, the project you just created is selected. If you rush thou
 * Quit the simulator (⌘q)
 * This is not correct as it is no different from the first project.
 
-### Update the Unit Test Project
+#### Update the Unit Test Project
 * [Download GHUnit](https://github.com/gabriel/gh-unit/downloads) and unzip the file somewhere. I'm using 0.4.28 and I downloaded the file to ~/Downloads. The unziped directory is ~/Downloads/GHUnitIOS.framework
 * Add this as a dependent framework to your project by dragging GHUnitIOS.framework on to your UnitTests project
 * Under the Destination enable "Copy items...". When you check in this one directory into your repository, it will be a stand-alone, build-able unit.
@@ -82,7 +82,7 @@ Note that by default, the project you just created is selected. If you rush thou
 * Update its contents by copying the file from [here](https://github.com/gabriel/gh-unit/raw/master/Project-IPhone/GHUnitIOSTestMain.m).
 * If you run at this point, you'll get an exception. You'll need to add a few flags to the target's configuration
 
-### Update the Unit Test Target
+#### Update the Unit Test Target
 * Select your// **UnitTests**// project
 * Select the// **UnitTests**// target in the middle column
 * Select the// **Build Settings**// tab.
@@ -98,9 +98,9 @@ Note that by default, the project you just created is selected. If you rush thou
 * Delete the// **UnitTestsAppDelegate.h**// (don't just remove the reference)
 * Delete the// **UnitTestsAppDelegate.m**// (don't just remove the reference)
 * Run your project, make sure you see the unit test runner
-### Add One Test To Make Sure
+#### Add One Test To Make Sure
 
-# Adding the Model as a Static Library
+## Adding the Model as a Static Library
 
 * To do this:
   * Download the file somewhere (my download location is// **~/Downloads**//)
@@ -118,7 +118,7 @@ Note that by default, the project you just created is selected. If you rush thou
   * Run, command-r
   * When the simulator starts, click on //**Run**//. There are no tests, so it finishes quickly.
 
-# Add a first test
+## Add a first test
 * Under //**Targets**//, right-click  //**UnitTests_oniPhoneSimulator**//
 * Select //**Add:New File**//
 * Under //**iOS:Cocoa Touch Class**//, just select //**Objective-C class**//
@@ -176,7 +176,7 @@ Note that by default, the project you just created is selected. If you rush thou
 
 Congratulations, you have your first test working.
 
-# Set Unit Test Executable Settings
+## Set Unit Test Executable Settings
 Review// **GHUnitIOSTestMain.m**//. Notice that it recommends editing your unit test executable and setting the following properties:
 
 | Property Name | Default Value | Recommended Setting |
@@ -199,13 +199,13 @@ To make create these environment settings:
 
 Now the hard part starts.
 
-# Now Really Setting Things Up
+## Now Really Setting Things Up
 <<to be expanded>>
 * Create a new static library for your model code (keep model separate from UI
 * Link to it from the UI project
 * Link to it from the Unit Test Project
 
-# A Few Handy Shortcut Keys
+## A Few Handy Shortcut Keys
 
 | Command-r | run application |
 | Command-b | quick open |

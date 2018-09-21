@@ -1,7 +1,7 @@
 ---
 title: Cxx_Tdd_Iteration_2_The_Demo
 ---
-# Demo Goals
+## Demo Goals
 So far we only have test output to show for all of our hard work. Wouldn't it be nice if we could demonstrate our system with output? In reality, a product owner would probably require such a demo, so here's a list of things we want to accomplish with our demo:
 * Be able to create 40 locations with the correct name
 * Be able to show players taking turns and moving around the board
@@ -9,7 +9,7 @@ So far we only have test output to show for all of our hard work. Wouldn't it be
 
 Along the way we'll introduce a light-weight use of the boost library as well to handle memory deallocation.
 
-# The Back 40
+## The Back 40
 
 First let's create a simple set of 40 locations based on a file. Here's an example of what that file might look like:
 
@@ -28,7 +28,7 @@ To accomplish all of this, we're going to use the Boost C++ library and the C++ 
 
 Here we go...
 
-# Red: Our First Test
+## Red: Our First Test
 
 Here's our first goal, create a "board" of one location. We'll use for our data set the following:
 
@@ -37,7 +37,7 @@ Here's our first goal, create a "board" of one location. We'll use for our data 
 
 Here's our test (in a new test file):
 
-### BoardBuilderTest.hpp
+#### BoardBuilderTest.hpp
 
 {% highlight cpp %}
 01: #include <cxxtest/TestSuite.h>
@@ -73,11 +73,11 @@ Here's a breakdown:
 |19|First I want to verify that the location I got back has an expected name (this is a new method we'll need to add to Location.|
 |20|Next, I want to make sure that the list is circular. It's size is one, so the next of start should be itself.|
 
-## Red: Get it to compile
+### Red: Get it to compile
 
 We have to extend our location class and we have to create a BoardBilder class. Here they are:
 
-### Location.hpp
+#### Location.hpp
 
 Note: We've already seen this pattern repeated. Add a method get an attribute that returns a constant value. Then get the test to compile then go back and update to use a real reference. We're going to skip this step and go right to supporting a name attribute. Add the following method and attribute:
 
@@ -96,7 +96,7 @@ private:
 
 Now we need to create the BoardBuilderClass. Here's the header file:
 
-### BoardBuilder.hpp
+#### BoardBuilder.hpp
 
 {% highlight cpp %}
 #ifndef _BOARDBUILDER_HPP
@@ -117,7 +117,7 @@ public:
 
 Next, we need to get our code to compile, so we'll need to add a definition for the buildBoard method:
 
-### BuildBoard.cpp
+#### BuildBoard.cpp
 
 {% highlight cpp %}
 #include "BoardBuilder.hpp"
@@ -130,10 +130,10 @@ boost::shared_ptr<Location> BoardBuilder::buildBoard(std::istream &stream) {
 
 Build your system and verify that it compiles. You test should fail.
 
-## Green: Get your test to pass
+### Green: Get your test to pass
 We've already updated location with a new attribute, name. We need to fill out our definition of the buildBoard method and add any additional missing pieces as well:
 
-### BuildBoard.cpp
+#### BuildBoard.cpp
 
 {% highlight cpp %}
 01: #include "BoardBuilder.hpp"
@@ -182,12 +182,12 @@ We have to add a constructor to location that takes in a name. Since Locations a
 
 Build and run, are you green?
 
-## Refactor
+### Refactor
 We do not have a lot of duplicate code, but we do have code that might seem incomplete. There's not much to refactor yet, but that's coming up.
 
 Now is a great time to check in your work.
 
-## Red: Create two locations in a circle
+### Red: Create two locations in a circle
 |**type**|**name**|
 |location|Location1|
 |location|Location2|
@@ -212,10 +212,10 @@ This test is similar to the first test.
 * On line 9 we make sure that the location returned does not point to itself
 * We then make sure that the locations for a circle on line 10.
 
-## Red: Get it to compile
+### Red: Get it to compile
 This test already compiles but it does not pass. The fact that is does not pass suggests that it might be testing something useful. The fact that we did not have to add any code to get it to compile could mean we're testing an assumption or this test covers the same thing as another test. We'll review that in the refactor step.
 
-## Green: Get it to pass
+### Green: Get it to pass
 
 We need to update the buildBoard method:
 
@@ -264,12 +264,12 @@ This is quite a jump. That's often the case going from dealing with 1 thing to d
 
 Run your tests and make sure you're green.
 
-## Refactor: One of these tests subsumes the other
+### Refactor: One of these tests subsumes the other
 Notice that the second test in BoardBuilderTest.hpp does everything that the first test does and a little more?  It turns out that after running the tests, my first test failed because I "primed the pump" by reading the first location and then going into the loop but then I additionally use a do-while loop instead of a while loop. The test caught this problem and then I fixed the underlying code.
 
 So you might consider getting rid of this test but I'd recommend leaving it in to verify that any changes to that test don't break handling a single location in a loop.
 
-# Red: Time To Create Different Types
+## Red: Time To Create Different Types
 OK, now we need to make sure that while the board is building locations, it can do so with different types. For example:
 
 |**type**|**name**|
@@ -296,10 +296,10 @@ Here's a test:
 
 **Note**: You'll need to make sure to #include "Go.hpp" and "IncomeTax.hpp"
 
-## Red: Get it to compile
+### Red: Get it to compile
 This code compiles, it just does not pass so we can go right to Green.
 
-## Green: Get it to pass
+### Green: Get it to pass
 We need to update the BoardBuilder:
 
 {% highlight cpp %}
@@ -326,13 +326,13 @@ Location *createLocation(std::string &line) {
 
 **Note**: To get this to compile you'll need to include "Go.hpp" and "IncomeTax.hpp". You'll also additionally need to add a constructor to Go and IncomeTax that take a parameter:
 
-### Go.hpp
+#### Go.hpp
 
 {% highlight cpp %}
    Go(std::string name = "") : Location(name) {}
 {% endhighlight %}
 
-### IncomeTax.hpp
+#### IncomeTax.hpp
 
 {% highlight cpp %}
    IncomeTax(std::string name = "") : Location(name) {}
@@ -340,13 +340,13 @@ Location *createLocation(std::string &line) {
 
 Verify that your tests pass.
 
-## Refactor
+### Refactor
 
 Here are a couple of things to notice:
 * Every time we add a new kind of location we have to update board builder. While this isn't awful, it's going to get ugly.
 * BoardBuilder is good at reading the file and connecting up locations, how about we factor our the construction of different kinds of location into a simple Location factory:
 
-### LocationFactory.hpp
+#### LocationFactory.hpp
 
 {% highlight cpp %}
 #ifndef _LOCATIONFACTORY_HPP_
@@ -364,7 +364,7 @@ public:
 #endif
 {% endhighlight %}
 
-### LocationFactory.cpp
+#### LocationFactory.cpp
 
 {% highlight cpp %}
 #include <boost/tokenizer.hpp>
@@ -399,7 +399,7 @@ Location *LocationFactory::createLocation(std::string &line) {
 
 And we need to update BoardBuilder.cpp:
 
-### BoardBuilder.hpp
+#### BoardBuilder.hpp
 
 {% highlight cpp %}
 #include "BoardBuilder.hpp"
@@ -432,10 +432,10 @@ Verify you're still green.
 
 Now is a great time to checkin.
 
-# Refactor: Test Smells
+## Refactor: Test Smells
 Is it strange that we have a test in BoardBuilder that tests we're creating the correct kinds of locations? Since that is not a responsibility of BoardBuilder but LocationFactory, we should move the test and add missing tests to make sure that LocationBuilder creates every kind of location;
 
-### LocationFactoryTest.hpp
+#### LocationFactoryTest.hpp
 Here is a series of tests to make sure we can create each kind of Location there is:
 
 {% highlight cpp %}
@@ -502,7 +502,7 @@ public:
 
 To make this work, we need to update our LocationFactory:
 
-### LocationFactory.cpp
+#### LocationFactory.cpp
 
 {% highlight cpp %}
 #include <boost/tokenizer.hpp>
@@ -546,12 +546,12 @@ Location *LocationFactory::createLocation(std::string &line) {
 
 The tests all pass, so now is a good time to checkin.
 
-# Building Go To Jail Correctly
+## Building Go To Jail Correctly
 Right now we have a location, Go To Jail, that has as an attribute that is the destination location for when people land on it. We have a factory responsible for constructing the different kinds of locations but it does not currently keep track of all of the locations.
 
 Let's add a test to verify that when we get back an instance of GoToJail, it's destination location is properly set:
 
-## Red: Write a test
+### Red: Write a test
 
 {% highlight cpp %}
    void testBoardBuiltWithGoToJailWiredUp() {
@@ -589,15 +589,15 @@ Let's add a test to verify that when we get back an instance of GoToJail, it's d
 
 A bit of a brute force test, but it gets the job done. Construct a board with 14 locations, one is known as Just Visiting while the other, Go To Jail, uses Just Visiting as its destination.
 
-## Red: Get it to compile 
+### Red: Get it to compile 
 
 This test compiles as necessary but it does not pass. This might indicate we're refining the underlying implementation to assert more assumptions about building all of the locations.
 
-## Green: Get it to pass
+### Green: Get it to pass
 
 Since we've already simplified BoardBuilder and taken out its responsibility for building the actual correct kinds of locations, the next change will end up going into LocationFactory:
 
-### LocationFactory.cpp
+#### LocationFactory.cpp
 
 {% highlight cpp %}
 #include <boost/tokenizer.hpp>

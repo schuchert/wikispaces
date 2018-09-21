@@ -2,17 +2,17 @@
 title: Mockito.UsingPowerMockWithMockito
 ---
 {% include toc %}
-# Overview
+## Overview
 Sometimes there's some low-level code, or badly written code, that makes verifying its behavior difficult. In this example, I'll show a few examples of mixing [PowerMock](https://code.google.com/p/powermock/) in with [Mockito](https://code.google.com/p/mockito/) to take control of:
 * static methods
 * calls to new
 
 You can get a working copy of this code from my [spring_aop github repo](https://github.com/schuchert/spring_aop).
 
-## Maven Dependencies
+### Maven Dependencies
 This example works with PowerMock 1.5:
 
-//**Code from: pom.xml**//
+**Code from: pom.xml**
 {% highlight xml %}
 <dependency>
     <groupId>org.powermock</groupId>
@@ -39,13 +39,13 @@ And Mockito 1.9:
 </dependency>
 {% endhighlight %}
 
-# The Basics
+## The Basics
 When you want to take control of something not controllable by Mockito, you need to identify the class where you want to take that control. For example, if you are taking control of a static method, you name the class that has the static method. //**However**//, if you want to change what new X returns,// **you name the class that has the call to new**//.
 
-## Taking control of a static method
+### Taking control of a static method
 There are a few things you need to do according to the instructions and then one more thing currently (using PowerMock 1.5 and Mockito 1.9) if you happen to be using certain open-source libraries.
 
-## The Annotations
+### The Annotations
 Each test class wanting to use PowerMock needs 2 annotations, with a third optional one for handling current shortcoming (as I see it) in PowerMock:
 //**Code from: MetricsRecorderTest**//
 
@@ -62,7 +62,7 @@ public class MetricsRecorderTest {
 | @PowerMockIgnore | This is an optional annotation. We are using something that, underneath the covers, uses something that conflicts with how PowerMock replaces classes. This is not a problem with JMockIt (also had a problem with Emma and PowerMock leading me to prever JMockIt). If you happen to grab the code and run it, I recommend you comment this out and run the tests to see the exception that results, so you'll be aware of what to expect when it comes up somewhere else.|
 | @PrepareForTest | This informs PowerMock that these classes need to be instrumented. This list includes the classes from two different examples (static methods and calls to new). For the purpose of changing the static method, only SystemLoggerFactory.class is required. You can confirm this by running this test with the other classes removed. One test will pass, the others will fail.|
 
-### Replacing one static method
+#### Replacing one static method
 Next, you need to actually replace the static method. I want to replace the return value of a static method to return a Mockito-created object. Here's the problem code that I want to control:
 
 //**Code taken from MetricsRecorder**//
@@ -82,12 +82,12 @@ public void replaceLogger() {
 
 The first line informs PowerMock of your intention to actually change the class. The next line sets up the staticMethod get(...) to return logger, which is initialized using an @Mock annotation.
 
-## Changing what is returned from new
+### Changing what is returned from new
 What happens when you want to change a use of new? In Java, new is a keyword that does 2 things:
 * Causes allocation of an object on the heap (at least logically, in moder JVMs this can be heavily optimized)
 * Calls the constructor of the class being created
 
-### Taking Control
+#### Taking Control
 Note, you do not directly call the constructor, Java matches the constructor based on the parameters and does the invocation for you. Every place that uses new X does this. That is important, because if you want to take control of new X, you have to tell PowerMock to instrument the// **class with the call to new**//, not the class you're swapping out:
 
 //**Code from: MetricsRecorderTest**//
@@ -99,7 +99,7 @@ public void replaceCorrelationId() throws Exception {
 {% endhighlight %}
 This causes calls to new of the class CorrelationId, taking any arguments, to return a controlled value (id, which is Mockito-created object).
 
-### Annotation to Enable Control
+#### Annotation to Enable Control
 //**Code from: MetricsRecorderTest**//
 {% highlight java %}
 @RunWith(PowerMockRunner.class)
@@ -110,7 +110,7 @@ public class MetricsRecorderTest {
 
 In this case, the test calls the class MetricsRecorder, which calls new CorrelationId(), so MetricsRecorder is the class added to the @PrepareForTest annotation.
 
-# Summary
+## Summary
 It's nice that PowerMock integrates nicely with Mockito. There's a mismatch between using JMockIt and Mockito, but that could be an advantage. Using tools like PowerMock and JMockIt suggest that [maybe your design isn't so great](http://martinfowler.com/articles/modernMockingTools.html).
 
 I had problems with PowerMock not playing nice with emma, a code coverage tool, when executed from Gradle. Emma does instrumentation and it's instrumentation mechanism conflicted with what was going on in JMX. 
@@ -125,8 +125,8 @@ The syntax being more integrated with Mockito I actually think of as unfortunate
 
 However, PowerMock seems to be a fine solution and if you prefer more integrated syntax, it wins.
 
-# The Complete Source
-## The Test File
+## The Complete Source
+### The Test File
 {% highlight java %}
 package shoe.example.metrics;
 
@@ -191,7 +191,7 @@ public class MetricsRecorderTest {
 }
 {% endhighlight %}
 
-## The Production Code
+### The Production Code
 {% highlight java %}
 package shoe.example.metrics;
 

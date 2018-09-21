@@ -1,9 +1,9 @@
 ---
 title: ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator
 ---
-<span class="back_button">[Back](ruby.Tutorials)</span>
+[Back](ruby.Tutorials)
 
-# Introduction
+## Introduction
 {% include toc %}
 In this tutorial, you will develop a [Reverse Polish Notation](http://en.wikipedia.org/wiki/Reverse_Polish_notation) (RPN) calculator. According to [Wikipedia](http://en.wikipedia.org/wiki/Reverse_Polish_notation), PRN was developed by 1920 by Polish mathematician Jan Lukasiewicz, so the notation has some history. The purpose of this tutorial is to give you practice with BDD on an object with methods, rather than an object with one method, as in the first tutorial.
 
@@ -19,12 +19,12 @@ Unlike the first tutorial, this tutorial will:
 
 By the end of this tutorial, you'll be ready to start using story tests on a more complicated problem.
 
-## Note
+### Note
 This tutorial assumes you've either already worked through the first tutorial or are familiar with BDD and RSpec. If not, here are a few terms that come up early enough you'll need to know them:
 * Example - in RSpec parlance, this refers to a series of steps describing a use of the system. Before writing production code, you'll write an example. That example will not run most of the time, so you'll then create the production code necessary to get the example to pass.
 * Context - A context forms a common environment under-which Examples execute. A context may just be a name or it might include common setup and initialization as well as common clean-up. Contexts can be nested, which was demonstrated in the first tutorial.
 
-## Approach
+### Approach
 Unlike the first tutorial, this tutorial will be a bit more explicit in its steps. Where reasonable, each Example will follow the same flow:
 * **Title**: Proceeded by a solid line, this will be at Heading Level 1
 * **Overview**: The overview immediately follows the title
@@ -40,7 +40,7 @@ There will also be occasional side-bars on an as-needed basis.
 
 Before you get started on any Examples, however, we'll delve into the problem just a bit.
 
-# The Problem
+## The Problem
 An RPN calculator works by performing calculations on operands that the user has already entered. Here is an example scenario:
 {% highlight terminal %}
 5 <enter>
@@ -77,14 +77,14 @@ Here's the evaluation of the above expression:
 * The final operator, +, another binary operator, takes as its first operand the top item on the stack, which is 3. For its right-hand operand, it takes the x register, -3. Adding, the result is 0, which becomes the value in the x register.
 * The stack is empty.
 
-## The x register
+### The x register
 The x register behaves like an accumulator. As you type numbers, those numbers get added to what is already there. When you type a non-number key, it applies itself. For example, the <enter> key really behaves like a unary operator. When you press <enter>, it takes the value in the x register and places it on the stack.
 * If the next key is part of a number, the x register is reset and the key pressed becomes the contents of the x register.
 * If the next key is not part of a number, then it applies as is.
 
 After any non-number key, the x register is "locked" and any attempt to change it results in it being reset.
 
-## Getting Started
+### Getting Started
 There are several major parts to this problem:
 * Handling input
 * Handling the stack and the x register properly
@@ -97,13 +97,13 @@ In addition, we'll add several things to make this a bit more interesting:
 
 Behavior Driven Development advocates starting outside in; start with the user experience and then work your way into the system. In this tutorial, you will not strictly be creating a user interface; you will, however, create the stuff necessary to build a user interface. The tutorial will start at the individual entry of keys and work up to basic math.
 
-## Your Work Area
+### Your Work Area
 * Create a directory to store all of your work. Unlike the first tutorial, you'll be working in multiple files this time.
 
-# The 0th Example
+## The 0th Example
 As with all problems, you need to pick a starting place. As with the first tutorial, you will create a basic example describing object creation. Next, you'll continue with a series of examples centered on basic input. Thinking further ahead at this point might constitute analysis paralysis. 
 
-### Example
+#### Example
 Here is a first Example for this problem:
 {% highlight ruby %}
     describe "Basic Creation" do
@@ -185,7 +185,7 @@ OK, you have an Example but it does not contain any verification. So one more ch
 
 {% include aside/collapsed id="allgreen" title="All Green" filename="ruby.sidebar.AllGreen" %}
 
-### Check-In
+#### Check-In
 You are all green, so it is time to check in your work. As with the previous tutorial, I'll be using git:
 {% highlight terminal %}
 Macintosh-7% ls
@@ -203,15 +203,15 @@ Created initial commit 05273da: First spec passing.
 
 Note that in this example I have a file you will not have, wikiwriteup.txt. That's the raw material used for format the wikipage you are now reading.
 
-### Refactor
+#### Refactor
 A quick review of the existing Example and production code does not suggest any refactoring yet.
 
-### Check-In
+#### Check-In
 Since there was no need to refactor, there's no need to check in again.
 
-### Summary
+#### Summary
 You created two files:
-### rpn_calculator_spec.rb
+#### rpn_calculator_spec.rb
 {% highlight ruby %}
 require 'rpn_calculator'
 
@@ -223,7 +223,7 @@ describe "Basic Creation" do
 end
 {% endhighlight %}
 
-### rpn_calculator
+#### rpn_calculator
 {% highlight ruby %}
 class RpnCalculator
 end
@@ -245,7 +245,7 @@ Not every Example will be so small and quick to create, but you should attempt t
 
 {% include aside/collapsed id="examplehwsim" title="Example: Hardware Simulator" filename="ruby.sidebar.ConcreteExampleHardwareSimulator" %}
 
-# Example: Accepting User Input
+## Example: Accepting User Input
 With the first Example running it is time to move on to basic user input. We have to make a decision already, where is the system boundary. Here are a few possibilities:
 * The system receives a series of events for buttons pressed, e.g., pressing "9" on the UI generates a 9-button pressed event, pressing "sqrt" on the UI generates a sqrt-button pressed event.
 * The system receives "digit" messages for digits or "function" messages for functions.
@@ -259,7 +259,7 @@ As a side benefit, most of the logic will be in easy to test code.
 
 Since the particulars of the UI are irrelevant, this tutorial will move forward using option 2 listed above for handling numbers. When it is time to handle things like +, /, etc., it'll be time to make another decision.
 
-### Example
+#### Example
 Here is the beginning of an example:
 {% highlight ruby %}
     describe "Handling User Input of Numbers" do
@@ -369,7 +369,7 @@ As with the previous failure, this failure is a result of a missing method.
 
 {% include aside/collapsed id="sillyimpl" title="What a Silly Implementation" filename="ruby.sidebar.WhatASillyImplementation" %}
 
-### Check-In
+#### Check-In
 * Check in your work:
 {% highlight terminal %}
     Macintosh-7% git commit -a
@@ -377,7 +377,7 @@ As with the previous failure, this failure is a result of a missing method.
      3 files changed, 215 insertions(+), 2 deletions(-)
 {% endhighlight %}
 
-### Refactor
+#### Refactor
 Review of the RpnCalculator class does not suggest any refactoring.
 
 Review of the Examples, however, does. There is some minor duplication. Both Examples create a calculator. This is a quick fix since you can create a containing Context with common setup. As with any refactoring, however, you'll take small steps and verify as you go along.
@@ -456,7 +456,7 @@ Review of the Examples, however, does. There is some minor duplication. Both Exa
 
 You might be tempted to do more at this point. For example, you know you'll be adding a lot of values to the x_register. However, let that generalization happen naturally. Practicing both BDD and TDD encourages bottom-up, example-based generalization.
 
-### Check-In
+#### Check-In
 * Check in your work:
 {% highlight terminal %}
     Macintosh-7% git commit -a
@@ -465,14 +465,14 @@ You might be tempted to do more at this point. For example, you know you'll be a
      rewrite rpn_calculator_spec.rb (90%)
 {% endhighlight %}
 
-### Summary
+#### Summary
 The first example added basic object creation. This Example defined some of the API for entering digits. The production code doesn't actually process this yet, however, you already have executable documentation of how the API is supposed to work.
 
 You also performed some basic refactoring on your Examples. While mentioned in the first tutorial, here are a few observations:
 * You want to get to the point where your muscle memory is imbued with this kind of basic cleanup. The only way to get there is practice.
 * We removed a violation of the DRY principle. I believe Ruby Dave Thomas is credited with saying all design is an exercise in removing duplication. Regardless of who said it, I think it's a sound idea.
 
-# Example: Taking a decimal point as well
+## Example: Taking a decimal point as well
 The production code is hard-coded. Somehow you want to push your solution to remove that hard-coded value. One way to do that is to and another Example (don't do this):
 {% highlight ruby %}
       describe "Handling an even longer User Input of Numbers" do
@@ -492,7 +492,7 @@ On the one hand, this will force some more work in the production code. On the o
 
 {% include aside/collapsed id="notidlechitchat" title="Not Idle Chit Chat" filename="ruby.sidebar.NotIdleChitChat" %}
 
-### Example
+#### Example
 Here is another example that fits extends the functionality just a little but will also force the implementation of the production code:
 {% highlight ruby %}
     it "should handle a string of digits with an embedded ." do
@@ -563,7 +563,7 @@ Now it is time to do something more than hard-code the response.
     
     3 examples, 0 failures
 {% endhighlight %}
-### Check-In
+#### Check-In
 * It is once again time to check in your code. Everything is green:
 {% highlight terminal %}
     Macintosh-7% git commit -a
@@ -573,7 +573,7 @@ Now it is time to do something more than hard-code the response.
 
 And as a reminder, the reason there are so many insertions in this example is because my checkins include updates to the source file used to generate the page you are reading.
 
-### Refactor
+#### Refactor
 Reviewing the RpnCalclator class, there's little to do right now. What about your Examples? There appears to be duplication in that there are several lines that call the digit_pressed method. Is this duplication? It does represent the underlying objects' API. Even so, how can you improve this?
 
 Before making any improvements, you need a reason to make the improvement. It is to make the Example more readable, easier to write, easier to maintain, or some other characteristic?
@@ -641,7 +641,7 @@ How about allowing your Example to provide a number, which is then "typed" for y
     3 examples, 0 failures
 {% endhighlight %}
 
-### Check-In
+#### Check-In
 * Check in your changes:
 {% highlight terminal %}
     Macintosh-7% git commit -a
@@ -649,13 +649,13 @@ How about allowing your Example to provide a number, which is then "typed" for y
      2 files changed, 56 insertions(+), 24 deletions(-)
 {% endhighlight %}
 
-### Summary
+#### Summary
 Congratulations, you have basic support for processing numeric input. You managed to use an Example that pushed the design just a bit and ended up with code in each of the methods.
 
 There is one strange thing, your code uses "digit_pressed" for the digits 0 through 9 and '.'. That's something worth considering.
 
 Here is a snapshot of what your code should resemble at this point:
-### rpn_calculator_spec.rb
+#### rpn_calculator_spec.rb
 {% highlight ruby %}
     require 'rpn_calculator'
     
@@ -688,7 +688,7 @@ Here is a snapshot of what your code should resemble at this point:
     end
 {% endhighlight %}
 
-### rpn_calculator.rb
+#### rpn_calculator.rb
 {% highlight ruby %}
     class RpnCalculator
       def initialize
@@ -705,14 +705,14 @@ Here is a snapshot of what your code should resemble at this point:
     end 
 {% endhighlight %}
 
-# Example: What Happens with Enter?
+## Example: What Happens with Enter?
 What happens when a user presses the <enter> key on the calculator:
 * The current value in the x_register is placed on the stack of previous operands.
 * Subsequent, the next numeric digit causes the x_register to reset, but pressing <enter> again causes that value to placed on the stack again.
 
 In fact, as you will see, pressing a non-numeric key generally "locks-down" the x_register and makes the next digit cause it to be reset. You can describe this we several Examples.
 
-### Example
+#### Example
 Here is a Context with three as yet to be defined Examples:
 {% highlight ruby %}
       describe "Handling the <enter> key" do
@@ -811,7 +811,7 @@ Did you notice that? If not, see how easy it is to slide backwards?
 
 {% include aside/collapsed id="howmuchtofollowthreelaws" title="How Much is Too Much?" filename="ruby.sidebar.JustHowMuchCanYouFollowTheThreeLaws" %}
 
-### Check-In
+#### Check-In
 You have all passing Examples, but two are not implemented. Should you check in your work?
 * Sure:
 {% highlight terminal %}
@@ -821,21 +821,21 @@ You have all passing Examples, but two are not implemented. Should you check in 
      3 files changed, 148 insertions(+), 7 deletions(-)
 {% endhighlight %}
 
-### Refactor
+#### Refactor
 A quick review of RpnCalculator doesn't suggest a need for refactoring. For now, the same can be said of the Examples.
 
-### Check-In
+#### Check-In
 No need, there was no need to refactor.
 
-### Summary
+#### Summary
 Do you think pressing <enter> on a calculator is a function? Before I started this project my reaction would have been, "That's silly." However, when I got to this Example, I considered the writeup on the RPN Calculator and realized that the <enter> key is a function just as much as sqrt, pow, etc.
 
 Have we made progress? Yes, we have extended the API of the calculator. What about checking in code with pending Examples, is that a good idea? I think it is OK, but it could cause problems. I prefer clean Example execution, so having several pending Examples is a bother. On the other hand, if I'm pairing with someone and one of us thinks of something worthy of validation, but it is not where we are working, we could write it down, email it, yell it to another team member, or we can put it in the code in an executable fashion.
 
-# Example: Checking that the x_register is reset-able
+## Example: Checking that the x_register is reset-able
 The next Example involves what happens after the <enter> key. You could have included this check in the previous Example, however keeping the tests small, focused and checking fewer things makes pinpointing problems easier.
 
-### Example
+#### Example
 Here's an example that seems to express the idea:
 {% highlight ruby %}
     it "should cause next digit to reset the x_register" do
@@ -889,7 +889,7 @@ Notice that the 1 entered was appended to the x_register. So looks like this tes
     6 examples, 0 failures, 1 pending
 {% endhighlight %}
 
-### Check-In
+#### Check-In
 * Now is a good time to check in, even though you have a pending Example:
 {% highlight terminal %}
     Macintosh-7% !g
@@ -898,13 +898,13 @@ Notice that the 1 entered was appended to the x_register. So looks like this tes
      3 files changed, 65 insertions(+), 3 deletions(-)
 {% endhighlight %}
 
-### Refactor
+#### Refactor
 Here's a list of things that you might consider for refactoring:
 * There's a violation of DRY between digit_pressed and initialize
 * There's some duplication between the last two Examples
 * The method name enter_number either needs to be changed, or it should call the <enter> method.
 
-### enter_number
+#### enter_number
 You can either change its name or make it do what it says. Flip a coin, you probably do not have enough information to make that decision just yet. However, in the spirit of keeping things clean, I did make a decision. I kept the method name and changed its implementation:
 {% highlight ruby %}
       def enter_number(number)
@@ -915,7 +915,7 @@ You can either change its name or make it do what it says. Flip a coin, you prob
 
 * Run your Examples, nothing is broken.
 
-### Violation of DRY between digit_pressed and initialize
+#### Violation of DRY between digit_pressed and initialize
 This is one of those cases where duplication might be OK because right now initialize is simple but it is likely to get more complex later. I was originally going to change the implementation to this (don't do this):
 {% highlight ruby %}
       def digit_pressed(digit)
@@ -940,7 +940,7 @@ However, before I made that change, it occurred to me that coupling to the initi
 
 * Verify that nothing broke.
 
-### Duplication in last two Examples
+#### Duplication in last two Examples
 When you changed the implementation of enter_number to actually perform an <enter>, you could have updated the last two Examples as follows:
 {% highlight ruby %}
     it "should copy x_register to top of stack" do
@@ -957,7 +957,7 @@ When you changed the implementation of enter_number to actually perform an <ente
 
 When these Examples reflect the update to the enter_number method, the duplication does not see to be bad.
 
-### Check-In
+#### Check-In
 * Check in your work.
 {% highlight terminal %}
     Macintosh-7% !g
@@ -966,7 +966,7 @@ When these Examples reflect the update to the enter_number method, the duplicati
      3 files changed, 75 insertions(+), 8 deletions(-)
 {% endhighlight %}
 
-### Summary
+#### Summary
 The behavior of the calculator has grown. The it also is beginning to handle the <enter> functionality. You removed duplication in the production code. It was small, and trivial and probably seemed like nothing. 
 
 However, here's a principle from Jerry Weinberg:
@@ -981,14 +981,14 @@ Are you going to be perfect?
 
 No, you are going to miss stuff. That's why when you do find something, now is the time to handle it. If you cannot deal with it now, write it down on a piece of paper. Throw that piece of paper away in 2 days. If you haven't found the time to fix it by then, then by keeping the paper, you're just giving yourself undue stress.
 
-# Example: Should allow x_register to be entered again
+## Example: Should allow x_register to be entered again
 This one has been pending. While I was just about to get to that, a few ideas went through my head:
 * There's going to be a stack of numbers somewhere.
 * Once the calculator starts resetting, the code never stops, so the Examples have left work on the plate.
 
 Those two items are officially on the punch-list. For now, let's get back to all green. We've been away from all green for too long.
 
-### Example
+#### Example
 * Create the following example:
 {% highlight ruby %}
     it "should allow the x_register to be <entered> again" do
@@ -1024,7 +1024,7 @@ Those two items are officially on the punch-list. For now, let's get back to all
 
 Well everything is all green. So this Example might not be adding value. Rather than immediately delete it, keep a note to review it after completing the first two items on the punch-list.
 
-### Check-In
+#### Check-In
 Should you check in? You might not be sure about the Example, but you've got that to review after just a few more Examples. Even so, go ahead and commit. If you remove the Example later, your RCS tool can handle the workload.
 
 * Commit:
@@ -1035,19 +1035,19 @@ Should you check in? You might not be sure about the Example, but you've got tha
      2 files changed, 51 insertions(+), 8 deletions(-)
 {% endhighlight %}
 
-### Refactor
+#### Refactor
 There are some duplicated validation steps in the Examples. Before refactoring, however, keep things as is until you've done just a little more work.
 
-### Check-In
+#### Check-In
 There's nothing to check-in right now.
 
-### Summary
+#### Summary
 You've added an Example. You are not sure if it is a good one or not. You've got two items on your punch list. Review this Example after you have addressed those other two items.
 
-# Example: Resetting after the first digit
+## Example: Resetting after the first digit
 Once an example sends the execute_function method, the RpnCalculator will continue to reset. You need to fix this.
 
-### Example
+#### Example
 * Create the following example.
 {% highlight ruby %}
     it "should only reset after the first digit and not subsequent digits" do
@@ -1075,7 +1075,7 @@ Once an example sends the execute_function method, the RpnCalculator will contin
 The problem is, the "reset state" is set in execute_function but never reset.
 
 There are two ways to fix this:
-### Update the digit_pressed method
+#### Update the digit_pressed method
 {% highlight ruby %}
       def digit_pressed(digit)
         if @x_register_should_reset
@@ -1124,7 +1124,7 @@ Either will work. In fact, doing both works. Question, to which method does the 
 
 {% include aside/collapsed id="didtoomuch" title="I Did Too Much" filename="ruby.sidebar.IDidTooMuch" %}
 
-### Check-In
+#### Check-In
 * Check in your work, you've made some good progress:
 {% highlight terminal %}
     Macintosh-7% !g
@@ -1133,7 +1133,7 @@ Either will work. In fact, doing both works. Question, to which method does the 
      3 files changed, 139 insertions(+), 5 deletions(-)
 {% endhighlight %}
 
-### Refactor
+#### Refactor
 Reviewing the RpnCalculator there does not seem to be a need to do any refactoring. I do observe that the top method is still hard-coded, so an Example to drive that would be good.
 
 As for the Examples, there is one thing you can do to clean up a little duplication. Every Example enters the number 654, so add a before method:
@@ -1149,15 +1149,15 @@ As for the Examples, there is one thing you can do to clean up a little duplicat
 
 * Verify that all of your Examples still pass.
 
-### Check-In
+#### Check-In
 With the one refactoring, now is a good time to check in your changes
 
-### Summary
+#### Summary
 You've pushed the solution a bit further and cleaned up some duplication. Specifically, resetting the value in the x_register seems to work and you've put some common setup work into a before for your Context.
 
 You still have the question of whether there should or should not be a stack. And what about that pesky Example? You're keeping a punch-list, right?
 
-# Example: Enter actually puts values on the stack
+## Example: Enter actually puts values on the stack
 Up to this point, your examples have addressed the effect of the <enter> key on the x_register, but what about stored values? Consider the following:
 {% highlight terminal %}
     7 <enter>
@@ -1176,7 +1176,7 @@ Why is this last part important? When you've broken something, how big is the br
 
 So with that in mind, you can continue with one a few more Examples working with <enter> to move towards validating the last two bullets.
 
-### Example
+#### Example
 Here is an example that moves your production code just a little forward:
 {% highlight ruby %}
     it "should have two operands available after one <enter>" do
@@ -1199,22 +1199,22 @@ This Example suggests that after the first <enter> you should have two operands 
 
 * Verify that all of your Examples now pass.
 
-### Check-In
+#### Check-In
 * Check in your work.
 
-### Refactor
+#### Refactor
 There was little added to either of your two files, so there's not much to refactor right now. However, did you notice that you now have two hard-coded methods? This might suggest a direction in which you want to push your Examples.
 
-### Check-In
+#### Check-In
 No need, no change.
 
-### Summary
+#### Summary
 This Example really just extended the API of the RpnCalcualtor. You might be feeling like it is time to get busy because of the two pending methods.
 
-# Example: Enter should increase the number of operands
+## Example: Enter should increase the number of operands
 The operator_count is hard-coded, this Example will make it harder to get away with that.
 
-### Example
+#### Example
 {% highlight ruby %}
     it "should increase the operand count after each <enter>" do
       enter_number 13
@@ -1240,21 +1240,21 @@ The operator_count is hard-coded, this Example will make it harder to get away w
 {% endhighlight %}
 
 There are two ways to make this work. Here's one way to get this to pass (don't do this):
-### Update initialize
+#### Update initialize
 {% highlight ruby %}
       def initialize
         reset_input
         @op_count = 1
       end
 {% endhighlight %}
-### Update execute_function
+#### Update execute_function
 {% highlight ruby %}
       def execute_function(function_symbol)
         @x_register_should_reset = true
         @op_count += 1
       end 
 {% endhighlight %}
-### Update operand_count
+#### Update operand_count
 {% highlight ruby %}
       def available_operands
         @op_count
@@ -1262,21 +1262,21 @@ There are two ways to make this work. Here's one way to get this to pass (don't 
 {% endhighlight %}
 
 Alternatively, you can use an array and actually store the values entered (notice, you change the same methods, add the same amount of code):
-### Update initialize
+#### Update initialize
 {% highlight ruby %}
       def initialize
         reset_input
         @operands = []
       end
 {% endhighlight %}
-### Update execute_function
+#### Update execute_function
 {% highlight ruby %}
       def execute_function(function_symbol)
         @x_register_should_reset = true
         @operands << x_register
       end
 {% endhighlight %}
-### Update operand_count
+#### Update operand_count
 {% highlight ruby %}
       def available_operands
         @operands.length + 1
@@ -1303,10 +1303,10 @@ The second solution is a good one and it is not over design given the domain con
 
 * Verify that all of your Examples pass.
 
-### Check-In
+#### Check-In
 * Check in your work.
 
-### Refactor
+#### Refactor
 A quick review of the code shows a hard-coded top method. Now that you have a stack in place, can you simply return the "top" of the array?
 
 * Experiment, change the implementation of top:
@@ -1320,18 +1320,18 @@ A quick review of the code shows a hard-coded top method. Now that you have a st
 
 This works. You have changed the production code without breaking any tests, so this is a legitimate refactoring.
 
-### Check-In
+#### Check-In
 * Check in simple refactoring.
 
-### Summary
+#### Summary
 You have moved towards a more complete solution by introducing an array to hold operands. Was this over design? No. You certainly could have used the integer and then the stack, but that seems somewhat dogmatic.
 
 You also managed to get rid of the last hard-coded method, top. This one Example managed to move the production code forward quite a bit.
 
-# Example: The right thing is on the stack
+## Example: The right thing is on the stack
 Right now, there's no way to know if what is on the stack is the right thing on the stack. Most of the pieces are in place, in fact even though the code is fully covered by the Examples, the Examples do not reflect fully what your production code can do. It is time to exploit that.
 
-### Example
+#### Example
 Here is an example that verifies the stack behavior of the RpnCalculator:
 {% highlight ruby %}
       describe "Stack" do
@@ -1367,22 +1367,22 @@ First observation: This code will not run because there is no pop! method on the
 
 * Verify that your Examples pass.
 
-### Check-In
+#### Check-In
 * Check in your work.
 
-### Refactor
+#### Refactor
 There has been a slowly-growing code small, Feature Envy, but hold off until just a bit longer. The "describe" part of the last Example is a huge clue.
 
-### Check-In
+#### Check-In
 No need, you did not do any refactoring.
 
-### Summary
+#### Summary
 You have added an example to verify that in fact the right values are getting put onto the stack. Your RpnCalculator is growing, but at what point is the RpnCalcualtor suffering from too much design debt? It is right now, but you'll see that after the next Example.
 
-# Example: What happens with an 'Empty' stack?
+## Example: What happens with an 'Empty' stack?
 The stack on an RpnCalculator is conceptually filled with 0's when it has no values. In fact, it is literally filed with 0's. So if you check the top of your RpnCalculator, calculator, it should return 0 when it is empty. The same is true for pop!. It should return 0 if the stack is empty.
 
-### Example
+#### Example
 These two are closely related, so here, for the first time, are two complete examples that you will fix at the same time.
 
 {% highlight ruby %}
@@ -1430,10 +1430,10 @@ These two are closely related, so here, for the first time, are two complete exa
 
 * Make these changes and verify all of your Examples are passing.
 
-### Check-In
+#### Check-In
 Check in, it is finally time to get busy removing Feature Envy and get closer to conforming to the Single Responsibility Principle.
 
-### Refactor
+#### Refactor
 Review the following methods: pop!, top, available_operators. What do they all have in common? All three of these methods deal exclusively with the @operands instance variable.
 
 Is this bad? Yes, it suggests that the RpnCalculator is doing work that should be pushed into the array. What? That's right, the array is not pulling its weight. This is a legitimate case for wrapping a collection class and giving it domain-specific behavior (semantics). 
@@ -1610,10 +1610,10 @@ Did you fully test this class? No. What you instead did was extract a class and 
     12 examples, 0 failures
 {% endhighlight %}
 
-### Intra-refactoring Check-In
+#### Intra-refactoring Check-In
 * All of your Examples are passing, right? Now is a great time to check in before moving to the next step.
 
-### Back to refactoring
+#### Back to refactoring
 Now you should refactor the RpnCalcualtor to use your newly-created class. As with other refactorings, you'll add, duplicate, validate and then remove code.
 
 * Add "require 'operand_stack' to the beginning of your rpn_calculator.rb file.
@@ -1676,10 +1676,10 @@ Now you should refactor the RpnCalcualtor to use your newly-created class. As wi
 
 * Run your Examples, everything should still pass.
 
-### Check-In
+#### Check-In
 Whew! That was a big refactoring. Check your code in!
 
-### Summary
+#### Summary
 This was a big change. You had a violation of feature envy. The RpnCalculator was doing a lot of work with information stored in an Array. So you created a class to represent that work, OperandStack, and moved Examples around to get everything situated.
 
 If you have a decent IDE, these kinds of refactorings are quick, easy and fairly reliable. If not, then like Robert Martin tweeted:
@@ -1693,9 +1693,9 @@ When you are just learning TDD or BDD, this kind of stuff is going to happen. Le
 
 {% include aside/collapsed id="wrappingcollections" title="Wrapping Collections" filename="ruby.sidebar.WrappingCollections" %}
 
-### The Classes So Far
+#### The Classes So Far
 Here's one example of what all of your code should look like about now.
-### rpn_calculator_spec.rb
+#### rpn_calculator_spec.rb
 {% highlight ruby %}
     require 'rpn_calculator'
       
@@ -1773,7 +1773,7 @@ Here's one example of what all of your code should look like about now.
     end
 {% endhighlight %}
 
-### rpn_calculator.rb
+#### rpn_calculator.rb
 {% highlight ruby %}
     require 'operand_stack'
     
@@ -1816,7 +1816,7 @@ Here's one example of what all of your code should look like about now.
     end
 {% endhighlight %}
 
-### operand_stack_spec.rb
+#### operand_stack_spec.rb
 {% highlight ruby %}
     require "operand_stack"
       
@@ -1835,7 +1835,7 @@ Here's one example of what all of your code should look like about now.
     end 
 {% endhighlight %}
 
-### operand_stack.rb
+#### operand_stack.rb
 {% highlight ruby %}
     class OperandStack
       def initialize
@@ -1864,7 +1864,7 @@ Here's one example of what all of your code should look like about now.
     end 
 {% endhighlight %}
 
-# Example: A Binary Operator
+## Example: A Binary Operator
 Some time ago you created your first Example to exercise the <enter> key. That resulted in the following method:
 {% highlight ruby %}
       def execute_function(function_symbol)
@@ -1875,7 +1875,7 @@ Some time ago you created your first Example to exercise the <enter> key. That r
 
 Now it is time start executing more functions. The first function you'll support is +.
 
-### Example
+#### Example
 Here is a basic example to get started:
 {% highlight terminal %}
       describe "Basic Math Operators" do
@@ -1915,10 +1915,10 @@ Why is the result 92? The support method enter_number
 
 * Get your Examples passing.
 
-### Check-In
+#### Check-In
 Check in your code. You are about to refactor.
 
-### Refactor
+#### Refactor
 OK, the method you just updated, execute_function, is a bit of a mess. It does two thigns:
 * Determine which function to perform
 * Actually perform the work.
@@ -1952,16 +1952,16 @@ So you'll separate this for now.
 
 * Update your RpnCalculator, verify that your Examples are all passing.
 
-### Check-In
+#### Check-In
 This is all the refactoring you'll do right now. More is on the horizaon.
 
-### Summary
+#### Summary
 You've improved the execute_function but you have a stubbed-out + method. If you know a bit of Ruby, you might be chomping at the bits to evaluate a symbol, or use lambda and a hash. The code will get where it will, however, based on the Examples, rather than speculation.
 
-# Example: Work on +
+## Example: Work on +
 What should happen with + when there are no operands? Should it fail? Should it result in 0? If you're simulating an HP calculator, the result is 0. However, what it should do will be defined by the Examples you write.
 
-### Example
+#### Example
 {% highlight ruby %}
     it "should result in 0 when the calculator is empty" do
       @calculator.execute_function(:+)
@@ -1981,10 +1981,10 @@ What should happen with + when there are no operands? Should it fail? Should it 
 
 * Run your Example, make sure it works.
 
-### Check-In
+#### Check-In
 Check in your work.
 
-### Refactor
+#### Refactor
 Something is starting to look strange. You may have noticed it the first time your code "supported" +. The following line:
 {% highlight ruby %}
     @input = result.to_s
@@ -1992,16 +1992,16 @@ Something is starting to look strange. You may have noticed it the first time yo
 
 I'm not sure what to do with that yet because there's not enough code to make many decisions. It might be that the code will stay put. It just seems a bit strange.
 
-### Check-In
+#### Check-In
 No refactoring done, no need to check in again.
 
-### Summary
+#### Summary
 The + method no does work. It has one strange line, and there's still the issue of whether it modifies the stack correctly or not. Another thing occurred to me as well. After any operator, the x_register should be in "reset" mode.
 
-# Example: x_register in reset mode after +
+## Example: x_register in reset mode after +
 Like <enter>, after perform +, the next character typed should clear the x_register and write into it. That seems like a good thing to check next.
 
-### Example
+#### Example
 {% highlight ruby %}
     it "should reset the x_register after +" do
       enter_number 99
@@ -2037,10 +2037,10 @@ Like <enter>, after perform +, the next character typed should clear the x_regis
 
 * Run your Examples, they should all pass.
 
-### Check-In
+#### Check-In
 Check in your code. This time you will do a little bit of refactorig.
 
-### Refactor
+#### Refactor
 There is a duplicated line in the enter and + methods:
 {% highlight ruby %}
     @x_register_should_reset = true
@@ -2061,18 +2061,18 @@ At the very least, this line of code could be put into a well-named method.
 
 * Make sure your Examples still pass.
 
-### Check-In
+#### Check-In
 Even though small, you did make a change to your solution while keeping your Examples passing, so check in your work.
 
-### Summary
+#### Summary
 There appears to be a pattern emerging. Two functions, enter and +, both of which change the calculator into "override_mode". Will other functions look like this? Yes. Will you be able to remove this duplication as well? Yes.
 
-# Example: What about the stack?
+## Example: What about the stack?
 Some time back the tutorial asked about whether the stack was treated properly. You could have put those checks into another Example, but the rationale for not doing that is to keep your tests small and focused for better pinpointing of problems and better assessment of the size of a break.
 
 It's time to come back to that, if for no other reason than to expression a "contract" that the + method (and all binary operators) will need to follow.
 
-### Example
+#### Example
 Here's an example:
 {% highlight ruby %}
     it "should should reduce the stack by one" do
@@ -2089,10 +2089,10 @@ Here's an example:
 
 Did we code too much or are we validating a behavior? Would it have been possible to write less code and still keep other tests passing? Maybe, the design is such that it's getting harder to do the wrong thing. In any case, this seems like an OK Example - if maybe a bit off target.
 
-### Check-In
+#### Check-In
 Check in your work.
 
-### Refactor
+#### Refactor
 There's starting to be a bit of cruft in the Examples and maybe something in the RpnCalcualtor. You might already be noticing yourself. For example, in RpnCalculator, to set the "x_register" the code does the following:
 {% highlight ruby %}
     @input = result.to_s
@@ -2134,16 +2134,16 @@ Start by making an improvement to the bottom part of the + method:
 
 The next thing you might consider is how to better document getting parameters for +. I tried a few ways but none seemed to really make the code better. Just differently convoluted. You might try yourself (and even succeed). However, I already have an idea of where I want this code to go, so rather than any more refactoring, I want to move into other operators.
 
-### Check-In
+#### Check-In
 * Check in your refactoring.
 
-### Summary
+#### Summary
 You now have the basics of the + operator worked out. You make resetting the x_register at least a little better. Now it is time to add some more operators to see how this current solution grows.
 
-# Example: Support for a new binary operator, -
+## Example: Support for a new binary operator, -
 Adding support for - will allow you to see how your solution grows as new math functions are supported. You have already vetted + fairly well, so adding - should be a snap.
 
-### Example
+#### Example
 {% highlight ruby %}
     it "should subtract the first number entered from the second" do
       enter_number 4
@@ -2210,10 +2210,10 @@ You have two obvious choices here:
 
 * Verify that all of your Examples are passing.
 
-### Check-In
+#### Check-In
 Check in, you have a lot on your punch-list.
 
-### Refactor
+#### Refactor
 There are several things on your punch-list:
 * Adding a new operator requires too much work: update a method, add a new method, and write that method. More importantly, it requires changing an existing method which is in direct violation of the open/close principle.
 * The execute_function does not indicate if the function does not exist.
@@ -2455,10 +2455,10 @@ However, just to place a (somewhat arbitrary) stake in the ground, here's an upd
 
 * Get to where all of your Examples are passing.
 
-### Check-In
+#### Check-In
 * Check in your work.
 
-### Summary
+#### Summary
 That was a lot of refactoring. Maybe the tutorial let you collect too much design debt. However, this will happen and it is up to you to pick up the slack.
 
 You made several important changes:
@@ -2472,10 +2472,10 @@ What's left? There's still the issue of documenting what happens when you attemp
 
 This second issue is not addressed in this tutorial.
 
-# Example: Handling missing functions
+## Example: Handling missing functions
 So what happens when your calculator is asked to execute an unknown function?
 
-### Example
+#### Example
 {% highlight ruby %}
       describe "Handling Functions" do
         it "should raise an exception if attempting to run missing function" do
@@ -2488,24 +2488,24 @@ So what happens when your calculator is asked to execute an unknown function?
 
 This Example documents that you expect the behavior of throwing a NoMethodError when sending a bogus method name to your calculator.
 
-### Check-In
+#### Check-In
 * Check in your code.
 
-### Refactor
+#### Refactor
 You just did a bunch of refactoring. You only added an Example to capture something that was added during refactoring but not explicitly spelled out in any Example. So nothing new to refactor.
 
-### Check-In
+#### Check-In
 You have no changes to check in.
 
-### Summary
+#### Summary
 This example really just captured something about your system that was not explicitly spelled out anywhere. This probably indicates too much change done during refactoring. It would have been possible for you to wait to change the implementation of execute_function and first write this Example.
 
 You won't always figure out to do that, so you've managed to recover gracefully.
 
-# Example: Add support for * and /
+## Example: Add support for * and /
 You have a working design for + and -, adding * and / should be a snap. First your calculator will support multiplication.
 
-### Example
+#### Example
 {% highlight ruby %}
     it "should multiply the first number entered by the second" do
       type 3
@@ -2547,16 +2547,16 @@ That was so quick, before checking in add one more example:
 
 * Verify that your Examples pass.
 
-### Check-In
+#### Check-In
 Check in your work.
 
-### Refactor
+#### Refactor
 You might review your code and find some things to refactor. One issue is the size of the calculator. Right now it is not too bad, but it's going to get bigger. Each time you add a function, it grows.
 
-### Check-In
+#### Check-In
 Nothing new to check in.
 
-### Summary
+#### Summary
 You've just finished out the basics for your calculator.
 
 
@@ -2564,7 +2564,7 @@ You've just finished out the basics for your calculator.
 RUNNING OUT, COPY AGAIN
 ----
 
-# Example x
+## Example x
 ### Overview
 ### Example
 ### Check-In
@@ -2572,7 +2572,7 @@ RUNNING OUT, COPY AGAIN
 ### Check-In
 ### Summary
 
-# Example x
+## Example x
 ### Overview
 ### Example
 ### Check-In
@@ -2580,4 +2580,4 @@ RUNNING OUT, COPY AGAIN
 ### Check-In
 ### Summary
 
-<span class="back_button">[Back](ruby.Tutorials)</span>
+[Back](ruby.Tutorials)

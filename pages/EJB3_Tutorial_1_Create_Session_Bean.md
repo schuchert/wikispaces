@@ -23,11 +23,11 @@ public interface HelloWorldService {
 {% endhighlight %}
 
 To create this file, 
-# select your **src** directory, right-click and select **New:Interface**.
-# For **Name**, enter **HelloWorldService**
-# For **Package** enter **service**
-# Click on **Finish** then enter the above code into the file
-# Save your file (ctrl-s)
+* select your **src** directory, right-click and select **New:Interface**.
+* For **Name**, enter **HelloWorldService**
+* For **Package** enter **service**
+* Click on **Finish** then enter the above code into the file
+* Save your file (ctrl-s)
 
 ### The Session Bean
 Next, we need to create a session bean. Here's the code for it:
@@ -65,8 +65,8 @@ This class is also local. By default, session beans are local (no RMI-IIOP to ca
 If you still want a local session bean where there is more than one interface, you can use @Local.
 
 To create this file:
-# select your **src** directory, right-click and select **New:Class**
-# For **Name**, enter **HelloWorldServiceImpl**
-# For **Package** enter **service.impl**
-# Click on **Finish** then enter the above code into the file
-# Save your file (ctrl-s)
+* select your **src** directory, right-click and select **New:Class**
+* For **Name**, enter **HelloWorldServiceImpl**
+* For **Package** enter **service.impl**
+* Click on **Finish** then enter the above code into the file
+* Save your file (ctrl-s)

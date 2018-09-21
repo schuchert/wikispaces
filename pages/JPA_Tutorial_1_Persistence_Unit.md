@@ -27,17 +27,17 @@ We now need to create the Persistent Unit definition. Create a file called persi
 </persistence>
 {% endhighlight %}
 ### The Steps
-# Expand your project (**JpaTutorial1**)
-# Select the **src/META-INF** directory
-# Right click and select **new:File**
-# Enter **persistence.xml** for the name and press **Finish** (Note: all lowercase. It won't make a difference on Windows XP but it will on Unix.)
-# Copy the contents (above) into the file and save it.
+* Expand your project (**JpaTutorial1**)
+* Select the **src/META-INF** directory
+* Right click and select **new:File**
+* Enter **persistence.xml** for the name and press **Finish** (Note: all lowercase. It won't make a difference on Windows XP but it will on Unix.)
+* Copy the contents (above) into the file and save it.
 
 ### Verify This Works
-# Select the **test**
-# Right-click on **entity** and select **new:Class**
-# Enter **PersonTest** and click **Finish**
-# Enter the example code below:
+* Select the **test**
+* Right-click on **entity** and select **new:Class**
+* Enter **PersonTest** and click **Finish**
+* Enter the example code below:
 {% highlight java %}
 package entity;
 
@@ -77,9 +77,9 @@ public class PersonTest {
 }
 {% endhighlight %}
 
-# When you're finished and it all compiles, right-click within the source pane, select **Run As:JUnit Test**
-# You should see all green
-# If you do not, comment out the following line and review the console output
+* When you're finished and it all compiles, right-click within the source pane, select **Run As:JUnit Test**
+* You should see all green
+* If you do not, comment out the following line and review the console output
 {% highlight java %}
         Logger.getLogger("org").setLevel(Level.ERROR);
 {% endhighlight %}

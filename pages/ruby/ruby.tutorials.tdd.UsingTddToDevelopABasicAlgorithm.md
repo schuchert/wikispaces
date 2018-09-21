@@ -3,9 +3,9 @@ title: ruby.tutorials.tdd.UsingTddToDevelopABasicAlgorithm
 ---
 [<--Back](ruby.Tutorials)
 
-# Overview
+## Overview
 {% include toc %}
-This tutorial presents the mechanics of TDD, refactoring and touches on continuous integration by implementing the **[Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm)**. The point of this tutorial is **//not//** to write a solution to this algorithm. The algorithm is a vehicle for practicing the mechanics of TDD. Having said that, you will end up solving much of the algorithm.
+This tutorial presents the mechanics of TDD, refactoring and touches on continuous integration by implementing the **[Shunting Yard Algorithm](http://en.wikipedia.org/wiki/Shunting_yard_algorithm)**. The point of this tutorial is **not** to write a solution to this algorithm. The algorithm is a vehicle for practicing the mechanics of TDD. Having said that, you will end up solving much of the algorithm.
 
 This tutorial has been written for you to actually read and type. The [Kinesthetic Learning](http://en.wikipedia.org/wiki/Kinesthetic_learning) experience of actually typing the code, running the tests and checking in the work significantly reinforces learning habits that will serve you well. Much of what you practice in this tutorial can eventually become habit/muscle memory with enough practice. Consider this an opportunity to start. You'll get frequent feedback throughout. And while this may represent a very different way of working from what you are used to, here are a few comments:
 * What you are practicing now is just something you've learned, so this really is no different.
@@ -13,7 +13,7 @@ This tutorial has been written for you to actually read and type. The [Kinesthet
 
 Good Luck!
 
-# Introduction
+## Introduction
 Synopsis: The Shunting Yard Algorithm takes an expression in infix notation and converts it to reverse polish notation.
 
 Here are a few examples:
@@ -33,26 +33,26 @@ Here are a few examples:
 | a = b += 5 | a b 5 += = |
 
 To better understand the algorithm, consider spending some time reading it [here](http://en.wikipedia.org/wiki/Shunting_yard_algorithm). However, after reviewing the algorithm, you might come up with several issues that your code will need to handle. Here's a list of those issues:
-### Basics
+#### Basics
 * Read tokens from a string (assume space-separated for now)
 * Return space-separated tokens in a string
 
-### Tokens
+#### Tokens
 * Numbers/variables [e.g., 5, x]
 * function calls [e.g. f(), f(3, 1), f(a, b, 3)]
 * Operators
 
-### Operators
+#### Operators
 * unary [e.g., 3 !], binary [e.g. 4 + 5], ternary [ 5 > 3 ? a : b ]
 * Might just be one, [e.g., 4 + 5], or many, [e.g. 4 * 6 / 5 + 2 ^ 6]
 * Precedence, [e.g., * / before + -, before = +=]
 * Operators are associative, left -> right [e.g., +], or right -> left [e.g., ^ =]
 
-### Parenthesis
+#### Parenthesis
 * Used for precedence [e.g., ( 1 + 4 ) * 6]
 * Used in function calls [e.g., f ( 4 , 5 ) ]
 
-### Expressions
+#### Expressions
 * Simple expressions, [e.g., (x + y)]
 * Arbitrarily nestable, [e.g., ( 8 * ( 4 + 1 ) / ( 9 - 12 ) )]
 * With function calls, [e.g., f ( ( a + b ) ^ q / g ( 5, a, 1 ) )]
@@ -64,7 +64,7 @@ Even with the published algorithm, this is a lot of work. You do have the option
 * Check in code often so if you completely mess up, you can use the repository how it was meant to be used
 * You can take breaks often, so interruptions do not impact your work as much
 
-# Getting Started
+## Getting Started
 To follow all of the steps in this tutorial you will need three things:
 * A Ruby interpreter (you can type ruby at the command line and it is found or you know how to use Ruby in your favorite IDE)
 * A text editor (emacs, vi, or full-features IDE's like Eclipse or IntelliJ
@@ -95,7 +95,7 @@ Macintosh-7%
 
 Congratulations, you have successfully written a unit test class in Ruby. It's missing any actual test methods, and that's what this error indicates. Next, it's time to write your first test method.
 
-# The 0th Test
+## The 0th Test
 You will create a test whose primary purpose is to get the production class created with its usage documented in an executable form. This first test creates a skeleton, but it's an excellent way to start because you get something created and working almost immediately. From there, it's all about adding features while keeping your code clean. It is much easier to modify something that exists than something that does not exist.
 
 * Add a test method to get your unit test passing:
@@ -120,21 +120,21 @@ Macintosh-7%
 {% endhighlight %}
 
 At this point, you have a complete test class with all of its methods passing. You want to get back to this condition frequently. You need to create a test that somehow drives the development of new production code. Every unit test you'll write will have at least three parts:
-* **//Setup//**
+* **Setup**
 Create everything necessary for a test to execute. Create instances, connect objects, put things into a well-defined, known starting point. For this exercise, you'll always start with a fresh "converter" before each test.
 
-* **//Execution//**
+* **Execution**
 Given a known-starting point, exercise the production code in some way with the intent of generating an expected result.
 
-* **//Validation//**
+* **Validation**
 You knew the starting point (you control that), you know how you exercised the production code, verify that the production code did what you expected it to do
 
-* **//Teardown//**
-Not always necessary, you should write your tests such that they leave no footprint that could cause other tests to fail. For this tutorial, you will not have any teardown requirements because every test will begin with an in-memory object create before //**each**// test executes.
+* **Teardown**
+Not always necessary, you should write your tests such that they leave no footprint that could cause other tests to fail. For this tutorial, you will not have any teardown requirements because every test will begin with an in-memory object create before **each** test executes.
 
 You're going to take small steps to keep things running and passing often. Sometimes these small steps will seem too small. When you think that, ask yourself "compared to what?". If something is too small, that's because you're expecting to work in larger chunks. Fine, try this and see if it fits. At the end of the tutorial if you haven't warmed up to the idea, you still learned something useful.
 
-## Setup
+### Setup
 * Update your test to resemble the following:
 {% highlight ruby %}
 def test_empty_string_results_in_same
@@ -185,7 +185,7 @@ Macintosh-7%
 {% endhighlight %}
 
 This is all that is required for setup for this test. Next, you need to execute some code.
-## Execute
+### Execute
 * Update your test as follows:
 {% highlight ruby %}
   def test_empty_string_results_in_same
@@ -231,7 +231,7 @@ Macintosh-7%
 {% endhighlight %}
 
 Great, your test is back to working. You just finished the execution part. Now it is time to have your test verify the results it expected, and that's the next step.
-## Verify
+### Verify
 * Update your test to perform validation:
 
 {% highlight ruby %}
@@ -281,13 +281,13 @@ Macintosh-7%
 {% endhighlight %}
 
 Congratulations, you've made it through a complete TDD cycle. Now is a great time to commit this work in to a repository before moving on.
-## Check In
+### Check In
 A great time to check in is anytime your tests are passing. So after you've written a new unit test and got it to pass, check in your work. Why?
 * If you mess up, you can use the revision tool to compare what you have with what was already checked in to better pinpoint the problem.
 * If you subsequently mess up, you can revert back using the tool
 * Other people can see your work sooner (that can be scary, but since you're writing unit tests now, you're already a leg up on the average bear)
 
-This tutorial briefly demonstrated [git](http://git.or.cz/). I //**strongly**// encourage you to use some revision control tool throughout. This goes back to learning by doing. Thinking about doing this will not activate your brain in the same way doing it will. If you want more details on using git, read [the git tutorial](http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html).
+This tutorial briefly demonstrated [git](http://git.or.cz/). I **strongly** encourage you to use some revision control tool throughout. This goes back to learning by doing. Thinking about doing this will not activate your brain in the same way doing it will. If you want more details on using git, read [the git tutorial](http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html).
 
 * Add this directory into a revision control system and make sure it is checked in:
 {% highlight terminal %}
@@ -301,7 +301,7 @@ Created initial commit 043d347: initial checkin
 Macintosh-7% 
 {% endhighlight %}
 
-## Summary
+### Summary
 Here's what you have created so far:
 {% highlight ruby %}
 require 'test/unit'
@@ -338,7 +338,7 @@ This is what you did.
 
 Now is a great time to take a break.
 
-# Test: Constants
+## Test: Constants
 Now you'll work with both constants and basic operators like + and -. As you work though these next few examples, you'll end up writing code, changing it and cleaning it up. You will be adding refactoring to your tool set. This particular kind of refactoring might vary from your refactoring experiences. You will be performing simple refactoring that takes seconds and minutes not hours, days or weeks.
 
 * Add a new test to your test class (the location is irrelevant, however for your purposes consider adding new test methods after the last test added):
@@ -403,7 +403,7 @@ Created commit a284610: Added support for constants
  1 files changed, 7 insertions(+), 1 deletions(-)
 Macintosh-7%
 {% endhighlight %}
-## Refactor The Unit Tests
+### Refactor The Unit Tests
 {% include aside/collapsed id="howmanysteps" title="How Many Steps Are Normal" filename="ruby.sidebar.HowManyStepsAreNormal" %}
 
 * Update your unit test by adding a setup method:
@@ -539,7 +539,7 @@ Macintosh-7%
 
 Now is a great time to kick back, listen to some tunes, get a glass of ice tea and add TDD to your resume.
 
-# Test: An Actual Operator
+## Test: An Actual Operator
 Now seems like a good time to test a complete expression. This test represents a "happy path", or a path through the system that generates a good result. At some point you'll need to consider negative tests so you can define how an invalid use of the system behaves (gracefully somehow, hopefully).
 
 Now you'll add a test of addition:
@@ -617,7 +617,7 @@ Now is a good time to check in your work because you need to do some serious cle
 
 * Check in your code. Really!
 
-### Refactoring Your Mess
+#### Refactoring Your Mess
 You have three lines that write to the @result instance variable. You can quickly fix this by adding a method to add to the result:
 {% highlight ruby %}
   def add_to_result(token)
@@ -672,13 +672,13 @@ The previous two refactorings are examples of "Extract Method" as described in R
 In addition, taking even simple, but certainly complex conditions and putting them into a method can make your code much easier to read and maintain. This is one of those refactorings you should consider nearly all the time.
 
 * Use a ruby idiom to improve adding the operator at the end:
-### From:
+#### From:
 {% highlight ruby %}
     if @operator != nil
       add_to_result(@operator)
     end
 {% endhighlight %}
-### To:
+#### To:
 {% highlight ruby %}
     add_to_result(@operator) if @operator != nil
 {% endhighlight %}
@@ -709,9 +709,9 @@ In addition, taking even simple, but certainly complex conditions and putting th
 
 * Since you are back to everything working, check your work in. Go ahead and do it, the tutorial will be here when you get back.
 
-### Summary
+#### Summary
 Here's another important observation about refactoring. Consider extract method. In general, you should use the following steps:
-* Create a new method by //**copying**// the original code
+* Create a new method by **copying** the original code
 * Make sure the code compiles and the tests pass
 * Use the new method in the original code
 * Make sure the code compiles and the tests pass
@@ -722,7 +722,7 @@ In general, when refactoring use create by "copying, verify, update, verify" ins
 
 Now is a great time to take a break. You've made good progress. You've practiced another round of TDD, added some solid refactoring skills and refined your continuous practice.
 
-# Test: Two Operators, Same Precedence
+## Test: Two Operators, Same Precedence
 You handled one operator pretty easily. What happens when you put in two operators of the same precedence? You want to nudge your production code gradually. Going from 1 to more than 1 is often a good nudge (though it can be a big nudge at times). However, does this mean using the same operator two times? If you do that, it might make the results ambiguous. So this tests will use two different operators to make the results unambiguous.
 
 * Create the following test:
@@ -767,8 +767,8 @@ Congratulations, you've successfully removed duplication and kept your tests pas
 
 * Now is a great time to check in your work.
 
-# Test: Two Operators of Different Precedence
-The next nudge to your production code is adding the idea of precedence. You won't implement all of the rules yet, just a start. The first test will simply add a new operator, *, which, because of its higher precedence, results in something close to your previous test. //**Then**// the next test will change the order of the operators, with * after +, forcing a more serious change to your implementation.
+## Test: Two Operators of Different Precedence
+The next nudge to your production code is adding the idea of precedence. You won't implement all of the rules yet, just a start. The first test will simply add a new operator, *, which, because of its higher precedence, results in something close to your previous test. **Then** the next test will change the order of the operators, with * after +, forcing a more serious change to your implementation.
 
 Rather than giving you the source for the tests, I'll use a neat feature that allows me to draw some LaTex style formulas.
 
@@ -804,13 +804,13 @@ test_two_operators_lower_precedence_first(ShuntingYardAlgorithmTest)
 <"1 3 + 2 *">.
 {% endhighlight %}
 
-## Detour: Refactoring Before Moving Forward
+### Detour: Refactoring Before Moving Forward
 Rather than always writing a non-nil operator, your code needs to check something. However, there are cases where your code can just write and some where it must hold onto two operators before writing any. To support both cases, you'll want to change from storing a single operator to storing more than one. This requires a refactoring and you should do this while tests are passing.
 
 Often, you'll look at a solution, realize that its design is at the end of its life-cycle and it needs significant retooling. How do you know you have changed the design without breaking any assumptions? You keep the tests passing! So you'll get the current failing test out of the way for right now:
 * Rename the test to _test_two_operators_lower_precedence_first and verify that all your tests pass (by renaming this, it is not longer treated as a test)
 
-* Next, you need to create an array to hold the operators. This is a refactoring so you are going to //**add**// code first and then update it. My colleague Bob K calls this "Parallel Development".
+* Next, you need to create an array to hold the operators. This is a refactoring so you are going to **add** code first and then update it. My colleague Bob K calls this "Parallel Development".
 
 * Update the convert method to initialize an array @operators:
 {% highlight ruby %}
@@ -864,7 +864,7 @@ Often, you'll look at a solution, realize that its design is at the end of its l
 
 With that refactoring, you can now store multiple operators if necessary. So this diversion is over; time get back to the new test.
 
-## End Construction: Back to new development
+### End Construction: Back to new development
 Now that your code has a mechanism in place that allows storage of more than one operator, you need to undo some work that I asked you to do.
 
 * Re-rename the test _test_two_operators_lower_precedence_first by removing the _ at its beginning
@@ -1010,7 +1010,7 @@ Check: Did you first add the methods, run your test then change the original cod
 
 * After your tests are all passing, check your work in before moving on.
 
-## Summary
+### Summary
 You've just done quite a bit of refactoring and basic cleanup. The description of what you did probably too longer to read than the actual work. Constant cleaning up on the new code you write should just be a normal thing you do. Get into the habit. And seriously, add refactoring to your resume.
 
 Here's an example of what your file might look like:
@@ -1110,7 +1110,7 @@ class ShuntingYardAlgorithmTest < Test::Unit::TestCase
 end
 {% endhighlight %}
 
-# Test: More than two operators
+## Test: More than two operators
 So far you've handled a single operator and up to two operators and some basic precedence rules. Now you need to make sure you can handle an arbitrary length expression and a few new operators. While not always the case, here's a hierarchy of difficulty:
 * Not handling something to handling one such something.
 * Handling, more than one something (maybe just two) - often adds an "if" somewhere
@@ -1150,7 +1150,7 @@ However, it looks like you've got a decent general solution. You'll need to regi
 * Handling ()'s
 * Function calls and nested function calls, e.g., f(g(5))
 
-# Test: Handling Variables
+## Test: Handling Variables
 It is time to revisit an earlier test, only this time you'll use variables: $$ a\ +\ b\ \ \rightarrow \ \ a\ b\ + $$ 
 * Create this as a test and see how the test fails.
 
@@ -1182,18 +1182,18 @@ So something is an operand if it is a sequence of digits of length 1 or more or 
 
 * Check in your code since you are back to passing tests.
 
-# Test: Handling ()
+## Test: Handling ()
 In this section you'll start by properly parsing parenthesis. Then you'll make sure that ()'s work with simple expressions and finally you'll make sure that ()'s cause lower precedence operators to happen before higher-precedence operators.
 
 {% include aside/collapsed id="whatisanalysis" title="What is Analysis" filename="ruby.sidebar.WhatIsAnalysis" %}
 
-## Test: Removing ()
+### Test: Removing ()
 Begin by writing a test that verifies the removal of ()'s from an otherwise empty expression: $$ (\ )\ \ \rightarrow $$
 
 * Create this test, run your unit tests and verify that they fail.
 
 * You can fix this and follow the current approach used in the class by making a change to process and adding a few methods:
-### process
+#### process
 {% highlight ruby %}
   def process(token)
     if is_paren(token)
@@ -1205,7 +1205,7 @@ Begin by writing a test that verifies the removal of ()'s from an otherwise empt
     end
   end
 {% endhighlight %}
-### new methods
+#### new methods
 {% highlight ruby %}
   def is_paren(token)
     token =~ /[\(\)]/
@@ -1220,21 +1220,21 @@ Begin by writing a test that verifies the removal of ()'s from an otherwise empt
 
 {% include aside/collapsed id="toomuchprodcode" title="Too Much Production Code?" filename="ruby.sidebar.DIdYouJustWriteTooMuchProductionCode" %}
 
-## Test: () around expression works
+### Test: () around expression works
 Next, verify that ()'s around an expression still works.  $$ (\ 4\ *\ a\ )\ \ \rightarrow \ \ 4\ a\ * $$ 
 
 * Create this test and see whether it works or not.
 
 Since this appears to work, you might consider whether keeping this test is useful or not. It does not exercise any new code and it does not document some kind of edge condition (it doesn't exercise any new equivalence classes). Given that this test does now really add any new knowledge, you'll remove it and instead write a more complex test. Get used to taking some blind alleys, the blinder the alley, the more illuminating, ultimately, it will be.
 
-## Test: () around expression causes lower precedence operator to happen first
+### Test: () around expression causes lower precedence operator to happen first
 Here is a key test that should exercise something new: $$ (\ 4\ +\ 5\ )\ *\ 3\ \rightarrow \ 4\ 5\ +\ 3\ * $$ 
 This demonstrates the whole purpose of (), change the natural precedence rules.
 
 * Add this test, verify that the test fails.
 
 * Here is one way to make it "work":
-### handle_paren
+#### handle_paren
 {% highlight ruby %}
   def handle_paren(token)
     if token == '('
@@ -1248,7 +1248,7 @@ This demonstrates the whole purpose of (), change the natural precedence rules.
   end
 {% endhighlight %}
 
-### precedence_of
+#### precedence_of
 {% highlight ruby %}
   def precedence_of(operator)
     case operator
@@ -1332,14 +1332,14 @@ With all tests passing, you can perform some minor plastic surgery. The @operato
 
 * Check in your code.
 
-## Test: Nested ()'s
+### Test: Nested ()'s
 Moving along, you'll now have a look at supporting nested (). Here's a test to give it try: $$ (\ (\ 1\ +\ 3\ )\ /\ (\ 9\ -\ 5\ )\ )\ *\ (\ 2\ +\ 3\ )\ \ \rightarrow\ \ 1\ 3\ +\ 9\ 5\ -\ /\ 2\ 3\ +\ * $$ 
 
 * Create this test and see what happens.
 
 Surprisingly, this test passes. This test does not exercise any new code. However, unlike the last test, this does demonstrate some new functionality that your code happens to handle correctly, nested ()'s. So I recommend keeping this test around. This may seem like an arbitrary decision. It may be an incorrect decision. Here's an arbitrary statistic: 80% of all users never remove features from menus or tool bars. Here's another, 90% of all people don't think that the previous statistic applies to them. You're a pack-rat, admit it. You might find yourself wanting to write tests "just in case" and never get rid of them. That's OK, when it starts to cause a problem - and it will - you'll suffer and learn for yourself why you want to have as many tests as necessary, but no more.
 
-## Summary
+### Summary
 You've successfully added support for ()'s.
 * You started with a simple case, removing (). That gave your code basic support for () so you could focus on the next small thing.
 * You then worked your way up to making sure ()'s caused changed to precedence, as they are meant to do.
@@ -1347,7 +1347,7 @@ You've successfully added support for ()'s.
 
 Has it been some time since you took a break? Blinked your eyes? Go outside, play some laser tag. The tutorial will be here when you get back.
 
-# Test: Functions
+## Test: Functions
 Now you're going to add support for handling function calls. Functions are difficult because an operand might be a variable or a function, it depends on the next thing (or at least it does without some kind of context).
 
 So your code either needs to look ahead when processing a token that is an operand or look behind. Looking ahead is hard because of how your code processes expressions; iterating over tokens using the each message, which doesn't have look-ahead support. Looking back is possible, but your code directly builds a string, so it'd have to parse the string it just created.
@@ -1360,7 +1360,7 @@ How do you get started? In a situation like this, you'll probably experience som
 
 Just to be sure, you'll start with a test.
 
-## Test: Basic Function Call
+### Test: Basic Function Call
 Here's a simple test that describes what you want to have happen: $$ f\ (\ 3\ )\ \ \rightarrow\ \ 3\ f $$ 
 
 * Create this test, see that it in fact fails.
@@ -1370,7 +1370,7 @@ As expected, this test fails. To support this test you are going to separate the
 
 * Verify your tests pass.
 
-### Refactoring
+#### Refactoring
 You are going to refactor your solution in support of this new test case. Remember, refactoring means changing the structure without changing the behavior. In your case, you have a pretty clear definition of behavior...your tests. So keep your tests passing. Also, as mentioned earlier in the tutorial, the approach will be to add and then remove rather than replace.
 
 * Add a new line to the init method:
@@ -1458,7 +1458,7 @@ Notice that the code no longer needs to produce the intermediate result, so now 
 
 * Run your tests, things should still be working.
 
-### Back to Ruby-isms
+#### Back to Ruby-isms
 My colleague, Dean Whampler, reviewed an early version of this tutorial and pointed out that I had created something much more complex than necessary. In retrospect, given that in a previous life I used Smalltalk, I don't have much of an excuse for missing this. However, it's so much better, that I felt the need to fess up.
 
 * Replace the implementation of produce_result:
@@ -1472,17 +1472,17 @@ My colleague, Dean Whampler, reviewed an early version of this tutorial and poin
 
 * Check in your work.
 
-### Refactoring Summary
+#### Refactoring Summary
 You just changed the implementation without breaking any tests, congratulations. Having done this, you have a collection of tokens to work with rather than looking at a string to figure out if a left parenthesis represents a function call or groups an expression.
 
-## Back to supporting Functions
+### Back to supporting Functions
 You disabled the method for testing a function call to allow refactoring while keeping all tests passing. Now that the refactoring is complete, it is time to reintroduce that test.
 
 * Change the name of your test by removing the _. Run your tests and verify that you have one failing test.
 
 Throughout this exercise, you've been referring to the published algorithm on wikipedia. The algorithm mentions what to do when processing a right-parenthesis. Look at the operand stack and if it's a function, then put in the output. There's more than this, but you are not processing multiple parameters just yet.
 
-The algorithm also mentions what to do if the token is a function name. Your code won't know if a token is a constant or a function until the code hits a left parenthesis //**and look at the last element added to outputTokens**//. So that's where to start.
+The algorithm also mentions what to do if the token is a function name. Your code won't know if a token is a constant or a function until the code hits a left parenthesis **and look at the last element added to outputTokens**. So that's where to start.
 
 * Update handle_paren (which is getting pretty long and unruly about now):
 {% highlight ruby %}
@@ -1510,7 +1510,7 @@ The definition for last_result_pushed_is_function_name is straightforward, but i
 
 * Check in your results.
 
-### Time to refactor
+#### Time to refactor
 Here are a few observations:
 * The method handle_paren violates the SRP, it has multiple reasons to change, exists at different levels of abstraction and is generally getting harder to read. A secret to making code readable is to make it unnecessary to read it in the first place.
 * The regular expression for checking that something matches a name (variable or function) is duplicated.
@@ -1616,7 +1616,7 @@ Now remove the duplication of regular expressions used for handling names. There
 
 Did this last change seem silly or over the top? Consider this, the first part of the logical expression uses a regular expression, the second part did not, it called a function. You wanted to use a function on the second part to have a single definition of what is a name. Doing that forced a change in is_operand that made its implementation exist at different levels of abstraction. This simple change is a classic refactoring and leads to clean code. That is, code that someone else might have a chance to read and understand.
 
-# Test: Multiple parameters to a function
+## Test: Multiple parameters to a function
 Now it's time to add multiple parameters to a function. Here is one example: $$ f\ (\ 4\ ,\ 1\ ,\ a\ ,\ d\ )\ \ \rightarrow \ \ 4\ 1\ a\ d\ f $$ 
 
 * Create a test for this and see what happens.
@@ -1683,7 +1683,7 @@ An astute observer will notice that the body of handle_argument_separator does t
 
 * Check in your work.
 
-# Test: What About Something Complex?
+## Test: What About Something Complex?
 Here's a test to see if something a bit more complex works with what you've written so far:
 {% highlight ruby %}
   def test_nested_function_call_with_embedded_operators
@@ -1717,7 +1717,7 @@ The problem is that when balancing ) with (, there's the chance that it's being 
 
 * Check in your work.
 
-## A Quick Refactoring
+### A Quick Refactoring
 Some time ago, you added a method called under_logical_top. You can use that method in places where the code checks for a '('. A quick search of the code reveals just one,:
 {% highlight ruby %}
   def record_operators_to_matching_paren
@@ -1792,8 +1792,8 @@ There are several other methods than change your underlying object. In that spir
 * add_to_result
 This may seem like a bit of work, but consider this: The class is not thread safe. If the convert method were instead called convert!, it might better document that fact. Given that this is an exercise, this recommendation is left to your discretion.
 
-# Test: Operator Associativity
-Next, your code needs to address operator associativity. For example, 4 + 5 - 6 produces 4 5 + 6 - because + and - are left associative but otherwise at the same precedence. However, a = b += 5 produces a b 5 += =. First, b is incremented by 5 and then a equals that result. If these operators were left associative, the result would instead be: a b = 5 += (it's even worse, because the result of = would the an lvalue of the rvalue - whew!), so a would equal b //**before**// it was incremented by 5. And, as mentioned, the return value of = would be the thing on the right instead of the left to make the thing work in the first place.
+## Test: Operator Associativity
+Next, your code needs to address operator associativity. For example, 4 + 5 - 6 produces 4 5 + 6 - because + and - are left associative but otherwise at the same precedence. However, a = b += 5 produces a b 5 += =. First, b is incremented by 5 and then a equals that result. If these operators were left associative, the result would instead be: a b = 5 += (it's even worse, because the result of = would the an lvalue of the rvalue - whew!), so a would equal b **before** it was incremented by 5. And, as mentioned, the return value of = would be the thing on the right instead of the left to make the thing work in the first place.
 
 That gives a great test: $$ a\ =\ b\ += 5\ \ \rightarrow\ \ a\ b\ 5\ +=\ $$ 
 
@@ -1898,7 +1898,7 @@ There's one more thing to change before it's time to call this refactoring side-
 
 * Check your work in.
 
-## Conclusion
+### Conclusion
 Are you done? For the purposes of this exercise yes, but there remains quite a bit of work you could do:
 * Handle unary operators and binary operators
 * Tokenize the input expression by properly splitting the line rather than requiring spaces in the input line
@@ -1913,13 +1913,13 @@ However, you've made amazing progress on this work. You've:
 * Refactored code
 * Practiced an important aspect of continuous integration, frequent checkins - which requires that you work in small, tangible steps. That is a **hard** practice to learn and integrate.
 
-# Review
-### The Three Laws
+## Review
+#### The Three Laws
 * Write no production code without a failing test.
 * Write only enough of a test such that it fails (and not compiling is failing)
 * Write just enough production code to get the tests to pass
 
-### Refactoring
+#### Refactoring
 The three laws are not enough. You refactored code: Remember, refactoring means to change the structure without changing the behavior. In your case, the tests define "the behavior". So long as those tests remain passing, you're refactoring.
 
 There are some basics to consider when refactoring:
@@ -1927,14 +1927,14 @@ There are some basics to consider when refactoring:
 * Only start when all tests are passing. This might mean you disable a test you just added because you need to change the structure of your solution to support the new test (like what you did to support function calls)
 * Refactoring is not a separate activity from coding, it should be integrated as a natural part. Continuous refactoring keeps code clean versus building up large piles of design debt.
 
-### Methods
+#### Methods
 * Should be short and have a single purpose
 * Be written at one level of abstraction
 * Getting the meaning from a method should not require a lot of reading.
 
 See [Martin's Clean Code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=pd_bbs_sr_1?ie=UTF8&s=books&qid=1222313221&sr=8-1) book for more on, well, writing clean code.
 
-# A Final Version
+## A Final Version
 Here is the last version I ended up with after the tutorial. You result may vary based on where you added methods. Which one is right? Yours or mine? Both, as long as the tests pass:
 {% highlight ruby %}
 require 'test/unit'

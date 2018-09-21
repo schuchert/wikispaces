@@ -3,7 +3,7 @@ title: cpptraining.GettingAndBuildingBoostInMingw
 ---
 [<--Back](CppTraining#boost)
 
-# Overview
+## Overview
 At this point you should have:
 * [installed the Eclipse CDT](cpptraining.GettingStartedWithEclipseCdt), 
 * [built CppUTest](cpptraining.GettingCppUTestCompiledUsingCDTToolSet), and 
@@ -11,7 +11,7 @@ At this point you should have:
 
 Next, you'll download and build the boost library.
 
-# The Steps
+## The Steps
 * Download the Boost build tool bjam: [BJam Download Page](http://sourceforge.net/projects/boost/files/boost-jam/). As of this writing, I used 3.1.18.
 * Extract this zip file somewhere. In my case, I extracted to C:\workspaces, which created C:\workspaces\boost-jam-3.1.18-1-ntx86.
 * Download the Boost library from [Boost download page](http://sourceforge.net/projects/boost/files/boost/1.43.0/). As of this writing, I used 1.43.0.

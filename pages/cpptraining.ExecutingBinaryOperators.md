@@ -4,15 +4,15 @@ title: cpptraining.ExecutingBinaryOperators
 {% include toc %}
 [<--Back](CppTraining#FitNesse)
 
-# Background
+## Background
 These steps assuem you have already worked through the tutorial: [Getting Started With FitNesse in C++](cpptraining.GettingStartedWithFitNesseInCpp).
 
-# Building the RpnCalcualtor
+## Building the RpnCalcualtor
 You can find the source for the RpnCalculator at two github locations:
 * [Here is production code](http://github.com/schuchert/RpnCalculatorInCpp)
 * [Here is the test code](http://github.com/schuchert/RpnCalculatorInCppTests)
 
-## Building the Basic Structure
+### Building the Basic Structure
 * Create a top-level directory for all of your work. I'll be using ~/src/waat
 * Under that, create a workspace directory. I'll use ~/src/waat/workspace
 {% highlight terminal %}
@@ -57,17 +57,17 @@ RpnCalculatorInCpp/        RpnCalculatorInCppTests/
 [~/src/waat/workspace]% 
 {% endhighlight %}
 
-## Configuring the Eclipse Project
+### Configuring the Eclipse Project
 In [previous tutorial](cpptraining.GettingStartedWithFitNesseInCpp), you created a directory called ~/src/cslim and under that is CppUTest. To create this project, we'll use the equivalent of environment variables in Eclipse.
 * Create a new workspace. Select the directory containing two github projects you just checked out. In my case that's **Users/schuchert/src/waat/workspace**
 * Close the Welcome to Eclipse tab.
 * Edit the Eclipse properties:
-###  Under General:Workspce, enable **Refresh automatically
+  * Under General:Workspce, enable **Refresh automatically**
   * Under Eclipse properties:C/C++:Build:Environment, define some environment variables:
-### * **CSLIM_BASE** = **/Users/schuchert/src/cslim/cslim
-### * **CPPUTEST_BASE** = **/Users/schuchert/src/cslim/cpputest
+    * **CSLIM_BASE** = **/Users/schuchert/src/cslim/cslim
+    * **CPPUTEST_BASE** = **/Users/schuchert/src/cslim/cpputest
   * On my Mac, I additionally set:
-### * **GPP** = **/usr/local/bin/g++
+    * **GPP** = **/usr/local/bin/g++
   * This allows me to use g++ 4.4 or 4.5 instead of 4.2
 * Apply those changes.
 * Next, select **File:Import**
@@ -92,7 +92,7 @@ You should see your tests pass. As of this writing, there are 70 tests:
 
 OK (70 tests, 70 ran, 108 checks, 0 ignored, 0 filtered out, 8 ms)
 {% endhighlight %}
-# Creating Your First Test Table
+## Creating Your First Test Table
 Since you've already worked through [Getting Started With FitNesse in C++](cpptraining.GettingStartedWithFitNesseInCpp), you have FitNesse installed somewhere. Start your FitNesse instance. Here's what it looks like on my computer:
 {% highlight terminal %}
 [~]% cd src/cpp_fitnesse 
@@ -106,7 +106,7 @@ FitNesse (v20100711) Started...
     html page factory: fitnesse.html.HtmlPageFactory
     page version expiration set to 14 days.
 {% endhighlight %}
-## Creating Top-Level Test Suite
+### Creating Top-Level Test Suite
 Now that you have FitNesse started, create a top-level page for all of your work.
 * Edit the following URL: <http://localhost:8080/RpnExamples>
 * Edit its content to be:
@@ -123,7 +123,7 @@ Now that you have FitNesse started, create a top-level page for all of your work
 * Confirm this page has a **Suite** button. If not, edit its properties so it is a suite and save those properties.
 
 The TEST_RUNNER makes reference to a project/executable we have not yet created. Don't worry, it'll be there soon.
-## Creating First Test
+### Creating First Test
 * Go to the following URL and click edit: <http://localhost:8080/RpnExamples.BinaryOperatorExecution>
 * Click on the **Edit** button and set its contents to:
 {% highlight terminal %}
@@ -137,7 +137,7 @@ The TEST_RUNNER makes reference to a project/executable we have not yet created.
 
 This page makes reference to a fixture that does not yet exist. As in the previous step, don't worry. That's next.
 
-# Creating Fixture Project
+## Creating Fixture Project
 Now you're going to add a third project to contain your fixtures. This involves creating a project, linking to the calculator.
 * Select **File:New:C++ Project**
 * Create an **Empty Project**
@@ -212,8 +212,8 @@ You'll notice several warnings about unknown header files. Let's fix that before
 * Edit the project's properties.
 * Under **C/C++ Build:Settings**, select the C Compiler settings (That's C not C++!)
 * Select the **Includes** and make the following additions:
-###  **"${CSLIM_BASE}/include/CSlim"
-###  **"${CSLIM_BASE}/include/Com"
+  *  **"${CSLIM_BASE}/include/CSlim"**
+  *  **"${CSLIM_BASE}/include/Com"**
 * Save your changes (click **Apply** then **OK**, or just **OK** if you're feeling lucky)
 
 Next, create another new file called **Fixtures.c**: 
@@ -229,7 +229,7 @@ SLIM_END
 I'm having you preemptively add in the name of a fixture you have yet to write.
 
 Now it's time to create the fixture. Since this is a mechanics tutorial, I'll give you the fixture source code:
-### ExecuteBinaryOperator.cpp
+#### ExecuteBinaryOperator.cpp
 
 {% highlight cpp %}
 #include <stdlib.h>
@@ -311,8 +311,8 @@ You'll notice a few more warnings about unknown include files. You'll add a few 
 * Edit the project's properties
 * Select **C/C++ Build:Settings**
 * Now select **GCC C++ Compiler** (or similar) and under **Includes** add:
-###  **${workspace_loc:/RpnCalculatorInCpp}
-###  **"${CSLIM_BASE}/include/CSlim"
+####  **${workspace_loc:/RpnCalculatorInCpp}
+####  **"${CSLIM_BASE}/include/CSlim"
 * Apply those changes.
 
 Notice that there's still one missing header file. This is in another library that I've written to make writing C++ cslim fixtures a bit easer:
@@ -343,15 +343,15 @@ Resolving deltas: 100% (1/1), done.
 * Select the project, right-click and select build.
 * //**Warning**//: As of this writing, there is a "missing" method in the cslim library. You'll need to make two changes to the cslim library that you've downloaded to resolve this.
 
-### Updating CSlim Library
-### <cslim_base>/include/CSlim/SlimListSerializer.h
+#### Updating CSlim Library
+#### <cslim_base>/include/CSlim/SlimListSerializer.h
 Add the following function declaration to the header file:
 
 {% highlight cpp %}
 void SlimList_Release(char *serializedList);
 {% endhighlight %}
 
-### <cslim_base>/src/CSlim/SlimListSerializer.h
+#### <cslim_base>/src/CSlim/SlimListSerializer.h
 Add a function declaration to the source file:
 
 {% highlight cpp %}
@@ -371,15 +371,15 @@ Now if you try to build the project, it will compile but it will not link.
 * Edit the project's settings
 * Find the linker settings under **C/C++ Build:Linker**
 * Edit the **Libraries** and add the following list:
-###  **CSlim
-###  **RpnCalculatorInCpp
-###  **CppUTest
-###  **CSlimCppExtensions
+####  **CSlim
+####  **RpnCalculatorInCpp
+####  **CppUTest
+####  **CSlimCppExtensions
 * Edit he **Library search path** and add the following list:
-###  **${workspace_loc:/RpnCalculatorInCpp/Debug}
-###  **${CSLIM_BASE}/lib
-###  **${CPPUTEST_BASE}/lib
-###  **${workspace_loc:/CSlimCppExtensions/Debug}
+####  **${workspace_loc:/RpnCalculatorInCpp/Debug}
+####  **${CSLIM_BASE}/lib
+####  **${CPPUTEST_BASE}/lib
+####  **${workspace_loc:/CSlimCppExtensions/Debug}
 * Save your changes and build again
 
 You should now be able to run this executable. If you do, you'll see in red text:
@@ -388,17 +388,17 @@ You should now be able to run this executable. If you do, you'll see in red text
 getaddrinfo: nodename nor servname provided, or not known
 {% endhighlight %}
 
-# Running the Test
+## Running the Test
 You should be able to run your FitNesse test and get to green.
 * Go back to the following URL: <http://localhost:8080/RpnExamples>
 * Click on the **Suite** button
 * You should see all green.
 * You might see an error regarding a difference in protocol. That's under construction. The cslim library should be updated in the near future (August 2010 I hope).
 
-# Working with a Script Table
+## Working with a Script Table
 Now it is time to program the calculator. First a test, then the fixture code.
 
-## The Test
+### The Test
 Create the following test at: <http://localhost:8080/RpnExamples.SumOfPrimesExample>
 
 {% highlight terminal %}
@@ -414,7 +414,7 @@ Create the following test at: <http://localhost:8080/RpnExamples.SumOfPrimesExam
 
 This creates a new operator called "sumOfPrimesFactors" and then executes it. To make this work, you'll need to create a new fixture and register it.
 
-## Creating the Fixture
+### Creating the Fixture
 Create a new source filed called **ProgramTheCalcualtor.cpp**. Here's the source:
 
 {% highlight cpp %}
@@ -511,7 +511,7 @@ SLIM_END
 
 Once you make these changes and rebuild, you should have a passing test.
 
-# The Query Table
+## The Query Table
 Here is an example of a query table:
 
 {% highlight terminal %}
