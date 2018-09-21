@@ -3,7 +3,6 @@ title: iPhone.BasicOperators
 ---
 [<-- Back](iPhone)
 
-[media_type="custom"_key="7608371"](media_type="custom"_key="7608371")
-
+<iframe src="https://player.vimeo.com/video/17071058" width="640" height="480" frameborder="0" allowfullscreen></iframe>
 
 [<-- Back](iPhone)

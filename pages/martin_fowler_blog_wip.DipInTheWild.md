@@ -34,9 +34,9 @@ What follows are four examples of applying the dependency inversion principle in
 Before going into examples, I want to give you my current (circa early 2013) perspective on design principles:
 * I am not a personal fan of "best practices", but I do like good ideas for a given context.
 * I think all design principles
-** Should be "violated" sometimes
-** Are often at odds with each other
-** Often mix together for something even better than when used in isolation
+  * Should be "violated" sometimes
+  * Are often at odds with each other
+  * Often mix together for something even better than when used in isolation
 * There are no free lunches, all abstractions have a cost
 
 In fact, like the term "best practices" I wonder if "design principles" even makes sense as a moniker. In the case of the [SOLID](http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) principles, I think of them more as up front ideas that I often come back to due to familiarity.
@@ -45,24 +45,24 @@ In any case, an ability to make an informed decision to disregard a design princ
 </aside>
 
 ## Logging
-![](images/LoggerComplexity.png)
+![](images/LoggerComplexity.png){:width="600px"}
 
-![](images/Logger_an_approach.png)
+![](images/Logger_an_approach.png){:width="600px"}
 
 ## Depending on Interfaces
-![](images/Database.png =100x)
+![](images/Database.png){:width="100px"}
 
-![](images/Database_jdbc.png =100x)
+![](images/Database_jdbc.png){:width="100px"}
 
-![](images/Database_jpa.png =300x)
+![](images/Database_jpa.png){:width="300px"}
 
-![](images/Database_dao.png =500x)
+![](images/Database_dao.png){:width="300px"}
 
 ## Message Oriented Middleware
-![](images/Async_original_description.png =600x)
-![](images/Async_dependencies.png =600x)
-![](images/Async_re_envisioned.png =600x)
-![](images/Async_resulting_interaction.png =600x)
+![](images/Async_original_description.png){:width="600px"}
+![](images/Async_dependencies.png){:width="600px"}
+![](images/Async_re_envisioned.png){:width="600px"}
+![](images/Async_resulting_interaction.png){:width="600px"}
 
 ## Assist in Multi-Thread Development (add this???)
 

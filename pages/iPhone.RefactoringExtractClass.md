@@ -3,6 +3,6 @@ title: iPhone.RefactoringExtractClass
 ---
 [<-- Back](iPhone)
 
-[media_type="custom"_key="7608379"](media_type="custom"_key="7608379")
+<iframe src="https://player.vimeo.com/video/17071796" width="640" height="480" frameborder="0" allowfullscreen></iframe>
 
 [<-- Back](iPhone)

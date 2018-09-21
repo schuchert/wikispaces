@@ -19,7 +19,7 @@ Technology:
 These steps describe what you'll need to do to set up a framework, not an application. If you want to set up an application, review either of the bottom two links in the Why section.
 
 ## Video Version
-[media_type="custom"_key="5352763"](media_type="custom"_key="5352763")
+[Tdd Objective C](https://vimeo.com/9394596);
 
 ## Setting up Project
 * In XCode create a new project:// **File:New Project**// or// **Command-Shift-N**//
@@ -39,6 +39,7 @@ At this point, you should have a window that resembles the following:
 * Under// **Target Name**// enter some descriptive name. I'll use// **UnitTests**//.
 * Click// **Finish**//
 * This should bring up the info window on the target:
+
 ![](images/UnitTestsInfoWindow.jpg)
 * Under the Direct Dependencies pane, click the// **+**// and add a dependency to// **RpnCalculator**// (double-click on// **RpnCalculator**//)
 * Close the info window

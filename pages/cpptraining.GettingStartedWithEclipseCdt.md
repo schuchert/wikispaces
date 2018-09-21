@@ -14,9 +14,9 @@ These instructions are essentially a duplication of: [Wascana Eclipse C/C++ IDE 
 ## Steps
 Note: If you install the 64-bit JDK, install the 64-bit Eclipse. Same with 32-bit.
 
-* Install a JDK (this is to run Eclipse): [Jdk 1.6 Install](@http://java.sun.com/javase/downloads/widget/jdk6.jsp)
-* Download and install the Helios version of eclipse with the Eclipse CDT: [Helios](@http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers-includes-incubating-components/indigosr1)
-* Add the wascana plugin from the following Eclipse update site: [ Wascana Update Site](@http://svn.codespot.com/a/eclipselabs.org/wascana/repo)
+* Install a JDK (this is to run Eclipse): [Jdk 1.6 Install](http://java.sun.com/javase/downloads/widget/jdk6.jsp)
+* Download and install the Helios version of eclipse with the Eclipse CDT: [Helios](http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers-includes-incubating-components/indigosr1)
+* Add the wascana plugin from the following Eclipse update site: [ Wascana Update Site](http://svn.codespot.com/a/eclipselabs.org/wascana/repo)
   *  Start eclipse
   *  Go to```Help::Install New Software...```
   *  Paste```http://svn.codespot.com/a/eclipselabs.org/wascana/repo/``` in the```Work with:``` box

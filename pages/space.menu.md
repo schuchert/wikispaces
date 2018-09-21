@@ -13,7 +13,7 @@ title: space.menu
 [Agile_Courseware](Agile_Courseware)
 [Unpublished Articles](Articles)
 [Tool Configuration](Tool_Setup_and_Configuration_Notes)
-[AOP](AOP)
+[AOP](aop/AOP)
 [C# & OOP](CSharpAndOop)
 
 [Home]({{site.baseurl}}/pages/home)

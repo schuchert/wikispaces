@@ -2,7 +2,7 @@
 title: Katas.ReallyBasicRoboRally
 ---
 # Overview
-[Robo Rally](@http://en.wikipedia.org/wiki/RoboRally) is a board game from the '90 where you are pitted against a number of other players and obstacles. The goal is to move from one place to a number of other places, identified by flags, while dealing with moving floors, damage from the world and other players and having a limited number of moves from which to pick.
+[Robo Rally](http://en.wikipedia.org/wiki/RoboRally) is a board game from the '90 where you are pitted against a number of other players and obstacles. The goal is to move from one place to a number of other places, identified by flags, while dealing with moving floors, damage from the world and other players and having a limited number of moves from which to pick.
 
 # Basic Game Play
 There is a playing board with a number of locations. The original game had a number of same-sized board, which could be connected on any end. So the fully laid out playing area need not be a square. For our purposes it will be.

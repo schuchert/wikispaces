@@ -6,16 +6,15 @@
 
     {% seo %}
 
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    <script src="/assets/js/jquery-3.3.1.min.js" async></script>
-    <script src='MathJax.2.7.5.js' async></script>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" async>
+    <script src="{{ '/assets/js/jquery-3.3.1.min.js' | relative_url }}" async></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 <body>
 
 <div id="header">
     <nav>
-        <li class="fork"><a href="{{ site.url }}">View On GitHub</a></li>
         <li><a href="{{ site.blog }}/blog">Blog</a></li>
         <li><a href="{{ site.base_url }}/wikispaces/pages/home">Wikispaces</a></li>
         <li>
@@ -56,9 +55,6 @@
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
         ga('create', '{{ site.google_analytics }}', 'auto');
         ga('send', 'pageview');
-
-
-
 </script>
 {% endif %}
 </body>

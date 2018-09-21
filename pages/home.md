@@ -26,7 +26,7 @@ For more background on where I'm coming from, have a look at
 * ### [Ddo](Ddo)
 
 ## Exercises
-* ### [Aspect Oriented Programming](AspectOrientedProgramming)
+* ### [Aspect Oriented Programming](aop/AspectOrientedProgramming)
 
 ## Notes
 * ### [Experiential Learning Notes](ExperientialLearningNotes)
@@ -48,6 +48,6 @@ For more background on where I'm coming from, have a look at
 
 ## Old Book Work
 * ### [CSharpAndOop](CSharpAndOop)
-* ### [IntorductionToMicrocomputersAndDataProcessing](IntorductionToMicrocomputersAndDataProcessing)
+* ### [IntroductionToMicrocomputersAndDataProcessing](IntroductionToMicrocomputersAndDataProcessing)
 
 

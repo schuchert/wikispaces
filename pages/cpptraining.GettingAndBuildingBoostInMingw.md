@@ -7,7 +7,7 @@ title: cpptraining.GettingAndBuildingBoostInMingw
 At this point you should have:
 * [installed the Eclipse CDT](cpptraining.GettingStartedWithEclipseCdt), 
 * [built CppUTest](cpptraining.GettingCppUTestCompiledUsingCDTToolSet), and 
-* [cpptraining.GettingCppUTestRunningrun_your_first_test](cpptraining.GettingCppUTestRunningrun_your_first_test).
+* [cpptraining.GettingCppUTestRunning](cpptraining.GettingCppUTestRunning).
 
 Next, you'll download and build the boost library.
 

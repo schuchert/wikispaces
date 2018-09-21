@@ -1,7 +1,7 @@
 ---
 title: scala.example.rpn
 ---
-I'm back to learning Scala. I'm starting with [Rpn+Calculator.WithRefactoringAndPatterns](Rpn+Calculator.WithRefactoringAndPatterns). Here are a few examples of the code I've create. I'd appreciate feedback of any kind.
+I'm back to learning Scala. I'm starting with [Rpn Calculator With Refactoring And Patterns](Rpn_Calculator.WithRefactoringAndPatterns). Here are a few examples of the code I've create. I'd appreciate feedback of any kind.
 
 SpecTest looks nice as do Scala specs. I wanted a basic unit testing framework and it turns out the number of moving parts for Java is small, so I'm using it and I"ll be using scala specs for more rejection-check orientation.
 

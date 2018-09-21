@@ -4,7 +4,7 @@ title: iPhone.setup.xcode3
 [<-- Back](iPhone)
 
 # The Video
-[media_type="custom"_key="8643826"](media_type="custom"_key="8643826")
+<iframe src="https://player.vimeo.com/video/16722907" width="640" height="480" frameborder="0" allowfullscreen></iframe>
 
 # Basic Application Setup
 These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in this version, you can assume these steps are fragile. If they fail for you, please send me an email (schuchert -at- yahoo -dot- com) and let me know the version of XCode you are using. I'll see if I can figure it out. If you've solved the problem, let me know and I'll update these notes. Or, if you are feeling ambitious, I'll give you permission to update the notes.

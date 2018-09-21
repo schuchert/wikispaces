@@ -31,7 +31,7 @@ int bar() {
 {% endhighlight %}
 {: #thesteps}
 ## The Steps
-These steps assume you have some project setup using CppUTest. If not, [see below](cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt#seeblow).
+These steps assume you have some project setup using CppUTest. If not, [see below](cpptraining.ConfiguringGccToUseCpp0xInEclipseCdt#seebelow).
 
 * Select your project and edit its properties: right-click::edit properties (or alt-enter)
 * Go to C/C++ Build::Settings::GCC C++ Settings

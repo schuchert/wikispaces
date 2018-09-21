@@ -1,4 +1,3 @@
-
 {% if site.url contains 'localhost' %}
 	{{ site.url }}{{site.baseurl }}
 {% else %}
