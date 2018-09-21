@@ -4,25 +4,25 @@ title: Car_Rental_Code_Coverage_with_Cobertura
 {% include toc %}
 [<--Back](Car_Rental_Example)  [Next-->](Car_Rental_Code_Coverage_with_Cobertura_vehicle.type)
 
-# Code Coverage with Cobertura
+## Code Coverage with Cobertura
 
 This example is based on the [Car_Rental_Example](Car_Rental_Example). If you want work through this example, you need to follow [these instructions](Car_Rental_Installation_and_Setup) first.
 
 In this example, we add code coverage to the Car Rental Application. We then examine the results, make some changes and finish with a few conclusions. 
 
-## Setup and Configuration
+### Setup and Configuration
 Cobertura does not currently come with a plugin, so in this example we'll use [Ant](http://ant.apache.org/) from within Eclipse. I'll warn you that I'm not much of an Ant user, so if you'd like to make recommendations, please feel free: schuchert@yahoo.com.
 
 Let's get started:
-### Download
+#### Download
 * Download Cobertura from [here](http://cobertura.sourceforge.net/download.html). Note I downloaded version 1.8 for this example.
 * Extract the jar somewhere. I used c:\libs\, which created the directory C:\libs\cobertura-1.8.
 * Start Eclipse using the Car Rental workspace. If you used my directory names, it is C:\workspaces\CarRentalExample.
 
-### suite() method
+#### suite() method
 Ant 1.6.5 does not play nice with JUnit 4.x, so I added a [suite()](JUnit_4.xSuite) method to each of my classes. Depending on when you downloaded this file, you already have those suite methods.
  
-### Ant Script
+#### Ant Script
 When you followed [these instructions](Car_Rental_Installation_and_Setup), you should have created a workspace with three projects:
 * CarRental
 * LoggingUtils
@@ -38,7 +38,7 @@ Here's the file so we can discuss it and configure it for your situation:
 
 ----
 {: #cobertura}
-## cobertura.xml
+### cobertura.xml
 {% highlight xml %}
  <?xml version="1.0" encoding="UTF-8"?>
  <project name="cobertura" default="coverage-report">
@@ -120,7 +120,7 @@ Here's the file so we can discuss it and configure it for your situation:
  </project>
 {% endhighlight %}
 
-## Execution
+### Execution
 Assuming you've updated the cobertura.xml file and set all of the relevant properties for your environment, then do the following:
 * Right-click on CarRental/xml/cobertura.xml
 * Select Run As:Ant Build
@@ -133,7 +133,7 @@ I considered adding the following line to cobertura.xml:
 {% endhighlight %}
 This would force a refresh but it also requires that you run the ant script in the same VM as Eclipse.
 
-## Preliminary Analysis
+### Preliminary Analysis
 With your directory refreshed, you're ready to have a look at the output:
 * Expand the CarRental project.
 * Expand the cobertura_results directory.

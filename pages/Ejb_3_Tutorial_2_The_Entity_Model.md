@@ -8,10 +8,10 @@ We need to create our entity model. There are three classes in it:
 * Person
 
 To create the basic classes:
-# Select the **src** folder under **<project>**
-# Right-click and select **New::Class**
-# For the package, enter **entity**
-# For the name, enter **Address**, **Company**, and **Person** respectively.
+* Select the **src** folder under **<project>**
+* Right-click and select **New::Class**
+* For the package, enter **entity**
+* For the name, enter **Address**, **Company**, and **Person** respectively.
 
 Type or enter the source provided below for each of the three classes.
 

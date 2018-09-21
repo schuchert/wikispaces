@@ -3,12 +3,12 @@ title: AspectJ_Annotation_AllCode
 ---
 [<--Back](AspectJ_Annotation_One_Solution) [Next-->](AspectJ_Annotation_Apply)
 
-# Annotation All Code
+## Annotation All Code
 Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If you'd like to know how to set up a project using it, [click here](ExtractingSourceFilesIntoProject).
 
 ----
 
-## Main.java
+### Main.java
 {% highlight java %}
 01: package annotation;
 02: 
@@ -22,7 +22,7 @@ Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If
 10:     }
 11: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 There are arguably no interesting lines in this class. All of the work is done via aspects and annotations.
 ^
 |----|----|
@@ -31,7 +31,7 @@ There are arguably no interesting lines in this class. All of the work is done v
 
 ----
 
-## Dao.java
+### Dao.java
 {% highlight java %}
 01: package annotation;
 02: 
@@ -43,12 +43,12 @@ There are arguably no interesting lines in this class. All of the work is done v
 08:     }
 09: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 This class is unchanged from [Example 4](AspectJEX4Explained#Dao).
 
 ----
 
-## Address.java
+### Address.java
 {% highlight java %}
 01: package annotation;
 02: 
@@ -118,7 +118,7 @@ This class is unchanged from [Example 4](AspectJEX4Explained#Dao).
 66:     }
 67: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 There are 4 changes to this class.
 * We've added a new attribute, ignoredField.
 * We've added a setter
@@ -131,7 +131,7 @@ There are 4 changes to this class.
 
 ----
 
-## IgnoreField.java
+### IgnoreField.java
 {% highlight java %}
 01: package annotation;
 02: 
@@ -150,7 +150,7 @@ There are 4 changes to this class.
 15:     String value() default "";
 16: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 We create a new kind of annotation. This annotation by itself only allows adding information to some element type. In this case, it is a field. This does not actively do anything. However, this annotation and a chagne to the SetFieldAspect combine to cause fields with this annotation to be ignored.
 
 ^
@@ -162,7 +162,7 @@ We create a new kind of annotation. This annotation by itself only allows adding
 
 ----
 
-## FieldSetAspect.java
+### FieldSetAspect.java
 {% highlight java %}
 01: package annotation;
 02: 
@@ -219,7 +219,7 @@ We create a new kind of annotation. This annotation by itself only allows adding
 53:     }
 54: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 The key change to this class is on line 17 where we ignore fields with the annotation IgnoreField. Otherwise this aspect is mostly unchanged from previous examples. (In fact, this verion of the aspect includes changes for the [CFlow](AspectJ_CFlow) exmample on lines 21 - 23.
 
 ^
@@ -232,7 +232,7 @@ The key change to this class is on line 17 where we ignore fields with the annot
 
 ----
 
-## SaveMethodAspect.java
+### SaveMethodAspect.java
 {% highlight java %}
 01: package annotation;
 02: 
@@ -269,7 +269,7 @@ This Aspect is unchanged from [Example 4](AspectJ_Example_4). For details, see [
 
 ----
 
-## InnerTypeAspect.java
+### InnerTypeAspect.java
 {% highlight java %}
 01: package annotation;
 02: 
@@ -286,7 +286,7 @@ This Aspect is unchanged from [Example 4 InnerTypeAspect](AspectJEX4Explained#In
 
 ----
 
-## ITrackedObject.java
+### ITrackedObject.java
 {% highlight java %}
 01: package annotation;
 02: 
@@ -300,7 +300,7 @@ This Aspect is unchanged from [Example 4 InnerTypeAspect](AspectJEX4Explained#In
 This interface is unchanged from [Example 4 ITrackedObject](AspectJEX4Explained#ITrackedObject).
 
 ----
-## TrackedObjectMixin.java
+### TrackedObjectMixin.java
 {% highlight java %}
 01: package annotation;
 02: 
@@ -321,7 +321,7 @@ This interface is unchanged from [Example 4 ITrackedObject](AspectJEX4Explained#
 {% endhighlight %}
 This interface is unchanged from [Example 4 TrackedObjectMixin](AspectJEX4Explained#TrackedObjectMixin).
 ----
-## aop.xml
+### aop.xml
 {% highlight terminal %}
 01: <aspectj>
 02: 	<aspects>

@@ -7,9 +7,9 @@ Right now the relationship between Director and DVD is one-way. Make it bidirect
 ### Experiment with Inheritance Types
 We use InheritanceType.JOINED. There are two others, SINGLE_TABLE, TABLE_PER_CLASS. Try out both of those and see if you can figure out what is happening for each of them.  Be sure to re-run all the unit tests after switching to each type.
 
-# When you switch to the SINGLE_TABLE approach, what happens with column nullability, the isbn column (from Book), and the Dvd class?
-# When you switch to the TABLE_PER_CLASS approach, why does the key generation strategy have to change to in order fix the 'Cannot use identity column key generation' error?  What did you change to, and why?
-# Can you sum up the advantages/disadvantages of each approach?   
+* When you switch to the SINGLE_TABLE approach, what happens with column nullability, the isbn column (from Book), and the Dvd class?
+* When you switch to the TABLE_PER_CLASS approach, why does the key generation strategy have to change to in order fix the 'Cannot use identity column key generation' error?  What did you change to, and why?
+* Can you sum up the advantages/disadvantages of each approach?
 
 
 ### Sub-resource queries

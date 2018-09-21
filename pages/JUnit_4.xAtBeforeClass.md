@@ -3,7 +3,7 @@ title: JUnit_4.xAtBeforeClass
 ---
 [<--Back](JUnit_4.x#AtBeforeClass)
 
-# @BeforeClass
+## @BeforeClass
 
 There is no analog to @BeforeClass before JUnit 4.0. This is initialization code that is executed once. That is, if you have 1 unit tests or 100, this will execute one time before the very first test execution.
 

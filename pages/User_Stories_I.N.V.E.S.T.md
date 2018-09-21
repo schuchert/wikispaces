@@ -1,26 +1,26 @@
 ---
 title: User_Stories_I.N.V.E.S.T
 ---
-# I
+## I
 Independent
 * Avoid dependencies between stories
 
-# N
+## N
 Negotiable
 * Not contracts, but place holders for conversations
 
-# V
+## V
 Valuable
 * Can be directly tied to something a user or customer (purchaser) wants
 
-# E
+## E
 Estimable
 * Can fit into an iteration and be approximately estimated
 
-# S
+## S
 Small
 * Can be done in a "short" time & its details fit in a conversation
 
-# T
+## T
 Testable
 * Can describe ways in which we know the story works

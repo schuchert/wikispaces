@@ -20,11 +20,12 @@ Hint: You can compare the SQL from each approach by adding the following line to
 
 ## Fetch and Lazy Initialization Revisited
 Add a unit test where you:
-# Create a person
-# Create a company
-# Hire the person
-# Retrieve the person (you can add a new DAO or simply add a method to the Company Dao)
-# Verify that they have one job and that it is for the expected company.
+* Create a person
+* Create a company
+* Hire the person
+* Retrieve the person (you can add a new DAO or simply add a method to the Company Dao)
+* Verify that they have one job and that it is for the expected company.
+
 ### Review
 * Did this test work? If not, why? If so, what can you say about @OneToMany versus @ManyToOne?
 * If it did not work, fix it.

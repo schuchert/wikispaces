@@ -4,7 +4,7 @@ title: FitNesse.Tutorials.1
 {% include toc %}
 [<--Back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.2)
 
-# Introduction
+## Introduction
 This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If you need help installing or running [FitNesse](http://fitnesse.org/), please [go here first](FitNesse.Tutorials.0). In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:
 * Create Decision tables in FitNesse
 * Make the tables execute by writing Fixtures
@@ -20,7 +20,7 @@ This tutorial is primarily about getting you over the hurtle of the mechanics of
 
 Note, this tutorial assumes you are running [FitNesse](http://fitnesse.org/) on localhost at port 8080 <http://localhost:8080>. If you are not sure how to do that, [try this tutorial](FitNesse.Tutorials.0).
 
-# Background
+## Background
 [FitNesse.Slim Decision Tables](http://FitNesse.org/FitNesse.SliM.DecisionTable) are a common way to get test data into a System Under Test. A Decision table has three parts (only the first of which is actually required):
 * One Title Row - Names the fixture to execute, optionally includes constructor parameters
 * One Heading Row - Names of columns, which map to either setter methods or method calls (if they end in ?)
@@ -48,7 +48,7 @@ These methods can all take Strings or some, where there's a conversion available
 
 Finally, there are two data rows. Given the name of the fixture, this table's goal is to apparently add two programs to the schedule.
 
-## Creating this table
+### Creating this table
 
 Here are some preliminary steps to get this table created (there will be more later, this table is the skeleton of a test):
 * Browse to <http://localhost:8080>.
@@ -68,7 +68,7 @@ Here are some preliminary steps to get this table created (there will be more la
 
 Now you can execute the page. Click on the **Test** button. The tests will fail dues to a missing fixutre. [FitNesse](http://fitnesse.org/) will color the first row yellow and add the message "//Could not find fixture: AddProgramsToSchedule.//". Now you must create a Fixture class and add it to the test page.
 
-## Creating the Fixture
+### Creating the Fixture
 If you are planning on using Eclipse and working in Java, then you can get a repository from github: [fitnesse-tutorials](http://github.com/schuchert/fitnesse-tutorials/tree/master). Review the instructions [here](FitNesse.Tutorials.WorkingFromGitHub).
 
 Creating a fixture involves:
@@ -154,7 +154,7 @@ Run the test and verify that the page passes successfully.
 
 While you are at it, you have your original test page from the first tutorial. You can verify it still passes as well.
 
-# Add Assertions
+## Add Assertions
 
 Right now, this table does not assert any results, which means the underlying fixture can do the same, which is not much. Let's extend this just a bit to have the table actually perform validation:
 
@@ -175,10 +175,10 @@ Try running this page and FitNesse will complain that it cannot find the **creat
 
 Update your table and add the missing method. Verify that the test still passes. You'll notice there are three successful assertions.
 
-## What is this doing?
+### What is this doing?
 Adding a column with a ? at the end of its name requires that the fixture have a method with a matching name (remove spaces, use camel casing) with some return value. [FitNesse](http://fitnesse.org/) will execute that method and compare its return value to the value in the cell, marking it green or red for matching/not matching. If you happen to have a cell with no value, the return value will be displayed in the cell with a gray coloring. 
 
-# Make the Assertion have some Value
+## Make the Assertion have some Value
 There's nothing in the flow of this table that would cause a problem. However, what if we want to make sure adding a program on top of another is not possible? We can do that by adding one more row to the bottom of the table::
 
 {% highlight terminal %}
@@ -191,7 +191,7 @@ This is a non-typical use of the Decision table, but it certainly is legitimate.
 
 Run it, you should have one failed assertion. Your code will need some way to know that one slot is already used. Here's one way to accomplish that:
 
-## Update AddProgramsToSchedule.java
+### Update AddProgramsToSchedule.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -263,7 +263,7 @@ public class AddProgramsToSchedule {
 }
 {% endhighlight %}
 
-## Create new Class: TimeSlot.java
+### Create new Class: TimeSlot.java
 
 Notice, this class is in a different package (com.om.example.dvr.domain).
 
@@ -300,7 +300,7 @@ Along those lines, "buildStartDateTime" also exhibits feature envy. The "Schedul
 
 To fix this, we can introduce a new class and perform some basic re-factoring:
 
-### Schedule.java
+#### Schedule.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -333,7 +333,7 @@ public class Schedule {
 }
 {% endhighlight %}
 
-### ConflictingProgramException.java
+#### ConflictingProgramException.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -343,7 +343,7 @@ public class ConflictingProgramException extends RuntimeException {
 }
 {% endhighlight %}
 
-### Updated: AddProgramsToSchedule.java
+#### Updated: AddProgramsToSchedule.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -419,13 +419,13 @@ This really was just an Extract class refactoring or wrapping a collection. Wrap
 Before moving on, make sure your test passes. Assuming it does, congratulations on a successful refactoring.
 
 <aside>
-### Wrapping Collections
+#### Wrapping Collections
 When dealing with a language-provided collection, you should wrap it by default and only not wrap it if it makes sense. This might seem controversial, but in my experience the extra overhead of wrapping the collection provides a place for functionality that is otherwise heavily duplicated. For example:
 * Only adding something if it does not conflict in some way with existing members in the collection.
 * Doing some kind of work over the entire collection.
 * Responding in a domain-specific way to empty/full collections.
 </aside>
-# Deleting Something By Key
+## Deleting Something By Key
 We should be able to add a program, remove it and then add another at the same time slot. Here's just such a test and it uses something you might have noticed in the first tutorial:
 
 {% highlight terminal %}
@@ -453,7 +453,7 @@ Add the missing method. Verify that the test still passes. You'll notice there a
 
 As for the third id, you'll see that in a minute. To get this to run, you'll need to make several changes:
 
-## Add: Program.java
+### Add: Program.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -476,7 +476,7 @@ public class Program {
 }
 {% endhighlight %}
 
-## Update: Schedule.java
+### Update: Schedule.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -511,7 +511,7 @@ public class Schedule {
 }
 {% endhighlight %}
 
-## Update: AddProgramsToSchedule.java
+### Update: AddProgramsToSchedule.java
 
 {% highlight java %}
 package com.om.example.DVR.fixture;
@@ -559,7 +559,7 @@ In the first case, there is a variable assignment, which [FitNesse](http://fitne
 
 This variable is available for the rest of the page. However, before we get to that we do have a problem. The lastId? is set upon a successful program add, but it is not reset if the program is not added. Here is a quick fix to improve that:
 
-### AddProgramsToScheule.created
+#### AddProgramsToScheule.created
 
 {% highlight java %}
    public boolean created() {
@@ -577,7 +577,7 @@ This variable is available for the rest of the page. However, before we get to t
 
 Make the update and then you'll notice the third data row of the lastId? column is now n/a (in gray).
 
-## Finally, Delete by Key
+### Finally, Delete by Key
 
 Time to add another table and fixture:
 
@@ -615,7 +615,7 @@ What to do:
 
 When you run your tests, do you notice a problem? The tests pass! Maybe you expected the second attempt to add would fail, but it appears to work. This illustrates something [FitNesse](http://fitnesse.org/) does; each table causes a new instance of the fixture to be created, even on the same page. How can you tell this? If you want to verify it, you could simply add a print statement to the constructor and view the output. I've already done that. Here's the print statement:
 
-### Example: Added to AddProgramsToSchedule fixture
+#### Example: Added to AddProgramsToSchedule fixture
 
 {% highlight java %}
    private static int numberCreated = 0;
@@ -643,7 +643,7 @@ So what is the problem? The fixture holds the schedule. Each fixture has its own
 Ultimately, how you should do it depends on your system. If your system will eventually need objects like this configured, wired and passed around, then it might make sense to introduce Spring or maybe even a hand-rolled IoC container (a factory of some kind). For our purposes, simply making the schedule static in AddProgramsToSchedule will work effectively. So do that and then see the test fail (note, I've removed the constructor and static variable **numberCreated** in my version to get rid of output making its way into my test execution).
 
 <aside>
-### Tests Should Not Produce Output
+#### Tests Should Not Produce Output
 Your acceptance tests (and unit tests) should not produce output. Why? Because you've written them to have assertions. Those assertions are the only thing that define success or failure. If you find the need to produce output, are you also going to verify that output? If so, then turn the verification of the output into an assertion. If not, then you're adding noise to the test execution.
 
 This might be OK while you are working on your machine but don't check this cruft in. What I've seen happen, repeatedly, is people add output to verify their work (that's fine in the short term, maybe, but it represents a lack of trust in either your own abilities or the test system), and then other people notice the output and then the output grows. Soon, it becomes the norm.
@@ -698,7 +698,7 @@ import java.util.Iterator;
 
 Run your tests and you should see all tests green.
 
-## Not Doing the Work in the Constructor
+### Not Doing the Work in the Constructor
 
 If for some reason, you do not like to do the actual work done in the constructor, you can optionally write the table as follows:
 
@@ -736,7 +736,7 @@ public class RemoveProgramById {
 
 Note that this Fixture, as written, supports both styles. The real reason I wanted to include this last example was to demonstrate how you can cause a row of a decision table to be executed without include a column with a ? in its name. You add a method called **execute()**. [FitNesse](http://fitnesse.org/) will call that method, if it exists, after calling the last setter (the columns without ? in their name).
 
-# Conclusion and Summary
+## Conclusion and Summary
 Congratulations, you've completed this tutorial.
 
 This tutorial emphasizes Decision tables. There is still more to you can do with decision tables, but this covers most of what you'll need to know to effectively use decision tables. If you go to your fitness installation and go to FitNesse.SliM.DecisionTable (<http://localhost:8080/FitNesse.SliM.DecisionTable>), you can read the [FitNesse](http://fitnesse.org/FitNesse.SliM.DecisionTable)-provided documentation.

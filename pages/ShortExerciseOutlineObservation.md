@@ -3,7 +3,7 @@ title: ShortExerciseOutlineObservation
 ---
 [<--Back](ShortExerciseOutlineExperience) [Next-->](ShortExerciseOutlineThinking)
 
-# Short Exercise Outline Observation
+## Short Exercise Outline Observation
 Second, I'll ask the person to "take a step back" and make some observations about their recent experience:
 * What is happening?
 * How is this different from your previous experience?

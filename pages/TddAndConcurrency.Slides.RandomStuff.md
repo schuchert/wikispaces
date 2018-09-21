@@ -3,8 +3,8 @@ title: TddAndConcurrency.Slides.RandomStuff
 ---
 [<--Back](TddAndConcurrency.Slides.FinaNotes) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides)
 
-# TDD & Concurrency
-## Atomic Variables
+## TDD & Concurrency
+### Atomic Variables
 Modern Processors have a single instruction
 * Compare And Swap (CAS)
 * Logical example of optimistic locking
@@ -21,7 +21,7 @@ IncrementValue() {
   * If this is the case, high-contention systems will burn CPU time
 ----
 ----
-## Conditions for Deadlock
+### Conditions for Deadlock
 * Mutual Exclusion
   * Multiple threads want to use same (limited) resource
   * Cannot be used at same time
@@ -37,7 +37,7 @@ IncrementValue() {
   * At least two resources required by at least two threads
 ----
 ----
-## Avoiding Deadlock
+### Avoiding Deadlock
 * Break any of the 4 conditions
   * Makes deadlock impossible
   * Has performance and responsiveness ramifications

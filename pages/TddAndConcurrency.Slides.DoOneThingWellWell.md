@@ -3,9 +3,9 @@ title: TddAndConcurrency.Slides.DoOneThingWellWell
 ---
 [<--Back](TddAndConcurrency.Slides) | [^Top^](TddAndConcurrency.Slides)| [Next-->](TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid)
 
-# Do One Thing ... Well ... Well
+## Do One Thing ... Well ... Well
 
-## Focus, Focus, Focus
+### Focus, Focus, Focus
  You’ve heard it...
 * Cohesion
 * Separation of concerns
@@ -16,7 +16,7 @@ It’s even more important here
 ^
 Why?
 
-## A Simple Server
+### A Simple Server
  Imagine a server that forever…
 * Waits for a client connection, 
 * Gets a message
@@ -37,7 +37,7 @@ Why?
 {% endhighlight %}
 ----
 ----
-## And its client
+### And its client
  Now we need a client that...
 * Connects to the server
 * Sends a message
@@ -51,14 +51,14 @@ Why?
 {% endhighlight %}
 ----
 ----
-## You need to make this faster...
+### You need to make this faster...
 Threads to the rescue, right?
 * How can I introduce threading reliably?
 * What will change in the design to support threading?
 * How can I make this easier to test?
 ----
 ----
-## How do we test?
+### How do we test?
  What makes this hard to test?
 * Direct dependency on Sockets
 {% highlight java %}
@@ -79,7 +79,7 @@ Threads to the rescue, right?
   * Process client request
 ----
 ----
-## We want to verify threading...
+### We want to verify threading...
 Extract Classes:
 * Pull client processing into its own class
 * Pull client acquisition into its own class
@@ -88,8 +88,8 @@ Extract Classes:
 * Show everything still working
 ----
 ----
-## Demo
- Now we’ll walk through a rewrite of the class to speed it up…
+### Demo
+Now we’ll walk through a rewrite of the class to speed it up…
 * Client Request Processing
 * Client Acquisition
 * Dependency Injection

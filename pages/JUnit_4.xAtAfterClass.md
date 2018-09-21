@@ -3,7 +3,7 @@ title: JUnit_4.xAtAfterClass
 ---
 [<--Back](JUnit_4.x#AtAfterClass)
 
-# @AfterClass
+## @AfterClass
 There is no analog to @AfterClass before JUnit 4.0. It is run once after all unit tests in a given class have executed.
 
 The @AfterClass in the most derived class executes first, then the immediate superclass and so on. The most base class's @AfterClass annotated methods execute last.

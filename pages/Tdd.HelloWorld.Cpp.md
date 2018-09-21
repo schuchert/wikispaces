@@ -159,7 +159,7 @@ But this loses our ability to use the test harness. Hum, I don't like that. Seem
 Note that is simply changing the structure to support what Michael Feathers calls a link seam. I'll build the test version with one main and the non-test system with a different main. Here are those moving parts:
 ### mainImpl.h
 {% highlight cpp %}
-# pragma once
+#pragma once
 #ifndef mainImpl_header
 #definemainImpl_header
 

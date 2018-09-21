@@ -3,7 +3,7 @@ title: AspectJ_Annotation_Observation
 ---
 [<--Back](AspectJ_Annotation_Experience) [Next-->](AspectJ_Annotation_Thinking)
 
-# AspectJ Annotation: Observation
+## AspectJ Annotation: Observation
 
 Now review what you've just experience. Take a few moments and write down answers to the following questions:
 * What is happening?

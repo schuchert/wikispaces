@@ -3,14 +3,14 @@ title: AspectJ_Annotation_Experience
 ---
 [<--Back](AspectJ_Annotation_Start) [Next-->](AspectJ_Annotation_Observation)
 
-# AspectJ Annotation: Experience
+## AspectJ Annotation: Experience
 Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If you'd like to know how to set up a project using it, [click here](ExtractingSourceFilesIntoProject).
 
 This example is written in a way that it is meant to follow: [AspectJ_Example_3](AspectJ_Example_3) and [AspectJ_Example_4](AspectJ_Example_4). I specifically leave out details unchanged from those examples.
 
 Now we'll introduce selecting pointcuts augmented by annotations. Begin by reviewing the following Java files and the expected output. Based on all of that information, your assignment is to describe what is happening and try to guess how it is happening. Note that the code provided here is somewhat stripped down to reduce what you have to look at. Later, we provide the full source in the [Explained](AspectJ_Annotation_Explained) section.
 ----
-## Main.java
+### Main.java
 {% highlight java %}
 public class Main {
     public static void main(String args[]) {
@@ -23,7 +23,7 @@ public class Main {
 }
 {% endhighlight %}
 ----
-## Dao.java
+### Dao.java
 {% highlight java %}
 public class Dao {
     public static void save(Object o) {
@@ -34,13 +34,13 @@ public class Dao {
 }
 {% endhighlight %}
 ----
-## The Output
+### The Output
 {% highlight terminal %}
 Not saving: class annotation.Address, it is unchanged
 Saving: class annotation.Address
 {% endhighlight %}
 ----
-## IgnoreField.java - the annotation
+### IgnoreField.java - the annotation
 {% highlight java %}
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
@@ -49,7 +49,7 @@ public @interface IgnoreField {
 }
 {% endhighlight %}
 ----
-## FieldSetAspect.java
+### FieldSetAspect.java
 {% highlight java %}
 @Aspect
 public class FieldSetAspect {

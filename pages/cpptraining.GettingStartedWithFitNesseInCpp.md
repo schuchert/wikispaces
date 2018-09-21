@@ -3,8 +3,8 @@ title: cpptraining.GettingStartedWithFitNesseInCpp
 ---
 [<--Back](CppTraining#FitNesse)
 
-# Initial Downloads
-## Download [cslim from github](http://github.com/dougbradbury/cslim/tree/master)
+## Initial Downloads
+### Download [cslim from github](http://github.com/dougbradbury/cslim/tree/master)
 This requires a git client. 
 * Create a top-level directory in which to work (this example uses ~/src/cpp_fitnesse)
 
@@ -27,7 +27,7 @@ walk 9362f2b10fd30590a8f14c1caebf76cd2fcbe3ca
 walk 4ac0cbd8d58cfe9c353142a5363bd39718f43acf
 {% endhighlight %}
 
-## Get CppUTest
+### Get CppUTest
 The README.txt in the root of the cslim directory just created uses CppUTest.
 * [Download CppUTest from sourceforge](http://sourceforge.net/projects/cpputest/)
 * Extract the zip, creating a sibling directory to cslim called cpputest. The top-level directory name should be ~/src/cpp_fitnesse/cpputest
@@ -54,7 +54,7 @@ Running CppUTest_tests
 OK (171 tests, 167 ran, 599 checks, 4 ignored, 0 filtered out, 10 ms)
 {% endhighlight %}
 
-## Get FitNesse
+### Get FitNesse
 * [Download fitnesse.jar](http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad), these instructions were created using the edge build #398, dated July 11, 2010, 12:49, but the release at fitnesse.org should work fine.
 * Move fitnesse.jar into ~src/cpp_fitnesse/
 * The directory should look like this before you run fitnesse for the first time:
@@ -63,7 +63,7 @@ OK (171 tests, 167 ran, 599 checks, 4 ignored, 0 filtered out, 10 ms)
 [~/src/cpp_fitnesse]% ls
 cpputest/	cslim/		fitnesse.jar
 {% endhighlight %}
-# Building cslim
+## Building cslim
 * Go to ~/src/cpp_fitnesse/cslim
 * Type make:
 
@@ -81,7 +81,7 @@ Linking CSlim_cslim
 [~/src/cpp_fitnesse/cslim]% 
 {% endhighlight %}
 
-# Run FitNesse
+## Run FitNesse
 The first time you run FitNesse, it will extract a base wiki and then start. After the first execution, it will just start. If you replace the fitnesse.jar with a new version, starting FitNesse the first time after that will update the base wiki, but leave the pages you created alone.
 * The first execution looks like this
 
@@ -116,7 +116,7 @@ FitNesse (v20100711) Started...
 	page version expiration set to 14 days.
 {% endhighlight %}
 
-# Create Top-Level Page
+## Create Top-Level Page
 This assumes you're running FitNesse on port 8080. Update the url with your port as necessary.
 * Create a new top-level page at: <http://localhost:8080/CslimFirstExamples>
 * Edit the contents. Set it to (note, update// **/User/schuchert**// with your top-level directory):
@@ -145,7 +145,7 @@ This assumes you're running FitNesse on port 8080. Update the url with your port
 {% endhighlight %}
 If you click the// **Test**// Button, you'll see a bit of yellow. It's time to write a fixture.
 
-# Writing the Fixture
+## Writing the Fixture
 
 This example originated from the one provided with cslim. It's been somewhat simplified and moved closer to C++. You can review the original example in ~/src/cpp_fitnesse/cslim/fixtures/FixtureInCpp.cpp.
 * Go to the fixtures directory under your cslim installation (cd ~/src/cpp_fitnesse/cslim/fixtures).

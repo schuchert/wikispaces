@@ -3,7 +3,7 @@ title: AspectJ_Annotation_Problem
 ---
 [<--Back](AspectJ_Annotation_Start) [Next-->](AspectJ_Annotation_Possibilities)
 
-# Problem
+## Problem
 
 Right now, the solution provided in [Exercise 4](AspectJ_Exercise_4) enables tracking changes on an object when any of its fields change. What if I wanted to ignore certain fields?
 

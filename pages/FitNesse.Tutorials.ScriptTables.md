@@ -2,7 +2,7 @@
 title: FitNesse.Tutorials.ScriptTables
 ---
 {% include toc %}[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.ScenarioTables)
-# Background: The Return of Smalltalk
+## Background: The Return of Smalltalk
 This is a somewhat nostalgic background, you won't miss much if you [skip to the introduction](FitNesse.Tutorials.ScriptTables#introduction). 
 
 [Script tables](http://fitnesse.org/FitNesse.SliM.ScriptTable) originally derive from Do Fixtures in [fitlibrary](http://sourceforge.net/projects/fitlibrary). However, the design for Do Fixtures actually derives from Smalltalk. In smalltalk there are three kinds of messages:
@@ -54,12 +54,12 @@ generateProgrmas CreateDailyProgramNamed: 'D1" OnChannel: 8 StartingOn: '3/4/200
 The spirit of the keyword message in Smalltalk was revived in the design of the do fixture and then carried over into Slim.
 
 {: #introduction}
-# Introduction
+## Introduction
 In this tutorial, you'll continue working with the DVR problem, continuing right from where you left off in [Query Tables Tutorial](FitNesse.Tutorials.2). You can use your code as is from the previous tutorial, or you can use the tag FitNesse.Tutorials.ScriptTables, review [here](FitNesse.Tutorials.WorkingFromGitHub) to figure out what to do with this tag.
 
 In this tutorial you will learn how to use script tables to express things with sequences of messages rather than rows of data that are either created or queried. It is typically possible to express in script tables what you can do with decision tables and query tables. The reverse is also true. typically it is a matter of habit or taste. Sometimes, however, one expression is simply better than another.
 
-# A First Script Table
+## A First Script Table
 The basis of your work will come from this user story:
 * As a avid TV watcher, I want to review my to do list by day to verify that my programs are getting recorded
 
@@ -85,7 +85,7 @@ There are three parts to this table:
 * Rows 2 - 3: Invoke a method to generate programs on a weekly schedule
 * Rows 4 - 5: Invoke a method to generate programs on a daily basis
 
-### Creating Page Hierarchy/Table
+#### Creating Page Hierarchy/Table
 * Create a new Test Suite: Edit the following URL: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples>
 * Enter the following for its contents:
 
@@ -99,7 +99,7 @@ There are three parts to this table:
 * See the page type to Test.
 * Run the test, verify that you see a warning (in yellow) of the missing Generate Programs class
 
-## Create Initial Fixture
+### Create Initial Fixture
 As with other tables, this table needs a backing fixture:
 
 {% highlight java %}
@@ -122,7 +122,7 @@ public class GeneratePrograms {
 
 This is simply a skeleton of the fixture. Update your fixture and verify that your table executes and passes. (Note, depending on the version of FitNesse you are using, returning a "" might cause problems. If the above does not give a successful test execution, replace "" with "n/a".)
 
-## Write Fixture & Refactor
+### Write Fixture & Refactor
 There is a lot of date-based logic spread throughout the fixtures and production code. This is a problem waiting to happen. Here's a recommendation to get this under control:
 * Put all date-related stuff in a single place
 * Prepare to use this singe place to create instances of dates as well
@@ -131,7 +131,7 @@ Why? This gives you the ability to set the system date and run the system with a
 
 Here is the new class, DateUtil, to capture all of the date formatting carried out by various parts of the solution. I added this to account for violations of the DRY principle. Rather than walk you through all of that, I'm simply providing my changes.
 
-### Create: DateUtil.java
+#### Create: DateUtil.java
 
 {% highlight java %}
 package com.om.example.util;
@@ -182,7 +182,7 @@ public class DateUtil {
 }
 {% endhighlight %}
 
-### Update: AddProgramsToSchedule
+#### Update: AddProgramsToSchedule
 
 {% highlight java %}
    public void execute() throws ParseException {
@@ -198,7 +198,7 @@ public class DateUtil {
 {% endhighlight %}
 **Note**: When you make this change, you'll have an unused method, **buildStartDateTime**. Remove it.
 
-### Update: TimeSlotPropertyHandler
+#### Update: TimeSlotPropertyHandler
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -227,7 +227,7 @@ public class TimeSlotPropertyHandler extends PropertyHandler {
 }
 {% endhighlight %}
 
-### Update: GeneratePrograms
+#### Update: GeneratePrograms
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -277,7 +277,7 @@ public class GeneratePrograms {
 
 Make sure with all of these changes, your page passes.
 
-## Schedule Items in To Do List
+### Schedule Items in To Do List
 Now that you've generated a schedule with several programs, it is time to create season passes. This fixture already exists:
 
 {% highlight terminal %}
@@ -294,7 +294,7 @@ Note, as the fixture is written, it takes parameters on the constructor. To use 
 
 If you run your test, you should still see all green. As with previous tutorials, getting all green is not that difficult when there are no assertions in a test. Now it is time to verify something. To do that, it's time to return to Query Tables.
 
-## Assert Contents
+### Assert Contents
 Now it is time to review the to do list by date rather than by program id. Here's just a fixture:
 
 {% highlight terminal %}
@@ -313,7 +313,7 @@ Now it is time to review the to do list by date rather than by program id. Here'
 
 Here's the code to make this work:
 
-### Create: EpisodesInToDoListOn.java
+#### Create: EpisodesInToDoListOn.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -344,7 +344,7 @@ public class EpisodesInToDoListOn {
 }
 {% endhighlight %}
 
-### Update: DateUtil.java
+#### Update: DateUtil.java
 
 {% highlight java %}
    public boolean isSameDate(Date startDateTime, Date date) {
@@ -356,7 +356,7 @@ public class EpisodesInToDoListOn {
    }
 {% endhighlight %}
 
-### Update: Program.java
+#### Update: Program.java
 
 {% highlight java %}
    public boolean isOn(Date date) {
@@ -364,7 +364,7 @@ public class EpisodesInToDoListOn {
    }
 {% endhighlight %}
 
-### Update: SeasonPassManager.java
+#### Update: SeasonPassManager.java
 {% highlight java %}
    public List<Program> toDoListContentsOn(Date date) {
       List<Program> result = new LinkedList<Program>();
@@ -379,10 +379,10 @@ public class EpisodesInToDoListOn {
 
 Make all of these changes and execute your test. Notice anything? The first table shows that D1:E1 and D2:E1 are both missing. Apparently something is wrong with the code. There's not enough context to really know what is happening. Maybe we took too large of a leap. How can you fix this?
 
-### Switching to Unit Tests
+#### Switching to Unit Tests
 Here is a JUnit analog of the test page:
 
-### Create: GenerateProgramsTest.java
+#### Create: GenerateProgramsTest.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -432,7 +432,7 @@ Running this test indicates a similar problem (expected 4 by only found 2 in in 
 
 Stepping through, I noticed that attempting to add the first Episode of D1 and D2 caused a problem with a conflicting program. This should not be happening, so that's where to check next. As I was running this, I also notice that I forgot to set the length of the episode.
 
-### Update: GeneratePrograms.java
+#### Update: GeneratePrograms.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -486,7 +486,7 @@ public class GeneratePrograms {
 
 After a little time with the debugger, it because clear where the exception was getting lost:
 
-### Update: AddProgramsToSchculed.execute()
+#### Update: AddProgramsToSchculed.execute()
 
 {% highlight java %}
    public void execute() throws ParseException {
@@ -504,7 +504,7 @@ After a little time with the debugger, it because clear where the exception was 
  
 A quick test of the DateUtil.buildDate method shows a problem:
 
-### Create: DateUtilTest.java
+#### Create: DateUtilTest.java
 
 {% highlight java %}
 package com.om.example.util;
@@ -536,7 +536,7 @@ public class DateUtilTest {
 
 Which leads to a fix of an improperly extracted method:
 
-### Update: DateUtil.java
+#### Update: DateUtil.java
 
 {% highlight java %}
    public Date buildDate(String date, String startTime) throws ParseException {
@@ -547,7 +547,7 @@ Which leads to a fix of an improperly extracted method:
 
 Run your unit tests, they should all now pass. At this point if you are not convinced that the tutorial took too big of a step trying to use primarily acceptance tests to drive the work, then you have a high threshold of pain. That was too much much broken stuff for too long along with too much time spent in the debugger.
 
-## Verify Your Acceptance Tests
+### Verify Your Acceptance Tests
 Now things seem to be working fine and the test passes. What about the entire suite? Run it. Notice that there was a reason why the AddProgramsToSchedule.execute() method did not throw an exception. Now that test fails with an exception. What can we conclude from this?
 * First, it's good we have a suite. One button click and it's quick to spot the mistake.
 * Writing one fixture to use another fixture, while OK, can lean to different goals.
@@ -555,7 +555,7 @@ Now things seem to be working fine and the test passes. What about the entire su
 
 This can be fixed:
 
-### Update: GeneratePrograms.java
+#### Update: GeneratePrograms.java
 
 {% highlight java %}
    private void createOneProgram(String programName, int channel, String startTime,
@@ -572,7 +572,7 @@ This can be fixed:
    }
 {% endhighlight %}
 
-### Restore: AddProgramsToSchedule.java
+#### Restore: AddProgramsToSchedule.java
 
 {% highlight java %}
    public void execute() throws ParseException {
@@ -591,7 +591,7 @@ Run your unit tests, they should pass. Run your top-level suite, everything shou
 
 Finally, let's verify that in fact this change to the createOneProgram method actually does as expected. Attempt to force the exception to be thrown from createOneProgram:
 
-### Add Test To: GenerateProgramsTest
+#### Add Test To: GenerateProgramsTest
 
 {% highlight java %}
    @Test(expected = ConflictingProgramException.class)
@@ -605,7 +605,7 @@ Finally, let's verify that in fact this change to the createOneProgram method ac
 
 Make sure this test passes before moving to the next section.
 
-# A Second Example
+## A Second Example
 Here are a few addons to the table to show a few additional features of Script tables:
 
 {% highlight terminal %}
@@ -632,7 +632,7 @@ Create this table:
 
 This requires a few changes to the existing fixture:
 
-### Update: GeneratePrograms.java
+#### Update: GeneratePrograms.java
 
 {% highlight java %}
 public class GeneratePrograms {
@@ -663,7 +663,7 @@ public class GeneratePrograms {
 
 Run your test and verify it passes. Rerun the suite and verify it passes.
 
-# Summary
+## Summary
 Congratulations, you've finished another tutorial and learned about Script tables. Script tables are a convenient way to introduce code-like sequences into your tests. They derive their design from Smalltalk keyword messages but other than that, they behave like other Slim tables:
 * They are backed with a fixture
 * They have one or more method invocations, one per line.

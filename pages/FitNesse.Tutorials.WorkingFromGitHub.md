@@ -42,7 +42,7 @@ Switched to a new branch "work_on_tutorial_0"
 
 Now you have the option of working, checking in your work on this branch, and then switching to another tag and starting over.
 
-# Configuring Eclipse
+## Configuring Eclipse
 Now, you'll need to create a workspace:
 * Start Eclipse
 * Set the workspace equal to the directory where you cloned the repository, e.g., /Users/schuchert/src/fitnesse-tutorials
@@ -53,6 +53,6 @@ Now, you'll need to create a workspace:
 * Click **Finish**
 * Set the JDK to 1.6: Eclipse Properties (Mac: command , | pc: File:properites):Java:Compiler:Compiler Compliance Level:1.6).
 
-# Get Going!
+## Get Going!
 Now is a great time to start [the first turtorial](FitNesse.Tutorials.0).
 [<--Back](FitNesse.Tutorials)

@@ -13,7 +13,7 @@ After the adding support for functions, I figured that was enough. However, once
 After that, I decided to migrate the example to an Enumerator. This is that version.
 
 Here are the most-recent final versions of these two files.
-# Tokenizer.Tests.ps1
+## Tokenizer.Tests.ps1
 {% highlight powershell %}
 using module '.\Tokenizer.psm1'
 
@@ -52,7 +52,7 @@ Describe "Tokenizing an in-fix expression" {
 }
 {% endhighlight %}
 
-# Tokenizer.psm1
+## Tokenizer.psm1
 {% highlight powershell %}
 using namespace System.Collections
 

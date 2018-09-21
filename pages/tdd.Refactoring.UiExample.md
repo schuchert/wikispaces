@@ -1,9 +1,9 @@
 ---
 title: tdd.Refactoring.UiExample
 ---
-# Legacy Refactoring: Improving Testability of UI Code
+## Legacy Refactoring: Improving Testability of UI Code
 
-## Introduction
+### Introduction
 In September 2009 I taught a TDD & Refactoring class in Chicago with a great group of people. One of the questions that came up (and always comes up) is testing UI code.
 
 UI could be graphical, textual, web-based, etc., but the techniques are the the same:
@@ -20,16 +20,16 @@ In this class one of the students (Joseph Buschmann) brought me a simple, focuse
 
 What follows is an example of improving testability using some of the principles above along with some of [Michael Feather's](http://www.objectmentor.com/omTeam/feathers_m.html) [Legacy Refactorings](http://www.informit.com/store/product.aspx?isbn=0131177052).
 
-## Background
+### Background
 Imagine you want to capture supplemental information about some product in your system. This additional information can either be text, html or a url.  To capture it, you've created a UI control that captures the information and then validates it.
 
-## The Program
+### The Program
 Here is the code for a program. Now this is certainly not complete and it certainly is not as complex as the code you have to deal with. Even so, it should be enough to demonstrate a few fundamentals.
 
-### Credit Where It's Due
+#### Credit Where It's Due
 The idea for this example is from Joseph Buschmann. The Java code I've written borrows heavily from the Java tutorial. Specifically: [How to Use Radio Buttons](http://java.sun.com/docs/books/tutorial/uiswing/components/button.html#radiobutton).
 
-### The Code
+#### The Code
 Here is such a program (greatly simplified when transitioned from C# to Java):
 
 //**AdditionalDetailsPanel.java**//
@@ -195,7 +195,7 @@ You might notice that there currently is no test code for this example. That is 
 
 If this were "done" and not changing, the there's no reason to do anything with this code. So let's discuss a scenario where we need to make changes to justify spending time refactoring this code and introducing automated tests.
 
-## Some New Requirements
+### Some New Requirements
 Imagine you've been given a new set of rules for validation such as:
 * Validate that HTML is well-formed but only includes certain acceptable tags (e.g. no divs or spans)
 * Validate that any css class includes some mandatory prefix
@@ -212,7 +212,7 @@ There are several reasons to add tests to code that currently does not have test
 * The code has been producing a number of defects
 
 Why take this approach? Imagine you have 1 million lines of untested code.  If you randomly start testing code, chances are you will test something that won't change. While I'd prefer to have tests over all of that code, the next best thing is cover what is changing.  
-## How to Test
+### How to Test
 As written, this test requires a graphic context. If you were to create tests for this code as written, you would have a difficult time running those tests on a headless box. Even so, that's not a very realistic problem, so let's write a few simple tests for the URL validation path.
 
 Here are two simple tests to verify basic Url validation that keep the code structure essentially unchanged:
@@ -262,7 +262,7 @@ There's another issue to consider. Assume, for the moment, that the new requirem
 
 So while this approach works (and in my environment these tests pass), let's consider a second approach.
 
-## Applying WELC Refactorings
+### Applying WELC Refactorings
 In [Working Effectively with Legacy Code,](http://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052)Michael Feathers describes several refactorings you can apply that have the following characteristics:
 * They are (as all refactorings) behavior preserving
 * They are (typically) smaller than many of the Fowler refactorings
@@ -279,7 +279,7 @@ We are not going to do this exactly. In fact, we're going to introduce a strateg
 
 As I continue working thorough this, I'm keeping all the code you've seen so far compiling and the tests passing.
 
-### Break Out Method Object
+#### Break Out Method Object
 To apply this refactoring, we are going to make the following method work as a standalone class:
 {% highlight java %}
   private boolean validateUrl() {
@@ -369,7 +369,7 @@ public class UrlValidatorVersion1Test {
 {% endhighlight %}
 There's less setup. The code is directly hitting its target. This exposes the error message, giving us more we can easily test. Even so, we can do much better.
 
-### Keeping UI Code in One Place
+#### Keeping UI Code in One Place
 Go back to the original validateUrl method:
 {% highlight java %}
   private boolean validateUrl() {
@@ -587,7 +587,7 @@ For those of you worried about all the new'ing up of objects, here are a few com
 * This is easily fixed by using fields.
 * If you are running Java 1.6, these will be placed on the stack anyway (yes really).
 
-## Are We Done?
+### Are We Done?
 //**Yes!**// What?
 
 Sure there's more you could do. Not doing more might actually require more discipline. For example, we could:
@@ -615,7 +615,7 @@ Making such a change would result in a handleSubmit method that looked like this
 The rest of the code is also in need of some repair. However, the new requirements were about// **additional validation**//. Stopping with just extracting the three classes is enough to support independent development of the validation and easy verification (writing unit tests), so there's little need to go much further.
 
 One more change I would recommend is making the nested StubTextSource class a public class since it will come in handy writing tests for all of the validators.
-## Conclusion
+### Conclusion
 This code was initially testable but the tests ran slowly, had a great deal of internal knowledge (white-box) and where actually indirect (calling an actionPerformed method to test validation). Extracting individual validation classes was a great idea, but there's more than one way to do that. The various ways don't really involve a lot more time or effort but there are significant differences. Changing the code such that you can extract the class and have it//** avoid**// depending on enabling technology (swing widgets) is a better approach:
 * It makes the extracted class smaller and more light weight.
 * It allows that class to be used in more places.
@@ -623,12 +623,12 @@ This code was initially testable but the tests ran slowly, had a great deal of i
 
 While this example is trivial, the fundamental things you will want to do apply to your UI code. Actually, this approach is a general one that applies across technologies. It is worth practicing so making this kind of change is stored in muscle memory. In fact, you might consider this for a coding kata.
 
-## Final Questions
-### What about the GUI code?
+### Final Questions
+#### What about the GUI code?
 Imagine if you had the business logic tested. What's left? Flow, enabling/disabling fields & buttons, UI look and feel, etc. Some of this you can automate with any number of testing tools. However, before you do that, you might want to make the system configurable such that you can have a body-less head. That is, a UI with a test double back end.
 
 Why? So that the UI tests you run verify flow, are reliable, run quickly, etc.
 
-### Do you never fully test the system
+#### Do you never fully test the system
 You// **do**// want to also write some tests that verify the fully connected system works. These tests are closer to smoke tests than full integration tests. They will have fewer checks because they are verifying that the system can be brought up in a fully-configured manner.
 

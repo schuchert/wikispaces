@@ -1,7 +1,7 @@
 ---
 title: NotesOnCppULite
 ---
-# Using CppULite
+## Using CppULite
 
 There are three parts to using CppULite
 * Creating a main
@@ -9,7 +9,7 @@ There are three parts to using CppULite
 * Including headers
 * Linking in library
 
-## Creating a main
+### Creating a main
 This is a one-time thing in any project. This example runs a text runner and reports errors:
 {% highlight cpp %}
 #include <CppUTest/CommandLineTestRunner.h>
@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
 }
 {% endhighlight %}
 
-## Creating a test
+### Creating a test
 Here's part of a file to test code to validate logging in using the state pattern:
 {% highlight cpp %}
 #include <CppUTest/TestHarness.h>
@@ -59,7 +59,7 @@ TEST(StateBasedLoginValidator, firstLoginSuccessful) {
    CHECK(account->loggedIn);
 }
 {% endhighlight %}
-### TEST_GROUP
+#### TEST_GROUP
 A test group is how you create a [test fixture](http://xunitpatterns.com/test%20fixture%20-%20xUnit.html). This actually creates a class with **CppUTestGroup** as a prefix. So this creates the following definitions:
 {% highlight cpp %}
 int externTestGroupStateBasedLoginValidator = 0;
@@ -75,7 +75,7 @@ If you happen to use any classes that use things from std:: such as std::string 
 
 **Important**, the ";" is necessary after the closing } on the definition of a test group.
 
-### TEST
+#### TEST
 A test is an individual, focused test. You first mention its test group and then its name. This actually creates a class prefixed with "testGroup" and suffixed with Test. So in this example, we end up with the following definition:
 {% highlight cpp %}
 class testGroupfirstLoginSuccessfulTest : public CppUTestGroupfirstLoginSuccessful { /* ... */ };

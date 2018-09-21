@@ -3,7 +3,7 @@ title: PowerShell5.TokenizeExpression
 ---
 [<--Back](PowerShell5)
 
-# Overview
+## Overview
 The next problem is an implementation of the [The Shunting Yard Algorithm Kata](Katas.ShuntingYardAlgorithm). To implement this algorithm, we need to be able to break a complex expression into its logical parts. For example:
 ^
 | Expression |
@@ -18,7 +18,7 @@ Here are some notes and observations from these examples:
 
 Initially, we only want to break expressions into their logical parts. Notice, we should simply make sure everything uses whitespace, but since we're practicing TDD, we can use this as a good place to start.
 
-# Getting Started
+## Getting Started
 Create a directory into which we will store all of the test code and the production. Given that this example leads into the [The Shunting Yard Algorithm Kata](Katas.ShuntingYardAlgorithm), I'll create C:\Users\Brett\shunting_yard_algorithm.
 
 * [First Failing Test](PowerShell5-Tokenize_Expression-First_Failing_Test)

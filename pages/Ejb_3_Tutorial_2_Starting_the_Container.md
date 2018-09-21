@@ -2,12 +2,12 @@
 title: Ejb_3_Tutorial_2_Starting_the_Container
 ---
 As with our first tutorial, we need to be able to start the container. Here's the JBossUtil class again. Below is the file again. However, to get this file into your new tutorial:
-# Expand your first project (**Ejb3Tutorial1**)
-# Expand the **src** directory, select the **util** package
-# Copy it (**ctrl-c** or right-click and select **copy**)
-# Expand your second project (**Ejb3Tutorial2**)
-# Select the **src** directory
-# Paste it (**ctrl-v** or right-click and select **paste**)
+* Expand your first project (**Ejb3Tutorial1**)
+* Expand the **src** directory, select the **util** package
+* Copy it (**ctrl-c** or right-click and select **copy**)
+* Expand your second project (**Ejb3Tutorial2**)
+* Select the **src** directory
+* Paste it (**ctrl-v** or right-click and select **paste**)
 
 ### JBossUtil.java
 {% highlight java %}

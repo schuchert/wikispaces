@@ -1,7 +1,7 @@
 ---
 title: tdd_intro.CreatingAnEmptyProject
 ---
-# Create a new project
+## Create a new project
 * Use the default maven archetype:
 {% highlight terminal %}
     mvn archetype:generate <<enter>>
@@ -41,7 +41,7 @@ Define value for property 'package':  com.shoe: : com.shoe.paginator <<enter>>
     package: com.shoe.paginator
      Y: : <<enter>>
 {% endhighlight %}
-# Check the project
+## Check the project
 * Change to directory created (e.g., cd paginator)
 {% highlight terminal %}
     cd paginator <<enter>> 
@@ -68,7 +68,7 @@ Define value for property 'package':  com.shoe: : com.shoe.paginator <<enter>>
     [INFO] Final Memory: 14M/166M
     [INFO] ------------------------------------------------------------------------
 {% endhighlight %}
-# Modernize the project
+## Modernize the project
 * Edit pom.xml
 * Change JUnit version to 4.12
 * Modify the target Java version (paste above <dependencies>:
@@ -95,12 +95,12 @@ Define value for property 'package':  com.shoe: : com.shoe.paginator <<enter>>
 {% highlight terminal %}
     find . -name \*.java | xargs rm
 {% endhighlight %}
-# Optionally create a git repo out of this directory
+## Optionally create a git repo out of this directory
 {% highlight terminal %}
     git init
     echo "target" > .gitignore
     git add pom.xml .gitignore
     git commit -m "Initial commit"
 {% endhighlight %}
-# You are ready to open pom.xml in an ide
+## You are ready to open pom.xml in an ide
 [Creating Empty Project](https://vimeo.com/13240481)

@@ -17,7 +17,7 @@ For this tutorial, we continue using JUnit 4 by writing a unit test for each of 
 |JPQL|A query language where you express what you want in terms of Objects and relationships between objects instead of directly in SQL using tables and columns.|
  
 The following queries will get you started experimenting with the JPA query interface. Your task is to do the following for each query:
-# Review the query
+### Review the query
 * **Predict** the results before you do anything
 * Compose a unit test to exercise the query (make sure your test produces no output)
 * Execute the test to see if your prediction was correct

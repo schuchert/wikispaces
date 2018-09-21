@@ -3,32 +3,32 @@ title: EJB3_Tutorial_2_Session_Bean_and_JPA
 ---
 {% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
-# Session Bean and JPA
+## Session Bean and JPA
 
 This tutorial revisits the entities from [JPA_Tutorial_1_Getting_Started](JPA_Tutorial_1_Getting_Started) and introduces a DAO, which gets its entity manager auto-wired.
 ----
-## Setting Up Your Project
+### Setting Up Your Project
 {% include include_md_file filename="Ejb_3_Tutorial_2_Setting_Up_Your_Project.md" %}
 ----
-## The Entity Model
+### The Entity Model
 {% include include_md_file filename="Ejb_3_Tutorial_2_The_Entity_Model.md" %}
 ----
-## The Dao and its Interface
+### The Dao and its Interface
 {% include include_md_file filename="Ejb_3_Tutorial_2_The_Dao_and_its_Interface.md" %}
 ----
-## Starting JBoss EJB 3 Embeddable Container
+### Starting JBoss EJB 3 Embeddable Container
 {% include include_md_file filename="Ejb_3_Tutorial_2_Starting_the_Container.md" %}
 ----
-## Smoke Test Suite
+### Smoke Test Suite
 {% include include_md_file filename="Ejb_3_Tutorial_2_Smoke_Test_Suite.md" %}
 ----
-## Optional: Data Source Configuration
+### Optional: Data Source Configuration
 {% include include_md_file filename="Ejb_3_Tutorial_2_Optional_Data_Source_Configuration.md" %}
 ----
-## Optional: QuantumDb Setup and Configuration
+### Optional: QuantumDb Setup and Configuration
 {% include include_md_file filename="QuantumDB_Configuration.md" %}
 ----
-## Exercises
+### Exercises
 {% include include_md_file filename="Ejb_3_Tutorial_2_Exercises.md" %}
 
 [<--Back](EJB_3_and_Java_Persistence_API)

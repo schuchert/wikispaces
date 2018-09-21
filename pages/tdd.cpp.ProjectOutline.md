@@ -1,16 +1,16 @@
 ---
 title: tdd.cpp.ProjectOutline
 ---
-# C++ Project Outline
+## C++ Project Outline
 Developer Studio 2008 Project Directories: [[file:cpptdd.zip]]
 
-## Projects
+### Projects
 * Rpn Calculator
 * Legacy Refactoring
 * Replacing Switch with Polymorphism
 * Open Project
 
-## Rpn Calculator
+### Rpn Calculator
 This project introduces the mechanics of TDD in C++. Along the way, you will:
 * Create several unit tests
 * Refactor your code
@@ -20,35 +20,35 @@ This project introduces the mechanics of TDD in C++. Along the way, you will:
   * Abstract factory pattern
   * Use test doubles to test pure-virtual class
 
-### Behaviors
-### Round 1
+#### Behaviors
+#### Round 1
 * XRegister should be 0 after creation
 
-### Round 2
+#### Round 2
 * Digits pressed should be in X Register
 * XRegister should not change after pressing enter
 * XRegister should be copied on stack
 * XRegister should be reset on first digit after enter
 * XRegsiter should not be reset on second digit after enter
 
-### Round 3
+#### Round 3
 * Adding 2 numbers correctly
 * Adding 0 numbers OK
 
-### Refactor Stack
-### Minus, Factorial
-### Change calculator API
-### Move to Strategy Pattern
-### Create Template Method using Test Doubles
+#### Refactor Stack
+#### Minus, Factorial
+#### Change calculator API
+#### Move to Strategy Pattern
+#### Create Template Method using Test Doubles
 
-## Legacy Refactoring/Characterization Testing
+### Legacy Refactoring/Characterization Testing
 Given a wad of code, write characterization tests for it. Once you've characterized it, use the tests to safely refactor the code.
 
-## Replacing Switch with Polymorphism
+### Replacing Switch with Polymorphism
 Take the previous example through one more refactoring.
 
-## Logging In Example
+### Logging In Example
 Work on a project on your own with guidance.
 
-## Monopoly (if time permits)
+### Monopoly (if time permits)
  

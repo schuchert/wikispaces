@@ -3,12 +3,12 @@ title: AspectJ_Example_2
 ---
 [<--Back](AspectJ_Self_Study) [Next-->](AspectJEX2ExpectedVersusActualOutput)
 
-# Predict the Output
+## Predict the Output
 Source files are here: [[file:AspectJExample2src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 Have a look at the following Main.main() method and the associated Address class.
 ----
-## Main class
+### Main class
 {% highlight java %}
 package ex2;
 
@@ -25,7 +25,7 @@ public class Main {
 }
 {% endhighlight %}
 ----
-## Address class
+### Address class
 {% highlight java %}
 package ex2;
 
@@ -81,7 +81,7 @@ public class Address implements Serializable {
 }
 {% endhighlight %}
 ----
-## Assignment: Predict the Output
+### Assignment: Predict the Output
 
 Given these 2 classes, predict the output. Please do so before continuing.
 

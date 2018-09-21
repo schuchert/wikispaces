@@ -4,13 +4,13 @@ title: EJB3_Tutorial_4_Extended_Context
 {% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
 
-# Ejb3 Tutorial 4 - Extended Context
+## Ejb3 Tutorial 4 - Extended Context
 
 A Stateful session bean can optionally use an extended context. An extended context maintains its managed objects between transactions or even in situation where a method is not using transactions. All objects accessed or created hang around until the bean goes away. This normally happens when a client executes a method that has been denoted as a Remove method (annotated with @Remove or declared as such in XML).
 
 This short tutorial demonstrates some of the differences between these two types of container-managed contexts.
 
-## Project Setup
+### Project Setup
 
 The instructions for setting up your project mirror those from the first tutorial: [EJB3_Tutorial_1_Create_and_Configure](EJB3_Tutorial_1_Create_and_Configure).
 
@@ -25,11 +25,11 @@ Here are a few things to note (source for all of these items appears at the end 
 <persistence-unit name="tolltag">
 {% endhighlight %}
 
-## The Entity Model
+### The Entity Model
 
 For this example, we have a simple entity model. We have an Account that has a bidirectional one-to-many relationship with TollTag objects and a bidirectional one-to-many relationship with Vehicle objects. Normally, one-to-many relationships are lazily fetched. For this example, the relationship with TollTag objects is left as lazily fetched while the relationship with Vehicle objects is eagerly fetched. 
 
-### Account.java
+#### Account.java
 
 {% highlight java %}
 package entity;
@@ -121,7 +121,7 @@ public class Account {
 }
 {% endhighlight %}
 
-### TollTag.java
+#### TollTag.java
 
 {% highlight java %}
 package entity;
@@ -195,7 +195,7 @@ public class TollTag {
 }
 {% endhighlight %}
 
-### Vehicle.java
+#### Vehicle.java
 
 {% highlight java %}
 package entity;
@@ -302,9 +302,9 @@ public class Vehicle {
 }
 {% endhighlight %}
 
-## The Session Beans
+### The Session Beans
 
-### AccountInventory.java
+#### AccountInventory.java
 
 {% highlight java %}
 package session;
@@ -357,7 +357,7 @@ public interface AccountInventory {
 }
 {% endhighlight %}
 
-### AccountInventoryBean.java
+#### AccountInventoryBean.java
 
 {% highlight java %}
 package session;
@@ -418,7 +418,7 @@ public class AccountInventoryBean implements AccountInventory {
 }
 {% endhighlight %}
 
-### AccountInventoryExtendedBean.java
+#### AccountInventoryExtendedBean.java
 
 {% highlight java %}
 package session;
@@ -481,7 +481,7 @@ public class AccountInventoryExtendedBean implements AccountInventory {
 }
 {% endhighlight %}
 
-## The Tests
+### The Tests
 
 This class performs the same two test algorithms two times each for a total of 4 test methods:
 
@@ -491,7 +491,7 @@ This class performs the same two test algorithms two times each for a total of 4
 |createExampleUsingTollTagsTransactionScoped|Transaction|TollTags|Fails|
 |createExampleUsingTollTagsExtendedScoped|Extended|TollTags|Success|
 
-### AccountInventoryBeanTest.java
+#### AccountInventoryBeanTest.java
 
 {% highlight java %}
 package session;
@@ -603,9 +603,9 @@ public class AccountInventoryBeanTest {
 }
 {% endhighlight %}
 
-## Exercises
+### Exercises
 
-### Test Passing
+#### Test Passing
 
 There are 3 ways to make the one failing test pass:
 * Touch the collection before returning from the method
@@ -614,16 +614,16 @@ There are 3 ways to make the one failing test pass:
 
 Experiment with each of these options.
 
-### Shared Code
+#### Shared Code
 There is a lot of shared code between the two AccountInventory bean implementations. Describe at least two ways you could reduce the redundancy.
 
-### Interfaces
+#### Interfaces
 The interface seems to be a bit messed up with concepts that relate to both stateless and stateful beans. Describe how you might change the interface to make this better. Consider using two interfaces instead of one.
 
 {: #OtherFiles}
-## Other Files
+### Other Files
 
-### persistence.xml
+#### persistence.xml
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>

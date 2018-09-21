@@ -1,26 +1,26 @@
 ---
 title: Tutorial_2_The_First_Example
 ---
-### Test Setup
+## Test Setup
 We have a bit of setup/initialization code we need to do before we can get started. We have seen all of this code before in Tutorial 1. The difference here is that we are going to work though some refactorings to get to where we were in tutorial 1. Here are the various parts:
-### Configure the Logger
+## Configure the Logger
 {% highlight java %}
     BasicConfigurator.configure();
     Logger.getLogger("org").setLevel(Level.ERROR);
 {% endhighlight %}
 
-### Create the Entity Manager Factory
+## Create the Entity Manager Factory
 {% highlight java %}
     final EntityManagerFactory emf = Persistence
         .createEntityManagerFactory("examplePersistenceUnit");
 {% endhighlight %}
 
-### Create the Entity Manager
+## Create the Entity Manager
 {% highlight java %}
     final EntityManager em = emf.createEntityManager();
 {% endhighlight %}
 
-### Create Entities
+## Create Entities
 {% highlight java %}
     final Address a1 = new Address("A Rd.", "", "Dallas", "TX", "75001");
     final Person p1 = new Person("Brett", 'L', "Schuchert", a1);
@@ -30,7 +30,7 @@ We have a bit of setup/initialization code we need to do before we can get start
         'K', "LastName", a2);
 {% endhighlight %}
 
-### Use the Entity Manager
+## Use the Entity Manager
 {% highlight java %}
     em.getTransaction().begin();
     em.persist(p1);
@@ -38,14 +38,14 @@ We have a bit of setup/initialization code we need to do before we can get start
     em.flush();
 {% endhighlight %}
 
-### Perform a Query and Verify it Works
+## Perform a Query and Verify it Works
 {% highlight java %}
     final int numberFound = em.createQuery("Select p from Person p")
         .getResultList().size();
     assertEquals(2, numberFound);
 {% endhighlight %}
 
-### The Whole Thing
+## The Whole Thing
 Here's all of this put together. Note that we're going to refactor this heavily coming up.
 {% highlight java %}
 package entity;
@@ -91,7 +91,7 @@ public class JpaApiTests {
 }
 {% endhighlight %}
 
-### Get it Running
+## Get it Running
 After creating your Test Class, verify that it runs and that this test passes:
-# Right-click anywhere in your class' editor pane.
-# Select **Run As:JUnit Test**
+* Right-click anywhere in your class' editor pane.
+* Select **Run As:JUnit Test**

@@ -2,7 +2,7 @@
 title: cpptraining.SettingUpInitialProject
 ---
 {: #SettingupInitialProject}
-# Setting up Initial Project
+## Setting up Initial Project
 * Start Eclipse and create a new workspace. I'll use// **c:\workspaces\firstexample**// for my workspace.
 * Close the welcome screen.
 * Create a new C++ project (File:New:C++ Project). 

@@ -3,7 +3,7 @@ title: AspectJ_CFlowExplained
 ---
 [<--Back](AspectJ_CFlowSoWhatIsHappening) [Next-->](AspectJ_CFlowApplyYourself)
 
-# CFlow
+## CFlow
 CFlow, or control flow, allows the selection of pointcuts based on the program flow at runtime. Most of the pointcuts you've reviewed so far have probably been selectable at weave time. For example, call matches pointcuts that call a particular method; execution matches the execution of code whose signature matches. AspectJ determines both of these examples without having to execute the program.
 
 What about wanting to capture a pointcut so long as it is not called while in another method? In our example, we want to disable change tracking if changes occur either directly in a constructor or are called as a result of a (below in the stack trace) of a constructor. For example:
@@ -46,7 +46,7 @@ What follows is a breakdown of all the code for this example.
 
 ----
 {: #Address}
-## Address.java
+### Address.java
 {% highlight java %}
 01: package cf;
 02: 
@@ -105,14 +105,14 @@ What follows is a breakdown of all the code for this example.
 55:     }
 56: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 ^
 |---|---|
 |Line|Description|
 |14|This line causes a field to be set. If we did not do this, then we would not see any changes to the address object at construction time and this cflow example would have no motivation.|
 
 {: #Dao}
-## Dao.java
+### Dao.java
 {% highlight java %}
 01: package cf;
 02: 
@@ -124,12 +124,12 @@ What follows is a breakdown of all the code for this example.
 08:     }
 09: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 This class is unchanged from [Example 4](AspectJEX4Explained#Dao).
 
 ----
 {: #FieldSetAspect}
-## FieldSetAspect.java
+### FieldSetAspect.java
 {% highlight java %}
 01: package cf;
 02: 
@@ -188,7 +188,7 @@ This class is unchanged from [Example 4](AspectJEX4Explained#Dao).
 55: }
 {% endhighlight %}
 
-### Interesting Lines
+#### Interesting Lines
 ^
 |-|-|
 |Line|Description|
@@ -196,7 +196,7 @@ This class is unchanged from [Example 4](AspectJEX4Explained#Dao).
 |25|This is where we actually use the constructors pointcut. Notice we negate it using !. This means that the following Around advice, called trackFieldAssignment, will not execute if we happen to hit any of the constructor pointcuts. Since the around advice does not apply to constructors, any changes that happen there or below will NOT cause change tracking to occur.|
 
 {: #InnerTypeAspect}
-## InnerTypeAspect.java
+### InnerTypeAspect.java
 {% highlight java %}
 01: package cf;
 02: 
@@ -209,12 +209,12 @@ This class is unchanged from [Example 4](AspectJEX4Explained#Dao).
 09:     ITrackedObject trackedObject;
 10: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 None. This is unchanged from [Example 4](AspectJEX4Explained#InnerTypeAspect).
 
 ----
 {: #ITrackedObject}
-## ITrackedObject.java
+### ITrackedObject.java
 {% highlight java %}
 01: package cf;
 02: 
@@ -224,12 +224,12 @@ None. This is unchanged from [Example 4](AspectJEX4Explained#InnerTypeAspect).
 06:     void setChanged(boolean changed);
 07: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 None. This is unchanged from [Example 4](AspectJEX4Explained#ItrackedObject).
 
 ----
 {: #Main}
-## Main.java
+### Main.java
 {% highlight java %}
 01: package cf;
 02: 
@@ -246,14 +246,14 @@ None. This is unchanged from [Example 4](AspectJEX4Explained#ItrackedObject).
 13: }
 {% endhighlight %}
 
-### Interesting Lines
+#### Interesting Lines
 ^
 |-|-|
 |Line|Description|
 |5|We construct an address. In [[AspectJ_Example_4] this did not cause a change because construction did not cause anything to be initialized. In [ this exercise](AspectJEX4ApplyYourself#ExperimentConstructorUpdatesAddress) we found out that if it had, it would cause Address to be changed. We managed to change that by using cflow.|
 
 {: #SaveMethodAspect}
-## SaveMethodAspect.java
+### SaveMethodAspect.java
 {% highlight java %}
 01: package cf;
 02: 
@@ -289,12 +289,12 @@ None. This is unchanged from [Example 4](AspectJEX4Explained#ItrackedObject).
 32: }
 {% endhighlight %}
 
-### Interesting Lines
+#### Interesting Lines
 None. This class is unchanged from [Example 4](AspectJEX4Explained#SaveMethodAspect).
 
 ----
 {: #TrackedObjectMixin}
-## TrackedObjectMixin.java
+### TrackedObjectMixin.java
 {% highlight java %}
 01: package cf;
 02: 
@@ -314,12 +314,12 @@ None. This class is unchanged from [Example 4](AspectJEX4Explained#SaveMethodAsp
 16: }
 {% endhighlight %}
 
-### Interesting Lines
+#### Interesting Lines
 None. This class is unchanged from [[AspectJEX4Explained#TrackedObjectMixin|Example 4].
 
 ----
 {: #aop}
-## aop.xml
+### aop.xml
 {% highlight terminal %}
 01: <aspectj>
 02: 	<aspects>
@@ -333,7 +333,7 @@ None. This class is unchanged from [[AspectJEX4Explained#TrackedObjectMixin|Exam
 10: </aspectj>
 {% endhighlight %}
 
-### Interesting Lines
+#### Interesting Lines
 None. This class is unchanged from [Example 4](AspectJEX4Explained#aop).
 
 [<--Back](AspectJ_CFlowSoWhatIsHappening) [Next-->](AspectJ_CFlowApplyYourself)

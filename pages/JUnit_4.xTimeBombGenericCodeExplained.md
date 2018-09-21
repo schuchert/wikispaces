@@ -3,7 +3,7 @@ title: JUnit_4.xTimeBombGenericCodeExplained
 ---
 [<--Back](JUnit_4.x)
 
-# Time Bomb Generic Code Explained
+## Time Bomb Generic Code Explained
 Here's a use of TimeBomb (for context) taken from [Example 2](JUnit_4.x#example2):
 {% highlight terminal %}
 92:     @Test(expected = ObjectInUse.class)
@@ -40,7 +40,7 @@ I made throwUntil a generic method. Doing so allowed Java to determine at compil
 
 This is what I ended up using:
 {: #TimeBombCode}
-## TimeBomb.java
+### TimeBomb.java
 {% highlight java %}
 01: package vehicle.util;
 02:

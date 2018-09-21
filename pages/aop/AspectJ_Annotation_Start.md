@@ -15,6 +15,6 @@ The outline can be summarized by: Problem --> Alternatives --> Short explanation
 
 This version beings by posing a problem. In this case the problem posed is "How can you skip change tracking on individual fields." Next, it asks you to consider several possible alternative solutions. Next, it shows a short version of how to solve the problem one way. It then presents a more detailed, line-by-line solution like the one in version 1. It concludes with a series of exercises.
 
-# Feedback Appreciated
+## Feedback Appreciated
 If you like one over the other, or if you can recommend an alternative, please let me know at schuchert@yahoo.com.
 

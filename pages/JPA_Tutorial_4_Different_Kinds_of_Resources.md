@@ -603,8 +603,8 @@ The changes to Patron are a little less extreme. Other than some comments referr
 {% endhighlight %}
 
 ### The exceptions
-# Rename all of the exceptions with "Book" in their name. Replace "Book" with "Resource"
-# Rename all of the variables names bookId --> resourceId
+* Rename all of the exceptions with "Book" in their name. Replace "Book" with "Resource"
+* Rename all of the variables names bookId --> resourceId
 
 How can you easliy go about doing this? Use the refactor factor in Eclipse. Select an exception class, right-click and select Refactor:Rename and enter a new name. You can also do the same thing by selecting the attribute name, right-click, refactor:rename and enter the new name. Make sure to select the bottom two selections regarding renaming the getter and setter.
 

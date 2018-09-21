@@ -2,13 +2,13 @@
 title: cpptraining.GettingCppUTestRunningUsingCdt.Juno
 ---
 [<--back](CppTraining)
-# Overview
+## Overview
 These instructions assume you have already worked through:[this](cpptraining.GettingStartedWithEclipseCdt.Juno) and then [that](cpptraining.GettingCppUTestCompiledUsingCDTToolSet.Juno). 
 
 With a working Eclipse Juno + CDT and MinGW and CppUTest built, you are ready to create your first project.
 
-## Steps
-### Basic Project Creation
+### Steps
+#### Basic Project Creation
 * Start eclipse and select a project directory. For this example, I'll use// **c:\learncpp\workspaces\first_example**//
 * Close the Welcome window
 * In the **Project Explorer** (left-most column), right-click and select **New::C++ Project**
@@ -16,13 +16,13 @@ With a working Eclipse Juno + CDT and MinGW and CppUTest built, you are ready to
 * Under **Project Type**, expand **Executable** and select **Empty Project**
 
 What you select next depends on your environment
-#### Windows
+##### Windows
 * Select **MingGW GCC**
-#### OS X and *nix
+##### OS X and *nix
 * Selecte **Cross GCC** (guess)
 
 * Click **FInish**
-### Creating First Main
+#### Creating First Main
 * Select the project **SimpleExample**, right-click and select **New::File**
 * Enter **RunAllTests.cpp** for the name
 * Enter the following code:
@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
 }
 {% endhighlight %}
 * This does not compile, time for projet settings
-### Project Settings
+#### Project Settings
 This includes both project settings and recommended workspace settings
 * Right-click on the project **SimpleExample** and select **Properties**
 * Open up **C/C++ Build** then **Settings**
@@ -57,7 +57,7 @@ If having the editor complete things like "" and {} bother you:
 
 * Save all of your changes by clicking on **OK**
 
-### Build and Run
+#### Build and Run
 Hit ctrl-F11 to build and run your tests:
 {% highlight terminal %}
 OK (0 tests, 0 ran, 0 checks, 0 ignored, 0 filtered out, 0 ms)

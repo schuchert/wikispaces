@@ -2,7 +2,7 @@
 title: PowerShell5.YakShaving
 ---
 [<--Back](PowerShell5)
-# Overview
+## Overview
 All of these tutorials are written using Windows 10 Professional, PowerShell 5.1, [Pester](https://github.com/pester/Pester), and [Visual Studio Code](https://code.visualstudio.com/download). Here are the specifics.
 * Windows 10 Professional, Version 1703
 * PowerShell 5.1.15063.608
@@ -11,14 +11,14 @@ All of these tutorials are written using Windows 10 Professional, PowerShell 5.1
 
 While detailed setup instructions might come later, here are a few notes.
 
-## PowerShell
+### PowerShell
 * Install Pester (need to run as Admin)
 * Install [Solarized](https://github.com/neilpa/cmd-colors-solarized) color scheme
 
-## Pester
+### Pester
 * Seems the default install-module needs admin access. As of this writing, I'm a novice. I'll eventually not install these in "C:\Program Files\WindowsPowerShell\Modules"
 
-## Visual Studio Code
+### Visual Studio Code
 Modules I've installed:
 * Powershell 1.4.3
 * Vim 0.10.1

@@ -1,7 +1,7 @@
 ---
 title: Template_Method
 ---
-# Template Method Pattern
+## Template Method Pattern
 This is an example of the [GoF design pattern](http://en.wikipedia.org/wiki/Design_Patterns) [Template Method](http://en.wikipedia.org/wiki/Template_method_pattern). Here's an example taken from [Monopoly](http://en.wikipedia.org/wiki/Monopoly_(game)).
 
 Imagine the game of Monopoly. There are several kinds of (read this as classes of) squares, e.g. Go, Go To Jail, Free Parking, Real Estate. Under Real Estate there are three kinds:
@@ -47,7 +47,7 @@ protected int calculateRent();
 {% endhighlight %}
 
 We then write three derived classes, Railroad, Utility, Property, that each implement calculate rent:
-### Railroad
+#### Railroad
 {% highlight terminal %}
 class Railroad extends RealEstate {
    protected int calculateRent() {
@@ -58,7 +58,7 @@ class Railroad extends RealEstate {
    }
 }
 {% endhighlight %}
-### Utility
+#### Utility
 {% highlight terminal %}
 class Utility extends RealEstate {
    protected int calculateRent() {
@@ -75,7 +75,7 @@ class Utility extends RealEstate {
    }
 }
 {% endhighlight %}
-### Property
+#### Property
 {% highlight terminal %}
 class Property extends RealEstate {
    protected int calculateRent() {

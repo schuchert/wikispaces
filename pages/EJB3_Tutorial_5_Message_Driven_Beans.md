@@ -4,31 +4,31 @@ title: EJB3_Tutorial_5_Message_Driven_Beans
 {% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
 
-# Ejb3 Tutorial 5 - Message Drive Beans
+## Ejb3 Tutorial 5 - Message Drive Beans
 This tutorial is a derivative of one of the [JBoss tutorials](http://docs.jboss.org/ejb3/embedded/embedded-tutorial/mdb-standalone/) written using the embeddable container. In this tutorial we take the domain from [EJB3_Tutorial_4_Extended_Context](EJB3_Tutorial_4_Extended_Context) and add a new idea.
 ----
-## The Requirements
+### The Requirements
 Imagine a system where there are several toll tag reporting stations, each of which need to be able to quickly record vehicles passing through a toll both quickly. They do not have time to wait for a message to some back-end system to complete before the next car passes through. This is a typical example where we want to use asynchronous messaging. 
 
 A client traditionally waits for a message/function to complete before it continues doing what it was doing. This is called synchronous messaging. In our case, we don't want to force the client to wait for the back-end processing to be complete before it can continue doing what it was doing. Instead, the client will create a message and send it to some back-end system. This allows the client to "fire and forget", sort of like sending an email message.
 ----
-## JEE's Answer
+### JEE's Answer
 A solution can use Message Driven Beans (MBD) to address this kind of functionality. Originally MDB's were written on top of JMS but with the 2.1 and 3.0 specifications, Message Driven Beans can sit on top of many different kinds of resources. For our purposes, we'll simply stick to JMS.
 
 A Message Driven Bean is a stateless enterprise bean. A container typically manages a pool of such objects. As messages arrive, the container will take an MDB from the pool and have it process a message. If the processing succeeds, the message is removed from the queue; otherwise it remains on the queue.
 
 To demonstrate/simulate a client, we'll have a unit test that sends a message via JMS to a client.
 ----
-## Project Setup
+### Project Setup
 The instructions for setting up your project mirror those from the first tutorial: [EJB3_Tutorial_1_Create_and_Configure](EJB3_Tutorial_1_Create_and_Configure).
 
 For the remainder of this tutorial, when you see **<project>**, replace it with **Ejb3Tutorial5**.
 {% include include_md_file filename="Ejb3EclipseProjectSetupAndConfiguration.md" %}
 ----
-## The Entity Model
+### The Entity Model
 We've taken the domain model from the previous EJB tutorial and added a "charge" object. An account has one to many charges associated with it. Otherwise, this domain model is unchanged from the previous tutorial.
 
-### Charge.java
+#### Charge.java
 {% highlight java %}
 package entity;
 
@@ -120,14 +120,14 @@ To update the Account object, add a new relationship called "charges" as follows
     }
 {% endhighlight %}
 ----
-## The Session Model
+### The Session Model
 We need to update the AccountInventory interface and the beans. Make the following changes:
-# Remove the AccountInventoryExtendedBean
-# Remove the finish() method from both the AccountInventory interface and the AccountInventoryBean class.
-# Add the following methods to AccountInventory:
-# ```void addCharge(final String tollTagNumber, final double amount); ```
-# ```double getTotalChargesOnAccountById(final Long id);```
-# Create these methods in AccountInventoryBean:
+* Remove the AccountInventoryExtendedBean
+* Remove the finish() method from both the AccountInventory interface and the AccountInventoryBean class.
+* Add the following methods to AccountInventory:
+* ```void addCharge(final String tollTagNumber, final double amount); ```
+* ```double getTotalChargesOnAccountById(final Long id);```
+* Create these methods in AccountInventoryBean:
 {% highlight java %}
     public void addCharge(String tollTagNumber, double amount) {
         final Account account = findAccountByTagNumber(tollTagNumber);
@@ -151,9 +151,9 @@ We need to update the AccountInventory interface and the beans. Make the followi
     }
 {% endhighlight %}
 ----
-## Changes to util
-# Remove the DateTimeUtil class.
-# Update JBossUtil.startDeployer():
+### Changes to util
+* Remove the DateTimeUtil class.
+* Update JBossUtil.startDeployer():
 {% highlight java %}
     public static void startDeployer() {
         if (!initialized) {
@@ -171,7 +171,7 @@ We need to update the AccountInventory interface and the beans. Make the followi
     }
 {% endhighlight %}
 ----
-## The Message Driven Bean
+### The Message Driven Bean
 This is the heart of our next tutorial, the Message Driven Bean:
 {% highlight java %}
 package mdb;
@@ -229,7 +229,7 @@ public class TollTagChargesMdb implements MessageListener {
 
 This bean is created by the container as necessary (probably pooled at container start time). When the container sees a message, it starts a transaction (if necessary) and then waits for the onMessage to complete.
 ----
-## The Test
+### The Test
 {% highlight java %}
 package mdb;
 
@@ -323,15 +323,15 @@ public class TollTagChargedMdbTest {
 }
 {% endhighlight %}
 ----
-## Assignments/Questions
+### Assignments/Questions
 What do you think about whether objects are managed or unmanaged while being processed by the MDB?
 Who creates the transactions for these updates?
 The test uses Thread.sleep(1000). Why does it do so? Experiment with that value, is 1000 milliseconds the “right” value? Suggest a better way to test this. (Consider Aspect Oriented Programming or interceptors or even static variables.)
 ----
-## Full Sources
+### Full Sources
 Here is the source for all of the classes not already provided in full above.
 
-### Account.java
+#### Account.java
 {% highlight java %}
 package entity;
 
@@ -433,7 +433,7 @@ public class Account {
 }
 {% endhighlight %}
 
-### Charge.java
+#### Charge.java
 {% highlight java %}
 package entity;
 
@@ -506,7 +506,7 @@ public class Charge {
 }
 {% endhighlight %}
 
-### TollTag.java
+#### TollTag.java
 {% highlight java %}
 package entity;
 
@@ -579,7 +579,7 @@ public class TollTag {
 }
 {% endhighlight %}
 
-### Vehicle.java
+#### Vehicle.java
 {% highlight java %}
 package entity;
 
@@ -685,7 +685,7 @@ public class Vehicle {
 }
 {% endhighlight %}
 
-### AccountInventory.java
+#### AccountInventory.java
 {% highlight java %}
 package session;
 
@@ -713,7 +713,7 @@ public interface AccountInventory {
 }
 {% endhighlight %}
 
-### AccountInventoryBean.java
+#### AccountInventoryBean.java
 {% highlight java %}
 package session;
 
@@ -794,7 +794,7 @@ public class AccountInventoryBean implements AccountInventory {
 }
 {% endhighlight %}
 
-### EqualsUtil.java
+#### EqualsUtil.java
 {% highlight java %}
 package util;
 
@@ -816,7 +816,7 @@ public class EqualsUtil {
 }
 {% endhighlight %}
 
-### JBossUtil.java
+#### JBossUtil.java
 {% highlight java %}
 package util;
 
@@ -980,7 +980,7 @@ public class JBossUtil {
 }
 {% endhighlight %}
 
-### persistence.xml
+#### persistence.xml
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence>
@@ -993,7 +993,7 @@ public class JBossUtil {
 </persistence>
 {% endhighlight %}
 
-### AccountInventoryBeanTest.java
+#### AccountInventoryBeanTest.java
 {% highlight java %}
 package session;
 
@@ -1046,7 +1046,7 @@ public class AccountInventoryBeanTest {
 }
 {% endhighlight %}
 
-### tolltag-jms.xml
+#### tolltag-jms.xml
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -1076,7 +1076,7 @@ public class AccountInventoryBeanTest {
 </deployment>
 {% endhighlight %}
 
-### .classpath
+#### .classpath
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>

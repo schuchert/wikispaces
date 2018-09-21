@@ -3,7 +3,7 @@ title: FitNesse.Tutorials.ConvertingToStoryStyle
 ---
 [<--Back](FitNesse.Tutorials)
 
-# Placeholder
+## Placeholder
 
 Take previous test and rewrite it using:
 * Given

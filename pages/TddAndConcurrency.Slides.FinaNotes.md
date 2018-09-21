@@ -3,9 +3,9 @@ title: TddAndConcurrency.Slides.FinaNotes
 ---
 [<--Back](TddAndConcurrency.Slides.KeepItAwayFromMe) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.RandomStuff)
 
-# Final Notes
+## Final Notes
 
-## Hints
+### Hints
 * Run with more threads than processors
 * Run on the target platform when tuning
 * Run with the –server VM argument

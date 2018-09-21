@@ -3,7 +3,7 @@ title: AspectJ_Annotation_One_Solution
 ---
 [<--Back](AspectJ_Annotation_Possibilities) [Next-->](AspectJ_Annotation_AllCode)
 
-# One Solution
+## One Solution
 This example is about using annotations so we will go with the 6th option. First, here’s what adding a field that we want to ignore might look like:
 
 {% highlight java %}

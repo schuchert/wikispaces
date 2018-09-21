@@ -15,5 +15,5 @@ For more background on where I'm coming from, have a look at [ExperientialLearni
 ## Old Book Work 
 *  {% include links_for filename='CSharpAndOop.md' linktext='C# And OOP' %}
 
-# Old blog
+## Old blog
 * <http://brettschuchert.blogspot.com/>

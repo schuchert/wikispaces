@@ -3,15 +3,15 @@ title: AspectJ_Annotation_Possibilities
 ---
 [<--Back](AspectJ_Annotation_Problem) [Next-->](AspectJ_Annotation_One_Solution)
 
-# Possibilities
+## Possibilities
 What ideas did you come up with? How about some of these ideas:
-# Use a super class to contain fields that don’t affect change tracking. Inherit and only capture the setters on fields in the derived class.
-# Use the modifier transient. Somehow skip fields that are transient.
-# Write anther aspect. When you are about to set a field that you want to ignore, the aspect captures the set, stores the current change state, allows the other aspect to proceed, then restores the changed state after the change.
-# Use some kind of naming convention. Fields that match the naming convention (e.g. prepending an underscore, _ , or something similar) are not considered for change tracking.
-# Manually modify the aspect to skip specific fields in specific classes.
-# Use an annotation to denote fields we want to skip. Then change the aspect to ignore those fields so annotated.
-# ...
+* Use a super class to contain fields that don’t affect change tracking. Inherit and only capture the setters on fields in the derived class.
+* Use the modifier transient. Somehow skip fields that are transient.
+* Write anther aspect. When you are about to set a field that you want to ignore, the aspect captures the set, stores the current change state, allows the other aspect to proceed, then restores the changed state after the change.
+* Use some kind of naming convention. Fields that match the naming convention (e.g. prepending an underscore, _ , or something similar) are not considered for change tracking.
+* Manually modify the aspect to skip specific fields in specific classes.
+* Use an annotation to denote fields we want to skip. Then change the aspect to ignore those fields so annotated.
+* ...
 
 ### Option 1 – Inheritance
 We are using option 1 right now. All of our “changed-tracked” classes have an interface, ITrackedObject and a base class, TrackedObjectMixin, introduced. We have written the pointcut to ignore fields in TrackedObjectMixin to avoid infinite recursion. This is OK for that solution because there’s only one class and one field. As a general technique, however, it seems unnecessarily complex.

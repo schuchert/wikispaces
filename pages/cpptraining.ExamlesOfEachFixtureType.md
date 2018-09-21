@@ -4,7 +4,7 @@ title: cpptraining.ExamlesOfEachFixtureType
 {% include toc %}
 [<<--Back](CppTraining#FitNesse)
 
-# Decision Table
+## Decision Table
 Here is a basic table in FitNesse:
 ### Example Decision Table
 {% highlight terminal %}
@@ -114,7 +114,7 @@ SLIM_END
 
 This particular Fixtures.c file registeres all thee fixtures mentioned on this page.
 
-# Script Table
+## Script Table
 Here is an example of a script table:
 ### Example Script Table
 {% highlight terminal %}
@@ -219,7 +219,7 @@ SLIM_END
 }
 {% endhighlight %}
 
-# Query Table
+## Query Table
 Finally, the dreaded query table. The query table requires a bit more work to produce a result. So this section contains a table, a fixture and a utility class to help create the query results.
 ### Example Query Table
 {% highlight terminal %}
@@ -308,7 +308,7 @@ SLIM_END
 This code makes use of a utility class QueryResultAccumulator. This is [available in source from github](http://github.com/schuchert/CSlimCppExtensions) (warning, as of this writing it's in a raw form):
 ### QueryResultAccumulator.h
 {% highlight cpp %}
-# pragma once
+#pragma once
 #ifndef QUERYRESULTACCUMULATOR_H_
 #defineQUERYRESULTACCUMULATOR_H_
 

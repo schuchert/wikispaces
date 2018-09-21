@@ -3,12 +3,12 @@ title: AspectJ_Example_3
 ---
 [<--Back](AspectJ_Self_Study) [Next-->](AspectJEX3ExpectedVersusActualOutput)
 
-# Predict the Output
+## Predict the Output
 Source files are here: [[file:AspectJExample3src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 Have a look at the following Die class and the associated Main.main() method that serializes the Die.
 ----
-## Die class
+### Die class
 {% highlight java %}
 package ex3;
 
@@ -35,7 +35,7 @@ public class Die {
 }
 {% endhighlight %}
 ----
-## Main class
+### Main class
 {% highlight java %}
 package ex3;
 
@@ -109,7 +109,7 @@ public class Main {
 }
 {% endhighlight %}
 ----
-## Assignment: Predict the Output
+### Assignment: Predict the Output
 Given these 2 classes, predict the output. Please do so before continuing.
 
 [<--Back](AspectJ_Self_Study) [Next-->](AspectJEX3ExpectedVersusActualOutput)

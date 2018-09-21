@@ -3,10 +3,10 @@ title: AspectJ_CFlowApplyYourself
 ---
 [<--Back](AspectJ_CFlowExplained) [Next-->](AspectJ_CFlowAssignmentApplications)
 
-# Apply Yourself
+## Apply Yourself
 
 ----
-## Research/Experiment
+### Research/Experiment
 Do our pointcuts treat the following two code examples the same way?
 {% highlight terminal %}
     public Address() {
@@ -18,10 +18,10 @@ versus.
    private String addressLine1 = "";
 {% endhighlight %}
 ----
-## Custom Business Method
+### Custom Business Method
 Add a method to the Address class. Make sure the method changes the Address in some way. Extend the cflow pointcut definition to include this new method. Verify that calling this method does not cause change tracking to occur.
 ----
-## Advanced: Generic Disabling
+### Advanced: Generic Disabling
 This assignment comes from an actual experience.
 
 Sometimes during normal program flow, I want to avoid change tracking (an actual need derived from requirements). Create a method in some class (say a static method on a utility class). Include that method in the cflow pointcut expression so when it is called, it does not cause change tracking to occur.

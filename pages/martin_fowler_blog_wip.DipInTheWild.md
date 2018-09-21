@@ -11,7 +11,7 @@ This is a first version I'll put together. Then, after I've reintroduced myself 
 I'm applying my extraversion to the creation of this work just because. Since a 50-minute talk and a blog are different media, I expect there'll be some differences. However, I could also offer the real scoop on the heavy use of SWAG + procstination that went into the original presentation for [SDC2013](http://www.scandevconf.se/).
 
 {: #article}
-# Dip in the Wild
+## Dip in the Wild
 My original introduction to the  [Dependency Inversion Principle](http://www.objectmentor.com/resources/articles/dip.pdf) came from Robert (Uncle Bob) Martin back in the last century, around 1994. It, along with most of the [SOLID](http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) principles, is simple to state but deep in its application. What follows are some recent applications I've used on real projects (everything I discuss is in production from June 2012 and as of 2013 is still in production, with one of these going back several more years).
 
 Rather than define the dependency inversion principle, I'll first point to [wikipedia](http://c2.com/cgi/wiki?DependencyInversionPrinciple) and then a more in-depth coverage from [my original source](http://www.objectmentor.com/resources/articles/dip.pdf).

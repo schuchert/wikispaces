@@ -3,9 +3,9 @@ title: TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid
 ---
 [<--Back](TddAndConcurrency.Slides.DoOneThingWellWell) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo)
 
-# When It's Quiet Be Afraid, Very Afraid
+## When It's Quiet Be Afraid, Very Afraid
 
-## Quick Quiz. Is this code MT Safe?
+### Quick Quiz. Is this code MT Safe?
 {% highlight java %}
 public class ObjectWithValue {
     private int value;
@@ -15,7 +15,7 @@ public class ObjectWithValue {
 {% endhighlight %}
 ----
 ----
-## What's Happening?
+### What's Happening?
 ++value is actually three operations:
 * Read the current value 
 * Add one to it
@@ -27,7 +27,7 @@ Since a thread can be preempted at any time…
 * the first thread continues its work and it has a stale value.
 ----
 ----
-## It is actually worse
+### It is actually worse
 ++value turns into 7 byte-codes. Assume the value field has a value of 42.
 
 | Byte-code | Description | Operand Stack After |
@@ -41,7 +41,7 @@ Since a thread can be preempted at any time…
 
 ----
 
-## How Many Possibilities?
+### How Many Possibilities?
 Assume the following:
 Two threads
 * One instance of ObjectWithValue
@@ -53,7 +53,7 @@ Answer the following:
 
 ----
 
-## Answers
+### Answers
 How many possible orderings?
 * 3,432
 
@@ -74,7 +74,7 @@ How?
 
 ----
 
-## Sharing Without Guarding
+### Sharing Without Guarding
 {% highlight java %}
 @Test
 public void singleThreaded() throws InterruptedException {
@@ -101,7 +101,7 @@ public void multipleThreadsFail() throws InterruptedException {
 
 ----
 
-## Demo
+### Demo
 Let’s demonstrate that this code is broken
 * We’ll simply run the tests and hope they fail
 * We’ll manually manipulate them

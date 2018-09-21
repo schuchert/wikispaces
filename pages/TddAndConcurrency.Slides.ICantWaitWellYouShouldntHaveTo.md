@@ -3,8 +3,8 @@ title: TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo
 ---
 [<--Back](TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.KeepItAwayFromMe)
 
-# I Can't Wait Well You Shouldn't Have To
-## You’re waiting for another team to load the database
+## I Can't Wait Well You Shouldn't Have To
+### You’re waiting for another team to load the database
 This problem derives from recent consulting work. It has been changed to protect the innocent.
 
 Problem: Database synchronization takes about 10 hours.
@@ -17,7 +17,7 @@ A Few facts
 Final Results: 15 threads, 28 minutes…
 ----
 ----
-## Here's the code as written (not test first)
+### Here's the code as written (not test first)
 {% highlight java %}
 public void execute() {
    service = Executors.newFixedThreadPool(THREADS);
@@ -35,7 +35,7 @@ public void execute() {
 {% endhighlight %}
 ----
 ----
-## Create a Fake Vendor Synchronization Service
+### Create a Fake Vendor Synchronization Service
 First the test:
 {% highlight java %}
 public class FakeVendorSynchronizationServiceTest {
@@ -60,7 +60,7 @@ public class FakeVendorSynchronizationServiceTest {
 {% endhighlight %}
 ----
 ----
-## Create a Fake Vendor Synchronization Service
+### Create a Fake Vendor Synchronization Service
 Next, the fake:
 {% highlight java %}
 public class FakeVendorSynchronizationService 
@@ -86,7 +86,7 @@ public class FakeVendorSynchronizationService
 {% endhighlight %}
 ----
 ----
-## Next, express how fast is fast enough
+### Next, express how fast is fast enough
 {% highlight java %}
 public class VendorSynchronizerTest {
    private static final int DELAY = 60;

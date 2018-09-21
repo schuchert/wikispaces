@@ -3,9 +3,9 @@ title: CustomJunit4RunnerJUnit4_4
 ---
 [<<--Back](CustomJUnit4Runner)
 
-# Writing a Custom JUnit 4 Test Runner
+## Writing a Custom JUnit 4 Test Runner
 
-## Introduction
+### Introduction
 (**Note** This example works with JUnit 4.4 and later and it requires Java 5 or later. It will not work with the JUnit shipped with Eclipse. So add JUnit4.4.jar to your class path in Eclipse when using this code.)
 
 This comes from a recent problem at a customer site. The customer had a number of automated tests written in JUnit. The tests were a mixture of unit tests and integration tests. To try and speed up the developer experience, we though that moving the integration-style tests into a separate source tree would solve the problem.
@@ -21,7 +21,7 @@ Here are a few assumptions:
 
 We settled on a simple approach. If there is a system property defined called// **ExecuteIntegrationTests**//, we run the integration tests, if not, we ignore them.
 
-### Original Idea
+#### Original Idea
 The original idea was to use the @RunWith(...) annotation to use a custom JUnit4 Runner and then add to that an annotation @Integration to indicate something was an integration test. However, having both was redundant so we settled on simply specifying a custom runner, e.g.:
 
 {% highlight java %}
@@ -38,11 +38,11 @@ When this test is executed either:
 * All tests are executed if the environment variable// **ExecuteIntegrationTests**// is not defined
 
 To get integration tests to execute, simply add -DExecuteIntegrationTests to the command-line when running the JVM.
-## The Code
+### The Code
 After many trials and opening up the JUnit 4.4. source, this is what we came up with:
 ----
 ----
-### IntegrationTestIgnorer
+#### IntegrationTestIgnorer
 This class is both a Runner and holds on to a runner. The particular runner is determined by a factory class (**RunnerFactory** below). This class simply adds a level of indirection between the execution of a test and the selection of the particular JUnit runner used to execute tests in a given test class.
 {% highlight java %}
 package com.om.runner;
@@ -77,7 +77,7 @@ public class IntegrationTestIgnorer extends Runner {
 {% endhighlight %}
 ----
 ----
-### RunnerFactory.java
+#### RunnerFactory.java
 This class determines whether or not Integration tests should be skipped and the style of test class and then constructs an appropriate runner to run the tests (or ignore them).
 
 There are 4 possibilities based on the following two items:
@@ -123,7 +123,7 @@ public class RunnerFactory {
 {% endhighlight %}
 ----
 ----
-### JUnit38TestMethodIgnorer.java
+#### JUnit38TestMethodIgnorer.java
 This class simply fires a "test ignored" message so that listeners know that each test was skipped. In IntelliJ and JUnit, their respective runners register listeners that select an icon in a tree viewer based on this message being fired. Also, by firing a message per test method, the progress bars will be updated correctly (as will test execution counts).
 {% highlight java %}
 package com.om.runner;
@@ -162,7 +162,7 @@ public final class JUnit38TestMethodIgnorer extends JUnit38ClassRunner {
 {% endhighlight %}
 ----
 ----
-### JUnit4TestMethodIgnorer.java
+#### JUnit4TestMethodIgnorer.java
 This test accomplishes the same thing in a somewhat easier manner than the JUnit 3 ignorer. There is a method to execute an individual test method, which this class simply overrides to fire an ignored test message. However, if all methods are ignored, the class will fail validation as defined in the base class JUnit4ClassRunner. So, this class also overrides the validate() method to make that error go away.
 {% highlight java %}
 package com.om.runner;

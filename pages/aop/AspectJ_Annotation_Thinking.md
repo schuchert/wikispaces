@@ -3,7 +3,7 @@ title: AspectJ_Annotation_Thinking
 ---
 [<--Back](AspectJ_Annotation_Observation) [Next-->](AspectJ_Annotation_Explained)
 
-# AspectJ Annotation: Thinking
+3# AspectJ Annotation: Thinking
 
 Taking your observations into consideration, take a moment to do the following things:
 * Describe in a general way what is happening. "What" not "How".

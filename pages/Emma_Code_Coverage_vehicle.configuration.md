@@ -3,7 +3,7 @@ title: Emma_Code_Coverage_vehicle.configuration
 ---
 [<--Back](Emma_Code_Coverage_vehicle.type) [Next-->](Emma_Code_Coverage_vehicle.integration)
 
-# Emma Code Coverage vehicle.type Package
+## Emma Code Coverage vehicle.type Package
 
 Here are the details for this package:
 
@@ -13,15 +13,15 @@ Here are the details for this package:
 
 This is a small package that manages the bean factory configuration. We'll look at each class, but before we do I think it's interesting that there are lines in the test class that do not execute.
 
-## The Plan
-### CarRentalBeanFactory.java
+### The Plan
+#### CarRentalBeanFactory.java
 There are a few things not covered in my bean factory:
 * A private constructor
 * An exception catch block
 * A throw clause when the type of bean found does not match the class type passed in
 * A condition that handles when I retrieve a bean that is in the default package
 
-### Private Constructor
+#### Private Constructor
 
 Here's the series of events that lead to this private constructor:
 
@@ -33,18 +33,18 @@ Here's the series of events that lead to this private constructor:
 * PMD has a rule that says classes with only static method should have private constructors.
 * I made the constructors private to document these classes as utility classes.
 
-### Catch Block in Static Initializer
+#### Catch Block in Static Initializer
 OK, if you're going to use static initializers (and myabe I should not have done so here), make sure that there is no possible way the code can fail. Why? If a static initizlier fails, the class will fail loading and you'll get a class not found exception. If you're not used to checking for that possibility, it can be a pain to fix since you'll be looking at classpath issues and not static initializers issues.
 
 I hope this block of code never executes. I could delete the file it's looking for, try to initialize it then replace the file. I'm not going to do that. I'm just going to consider that code covered because it's effect is to give me an idea of what is actually happening in the case that a configuration file cannot be found.
 
-### Throw Clause
+#### Throw Clause
 I'll write a test for this situation. It should be tested. Of course, as you'll see below, doing so will cause the line coverage in my test class to go down. Why? Such a test will expect an exception. Emma will no consider a line that calls the bean factory and which generates an exception to be covered.
 
-### Default Package
+#### Default Package
 I could create a class in the test directory in the default package to verify this code. Since the class is in the same package as the class, I'll change the access to package and test the method with a bogus class I add to the default pacakge.
 
-### CarRentalBeanFactoryTest.java
+#### CarRentalBeanFactoryTest.java
 
 There is one line considered not covered by emma:
 
@@ -54,7 +54,7 @@ There is one line considered not covered by emma:
 
 This line is meant to generate an exception. It does, the class passes but Emma does not consider this line covered. This is a shortcoming of Emma and I won't do anything about it.
 
-## The Results
+### The Results
 
 Well after writing a few more tests, here are the results:
 

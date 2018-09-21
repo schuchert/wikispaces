@@ -3,7 +3,7 @@ title: Ejb3_Tutorial_1_Printable
 ---
 [<--Back](EJB_3_and_Java_Persistence_API)
 
-# Getting Started with the JBoss Embedded Container
+## Getting Started with the JBoss Embedded Container
 
 This tutorial is a derivative (simplification really) of work done by JBoss. For the original material, look [here](http://docs.jboss.org/ejb3/embedded/embedded.html). This tutorial's goals are:
 * Download and install the JBoss Embeddable EJB3 Container
@@ -13,22 +13,22 @@ This tutorial is a derivative (simplification really) of work done by JBoss. For
 
 Most of this tutorial is about configuration and utility methods. We will use those items for the remainder of the tutorials using the Embeddable EJB3 Container.
 ----
-## Background
+### Background
 {% include include_md_file filename="EJB3_Tutorial_1_Background.md" %}
 ----
-## Download and Install
+### Download and Install
 {% include include_md_file filename="EJB3_Tutorial_1_Download_and_Install.md" %}
 ----
-## Create and Configure the Eclipse Project
+### Create and Configure the Eclipse Project
 {% include include_md_file filename="EJB3_Tutorial_1_Create_and_Configure.md" %}
 ----
-## Create a Local Stateless Session Bean
+### Create a Local Stateless Session Bean
 {% include include_md_file filename="EJB3_Tutorial_1_Create_Session_Bean.md" %}
 ----
-## Container Initialization and Session Bean Lookup
+### Container Initialization and Session Bean Lookup
 {% include include_md_file filename="EJB3_Tutorial_1_Initialization_and_Lookup.md" %}
 ----
-## Exercises
+### Exercises
 {% include include_md_file filename="EJB3_Tutorial_1_Exercises.md" %}
 
 [<--Back](EJB_3_and_Java_Persistence_API)

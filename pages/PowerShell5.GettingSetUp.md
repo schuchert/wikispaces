@@ -3,9 +3,9 @@ title: PowerShell5.GettingSetUp
 ---
 [<--Back](PowerShell5)
 
-# Overview
+## Overview
 For this point forward, we assume you have a working environment. To verify this, here is a a quick [smoke test](https://en.wikipedia.org/wiki/Smoke_testing_(software)) of your environment to make sure things work well enough to proceed. After this, we'll look at implementing an algorithm to practice the [TDD](https://en.wikipedia.org/wiki/Test-driven_development) cycle. Finally, we'll dig into a larger problem to look into [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming) and [Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern).
-# Primordial Beginnings
+## Primordial Beginnings
 A good start is to verify that you can run tests, they fail, and you can make them pass. So to get started, open up an instance of PowerShell and try the following:
 * Create a directory to store your work, I'll use C:\Users\Brett:
 {% highlight powershell %}
@@ -34,7 +34,7 @@ A good start is to verify that you can run tests, they fail, and you can make th
 {% endhighlight %}
 This tells me that we can run Pester from the shell. We will look at a few more ways to run tests, but this is enough to get started.
 
-# First Failing Test
+## First Failing Test
 A good practice is to make sure tests fail before they pass. This makes it easy to verify that your tests are running. 
 
 * Use your favorite editor (vim for me), and create the following file called Trivial.Tests.ps1:

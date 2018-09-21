@@ -2,7 +2,7 @@
 title: JUnit_4.xAtTest
 ---
 [<--Back](JUnit_4.x#AtTest)
-# @Test
+## @Test
 To denote a method as a test method you use the @Test annotation. The following example demonstrates nearly everything you need to know to get your first test running in Eclipse 2.x - 3.x:
 {% highlight terminal %}
      03: import static org.junit.Assert.assertEquals;
@@ -13,7 +13,7 @@ To denote a method as a test method you use the @Test annotation. The following 
 {% endhighlight %}
 The only thing you'd need to add to make this work in Eclipse is a [suite method](JUnit_4.xSuite). Adding that, you'd be able to run this class as a JUnit test and it would give you the familiar JUnit execution dialog.
 
-## Interesting Lines
+### Interesting Lines
 
 |Line|Description|
 |7|This is the import for the @Test annotation. You won't need to memorize that, simply enter @Test and then ctrl-space and Eclipse will add the import for you.|

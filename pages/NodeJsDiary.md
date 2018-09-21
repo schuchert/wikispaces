@@ -1,7 +1,7 @@
 ---
 title: NodeJsDiary
 ---
-# Background
+## Background
 * I'm rolling off a project at the end of February 2014. I have two options for my next gig:
   * West Coast: Work as a consultant across multiple projects, coaching, mentoring, and helping with getting a grasp on domains across projects, think [bounded context](http://www.sapiensworks.com/blog/post/2012/04/17/DDD-The-Bounded-Context-Explained.aspx). Projects are typical Java/Spring, etc. The tech stack is comfortable, not accountable for delivery. I see this as hard but cushy. Nice location, travel so-so. Mature, large project. It's in an "enterprise" setting that, while it has its issues, has been getting better for some time.
   * East Coast: Tech lead (responsible for delivery). Tech. stack includes [micro services](http://yobriefca.se/blog/2013/04/29/micro-service-architecture/) and is based on [node.js](http://en.wikipedia.org/wiki/Nodejs). I've dabbled with JavaScript but just on the cusp of groking, I get distracted. This would get me there I suspect. Location not as nice but pretty good. Travel good. Good people (like West Coast), though I've worked with a few of them and I'd like to again.
@@ -9,7 +9,7 @@ title: NodeJsDiary
 * I'm leaning towards the East coast because it's all new tech and it would be a challenge for me to start using my brain again (Java/Spring/etc. doesn't require much thought anymore for me). Along those lines, I'm installing node.js and working through a book. 
   * Because I'm preparing for node.js, I'll almost certainly end up on the West coast, so I'm probably jinxing myself )
 
-# Day 1: Saturday Feb 22, 2014
+## Day 1: Saturday Feb 22, 2014
 * Began reading last night, found what I think will be exactly what I need: [The Node Beginner Book](http://www.nodebeginner.org/)
   * I'll work through the free 21 pages then buy the book. From what I've read already, I ready to buy the book. But I'll wait to confirm what I already suspect, it'll really help me.
 * Yak shaving... Need to install some stuff, taking the [Gentoo approach](http://www.gentoo.org/proj/en/gentoo-alt/prefix/bootstrap.xml)
@@ -39,7 +39,7 @@ title: NodeJsDiary
 ----
 * Late in the evening, read a bit more and then read a link: [Understanding node.js](http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb)
 
-# 23 Feb 2014
+## 23 Feb 2014
 * Finished free book, bought the book off of leanpub, as well as another in a package deal <https://leanpub.com/b/node>
 * Also got another book he's working on (mentioned in The Node Beginner Book) <https://leanpub.com/nodecraftsman>
 * Noticed I was using raw vi and vim was not installed.
@@ -85,7 +85,7 @@ end
   * Ditto, for installing something using npm
 * Since node is my primary goal, I'll keep the vm I have and figure out the chef thing if my next gig is using Chef.
 
-# 24 Feb 2014
+## 24 Feb 2014
 Spent most of the day on work stuff (interviewed a sr. developer candidate and worked on notes for a transition from WebSphere to TC Serer).
 
 I'm going to spend some time reading. I'm still wondering how to get all of those manual steps in my VM to actually work, but I have a VM that works, so I'm mostly happy.
@@ -94,5 +94,5 @@ BTW, reading Hands-On Node.js
 ----
 Starting up my vm and working through the the book (12% already).
 
-# 25 Feb 2014
+## 25 Feb 2014
 Well as I somewhat expected, I'm probably not going to get on the project using this tech stack. I'm glad I took a quick look at node.js. I'll be happy to dig into it more. I think I need to switch to a few other things (brush up on DDD for example).

@@ -3,7 +3,7 @@ title: Spring_Templates_JDBC_Using_Template_Method_Pattern
 ---
 [<--Back](Spring_Templates_Typical_JDBC) [Next-->](Spring_Templates_JDBC_Strategy_Is_A_Template)
 
-# JDBC Using the Template Method Pattern
+## JDBC Using the Template Method Pattern
 This version uses the [GoF design pattern](http://en.wikipedia.org/wiki/Design_Patterns) [Template Method](http://en.wikipedia.org/wiki/Template_method_pattern). For more details, take a look at this [Template Method Pattern Example](Template_Method_Pattern).
 
 In this case, we've factored out much of the code in the a base class called AbstractTemplateMethod. We have one concrete implementation of this class called Example2. The driver class, JdbcExample, now uses Exmaple2 to:
@@ -11,13 +11,13 @@ In this case, we've factored out much of the code in the a base class called Abs
 * Insert some rows
 * Execute a query
 
-## Class Diagram
+### Class Diagram
 ![](images/DesigningToSpringTemplates.v2.gif)
 
-## The Source
+### The Source
 ----
 {: #AbstractTemplateMethod}
-## AbstractTemplateMethod.java
+### AbstractTemplateMethod.java
 {% highlight java %}
 01: package aab.valtech.jug.templatemethod;
 02: 
@@ -97,11 +97,11 @@ In this case, we've factored out much of the code in the a base class called Abs
 76:     protected abstract String getSearchStatement();
 77: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 |Line|Description|
 ----
 {: #Example2}
-## Example2.java
+### Example2.java
 {% highlight java %}
 01: package aab.valtech.jug.templatemethod;
 02: 
@@ -167,11 +167,11 @@ In this case, we've factored out much of the code in the a base class called Abs
 62:     }
 63: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 |Line|Description|
 ----
 {: #JdbcExample}
-## JdbcExample.java
+### JdbcExample.java
 {% highlight java %}
 01: package aab.valtech.jug.templatemethod;
 02: 
@@ -197,7 +197,7 @@ In this case, we've factored out much of the code in the a base class called Abs
 22:     }
 23: }
 {% endhighlight %}
-### Interesting Lines
+#### Interesting Lines
 |Line|Description|
 
 [<--Back](Spring_Templates_Typical_JDBC) [Next-->](Spring_Templates_JDBC_Strategy_Is_A_Template)

@@ -4,14 +4,14 @@ title: FitNesse.Tutorials.2
 {% include toc %}
 [<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.ScriptTables)
 
-# Introduction
+## Introduction
 A Query table is a means of performing a single query and verifying the results. A typical test might use [Slim Decision Tables](http://fitnesse.org/FitNesse.UserGuide.SliM.DecisionTable) to insert a large data set and then Query tables to verify that the correct sub-set of the data is returned from the query.
 
 This tutorial begins with a basic introduction of Query tables, but it assumes a basic understanding of Decision tables. If you are not familiar with Decision Tables, work through [this tutorial first](FitNesse.Tutorials.1). Along the way, we'll look at what it takes to produce query results manually and then review a small tool available from [github](http://github.com/schuchert/queryresultbuilder/tree/master) to produce these results automatically.
 
 As a final note, this tutorial picks up where [this tutorial](FitNesse.Tutorials.1) left off. However, you can start with these source files using the tag FitNesse.Tutorials.2.Start, see [here](FitNesse.Tutorials.WorkingFromGitHub) for details:
 
-# Beginning
+## Beginning
 Consider the following user story:
 * As a dvr user, I want to create season passes so that I can record every episode of a particular program on a channel, no matter when it appears.
 
@@ -86,7 +86,7 @@ public class AddProgramsToSchedule {
 
 Since you've just changed the fixture, you should go back to your DecisionTableExample page and verify that the test still passes. In fact, you'll be making additional changes to this fixture as this tutorial proceeds. It might be a good idea to make it convenient to run all of the tests at the same time. Before moving forward, however, make sure the DecisionTableExample page still successfully passes.
 
-## Introducing a Test Suite
+### Introducing a Test Suite
 A test suite is simply a page above other pages that is set to be a suite. FitNesse will look at all of its children and execute the pages under it that are set to test pages. To do this, you'll need to create the suite and move existing pages under it:
 * Go to the [FrontPage](http://localhost:8080/FrontPage).
 * Edit the page and add the following near the bottom:
@@ -123,7 +123,7 @@ A test suite is simply a page above other pages that is set to be a suite. FitNe
 >DecisionTableExample
 {% endhighlight %}
 
-## Removing Future Duplication
+### Removing Future Duplication
 The definition of the TEST_SYSTEM, !path and import statement will be the same for the pages we create during these tutorials. Right now it is duplicated across FirstExample and DecisionTableExample. We can put the TEST_SYSTEM and !path in the DigitivalVideoRecorderExamples and it will be inherited by FirstExample, DecisionTableExample and any other sub-pages.
 
 
@@ -153,7 +153,7 @@ FitNesse import tables are not implicitly inherited. The import statements must 
 
 We'll use a SetUp page.
 
-### Creating a SetUp Page
+#### Creating a SetUp Page
 There are many ways to create pages in FitNesse. You can:
 * directly type in the URL
 * you can click a __[?]__ link
@@ -171,7 +171,7 @@ We want to create a SetUp page that will be available for all pages under Digita
 * Go back to DecisionTableExample and FirstExample and remove the import table from each page.
 * Verify that your suite still passes.
 
-## Summary of Page Hierarchy
+### Summary of Page Hierarchy
 * You created a top level page, <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples> and made it a suite with some common configuration information.
 * You refactored(moved) DecisionTableExample under that page.
 * You removed the common configuration from DecisionTableExample
@@ -182,7 +182,7 @@ Now as you create new test pages, put them under DigitalVideoRecorderExample and
 * !path
 * import table - via a SetUp page (this is not exactly correct, but you'll see what really happens below).
 
-# Back to a New Test
+## Back to a New Test
 Near the top of this tutorial, there was a table with a lot of data. You have not yet created that page. Now we have a place to create that page. So you do not have to scroll back, here's that table again:
 
 {% highlight terminal %}
@@ -233,12 +233,12 @@ This is a simple expected result. I could have chosen p1 on channel 7, which we'
 
 Add the previous two tables to your existing page. If you execute the test, you'll notice that the bottom two tables fail.
 
-## Create Missing Fixtures
+### Create Missing Fixtures
 Round 1 is simply getting a fixture that will make this test pass. To do this, the fixture will hard-code the results. Why do I do this? The structure that needs to be returned is complex enough that just looking at it first is enough to consider.
 
 Execute the test with these two new tables. You'll find you need to create two fixtures:
 
-### CreateSeasonPassFor.java
+#### CreateSeasonPassFor.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -253,7 +253,7 @@ public class CreateSeasonPassFor {
 }
 {% endhighlight %}
 
-### EpisodesInToDoList.java
+#### EpisodesInToDoList.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -273,7 +273,7 @@ public class EpisodesInToDoList {
 
 Create these two fixtures and execute the test. While it is not passing, this is a good start. Next, we'll actually update one fixture to get the production test passing:
 
-### EpisodesInToDoList.java
+#### EpisodesInToDoList.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -309,7 +309,7 @@ public class EpisodesInToDoList {
 
 Update your fixture and verify that your your test page passes all assertions.
 
-## What is this doing?
+### What is this doing?
 A key design element of Slim is simplicity at the protocol level. Fit, the original text executor, was written as a complete solution. It takes in (among other things) HTML tables, executes them, then returns HTML tables. Slim takes in lists, executes results and then returns lists. All formatting is done by FitNesse. This makes Slim smaller and therefore easier to maintain and port than Fit.
 
 A side effect of this smaller system boundary for Slim results in a somewhat low-level expected return from the Query method. The structure of the output is a three-tiered list:
@@ -321,7 +321,7 @@ While this is a generic result, it is also a bit difficult to build. This exampl
 
 It will get easier to generate these results. However, to get there will require several steps.
 
-## Switch to Unit Testing
+### Switch to Unit Testing
 This next step requires a lot of work. We want to generate correct results, which we then feed back to Fixture. We could attempt to simply drive this from FitNesse, and I've done it successfully. However, the amount of time between tests passing is too long and therefore too risky. So these next steps move from Story Test writing into Unit Test writing.
 
 Here's what we need to have happen:
@@ -330,7 +330,7 @@ Here's what we need to have happen:
 
 In the two types of DVR's I've owned, there's been something called the "Season Pass Manager." So this is where we can start:
 
-### SeasonPassManagerTest.java
+#### SeasonPassManagerTest.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -380,7 +380,7 @@ public class SeasonPassManagerTest {
 }
 {% endhighlight %}
 
-### SeasonPassManager.java
+#### SeasonPassManager.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -406,7 +406,7 @@ public class SeasonPassManager {
 }
 {% endhighlight %}
 
-### Update: Schedule.java
+#### Update: Schedule.java
 
 {% highlight java %}
    public List<Program> findProgramsNamedOn(String programName, int channel) {
@@ -422,7 +422,7 @@ public class SeasonPassManager {
 
 Make these updates and verify that your two unit tests pass.
 
-### Wiring It Up
+#### Wiring It Up
 
 That was just enough to get the unit test passing. It may not seem complete, but there are no more story-based assertions that require more work, so the solution will be adequate. However, we next need to hook up the results in the fixture. That is, we need to replace:
 
@@ -454,7 +454,7 @@ We need to replace that with code that will turn an object or list into a list i
 
 Rather than describe this in great detail (you can review the source and embedded unit tests), here is a first example:
 
-### Update: Add Unit Test to SeasonPassManagerTest.java
+#### Update: Add Unit Test to SeasonPassManagerTest.java
 
 {% highlight java %}
    @Test
@@ -469,7 +469,7 @@ Rather than describe this in great detail (you can review the source and embedde
 
 Note, this example requires the addition of one more method to SeasonPassManager.java:
 
-### Update: SeasonPassManager.java
+#### Update: SeasonPassManager.java
 
 {% highlight java %}
    public Iterable<?> toDoListIterator() {
@@ -495,7 +495,7 @@ Not to worry, we can promote those fields up to our results in one of two ways:
 
 The first option might seem simple, but it will involve putting fixture-specific code in our domain object, which is a bad idea. Instead, we'll create a custom property handler to perform the promotion of the fields instead:
 
-### Create: TimeSlotPropertyHandler.java
+#### Create: TimeSlotPropertyHandler.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -526,10 +526,10 @@ public class TimeSlotPropertyHandler extends PropertyHandler {
 }
 {% endhighlight %}
 
-### Slightly Updated Test
+#### Slightly Updated Test
 This test, which you might have put in SeasonPassManagerTest should no longer be in that class. Why? The class you just created is in the fixtures package. The SeasonPassManagerTest is in the domain package. The domain package should not point to the fixtures package. So leave that test as it is and instead create a new test class:
 
-### Create: QueryResultBuilderExampleTest
+#### Create: QueryResultBuilderExampleTest
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -598,7 +598,7 @@ com.om.reflection.PropertyDoesNotExistInBeanException: Propery: timeSlot,
 
 This exception is telling you that when you tried register a property handler for timeSlot, there was no corresponding getter method. To get this to work, you will need to add some getter methods to Program:
 
-### Update: Program.java
+#### Update: Program.java
 
 {% highlight java %}
    public String getProgramName() {
@@ -616,10 +616,10 @@ This exception is telling you that when you tried register a property handler fo
 
 Once you get your tests passing, remove the old version of the queryResultBuilderCanTranslateToDoListCorrectly test from the SeasonPassManagerTest.
 
-### Updating the Fixtures
+#### Updating the Fixtures
 To complete this wiring, you'll need to make some updates to the fixtures:
 
-### Update: CreateSeasonPassFor.java
+#### Update: CreateSeasonPassFor.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -650,7 +650,7 @@ public class CreateSeasonPassFor {
 
 This also requires a change to SeasonPassManager:
 
-### Update: SeasonPassManager.java
+#### Update: SeasonPassManager.java
 
 {% highlight java %}
    public Program createNewSeasonPass(String programName, int channel) {
@@ -695,7 +695,7 @@ public class EpisodesInToDoList {
 
 And finally, this requires another change to SeasonPassManager (overly simplistic, maybe, but enough for our tests):
 
-### Update: SeasonPassManager.java
+#### Update: SeasonPassManager.java
 
 {% highlight java %}
    public List<Program> toDoListContentsFor(String programId) {
@@ -703,7 +703,7 @@ And finally, this requires another change to SeasonPassManager (overly simplisti
    }
 {% endhighlight %}
 
-## Update Path
+### Update Path
 Your new code uses two jar files (downloaded from above). You need to add these to the class path:
 * Go to your suite page : <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples>
 * Edit your top-level page and add a third !path statement (update the path accordingly):
@@ -714,7 +714,7 @@ Your new code uses two jar files (downloaded from above). You need to add these 
 
 After all of these changes, see if in fact your story test still passes. Now, go to your suite, and verify that all tests in your suite pass.
 
-# Expand the Test, Grow the Logic
+## Expand the Test, Grow the Logic
 Now it's time to make sure the same program/episode on the same channel is not scheduled to record more than once.
 
 Update the page to add another few tables at the bottom:
@@ -741,7 +741,7 @@ After adding these tables, run the test again. Notice that you have a surplus re
 
 The last option leads to more tests so there's a balance between it and adding commentary. However, for this example you'll split these tests into separate, well-named pages.
 
-## Refactor the Tests
+### Refactor the Tests
 * Start by turning QueryTableExample into a Suite.
 * Next, rename it so it is instead QueryTableExamples (Refactor button, find rename, enter new name, click on rename button)
 * Create a SetUp page for your newly renamed page (click on the __[?]__ next to SetUp near the bottom of the page (if for some reason it is not there, then go to <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.QueryTableExamples.SetUp>)
@@ -825,10 +825,10 @@ The test fails! Why? It is not finding the import included in the original SetUp
 
 * Click the **Suite** button, make sure the tests run with one failed assertion.
 
-## Fix the Production Code
+### Fix the Production Code
 To fix this problem, we need to make a few changes.
 
-### Add Method to: Program.java
+#### Add Method to: Program.java
 
 {% highlight java %}
    public boolean sameEpisodeAs(Program program) {
@@ -838,7 +838,7 @@ To fix this problem, we need to make a few changes.
    }
 {% endhighlight %}
 
-### Update: SeasonPassManager.java
+#### Update: SeasonPassManager.java
 
 {% highlight java %}
 package com.om.example.dvr.domain;
@@ -924,7 +924,7 @@ Either of the last two options are fine. Given we have not created a TearDown pa
 
 To make this work, you'll need a matching fixture:
 
-### Create: ClearProgramSchedule.java
+#### Create: ClearProgramSchedule.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -938,7 +938,7 @@ public class ClearProgramSchedule {
 
 And finally, this requires you to add a method to Schedule:
 
-### Add Method To: Schedule.java
+#### Add Method To: Schedule.java
 
 {% highlight java %}
    public void clear() {
@@ -950,7 +950,7 @@ If you do not like this, you could have alternatively updated the AddProgramsToS
 
 Congratulations, you've finished this tutorial.
 
-# Summary
+## Summary
 This was a fairly detailed tutorial. You learned several things about Query tables:
 * They can pass parameters into the constructor of their fixture.
 * They expect a method, **query**, which returns a List of a List of a List of strings.

@@ -1,11 +1,11 @@
 ---
 title: cpptraining.dependencyinjection.dicegame.templatearguments
 ---
-# Version 1
+## Version 1
 One template parameter, LoadedDie that can return two values.
 
 
-# Version 2
+## Version 2
 In this version, the Dice Game takes two template parameters. Notice that because of this, we cannot put them into a vector.
 
 //**DiceGame_TwoTemplateParametersTest.h**//
@@ -46,7 +46,7 @@ TEST(DiceGame_TwoTemplateParameters, PushShouldLeaveBalanceUnchanged) {
 
 //**DiceGame_TwoTemplateParameters.h**//
 {% highlight cpp %}
-# pragma once
+#pragma once
 
 #include "Die.h"
 #include <vector>
@@ -85,7 +85,7 @@ void DiceGame_TwoTemplateParameters<T1, T2>::play() {
 }
 {% endhighlight %}
 
-# Version 3
+## Version 3
 In this version, the LoadedDie are instead "LoadedDieWithTwoAlternatinvValues", where the two values are template parameters. The DiceGame takes one template parameter.
 //**DiceGame_UsingTemplatesTest.cpp**//
 {% highlight cpp %}
@@ -137,7 +137,7 @@ TEST(DiceGame_UsingTemplates, PushShouldLeaveBalanceUnchanged) {
 
 //**DiceGame_UsingTemplates.h**//
 {% highlight cpp %}
-# pragma once
+#pragma once
 
 #include "Die.h"
 #include <vector>

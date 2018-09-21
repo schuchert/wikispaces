@@ -2,7 +2,7 @@
 title: FitNesse.Tutorials.0.Java
 ---
 {% include toc %}
-# Create Eclipse Project
+## Create Eclipse Project
 In a nutshell, you are going to create a Java project, add some classes and then add the bin directory to the FitNesse path so that FitNesse can find and execute your Java Fixtures.
 
 You can either [start with source from github](FitNesse.Tutorials.WorkingFromGitHub) and skip to the next section or:
@@ -11,11 +11,11 @@ You can either [start with source from github](FitNesse.Tutorials.WorkingFromGit
 * Create a Java Project (I used DVR)
 * Set the JDK to 1.6: Eclipse Properties (Mac: command , | pc: File:properites):Java:Compiler:Compiler Compliance Level:1.6).
 
-# Create Fixture for Test Table
+## Create Fixture for Test Table
 * Add the package com.om.example.dvr.fixtures to your Java project
 * Create a class called "CreatePrograms" to the com.om.example.dvr.fixtures package.
 
-# Determine Where Eclipse Stores Your Class Files
+## Determine Where Eclipse Stores Your Class Files
 Next, you'll need to know where Eclipse is placing your compiled Java classes.
 * Hit ctrl-shift-r (apple: command-shift-r) to bring up the Open Resource dialog.
 * Type in .classpath and press **Enter**
@@ -34,7 +34,7 @@ Next, you'll need to know where Eclipse is placing your compiled Java classes.
 * If your .classpath does not contain the kind="output", then chances are your class files are in the same directory as the source files. If so, you'd just use the same path but remove the bin directory(/Users/schuchert/workspaces/fitnesse-tutorials/DVR).
 * If you are not sure, use a shell and find the root directory where your class files are stored. If you cannot, the next steps in FitNesse will not work.
 
-# Add your code to Path
+## Add your code to Path
 * Switch back to FitNesse, edit your page and add the following lines (above the table that is already there), making sure to adjust the value after !path as appropriate:
 
 {% highlight terminal %}
@@ -102,9 +102,9 @@ public class CreatePrograms {
 * Edit your CreatePrograms class and add the missing methods.
 * Notice that the implementation of id() returns a String with the name and channel. As you'll see, this value will show up later.
 
-# Verify Your Tests Pass
+## Verify Your Tests Pass
 * Go back to your browser and click the **Test** button. You should see the following:
 ![](images/AllGreenFirstTime.gif)
 
-# [Return and Complete Your Tutorial](FitNesse.Tutorials.0#Congratulations)
+## [Return and Complete Your Tutorial](FitNesse.Tutorials.0#Congratulations)
  

@@ -5,13 +5,13 @@ title: AspectJ_Example_1
 
 Source files are here: [[file:AspectJEx1src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
-# Predict the Output
+## Predict the Output
 This is the first of several exercise. If you'd like to get a feel for the general outline for each exercise, take a look [here](AspectJGeneralExerciseOutline).
 
-## Code to Review
+### Code to Review
 Examine the following 2 Java files. Your assignment is to predict the output based on these two files.
 ----
-### Main.java
+#### Main.java
 {% highlight java %}
 package ex1;
 
@@ -33,7 +33,7 @@ public class Main {
 }
 {% endhighlight %}
 ----
-### MethodExecutionExample.java
+#### MethodExecutionExample.java
 {% highlight java %}
 package ex1;
 
@@ -58,7 +58,7 @@ public class MethodExecutionExample {
 }
 {% endhighlight %}
 
-## Predict the output
+### Predict the output
 Before continuing on, please predict the output from these two files.
 
 [<--Back](AspectJ_Self_Study) [Next-->](AspectJEX1ExpectedVersusActualOutput)

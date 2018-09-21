@@ -3,7 +3,7 @@ title: Cxx_Monopoly_Building_Blocks
 ---
 All of these examples run under cygwin. In addition to cygwin, these examples use the boost library (which can be installed as part of cygwin) and cxxunit, which you can download.
 
-# Building
+## Building
 For these examples I'm using make. The Boost C++ libraries recommend using bjam, however, in the spirit of using the simplest thing that can possibly work, here is a trivial makefile that rebuilds the world each time;
 {% highlight terminal %}
 CxxTest_DIR = ~/cpp/cxxtest/cxxtest
@@ -14,24 +14,24 @@ all:
 	./tests
 {% endhighlight %}
 
-## **Warning**
+### **Warning**
 This is not meant to serve as a makefile for a "real" system. It has all of the necessary characteristics:
 * It's easy, you type make and it does **everything**
 * If you system is small, it's fast. For the TDD example, it takes very little time to perform a full build and run all of the tests (after iteration 2 it took about 7 - 6 seconds on my laptop)
 * It's reliable. If there's a problem building or the tests don't pass, it's because I messed up, not because the build doesn't work.
 
 Here's what you'll need to do to get this to work for you:
-# Install cygwin with the development package
-# Download and install cxxtest
-# Update the CxxTest_DIR macro to point to where you extracted the CxxTest installation
-# Create a directory and in that directory create a file called "makefile" and paste the contents above with the updated CxxTest_DIR macro
-# Create each of the following examples, noting the name of the files.
+* Install cygwin with the development package
+* Download and install cxxtest
+* Update the CxxTest_DIR macro to point to where you extracted the CxxTest installation
+* Create a directory and in that directory create a file called "makefile" and paste the contents above with the updated CxxTest_DIR macro
+* Create each of the following examples, noting the name of the files.
 
-# Examples
+## Examples
 These examples use CxxTest as a way to write tests to understand how to use parts of boost and the C++ standard library. Starting with these examples, you'll hopefully be able to continue experimentation on your own.
 
 ----
-## Main.cpp
+### Main.cpp
 You'll need this as a driver. It's your main function:
 {% highlight cpp %}
 #include <cxxtest/ErrorPrinter.h>
@@ -45,7 +45,7 @@ int main(int argc, char* argv[]) {
 {% endhighlight %}
 
 ----
-## IStringStreamTest.hpp
+### IStringStreamTest.hpp
 {% highlight cpp %}
 #include <cxxtest/TestSuite.h>
 
@@ -77,7 +77,7 @@ public:
 {% endhighlight %}
 
 ----
-## BoostRegexTest.hpp
+### BoostRegexTest.hpp
 {% highlight cpp %}
 #include <cxxtest/TestSuite.h>
 
@@ -112,7 +112,7 @@ public:
 {% endhighlight %}
 
 ----
-## BoostTokenizerTest
+### BoostTokenizerTest
 {% highlight cpp %}
 #include <cxxtest/TestSuite.h>
 

@@ -3,7 +3,7 @@ title: ShortExerciseOutlineThinking
 ---
 [<--Back](ShortExerciseOutlineObservation) [Next-->](ShortExerciseOutlineExplained)
 
-# Short Exercise Outline Thinking
+## Short Exercise Outline Thinking
 Third, I'll ask the person to attempt to generalize from their experience:
 * Describe in a general way what is happening.
 * Relate this "what" back to some example other than the one provided.

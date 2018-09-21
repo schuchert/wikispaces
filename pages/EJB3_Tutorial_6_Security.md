@@ -3,15 +3,15 @@ title: EJB3_Tutorial_6_Security
 ---
 {% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
-# Ejb3 Tutorial 6 - Security
+## Ejb3 Tutorial 6 - Security
 This simple tutorial takes the solution from [EJB3_Tutorial_5_Message_Driven_Beans](EJB3_Tutorial_5_Message_Driven_Beans) and augments the beans with the configuration information necessary to limit access declaratively.
 ----
-## Project Setup
+### Project Setup
 We recommend you create a copy of your project (or if you are using revision control software, make sure to check-in and tag your work).
 
 We need to create a few basic files: users.properties and roles.properties.
 
-### users.properties
+#### users.properties
 {% highlight terminal %}
 bschuchert=password
 msmith=password
@@ -25,7 +25,7 @@ This file should reside anywhere in the root of a classpath entry. Place this in
 
 By the way, notice that it is users and not user. You can use another name, but this is the default name JBoss uses.
 
-### roles.properties
+#### roles.properties
 {% highlight terminal %}
 bschuchert=admin
 msmith=admin
@@ -36,10 +36,10 @@ student=user
 The comments from users.properties apply here.
 
 ----
-## Update Session Bean
+### Update Session Bean
 Next we need to configure the bean with security information. As usual, we can use either XML or annotations. Here is an updated version of AccountInventoryBean.java:
 
-### AccountInventoryBean.java
+#### AccountInventoryBean.java
 {% highlight java %}
 package session;
 
@@ -119,7 +119,7 @@ public class AccountInventoryBean implements AccountInventory {
 
 and the updated interface:
 
-### AccountInventory.java
+#### AccountInventory.java
 {% highlight java %}
 package session;
 
@@ -141,7 +141,7 @@ public interface AccountInventory {
 
 
 ----
-## Updated JBossUtil
+### Updated JBossUtil
 We now need to update JBossUtil once more to read our security properties. The only method that has changed is startDeployer:
 {% highlight java %}
     public static void startDeployer() {
@@ -163,9 +163,9 @@ We now need to update JBossUtil once more to read our security properties. The o
 
 This method now reads in MDB configuration information in the first two calls to deployXmlResources and configures the security settings in the third line.
 ----
-## The Test
+### The Test
 This test attempts one successful and four failed attempts. The names of the methods describe whether we expect success or failure:
-### AccountInventoryBeanTest.java
+#### AccountInventoryBeanTest.java
 {% highlight java %}
 package session;
 
@@ -280,7 +280,7 @@ public class AccountInventoryBeanTest {
 
 Notice that in all cases where the method is expected to generate an exception, we first catch EJBAccessException. EJBAccessException is a wrapper exception. We verify the contents by getting the wrapped exception and throwing it. We then let JUnit tell us if we got the exception we expected.
 ----
-## Questions
+### Questions
 If you do not provide a RolesAllowed, what is the default?
 How do you set a different default value for all the methods in a class?
 
