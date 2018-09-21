@@ -117,8 +117,9 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 Congratulations, you have your first test working.
 # Set Unit Test Executable Settings
 
-Review// **GHUnitIOSTestMain.m**//. Notice that it recommends editing your unit test executable and setting the following properties:
-|~ Property Name|~ Default Value|~ Recommended Setting |
+Review `GHUnitIOSTestMain.m`/. Notice that it recommends editing your unit test executable and setting the following properties:
+^
+|Property Name| Default Value| Recommended Setting |
 |NSDebugEnabled|                        NO      |YES|
 |NSZombieEnabled|                       NO       |YES|
 |NSDeallocateZombies|                   NO       |YES|
@@ -130,9 +131,9 @@ Review// **GHUnitIOSTestMain.m**//. Notice that it recommends editing your unit 
 Note, the last one is one I recommend. This will make your tests run automatically.
 
 To make create these environment settings:
-* Expand// **Executables**//
-* Select your unit test executable (//**Unit Tests**//
-* Right-click, Get Info (command-I)
+* Expand `Executables`
+* Select your unit test executable (`Unit Tests`)
+* Right-click, Get Info (`command-I`)
 * In the bottom window, click the +, add a field and set its value
 * Re-run your tests to make sure they work as expected
 
@@ -144,7 +145,7 @@ Now the hard part starts.
 * Link to it from the UI project
 * Link to it from the Unit Test Project
 # A Few Handy Shortcut Keys
-
+^
 | Command-r | run application |
 | Command-b | quick open |
 | F3 | mapped to Edit:Find:Jump to Definition |
