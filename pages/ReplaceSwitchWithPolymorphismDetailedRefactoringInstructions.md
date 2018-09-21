@@ -13,16 +13,16 @@ These are rough notes I kept while performing the refactoring. They may not make
 * **Are there any preliminary steps?** Yes, Self encapsulate type code before replace conditional with polymorphism (both of these are mentioned in Refactoring by Fowler
 ## Part 1: Replace Type Code with State/Strategy (Refactoring Page 227)
 * Self Encapsulate type code (preliminary refactoring, page number??)
-** Add implicit inline get type in customer
-** Add setter as well
-** Update rate calculator to use method
-** Add setter, make field private
-** Update all tests
+  * Add implicit inline get type in customer
+  * Add setter as well
+  * Update rate calculator to use method
+  * Add setter, make field private
+  * Update all tests
 *** Three places in rate calculator test also need updating(37, 61, 81)
-** Run all the tests
+  * Run all the tests
 * Create new class for type code
-** **What does this represent?** We use it for determining which kind of rate to calculate, so we use the type to determine how to calculate. This is like a strategy; different algorithms for calculating, so we're creating different kinds of rate calculators.
-** Create Rate Calculator
+  * **What does this represent?** We use it for determining which kind of rate to calculate, so we use the type to determine how to calculate. This is like a strategy; different algorithms for calculating, so we're creating different kinds of rate calculators.
+  * Create Rate Calculator
 *** Rename RateCalculator --> RateCalculatorOld
 *** Create Rate Calculator Class In same file
 *** Make sure to provide implementation for dtor
@@ -30,43 +30,43 @@ These are rough notes I kept while performing the refactoring. They may not make
 *** Run tests
 *** Create abstract query in RC and implement in subclasses
 **** Each get type returns typecode
-** Add RateCalculator * to Customer
-** Update Customer class to delegate to that method
-** Update setter to use correct sub-type
-** Run all tests - get null pointer exception...
-** Add set of customerType in blank customer test
-** Run tests
+  * Add RateCalculator * to Customer
+  * Update Customer class to delegate to that method
+  * Update setter to use correct sub-type
+  * Run all tests - get null pointer exception...
+  * Add set of customerType in blank customer test
+  * Run tests
 ## Repalce conditional with polymorphism
 * Put calculateRate method in RateCalculator
-** Copy calculatRate into CustomerType
-** Create a local instance of RateCalculator for now...
+  * Copy calculatRate into CustomerType
+  * Create a local instance of RateCalculator for now...
 *** add to header file
 *** Update rateCalculatorOld to use RateCalculator from customer
-** Add calculate rate to customer
-** Update tests to use customer instead of RateCalculator
+  * Add calculate rate to customer
+  * Update tests to use customer instead of RateCalculator
 *** Remove RateCalculator member field and #include from test
-** Remove calculateRate from rate calculator to prove it
-** Copy method into each of the sub-types 
-** Run Tests 
-** Make calculateRate abstract in RateCalcualtor (and remove method body)
+  * Remove calculateRate from rate calculator to prove it
+  * Copy method into each of the sub-types
+  * Run Tests
+  * Make calculateRate abstract in RateCalcualtor (and remove method body)
 *** Fix each of the methods to call only what they need to call
 **** Remove the switch and all of the cases that do not apply.
 ## Move beahvior into each of the subclasses
 * Business Rate Calculator
-** Nothing special with this one (other than there's apparently no business-specific test)
+  * Nothing special with this one (other than there's apparently no business-specific test)
 * Consumer Rate Calculator
-** Copy three methods, then we'll also need IsWinter and one other
+  * Copy three methods, then we'll also need IsWinter and one other
 * Industrial - note use of inheritance of business (it’s an option since it extends the behavior)
-** Make it subclass from BusinessRateCalculator
+  * Make it subclass from BusinessRateCalculator
 * Show all tests passing
 * Remove all RateCalculatorOld stuff in .cpp and .hpp
 ## Introduce Simple Factory
 * Review Customer setType -- move this into a simple factory
-** Create RateCalculatorFactory with a simple static method to gee type based on string name:
+  * Create RateCalculatorFactory with a simple static method to gee type based on string name:
 *** Add a new set type using a string
 *** Update one test at a time
-** Remove old set type when done updating tests
-** Remove enum customer type
-** Remove getType in customer
-** Remove customertype type attribute
-** We no longer need getType in the RateCalculator hierarchy, remove them all
+  * Remove old set type when done updating tests
+  * Remove enum customer type
+  * Remove getType in customer
+  * Remove customertype type attribute
+  * We no longer need getType in the RateCalculator hierarchy, remove them all

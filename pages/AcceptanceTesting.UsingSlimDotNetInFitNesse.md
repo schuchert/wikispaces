@@ -1,8 +1,8 @@
 ---
 title: AcceptanceTesting.UsingSlimDotNetInFitNesse
 ---
-{% include toc %}
 [<-- Back](FitNesse.Tutorials)
+{% include toc %}
 
 ## Rapid Intro to using Slim with .Net
 Thanks to Mike Stockdale for both writing the slim .Net implementation as well as helping me to get this working.

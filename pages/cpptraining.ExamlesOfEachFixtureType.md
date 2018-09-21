@@ -17,10 +17,10 @@ Here is a basic table in FitNesse:
 Since no table type is provided, this is a decision table. The basic mechanics for this table are:
 * Find a class called ExecuteBinaryOperator
 * For each row after the header row:
-** Call setLhs, providing a string
-** Call setRhs, providing a string
-** Call setOperator, providing a string
-** Call expected, which returns a string and compare the value returned to the value provided
+  * Call setLhs, providing a string
+  * Call setRhs, providing a string
+  * Call setOperator, providing a string
+  * Call expected, which returns a string and compare the value returned to the value provided
 
 Here's cslim code that can handle this table:
 ### ExecuteBinaryOperator.cpp

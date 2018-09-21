@@ -69,6 +69,6 @@ We work through each of the topics and bring up the following discussion points:
 * Requirements discovery
 * What it really means to work in iterations
 * What is success?
-** Customer satisfied
+  * Customer satisfied
 * Too many UATs? Story too big
 * Too few? Don't understand problem.

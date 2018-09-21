@@ -6,7 +6,7 @@ I sent you a zip of the Eclipse project directory. While you can follow these st
 ## Get the source
 The project resides on [github](https://github.com/schuchert/tw_coding_interview). To acquire the source, you can do the following:
 * git clone git://github.com/schuchert/tw_coding_interview.git
-** This creates a directory called tw_coding_interview under the current directory
+  * This creates a directory called tw_coding_interview under the current directory
 
 ## Build & Run the Tests
 I used gradle as my build tool. To build and run the tests:

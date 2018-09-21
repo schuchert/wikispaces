@@ -1,7 +1,7 @@
 ---
 title: FitNesse.Tutorials
 ---
-# Note on Table Representation
+## Note on Table Representation
 
 Most tables shown in these tutorials look something like this:
 
@@ -25,12 +25,12 @@ They are written this way to make them appear about how they appear in FitNesse 
 
 If you prefer the first but want to enter the second button, look for the// **format**// button near the// **Save**// button in Fitnesse.
 
-# Working From [Schuchert's GitHub Repository](http://github.com/schuchert/fitnesse-tutorials/tree/master)
+## Working From [Schuchert's GitHub Repository](http://github.com/schuchert/fitnesse-tutorials/tree/master)
 For instructions on working from github: [FitNesse.Tutorials.WorkingFromGitHub](FitNesse.Tutorials.WorkingFromGitHub)
 
 {: #JavaTutorials}
 
-# Java Tutorials Ready to be Used
+## Java Tutorials Ready to be Used
 
 * [Getting Started](FitNesse.Tutorials.0) 
 * [Introduction To Decision Tables](FitNesse.Tutorials.1) 
@@ -40,15 +40,15 @@ For instructions on working from github: [FitNesse.Tutorials.WorkingFromGitHub](
 * [Table Tables](FitNesse.Tutorials.TableTables) 
 * [Alternative Script Table Syntax](FitNesse.Tutorials.AlternativeScriptTableSyntax) 
 
-# C# Tutorials
+## C# Tutorials
 * [C# W/Slim, Each Table Type](FitNesse.Tutorials.CSharp.Slim.EachTable) 
 
-# Under Construction
+## Under Construction
 * [Converting Tests to use more of a Story Style](FitNesse.Tutorials.ConvertingToStoryStyle) 
 
-# Writeups more than Tutorials: To Be Migrated
+## Writeups more than Tutorials: To Be Migrated
 * [Using Table Table for DSL-esque Test Setup](AcceptanceTesting.FitNesse.TableTableExample) 
 
-# Originals Already Incorporated Into Tutorial Series
+## Originals Already Incorporated Into Tutorial Series
 * [Scenario Tables](FitNesse.Tutorials.ScenarioTables) 
 * [Rapid Intro to Using Slim.Net](AcceptanceTesting.UsingSlimDotNetInFitNesse) 

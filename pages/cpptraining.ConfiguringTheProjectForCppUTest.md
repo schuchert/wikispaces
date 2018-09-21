@@ -6,9 +6,9 @@ title: cpptraining.ConfiguringTheProjectForCppUTest
 * Select// **C/C++ Build:Settings**//
 ### Include Directories
 * Under// **GCC C++ Compiler:Includes**// enter the include directory of CppUTest. 
-** Click the page with the green plus. 
-** Select// **File system...**//
-** Enter or search to the directory. For my install location, the directory is: C:\workspaces\CppUTest2_1\includes.
+  * Click the page with the green plus.
+  * Select// **File system...**//
+  * Enter or search to the directory. For my install location, the directory is: C:\workspaces\CppUTest2_1\includes.
 ### CppUTest Library
 * Under// **MinGW C++ Linker:Libraries**//, enter both a library path as well as a library
 * Under// **Libraries (-l)**//, click on the page with a green plus

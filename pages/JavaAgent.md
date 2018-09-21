@@ -21,8 +21,8 @@ But that alone is not enough to justify creating a simple jar file with an agent
 Now, when I want to run my tests with some custom instrumentation, all I need to do is:
 # Write my unit tests
 # Run my unit tests with two command line parameters:
-** -javaagent:Registrar.jar
-** -Dschuchert.ClassFileTransformer=MyCustomClassFileTransformer, 
+  * -javaagent:Registrar.jar
+  * -Dschuchert.ClassFileTransformer=MyCustomClassFileTransformer,
 {% highlight terminal %}
  -Dschuchert.ClassFileTransformer=schuchert.contest.DynamicInstrumentor
 {% endhighlight %}

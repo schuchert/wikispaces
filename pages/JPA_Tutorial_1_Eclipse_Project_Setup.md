@@ -7,9 +7,12 @@ Next we need to start eclipse and create a workspace.
 * Start eclipse.
 * When prompted, enter a directory for your workspace. I used C:\workspaces\JpaAndEjb3. To understand why I recommend not using a space in the name, read [this sidebar](JPA_Tutorial_1_Getting_Started#SideBarJpaClassPath).
 * Close the Welcome window
+
 {: #AddRequiredLibraries}
 ### User Library
-We are going to define a user library, which is just a collection of jar files with a name. Once we create this, we can add it to our classpath with one command. This also makes setting up new projects in the same workspace a snap. We can also export workspace settings and import them into a new workspace.
+We are going to define a user library, which is just a collection of jar files with a name. 
+Once we create this, we can add it to our classpath with one command. This also makes setting 
+up new projects in the same workspace a snap. We can also export workspace settings and import them into a new workspace.
 * Pull down **Window:Preferences**
 * Navigate to **Java:Build Path:User Libraries**
 * Click on **New**

@@ -1,4 +1,7 @@
-==Overview==
+---
+title: Acceptance Testing Experiential Workshop with FitNesse Concert Registration
+
+## Overview
 
 A local promoter wants to take advantage of the mobile technology that already exists at most of their concerts. They want to allow fans to:
 * register for promotional gifts while at the concert

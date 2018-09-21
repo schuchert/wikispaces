@@ -9,10 +9,10 @@ This is a complete, albeit simple, example using jMock. To get this running, you
 # Add JUnit 4 to your classpath
 # Download [jMock](http://www.jmock.org/download.html)
 # Extract the download and add the 4 jars into your classpath (note your version numbers might be different):
-** jmock-2.0.0.jar
-** jmock-junit4-2.0.0.jar
-** hamcrest-api-1.0.jar
-** hamcrest-library-1.0.jar
+  * jmock-2.0.0.jar
+  * jmock-junit4-2.0.0.jar
+  * hamcrest-api-1.0.jar
+  * hamcrest-library-1.0.jar
 # Take each of the following files and add them into a project in your favorite IDE
 
 ## WithdrawalTest.java

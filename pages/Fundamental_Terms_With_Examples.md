@@ -68,9 +68,9 @@ Something that does one thing or a few highly-related things well is cohesive. S
 
 ### Example 1
 In the inheritance example, we described two example hierarchies:
-[[image:GuiPlatformHierarchy.gif width="901"]]
+![](images/GuiPlatformHierarchy.gif){:with="600px"}
 
-[[image:GuiHasAPlatform.gif width="721"]]
+![](images/GuiHasAPlatform.gif){:width="600px}
 
 In the first diagram we couple the notion and Gui Component and Platform into on hierarchy. In the second, we separate those concerns into two hierarchies.
 

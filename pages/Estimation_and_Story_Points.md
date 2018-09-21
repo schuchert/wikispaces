@@ -26,9 +26,9 @@ title: Estimation_and_Story_Points
 * How have you estimated work in the past?
 * What is the relationship between work load and deadlines?
 * Scope, Resources, Deadline, Quality…
-** Which of these do you explicitly decide upon
-** Which do you leave hanging?
-** Who chooses each of these? Customers, users, developers, ???
+  * Which of these do you explicitly decide upon
+  * Which do you leave hanging?
+  * Who chooses each of these? Customers, users, developers, ???
 
 ----
 ## Class Exercise – Estimation Observations
@@ -40,27 +40,27 @@ Note, this example comes from Cohn’s “User Stories Applied”
 
 ### Individually…
 * From 1 to 10, estimate each based on average height at their shoulders:
-** Labrador Retriever
-** Vizsla
-** Terrier
-** Great Dane
-** Standard Poodle
-** French Bulldog
-** Dachshund
-** German Short-haired Pointer
+  * Labrador Retriever
+  * Vizsla
+  * Terrier
+  * Great Dane
+  * Standard Poodle
+  * French Bulldog
+  * Dachshund
+  * German Short-haired Pointer
 
 ----
 ## Group Exercise – Estimation
 ### In our groups of 4…
 * From 1 to 10, estimate each based on average height at their shoulders:
-** Labrador Retriever
-** Vizsla
-** Terrier
-** Great Dane
-** Standard Poodle
-** French Bulldog
-** Dachshund
-** German Short-haired Pointer
+  * Labrador Retriever
+  * Vizsla
+  * Terrier
+  * Great Dane
+  * Standard Poodle
+  * French Bulldog
+  * Dachshund
+  * German Short-haired Pointer
 
 * Be prepared to discuss the difference in the two experiences
 
@@ -98,8 +98,8 @@ Discuss your differences between the individual exercise and the group exercise
 * Have decks of prepared cards (playing cards, 3x5 cards)
 * One deck per person estimating (developers)
 * Each deck has same set of numbers, 
-** 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-** 1, 2, 3, 7, 10, 17, 27
+  * 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+  * 1, 2, 3, 7, 10, 17, 27
 
 ----
 ## Group Exercise – Estimates
@@ -110,8 +110,8 @@ Discuss your differences between the individual exercise and the group exercise
 * Really, it is only developers who estimate
 * Product owners, users, managers do not estimate
 * Be prepared to discuss your answers
-** Ah-ha’s
-** Oh’s
+  * Ah-ha’s
+  * Oh’s
 
 ----
 ## Class Exercise – Estimates

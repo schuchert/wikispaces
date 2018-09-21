@@ -174,8 +174,8 @@ So what approaches can we take to demonstrate this simple failure? And, more imp
 Here are a few ideas:
 * Make tests flexible, so they can be tuned. Then run the test over and over - say on a test server - randomly changing the tuning values. If tests ever fail, the code is broken (assuming the tests are correct). Make sure to start writing those tests early so a continuous integration server start running them now. By the way, good luck knowing the conditions under which the test failed.
 * Run the test on every one of the target deployment platforms. Repeatedly. Continuously. The longer the tests run without failure, the more confident that either:
-** The production code is correct
-** The tests aren't adequate to expose problems
+  * The production code is correct
+  * The tests aren't adequate to expose problems
 * Run the tests on a machine with varying loads. If you can simulate loads close to a production environment, do so.
 
 You should be doing all of these things anyway. If you are writing threaded code and you are not doing all of these things, you have a design debt. By doing all of these things, you are simply getting back to a debt of 0 with respect to thread-based testing.

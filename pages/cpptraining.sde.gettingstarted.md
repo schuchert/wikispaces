@@ -7,13 +7,13 @@ This example uses windows XP, cygwin and SDE lite 6.06.
 ## Install The SDE
 * Download the SDE lite from [here](http://www.mips.com/products/software-tools/mips-sde-lite/). Note (free) registration is required.
 * Follow the install instructions in chapter 3 of the [SDE Programmer's Guide](http://www.mips.com/media/files/MD00428-2B-SDE6X-SUM-01.17.pdf), partially copied here for ease:
-** Install cygin
-** Unzip contents of downloaded zip file to /cygdrive/c/sde-6.06
-** In a cygwin shell, run the setup script: 
+  * Install cygin
+  * Unzip contents of downloaded zip file to /cygdrive/c/sde-6.06
+  * In a cygwin shell, run the setup script:
 {% highlight terminal %}
 sh /cygdrive/c/sde-6.06/bin/sdesetup.sh
 {% endhighlight %}
-** Every time you start a shell (or configure your login) to source environment variables
+  * Every time you start a shell (or configure your login) to source environment variables
 {% highlight terminal %}
 source /cygdrive/c/sde-6.06/bin/sdeenv.sh
 {% endhighlight %}

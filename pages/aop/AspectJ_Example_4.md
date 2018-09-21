@@ -1,14 +1,14 @@
 ---
 title: AspectJ_Example_4
 ---
-[<--Back](AspectJ_Self_Study) [Next-->](ApsectJEX4ExpectedVersusActualOutput)
+[<--Back](AspectJ_Self_Study) [Next-->](AspectJEX4ExpectedVersusActualOutput)
 
-# Predict the Output
+## Predict the Output
 Source files are here: [[file:AspectJExample4src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 Have a look at the following Java files and, as before, predict the output.
 ----
-## Main.java
+### Main.java
 {% highlight java %}
 package ex4;
 
@@ -26,7 +26,7 @@ public class Main {
 {% endhighlight %}
 ----
 {: #Dao}
-## Dao.java
+### Dao.java
 {% highlight java %}
 package ex4;
 
@@ -39,10 +39,10 @@ public class Dao {
 }
 {% endhighlight %}
 ----
-## Address.java
+### Address.java
 Address is unchanged from the previous example. It is a simple Java Bean style class with setters and getters.
 ----
-## Assignment: Predict the Output
+### Assignment: Predict the Output
 Please take a few moments to predict the output before moving on.
 
-[<--Back](AspectJ_Self_Study) [Next-->](ApsectJEX4ExpectedVersusActualOutput)
+[<--Back](AspectJ_Self_Study) [Next-->](AspectJEX4ExpectedVersusActualOutput)

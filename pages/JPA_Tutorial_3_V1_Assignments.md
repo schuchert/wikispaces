@@ -3,8 +3,8 @@ title: JPA_Tutorial_3_V1_Assignments
 ---
 ### Questions
 * Given our current solution, how would you add support for:
-** Return dates
-** Fines
+  * Return dates
+  * Fines
 * Review how we return a book. Does it seem strange that we retrieve the book, get the patron, update both of them and then merge the patron? 
 * How are the first two questions related?
 

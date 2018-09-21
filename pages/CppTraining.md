@@ -43,12 +43,7 @@ title: CppTraining
 
 {: #DependencyInjectionOptions}
 ## Dependency Injection of Die Objects into Dice Game
-* [Base Problem](cpptraining.dependencyinjection.dicegame.baseproblem)
-* [Using Basic OOP](cpptraining.dependencyinjection.dicegame.oop)
 * [Using Template Arguments](cpptraining.dependencyinjection.dicegame.templatearguments)
-* [Using Preprocessor Seam](cpptraining.dependencyinjection.dicegame.preprocessorseam)
-* [Link Seam](cpptraining.dependencyinjection.dicegame.linkerseam)
-* [Backdoor](cpptraining.dependencyinjection.dicegame.backdoor)
 
 {: #LinksToDesignPatterns}
 ## Links to Design Patterns

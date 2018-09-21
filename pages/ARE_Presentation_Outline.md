@@ -7,9 +7,9 @@ This presentation serves as a 1 - 2 hour practice session on basic user story ex
 For this series of exercises we will:
 * Break up in to small groups (4 - 5 people)
 * Repeatedly:
-** Work on a problem within the group
-** Present findings back the the class as a whole
-** Summarize and fill out any missing details
+  * Work on a problem within the group
+  * Present findings back the the class as a whole
+  * Summarize and fill out any missing details
 
 Near the end, we'll have one final exercise where your groups will be given an assignment and compete with all of the other groups.
 
@@ -58,12 +58,12 @@ During initial discussions with the product owner, a few things may become clear
 * They want to be able to sell the device, accessories and customizations online
 * Customizations include engraving, decals and even multi-tone colors
 * They want people to spend time on their site, like a social-networking site
-** The want to support chatting
-** Friends
-** Share photos
-** Email
-** Etc., the usual social networking stuff, targeted towards teens
-** They are concerned with problems that MySpace has had, so they want their site to be safe
+  * The want to support chatting
+  * Friends
+  * Share photos
+  * Email
+  * Etc., the usual social networking stuff, targeted towards teens
+  * They are concerned with problems that MySpace has had, so they want their site to be safe
 * The device supports music and photos (including album art)
 * They are working on a contract with CDDB to get track information
 * They want their client to be able to rip music as well. They have licenses a product to do that for both the PC and the MAC.

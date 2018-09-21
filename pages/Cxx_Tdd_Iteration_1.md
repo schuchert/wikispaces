@@ -6,7 +6,7 @@ This tutorial uses a game similar to Monopoly as a basis for our work. The rules
 
 This iteration's theme is: **Player Movement**
 {% include include_md_file filename="Monopoly_Release_1_Theme_Description.md" %}
-{% include include_md_file filename="Monopoly_Release_1_User_Stories_WO_Link.md" %}
+{% include include_md_file filename="Monopoly_Release_1_User_Stories.md" %}
 
 ## Our First User Story
 Here is our current user story:
@@ -1316,7 +1316,7 @@ To paraphrase Douglas Adams, if the system ever has all of its tests running, it
 * Add names to your locations.
 * Create a main and link it instead of the main that runs the tests. "Play" a game.
 * Add output to your system:
-** Try to do it without changing any of the existing classes or header files in your system.
+  * Try to do it without changing any of the existing classes or header files in your system.
 {: #EndGame}
 
 # End Game

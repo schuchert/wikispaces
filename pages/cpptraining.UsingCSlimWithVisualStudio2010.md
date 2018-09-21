@@ -234,9 +234,9 @@ C:\src\cslim_vs2010>dir FitNesseRoot\CslimExamples
 !define SLIM_VERSION {0.0}
 {% endhighlight %}
 * Now you can hit the// **Suite**// button. You will see some passing tests, missing fixtures and Exceptions.
-** If you get an exception related to a difference in the version of the slim protocol implemented by cslim versus the one expected by FitNesse, you'll need to change the "!define SLIM_VERSION {0.0}" to the version used by what cslim is implementing.
-** There are problems with exception handling. I'll be looking into that but that causes the fixture called ExceptionsExample to fail. (These are alpha instructions after all!)
-** The class TestSlim is part of the examples and it seems to be missing.
+  * If you get an exception related to a difference in the version of the slim protocol implemented by cslim versus the one expected by FitNesse, you'll need to change the "!define SLIM_VERSION {0.0}" to the version used by what cslim is implementing.
+  * There are problems with exception handling. I'll be looking into that but that causes the fixture called ExceptionsExample to fail. (These are alpha instructions after all!)
+  * The class TestSlim is part of the examples and it seems to be missing.
 # Where to go from here
 If you want to use this in your own project, and use VS 2010, here are some bullets to get you started.
 * You'll need to link the library CSlim.lib created by the NMakefile

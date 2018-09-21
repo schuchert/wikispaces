@@ -1,11 +1,11 @@
 ---
 title: Cxx_TDD_Monopoly
 ---
-# Introduction
+### Introduction
 
 This tutorial takes you from the ground up working with a unit testing tool called [CxxTest](http://cxxtest.sourceforge.net/). It uses the user stories and acceptance tests from [Monopoly](Monopoly) as the basis of requirements and works through four iterations. We'll use the traditional Red:Green:Refactor approach to TDD.
 
-## Assumptions
+### Assumptions
 * Writing reliable code is more important than writing "efficient" code
 * Writing maintainable code is more important that writing "efficient" code
 * Writing testable code is more important that writing "efficient" code
@@ -18,7 +18,7 @@ By the way, I recently found out that my Pentium-M processor takes on the order 
 
 If your curiosity is piqued, read on.
 
-## Background
+### Background
 This tutorial is not meant to teach you C++. It is meant to teach you how to apply TDD using C++. However, along the way you might pick up a few things about C++. If you are a long-time C++ user, you will probably argue with many of the parts of the solution for a number of reasons:
 * "Unnecessary" use of virtual functions
 * "Unnecessary" use of pointers and dynamic memory when defining stuff on the stack would "suffice"
@@ -37,7 +37,7 @@ In this example, I've used the following tools:
 * [Subversion server](Subversion_on_XP)
 * [CxxTest](http://cxxtest.sourceforge.net/) version 3.10.1
 
-## Overview
+### Overview
 When we talk about TDD, you'll often hear "Red, Green, Refactor." This is a light-weight way to remind us of the steps we take while practicing TDD. In practice there are more than three steps:
 
 |**Color**|**You do what?**|**What can you expect?**|
@@ -74,10 +74,8 @@ So here's our algorithm for addressing each iteration:
    end
 {% endhighlight %}
 
-## The Iterations
+### The Iterations
 If you are ready to move on, here are the four iterations:
 * [C++ TDD Iteration 1](Cxx_Tdd_Iteration_1)
 * [C++ TDD Iteration 2](Cxx_Tdd_Iteration_2)
 * [C++ TDD Iteration 2 - The Demo](Cxx_Tdd_Iteration_2_The_Demo)
-* [C++ TDD Iteration 3](Cxx_Tdd_Iteration_3)
-* [C++ TDD Iteration 4](Cxx_Tdd_Iteration_4)

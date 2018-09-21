@@ -297,9 +297,9 @@ rpn_calculator_test.js:30:2)
   };
 {% endhighlight %}
 * This gets the job done but now this method is exhibiting feature envy even stronger:
-** It checks the length twice
-** It knows that the array is 0-based
-** It uses "value." twice and values 1, so values three times.
+  * It checks the length twice
+  * It knows that the array is 0-based
+  * It uses "value." twice and values 1, so values three times.
 * A typical fix for feature envy is to push the responsibility into the object that has the data. To do that, we'll introduce a new object: rpn_stack.
 
 ## rpn_stack

@@ -2,22 +2,22 @@
 title: FitNesse.Tutorials.0.CSharp
 ---
 {% include toc %}
-# Create C# Project
-In a nutshell, you are going to create a C# project, add some classes and then add the DLL to the FitNesse path so that FitNesse can find and execute your C# Fixtures.
+## Create C# Project
+In a nutshell, you are going to create a C## project, add some classes and then add the DLL to the FitNesse path so that FitNesse can find and execute your C# Fixtures.
 
 * Start Visual Studio
 * Create a new Project (File:New:Project:Visual C#:Class Library) (I used C:\Projects\C_Sharp for the directory, Digital Video Recorder for the Name and Solution Name)
 
-# Create Fixture to back Test Table
+## Create Fixture to back Test Table
 * Visual Studio creates a class called Class1.cs in the namespace DigitalVideoRecorder by default, rename Class1.cs to CreatePrograms.
 * Remove all of the using statements automatically inserted by Visual Studio
 * Save and build your solution.
 
-# Determine Where Visual Studio Stores Your Generated DLL
+## Determine Where Visual Studio Stores Your Generated DLL
 * The DLL should be under the bin\Debug directory. In my case, the full path to my DLL is:
 * ```C:\Projects\C_Sharp\DigitalVideoRecorder\DigitalVideoRecorder\bin\Debug```
 
-# Update Page to have NSlim Configuration
+## Update Page to have NSlim Configuration
 * Add the required configuration to the top of your DigitalVideoRecorder page:
 
 {% highlight terminal %}
@@ -35,7 +35,7 @@ In a nutshell, you are going to create a C# project, add some classes and then a
 |DigitalVideoRecorder|
 {% endhighlight %}
 
-# Add your code to Path
+## Add your code to Path
 * Edit your page and add the following lines (above the table that is already there):
 
 {% highlight terminal %}
@@ -65,7 +65,8 @@ In a nutshell, you are going to create a C# project, add some classes and then a
 {% endhighlight %}
 
 * Click on the **Test** button, you should see some green and red now:
-[[image:CSharpMissingMethods.gif width="800" height="787"]]
+^
+![](images/CSharpMissingMethods.gif){:width="600px"}
 
 You have two tables in your page. The first table is an import table, it tells FitNesse to import that namespace (i.e. like using in .Net). That is, when looking for fixture classes (classes that process tables), look in this namespace. If you want to import multiple namespaces, use multiple rows (or duplicate the entire table).
 
@@ -115,9 +116,10 @@ namespace DigitalVideoRecorder
 * Notice that the implementation of id() returns a String with the name and channel. As you'll see, this value will show up later.
 * Make sure to build your project.
 
-# Verify Your Tests Pass
+## Verify Your Tests Pass
 * Switch back to your browser, click on the **Test** button. You should see something similar to this:
-[[image:CSharpCongratulations.gif width="800" height="548"]]
+^
+![](images/CSharpCongratulations.gif){:width="600px"}
 
-# [Return and Complete Your Tutorial](FitNesse.Tutorials.0#Congratulations)
+## [Return and Complete Your Tutorial](FitNesse.Tutorials.0#Congratulations)
  

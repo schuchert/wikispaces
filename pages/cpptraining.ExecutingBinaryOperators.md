@@ -63,20 +63,20 @@ In [previous tutorial](cpptraining.GettingStartedWithFitNesseInCpp), you created
 * Close the Welcome to Eclipse tab.
 * Edit the Eclipse properties:
 ###  Under General:Workspce, enable **Refresh automatically
-** Under Eclipse properties:C/C++:Build:Environment, define some environment variables:
+  * Under Eclipse properties:C/C++:Build:Environment, define some environment variables:
 ### * **CSLIM_BASE** = **/Users/schuchert/src/cslim/cslim
 ### * **CPPUTEST_BASE** = **/Users/schuchert/src/cslim/cpputest
-** On my Mac, I additionally set:
+  * On my Mac, I additionally set:
 ### * **GPP** = **/usr/local/bin/g++
-** This allows me to use g++ 4.4 or 4.5 instead of 4.2
+  * This allows me to use g++ 4.4 or 4.5 instead of 4.2
 * Apply those changes.
 * Next, select **File:Import**
 * Under **General** select **Existing Projects into Workspace**
 * Click **Next**
 * Click the **Browse** button then simply press OK
 * You should see listed two projects
-** RpnCalculatorInCpp
-** RpnCalculatorInCppTests
+  * RpnCalculatorInCpp
+  * RpnCalculatorInCppTests
 * Both of these projects should be selected by default.
 * Click **Finish**
 * Eclipse will probably attempt to build **RpnCalculatorInCppTests**, but it will fail because the other project must be build first.

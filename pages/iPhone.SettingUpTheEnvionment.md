@@ -20,8 +20,8 @@ These notes are for XCode 4 and GHUnit 0.4.28. Each project I set up will have a
 ## Why?
 GHUnit runs as an application, which means it has a main() function. Objective-C is based on C. In a C project, an executable can only have one main() when linking. The main() used for brining up the iPhone(iPad) UI is different that the main() used to execute tests. This is a deficiency in Objective-C's execution model. So there are some obvious obvious options:
 * Have two files with main()
-** Conditionally select the correct one based on a build flag
-** Put them in different projects and just build the project you want to run
+  * Conditionally select the correct one based on a build flag
+  * Put them in different projects and just build the project you want to run
 * Update main() to either do the "real" thing or the "test" thing based on a runtime command line flag.
 
 I prefer having two projects. This also provides a logical place to put the unit test source files. In languages like Java or C#, the extra source code from tests does not incur a runtime burden on the executable if they are not used. Not so with C/C++/Objective-C; that is built into the execution model. So I don't want to link my test code into my final executable and I don't want to hassle with more complex builds. Two projects make that an easy problem to solve.
@@ -36,9 +36,9 @@ These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in 
 ## Creating the Workspace
 * Start XCode
 * Create a new Workspace
-** File::New Workspace (^⌘N)
-** Select a folder for the workspace. For this example I'll use:// **/Users/Schuchert/src/iPhoneDemo**//. I'll also be putting all of the project directories in this same folder. You'll need to create a directory somewhere.
-** Enter a name for the project. I used iPhoneDemo
+  * File::New Workspace (^⌘N)
+  * Select a folder for the workspace. For this example I'll use:// **/Users/Schuchert/src/iPhoneDemo**//. I'll also be putting all of the project directories in this same folder. You'll need to create a directory somewhere.
+  * Enter a name for the project. I used iPhoneDemo
 
 ## Creating the View Project
 * Add a project:// **File::New Project**// (⇧⌘N)
@@ -58,17 +58,17 @@ These notes are for XCode 3.2.2. Given that Apple has messed up Unit Testing in 
 Note that by default, the project you just created is selected. If you rush though this, you'll create the new project as a dependent of the view project.
 * Confirm your project is not selected. If it is, unselect it by command clicking it.
 * Follow the same instructions as above for creating the View project
-** Add a project:// **File::New Project**// (⇧⌘N)
-** Select// **iOS::Application**// on the left side
+  * Add a project:// **File::New Project**// (⇧⌘N)
+  * Select// **iOS::Application**// on the left side
 ###  On the right side, select// **Windows-based Application//
-** Click// **Next**//
-** Enter a product name. I'll use// **UnitTests**//. You might call this project LogicTests or similar.
-** Select a device family. I'll be using// **iPhone**//
-** For this example do not select either "Use Core Data" or "Include Unit Tests"
-** Click// **Next**//
-** When Prompted for a directory, select the same directory that you put the workspace file in. In my case that is// **/Users/Schuchert/src/iPhoneDemo**//
-** Verify that the "Group" selection is iPhoneDemo and not RpnDemo.
-** Click// **Create**//
+  * Click// **Next**//
+  * Enter a product name. I'll use// **UnitTests**//. You might call this project LogicTests or similar.
+  * Select a device family. I'll be using// **iPhone**//
+  * For this example do not select either "Use Core Data" or "Include Unit Tests"
+  * Click// **Next**//
+  * When Prompted for a directory, select the same directory that you put the workspace file in. In my case that is// **/Users/Schuchert/src/iPhoneDemo**//
+  * Verify that the "Group" selection is iPhoneDemo and not RpnDemo.
+  * Click// **Create**//
 * Switch the the UnitTests Scheme and verify that it runs (⌘r)
 * Quit the simulator (⌘q)
 * This is not correct as it is no different from the first project.
@@ -103,20 +103,20 @@ Note that by default, the project you just created is selected. If you rush thou
 # Adding the Model as a Static Library
 
 * To do this:
-** Download the file somewhere (my download location is// **~/Downloads**//)
-** Expand //**Targets**//
-** Select your target name, mine is //**UnitTests_oniPhoneSimulator**//
-** //**Right-click:Add:Existing Files...**//
-** Find// **GHUnitIOSTestMain.m**// and double-click it (find your download location)
-** On the next dialog, check //**Copy items into destination group's folder (if needed)**//
-** Make sure that the right Target is selected. In my case this means //**UnitTests_oniPhoneSimulator**// is selected, but //**Tutorial**// is not selected.
-** Click //**Add**//
+  * Download the file somewhere (my download location is// **~/Downloads**//)
+  * Expand //**Targets**//
+  * Select your target name, mine is //**UnitTests_oniPhoneSimulator**//
+  * //**Right-click:Add:Existing Files...**//
+  * Find// **GHUnitIOSTestMain.m**// and double-click it (find your download location)
+  * On the next dialog, check //**Copy items into destination group's folder (if needed)**//
+  * Make sure that the right Target is selected. In my case this means //**UnitTests_oniPhoneSimulator**// is selected, but //**Tutorial**// is not selected.
+  * Click //**Add**//
 * Change the active target to the new target:
-** Pull down //**Project:Set Active Target**//
-** Select your unit test project.
-** Build, command-b
-** Run, command-r
-** When the simulator starts, click on //**Run**//. There are no tests, so it finishes quickly.
+  * Pull down //**Project:Set Active Target**//
+  * Select your unit test project.
+  * Build, command-b
+  * Run, command-r
+  * When the simulator starts, click on //**Run**//. There are no tests, so it finishes quickly.
 
 # Add a first test
 * Under //**Targets**//, right-click  //**UnitTests_oniPhoneSimulator**//

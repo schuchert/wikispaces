@@ -1,28 +1,28 @@
 ---
 title: FitNesse.Tutorials.ScenarioTables.OriginalArticle
 ---
-# Motivation
+## Motivation
 This tutorial exists because I did not really understand Scenario Tables even though I was using them. At a customer site, I noticed a developer had an Uber Scenario Table representing a scenario with complete flexibility in all of its parameters (and this was a good thing). However, when it was time to make tests use the scenario table, he wanted to fill in some of the parameters with fixed values for several tests and did so by copying the table (this was a bad thing).
 
 We discussed this with Bob Martin and he recognized this as a form of [currying from functional programming](http://en.wikipedia.org/wiki/Currying). Scenario tables are really just one or more function invocations on a fixture (know as the Actor in FitNesse, see Sidebar: 
-[Scenario Actors](FitNesse.Tutorials.ScenarioTables#Scenario_Actors)) with parameters passed in. What the developer wanted was a form of this table(function) taking fewer parameters(currying), with some of the parameters hard coded. E.g.,
+[Scenario Actors](FitNesse.Tutorials.ScenarioTables.OriginalArticle#Scenario_Actors)) with parameters passed in. What the developer wanted was a form of this table(function) taking fewer parameters(currying), with some of the parameters hard coded. E.g.,
 
 {% include_relative FitNesse.Tutorials.ScenarioTables.CurryingFunctions.md %}
 
 Bob magically did this using FitNesse.SliM-based tables and then I spent quite a bit of time trying to understand the mechanics. As a result, I figured I better write something to remember this because while now it is obvious, it was not at the time.
 
-# Background
+## Background
 Scenario Tables are a way to express a sequence of steps required as part of an automated acceptance test. A Scenario table takes a number of parameters, specified as part of its name, and then expresses one or more steps, any of which may use any of the parameters provided.
 
 In a nutshell, if you have a standard sequence of steps you need to follow as part of a number of tests with potentially different data values, a Scenario table may be just what you need.
 
 The steps in a Scenario table ultimately become method invocations on an Actor (more on this later). Since a Scenario table potentially executes multiple steps and does not return anything, validation for a test will typically reside in the scenario table. In this respect, they may seem like a data-driven test from xUnit. However, a Scenario table makes demands on the fixture(actor) to which it binds. That is, if a scenario table ultimately invokes a function called X, then that function must exist on the fixture to which the invocation binds. In this respect, a scenario has similarities with interfaces or abstract methods. At one point, I though of them as similar to Ruby modules, but that model wasn't correct since Scenario tables impose a requirement, they do not add methods to anything. The requirements are imposed on the ultimate actor.
 
-[#Scenario_Actors](#Scenario_Actors)
+{: #Scenario_Actors }
 <aside>
 ### Scenario Actors
 A Scenario table puts requirements on some class, know as its actor. The Actor can be set in one of three ways:
-* Using a start line in a Scenario, as [demonstrated below](FitNesse.Tutorials.ScenarioTables#ExampleOfStartInScenario)
+* Using a start line in a Scenario, as [demonstrated below](FitNesse.Tutorials.ScenarioTables.OriginalArticle#ExampleOfStartInScenario)
 * Introducing a Script table and then giving it a Start line:
 {% highlight terminal %}
 |script|
@@ -38,13 +38,14 @@ The instance scriptTableActor. does not exist
 {% endhighlight %}
 This is somewhat simplified, but it gets the point across. 
 
-//**[Warning you can probably skip past the rest of this sidebar](FitNesse.Tutorials.ScenarioTables#skipPastScenarioActorsSidebar)**//
-Scenarios with Actors and scripts set the "global actor". So it might seem that a script before a decision table using a scenario would change the actor. It does,// **but**// the decision table is really a call to the Scenario, so the Scenario, which is basically a text substitution, occurs after the script and sets the global actor.
+**[Warning you can probably skip past the rest of this sidebar](FitNesse.Tutorials.ScenarioTables.OriginalArticle#skipPastScenarioActorsSidebar)**
+Scenarios with Actors and scripts set the "global actor". So it might seem that a script before a decision table using a scenario would change the actor. It does, **but** the decision table is really a call to the Scenario, so the Scenario, which is basically a text substitution, occurs after the script and sets the global actor.
 
 Bob is considering switching to a stack-based scheme to avoid pollution of the actor across siblings. In this scheme, if a sibling introduces an actor, when the test concludes, the actor will be reset to what it was just before the test executed. This removes a possible dependence upon the execution order of tests. For example, imagine a test that uses a scenario but does not itself set the actor. If the tests is run by itself it would fail. However, if another test runs before it and sets the global actor, then the test might pass. A stack-based scheme would address this kind of problem. The test would consistently fail in both situations.
 </aside>
-{: #skipPastScenarioActorsSidebar}
-# Using Scenario Tables
+
+{: #skipPastScenarioActorsSidebar }
+## Using Scenario Tables
 Imagine you have a need to perform some test that requires several steps. You want to perform those same steps across several test cases where all parts of the test can be parameterized, even the expected results. For example, image you want to validate a Login Service with the following requirements (these are actual requirements from a project I worked on, these are not made up - well at least not by me):
 * Logging in requires a user name and password (both alphanumeric)
 * If a user fails to enter the correct password 3x in a row, their account is revoked and an administrator is required to enable the account
@@ -74,8 +75,8 @@ So trying to generalize this is may be overkill, but using a simple example will
 
 Notice that we could use a Script table. However, we'll instead use a scenario table. Why? I want to specify these steps abstractly. Then I want to express multiple scenarios with some of the parameters hard-coded. To do that I'll create new scenario tables that use the original one with some of the parameters already filled in.
 
-{: #ExampleOfStartInScenario}
-# The First Attempt
+{: #ExampleOfStartInScenario }
+## The First Attempt
 Here's an example test page with this scenario:
 {% highlight terminal %}
 !|Scenario     |attempt|times    |logins to   |accountName|with     |password|andIn|status|expecting|result|
@@ -150,10 +151,10 @@ This example uses a decision table to execute the scenario. A decision table has
 * Second row defines column headers (ignored in this case because it is a scenario)
 * Third row is the first of potentially many executions
 
-FitNesse matches parameters //**by order**//, not name. The second row is a nice way to document your intentions but think of a scenario as one or more method invocations. Method invocations in most languages are matched by order, not type. That's how FitNesse performs the matching.
+FitNesse matches parameters **by order**, not name. The second row is a nice way to document your intentions but think of a scenario as one or more method invocations. Method invocations in most languages are matched by order, not type. That's how FitNesse performs the matching.
 </aside>
 
-# From Red/Yellow to Green
+## From Red/Yellow to Green
 The Scenario is Red (if you create this page and executed it, that's what you'll see). However, when you open up the scenario, it shows several yellow rows, indicating a missing class. Here a Java class to make this test fully pass (for you C# users, this is basically the same):
 
 {% highlight java %}
@@ -196,7 +197,7 @@ Here is a complete version of that page:
 |1    |brett      |secret  |valid           |success          |
 {% endhighlight %}
 
-# More Than 1 Test
+## More Than 1 Test
 Now that you have one test, it's not a big leap to turn this into more tests:
 
 {% highlight terminal %}
@@ -312,7 +313,7 @@ Here is the entire page with all of these tables together on the same page:
 
 If you finally put all of this together with the last version of the Java class, everything should pass.
 
-# Conclusion
+## Conclusion
 There is more to discuss regarding Scenario tables. First, while this example demonstrates explicitly setting the actor for a scenario, that is not required and leaving it undefined allows for interesting possibilities. In fact, this is Bob's preference.
 
 However, this simple example does demonstrate a few key characteristics of Scenario tables:

@@ -47,11 +47,11 @@ Here are some steps to get you started:
 
 ### TDD
 # Pick the highest listed user uncompleted user story
-** Create a test for the first uncompleted UAT
-** Get the test to compile
-** Get the test to run
-** Refactor if necessary
-** Check in your source code
+  * Create a test for the first uncompleted UAT
+  * Get the test to compile
+  * Get the test to run
+  * Refactor if necessary
+  * Check in your source code
 # Repeat until all UAT's are done for the current user story
 # Repeat until all user stories for the current release are finished
 

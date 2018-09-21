@@ -9,7 +9,7 @@ These do not include working in the express version. See the old section below f
 * Extract the zip into some directory (e.g. C:\projects\CppTdd\CppUTest).
 * Go into the CppUTest directory under which you extracted the zip file.
 * Double-click on CppUTest.dsw.
-** Do NOT click on CppUTest.dsp. That will leave out the self-tests.
+  * Do NOT click on CppUTest.dsp. That will leave out the self-tests.
 * When asked to convert project, click yes.
 * Execute the unit tests to make sure they work (ctrl-F5), you'll have some warnings in both the build and the output window. The warnings should all be related to the use of sprintf.
 
@@ -66,10 +66,10 @@ old
 * Extract the zip into some directory.
 * Go into the CppUTest directory under which you extracted the zip file.
 * Double-click on CppUTest.dsw.
-** Do NOT click on CppUTest.dsp. That will leave out the self-tests.
+  * Do NOT click on CppUTest.dsp. That will leave out the self-tests.
 * When asked to convert project, click yes.
 * Execute the unit tests to make sure they work (ctrl-F5), you'll have some warnings in both the build and the output window. The warnings should all be related to the use of sprintf.
-** If you use VS2005 Express, it won't have windows.h, which is needed for CppUtest.
+  * If you use VS2005 Express, it won't have windows.h, which is needed for CppUtest.
 *** Google for PSDK-x86.exe and VS2005 and see all the complaints and how to fix.
 
 #### Install DevExpress Refactor!
@@ -97,13 +97,13 @@ int main(int ac, char** av)
 <path of CppUTest project>\include
 {% endhighlight %}
 
-** (Use your project's Properties, C/C++, General, Additional Include Directories...)
+  * (Use your project's Properties, C/C++, General, Additional Include Directories...)
 * Add one library to be linked in (CppUTest uses a time function found here):
 {% highlight terminal %}
 winmm.lib
 {% endhighlight %}
 
-** (project Properties... Linker, Input, Additional Dependencies)
+  * (project Properties... Linker, Input, Additional Dependencies)
 * You should be able to start writing and executing tests. E.g., Add a file to hold some tests, FooTest.cpp
 {% highlight cpp %}
 # include <CppUTest/TestHarness.h>

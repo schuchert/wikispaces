@@ -161,9 +161,9 @@ Initial = 15 - completed (17) + points added/removed (-5) + changes(3) ==> -4 (w
 ## Velocity Graph
 A velocity graph charts velocity over iterations. You can use it to:
 * Estimate future velocity based on previous iterations 
-** Average of past three
-** Worst three
-** Best three
+  * Average of past three
+  * Worst three
+  * Best three
 * Research drastic changes
 * See if the project is stabilizing or not
 

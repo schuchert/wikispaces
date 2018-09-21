@@ -1,13 +1,14 @@
 ---
 title: FitNesse.Tutorials.ScenarioTables
 ---
-{% include toc %}[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.TableTables)
+{% include toc %}
+[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.TableTables)
 
-# Note
+## Note
 The [original article](FitNesse.Tutorials.ScenarioTables.OriginalArticle) is here. This page is a rewritten version that ties in with the previous tutorials.
 
-# Introduction
-This tutorial picks up where the [previous one](FitNesse.Tutorials.ScriptTables) finished. If you'd like to start at this tutorial with a fresh source base, use the tag: //**FitNesse.Tutorials.ScenarioTables.Start**// and [review these notes on working with the source from github](FitNesse.Tutorials.WorkingFromGitHub).
+## Introduction
+This tutorial picks up where the [previous one](FitNesse.Tutorials.ScriptTables) finished. If you'd like to start at this tutorial with a fresh source base, use the tag: **FitNesse.Tutorials.ScenarioTables.Start** and [review these notes on working with the source from github](FitNesse.Tutorials.WorkingFromGitHub).
 
 Scenario tables are a way to express a sequence of abstract steps. Unlike the other table types you've probably worked with, scenario tables are not necessarily backed by a particular fixture. In fact, if you simply declare a sequence of steps in a scenario table, FitNesse will not attempt to do anything with it; you will not need a backing fixture. However, as soon as you define concrete tests that use the scenario table, then you'll need to make sure a fixture is in place. It is possible for the same Scenario table to be backed by different fixtures for different uses.
 
@@ -18,7 +19,7 @@ In this tutorial you'll:
 * Use a scenario table to validate some complex logic
 * Use a little TDD to get some of the underlying code working
 
-# The Problem
+## The Problem
 For this tutorial, you'll work on the following user stories:
 * As a DVR user, I want to make sure the priority of my season passes affects what gets scheduled in the to do list.
 
@@ -37,7 +38,7 @@ With this in mind, it's time to start working on a test.
 
 //**Note**//: For this and future tutorials in this series, the examples will stop making the tables look nice. FitNesse does that job well enough. If you prefer to make your table look nice, you can click on the **Format** button when editing the table.
 
-# The Test
+## The Test
 First you need to create a schedule. Given your recent experience with script tables, it might be a good idea to create several programs and then simply reuse that program guide across all tests:
 
 {% highlight terminal %}
@@ -93,7 +94,7 @@ You'll also need to set the page type to test.
 
 The last table requires a change to the EpisodesInToDoList class and elsewhere:
 
-### Update: EpisodesInToDoList, add no-argument constructor
+#### Update: EpisodesInToDoList, add no-argument constructor
 
 {% highlight java %}
    public EpisodesInToDoList() {
@@ -103,7 +104,7 @@ The last table requires a change to the EpisodesInToDoList class and elsewhere:
 
 This also requires a change to SeasonPassManager since we are passing in a blank programId:
 
-### Update: SeasonPassManager.toDoListContentsFor
+#### Update: SeasonPassManager.toDoListContentsFor
 
 {% highlight java %}
    public List<Program> toDoListContentsFor(String programId) {
@@ -123,7 +124,7 @@ Run this and there are a few problems:
 
 To fix the first problem, you'll need to update DateUtil:
 
-### Update: DateUtil.java, Change h to H
+#### Update: DateUtil.java, Change h to H
 
 {% highlight java %}
    static SimpleDateFormat timeFormat = new SimpleDateFormat("H:mm");
@@ -131,7 +132,7 @@ To fix the first problem, you'll need to update DateUtil:
 
 Make sure this seeming innocuous change did not break any unit tests (it should not). Also make sure all other acceptance tests are still passing (oops, it does). Before you fix the problem with the current acceptance test, you should fix the problem introduced// **by**// the new acceptance test - or rather the one exploited by the current unit test. The [TearDown](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown) page resets the program guide, but it does not reset the to do list.
 
-## Cleaning Up Between Tests, Part Dux
+### Cleaning Up Between Tests, Part Dux
 The TearDown page <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TearDown> uses the ClearProgramSchedule fixture to, well, clear the program schedule. Should you update the ClearProgramSchedule to also clear the todo list, or should you create a second fixture, say ClearToDoList? There's no clear answer as either will work. Using a single fixture will couple these two separate concerns (a possible violation of the [Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf)). Using two fixtures will make things more explicit, but also leave the possibility of forgetting to do both together. (Ultimately there's a better solution, put all of these key objects in a single place and reset that, however, this tutorial does not take that approach.)
 
 In your domain, these two concepts might actually be intertwined by design. If you believe that clearing the program guide should logically cause the to to list to be cleared, then update the fixture. If you think instead that these are orthogonal concerns, then create a second fixture and call it. This tutorial is going to treat these as separate concerns.
@@ -165,7 +166,7 @@ public class ClearToDoList {
 
 Now everything should still pass other than your new acceptance test.
 
-## Back to Fixing the Acceptance Test
+### Back to Fixing the Acceptance Test
 
 Here is the code from SeasonPassManager responsible for populating the to do list:
 
@@ -187,7 +188,7 @@ A quick review of this code and you'll notice it only checks to see if a duplica
 
 Since this is not a tutorial on TDD (at least not directly), here are the unit tests for a new unit test on DateUtil that determines if two date/time ranges conflict with each other. This is an example of a JUnit 4 [Parameterized_Test](Parameterized_Test):
 
-### Create: DateUtilConflictsInTimeWithTest.java
+#### Create: DateUtilConflictsInTimeWithTest.java
 
 {% highlight java %}
 package com.om.example.util;
@@ -259,7 +260,7 @@ public class DateUtilConflictsInTimeWithTest {
 
 This introduces a new public method on the DateUtil class:
 
-### Update: DateUtil.java, add four methods
+#### Update: DateUtil.java, add four methods
 
 {% highlight java %}
    public Date createEndDate(Date startDateTime, int durationInMinutes) {
@@ -290,7 +291,7 @@ This introduces a new public method on the DateUtil class:
 
 Finally, this code is used in TimeSlot:
 
-### Update: TimeSlot.java, add new method
+#### Update: TimeSlot.java, add new method
 
 {% highlight java %}
    public boolean conflictsInTimeWith(TimeSlot other) {
@@ -301,10 +302,10 @@ Finally, this code is used in TimeSlot:
 
 In my original implementation, I did all of this work in TimeSlot and the original unit test targeted time slot. When I was done, I extracted the bulk of the implementation into DateUtil because it was dealing with dates. So I changed the test to target DateUtil and simply left the call to the DateUtil in TimeSlot. So while this particular method is not tested by unit tests, it will be tested by acceptance tests. Is this a possible hole in the testing regiment? Depends on if you have a proper build system that executes both acceptance and unit tests. I don't see it as a large risk, if you do not agree, then create a unit test for TimeSlot as well.
 
-## Working Back to Story
+### Working Back to Story
 Now that the fundamental support is in place, you can go back and update SeasonPassManager:
 
-### Update: SeasonPassManager.java, add method, update other
+#### Update: SeasonPassManager.java, add method, update other
 
 {% highlight java %}
    public Program createNewSeasonPass(String programName, int channel) {
@@ -330,7 +331,7 @@ Now that the fundamental support is in place, you can go back and update SeasonP
 
 This requires a method added to Program (thus avoiding a violation of the Law of Demeter):
 
-### Update: Program.java, add a pass-through method
+#### Update: Program.java, add a pass-through method
 
 {% highlight java %}
    public boolean hasTimeConflictWith(Program other) {
@@ -352,7 +353,7 @@ Upon review, the test data for this test is:
 
 The problem is that the programs W1 and W2, while on different channels, conflict with each other. Right now the DVR can only record one program at a time. So the test is wrong! You need to update this test. You can either update the third row of the table to change the time of the programs or update the query table. I recommend updating the query table since is the assertion that is incorrect:
 
-### Update: Query table, remove an expected result
+#### Update: Query table, remove an expected result
 
 {% highlight terminal %}
 |Query:Episodes in to do list on|3/4/2008   |
@@ -364,7 +365,7 @@ The problem is that the programs W1 and W2, while on different channels, conflic
 
 Run your acceptance test suite, everything should pass. Now, if you have a failing unit test, it requires a similar fix. You need to change the expected size of the list from 4 to 3:
 
-### Update: GenerateProgramsTest.
+#### Update: GenerateProgramsTest.
 
 {% highlight java %}
   public void ReviewToDoListByDay() throws Exception {
@@ -373,7 +374,7 @@ Run your acceptance test suite, everything should pass. Now, if you have a faili
    }
 {% endhighlight %}
 
-# Now On To a Scenario
+## Now On To a Scenario
 
 Now that you have one test working, it would be handy to create additional tests. The DVR can record 1, 2 or 4 simultaneous programs. The 1 is for one-input DVR's. The 4 is for the upscale model. If a user has an upscale model but only one coax cable, then the DVR can only record 2 programs. However, these are all details. we need to create several test scenarios with similar data but different results based on the number of programs a DVR can record. Each of these tests will need to:
 * Create a data set
@@ -383,7 +384,7 @@ Now that you have one test working, it would be handy to create additional tests
 
 Notice, this describes an abstract test. Now it is time to express that abstract test and then rewrite your existing test using this new approach.
 
-## First The Script Table
+### First The Script Table
 
 The first bullet above is currently handled at the top of the page with a large Decision table. However, the remainder can be expressed as follows:
 
@@ -410,7 +411,7 @@ Now it is type to attempt to use it. To use it you'll need to do several things:
 
 Luckily, we already have a working test, so this is a good time to change its format. In the spirit of refactoring, let's leave this test as is (it is passing), and instead create a new test that does what we want. This will require a bit more work, but it will give us a working test to verify we have not broken the production code, so it is a much less risky approach.
 
-## Create New Page
+### Create New Page
 
 * First, create the following page <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordOneProgramAtaTimeExample> (//**Note**//: The AtaTime part of the name is important, FitNesse will not recognize a wikiword with two capital letters back to back, so rather than calling the page ...AtATime..., I named it ...AtaTime...)
 * Replace the !contents with the following: 
@@ -499,7 +500,7 @@ Luckily, we already have a working test, so this is a good time to change its fo
 * Go back to the <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordOneProgramAtaTimeExample> and change its page type to test.
 * Run the test, it should also pass.
 
-## Migrate new page to Scenario Test
+### Migrate new page to Scenario Test
 The way this scenario works is it takes in 3 parameters, the first is the number of programs the DVR can record at any given time. The next two parameters represent a list of season passes and a list of to do contents. So to finish this page, you must name the fixture (the first table coming up) and use the scenario (second table):
 
 {% highlight terminal %}
@@ -542,7 +543,7 @@ After doing that, run the acceptance test. You'll notice it fails, and if you lo
 * whenICreateSeasonPasses
 * thenTheToDoListShouldContain
 
-## Introduce Skeleton Fixture Class
+### Introduce Skeleton Fixture Class
 
 So update your fixture class:
 
@@ -564,9 +565,9 @@ public class DvrRecording {
 
 Now run your acceptance test, notice that it only fails on the last line. If you change the return value to true, the test will "pass", even though it is doing nothing.
 
-## Complete the Fixture
+### Complete the Fixture
 
-### Update: DvrRecording.java
+#### Update: DvrRecording.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -662,7 +663,7 @@ public class DvrRecording {
 
 Update your fixture and verify that your test passes.
 
-# Now Add A Different Use
+## Now Add A Different Use
 
 Next, you'll try a degenerate case. What happens if there no programs can be recorded? Rather than write about it, express it as a test.
 
@@ -729,7 +730,7 @@ Next, you'll try a degenerate case. What happens if there no programs can be rec
 
 After making this update, run the test. Now the error is that there's no check for the number of allowed recordings. So that's next.
 
-## Allow Number of Recordings to be Set
+### Allow Number of Recordings to be Set
 
 * First, update the fixture one final time:
 
@@ -777,7 +778,7 @@ public class SeasonPassManager {
 
 Run your acceptance test. When that passes, run your suite and unit tests. Everything should pass.
 
-## Remove Duplication
+### Remove Duplication
 
 Notice that the Scenario Table is duplicated?
 
@@ -795,7 +796,7 @@ Notice that the Scenario Table is duplicated?
 * Update each of the pages under the ScenarioTableExamples that includes these tables and remove them.
 * Verify your tests still pass.
 
-# Now Support 2 Recordings at a Time
+## Now Support 2 Recordings at a Time
 * Create another page: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.DvrThatCanRecordTwoProgramsAtaTimeExample>
 * Create the basic test:
 
@@ -821,7 +822,7 @@ Wow! That worked. Almost seems too simple. Sure enough, the basic functionality 
 * Clean Up
 * Advanced Scenario Example
 
-## Clean Up
+### Clean Up
 Some time back you created a page called: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScenarioTableExamples.OriginalExample>. You have two options:
 * Remove it, you've rewritten it.
 * Leave it as is so you have something to compare the Scenario table with.
@@ -846,7 +847,7 @@ The first option is causing a test to fix something messed up by other tests. Th
 
 So the best of the options listed is to change the fixtures that clean thins up:
 
-### Update: ClearProgramSchedule.java
+#### Update: ClearProgramSchedule.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -858,7 +859,7 @@ public class ClearProgramSchedule {
 }
 {% endhighlight %}
 
-### Update: AddProgramsToSchedule.java
+#### Update: AddProgramsToSchedule.java
 
 {% highlight java %}
    public static void resetSchedule() {
@@ -866,7 +867,7 @@ public class ClearProgramSchedule {
    }
 {% endhighlight %}
 
-### Update: ClearToDoList.java
+#### Update: ClearToDoList.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -878,7 +879,7 @@ public class ClearToDoList {
 }
 {% endhighlight %}
 
-### Update: CreateSeasonPassFor.java
+#### Update: CreateSeasonPassFor.java
 
 {% highlight java %}
    public static void resetSeasonPassManager() {
@@ -897,7 +898,7 @@ It is important to frequently run your unit tests and acceptance tests to make s
 
 This will not happen by chance, you must design your system to allow for it, anticipate that things will break, and when the break, fix them fast!
 
-# Advanced: Scenario Table Calling Scenario Table
+## Advanced: Scenario Table Calling Scenario Table
 This is an optional section. [You can safely skip it](FitNesse.Tutorials.ScenarioTables#summary).
 
 This section is the motivation for the [original article](FitNesse.Tutorials.ScenarioTables.OriginalArticle) so it seems appropriate to include a shortened version here. If you want to understand the inner workings, read [original article](FitNesse.Tutorials.ScenarioTables.OriginalArticle). It is not a tutorial, so there will not be any work beyond the reading effort.
@@ -919,7 +920,7 @@ This requires two steps:
 * Define a new Scenario in terms of an existing scenario.
 * Use new scenario.
 
-## Define a new scenario
+### Define a new scenario
 
 Here is a new scenario defined in terms of the old scenario:
 
@@ -943,7 +944,7 @@ This scenario is defined in terms of the first scenario. How can you tell?
 
 What you end up with is: Dvr Can Simultaneously Record And With These Should Have The Following. FitNesse notices this, realizes it has a Scenario table with that name and uses it. Scenario tables take precedence over other kinds of tables for lookup.
 
-## Use It
+### Use It
 Now you need to actually use the table:
 
 {% highlight terminal %}
@@ -977,7 +978,7 @@ I don't recommend keeping the first table and the last table since they result i
 This example use of a scenario calling another scenario is overkill. Review the [original article](FitNesse.Tutorials.ScenarioTables.OriginalArticle) for a better example and a much more detailed explanation. This technique is useful when you have a complex abstract test scenario and you'll end up performing many tests using the same sequence of steps. The abstract scenario might require many parameters. However, for a given test, you might only need to vary 1. In that case, this is a good way to both capture the basic steps and then execute them.
 
 {: #summary}
-# Summary
+## Summary
 Congratulations. At this point, if you've worked through each of the tutorials, you are only lacking experience with Table Tables. You now know how to work effectively with FitNesse and Slim. You picked up several test refactoring and organization techniques along the way. You even saw a data-driven test in JUunit.
 
 The key subject for this tutorial is Scenaro Tables:

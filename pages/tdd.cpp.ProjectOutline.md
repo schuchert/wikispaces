@@ -15,10 +15,10 @@ This project introduces the mechanics of TDD in C++. Along the way, you will:
 * Create several unit tests
 * Refactor your code
 * Refactor to design patterns
-** Strategy Pattern
-** Template Method Pattern
-** Abstract factory pattern
-** Use test doubles to test pure-virtual class
+  * Strategy Pattern
+  * Template Method Pattern
+  * Abstract factory pattern
+  * Use test doubles to test pure-virtual class
 
 ### Behaviors
 ### Round 1

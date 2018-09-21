@@ -507,12 +507,12 @@ The only update to get to green is adding a check - a guard clause - similar to 
 There are many more tests you could add to this system:
 * Data validation is non-existent (e.g., blank/invalid account id's/passwords).
 * Several account-related things:
-** Cannot Login to Account with Expired Password
-** Can Login to Account with Expired Password After Changing the Password
-** Cannot Login to Account with Temporary Password
-** Can Login to Account with Temporary Password After Changing Password
-** Cannot Change Password to any of Previous 24 passwords
-** Can Change Password to Previous password if > 24 Changes from last use
+  * Cannot Login to Account with Expired Password
+  * Can Login to Account with Expired Password After Changing the Password
+  * Cannot Login to Account with Temporary Password
+  * Can Login to Account with Temporary Password After Changing Password
+  * Cannot Change Password to any of Previous 24 passwords
+  * Can Change Password to Previous password if > 24 Changes from last use
 * ...
 
 So there's a lot let to make this a complete system. Even so, the code in the LoginService.login method is unruly. There are two problems:
@@ -969,7 +969,7 @@ Notice that there's a lot of duplication in each of the three derived classes. N
 The template method pattern expresses an algorithm in a base class with extension points implemented in a derived class. The extension points are:
 * Called by a method that implements the algorithm in the base class.
 * Declared abstract in the base class.
-[[image:http://create.ly/fvka9dq71 width="800" height="436"]]
+**Image no longer available**
 
 Some external client issues a command, say X() as in the diagram above. The method X() has a number of steps (three in this example). The first and third steps are implemented in the base class. There is one part of the algorithm, the second step, that varies. Rather than attempt to implement it, the base class defers to an abstract method. The derived classes implement that abstract method to complete the algorithm.
 
@@ -986,9 +986,9 @@ There is a standard algorithm for what happens when a player lands on a location
 Landing is a standard set of steps except for rent calculation. In terms of the template method pattern, there could be an abstract base class, say Real Estate, that has a method, landOn. Most of the work of landOn is written in the Real Estate base class. However, if rent needs to be charged, the RealEstate's landOn method can defer the details of rent calculation to an abstract method it defines.
 * If the current location is a Railroad, rent is equal to 25, 50, 100, or 200 depending on if the current player owns 1, 2, 3 or 4 railroads, respectively.
 * If the current location is a Property, then rent is equal to:
-** The face value if the owner owns less than all properties in a color group
-** Double the face value if the owner owns all the properties in a color group but has made no improvements
-** Some amount shown on the individual property deed if the owner has made improvements (e.g., added houses).
+  * The face value if the owner owns less than all properties in a color group
+  * Double the face value if the owner owns all the properties in a color group but has made no improvements
+  * Some amount shown on the individual property deed if the owner has made improvements (e.g., added houses).
 
 ### How It Applies To LoginServiceState
 In the following drawing (which attempts to follow the UML 2.0 specification), the// italic// method// handleIncorrectPassword// in the// abstract// base class// LoginServiceState// is the extension point. The base class deals with the basic validation like matching passwords and revoked accounts. It only defers what happens if the password does not match to the derived classes:

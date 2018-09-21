@@ -1,7 +1,7 @@
 ---
 title: JavaAgentRedirectorExplained
 ---
-[[image:Back.gif link="JavaAgent"]]
+[<--Back](JavaAgent)
 ## Background
 The only requirement for a class used to register a Java Agent is a premain method:
 {% highlight java %}
@@ -363,3 +363,5 @@ public class ConfigurableClassFileTransformerRegistrarTest {
 
 }
 {% endhighlight %}
+
+[<--Back](JavaAgent)

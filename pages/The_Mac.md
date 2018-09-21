@@ -36,12 +36,12 @@ After a lot of trial and error I managed to find a repeatable (I've done it twic
 * Execute: **AtherosXPInstaller.exe**
 * Configure your wireless network
 * Run the windows Updater
-** I ran it once, it updated the updating software and I rebooted
-** I ran it a second time and it had 77 downloads (I used custom installation, not express, to skip upgrading IE)
-** Reboot if told to do so
+  * I ran it once, it updated the updating software and I rebooted
+  * I ran it a second time and it had 77 downloads (I used custom installation, not express, to skip upgrading IE)
+  * Reboot if told to do so
 
 ### Finish Install
-** Install the drivers DVD, and you are ready to go. It works like a champ.
+  * Install the drivers DVD, and you are ready to go. It works like a champ.
 
 ## Subversion For All
 OK, I installed a subversion client on my PC. I've had subversion running on my PC for some time now and I wanted one repository for both systems. I took th easy way out:

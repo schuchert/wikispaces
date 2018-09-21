@@ -1,5 +1,5 @@
 ---
-title: ApsectJEX4ExpectedVersusActualOutput
+title: AspectJEX4ExpectedVersusActualOutput
 ---
 [<--Back](AspectJ_Example_4) [Next-->](AspectJEX4Possibilities)
 

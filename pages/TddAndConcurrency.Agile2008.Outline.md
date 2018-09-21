@@ -10,15 +10,15 @@ At start, David Nunn will present himself and myself.
 * Show trivial code example ([ObjectWithValue](TddAndConcurrency.ObjectWithValue))
 * Show results of running driver, the code is broken
 * Ask by table:
-** Help me demonstrate that this code is broken with a test
-** Here are a few candidate characteristics of a good test: Fast, Independent, Reliable, Self-validating, Timely. Which of these apply to your approach? Do all of these apply?
-** Start running demo in XP under Parallels so I can discuss those results
+  * Help me demonstrate that this code is broken with a test
+  * Here are a few candidate characteristics of a good test: Fast, Independent, Reliable, Self-validating, Timely. Which of these apply to your approach? Do all of these apply?
+  * Start running demo in XP under Parallels so I can discuss those results
 * Poll Tables
-** Collect their ideas (added to results of workshop)
+  * Collect their ideas (added to results of workshop)
 *** Ask if anybody has coded it and if so do they want to demo it?
 *** If not, anybody want to pair on this?
 *** Collect group testing ideas
-** Demo my test, walk through it. Run it with 2 threads, 10000 loops.
+  * Demo my test, walk through it. Run it with 2 threads, 10000 loops.
 *** Run with OS X 1.5 and 1.6 JVM, run with Parallels-based XP running JDK ?
 *** Relate examples from developing course
 *** Discuss a few findings
@@ -29,12 +29,12 @@ At start, David Nunn will present himself and myself.
 
 Problem: Imagine you have two pooled resources: one bucket of MQ connections and one bucket of database connections. Also imagine 4 operations: CRUD, each of which uses one connection and one database. Finally, assume these operations are fronted by some threaded environment, e.g. a web-server:
 * In your groups discuss the following:
-** Is deadlock possible?
-** Describe a specific scenario that causes it?
-** How can you guarantee it cannot happen?
-** How can you demonstrate deadlock occurring via a test?
-** How can you show that it probably isn't going to happen?
-** 10-minute table-top discussion
+  * Is deadlock possible?
+  * Describe a specific scenario that causes it?
+  * How can you guarantee it cannot happen?
+  * How can you demonstrate deadlock occurring via a test?
+  * How can you show that it probably isn't going to happen?
+  * 10-minute table-top discussion
 
 Dining Philosophers:
 * Describe the problem

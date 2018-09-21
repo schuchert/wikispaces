@@ -1,19 +1,20 @@
 ---
 title: FitNesse.Tutorials.TableTables
 ---
-{% include toc %}[<--Back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.AlternativeScriptTableSyntax)
+{% include toc %}
+[<--Back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.AlternativeScriptTableSyntax)
 
-# Background
+## Background
 This is a tutorial loosely based on [this writeup](AcceptanceTesting.FitNesse.TableTableExample). [That writeup](AcceptanceTesting.FitNesse.TableTableExample) describes using table table to implement test data setup to make determining expected results easier. You can read that for a slightly different take. That example was written after the fact and somewhat cleaned up. It also is not a tutorial; it is really a summary of what you'll be doing in this tutorial.
 
 In this tutorial, you'll review the setup for a previous test and then build the test setup in a way that will much better relate to the domain. Unlike the [original table table example](AcceptanceTesting.FitNesse.TableTableExample), this one will seem a lot more like a plausible development effort.
 
-# Getting Started
+## Getting Started
 As with the other tutorials, you can continue from the work you've done on the [previous tutorial](FitNesse.Tutorials.ScenarioTables), or you can [use the source](FitNesse.Tutorials.WorkingFromGitHub) and start at the tag: FitNesse.Tutorials.TableTables.Start.
 
 Up to this point, you have created programs using several different styles. However, all of these styles are very different from the underlying domain. This tutorial picks up from the [Scenario Tables Tutorial](FitNesse.Tutorials.ScenarioTables) and looks at one final way to create a program guide, or a series of programs.
 
-# Creating Many Programs
+## Creating Many Programs
 You used the following table to populate the program schedule (this is a snippet):
 {% highlight terminal %}
 |Create Daily Program Named|D5_1|On Channel|5|Starting On|3/4/2008|at|20:00|Length|30|Episodes|7|
@@ -63,7 +64,7 @@ There is one problem with this setup. On DVRs, the length of the program is not 
 
 What you will do in the remainder of this tutorial is create a fixture to handle this new table type. Once you've done that, you'll recreate some of the tests from the previous tutorial using the table table for the setup.
 
-# Creating the table
+## Creating the table
 As with the previous tutorials, you'll create these tests under their own sub-hierarchy:
 * Create a suite-page for these tests here: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.TableTableExamples>
 * Just save the page as is (with the !contents ...)
@@ -107,7 +108,7 @@ Next, we need a test that uses this <http://localhost:8080/FrontPage.DigitalVide
 
 * You might need to set this page to a test page. As of 4/15/09, the FitNesse source will automatically set the test page type for pages that begin with or end with the word "Example" (in addition to the word "Test"). However, you might not have the latest release.
 * Finally, you have a complete test with SetUp and TearDown code. Run it and notice that the test fails. It cannot find the class "Create One Day Program Guide", which is required by the Table Table.
-## Create the Fixture
+### Create the Fixture
 * Create version 1 of the fixture:
 
 {% highlight java %}
@@ -159,9 +160,9 @@ Does this look familiar? This gives a hint at just what a table-table does. FitN
 * The inside list represents the individual cells within a given row. In our case, the first cell is the channel. The remaining cells represent an hour of programming.
 
 With that basic understanding, now it is time to process an individual row. This fixture (and in general, table-table fixtures) can be complex enough to warrant unit test code. Why is that? You are trying to make a table that is easy for a non-programmer to be able to use effectively; something that is closer to the problem domain. Because the table is closer to the domain and further away from the implementation, it will require some amount of coding.
-# Switch to Unit Testing
+## Switch to Unit Testing
 Our fixture needs to be able process a series of rows, each of which represent a channel of programming. That's where we'll start with unit testing.
-## Create the First Test
+### Create the First Test
 * This first test simply puts most of the basic API in place:
 
 {% highlight java %}
@@ -206,7 +207,7 @@ public class ProgramGuideRowParser {
 
 * Run the test, make sure it passes.
 * Next, add another test with one program and notice that this requires several changes:
-### Update: ProgramGuideRowParserTest, Add new test
+#### Update: ProgramGuideRowParserTest, Add new test
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -259,7 +260,7 @@ public class ProgramGuideRowParserTest {
 }
 {% endhighlight %}
 
-### Update ProgramGuidRowPaser: Add constructor and method
+#### Update ProgramGuidRowPaser: Add constructor and method
 
 {% highlight java %}
    public ProgramGuideRowParser(Date buildDate) {
@@ -286,7 +287,7 @@ public class ProgramGuideRowParserTest {
    }
 {% endhighlight %}
 
-### Update: Program
+#### Update: Program
 
 {% highlight java %}
    @Override
@@ -331,7 +332,7 @@ public class ProgramGuideRowParser {
 
 These methods were written in response to a test, something more than a unit test, but a test none the less. Whether to add tests for the equals() method beyond what we've already written is not a clear yes or no decision, so I'll leave that to the reader since this is more about working with FitNesse than unit testing (in the book version of this tutorial, however, I'll probably take the other approach).
 
-## Next Test: Getting Program Length Correct
+### Next Test: Getting Program Length Correct
 * Add this test:
 
 {% highlight java %}
@@ -369,7 +370,7 @@ These methods were written in response to a test, something more than a unit tes
 * Run your tests, make sure they pass.
 **Note**: This is a somewhat refactored method. It will get longer and shorter as you work through this parsing exercise.
 
-## Next Test: Handle two 30 minute programs
+### Next Test: Handle two 30 minute programs
 * Add a new test (and update the @Before method):
 
 {% highlight java %}
@@ -400,7 +401,7 @@ These methods were written in response to a test, something more than a unit tes
 * Run your tests, the new one will.
 * Now make several updates to make this next test pass (and notice that the code is getting unruly):
 
-### Update: ProgramGuideRowParser.java
+#### Update: ProgramGuideRowParser.java
 
 {% highlight java %}
    public List<Program> parse(String programsInCells) {
@@ -451,7 +452,7 @@ These methods were written in response to a test, something more than a unit tes
    }
 {% endhighlight %}
 
-### Update: DateUtil.java
+#### Update: DateUtil.java
 
 {% highlight java %}
    public Date addMinutesTo(Date fromDate, int minutes) {
@@ -463,7 +464,7 @@ These methods were written in response to a test, something more than a unit tes
 {% endhighlight %}
 * Run your tests, make sure they pass.
 
-## Next Test: Ignore _ in name
+### Next Test: Ignore _ in name
 * FitNesse removes extra spaces on either side of the cell. To represent "no program", the example uses _. Here's a test that verifies the production code handles _'s correctly:
 
 {% highlight java %}
@@ -554,7 +555,7 @@ public class ProgramGuideRowParser {
 
 * Run your tests, make sure the pass.
 
-## Next Test: A cell with all spaces handled correctly
+### Next Test: A cell with all spaces handled correctly
 
 * FitNesse will take an empty cell and pass in "", so here's a test to make sure the production code works: 
 
@@ -591,7 +592,7 @@ public class ProgramGuideRowParser {
 
 * Run your tests, make sure they pass.
 
-## Final Test: One Big Row
+### Final Test: One Big Row
 
 This algorithm is either close to complete or complete. Here's a final test that will bring everything together:
 
@@ -698,21 +699,21 @@ public class ProgramGuideRowParser {
 * Make sure all of your unit tests still pass.
 * Switch back to your browser and verify that all acceptance tests still pass (other than the one failing test).
 
-# Bringing it all together
+## Bringing it all together
 Now that you can parse a single row, there are a few things left before your table-table fixture will be ready:
 * Parse a row that contains both a channel and all of the programs.
 * Take all of the programs from all of the rows and add them to the program schedule.
 
 This will require several more steps, so let's get started.
 
-## Refactor: The Name is wrong
+### Refactor: The Name is wrong
 The name of the parser class is wrong, it only parses the programs not the whole row (it does not handle the channel).
 * Rename the class ProgramGuideRowParser --> ProgramGuideProgramCellsParser.
 * Run your tests, make sure they still pass
 * Rename the test class ProgramGuidRowParserTest --> ProgramGuideProgramCellsParserTest
 * Run your tests, make sure they still pass.
 
-## Create the Real ProgramGuideRowParser
+### Create the Real ProgramGuideRowParser
 * Create a new test class, ProgramGuideRowParserTest:
 
 {% highlight java %}
@@ -743,7 +744,7 @@ public class ProgramGuideRowParserTest {
 
 * This requires two new classes:
 
-### Create: ProgramBuilderUtil.java
+#### Create: ProgramBuilderUtil.java
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -765,7 +766,7 @@ public class ProgramBuilderUtil {
 }
 {% endhighlight %}
 
-### Create: ProgramGuideRowParser
+#### Create: ProgramGuideRowParser
 
 {% highlight java %}
 package com.om.example.dvr.fixtures;
@@ -804,7 +805,7 @@ public class ProgramGuideRowParser {
 
 * Also, the new class ProgramBuilderUtil was extracted from the previous class:
 
-### Update: ProgramGuideProgramCellsParserTest.java
+#### Update: ProgramGuideProgramCellsParserTest.java
 
 {% highlight java %}
    private Program buildProgram(String date, String time, String name, int channel,
@@ -815,7 +816,7 @@ public class ProgramGuideRowParser {
 
 * Run all of your unit tests, make sure everything passes.
 
-## Finally, upate the Table Fixture
+### Finally, upate the Table Fixture
 All the pieces are in place, now it's just a matter of creating the programs:
 * Update the CreateOneDayProgramGuide.java**
 
@@ -878,10 +879,10 @@ public class CreateOneDayProgramGuide {
 * Make sure all of your unit tests pass.
 * Make sure all of your acceptance tests pass.
 
-# Final Cleanup
+## Final Cleanup
 I made some false starts. For example, rather than having the ProgramGuideRowParser take in a String, it could easily have taken in a List<String> and did all of its work based on that. Also, the DvrRecording fixture requires a range of episodes, but the way this program fixture works, it only creates one episode per program. I'm sure you could review the fixtures and also the unit tests and production code and find several more places to refactor. Before you leave this tutorial, let's finish up with some basic refactoring of the Fixtures.
 
-## Allow for a Single Episode
+### Allow for a Single Episode
 After a little experimentation with the DvrRecording fixture, I discovered a simple change that allows a single value rather than a range. I tried a few values and ran the tests after each time.
 * Make the following update to DvrRecording (note, only the return statement in each of these methods changed):
 
@@ -925,7 +926,7 @@ After a little experimentation with the DvrRecording fixture, I discovered a sim
 
 * Run all of your unit tests and acceptance tests, they should all pass.
 
-## Change ProgramGuideRowParser to take a List<String> instead of a String
+### Change ProgramGuideRowParser to take a List<String> instead of a String
 * Update ProgramGuideRowParserTest:
 
 {% highlight java %}
@@ -1042,7 +1043,7 @@ public class CreateOneDayProgramGuide {
 * Run your unit tests, verify they still pass.
 * Run your acceptance tests, make sure they still pass.
 
-# Conclusion and Summary
+## Conclusion and Summary
 Congratulations, you have finished this tutorial.
 
 This tutorial demonstrated that you can create tables reflecting a more natural or fluent style and then write more complex fixture code to support that style.

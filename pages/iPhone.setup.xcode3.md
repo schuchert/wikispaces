@@ -29,10 +29,10 @@ What follows derives heavily from [the gh-unit documentation](http://gabriel.git
 * Select //**iOS:Cocoa Touch:Application**//
 * Give it a descriptive name, for this tutorial I'll use //**UnitTests_onIPhoneSimulator**//
 * Add the following frameworks in the following dialog that pops up:
-** GHUnitIOS.framework
-** CoreGraphics.framework
-** Foundation.framework
-** UIKit.framework
+  * GHUnitIOS.framework
+  * CoreGraphics.framework
+  * Foundation.framework
+  * UIKit.framework
 * To add the first one, under "Linked Libraries", click on //**+**// then //**Add Other...**//
 * You'll find the framework where you just unzipped it (//**/Users/schuchert/src/iPhone/Libraries**// in my case.)
 * The other three are listed under the Device list.
@@ -44,20 +44,20 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 * Find the file //**UnitTests_oniPhoneSimulator-Info.plist**// and edit it. You'll find an entry at the bottom, //**Main nib file base name**// with the entry //**MainWindow**//. Simply remove the value (clear the field).
 * Add the //**GHUnitIOSTestMain.m**// to your project. You can find a copy on github [here](https://github.com/gabriel/gh-unit/raw/master/Project-IPhone/GHUnitIOSTestMain.m)
 * To do this:
-** Download the file somewhere (my download location is// **~/Downloads**//)
-** Expand //**Targets**//
-** Select your target name, mine is //**UnitTests_oniPhoneSimulator**//
-** //**Right-click:Add:Existing Files...**//
-** Find// **GHUnitIOSTestMain.m**// and double-click it (find your download location)
-** On the next dialog, check //**Copy items into destination group's folder (if needed)**//
-** Make sure that the right Target is selected. In my case this means //**UnitTests_oniPhoneSimulator**// is selected, but //**Tutorial**// is not selected.
-** Click //**Add**//
+  * Download the file somewhere (my download location is// **~/Downloads**//)
+  * Expand //**Targets**//
+  * Select your target name, mine is //**UnitTests_oniPhoneSimulator**//
+  * //**Right-click:Add:Existing Files...**//
+  * Find// **GHUnitIOSTestMain.m**// and double-click it (find your download location)
+  * On the next dialog, check //**Copy items into destination group's folder (if needed)**//
+  * Make sure that the right Target is selected. In my case this means //**UnitTests_oniPhoneSimulator**// is selected, but //**Tutorial**// is not selected.
+  * Click //**Add**//
 * Change the active target to the new target:
-** Pull down //**Project:Set Active Target**//
-** Select your unit test project.
-** Build, command-b
-** Run, command-r
-** When the simulator starts, click on //**Run**//. There are no tests, so it finishes quickly.
+  * Pull down //**Project:Set Active Target**//
+  * Select your unit test project.
+  * Build, command-b
+  * Run, command-r
+  * When the simulator starts, click on //**Run**//. There are no tests, so it finishes quickly.
 
 # Add a first test
 * Under //**Targets**//, right-click  //**UnitTests_oniPhoneSimulator**//

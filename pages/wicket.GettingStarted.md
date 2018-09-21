@@ -154,10 +154,10 @@ Now we need to start Eclipse and make a few minor corrections:
 * Start Eclipse.
 * When asked for a directory, select the original directory you created (in my case, that's /Users/schuchert/src/CheesrWorkspace)
 * Import existing project:
-** Right-click in Project Explorer
-** Select Import::Import...
-** Open General
-** Select Existing Projects into Workspace
+  * Right-click in Project Explorer
+  * Select Import::Import...
+  * Open General
+  * Select Existing Projects into Workspace
 ###  Click **Next
 ###  Click **Browse
 ###  Click **Open

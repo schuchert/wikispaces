@@ -157,21 +157,21 @@ public class CurrencyConversion {
 {% endhighlight %}
 
 * Review this code, what is worth changing?
-** Static methods
-** Embedded news
-** Long methods
-** Use of regular expressions
-** Embedded use of web client - extract class or at least make separate method
-** Violation of DIP
-** Violation of SRP
-** Violation of Law of Demeter
-** ... There are lots of opportunities
+  * Static methods
+  * Embedded news
+  * Long methods
+  * Use of regular expressions
+  * Embedded use of web client - extract class or at least make separate method
+  * Violation of DIP
+  * Violation of SRP
+  * Violation of Law of Demeter
+  * ... There are lots of opportunities
 * What should we fix?
-** Pull model
-** Nothing without a change case
-** General discussion
+  * Pull model
+  * Nothing without a change case
+  * General discussion
 * Change case:
-** We want to develop an algorithm that will analyze currency conversion to see if we can find any deals due to asymmetries in the various conversion rates up to a certain length. This is essentially a graph traversal algorithm that finds loops of a certain length which have different costs to traverse. We need to grow this algorithm and possibly introduce some heuristics after we get the basic algorithm working. Problem is, it will be hard to get this right and we need to test it because it will be a multi-million dollar investment scheme.
+  * We want to develop an algorithm that will analyze currency conversion to see if we can find any deals due to asymmetries in the various conversion rates up to a certain length. This is essentially a graph traversal algorithm that finds loops of a certain length which have different costs to traverse. We need to grow this algorithm and possibly introduce some heuristics after we get the basic algorithm working. Problem is, it will be hard to get this right and we need to test it because it will be a multi-million dollar investment scheme.
 
 ### Part 2
 Enter JMockIt. Here's a test to just exercise the code:

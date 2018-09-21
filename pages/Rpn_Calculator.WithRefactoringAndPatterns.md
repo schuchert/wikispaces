@@ -42,7 +42,7 @@ Fix that problem.
 Notice how the API is getting wide? Violation of Open/Closed. How can we fix? I guide
 them to:
 * execute("+")
-** No enums to select the operator - still compile-time
+  * No enums to select the operator - still compile-time
 *** Note, you now have the forces for both strategy and factory...
 OK, so refactor to execute("+")
 * add method for plus
@@ -56,9 +56,9 @@ Discuss Strategy Pattern.
 Implement Plus as strategy (do not use an interface YET)
 * Before you do, discuss API. Strategy requires consistent API, callers should not,
 * for example, select method based on number of parameters. So single API. Options:
-** Calculator asks for number of parameters (feature envy really), builds array
+  * Calculator asks for number of parameters (feature envy really), builds array
 *** and passes it in.
-** Send your Extracted OperatorStack to the strategy, it removes appropriate number
+  * Send your Extracted OperatorStack to the strategy, it removes appropriate number
 *** of parameters, and puts result(s) back on
 * Now actually implement plus.
 * Replace plus impl in calculator class.
@@ -71,7 +71,7 @@ You have strategies. You have duplication. You have too much responsibility in c
 Make all strategies implement interface (extract interface).
 Change long method... calculate method:
 * Split selecting operation from execution.
-** You can do this with strategy interface (math operator)
+  * You can do this with strategy interface (math operator)
 * Extract selection of operator into a factory (just a concrete factory), abstract factory later
 * 
 Now, the factory was just hard-coded. Write a test that shows an "invalid operator" exception
@@ -105,21 +105,21 @@ I have them implement two functions:
 * (using tdd to write it)
 
 * prime factors -> takes one value, puts many back:
-** values < 2 -> just removed, stack should reduce in size by one
-** 2 -> 2
-** 3 -> 3
-** 4 -> 2, 2
-** 5 -> 5
-** (these are the test cases and I'd use them)
-** 6 -> 2, 3
-** 7 -> 7
-** 8 -> 2, 2, 2
-** 1024 -> 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 (10 total)
+  * values < 2 -> just removed, stack should reduce in size by one
+  * 2 -> 2
+  * 3 -> 3
+  * 4 -> 2, 2
+  * 5 -> 5
+  * (these are the test cases and I'd use them)
+  * 6 -> 2, 3
+  * 7 -> 7
+  * 8 -> 2, 2, 2
+  * 1024 -> 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 (10 total)
 
 * Composite pattern. Add composite, then create one that is:
-** sum of prime factors
+  * sum of prime factors
 *** and and one that is
-** prime factors of sum
+  * prime factors of sum
 
 
  

@@ -3,7 +3,7 @@ title: CitiesAndStuff
 ---
 ## Oklahoma City
 My current home town.
-* Yoga: [http://www.lifemasteryservices.com/](Life_Mastery_Services).
+* Yoga: [Life_Mastery_Services](http://www.lifemasteryservices.com/).
 * NPR: 105.7 FM
 
 ## Malvern, PA

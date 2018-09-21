@@ -74,8 +74,8 @@ If you are planning on using Eclipse and working in Java, then you can get a rep
 Creating a fixture involves:
 * Creating class.
 * Making it executable:
-** On the JVM, you need a .class file
-** On the CLR, you need a DLL with the compiled class embedded
+  * On the JVM, you need a .class file
+  * On the CLR, you need a DLL with the compiled class embedded
 * Updating the classpath on your page (or hierarchically above it) to point to your executable code
 * Using an import table to name the package/namespace of the class (or fully qualifying the fixture name in the table)
 

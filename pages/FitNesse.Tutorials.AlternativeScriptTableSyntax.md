@@ -9,8 +9,8 @@ Sometime in the beginning of 2010, Bob Martin started working on an alternative 
 * Ultimately what gets executed in the fixture is the same thing that gets executed using "regular" scripts
 * All processing is done by FitNesse before sending test information into Slim.
 * There are two parts:
-** placeholder syntax for scenario tables
-** a new way to represent script tables
+  * placeholder syntax for scenario tables
+  * a new way to represent script tables
 
 # Not Starting from Scratch
 I'm bolting this tutorial on more than a year after writing the other tutorials. So I'm starting with the last checkin into github and creating all new tables for this example. I might eventually integrate this into the tutorial suite at some point in the future, but for now if you want to get started, [follow the instructions here](FitNesse.Tutorials.WorkingFromGitHub). When switching to tags, use the following tag: //**FitNesse.FitNesse.Tutorials.TableTables.Finished**//.

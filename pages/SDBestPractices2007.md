@@ -14,13 +14,13 @@ Next, you'll need the workspace. Here is a complete Eclipse workspace:
 
 * Download the file.
 * Extract the file somewhere, e.g.
-** PC: C:\workspaces
-** Mac: /Users/Schuchert/Workspaces
+  * PC: C:\workspaces
+  * Mac: /Users/Schuchert/Workspaces
 * This creates a directory called SdBestPractices2007 under the directory to which you extracted the zip file.
 * Start eclipse
 * Select the directory "SdBestPractices2007" under your target extraction directory 
 * Verify your tests run
-** Right-click on your project
-** Select Run:JUnit Tests
-** Verify all 106 tests pass
+  * Right-click on your project
+  * Select Run:JUnit Tests
+  * Verify all 106 tests pass
 

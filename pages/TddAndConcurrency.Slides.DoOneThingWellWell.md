@@ -75,8 +75,8 @@ Threads to the rescue, right?
 {% endhighlight %}
 
 * Class violates Single Responsibility
-** Connection Management
-** Process client request
+  * Connection Management
+  * Process client request
 ----
 ----
 ## We want to verify threading...

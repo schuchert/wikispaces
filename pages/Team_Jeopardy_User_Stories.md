@@ -7,7 +7,7 @@ title: Team_Jeopardy_User_Stories
 ### As an MC, I can create a game that players can join.
 * Any number of players can join while the game is accepting players.
 * No new players may join after the game is started.
-** Nice to have if you can get it
+  * Nice to have if you can get it
 * An existing player can rejoin if they need to reconnect to the game.
 
 ### As an MC, I can start the game.

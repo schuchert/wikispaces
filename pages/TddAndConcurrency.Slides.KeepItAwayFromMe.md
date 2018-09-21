@@ -144,8 +144,8 @@ When you have control of the code: Prefer server-based locking
 What if you don't have control?
 *  Adapter to change the API & add Locking
 * The Java collections use the collection object itself. Even so:
-** Adapt 
-** OR better yet, use the thread-safe collections with extended interfaces
+  * Adapt
+  * OR better yet, use the thread-safe collections with extended interfaces
 * Pick client-based locking only if it is impossible to use an adapter – which should be nearly never
 
 [<--Back](TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo) | [^Top^](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.FinaNotes)
