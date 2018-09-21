@@ -303,7 +303,7 @@ For the purpose,
 * [Stakeholder Analysis](Stakeholder_Analysis)
 * [User Roles](User_Roles)
 * [User Stories Revisited](User_Stories_Revisited)
-* [Acceptance Testing User Stories](Acceptance_Testing_User_Stories)
+* [Acceptance Testing User Stories](AcceptanceTesting_User_Stories)
 * [Story Guidelines](Story_Guidelines)
 * [Lightweight Domain Analysis](Lightweight_Domain_Analysis)
 * [Must, Should, Could, Won't](Must,_Should,_Could,_Won't)

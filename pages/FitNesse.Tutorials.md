@@ -47,8 +47,8 @@ For instructions on working from github: [FitNesse.Tutorials.WorkingFromGitHub](
 * [Converting Tests to use more of a Story Style](FitNesse.Tutorials.ConvertingToStoryStyle) 
 
 # Writeups more than Tutorials: To Be Migrated
-* [Using Table Table for DSL-esque Test Setup](Acceptance_Testing.FitNesse.TableTableExample) 
+* [Using Table Table for DSL-esque Test Setup](AcceptanceTesting.FitNesse.TableTableExample) 
 
 # Originals Already Incorporated Into Tutorial Series
 * [Scenario Tables](FitNesse.Tutorials.ScenarioTables) 
-* [Rapid Intro to Using Slim.Net](Acceptance_Testing.UsingSlimDotNetInFitNesse) 
+* [Rapid Intro to Using Slim.Net](AcceptanceTesting.UsingSlimDotNetInFitNesse) 

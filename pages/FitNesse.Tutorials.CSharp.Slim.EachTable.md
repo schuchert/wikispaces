@@ -5,11 +5,11 @@ title: FitNesse.Tutorials.CSharp.Slim.EachTable
 [<--Back](FitNesse.Tutorials)
 
 ## Introduction
-This tutorial simply demonstrates each of the kinds of tables available in Slim using C#. Before getting started with this tutorial, make sure you understand [this tutorial first](Acceptance_Testing.UsingSlimDotNetInFitNesse).
+This tutorial simply demonstrates each of the kinds of tables available in Slim using C#. Before getting started with this tutorial, make sure you understand [this tutorial first](AcceptanceTesting.UsingSlimDotNetInFitNesse).
 
 ## Table Types
 In Slim there are 5 major table types and one minor type (the import table):
-
+^
 | Decision Table | A decision table allows individual rows to execute, one at a type. Typically used to insert data into the system for testing. This replaces the Column Fixture Table from Fit. |
 | Query Table | A query table allows you to specify a number of rows expected from querying the system. Surplus or missing rows are clearly labeled. This replaces the Row Fixture Table from Fit. |
 | Script Table | Individual rows represent individual method invocations. Can make tests more expressive, often used by developers looking for something more familiar. This replaces the doFixture from Fit Library. |

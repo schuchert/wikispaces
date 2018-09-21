@@ -1,5 +1,5 @@
 ---
-title: Acceptance_Testing.UsingSlimDotNetInFitNesse
+title: AcceptanceTesting.UsingSlimDotNetInFitNesse
 ---
 {% include toc %}
 [<-- Back](FitNesse.Tutorials)

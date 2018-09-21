@@ -974,7 +974,7 @@ Finally, you've experience test cross-chatter and one way to clean it up. That's
 At this point, you've learned enough about FitNesse with the first three tutorials to be fairly effective. There's more to learn, e.g.,
 * Script Tables (TBD)
 * [Scenario Tables](FitNesse.Tutorials.ScenarioTables)
-* [Table Tables](Acceptance_Testing.FitNesse.TableTableExample)
+* [Table Tables](AcceptanceTesting.FitNesse.TableTableExample)
 
 Even so, you can do quite a bit right now.
 
