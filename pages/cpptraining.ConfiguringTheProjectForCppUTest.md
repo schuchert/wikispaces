@@ -4,7 +4,7 @@ title: cpptraining.ConfiguringTheProjectForCppUTest
 ## Configuring the Project for CppUTest
 * Edit your project's properties (right-click, properties)
 * Select// **C/C++ Build:Settings**//
-### Include Directories
+#include Directories
 * Under// **GCC C++ Compiler:Includes**// enter the include directory of CppUTest. 
   * Click the page with the green plus.
   * Select// **File system...**//
@@ -21,7 +21,7 @@ title: cpptraining.ConfiguringTheProjectForCppUTest
 You won't notice any changes unless you use CppUTest.
 * CppUTest uses the main() to execute its tests. So update the file with main() (CppUTestHasItsSmoke.cpp):
 {% highlight cpp %}
-## include <CppUTest/CommandLineTestRunner.h>
+#include <CppUTest/CommandLineTestRunner.h>
 
 int main(int argc, char **argv) {
 	return CommandLineTestRunner::RunAllTests(argc, argv);
@@ -37,7 +37,7 @@ If you'd like to see a list of tests and the time each takes to run, you can eit
 * Provide command-line arguments when you run the program in Eclipse
 * Use an updated main to make it happen every time:
 {% highlight cpp %}
-## include <CppUTest/CommandLineTestRunner.h>
+#include <CppUTest/CommandLineTestRunner.h>
 
 int main() {
 	const char* args[] = { "", "-v" };

@@ -19,9 +19,9 @@ These examples use The Eclipse CDT, mingw, CppUTest 2.1 and gcc 4.4. If you need
 ### Summing Vector of```int```
 **SummingVectorOfInts.cpp**
 {% highlight cpp %}
-# include <vector>
+#include <vector>
 
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
 TEST_GROUP(vector_ints) {
 };
@@ -50,10 +50,10 @@ This first example simply demonstrates the mechanics of manually summing up the 
 ### Smming Vector of Objects
 **SummingVectorExample1.cpp**
 {% highlight cpp %}
-# include <algorithm>
-# include <vector>
+#include <algorithm>
+#include <vector>
 
-# include <CppUTest/Testharness.h>
+#include <CppUTest/Testharness.h>
 
 struct Value_1 {
   Value_1(int v) : v(v) {}
@@ -89,10 +89,10 @@ The standard library includes  std::accumulate that accomplishes what we've alre
 
 **AccumulateVectorOfInts.cpp**
 {% highlight cpp %}
-# include <numeric>
-# include <vector>
+#include <numeric>
+#include <vector>
 
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
 TEST_GROUP(accumulate_vector) {
 };
@@ -125,10 +125,10 @@ Now that you've seen the basic algorithm, let's move on to a vector of objects:
 
 **SummingVectorsExample2.cpp**
 {% highlight cpp %}
-# include <numeric>
-# include <vector>
+#include <numeric>
+#include <vector>
 
-# include <CppUTest/Testharness.h>
+#include <CppUTest/Testharness.h>
 
 struct Value_2 {
   Value_2(int v) : v(v) {}
@@ -176,10 +176,10 @@ Another option is to provide a conversion operator. Since we are doing something
 
 **SummingVectorsExample3.cpp**
 {% highlight cpp %}
-# include <algorithm>
-# include <vector>
+#include <algorithm>
+#include <vector>
 
-# include <CppUTest/Testharness.h>
+#include <CppUTest/Testharness.h>
 
 struct Value_3 {
   Value_3(int v) : v(v) {}
@@ -193,7 +193,7 @@ typedef v_Value_3::iterator iterator;
 TEST_GROUP(SummingVectorsExample3) {
 };
 
-# include <numeric>
+#include <numeric>
 TEST(SummingVectorsExample3, usingAccumulate) {
   v_Value_3 values;
 
@@ -216,12 +216,12 @@ This works, as mentioned, because all the code is trying to sum on ints stored i
 This is going to be a bit of a leap. After this, there's a series of much smaller steps showing how to get to the final version.
 **SummingVectorsExample4.cpp**
 {% highlight cpp %}
-# include <algorithm>
-# include <vector>
-# include <numeric>
-# include <boost/bind.hpp>
+#include <algorithm>
+#include <vector>
+#include <numeric>
+#include <boost/bind.hpp>
 
-# include <CppUTest/Testharness.h>
+#include <CppUTest/Testharness.h>
 
 struct Value_4 {
   Value_4(int v) : v(v) {}
@@ -266,10 +266,10 @@ These next examples use type inference, one of the features in C++0x. If you fol
 First, the top of the source file:
 
 {% highlight cpp %}
-# include <boost/bind.hpp>
-# include <numeric>
-# include <boost/shared_ptr.hpp>
-# include <CppUTest/TestHarness.h>
+#include <boost/bind.hpp>
+#include <numeric>
+#include <boost/shared_ptr.hpp>
+#include <CppUTest/TestHarness.h>
 
 using boost::bind;
 
@@ -490,8 +490,8 @@ TEST(plusAndBind, accumulateHowYoudProbablyWriteIt) {
 Let's look at one final example. Imagine you want to have a vector of dynamically-allocated objects. Instead of storing raw pointers, you might think to use some kind of smart pointer, such as```std::auto_ptr```. However, you cannot put```std::auto_pointer``` into standard collections. So instead, you decide to use```boost::shared_ptr```. Here's a final example that does all of that:
 
 {% highlight cpp %}
-# include <vector>
-# include <boost/shared_ptr.hpp>
+#include <vector>
+#include <boost/shared_ptr.hpp>
 
 typedef boost::shared_ptr<Value> sp_Value;
 typedef std::vector<sp_Value> vsp_Value;
@@ -525,10 +525,10 @@ Each of these examples are pulled from one larger, compiling C++ source file. He
 
 ```PlusAndBindTest.cpp```
 {% highlight cpp %}
-# include <boost/bind.hpp>
-# include <numeric>
-# include <boost/shared_ptr.hpp>
-# include <CppUTest/TestHarness.h>
+#include <boost/bind.hpp>
+#include <numeric>
+#include <boost/shared_ptr.hpp>
+#include <CppUTest/TestHarness.h>
 
 using boost::bind;
 
@@ -629,8 +629,8 @@ TEST(plusAndBind, accumulateHowYoudProbablyWriteIt) {
   LONGS_EQUAL(52, result);
 }
 
-# include <vector>
-# include <boost/shared_ptr.hpp>
+#include <vector>
+#include <boost/shared_ptr.hpp>
 typedef boost::shared_ptr<Value> sp_Value;
 typedef std::vector<sp_Value> vsp_Value;
 TEST(plusAndBind, vsp_Value) {

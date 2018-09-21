@@ -47,7 +47,7 @@ To setup some of the C++ properties, your project must have one .cpp file in in.
 * Click// **Add**//
 * Edit the contents of the file, add the following code:
 {% highlight cpp %}
-# include <CppUTest/CommandLineTestRunner.h>
+#include <CppUTest/CommandLineTestRunner.h>
 
 int main() {
   const char* args[] = { "", "-v" };
@@ -84,7 +84,7 @@ Note: We will be using just source files for our test code.
 * Add a source file to your project (see above for details on how). Call the file// **FooTest.cpp**//
 * Edit its contents:
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
  
 TEST_GROUP(FooTest) {
 };

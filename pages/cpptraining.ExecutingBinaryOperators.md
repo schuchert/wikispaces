@@ -148,16 +148,16 @@ You'll need to copy in two boilerplate files, create the fixture class and then 
 * Add a new file called **Main.c** and set its contents:
 
 {% highlight cpp %}
-# include "SocketServer.h"
-# include "SlimConnectionHandler.h"
-# include "TcpComLink.h"
-# include <stdlib.h>
-# include <string.h>
-# include "SlimList.h"
-# include "SlimListDeserializer.h"
-# include "StatementExecutor.h"
-# include "ListExecutor.h"
-# include "SlimListSerializer.h"
+#include "SocketServer.h"
+#include "SlimConnectionHandler.h"
+#include "TcpComLink.h"
+#include <stdlib.h>
+#include <string.h>
+#include "SlimList.h"
+#include "SlimListDeserializer.h"
+#include "StatementExecutor.h"
+#include "ListExecutor.h"
+#include "SlimListSerializer.h"
 
 void AddFixtures(StatementExecutor* executor);
 char * handle_slim_message(char * message);
@@ -219,7 +219,7 @@ You'll notice several warnings about unknown header files. Let's fix that before
 Next, create another new file called **Fixtures.c**: 
 
 {% highlight cpp %}
-# include "Fixtures.h"
+#include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(ExecuteBinaryOperator)
@@ -232,13 +232,13 @@ Now it's time to create the fixture. Since this is a mechanics tutorial, I'll gi
 ### ExecuteBinaryOperator.cpp
 
 {% highlight cpp %}
-# include <stdlib.h>
-# include <stdio.h>
-# include <string>
-# include "RpnCalculator.h"
-# include "OperatorFactory.h"
-# include "Fixtures.h"
-# include "SlimUtils.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string>
+#include "RpnCalculator.h"
+#include "OperatorFactory.h"
+#include "Fixtures.h"
+#include "SlimUtils.h"
  
 struct ExecuteBinaryOperator {
     ExecuteBinaryOperator() {
@@ -418,14 +418,14 @@ This creates a new operator called "sumOfPrimesFactors" and then executes it. To
 Create a new source filed called **ProgramTheCalcualtor.cpp**. Here's the source:
 
 {% highlight cpp %}
-# include <stdlib.h>
-# include <stdio.h>
-# include <string>
-# include "RpnCalculator.h"
-# include "OperatorFactory.h"
-# include "SlimUtils.h"
-# include "SlimList.h"
-# include "Fixtures.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string>
+#include "RpnCalculator.h"
+#include "OperatorFactory.h"
+#include "SlimUtils.h"
+#include "SlimList.h"
+#include "Fixtures.h"
 
 struct ProgramTheCalculator {
     ProgramTheCalculator() : calculator(factory) {
@@ -501,7 +501,7 @@ SLIM_END
 To get this working, you'll need to register the fixture by updated **Fixtures.c**:
 
 {% highlight cpp %}
-# include "Fixtures.h"
+#include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(ExecuteBinaryOperator)
@@ -533,14 +533,14 @@ Create this page at: <http://localhost:8080/RpnExamples.AlphaNamedOperatorsExamp
 Now you'll need to create a fixture. Create a new source file called **AlphaNamedOperators.cpp**:
 
 {% highlight cpp %}
-# include <ctype.h>
-# include <stdlib.h>
-# include <string>
-# include "RpnCalculator.h"
-# include "OperatorFactory.h"
-# include "Fixtures.h"
-# include "SlimUtils.h"
-# include "QueryResultAccumulator.h"
+#include <ctype.h>
+#include <stdlib.h>
+#include <string>
+#include "RpnCalculator.h"
+#include "OperatorFactory.h"
+#include "Fixtures.h"
+#include "SlimUtils.h"
+#include "QueryResultAccumulator.h"
 
 struct AlphaNamedOperators {
     OperatorFactory factory;
@@ -602,7 +602,7 @@ SLIM_CREATE_FIXTURE(AlphaNamedOperators)
 To get this registered, you'll have to update **Fixtures.c**:
 
 {% highlight cpp %}
-# include "Fixtures.h"
+#include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(ExecuteBinaryOperator)

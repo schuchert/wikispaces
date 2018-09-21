@@ -26,10 +26,10 @@ Typically, I introduce this problem similar to how Bob introduces it (it is his 
 Here is one way to write these tests using [CppUTest](http://www.cpputest.org/):
 ### PrimeFactorsOperator.cpp
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
-# include "OperandStack.h"
-# include "PrimeFactorsOperator.h"
+#include "OperandStack.h"
+#include "PrimeFactorsOperator.h"
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
    PrimeFactorsOperator op;
@@ -112,10 +112,10 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
 ## [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) Violation?
 There is a lot of duplication in this test code. Often, test code might have more duplication than production code to make it easier to understand without hunting around. Even so, this really seems to abuse duplication unnecessarily. Here is the same thing simply cleaned up a bit:
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
-# include "OperandStack.h"
-# include "PrimeFactorsOperator.h"
+#include "OperandStack.h"
+#include "PrimeFactorsOperator.h"
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
    // snip
@@ -187,10 +187,10 @@ The next thing worth improving is the multiple lines used to determine what is o
 
 Here is one example using a (crazy) long list of parameters:
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
-# include "OperandStack.h"
-# include "PrimeFactorsOperator.h"
+#include "OperandStack.h"
+#include "PrimeFactorsOperator.h"
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
    // snip
@@ -270,10 +270,10 @@ It would be nice to be able to specify the total number of elements that should 
 
 Consider this version:
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
-# include "OperandStack.h"
-# include "PrimeFactorsOperator.h"
+#include "OperandStack.h"
+#include "PrimeFactorsOperator.h"
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
    // snip
@@ -341,7 +341,7 @@ TEST(PrimeFactorsOperatorTest, 1024ResultsInTen2s) {
 The method taking 10 parameters was just a temporary solution. Now we can rewrite it using variable arguments. A problem with variable arguments is that you need some way to know when to stop reading. Putting in the **stackSizeShouldBe()** method gives us a natural way to express the number of variable arguments:
 {% highlight cpp %}
 //snip
-# include <stdarg.h>
+#include <stdarg.h>
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
    int expectedStackLength;
@@ -373,13 +373,13 @@ Here is another, probably over the top, version of the tests using more of a sto
 
 For these unit tests, I believe this is overkill. However, it does show another way to express tests:
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
-# include "OperandStack.h"
-# include "PrimeFactorsOperator.h"
+#include "OperandStack.h"
+#include "PrimeFactorsOperator.h"
 
-# include <stdarg.h>
-# include <string>
+#include <stdarg.h>
+#include <string>
 using namespace std;
 
 TEST_GROUP(PrimeFactorsOperatorTest) {
@@ -528,13 +528,13 @@ This second point is a bit ironic coming from me. There's a design pattern from 
 In Cucumber, often the "And" step includes one thing to check. There's no reason to disallow more than one thing to check. Given the a previous solution using variable arguments, it seems OK to bring that back to clean up the examples that have so many "And" lines:
 
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
-# include "OperandStack.h"
-# include "PrimeFactorsOperator.h"
+#include "OperandStack.h"
+#include "PrimeFactorsOperator.h"
 
-# include <stdarg.h>
-# include <string>
+#include <stdarg.h>
+#include <string>
 using namespace std;
 
 TEST_GROUP(PrimeFactorsOperatorTest) {

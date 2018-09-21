@@ -13,7 +13,7 @@ Some time ago I wanted to get a rough idea of which unit tests were taking the l
          0, vehicle.integration.IVehicleDaoTest.createDuplicateVehicle
 {% endhighlight %}
 
-The first column is 10 digits wide and is the number of milliseconds to run the **test** method. It does NOT include the time to run setUp() and tearDown() (or their equivalent [@Before](JUnit_4.xBefore) and [@After](JUnit_4.xAtAfter) methods.)
+The first column is 10 digits wide and is the number of milliseconds to run the **test** method. It does NOT include the time to run setUp() and tearDown() (or their equivalent [@Before](JUnit_4.xAtBefore) and [@After](JUnit_4.xAtAfter) methods.)
 
 This example uses Log4J. To configure Log4J, I first used a [simple configurator](Commons_Logging_and_Log4j_Config). Then I programmatic ally set up an appender in the Aspect so that my logging configuration would not have aspect-based logging information in it (thereby keeping the crosscutting concern more localized).
 

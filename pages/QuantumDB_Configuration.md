@@ -1,16 +1,16 @@
 ---
 title: QuantumDB_Configuration
 ---
-# QuantumDb Configuration
+## QuantumDb Configuration
 
 QuantumDb is an Eclipse plugin that lets you view a database. This is a quick start guide.
 
 ## Download and Install
-# Download GEF (a required package) from [here](http://www.eclipse.org/downloads/download.php?file=/tools/gef/downloads/drops/R-3.2.1-200609211617/GEF-ALL-3.2.1.zip)
-# Download QuantumDb from [here](http://sourceforge.net/project/showfiles.php?group_id=7746&package_id=57047)
-# Open the GEF zip file and extract just the **plugins** and **features** directories directly into you eclipse installation (c:\eclipse)
-# Open the QuantumDb zip file and extract just the **plugins** and **features** directories directly into your eclipse installation (c:\eclipse)
-# Restart Eclipse
+* Download GEF (a required package) from [here](http://www.eclipse.org/downloads/download.php?file=/tools/gef/downloads/drops/R-3.2.1-200609211617/GEF-ALL-3.2.1.zip)
+* Download QuantumDb from [here](http://sourceforge.net/project/showfiles.php?group_id=7746&package_id=57047)
+* Open the GEF zip file and extract just the **plugins** and **features** directories directly into you eclipse installation (c:\eclipse)
+* Open the QuantumDb zip file and extract just the **plugins** and **features** directories directly into your eclipse installation (c:\eclipse)
+* Restart Eclipse
 
 {: #StartYourDatabase}
 ## Start your Database
@@ -102,24 +102,24 @@ And the additions to embedded-jboss-bean.xml:
 ## Using the Perspective
 Now that everything is setup, you'll need to open the perspective and form a connection to the database.
 
-# Click the Open Perspective button and select **Other**
-# Select **Quantum DB** and click **OK**
-# Right-click in **Database Bookmarks** pane and select **New Bookmark...**
-# Click on the **Add Driver** button
-# Click on **Add External Jar...**
-# Find **hsqldb.jar** (c:\libs\hsqldb\lib\hsqldb.jar) and click **Open**
-# Click on **Browse...**
-# Select **org.hsqldb.jdbcDriver**  and click **ok**
-# Click on **Finish**
-# Select the driver you just added (it is probably the first in the list but look in the **JDBC Driver Name** column for **org.hsqldb.jdbcDriver**
-# Click **Next**
-# In the **Userid** field, enter **sa**
-# Leave the **Password** field blank
-# Leave **Prompt for Password** unselected
-# In the **JDBC URL** filed, enter **jdbc:hsqldb:hsql://localhost/xdb**
-# Name your bookmark **HypersonicLocalServer** and click **Finish**
-# Double-click on you new **HypersonicLocalServer** Bookmark
-# Expand **PUBLIC**
-# Expand **Tables**
+* Click the Open Perspective button and select **Other**
+* Select **Quantum DB** and click **OK**
+* Right-click in **Database Bookmarks** pane and select **New Bookmark...**
+* Click on the **Add Driver** button
+* Click on **Add External Jar...**
+* Find **hsqldb.jar** (c:\libs\hsqldb\lib\hsqldb.jar) and click **Open**
+* Click on **Browse...**
+* Select **org.hsqldb.jdbcDriver**  and click **ok**
+* Click on **Finish**
+* Select the driver you just added (it is probably the first in the list but look in the **JDBC Driver Name** column for **org.hsqldb.jdbcDriver**
+* Click **Next**
+* In the **Userid** field, enter **sa**
+* Leave the **Password** field blank
+* Leave **Prompt for Password** unselected
+* In the **JDBC URL** filed, enter **jdbc:hsqldb:hsql://localhost/xdb**
+* Name your bookmark **HypersonicLocalServer** and click **Finish**
+* Double-click on you new **HypersonicLocalServer** Bookmark
+* Expand **PUBLIC**
+* Expand **Tables**
 
 At this point you can experiment with the plugin.

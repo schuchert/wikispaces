@@ -1,9 +1,9 @@
 ---
 title: Katas.MonopolyTheGame
 ---
-[<--Back]({{ site.pagesurl}}/Katas)
+[<--Back](Katas)
 
-# Background
+## Background
 In 1992 I started working for a company called ObjectSpace with Graham Glass and David Norris. At that time, Graham taught classes on Object Oriented Development in C++ and sometimes Smalltalk. I was brought on to help with the teaching and helped Graham formalize the classes somewhat. Some years before 1991, Graham had bought several board games and randomly selected Monopoly to use as implementation problem for his class on Object Oriented Programming in C++. That project turned out to be an excellent source for basic object oriented design problems, design patterns (which were not yet on the scene in any significant way) and even analysis.
 
 I have worked through Monopoly in several ways since 1992 when I joined ObjectSpace:
@@ -19,12 +19,12 @@ I have worked through Monopoly in several ways since 1992 when I joined ObjectSp
 
 So without knowing it, I've personally used Monopoly as a Kata for over 15 years. 
 
-In the early days, Graham had the problem in his head (the phases, design alternatives, etc.). Just before I started teaching the class, he wrote a document to summarize his approach. I took his writeup and over a series of several applications formalized the approach and the particular requirements we picked to force certain analysis and design issues in certain directions. I've reproduced and somewhat expanded those requirements [here]({{ site.pagesurl}}/Monopoly). Actually, at that time I created slides for our C++ and Smalltalk classes - this was a mistake because the formality of the class was too much (a good lesson learned for me on class design). Later on, [Craig Larman](http://www.craiglarman.com/) joined the company and at one point, he and I mapped out our C++ and Smalltalk classes to try and them them as consistent as possible.
+In the early days, Graham had the problem in his head (the phases, design alternatives, etc.). Just before I started teaching the class, he wrote a document to summarize his approach. I took his writeup and over a series of several applications formalized the approach and the particular requirements we picked to force certain analysis and design issues in certain directions. I've reproduced and somewhat expanded those requirements [here](Monopoly). Actually, at that time I created slides for our C++ and Smalltalk classes - this was a mistake because the formality of the class was too much (a good lesson learned for me on class design). Later on, [Craig Larman](http://www.craiglarman.com/) joined the company and at one point, he and I mapped out our C++ and Smalltalk classes to try and them them as consistent as possible.
 
 In recent years, I have programmed it, though not as much as at the end of last century. Even so, when I'm teaching anything to do with design issues, I often go back to the very deep Monopoly well to find concrete examples of basic to advanced principles.
 
-# Approach
-Work through the problem as described [here]({{ site.pagesurl}}/Monopoly), completing one phase before going on to the next. This problem, as described, is meant to allow you to practice the fundamentals of object oriented programming. Keep that in mind as you approach it. You might want to review [the S.O.L.I.D.](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) principles. 
+## Approach
+Work through the problem as described [here](Monopoly), completing one phase before going on to the next. This problem, as described, is meant to allow you to practice the fundamentals of object oriented programming. Keep that in mind as you approach it. You might want to review [the S.O.L.I.D.](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) principles.
 
 Here are a few considerations:
 * Repeat this several times over a period of months, let it sink in. Think of this as process, not a "coding event."
@@ -34,9 +34,9 @@ Here are a few considerations:
 * I've work on this mostly using [big design up front](http://en.wikipedia.org/wiki/Big_Design_Up_Front) per "iteration" or "phase" (because I used this problem well before I was aware of automated unit testing or had first become [Test Infected](http://c2.com/cgi/wiki?TestInfected)). I now recommend using TDD or BDD on the problem, but you can certainly try to use [big design up front](http://en.wikipedia.org/wiki/Big_Design_Up_Front) and code from UML diagrams.
 * After you've tried this, approach it using a [strict mockist approach](http://martinfowler.com/articles/mocksArentStubs.html#SoShouldIBeAClassicistOrAMockist).
 
-# Why?
+## Why?
 Once you become very familiar with this problem (say 10 + times, maybe more), then you can use it as a means to learn something else. When you try it for the first time, you are trying to pick out classes, assign responsibilities, deal with subtle edge conditions, etc. Once you become quite familiar with the domain and typical design approaches, you can then use it to look at other techniques. Given a strong baseline understanding of this problem, you will have the ability to critically contrast a new technique on an old problem. For example, even after working on this problem over 100 times, when I tried working on it using [Mockito](http://mockito.org/), I had several micro a-ha experiences. Since I was so familiar with the problem, the different technique of taking a [strict mockist approach](http://martinfowler.com/articles/mocksArentStubs.html#SoShouldIBeAClassicistOrAMockist) gave me a "high contrast experience."
 
 Let me know how it goes for you!
 
-[<--Back]({{ site.pagesurl}}/Katas)
+[<--Back](Katas)

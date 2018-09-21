@@ -138,7 +138,7 @@ Note that by default, the project you just created is selected. If you rush thou
 //  Copyright 2010 Brett L. Schuchert. Use at will, just don't blame me.
 //
 
-# import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 
 @interface ItShouldHaveSmoke : GHTestCase {
     NSString *someVariableToInitialize;

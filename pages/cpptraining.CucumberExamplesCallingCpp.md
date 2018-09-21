@@ -90,10 +90,10 @@ create_makefile("fixture_glue")
 * Create a file called fixture_glue.cpp:
 //**fixture_glue.cpp**//
 {% highlight terminal %}
-# include "ruby.h"
+#include "ruby.h"
  
 using namespace std;
-# include <stdio.h>
+#include <stdio.h>
  
 VALUE cRpnCalcFixture;
  

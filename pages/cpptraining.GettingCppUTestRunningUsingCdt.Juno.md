@@ -27,7 +27,7 @@ What you select next depends on your environment
 * Enter **RunAllTests.cpp** for the name
 * Enter the following code:
 {% highlight cpp %}
-# include <CppUTest/CommandLineTestRunner.h>
+#include <CppUTest/CommandLineTestRunner.h>
 
 int main(int argc, char *argv[]) {
 	return CommandLineTestRunner::RunAllTests(argc, argv);

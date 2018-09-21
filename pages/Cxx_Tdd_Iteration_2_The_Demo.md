@@ -83,7 +83,7 @@ Note: We've already seen this pattern repeated. Add a method get an attribute th
 
 {% highlight cpp %}
 // add the following include
-# include <string>
+#include <string>
 
 // add the following method
 public:
@@ -99,11 +99,11 @@ Now we need to create the BoardBuilderClass. Here's the header file:
 ### BoardBuilder.hpp
 
 {% highlight cpp %}
-# ifndef _BOARDBUILDER_HPP
-# define _BOARDBUILDER_HPP
+#ifndef _BOARDBUILDER_HPP
+#define_BOARDBUILDER_HPP
 
-# include <boost/shared_ptr.hpp>
-# include <iostream>
+#include <boost/shared_ptr.hpp>
+#include <iostream>
 
 class Location;
 
@@ -112,7 +112,7 @@ public:
    static boost::shared_ptr<Location> buildBoard(std::istream &board);
 };
 
-# endif
+#endif
 {% endhighlight %}
 
 Next, we need to get our code to compile, so we'll need to add a definition for the buildBoard method:
@@ -120,7 +120,7 @@ Next, we need to get our code to compile, so we'll need to add a definition for 
 ### BuildBoard.cpp
 
 {% highlight cpp %}
-# include "BoardBuilder.hpp"
+#include "BoardBuilder.hpp"
 
 boost::shared_ptr<Location> BoardBuilder::buildBoard(std::istream &stream) {
 
@@ -220,11 +220,11 @@ This test already compiles but it does not pass. The fact that is does not pass 
 We need to update the buildBoard method:
 
 {% highlight cpp %}
-# include "BoardBuilder.hpp"
+#include "BoardBuilder.hpp"
 
-# include "Location.hpp"
+#include "Location.hpp"
 
-# include <boost/tokenizer.hpp>
+#include <boost/tokenizer.hpp>
 
 typedef boost::tokenizer<boost::char_separator<char> > tokenizer;
 
@@ -349,10 +349,10 @@ Here are a couple of things to notice:
 ### LocationFactory.hpp
 
 {% highlight cpp %}
-# ifndef _LOCATIONFACTORY_HPP_
-# define _LOCATIONFACTORY_HPP_
+#ifndef _LOCATIONFACTORY_HPP_
+#define_LOCATIONFACTORY_HPP_
 
-# include <string>
+#include <string>
 
 class Location;
 
@@ -361,18 +361,18 @@ public:
    static Location *createLocation(std::string &line);
 };
 
-# endif
+#endif
 {% endhighlight %}
 
 ### LocationFactory.cpp
 
 {% highlight cpp %}
-# include <boost/tokenizer.hpp>
+#include <boost/tokenizer.hpp>
 
-# include "LocationFactory.hpp"
-# include "Location.hpp"
-# include "Go.hpp"
-# include "IncomeTax.hpp"
+#include "LocationFactory.hpp"
+#include "Location.hpp"
+#include "Go.hpp"
+#include "IncomeTax.hpp"
 
 typedef boost::tokenizer<boost::char_separator<char> > tokenizer;
 
@@ -402,10 +402,10 @@ And we need to update BoardBuilder.cpp:
 ### BoardBuilder.hpp
 
 {% highlight cpp %}
-# include "BoardBuilder.hpp"
+#include "BoardBuilder.hpp"
 
-# include "LocationFactory.hpp"
-# include "Location.hpp"
+#include "LocationFactory.hpp"
+#include "Location.hpp"
 
 boost::shared_ptr<Location> BoardBuilder::buildBoard(std::istream &stream) {
    std::string line;
@@ -439,14 +439,14 @@ Is it strange that we have a test in BoardBuilder that tests we're creating the 
 Here is a series of tests to make sure we can create each kind of Location there is:
 
 {% highlight cpp %}
-# include <cxxtest/TestSuite.h>
+#include <cxxtest/TestSuite.h>
 
-# include "LocationFactory.hpp"
-# include "Location.hpp"
-# include "Go.hpp"
-# include "IncomeTax.hpp"
-# include "GoToJail.hpp"
-# include "LuxuryTax.hpp"
+#include "LocationFactory.hpp"
+#include "Location.hpp"
+#include "Go.hpp"
+#include "IncomeTax.hpp"
+#include "GoToJail.hpp"
+#include "LuxuryTax.hpp"
 
 template<class T> T *build(const char *l) {
    std::string line(l);
@@ -505,14 +505,14 @@ To make this work, we need to update our LocationFactory:
 ### LocationFactory.cpp
 
 {% highlight cpp %}
-# include <boost/tokenizer.hpp>
+#include <boost/tokenizer.hpp>
 
-# include "LocationFactory.hpp"
-# include "Location.hpp"
-# include "Go.hpp"
-# include "IncomeTax.hpp"
-# include "LuxuryTax.hpp"
-# include "GoToJail.hpp"
+#include "LocationFactory.hpp"
+#include "Location.hpp"
+#include "Go.hpp"
+#include "IncomeTax.hpp"
+#include "LuxuryTax.hpp"
+#include "GoToJail.hpp"
 
 
 typedef boost::tokenizer<boost::char_separator<char> > tokenizer;
@@ -600,18 +600,18 @@ Since we've already simplified BoardBuilder and taken out its responsibility for
 ### LocationFactory.cpp
 
 {% highlight cpp %}
-# include <boost/tokenizer.hpp>
+#include <boost/tokenizer.hpp>
 
-# include "LocationFactory.hpp"
-# include "Location.hpp"
-# include "Go.hpp"
-# include "IncomeTax.hpp"
-# include "LuxuryTax.hpp"
-# include "GoToJail.hpp"
+#include "LocationFactory.hpp"
+#include "Location.hpp"
+#include "Go.hpp"
+#include "IncomeTax.hpp"
+#include "LuxuryTax.hpp"
+#include "GoToJail.hpp"
 
-# include <iostream>
+#include <iostream>
 
-# include <map>
+#include <map>
 typedef boost::tokenizer<boost::char_separator<char> > tokenizer;
 typedef std::map<std::string, Location*> m_l;
 

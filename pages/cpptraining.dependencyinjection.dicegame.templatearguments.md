@@ -10,9 +10,9 @@ In this version, the Dice Game takes two template parameters. Notice that becaus
 
 //**DiceGame_TwoTemplateParametersTest.h**//
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
-# include "DiceGame_TwoTemplateParameters.h"
+#include "DiceGame_TwoTemplateParameters.h"
 
 template<int v1>
 class HardCodedDie {
@@ -48,8 +48,8 @@ TEST(DiceGame_TwoTemplateParameters, PushShouldLeaveBalanceUnchanged) {
 {% highlight cpp %}
 # pragma once
 
-# include "Die.h"
-# include <vector>
+#include "Die.h"
+#include <vector>
 
 template<class T1=Die, class T2=T1>
 class DiceGame_TwoTemplateParameters {
@@ -89,9 +89,9 @@ void DiceGame_TwoTemplateParameters<T1, T2>::play() {
 In this version, the LoadedDie are instead "LoadedDieWithTwoAlternatinvValues", where the two values are template parameters. The DiceGame takes one template parameter.
 //**DiceGame_UsingTemplatesTest.cpp**//
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
-# include "DiceGame_UsingTemplates.h"
+#include "DiceGame_UsingTemplates.h"
 
 template<int v1, int v2 = v1>
 class LoadedDieWithTwoAlternativingValues {
@@ -139,8 +139,8 @@ TEST(DiceGame_UsingTemplates, PushShouldLeaveBalanceUnchanged) {
 {% highlight cpp %}
 # pragma once
 
-# include "Die.h"
-# include <vector>
+#include "Die.h"
+#include <vector>
 
 template<class T=Die>
 class DiceGame_UsingTemplates {
@@ -166,8 +166,8 @@ template<class T>
 DiceGame_UsingTemplates<T>::~DiceGame_UsingTemplates() {
 }
 
-# include <tr1/functional>
-# include <numeric>
+#include <tr1/functional>
+#include <numeric>
 using namespace std;
 using namespace tr1;
 using namespace placeholders;

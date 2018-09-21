@@ -2,7 +2,7 @@
 title: JavaAgent
 ---
 # Java Agents Transform Classes at Load Times
-By now this is old news, but since Java 5, there's been an option to add so-called Java Agents to the class loader. A Java Agent is given the raw bytes of a class file and it is able to transform (instrument) it. You might do this when using [Aspect Oriented Programming](AOP), some EJB containers or other light-weight containers. 
+By now this is old news, but since Java 5, there's been an option to add so-called Java Agents to the class loader. A Java Agent is given the raw bytes of a class file and it is able to transform (instrument) it. You might do this when using [Aspect Oriented Programming](aop/AOP), some EJB containers or other light-weight containers.
 
 There are two parts to a Java Agent:
 # The Class File Transformer - a call that implements [ClassFileTransformer](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/instrument/ClassFileTransformer.html).

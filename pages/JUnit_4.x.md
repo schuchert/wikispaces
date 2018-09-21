@@ -1,6 +1,7 @@
 ---
 title: JUnit_4.x
 ---
+
 ## JUnit 4.1
 {% include toc %}
 If you've used JUnit prior to version 4.0 (e.g. you've been using JUnit in Eclipse version 2.0 to 3.1.2) then here is the first place you want to go to get up to speed: [JUnit 4.0 in 10 Minutes](http://www.instrumentalservices.com/index.php?option=com_content&task=view&id=45&Itemid=52). If you are not somewhat familiar with JUnit 4, you can probably follow this material. However, after code examples that use JUnit 4 specific features, you'll notice a [Click_Here](Click_Here) link that will give you more detailed information.
@@ -127,8 +128,9 @@ This section contains the full code for the examples mentioned above.
 16:     private VehicleLicense license;
 17:     private VehicleType type;
 {% endhighlight %}
+
 {: #AtBefore}
-[For a description of @Before, click here.](JUnit_4.xBefore)
+[For a description of @Before, click here.](JUnit_4.xAtBefore)
 {% highlight java %}
 19:     @Before
 20:     public void setup() {

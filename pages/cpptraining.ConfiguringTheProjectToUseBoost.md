@@ -19,9 +19,9 @@ title: cpptraining.ConfiguringTheProjectToUseBoost
 * Verify these settings.
   * Create a new file: BoostDateTimeSmokeTest.cpp:
 {% highlight cpp %}
-# include <boost/date_time/gregorian/gregorian.hpp>
+#include <boost/date_time/gregorian/gregorian.hpp>
 
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
 TEST_GROUP(Dates) {
 

@@ -6,8 +6,8 @@ title: CppRpnCalculatorStrategyPatternExample
 Review first the abstract base classes of all strategies (in this case, math operators):
 ### MathOperator.h
 {% highlight cpp %}
-# ifndef MATHOPERATOR_H
-# define MATHOPERATOR_H
+#ifndef MATHOPERATOR_H
+#defineMATHOPERATOR_H
 
 class OperandStack;
 
@@ -19,7 +19,7 @@ public:
    virtual void execute(OperandStack& stack) = 0;
 };
 
-# endif
+#endif
 {% endhighlight %}
 
 This defines that any operator can perform its work by having its **execute** method called passing in an OperandStack. An operand stack is a regular stack that:
@@ -47,11 +47,11 @@ void Factorial::execute(OperandStack& stack) {
 Here are the tests that verify it works as expected(using CppUTest):
 ### FactorialTest.cpp
 {% highlight cpp %}
-# include "CppUTest/TestHarness.h"
+#include "CppUTest/TestHarness.h"
 
-# include "OperandStack.h"
-# include "Factorial.h"
-# include "InvalidOperandException.h"
+#include "OperandStack.h"
+#include "Factorial.h"
+#include "InvalidOperandException.h"
 
 TEST_GROUP(Factorial) {
    void assertFactorialOfIs(int number, int expectedValue) {

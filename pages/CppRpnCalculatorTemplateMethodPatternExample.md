@@ -9,10 +9,10 @@ Review the method BinaryOperator::execute. Notice how it is concrete, but it ref
 
 ### BinaryOperator.h
 {% highlight cpp %}
-# ifndef BINARYOPERATOR_H
-# define BINARYOPERATOR_H
+#ifndef BINARYOPERATOR_H
+#defineBINARYOPERATOR_H
 
-# include "MathOperator.h"
+#include "MathOperator.h"
 
 class BinaryOperator: public MathOperator {
 public:
@@ -23,14 +23,14 @@ protected:
    virtual int executeImpl(int lhs, int rhs) = 0;
 
 };
-# endif
+#endif
 {% endhighlight %}
 
 ### BinaryOperator.cpp
 {% highlight cpp %}
-# include "BinaryOperator.h"
+#include "BinaryOperator.h"
 
-# include "OperandStack.h"
+#include "OperandStack.h"
 
 BinaryOperator::~BinaryOperator() {
 }

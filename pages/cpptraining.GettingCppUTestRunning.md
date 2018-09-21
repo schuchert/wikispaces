@@ -13,7 +13,7 @@ Make sure you have [already installed the CDT](cpptraining.GettingStartedWithEcl
 # Creating A Test
 * Now, add another source file called ActualSmokeTest.cpp:
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
 TEST_GROUP(Foo) {
 };

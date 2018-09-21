@@ -58,7 +58,7 @@ Now you'll add a simple fixture with a failing test, then get the test to pass.
 ## Create a Failing Test
 * Update ANewlyCreatedRpnCalculator.h to resemble:
 {% highlight c %}
-# import <SenTestingKit/SenTestingKit.h>
+#import <SenTestingKit/SenTestingKit.h>
 
 @interface ANewlyCreatedRpnCalculatorShould : SenTestCase {
 }
@@ -68,7 +68,7 @@ Now you'll add a simple fixture with a failing test, then get the test to pass.
 
 * Update ANewlyCreatedRpnCalculator.m to resemble:
 {% highlight c %}
-# import "ANewlyCreatedRpnCalculatorShould.h"
+#import "ANewlyCreatedRpnCalculatorShould.h"
 
 @implementation ANewlyCreatedRpnCalculatorShould
 
@@ -104,8 +104,8 @@ To:
 Now it's time to get the RpnCalculator framework linked into the test target. 
 * Update the unit test (in ANewlyCreatedCalculatorShould.m):
 {% highlight c %}
-# import "ANewlyCreatedRpnCalculatorShould.h"
-# import "RpnCalculator.h"
+#import "ANewlyCreatedRpnCalculatorShould.h"
+#import "RpnCalculator.h"
 
 @implementation ANewlyCreatedRpnCalculatorShould
 
@@ -127,7 +127,7 @@ This example imports a type that does not yet exist. So add it:
 * Click// **Finish**//
 * Edit// **RpnCalculator.h**//:
 {% highlight c %}
-# import <Cocoa/Cocoa.h>
+#import <Cocoa/Cocoa.h>
 
 @interface RpnCalculator : NSObject {
 	int accumulator;
@@ -139,7 +139,7 @@ This example imports a type that does not yet exist. So add it:
 {% endhighlight %}
 * Edit// **RpnCalculator.m**//:
 {% highlight c %}
-# import "RpnCalculator.h"
+#import "RpnCalculator.h"
 
 @implementation RpnCalculator
 

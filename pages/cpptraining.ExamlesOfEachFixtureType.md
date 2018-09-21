@@ -25,13 +25,13 @@ Since no table type is provided, this is a decision table. The basic mechanics f
 Here's cslim code that can handle this table:
 ### ExecuteBinaryOperator.cpp
 {% highlight cpp %}
-# include <stdlib.h>
-# include <stdio.h>
-# include <string>
-# include "RpnCalculator.h"
-# include "OperatorFactory.h"
-# include "Fixtures.h"
-# include "SlimUtils.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string>
+#include "RpnCalculator.h"
+#include "OperatorFactory.h"
+#include "Fixtures.h"
+#include "SlimUtils.h"
  
 struct ExecuteBinaryOperator {
     ExecuteBinaryOperator() {
@@ -103,7 +103,7 @@ SLIM_END
 Note that as with all fixtures, this code will need to be "registered" with cslim. The default installation of cslim provides a file called "Fixtures.c". To register this class, you'd add:
 ### Fixtures.c
 {% highlight cpp %}
-# include "Fixtures.h"
+#include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(ExecuteBinaryOperator)
@@ -134,14 +134,14 @@ How can you tell it's a script table? The word script on the first row.
 And here's an example fixture that can handle this table. Note, I used g++ 4.4 (or 4.5) and provided the command-line parameter "-std=c++0x". This allows me to use the auto keyword in its new form:
 ### ProgrammingTheCalculator.cpp
 {% highlight cpp %}
-# include <stdlib.h>
-# include <stdio.h>
-# include <string>
-# include "RpnCalculator.h"
-# include "OperatorFactory.h"
-# include "SlimUtils.h"
-# include "SlimList.h"
-# include "Fixtures.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string>
+#include "RpnCalculator.h"
+#include "OperatorFactory.h"
+#include "SlimUtils.h"
+#include "SlimList.h"
+#include "Fixtures.h"
 
 struct ProgramTheCalculator {
     ProgramTheCalculator() : calculator(factory) {
@@ -236,16 +236,16 @@ How can you tell this is a query table? The word "Query" in the first row.
 Now the fixture to handle it:
 ### SingleCharacterNameOperators.cpp
 {% highlight cpp %}
-# include <stdlib.h>
-# include <stdio.h>
-# include <vector>
-# include <string>
-# include <memory>
-# include "RpnCalculator.h"
-# include "OperatorFactory.h"
-# include "Fixtures.h"
-# include "SlimUtils.h"
-# include "QueryResultAccumulator.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <vector>
+#include <string>
+#include <memory>
+#include "RpnCalculator.h"
+#include "OperatorFactory.h"
+#include "Fixtures.h"
+#include "SlimUtils.h"
+#include "QueryResultAccumulator.h"
 
 struct SingleCharacterNameOperators {
     OperatorFactory factory;
@@ -309,12 +309,12 @@ This code makes use of a utility class QueryResultAccumulator. This is [availabl
 ### QueryResultAccumulator.h
 {% highlight cpp %}
 # pragma once
-# ifndef QUERYRESULTACCUMULATOR_H_
-# define QUERYRESULTACCUMULATOR_H_
+#ifndef QUERYRESULTACCUMULATOR_H_
+#defineQUERYRESULTACCUMULATOR_H_
 
 class SlimList;
-# include <vector>
-# include <string>
+#include <vector>
+#include <string>
 class QueryResultAccumulator {
 public:
     typedef std::vector<SlimList*> v_SlimList;
@@ -345,18 +345,18 @@ private:
     QueryResultAccumulator& operator=(const QueryResultAccumulator&);
 };
 
-# endif
+#endif
 {% endhighlight %}
 
 ### QueryResultAccumulator.cpp
 {% highlight cpp %}
-# include "QueryResultAccumulator.h"
-# include "DifferentFieldCountsInObjects.h"
-# include "InvalidStateException.h"
+#include "QueryResultAccumulator.h"
+#include "DifferentFieldCountsInObjects.h"
+#include "InvalidStateException.h"
 
 extern "C" {
-# include "SlimList.h"
-# include "SlimListSerializer.h"
+#include "SlimList.h"
+#include "SlimListSerializer.h"
 }
 
 QueryResultAccumulator::QueryResultAccumulator() : result(0) {

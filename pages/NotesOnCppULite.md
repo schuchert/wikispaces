@@ -12,7 +12,7 @@ There are three parts to using CppULite
 ## Creating a main
 This is a one-time thing in any project. This example runs a text runner and reports errors:
 {% highlight cpp %}
-# include <CppUTest/CommandLineTestRunner.h>
+#include <CppUTest/CommandLineTestRunner.h>
 
 int main(int argc, char* argv[]) {
    CommandLineTestRunner::RunAllTests(argc, argv);
@@ -22,14 +22,14 @@ int main(int argc, char* argv[]) {
 ## Creating a test
 Here's part of a file to test code to validate logging in using the state pattern:
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
-# include "Accounts.h"
+#include "Accounts.h"
 
-# include "LoggingInState.h"
-# include "StateBasedLoginValidator.h"
-# include "WaitingForLoginState.h"
-# include "FirstFailedLoginAttemptState.h"
+#include "LoggingInState.h"
+#include "StateBasedLoginValidator.h"
+#include "WaitingForLoginState.h"
+#include "FirstFailedLoginAttemptState.h"
 
 TEST_GROUP(StateBasedLoginValidator) {
    Accounts *accounts;

@@ -23,7 +23,7 @@ public class JpaApiTests {
 }
 {% endhighlight %}
 
-This creates two fields. We then use the JUnit 4 @Before annotation to initialize that before the execution of each individual unit test. For details, please see [here](JUnit_4.xBefore).
+This creates two fields. We then use the JUnit 4 @Before annotation to initialize that before the execution of each individual unit test. For details, please see [here](JUnit_4.xAtBefore).
 
 ### Per test method cleanup
 {% highlight java %}

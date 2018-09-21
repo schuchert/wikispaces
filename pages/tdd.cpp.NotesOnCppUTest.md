@@ -17,7 +17,7 @@ These do not include working in the express version. See the old section below f
 * Create a new solution with an Empty C++ Project (new, Empty C++ project)
 * Add a source file (select project, right-click, add, new item..., c++ file) to your Empty C++ project called RunAllTests.cpp:
 {% highlight cpp %}
-# include <CppUTest/CommandLineTestRunner.h>
+#include <CppUTest/CommandLineTestRunner.h>
 
 int main(int argc, char** argv) {
     return CommandLineTestRunner::RunAllTests(argc, argv);
@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
 * Add a test file. Create a new source file. E.g. FooTest.cpp:
 {% highlight cpp %}
 // the below include should be the last include if you are using <vector>, <string>, etc.
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
 TEST_GROUP(FooTest) {
 };
@@ -84,7 +84,7 @@ old
 * (Optional) Remove the AllTests project included when you included the solution
 * Add a source file to your Empty C++ project called AllTests.cpp:
 {% highlight cpp %}
-# include <CppUTest/CommandLineTestRunner.h>
+#include <CppUTest/CommandLineTestRunner.h>
 
 int main(int ac, char** av)
 {
@@ -106,7 +106,7 @@ winmm.lib
   * (project Properties... Linker, Input, Additional Dependencies)
 * You should be able to start writing and executing tests. E.g., Add a file to hold some tests, FooTest.cpp
 {% highlight cpp %}
-# include <CppUTest/TestHarness.h>
+#include <CppUTest/TestHarness.h>
 
 TEST_GROUP(FooTest)
 {

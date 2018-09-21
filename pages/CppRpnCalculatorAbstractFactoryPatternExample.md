@@ -9,12 +9,12 @@ This section has an example of an abstract factory and two concrete implementati
 Here's the abstract factory class:
 ### MathOperatorFactory.h
 {% highlight cpp %}
-# ifndef MATHOPERATORFACTORY_H
-# define MATHOPERATORFACTORY_H
+#ifndef MATHOPERATORFACTORY_H
+#defineMATHOPERATORFACTORY_H
 
 class MathOperator;
 
-# include <string>
+#include <string>
 
 class MathOperatorFactory
 {
@@ -24,13 +24,13 @@ public:
    virtual MathOperator& getOperatorNamed(const std::string& operatorName) = 0;
 };
 
-# endif
+#endif
 {% endhighlight %}
 
 ### MathoOperatorFactory.cpp
 {% highlight cpp %}
 
-# include "MathOperatorFactory.h"
+#include "MathOperatorFactory.h"
 
 MathOperatorFactory::MathOperatorFactory(void)
 {
@@ -44,12 +44,12 @@ MathOperatorFactory::~MathOperatorFactory(void)
 Here's a basic factory that provides MathOperators using conditional and static variables within a method:
 ### IfBasedMathOperatorFactory.cpp
 {% highlight cpp %}
-# include "IfBasedMathOperatorFactory.h"
-# include "Plus.h"
-# include "Minus.h"
-# include "Multiply.h"
-# include "Divide.h"
-# include "Factorial.h"
+#include "IfBasedMathOperatorFactory.h"
+#include "Plus.h"
+#include "Minus.h"
+#include "Multiply.h"
+#include "Divide.h"
+#include "Factorial.h"
 
 IfBasedMathOperatorFactory::IfBasedMathOperatorFactory(){}
 
@@ -82,13 +82,13 @@ MathOperator &IfBasedMathOperatorFactory::getOperatorNamed(const std::string &op
 And here's one that uses words like "plus" and "factorial" instead of "+" and "!":
 ### FullyNamedMathOperatorFactory
 {% highlight cpp %}
-# include "FullyNamedMathOperatorFactory.h"
+#include "FullyNamedMathOperatorFactory.h"
 
-# include "Plus.h"
-# include "Minus.h"
-# include "Multiply.h"
-# include "Divide.h"
-# include "Factorial.h"
+#include "Plus.h"
+#include "Minus.h"
+#include "Multiply.h"
+#include "Divide.h"
+#include "Factorial.h"
 
 FullyNamedMathOperatorFactory::FullyNamedMathOperatorFactory(void) {
    nameToOperator["plus"] = new Plus();

@@ -34,7 +34,7 @@ These examples use CxxTest as a way to write tests to understand how to use part
 ## Main.cpp
 You'll need this as a driver. It's your main function:
 {% highlight cpp %}
-# include <cxxtest/ErrorPrinter.h>
+#include <cxxtest/ErrorPrinter.h>
 
 int main(int argc, char* argv[]) {
 	CxxTest::ErrorPrinter errorPrinter;
@@ -47,10 +47,10 @@ int main(int argc, char* argv[]) {
 ----
 ## IStringStreamTest.hpp
 {% highlight cpp %}
-# include <cxxtest/TestSuite.h>
+#include <cxxtest/TestSuite.h>
 
-# include <iostream>
-# include <string>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -79,9 +79,9 @@ public:
 ----
 ## BoostRegexTest.hpp
 {% highlight cpp %}
-# include <cxxtest/TestSuite.h>
+#include <cxxtest/TestSuite.h>
 
-# include <boost/regex.hpp>
+#include <boost/regex.hpp>
 
 using boost::regex;
 using boost::regex_match;
@@ -114,10 +114,10 @@ public:
 ----
 ## BoostTokenizerTest
 {% highlight cpp %}
-# include <cxxtest/TestSuite.h>
+#include <cxxtest/TestSuite.h>
 
-# include <boost/tokenizer.hpp>
-# include <string>
+#include <boost/tokenizer.hpp>
+#include <string>
 using std::string;
 
 class BoostTokenizerTest : public CxxTest::TestSuite {

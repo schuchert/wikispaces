@@ -1,8 +1,8 @@
 ---
 title: JPA_Tutorial_2_Working_with_Queries_1
 ---
-{% include toc %}
 [<--Back](EJB_3_and_Java_Persistence_API)
+{% include toc %}
 
 ## JPA Tutorial 2 - Working with Queries 1
 {% include include_md_file filename="Tutorial_2_Background.md" %}

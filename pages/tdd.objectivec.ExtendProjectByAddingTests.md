@@ -36,8 +36,8 @@ The first and last step are common, so we'll refactor the code using the Test Cl
 
 * Update ANewlyCreatedRpnCalculatorShould.h:
 {% highlight c %}
-# import <SenTestingKit/SenTestingKit.h>
-# import "RpnCalculator.h"
+#import <SenTestingKit/SenTestingKit.h>
+#import "RpnCalculator.h"
 
 @interface ANewlyCreatedRpnCalculatorShould : SenTestCase {
 	RpnCalculator *calculator;
@@ -53,8 +53,8 @@ This adds an instance variable that will be available to each test method. It al
 
 * Now, update ANewlyCreatedRpnCalculatorShould.m:
 {% highlight c %}
-# import "ANewlyCreatedRpnCalculatorShould.h"
-# import "RpnCalculator.h"
+#import "ANewlyCreatedRpnCalculatorShould.h"
+#import "RpnCalculator.h"
 
 @implementation ANewlyCreatedRpnCalculatorShould
 

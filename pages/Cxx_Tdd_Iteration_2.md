@@ -67,8 +67,8 @@ public:
 Next, we need to create the class Go. First there’s Go.hpp:
 
 {% highlight cpp %}
-# ifndef Go_hpp
-# define Go_hpp
+#ifndef Go_hpp
+#defineGo_hpp
 
 class Player;
 
@@ -77,14 +77,14 @@ public:
     void landOn(Player *player);
 };
 
-# endif 
+#endif 
 {% endhighlight %}
 
 Next, we need an implementation for this method, here’s Go.cpp:
 
 {% highlight cpp %}
-# include "Go.hpp"
-# include "Player.hpp"
+#include "Go.hpp"
+#include "Player.hpp"
 
 void Go::landOn(Player *player) {
 }
@@ -202,13 +202,13 @@ So our first goal is to get back to compiling but failing tests.
 ### Red: Get Tests to Compile
 First a simple Location class, here’s Location.hpp:
 {% highlight cpp %}
-# ifndef Location_hpp
-# define Location_hpp
+#ifndef Location_hpp
+#defineLocation_hpp
 
 class Location {
 };
 
-# endif
+#endif
 {% endhighlight %}
 
 Next we need to update Player.hpp:
@@ -506,11 +506,11 @@ We’re still working up to the ultimate goal of showing that when a player take
 Here’s such a test:
 
 {% highlight cpp %}
-# ifndef LOCATIONTEST_HPP_
-# define LOCATIONTEST_HPP_
+#ifndef LOCATIONTEST_HPP_
+#defineLOCATIONTEST_HPP_
 
-# include <cxxtest/TestSuite.h>
-# include "Location.hpp"
+#include <cxxtest/TestSuite.h>
+#include "Location.hpp"
 
 class LocationTest : public CxxTest::TestSuite {
 public:
@@ -524,7 +524,7 @@ public:
     }
 };
 
-# endif /*LOCATIONTEST_HPP_*/
+#endif /*LOCATIONTEST_HPP_*/
 {% endhighlight %}
 
 ### Red: Get test to compile
@@ -532,8 +532,8 @@ public:
 This test won’t initially compile because Location does not have a landOn method like we added to Go. So update Location to have a landOn method:
 
 {% highlight cpp %}
-# ifndef Location_hpp
-# define Location_hpp
+#ifndef Location_hpp
+#defineLocation_hpp
 
 class Player;
 
@@ -547,7 +547,7 @@ private:
     Location *myNext;
 };
 
-# endif
+#endif
 {% endhighlight %}
 
 ### Green: We’re already there
@@ -653,8 +653,8 @@ OK, we have a few problems:
 Here we go, first we’ll fix Location.hpp:
 
 {% highlight cpp %}
-# ifndef Location_hpp
-# define Location_hpp
+#ifndef Location_hpp
+#defineLocation_hpp
 
 class Player;
 
@@ -669,7 +669,7 @@ private:
     Location *myNext;
 };
 
-# endif
+#endif
 {% endhighlight %}
 
 Next, we need to make sure that our LandonTrackingLocationMock class overrides landOn:
@@ -687,10 +687,10 @@ We want to make sure that the Go class inherits from Location:
 
 {% highlight cpp %}
 
-# ifndef Go_hpp
-# define Go_hpp
+#ifndef Go_hpp
+#defineGo_hpp
 
-# include "Location.hpp"
+#include "Location.hpp"
 
 class Player;
 
@@ -699,7 +699,7 @@ public:
     void landOn(Player *player);
 };
 
-# endif
+#endif
 {% endhighlight %}
 
 And finally, we need to make sure that a Player sends the message landOn during takeATurn:
@@ -812,9 +812,9 @@ Success!
 Now we need to review to see if we have any opportunities for refactoring. Reviewing GoTest.hpp, we can remove some duplication:
 
 {% highlight cpp %}
-# include <cxxtest/TestSuite.h>
-# include "Go.hpp"
-# include "Player.hpp"
+#include <cxxtest/TestSuite.h>
+#include "Go.hpp"
+#include "Player.hpp"
 
 class GoTest : public CxxTest::TestSuite {
 public:
@@ -1070,8 +1070,8 @@ What if we moved this responsibility into location? At the very least we could �
 Here’s a possible refactoring to address this (create a new class file Location.cpp:
 
 {% highlight cpp %}
-# include "Location.hpp"
-# include "Player.hpp"
+#include "Location.hpp"
+#include "Player.hpp"
 
 void Location::move(Player *p, int spaces) {
     Location *current = this;
@@ -1119,10 +1119,10 @@ Here are all of the updated files:
 ### PlayerTest.hpp
 
 {% highlight cpp %}
-# include <cxxtest/TestSuite.h>
-# include "Player.hpp"
-# include "Location.hpp"
-# include "FixedValueMockDice.hpp"
+#include <cxxtest/TestSuite.h>
+#include "Player.hpp"
+#include "Location.hpp"
+#include "FixedValueMockDice.hpp"
 
 class PlayerTest : public CxxTest::TestSuite {
 private:
@@ -1171,12 +1171,12 @@ public:
 ### LocationTest.hpp
 
 {% highlight cpp %}
-# ifndef LOCATIONTEST_HPP_
-# define LOCATIONTEST_HPP_
+#ifndef LOCATIONTEST_HPP_
+#defineLOCATIONTEST_HPP_
 
-# include <cxxtest/TestSuite.h>
-# include "Location.hpp"
-# include "FixedValueMockDice.hpp"
+#include <cxxtest/TestSuite.h>
+#include "Location.hpp"
+#include "FixedValueMockDice.hpp"
 
 class LandonPassingTrackingLocationMock: public Location {
 public:
@@ -1244,7 +1244,7 @@ public:
     }
 };
 
-# endif /*LOCATIONTEST_HPP_*/
+#endif /*LOCATIONTEST_HPP_*/
 {% endhighlight %}
 
 Here's a new file. We now use this mock in multiple places so it's now in its own location:
@@ -1252,10 +1252,10 @@ Here's a new file. We now use this mock in multiple places so it's now in its ow
 ### FixedValueMockDice.hpp
 
 {% highlight cpp %}
-# ifndef _FIXEDVALUEMOCKDICE_HPP
-# define _FIXEDVALUEMOCKDICE_HPP
+#ifndef _FIXEDVALUEMOCKDICE_HPP
+#define_FIXEDVALUEMOCKDICE_HPP
 
-# include "Dice.hpp"
+#include "Dice.hpp"
 
 class FixedValueMockDice : public Dice {
 public:
@@ -1267,7 +1267,7 @@ private:
     int fixedValue;
 };
 
-# endif
+#endif
 {% endhighlight %}
 
 Run your tests and verify you are still green.
@@ -1302,10 +1302,10 @@ We don’t do this as a unit test, but just a smoke test to make sure everything
 Here’s a test for landing on GoToJail:
 
 {% highlight cpp %}
-# include <cxxtest/TestSuite.h>
+#include <cxxtest/TestSuite.h>
 
-# include "GoToJail.hpp"
-# include "Player.hpp"
+#include "GoToJail.hpp"
+#include "Player.hpp"
 
 class GoToJailTest : public CxxTest::TestSuite {
 public:
@@ -1328,17 +1328,17 @@ This test sets up an instance of GoToJail and verifies that when a player lands 
 Here’s the minimal amount necessary to get our test to compile:
 
 {% highlight cpp %}
-# ifndef GOTOJAIL_HPP_
-# define GOTOJAIL_HPP_
+#ifndef GOTOJAIL_HPP_
+#defineGOTOJAIL_HPP_
 
-# include "Location.hpp"
+#include "Location.hpp"
 
 class GoToJail : public Location {
 public:
     void setDestination(Location *dest) {}
 };
 
-# endif /*GOTOJAIL_HPP_*/
+#endif /*GOTOJAIL_HPP_*/
 {% endhighlight %}
 
 Verify that your tests now passes but does not compile:
@@ -1357,11 +1357,11 @@ Success rate: 94%
 We need to override the landOn method in GoToJail to do what it is supposed to do:
 
 {% highlight cpp %}
-# ifndef GOTOJAIL_HPP_
-# define GOTOJAIL_HPP_
+#ifndef GOTOJAIL_HPP_
+#defineGOTOJAIL_HPP_
 
-# include "Location.hpp"
-# include "Player.hpp"
+#include "Location.hpp"
+#include "Player.hpp"
 
 class GoToJail : public Location {
 public:
@@ -1372,7 +1372,7 @@ private:
     Location *destination;
 };
 
-# endif /*GOTOJAIL_HPP_*/
+#endif /*GOTOJAIL_HPP_*/
 {% endhighlight %}
 
 Now verify you’re green:
@@ -1390,10 +1390,10 @@ First, we’ve written the entire implementation inline. Virtual functions and i
 On the other hand, because we’ve provided the implementation in an implicit inline, we must include Player.hpp rather than forward-declare Player. We must do so since we send a message to Player. We can remedy both of these situations by simply putting the code for landOn in GoToJail.cpp:
 
 {% highlight cpp %}
-# ifndef GOTOJAIL_HPP_
-# define GOTOJAIL_HPP_
+#ifndef GOTOJAIL_HPP_
+#defineGOTOJAIL_HPP_
 
-# include "Location.hpp"
+#include "Location.hpp"
 class Player;
 
 
@@ -1406,13 +1406,13 @@ private:
     Location *destination;
 };
 
-# endif /*GOTOJAIL_HPP_*/
+#endif /*GOTOJAIL_HPP_*/
 {% endhighlight %}
 
 {% highlight cpp %}
-# include "GoToJail.hpp"
+#include "GoToJail.hpp"
 
-# include "Player.hpp"
+#include "Player.hpp"
 void GoToJail::landOn(Player *p) { 
     p->setLocation(destination); 
 } 
@@ -1433,10 +1433,10 @@ Success! And we’re finished refactoring so it’s time to check in all of our 
 This next one involves a calculation. Income tax costs 10% of the Player’s total worth up to a maximum of $200. First the test:
 
 {% highlight cpp %}
-# include <cxxtest/TestSuite.h>
+#include <cxxtest/TestSuite.h>
 
-# include "IncomeTax.hpp"
-# include "Player.hpp"
+#include "IncomeTax.hpp"
+#include "Player.hpp"
 
 class IncomeTaxText : public CxxTest::TestSuite {
 public:
@@ -1457,16 +1457,16 @@ We verify that when a player with a balance of $1500 lands on Income Tax, their 
 To get this test to pass, we need to add IncomeTax.hpp:
 
 {% highlight cpp %}
-# ifndef INCOMETAX_HPP_
-# define INCOMETAX_HPP_
+#ifndef INCOMETAX_HPP_
+#defineINCOMETAX_HPP_
 
-# include "Location.hpp"
+#include "Location.hpp"
 
 class IncomeTax : public Location {
     
 };
 
-# endif /*INCOMETAX_HPP_*/
+#endif /*INCOMETAX_HPP_*/
 {% endhighlight %}
 
 Verify that you are now compiling but the test is failing:
@@ -1486,24 +1486,24 @@ Success rate: 95%
 We need to add the landOn method to make this all work. First update IncomeTax.hpp:
 
 {% highlight cpp %}
-# ifndef INCOMETAX_HPP_
-# define INCOMETAX_HPP_
+#ifndef INCOMETAX_HPP_
+#defineINCOMETAX_HPP_
 
-# include "Location.hpp"
+#include "Location.hpp"
 
 class IncomeTax : public Location {
 public:
     void landOn(Player *player);
 };
 
-# endif /*INCOMETAX_HPP_*/
+#endif /*INCOMETAX_HPP_*/
 {% endhighlight %}
 
 And then we add the method to IncomeTax.cpp (we’re avoiding adding the implementation to the header file since we know it’s a virtual method we’re overriding):
 {% highlight cpp %}
-# include "IncomeTax.hpp"
+#include "IncomeTax.hpp"
 
-# include "Player.hpp"
+#include "Player.hpp"
 
 void IncomeTax::landOn(Player *p) {
     int balance = p->balance();
@@ -1584,9 +1584,9 @@ We have to repeat what we just did for Luxury Tax. The rule is simple, it costs 
 Here’s our test:
 
 {% highlight cpp %}
-# include <cxxunit/TestSuite.h>
+#include <cxxunit/TestSuite.h>
 
-# include "LuxuryTax.hpp"
+#include "LuxuryTax.hpp"
 
 class LuxuryTaxTest : public CxxUnit::TestSuite {
 public:
@@ -1602,16 +1602,16 @@ public:
 ### Red: Get the test to compile
 
 {% highlight cpp %}
-# ifndef LUXURYTAX_HPP_
-# define LUXURYTAX_HPP_
+#ifndef LUXURYTAX_HPP_
+#defineLUXURYTAX_HPP_
 
-# include "Location.hpp"
+#include "Location.hpp"
 
 class LuxuryTax : public Location {
     
 };
 
-# endif /*LUXURYTAX_HPP_*/
+#endif /*LUXURYTAX_HPP_*/
 {% endhighlight %}
 
 Build and make sure your tests compile but do not run:
@@ -1627,23 +1627,23 @@ Running 21 tests.....................OK!
 Now we need to override the landOn method, so we’ll update the header file and add a source file:
 
 {% highlight cpp %}
-# ifndef LUXURYTAX_HPP_
-# define LUXURYTAX_HPP_
+#ifndef LUXURYTAX_HPP_
+#defineLUXURYTAX_HPP_
 
-# include "Location.hpp"
+#include "Location.hpp"
 
 class LuxuryTax : public Location {
 public:
     void landOn(Player *player);    
 };
 
-# endif /*LUXURYTAX_HPP_*/
+#endif /*LUXURYTAX_HPP_*/
 
 {% endhighlight %}
 
 {% highlight cpp %}
-# include "LuxuryTax.hpp"
-# include "Player.hpp"
+#include "LuxuryTax.hpp"
+#include "Player.hpp"
 
 void LuxuryTax::landOn(Player *p) {
     p->deposit(-75);

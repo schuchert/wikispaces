@@ -7,4 +7,4 @@ As a plyaer, when I'm in Jail at the beginning of my turn I can pay $50 to take 
 * In Jail, Player pays $50. Rolls doubles, moves and rolls again, balance decreased by $50.
 * In Jail, Player pays $50. Rolls doubles, moves, does not roll a second time, balance decreased by $50.
 
-[<--Back]({{ site.pagesurl}}/Monopoly Release 4 User Stories) 
+[<--Back](Monopoly_Release_4_User_Stories)

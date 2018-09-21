@@ -79,7 +79,7 @@ Note that manually finding the GHUnitIOS.framework directory added a Framework S
 //  Copyright 2010 Brett L. Schuchert. Use at will, just don't blame me.
 //
 
-# import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 
 @interface ItShouldHaveSmoke : GHTestCase {
     NSString *someVariableToInitialize;

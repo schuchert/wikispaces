@@ -6,7 +6,7 @@ title: Tdd.HelloWorld.Cpp
 ## Overview
 Here's a traditional Hello World program in C++:
 {% highlight cpp %}
-# include <iostream>
+#include <iostream>
 
 int main(int argc, char **argv) {
 	std::cout << "Hello World" << std::endl;
@@ -29,7 +29,7 @@ I'm already going to accept partial defeat. I'm not going to test that main does
 Choosing to test the easy thing first, I'll verify that the method I'll eventually have main call in fact returns 0 (meaning no error in the shell):
 ### HelloWorldTest.cpp
 {% highlight cpp %}
-# include <cpputest/TestHarness.h>
+#include <cpputest/TestHarness.h>
 
 extern int mainImpl(int argc, char **argv);
 
@@ -45,8 +45,8 @@ TEST(HelloWorld, ExtractedFunctionReturns0UponSuccess) {
 Getting this test to pass requires that I write a main for the test harness as well as the method mainImpl:
 ### HelloWorld.cpp
 {% highlight cpp %}
-# include <iostream>
-# include <CppUTest/CommandLineTestRunner.h>
+#include <iostream>
+#include <CppUTest/CommandLineTestRunner.h>
 
 int mainImpl(int argc, char **argv) {
 	return 0;
@@ -75,10 +75,10 @@ OK (1 tests, 1 ran, 1 checks, 0 ignored, 0 filtered out, 0 ms)
 Now we have to get tricky. I know that the traditional Hello World program writes to a global variable, std::cout. However, that does not cause any problems since I can inject my own stream into the middle before calling the method. That is, dependency injection is an option with cout. Note that I do this in a setup and teardown method to make sure that cout is reset regardless of what happens in my test:
 ### HelloWorldTest.cpp
 {% highlight cpp %}
-# include <iostream>
-# include <sstream>
+#include <iostream>
+#include <sstream>
 
-# include <cpputest/TestHarness.h>
+#include <cpputest/TestHarness.h>
 
 extern int mainImpl(int argc, char **argv);
 
@@ -114,8 +114,8 @@ Note, CppUTest does memory leak detection. It will report a memory leak when usi
 To get this test passing:
 ### HelloWorld.cpp
 {% highlight cpp %}
-# include <iostream>
-# include <CppUTest/CommandLineTestRunner.h>
+#include <iostream>
+#include <CppUTest/CommandLineTestRunner.h>
 
 int mainImpl(int argc, char **argv) {
 	std::cout << "Hello World!" << std::endl;
@@ -139,7 +139,7 @@ Even so, I'm bothered by checking for "\n" in one place and using std::endl in a
 Well now that we've got a working method, we can change main:
 ### HelloWorld.cpp
 {% highlight cpp %}
-# include <iostream>
+#include <iostream>
 
 int mainImpl(int argc, char **argv) {
 	std::cout << "Hello World!" << std::endl;
@@ -160,18 +160,18 @@ Note that is simply changing the structure to support what Michael Feathers call
 ### mainImpl.h
 {% highlight cpp %}
 # pragma once
-# ifndef mainImpl_header
-# define mainImpl_header
+#ifndef mainImpl_header
+#definemainImpl_header
 
 int mainImpl(int argc, char **argv);
 
-# endif
+#endif
 {% endhighlight %}
 
 ### mainImpl.cpp
 {% highlight cpp %}
-# include <iostream>
-# include "mainImpl.h"
+#include <iostream>
+#include "mainImpl.h"
 
 int mainImpl(int argc, char **argv) {
 	std::cout << "Hello World!" << std::endl;
@@ -181,7 +181,7 @@ int mainImpl(int argc, char **argv) {
 
 ### HelloWorld.cpp
 {% highlight cpp %}
-# include "mainImpl.h"
+#include "mainImpl.h"
 
 int main(int argc, char **argv) {
 	return mainImpl(argc, argv);
@@ -190,7 +190,7 @@ int main(int argc, char **argv) {
 
 ### TestMain.cpp
 {% highlight cpp %}
-# include <cpputest/CommandLineTestRunner.h>
+#include <cpputest/CommandLineTestRunner.h>
 
 int main(int argc, char **argv) {
 	CommandLineTestRunner::RunAllTests(argc, argv);
@@ -200,11 +200,11 @@ int main(int argc, char **argv) {
 I updated HelloWorldTest.cpp to include mainImpl.h:
 ### HelloWorldTest.cpp
 {% highlight cpp %}
-# include <iostream>
-# include <sstream>
-# include "mainImpl.h"
+#include <iostream>
+#include <sstream>
+#include "mainImpl.h"
 
-# include <cpputest/TestHarness.h>
+#include <cpputest/TestHarness.h>
 
 TEST_GROUP(HelloWorld) {
 	std::streambuf *original;

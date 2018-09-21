@@ -15,7 +15,7 @@ title: PMD_In_Eclipse
 # Windows:Preferences:PMD:Rules Configuration
 # Clear All
 # Confirm by clicking OK
-# Import rule set...
+#import rule set...
 # Browse
 # Select the file you downloaded above
 # Click OK to complete import

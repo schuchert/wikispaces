@@ -152,10 +152,10 @@ This example originated from the one provided with cslim. It's been somewhat sim
 * Create a new file, Modulus.cpp:
 
 {% highlight cpp %}
-# include <stdlib.h>
-# include <stdio.h>
-# include "SlimList.h"
-# include "Fixtures.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include "SlimList.h"
+#include "Fixtures.h"
 
 struct Modulus
 {
@@ -217,7 +217,7 @@ SLIM_END
 * Update the fixture registry in Fixtures.c. This file is in the same directory. You'll see something close to this:
 
 {% highlight cpp %}
-# include "Fixtures.h"
+#include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(Division)
@@ -231,7 +231,7 @@ SLIM_END
 * You need to add your new fixture, Modulus, in the list somewhere:
 
 {% highlight cpp %}
-# include "Fixtures.h"
+#include "Fixtures.h"
 
 SLIM_FIXTURES
   SLIM_FIXTURE(Modulus)

@@ -2,11 +2,11 @@
 title: Monopoly_Release_2_User_Stories
 ---
 The following stories along with their user acceptance tests cover release 2:
-* [Landing on Go]({{ site.pagesurl}}/Monopoly Release 2 Landing on Go)
-* [Passing over Go]({{ site.pagesurl}}/Monopoly Release 2 Passing over Go)
-* [Landing on Go To Jail]({{ site.pagesurl}}/Monopoly Release 2 Landing on Go To Jail)
-* [Landing on Income Tax]({{ site.pagesurl}}/Monopoly Release 2 Landing on Income Tax)
-* [Landing on Luxury Tax]({{ site.pagesurl}}/Monopoly Release 2 Landing on Luxury Tax)
+* [Landing on Go](Monopoly_Release_2_Landing_on_Go)
+* [Passing over Go](Monopoly_Release_2_Passing_over_Go)
+* [Landing on Go To Jail](Monopoly_Release_2_Landing_on_Go_To_Jail)
+* [Landing on Income Tax](Monopoly_Release_2_Landing_on_Income_Tax)
+* [Landing on Luxury Tax](Monopoly_Release_2_Landing_on_Luxury_Tax)
 
 ### Optional
 If you finish ahead of the class, work on the following:

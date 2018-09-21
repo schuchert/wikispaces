@@ -9,7 +9,7 @@ This problem is different from the [[RPN Calculator]] in that we do not start wi
 ## Release 1: Basic Board and Player Movement
 {% include include_md_file filename="Monopoly_Release_1_Theme_Description.md" %}
 
-[User Stories]({{ site.pagesurl}}/Monopoly_Release_1_User_Stories)
+[User Stories](Monopoly_Release_1_User_Stories)
 
 ----
 
@@ -23,7 +23,7 @@ When a player lands on Income Tax, they must pay 20% of their net worth or $200,
 
 When a player lands on luxury tax, they must pay $75.
 
-[User Stories]({{ site.pagesurl}}/Monopoly_Release_2_User_Stories)
+[User Stories](Monopoly_Release_2_User_Stories)
 
 ----
 
@@ -46,7 +46,7 @@ Railroads: If a player owns one railroad, rent is $25. If a player owns two, ren
 ### Optional
 If a player rolls doubles, they get to continue their turn and roll again. If they roll doubles three times in a row, they go directly to jail immediately after rolling doubles a third time.
 
-[User Stories]({{ site.pagesurl}}/Monopoly_Release_3_User_Stories)
+[User Stories](Monopoly_Release_3_User_Stories)
 
 ----
 
@@ -66,7 +66,7 @@ A player can get out of jail in any of the following ways:
 
 If a player is still in jail after rolling dice (and not paying a fine) on the third turn, they must pay $50 and moves ahead the number of locations shown on the dice.
 
-[User Stories]({{ site.pagesurl}}/Monopoly_Release_4_User_Stories)
+[User Stories](Monopoly_Release_4_User_Stories)
 
 ----
 
@@ -80,4 +80,4 @@ There are several kinds of community chest and chance cards. To find out more, s
 * [List of Chance Cards](http://en.wikipedia.org/wiki/Chance_cards)
 * [List of Community Chest Cards](http://en.wikipedia.org/wiki/Community_Chest_cards)
 
-[User Stories]({{ site.pagesurl}}/Monopoly_Release_5_User_Stories)
+[User Stories](Monopoly_Release_5_User_Stories)

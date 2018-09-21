@@ -4,7 +4,7 @@ title: AspectJ_Annotation_Start
 I'm still trying out different formats. I have the long format as demonstrated by [Example 1](AspectJ_Example_1), [Example 2](AspectJ_Example_2), [Example 3](AspectJ_Example_3) and [Example 4](AspectJ_Example_4). I've got two different approaches for this example:
 
 ## [Version 1](AspectJ_Annotation_Experience)
-This version follows [ShortExerciseOutline](ShortExerciseOutline) as described in the [Experiential_Learning](Experiential_Learning) section.
+This version follows [ShortExerciseOutline](ShortExerciseOutline) as described in the [Experiential Learning Notes](../ExperientialLearningNotes) section.
 
 The outline can be summarized by: Experience --> Observation --> Generalization --> Explained --> Apply
 

@@ -24,7 +24,7 @@ What follows is a description of the problem in terms of tests and expected resu
 ## The Problem
 A mathematical expression consists of a sequence of numbers, variables, operators, function calls and parentheses. Processing such an expression requires clearly knowing its various parts. One way to process such an expression is to develop a [B.N.F](http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form) representation and then use some kind of parser library (e.g., [Y.A.C.C.](http://en.wikipedia.org/wiki/Yacc)) to parse it.
 
-Alternatively, you can build a parser from the ground up using a series of more expressive micro tests, and that's what kata is about. As with the [Shunting Yard Algorithm Kata](Katas.ShuntingYardAlgorith), this one is designed around a series of examples and expected results. 
+Alternatively, you can build a parser from the ground up using a series of more expressive micro tests, and that's what kata is about. As with the [Shunting Yard Algorithm Kata](Katas.ShuntingYardAlgorithm), this one is designed around a series of examples and expected results.
 
 What follows is a series of examples to drive your work and some supplemental materials you may choose to use to create further tests.
 
