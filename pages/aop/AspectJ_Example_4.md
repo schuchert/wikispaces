@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Example_4
 ---
-[<--Back](AspectJ_Self_Study) [Next-->](AspectJEX4ExpectedVersusActualOutput)
+{% include nav prev="AspectJ_Self_Study" next="AspectJEX4ExpectedVersusActualOutput" %}
 
 ## Predict the Output
 Source files are here: [[file:AspectJExample4src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
@@ -45,4 +45,4 @@ Address is unchanged from the previous example. It is a simple Java Bean style c
 ### Assignment: Predict the Output
 Please take a few moments to predict the output before moving on.
 
-[<--Back](AspectJ_Self_Study) [Next-->](AspectJEX4ExpectedVersusActualOutput)
+{% include nav prev="AspectJ_Self_Study" next="AspectJEX4ExpectedVersusActualOutput" %}

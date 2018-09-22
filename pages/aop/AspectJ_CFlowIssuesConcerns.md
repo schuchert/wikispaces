@@ -1,7 +1,7 @@
 ---
 title: AspectJ_CFlowIssuesConcerns
 ---
-[<--Back](AspectJ_CFlowAssignmentIssues) [Next-->](AspectJ_Self_Study)
+{% include nav prev="AspectJ_CFlowAssignmentIssues" next="AspectJ_Self_Study" %}
 
 ## Issues/Concerns
 Here are some issues/concerns I’ve heard people mention:
@@ -10,4 +10,4 @@ Here are some issues/concerns I’ve heard people mention:
 * This can be done using regular OO techniques
 * …
 
-[<--Back](AspectJ_CFlowAssignmentIssues) [Next-->](AspectJ_Self_Study)
+{% include nav prev="AspectJ_CFlowAssignmentIssues" next="AspectJ_Self_Study" %}

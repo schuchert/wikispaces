@@ -2,7 +2,7 @@
 title: PPPChapter9RepackagingExercise
 ---
 
-[up](Vancouver_PPP_Exercise_Ch8and9)
+{%include nav up="Vancouver_PPP_Exercise_Ch8and9" %}
 
 In parts 1 and 2 we practiced creating components from an existing system using pencil and paper. Now we'll take that one step further and create a component from actual code.
 
@@ -37,4 +37,4 @@ Here are some steps you can follow:
 * Run all of your tests. A few may fail. Upon review, you'll notice that you probably need to update a few tests to configure the **Application** factory.
 * Make sure you're green. Congratulations, you've just make a new, reusable component. What does it take to us this new component in a new application?
 
-[up](Vancouver_PPP_Exercise_Ch8and9)
+{%include nav up="Vancouver_PPP_Exercise_Ch8and9" %}

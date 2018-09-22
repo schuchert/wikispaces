@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3Possibilities
 ---
-[<--Back](AspectJEX3ExpectedVersusActualOutput) [Next-->](AspectJEX3WhatIsHappening)
+{% include nav prev="AspectJEX3ExpectedVersusActualOutput" next="AspectJEX3WhatIsHappening" %}
 
 ## Possibilities
 Did you have any ideas? Here are some ideas I’ve heard:
@@ -10,4 +10,4 @@ Did you have any ideas? Here are some ideas I’ve heard:
 * Force Die to implement Serializable
 * …
 
-[<--Back](AspectJEX3ExpectedVersusActualOutput) [Next-->](AspectJEX3WhatIsHappening)
+{% include nav prev="AspectJEX3ExpectedVersusActualOutput" next="AspectJEX3WhatIsHappening" %}

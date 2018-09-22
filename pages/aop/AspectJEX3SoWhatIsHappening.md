@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3SoWhatIsHappening
 ---
-[<--Back](AspectJEX3WhatIsHappening) [Next-->](AspectJEX3Explained)
+{% include nav prev="AspectJEX3WhatIsHappening" next="AspectJEX3Explained" %}
 
 ## So what is happening?
 Here are some descriptions I’ve heard:
@@ -9,4 +9,4 @@ Here are some descriptions I’ve heard:
 * We are allowing a class's hierarchy to change at load time
 * ...
 
-[<--Back](AspectJEX3WhatIsHappening) [Next-->](AspectJEX3Explained)
+{% include nav prev="AspectJEX3WhatIsHappening" next="AspectJEX3Explained" %}

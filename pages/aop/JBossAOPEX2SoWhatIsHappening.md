@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX2SoWhatIsHappening
 ---
-[<--Back](JBossAOPEX2WhatIsHappening) [Next-->](JBossAOPEX2Explained)
+{% include nav prev="JBossAOPEX2WhatIsHappening" next="JBossAOPEX2Explained" %}
 
 ## So what is happening?
 Here are some descriptions I’ve heard:
@@ -9,4 +9,4 @@ Here are some descriptions I’ve heard:
 * We are adding to variable assignment.
 * ...
 
-[<--Back](JBossAOPEX2WhatIsHappening) [Next-->](JBossAOPEX2Explained)
+{% include nav prev="JBossAOPEX2WhatIsHappening" next="JBossAOPEX2Explained" %}

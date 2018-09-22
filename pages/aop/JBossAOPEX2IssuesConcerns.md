@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX2IssuesConcerns
 ---
-[<--Back](JBossEX2AssignmentIssues) [Next-->](JBoss_AOP_Example_3)
+{% include nav prev="JBossEX2AssignmentIssues" next="JBoss_AOP_Example_3" %}
 
 ## Issues/Concerns
 Here are some issues and concerns that I've heard people mention:
@@ -10,4 +10,4 @@ Here are some issues and concerns that I've heard people mention:
 * How do you know what is happening in what order and when
 * ...
 
-[<--Back](JBossEX2AssignmentIssues) [Next-->](JBoss_AOP_Example_3)
+{% include nav prev="JBossEX2AssignmentIssues" next="JBoss_AOP_Example_3" %}

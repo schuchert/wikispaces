@@ -1,7 +1,7 @@
 ---
 title: Spring_Templates_Typical_JDBC
 ---
-[<--Back](Designing_to_Spring_Templates)  [Next-->](Spring_Templates_JDBC_Using_Template_Method_Pattern)
+{% include nav prev="Designing_to_Spring_Templates" next="Spring_Templates_JDBC_Using_Template_Method_Pattern" %}
 
 ## Using JDBC Directly
 This is the base example. In it we:
@@ -136,4 +136,4 @@ Since this is NOT a JDBC example but rather I use JDBC as a vehicle to better un
 
 TBD
 
-[<--Back](Designing_to_Spring_Templates)  [Next-->](Spring_Templates_JDBC_Using_Template_Method_Pattern)
+{% include nav prev="Designing_to_Spring_Templates" next="Spring_Templates_JDBC_Using_Template_Method_Pattern" %}

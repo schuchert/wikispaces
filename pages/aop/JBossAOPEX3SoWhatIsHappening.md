@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX3SoWhatIsHappening
 ---
-[<--Back](JBossAOPEX3WhatIsHappening) [Next-->](JBossAOPEX3Explained)
+{% include nav prev="JBossAOPEX3WhatIsHappening" next="JBossAOPEX3Explained" %}
 
 ## So What Is Happening?
 Here are some descriptions I've heard:
@@ -10,4 +10,4 @@ Here are some descriptions I've heard:
 * Track the dirty state of objects.
 * ...
 
-[<--Back](JBossAOPEX3WhatIsHappening) [Next-->](JBossAOPEX3Explained)
+{% include nav prev="JBossAOPEX3WhatIsHappening" next="JBossAOPEX3Explained" %}

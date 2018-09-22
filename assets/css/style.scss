@@ -122,7 +122,11 @@ input:checked.toggle ~ div.collapsible-content {
 }
 
 
-a.prev, a.next, a.blog {
+a.nav + a.nav {
+    margin-left: 1em;
+}
+
+a.up, a.prev, a.next, a.blog {
 	display: inline-block;
 	text-align: center;
 	background: #6f95c6;
@@ -240,11 +244,14 @@ div.content {
 
 div.content {
     div.include {
-        > hr:first-child {
+        > hr:first-child, a.nav {
             display: none;
         }
         > hr:first-child + p {
             display: none;
+            margin: 0;
+            border: 0;
+            padding: 0;
         }
     }
 }

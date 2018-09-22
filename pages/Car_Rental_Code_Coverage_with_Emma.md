@@ -1,7 +1,7 @@
 ---
 title: Car_Rental_Code_Coverage_with_Emma
 ---
-[<--Back](Car_Rental_Example) [Next-->](Emma_Code_Coverage_vehicle.type)
+{% include nav prev="Car_Rental_Example" next="Emma_Code_Coverage_vehicle.type" %}
 
 ## Code Coverage with Emma
 
@@ -184,4 +184,4 @@ So I have roughly 81% code coverage with 106 unit tests and I have a few problem
 
 Over the next several sections, we will look at each package with less than 80% code coverage, assess each class and plan out our changes. For you to follow along, you'll need to execute the Emma ant script and then look at the classes to understand the assessments.
 
-[<--Back](Car_Rental_Example) [Next-->](Emma_Code_Coverage_vehicle.type)
+{% include nav prev="Car_Rental_Example" next="Emma_Code_Coverage_vehicle.type" %}

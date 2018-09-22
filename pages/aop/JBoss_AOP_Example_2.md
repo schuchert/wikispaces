@@ -1,7 +1,7 @@
 ---
 title: JBoss_AOP_Example_2
 ---
-[<--Back](JBoss_AOP_Self_Study) [Next-->](JBossAOPEX2ExpectedVersusActualOutput)
+{% include nav prev="JBoss_AOP_Self_Study" next="JBossAOPEX2ExpectedVersusActualOutput" %}
 
 ## Predict the Output
 Source files are here: [[file:JBossAOPExample2src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
@@ -85,4 +85,4 @@ public class Address implements Serializable {
 
 Given these 2 classes, predict the output. Please do so before continuing.
 
-[<--Back](JBoss_AOP_Self_Study) [Next-->](JBossAOPEX2ExpectedVersusActualOutput)
+{% include nav prev="JBoss_AOP_Self_Study" next="JBossAOPEX2ExpectedVersusActualOutput" %}

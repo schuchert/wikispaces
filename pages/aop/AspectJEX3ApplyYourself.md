@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3ApplyYourself
 ---
-[<--Back](AspectJEX3Explained) [Next-->](AspectJEX3AssignmentApplications)
+{% include nav prev="AspectJEX3Explained" next="AspectJEX3AssignmentApplications" %}
 
 ## Apply Yourself
 Here are some assignments to practice and reinforce what you've learned.
@@ -23,4 +23,4 @@ Add another interface to the Die class, have it implement Cloneable instead of S
 ### Introduce two interfaces
 Now change the aspect so that Die implements **both** Cloneable and Serializable.
 
-[<--Back](AspectJEX3Explained) [Next-->](AspectJEX3AssignmentApplications)
+{% include nav prev="AspectJEX3Explained" next="AspectJEX3AssignmentApplications" %}

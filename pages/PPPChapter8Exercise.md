@@ -2,7 +2,7 @@
 title: PPPChapter8Exercise
 ---
 
-[up](Vancouver_PPP_Exercise_Ch8and9) [next -->](PPPChapter9Exercise)
+{%include nav up="Vancouver_PPP_Exercise_Ch8and9" next="PPPChapter9Exercise" %}
 
 ## Part 1: Unit 8
 
@@ -42,4 +42,4 @@ Your task is to review the existing system (represented by the diagram below) an
 After you've had some time to work on this, we'll discuss it as a group and then learn how to assess the design of your solution.
 ![](images/PPP_Exercise8And9.jpg)
 
-[up](Vancouver_PPP_Exercise_Ch8and9) [next -->](PPPChapter9Exercise)
+{%include nav up="Vancouver_PPP_Exercise_Ch8and9" next="PPPChapter9Exercise" %}

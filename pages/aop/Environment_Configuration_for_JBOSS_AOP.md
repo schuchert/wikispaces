@@ -37,4 +37,4 @@ The following additional configuration sets will set your Eclipse configuration 
 * [JBoss_AOP_Example_2](JBoss_AOP_Example_2)
 * [JBoss_AOP_Example_3](JBoss_AOP_Example_3)
 
-[<--Back](JBoss_AOP_Self_Study) [Next-->](Eclipse_VM_Configuration_for_JBoss_AOP)
+{% include nav prev="JBoss_AOP_Self_Study" next="Eclipse_VM_Configuration_for_JBoss_AOP" %}

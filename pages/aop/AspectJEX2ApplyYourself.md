@@ -1,7 +1,7 @@
 ---
 title: AspectJEX2ApplyYourself
 ---
-[<--Back](AspectJEX2Explained) [Next-->](AspectJEX2AssignmentApplications)
+{% include nav prev="AspectJEX2Explained" next="AspectJEX2AssignmentApplications" %}
 
 ## Apply Yourself
 Here are some assignments to practice and reinforce what you've learned.
@@ -25,4 +25,4 @@ Using the provided Die class, write a program that rolls the die 1000 times. Nex
 ### Thought Problem
 In Monopoly there is a rule that if you roll three consecutive doubles during a turn, the player goes to jail. Think about ways you might begin to approach this problem using AOP. Once you’ve done that, ask yourself it if makes sense to do so. Is this a cross-cutting concern?
 
-[<--Back](AspectJEX2Explained) [Next-->](AspectJEX2AssignmentApplications)
+{% include nav prev="AspectJEX2Explained" next="AspectJEX2AssignmentApplications" %}

@@ -1,7 +1,7 @@
 ---
 title: AspectJ_CFlowSoWhatIsHappening
 ---
-[<--Back](AspectJ_CFlowWhatIsHappening) [Next-->](AspectJ_CFlowExplained)
+{% include nav prev="AspectJ_CFlowWhatIsHappening" next="AspectJ_CFlowExplained" %}
 
 ## So What Is Happening?
 Here are some descriptions I’ve heard some people mention:
@@ -10,4 +10,4 @@ Here are some descriptions I’ve heard some people mention:
 * The execution control flow enables or disables pointcuts.
 * ...
 
-[<--Back](AspectJ_CFlowWhatIsHappening) [Next-->](AspectJ_CFlowExplained)
+{% include nav prev="AspectJ_CFlowWhatIsHappening" next="AspectJ_CFlowExplained" %}

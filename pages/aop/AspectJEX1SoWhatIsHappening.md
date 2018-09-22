@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1SoWhatIsHappening
 ---
-[<--Back](AspectJEX1WhatIsHappening) [Next-->](AspectJEX1Explained)
+{% include nav prev="AspectJEX1WhatIsHappening" next="AspectJEX1Explained" %}
 
 ## So What Is Happening?
 Here are some descriptions I’ve heard some people mention:
@@ -11,4 +11,4 @@ Here are some descriptions I’ve heard some people mention:
 * We modify every method execution. Before and after the method execution we display the name of the method.
 * ...
 
-[<--Back](AspectJEX1WhatIsHappening) [Next-->](AspectJEX1Explained)
+{% include nav prev="AspectJEX1WhatIsHappening" next="AspectJEX1Explained" %}

@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3ExpectedVersusActualOutput
 ---
-[<--Back](AspectJ_Example_2) [Next-->](AspectJEX3Possibilities)
+{% include nav prev="AspectJ_Example_2" next="AspectJEX3Possibilities" %}
 
 ## Expected Versus Actual Output
 
@@ -26,4 +26,4 @@ By now you've figured out that the expected and actual output are generally not 
 ## Assignment: Form a Theory
 Spend a few moments and try to figure out how to make this output happen. Write down those ideas. Please do so before continuing to the next section.
 
-[<--Back](AspectJ_Example_2) [Next-->](AspectJEX3Possibilities)
+{% include nav prev="AspectJ_Example_2" next="AspectJEX3Possibilities" %}

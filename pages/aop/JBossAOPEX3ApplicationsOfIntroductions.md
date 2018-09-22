@@ -1,8 +1,8 @@
 ---
 title: JBossAOPEX3ApplicationsOfIntroductions
 ---
-[<--Back](JBossAOPEX3AssignmentApplications) [Next-->](JBossEX3AssignmentIssues)
+{% include nav prev="JBossAOPEX3AssignmentApplications" next="JBossEX3AssignmentIssues" %}
 
 TBD
 
-[<--Back](JBossAOPEX3AssignmentApplications) [Next-->](JBossEX3AssignmentIssues)
+{% include nav prev="JBossAOPEX3AssignmentApplications" next="JBossEX3AssignmentIssues" %}

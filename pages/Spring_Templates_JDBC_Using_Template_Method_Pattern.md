@@ -1,7 +1,7 @@
 ---
 title: Spring_Templates_JDBC_Using_Template_Method_Pattern
 ---
-[<--Back](Spring_Templates_Typical_JDBC) [Next-->](Spring_Templates_JDBC_Strategy_Is_A_Template)
+{% include nav prev="Spring_Templates_Typical_JDBC" next="Spring_Templates_JDBC_Strategy_Is_A_Template" %}
 
 ## JDBC Using the Template Method Pattern
 This version uses the [GoF design pattern](http://en.wikipedia.org/wiki/Design_Patterns) [Template Method](http://en.wikipedia.org/wiki/Template_method_pattern). For more details, take a look at this [Template Method Pattern Example](Template_Method).
@@ -200,4 +200,4 @@ In this case, we've factored out much of the code in the a base class called Abs
 #### Interesting Lines
 |Line|Description|
 
-[<--Back](Spring_Templates_Typical_JDBC) [Next-->](Spring_Templates_JDBC_Strategy_Is_A_Template)
+{% include nav prev="Spring_Templates_Typical_JDBC" next="Spring_Templates_JDBC_Strategy_Is_A_Template" %}

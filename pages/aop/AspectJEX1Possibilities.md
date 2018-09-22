@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1Possibilities
 ---
-[<--Back](AspectJEX1FormTheory) [Next-->](AspectJEX1WhatIsHappening)
+{% include nav prev="AspectJEX1FormTheory" next="AspectJEX1WhatIsHappening" %}
 
 ## Possibilities
 Did you have any ideas? Here are some ideas I’ve heard some people mention:
@@ -10,4 +10,4 @@ Did you have any ideas? Here are some ideas I’ve heard some people mention:
 * Something to do with reflection
 * …
 
-[<--Back](AspectJEX1FormTheory) [Next-->](AspectJEX1WhatIsHappening)
+{% include nav prev="AspectJEX1FormTheory" next="AspectJEX1WhatIsHappening" %}

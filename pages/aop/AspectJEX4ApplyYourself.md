@@ -1,7 +1,7 @@
 ---
 title: AspectJEX4ApplyYourself
 ---
-[<--Back](AspectJEX4Explained) [Next-->](AspectJEX4AssignmentApplications)
+{% include nav prev="AspectJEX4Explained" next="AspectJEX4AssignmentApplications" %}
 
 ## Apply Yourself
 ### Avoid unnecessary checking
@@ -26,4 +26,4 @@ Create a class that allows you to keep track of the history of rolls of individu
 ### Thought: Why return null?
 [FieldSetAspect.java](AspectJEX4Explained#FieldSetAspect) returns null on line 32. Could this cause any side effects? Can you suggest any alternatives?
 
-[<--Back](AspectJEX4Explained) [Next-->](AspectJEX4AssignmentApplications)
+{% include nav prev="AspectJEX4Explained" next="AspectJEX4AssignmentApplications" %}

@@ -1,7 +1,7 @@
 ---
 title: JBossEX1ApplicationsOfMethodExecution
 ---
-[<--Back](JBossEX1AssignmentApplications) [Next-->](JBossEX1AssignmentIssues)
+{% include nav prev="JBossEX1AssignmentApplications" next="JBossEX1AssignmentIssues" %}
 
 ## Applications of Method Execution
 Here are some things I’ve heard people mention:
@@ -10,4 +10,4 @@ Here are some things I’ve heard people mention:
 * Copying method execution to a second target automatically
 * …
 
-[<--Back](JBossEX1AssignmentApplications) [Next-->](JBossEX1AssignmentIssues)
+{% include nav prev="JBossEX1AssignmentApplications" next="JBossEX1AssignmentIssues" %}

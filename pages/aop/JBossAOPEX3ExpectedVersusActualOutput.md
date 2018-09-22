@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX3ExpectedVersusActualOutput
 ---
-[<--Back](JBoss_AOP_Example_3) [Next-->](JBossAOPEX3Possibilities)
+{% include nav prev="JBoss_AOP_Example_3" next="JBossAOPEX3Possibilities" %}
 
 ## Expected Versus Actual Output
 ### Expected Output
@@ -24,4 +24,4 @@ Not saving: class ex3.Address, it is unchanged
 ### Assignment: Form a Theory
 Spend a few moments and try to figure out how to make this output happen. Write down those ideas. Please do so before continuing to the next section.
 
-[<--Back](JBoss_AOP_Example_3) [Next-->](JBossAOPEX3Possibilities)
+{% include nav prev="JBoss_AOP_Example_3" next="JBossAOPEX3Possibilities" %}

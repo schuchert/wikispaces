@@ -1,7 +1,7 @@
 ---
 title: AspectJEX2SoWhatIsHappening
 ---
-[<--Back](AspectJEX2WhatIsHappening) [Next-->](AspectJEX2Explained)
+{% include nav prev="AspectJEX2WhatIsHappening" next="AspectJEX2Explained" %}
 
 ## So what is happening?
 Here are some descriptions I’ve heard:
@@ -9,4 +9,4 @@ Here are some descriptions I’ve heard:
 * We are adding to variable assignment.
 * ...
 
-[<--Back](AspectJEX2WhatIsHappening) [Next-->](AspectJEX2Explained)
+{% include nav prev="AspectJEX2WhatIsHappening" next="AspectJEX2Explained" %}

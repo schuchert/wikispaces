@@ -1,7 +1,7 @@
 ---
 title: AspectJEX4SoWhatIsHappening
 ---
-[<--Back](AspectJEX4WhatIsHappening) [Next-->](AspectJEX4Explained)
+{% include nav prev="AspectJEX4WhatIsHappening" next="AspectJEX4Explained" %}
 
 ## So What Is Happening?
 Here are some descriptions I've heard:
@@ -10,4 +10,4 @@ Here are some descriptions I've heard:
 * Track the dirty state of objects.
 * ...
 
-[<--Back](AspectJEX4WhatIsHappening) [Next-->](AspectJEX4Explained)
+{% include nav prev="AspectJEX4WhatIsHappening" next="AspectJEX4Explained" %}

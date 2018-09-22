@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3ApplicationsOfIntroduction
 ---
-[<--Back](AspectJEX3AssignmentApplications) [Next-->](AspectJEX3AssignmentIssues)
+{% include nav prev="AspectJEX3AssignmentApplications" next="AspectJEX3AssignmentIssues" %}
 
 ## Applications of Introductions
 
@@ -11,4 +11,4 @@ Here are some ideas I've heard people mention:
 * Implementing multiple inheritance
 * ...
 
-[<--Back](AspectJEX3AssignmentApplications) [Next-->](AspectJEX3AssignmentIssues)
+{% include nav prev="AspectJEX3AssignmentApplications" next="AspectJEX3AssignmentIssues" %}

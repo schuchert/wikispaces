@@ -1,7 +1,7 @@
 ---
 title: ShortExerciseOutlineExercises
 ---
-[<--Back](ShortExerciseOutlineThinking) [Next-->](ShortExerciseOutline)
+{% include nav prev="ShortExerciseOutlineThinking" next="ShortExerciseOutline" %}
 
 ## Short Exercise Outline Exercises
 
@@ -10,4 +10,4 @@ Finally, I'll provide a list of exercises to:
 ### Expand what the original exercise was doing
 ### Attempt to find some limits to the technique
 
-[<--Back](ShortExerciseOutlineThinking) [Next-->](ShortExerciseOutline)
+{% include nav prev="ShortExerciseOutlineThinking" next="ShortExerciseOutline" %}

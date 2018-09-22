@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1Explained
 ---
-[<--Back](AspectJEX1SoWhatIsHappening) [Next-->](AspectJVMConfigurationBlackMagic)
+{% include nav prev="AspectJEX1SoWhatIsHappening" next="AspectJVMConfigurationBlackMagic" %}
 
 ## Example 1 Explained
 Capturing method execution is often what people first think of when considering AOP.
@@ -84,4 +84,4 @@ Note, this file needs to be in a directory called META-INF in the classpath. Her
 * Create a file called aop.xml in that folder
 * Cut and paste the contents
 
-[<--Back](AspectJEX1SoWhatIsHappening) [Next-->](AspectJVMConfigurationBlackMagic)
+{% include nav prev="AspectJEX1SoWhatIsHappening" next="AspectJVMConfigurationBlackMagic" %}

@@ -1,7 +1,7 @@
 ---
 title: Emma_Code_Coverage_vehicle.configuration
 ---
-[<--Back](Emma_Code_Coverage_vehicle.type) [Next-->](Emma_Code_Coverage_vehicle.integration)
+{% include nav prev="Emma_Code_Coverage_vehicle.type" next="Emma_Code_Coverage_vehicle.integration" %}
 
 ## Emma Code Coverage vehicle.type Package
 
@@ -64,4 +64,4 @@ Well after writing a few more tests, here are the results:
 
 Are these results disappointing? Again, have we improved our system? What is your purpose for using code coverage tools? Is it to get high percentages? If so, then are you going for the right thing? What if your goal is to improve the quality of the code or at least your confidence in the code? This round of tests did that a little bit for me, but not very much.
 
-[<--Back](Emma_Code_Coverage_vehicle.type) [Next-->](Emma_Code_Coverage_vehicle.integration)
+{% include nav prev="Emma_Code_Coverage_vehicle.type" next="Emma_Code_Coverage_vehicle.integration" %}

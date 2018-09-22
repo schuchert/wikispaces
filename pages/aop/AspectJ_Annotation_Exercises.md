@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_Exercises
 ---
-[<--Back](AspectJ_Annotation_Thinking) [Next-->](AspectJ_Annotation_Start)
+{% include nav prev="AspectJ_Annotation_Thinking" next="AspectJ_Annotation_Start" %}
 
 ## AspectJ Annotation: Exercises
 
@@ -27,4 +27,4 @@ If you have not already done so, work through [CFlow Example](AspectJ_CFlow).
 
 Create a new annotation, @IgnoreMethod, that works just like @IgnoreField. Only this time, all changes are ignored if they happen either directly in this method or the cflow of this method.
 
-[<--Back](AspectJ_Annotation_Thinking) [Next-->](AspectJ_Annotation_Start)
+{% include nav prev="AspectJ_Annotation_Thinking" next="AspectJ_Annotation_Start" %}

@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_AllCode
 ---
-[<--Back](AspectJ_Annotation_One_Solution) [Next-->](AspectJ_Annotation_Apply)
+{% include nav prev="AspectJ_Annotation_One_Solution" next="AspectJ_Annotation_Apply" %}
 
 ## Annotation All Code
 Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If you'd like to know how to set up a project using it, [click here](ExtractingSourceFilesIntoProject).
@@ -336,4 +336,4 @@ This interface is unchanged from [Example 4 TrackedObjectMixin](AspectJEX4Explai
 {% endhighlight %}
 This file is unchanged from [Example 4 aop.xml](AspectJEX4Explained#aop).
 
-[<--Back](AspectJ_Annotation_One_Solution) [Next-->](AspectJ_Annotation_Apply)
+{% include nav prev="AspectJ_Annotation_One_Solution" next="AspectJ_Annotation_Apply" %}

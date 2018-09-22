@@ -1,7 +1,7 @@
 ---
 title: JBoss_AOP_Example_3
 ---
-[<--Back](JBoss_AOP_Self_Study) [Next-->](JBossAOPEX3ExpectedVersusActualOutput)
+{% include nav prev="JBoss_AOP_Self_Study" next="JBossAOPEX3ExpectedVersusActualOutput" %}
 
 ## Predict the Output
 Source files are here: [[file:JBossAOPExample3src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
@@ -44,4 +44,4 @@ Address is unchanged from the previous example. It is a simple Java Bean style c
 ### Assignment: Predict the Output
 Please take a few moments to predict the output before moving on.
 
-[<--Back](JBoss_AOP_Self_Study) [Next-->](JBossAOPEX3ExpectedVersusActualOutput)
+{% include nav prev="JBoss_AOP_Self_Study" next="JBossAOPEX3ExpectedVersusActualOutput" %}

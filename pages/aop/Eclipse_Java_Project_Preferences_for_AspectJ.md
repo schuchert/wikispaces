@@ -1,7 +1,7 @@
 ---
 title: Eclipse_Java_Project_Preferences_for_AspectJ
 ---
-[<--Back](Eclipse_Java_Language_Preferences_for_AspectJ) [Next-->](Save_Workspace_Configurations_for_AspectJ)
+{% include nav prev="Eclipse_Java_Language_Preferences_for_AspectJ" next="Save_Workspace_Configurations_for_AspectJ" %}
 
 In these examples, I have Eclipse configured to use separate src and bin directories. This is an optional step.
 
@@ -15,4 +15,4 @@ In Eclipse:
 * In **Output folder name:** enter **bin** (this is the default value)
 * Click **OK**
 
-[<--Back](Eclipse_Java_Language_Preferences_for_AspectJ) [Next-->](Save_Workspace_Configurations_for_AspectJ)
+{% include nav prev="Eclipse_Java_Language_Preferences_for_AspectJ" next="Save_Workspace_Configurations_for_AspectJ" %}

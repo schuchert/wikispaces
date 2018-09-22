@@ -1,7 +1,7 @@
 ---
 title: Eclipse_VM_Configuration_for_JBoss_AOP
 ---
-[<--Back](Environment_Configuration_for_JBOSS_AOP) [Next-->](Eclipse_Classpath_Variable_for_JBoss_AOP)
+{% include nav prev="Environment_Configuration_for_JBOSS_AOP" next="Eclipse_Classpath_Variable_for_JBoss_AOP" %}
 
 Your goal is to configure the Java VM to include one additional parameter:
 {% highlight terminal %}
@@ -19,4 +19,4 @@ In Eclipse:
 
 ![](../images/JBossAOPJREConfiguration.jpg)
 
-[<--Back](Environment_Configuration_for_JBOSS_AOP) [Next-->](Eclipse_Classpath_Variable_for_JBoss_AOP)
+{% include nav prev="Environment_Configuration_for_JBOSS_AOP" next="Eclipse_Classpath_Variable_for_JBoss_AOP" %}

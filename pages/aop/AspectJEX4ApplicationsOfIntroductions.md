@@ -1,8 +1,8 @@
 ---
 title: AspectJEX4ApplicationsOfIntroductions
 ---
-[<--Back](AspectJEX4AssignmentApplications) [Next-->](AspectJEX4AssignmentIssues)
+{% include nav prev="AspectJEX4AssignmentApplications" next="AspectJEX4AssignmentIssues" %}
 
 TBD
 
-[<--Back](AspectJEX4AssignmentApplications) [Next-->](AspectJEX4AssignmentIssues)
+{% include nav prev="AspectJEX4AssignmentApplications" next="AspectJEX4AssignmentIssues" %}

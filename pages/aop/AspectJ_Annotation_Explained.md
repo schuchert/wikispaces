@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_Explained
 ---
-[<--Back](AspectJ_Annotation_Thinking) [Next-->](AspectJ_Annotation_Exercises)
+{% include nav prev="AspectJ_Annotation_Thinking" next="AspectJ_Annotation_Exercises" %}
 
 ## Annotation Explained
 ### Main.java
@@ -321,4 +321,4 @@ This interface is unchanged from [Example 4 TrackedObjectMixin](AspectJEX4Explai
 {% endhighlight %}
 This file is unchanged from [Example 4 aop.xml](AspectJEX4Explained#aop).
 
-[<--Back](AspectJ_Annotation_Thinking) [Next-->](AspectJ_Annotation_Exercises)
+{% include nav prev="AspectJ_Annotation_Thinking" next="AspectJ_Annotation_Exercises" %}

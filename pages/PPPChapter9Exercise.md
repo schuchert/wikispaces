@@ -2,7 +2,7 @@
 title: PPPChapter9Exercise
 ---
 
-[<-- Back](PPPChapter8Exercise) [up](Vancouver_PPP_Exercise_Ch8and9)
+{%include nav prev="PPPChapter8Exercise" up="Vancouver_PPP_Exercise_Ch8and9" %}
 
 ## Part 2: Unit 9
 
@@ -83,4 +83,4 @@ Final Observations
 
 ![](images/PPP_Exercise8And9.jpg)
 
-[<-- Back](PPPChapter8Exercise) [up](Vancouver_PPP_Exercise_Ch8and9)
+{%include nav prev="PPPChapter8Exercise" up="Vancouver_PPP_Exercise_Ch8and9" %}

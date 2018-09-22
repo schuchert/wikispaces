@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1IssuesConcerns
 ---
-[<--Back](AspectJEX1AssignmentIssues) [Next-->](AspectJ_Example_2)
+{% include nav prev="AspectJEX1AssignmentIssues" next="AspectJ_Example_2" %}
 
 ## Issues/Concerns
 Here are some issues/concerns I’ve heard people mention:
@@ -10,4 +10,4 @@ Here are some issues/concerns I’ve heard people mention:
 * This can be done using regular OO techniques
 * …
 
-[<--Back](AspectJEX1AssignmentIssues) [Next-->](AspectJ_Example_2)
+{% include nav prev="AspectJEX1AssignmentIssues" next="AspectJ_Example_2" %}

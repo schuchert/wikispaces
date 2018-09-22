@@ -1,7 +1,7 @@
 ---
 title: ShortExerciseOutlineObservation
 ---
-[<--Back](ShortExerciseOutlineExperience) [Next-->](ShortExerciseOutlineThinking)
+{% include nav prev="ShortExerciseOutlineExperience" next="ShortExerciseOutlineThinking" %}
 
 ## Short Exercise Outline Observation
 Second, I'll ask the person to "take a step back" and make some observations about their recent experience:
@@ -11,4 +11,4 @@ Second, I'll ask the person to "take a step back" and make some observations abo
 * What in the code do you think is driving the effect?
 * How do you think this is accomplished?
 
-[<--Back](ShortExerciseOutlineExperience) [Next-->](ShortExerciseOutlineThinking)
+{% include nav prev="ShortExerciseOutlineExperience" next="ShortExerciseOutlineThinking" %}

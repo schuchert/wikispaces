@@ -2,7 +2,7 @@
 title: Car_Rental_Code_Coverage_with_Cobertura_vehicle.type
 ---
 {% include toc %}
-[<--Back](Car_Rental_Code_Coverage_with_Cobertura)  [Next-->](Car_Rental_Code_Coverage_with_Cobertura_vehicle.exception)
+{% include nav prev="Car_Rental_Code_Coverage_with_Cobertura" next="Car_Rental_Code_Coverage_with_Cobertura_vehicle.exception" %}
 
 ## Package: vehicle.type
 
@@ -116,4 +116,4 @@ Adding in the missing test methods improved the coverage. There still the matter
 
 ## Conclusions
 
-[<--Back](Car_Rental_Code_Coverage_with_Cobertura)  [Next-->](Car_Rental_Code_Coverage_with_Cobertura_vehicle.exception)
+{% include nav prev="Car_Rental_Code_Coverage_with_Cobertura" next="Car_Rental_Code_Coverage_with_Cobertura_vehicle.exception" %}

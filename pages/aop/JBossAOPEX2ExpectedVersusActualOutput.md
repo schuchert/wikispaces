@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX2ExpectedVersusActualOutput
 ---
-[<--Back](JBoss_AOP_Example_2) [Next-->](JBossAOPEX2Possibilities)
+{% include nav prev="JBoss_AOP_Example_2" next="JBossAOPEX2Possibilities" %}
 
 ## Expected Versus Actual Output
 
@@ -21,4 +21,4 @@ Setting zip from 75001 to 75001
 ### Assignment: Form a Theory
 Spend a few moments and try to figure out how to make this output happen. Write down those ideas. Please do so before continuing to the next section.
 
-[<--Back](JBoss_AOP_Example_2) [Next-->](JBossAOPEX2Possibilities)
+{% include nav prev="JBoss_AOP_Example_2" next="JBossAOPEX2Possibilities" %}

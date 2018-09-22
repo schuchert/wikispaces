@@ -1,7 +1,7 @@
 ---
 title: AspectJEX3Explained
 ---
-[<--Back](AspectJEX3SoWhatIsHappening) [Next-->](AspectJEX3ApplyYourself)
+{% include nav prev="AspectJEX3SoWhatIsHappening" next="AspectJEX3ApplyYourself" %}
 
 ## Example 3 Explained
 In addition to modifying such things as method exeuction and method calling and attribute reading and writing, we can also use introductions. The introduction in this example simply adds the Serializable interface to a class that did not already implement it. Imagin wanting to use some legay code that does not support some interface or feature. This is one way to can get that legacy code to support new functionality without changing its souce code.
@@ -141,4 +141,4 @@ To make this example work, we need two additional things:
 |28 - 43|Use standard Java Serialization to attempt to write the Die object. If the Die class did not implement Serializable, this would fail with a java.io.NotSerializable exception. We made it Serializable using an aspect so this succeeds. We create a ByteArrayOutpuStream and serialize the Die in memory rather than to a file. This is quick way to clone an object.|
 |45 - 59|We would not get to this method if the serializeObject() did not work. This method takes a ByteArrayOutputStream's byte array and attempts to read an object stored in the byte array.|
 
-[<--Back](AspectJEX3SoWhatIsHappening) [Next-->](AspectJEX3ApplyYourself)
+{% include nav prev="AspectJEX3SoWhatIsHappening" next="AspectJEX3ApplyYourself" %}

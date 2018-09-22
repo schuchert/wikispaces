@@ -2,7 +2,7 @@
 title: Car_Rental_Code_Coverage_with_Cobertura
 ---
 {% include toc %}
-[<--Back](Car_Rental_Example)  [Next-->](Car_Rental_Code_Coverage_with_Cobertura_vehicle.type)
+{% include nav prev="Car_Rental_Example" next="Car_Rental_Code_Coverage_with_Cobertura_vehicle.type" %}
 
 ## Code Coverage with Cobertura
 
@@ -176,4 +176,4 @@ Let's begin by working from the worst pacakge to the best package. This gives us
 
 Even though the last two packages already have 90% coverage, we'll review them anyway.
 
-[<--Back](Car_Rental_Example)  [Next-->](Car_Rental_Code_Coverage_with_Cobertura_vehicle.type)
+{% include nav prev="Car_Rental_Example" next="Car_Rental_Code_Coverage_with_Cobertura_vehicle.type" %}

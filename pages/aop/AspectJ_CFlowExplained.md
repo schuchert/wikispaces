@@ -1,7 +1,7 @@
 ---
 title: AspectJ_CFlowExplained
 ---
-[<--Back](AspectJ_CFlowSoWhatIsHappening) [Next-->](AspectJ_CFlowApplyYourself)
+{% include nav prev="AspectJ_CFlowSoWhatIsHappening" next="AspectJ_CFlowApplyYourself" %}
 
 ## CFlow
 CFlow, or control flow, allows the selection of pointcuts based on the program flow at runtime. Most of the pointcuts you've reviewed so far have probably been selectable at weave time. For example, call matches pointcuts that call a particular method; execution matches the execution of code whose signature matches. AspectJ determines both of these examples without having to execute the program.
@@ -336,4 +336,4 @@ None. This class is unchanged from [[AspectJEX4Explained#TrackedObjectMixin|Exam
 #### Interesting Lines
 None. This class is unchanged from [Example 4](AspectJEX4Explained#aop).
 
-[<--Back](AspectJ_CFlowSoWhatIsHappening) [Next-->](AspectJ_CFlowApplyYourself)
+{% include nav prev="AspectJ_CFlowSoWhatIsHappening" next="AspectJ_CFlowApplyYourself" %}

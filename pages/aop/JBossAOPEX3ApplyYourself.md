@@ -1,7 +1,7 @@
 ---
 title: JBossAOPEX3ApplyYourself
 ---
-[<--Back](JBossAOPEX3Explained) [Next-->](JBossAOPEX3AssignmentApplications)
+{% include nav prev="JBossAOPEX3Explained" next="JBossAOPEX3AssignmentApplications" %}
 
 ## Apply Yourself
 ### Avoid unnecessary checking
@@ -27,4 +27,4 @@ A class must implement java.io.Serializable to be saved using an ObjectOutputStr
 ### Thought: Why return null?
 [SetInterceptor.java](JBossAOPEX3Explained#SetInterceptor) returns null on line 25. Could this cause any side effects? Can you suggest any alternatives?
 
-[<--Back](JBossAOPEX3Explained) [Next-->](JBossAOPEX3AssignmentApplications)
+{% include nav prev="JBossAOPEX3Explained" next="JBossAOPEX3AssignmentApplications" %}

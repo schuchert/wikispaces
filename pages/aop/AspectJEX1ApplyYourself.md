@@ -1,7 +1,7 @@
 ---
 title: AspectJEX1ApplyYourself
 ---
-[<--Back](AspectJVMConfigurationBlackMagic) [Next-->](AspectJEX1AssignmentApplications)
+{% include nav prev="AspectJVMConfigurationBlackMagic" next="AspectJEX1AssignmentApplications" %}
 
 ## Apply Yourself
 ^
@@ -52,4 +52,4 @@ Currently, the provided Monopoly® source code produces game output in the Game.
 ^
 Does doing this make sense? Is this a cross-cutting concern? How might you apply this kind of idea in a realistic situation?
 
-[<--Back](AspectJVMConfigurationBlackMagic) [Next-->](AspectJEX1AssignmentApplications)
+{% include nav prev="AspectJVMConfigurationBlackMagic" next="AspectJEX1AssignmentApplications" %}

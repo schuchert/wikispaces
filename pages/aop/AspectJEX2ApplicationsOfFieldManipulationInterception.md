@@ -1,7 +1,7 @@
 ---
 title: AspectJEX2ApplicationsOfFieldManipulationInterception
 ---
-[<--Back](AspectJEX2AssignmentApplications) [Next-->](AspectJEX2AssignmentIssues)
+{% include nav prev="AspectJEX2AssignmentApplications" next="AspectJEX2AssignmentIssues" %}
 
 ## Applications of Field Manipulation Interception
 
@@ -11,4 +11,4 @@ Here are some ideas I've heard people mention:
 * Tracking field access for logging or security reasons
 * ...
 
-[<--Back](AspectJEX2AssignmentApplications) [Next-->](AspectJEX2AssignmentIssues)
+{% include nav prev="AspectJEX2AssignmentApplications" next="AspectJEX2AssignmentIssues" %}

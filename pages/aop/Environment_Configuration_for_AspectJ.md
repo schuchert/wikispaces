@@ -38,4 +38,4 @@ The following additional configuration sets will set your Eclipse configuration 
 * [AspectJ_Example_3](AspectJ_Example_3)
 * [AspectJ_Example_4](AspectJ_Example_4)
 
-[<--Back](AspectJ_Self_Study) [Next-->](Eclipse_VM_Configuration_for_AspectJ)
+{% include nav prev="AspectJ_Self_Study" next="Eclipse_VM_Configuration_for_AspectJ" %}

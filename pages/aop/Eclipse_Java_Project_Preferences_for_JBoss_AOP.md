@@ -1,7 +1,7 @@
 ---
 title: Eclipse_Java_Project_Preferences_for_JBoss_AOP
 ---
-[<--Back](Eclipse_Java_Language_Preferences_for_JBoss_AOP) [Next-->](Save_Workspace_Configurations_for_JBoss_AOP)
+{% include nav prev="Eclipse_Java_Language_Preferences_for_JBoss_AOP" next="Save_Workspace_Configurations_for_JBoss_AOP" %}
 
 In these examples, I have Eclipse configured to use separate src and bin directories. This is an optional step.
 
@@ -15,4 +15,4 @@ In Eclipse:
 * In **Output folder name:** enter **bin** (this is the default value)
 * Click **OK**
 
-[<--Back](Eclipse_Java_Language_Preferences_for_JBoss_AOP) [Next-->](Save_Workspace_Configurations_for_JBoss_AOP)
+{% include nav prev="Eclipse_Java_Language_Preferences_for_JBoss_AOP" next="Save_Workspace_Configurations_for_JBoss_AOP" %}

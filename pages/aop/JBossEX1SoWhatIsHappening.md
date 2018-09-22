@@ -1,7 +1,7 @@
 ---
 title: JBossEX1SoWhatIsHappening
 ---
-[<--Back](JBossEX1WhatIsHappening) [Next-->](JBossEX1Explained)
+{% include nav prev="JBossEX1WhatIsHappening" next="JBossEX1Explained" %}
 
 ## So What Is Happening?
 Here are some descriptions I’ve heard some people mention:
@@ -11,4 +11,4 @@ Here are some descriptions I’ve heard some people mention:
 * We modify every method execution. Before and after the method execution we display the name of the method.
 * ...
 
-[<--Back](JBossEX1WhatIsHappening) [Next-->](JBossEX1Explained)
+{% include nav prev="JBossEX1WhatIsHappening" next="JBossEX1Explained" %}

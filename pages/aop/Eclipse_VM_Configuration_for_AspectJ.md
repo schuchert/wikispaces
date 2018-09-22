@@ -1,7 +1,7 @@
 ---
 title: Eclipse_VM_Configuration_for_AspectJ
 ---
-[<--Back](Environment_Configuration_for_AspectJ) [Next-->](Eclipse_Classpath_Variable_for_AspectJ)
+{% include nav prev="Environment_Configuration_for_AspectJ" next="Eclipse_Classpath_Variable_for_AspectJ" %}
 
 Your goal is to configure the Java VM to include one additional parameter:
 {% highlight terminal %}
@@ -20,4 +20,4 @@ In Eclipse:
 
 ![](../images/JBossAOPJREConfiguration.jpg)
 
-[<--Back](Environment_Configuration_for_AspectJ) [Next-->](Eclipse_Classpath_Variable_for_AspectJ)
+{% include nav prev="Environment_Configuration_for_AspectJ" next="Eclipse_Classpath_Variable_for_AspectJ" %}

@@ -1,7 +1,7 @@
 ---
 title: AspectJVMConfigurationBlackMagic
 ---
-[<--Back](AspectJEX1Explained) [Next-->](AspectJEX1ApplyYourself)
+{% include nav prev="AspectJEX1Explained" next="AspectJEX1ApplyYourself" %}
 
 ## VM Configuration: Black Magic
 This section describes the black magic that actually binds the MethodExecutionAspect class to the MethodExecutionAspect class. You can safely skip it but it is here just in case you are interested in what’s happening.
@@ -31,4 +31,4 @@ Aspect
 Advice: Bad Name?
 : Advice is the metaphor that AspectJ uses to describe **what** should happen when a pointcut is encountered. Ask your self this question, when given advice (or giving), it is always followed? Because it IS in AspectJ.
 
-[<--Back](AspectJEX1Explained) [Next-->](AspectJEX1ApplyYourself)
+{% include nav prev="AspectJEX1Explained" next="AspectJEX1ApplyYourself" %}

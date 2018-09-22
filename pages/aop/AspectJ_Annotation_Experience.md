@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Annotation_Experience
 ---
-[<--Back](AspectJ_Annotation_Start) [Next-->](AspectJ_Annotation_Observation)
+{% include nav prev="AspectJ_Annotation_Start" next="AspectJ_Annotation_Observation" %}
 
 ## AspectJ Annotation: Experience
 Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If you'd like to know how to set up a project using it, [click here](ExtractingSourceFilesIntoProject).
@@ -87,4 +87,4 @@ public class Address implements Serializable {
     }
 {% endhighlight %}
 
-[<--Back](AspectJ_Annotation_Start) [Next-->](AspectJ_Annotation_Observation)
+{% include nav prev="AspectJ_Annotation_Start" next="AspectJ_Annotation_Observation" %}

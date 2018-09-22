@@ -1,7 +1,7 @@
 ---
 title: AspectJ_CFlowPossibilities
 ---
-[<--Back](AspectJ_CFlowFormTheory) [Next-->](AspectJ_CFlowWhatIsHappening)
+{% include nav prev="AspectJ_CFlowFormTheory" next="AspectJ_CFlowWhatIsHappening" %}
 
 ## Possibilities
 Did you have any ideas? Here are some ideas I’ve heard some people mention:
@@ -10,4 +10,4 @@ Did you have any ideas? Here are some ideas I’ve heard some people mention:
 * If you are in a constructor, or a method called by a constructor, do not go into the around advice.
 * ... 
 
-[<--Back](AspectJ_CFlowFormTheory) [Next-->](AspectJ_CFlowWhatIsHappening)
+{% include nav prev="AspectJ_CFlowFormTheory" next="AspectJ_CFlowWhatIsHappening" %}

@@ -1,7 +1,7 @@
 ---
 title: Emma_Code_Coverage_vehicle.type
 ---
-[<--Back](Car_Rental_Code_Coverage_with_Emma) [Next-->](Emma_Code_Coverage_vehicle.configuration)
+{% include nav prev="Car_Rental_Code_Coverage_with_Emma" next="Emma_Code_Coverage_vehicle.configuration" %}
 
 ## Emma Code Coverage vehicle.type Package
 
@@ -108,4 +108,4 @@ The specific results for the classes are here:
 
 Have we made any real improvements? Have we tested methods that are likely to fail? That is something that you'd have to decide for yourself. I'm not convinced that we've accomplished very much other than removing unused classes and methods.
 
-[<--Back](Car_Rental_Code_Coverage_with_Emma) [Next-->](Emma_Code_Coverage_vehicle.configuration)
+{% include nav prev="Car_Rental_Code_Coverage_with_Emma" next="Emma_Code_Coverage_vehicle.configuration" %}
