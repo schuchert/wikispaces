@@ -22,7 +22,7 @@ It also includes all of the necessary jar files to run these examples.
 #### Import the included Eclipse Preferences
 * File:Import:General:Preferences
 * Click on next
-* Enter <yourworkspace>\EclipsePrefs.epf, e.g. for me it would be: C:\workspaces\SpringTemplatesExample\EclipsePrefs.epf
+* Enter ```<yourworkspace>```\EclipsePrefs.epf, e.g. for me it would be: C:\workspaces\SpringTemplatesExample\EclipsePrefs.epf
 * Verify that import all is selected
 * Click Finish
 
@@ -30,7 +30,7 @@ It also includes all of the necessary jar files to run these examples.
 * File:Import:General:Existing Projects into Workspace
 * Click on next
 * Enter the directory of your workspace, e.g. mine would be C:\workspaces\SpringTemplatesExample
-* Wait for a few seconds or press <enter>
+* Wait for a few seconds or press ```<enter>```
 * You should see two projects: JdbcToSpringTemplates, LoggingUtils
 * Click select all
 * Click finish

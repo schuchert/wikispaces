@@ -4,8 +4,8 @@ title: Rpn_Calculator.WithRefactoringAndPatterns
 Describe the calculator (unlimited stack BTW, but a stack of 4 is a nice option)
 Ask them what they'd like to see first
 Get an idea of what they want for a system boundary
-* It is something receiving messages like 34 <enter>
-* it is something receiving a series of characters like 3, 4, <enter> 2, 3 +
+* It is something receiving messages like 34 ```<enter>```
+* it is something receiving a series of characters like 3, 4, ```<enter>``` 2, 3 +
 * I've done it both ways. I like the first better.
 
 Then I start demonstrating TDD in the raw. I don't describe the steps, just demo it.
@@ -105,7 +105,7 @@ I have them implement two functions:
 * (using tdd to write it)
 
 * prime factors -> takes one value, puts many back:
-  * values < 2 -> just removed, stack should reduce in size by one
+  * values ```< 2 ->``` just removed, stack should reduce in size by one
   * 2 -> 2
   * 3 -> 3
   * 4 -> 2, 2

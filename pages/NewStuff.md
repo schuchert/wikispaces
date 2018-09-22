@@ -2,15 +2,15 @@
 title: New Stuff
 ---
 
-* [PrinciplesOfProductDevelopmentFlow](Principles of Product Development Flow)
-* [lombok](Lombok)
-* [vm](Setting Up the VM)
-* [cpptraining](C++ Training Materials)
+* [Principles of Product Development Flow)](PrinciplesOfProductDevelopmentFlow)
+* [Lombok](lombok)
+* [Setting Up the VM)](vm)
+* [C++ Training Materials](cpptraining)
 * [VideoDemonstrations](VideoDemonstrations)
 * [FitNesse](FitNesse)
-* [Ruby](Ruby)
+* [Ruby](ruby/Ruby)
 * [Languages](Languages)
-* [TddAndConcurrency](Tdd & Concurrency)
+* [Tdd & Concurrency)](TddAndConcurrency)
 * [CustomJUnit4Runner](CustomJUnit4Runner)
 * [NewTddStuff](NewTddStuff)
 * [JavaAgent](JavaAgent)

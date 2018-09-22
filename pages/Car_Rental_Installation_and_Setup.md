@@ -47,7 +47,7 @@ Here are the full instructions. Note that if you've already downloaded/installed
 ### Import the included Eclipse Preferences
 * File:Import:General:Preferences
 * Click on next
-* Enter <yourworkspace>\ToolConfiguration\EclipsePrefs.epf, e.g. for me it would be: C:\workspaces\CarRentalExample\TooConfiguration\EclipsePrefs.epf
+* Enter ```<yourworkspace>```\ToolConfiguration\EclipsePrefs.epf, e.g. for me it would be: C:\workspaces\CarRentalExample\TooConfiguration\EclipsePrefs.epf
 * Verify that import all is selected
 * Click Finish
 
@@ -88,7 +88,7 @@ These steps are optional if you've installed Eclipse and the various libs in the
 * File:Import:General:Existing Projects into Workspace
 * Click on next
 * Enter the directory of your workspace, e.g. mine would be C:\workspaces\CarRentalExample
-* Wait for a few seconds or press <enter>
+* Wait for a few seconds or press ```<enter>```
 * You should see three projects: CarRental, LoggingUtils, ToolConfiguration
 * Click select all
 * Click finish

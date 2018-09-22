@@ -28,7 +28,7 @@ title: tdd_intro.CreatingAnEmptyProject
 {% highlight terminal %}
     Define value for property 'version':  1.0-SNAPSHOT: : <<enter>>
 {% endhighlight %}
-* Enter default package (e.g., com.shoe.paginator <enter>)
+* Enter default package (e.g., com.shoe.paginator ```<enter>```)
 {% highlight terminal %}
 Define value for property 'package':  com.shoe: : com.shoe.paginator <<enter>>
 {% endhighlight %}

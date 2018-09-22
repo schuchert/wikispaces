@@ -708,7 +708,7 @@ Here is a snapshot of what your code should resemble at this point:
 ## Example: What Happens with Enter?
 What happens when a user presses the <enter> key on the calculator:
 * The current value in the x_register is placed on the stack of previous operands.
-* Subsequent, the next numeric digit causes the x_register to reset, but pressing <enter> again causes that value to placed on the stack again.
+* Subsequent, the next numeric digit causes the x_register to reset, but pressing ```<enter>``` again causes that value to placed on the stack again.
 
 In fact, as you will see, pressing a non-numeric key generally "locks-down" the x_register and makes the next digit cause it to be reset. You can describe this we several Examples.
 
@@ -902,7 +902,7 @@ Notice that the 1 entered was appended to the x_register. So looks like this tes
 Here's a list of things that you might consider for refactoring:
 * There's a violation of DRY between digit_pressed and initialize
 * There's some duplication between the last two Examples
-* The method name enter_number either needs to be changed, or it should call the <enter> method.
+* The method name enter_number either needs to be changed, or it should call the ```<enter>``` method.
 
 #### enter_number
 You can either change its name or make it do what it says. Flip a coin, you probably do not have enough information to make that decision just yet. However, in the spirit of keeping things clean, I did make a decision. I kept the method name and changed its implementation:
@@ -1470,7 +1470,7 @@ Barring extending a single instance, it is certainly reasonable to create an Ope
 
 Before you start, did you notice that the Context for the last three Examples was "Stack"? That's a big clue that there's a missing class.
 
-* There are 3 Examples in the "Stack" context. Move the first one out into "Handling the <enter> key" context.
+* There are 3 Examples in the "Stack" context. Move the first one out into "Handling the ```<enter>``` key" context.
 
 * Verify that all of your Examples are still passing.
 
@@ -1865,7 +1865,7 @@ Here's one example of what all of your code should look like about now.
 {% endhighlight %}
 
 ## Example: A Binary Operator
-Some time ago you created your first Example to exercise the <enter> key. That resulted in the following method:
+Some time ago you created your first Example to exercise the ```<enter>``` key. That resulted in the following method:
 {% highlight ruby %}
       def execute_function(function_symbol)
         @x_register_should_reset = true

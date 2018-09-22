@@ -25,7 +25,7 @@ This tutorial revisits the entities from [JPA_Tutorial_1_Getting_Started](JPA_Tu
 ### Optional: Data Source Configuration
 {% include include_md_file filename="Ejb_3_Tutorial_2_Optional_Data_Source_Configuration.md" %}
 ----
-### Optional: QuantumDb Setup and Configuration
+### Optional: QuantumDB Setup and Configuration
 {% include include_md_file filename="QuantumDB_Configuration.md" %}
 ----
 ### Exercises

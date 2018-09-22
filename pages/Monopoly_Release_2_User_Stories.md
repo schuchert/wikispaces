@@ -14,4 +14,4 @@ If you finish ahead of the class, work on the following:
 * Allow for more than 2 players. Have one player run out of money and the other 2 continue playing through the remainder of the 20 rounds.
 * Allow for more than 2 players. Have all but one player run out of money over time (not all during the same turn). Announce the one remaining player as a winner.
 
-[<--Back]({{ site.pagesurl}}/Monopoly#Release2)
+[<--Back](Monopoly#Release2)
