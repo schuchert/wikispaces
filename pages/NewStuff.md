@@ -5,7 +5,7 @@ title: New Stuff
 * [Principles of Product Development Flow)](PrinciplesOfProductDevelopmentFlow)
 * [Lombok](lombok)
 * [Setting Up the VM)](vm)
-* [C++ Training Materials](cppTraining)
+* [C++ Training Materials](CppTraining)
 * [VideoDemonstrations](VideoDemonstrations)
 * [FitNesse](FitNesse)
 * [Ruby](ruby/ruby)
