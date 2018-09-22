@@ -10,14 +10,14 @@ Thanks to Mike Stockdale for both writing the slim .Net implementation as well a
 ### Get SliM.net
 Note, this tool is called fitsharp, but it is actually an implementation of Slim for FitNesse. So while this title of this section does not patch the tool title, it better represents what the tool is.
 
-* Download a release zip from [[http://github.com/jediwhale/fitsharp/downloads|jediwhale's github account]]. Note, as of this update, the release version is called [[http://github.com/downloads/jediwhale/fitsharp/release.1.6.zip|release.1.6.zip]].
+* Download a release zip from [jediwhale's github account](http://github.com/jediwhale/fitsharp/downloads). Note, as of this update, the release version is called [release.1.1.6.zip](http://github.com/downloads/jediwhale/fitsharp/release.1.6.zip)
 * Extract the zip's contents to some directory (I'll use c:\tools\nslim)
-* This creates a directory structure as follows: ![Extracted Slim](images/ExtractedNSlim.jpg)
+* This creates a directory structure as follows: ![](images/ExtractedNSlim.jpg)
 
 
 ### Get FitNesse
 
-{% include_relative FitNesse.Installing.md %}
+{% include include_md_file filename="FitNesse.Installing.md" %}
 
 ### Starting FitNesse
 All of the tutorials assume you are running FitNesse on port 8080. These instructions show you how to start FitNesse on port 8080.

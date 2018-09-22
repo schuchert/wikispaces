@@ -4,8 +4,8 @@ title: Katas.ShuntingYardAlgorithm.examples
 
 |-----|---|---|
 | Example Infix Expression | Expected Postfix Result| Notes |
-| <empty string> | <empty string> |A good place to start, you'll create the basic translator class and get a value back.|
-| <null> | <empty string> |Make sure you handle one error case, a null string, by returning a reasonable default value of an empty string.|
+| empty string | empty string |A good place to start, you'll create the basic translator class and get a value back.|
+| null | empty string |Make sure you handle one error case, a null string, by returning a reasonable default value of an empty string.|
 |45 | 45 |Make sure you can handle a simple, literal number. This test may work out of the box, if not, it should be simple to get it to work.|
 | + | + |Make sure you can handle a simple operator. This test will probably work out of the box after getting the previous test to pass. Later on, this test represents a error case of sorts since there are no operands for this operator.|
 | 3 + 8 | 3 8 + |Your first "real" test, can you perform some basic translation?|
