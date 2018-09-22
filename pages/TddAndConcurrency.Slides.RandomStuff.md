@@ -1,7 +1,7 @@
 ---
 title: TddAndConcurrency.Slides.RandomStuff
 ---
-[<--Back](TddAndConcurrency.Slides.FinaNotes) [Top](TddAndConcurrency.Slides) [Next-->](TddAndConcurrency.Slides)
+{% include nav prev="TddAndConcurrency.Slides.FinaNotes" up="TddAndConcurrency.Slides" next="TddAndConcurrency.Slides" %}
 
 ## TDD & Concurrency
 ### Atomic Variables
@@ -54,4 +54,4 @@ IncrementValue() {
 * Circular Wait
   * Order your locks
 
-[<--Back](TddAndConcurrency.Slides.FinaNotes) [Top](TddAndConcurrency.Slides) [Next-->](TddAndConcurrency.Slides)
+{% include nav prev="TddAndConcurrency.Slides.FinaNotes" up="TddAndConcurrency.Slides" next="TddAndConcurrency.Slides" %}

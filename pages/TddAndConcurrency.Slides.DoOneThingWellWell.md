@@ -1,7 +1,7 @@
 ---
 title: TddAndConcurrency.Slides.DoOneThingWellWell
 ---
-[<--Back](TddAndConcurrency.Slides) [Top](TddAndConcurrency.Slides) [Next-->](TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid)
+{% include nav prev="TddAndConcurrency.Slides" up="TddAndConcurrency.Slides" next="TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid" %}
 
 ## Do One Thing ... Well ... Well
 
@@ -95,4 +95,4 @@ Now we’ll walk through a rewrite of the class to speed it up…
 * Dependency Injection
 * Server Update
 
-[<--Back](TddAndConcurrency.Slides) [Top](TddAndConcurrency.Slides) [Next-->](TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid)
+{% include nav prev="TddAndConcurrency.Slides" up="TddAndConcurrency.Slides" next="TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid" %}
