@@ -1,0 +1,9 @@
+{%- if include.prev -%}
+    <a href="{{include.prev}}" class="prev nav">Previous</a>
+{%- endif -%}
+{%- if include.up -%}
+    <a href="{{include.up}}" class="up nav">Up</a>
+{%- endif -%}
+{%- if include.next -%}
+    <a href="{{include.next}}" class="next nav">Next</a>
+{% endif %}
