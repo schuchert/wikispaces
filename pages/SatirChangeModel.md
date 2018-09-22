@@ -13,7 +13,7 @@ There are **4 stages** and 2 events in the Satir Change Model:
 * **Practice and Integration**
 * **New Status Quo**
 
-![satir change model](images/SatirChangeModel.jpg)
+![](images/SatirChangeModel.jpg){:width="600px"}
 
 ### Old Status Quo
 This is where we are right now.

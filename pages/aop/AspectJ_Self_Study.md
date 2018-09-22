@@ -6,7 +6,7 @@ title: AspectJ_Self_Study
 AOP is an abbreviation for Aspect Oriented Programming. For now, that’s all you’re going to get for a definition. Why is that? Because this set of exercises assist you in defining AOP for yourself. You’d do that anyway; we all do, so these notes work off that fact. 
 
 If you prefer to work from concrete examples, consider having a look here:
-* [Some_Example_Aspects](Some_Example_Aspects)
+* [Some_Example_Aspects](../Some_Example_Aspects)
 
 These exercises use a particular tool, AspectJ, but the concepts apply equally well to JBoss AOP (see: [JBoss_AOP_Self_Study](JBoss_AOP_Self_Study)).
 

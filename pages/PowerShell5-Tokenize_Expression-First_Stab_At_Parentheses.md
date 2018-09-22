@@ -1,7 +1,9 @@
 ---
 title: PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses
 ---
-[<— Back](PowerShell5.TokenizeExpression.SimpleBinaryExpressions)  [^ Up ^](PowerShell5.TokenizeExpression) [Next—>](PowerShell5.TokenizeExpression.FunctionCalls)
+[<— Back](PowerShell5.TokenizeExpression.SimpleBinaryExpressions)  [Up](PowerShell5.TokenizeExpression) [Next—>](PowerShell5.TokenizeExpression.FunctionCalls)
+
+## First Stab at parenthesis
 There are two ways in which our tokenizer might encounter parenthesis. The first is to group a lower-precedence operator, as in:
 * (3 + 4) * 6
 ^
@@ -57,4 +59,4 @@ After this, it seemed like there was a pattern in the code that I could represen
         return $result
     }
 {% endhighlight %}
-[<— Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.SimpleBinaryExpressions)  [^^ Up ^^](PowerShell5.TokenizeExpression) [Next—>](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.FunctionCalls)
+[<— Back](PowerShell5.TokenizeExpression.SimpleBinaryExpressions)  [Up](PowerShell5.TokenizeExpression) [Next—>](PowerShell5.TokenizeExpression.FunctionCalls)

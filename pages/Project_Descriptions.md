@@ -11,7 +11,7 @@ title: Project_Descriptions
 * [Rpn_Calculator_High_Level_Description](Rpn_Calculator_High_Level_Description)
 * [RPN_Calculator](RPN_Calculator)
 * [Rpn_Calculator.WithRefactoringAndPatterns](Rpn_Calculator.WithRefactoringAndPatterns)
-* [ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator](ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator)
+* [ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator](ruby/ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator)
 * [RpnCalculatorPrintable](RpnCalculatorPrintable)
 
  

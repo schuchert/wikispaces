@@ -25,7 +25,7 @@ Create a directory into which we will store all of the test code and the product
 * [Simple Binary Expressions](PowerShell5-Tokenize_Expression-Simple_Binary_Expressions)
 * [First Stab At Parentheses](PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses)
 * [FunctionCalls](PowerShell5-Tokenize_Expression-Function_Calls)
-* [Convert Tokenizer to an Enumerator](PowerShell5-Tokenize_Expression-Convert_Tokenizer_To_An_Enumeratr)
+* [Convert Tokenizer to an Enumerator](PowerShell5-Tokenize_Expression-Convert_Tokenizer_To_An_Enumerator)
 * [My Final-ishVersion](PowerShell5-Tokenize_Expression-Finalish_Version)
 * [Tutorial As One Page](PowerShell5-Tokenize_Expression-As_One_Page)
 

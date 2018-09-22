@@ -107,7 +107,7 @@ If you do not use a src directory and just store your projects at the top level,
 ^
 |--|--|
 | Line | Description |
-|24|Use a [simple configurator](Commons_Loggins_and_Log4j_Config) to get a logging configuration.|
+|24|Use a [simple configurator](Commons_Logging_and_Log4j_Config) to get a logging configuration.|
 |25|Create an output file name that's based on the [Java user.home](http://java.sun.com/docs/books/tutorial/essential/system/properties.html) property. On my machine, this is the directory "C:\Documents and Settings\brett.schuchert". On a Unix machine, it will probably be equal to "~".|
 |26|Dos uses \ and Unix uses /. Using / in Java works on both PC's and Unix boxes, so replace all of the \ with /.|
 |27 - 28|Output where the log file is placing information to System.err. It will show up as red in Eclipse and I flush the output so it should appear somewhere near the top. You can safely remove this line once you know where the output goes.|

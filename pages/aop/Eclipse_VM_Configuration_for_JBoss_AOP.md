@@ -17,6 +17,6 @@ In Eclipse:
 * In **Default VM Arguments:**
 * Adjust the directory to where your version of JBoss AOP is installed
 
-![](images/JBossAOPJREConfiguration.jpg)
+![](../images/JBossAOPJREConfiguration.jpg)
 
 [<--Back](Environment_Configuration_for_JBOSS_AOP) [Next-->](Eclipse_Classpath_Variable_for_JBoss_AOP)

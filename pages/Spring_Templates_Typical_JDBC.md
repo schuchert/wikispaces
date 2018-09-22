@@ -14,8 +14,8 @@ This is a recurring theme through all of the examples. The only real difference 
 Please see the notes on this example below the code.
 
 ### Class Relationships 
-![Class Relationships](images/DesigningToSpringTemplates.v1.gif){:width="600px"}
 ![](images/DesigningToSpringTemplates.v1.gif){:width="600px"}
+![](images/DesigningToSpringTemplates.v2.gif){:width="600px"}
 
 ### Important Note
 All of these examples are configured to use [hsqldb](http://www.hsqldb.org/) which is a free database that supports both in-memory operation as well as using the disk (and other configurations). I've set it up to work strictly in memory. This means:

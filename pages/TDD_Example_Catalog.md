@@ -6,7 +6,7 @@ title: TDD_Example_Catalog
 * [Full Coverage when Expecting an Exception](Full_Coverage_when_Expecting_an_Exception)
 
 ## jMock 2.0
-* [Demystifying The Beast](JMock-Demystifying_The_Beast)
+* [Demystifying The Beast](JMock-Demystifying_the_Beast)
 * [Fixed Return Value](JMock-Fixed_Return_Value)
 * [Verify Method Called Exactly Once](JMock-Verify_Method_Called_Exactly_Once)
 * [Verify Method Called With Value](JMock-Verify_Method_Called_With_Value)
