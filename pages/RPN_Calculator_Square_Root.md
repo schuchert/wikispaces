@@ -7,4 +7,4 @@ As a user I want to be able to take the square root of a number so that I don't 
 * [4] <sqrt> -> [2]
 * [-4] <sqrt> -> error invalid number/[]  (if you want to experiment with imaginary numbers, feel free to do so)
 
-[<--Back](RPN_Calculator)
+{% include nav prev="RPN_Calculator" %}

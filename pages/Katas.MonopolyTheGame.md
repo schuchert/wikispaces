@@ -1,7 +1,7 @@
 ---
 title: Katas.MonopolyTheGame
 ---
-[<--Back](Katas)
+{% include nav prev="Katas" %}
 
 ## Background
 In 1992 I started working for a company called ObjectSpace with Graham Glass and David Norris. At that time, Graham taught classes on Object Oriented Development in C++ and sometimes Smalltalk. I was brought on to help with the teaching and helped Graham formalize the classes somewhat. Some years before 1991, Graham had bought several board games and randomly selected Monopoly to use as implementation problem for his class on Object Oriented Programming in C++. That project turned out to be an excellent source for basic object oriented design problems, design patterns (which were not yet on the scene in any significant way) and even analysis.
@@ -39,4 +39,4 @@ Once you become very familiar with this problem (say 10 + times, maybe more), th
 
 Let me know how it goes for you!
 
-[<--Back](Katas)
+{% include nav prev="Katas" %}

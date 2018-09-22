@@ -14,4 +14,4 @@ As a Player, when I land on Community Chest or Chance I must play a card.
 * [List of Chance Cards](http://en.wikipedia.org/wiki/Chance_cards)
 * [List of Community Chest Cards](http://en.wikipedia.org/wiki/Community_Chest_cards)
 
-[<--Back](Monopoly_Release_5_User_Stories)
+{% include nav prev="Monopoly_Release_5_User_Stories" %}

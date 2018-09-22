@@ -1,7 +1,7 @@
 ---
 title: AcceptanceTesting.UsingSlimDotNetInFitNesse
 ---
-[<-- Back](FitNesse.Tutorials)
+{% include nav prev="FitNesse.Tutorials" %}
 {% include toc %}
 
 ## Rapid Intro to using Slim with .Net
@@ -207,4 +207,4 @@ Here are example implementations for those methods:
     }
 {% endhighlight %}
 
-[<-- Back](FitNesse.Tutorials)
+{% include nav prev="FitNesse.Tutorials" %}

@@ -1,7 +1,7 @@
 ---
 title: TestPage4
 ---
-[<-Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}
 
 ## JPA Tutorial 3 - A Mini Application
 In this example we start with a simple domain model and incrementally migrate it to become more realistic. Along the way we end up using several features of JPA not yet covered by the previous tutorials.
@@ -52,4 +52,4 @@ In this example we start with a simple domain model and incrementally migrate it
 
 [JPA_Tutorial_3_FAQ](JPA_Tutorial_3_FAQ)
 
-[<-Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}

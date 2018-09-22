@@ -10,4 +10,4 @@ Here are the user stories for release 4:
 ### Optional
 * [Games Offers Player Option to Pay to Get Out of Jail](Monopoly_Release_4_Games_Offers_Player_Option_to_Pay_to_Get_Out_of_Jail)
 
-[<--Back](Monopoly#Release4)
+{% include nav prev="Monopoly#Release4" %}

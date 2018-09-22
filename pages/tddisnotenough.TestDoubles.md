@@ -1,7 +1,7 @@
 ---
 title: tddisnotenough.TestDoubles
 ---
-[<==Back](TddIsNotEnough#TestDoubles)
+{% include nav prev="TddIsNotEnough#TestDoubles" %}
 
 From Gerard Meszaros - <http://xunitpatterns.com/Test%20Double%20Patterns.html>.
 ^
@@ -14,4 +14,4 @@ From Gerard Meszaros - <http://xunitpatterns.com/Test%20Double%20Patterns.html>.
 |Mock|Has & Validates expectations|
 |Saboteur|Designed to always fail, e.g., always throws an exception.|
 
-[<==Back](TddIsNotEnough#TestDoubles)
+{% include nav prev="TddIsNotEnough#TestDoubles" %}

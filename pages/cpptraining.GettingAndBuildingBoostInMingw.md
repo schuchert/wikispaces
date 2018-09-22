@@ -1,7 +1,7 @@
 ---
 title: cpptraining.GettingAndBuildingBoostInMingw
 ---
-[<--Back](CppTraining#boost)
+{% include nav prev="CppTraining#boost" %}
 
 ## Overview
 At this point you should have:
@@ -77,4 +77,4 @@ C:\workspaces\boost_1_43_0\stage\lib>
 {% endhighlight %}
 
 
-[<--Back](CppTraining#boost)
+{% include nav prev="CppTraining#boost" %}

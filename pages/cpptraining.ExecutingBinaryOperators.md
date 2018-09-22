@@ -2,7 +2,7 @@
 title: cpptraining.ExecutingBinaryOperators
 ---
 {% include toc %}
-[<--Back](CppTraining#FitNesse)
+{% include nav prev="CppTraining#FitNesse" %}
 
 ## Background
 These steps assuem you have already worked through the tutorial: [Getting Started With FitNesse in C++](cpptraining.GettingStartedWithFitNesseInCpp).
@@ -613,4 +613,4 @@ SLIM_END
 
 Save and rebuild. You should now have a passing test. If you run the entire suite, all three tests should pass.
 
-[<--Back](CppTraining#FitNesse)
+{% include nav prev="CppTraining#FitNesse" %}

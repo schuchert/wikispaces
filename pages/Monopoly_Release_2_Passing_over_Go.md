@@ -8,4 +8,4 @@ As a player, I receive $200 when I pass over Go.
 * Player starts on Go, takes a turn where the Player does not additionally land on or pass over Go. Their balance remains unchanged.
 * Player passes go twice during a turn. Their balance increases by $200 each time for a total change of $400.
 
-[<--Back](Monopoly_Release_2_User_Stories)
+{% include nav prev="Monopoly_Release_2_User_Stories" %}

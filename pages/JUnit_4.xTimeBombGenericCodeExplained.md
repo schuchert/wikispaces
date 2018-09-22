@@ -1,7 +1,7 @@
 ---
 title: JUnit_4.xTimeBombGenericCodeExplained
 ---
-[<--Back](JUnit_4.x)
+{% include nav prev="JUnit_4.x" %}
 
 ## Time Bomb Generic Code Explained
 Here's a use of TimeBomb (for context) taken from [Example 2](JUnit_4.x#example2):
@@ -88,4 +88,4 @@ Back to the original use:
 {% endhighlight %}
 Java matches the first three int parameters as before. Next, Java notices that the 4th parameter's compile-time type is "ObjectInUse". As already mentioned, ObjectInUse is a RuntimeException, so this line compiles and we do not need either a try/catch or a throws clause.
 
-[<--Back](JUnit_4.x)
+{% include nav prev="JUnit_4.x" %}

@@ -1,6 +1,6 @@
 ---
 title: PowerShell5.RpnCalculator
 ---
-[<--Back](PowerShell5)
+{% include nav prev="PowerShell5" %}
 This will fuse [The Rpn Calculator](RPN_Calculator), which is one of my favorite practice problems.
-[<--Back](PowerShell5)
+{% include nav prev="PowerShell5" %}

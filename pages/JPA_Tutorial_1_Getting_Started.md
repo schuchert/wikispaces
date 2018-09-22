@@ -2,7 +2,7 @@
 title: JPA_Tutorial_1_Getting_Started
 ---
 {% include toc %}
-[<--Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}
 
 ## Introduction
 This first tutorial gives you an opportunity to work with:
@@ -49,4 +49,4 @@ Links to the individual pages:
 [JPA_Tutorial_1_Entire_Source_Base](JPA_Tutorial_1_Entire_Source_Base)
 [JPA_Tutorial_1_FAQ](JPA_Tutorial_1_FAQ)
 
-[<--Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}

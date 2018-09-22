@@ -1,7 +1,7 @@
 ---
 title: Katas.ExpressionTokenizer
 ---
-[<--Back](Katas)
+{% include nav prev="Katas" %}
 ## Background
 While working on the [Shunting Yard Algorithm Kata](Katas.ShuntingYardAlgorithm), it became apparent that one part of the problem is taking an expression and determining its various parts, or turning it into a sequence of tokens. In my original attempts at the Shunting Yard Algorithm, I ignored the problem. I made sure each token in the input string was separated by spaces. For example:
 * ( 3 + 4 ) / 5 * f ( g ( 4 , 3 , 2 ) ) instead of
@@ -114,4 +114,4 @@ My first version was long (don't have a count). My next version was shorter (127
 
 Oh, and the longest method in my final version has 4 lines (including one blank line), there are two conditionals in the entire solution. Of course, that's making heavy use of the regular expression support in Java.
 
-[<--Back](Katas)
+{% include nav prev="Katas" %}

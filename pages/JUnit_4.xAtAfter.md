@@ -1,7 +1,7 @@
 ---
 title: JUnit_4.xAtAfter
 ---
-[<--Back](JUnit_4.x#AtAfter)
+{% include nav prev="JUnit_4.x#AtAfter" %}
 
 ## @After
 @After is the opposite of [@Before](JUnit_4.xAtBefore). It is executed after each unit test. JUnit prior to version 4.0 had an equivalent method, tearDown, you could optionally define in a test class to get similar behavior. There are differences:
@@ -30,4 +30,4 @@ And here's the equivalent in JUnit before 4.0.
 65:     }
 {% endhighlight %}
 
-[<--Back](JUnit_4.x#AtAfter)
+{% include nav prev="JUnit_4.x#AtAfter" %}

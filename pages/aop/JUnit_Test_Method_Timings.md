@@ -1,7 +1,7 @@
 ---
 title: JUnit_Test_Method_Timings
 ---
-[<--Back](Some_Example_Aspects)
+{% include nav prev="Some_Example_Aspects" %}
 
 Some time ago I wanted to get a rough idea of which unit tests were taking the longest time to run so I could run those tests under a profiler and profile my code. We had tests that ran both in container and out of container so I decided to write all of the output to a log. The output looked like the following (I've rewritten the aspect for public consumption and applied it to an example I'm building for another class):
 {% highlight terminal %}
@@ -143,4 +143,4 @@ If you do not use a src directory and just store your projects at the top level,
 |3|The fully-qualified name of an aspect. Add this aspect to the list of aspects to weave at runtime. If you change the name of the aspect or change its package, you must update this fully-qualified name.|
 |6|The list of packages to be woven. You'll need to change this to match your packages. The part before .. is the beginning of the package names I used (see the picture above). The ..* means everything from that name down. So in my case, I have packages like vehicle.component and vehicle.validation and vehicle.component.validation, all of which match vehicle..*.|
 
-[<--Back](Some_Example_Aspects)
+{% include nav prev="Some_Example_Aspects" %}

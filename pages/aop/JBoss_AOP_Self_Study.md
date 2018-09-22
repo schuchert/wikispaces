@@ -1,7 +1,7 @@
 ---
 title: JBoss_AOP_Self_Study
 ---
-[<--Back](AspectOrientedProgramming)
+{% include nav prev="AspectOrientedProgramming" %}
 
 AOP is an abbreviation for Aspect Oriented Programming. For now, that’s all you’re going to get for a definition.
 
@@ -20,4 +20,4 @@ Examples meant to get you up to speed on self-defining what AOP means:
 * [JBoss_AOP_Example_2](JBoss_AOP_Example_2)
 * [JBoss_AOP_Example_3](JBoss_AOP_Example_3)
 
-[<--Back](AspectOrientedProgramming)
+{% include nav prev="AspectOrientedProgramming" %}

@@ -1,7 +1,7 @@
 ---
 title: cpptraining.UsingBoostWithMingwAndEclipse
 ---
-[<--Back](CppTraining#boost)
+{% include nav prev="CppTraining#boost" %}
 
 ## Overview
 Now that you've [successfully build boot](cpptraining.GettingAndBuildingBoostInMingw), it is finally time to use it in a project.
@@ -15,4 +15,4 @@ Now that you've [successfully build boot](cpptraining.GettingAndBuildingBoostInM
 {% include include_md_file filename="cpptraining.ConfiguringTheProjectForCppUTest.md" %}
 {% include include_md_file filename="cpptraining.ConfiguringTheProjectToUseBoost.md" %}
 
-[<--Back](CppTraining#boost)
+{% include nav prev="CppTraining#boost" %}

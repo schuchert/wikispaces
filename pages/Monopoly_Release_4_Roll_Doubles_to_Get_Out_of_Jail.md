@@ -9,4 +9,4 @@ As a Player in Jail, I can try to roll doubles and get out of Jail for free.
 * In Jail, turn 3, roll doubles. Move and don't roll again.
 * In Jail, turn 3, do not roll doubles. Move, balance decreased by $50.
 
-[<--Back](Monopoly_Release_4_User_Stories)
+{% include nav prev="Monopoly_Release_4_User_Stories" %}

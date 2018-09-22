@@ -13,4 +13,4 @@ Here are the stories for Release 3:
 *_[Payback Mortgage](Monopoly_Release_3_Player_Pays_Back_Mortgage)
 * [Game Offers Mortgage Options](Monopoly_Release_3_Game_Offers_Mortgage_Options)
 
-[<--Back](Monopoly#Release3)
+{% include nav prev="Monopoly#Release3" %}

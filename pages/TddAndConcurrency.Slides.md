@@ -1,7 +1,7 @@
 ---
 title: TddAndConcurrency.Slides
 ---
-[<--Back](TddAndConcurrency)
+{% include nav prev="TddAndConcurrency" %}
 
 * ==[Do one thing … well … well](TddAndConcurrency.Slides.DoOneThingWellWell)
 * ==[When it’s quiet, be afraid, very afraid](TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid)
@@ -10,4 +10,4 @@ title: TddAndConcurrency.Slides
 * ==[Final notes](TddAndConcurrency.Slides.FinaNotes)
 * ==[Random stuff](TddAndConcurrency.Slides.RandomStuff)
 
-[<--Back](TddAndConcurrency)
+{% include nav prev="TddAndConcurrency" %}

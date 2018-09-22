@@ -1,7 +1,7 @@
 ---
 title: Car_Rental_Installation_and_Setup
 ---
-[<--Back](Car_Rental_Example)
+{% include nav prev="Car_Rental_Example" %}
 
 ## Car Rental Installation and Setup
 
@@ -108,4 +108,4 @@ These steps are optional if you've installed Eclipse and the various libs in the
 * Select PMD:Check Code with PMD
 * Do this every so often after you've made changes to the code to see what PMD has to say about your changes.
 
-[<--Back](Car_Rental_Example)
+{% include nav prev="Car_Rental_Example" %}

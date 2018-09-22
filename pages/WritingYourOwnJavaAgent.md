@@ -1,7 +1,7 @@
 ---
 title: WritingYourOwnJavaAgent
 ---
-[<--Back](JavaAgent)
+{% include nav prev="JavaAgent" %}
 
 A Java Agent, once registered with the class loader, has a single method:
 {% highlight java %}
@@ -102,4 +102,4 @@ Finally, we need to star the VM:
 {% highlight terminal %}
     java -javaagent:MyJarFile.jar <A Regular Class With A Main>
 {% endhighlight %}
-[<--Back](JavaAgent)
+{% include nav prev="JavaAgent" %}

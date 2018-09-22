@@ -1,7 +1,7 @@
 ---
 title: iPhone.setup.xcode3
 ---
-[<-- Back](iPhone)
+{% include nav prev="iPhone" %}
 
 ## The Video
 <iframe src="https://player.vimeo.com/video/16722907" width="640" height="480" frameborder="0" allowfullscreen></iframe>
@@ -151,4 +151,4 @@ Now the hard part starts.
 | F3 | mapped to Edit:Find:Jump to Definition |
 | Command-alt up-arrow | Switch between .h and .m |
 
-[<-- Back](iPhone)
+{% include nav prev="iPhone" %}

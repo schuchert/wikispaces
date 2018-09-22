@@ -1,7 +1,7 @@
 ---
 title: JMock-Minimal_Failing_Example
 ---
-[<--Back](TDD_Example_Catalog)
+{% include nav prev="TDD_Example_Catalog" %}
 
 {% highlight java %}
 @Test
@@ -20,4 +20,4 @@ Why does this fail? Assuming two things:
 
 The any use of any method not explicitly stated in the Expectations will cause an unexpected invocation.
 
-[<--Back](TDD_Example_Catalog) 
+{% include nav prev="TDD_Example_Catalog" %}

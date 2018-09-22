@@ -2,7 +2,7 @@
 title: EJB3_Tutorial_4_Extended_Context
 ---
 {% include toc %}
-[<--Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}
 
 ## Ejb3 Tutorial 4 - Extended Context
 
@@ -639,4 +639,4 @@ The interface seems to be a bit messed up with concepts that relate to both stat
 
 {% include include_md_file filename="Ejb3JBossUtilJava.md" %}
 
-[<--Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}

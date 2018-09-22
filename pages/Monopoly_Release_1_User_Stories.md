@@ -1,7 +1,7 @@
 ---
 title: Monopoly_Release_1_User_Stories
 ---
-[<--Back](Monopoly#Release1)
+{% include nav prev="Monopoly#Release1" %}
 
 The following stories along with their user acceptance tests cover release 1:
 * [Player Movement](Monopoly_R1_Player_Movement)

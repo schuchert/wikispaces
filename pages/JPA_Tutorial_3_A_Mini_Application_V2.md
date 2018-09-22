@@ -1,7 +1,7 @@
 ---
 title: JPA_Tutorial_3_A_Mini_Application_V2
 ---
-[<-Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}
 
 ## JPA Tutorial 3 - A Mini Application
 
@@ -28,4 +28,4 @@ In this example we start with a simple domain model and incrementally migrate it
 ### V2 Requirements: Books on Loan
 [JPA_Tutorial_3_Books_on_Loan](JPA_Tutorial_3_Books_on_Loan)
 
-[<-Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}

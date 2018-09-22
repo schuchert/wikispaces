@@ -1,7 +1,7 @@
 ---
 title: JUnit_4.xAtTestWithExpected
 ---
-[<--Back](JUnit_4.x#AtTestExpected)
+{% include nav prev="JUnit_4.x#AtTestExpected" %}
 
 ## @Test(expected``=``SomeException.class)
 Prior to JUnit 4, if I wanted to write a test that verified a certain exception was thrown, I'd write something like the following:
@@ -43,4 +43,4 @@ I mention this to make it clear that @Test(expected=...) does not allow you to i
 {% endhighlight %}
 The use of @Test(expected=...) removes the need for several lines of boilerplate code.
 
-[<--Back](JUnit_4.x#AtTestExpected)
+{% include nav prev="JUnit_4.x#AtTestExpected" %}

@@ -2,7 +2,7 @@
 title: FitNesse.Tutorials.CSharp.Slim.EachTable
 ---
 {% include toc %}
-[<--Back](FitNesse.Tutorials)
+{% include nav prev="FitNesse.Tutorials" %}
 
 ## Introduction
 This tutorial simply demonstrates each of the kinds of tables available in Slim using C#. Before getting started with this tutorial, make sure you understand [this tutorial first](AcceptanceTesting.UsingSlimDotNetInFitNesse).
@@ -383,4 +383,4 @@ namespace slim_example
 ## Summary
 This is simply a quick summary of the types of tables available and minimal code to get those fixtures to pass. There's much more to consider in terms of test design and connecting test fixtures to production code. You can get an idea of how to proceed looking at the [Java tutorials](FitNesse.Tutorials#JavaTutorials).
 
-[<--Back](FitNesse.Tutorials)
+{% include nav prev="FitNesse.Tutorials" %}

@@ -1,7 +1,7 @@
 ---
 title: ruby.tutorials.bdd.UsingBddToDevelopABasicAlgorithm
 ---
-[<--Back](ruby.Tutorials)
+{% include nav prev="ruby.Tutorials" %}
 
 {% include toc %}
 
@@ -2797,5 +2797,5 @@ Here is the last version I ended up with after the tutorial. You result may vary
     end
 {% endhighlight %}
 
-[<--Back](ruby.Tutorials)
+{% include nav prev="ruby.Tutorials" %}
 

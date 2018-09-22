@@ -1,7 +1,7 @@
 ---
 title: Katas.RecursiveDecentIterator
 ---
-[<--Back](Katas)
+{% include nav prev="Katas" %}
 ## Problem
 You need to get a list of all of the files in a directory system (or walk a n-ary tree really).
 You want to provide one file at a time to the caller. For example, given the following directory
@@ -64,4 +64,4 @@ There are other ways to address this problem:
 * Passing in an interface or block of code to apply to each node
 
 While you can certainly do these, that misses the point of practicing writing a traditional algorithm in a way that is possibly different from how you've done it in the past. This exercise will give you some general skills you'll be able to apply to other graph traversal algorithms.
-[<--Back](Katas)
+{% include nav prev="Katas" %}

@@ -1,7 +1,7 @@
 ---
 title: JavaAgentRedirectorExplained
 ---
-[<--Back](JavaAgent)
+{% include nav prev="JavaAgent" %}
 ## Background
 The only requirement for a class used to register a Java Agent is a premain method:
 {% highlight java %}
@@ -364,4 +364,4 @@ public class ConfigurableClassFileTransformerRegistrarTest {
 }
 {% endhighlight %}
 
-[<--Back](JavaAgent)
+{% include nav prev="JavaAgent" %}

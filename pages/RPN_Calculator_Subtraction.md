@@ -11,4 +11,4 @@ As a user, I want to be able to subtract two numbers so that I don't have to do 
 * [] ```<minus>``` -> [0]
 
 
-[<--Back](RPN_Calculator)
+{% include nav prev="RPN_Calculator" %}

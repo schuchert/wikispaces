@@ -1,7 +1,7 @@
 ---
 title: cpptraining.GettingStartedWithEclipseCdt
 ---
-[<--Back](CppTraining#gettingfirsttestrunning)
+{% include nav prev="CppTraining#gettingfirsttestrunning" %}
 
 ## Overview
 This instructions help you get started using Eclipse and the CDT to develop C++ systems under Windows.
@@ -38,4 +38,4 @@ That's it, works quite well. This gives support for compiling and debugging C++ 
 * Build and run it, notice the output in the console window
 * Debug it, you should see it pause just before beginning main()
 
-[<--Back](CppTraining#gettingfirsttestrunning)
+{% include nav prev="CppTraining#gettingfirsttestrunning" %}

@@ -2,7 +2,7 @@
 title: cpptraining.UsingCSlimWithVisualStudio2010
 ---
 {% include toc %}
-[<--Back](CppTraining#FitNesse)
+{% include nav prev="CppTraining#FitNesse" %}
 
 **September 2011**
 
@@ -247,4 +247,4 @@ If you want to use this in your own project, and use VS 2010, here are some bull
 
 Hope this helps you get started. 
 
-[<--Back](CppTraining#FitNesse)
+{% include nav prev="CppTraining#FitNesse" %}

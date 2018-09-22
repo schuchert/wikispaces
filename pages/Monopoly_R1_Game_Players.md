@@ -8,4 +8,4 @@ As a game, I can have between 2 and 8 players with an initial random ordering.
 * Try to create a game with < 2 or > 8 players. When attempting to play the game, it will fail.
 * Create a game with two players named Horse and Car. Within creating 100 games, both orders [Horse, Car] and [car, horse] occur.
 
-[<--Back](Monopoly_Release_1_User_Stories)
+{% include nav prev="Monopoly_Release_1_User_Stories" %}

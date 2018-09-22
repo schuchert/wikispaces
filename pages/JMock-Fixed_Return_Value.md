@@ -1,7 +1,7 @@
 ---
 title: JMock-Fixed_Return_Value
 ---
-[<--Back](TDD_Example_Catalog)
+{% include nav prev="TDD_Example_Catalog" %}
 
 This test method exists in a [jMock_JUnit_4_Die_Skeleton](jMock_JUnit_4_Die_Skeleton).
 
@@ -57,4 +57,4 @@ public void faceValueAlways2() {
 }
 {% endhighlight %}
 
-[<--Back](TDD_Example_Catalog)
+{% include nav prev="TDD_Example_Catalog" %}

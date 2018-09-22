@@ -2,7 +2,7 @@
 title: EJB3_Tutorial_6_Security
 ---
 {% include toc %}
-[<--Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}
 ## Ejb3 Tutorial 6 - Security
 This simple tutorial takes the solution from [EJB3_Tutorial_5_Message_Driven_Beans](EJB3_Tutorial_5_Message_Driven_Beans) and augments the beans with the configuration information necessary to limit access declaratively.
 ----
@@ -284,4 +284,4 @@ Notice that in all cases where the method is expected to generate an exception, 
 If you do not provide a RolesAllowed, what is the default?
 How do you set a different default value for all the methods in a class?
 
-[<--Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}

@@ -10,4 +10,4 @@ As a user I can use exponential notation to enter large numbers so I do not have
 * [] -4 ```<e>``` 5 ```<enter>``` -> [-400000]
 * [] 20 ```<e>``` -1 ```<enter>``` -> [2]
 
-[<--Back](RPN_Calculator)
+{% include nav prev="RPN_Calculator" %}

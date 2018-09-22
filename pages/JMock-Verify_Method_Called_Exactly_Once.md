@@ -1,7 +1,7 @@
 ---
 title: JMock-Verify_Method_Called_Exactly_Once
 ---
-[<--Back](TDD_Example_Catalog)
+{% include nav prev="TDD_Example_Catalog" %}
 
 ## Verify a sequence of methods
 This test method exists in a [jMock_JUnit_4_Die_Skeleton](jMock_JUnit_4_Die_Skeleton).
@@ -39,5 +39,5 @@ public void rollThenGetFaceValue() {
     }
 {% endhighlight %}
 
-[<--Back](TDD_Example_Catalog)
+{% include nav prev="TDD_Example_Catalog" %}
 

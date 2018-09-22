@@ -1,7 +1,7 @@
 ---
 title: tddisnotenough.SOLID
 ---
-[<==Back](TddIsNotEnough#SOLID)
+{% include nav prev="TddIsNotEnough#SOLID" %}
 
 [From Uncle Bob](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
 
@@ -11,4 +11,4 @@ title: tddisnotenough.SOLID
 |I|Interface Segregation|Interfaces should be focused (small) & client specific|
 |D|Dependency Inversion|Dependencies should go from concrete to abstract|
 
-[<==Back](TddIsNotEnough#SOLID)
+{% include nav prev="TddIsNotEnough#SOLID" %}

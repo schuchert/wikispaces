@@ -1,7 +1,7 @@
 ---
 title: AspectJ_Example_1_PrintLayout
 ---
-[<--Back](AspectJ_Self_Study)
+{% include nav prev="AspectJ_Self_Study" %}
 
 {% include include_md_file filename="AspectJ_Example_1.md" %}
 {% include include_md_file filename="AspectJEX1ExpectedVersusActualOutput.md" %}
@@ -17,4 +17,4 @@ title: AspectJ_Example_1_PrintLayout
 {% include include_md_file filename="AspectJEX1AssignmentIssues.md" %}
 {% include include_md_file filename="AspectJEX1IssuesConcerns.md" %}
 
-[<--Back](AspectJ_Self_Study)
+{% include nav prev="AspectJ_Self_Study" %}

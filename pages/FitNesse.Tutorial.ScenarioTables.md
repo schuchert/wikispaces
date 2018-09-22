@@ -2,7 +2,7 @@
 title: FitNesse.Tutorial.ScenarioTables
 ---
 ## Not Even Yet Under Construction
-[<--Back](FitNesse.Tutorials)
+{% include nav prev="FitNesse.Tutorials" %}
 
-[<--Back](FitNesse.Tutorials)
+{% include nav prev="FitNesse.Tutorials" %}
  

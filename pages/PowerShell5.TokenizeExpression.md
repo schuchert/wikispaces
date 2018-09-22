@@ -1,7 +1,7 @@
 ---
 title: PowerShell5.TokenizeExpression
 ---
-[<--Back](PowerShell5)
+{% include nav prev="PowerShell5" %}
 
 ## Overview
 The next problem is an implementation of the [The Shunting Yard Algorithm Kata](Katas.ShuntingYardAlgorithm). To implement this algorithm, we need to be able to break a complex expression into its logical parts. For example:
@@ -29,5 +29,5 @@ Create a directory into which we will store all of the test code and the product
 * [My Final-ishVersion](PowerShell5-Tokenize_Expression-Finalish_Version)
 * [Tutorial As One Page](PowerShell5-Tokenize_Expression-As_One_Page)
 
-[<--Back](PowerShell5)
+{% include nav prev="PowerShell5" %}
 

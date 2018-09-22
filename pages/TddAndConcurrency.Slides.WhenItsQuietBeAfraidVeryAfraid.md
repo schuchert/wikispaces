@@ -1,7 +1,7 @@
 ---
 title: TddAndConcurrency.Slides.WhenItsQuietBeAfraidVeryAfraid
 ---
-[<--Back](TddAndConcurrency.Slides.DoOneThingWellWell) | [Top](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo)
+[<--Back](TddAndConcurrency.Slides.DoOneThingWellWell) [Top](TddAndConcurrency.Slides) [Next-->](TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo)
 
 ## When It's Quiet Be Afraid, Very Afraid
 
@@ -110,5 +110,5 @@ Let’s demonstrate that this code is broken
 <iframe src="https://player.vimeo.com/video/291224849" width="640" height="436" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/291224849">ConcurrencyDemo_increasingChangesOfFindingDefect</a> from <a href="https://vimeo.com/user3159463">Brett L. Schuchert</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-[<--Back](TddAndConcurrency.Slides.DoOneThingWellWell) | [Top](TddAndConcurrency.Slides) | [Next-->](TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo)
+[<--Back](TddAndConcurrency.Slides.DoOneThingWellWell) [Top](TddAndConcurrency.Slides) [Next-->](TddAndConcurrency.Slides.ICantWaitWellYouShouldntHaveTo)
 

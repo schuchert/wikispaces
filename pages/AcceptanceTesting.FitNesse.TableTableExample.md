@@ -1,7 +1,7 @@
 ---
 title: Acceptance Testing FitNesse Table Table Example
 ---
-[<--Back](FitNesse.Tutorials)
+{% include nav prev="FitNesse.Tutorials" %}
 
 {% include toc %}
 ## DRAFT
@@ -165,4 +165,4 @@ I was visiting my good friend David Nunn in Dallas and I showed him my "fluent" 
 
 To get this to work at first, I simply converted the row into a string and parsed it using the original parser. Of course, this only works if each cell is 4 letters long (or the same length). A real parser should handle this correctly. Even so, it greatly improves the match to the metaphor.
 
-[<--Back](FitNesse.Tutorials)
+{% include nav prev="FitNesse.Tutorials" %}

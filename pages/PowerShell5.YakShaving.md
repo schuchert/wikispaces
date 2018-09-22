@@ -1,7 +1,7 @@
 ---
 title: PowerShell5.YakShaving
 ---
-[<--Back](PowerShell5)
+{% include nav prev="PowerShell5" %}
 ## Overview
 All of these tutorials are written using Windows 10 Professional, PowerShell 5.1, [Pester](https://github.com/pester/Pester), and [Visual Studio Code](https://code.visualstudio.com/download). Here are the specifics.
 * Windows 10 Professional, Version 1703
@@ -95,4 +95,4 @@ Custom key bindings to run the custom tasks:
     ]
 {% endhighlight %}
 
-[<--Back](PowerShell5)
+{% include nav prev="PowerShell5" %}

@@ -1,7 +1,7 @@
 ---
 title: cpptraining.BuildingCppUTestForVisualStudio
 ---
-[<--Back](CppTraining#gettingfirsttestrunningvisualstudio)
+{% include nav prev="CppTraining#gettingfirsttestrunningvisualstudio" %}
 
 Now it is time to build the library you will be using for writing micro tests:
 * [Download CppUTest V 2.3](http://sourceforge.net/projects/cpputest/files/cpputest/v2.3/CppUTest-v2.3.zip/download)
@@ -25,4 +25,4 @@ Press any key to continue . . .
 {% endhighlight %}
 * Move on to the next step: [Getting CppUTestRunning in Visual Studio](cpptraining.GettingCppUTestRunningInVisualStudio)
 
-[<--Back](CppTraining#gettingfirsttestrunningvisualstudio)
+{% include nav prev="CppTraining#gettingfirsttestrunningvisualstudio" %}

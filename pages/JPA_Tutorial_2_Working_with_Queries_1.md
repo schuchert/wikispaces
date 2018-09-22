@@ -1,7 +1,7 @@
 ---
 title: JPA_Tutorial_2_Working_with_Queries_1
 ---
-[<--Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}
 {% include toc %}
 
 ## JPA Tutorial 2 - Working with Queries 1
@@ -57,4 +57,4 @@ For this next section, where you see **<project>**, replace it with **JpaTutoria
 [Tutorial_2_Second_Example](Tutorial_2_Second_Example)
 [Tutorial_2_One_Example_Solution](Tutorial_2_One_Example_Solution)
 
-[<--Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}

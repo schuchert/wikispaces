@@ -2,7 +2,7 @@
 title: Commons_Logging_and_Log4j_Config
 ---
 {% include toc %}
-[<--Back](Tool_Setup_and_Configuration_Notes)
+{% include nav prev="Tool_Setup_and_Configuration_Notes" %}
 
 When I started using [Spring](http://www.springframework.org/), I need to include some logging and basic configuration. This page gives the details for the entire setup I'm using.
 
@@ -247,4 +247,4 @@ This example is not complete. It does not publish the logging levels, which real
 {% endhighlight %}
 Let’s say that the method getUserNameFromJndi() takes a long time. In this example, we called the method before calling the debug() method, so we did this extra work potentially unnecessarily.
 
-[<--Back](Tool_Setup_and_Configuration_Notes)
+{% include nav prev="Tool_Setup_and_Configuration_Notes" %}

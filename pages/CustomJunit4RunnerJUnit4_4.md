@@ -1,7 +1,7 @@
 ---
 title: CustomJunit4RunnerJUnit4_4
 ---
-[<<--Back](CustomJUnit4Runner)
+{% include nav prev="CustomJUnit4Runner" %}
 
 ## Writing a Custom JUnit 4 Test Runner
 

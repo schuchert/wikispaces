@@ -7,4 +7,4 @@ As a game, I execute 20 rounds so that I can complete a game.
 * Create a game and play, verify that the total rounds was 20 and that each player played 20 rounds.
 * Create a game and play, verify that in every round the order of the players remained the same.
 
-[<--Back](Monopoly_Release_1_User_Stories)
+{% include nav prev="Monopoly_Release_1_User_Stories" %}

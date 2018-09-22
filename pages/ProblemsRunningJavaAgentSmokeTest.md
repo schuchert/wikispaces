@@ -1,7 +1,7 @@
 ---
 title: ProblemsRunningJavaAgentSmokeTest
 ---
-[<--Back](AnExampleJavaAgent)
+{% include nav prev="AnExampleJavaAgent" %}
 If you see anything else, use the output to fix the problem.
 
 Here are some examples:
@@ -69,4 +69,4 @@ Cannot give an example, other than if you simply mistype the name of the class:
 {% highlight terminal %}
 Exception in thread "main" java.lang.NoClassDefFoundError: schuchert/agent/MainNameWrong
 {% endhighlight %}
-[<--Back](AnExampleJavaAgent)
+{% include nav prev="AnExampleJavaAgent" %}

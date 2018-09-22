@@ -1,7 +1,7 @@
 ---
 title: cpptraining.GettingCppUTestRunning
 ---
-[<--Back](CppTraining#gettingfirsttestrunning)
+{% include nav prev="CppTraining#gettingfirsttestrunning" %}
 
 ## Introduction
 Now it is time to get a simple example running to verify everything works.
@@ -26,4 +26,4 @@ TEST(Foo, 1Equals1) {
 {% highlight terminal %}
 OK (1 tests, 1 ran, 1 checks, 0 ignored, 0 filtered out, 0 ms)
 {% endhighlight %}
-[<--Back](CppTraining#gettingfirsttestrunning)
+{% include nav prev="CppTraining#gettingfirsttestrunning" %}

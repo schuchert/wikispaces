@@ -1,7 +1,7 @@
 ---
 title: cpptraining.GettingCppUTestCompiledUsingCDTToolSet
 ---
-[<--Back](CppTraining#gettingfirsttestrunning)
+{% include nav prev="CppTraining#gettingfirsttestrunning" %}
 
 ## Background
 These steps assume you are using the CDT's tool set. Before following these instructions, please make sure you have [followed these instructions first.](cpptraining.GettingStartedWithEclipseCdt)
@@ -121,4 +121,4 @@ OK (179 tests, 174 ran, 610 checks, 5 ignored, 0 filtered out, 15 ms)
 C:\workspaces\CppUTest>
 {% endhighlight %}
 
-[<--Back](CppTraining#gettingfirsttestrunning)
+{% include nav prev="CppTraining#gettingfirsttestrunning" %}

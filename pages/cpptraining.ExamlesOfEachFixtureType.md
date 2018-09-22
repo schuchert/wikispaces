@@ -2,7 +2,7 @@
 title: cpptraining.ExamlesOfEachFixtureType
 ---
 {% include toc %}
-[<<--Back](CppTraining#FitNesse)
+{% include nav prev="CppTraining#FitNesse" %}
 
 ## Decision Table
 Here is a basic table in FitNesse:
@@ -418,4 +418,4 @@ char* QueryResultAccumulator::produceFinalResults() {
 }
 {% endhighlight %}
 
-[<--Back](CppTraining#FitNesse)
+{% include nav prev="CppTraining#FitNesse" %}

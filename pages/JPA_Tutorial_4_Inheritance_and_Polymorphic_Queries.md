@@ -2,7 +2,7 @@
 title: JPA_Tutorial_4_Inheritance_and_Polymorphic_Queries
 ---
 {% include toc %}
-[<-Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}
 ## Inheritance and Polymorphic Queries
 This tutorial picks up at the end of [JPA_Tutorial_3_A_Mini_Application](JPA_Tutorial_3_A_Mini_Application). If you have not completed that tutorial, you can start with this source base: 
 [[file:JpaTutoria3Solution.jar]]
@@ -34,4 +34,4 @@ What happens when we perform a query on an entity type that serves as a base cla
 [JPA_Tutorial_4_Adding_a_Second_Kind_of_Resource](JPA_Tutorial_4_Adding_a_Second_Kind_of_Resource)   
 [JPA_Tutorial_4_Assignments](JPA_Tutorial_4_Assignments)
 
-[<--Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}

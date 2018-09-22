@@ -1,7 +1,7 @@
 ---
 title: CppRpnCalculatorStrategyPatternExample
 ---
-[<--Back](RpnCalculatorCppExampleImplementation)
+{% include nav prev="RpnCalculatorCppExampleImplementation" %}
 ## Strategy Pattern Example
 Review first the abstract base classes of all strategies (in this case, math operators):
 ### MathOperator.h
@@ -83,4 +83,4 @@ TEST(Factorial, factorialOfNegativeNumber) {
 
 In the next section, **Template Method Pattern Example**, each of the subclasses are all examples of the strategy as well.
 
-[<--Back](RpnCalculatorCppExampleImplementation)
+{% include nav prev="RpnCalculatorCppExampleImplementation" %}

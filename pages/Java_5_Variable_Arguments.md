@@ -1,7 +1,7 @@
 ---
 title: Java_5_Variable_Arguments
 ---
-[<--Back](Articles)
+{% include nav prev="Articles" %}
 {% include toc %}
 
 ## Java 5 Variable Arguments
@@ -428,4 +428,4 @@ Here is the source code for all 4 versions in an Eclipse 3.2 archive file.
 ## Other Resources
 * [Speeding up Log4J in Java 1.5](http://surguy.net/articles/removing-log-messages.xml)
 
-[<--Back](Articles)
+{% include nav prev="Articles" %}

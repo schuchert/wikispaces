@@ -1,7 +1,7 @@
 ---
 title: JUnit_4.xAtTest
 ---
-[<--Back](JUnit_4.x#AtTest)
+{% include nav prev="JUnit_4.x#AtTest" %}
 ## @Test
 To denote a method as a test method you use the @Test annotation. The following example demonstrates nearly everything you need to know to get your first test running in Eclipse 2.x - 3.x:
 {% highlight terminal %}
@@ -26,4 +26,4 @@ In JUnit prior to 4.0, this would have been written as follows:
      27:     public void testCreateSimpleVehicle() {
 {% endhighlight %}
 
-[<--Back](JUnit_4.x#AtTest)
+{% include nav prev="JUnit_4.x#AtTest" %}

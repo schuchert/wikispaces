@@ -1,7 +1,7 @@
 ---
 title: Ejb3_Tutorial_1_Printable
 ---
-[<--Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}
 
 ## Getting Started with the JBoss Embedded Container
 
@@ -31,4 +31,4 @@ Most of this tutorial is about configuration and utility methods. We will use th
 ### Exercises
 {% include include_md_file filename="EJB3_Tutorial_1_Exercises.md" %}
 
-[<--Back](EJB_3_and_Java_Persistence_API)
+{% include nav prev="EJB_3_and_Java_Persistence_API" %}

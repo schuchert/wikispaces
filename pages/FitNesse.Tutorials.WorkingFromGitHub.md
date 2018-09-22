@@ -1,7 +1,7 @@
 ---
 title: FitNesse.Tutorials.WorkingFromGitHub
 ---
-[<--Back](FitNesse.Tutorials)
+{% include nav prev="FitNesse.Tutorials" %}
 
 You can get the start of this project from [github](http://github.com/schuchert/fitnesse-tutorials/tree/master) and then import it into an Eclipse workspace rather than starting completely from scratch. The start of each tutorial will use the following tag format: <FullPageName>.Start, for example the first tutorial is called FitNesse.Tutorials.0, so add ".Start" to that and you'll get "FitNesse.Tutorails.0.Start" as the tag. Each tutorial will list the tag.
 
@@ -55,4 +55,4 @@ Now, you'll need to create a workspace:
 
 ## Get Going!
 Now is a great time to start [the first turtorial](FitNesse.Tutorials.0).
-[<--Back](FitNesse.Tutorials)
+{% include nav prev="FitNesse.Tutorials" %}
