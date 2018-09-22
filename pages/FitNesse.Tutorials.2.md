@@ -2,7 +2,7 @@
 title: FitNesse.Tutorials.2
 ---
 {% include toc %}
-[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.ScriptTables)
+{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.ScriptTables" %}
 
 ## Introduction
 A Query table is a means of performing a single query and verifying the results. A typical test might use [Slim Decision Tables](http://fitnesse.org/FitNesse.UserGuide.SliM.DecisionTable) to insert a large data set and then Query tables to verify that the correct sub-set of the data is returned from the query.
@@ -978,4 +978,4 @@ At this point, you've learned enough about FitNesse with the first three tutoria
 
 Even so, you can do quite a bit right now.
 
-[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.ScriptTables)
+{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.ScriptTables" %}

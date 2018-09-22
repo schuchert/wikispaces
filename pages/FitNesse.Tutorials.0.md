@@ -107,4 +107,4 @@ Congratulations, you've finished the first tutorial. In this tutorial you:
 * Learn how to make tests that actually execute production code.
 * Learn how to use a Table Table to implement a "fluent" or DSL-based table
 
-[<--Back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.1)
+{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.1" %}

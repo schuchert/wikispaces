@@ -1,7 +1,7 @@
 ---
 title: PowerShell5-Tokenize_Expression-Finalish_Version
 ---
-[<—Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.ConvertTokenizerToAnEnumerator)  [Up](PowerShell5.TokenizeExpression)
+{% include nav prev="http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.ConvertTokenizerToAnEnumerator" up="PowerShell5.TokenizeExpression" %}
 
 ## Final-ish Version
 
@@ -101,4 +101,4 @@ class Tokenizer : IEnumerable, IEnumerator {
     }
 }
 {% endhighlight %}
-[<—Back](http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.ConvertTokenizerToAnEnumerator)  [Up](PowerShell5.TokenizeExpression)
+{% include nav prev="http://schuchert.wikispaces.com/PowerShell5.TokenizeExpression.ConvertTokenizerToAnEnumerator" up="PowerShell5.TokenizeExpression" %}

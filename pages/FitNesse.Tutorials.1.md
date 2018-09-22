@@ -2,7 +2,7 @@
 title: FitNesse.Tutorials.1
 ---
 {% include toc %}
-[<--Back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.2)
+{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.2" %}
 
 ## Introduction
 This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If you need help installing or running [FitNesse](http://fitnesse.org/), please [go here first](FitNesse.Tutorials.0). In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:
@@ -768,4 +768,4 @@ However, you've learned several things in this tutorial:
 * Learned that each of the data rows in your fixture is executed in order, top-to-bottom.
 
 After working with decision tables, the next tutorial which makes sense is [this one on query tables](FitNesse.Tutorials.2).
-[<--back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.2)
+[<--back](FitNesse.Tutorials) [Next Tutorial-->](FitNesse.Tutorials.2)

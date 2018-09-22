@@ -2,7 +2,7 @@
 title: FitNesse.Tutorials.ScenarioTables
 ---
 {% include toc %}
-[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.TableTables)
+{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.TableTables" %}
 
 ## Note
 The [original article](FitNesse.Tutorials.ScenarioTables.OriginalArticle) is here. This page is a rewritten version that ties in with the previous tutorials.
@@ -993,4 +993,4 @@ The key subject for this tutorial is Scenaro Tables:
 At this point you should consider finishing your knowledge of FitNesse.Slim tables and work on the [Table Table Tutorial](FitNesse.Tutorials.TableTables).
 
 
-[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.TableTables)
+{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.TableTables" %}

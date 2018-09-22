@@ -2,7 +2,7 @@
 title: FitNesse.Tutorials.TableTables
 ---
 {% include toc %}
-[<--Back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.AlternativeScriptTableSyntax)
+{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.AlternativeScriptTableSyntax" %}
 
 ## Background
 This is a tutorial loosely based on [this writeup](AcceptanceTesting.FitNesse.TableTableExample). [That writeup](AcceptanceTesting.FitNesse.TableTableExample) describes using table table to implement test data setup to make determining expected results easier. You can read that for a slightly different take. That example was written after the fact and somewhat cleaned up. It also is not a tutorial; it is really a summary of what you'll be doing in this tutorial.
@@ -1056,5 +1056,5 @@ Notice that this tutorial was different from the previous tutorials in that you 
 
 Assuming you've worked through the previous tutorials, you have now used all of the basic table types in Slim. Congratulations!
 
-[<--Back](FitNesse.Tutorials) -or- [Next Tutorial-->](FitNesse.Tutorials.AlternativeScriptTableSyntax)
+{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.AlternativeScriptTableSyntax" %}
  

@@ -1,7 +1,7 @@
 ---
 title: FitNesse.Tutorials.ScriptTables
 ---
-{% include toc %}[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.ScenarioTables)
+{% include toc %}{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.ScenarioTables" %}
 ## Background: The Return of Smalltalk
 This is a somewhat nostalgic background, you won't miss much if you [skip to the introduction](FitNesse.Tutorials.ScriptTables#introduction). 
 
@@ -677,5 +677,5 @@ While not demonstrated:
 
 Now that you have worked with all of the basic table types, you might consider looking into [Scenario Tables](FitNesse.Tutorials.ScenarioTables) or [Table Tables](FitNesse.Tutorials.TableTables).
 
-[<--Back](FitNesse.Tutorials) or [Next Tutorial--->](FitNesse.Tutorials.ScenarioTables)
+{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.ScenarioTables" %}
  
