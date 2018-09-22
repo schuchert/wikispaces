@@ -13,7 +13,7 @@ For more background on where I'm coming from, have a look at
 * ### [C++ Training Materials](CppTraining)
 * ### [VideoDemonstrations](VideoDemonstrations)
 * ### [FitNesse](FitNesse)
-* ### [Ruby](RubyNotes)
+* ### [Ruby](ruby/RubyNotes)
 * ### [Languages](Languages)
 * ### [Tdd & Concurrency](TddAndConcurrency)
 * ### [CustomJUnit4Runner](CustomJUnit4Runner)
@@ -34,7 +34,7 @@ For more background on where I'm coming from, have a look at
 * ### [The Mac](The_Mac)
 
 ## Language Stuff
-* ### [RubyNotes](RubyNotes)
+* ### [RubyNotes](ruby/RubyNotes)
 * ### [Smalltalk](Smalltalk)
 * ### [C++](Cxx)
 

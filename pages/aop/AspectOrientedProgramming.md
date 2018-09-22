@@ -1,7 +1,7 @@
 ---
 title: AspectOrientedProgramming
 ---
-[Home](../Home)
+[Home](../home)
 
 Welcome to my Aspect Oriented Programming Page. My intention is to publish materials mean to assist you in learning about Aspect Oriented Programming on your own. Much of this work is either the basis for or used in an AOP course I currently teach.
 
@@ -9,4 +9,4 @@ Welcome to my Aspect Oriented Programming Page. My intention is to publish mater
 * ### [AspectJ_Self_Study](AspectJ_Self_Study)
 * ### [Data_Validation_Alternatives](../Data_Validation_Alternatives)
 
-[Home](../Home)
+[Home](../home)

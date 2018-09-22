@@ -1,14 +1,14 @@
 ---
 title: space.menu
 ---
-[Home]({{site.baseurl}}/pages/home)
+[Home](home)
 
 [My CV](MyCv)
 [C++ Training](CppTraining)
 [New Stuff](NewStuff)
 [FitNessse Tutorials](FitNesse.Tutorials)
 [Experiential Learning](ExperientialLearningNotes)
-[RubyNotes](RubyNotes)
+[RubyNotes](ruby/RubyNotes)
 [EJB & JPA](EJB_3_and_Java_Persistence_API)
 [Agile_Courseware](Agile_Courseware)
 [Unpublished Articles](Articles)
@@ -16,4 +16,4 @@ title: space.menu
 [AOP](aop/AOP)
 [C# & OOP](CSharpAndOop)
 
-[Home]({{site.baseurl}}/pages/home)
+[Home](home)
