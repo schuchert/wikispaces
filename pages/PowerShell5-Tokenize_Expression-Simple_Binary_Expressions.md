@@ -1,7 +1,7 @@
 ---
 title: PowerShell5-Tokenize_Expression-Simple_Binary_Expressions
 ---
-[<— Back](PowerShell5-Tokenize_Expression-Simple_Binary_Expressions)  [Up](PowerShell5.TokenizeExpression) [Next—>](PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses)
+{% include nav prev="PowerShell5-Tokenize_Expression-Simple_Binary_Expressions" up="PowerShell5.TokenizeExpression" next="PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses" %}
 
 ## Simple Binary Expression
 Now that we have a trivial first test, we'll begin growing the implementation one test at a time. We'll be following [Uncle Bob's Three Rules of TDD](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd), summarized here as:
@@ -388,4 +388,4 @@ Tests Passed: 8, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0
 {% endhighlight %}
 
 This seems like enough progress on binary expressions. Next up, handling parenthesis.
-[<— Back](PowerShell5-Tokenize_Expression-Simple_Binary_Expressions)  [Up](PowerShell5.TokenizeExpression) [Next—>](PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses)
+{% include nav prev="PowerShell5-Tokenize_Expression-Simple_Binary_Expressions" up="PowerShell5.TokenizeExpression" next="PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses" %}

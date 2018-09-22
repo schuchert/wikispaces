@@ -1,7 +1,7 @@
 ---
 title: PowerShell5-Tokenize_Expression-Function_Calls
 ---
-[<— Back](PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses)  [Up](PowerShell5.TokenizeExpression)  [Next—>](PowerShell5-Tokenize_Expression-Convert_Tokenizer_To_An_Enumerator)
+{% include nav prev="PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses" up="PowerShell5.TokenizeExpression" next="PowerShell5-Tokenize_Expression-Convert_Tokenizer_To_An_Enumerator" %}
 
 ## Function Calls
 
@@ -20,4 +20,4 @@ As it turns out, the first version passes as is. The second version requires a c
 The change is in the middle regex, allowing for zero or 1 ( at the end of a series of digits and letters. Given the change is easy, I'll leave this as is and consider the tokenizer done for now. Next, we'll move on to the [Shunting Yard Algorithm in PowerShell 5](PowerShell5.ShuntingYardAlgorithm).
 
 [Here's my final-ish version.](PowerShell5-Tokenize_Expression-Finalish_Version).
-[<— Back](PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses)  [Up](PowerShell5.TokenizeExpression)  [Next—>](PowerShell5-Tokenize_Expression-Convert_Tokenizer_To_An_Enumerator)
+{% include nav prev="PowerShell5-Tokenize_Expression-First_Stab_At_Parentheses" up="PowerShell5.TokenizeExpression" next="PowerShell5-Tokenize_Expression-Convert_Tokenizer_To_An_Enumerator" %}

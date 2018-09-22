@@ -1,7 +1,7 @@
 ---
 title: PowerShell5-Tokenize_Expression-Convert_Tokenizer_To_An_Enumerator
 ---
-[<—Back](PowerShell5-Tokenize_Expression-Function_Calls)  [Up](PowerShell5.TokenizeExpression)  [Next—>](PowerShell5-Tokenize_Expression-Finalish_Version)
+{% include nav prev="PowerShell5-Tokenize_Expression-Function_Calls" up="PowerShell5.TokenizeExpression" next="PowerShell5-Tokenize_Expression-Finalish_Version" %}
 The Tokenizer converts a whole expression into an array of tokens. Now we'll convert it to an [Enumerator](https://msdn.microsoft.com/en-us/library/system.collections.ienumerator(v=vs.110).aspx).
 
 ## Convert Tokenizer to Enumerator
@@ -274,4 +274,4 @@ Notice that we have no tests for Reset? It is required to get the code to run bu
 {% endhighlight %}
 * Run your tests, they all pass.
 
-[<—Back](PowerShell5-Tokenize_Expression-Function_Calls)  [Up](PowerShell5.TokenizeExpression)  [Next—>](PowerShell5-Tokenize_Expression-Finalish_Version)
+{% include nav prev="PowerShell5-Tokenize_Expression-Function_Calls" up="PowerShell5.TokenizeExpression" next="PowerShell5-Tokenize_Expression-Finalish_Version" %}
