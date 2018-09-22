@@ -18,6 +18,6 @@ In Eclipse:
 * Adjust the directory to where your version of AspectJ is installed
 (Note, this image actually shows the configuration for JBoss AOP. It's the same procedure, just a different value in the **Default VM Arguments:**
 
-![](images/JBossAOPJREConfiguration.jpg)
+![](../images/JBossAOPJREConfiguration.jpg)
 
 [<--Back](Environment_Configuration_for_AspectJ) [Next-->](Eclipse_Classpath_Variable_for_AspectJ)
