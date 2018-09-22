@@ -2,7 +2,7 @@
 title: scala.GettingStarted
 ---
 * Install Scala
->> I used mac ports
+  * I used mac ports
 
 * Install Eclipse plugin: http://www.scala-lang.org/node/94
 

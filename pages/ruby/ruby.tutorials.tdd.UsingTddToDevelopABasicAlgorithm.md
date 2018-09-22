@@ -1810,7 +1810,7 @@ test_right_associative_operators(ShuntingYardAlgorithmTest)
 {% endhighlight %}
 
 This is in fact what is happening because the process method has three checks, is_paren, is_function_argument_separator, is_operand, none of which match, so by default, += and = are treated as operators. A review of the shunting algorithm says this about such operators (paraphrased):
-> While the token is right-associative and its precedence is less than the last operator pushed, add the last operator pushed to the output. - Notice, it's stuff like this in the algorithm that makes writing tests just about necessary to make sure you wrote it correctly!
+* While the token is right-associative and its precedence is less than the last operator pushed, add the last operator pushed to the output. - Notice, it's stuff like this in the algorithm that makes writing tests just about necessary to make sure you wrote it correctly!
 
 Since your code handles this logic in add_higher_precedence_operators_to_result, that's the place to change. However, its name will be a bit off.
 

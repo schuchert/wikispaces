@@ -11,7 +11,7 @@ UI could be graphical, textual, web-based, etc., but the techniques are the the 
 * Use the [humble dialog(object) pattern](http://xunitpatterns.com/Humble%20Object.html).
 
 A more general principle is:
->> Do not mix production code with enabling technologies.
+* Do not mix production code with enabling technologies.
 This is just a restatement of the SRP. But, for example, don't put business logic in EJB classes; don't put business logic in Servlet code.
 
 These are good ideas; sometimes it helps to consider a concrete example.
@@ -273,7 +273,7 @@ So many of us at Object Mentor use the phrase "welc refactoring" to mean:
 That is, given code without tests, these refactorings are done so you can write tests so that you can do the refactoring you originally wanted to do.
 
 For this example, we'll use one Michael calls Break Out Method Object (page 330):
->> Convert a method by passing instance data into a class with a constructor and a single method
+* Convert a method by passing instance data into a class with a constructor and a single method
 
 We are not going to do this exactly. In fact, we're going to introduce a strategy to make the code more easily tested instead, but it is essentially the same thing. The difference is how the extracted class gets access to the data it needs to read/write. The two forms we'll consider are different types of dependency injection.
 
