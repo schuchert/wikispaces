@@ -4,7 +4,7 @@ title: JBoss_AOP_Example_3
 {% include nav prev="JBoss_AOP_Self_Study" next="JBossAOPEX3ExpectedVersusActualOutput" %}
 
 ## Predict the Output
-Source files are here: [[file:JBossAOPExample3src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
+Source files are here: [JBossAOPExample3src.zip](../files/JBossAOPExample3src.zip). If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 Have a look at the following Java files and, as before, predict the output.
 ----

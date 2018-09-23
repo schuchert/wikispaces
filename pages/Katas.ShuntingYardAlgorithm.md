@@ -178,8 +178,8 @@ I take the approach of splitting the expression into individual tokens and then 
 {: #ExampleSource}
 ## What We Accomplished
 Here's a zip of the source files we created during the dojo:
-[[file:dojo.zip]]
+[dojo.zip](files/dojo.zip)
 
 Here's a version I've worked on a bit more:
-[[file:ShuntingYardAlgorithm.zip]]
+[ShuntingYardAlgorithm.zip](files/ShuntingYardAlgorithm.zip)
 {% include nav prev="Katas" %}

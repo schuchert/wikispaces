@@ -8,7 +8,7 @@ title: Checkstyle_in_Eclipse
 * Follow [here](http://eclipse-cs.sourceforge.net/) and follow the Download & Installation section.
 
 ### Configuring Checkstyle
-* Download this file: [[file:CheckstyleConfig.xml]]. I recommend putting this file in your workspace directory
+* Download this file: [CheckstyleConfig.xml](files/CheckstyleConfig.xml). I recommend putting this file in your workspace directory
 * In Eclipse: Windows:Preferences:Checkstyle
 * Click on new
 * Select "External Configuration File" (it defaults to Internal Configuration)

@@ -7,7 +7,7 @@ title: Designing_to_Spring_Templates_Source
 This page has the full source in an Eclipse Archive file along with instructions for creating a workspace and setting up the workspace using the archive file.
 
 ### Eclipse Archive File
-[[file:JdbcToSpringExample.zip]]
+[JdbcToSpringExample.zip](files/JdbcToSpringExample.zip)
 This is an Eclipse 3.2 Archive file with two projects: 
 * JdbcToSpringTemplates
 * LoggingUtils

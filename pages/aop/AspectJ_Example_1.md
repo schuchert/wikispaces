@@ -4,7 +4,7 @@ title: AspectJ_Example_1
 
 {% include nav prev="AspectJ_Self_Study" next="AspectJEX1ExpectedVersusActualOutput" %}
 
-Source files are here: [[file:AspectJEx1src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
+Source files are here: [AspectJEx1src.zip](../files/AspectJEx1src.zip). If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 ## Predict the Output
 This is the first of several exercise. If you'd like to get a feel for the general outline for each exercise, take a look [here](AspectJGeneralExerciseOutline).

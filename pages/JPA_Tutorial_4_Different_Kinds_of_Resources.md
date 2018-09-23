@@ -1295,4 +1295,4 @@ public class ResourceDaoTest extends BaseDbDaoTest {
 }
 {% endhighlight %}
 ### The Source
-[[file:ResourceBasicSupport.jar]]
+[ResourceBasicSupport.jar](files/ResourceBasicSupport.jar)

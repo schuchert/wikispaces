@@ -1,4 +1,4 @@
 ---
 title: CSharpTddNotes
 ---
-* RateCalculator project: [[file:RateCalculator.zip]] 
+* RateCalculator project: [RateCalculator.zip](files/RateCalculator.zip) 

@@ -423,7 +423,7 @@ But it does not come without some costs. If you wrap as demonstrated in the 3rd 
 * This is not something you'll use heavily. Most likely it will support non-functional requirements better than functional requirements.
 
 Here is the source code for all 4 versions in an Eclipse 3.2 archive file.
-[[file:VariableArgumentsExample.zip]]
+[VariableArgumentsExample.zip](files/VariableArgumentsExample.zip)
 
 ## Other Resources
 * [Speeding up Log4J in Java 1.5](http://surguy.net/articles/removing-log-messages.xml)

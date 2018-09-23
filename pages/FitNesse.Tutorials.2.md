@@ -449,8 +449,8 @@ That was just enough to get the unit test passing. It may not seem complete, but
 {% endhighlight %}
 
 We need to replace that with code that will turn an object or list into a list into a list of list of list of strings. There is a utility available that can help: [ github - Query Result Builder](http://github.com/schuchert/queryresultbuilder/tree/master). You can download and build the jar file, or you can simple download the following two jar files and add them to your class path in both your IDE and FitNesse:
-* [[file:QueryResultBuilder.jar]]
-* [[file:ReflectionUtil.jar]]
+* [QueryResultBuilder.jar](files/QueryResultBuilder.jar)
+* [ReflectionUtil.jar](files/ReflectionUtil.jar)
 
 Rather than describe this in great detail (you can review the source and embedded unit tests), here is a first example:
 

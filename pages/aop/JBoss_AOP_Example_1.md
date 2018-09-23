@@ -3,7 +3,7 @@ title: JBoss_AOP_Example_1
 ---
 {% include nav prev="JBoss_AOP_Self_Study" next="JBossEX1ExpectedVersusActualOutput" %}
 
-Source files are here: [[file:JBossEX1Source.jar]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
+Source files are here: [JBossEX1Source.jar](../files/JBossEX1Source.jar). If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 ## Predict the Output
 This is the first of several exercise. If you'd like to get a feel for the general outline for each exercise, take a look [here](JBossAOPGeneralExerciseOutline).

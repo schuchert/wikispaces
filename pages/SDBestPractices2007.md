@@ -9,7 +9,7 @@ This page contains various stages of a project used as an example for code cover
 Install each of these in order listed above.
 
 Next, you'll need the workspace. Here is a complete Eclipse workspace:
-[[file:SdBestPractices2007.zip]]
+[SdBestPractices2007.zip](files/SdBestPractices2007.zip)
 
 
 * Download the file.

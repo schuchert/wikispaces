@@ -7,7 +7,7 @@ This project is used in several places across this wikispace (or will be at some
 * [Java JDK 1.5.0](http://java.sun.com/j2se/1.5.0/download.jsp).
 * [Eclipse](http://www.eclipse.org/downloads/)
 
-If you just want the source, download it here: [[file:CarRentalRelease1.zip]].
+If you just want the source, download it here: [CarRentalRelease1.zip](files/CarRentalRelease1.zip).
 
 ### Branches From Here
 

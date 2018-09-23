@@ -29,7 +29,7 @@ Here are the full instructions. Note that if you've already downloaded/installed
 * Download [Java JDK 1.5.0](http://java.sun.com/j2se/1.5.0/download.jsp)
 * Download [Eclipse](http://www.eclipse.org/downloads/)
 * Download [Spring](http://www.springframework.org/download) (get the one with dependencies: spring-framework-2.0-rc2-with-dependencies.zip)
-* Download [[file:CarRentalRelease1.zip]]
+* Download [CarRentalRelease1.zip](files/CarRentalRelease1.zip)
 * Download [AspectJ 1.5.x](http://www.eclipse.org/aspectj/downloads.php)
 
 ### Install/Unzip Everything
@@ -38,7 +38,7 @@ Here are the full instructions. Note that if you've already downloaded/installed
 * Expand the Spring jar anywhere. I used C:\libs, which creates C:\libs\spring-framework-2.0-rc2
 * Extract the AspectJ zip anywhere you want. I used C:\libs\aspectj
 * Create a place to store your Eclipse workspace, I used C:\workspaces\CarRentalExample
-* Extract [[file:CarRentalRelease1.zip]] to your workspace directory (C:\workspaces\CarRentalExample).
+* Extract [CarRentalRelease1.zip](files/CarRentalRelease1.zip) to your workspace directory (C:\workspaces\CarRentalExample).
 
 ### Eclipse/Environment Configuration
 * Start Eclipse (if you have not already done so) and select your workspace (in my case it is C:\AOP\Workspaces\aspectj)

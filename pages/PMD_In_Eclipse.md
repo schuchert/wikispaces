@@ -11,7 +11,7 @@ title: PMD_In_Eclipse
 * Restart Eclipse
 
 ### Set up Preferences
-* Download this file: [[file:PMDConfig.xml]]. I recommend downloading this to your workspace directory
+* Download this file: [PMDConfig.xml](files/PMDConfig.xml). I recommend downloading this to your workspace directory
 * Windows:Preferences:PMD:Rules Configuration
 * Clear All
 * Confirm by clicking OK

@@ -35,5 +35,5 @@ Here are the details on how to actually accomplish writing your own Java Agent:
 Here is a simple jar file you can use that already does the basic work:
 * [AnExampleJavaAgent](AnExampleJavaAgent)
 
-Here are the guts of the specific agent register provided in [[file:Registrar.jar]].
+Here are the guts of the specific agent register provided in [Registrar.jar](files/Registrar.jar).
 * [JavaAgentRedirectorExplained](JavaAgentRedirectorExplained)

@@ -3,7 +3,7 @@ title: AspectJ_CFlow
 ---
 {% include nav prev="AspectJ_Self_Study" next="AspectJ_CFlow_ExpectedVersusActualOutput" %}
 
-Source files are here: [[file:AspectJCFlowsrc.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
+Source files are here: [AspectJCFlowsrc.zip](../files/AspectJCFlowsrc.zip). If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 ## Predict the Output
 In this exercise, you have all of the information you need to predict the output, unlike Examples 1 - 4.

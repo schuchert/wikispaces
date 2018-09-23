@@ -4,7 +4,7 @@ title: AspectJ_Example_2
 {% include nav prev="AspectJ_Self_Study" next="AspectJEX2ExpectedVersusActualOutput" %}
 
 ## Predict the Output
-Source files are here: [[file:AspectJExample2src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
+Source files are here: [AspectJExample2src.zip](../files/AspectJExample2src.zip). If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 Have a look at the following Main.main() method and the associated Address class.
 ----

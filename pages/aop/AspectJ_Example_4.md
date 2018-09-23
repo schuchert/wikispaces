@@ -4,7 +4,7 @@ title: AspectJ_Example_4
 {% include nav prev="AspectJ_Self_Study" next="AspectJEX4ExpectedVersusActualOutput" %}
 
 ## Predict the Output
-Source files are here: [[file:AspectJExample4src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
+Source files are here: [AspectJExample4src.zip](../files/AspectJExample4src.zip). If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 Have a look at the following Java files and, as before, predict the output.
 ----

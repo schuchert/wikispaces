@@ -17,4 +17,4 @@ theme: jekyll-theme-midnight
 baseurl: /wikispaces
 github: [metadata]
 highlight: rogue
-exclude: [.idea,site_errors,bin]
+exclude: [.idea,site_errors,bin,_build,.gitignore,.gitconfig]

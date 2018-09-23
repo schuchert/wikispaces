@@ -1,4 +1,4 @@
 ---
 title: Stuff
 ---
-[[file:welc.pdf]]
+[welc.pdf](files/welc.pdf)

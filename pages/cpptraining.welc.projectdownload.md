@@ -1,4 +1,4 @@
 ---
 title: cpptraining.welc.projectdownload
 ---
-[[file:welc.zip]]
+[welc.zip](files/welc.zip)

@@ -2,7 +2,7 @@
 title: JPA_Tutorial_3_Books_on_Loan
 ---
 ## Books on Loan
-You can start from this point usingthe following source files: [[file:JapTutorial3BeforeAddingLoan.jar]]
+You can start from this point usingthe following source files: [JapTutorial3BeforeAddingLoan.jar](files/JapTutorial3BeforeAddingLoan.jar)
 
 The relationship between Patron and Book is:
 ![](images/PatronToBook.gif)

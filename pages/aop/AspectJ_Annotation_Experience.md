@@ -4,7 +4,7 @@ title: AspectJ_Annotation_Experience
 {% include nav prev="AspectJ_Annotation_Start" next="AspectJ_Annotation_Observation" %}
 
 ## AspectJ Annotation: Experience
-Here is the full source for this example: [[file:AspectJAnnotationsSrc.zip]]. If you'd like to know how to set up a project using it, [click here](ExtractingSourceFilesIntoProject).
+Here is the full source for this example: [AspectJAnnotationsSrc.zip](../files/AspectJAnnotationsSrc.zip). If you'd like to know how to set up a project using it, [click here](ExtractingSourceFilesIntoProject).
 
 This example is written in a way that it is meant to follow: [AspectJ_Example_3](AspectJ_Example_3) and [AspectJ_Example_4](AspectJ_Example_4). I specifically leave out details unchanged from those examples.
 

@@ -2,7 +2,7 @@
 title: tdd.solutions
 ---
 ## Class First Half of Week
-* [[file:FitNesseRoot.zip]]
+* [FitNesseRoot.zip](files/FitNesseRoot.zip)
 * [[file:tdd_1.zip]]
 
 ## Class First Half of Week

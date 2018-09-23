@@ -4,7 +4,7 @@ title: AspectJ_Example_3
 {% include nav prev="AspectJ_Self_Study" next="AspectJEX3ExpectedVersusActualOutput" %}
 
 ## Predict the Output
-Source files are here: [[file:AspectJExample3src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
+Source files are here: [AspectJExample3src.zip](../files/AspectJExample3src.zip). If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
 
 Have a look at the following Die class and the associated Main.main() method that serializes the Die.
 ----

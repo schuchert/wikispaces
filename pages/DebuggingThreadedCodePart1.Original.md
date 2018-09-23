@@ -222,7 +222,7 @@ The first (one time) step, makes sure every time my IDE runs the Java VM, it pas
 If you want to read more on how that happens, go [here](JavaAgent).
 
 ## Trying It Yourself
-Here's a jar file you can use that will give you the same results: [[file:Registrar.jar]]
+Here's a jar file you can use that will give you the same results: [Registrar.jar](files/Registrar.jar)
 
 To use this jar:
 * Download the file Registrar.jar

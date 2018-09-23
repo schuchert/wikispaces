@@ -3,7 +3,7 @@ title: AnExampleJavaAgent
 ---
 [<<-- back](JavaAgent)
 ## Smoke Test
-* Download this jar file [[file:Registrar.jar]]
+* Download this jar file [Registrar.jar](files/Registrar.jar)
 * Start a command prompt and change to the directory where you downloaded Registrar.jar
 * At a command prompt, type the following command (making sure you are using a Java 5 VM or later)
 {% highlight terminal %}
@@ -20,7 +20,7 @@ If you see anything else, [check here](ProblemsRunningJavaAgentSmokeTest)
 The Registrar.jar file contains several things, including source and class files and even a JUnit 4 test. IF you want to actually run that test, you'll need to have the following in your class path:
 * JUnit 4.4 (not shipped with Eclipse 3.3 or before)
 * JMOck 2.4
-Or better yet, you can just download this Eclipse 3.3 workspace and run the tests within eclipse: [[file:JavaAgent.zip]]
+Or better yet, you can just download this Eclipse 3.3 workspace and run the tests within eclipse: [JavaAgent.zip](files/JavaAgent.zip)
 * Download this file
 * Extract the file to some directory, e.g. PC: **c:\workspaces** or Mac: **/Users/schuchert/workspaces**
   * This creates a directory called JavaAgent under the target directory

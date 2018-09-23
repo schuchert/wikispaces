@@ -155,7 +155,6 @@ With your directory refreshed, you're ready to have a look at the output:
 * Expand the CarRental project.
 * Expand the emma_results directory.
 * Double click on coverage.html.
-* Here's what I get when I run it (well almost): [[file:coverage.html]]
 * Because this is just the top-level file from my machine, it is missing some links.
 * Here's a summary of my numbers by package:
 

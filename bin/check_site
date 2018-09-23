@@ -1,7 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 
 NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
-bundle exec jekyll build
+DEST=_build
 
-bundle exec htmlproofer ./_site --assume-extension --disable-external > site_errors 2>&1
+bundle exec jekyll build --destination $DEST --incremental
+
+pushd $DEST;ln -s . wikispaces;popd
+
+bundle exec htmlproofer $DEST --empty-alt-ignore true --assume-extension true --disable-external true > site_errors 2>&1
+
+rm $DEST/wikispaces
