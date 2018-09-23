@@ -14,6 +14,6 @@ Older Updates:
 * 2011/August/3, 19:00 GMT -6
 * 2011/July/28, 14:00 GMT -6
 
-[[file:CppAndOodTheLeastYouNeedToKnow.pdf]]
+[CppAndOodTheLeastYouNeedToKnow.pdf](files/CppAndOodTheLeastYouNeedToKnow.pdf)
 
 {% include nav prev="CppTraining#CppAndOodTheLeastYouNeedToKnow" %}
