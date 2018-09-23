@@ -1,6 +1,7 @@
 ---
 title: AspectJ_Example_1
 ---
+
 {% include nav prev="AspectJ_Self_Study" next="AspectJEX1ExpectedVersusActualOutput" %}
 
 Source files are here: [[file:AspectJEx1src.zip]]. If you need instructions on what do with these files, try [here](ExtractingSourceFilesIntoProject).
@@ -62,3 +63,4 @@ public class MethodExecutionExample {
 Before continuing on, please predict the output from these two files.
 
 {% include nav prev="AspectJ_Self_Study" next="AspectJEX1ExpectedVersusActualOutput" %}
+

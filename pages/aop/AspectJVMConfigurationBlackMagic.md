@@ -21,14 +21,18 @@ We've used several terms: **joinpoint**, **pointcut**, **aspect**.
 
 Joinpoint
 : What is a joinpoint? It is a place in code that can be uniquely identified and somehow modified. Java VM's execute bytecodes. A joinpoint, therefore, is a Java bytecode. Not all bytecodes can be uniquely identified. Not because they are not somehow look-up-able, but because the designers of AspectJ made a decision about where they will allow aspects to apply. This decision is the **joinpoint model**.
+^
 
 Pointcut
 : A pointcut is simply a collection of joinpoints. In our first example, the execution of all methods in a class called ex1.MethodExecutionExample. We'll see more of these later. A pointcut is how you define **what**.
+^
 
 Aspect
 : An aspect is something that describes **where** to do **what**. In our first example, we used a joinpoint for **where** and what AspectJ refers to as **advice** for the **what**.
+^
 
 Advice: Bad Name?
 : Advice is the metaphor that AspectJ uses to describe **what** should happen when a pointcut is encountered. Ask your self this question, when given advice (or giving), it is always followed? Because it IS in AspectJ.
+^
 
 {% include nav prev="AspectJEX1Explained" next="AspectJEX1ApplyYourself" %}
