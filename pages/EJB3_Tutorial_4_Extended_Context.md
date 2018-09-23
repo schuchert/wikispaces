@@ -1,8 +1,8 @@
 ---
 title: EJB3_Tutorial_4_Extended_Context
 ---
-{% include toc %}
 {% include nav prev="EJB_3_and_Java_Persistence_API" %}
+{% include toc %}
 
 ## Ejb3 Tutorial 4 - Extended Context
 

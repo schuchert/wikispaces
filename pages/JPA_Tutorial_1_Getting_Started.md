@@ -1,8 +1,8 @@
 ---
 title: JPA_Tutorial_1_Getting_Started
 ---
-{% include toc %}
 {% include nav prev="EJB_3_and_Java_Persistence_API" %}
+{% include toc %}
 
 ## Introduction
 This first tutorial gives you an opportunity to work with:

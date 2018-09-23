@@ -1,7 +1,7 @@
 ---
 title: ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator
 ---
-[Back](ruby.Tutorials)
+{% include nav prev="ruby.Tutorials" %}
 {% include toc %}
 
 <section>
@@ -2637,4 +2637,4 @@ RUNNING OUT, COPY AGAIN
 ### Check-In
 ### Summary
 
-[Back](ruby.Tutorials)
+{% include nav prev="ruby.Tutorials" %}

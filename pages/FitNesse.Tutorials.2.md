@@ -1,8 +1,8 @@
 ---
 title: FitNesse.Tutorials.2
 ---
-{% include toc %}
 {% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.ScriptTables" %}
+{% include toc %}
 
 ## Introduction
 A Query table is a means of performing a single query and verifying the results. A typical test might use [Slim Decision Tables](http://fitnesse.org/FitNesse.UserGuide.SliM.DecisionTable) to insert a large data set and then Query tables to verify that the correct sub-set of the data is returned from the query.

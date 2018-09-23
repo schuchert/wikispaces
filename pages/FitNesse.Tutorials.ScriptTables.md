@@ -1,9 +1,10 @@
 ---
 title: FitNesse.Tutorials.ScriptTables
 ---
-{% include toc %}{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.ScenarioTables" %}
+{% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.ScenarioTables" %}
+{% include toc %}
 ## Background: The Return of Smalltalk
-This is a somewhat nostalgic background, you won't miss much if you [skip to the introduction](FitNesse.Tutorials.ScriptTables#introduction). 
+This is a somewhat nostalgic background, you won't miss much if you [skip to the introduction](FitNesse.Tutorials.ScriptTables#introduction).
 
 [Script tables](http://fitnesse.org/FitNesse.SliM.ScriptTable) originally derive from Do Fixtures in [fitlibrary](http://sourceforge.net/projects/fitlibrary). However, the design for Do Fixtures actually derives from Smalltalk. In smalltalk there are three kinds of messages:
 * Unary: no parameters

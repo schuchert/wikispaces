@@ -1,8 +1,8 @@
 ---
 title: FitNesse.Tutorials.CSharp.Slim.EachTable
 ---
-{% include toc %}
 {% include nav prev="FitNesse.Tutorials" %}
+{% include toc %}
 
 ## Introduction
 This tutorial simply demonstrates each of the kinds of tables available in Slim using C#. Before getting started with this tutorial, make sure you understand [this tutorial first](AcceptanceTesting.UsingSlimDotNetInFitNesse).

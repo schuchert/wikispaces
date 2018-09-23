@@ -1,8 +1,8 @@
 ---
 title: EJB3_Tutorial_5_Message_Driven_Beans
 ---
-{% include toc %}
 {% include nav prev="EJB_3_and_Java_Persistence_API" %}
+{% include toc %}
 
 ## Ejb3 Tutorial 5 - Message Drive Beans
 This tutorial is a derivative of one of the [JBoss tutorials](http://docs.jboss.org/ejb3/embedded/embedded-tutorial/mdb-standalone/) written using the embeddable container. In this tutorial we take the domain from [EJB3_Tutorial_4_Extended_Context](EJB3_Tutorial_4_Extended_Context) and add a new idea.

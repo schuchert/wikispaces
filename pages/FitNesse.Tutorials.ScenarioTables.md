@@ -1,8 +1,8 @@
 ---
 title: FitNesse.Tutorials.ScenarioTables
 ---
-{% include toc %}
 {% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.TableTables" %}
+{% include toc %}
 
 ## Note
 The [original article](FitNesse.Tutorials.ScenarioTables.OriginalArticle) is here. This page is a rewritten version that ties in with the previous tutorials.

@@ -1,8 +1,8 @@
 ---
 title: FitNesse.Tutorials.0
 ---
-{% include toc %}
 {% include nav prev="FitNesse.Tutorials" %}
+{% include toc %}
 
 ## Install FitNesse
 * Install a JVM 1.6 or later.

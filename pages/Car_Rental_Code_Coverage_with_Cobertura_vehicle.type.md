@@ -1,8 +1,8 @@
 ---
 title: Car_Rental_Code_Coverage_with_Cobertura_vehicle.type
 ---
-{% include toc %}
 {% include nav prev="Car_Rental_Code_Coverage_with_Cobertura" next="Car_Rental_Code_Coverage_with_Cobertura_vehicle.exception" %}
+{% include toc %}
 
 ## Package: vehicle.type
 

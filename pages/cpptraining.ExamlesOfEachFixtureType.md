@@ -1,8 +1,8 @@
 ---
 title: cpptraining.ExamlesOfEachFixtureType
 ---
-{% include toc %}
 {% include nav prev="CppTraining#FitNesse" %}
+{% include toc %}
 
 ## Decision Table
 Here is a basic table in FitNesse:

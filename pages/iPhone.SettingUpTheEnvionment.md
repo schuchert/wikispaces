@@ -1,8 +1,8 @@
 ---
 title: iPhone.SettingUpTheEnvionment
 ---
-{% include toc %}
 {% include nav prev="iPhone" %}
+{% include toc %}
 
 ## UNDER CONSTRUCTION
 [Old Setup for XCode 3](iPhone.setup.xcode3)

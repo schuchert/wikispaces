@@ -1,8 +1,8 @@
 ---
 title: cpptraining.ExecutingBinaryOperators
 ---
-{% include toc %}
 {% include nav prev="CppTraining#FitNesse" %}
+{% include toc %}
 
 ## Background
 These steps assuem you have already worked through the tutorial: [Getting Started With FitNesse in C++](cpptraining.GettingStartedWithFitNesseInCpp).

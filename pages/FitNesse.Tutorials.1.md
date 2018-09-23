@@ -1,8 +1,8 @@
 ---
 title: FitNesse.Tutorials.1
 ---
-{% include toc %}
 {% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.2" %}
+{% include toc %}
 
 ## Introduction
 This tutorial assumes some basic [FitNesse](http://fitnesse.org/) knowledge. If you need help installing or running [FitNesse](http://fitnesse.org/), please [go here first](FitNesse.Tutorials.0). In this tutorial, you will use a Decision table to send data into a system and verify results returned. You will:

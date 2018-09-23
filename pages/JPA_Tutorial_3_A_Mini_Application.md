@@ -1,8 +1,8 @@
 ---
 title: JPA_Tutorial_3_A_Mini_Application
 ---
-{% include toc %}
 {% include nav prev="EJB_3_and_Java_Persistence_API" %}
+{% include toc %}
 
 ## JPA Tutorial 3 - A Mini Application
 

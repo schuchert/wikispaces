@@ -1,8 +1,8 @@
 ---
 title: Car_Rental_Code_Coverage_with_Cobertura
 ---
-{% include toc %}
 {% include nav prev="Car_Rental_Example" next="Car_Rental_Code_Coverage_with_Cobertura_vehicle.type" %}
+{% include toc %}
 
 ## Code Coverage with Cobertura
 

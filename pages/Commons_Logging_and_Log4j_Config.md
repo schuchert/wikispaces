@@ -1,8 +1,8 @@
 ---
 title: Commons_Logging_and_Log4j_Config
 ---
-{% include toc %}
 {% include nav prev="Tool_Setup_and_Configuration_Notes" %}
+{% include toc %}
 
 When I started using [Spring](http://www.springframework.org/), I need to include some logging and basic configuration. This page gives the details for the entire setup I'm using.
 

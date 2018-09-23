@@ -1,11 +1,13 @@
 ---
 title: EJB3_Tutorial_6_Security
 ---
-{% include toc %}
 {% include nav prev="EJB_3_and_Java_Persistence_API" %}
+{% include toc %}
 ## Ejb3 Tutorial 6 - Security
 This simple tutorial takes the solution from [EJB3_Tutorial_5_Message_Driven_Beans](EJB3_Tutorial_5_Message_Driven_Beans) and augments the beans with the configuration information necessary to limit access declaratively.
+
 ----
+
 ### Project Setup
 We recommend you create a copy of your project (or if you are using revision control software, make sure to check-in and tag your work).
 

@@ -1,8 +1,8 @@
 ---
 title: cpptraining.UsingCSlimWithVisualStudio2010
 ---
-{% include toc %}
 {% include nav prev="CppTraining#FitNesse" %}
+{% include toc %}
 
 **September 2011**
 
