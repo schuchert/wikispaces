@@ -1,4 +1,5 @@
 ---
 title: pictures.SpiderInFrontYard
 ---
-![](images/SpiderInFrontYard.jpg){:width="600px"}
+
+![SpiderInFrontYard](images/SpiderInFrontYard.jpg)

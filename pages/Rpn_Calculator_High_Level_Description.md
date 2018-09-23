@@ -6,7 +6,7 @@ I got the idea for using a calculator for a TDD problem from a few different peo
 
 ## Background
 An [Rpn](http://en.wikipedia.org/wiki/Reverse_Polish_notation) Calculator allows you to calculate results without having to use parenthesis. Here is an image of an HP 10 calculator (from <http://www.hpmuseum.org>):
-![](http://www.hpmuseum.org/10c.jpg){:width="600px", align="center"}
+![](http://www.hpmuseum.org/10c.jpg){align="center"}
 A few more links:
 * [Here is the manual for my HP 32SII.](http://ec1.images-amazon.com/media/i3d/01/A/man-migrate/MANUAL000014738.pdf)
 * <http://www.hpmuseum.org/>

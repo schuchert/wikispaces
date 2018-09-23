@@ -51,5 +51,3 @@ For more background on where I'm coming from, have a look at
 ## Old Book Work
 * ### [CSharpAndOop](CSharpAndOop)
 * ### [IntroductionToMicrocomputersAndDataProcessing](IntroductionToMicrocomputersAndDataProcessing)
-
-

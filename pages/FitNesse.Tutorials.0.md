@@ -23,7 +23,8 @@ FitNesse (v20100103) Started...
 {% endhighlight %}
 
 * Verify you see a friendly FitNesse web page when you open [your browser here](http://localhost:8080/) (I built this from source and it might be different from what you see when you start FitNesse, but it should be close - you won't see the tree on the left until sometime in 4/2009)
-![](images/FitNesseStartScreen.gif)
+![Fitnesse Start Screen](images/FitNesseStartScreen.gif)
+
 
 ## Configure FitNesse for Slim
 * Click the **Edit** button on the home page. You will see something close to the following:

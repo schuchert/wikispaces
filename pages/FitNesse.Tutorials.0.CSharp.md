@@ -66,7 +66,7 @@ In a nutshell, you are going to create a C## project, add some classes and then 
 
 * Click on the **Test** button, you should see some green and red now:
 ^
-![](images/CSharpMissingMethods.gif){:width="600px"}
+![](images/CSharpMissingMethods.gif)
 
 You have two tables in your page. The first table is an import table, it tells FitNesse to import that namespace (i.e. like using in .Net). That is, when looking for fixture classes (classes that process tables), look in this namespace. If you want to import multiple namespaces, use multiple rows (or duplicate the entire table).
 
@@ -119,7 +119,7 @@ namespace DigitalVideoRecorder
 ## Verify Your Tests Pass
 * Switch back to your browser, click on the **Test** button. You should see something similar to this:
 ^
-![](images/CSharpCongratulations.gif){:width="600px"}
+![](images/CSharpCongratulations.gif)
 
 ## [Return and Complete Your Tutorial](FitNesse.Tutorials.0#Congratulations)
  

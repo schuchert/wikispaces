@@ -45,9 +45,9 @@ In any case, an ability to make an informed decision to disregard a design princ
 </aside>
 
 ## Logging
-![](images/LoggerComplexity.png){:width="600px"}
+![](images/LoggerComplexity.png)
 
-![](images/Logger_an_approach.png){:width="600px"}
+![](images/Logger_an_approach.png)
 
 ## Depending on Interfaces
 ![](images/Database.png){:width="100px"}
@@ -59,10 +59,10 @@ In any case, an ability to make an informed decision to disregard a design princ
 ![](images/Database_dao.png){:width="300px"}
 
 ## Message Oriented Middleware
-![](images/Async_original_description.png){:width="600px"}
-![](images/Async_dependencies.png){:width="600px"}
-![](images/Async_re_envisioned.png){:width="600px"}
-![](images/Async_resulting_interaction.png){:width="600px"}
+![](images/Async_original_description.png)
+![](images/Async_dependencies.png)
+![](images/Async_re_envisioned.png)
+![](images/Async_resulting_interaction.png)
 
 ## Assist in Multi-Thread Development (add this???)
 

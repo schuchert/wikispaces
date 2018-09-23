@@ -539,7 +539,7 @@ I made the change and sure enough supporting new requirements was**much** easier
 
 {: #CoolDiagram}
 Here's where we're going:
-![](images/LoginStates.png){: width="600px" %}
+![](images/LoginStates.png)
 
 ### How Does the State Pattern Apply?
 In the typical state pattern, all or part of an object's behavior depends on what has happened to it in the past. In this case there are two different sets of state:

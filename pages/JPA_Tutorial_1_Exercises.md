@@ -10,7 +10,7 @@ title: JPA_Tutorial_1_Exercises
 
 ## New Class
 Right now the relationship between Person and Company is direct. Let's make that a little less direct. The Person should now have a Job with a title, salary and employeeId. The company still has employees as before. This picture describes the before and after relationships.
-![](images/Tutorial1Assignment1.gif){:width="600px"}
+![](images/Tutorial1Assignment1.gif)
 
 In order to refactor to the [above] "after" picture consider some of the following advice:
 
