@@ -3,6 +3,8 @@ title: FitNesse.Tutorials.ScriptTables
 ---
 {% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.ScenarioTables" %}
 {% include toc %}
+
+<section>
 ## Background: The Return of Smalltalk
 This is a somewhat nostalgic background, you won't miss much if you [skip to the introduction](FitNesse.Tutorials.ScriptTables#introduction).
 
@@ -54,11 +56,27 @@ generateProgrmas CreateDailyProgramNamed: 'D1" OnChannel: 8 StartingOn: '3/4/200
 {% endhighlight %}
 The spirit of the keyword message in Smalltalk was revived in the design of the do fixture and then carried over into Slim.
 
+</section>
+
+<section>
 {: #introduction}
 ## Introduction
-In this tutorial, you'll continue working with the DVR problem, continuing right from where you left off in [Query Tables Tutorial](FitNesse.Tutorials.2). You can use your code as is from the previous tutorial, or you can use the tag FitNesse.Tutorials.ScriptTables, review [here](FitNesse.Tutorials.WorkingFromGitHub) to figure out what to do with this tag.
+In this tutorial, you'll continue working with the DVR problem, continuing 
+right from where you left off in [Query Tables Tutorial](FitNesse.Tutorials.2). 
+You can use your code as is from the previous tutorial, or you can use the tag 
+FitNesse.Tutorials.ScriptTables, review [here](FitNesse.Tutorials.WorkingFromGitHub) 
+to figure out what to do with this tag.
 
-In this tutorial you will learn how to use script tables to express things with sequences of messages rather than rows of data that are either created or queried. It is typically possible to express in script tables what you can do with decision tables and query tables. The reverse is also true. typically it is a matter of habit or taste. Sometimes, however, one expression is simply better than another.
+In this tutorial you will learn how to use script tables to express things 
+with sequences of messages rather than rows of data that are either created 
+or queried. It is typically possible to express in script tables what you 
+can do with decision tables and query tables. The reverse is also true. 
+typically it is a matter of habit or taste. Sometimes, however, one expression 
+is simply better than another.
+
+</section>
+
+<section>
 
 ## A First Script Table
 The basis of your work will come from this user story:
@@ -87,7 +105,7 @@ There are three parts to this table:
 * Rows 4 - 5: Invoke a method to generate programs on a daily basis
 
 #### Creating Page Hierarchy/Table
-* Create a new Test Suite: Edit the following URL: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples>
+* Create a new Test Suite: Edit the following URL: [localhost url](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples)
 * Enter the following for its contents:
 
 {% highlight terminal %}
@@ -95,7 +113,7 @@ There are three parts to this table:
 {% endhighlight %}
 
 * Save this and set the page type to Suite.
-* Edit the following URL (to add a child page): <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples.CreatingManyProgramsExample>
+* Edit the following URL (to add a child page): [localhost url](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples.CreatingManyProgramsExample)
 * Copy the table above into the contents of the page (replacing the !contents line)
 * See the page type to Test.
 * Run the test, verify that you see a warning (in yellow) of the missing Generate Programs class
@@ -606,6 +624,10 @@ Finally, let's verify that in fact this change to the createOneProgram method ac
 
 Make sure this test passes before moving to the next section.
 
+</section>
+
+<section>
+
 ## A Second Example
 Here are a few addons to the table to show a few additional features of Script tables:
 
@@ -626,7 +648,7 @@ This table demonstrates some things you have not yet used:
 * If the line starts with one of a few keywords (check/check not/reject/ensure/show), then the name of the method begins in cell 2 and and the parameters are in the odd numbered cells. If not, then the name of the method begins in cell 1 and the parameters are in the even numbered cells.
 
 Create this table:
-* Go to the following URL: <http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples.AnotherExample>.
+* Go to the following URL: [localhost url](http://localhost:8080/FrontPage.DigitalVideoRecorderExamples.ScriptTableExamples.AnotherExample).
 * Replace the contents with the above table.
 * Save your changes.
 * Change the page type to a Test.
@@ -664,6 +686,10 @@ public class GeneratePrograms {
 
 Run your test and verify it passes. Rerun the suite and verify it passes.
 
+</section>
+
+<section>
+
 ## Summary
 Congratulations, you've finished another tutorial and learned about Script tables. Script tables are a convenient way to introduce code-like sequences into your tests. They derive their design from Smalltalk keyword messages but other than that, they behave like other Slim tables:
 * They are backed with a fixture
@@ -678,5 +704,6 @@ While not demonstrated:
 
 Now that you have worked with all of the basic table types, you might consider looking into [Scenario Tables](FitNesse.Tutorials.ScenarioTables) or [Table Tables](FitNesse.Tutorials.TableTables).
 
+</section>
 {% include nav prev="FitNesse.Tutorials" next="FitNesse.Tutorials.ScenarioTables" %}
  
