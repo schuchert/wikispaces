@@ -1,12 +1,15 @@
 ---
 title: EJB3_Tutorial_2_Session_Bean_and_JPA
 ---
-{% include toc %}
 {% include nav prev="EJB_3_and_Java_Persistence_API" %}
+
+{% include toc %}
 ## Session Bean and JPA
 
 This tutorial revisits the entities from [JPA_Tutorial_1_Getting_Started](JPA_Tutorial_1_Getting_Started) and introduces a DAO, which gets its entity manager auto-wired.
+
 ----
+
 ### Setting Up Your Project
 {% include include_md_file filename="Ejb_3_Tutorial_2_Setting_Up_Your_Project.md" %}
 ----

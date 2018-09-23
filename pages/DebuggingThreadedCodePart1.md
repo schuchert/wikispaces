@@ -199,7 +199,9 @@ When I instrumented my code with [ConTest](http://www.alphaworks.ibm.com/tech/co
 At a first glance, that is the primary purpose of [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html). It instruments your classes so that during execution time, [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) adds so-called noise into the execution of your tests. By doing so, it increases the number of ways in which the threads in your tests interleave with each other, which increases the likelihood of exposing unsafe execution orderings. However, it additionally remembers the order in which things occurred, so it is also possible that it can help you figure out why your code broke so you have a better chance of fixing it.
 
 Describing how [ConTest](http://www.haifa.ibm.com/projects/verification/contest/index.html) actually accomplishes this, and what other features it offers, is better described by several [publications.](http://www.haifa.ibm.com/projects/verification/contest/publications.html)
+
 ----
+
 {: #StepByStepInstructions}
 ### Getting it Working
 

@@ -9,7 +9,7 @@ At start, David Nunn will present himself and myself.
 
 * Show trivial code example ([ObjectWithValue](TddAndConcurrency.ObjectWithValue))
 * Show results of running driver, the code is broken
-* Ask by table:
+* Ask by table
   * Help me demonstrate that this code is broken with a test
   * Here are a few candidate characteristics of a good test: Fast, Independent, Reliable, Self-validating, Timely. Which of these apply to your approach? Do all of these apply?
   * Start running demo in XP under Parallels so I can discuss those results

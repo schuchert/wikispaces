@@ -1,8 +1,9 @@
 ---
 title: EJB3_Tutorial_1_Getting_Started_with_JBoss_Embedded_Container
 ---
-{% include toc %}
 {% include nav prev="EJB_3_and_Java_Persistence_API" %}
+
+{% include toc %}
 
 ## Getting Started with the JBoss Embedded Container
 
@@ -13,7 +14,9 @@ This tutorial is a derivative (simplification really) of work done by JBoss. For
 * Look up that local stateless session bean and use it
 
 Most of this tutorial is about configuration and utility methods. We will use those items for the remainder of the tutorials using the Embeddable EJB3 Container.
+
 ----
+
 ### Background
 {% include include_md_file filename="EJB3_Tutorial_1_Background.md" %}
 ----
