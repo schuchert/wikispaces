@@ -1,0 +1,10 @@
+{% assign id = include.h | append: '-label' | slugify %}
+<section>
+{::nomarkdown}
+<input id="{{id}}" class="toggle" type="checkbox" checked>
+{:/nomarkdown}
+## {::nomarkdown}<label for="{{id}}" class="lbl-toggle" tabindex="0">{{ include.h }}</label>{:/nomarkdown}
+{::nomarkdown}
+<div class="collapsible-content">
+<div class="content-inner">
+{:/nomarkdown}

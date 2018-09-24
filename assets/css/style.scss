@@ -82,22 +82,35 @@ input[type='checkbox'] {
 	transition: all 0.25s ease-out;
 }
 
+@mixin arrowhead {
+    content: ' ';
+    display: inline-block;
+
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentColor;
+
+    margin-right: .7rem;
+}
+
+section {
+    label.lbl-toggle::before {
+        @include arrowhead;
+    }
+}
+
+aside {
+    > label.lbl-toggle::before {
+        @include arrowhead;
+    }
+}
+
+
 .lbl-toggle:hover {
   color: #7C5A0B;
 }
 
-.lbl-toggle::before {
-  content: ' ';
-  display: inline-block;
-
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid currentColor;
-
-  margin-right: .7rem;
-}
-
-.collapsible-content .content-inner {
+aside.collapsible-content .content-inner {
 	background: #6f95c6;
 }
 

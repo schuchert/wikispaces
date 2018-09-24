@@ -1,8 +1,6 @@
-<section>
 {% include aside/start id="toc" title="Table of Contents" %}
+
 * TOC
 {:toc}
+
 {% include aside/end %}
-</section>
-
-

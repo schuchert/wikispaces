@@ -1,6 +1,7 @@
+{%- assign checked = include.checked != false -%}
 {::nomarkdown}
-<aside>
-<input id="{{ include.id }}" class="toggle" type="checkbox" {%if include.checked %}checked{% endif %}>
+<section>
+<input id="{{ include.id }}" class="toggle" type="checkbox" {%if checked %}checked{% endif %}>
 <label for="{{ include.id }}" class="lbl-toggle" tabindex="0">{{ include.title }}</label>
 
 <div class="collapsible-content">
@@ -16,5 +17,5 @@
     </div>
 </div>
 
-</aside>
+</section>
 {:/nomarkdown}
