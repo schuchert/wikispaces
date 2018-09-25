@@ -1,7 +1,8 @@
+{% assign id_l = include.id | append: '-label' | slugify %}
 {::nomarkdown}
-<aside>
-<input id="{{ include.id }}" class="toggle" type="checkbox" {%if include.checked %}checked{% endif %}>
-<label for="{{ include.id }}" class="lbl-toggle" tabindex="0">{{ include.title }}</label>
+<aside id="{{ include.id }}">
+<input id="{{ id_l }}" class="toggle" type="checkbox" {%if include.checked %}checked{% endif %}>
+<label for="{{ id_l }}" class="lbl-toggle" tabindex="0">{{ include.title }}</label>
 
 <div class="collapsible-content">
     <div class="content-inner">
