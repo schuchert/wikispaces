@@ -188,8 +188,18 @@ div.content {
        margin-top: .5em;
     }
 
+    aside#toc {
+        margin: 1em 0;
+    }
+
     aside + * {
-        margin-top: 1em;
+        margin: 1em 0;
+    }
+
+    h2.toggle {
+        color: transparent;
+        line-height: 0;
+        font-size: 0;
     }
 
     li + li {
@@ -199,6 +209,10 @@ div.content {
 	section {
 		padding: .25em .25em .25em .25em;
 		margin: 0 0 1em 0;
+
+	    &.summary {
+	        padding: 0;
+	    }
 
 		div.language-terminal {
 			margin-bottom: 1em;
@@ -216,11 +230,11 @@ div.content {
 			}
 		}
 
-		pre.highlight {
-			margin-bottom: 0;
-			padding-top: 0;
-			padding-bottom: 0;
-			white-space: pre-wrap;
+		pre.highlight, div.highlighter-rouge {
+		    margin-top: 0;
+		    margin-bottom: 0;
+		    border-top: 0;
+		    border-bottom: 0;
 		}
 
 		&.summary {

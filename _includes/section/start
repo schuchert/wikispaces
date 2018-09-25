@@ -3,7 +3,9 @@
 {::nomarkdown}
 <input id="{{id}}" class="toggle" type="checkbox" checked>
 {:/nomarkdown}
-## {::nomarkdown}<label for="{{id}}" class="lbl-toggle" tabindex="0">{{ include.h }}</label>{:/nomarkdown}
+{::nomarkdown}<label for="{{id}}" class="lbl-toggle" tabindex="0">{{include.h}}</label>{:/nomarkdown}
+## {{include.h}}
+{: .toggle }
 {::nomarkdown}
 <div class="collapsible-content">
 <div class="content-inner">
