@@ -63,7 +63,8 @@ presented in the exercise.
 
 Before doing that, commit any changes you want to keep in the branch created for this exercise.
 
-To review one possible solution to ```wrap-collection-start``, compare your results with the tag after it, which is ```open-closed-start```:
+To review one possible solution to ```wrap-collection-start``, compare your results with the tag after it, which is `open-closed-start`:
+
 #### Currenntly Clean
 ```terminal
 vagrant@vagrant-mint19:~/src/rpn$ git status
@@ -92,8 +93,8 @@ We want to make our stack never empty. Technically the value returned should ref
 T register. We will simplify this and instead return 0 when all the user-entered values are gone.
 (See [Rpn Description](https://schuchert.github.io/wikispaces/pages/Rpn_Calculator_High_Level_Description.html) for too much detail.)
 
-Introduce a new class, RpnCalculator. This class will wrap the ```Stack<BigDecimal>```. Then update
-the ```RpnCalculator``` to use this new class.
+Introduce a new class, RpnCalculator. This class will wrap the `Stack<BigDecimal>`. Then update
+the `RpnCalculator` to use this new class.
 
 </section>
 
@@ -110,32 +111,10 @@ Experiment with making a change to the API and get the code to pass.
 * Introduce some negative testing to make sure use of the new API produces "reasonable" errors
 
 
-If you want a hint look below.
-{% include aside/start id="open-closed-hints" title="Hint: Open/Closed Principle" %}
-### Before
-```java
-    @Test
-    public void addsNumbersCorrectly() {
-        calculator.enter(BigDecimal.valueOf(13));
-        calculator.enter(BigDecimal.valueOf(-2));
-        calculator.add();
-        assertEquals(BigDecimal.valueOf(11), calculator.x());
-    }
-```
+If you want hints, look below.
 
-### After
-```java
-    @Test
-    public void addsNumbersCorrectly() {
-        calculator.enter(BigDecimal.valueOf(13));
-        calculator.enter(BigDecimal.valueOf(-2));
-        calculator.execute("add");
-        assertEquals(BigDecimal.valueOf(11), calculator.x());
-    }
-```
+{% include aside/collapsed id="open-closed-hints" title="Open/Closed Hints" filename="OpenClosedHints.md" %}
 
-{% include aside/end %}
-^
 </section>
 
 <section>

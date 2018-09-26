@@ -1,7 +1,9 @@
-<aside id="{{include.id}}">
+<aside id="{{include.id}}" markdown="1">
 {::nomarkdown}
+
 <input id= "{{ include.id | append: '_l' }}" class="toggle" type="checkbox" {%if include.checked %}checked{% endif %}>
 <label for="{{ include.id | append: '_l' }}" class="lbl-toggle" tabindex="0">{{ include.title }}</label>
 <div class="collapsible-content">
 <div class="content-inner">
+
 {:/nomarkdown}
