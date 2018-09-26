@@ -18,17 +18,17 @@ Note: If you install the 64-bit JDK, install the 64-bit Eclipse. Same with 32-bi
 * Download and install the Helios version of eclipse with the Eclipse CDT: [Helios](http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers-includes-incubating-components/indigosr1)
 * Add the wascana plugin from the following Eclipse update site: [ Wascana Update Site](http://svn.codespot.com/a/eclipselabs.org/wascana/repo)
   *  Start eclipse
-  *  Go to```Help::Install New Software...```
-  *  Paste```http://svn.codespot.com/a/eclipselabs.org/wascana/repo/``` in the```Work with:``` box
-  *  Click```Add```
-  *  In the dialog, provide a name (I used```wascana```))
-  *  Click```OK```
+  *  Go to ```Help::Install New Software...```
+  *  Paste ```http://svn.codespot.com/a/eclipselabs.org/wascana/repo/``` in the ```Work with:``` box
+  *  Click ```Add```
+  *  In the dialog, provide a name (I used ```wascana```))
+  *  Click ```OK```
   *  Eventually you'll see under the **Name** column in the middle of the dialog "Wascana C/C++ Developer Tools for Windows"
   *  Click the box next to it to make a check appear.
-  *  Click```Next```
-  *  When the **Install Details** window appears, click```Next```
-  *  When the **Review Licenses** window appears, select the "I Accept the terms of the License Agreements" and click```Finish```
-  *  After the update is downloaded, you'll be asked to apply the updates. Do so by selecting```Restart Now```.
+  *  Click ```Next```
+  *  When the **Install Details** window appears, click ```Next```
+  *  When the **Review Licenses** window appears, select the "I Accept the terms of the License Agreements" and click ```Finish```
+  *  After the update is downloaded, you'll be asked to apply the updates. Do so by selecting ```Restart Now```.
 
 That's it, works quite well. This gives support for compiling and debugging C++ applications in Eclipse.
 

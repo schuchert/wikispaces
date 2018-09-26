@@ -161,12 +161,10 @@ a.up, a.prev, a.next, a.blog {
 	}
 }
 
-section {
-	p {
-		code {
-			margin: 0;
-			padding: 0;
-		}
+p, li {
+    > code {
+		margin: 0;
+		padding: 0;
 	}
 }
 
