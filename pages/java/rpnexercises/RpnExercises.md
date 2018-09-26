@@ -9,7 +9,7 @@ That repo is to practice different kinds of code refactorings. There are several
 The current tags (in the order I'd recommend using):
 * wrap-collection-start
 * open-closed-start
-* command-pattern-start
+* strategy-pattern-start
 * template-method-start
 * composite-method-start (tbd)
 
@@ -73,7 +73,7 @@ git diff open-closed-start
 #### Switch to tag
 Now review [select an exercise above](#selectanexercise).
 
-## wrap-collections-start
+## Tag: wrap-collections-start
 
 Direcly using the regular Stack class in Java for this project violates the
 [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle).
@@ -126,15 +126,37 @@ If you want a hint look below. But be carefu
 ```
 {% include aside/end %}
 
-## command-pattern-start
+## strategy-pattern-start
+All of the operators look similar. Rather than writing each as its own function, we can
+do the same thing as a class. Note: With Java 8 we could also use Lambdas, but for now
+let's take more of a traditional approach to the Stragegy Pattern.
+![Image of Stragegy Pattern](Strategy.png)
 
-(tbd)
+We want to define an interface with a single method that will work all of the operators.
+Review each of the operators, and determine what, if anything, is common across all
+operators.
+
+Once you've done that, create an appropraite interface, have each of the functions in
+its own class, which implements that interface.
+
+Update the solution from calling a bunch of functions to instead using instances of
+the various subclasses of your new interface.
+
+As a bonus, use some kind of reflection to find the operators rather than having to
+manually create them.
+
+## introduce-factory-start
+
+![Image of Abstract Factory](AbstractFactory.png)
+**Not in current repo, will redo**
+There's an abundance of code in the `RpnCalculator` that can be put into its own class.
 
 ## template-method-start
-
-(tbd)
+![Image of Template Method Pattern](TemplateMethod.png)
+Notice duplication acrosss binary operators. How can we remove that duplication?
 
 ## composite-method-start
+![Image of Composite Pattern](Composite.png)
 
-(tbd)
-
+What if I want to compose simple operators to make more complex operator, a program
+or a macro if you will.

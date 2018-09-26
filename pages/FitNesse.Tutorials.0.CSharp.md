@@ -15,7 +15,7 @@ In a nutshell, you are going to create a C## project, add some classes and then 
 
 ## Determine Where Visual Studio Stores Your Generated DLL
 * The DLL should be under the bin\Debug directory. In my case, the full path to my DLL is:
-* ```C:\Projects\C_Sharp\DigitalVideoRecorder\DigitalVideoRecorder\bin\Debug```
+* `C:\Projects\C_Sharp\DigitalVideoRecorder\DigitalVideoRecorder\bin\Debug`
 
 ## Update Page to have NSlim Configuration
 * Add the required configuration to the top of your DigitalVideoRecorder page:
