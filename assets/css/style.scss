@@ -4,6 +4,19 @@
 $white: white;
 $black: black;
 
+header#header {
+    z-index: 100;
+    background: #434343;
+    box-shadow: none;
+    position: fixed;
+}
+
+:target {
+    padding-top: 79px;
+    margin-top: -79px;
+    display: inline-block;
+}
+
 .draft {
 	background-image: url({% link /assets/images/draft-160133_640.png %});
 	background-repeat: repeat;
@@ -334,3 +347,4 @@ div.content {
         max-width: 100%;
     }
 }
+

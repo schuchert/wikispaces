@@ -1,6 +1,9 @@
 ---
 Title: Rpn Calculator Exercises
 ---
+{% include toc %}
+
+<section>
 ## Overview
 These instructions give further details on a set of exercises in a [github repo](git@github.com:schuchert/rpn_pattern_practice.git).
 
@@ -13,7 +16,10 @@ The current tags (in the order I'd recommend using):
 * template-method-start
 * composite-method-start (tbd)
 
-## Working with this repo
+</section>
+
+<section>
+## Working with the repo
 You will need to install a few things for this to work. Have a look [here](https://schuchert.github.io/wikispaces/pages/java/project.from.scratch/using.gradle.html#prerequisites).
 Note, you will not need gradle installed as described [there](https://schuchert.github.io/wikispaces/pages/java/project.from.scratch/using.gradle.html#prerequisites).
 
@@ -36,7 +42,6 @@ git tag -l
 
 **todo: add in list of branches once they are all there**
 
-{: selectanexercise }
 ### Select an exercise
 
 In the repo directory, use git branch with a tag to create a branch based on one of the exercises, i.e.,
@@ -71,10 +76,12 @@ nothing to commit, working tree clean
 git diff open-closed-start
 ```
 #### Switch to tag
-Now review [select an exercise above](#selectanexercise).
+Now review [select an exercise above](#select-an-exercise).
 
-## Tag: wrap-collections-start
+</section>
 
+<section>
+## Tag: wrap-collection-start
 Direcly using the regular Stack class in Java for this project violates the
 [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle).
 
@@ -88,8 +95,10 @@ T register. We will simplify this and instead return 0 when all the user-entered
 Introduce a new class, RpnCalculator. This class will wrap the ```Stack<BigDecimal>```. Then update
 the ```RpnCalculator``` to use this new class.
 
-## open-closed-start
+</section>
 
+<section>
+## Tag: open-closed-start
 The interface to the calculator changes every time you add a new operator.
 This violates the [Open/Closed Principle](https://schuchert.github.io/wikispaces/pages/ruby/ruby.tutorials.bdd.UsingBddToDevelopAnRpnCalculator.html#openclosed)
 Experiment with making a change to the API and get the code to pass.
@@ -101,7 +110,7 @@ Experiment with making a change to the API and get the code to pass.
 * Introduce some negative testing to make sure use of the new API produces "reasonable" errors
 
 
-If you want a hint look below. But be carefu
+If you want a hint look below.
 {% include aside/start id="open-closed-hints" title="Hint: Open/Closed Principle" %}
 ### Before
 ```java
@@ -124,9 +133,13 @@ If you want a hint look below. But be carefu
         assertEquals(BigDecimal.valueOf(11), calculator.x());
     }
 ```
+
 {% include aside/end %}
 
-## strategy-pattern-start
+</section>
+
+<section>
+## Tag: stragety-pattern-start
 All of the operators look similar. Rather than writing each as its own function, we can
 do the same thing as a class. Note: With Java 8 we could also use Lambdas, but for now
 let's take more of a traditional approach to the Stragegy Pattern.
@@ -144,19 +157,29 @@ the various subclasses of your new interface.
 
 As a bonus, use some kind of reflection to find the operators rather than having to
 manually create them.
+^
+</section>
 
-## introduce-factory-start
-
+<section>
+## Tag: factory-pattern-start
 ![Image of Abstract Factory](AbstractFactory.png)
-**Not in current repo, will redo**
+**Note in current repo, will redo**
 There's an abundance of code in the `RpnCalculator` that can be put into its own class.
+^
+</section>
 
-## template-method-start
+<section>
+## Tag: template-method-start
 ![Image of Template Method Pattern](TemplateMethod.png)
 Notice duplication acrosss binary operators. How can we remove that duplication?
+^
+</section>
 
-## composite-method-start
+<section>
+## Tag: composite-pattern-start
 ![Image of Composite Pattern](Composite.png)
 
 What if I want to compose simple operators to make more complex operator, a program
 or a macro if you will.
+^
+</section>
