@@ -135,10 +135,11 @@ If you want a hint look below.
 ```
 
 {% include aside/end %}
-
+^
 </section>
 
 <section>
+    
 ## Tag: stragety-pattern-start
 All of the operators look similar. Rather than writing each as its own function, we can
 do the same thing as a class. Note: With Java 8 we could also use Lambdas, but for now
