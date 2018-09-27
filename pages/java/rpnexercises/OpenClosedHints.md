@@ -1,5 +1,5 @@
 ---
-Title: Open/Closed Exercise Hints
+title: Open/Closed Exercise Hints
 ---
 
 ### Example of before/after test
@@ -32,13 +32,16 @@ Notice, you can do this in small steps. Assuming adding `execute(String)`, you c
   * Another reasonable apporach is to create a new test rather than change an exsiting test
 * Add the missing method
 * The first version simply calls the add method:
+^
 ```java
 public void execute(String operatorName) {
     add();
 }
+```
 * Find other tests that use the `add()` method and update them to instead call `execute("add")`
 * Update another operator, say `subtract`.
 * Update the `execute` method:
+^
 ```java
 public void execute(String operatorName) {
     if("add".equals(operatorName))
@@ -46,6 +49,7 @@ public void execute(String operatorName) {
     if("subtract".equqls(operatorName))
         subtract();
 }
+```
 * Update all uses of the `subtract()` method.
 * Continue until none of the named operator methods are used in the test.
 * Make those named operator methods private to confirm they are no longer used.
