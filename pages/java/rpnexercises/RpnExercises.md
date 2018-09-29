@@ -100,7 +100,7 @@ the [select an exercise above](#select-an-exercise) above.
 ## Wrap Collection
 ### Get Started
 ```terminal
-git branch -b wrap-collection-exercise 01-wrap-collection-start
+git checkout -b wrap-collection-exercise 01-wrap-collection-start
 ```
 
 ### Background
@@ -137,7 +137,7 @@ git diff 01-wrap-collection-end
 ## Open Closed Principle
 ### Get Started
 ```terminal
-git branch -b open-closed-exercise 02-open-closed-start
+git checkout -b open-closed-exercise 02-open-closed-start
 ```
 
 ### Background
@@ -165,7 +165,7 @@ git diff 02-open-closed-end
 ## Strategy Pattern
 ### Get Started
 ```terminal
-git branch -b strategy-pattern-exercise 03-strategy-pattern-start
+git checkout -b strategy-pattern-exercise 03-strategy-pattern-start
 ```
 
 ### Background
@@ -199,7 +199,7 @@ git diff 03-strategy-pattern-end
 ## Factory Pattern
 ### Get Started
 ```terminal
-git branch -b factory-pattern-exercise 04-factory-pattern-start
+git checkout -b factory-pattern-exercise 04-factory-pattern-start
 ```
 
 ### Background
@@ -223,7 +223,7 @@ git diff 04-factory-pattern-end
 ## Template Method Pattern
 ### Get Started
 ```termainl
-git branch -b template-method-exercise 05-tempalte-method-start
+git checkout -b template-method-exercise 05-tempalte-method-start
 ```
 
 ### Backgound
@@ -261,7 +261,7 @@ git diff 05-template-method-end
 ## Composit Object Pattern
 ### Get Started
 ```termainl
-git branch -b composite-object-exercise 06-composite-object-start
+git checkout -b composite-object-exercise 06-composite-object-start
 ```
 
 ### Background
