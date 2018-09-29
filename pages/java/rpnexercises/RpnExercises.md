@@ -266,46 +266,49 @@ git branch -b composite-object-exercise 06-composite-object-start
 
 ### Background
 We want our calculator to be "programmable." By that, we can make our own combinariion
-of existing operators. For example:
+of existing operators. For example, [Pythagorean's theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem):
+^
 $$
-sqrt(x^2 + y^2)
+C^2 = A^2 + B^2
+$$
+^
+$$
+C = sqrt(A^2 + B^2)
 $$
 
-Given an x,y of (11, 13), we might do something like this with our calculator:
+Given an a,b of (3, 4), we might do something like this with our calculator:
 ^
 |---|--- | --- |
 | Entry | Values on RpnStack | Who |
-| 11| 11 | user |
-|  2| 2, 11 | user |
-|pow| 121 | user |
-|13| 13, 121 | user |
-|2| 2, 13, 121 | user |
-|pow| 169 | user |
-|+ |  290 | user |
-|sqrt| 17.029386366 | user |
+| 3| 3 | user |
+| 2| 2, 3| user |
+| pow | 9 | user |
+|  4| 4, 9 | user |
+|  2| 2, 4, 9| user |
+|pow| 16, 9 | user |
+| add| 25 | user |
+|sqrt| 5 | user |
 
-Imagine if we could turn that into a program named thirdLeg:
+Imagine if we could turn that into a program named Pythagorean:
 ^
 |---|---| --- |
 |entry | Values on RpnStack | Who |
-| 11 | 11 | User |
-| 13 | 13, 11 | user |
-| thirdLeg | 17.029386366 | user |
+| 3 | 3 | User |
+| 4 | 4, 3 | user |
+| Pythagorean | 5 | user |
 
-One way to write the program `thirdLeg` might be:
+One way to write the program `Pythagorean` might be:
 ^
 |---|---|---|
-|entry | Values on RpnStack | performed by |
-| 11  |  11 | user |
-| 13  | 13, 11 | user |
-| push2  | 2, 13, 11 | thirdLeg executes push2 |
-| pow | 121, 11 | thirLeg executes pow |
-| swap| 11, 169 | thirdLeg executes swap |
-| push2  | 2, 13, 11 | thirdLeg executes push2 |
-| pow | 121, 169 | thirdLeg executes pow |
-| add | 290 | thirdLeg executes add |
-| sqrt|17.029386366| thirdLeg executes sqrt |
-
+|entry | Values on RpnStack | Who |
+| Pythagorean |4, 3| user |
+| push2  | 2, 4, 3 | Pythagorean |
+| pow | 16, 3 | Pythagorean |
+| swap| 3, 16 | Pythagorean |
+| push2  | 2, 3, 16 | Pythagorean |
+| pow | 9, 16 | Pythagorean
+| add | 25 | Pythagorean |
+| sqrt| 5| Pythagorean |
 
 ![Image of Composite Pattern](Composite.png)
 
