@@ -22,7 +22,7 @@ The tags for this repo are:
 1. 05-template-method-start
 1. 05-template-method-end
 1. 06-composite-object-start
-1. 05-composite-object-end (tbd)
+1. 06-composite-object-end
 
 After cloaning, you can confirm this list by using git (not the order will be different from what is listed above):
 ```termial

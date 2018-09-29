@@ -201,6 +201,20 @@ div.content {
 
     aside#toc {
         margin: 1em 0;
+        ul, li {
+            margin: 0;
+        }
+
+        ul#markdown-toc {
+            > li {
+                + li {
+                    margin-bottom: 1em;
+                }
+            }
+            > li:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 
     aside + * {
@@ -309,7 +323,6 @@ div.content {
         padding-bottom: 0em;
 
         ul {
-            padding-bottom: 1em;
             margin-bottom: 0em;
         }
         + p, + h2, + h3, + h4, + h5 {
@@ -335,7 +348,6 @@ div.content {
     li {
         > ul {
             margin-top: 0;
-            padding-bottom: 1em;
         }
     }
 
