@@ -20,9 +20,9 @@ The tags for this repo are:
 1. 04-factory-pattern-start
 1. 04-factory-pattern-end
 1. 05-template-method-start
-1. 05-template-method-end (tbd)
-1. 06-composite-pattern-start (tbd)
-1. 05-composite-pattern-end (tbd)
+1. 05-template-method-end
+1. 06-composite-object-start
+1. 05-composite-object-end (tbd)
 
 After cloaning, you can confirm this list by using git (not the order will be different from what is listed above):
 ```termial
@@ -202,9 +202,10 @@ git diff 03-strategy-pattern-end
 git branch -b factory-pattern-exercise 04-factory-pattern-start
 ```
 
-### Overview
+### Background
 ![Image of Abstract Factory](AbstractFactory.png)
 
+### Goals
 There's an abundance of code in the `RpnCalculator` that can be put into its own class.
 ^
 
@@ -225,10 +226,27 @@ git diff 04-factory-pattern-end
 git branch -b template-method-exercise 05-tempalte-method-start
 ```
 
-### Overview
-![Image of Template Method Pattern](TemplateMethod.png)
-Notice duplication acrosss binary operators. How can we remove that duplication?
+### Backgound
+There's quite a bit of duplication in all of the binary operators. Consider add versus subtract:
 ^
+|add | subtract|
+|`BigDecimal rhs = values.pop();` |`BigDecimal rhs = values.pop();` |
+|`BigDecimal lhs = values.pop();` |`BigDecimal lhs = values.pop();` |
+|`values.push(lhs.add(rhs));`     |`values.push(lhs.subtract(rhs));`|
+
+In fact, the only difference is the calculation of the result. The "algorithm" then is:
+1. Acquire operands (`lhs` and `rhs`)
+1. Calculate the result (`add` or `subtract`)
+1. Store the result (`push`)
+
+The Template Method Pattern implements an algorithm in a (typically abstract)
+base class and has one or more extension points (abstarct methods) for
+derived classes to implement. Those derived classes fill in the details.
+
+![Image of Template Method Pattern](TemplateMethod.png)
+
+### Goals
+* Remove the dupplication between the various binary operator classes.
 
 {% include aside/collapsed id="template-method-hints" title="Template Method Pattern Hints" filename="TemplateMethodPatternHints.md" %}
 
@@ -243,15 +261,57 @@ git diff 05-template-method-end
 ## Composit Object Pattern
 ### Get Started
 ```termainl
-git branch -b composite-pattern-exercise 06-composite-pattern-start
+git branch -b composite-object-exercise 06-composite-object-start
 ```
-### Overview
+
+### Background
+We want our calculator to be "programmable." By that, we can make our own combinariion
+of existing operators. For example:
+$$
+sqrt(x^2 + y^2)
+$$
+
+Given an x,y of (11, 13), we might do something like this with our calculator:
+^
+|---|--- | --- |
+| Entry | Values on RpnStack | Who |
+| 11| 11 | user |
+|  2| 2, 11 | user |
+|pow| 121 | user |
+|13| 13, 121 | user |
+|2| 2, 13, 121 | user |
+|pow| 169 | user |
+|+ |  290 | user |
+|sqrt| 17.029386366 | user |
+
+Imagine if we could turn that into a program named thirdLeg:
+^
+|---|---| --- |
+|entry | Values on RpnStack | Who |
+| 11 | 11 | User |
+| 13 | 13, 11 | user |
+| thirdLeg | 17.029386366 | user |
+
+One way to write the program `thirdLeg` might be:
+^
+|---|---|---|
+|entry | Values on RpnStack | performed by |
+| 11  |  11 | user |
+| 13  | 13, 11 | user |
+| push2  | 2, 13, 11 | thirdLeg executes push2 |
+| pow | 121, 11 | thirLeg executes pow |
+| swap| 11, 169 | thirdLeg executes swap |
+| push2  | 2, 13, 11 | thirdLeg executes push2 |
+| pow | 121, 169 | thirdLeg executes pow |
+| add | 290 | thirdLeg executes add |
+| sqrt|17.029386366| thirdLeg executes sqrt |
+
+
 ![Image of Composite Pattern](Composite.png)
 
-What if I want to compose simple operators to make more complex operator, a program
-or a macro if you will.
+### Goals
 
-{% include aside/collapsed id="composit-object-pattern" title="Composit Object Pattern Hints" filename="CompositeObjectPatternHints.md" %}
+{% include aside/collapsed id="composit-object-pattern" title="Composite Object Pattern Hints" filename="CompositeObjectPatternHints.md" %}
 
 ### Check
 ```terminal
