@@ -4,6 +4,11 @@
 $white: white;
 $black: black;
 
+ul{
+  list-style-image: none;
+  list-style-type: disc;
+}
+
 header#header {
     z-index: 100;
     background: #434343;
@@ -337,7 +342,7 @@ div.content {
         }
 
         li {
-            margin-bottom: .5em;
+            margin-bottom: 0em;
             p {
                 margin-bottom: 0em;
             }
