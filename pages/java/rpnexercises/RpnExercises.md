@@ -41,7 +41,7 @@ In addition, you probably want to install some IDE. Any of these will be fine:
 * [NetBeans](https://netbeans.org/downloads/){:target="_blank"}
 
 Once you have a command line, git, and an IDE, you are ready to:
-* Clone the repo (do this once)
+* the repo (do this once)
 * Select an exercise and work on it
 * Move to the next exercise to either review one possible solution or start another exercise
 
@@ -49,7 +49,7 @@ Once you have a command line, git, and an IDE, you are ready to:
 
 Clone this project as usual and review the tags:
 ```terminal
-git clone git@github.com:schuchert/rpn_exercise.git
+git clone https://github.com/schuchert/rpn_exercises.git
 cd rpn_exercises
 git tag -l
 ```
