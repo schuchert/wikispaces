@@ -16,12 +16,6 @@ header#header {
     position: fixed;
 }
 
-:target {
-    padding-top: 79px;
-    margin-top: -79px;
-    display: inline-block;
-}
-
 .draft {
 	background-image: url({% link /assets/images/draft-160133_640.png %});
 	background-repeat: repeat;
@@ -192,16 +186,26 @@ div#title, div.wrapper > section {
 }
 
 div.content {
+    :target {
+        padding-top: 2em;
+        margin-top: -2em;
+    }
+
     p {
         margin-bottom: 0em;
-    }
 
-    p + * {
-        margin-top: 1em;
-    }
+        + h2:target {
+            padding-top: 3em;
+            margin-top: -2em;
+        }
 
-    p + ul {
-       margin-top: .5em;
+        + h2 {
+            padding-top: 1em;
+        }
+
+        + ul {
+           margin-top: .5em;
+        }
     }
 
     aside#toc {
