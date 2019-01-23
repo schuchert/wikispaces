@@ -5,6 +5,5 @@
 {%- assign pages = site.pages | where: 'name', include.filename -%}
 
 {%- for p in pages -%}
-    {%- assign page_url = append: p.url | relative_url | strip_newlines | strip -%}
-    <a href="{{ page_url }}">{{ include.linktext }}</a>
-{% endfor %}
+    <a href="{{ site_url | strip }}{{ p.url | remove: '.html' }}">{{ include.linktext }}</a>
+{%- endfor -%}
