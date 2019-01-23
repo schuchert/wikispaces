@@ -8,6 +8,9 @@ Also see [on wikipedia](http://en.wikipedia.org/wiki/GRASP_(object-oriented_desi
 {: #SOLID }
 ## {% include links_for filename="tddisnotenough.SOLID.md" linktext='SOLID' %}
 [From Robert Martin(uncle bob)](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
+
+{: #LOD }
+## Law of Demeter
 [Law of Demter](http://en.wikipedia.org/wiki/Law_of_Demeter)
 
 {: #CodeSmells }
@@ -24,4 +27,4 @@ Also see [on wikipedia](http://en.wikipedia.org/wiki/GRASP_(object-oriented_desi
 
 {: #CodingKatas }
 ## {% include links_for filename="Katas.md" linktext='Coding Katas' %}
-[My Summary of Links](http://schuchert.wikispaces.com/Katas)
+[My Summary of Links](Katas)
