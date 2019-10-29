@@ -17,4 +17,5 @@ theme: jekyll-theme-midnight
 baseurl: /wikispaces
 github: [metadata]
 highlight: rogue
-exclude: [.idea,site_errors,bin,_build,.gitignore,.gitconfig]
+exclude: [.idea,site_errors,bin,_build,.gitignore,.gitconfig,Gemfile,Gemfile.lock]
+include: [favico.ico]
