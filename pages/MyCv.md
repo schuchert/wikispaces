@@ -1,4 +1,4 @@
----
+~~~~---
 title: MyCv
 ---
 ## Curriculum Vitae for Brett L. Schuchert
@@ -20,10 +20,10 @@ August 2015 - Present
 
 #### Lean Coach
 Middle-East Telecommunications Company
-
+<b/>
 Working as part of a team of coaches, we helped a large Telecom on its delivery focus. At the beginning
 of the engagement, average lead time was 26 weeks. After 2 months, the average dropped to 4 weeks.
-
+<b/>
 #### Instructor
 
 * Taught our Testing and Refactoring Workshop both in person and guided.
@@ -53,7 +53,7 @@ the team reduced their cycle-time from around 8.5 days per story to around 2.5 d
 of existing code bases, so we also upgraded major software versions of Spring Boot, greatly improved delivery safety
 through more and better automated tests, improved on acceptance testing, experimented with continuous deployment into
 production (though most of our projects were CD into lower environments and 1-click run of push to production).
-
+<br/>
 During this engagement I also worked with two shadow coaches and had a third tag along for a few months.
 
 #### Agile Coach
