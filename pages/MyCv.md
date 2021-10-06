@@ -1,4 +1,4 @@
-~~~~---
+---
 title: MyCv
 ---
 ## Curriculum Vitae for Brett L. Schuchert
