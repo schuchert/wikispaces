@@ -1,6 +1,7 @@
 ---
 title: MyCv
 ---
+{% include toc %}
 ## Curriculum Vitae for Brett L. Schuchert
 
 ### Skill Summary
@@ -8,9 +9,9 @@ Brett has over 35 years of teaching experience and over 30 years of consulting a
 in his career, Brett was introduced to Object-Oriented Programming and Constraint Theory, and later agile
 software development, then in the past decade, lean thinking. 
 
-While he maintains a number of hobbies such as hiking, photography, and gardening, he practices and provides
+While he maintains a number of hobbies such as hiking, yoga, photography, and gardening, he practices and provides
 backup training in Tai Chi, [Liuhebafa](https://en.wikipedia.org/wiki/Liuhebafa), and Bagwa, all three internal 
-martial arts, where he applies years of training experience in technology
+martial arts, where he applies years of training experience in technology into training internal martial arts.
 
 ----
 
@@ -31,24 +32,28 @@ of the engagement, average lead time was 26 weeks. After 2 months, the average d
 ##### First engagement, Software Development Coach
 Embedded with a team and generally introducing XP practices, lean software development principles, improved automated 
 testing practices, and changed overall project structure and build structure to make it far easier to work with the 
-project for existing and new developers.
+project for existing and new developers.  
+
 
 ##### Second Engagement, Software Development Coach
 Embedded with 4 different teams, rotating between then. As with the first engagement, introduced XP practices, lean software
-development principles, improved testing, and generally applying DevOps principles to overall development approach.
+development principles, improved testing, and generally applying DevOps principles to overall development approach.  
+
 
 ##### Third Engagement, Software Development Coach
 Embedded with a team and assisted in an internal transformation. As before, XP practices, lean principles. Starting
 with this engagement, we introduced [DORA](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance)
-metrics to track how process changes impact our delivery. 
+metrics to track how process changes impact our delivery.   
+
 
 ##### Fourth Engagement, Software Development Coach
 Embedded with a team and continued where the third engagement left off in terms of transformation. Over a 1-year period, 
 the team reduced their cycle-time from around 8.5 days per story to around 2.5 days. The team had inherited a number
 of existing code bases, so we also upgraded major software versions of Spring Boot, greatly improved delivery safety
 through more and better automated tests, improved on acceptance testing, experimented with continuous deployment into
-production (though most of our projects were CD into lower environments and 1-click run of push to production).
-<br/>
+production (though most of our projects were CD into lower environments and 1-click run of push to production).  
+
+
 During this engagement I also worked with two coach candidates, both who moved into coaching roles as employees.
 
 #### Agile Coach, National Food Chain
