@@ -4,7 +4,83 @@ title: MyCv
 ## Curriculum Vitae for Brett L. Schuchert
 
 ### Skill Summary
-Brett has 25+ years of teaching experience and over 20 years of experience with object technology. He has worked extensively in developing software, training, mentoring, and consulting using Java, C++ and Smalltalk as well as software process and requirements analysis both locally and internationally.
+Brett has over 35 years of teaching experience and over 30 years of consulting and coaching experience. Early
+in his career, Brett was introduced to Object-Oriented Programming and Constraint Theory, and later agile
+software development, then in the past decade, lean thinking. 
+
+While he maintains a number of hobbies such as hiking, photography, and gardening, he practices and provides
+backup training in Tai Chi, [Liuhebafa](https://en.wikipedia.org/wiki/Liuhebafa), and Bagwa, all three internal 
+martial arts, where he applies years of training experience in technology
+
+----
+### Industrial Logic
+August 2015 - Present
+
+----
+
+#### Lean Coach
+Middle-East Telecommunications Company
+
+Working as part of a team of coaches, we helped a large Telecom on its delivery focus. At the beginning
+of the engagement, average lead time was 26 weeks. After 2 months, the average dropped to 4 weeks.
+
+#### Instructor
+
+* Taught our Testing and Refactoring Workshop both in person and guided.
+* Taught our Continuous Deployment workshop
+* Developed and taught a 1-day extension to our Continuous Development workshop called "0 to CD" where attendees create a build pipeline from scratch.
+
+#### Lean Coach
+Major Auto Manufacturer
+
+##### First engagement
+Embedded with a team and generally introducing XP practices, lean software development principles, improved automated 
+testing practices, and changed overall project structure and build structure to make it far easier to work with the 
+project for existing and new developers.
+
+##### Second Engagement
+Embedded with 4 different teams, rotating between then. As with the first engagement, introduced XP practices, lean software
+development principles, improved testing, and generally applying DevOps principles to overall development approach.
+
+##### Third Engagement
+Embedded with a team and assisted in an internal transformation. As before, XP practices, lean principles. Starting
+with this engagement, we introduced [DORA](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance)
+metrics to track how process changes impact our delivery. 
+
+##### Fourth Engagement
+Embedded with a team and continued where the third engagement left off in terms of transformation. Over a 1-year period, 
+the team reduced their cycle-time from around 8.5 days per story to around 2.5 days. The team had inherited a number
+of existing code bases, so we also upgraded major software versions of Spring Boot, greatly improved delivery safety
+through more and better automated tests, improved on acceptance testing, experimented with continuous deployment into
+production (though most of our projects were CD into lower environments and 1-click run of push to production).
+
+During this engagement I also worked with two shadow coaches and had a third tag along for a few months.
+
+#### Agile Coach
+National Food Chain
+
+Helped stand up a cross-functional team. The first team accomplishment increased 
+the delivery success rate of marketing material to Point of Sale Terminals. Originally,
+marketing material delivery was around 54% successful, meaning about 46% of roughly 80,000 
+terminals successfully updated. We analyzed the failures, developed a tool to review
+the distribution package, and in doing do increased the success rate to 96%. While the problem was years old,
+our solution took 6 weeks, including training people in both practices such as TDD, as well as
+conception, development, delivery and updating business processes to make this make the
+change stick, and ultimately helped root out the source of many of the deployment failures in the
+underlying CRM technology,  as well as the satellite network used for delivery of those materials.
+
+----
+### Independent Contractor
+May 2015 - August 2015
+
+----
+
+#### Lean Coach
+Assisted a team in moving towards pull-based software development. Team originally had high work
+in progress, frequent interruptions, and felt like development had nearly stopped moving. After 
+a few months, most work was organized into approximately 1 day buckets, developers were no longer 
+swapping between tasks throughout the day, and both the flow of delivery and the feel of working
+on the team improved.
 
 ----
 ### ThoughtWorks Incorporated
