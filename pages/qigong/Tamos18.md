@@ -4,7 +4,9 @@ title: Tamos 18
 
 ## Overview
 
-As taught by [Rick Krause](https://taichiokc.com/)
+As taught by [Rick Krause](https://taichiokc.com/). 
+
+[Tamos18](https://vimeo.com/manage/videos/351841296)
 
 ## Background
 
@@ -14,20 +16,20 @@ As taught by [Rick Krause](https://taichiokc.com/)
 * Pushing Palms
 * Separating Heaven and Earth
 * Pushing Mountains
-* Dragon Twists Tail
+* Dragon Twists Waist
 * Low Kicking
 * High Kicking
 * Rooster throws sand on its back
 * Sweeping Leg
-* Tiger opens shower curtain
 * Pushing Mountains
-* Shooting Tiger in Tree
+* Golden Leopard Reveals Claws
 * Dragon Straightens Waist
-* Flapping Wings
-* Bend Bar
-* Triangle Down Midline 
+* Wild Goose Flapping Wings
+* Bend the Bow to Shoot the Tiger
+* Reach Forward and Grab
+* Dragon Thrashing Its Tail
 * Dragon Strikes Out
-* Reveal Lotus
+* Pivot and Push Upward to Reveal Lotus
 
 ## Extras
 
