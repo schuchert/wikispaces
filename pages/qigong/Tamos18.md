@@ -4,11 +4,18 @@ title: Tamos 18
 
 ## Overview
 
-As taught by [Rick Krause](https://taichiokc.com/). 
+Tamos 18 is the beginning of Tai Chi and Chan Buddhism. Tamos came to the Shaolin Monastery 
+at a time when the monks practiced sitting meditation, and copied texts. The temple was often
+robbed because the monks had no means of self-defense.
 
-[Tamos18](https://vimeo.com/manage/videos/351841296)
+Tamos observed that by maintaining such a weakened state, the monks were hurting the karma of the robbers,
+because the robbers would not be able to hurt their karma by stealing if the monks could defend themselves.
 
-## Background
+(This is the earliest example of a [double bind](https://en.wikipedia.org/wiki/Double_bind) I know of.)
+
+Tamos added these exercises to their daily experience, and we'll be practcing them as taught by [Rick Krause](https://taichiokc.com/). 
+
+Here is a recording of Rick demonstrating [Tamos18](https://vimeo.com/manage/videos/351841296).
 
 ## Exercises
 
