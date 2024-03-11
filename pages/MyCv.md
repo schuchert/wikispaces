@@ -9,18 +9,52 @@ Brett has over 35 years of teaching experience and over 30 years of consulting a
 in his career, Brett was introduced to Object-Oriented Programming and Constraint Theory, and later agile
 software development, then in the past decade, lean thinking. 
 
-While he maintains a number of hobbies such as hiking, yoga, photography, and gardening, he practices and provides
-backup training in Tai Chi, [Liuhebafa](https://en.wikipedia.org/wiki/Liuhebafa), and Bagwa, all three internal 
-martial arts, where he applies years of training experience in technology into training internal martial arts.
+While he maintains a number of hobbies such as photography, and gardening, he practices and teaches
+internal martial arts, e.g., Tai Chi, and Qigong. In April 2024, he is expecting to certify as a Flexibility
+Coach, which he will additionally teach.
+
+Brett is a lateral thinker and mixes and mingles across domains. For example, he applies lean thinking to 
+learning and teaching new ideas in both a technical realm, and internal martial arts training. The notion
+of practice, or katas, he does in both software and body awareness. Meditation and paying attention to the 
+moment are a cornerstone of Code Whispering, or listening to the code, versus projecting design on to it.
 
 ----
 
 ### Industrial Logic
 August 2015 - Present
 
-#### Lean Coach, Middle-East Telecommunications Company
-Working as part of a team of coaches, we helped a large Telecom on its delivery focus. At the beginning
-of the engagement, average lead time was 26 weeks. After 2 months, the average dropped to 4 weeks.
+#### Senior Software Developer
+
+#### Internal Product Development
+Building, supporting, and updating a collection of educational games used to teach lean principles related to 
+Batch Size, Work in Progress, and Queues / Handoff. The application is a mix of technologies, including:
+* [AWS CDK](https://aws.amazon.com/cdk/)
+* [AWS Lambdas](https://aws.amazon.com/lambda/) via The [Serverless](https://www.serverless.com/) Framework
+* [Angular JS](https://angularjs.org/)
+* [React Native](https://reactnative.dev/)
+* The use of which includes the following AWS Services
+  * Cognito, IAM, S3, CloudWatch, API Gateway, DynamoDB, AWS Amplify, Cloud Formation, Textract
+
+#### Customer Product Development
+Building a ReactNative replacement for an existing Point of Sale Terminal in thousands of restaurants. The product was 
+delivered into production on time, supporting backwards-compatibility with the original system, which eased
+migration for existing customers. It also supported Android, iOS, both phones and tablets.
+
+The customer was looking clients to competitors, and updating their 10-year-old system became untenable. 
+
+During the development, we targeted several mobile devices, some with multiple displays. Supported different UX
+experiences with those different formats, integrating with existing credit card terminals, and supporting different
+payment flows. 
+
+There was a mix of technologies and practices:
+* [Ensemble Programming](https://en.wikipedia.org/wiki/Ensemble_coding)
+* Test Driven Development
+* Trunk Based Development
+* Continuous Deployment to test devices and one-click deployment (customer choice) into production
+* [React Native](https://reactnative.dev/)
+* [Code Push](https://microsoft.github.io/code-push/)
+* [Redux](https://redux.js.org/)
+* Native coding to support multiple screens in React Native
 
 #### Instructor
 * Taught our Testing and Refactoring Workshop both in person and guided.
@@ -45,14 +79,12 @@ Embedded with a team and assisted in an internal transformation. As before, XP p
 with this engagement, we introduced [DORA](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance)
 metrics to track how process changes impact our delivery.   
 
-
 ##### Fourth Engagement, Software Development Coach
 Embedded with a team and continued where the third engagement left off in terms of transformation. Over a 1-year period, 
 the team reduced their cycle-time from around 8.5 days per story to around 2.5 days. The team had inherited a number
 of existing code bases, so we also upgraded major software versions of Spring Boot, greatly improved delivery safety
 through more and better automated tests, improved on acceptance testing, experimented with continuous deployment into
 production (though most of our projects were CD into lower environments and 1-click run of push to production).  
-
 
 During this engagement I also worked with two coach candidates, both who moved into coaching roles as employees.
 
@@ -67,6 +99,10 @@ our solution took 6 weeks, including training people in both practices such as T
 conception, development, delivery and updating business processes to make this make the
 change stick, and ultimately helped root out the source of many of the deployment failures in the
 underlying CRM technology,  as well as the satellite network used for delivery of those materials.
+
+#### Lean Coach, Middle-East Telecommunications Company
+Working as part of a team of coaches, we helped a large Telecom on its delivery focus. At the beginning
+of the engagement, average lead time was 26 weeks. After 2 months, the average dropped to 4 weeks.
 
 ----
 ### Independent Contractor
@@ -85,31 +121,54 @@ Title: Principal Consultant
 
 #### Technical Lead, Client-Facing Responsive Web Presence
 
-Worked as a technical lead for a customer-facing application developed to test out modes of client interaction. The technical stack initially included Angular on the front end, Node in the mid-tier and a back end aggregation layer. After a pivot based on customer research, the front-end solution simplified to simply JavaScript and JQuery, maintaining the Node back end. Also assisted in solving inconsistent automated test execution based on changes to the technology stack after the pivot.
+Worked as a technical lead for a customer-facing application developed to test out modes of client interaction. The
+technical stack initially included Angular on the front end, Node in the mid-tier and a back end aggregation layer.
+After a pivot based on customer research, the front-end solution simplified to simply JavaScript and JQuery, maintaining
+the Node back end. Also assisted in solving inconsistent automated test execution based on changes to the technology
+stack after the pivot.
 
 #### Platform Architect, Clothing Retailer
 
-Working as both a technical BA as well as an evangelist for the introduction and use of a corporation-wide service-enabling software harness. Embedded with four teams transforming their in-store sales experience, mentoring team members on technical issues, assisting in the adoption of the harness, and working with the team developing the harness by giving feedback on those adoption experiences.
+Working as both a technical BA as well as an evangelist for the introduction and use of a corporation-wide
+service-enabling software harness. Embedded with four teams transforming their in-store sales experience, mentoring team
+members on technical issues, assisting in the adoption of the harness, and working with the team developing the harness
+by giving feedback on those adoption experiences.
 
 #### Technical Lead, Airline Carrier
 
-Working as a tech. lead for a team of several developers in the development of [FAR 117](http://www.faa.gov/about/office_org/headquarters_offices/agc/pol_adjudication/agc200/Part117/) rules for tracking crew flight time. This is a required to fly system with a hard deadline of January 4, 2014 for complete implementation and data deadline starting 28 days earlier. Developed functionality and coached other developers in both coding and agile practices. Supported several production-live versions leading up to the final release on December 6, 2013.
+Working as a tech. lead for a team of several developers in the development
+of [FAR 117](http://www.faa.gov/about/office_org/headquarters_offices/agc/pol_adjudication/agc200/Part117/) rules for
+tracking crew flight time. This is a required to fly system with a hard deadline of January 4, 2014 for complete
+implementation and data deadline starting 28 days earlier. Developed functionality and coached other developers in both
+coding and agile practices. Supported several production-live versions leading up to the final release on December 6,
+2013.
 
-Also worked on dev-ops related items including: automated build for continuous integration, scripting of developer virtual machines.
+Also worked on dev-ops related items including: automated build for continuous integration, scripting of developer
+virtual machines.
 
-Schedule into early 2014 to assist in the removal of unnecessary technical stack, which will include the removal of Enterprise Java Means and migrating from WebSphere to Tomcat.
+Schedule into early 2014 to assist in the removal of unnecessary technical stack, which will include the removal of
+Enterprise Java Means and migrating from WebSphere to Tomcat.
 
 #### Consultant, Smart Grid Company
 
-Originally introduced to help with refactoring of a system but instead switched to agile enablement as the current solution was a symptom of a systemic problem. Assisted the team in the introduction of many of the Scrum practices, identification of and elimination of bottlenecks in their overall software development process and the creation of a preliminary backlog for new work. Continued with assisting in identification of the work that needed to be done, estimation on delivery possibility versus promises and helped introduce some of the XP practices into another team.
+Originally introduced to help with refactoring of a system but instead switched to agile enablement as the current
+solution was a symptom of a systemic problem. Assisted the team in the introduction of many of the Scrum practices,
+identification of and elimination of bottlenecks in their overall software development process and the creation of a
+preliminary backlog for new work. Continued with assisting in identification of the work that needed to be done,
+estimation on delivery possibility versus promises and helped introduce some of the XP practices into another team.
 
-This organization also needed to grow and I assisted in the definition and application of an interview process for several roles: Business Analyst, Quality Assurance (with emphasis on automation), Senior Developer.
+This organization also needed to grow and I assisted in the definition and application of an interview process for
+several roles: Business Analyst, Quality Assurance (with emphasis on automation), Senior Developer.
 
 #### Consultant, Travel Corporation
 
 Project: Service Retirement and Replacement
 
-Member of team developing replacement of existing services implemented in CORBA and C++. Project stack included JMS (ActiveMQ and Tibco), Rest-based API (Jersey), IoC (Spring 3), ORM (Hibernate 3.x), Automated Test (JBehave, JUnit), Build (Maven), Continuous Integration (Jenkins), Revision Control (git, git svn bridge). Team organization included a combination of Scrum and XP with 2-week sprints. Responsibilities included both development as well as mentoring and general technical leadership within the team.
+Member of team developing replacement of existing services implemented in CORBA and C++. Project stack included JMS (
+ActiveMQ and Tibco), Rest-based API (Jersey), IoC (Spring 3), ORM (Hibernate 3.x), Automated Test (JBehave, JUnit),
+Build (Maven), Continuous Integration (Jenkins), Revision Control (git, git svn bridge). Team organization included a
+combination of Scrum and XP with 2-week sprints. Responsibilities included both development as well as mentoring and
+general technical leadership within the team.
 
 Project deployed into production 7/2012 and currently in use as of 2012.
 
@@ -117,7 +176,10 @@ Project deployed into production 7/2012 and currently in use as of 2012.
 
 Project: Architecture & Technology Assessment/Product Development
 
-Member of team evaluating as-is system including: Amazon EC2, NetSuite, SalesForce, custom-build Java Applications all integrated to provide an overall learning experience. Assisting in redesign of a simplified and overall improved intermediate solution. Also involved in inception of project related to online payment processing as well as COTS product evaluation.
+Member of team evaluating as-is system including: Amazon EC2, NetSuite, SalesForce, custom-build Java Applications all
+integrated to provide an overall learning experience. Assisting in redesign of a simplified and overall improved
+intermediate solution. Also involved in inception of project related to online payment processing as well as COTS
+product evaluation.
 
 ----
 
@@ -147,9 +209,9 @@ Title: Senior Trainer, Mentor and Consultant
 #### Consulting & Coaching
 * Several Agile/XP Immersions
 * Involved with several Agile in the Large Transitions (> 100 people)
-* Archicturial Assessment, coaching and training for a large C#-based Point of Sale Terminal provider
+* Architectural Assessment, coaching and training for a large C#-based Point of Sale Terminal provider
 * Agile transition, immersion, ongoing coaching with a large online travel offering
-* Agile coaching and mentoring with two large insurance companies. On primarily focused on automated testing and archicturail assessment, the other primarily focusing on improving several technical skills such as Test Driven Development.
+* Agile coaching and mentoring with two large insurance companies. On primarily focused on automated testing and architectural assessment, the other primarily focusing on improving several technical skills such as Test Driven Development.
 
 ----
 
