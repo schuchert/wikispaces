@@ -15,7 +15,7 @@ Coach, which he will additionally teach.
 
 Brett is a lateral thinker and mixes and mingles across domains. For example, he applies lean thinking to 
 learning and teaching new ideas in both a technical realm, and internal martial arts training. The notion
-of practice, or katas, he does in both software and body awareness. Meditation and paying attention to the 
+of practice/katas he does in both software development, and body awareness. Meditation and paying attention to the 
 moment are a cornerstone of Code Whispering, or listening to the code, versus projecting design on to it.
 
 ----
@@ -34,6 +34,8 @@ Batch Size, Work in Progress, and Queues / Handoff. The application is a mix of 
 * [React Native](https://reactnative.dev/)
 * The use of which includes the following AWS Services
   * Cognito, IAM, S3, CloudWatch, API Gateway, DynamoDB, AWS Amplify, Cloud Formation, Textract
+
+---- 
 
 #### Customer Product Development
 Building a ReactNative replacement for an existing Point of Sale Terminal in thousands of restaurants. The product was 
@@ -56,10 +58,14 @@ There was a mix of technologies and practices:
 * [Redux](https://redux.js.org/)
 * Native coding to support multiple screens in React Native
 
+----
+
 #### Instructor
 * Taught our Testing and Refactoring Workshop both in person and guided.
 * Taught our Continuous Deployment workshop
 * Developed and taught a 1-day extension to our Continuous Development workshop called "0 to CD" where attendees create a build pipeline from scratch.
+
+----
 
 #### Lean Coach, Major Auto Manufacturer
 
@@ -79,6 +85,7 @@ Embedded with a team and assisted in an internal transformation. As before, XP p
 with this engagement, we introduced [DORA](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance)
 metrics to track how process changes impact our delivery.   
 
+
 ##### Fourth Engagement, Software Development Coach
 Embedded with a team and continued where the third engagement left off in terms of transformation. Over a 1-year period, 
 the team reduced their cycle-time from around 8.5 days per story to around 2.5 days. The team had inherited a number
@@ -87,6 +94,8 @@ through more and better automated tests, improved on acceptance testing, experim
 production (though most of our projects were CD into lower environments and 1-click run of push to production).  
 
 During this engagement I also worked with two coach candidates, both who moved into coaching roles as employees.
+
+---- 
 
 #### Agile Coach, National Food Chain
 
@@ -100,11 +109,13 @@ conception, development, delivery and updating business processes to make this m
 change stick, and ultimately helped root out the source of many of the deployment failures in the
 underlying CRM technology,  as well as the satellite network used for delivery of those materials.
 
+
 #### Lean Coach, Middle-East Telecommunications Company
 Working as part of a team of coaches, we helped a large Telecom on its delivery focus. At the beginning
 of the engagement, average lead time was 26 weeks. After 2 months, the average dropped to 4 weeks.
 
 ----
+
 ### Independent Contractor
 May 2015 - August 2015
 
@@ -115,6 +126,7 @@ swapping between tasks throughout the day, and both the flow of delivery and the
 on the team improved.
 
 ----
+
 ### ThoughtWorks Incorporated
 November 2011 - May 2015
 Title: Principal Consultant
@@ -149,6 +161,7 @@ virtual machines.
 Schedule into early 2014 to assist in the removal of unnecessary technical stack, which will include the removal of
 Enterprise Java Means and migrating from WebSphere to Tomcat.
 
+
 #### Consultant, Smart Grid Company
 
 Originally introduced to help with refactoring of a system but instead switched to agile enablement as the current
@@ -159,6 +172,7 @@ estimation on delivery possibility versus promises and helped introduce some of 
 
 This organization also needed to grow and I assisted in the definition and application of an interview process for
 several roles: Business Analyst, Quality Assurance (with emphasis on automation), Senior Developer.
+
 
 #### Consultant, Travel Corporation
 
@@ -171,6 +185,7 @@ combination of Scrum and XP with 2-week sprints. Responsibilities included both 
 general technical leadership within the team.
 
 Project deployed into production 7/2012 and currently in use as of 2012.
+
 
 #### Consultant, Online Education Provider
 
