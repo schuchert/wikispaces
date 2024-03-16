@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'github-pages', group: :jekyll_plugins
+gem 'jekyll-theme'
 gem 'jekyll-sitemap'
 gem 'jekyll-relative-links'
 gem 'jekyll-theme-midnight'

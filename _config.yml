@@ -1,7 +1,10 @@
 title: Schuchert Wikispaces
 description: Port of schuchert.wikispaces.com
 twitter_username: schuchert
+theme: jekyll-theme-midnight
+highlight: rogue
 github_username: schuchert
+layout: kramdown
 makrdown: kramdown
 kramdown: 
   parse_block_html: true
@@ -13,9 +16,7 @@ plugins:
 blog: "https://schuchert.github.io"
 url: "https://schuchert.github.io/wikispaces"
 repository: schuchert/wikispaces
-theme: jekyll-theme-midnight
 baseurl: /wikispaces
 github: [metadata]
-highlight: rogue
 exclude: [.idea,site_errors,bin,_build,.gitignore,.gitconfig,Gemfile,Gemfile.lock]
 include: [favico.ico]
