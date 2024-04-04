@@ -42,7 +42,7 @@ Building a ReactNative replacement for an existing Point of Sale Terminal in tho
 delivered into production on time, supporting backwards-compatibility with the original system, which eased
 migration for existing customers. It also supported Android, iOS, both phones and tablets.
 
-The customer was looking clients to competitors, and updating their 10-year-old system became untenable. 
+The customer was losing clients to competitors. Updating their 10-year-old system became untenable. 
 
 During the development, we targeted several mobile devices, some with multiple displays. Supported different UX
 experiences with those different formats, integrating with existing credit card terminals, and supporting different
