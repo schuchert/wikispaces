@@ -23,19 +23,37 @@ moment are a cornerstone of Code Whispering, or listening to the code, versus pr
 ### Industrial Logic
 August 2015 - Present
 
-#### Senior Software Developer
+#### Senior Software Developer / Coach
+----
+#### Aurora-Nexus Design Pro
+Developed a web based tool, with option for mobile use, for the design and planning of the installation of commercial
+security systems. DesignPro is the first of a suite of products. The primary goals of this effort were: determine costs 
+of developing certain key distinguish features, be able to demo at the GSX Trade show the week of September 23, 2024.
 
-#### Internal Product Development
-Building, supporting, and updating a collection of educational games used to teach lean principles related to 
-Batch Size, Work in Progress, and Queues / Handoff. The application is a mix of technologies, including:
-* [AWS CDK](https://aws.amazon.com/cdk/)
-* [AWS Lambdas](https://aws.amazon.com/lambda/) via The [Serverless](https://www.serverless.com/) Framework
-* [Angular JS](https://angularjs.org/)
-* [React Native](https://reactnative.dev/)
-* The use of which includes the following AWS Services
-  * Cognito, IAM, S3, CloudWatch, API Gateway, DynamoDB, AWS Amplify, Cloud Formation, Textract
+Initiated project and released into production the first version on Day 3. During the development, we focused on using
+story maps for a general idea of what each release might include, frequent bargain hunting on both what features, and
+how much of each feature we'd build, discovery trees to plan and visualize the next few hours/days of work, mostly
+pair programming, and nearly daily demos showing new development.
 
----- 
+The back-end included: Aws Lambda, S3, and Serverless, along with hand-rolled IAM, Amplify, and most of the 
+infrastructure built by hand. As our goal was proof of concept, we held off automating a number of things.
+
+The system is build using GitHub actions and AWS Amplify. 
+
+The front-end uses a number of technologies including: React-Native, React-Native-Web, Expo, React-Native-Paper,
+Skia (2d Graphics Library), AWS Sdk.
+
+#### Mobile Games
+A cloud-backed, mobile-driven, multi-user system supporting our workshop offerings. A collection of games to 
+teach principles of lead software development. 
+
+The system is built and deployed using GitHub actions, as well as XCode, and both the Android and Apple application
+stores.
+
+The backend included: Amazon Textract, API Gateway, Amplify, CloudFormation, CloudWatch, Cognito, DynamoDB, IAM, 
+Lambda, S3, Serverless, AWS CDK.
+
+The two front ends used: React-Native for mobile development, and Angular for the web-based administration client.
 
 #### Customer Product Development
 Building a ReactNative replacement for an existing Point of Sale Terminal in thousands of restaurants. The product was 
