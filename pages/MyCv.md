@@ -26,17 +26,24 @@ August 2015 - Present
 #### Senior Software Developer / Coach
 ----
 #### Aurora-Nexus Design Pro
-Developed a web based tool, with option for mobile use, for the design and planning of the installation of commercial
-security systems. DesignPro is the first of a suite of products. The primary goals of this effort were: determine costs 
-of developing certain key distinguish features, be able to demo at the GSX Trade show the week of September 23, 2024.
+Developed a web based tool, with option for mobile use (iOS and Android), for the design and planning of the 
+installation of commercial security systems. DesignPro is the first of a suite of products. The primary goals of 
+this effort were: 
+* determine costs of developing certain key distinguish features, 
+* demo at the GSX Trade show the week of September 23, 2024.
 
-Initiated project and released into production the first version on Day 3. During the development, we focused on using
-story maps for a general idea of what each release might include, frequent bargain hunting on both what features, and
-how much of each feature we'd build, discovery trees to plan and visualize the next few hours/days of work, mostly
-pair programming, and nearly daily demos showing new development.
+Both of which we accomplished.
 
-The back-end included: Aws Lambda, S3, and Serverless, along with hand-rolled IAM, Amplify, and most of the 
-infrastructure built by hand. As our goal was proof of concept, we held off automating a number of things.
+Initiated project and released into production the first version on Day 3. During the development, 
+* we focused on using story maps for a general idea of what each release might include, 
+* frequent bargain hunting on both what features, and how much of each feature we'd build, 
+* discovery trees to plan and visualize the next few hours/days of work, 
+* majority pair programming, 
+* and nearly daily demos showing new development.
+
+The back-end includes: Aws Lambda, S3, and Serverless, along with hand-rolled IAM, Amplify, and most of the 
+infrastructure built by hand. As our goal was proof of concept, we held off automating a number of things, which
+is part of bargain hunting.
 
 The system is build using GitHub actions and AWS Amplify. 
 
@@ -50,7 +57,7 @@ teach principles of lead software development.
 The system is built and deployed using GitHub actions, as well as XCode, and both the Android and Apple application
 stores.
 
-The backend included: Amazon Textract, API Gateway, Amplify, CloudFormation, CloudWatch, Cognito, DynamoDB, IAM, 
+The backend includes: Amazon Textract, API Gateway, Amplify, CloudFormation, CloudWatch, Cognito, DynamoDB, IAM, 
 Lambda, S3, Serverless, AWS CDK.
 
 The two front ends used: React-Native for mobile development, and Angular for the web-based administration client.
