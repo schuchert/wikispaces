@@ -21,7 +21,7 @@ moment are a cornerstone of Code Whispering, or listening to the code, versus pr
 ----
 
 ### Industrial Logic
-August 2015 - Present
+August 2015 - October 2024
 
 #### Senior Software Developer / Coach
 ----
