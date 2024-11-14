@@ -19,6 +19,11 @@ of practice/katas he does in both software development, and body awareness. Medi
 moment are a cornerstone of Code Whispering, or listening to the code, versus projecting design on to it.
 
 ----
+### Leading Agile
+November 2024 - Present
+Managing Consultant
+
+LAMP migration.
 
 ### Industrial Logic
 August 2015 - October 2024
