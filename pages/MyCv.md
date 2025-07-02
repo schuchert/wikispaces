@@ -5,25 +5,31 @@ title: MyCv
 ## Curriculum Vitae for Brett L. Schuchert
 
 ### Skill Summary
-Brett has over 35 years of teaching experience and over 30 years of consulting and coaching experience. Early
+Brett has 40 years of teaching experience and over 35 years of consulting and coaching experience. Early
 in his career, Brett was introduced to Object-Oriented Programming and Constraint Theory, and later agile
 software development, then in the past decade, lean thinking. 
 
 While he maintains a number of hobbies such as photography, and gardening, he practices and teaches
-internal martial arts, e.g., Tai Chi, and Qigong. In April 2024, he is expecting to certify as a Flexibility
-Coach, which he will additionally teach.
+internal martial arts, e.g., Tai Chi, and Qigong. He's also a Certified Flexibility
+Coach, which augments his intentional body work.
 
 Brett is a lateral thinker and mixes and mingles across domains. For example, he applies lean thinking to 
 learning and teaching new ideas in both a technical realm, and internal martial arts training. The notion
-of practice/katas he does in both software development, and body awareness. Meditation and paying attention to the 
-moment are a cornerstone of Code Whispering, or listening to the code, versus projecting design on to it.
+of practice/katas he does in both software development, and body awareness. Meditation and paying
+attention to the moment are a cornerstone of Code Whispering, or listening to the code, versus 
+projecting design on to it.
 
 ----
 ### Leading Agile
 November 2024 - Present
 Managing Consultant
 
-LAMP migration.
+#### Senior Software Developer / Legacy Rescue, Modernization
+Designing and developing a domain-centric rewrite of the applications supporting Building / Property inspections.
+
+#### Senior Software Developer / Multi-Tenant Application
+Perform architectural analysis, evaluate implementation paths and perform orchestration of the work
+involved in migrating a legacy application towards introducing multi-tenancy / BYOK functionality.
 
 ### Industrial Logic
 August 2015 - October 2024
