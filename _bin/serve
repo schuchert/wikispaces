@@ -1,3 +1,10 @@
 #!/bin/bash
 
-bundle exec jekyll serve --incremental
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+rm -r $DIR/../_site 2> /dev/null
+
+cd $DIR/.. 
+
+bundle install
+bundle exec jekyll serve --incremental --port 5500
