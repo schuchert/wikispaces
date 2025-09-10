@@ -55,7 +55,7 @@ OK (171 tests, 167 ran, 599 checks, 4 ignored, 0 filtered out, 10 ms)
 {% endhighlight %}
 
 ### Get FitNesse
-* [Download fitnesse.jar](http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad), these instructions were created using the edge build #398, dated July 11, 2010, 12:49, but the release at fitnesse.org should work fine.
+* [Download fitnesse.jar](https://fitnesse.org/FitNesseDownload.html), these instructions were created using the edge build #398, dated July 11, 2010, 12:49, but the release at fitnesse.org should work fine.
 * Move fitnesse.jar into ~src/cpp_fitnesse/
 * The directory should look like this before you run fitnesse for the first time:
 

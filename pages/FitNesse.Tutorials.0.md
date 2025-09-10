@@ -6,7 +6,7 @@ title: FitNesse.Tutorials.0
 
 ## Install FitNesse
 * Install a JVM 1.6 or later.
-* [Download FitNesse](http://fitnesse.org/FrontPage.FitNesseDevelopment.DownLoad)
+* [Download FitNesse](https://fitnesse.org/FitNesseDownload.html)
 * Go to that directory and execute "java -jar fitnesse.jar -p 8080"
 
 {% highlight terminal %}
