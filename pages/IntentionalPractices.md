@@ -27,12 +27,20 @@ title: International Practices Reference
 ## Videos
 * [Empty Stepping](https://www.youtube.com/playlist?list=PLaaZHsVfI4FGRMAslB4IVQif_isKrkFSi)
 * [Yang Family Form, Part 1](https://www.youtube.com/playlist?list=PLaaZHsVfI4FEvlab88ptlvBx1jOldFTSw)
-* 
+
 # Bagua
+
+## Videos
+* [Set 1](https://youtu.be/tE2YuKXCfAA)
+* [Set 2](https://youtu.be/9fFKG3n1P70)
+* [Set 3](https://youtu.be/vZyeAva-e_o)
+* [8 Version 4 and 5](https://youtu.be/cwfZRkOpdE4)
+* [1 - 9](https://youtu.be/R_UuqBFXr_U)
+
 
 ## Blogs
 * [Master Huang's Dragon Palm Changes](https://schuchert.github.io/self/2025/10/25/MasterWeiLunHaungDragonPalmChanges.html)
-* [Master Li's Dragon Palm Changes](https://schuchert.github.io/gigong/2024/02/26/LiDragonPalmChanges.html])
+* [Master Li's Dragon Palm Changes](https://schuchert.github.io/gigong/2024/02/26/LiDragonPalmChanges.html)
 
 ## Videos
 
