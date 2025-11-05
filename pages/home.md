@@ -9,6 +9,7 @@ For more background on where I'm coming from, have a look at
 ## [All Pages](/wikispaces/index)
 
 ## New Stuff
+* ### [Intentional Body Work](IntentionalPractices)
 * ### [Principles of Product Development Flow](PrinciplesOfProductDevelopmentFlow)
 * ### [Lombok](lombok)
 * ### [Setting Up the VM](vm)
